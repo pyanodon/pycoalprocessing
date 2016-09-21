@@ -1,3 +1,4 @@
+--luacheck: ignore Time table string
 -- utils.lua by binbinhfr, v1.0.10
 
 local author_name1 = "Nexela"
@@ -7,7 +8,6 @@ require("stdlib.table")
 require("stdlib.string")
 require("stdlib.time")
 require("stdlib.utils.colors")
-local Game=require("stdlib.game")
 -------------------------------------------------------------------------------
 
 
@@ -33,10 +33,10 @@ function doDebug(msg, alert)
                 MOD.logfile.log(tostring(msg))
             end
     if (level >= 2 or alert) and game then
-        Game.print_all(MOD.n .. ":" .. table.tostring(msg))
+        game.print(MOD.n .. ":" .. table.tostring(msg))
     end
 end
-doDebug(MOD.fileheader) --Start the debug log with a header
+--doDebug(MOD.fileheader) --Start the debug log with a header
 
 --------------------------------------------------------------------------------------
 function string.PrettyNumber( number )

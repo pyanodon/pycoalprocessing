@@ -1,7 +1,7 @@
 --- Gui module
 -- @module Gui
 
-require 'stdlib/event/event'
+if not _G.Event then require 'stdlib/event/event' end
 
 Gui = {}
 -- Factorio's gui events are so monolithic we need a special event system for it.
