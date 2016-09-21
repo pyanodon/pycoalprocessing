@@ -1,3 +1,4 @@
+--luacheck: ignore Time table string
 -- utils.lua by binbinhfr, v1.0.10
 
 local author_name1 = "Nexela"
@@ -6,8 +7,7 @@ local author_name2 = "Nexela"
 require("stdlib.table")
 require("stdlib.string")
 require("stdlib.time")
-require("stdlib.colors")
-local Game=require("stdlib.game")
+require("stdlib.utils.colors")
 -------------------------------------------------------------------------------
 
 
@@ -33,10 +33,10 @@ function doDebug(msg, alert)
                 MOD.logfile.log(tostring(msg))
             end
     if (level >= 2 or alert) and game then
-        Game.print_all(MOD.n .. ":" .. table.tostring(msg))
+        game.print(MOD.n .. ":" .. table.tostring(msg))
     end
 end
-doDebug(MOD.fileheader) --Start the debug log with a header
+--doDebug(MOD.fileheader) --Start the debug log with a header
 
 --------------------------------------------------------------------------------------
 function string.PrettyNumber( number )
@@ -97,7 +97,7 @@ end
 
 --------------------------------------------------------------------------------------
 function flyingText(line, color, pos, surface)
-    color = color or colors.RED
+    color = color or defines.colors.RED
     line = line or "missing text" --If we for some reason didn't pass a message make a message
     if not pos then
 		for _, p in pairs(game.players) do

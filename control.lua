@@ -1,11 +1,12 @@
 require("config")
+_G.Event=require("stdlib.event.event")
 
 MOD = {}
 MOD.name = "tailings_pond"
 MOD.IF = "TP"
 MOD.path = "__tailings_pond__"
 
-require("stdlib.string")
+require("stdlib.utils.utils")
 local Position = require("stdlib.area.position")
 local Area = require ("stdlib.area.area")
 local tailings_pond = {}
@@ -119,6 +120,8 @@ function tailings_pond.on_init()
 end
 script.on_init(tailings_pond.on_init)
 
-if _G.TAILINGS_POND._DEBUG then require("stdlib.quickstart") end
+if _G.TAILINGS_POND.DEBUG then
+  require("stdlib.utils.quickstart")
+end
 
 remote.add_interface(MOD.IF, require("interface"))
