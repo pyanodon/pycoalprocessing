@@ -119,6 +119,6 @@ function tailings_pond.on_init()
 end
 script.on_init(tailings_pond.on_init)
 
-if _G.TAILINGS_POND._DEBUG then require("stdlib.quickstart") end
+if _G.TAILINGS_POND.DEBUG then require("stdlib.utils.quickstart") end
 
 remote.add_interface(MOD.IF, require("interface"))
