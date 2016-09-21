@@ -131,3 +131,5 @@ function Gui.on_text_changed(gui_element_pattern, handler)
     Gui.Event.register(defines.events.on_gui_text_changed, gui_element_pattern, handler)
     return Gui
 end
+
+return Gui

@@ -6,7 +6,7 @@ local author_name2 = "Nexela"
 require("stdlib.table")
 require("stdlib.string")
 require("stdlib.time")
-require("stdlib.colors")
+require("stdlib.utils.colors")
 local Game=require("stdlib.game")
 -------------------------------------------------------------------------------
 
@@ -97,7 +97,7 @@ end
 
 --------------------------------------------------------------------------------------
 function flyingText(line, color, pos, surface)
-    color = color or colors.RED
+    color = color or defines.colors.RED
     line = line or "missing text" --If we for some reason didn't pass a message make a message
     if not pos then
 		for _, p in pairs(game.players) do
