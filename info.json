@@ -1,0 +1,10 @@
+{
+    "name":"tailings-pond",
+    "author":"Nexela, pyanodon",
+    "version":"1.0.0",
+    "factorio_version": "0.14",
+    "title":"Tailing Pool for pyanodon",
+    "homepage":"https://github.com/Nexela/BaseMod",
+    "description":"",
+    "dependencies": ["base >= 0.13.10"]
+}
