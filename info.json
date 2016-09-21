@@ -1,0 +1,11 @@
+{
+  "name": "pycoalprocessing",
+  "version": "0.2.1",
+  "factorio_version": "0.14",
+  "title": "Pyanodons Coal Processing",
+  "author": "Pyanodon",
+  "contact": "",
+  "homepage": "",
+  "description": "Adds coal processing lines to the game.",
+  "dependencies": ["base >= 0.14.0"]
+}
