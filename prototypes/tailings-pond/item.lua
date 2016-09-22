@@ -1,10 +1,10 @@
 local tailings_pond = {
   type = "item",
   name = "tailings-pond",
-  icon = "__tailings-pond__/graphics/item/tailings-pond-item-icon.png",
+  icon = "__tailings-pond__/graphics/icons/tailings-pond.png",
   flags = {"goes-to-quickbar"},
-  subgroup = "circuit-network",
-  order = "c-a",
+  subgroup = "coal-processing",
+  order = "t",
   place_result = "tailings-pond",
   stack_size = 50
 }
