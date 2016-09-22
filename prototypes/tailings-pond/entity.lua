@@ -10,7 +10,7 @@ local tailings_pond =
 {
   type = "storage-tank",
   name = "tailings-pond",
-  icon = "__tailings-pond__/graphics/item/tailings-pond-item-icon.png",
+  icon = "__tailings-pond__/graphics/icons/tailings-pond.png",
   flags = {"placeable-player", "player-creation"},
   minable = {hardness = 0.2, mining_time = 3, result = "tailings-pond"},
   max_health = 500,
@@ -35,7 +35,7 @@ local tailings_pond =
     {
       sheet =
       {
-        filename = "__tailings-pond__/graphics/entity/tailings-pond-mask.png",
+        filename = "__tailings-pond__/graphics/entity/tailings-pond/tailings-pond-mask.png",
         priority = "high",
         frames = 1,
         width = 171,
@@ -48,7 +48,7 @@ local tailings_pond =
     --window_background = empty_sprite,
     window_background =
     {
-        filename = "__tailings-pond__/graphics/entity/tailings-pond-empty-window.png",
+        filename = "__tailings-pond__/graphics/entity/tailings-pond/tailings-pond-empty-window.png",
         priority = "extra-high",
         width = 171,
         height = 185
@@ -99,7 +99,7 @@ local sprite =
 {
   type = "car",
   name = "tailings-pond-sprite",
-  icon = "__tailings-pond__/graphics/item/tailings-pond-item-icon.png",
+  icon = "__tailings-pond__/graphics/icons/tailings-pond.png",
   flags = {"placeable-neutral", "placeable-off-grid", "player-creation"},
   minable = {mining_time = 1, result = "tailings-pond"},
   max_health = 0,

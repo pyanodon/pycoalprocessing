@@ -2,6 +2,7 @@ if not pysmods then pysmods = {} end
 if not pysmods.coalpro then pysmods.coalpro = {} end
 if not bobmods then bobmods = {false} end
 require("config")
+require("stdlib.utils.utils")
 pysmods.coalpro = true
 
 if pysmods.coalpro then
@@ -17,7 +18,7 @@ require("prototypes.buildings.tar-processing-unit")
 require("prototypes.buildings.rectisol")
 require("prototypes.buildings.methanol-reactor")
 
-require("stdlib.utils.utils")
+
 
 require ("prototypes.terrain.terrain")
 
@@ -29,7 +30,7 @@ require ("prototypes.objects.tiles")
 require("prototypes.recipes.recipes-entity")
 
 
-require("prototypes.recipes.recipes_updates") -- The recipes we want to update.
+--require("prototypes.recipes.recipes_updates") -- The recipes we want to update.
 
 	if bobmods.plates then
 			require("prototypes.recipes.recipes-bob")
