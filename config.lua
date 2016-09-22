@@ -1,8 +1,10 @@
+--luacheck: ignore
 
 USECREOSOTE_RAIL = true
 USECREOSOTE_POLE = true
 
---luacheck: globals TAILINGS_POND
+PYC = {}
+
 --Config settings for tailings ponds
 TAILINGS_POND = {}
 
@@ -18,4 +20,4 @@ TAILINGS_POND.GAS_POLLUTE_MODIFIER = .15
 TAILINGS_POND.SCORCH = false
 
 --Messages and stuff for developers
-TAILINGS_POND.DEBUG = true
+PYC.DEBUG = true

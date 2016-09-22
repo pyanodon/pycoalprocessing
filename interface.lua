@@ -9,7 +9,7 @@ end
 function interface.recoverItems()
 end
 
-if _G.TAILINGS_POND.DEBUG then
+if _G.PYC.DEBUG then
   interface.console = require("stdlib.utils.console")
 end
 
