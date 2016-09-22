@@ -27,6 +27,8 @@ require("prototypes.fluids.methanol")
 require("prototypes.fluids.refsyngas")
 require("prototypes.fluids.syngas")
 require("prototypes.fluids.tar")
+require("prototypes.fluids.dirty-water")
+require("prototypes.fluids.flue-gas")
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -37,6 +39,7 @@ require("prototypes.buildings.tar-processing-unit")
 require("prototypes.buildings.rectisol")
 require("prototypes.buildings.methanol-reactor")
 require("prototypes.buildings.tailings-pond")
+require("prototypes.buildings.quenching-tower")
 
 
 
