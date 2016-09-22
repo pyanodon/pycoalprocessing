@@ -37,7 +37,7 @@ local function on_player_joined_game(event)
 
   local tiles = {}
   for x, y in Area.spiral_iterate(area) do
-    tiles[#tiles+1]={name="polluted-ground", position={x=x, y=y}}
+    tiles[#tiles+1]={name="grass", position={x=x, y=y}}
   end
   surface.set_tiles(tiles, true)
 
