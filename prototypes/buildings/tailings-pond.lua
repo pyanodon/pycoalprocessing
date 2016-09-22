@@ -1,3 +1,5 @@
+-------------------------------------------------------------------------------
+--[[Helper Functions]]--
 local empty_sprite =
 {
   filename = "__core__/graphics/empty.png",
@@ -6,7 +8,36 @@ local empty_sprite =
   height = 1
 }
 
-local tailings_pond =
+-------------------------------------------------------------------------------
+--[[Recipes]]--
+local recipe_tailings_pond = {
+    type = "recipe",
+    name = "tailings-pond",
+    enabled = "false",
+    ingredients =
+    {
+      {"iron-plate", 1},
+      {"iron-stick", 5},
+    },
+    result = "tailings-pond"
+}
+
+-------------------------------------------------------------------------------
+--[[Items]]--
+local item_tailings_pond = {
+  type = "item",
+  name = "tailings-pond",
+  icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
+  flags = {"goes-to-quickbar"},
+  subgroup = "coal-processing",
+  order = "t",
+  place_result = "tailings-pond",
+  stack_size = 50
+}
+
+-------------------------------------------------------------------------------
+--[[Entities]]--
+local entity_tailings_pond =
 {
   type = "storage-tank",
   name = "tailings-pond",
@@ -95,7 +126,7 @@ local tailings_pond =
   circuit_wire_max_distance = 8.5
 }
 
-local sprite =
+local entity_tailings_pond_sprite =
 {
   type = "car",
   name = "tailings-pond-sprite",
@@ -231,4 +262,7 @@ local sprite =
   inventory_size = 0
 }
 
-data:extend({sprite, tailings_pond})
+-------------------------------------------------------------------------------
+--[[Extend Prototypes]]--
+
+data:extend({recipe_tailings_pond, item_tailings_pond, entity_tailings_pond, entity_tailings_pond_sprite})
