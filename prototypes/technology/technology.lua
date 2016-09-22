@@ -98,6 +98,14 @@ data:extend(
           type = "unlock-recipe",
           recipe = "syngas2"
         },
+		{
+          type = "unlock-recipe",
+          recipe = "quenching-tower"
+        },
+		{
+          type = "unlock-recipe",
+          recipe = "tailings"
+        },
 
       },
       unit =
