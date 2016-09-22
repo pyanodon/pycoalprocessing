@@ -11,19 +11,19 @@ local polluted_ground=
     main =
     {
       {
-        picture = "__pycoalprocessing__/graphics/terrain/polluted-ground/polluted-ground1.png",
+        picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground1.png",
         count = 16,
         size = 1
       },
       {
-        picture = "__pycoalprocessing__/graphics/terrain/polluted-ground/polluted-ground2.png",
+        picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground2.png",
         count = 16,
         size = 2,
         probability = 0.39,
         weights = {0.025, 0.010, 0.013, 0.025, 0.025, 0.100, 0.100, 0.005, 0.010, 0.010, 0.005, 0.005, 0.001, 0.015, 0.020, 0.020}
       },
       {
-        picture = "__pycoalprocessing__/graphics/terrain/polluted-ground/polluted-ground4.png",
+        picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground4.png",
         count = 22,
         line_length = 11,
         size = 4,
@@ -33,17 +33,17 @@ local polluted_ground=
     },
     inner_corner =
     {
-      picture = "__pycoalprocessing__/graphics/terrain/polluted-ground/polluted-ground-inner-corner.png",
+      picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground-inner-corner.png",
       count = 8
     },
     outer_corner =
     {
-      picture = "__pycoalprocessing__/graphics/terrain/polluted-ground/polluted-ground-outer-corner.png",
+      picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground-outer-corner.png",
       count = 8
     },
     side =
     {
-      picture = "__pycoalprocessing__/graphics/terrain/polluted-ground/polluted-ground-side.png",
+      picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground-side.png",
       count = 8
     }
   },
