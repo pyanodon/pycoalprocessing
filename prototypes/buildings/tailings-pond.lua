@@ -50,7 +50,7 @@ local entity_tailings_pond =
   selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
   fluid_box =
   {
-    base_area = (_G.TAILINGS_POND.TANK_SIZE / 10),
+    base_area = (_G.PYC.TAILINGS_POND.TANK_SIZE / 10),
     pipe_covers = _G.pipecoverspictures(),
     pipe_connections = {
       {position = {0, -3}},
