@@ -30,6 +30,10 @@ data:extend(
     name = "methanol",
   },
   {
+    type = "recipe-category",
+    name = "quenching-tower",
+  },
+  {
     type = "item-group",
     name = "coal-processing",
     order = "t",
