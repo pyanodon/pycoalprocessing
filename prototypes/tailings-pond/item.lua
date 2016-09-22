@@ -1,7 +1,7 @@
 local tailings_pond = {
   type = "item",
   name = "tailings-pond",
-  icon = "__tailings-pond__/graphics/icons/tailings-pond.png",
+  icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
   flags = {"goes-to-quickbar"},
   subgroup = "coal-processing",
   order = "t",

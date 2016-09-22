@@ -39,7 +39,7 @@ data:extend({
     icon = "__pycoalprocessing__/graphics/icons/syngas.png",
     order = "b [syn-gas]",
   },
-  
+
       {
     type = "recipe",
     name = "syngas2",
@@ -61,7 +61,7 @@ data:extend({
     icon = "__pycoalprocessing__/graphics/icons/syngas.png",
     order = "c [syn-gas2]",
   },
-  
+
 {
     type = "recipe",
     name = "creosote",
@@ -79,7 +79,7 @@ data:extend({
     icon = "__pycoalprocessing__/graphics/icons/creosote.png",
     order = "c [syn-gas]",
   },
-	
+
   {
     type = "recipe",
     name = "filtersyngas",
@@ -105,7 +105,7 @@ data:extend({
 	enabled = "false",
     energy_required = 4,
     ingredients ={
-	
+
 		{type="fluid", name="syngas", amount=10},
 --		{type="fluid", name="methanol", amount=10},
 	},
@@ -120,7 +120,7 @@ data:extend({
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
     order = "e [refsyn-gas]",
   },
-	
+
   {
     type = "recipe",
     name = "canister",
@@ -141,7 +141,7 @@ data:extend({
     icon = "__pycoalprocessing__/graphics/icons/canister.png",
     order = "c [methanol]",
   },
-	
+
 {
     type = "recipe",
     name = "canister2",
@@ -164,7 +164,7 @@ data:extend({
     icon = "__pycoalprocessing__/graphics/icons/canister.png",
     order = "d [methanol]",
   },
-	
+
   {
     type = "recipe",
     name = "iron-oxide",
@@ -173,8 +173,8 @@ data:extend({
     ingredients = {{"iron-oxide", 1}},
     result = "iron-ore"
   },
-  
-  
+
+
   {
     type = "recipe",
     name = "py-asphalt",
@@ -189,6 +189,6 @@ data:extend({
     result = "py-asphalt",
     requester_paste_multiplier = 4
   },
-  
-  
+
+
   })

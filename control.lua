@@ -129,11 +129,14 @@ end
 
 remote.add_interface(MOD.IF, require("interface"))
 
-script.on_event(defines.events.on_tick, function(event)
-local t = event.tick
+
+--script.on_event(defines.events.on_tick, function(event)
+function ontick(event)
+	local t = event.tick
 		check_generators()
     recheck_archived_generators()
-end)
+end
+Event.register(defines.events.on_tick, ontick)
 
 function BuiltEntity(event)
 	if event.created_entity.name == "gasturbinemk01" then
@@ -167,8 +170,8 @@ function MinedEntity(event)
 
 end
 
-script.on_event(defines.events.on_built_entity, BuiltEntity)
-script.on_event(defines.events.on_robot_built_entity, BuiltEntity)
-script.on_event(defines.events.on_preplayer_mined_item , MinedEntity)
-script.on_event(defines.events.on_entity_died , MinedEntity)
-script.on_event(defines.events.on_robot_pre_mined  , MinedEntity)
+Event.register(defines.events.on_built_entity, BuiltEntity)
+Event.register(defines.events.on_robot_built_entity, BuiltEntity)
+Event.register(defines.events.on_preplayer_mined_item , MinedEntity)
+Event.register(defines.events.on_entity_died , MinedEntity)
+Event.register(defines.events.on_robot_pre_mined  , MinedEntity)
