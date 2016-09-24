@@ -1,25 +1,36 @@
 -------------------------------------------------------------------------------
 --[[Helper Functions]]--
-local empty_sprite =
-{
+local empty_sprite ={
   filename = "__core__/graphics/empty.png",
   priority = "extra-high",
   width = 1,
   height = 1
 }
 
+local empty_animation = {
+  filename = empty_sprite.filename,
+  width = empty_sprite.width,
+  height = empty_sprite.height,
+  line_length = 1,
+  frame_count = 1,
+  shift = { 0, 0},
+  animation_speed = 0
+}
+
+--pond inner 153
+
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe_tailings_pond = {
-    type = "recipe",
-    name = "tailings-pond",
-    enabled = "false",
-    ingredients =
-    {
-      {"iron-plate", 1},
-      {"iron-stick", 5},
-    },
-    result = "tailings-pond"
+  type = "recipe",
+  name = "tailings-pond",
+  enabled = "false",
+  ingredients =
+  {
+    {"iron-plate", 1},
+    {"iron-stick", 5},
+  },
+  result = "tailings-pond"
 }
 
 -------------------------------------------------------------------------------
@@ -46,6 +57,7 @@ local entity_tailings_pond =
   minable = {hardness = 0.2, mining_time = 3, result = "tailings-pond"},
   max_health = 500,
   corpse = "big-remnants",
+  --2.4
   collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
   selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
   fluid_box =
@@ -59,14 +71,15 @@ local entity_tailings_pond =
       {position = {-3, 0}},
     },
   },
-  window_bounding_box = {{-2.390625, -2.390625},{2.390625, 2.390625}},
+  --window_bounding_box = {{-2.390625, -2.390625},{2.390625, 2.390625}},
+  window_bounding_box = {{-2.4, -2.4},{2.4, 2.4}},
   pictures =
   {
     picture =
     {
       sheet =
       {
-        filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-mask.png",
+        filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-mask-2.png",
         priority = "high",
         frames = 1,
         width = 171,
@@ -79,20 +92,20 @@ local entity_tailings_pond =
     --window_background = empty_sprite,
     window_background =
     {
-        filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-empty-window.png",
-        priority = "extra-high",
-        width = 171,
-        height = 185
+      filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-empty-window-2.png",
+      priority = "extra-high",
+      width = 171,
+      height = 185
     },
     flow_sprite = empty_sprite,
   },
   flow_length_in_ticks = 360,
-  vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+  vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
   working_sound =
   {
     sound = {
-        filename = "__base__/sound/storage-tank.ogg",
-        volume = 0.8
+      filename = "__base__/sound/storage-tank.ogg",
+      volume = 0.8
     },
     apparent_volume = 1.5,
     max_sounds_per_type = 3
@@ -210,10 +223,10 @@ local entity_tailings_pond_sprite =
         stripes =
         {
           {
-           filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-fluid-sheet.png",
-           priority="extra-high",
-           width_in_frames = 10,
-           height_in_frames = 3,
+            filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-fluid-sheet.png",
+            priority="extra-high",
+            width_in_frames = 10,
+            height_in_frames = 3,
           },
         }
       },
@@ -234,7 +247,7 @@ local entity_tailings_pond_sprite =
     },
   },
   sound_minimum_speed = 0;
-  vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0 },
+  vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0 },
   working_sound =
   {
     sound =
@@ -262,7 +275,127 @@ local entity_tailings_pond_sprite =
   inventory_size = 0
 }
 
+local entity_tailings_pond_spinner = {
+  type = "beacon",
+  name = "tailings-pond-spinner",
+  icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
+  flags = {"placeable-player", "player-creation"},
+  minable = {mining_time = 1, result = "tailings-pond"},
+  order = "zzz",
+  max_health = 0,
+  corpse = "small-remnants",
+  dying_explosion = "medium-explosion",
+  collision_box = {{-2.25, -2.25}, {2.25, 2.25}},
+  selection_box = {{-0, -0}, {0, 0}},
+  allowed_effects = {"consumption", "speed", "pollution"},
+  base_picture = empty_sprite,
+  -- {
+  -- filename = "__base__/graphics/entity/beacon/beacon-base.png",
+  -- width = 116,
+  -- height = 93,
+  -- shift = { 0.34375, 0.046875}
+  -- },
+  animation =
+  {
+    filename = "__pycoalprocessing__/graphics/entity/tailings-pond/spinner.png",
+    width = 29,
+    height = 41,
+    line_length = 0,
+    frame_count = 50,
+    shift = { -1.95, 1.71875},
+    animation_speed = 0.25
+  },
+  animation_shadow =
+  {
+    filename = "__pycoalprocessing__/graphics/entity/tailings-pond/spinner-shadow.png",
+    width = 29,
+    height = 41,
+    line_length = 0,
+    frame_count = 50,
+    shift = { -1.140625, 1.484375},
+    animation_speed = 0.25
+  },
+  radius_visualisation_picture = empty_sprite,
+  -- radius_visualisation_picture =
+  -- {
+  -- filename = "__base__/graphics/entity/beacon/beacon-radius-visualization.png",
+  -- width = 12,
+  -- height = 12
+  -- },
+  supply_area_distance = 0,
+  energy_source =
+  {
+    type = "electric",
+    usage_priority = "terciary"
+  },
+  vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+  energy_usage = "100W",
+  distribution_effectivity = 0.5,
+  module_specification =
+  {
+    module_slots = 1,
+    module_info_icon_shift = {0, 0.5},
+    module_info_multi_row_initial_height_modifier = -0.3
+  }
+}
+
+local entity_tailings_pond_power_source = {
+  type = "electric-energy-interface",
+  name = "tailings-pond-power-source",
+  icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
+  flags = {"placeable-neutral", "player-creation"},
+  minable = {hardness = 0.2, mining_time = 0.5, result = "tailings-pond"},
+  order="z",
+  max_health = 0,
+  corpse = "small-remnants",
+  collision_box = {{-0.01, -0.01}, {0.01, 0.01}},
+  selection_box = {{-0, -0}, {0, 0}},
+  energy_source =
+  {
+    type = "electric",
+    buffer_capacity = "1MJ",
+    usage_priority = "terciary",
+    input_flow_limit = "100kW",
+    output_flow_limit = "100kW"
+  },
+  energy_production = "1000kW",
+  energy_usage = "0kW",
+  -- also 'pictures' for 4-way sprite is available, or 'animation' resp. 'animations'
+  animations =
+  {
+    filename = "__pycoalprocessing__/graphics/entity/tailings-pond/spinner.png",
+    width = 29,
+    height = 41,
+    --line_length = 0,
+    direction_count = 1,
+    frame_count = 50,
+    shift = { -2.0, 1.71875},
+    animation_speed = 0.25
+  },
+  vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+  working_sound =
+  {
+    sound =
+    {
+      filename = "__base__/sound/accumulator-working.ogg",
+      volume = 0
+    },
+    idle_sound = {
+      filename = "__base__/sound/accumulator-idle.ogg",
+      volume = 0
+    },
+    max_sounds_per_type = 5
+  },
+}
+
 -------------------------------------------------------------------------------
 --[[Extend Prototypes]]--
 
-data:extend({recipe_tailings_pond, item_tailings_pond, entity_tailings_pond, entity_tailings_pond_sprite})
+data:extend({
+    recipe_tailings_pond, item_tailings_pond,
+    entity_tailings_pond,
+    entity_tailings_pond_sprite,
+    entity_tailings_pond_spinner,
+    --entity_tailings_pond_power_source,
+    --entity_tailings_pond_pole,
+  })
