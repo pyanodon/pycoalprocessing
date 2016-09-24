@@ -17,14 +17,11 @@ end
 
 local function get_unpolluted_terrain(surface, position)
   local area = Position.expand_to_area(position, 6)
-  local tile_positions = {}
-
+  local tiles = {}
   for x,y in Area.spiral_iterate(area) do
-    if get_terrain_name(surface, {position.x, position.y}) ~= "polluted-ground" then
-      table.insert(tile_positions, 1, {x=x, y=y})
-    end
+    tiles[#tiles+1] = {name="polluted-ground", position={x=x,y=y}}
   end
-  return tile_positions
+  return tiles
 end
 
 --TODO create pollution on destruction
@@ -34,25 +31,35 @@ end
 local function scorch_earth(pond)
   if _G.PYC.TAILINGS_POND.SCORCH and #pond.tiles > 0 and pond.fluid.percent > .5 then
     if not (string.contains(pond.fluid.type, "water")) then
-      if ((math.random()/2)+(pond.fluid.percent/1.5)) > 1 then
+      if ((math.random()/2)+(pond.fluid.percent/1.75)) > 1 then
         local surface = pond.entity.surface
-        local tile = {name="polluted-ground", position=table.remove(pond.tiles)}
-        surface.set_tiles({tile})
+
+        if #pond.tiles > 0 then
+          surface.set_tiles(pond.tiles, true)
+          pond.tiles = {}
+        end
+
       end
     end
   end
 end
 
---Destroy any attachments or sprites attached to the entity, possibly change this to an area check.
+--Destroy any attachments or sprites attached to the entity.
 local function destroy_attachments(pond)
   if pond.sprite and pond.sprite.valid then pond.sprite.destroy() end
-  if pond.spinner and pond.spinner.valid then pond.spinnder.destroy() end
+  if pond.spinner and pond.spinner.valid then pond.spinner.destroy() end
 end
 
 --Sets animation frame based on tank filled percentage
 local function set_animation(pond)
   local fluid = pond.entity.fluidbox[1]
   local fluid_per = 0
+
+  if pond.spinner.energy <= 0 and pond.entity.active then
+    pond.entity.active=false
+  elseif pond.spinner.energy > 0 and not pond.entity.active then
+    pond.entity.active=true
+  end
 
   if fluid and (string.contains(fluid.type, "gas-")
     or string.contains(fluid.type, "-air") or string.contains(fluid.type, "steam")
@@ -72,16 +79,24 @@ end
 
 function tailings_pond.create(event)
   if event.created_entity.name == "tailings-pond" then
+
     local entity = event.created_entity
-    entity.rotatable=false
+    --entity.rotatable=false
     entity.direction=defines.direction.north
+    entity.active=false
+
     local sprite = entity.surface.create_entity({name = "tailings-pond-sprite", force=entity.force, position = entity.position})
     sprite.orientation= 0
     sprite.destructible = false
     sprite.operable=false
     sprite.rotatable=false
     sprite.insert({name="coal",count=1})
-    local spinner = nil
+
+    local spinner = entity.surface.create_entity({name = "tailings-pond-spinner", force=entity.force, position = entity.position})
+    spinner.insert({name="speed-module", count=1})
+    spinner.destructible = false
+    spinner.operable=false
+
     local ponds = global.tailings_ponds
     local pond = {
       tick = event.tick,
@@ -95,6 +110,7 @@ function tailings_pond.create(event)
         amount = 0,
         percent = 0,
       },
+      mt = {}
     }
     ponds[pond.index] = pond
   end
