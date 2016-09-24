@@ -13,6 +13,8 @@ local function on_player_created(event)
     "creative-mode_fluid-source",
     "creative-mode_energy-source",
     "creative-mode_super-electric-pole",
+    "construction-robot",
+    --"power-armor-mk2",
   }
 
   for _, item in pairs(simple_stack) do
@@ -20,6 +22,13 @@ local function on_player_created(event)
       player.insert(item)
     end
   end
+
+  --Put on power armor, install equipment
+  local inv = player.get_inventory(defines.inventory.player_armor)
+  inv.insert("power-armor-mk2")
+  local armor = inv[1].grid
+  armor.put{name="fusion-reactor-equipment"}
+  armor.put{name="personal-roboport-equipment"}
 
 end
 _G.Event.register(defines.events.on_player_created, on_player_created)
@@ -34,6 +43,7 @@ local function on_player_joined_game(event)
       entity.destroy()
     end
   end
+  local inv = player.get_inventory(defines.inventory.player_armor)
 
   local tiles = {}
   for x, y in Area.spiral_iterate(area) do

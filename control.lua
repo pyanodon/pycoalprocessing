@@ -6,6 +6,7 @@ MOD = {}
 MOD.name = "pycoalprocessing"
 MOD.IF = "PYC"
 MOD.path = "__pycoalprocessing__"
+MOD.debugpath = "/logs/"..MOD.name .. "/debug.log"
 
 
 local generator = require("scripts.gasturbinemk01")
@@ -27,7 +28,7 @@ end)
 
 
 Event.register({defines.events.on_robot_built_entity, defines.events.on_built_entity}, tailings_pond.create)
-Event.register({defines.events.on_preplayer_mined_item, defines.events.on_robot_mined, defines.events.on_entity_died}, tailings_pond.destroy)
+Event.register({defines.events.on_preplayer_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}, tailings_pond.destroy)
 
 Event.register({defines.events.on_built_entity, defines.events.on_robot_built_entity}, generator.on_built_entity)
 -- local mined_table = {defines.events.on_preplayer_mined_item, defines.events.on_entity_died, defines.events.on_robot_pre_mined}
