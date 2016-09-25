@@ -31,6 +31,10 @@ data:extend(
   },
   {
     type = "recipe-category",
+    name = "hpf",
+  },
+  {
+    type = "recipe-category",
     name = "quenching-tower",
   },
   {
