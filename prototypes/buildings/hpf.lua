@@ -45,7 +45,7 @@ data:extend(
       },
       allowed_effects = {"consumption", "speed", "productivity", "pollution"},
       crafting_categories = {"hpf"},
-      crafting_speed = 0.1,
+      crafting_speed = 0.75,
       energy_source =
       {
         type = "electric",
@@ -98,7 +98,7 @@ data:extend(
             height = 44,
             animation_speed = 0.3
           }
-        }
+        },
 	},
 	
       fluid_boxes =
@@ -118,7 +118,7 @@ data:extend(
       working_sound =
       {
         sound = { filename = "__pycoalprocessing__/sounds/hpf.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/hpf.ogg", volume = 0.3 },
+        idle_sound = { filename = "__pycoalprocessing__/sounds/hpf.ogg", volume = 0.5 },
         apparent_volume = 2.5,
       },
     },

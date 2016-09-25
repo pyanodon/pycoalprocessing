@@ -28,7 +28,7 @@ data:extend({
       ingredients ={
         {type="fluid", name="nitrogen", amount=10},
         {type="item", name="zinc-chloride", amount=2},
-		{type="item", name="coke", amount=5},
+		{type="item", name="coke", amount=25},
 		{type="item", name="sodium-hydroxide", amount=15},
       },
       results={
