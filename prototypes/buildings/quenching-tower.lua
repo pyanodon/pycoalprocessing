@@ -123,8 +123,8 @@ data:extend(
       vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
       working_sound =
       {
-        sound = { filename = "__pycoalprocessing__/sounds/quenching-tower.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/quenching-tower.ogg", volume = 0.5 },
+        sound = { filename = "__pycoalprocessing__/sounds/quenching-tower.ogg",volume = 0.55 },
+        idle_sound = { filename = "__pycoalprocessing__/sounds/quenching-tower.ogg", volume = 0.35 },
         apparent_volume = 2.5,
       },
     },

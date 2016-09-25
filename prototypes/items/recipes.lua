@@ -1,5 +1,46 @@
 data:extend({
-    {
+    
+	{
+      type = "recipe",
+      name = "zinc-chloride",
+      category = "chemistry",
+      enabled = "false",
+      energy_required = 4,
+      ingredients ={
+        {type="fluid", name="hydrogen-chloride", amount=2},
+        {type="item", name="zinc-plate", amount=1},
+      },
+      results={
+        {type="item", name="zinc-chloride", amount=1},
+		{type="fluid", name="hydrogen", amount=2},
+      },
+      main_product= "zinc-chloride",
+      icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
+      order = "d [syn-gas]",
+    },
+	
+	{
+      type = "recipe",
+      name = "active-carbon",
+      category = "hpf",
+      enabled = "false",
+      energy_required = 4,
+      ingredients ={
+        {type="fluid", name="nitrogen", amount=10},
+        {type="item", name="zinc-chloride", amount=2},
+		{type="item", name="coke", amount=5},
+		{type="item", name="sodium-hydroxide", amount=15},
+      },
+      results={
+        {type="item", name="active-carbon", amount=2},
+      },
+      main_product= "active-carbon",
+      icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
+      order = "d [syn-gas]",
+    },
+	
+	
+	{
       type = "recipe",
       name = "canister",
       category = "methanol",

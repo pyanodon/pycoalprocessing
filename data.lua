@@ -40,6 +40,7 @@ require("prototypes.buildings.rectisol")
 require("prototypes.buildings.methanol-reactor")
 require("prototypes.buildings.tailings-pond")
 require("prototypes.buildings.quenching-tower")
+require("prototypes.buildings.hpf")
 
 
 
