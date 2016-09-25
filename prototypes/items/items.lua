@@ -37,7 +37,28 @@ data:extend({
     flags = {"goes-to-main-inventory"},
 	subgroup = "coal-processing",
     order = "b[coal-processing]",
-    stack_size = 200
+    stack_size = 500
+},
+
+{
+    type = "item",
+    name = "active-carbon",
+	fuel_value = "25MJ",
+    icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
+    flags = {"goes-to-main-inventory"},
+	subgroup = "coal-processing",
+    order = "b[coal-processing]",
+    stack_size = 100
+},
+
+{
+    type = "item",
+    name = "zinc-chloride",
+    icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
+    flags = {"goes-to-main-inventory"},
+	subgroup = "coal-processing",
+    order = "c[coal-processing]",
+    stack_size = 100
 },
 
 })

@@ -106,6 +106,18 @@ data:extend(
           type = "unlock-recipe",
           recipe = "tailings"
         },
+		{
+          type = "unlock-recipe",
+          recipe = "hpf"
+        },
+		{
+          type = "unlock-recipe",
+          recipe = "zinc-chloride"
+        },
+		{
+          type = "unlock-recipe",
+          recipe = "active-carbon"
+        },
 
       },
       unit =

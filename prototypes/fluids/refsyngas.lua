@@ -10,7 +10,7 @@ local recipe1=
     ingredients ={
 
       {type="fluid", name="syngas", amount=10},
-      -- {type="fluid", name="methanol", amount=10},
+      {type="item", name="canister", amount=3},
     },
     results=
     {
@@ -18,6 +18,7 @@ local recipe1=
       {type="fluid", name="hydrogen", amount=3},
       {type="fluid", name="carbon-dioxide", amount=2},
       {type="fluid", name="acidgas", amount=6},
+	  {type="item", name="steel-plate", amount=3},
     },
     main_product= "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
@@ -32,6 +33,7 @@ local recipe2=  {
     energy_required = 4,
     ingredients ={
       {type="fluid", name="syngas", amount=10},
+	  {type="item", name="active-carbon", amount=5},
     },
     results=
     {
