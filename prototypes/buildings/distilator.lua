@@ -56,12 +56,12 @@ data:extend(
         layers={
           {
             filename = "__pycoalprocessing__/graphics/entity/distilator/distilator.png",
-            width = 256,
-            height = 256,
+            width = 283,
+            height = 266,
             frame_count = 1,
             --line_length = 4,
             --animation_speed = 0.5,
-            shift = {0.0, 0.0},
+            shift = {0.45, -0.156},
           },
         }
       },
@@ -72,12 +72,49 @@ data:extend(
           pipe_covers = pipecoverspictures(),
           base_level = 1,
           pipe_connections = {{ position = {4.5, 0.5} }}
+		  
+        },
+		{
+          production_type = "output",
+          pipe_covers = pipecoverspictures(),
+          base_level = 1,
+          pipe_connections = {{ position = {4.5, -0.5} }}
+        },
+		{
+          production_type = "output",
+          pipe_covers = pipecoverspictures(),
+          base_level = 1,
+          pipe_connections = {{ position = {0.5, 4.5} }}
+        },
+		{
+          production_type = "output",
+          pipe_covers = pipecoverspictures(),
+          base_level = 1,
+          pipe_connections = {{ position = {-0.5, 4.5} }}
+        },
+		{
+          production_type = "output",
+          pipe_covers = pipecoverspictures(),
+          base_level = 1,
+          pipe_connections = {{ position = {0.5, -4.5} }}
+        },
+		{
+          production_type = "output",
+          pipe_covers = pipecoverspictures(),
+          base_level = 1,
+          pipe_connections = {{ position = {-0.5, -4.5} }}
         },
         {
           production_type = "output",
           pipe_covers = pipecoverspictures(),
           base_level = 1,
           pipe_connections = {{ position = {-4.5, 0.5} }}
+        },
+		{
+          production_type = "output",
+          pipe_covers = pipecoverspictures(),
+          base_level = 1,
+          pipe_connections = {{ position = {-4.5, -0.5} }}
         },
 
       },
