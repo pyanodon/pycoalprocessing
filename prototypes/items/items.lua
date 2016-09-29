@@ -32,7 +32,7 @@ data:extend({
 {
     type = "item",
     name = "coke",
-	fuel_value = "13MJ",
+	fuel_value = "10MJ",
     icon = "__pycoalprocessing__/graphics/icons/coke.png",
     flags = {"goes-to-main-inventory"},
 	subgroup = "coal-processing",

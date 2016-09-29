@@ -72,19 +72,7 @@ data:extend(
         },
         {
           type = "unlock-recipe",
-          recipe = "methanol-reactor"
-        },
-        {
-          type = "unlock-recipe",
           recipe = "filtersyngas"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "canister"
-        },
-        {
-          type = "unlock-recipe",
-          recipe = "canister2"
         },
         {
           type = "unlock-recipe",
@@ -131,6 +119,8 @@ data:extend(
       },
     },
 
+-- Asphalt
+	
     {
       type = "technology",
       name = "py-asphalt",
@@ -158,4 +148,76 @@ data:extend(
       },
     },
 
+    --METHANOL MK01
+
+    {
+      type = "technology",
+      name = "methanol-processing1",
+      icon = "__pycoalprocessing__/graphics/technology/coal-processing-technology-methanol1.png",
+      icon_size = 128,
+      order = "c-a",
+      prerequisites = {"coal-processing2"},
+      effects =
+      {
+
+        {
+          type = "unlock-recipe",
+          recipe = "methanol-reactor"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "canister"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "canister2"
+        },
+      },
+      unit =
+      {
+        count = 30,
+        ingredients = {
+          {"science-pack-1", 1},
+          {"science-pack-2", 1},
+        },
+        time = 30
+      },
+    },
+
+    --METHANOL MK02
+
+    {
+      type = "technology",
+      name = "methanol-processing2",
+      icon = "__pycoalprocessing__/graphics/technology/coal-processing-technology-methanol2.png",
+      icon_size = 128,
+      order = "c-b",
+      prerequisites = {"methanol-processing1"},
+      effects =
+      {
+		{
+          type = "unlock-recipe",
+          recipe = "methanol-from-syngas"
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "methanol-from-hydrogen"
+        },	
+        {
+          type = "unlock-recipe",
+          recipe = "recsyngas-meth"
+        },		
+		
+      },
+      unit =
+      {
+        count = 30,
+        ingredients = {
+          {"science-pack-1", 1},
+          {"science-pack-2", 1},
+        },
+        time = 35
+      },
+    },
+	
   })
