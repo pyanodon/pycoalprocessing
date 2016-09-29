@@ -35,7 +35,7 @@ data:extend(
       max_health = 300,
       corpse = "big-remnants",
       effectivity = 25,
-      fluid_usage_per_tick = 0.02,
+      fluid_usage_per_tick = 0.03,
       resistances =
       {
         {
@@ -43,7 +43,7 @@ data:extend(
           percent = 70
         }
       },
-      collision_box = {{-0.9, -0.9}, {0.9, 0.9}},
+      collision_box = {{-0.9, -1.9}, {0.9, 1.9}},
       selection_box = {{-1, -1}, {1, 1}},
       fluid_box ={
         base_area = 1,
@@ -59,7 +59,7 @@ data:extend(
       {
         type = "electric",
         usage_priority = "secondary-output",
-        emissions = 0.03,
+        emissions = 0.04,
       },
       horizontal_animation =
       {
