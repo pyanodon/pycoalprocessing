@@ -1,7 +1,6 @@
 -------------------------------------------------------------------------------
 --[[recipes]]--
-local recipe1=
-{
+local recipe1= {
     type = "recipe",
     name = "recsyngas",
     category = "rectisol",
@@ -44,6 +43,7 @@ local recipe2=  {
     order = "d [refsyn-gas]",
   }
 
+  
 -------------------------------------------------------------------------------
 --[[items]]--
 local item1=

@@ -39,6 +39,49 @@ data:extend({
       order = "d [syn-gas]",
     },
 	
+	{ 
+		type = "recipe",
+		name = "recsyngas-meth",
+		category = "rectisol",
+		enabled = "false",
+		energy_required = 2,
+		ingredients ={
+		  {type="fluid", name="syngas", amount=10},
+		  {type="fluid", name="methanol", amount=10},
+		},
+		results=
+		{
+		  {type="fluid", name="refsyngas", amount=5},
+		  {type="fluid", name="hydrogen", amount=3},
+		  {type="fluid", name="carbon-dioxide", amount=2},
+		  {type="fluid", name="acidgas", amount=6},
+
+		},
+		main_product= "refsyngas",
+		icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
+		order = "f [refsyn-gas]",
+	},
+	
+	{
+		 type = "recipe",
+		 name = "methanol-from-hydrogen",
+		 category = "methanol",
+		 enabled = "false",
+		 energy_required = 3,
+		 ingredients ={
+			  {type="fluid", name="carbon-dioxide", amount=3},
+			  {type="fluid", name="hydrogen", amount=5},
+			  {type="item", name="zinc-ore", amount=1},
+			  {type="item", name="alumina", amount=2},  },
+		 results=
+		 {
+		   {type="fluid", name="methanol", amount=4},
+		 },
+		 main_product= "methanol",
+		 icon = "__pycoalprocessing__/graphics/icons/methanol.png",
+		 order = "f [methanol]",
+	},
+
 	
 	{
       type = "recipe",

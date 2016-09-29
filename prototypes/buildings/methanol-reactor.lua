@@ -52,33 +52,33 @@ data:extend(
         usage_priority = "secondary-input",
         emissions = 0.01 / 2,
       },
-      energy_usage = "450kW",
+      energy_usage = "500kW",
       ingredient_count = 5,
 
       animation =
       {
         filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/methanol-off.png",
-        width = 200,
-        height = 238,
+        width = 202,
+        height = 247,
         frame_count = 1,
         --animation_speed = 0.5,
-        shift = {0.056, -0.7},
+        shift = {0.15, -0.79},
       },
 
       working_visualisations =
       {
         {
-          north_position = {0.056, -0.7},
-          west_position = {0.056, -0.7},
-          south_position = {0.056, -0.7},
-          east_position = {0.056, -0.7},
+          north_position = {0.15, -0.79},
+          west_position = {0.15, -0.79},
+          south_position = {0.15, -0.79},
+          east_position = {0.15, -0.79},
           animation =
           {
             filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/methanol-anim.png",
             frame_count = 50,
             line_length = 10,
-            width = 200,
-            height = 238,
+            width = 202,
+            height = 247,
             animation_speed = 0.25
           }
         },
@@ -95,6 +95,14 @@ data:extend(
           base_level = -1,
           pipe_connections = {{ type="input", position = {-3.4, 0.5} }}
         },
+		{
+          production_type = "input",
+          --pipe_picture = floatationpipepictures(),
+          pipe_covers = pipecoverspictures(),
+          base_area = 10,
+          base_level = -1,
+          pipe_connections = {{ type="input", position = {-3.4, -0.5} }}
+        },
         {
           production_type = "input",
           --pipe_picture = floatationpipepictures(),
@@ -103,13 +111,42 @@ data:extend(
           base_level = -1,
           pipe_connections = {{ type="input", position = {3.4,0.5} }}
         },
+		{
+          production_type = "input",
+          --pipe_picture = floatationpipepictures(),
+          pipe_covers = pipecoverspictures(),
+          base_area = 10,
+          base_level = -1,
+          pipe_connections = {{ type="input", position = {3.4,-0.5} }}
+        },
 
         {
           production_type = "output",
           --pipe_picture = floatationpipepictures()
           pipe_covers = pipecoverspictures(),
           base_level = 1,
-          pipe_connections = {{ type="output" , position = {-0.5, 3.2} }}
+          pipe_connections = {{ type="output" , position = {0.5, 3.4} }}
+        },
+		{
+          production_type = "output",
+          --pipe_picture = floatationpipepictures()
+          pipe_covers = pipecoverspictures(),
+          base_level = 1,
+          pipe_connections = {{ type="output" , position = {-0.5, -3.4} }}
+        },
+        {
+          production_type = "output",
+          --pipe_picture = floatationpipepictures()
+          pipe_covers = pipecoverspictures(),
+          base_level = 1,
+          pipe_connections = {{ type="output" , position = {0.5, -3.4} }}
+        },
+		{
+          production_type = "output",
+          --pipe_picture = floatationpipepictures()
+          pipe_covers = pipecoverspictures(),
+          base_level = 1,
+          pipe_connections = {{ type="output" , position = {-0.5, 3.4} }}
         },
 
       },

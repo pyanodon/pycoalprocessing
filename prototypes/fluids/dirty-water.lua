@@ -13,10 +13,10 @@ local recipe1=
   },
   results=
   {
-    {type="fluid", name="dirty-water", amount=35},
+    {type="fluid", name="dirty-water", amount=65},
 	{type="fluid", name="flue-gas", amount=15},
-	{type="item", name="zinc-ore", amount=1, probability=0.3},
-	{type="item", name="lead-ore", amount=1, probability=0.3},
+	{type="item", name="zinc-ore", amount=1, probability=0.4},
+	{type="item", name="lead-ore", amount=1, probability=0.4},
 	{type="item", name="salt", amount=1},
   },
   main_product= "dirty-water",
