@@ -49,15 +49,21 @@ function Entity.get_data(entity)
     fail_if_missing(entity, "missing entity argument")
     if not global._entity_data then return nil end
 
-    local entity_name = entity.name
-    if not global._entity_data[entity_name] then return nil end
-    local entity_category = global._entity_data[entity_name]
-    for _, entity_data in pairs(entity_category) do
-        if entity_data.entity == entity then
-            return entity_data.data
+    local unit_number = entity.unit_number
+    if unit_number then
+         return global._entity_data[unit_number]
+     else
+        local entity_name = entity.name
+        if not global._entity_data[entity_name] then return nil end
+
+        local entity_category = global._entity_data[entity_name]
+        for _, entity_data in pairs(entity_category) do
+            if Entity._are_equal(entity_data.entity, entity) then
+                return entity_data.data
+            end
         end
+        return nil
     end
-    return nil
 end
 
 --- Sets user data on the entity, stored in a mod's global data.
@@ -70,31 +76,53 @@ function Entity.set_data(entity, data)
 
     if not global._entity_data then global._entity_data = {} end
 
-    local entity_name = entity.name
-    if not global._entity_data[entity_name] then
-        global._entity_data[entity_name] = { pos_data = {}, data = {} }
-     end
+    local unit_number = entity.unit_number
+    if unit_number then
+         global._entity_data[unit_number] = data
+    else
+        local entity_name = entity.name
+        if not global._entity_data[entity_name] then
+            global._entity_data[entity_name] = {}
+         end
 
-    local entity_category = global._entity_data[entity_name]
+        local entity_category = global._entity_data[entity_name]
 
-    for i = #entity_category, 1, -1 do
-        local entity_data = entity_category[i]
-        if not entity_data.entity.valid then
-            table.remove(entity_category, i)
-        end
-        if entity_data.entity == entity then
-            local prev = entity_data.data
-            if data then
-                entity_data.data = data
-            else
+        for i = #entity_category, 1, -1 do
+            local entity_data = entity_category[i]
+            if not entity_data.entity.valid then
                 table.remove(entity_category, i)
             end
-            return prev
+            if Entity._are_equal(entity_data.entity, entity) then
+                local prev = entity_data.data
+                if data then
+                    entity_data.data = data
+                else
+                    table.remove(entity_category, i)
+                end
+                return prev
+            end
         end
+        table.insert(entity_category, { entity = entity, data = data })
     end
-
-    table.insert(entity_category, { entity = entity, data = data })
     return nil
+end
+
+--- Tests if two entities are equal
+-- <p>If they don't have reference equality and entity_a has an 'equals' function,
+-- it will be called with entity_b as the first argument</p>
+-- @tparam table entity_a
+-- @tparam table entity_b
+-- @treturn bool
+function Entity._are_equal(entity_a, entity_b)
+  if entity_a == nil then
+    return entity_a == entity_b
+  elseif entity_a == entity_b then
+    return true
+  elseif entity_a.equals ~= nil then
+    return entity_a.equals(entity_b)
+  else
+    return false
+  end
 end
 
 return Entity

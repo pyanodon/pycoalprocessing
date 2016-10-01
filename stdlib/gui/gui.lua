@@ -1,7 +1,7 @@
 --- Gui module
 -- @module Gui
 
-if not _G.Event then require 'stdlib/event/event' end
+require 'stdlib/event/event'
 
 Gui = {}
 -- Factorio's gui events are so monolithic we need a special event system for it.
@@ -131,5 +131,3 @@ function Gui.on_text_changed(gui_element_pattern, handler)
     Gui.Event.register(defines.events.on_gui_text_changed, gui_element_pattern, handler)
     return Gui
 end
-
-return Gui
