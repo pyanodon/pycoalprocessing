@@ -101,6 +101,8 @@ function generator.on_tick()
 	check_generators()
 	recheck_archived_generators()
 end
+Event.register(defines.events.on_tick, generator.on_tick)
+
 
 function generator.on_built_entity(event)
 	if event.created_entity.name == "gasturbinemk01" then
@@ -114,6 +116,7 @@ function generator.on_built_entity(event)
 					table.insert(global.archived_gasturbinemk01, gasturbinemk01)
 	end
 end
+Event.register({defines.events.on_built_entity, defines.events.on_robot_built_entity}, generator.on_built_entity)
 
 
 return generator
