@@ -10,7 +10,7 @@ data:extend(
         {"concrete", 20},
         {"steel-plate", 20},
         {"glass", 10},
-		{"steel-bearing", 5},
+        {"steel-bearing", 5},
         {"invar-alloy", 10},
         {"advanced-circuit", 10},
       },
@@ -65,25 +65,25 @@ data:extend(
         shift = {0.1, 0.0},
       },
 
-	working_visualisations =
-    {
+      working_visualisations =
       {
-        north_position = {0.1, 0},
-        west_position = {0.1, 0},
-        south_position = {0.1, 0},
-        east_position = {0.1, 0},
-        animation =
         {
-          filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-anim.png",
-		  priority = "medium",
-          frame_count = 50,
-		  line_length = 10,
-          width = 167,
-          height = 173,
-          animation_speed = 0.7
-        }
-      },
-	  {
+          north_position = {0.1, 0},
+          west_position = {0.1, 0},
+          south_position = {0.1, 0},
+          east_position = {0.1, 0},
+          animation =
+          {
+            filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-anim.png",
+            priority = "medium",
+            frame_count = 50,
+            line_length = 10,
+            width = 167,
+            height = 173,
+            animation_speed = 0.7
+          }
+        },
+        {
           north_position = {1.543, -2.68},
           west_position = {1.543, -2.68},
           south_position = {1.543, -2.68},
@@ -91,7 +91,7 @@ data:extend(
           animation =
           {
             filename = "__pycoalprocessing__/graphics/entity/hpf/smoke-anim.png",
-			priority = "extra-high",
+            priority = "extra-high",
             frame_count = 80,
             line_length = 20,
             width = 79,
@@ -99,8 +99,8 @@ data:extend(
             animation_speed = 0.3
           }
         },
-	},
-	
+      },
+
       fluid_boxes =
       {
         {

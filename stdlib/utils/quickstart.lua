@@ -1,4 +1,4 @@
-_G.Event = _G.Event or require("stdlib.event.event")
+require("stdlib.event.event")
 
 local Area=require("stdlib.area.area")
 
@@ -31,7 +31,7 @@ local function on_player_created(event)
   armor.put{name="personal-roboport-equipment"}
 
 end
-_G.Event.register(defines.events.on_player_created, on_player_created)
+Event.register(defines.events.on_player_created, on_player_created)
 
 local function on_player_joined_game(event)
   local player = game.players[event.player_index]
@@ -43,7 +43,6 @@ local function on_player_joined_game(event)
       entity.destroy()
     end
   end
-  local inv = player.get_inventory(defines.inventory.player_armor)
 
   local tiles = {}
   for x, y in Area.spiral_iterate(area) do
@@ -51,6 +50,6 @@ local function on_player_joined_game(event)
   end
   surface.set_tiles(tiles, true)
 
-  player.clear_console()
+  --player.clear_console()
 end
-_G.Event.register(defines.events.on_player_joined_game, on_player_joined_game)
+Event.register(defines.events.on_player_joined_game, on_player_joined_game)

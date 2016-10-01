@@ -1,5 +1,5 @@
 --Console Code from adil modified for STDlib
-local Gui = require("stdlib.gui.gui")
+Gui = Gui or require("stdlib.gui.gui")
 
 local function create_gui_player(player)
 	if player.gui.left.console then player.gui.left.console.destroy() end

@@ -9,15 +9,15 @@ local recipe1=
   energy_required = 2,
   ingredients ={
     {type="fluid", name="tar", amount=20},
-	{type="fluid", name="water", amount=50},
+    {type="fluid", name="water", amount=50},
   },
   results=
   {
     {type="fluid", name="dirty-water", amount=65},
-	{type="fluid", name="flue-gas", amount=15},
-	{type="item", name="zinc-ore", amount=1, probability=0.4},
-	{type="item", name="lead-ore", amount=1, probability=0.4},
-	{type="item", name="salt", amount=1},
+    {type="fluid", name="flue-gas", amount=15},
+    {type="item", name="zinc-ore", amount=1, probability=0.4},
+    {type="item", name="lead-ore", amount=1, probability=0.4},
+    {type="item", name="salt", amount=1},
   },
   main_product= "dirty-water",
   icon = "__pycoalprocessing__/graphics/icons/dirty-water.png",
