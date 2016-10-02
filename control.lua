@@ -16,13 +16,13 @@ require("stdlib.event.event") --Event system
 require("stdlib.gui.gui") --Gui system
 
 
---luacheck: globals generator tailings_pond
+--luacheck: globals generator tailings_pond quickstart
 generator = require("scripts.gasturbinemk01")
 tailings_pond = require("scripts.tailings-pond")
 
 
 if _G.PYC.DEBUG then
-  require("stdlib.utils.quickstart")
+quickstart = require("stdlib.utils.quickstart")
 end
 
 remote.add_interface(MOD.IF, require("interface"))

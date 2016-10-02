@@ -1,4 +1,4 @@
---luacheck: ignore table string
+--luacheck: ignore table string Proto
 -- utils.lua by binbinhfr, v1.0.10
 
 local author_name1 = "Nexela"
@@ -10,7 +10,63 @@ require("stdlib.time")
 require("stdlib.utils.colors")
 -------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------
+--[[Helper Proto Functions]]--
+Proto = {}
 
+Proto.pipes = function ()
+  return {
+    north =
+    {
+      filename = "__base__/graphics/entity/pipe/pipe-straight-vertical.png",
+      priority = "extra-high",
+      width = 44,
+      height = 42,
+      shift = {0, 1}
+    },
+    south =
+    {
+      filename = "__base__/graphics/entity/pipe/pipe-straight-vertical.png",
+      priority = "extra-high",
+      width = 44,
+      height = 42,
+      shift = {0, -2}
+    },
+    east =
+    {
+      filename = "__base__/graphics/entity/pipe/pipe-straight-horizontal.png",
+      priority = "extra-high",
+      width = 32,
+      height = 42,
+      shift = {-1, 0}
+    },
+    west =
+    {
+      filename = "__base__/graphics/entity/pipe/pipe-straight-horizontal.png",
+      priority = "extra-high",
+      width = 32,
+      height = 42,
+      shift = {1, 0}
+    },
+  }
+end
+
+Proto.empty_sprite ={
+  filename = "__core__/graphics/empty.png",
+  priority = "extra-high",
+  width = 1,
+  height = 1
+}
+
+Proto.empty_animation = {
+  filename = Proto.empty_sprite.filename,
+  width = Proto.empty_sprite.width,
+  height = Proto.empty_sprite.height,
+  line_length = 1,
+  frame_count = 1,
+  shift = { 0, 0},
+  animation_speed = 0
+}
 --------------------------------------------------------------------------------------
 function string.PrettyNumber( number )
 	if number < 1000 then
