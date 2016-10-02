@@ -9,8 +9,8 @@ local recipe1= {
 	ingredients ={
 	
 		{type="fluid", name="syngas", amount=5},
-		{type="item", name="copper-ore", amount=2},
-		{type="item", name="zinc-ore", amount=1},
+		{type="item", name="copper-plate", amount=2},
+		{type="item", name="zinc-plate", amount=1},
 	},
 	results=
 	{

@@ -21,6 +21,23 @@ data:extend({
 	
 	{
       type = "recipe",
+      name = "tar-carbon",
+      category = "tar",
+      enabled = "false",
+      energy_required = 4,
+      ingredients ={
+        {type="fluid", name="tar", amount=2},
+      },
+      results={
+        {type="item", name="carbon", amount=1},
+      },
+      main_product= "carbon",
+      icon = "__bobplates__/graphics/icons/carbon.png",
+	  order = "d [syn-gas]",
+    },
+	
+	{
+      type = "recipe",
       name = "active-carbon",
       category = "hpf",
       enabled = "false",
