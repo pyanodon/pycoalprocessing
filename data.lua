@@ -29,6 +29,7 @@ require("prototypes.fluids.syngas")
 require("prototypes.fluids.tar")
 require("prototypes.fluids.dirty-water")
 require("prototypes.fluids.flue-gas")
+require("prototypes.fluids.combustion-mixture1")
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -41,6 +42,7 @@ require("prototypes.buildings.methanol-reactor")
 require("prototypes.buildings.tailings-pond")
 require("prototypes.buildings.quenching-tower")
 require("prototypes.buildings.hpf")
+require("prototypes.buildings.power-house")
 
 
 

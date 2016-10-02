@@ -38,6 +38,10 @@ data:extend(
     name = "quenching-tower",
   },
   {
+    type = "recipe-category",
+    name = "combustion",
+  },
+  {
     type = "item-group",
     name = "coal-processing",
     order = "t",
