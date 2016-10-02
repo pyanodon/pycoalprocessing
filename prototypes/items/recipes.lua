@@ -126,7 +126,7 @@ data:extend({
       icon = "__pycoalprocessing__/graphics/icons/canister.png",
       order = "d [methanol]",
     },
-
+	
     {
       type = "recipe",
       name = "iron-oxide",

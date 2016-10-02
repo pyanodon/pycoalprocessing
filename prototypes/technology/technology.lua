@@ -106,6 +106,14 @@ data:extend(
           type = "unlock-recipe",
           recipe = "active-carbon"
         },
+		{
+          type = "unlock-recipe",
+          recipe = "combustion-mixture1"
+        },
+		{
+          type = "unlock-recipe",
+          recipe = "power-house"
+        },
 
       },
       unit =
