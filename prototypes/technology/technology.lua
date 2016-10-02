@@ -114,6 +114,10 @@ data:extend(
           type = "unlock-recipe",
           recipe = "power-house"
         },
+		{
+          type = "unlock-recipe",
+          recipe = "tar-carbon"
+        },
 
       },
       unit =
