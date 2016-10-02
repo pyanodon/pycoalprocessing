@@ -1,14 +1,14 @@
 local generator = {}
 
 -- local function find_generators(surface)
---   if global.gasturbinemk01 == nil then
---     global.gasturbinemk01 = {}
---     for c in surface.get_chunks() do
---       for _, gasturbinemk01 in pairs(surface.find_entities_filtered({area={{c.x * 32, c.y * 32}, {c.x * 32 + 32, c.y * 32 + 32}}, name="gasturbinemk01"})) do
---         table.insert(global.gasturbinemk01, gasturbinemk01)
---       end
---     end
---   end
+-- if global.gasturbinemk01 == nil then
+-- global.gasturbinemk01 = {}
+-- for c in surface.get_chunks() do
+-- for _, gasturbinemk01 in pairs(surface.find_entities_filtered({area={{c.x * 32, c.y * 32}, {c.x * 32 + 32, c.y * 32 + 32}}, name="gasturbinemk01"})) do
+-- table.insert(global.gasturbinemk01, gasturbinemk01)
+-- end
+-- end
+-- end
 -- end
 
 local fluidTypeToTemperature =
@@ -97,26 +97,24 @@ function generator.on_init()
 end
 
 function generator.on_tick()
---local t = event.tick
-	check_generators()
-	recheck_archived_generators()
+  --local t = event.tick
+  check_generators()
+  recheck_archived_generators()
 end
 Event.register(defines.events.on_tick, generator.on_tick)
 
-
 function generator.on_built_entity(event)
-	if event.created_entity.name == "gasturbinemk01" then
+  if event.created_entity.name == "gasturbinemk01" then
 
-		if global.gasturbinemk01 == nil then global.gasturbinemk01 = {} end
-	if global.archived_gasturbinemk01 == nil then global.archived_gasturbinemk01 = {} end
-			local gasturbinemk01 = event.created_entity
-						if global.gasturbinemk01 == nil
-						then global.gasturbinemk01 = {}
-						end
-					table.insert(global.archived_gasturbinemk01, gasturbinemk01)
-	end
+    if global.gasturbinemk01 == nil then global.gasturbinemk01 = {} end
+    if global.archived_gasturbinemk01 == nil then global.archived_gasturbinemk01 = {} end
+    local gasturbinemk01 = event.created_entity
+    if global.gasturbinemk01 == nil
+    then global.gasturbinemk01 = {}
+  end
+  table.insert(global.archived_gasturbinemk01, gasturbinemk01)
+end
 end
 Event.register({defines.events.on_built_entity, defines.events.on_robot_built_entity}, generator.on_built_entity)
-
 
 return generator
