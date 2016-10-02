@@ -1,49 +1,48 @@
 -------------------------------------------------------------------------------
 --[[recipes]]--
 local recipe1= {
-    type = "recipe",
-    name = "recsyngas",
-    category = "rectisol",
-    enabled = "false",
-    energy_required = 4,
-    ingredients ={
+  type = "recipe",
+  name = "recsyngas",
+  category = "rectisol",
+  enabled = "false",
+  energy_required = 4,
+  ingredients ={
 
-      {type="fluid", name="syngas", amount=10},
-      {type="item", name="canister", amount=3},
-    },
-    results=
-    {
-      {type="fluid", name="refsyngas", amount=10},
-      {type="fluid", name="hydrogen", amount=3},
-      {type="fluid", name="carbon-dioxide", amount=2},
-      {type="fluid", name="acidgas", amount=6},
-	  {type="item", name="steel-plate", amount=3},
-    },
-    main_product= "refsyngas",
-    icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
-    order = "e [refsyn-gas]",
+    {type="fluid", name="syngas", amount=10},
+    {type="item", name="canister", amount=3},
+  },
+  results=
+  {
+    {type="fluid", name="refsyngas", amount=10},
+    {type="fluid", name="hydrogen", amount=3},
+    {type="fluid", name="carbon-dioxide", amount=2},
+    {type="fluid", name="acidgas", amount=6},
+    {type="item", name="steel-plate", amount=3},
+  },
+  main_product= "refsyngas",
+  icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
+  order = "e [refsyn-gas]",
 }
 
-local recipe2=  {
-    type = "recipe",
-    name = "filtersyngas",
-    category = "carbonfilter",
-    enabled = "false",
-    energy_required = 4,
-    ingredients ={
-      {type="fluid", name="syngas", amount=10},
-	  {type="item", name="active-carbon", amount=5},
-    },
-    results=
-    {
-      {type="fluid", name="refsyngas", amount=4},
-    },
-    main_product= "refsyngas",
-    icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
-    order = "d [refsyn-gas]",
-  }
+local recipe2= {
+  type = "recipe",
+  name = "filtersyngas",
+  category = "carbonfilter",
+  enabled = "false",
+  energy_required = 4,
+  ingredients ={
+    {type="fluid", name="syngas", amount=10},
+    {type="item", name="active-carbon", amount=5},
+  },
+  results=
+  {
+    {type="fluid", name="refsyngas", amount=4},
+  },
+  main_product= "refsyngas",
+  icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
+  order = "d [refsyn-gas]",
+}
 
-  
 -------------------------------------------------------------------------------
 --[[items]]--
 local item1=
