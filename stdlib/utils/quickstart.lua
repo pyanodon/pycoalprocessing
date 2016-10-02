@@ -1,8 +1,9 @@
 require("stdlib.event.event")
 
 local Area=require("stdlib.area.area")
+local quickstart = {}
 
-local function on_player_created(event)
+function quickstart.on_player_created(event)
   local player = game.players[event.player_index]
 
   local simple_stack =
@@ -14,6 +15,9 @@ local function on_player_created(event)
     "creative-mode_energy-source",
     "creative-mode_super-electric-pole",
     "construction-robot",
+    "pipe",
+    "gasturbinemk01",
+    "blueprint",
     --"power-armor-mk2",
   }
 
@@ -31,9 +35,9 @@ local function on_player_created(event)
   armor.put{name="personal-roboport-equipment"}
 
 end
-Event.register(defines.events.on_player_created, on_player_created)
+Event.register(defines.events.on_player_created, quickstart.on_player_created)
 
-local function on_player_joined_game(event)
+function quickstart.on_player_joined_game(event)
   local player = game.players[event.player_index]
   local surface = player.surface
   local area = {{-200, -200}, {200, 200}}
@@ -52,4 +56,6 @@ local function on_player_joined_game(event)
 
   --player.clear_console()
 end
-Event.register(defines.events.on_player_joined_game, on_player_joined_game)
+Event.register(defines.events.on_player_joined_game, quickstart.on_player_joined_game)
+
+return quickstart
