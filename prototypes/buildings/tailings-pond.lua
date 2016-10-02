@@ -1,25 +1,4 @@
 -------------------------------------------------------------------------------
---[[Helper Functions]]--
-local empty_sprite ={
-  filename = "__core__/graphics/empty.png",
-  priority = "extra-high",
-  width = 1,
-  height = 1
-}
-
-local empty_animation = {
-  filename = empty_sprite.filename,
-  width = empty_sprite.width,
-  height = empty_sprite.height,
-  line_length = 1,
-  frame_count = 1,
-  shift = { 0, 0},
-  animation_speed = 0
-}
-
---pond inner 153
-
--------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe_tailings_pond = {
   type = "recipe",
@@ -88,8 +67,8 @@ local entity_tailings_pond =
         shift = {0, 0}
       }
     },
-    fluid_background = empty_sprite,
-    --window_background = empty_sprite,
+    fluid_background = Proto.empty_sprite,
+    --window_background = Proto.empty_sprite,
     window_background =
     {
       filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-empty-window-2.png",
@@ -97,7 +76,7 @@ local entity_tailings_pond =
       width = 171,
       height = 185
     },
-    flow_sprite = empty_sprite,
+    flow_sprite = Proto.empty_sprite,
   },
   flow_length_in_ticks = 360,
   vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -288,7 +267,7 @@ local entity_tailings_pond_spinner = {
   collision_box = {{-2.25, -2.25}, {2.25, 2.25}},
   selection_box = {{-0, -0}, {0, 0}},
   allowed_effects = {"consumption", "speed", "pollution"},
-  base_picture = empty_sprite,
+  base_picture = Proto.empty_sprite,
   -- {
   -- filename = "__base__/graphics/entity/beacon/beacon-base.png",
   -- width = 116,
@@ -315,7 +294,7 @@ local entity_tailings_pond_spinner = {
     shift = { -1.140625, 1.484375},
     animation_speed = 0.25
   },
-  radius_visualisation_picture = empty_sprite,
+  radius_visualisation_picture = Proto.empty_sprite,
   -- radius_visualisation_picture =
   -- {
   -- filename = "__base__/graphics/entity/beacon/beacon-radius-visualization.png",
@@ -339,7 +318,7 @@ local entity_tailings_pond_spinner = {
   }
 }
 
-local entity_tailings_pond_power_source = {
+local entity_tailings_pond_power_source = { --luacheck: ignore
   type = "electric-energy-interface",
   name = "tailings-pond-power-source",
   icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
