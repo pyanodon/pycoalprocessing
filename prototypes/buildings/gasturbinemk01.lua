@@ -51,43 +51,12 @@ local entity1={
   selection_box = {{-1.0, -1.0}, {1.0, 1.0}},
   fluid_box ={
     base_area = 1,
-    pipe_picture = Proto.pipes(),
-    pipe_covers = {
-    north = Proto.empty_sprite,
-    -- {
-    --   filename = "__base__/graphics/entity/pipe-covers/pipe-cover-north.png",
-    --   priority = "extra-high",
-    --   width = 44,
-    --   height = 32
-    -- },
-    east =
-    {
-      filename = "__base__/graphics/entity/pipe-covers/pipe-cover-east.png",
-      priority = "extra-high",
-      width = 32,
-      height = 32
-    },
-    south =
-    {
-      filename = "__base__/graphics/entity/pipe-covers/pipe-cover-south.png",
-      priority = "extra-high",
-      width = 46,
-      height = 52
-    },
-    west =
-    {
-      filename = "__base__/graphics/entity/pipe-covers/pipe-cover-west.png",
-      priority = "extra-high",
-      width = 32,
-      height = 32
-    }
-  },
+    --pipe_picture = Proto.pipes(), --invalid for generators?
+    pipe_covers = Proto.pipe_covers(false, true, true, true),
     pipe_connections =
     {
       { position = {0, 2.00} },
       { position = {0, -2.00} },
-      -- { position = {0.5, 1.5} },
-      -- { position = {1.5, -0.5} },
     },
   },
 
