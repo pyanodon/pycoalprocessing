@@ -4,8 +4,8 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
   if shift_north then
     north =
     {
-      filename = "__pycoalprocessing__/graphics/entity/hpf/pipe-north.png",
-      priority = "extra-high",
+      filename = "__pycoalprocessing__/graphics/entity/hpf/long-pipe-north.png",
+      priority = "medium",
       width = 30,
       height = 44,
       --shift = {0.03125, 0.3125}
