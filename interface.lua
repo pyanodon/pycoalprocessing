@@ -1,6 +1,7 @@
 local interface = {}
 
 function interface.resetMod()
+  Event.dispatch(Event[MOD.IF].reset_mod)
 end
 
 function interface.resetUser()

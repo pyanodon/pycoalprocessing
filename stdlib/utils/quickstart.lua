@@ -36,8 +36,9 @@ function quickstart.on_player_created(event)
 
 end
 Event.register(defines.events.on_player_created, quickstart.on_player_created)
-
+--quickstart.map = require("test")
 function quickstart.on_player_joined_game(event)
+  --local map = map
   local player = game.players[event.player_index]
   local surface = player.surface
   local area = {{-200, -200}, {200, 200}}
@@ -52,9 +53,9 @@ function quickstart.on_player_joined_game(event)
   for x, y in Area.spiral_iterate(area) do
     tiles[#tiles+1]={name="grass", position={x=x, y=y}}
   end
-  surface.set_tiles(tiles, true)
+    surface.set_tiles(tiles, true)
+  --surface.set_tiles(quickstart.map, true)
 
-  --player.clear_console()
 end
 Event.register(defines.events.on_player_joined_game, quickstart.on_player_joined_game)
 
