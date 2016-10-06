@@ -101,8 +101,7 @@ end
 Event.register(Event.core_events.load, generators.on_load)
 
 function generators.on_configuration_changed(data)
-  local changes = data.mod_changes[MOD.name]
-  if changes ~= nil then -- This Mod has changed
+  if data.mod_changes and data.mod_changes[MOD.name] ~= nil then -- This Mod has changed
     doDebug("Updating Generators")
     global.generators = global.generators or {}
     --global.archived_generators = global.archived_generators or {}
@@ -122,7 +121,7 @@ Event.register(defines.events.on_tick, generators.on_tick)
 function generators.on_built_entity(event)
   if generators.generator_data[event.created_entity.name] then
     generators.add_generator(event.created_entity)
-    doDebug("Generator added")
+    --doDebug("Generator added")
   end
 end
 Event.register({defines.events.on_built_entity, defines.events.on_robot_built_entity}, generators.on_built_entity)
