@@ -47,8 +47,8 @@ local entity1={
       percent = 70
     }
   },
-  collision_box = {{-1.35, -1.35}, {1.30, 1.35}},
-  selection_box = {{-1.0, -1.0}, {1.0, 1.0}},
+  collision_box = {{-1.49, -1.49}, {1.49, 1.49}},
+  selection_box = {{-1.53, -1.53}, {1.53, 1.53}},
   fluid_box ={
     base_area = 1,
     --pipe_picture = Proto.pipes(), --invalid for generators?
@@ -69,25 +69,25 @@ local entity1={
   --scale=1.75,
   horizontal_animation =
   {
-    filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk01/gasturbinemk01.png",
-    width = 160,
-    height = 224,
+    filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk01/gasturbinemk01_horizontal.png",
+    width = 131,
+    height = 288,
     frame_count = 25,
     line_length = 5,
-    shift = {.65,-3.00},
+    shift = {0.52,-2.70},
     animation_speed = 0.8,
-    scale=1.4
+	scale=1.2
   },
   vertical_animation =
   {
     filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk01/gasturbinemk01_vertical.png",
-    width = 160,
-    height = 224,
+    width = 128,
+    height = 288,
     frame_count = 25,
     line_length = 5,
-    shift = {0.65,-3.00},
+    shift = {0.62,-2.70},
     animation_speed = 0.8,
-    scale=1.4
+	scale=1.2
   },
   smoke =
     {
