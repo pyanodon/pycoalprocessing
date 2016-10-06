@@ -15,7 +15,7 @@ local recipe1=
     {type="fluid", name="coal-gas", amount=4},
     {type="fluid", name="tar", amount=5},
     {type="item", name="iron-oxide", amount=1, probability=0.5},
-    {type="item", name="coke", amount=3},
+    {type="item", name="coke", amount=2},
   },
   main_product= "coal-gas",
   icon = "__pycoalprocessing__/graphics/icons/coalgas.png",
