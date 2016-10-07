@@ -118,6 +118,10 @@ data:extend(
           type = "unlock-recipe",
           recipe = "tar-carbon"
         },
+		{
+          type = "unlock-recipe",
+          recipe = "gasturbinemk02"
+        },
 
       },
       unit =

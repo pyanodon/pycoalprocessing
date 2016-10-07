@@ -34,6 +34,7 @@ require("prototypes.fluids.combustion-mixture1")
 --Buildings
 require("prototypes.buildings.distilator")
 require("prototypes.buildings.gasturbinemk01")
+require("prototypes.buildings.gasturbinemk02")
 require("prototypes.buildings.gasifier")
 require("prototypes.buildings.carbon-filter")
 require("prototypes.buildings.tar-processing-unit")
