@@ -74,7 +74,7 @@ local entity1={
     height = 288,
     frame_count = 25,
     line_length = 5,
-    shift = {0.52,-2.70},
+    shift = {0.7,-2.70},
     animation_speed = 0.8,
 	scale=1.2
   },
