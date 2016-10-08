@@ -204,7 +204,7 @@ local entity_tailings_pond_sprite =
         stripes =
         {
           {
-            filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-fluid-sheet.png",
+            filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-fluid-sheet2.png",
             priority="extra-high",
             width_in_frames = 10,
             height_in_frames = 3,
