@@ -78,7 +78,7 @@ local entity1={
       pipe_covers = Proto.pipe_covers(false, true, true, true),
       base_area = 10,
       base_level = -1,
-      pipe_connections = {{ type="input", position = {-4,5, -0.5} }}
+      pipe_connections = {{ type="input", position = {-4.5, -0.5} }}
     },
     {
       production_type = "input",
