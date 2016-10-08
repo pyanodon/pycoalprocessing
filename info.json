@@ -5,7 +5,7 @@
   "title": "Pyanodons Coal Processing",
   "author": "Pyanodon,Nexela",
   "contact": "",
-  "homepage": "",
+  "homepage": "https://mods.factorio.com/mods/pyanodon/pycoalprocessing",
   "description": "Adds coal processing lines to the game.",
-  "dependencies": ["base >= 0.14.0"]
+  "dependencies": ["base >= 0.14.0", "? bobplates", "? boblibrary"]
 }

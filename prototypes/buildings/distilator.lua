@@ -1,4 +1,3 @@
-local pipecoverspictures = _G.pipecoverspictures
 local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
   local north, south, east, west
   if shift_north == true then
@@ -66,7 +65,7 @@ local recipe1={
   ingredients =
   {
     {"steel-plate", 20},
-    {"pipe", 10},
+    {"pipe", 10}, --copper-pipe in bobmods
     {"iron-plate", 10},
     {"storage-tank", 2},
   },
@@ -133,7 +132,7 @@ local entity1={
     --North, left
     {
       production_type = "output",
-      pipe_covers = pipecoverspictures(),
+      pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
       pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
       --pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.6, 0.15}, {-0.6, 0.15}),
@@ -142,7 +141,7 @@ local entity1={
     --North, right
     {
       production_type = "output",
-      pipe_covers = pipecoverspictures(),
+      pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
       pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.05}, {-0.6, 0.15}),
       --pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.6, 0.15}, {-0.6, 0.15}),
@@ -152,7 +151,7 @@ local entity1={
     --South, left
     {
       production_type = "output",
-      pipe_covers = pipecoverspictures(),
+      pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
       pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
       --pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.05}, {-0.6, 0.15}),
@@ -162,7 +161,7 @@ local entity1={
     --South, right
     {
       production_type = "output",
-      pipe_covers = pipecoverspictures(),
+      pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
       pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.05}, {-0.6, 0.15}),
       --pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.6, 0.15}, {-0.6, 0.15}),
@@ -172,7 +171,7 @@ local entity1={
     --West, top
     {
       production_type = "output",
-      pipe_covers = pipecoverspictures(),
+      pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
       pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.05}, {-0.6, 0.15}),
       pipe_connections = {{ position = {-4.5, -0.5} }}
@@ -180,7 +179,7 @@ local entity1={
     --West, bottom
     {
       production_type = "output",
-      pipe_covers = pipecoverspictures(),
+      pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
       pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
       pipe_connections = {{ position = {-4.5, 0.5} }}
@@ -189,7 +188,7 @@ local entity1={
     --East, top
     {
       production_type = "output",
-      pipe_covers = pipecoverspictures(),
+      pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
       pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.05}, {-0.6, 0.15}),
       pipe_connections = {{ position = {4.5, -0.5} }}
@@ -197,7 +196,7 @@ local entity1={
     --East, bottom
     {
       production_type = "output",
-      pipe_covers = pipecoverspictures(),
+      pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
       pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
       pipe_connections = {{ position = {4.5, 0.5} }}

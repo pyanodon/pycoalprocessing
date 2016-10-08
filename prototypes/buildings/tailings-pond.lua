@@ -1,3 +1,5 @@
+local _TANK_SIZE = _G.PYC.TAILINGS_POND.TANK_SIZE
+
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe_tailings_pond = {
@@ -6,8 +8,9 @@ local recipe_tailings_pond = {
   enabled = "false",
   ingredients =
   {
-    {"iron-plate", 1},
-    {"iron-stick", 5},
+    {"small-pump", 1},
+    {"storage-tank", 4},
+    {"stone-brick", 20}
   },
   result = "tailings-pond"
 }
@@ -41,8 +44,8 @@ local entity_tailings_pond =
   selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
   fluid_box =
   {
-    base_area = (_G.PYC.TAILINGS_POND.TANK_SIZE / 10),
-    pipe_covers = _G.pipecoverspictures(),
+    base_area = (_TANK_SIZE / 10),
+    pipe_covers = Proto.pipe_covers(true, true, true, true),
     pipe_connections = {
       {position = {0, -3}},
       {position = {0, 3}},
@@ -68,7 +71,6 @@ local entity_tailings_pond =
       }
     },
     fluid_background = Proto.empty_sprite,
-    --window_background = Proto.empty_sprite,
     window_background =
     {
       filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-empty-window-2.png",
@@ -318,6 +320,9 @@ local entity_tailings_pond_spinner = {
   }
 }
 
+--Ignore this we are currently not using it.
+--May change in the future though if we want to use tailings pond without power.
+--Will also need to add a custom pole with no connection and 1x supply
 local entity_tailings_pond_power_source = { --luacheck: ignore
   type = "electric-energy-interface",
   name = "tailings-pond-power-source",

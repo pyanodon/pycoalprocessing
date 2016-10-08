@@ -56,7 +56,7 @@ function generators.reset_generators()
     end
   end
 end
-Event.register(Event[MOD.IF].reset_mod, generators.reset_generators)
+Event.register(Event.reset_mod, generators.reset_generators)
 
 --check generators for fluid and set tempurature and pollution
 function generators.check_generators()
@@ -124,14 +124,13 @@ function generators.on_built_entity(event)
     --doDebug("Generator added")
   end
 end
-Event.register({defines.events.on_built_entity, defines.events.on_robot_built_entity}, generators.on_built_entity)
+Event.register(Event.build_events, generators.on_built_entity)
 
 --Remove the generator from both lists when destroyed
 function generators.on_destroy(event)
   global.generators[event.entity.unit_number] = nil
   --global.archived_generators[event.entity.unit_number] = nil
 end
-local death_events = {defines.events.on_preplayer_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}
-Event.register(death_events, generators.on_destroy)
+Event.register(Event.death_events, generators.on_destroy)
 
 return generators
