@@ -55,8 +55,8 @@ local entity1={
     pipe_covers = Proto.pipe_covers(false, true, true, true),
     pipe_connections =
     {
-      { position = {0, 2.00} },
-      { position = {0, -2.00} },
+      { position = {0.00, 2.00} },
+      { position = {0.00, -2.00} },
     },
   },
 
@@ -74,9 +74,9 @@ local entity1={
     height = 288,
     frame_count = 25,
     line_length = 5,
-    shift = {0.7,-2.70},
+    shift = {0.5,-3.0},
     animation_speed = 0.8,
-	scale=1.2
+	--scale=1.2
   },
   vertical_animation =
   {
@@ -85,16 +85,16 @@ local entity1={
     height = 288,
     frame_count = 25,
     line_length = 5,
-    shift = {0.62,-2.70},
+    shift = {0.5,-3.0},
     animation_speed = 0.8,
-	scale=1.2
+	--scale=1.2
   },
   smoke =
     {
       {
         name = "light-smoke",
-        north_position = {-1.5, -2},
-        east_position = {-1.5, -2},
+        north_position = {-1.2, -2},
+        east_position = {-0.75, -2},
         frequency = 5 / 32,
         starting_vertical_speed = 0.08,
         slow_down_factor = 1,
@@ -102,8 +102,8 @@ local entity1={
       },
       {
         name = "light-smoke",
-        north_position = {1.5, -2},
-        east_position = {1.5, -2},
+        north_position = {1.2, -2},
+        east_position = {1.2, -2},
         frequency = 5 / 32,
         starting_vertical_speed = 0.08,
         slow_down_factor = 1,
