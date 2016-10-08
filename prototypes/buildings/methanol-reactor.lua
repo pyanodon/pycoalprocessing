@@ -65,10 +65,10 @@ local recipe1={
   ingredients =
   {
     {"gasturbinemk01", 1},
-    {"electrolyser", 1},
+    {"chemical-plant", 1},  --bob electrolyser
     {"electronic-circuit", 25},
     {"steel-plate", 20},
-    {"steel-bearing", 15},
+    {"iron-gear-wheel", 15}, --bob steel-bearing
 
   },
   result= "methanol-reactor",
@@ -210,7 +210,7 @@ local entity1={
       pipe_connections = {{ type="input", position = {3.5,-0.5} }}
     },
     --East, bottom
-        {
+    {
       production_type = "input",
       pipe_picture = pipe_pictures(nil, {-0.05,-0.75}, nil, nil),
       pipe_covers = Proto.pipe_covers(true, true, true, true),

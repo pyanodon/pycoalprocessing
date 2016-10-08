@@ -1,1 +1,7 @@
-require("prototypes.updates.recipe-updates") -- The recipes we want to update.
+--update vanilla recipes to use creostoe
+require("prototypes.updates.recipe-updates")
+
+--update recipes to use bobmods
+if _G.bobmods and _G.bobmods.lib then 
+  require("prototypes.updates.bob-recipe-updates")
+end

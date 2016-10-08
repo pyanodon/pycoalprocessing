@@ -1,7 +1,7 @@
 local interface = {}
 
 function interface.resetMod()
-  Event.dispatch(Event[MOD.IF].reset_mod)
+  Event.dispatch(Event.reset_mod)
 end
 
 function interface.resetUser()
@@ -10,6 +10,7 @@ end
 function interface.recoverItems()
 end
 
+--Require the awesome console for quick script debugging
 if _G.PYC.DEBUG then
   interface.console = require("stdlib.utils.console")
 end

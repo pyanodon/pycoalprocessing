@@ -1,4 +1,3 @@
---local pipecoverspictures = _G.pipecoverspictures
 local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
   local north, south, east, west
   if shift_north then
@@ -67,9 +66,9 @@ local recipe1={
   {
     {"concrete", 20},
     {"steel-plate", 20},
-    {"glass", 10},
-    {"steel-bearing", 5},
-    {"invar-alloy", 10},
+    {"stone-brick", 10}, --bob glass
+    {"iron-gear-wheel", 5}, --bob steel-bearing
+    {"iron-plate", 10},  --bob invar-alloy
     {"advanced-circuit", 10},
   },
   result= "hpf",
@@ -177,7 +176,6 @@ local entity1={
     },
 
   },
-  --pipe_covers = pipecoverspictures(),
   vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
   working_sound =
   {

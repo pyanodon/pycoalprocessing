@@ -8,9 +8,9 @@ local recipe1={
   ingredients =
   {
     {"advanced-circuit", 20},
-    {"pipe", 20},
+    {"pipe", 20}, -- bob bronze-pipe
     {"steel-plate", 50},
-    {"invar-alloy", 30},
+    {"iron-plate", 30}, -- bob invar-alloy
     {"iron-gear-wheel", 40},
   },
   result= "gasturbinemk02",
