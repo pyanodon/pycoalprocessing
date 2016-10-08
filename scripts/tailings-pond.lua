@@ -183,7 +183,7 @@ function tailings_pond.create(event)
     ponds[pond.index] = pond
   end
 end
-Event.register({defines.events.on_robot_built_entity, defines.events.on_built_entity}, tailings_pond.create)
+Event.register(Event.build_events, tailings_pond.create)
 
 --Destroy any attachments or sprites attached to the entity.
 local function destroy_attachments(pond)
@@ -199,7 +199,7 @@ function tailings_pond.destroy(event)
     end
   end
 end
-Event.register({defines.events.on_preplayer_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}, tailings_pond.destroy)
+Event.register(Event.death_events, tailings_pond.destroy)
 
 --Run tick handler every 30 ticks. In the future this will need to be spread out to itereate over a queing system.
 function tailings_pond.on_tick(event)

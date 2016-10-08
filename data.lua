@@ -1,14 +1,23 @@
-if not pysmods then pysmods = {} end
-if not pysmods.coalpro then pysmods.coalpro = {} end
+if not _G.pysmods then _G.pysmods = {} end
+if not _G.pysmods.coalpro then _G.pysmods.coalpro = {} end
 
+--Settings and Helpers
 require("config") --Config variables
-require("stdlib.utils.utils") --Usefull helper functions
+require("stdlib.utils.utils") --Usefull script helper functions
+require("stdlib.utils.protohelpers") --Prototype helper functions
+
+--Groups
+require("prototypes.item-groups")
 
 --Categories
-require("prototypes.coal-processing-category")
+require("prototypes.recipe-categories")
 
 --Technolgies
-require("prototypes.technology.technology")
+require("prototypes.technologies.coal-processing1")
+require("prototypes.technologies.coal-processing2")
+require("prototypes.technologies.methanol-processing1")
+require("prototypes.technologies.methanol-processing2")
+require("prototypes.technologies.py-asphalt")
 
 --Items without entities
 require("prototypes.items.items")
