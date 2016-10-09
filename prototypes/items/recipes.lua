@@ -174,4 +174,21 @@ local iron_oxide = {
   result = "iron-plate"
 }
 
-data:extend({zinc_chloride, tar_carbon, active_carbon, recsyngas_meth, canister, canister2, methanol_from_hydrogen, iron_oxide, cooling_water})
+local salt_ex = {
+  type = "recipe",
+  name = "salt-ex",
+  category = "evaporator",
+  enabled = "false",
+  energy_required = 4,
+  ingredients ={
+    {type="fluid", name="water-saline", amount=10},
+  },
+  results={
+    {type="item", name="salt", amount=1},
+  },
+  main_product= "salt",
+  icon = "__pycoalprocessing__/graphics/icons/salt.png",
+  order = "d [syn-gas]",
+}
+
+data:extend({zinc_chloride, tar_carbon, active_carbon, recsyngas_meth, canister, canister2, methanol_from_hydrogen, iron_oxide, cooling_water, salt_ex,})
