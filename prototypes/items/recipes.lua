@@ -1,6 +1,23 @@
 --Stuff from bobs:
 --hydrogen-chloride, hydrogen, zinc-plate, carbon, nitrogen, sodium-hydroxide, zinc-ore, alumina
 
+local cooling_water ={
+  type = "recipe",
+  name = "cooling_water",
+  category = "cooling",
+  enabled = "false",
+  energy_required = 1,
+  ingredients ={
+    {type="fluid", name="water", amount=5, temperature=100},
+  },
+  results={
+    {type="fluid", name="water", amount=5, temperature=15},
+  },
+  main_product= "water",
+  icon = "__pycoalprocessing__/graphics/icons/cooling_water.png",
+  order = "d [syn-gas]",
+}
+
 local zinc_chloride ={
   type = "recipe",
   name = "zinc-chloride",
@@ -100,7 +117,7 @@ local methanol_from_hydrogen = {
   order = "f [methanol]",
 }
 
---TODO break canisters up to be made in assembling machine?
+--TODO break canisters up to be made in assembling machine? YES
 
 local canister = {
   type = "recipe",
@@ -157,4 +174,4 @@ local iron_oxide = {
   result = "iron-plate"
 }
 
-data:extend({zinc_chloride, tar_carbon, active_carbon, recsyngas_meth, canister, canister2, methanol_from_hydrogen, iron_oxide})
+data:extend({zinc_chloride, tar_carbon, active_carbon, recsyngas_meth, canister, canister2, methanol_from_hydrogen, iron_oxide, cooling_water})

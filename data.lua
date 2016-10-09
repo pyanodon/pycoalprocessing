@@ -18,6 +18,7 @@ require("prototypes.technologies.coal-processing2")
 require("prototypes.technologies.methanol-processing1")
 require("prototypes.technologies.methanol-processing2")
 require("prototypes.technologies.py-asphalt")
+require("prototypes.technologies.coolingmk01")
 
 --Items without entities
 require("prototypes.items.items")
@@ -53,6 +54,7 @@ require("prototypes.buildings.tailings-pond")
 require("prototypes.buildings.quenching-tower")
 require("prototypes.buildings.hpf")
 require("prototypes.buildings.power-house")
+require("prototypes.buildings.cooling_tower_mk01")
 
 
 
