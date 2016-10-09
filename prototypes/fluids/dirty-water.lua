@@ -17,7 +17,7 @@ local recipe1=
     {type="fluid", name="flue-gas", amount=15},
     {type="item", name="zinc-ore", amount=1, probability=0.4},
     {type="item", name="lead-ore", amount=1, probability=0.4},
-    {type="item", name="salt", amount=1},
+    {type="fluid", name="water-saline", amount=20},
   },
   main_product= "dirty-water",
   icon = "__pycoalprocessing__/graphics/icons/dirty-water.png",

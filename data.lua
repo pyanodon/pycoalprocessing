@@ -40,6 +40,7 @@ require("prototypes.fluids.tar")
 require("prototypes.fluids.dirty-water")
 require("prototypes.fluids.flue-gas")
 require("prototypes.fluids.combustion-mixture1")
+require("prototypes.fluids.water-saline")
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -55,6 +56,7 @@ require("prototypes.buildings.quenching-tower")
 require("prototypes.buildings.hpf")
 require("prototypes.buildings.power-house")
 require("prototypes.buildings.cooling_tower_mk01")
+require("prototypes.buildings.evaporator")
 
 
 

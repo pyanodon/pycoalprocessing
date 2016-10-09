@@ -63,8 +63,16 @@ local technology = {
     {
       type = "unlock-recipe",
       recipe = "gasturbinemk02"
+	},
+	{
+      type = "unlock-recipe",
+      recipe = "evaporator"
     },
-
+	{
+      type = "unlock-recipe",
+      recipe = "salt-ex"
+    },
+	  
   },
   unit =
   {
