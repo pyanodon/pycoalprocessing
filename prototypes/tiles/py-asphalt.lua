@@ -41,18 +41,18 @@ local entity1= {
     main =
     {
       {
-        picture = "__pycoalprocessing__/graphics/tiles/py-asphalt1.png",
+        picture = "__pycoalprocessing__/graphics/tiles/py-asphalt/py-asphalt1.png",
         count = 16,
         size = 1
       },
       {
-        picture = "__pycoalprocessing__/graphics/tiles/py-asphalt2.png",
+        picture = "__pycoalprocessing__/graphics/tiles/py-asphalt/py-asphalt2.png",
         count = 4,
         size = 2,
         probability = 0.39,
       },
       {
-        picture = "__pycoalprocessing__/graphics/tiles/py-asphalt4.png",
+        picture = "__pycoalprocessing__/graphics/tiles/py-asphalt/py-asphalt4.png",
         count = 4,
         size = 4,
         probability = 1,
@@ -60,27 +60,27 @@ local entity1= {
     },
     inner_corner =
     {
-      picture = "__pycoalprocessing__/graphics/tiles/concrete-inner-corner.png",
+      picture = "__pycoalprocessing__/graphics/tiles/py-asphalt/concrete-inner-corner.png",
       count = 8
     },
     outer_corner =
     {
-      picture = "__pycoalprocessing__/graphics/tiles/concrete-outer-corner.png",
+      picture = "__pycoalprocessing__/graphics/tiles/py-asphalt/concrete-outer-corner.png",
       count = 8
     },
     side =
     {
-      picture = "__pycoalprocessing__/graphics/tiles/concrete-side.png",
+      picture = "__pycoalprocessing__/graphics/tiles/py-asphalt/concrete-side.png",
       count = 8
     },
     u_transition =
     {
-      picture = "__pycoalprocessing__/graphics/tiles/concrete-u.png",
+      picture = "__pycoalprocessing__/graphics/tiles/py-asphalt/concrete-u.png",
       count = 8
     },
     o_transition =
     {
-      picture = "__pycoalprocessing__/graphics/tiles/concrete-o.png",
+      picture = "__pycoalprocessing__/graphics/tiles/py-asphalt/concrete-o.png",
       count = 1
     }
   },
