@@ -1,6 +1,6 @@
 local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
   local north, south, east, west
-  if shift_north == true then
+  if shift_north then
     north =
     {
       filename = "__base__/graphics/entity/assembling-machine-3/pipe-north.png",
@@ -143,7 +143,7 @@ local entity1={
       production_type = "output",
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
-      pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.05}, {-0.6, 0.15}),
+      pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
       --pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.6, 0.15}, {-0.6, 0.15}),
       pipe_connections = {{ position = {0.5, -4.5} }}
     },
@@ -163,7 +163,7 @@ local entity1={
       production_type = "output",
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
-      pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.05}, {-0.6, 0.15}),
+      pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
       --pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.6, 0.15}, {-0.6, 0.15}),
       pipe_connections = {{ position = {0.5, 4.5} }}
     },
@@ -173,7 +173,7 @@ local entity1={
       production_type = "output",
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
-      pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.05}, {-0.6, 0.15}),
+      pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
       pipe_connections = {{ position = {-4.5, -0.5} }}
     },
     --West, bottom
@@ -190,7 +190,7 @@ local entity1={
       production_type = "output",
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
-      pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.05}, {-0.6, 0.15}),
+      pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
       pipe_connections = {{ position = {4.5, -0.5} }}
     },
     --East, bottom
