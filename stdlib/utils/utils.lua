@@ -10,8 +10,6 @@ require("stdlib.time")
 require("stdlib.utils.colors")
 -------------------------------------------------------------------------------
 
-
-
 --------------------------------------------------------------------------------------
 function string.PrettyNumber( number )
   if number < 1000 then
@@ -175,8 +173,6 @@ end
 
 --------------------------------------------------------------------------------------
 
-
-
 -----------------------------------------------------------------------------------
 --Additional Table Helpers
 
@@ -185,11 +181,13 @@ function table.val_to_str ( v )
     v = string.gsub( v, "\n", "\\n" )
     if string.match( string.gsub(v,"[^'\"]",""), '^"+$' ) then
         return "'" .. v .. "'"
+      else
+        return '"' .. string.gsub(v,'"', '\\"' ) .. '"'
       end
-      return '"' .. string.gsub(v,'"', '\\"' ) .. '"'
     else
       return "table" == type( v ) and table.tostring( v ) or
       tostring( v )
+
     end
   end
 
@@ -235,4 +233,12 @@ function table.val_to_str ( v )
       if v == value then return v end
     end
     return nil
+  end
+
+  function table.getcount(tbl)
+    local i = 0
+    for _,_ in pairs(tbl) do
+      i = i + 1
+    end
+    return i
   end
