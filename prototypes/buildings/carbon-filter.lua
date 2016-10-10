@@ -125,8 +125,8 @@ local entity1={
   vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
   working_sound =
   {
-    sound = { filename = "__base__/sound/oil-refinery.ogg" },
-    idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
+    sound = { filename = "__pycoalprocessing__/sounds/carbon-filter.ogg" },
+    idle_sound = { filename = "__pycoalprocessing__/sounds/carbon-filter.ogg", volume = 0.6 },
     apparent_volume = 2.5,
   },
 }
