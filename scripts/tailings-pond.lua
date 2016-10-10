@@ -47,6 +47,7 @@ local function scorch_earth(pond, tick)
 
   --Vent Gasses
   local fluid = empty_pond_gas( pond.entity.fluidbox[1], pond.entity.surface, pond.entity.position)
+  --game.print("boxes" .. #pond.entity.fluidbox)
 
   --No gasses left if we still have fluid
   if fluid then
