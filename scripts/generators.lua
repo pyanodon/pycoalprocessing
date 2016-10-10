@@ -128,7 +128,9 @@ Event.register(Event.build_events, generators.on_built_entity)
 
 --Remove the generator from both lists when destroyed
 function generators.on_destroy(event)
-  global.generators[event.entity.unit_number] = nil
+  if generators.generator_data[event.entity.name] and global.generators[event.entity.unit_number] then
+    global.generators[event.entity.unit_number] = nil
+  end
   --global.archived_generators[event.entity.unit_number] = nil
 end
 Event.register(Event.death_events, generators.on_destroy)
