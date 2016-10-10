@@ -9,12 +9,12 @@ local recipe1=
 	  energy_required = 2,
 	  ingredients ={
 		{type="fluid", name="refsyngas", amount=5},
-		{type="fluid", name="water", amount=10},
+		{type="fluid", name="water", amount=20},
 	  },
 	  results=
 	  {
 		{type="fluid", name="combustion-mixture1", amount=5},
-		{type="fluid", name="water", amount=10, temperature=100},
+		{type="fluid", name="water", amount=20, temperature=100},
 	  },
 	  main_product= "combustion-mixture1",
 	  icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
