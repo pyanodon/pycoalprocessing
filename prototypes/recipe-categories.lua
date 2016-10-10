@@ -49,5 +49,10 @@ data:extend(
 	  type = "recipe-category",
       name = "evaporator",
     },
+	{
+	  type = "recipe-category",
+      name = "dessulfurization",
+    },
+
 }
 )

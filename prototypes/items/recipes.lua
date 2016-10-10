@@ -1,6 +1,23 @@
 --Stuff from bobs:
 --hydrogen-chloride, hydrogen, zinc-plate, carbon, nitrogen, sodium-hydroxide, zinc-ore, alumina
 
+local extract_sulfur ={
+  type = "recipe",
+  name = "extract_sulfur",
+  category = "dessulfurization",
+  enabled = "false",
+  energy_required = 1,
+  ingredients ={
+    {type="fluid", name="acidgas", amount=10,},
+  },
+  results={
+    {type="item", name="sulfur", amount=2,},
+  },
+  main_product= "sulfur",
+  icon = "__base__/graphics/icons/sulfur.png",
+  order = "d [syn-gas]",
+}
+
 local cooling_water ={
   type = "recipe",
   name = "cooling_water",
@@ -191,4 +208,4 @@ local salt_ex = {
   order = "d [syn-gas]",
 }
 
-data:extend({zinc_chloride, tar_carbon, active_carbon, recsyngas_meth, canister, canister2, methanol_from_hydrogen, iron_oxide, cooling_water, salt_ex,})
+data:extend({zinc_chloride, tar_carbon, active_carbon, recsyngas_meth, canister, canister2, methanol_from_hydrogen, iron_oxide, cooling_water, salt_ex, extract_sulfur,})
