@@ -18,6 +18,7 @@ require("prototypes.technologies.coal-processing2")
 require("prototypes.technologies.methanol-processing1")
 require("prototypes.technologies.methanol-processing2")
 require("prototypes.technologies.py-asphalt")
+require("prototypes.technologies.coolingmk01")
 
 --Items without entities
 require("prototypes.items.items")
@@ -39,6 +40,7 @@ require("prototypes.fluids.tar")
 require("prototypes.fluids.dirty-water")
 require("prototypes.fluids.flue-gas")
 require("prototypes.fluids.combustion-mixture1")
+require("prototypes.fluids.water-saline")
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -53,6 +55,8 @@ require("prototypes.buildings.tailings-pond")
 require("prototypes.buildings.quenching-tower")
 require("prototypes.buildings.hpf")
 require("prototypes.buildings.power-house")
+require("prototypes.buildings.cooling_tower_mk01")
+require("prototypes.buildings.evaporator")
 
 
 

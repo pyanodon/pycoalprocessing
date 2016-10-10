@@ -61,30 +61,30 @@ local entity1={
   {
     filename = "__pycoalprocessing__/graphics/entity/carbon-filter/carbon-filter.png",
     priority = "high",
-    width = 167,
-    height = 160,
+    width = 171,
+    height = 167,
     frame_count = 25,
     line_length = 5,
-    shift = {0.09, 0.0},
+    shift = {0.1, -0.125},
     animation_speed = 2
   },
   fluid_boxes =
   {
     {
       production_type = "input",
-      --pipe_picture = floatationpipepictures(),
-      pipe_covers = Proto.pipe_covers(true, true, true, true),
+      pipe_picture = Proto.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.55, 0.15}),
+      pipe_covers = Proto.pipe_covers(false, true, true, true),
       base_area = 10,
       base_level = -1,
-      pipe_connections = {{ type="input", position = {2.7, -2.0} }}
+      pipe_connections = {{ type="input", position = {2.9, -0.0} }}
     },
 
     {
       production_type = "output",
-      --pipe_picture = floatationpipepictures()
-      pipe_covers = Proto.pipe_covers(true, true, true, true),
+      pipe_picture = Proto.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.55, 0.15}),
+      pipe_covers = Proto.pipe_covers(false, true, true, true),
       base_level = 1,
-      pipe_connections = {{ position = {-2.7, -2.0} }}
+      pipe_connections = {{ position = {-2.9, -0.0} }}
     },
   },
   pipe_covers = Proto.pipe_covers(true, true, true, true),

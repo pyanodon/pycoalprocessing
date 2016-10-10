@@ -120,6 +120,14 @@ local entity1={
       base_level = 1,
       pipe_connections = {{ position = {-4.0, 1.0} }}
     },
+    {
+      production_type = "output",
+      --pipe_picture = floatationpipepictures()
+      pipe_covers = Proto.pipe_covers(true, true, true, true),
+      base_level = 1,
+      pipe_connections = {{ position = {-4.0, 0.0} }}
+    },
+
 
   },
   pipe_covers = Proto.pipe_covers(true, true, true, true),
