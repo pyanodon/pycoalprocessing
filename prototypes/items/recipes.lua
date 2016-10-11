@@ -3,7 +3,7 @@
 
 local extract_sulfur ={
   type = "recipe",
-  name = "extract_sulfur",
+  name = "extract-sulfur",
   category = "dessulfurization",
   enabled = "false",
   energy_required = 1,
@@ -20,7 +20,7 @@ local extract_sulfur ={
 
 local cooling_water ={
   type = "recipe",
-  name = "cooling_water",
+  name = "cooling-water",
   category = "cooling",
   enabled = "false",
   energy_required = 1,
@@ -31,7 +31,7 @@ local cooling_water ={
     {type="fluid", name="water", amount=5, temperature=15},
   },
   main_product= "water",
-  icon = "__pycoalprocessing__/graphics/icons/cooling_water.png",
+  icon = "__pycoalprocessing__/graphics/icons/cooling-water.png",
   order = "d [syn-gas]",
 }
 
@@ -208,4 +208,7 @@ local salt_ex = {
   order = "d [syn-gas]",
 }
 
-data:extend({zinc_chloride, tar_carbon, active_carbon, recsyngas_meth, canister, canister2, methanol_from_hydrogen, iron_oxide, cooling_water, salt_ex, extract_sulfur,})
+data:extend({
+  zinc_chloride, tar_carbon, active_carbon, recsyngas_meth, canister,
+  canister2, methanol_from_hydrogen, iron_oxide, cooling_water, salt_ex, extract_sulfur,
+})
