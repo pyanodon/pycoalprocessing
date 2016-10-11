@@ -1,3 +1,21 @@
+local pipe_pictures = function(shift_south)
+  local north, south, east, west
+  north = Proto.empty_sprite
+  if shift_south then
+    south =
+    {
+      filename = "__pycoalprocessing__/graphics/entity/cooling-tower-mk01/pipe-ending-down.png",
+      priority = "extra-high",
+      width = 40,
+      height = 45,
+      shift = shift_south
+    }
+    west = Proto.empty_sprite
+    east = Proto.empty_sprite
+    return {north=north, south=south, west=west, east=east}
+  end
+end
+
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe1={
@@ -12,7 +30,7 @@ local recipe1={
     {"advanced-circuit", 5},
     {"pipe", 20}, -- bob copper-pipe
     {"iron-gear-wheel", 15}, --bob brass-gear-wheel
-    {"iron-plate", 30},  --bob brass-plate
+    {"iron-plate", 30}, --bob brass-plate
 
   },
   result= "cooling_tower_mk01",
@@ -68,14 +86,14 @@ local entity1={
     frame_count = 30,
     line_length = 10,
     animation_speed = 2,
-    shift = {0.20, -0.3},
+    shift = {0.20, -0.4},
   },
 
   fluid_boxes =
   {
     {
       production_type = "input",
-      pipe_picture = Proto.pipes("assembler", {0.1, 0.0}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
+      pipe_picture = pipe_pictures({-0.05, -0.8}),
       pipe_covers = Proto.pipe_covers(false, true, true, true),
       base_area = 10,
       base_level = -1,
@@ -83,7 +101,7 @@ local entity1={
     },
     {
       production_type = "output",
-      pipe_picture = Proto.pipes("assembler", {0.1, 0.0}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
+      pipe_picture = pipe_pictures({-0.05, -0.8}),
       pipe_covers = Proto.pipe_covers(false, true, true, true),
       base_level = 1,
       pipe_connections = {{ type="output" , position = {-2.0, 0.0} }}
