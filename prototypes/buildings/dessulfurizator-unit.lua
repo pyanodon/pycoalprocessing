@@ -1,3 +1,55 @@
+local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
+  local north, south, east, west
+  if shift_north then
+    north =
+    {
+      filename = "__base__/graphics/entity/assembling-machine-2/pipe-north.png",
+      priority = "extra-high",
+      width = 41,
+      height = 40,
+      shift = shift_north
+    }
+  else
+    north = Proto.empty_sprite
+  end
+  if shift_south then
+    south =
+    {
+      filename = "__base__/graphics/entity/assembling-machine-2/pipe-south.png",
+      priority = "extra-high",
+      width = 41,
+      height = 40,
+      shift = shift_south
+    }
+  else
+    south = Proto.empty_sprite
+  end
+  if shift_west then
+    west =
+    {
+      filename = "__base__/graphics/entity/assembling-machine-2/pipe-west.png",
+      priority = "extra-high",
+      width = 41,
+      height = 40,
+      shift = shift_west
+    }
+  else
+    west = Proto.empty_sprite
+  end
+  if shift_east then
+    east =
+    {
+      filename = "__base__/graphics/entity/assembling-machine-2/pipe-east.png",
+      priority = "extra-high",
+      width = 41,
+      height = 40,
+      shift = shift_east
+    }
+  else
+    east = Proto.empty_sprite
+  end
+  return {north=north, south=south, west=west, east=east}
+end
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe1={
@@ -11,7 +63,7 @@ local recipe1={
     {"chemical-plant", 1},
     {"electronic-circuit", 40},
     {"steel-plate", 20}, -- bob titanium-plate
-    {"iron-plate", 50},  --bob invar-alloy
+    {"iron-plate", 50}, --bob invar-alloy
 
   },
   result= "dessulfurizator-unit",
@@ -74,7 +126,7 @@ local entity1={
   {
     {
       production_type = "input",
-      pipe_picture = Proto.pipes("assembler", {0.1, 2.0}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
+      pipe_picture = pipe_pictures( nil, {-0.00, -0.75}, {0.65, 0.10}, {-0.65, 0.10}),
       pipe_covers = Proto.pipe_covers(false, true, true, true),
       base_area = 10,
       base_level = -1,
@@ -82,7 +134,7 @@ local entity1={
     },
     {
       production_type = "input",
-      pipe_picture = Proto.pipes("assembler", {0.1, 2.0}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
+      pipe_picture = pipe_pictures(nil, {-0.00, -0.75}, {0.65, 0.10}, {-0.65, 0.10}),
       pipe_covers = Proto.pipe_covers(false, true, true, true),
       base_area = 10,
       base_level = -1,

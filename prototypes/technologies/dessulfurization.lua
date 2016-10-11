@@ -14,7 +14,7 @@ local technology = {
     },
     {
       type = "unlock-recipe",
-      recipe = "extract_sulfur"
+      recipe = "extract-sulfur"
     },
 
   },
