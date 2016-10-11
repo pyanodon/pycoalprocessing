@@ -20,7 +20,7 @@ end
 --[[Recipes]]--
 local recipe1={
   type = "recipe",
-  name = "cooling_tower_mk01",
+  name = "cooling-tower-mk01",
   energy_requiered = 17,
   enabled = false,
   ingredients =
@@ -33,30 +33,30 @@ local recipe1={
     {"iron-plate", 30}, --bob brass-plate
 
   },
-  result= "cooling_tower_mk01",
-  icon = "__pycoalprocessing__/graphics/icons/cooling_tower_mk01.png",
+  result= "cooling-tower-mk01",
+  icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
 local item1= {
   type = "item",
-  name = "cooling_tower_mk01",
-  icon = "__pycoalprocessing__/graphics/icons/cooling_tower_mk01.png",
+  name = "cooling-tower-mk01",
+  icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
   flags = {"goes-to-quickbar"},
   subgroup = "coal-processing",
-  order = "a-c[cooling_tower_mk01]",
-  place_result = "cooling_tower_mk01",
+  order = "a-c[cooling-tower-mk01]",
+  place_result = "cooling-tower-mk01",
   stack_size = 5,
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--
 local entity1={
   type = "assembling-machine",
-  name = "cooling_tower_mk01",
-  icon = "__pycoalprocessing__/graphics/icons/cooling_tower_mk01.png",
+  name = "cooling-tower-mk01",
+  icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
   flags = {"placeable-neutral","player-creation"},
-  minable = {mining_time = 1, result = "cooling_tower_mk01"},
-  fast_replaceable_group = "cooling_tower_mk01",
+  minable = {mining_time = 1, result = "cooling-tower-mk01"},
+  fast_replaceable_group = "cooling-tower-mk01",
   max_health = 300,
   corpse = "big-remnants",
   dying_explosion = "medium-explosion",
@@ -80,7 +80,7 @@ local entity1={
 
   animation =
   {
-    filename = "__pycoalprocessing__/graphics/entity/cooling_tower_mk01/cooling_tower_mk01.png",
+    filename = "__pycoalprocessing__/graphics/entity/cooling-tower-mk01/cooling-tower-mk01.png",
     width = 113,
     height = 133,
     frame_count = 30,
@@ -111,8 +111,8 @@ local entity1={
   vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
   working_sound =
   {
-    sound = { filename = "__pycoalprocessing__/sounds/cooling_tower_mk01.ogg" },
-    idle_sound = { filename = "__pycoalprocessing__/sounds/cooling_tower_mk01.ogg", volume = 0.35 },
+    sound = { filename = "__pycoalprocessing__/sounds/cooling-tower-mk01.ogg" },
+    idle_sound = { filename = "__pycoalprocessing__/sounds/cooling-tower-mk01.ogg", volume = 0.35 },
     apparent_volume = 2.5,
   },
 }

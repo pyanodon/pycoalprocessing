@@ -1,6 +1,6 @@
 local technology = {
   type = "technology",
-  name = "cooling_tower_mk01",
+  name = "cooling-tower-mk01",
   icon = "__pycoalprocessing__/graphics/technology/coolingmk01.png",
   icon_size = 128,
   order = "c-a",
@@ -10,11 +10,11 @@ local technology = {
 
     {
       type = "unlock-recipe",
-      recipe = "cooling_tower_mk01"
+      recipe = "cooling-tower-mk01"
     },
     {
       type = "unlock-recipe",
-      recipe = "cooling_water"
+      recipe = "cooling-water"
     },
 
   },
