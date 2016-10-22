@@ -24,6 +24,7 @@ require("prototypes.technologies.dessulfurization")
 --Items without entities
 require("prototypes.items.items")
 require("prototypes.items.recipes")
+require("prototypes.items.canister")
 
 --Tiles and Terrain
 require ("prototypes.tiles.py-asphalt")
@@ -59,17 +60,6 @@ require("prototypes.buildings.power-house")
 require("prototypes.buildings.cooling-tower-mk01")
 require("prototypes.buildings.evaporator")
 require("prototypes.buildings.dessulfurizator-unit")
-
-
-
---Some of this stuff should be moved to data-updates?
-	-- if bobmods and bobmods.plates then
-	-- 		require("prototypes.recipes.recipes-bob")
-	-- 		require("prototypes.technology.technology-bob")
-	-- 	else
-	-- 		require("prototypes.recipes.recipes")
-	-- 		require("prototypes.technology.technology")
-	-- end
 
 --move to syngas recipe stuff in data-updates?
 for _, v in pairs(data.raw.module) do

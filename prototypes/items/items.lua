@@ -9,17 +9,6 @@ local ash ={
   stack_size = 100
 }
 
---NOT A GOOD NAME
-local canister = {
-  type = "item",
-  name = "canister",
-  icon = "__pycoalprocessing__/graphics/icons/canister.png",
-  flags = {"goes-to-main-inventory"},
-  subgroup = "coal-processing",
-  order = "c[coal-processing]",
-  stack_size = 100
-}
-
 --SHOULD SMELT DIRECTLY TO PLATE
 local iron_oxide = {
   type = "item",
@@ -64,4 +53,4 @@ local zinc_chloride = {
   stack_size = 100
 }
 
-data:extend({ash, coke, canister, iron_oxide, active_carbon, zinc_chloride})
+data:extend({ash, coke, iron_oxide, active_carbon, zinc_chloride})
