@@ -1,32 +1,8 @@
 -------------------------------------------------------------------------------
 --[[recipes]]--
-local recipe1= {
+local refsyngas_from_filtered_syngas= {
   type = "recipe",
-  name = "recsyngas",
-  category = "rectisol",
-  enabled = "false",
-  energy_required = 4,
-  ingredients ={
-
-    {type="fluid", name="syngas", amount=10},
-    {type="item", name="canister", amount=3},
-  },
-  results=
-  {
-    {type="fluid", name="refsyngas", amount=10},
-    {type="fluid", name="hydrogen", amount=3},
-    {type="fluid", name="carbon-dioxide", amount=2},
-    {type="fluid", name="acidgas", amount=6},
-    {type="item", name="steel-plate", amount=3},
-  },
-  main_product= "refsyngas",
-  icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
-  order = "e [refsyn-gas]",
-}
-
-local recipe2= {
-  type = "recipe",
-  name = "filtersyngas",
+  name = "refsyngas-from-filtered-syngas",
   category = "carbonfilter",
   enabled = "false",
   energy_required = 4,
@@ -43,9 +19,56 @@ local recipe2= {
   order = "d [refsyn-gas]",
 }
 
+local refsyngas_from_meth = {
+  type = "recipe",
+  name = "refsyngas-from-meth",
+  category = "rectisol",
+  enabled = "false",
+  energy_required = 2,
+  ingredients ={
+    {type="fluid", name="syngas", amount=10},
+    {type="fluid", name="methanol", amount=10},
+  },
+  results=
+  {
+    {type="fluid", name="refsyngas", amount=5},
+    {type="fluid", name="hydrogen", amount=3},
+    {type="fluid", name="carbon-dioxide", amount=2},
+    {type="fluid", name="acidgas", amount=6},
+
+  },
+  main_product= "refsyngas",
+  icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
+  order = "e [refsyn-gas]",
+}
+
+local refsyngas_from_meth_canister = {
+  type = "recipe",
+  name = "refsyngas-from-meth-canister",
+  category = "rectisol",
+  enabled = "false",
+  energy_required = 2,
+  ingredients ={
+    {type="fluid", name="syngas", amount=10},
+    {type="item", name="filled-methanol-canister", amount=1},
+  },
+  results=
+  {
+    {type="fluid", name="refsyngas", amount=5},
+    {type="fluid", name="hydrogen", amount=3},
+    {type="fluid", name="carbon-dioxide", amount=2},
+    {type="fluid", name="acidgas", amount=6},
+    {type="item", name="empty-methanol-canister", amount=1},
+
+  },
+  main_product= "refsyngas",
+  icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
+  order = "f [refsyn-gas]",
+}
+
 -------------------------------------------------------------------------------
 --[[items]]--
-local item1=
+local refsyngas =
 {
   type = "fluid",
   name = "refsyngas",
@@ -59,10 +82,5 @@ local item1=
   flow_to_energy_ratio = 0.59,
 }
 -------------------------------------------------------------------------------
---[[Entites]]--
-local entity11=nil
--------------------------------------------------------------------------------
 --[[Extend Data]]--
-if recipe1 then data:extend({recipe1, recipe2}) end
-if item1 then data:extend({item1}) end
-if entity11 then data:extend({entity11}) end
+data:extend({refsyngas, refsyngas_from_filtered_syngas, refsyngas_from_meth, refsyngas_from_meth_canister})

@@ -51,7 +51,6 @@ local entity1={
   selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
   fluid_box ={
     base_area = 1,
-    --pipe_picture = Proto.pipes(), --invalid for generators?
     pipe_covers = Proto.pipe_covers(false, true, true, true),
     pipe_connections =
     {
@@ -69,7 +68,7 @@ local entity1={
   --scale=1.75,
 	horizontal_animation =
 	 {
-		filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-anim.png",
+		filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-horizontal-anim.png",
 		width = 238,
 		height = 244,
 		frame_count = 16,
@@ -79,7 +78,7 @@ local entity1={
 	  },
 	vertical_animation =
 	 {
-		filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-anim.png",
+		filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-vertical-anim.png",
 		width = 238,
 		height = 244,
 		frame_count = 16,

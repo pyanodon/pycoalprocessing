@@ -1,16 +1,16 @@
 -------------------------------------------------------------------------------
 --[[recipes]]--
-local recipe1= {
+local methanol_from_syngas = {
 	type = "recipe",
 	name = "methanol-from-syngas",
 	category = "methanol",
 	enabled = "false",
 	energy_required = 2,
 	ingredients ={
-	
+
 		{type="fluid", name="syngas", amount=5},
-		{type="item", name="copper-plate", amount=2},
-		{type="item", name="zinc-plate", amount=1},
+		{type="item", name="copper-ore", amount=2},
+		{type="item", name="iron-ore", amount=1}, --bob zinc-ore
 	},
 	results=
 	{
@@ -21,10 +21,11 @@ local recipe1= {
 	order = "e [methanol]",
 }
 
+--bob-additions: methanol_from_hydrogen
+
 -------------------------------------------------------------------------------
 --[[items]]--
-local item1=
-{
+local methanol = {
   type = "fluid",
   name = "methanol",
   icon = "__pycoalprocessing__/graphics/icons/methanol.png",
@@ -36,11 +37,7 @@ local item1=
   pressure_to_speed_ratio = 0.4,
   flow_to_energy_ratio = 0.59,
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1=nil
+
 -------------------------------------------------------------------------------
 --[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+data:extend({methanol_from_syngas, methanol})

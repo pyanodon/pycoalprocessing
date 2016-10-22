@@ -17,9 +17,12 @@ local technology = {
     },
     {
       type = "unlock-recipe",
-      recipe = "recsyngas-meth"
+      recipe = "refsyngas-from-meth"
     },
-
+    {
+      type = "unlock-recipe",
+      recipe = "refsyngas-from-meth-canister"
+    },
   },
   unit =
   {
