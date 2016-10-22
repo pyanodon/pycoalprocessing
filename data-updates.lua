@@ -5,4 +5,5 @@ require("prototypes.updates.recipe-updates")
 if _G.bobmods and _G.bobmods.lib then
   require("prototypes.updates.bob-recipe-updates")
   require("prototypes.updates.bob-additions")
+  require("prototypes.updates.bob-void")
 end

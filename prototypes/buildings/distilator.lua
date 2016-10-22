@@ -67,7 +67,8 @@ local recipe1={
     {"steel-plate", 20},
     {"pipe", 10}, --copper-pipe in bobmods
     {"iron-plate", 10},
-    {"storage-tank", 2},
+    --{"storage-tank", 2}, --Storage tank not available in red tech. oops
+    {"electronic-circuit", 2}
   },
   result= "distilator",
   icon = "__pycoalprocessing__/graphics/icons/distilator.png",

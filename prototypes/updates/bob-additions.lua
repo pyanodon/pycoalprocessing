@@ -22,4 +22,4 @@ local methanol_from_hydrogen = {
 
 data:extend({methanol_from_hydrogen})
 
-bobmods.lib.tech.add_recipe_unlock("methanol-processing2", "methanol_from_hydrogen")
+bobmods.lib.tech.add_recipe_unlock("methanol-processing2", "methanol-from-hydrogen")
