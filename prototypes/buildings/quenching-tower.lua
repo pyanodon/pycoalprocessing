@@ -1,3 +1,20 @@
+local pipe_pictures = function(shift_south)
+  local north, south, east, west
+  north = Proto.empty_sprite
+  south =
+  {
+    filename = "__base__/graphics/entity/assembling-machine-3/pipe-south.png",
+    priority = "extra-high",
+    width = 40,
+    height = 45,
+    --shift = {0.03125, -1.0625}
+    shift = shift_south
+  }
+  west = Proto.empty_sprite
+  east = Proto.empty_sprite
+  return {north=north, south=south, west=west, east=east}
+end
+
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe1={
@@ -91,7 +108,7 @@ local entity1={
   {
     {
       production_type = "input",
-      --pipe_picture = floatationpipepictures(),
+      pipe_picture = pipe_pictures({0.0, -1.0}),
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_area = 10,
       base_level = -1,
@@ -99,7 +116,7 @@ local entity1={
     },
     {
       production_type = "input",
-      --pipe_picture = floatationpipepictures(),
+      pipe_picture = pipe_pictures({0.0, -1.0}),
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_area = 10,
       base_level = -1,
@@ -108,29 +125,27 @@ local entity1={
 
     {
       production_type = "output",
-      --pipe_picture = floatationpipepictures()
+      pipe_picture = pipe_pictures({0.0, -1.0}),
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
       pipe_connections = {{ position = {-4.0, -1.0} }}
     },
     {
       production_type = "output",
-      --pipe_picture = floatationpipepictures()
+      pipe_picture = pipe_pictures({0.0, -1.0}),
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
       pipe_connections = {{ position = {-4.0, 1.0} }}
     },
     {
       production_type = "output",
-      --pipe_picture = floatationpipepictures()
+      pipe_picture = pipe_pictures({0.0, -1.0}),
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_level = 1,
-      pipe_connections = {{ position = {-4.0, 0.0} }}
+      pipe_connections = {{ position = {-1.0, 4.0} }}
     },
 
-
   },
-  pipe_covers = Proto.pipe_covers(true, true, true, true),
   vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
   working_sound =
   {
