@@ -15,11 +15,15 @@ local technology =
     },
     {
       type = "unlock-recipe",
-      recipe = "canister"
+      recipe = "methanol-canister"
     },
     {
       type = "unlock-recipe",
-      recipe = "canister2"
+      recipe = "empty-methanol-canister"
+    },
+    {
+      type = "unlock-recipe",
+      recipe = "fill-methanol-canister"
     },
   },
   unit =

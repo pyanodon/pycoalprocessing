@@ -14,11 +14,7 @@ local technology = {
     },
     {
       type = "unlock-recipe",
-      recipe = "filtersyngas"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "recsyngas"
+      recipe = "refsyngas-from-filtered-syngas"
     },
     {
       type = "unlock-recipe",
@@ -72,7 +68,7 @@ local technology = {
       type = "unlock-recipe",
       recipe = "salt-ex"
     },
-	  
+
   },
   unit =
   {

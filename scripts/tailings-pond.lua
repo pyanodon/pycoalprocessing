@@ -81,33 +81,6 @@ local function scorch_earth(pond, tick)
     pond.fluid_per = 0
   end
   pond.entity.fluidbox[1] = fluid
-  -- end
-  --
-  --
-  --
-  --
-  -- if pond.fluid_per > .5 then end
-  --
-  -- if tick > pond.tick + scorch_ticks then
-  -- scorch_earth(pond)
-  -- pond.tick=event.tick
-  -- end
-  -- if can_scorch and pond.fluid.percent > .5 then
-  --
-  -- if not (string.contains(pond.fluid.type, "water") and not string.contains(pond.fluid.type, "dirty") then
-  --
-  --
-  -- if ((math.random()/2)+(pond.fluid.percent/1.75)) > 1 then
-  -- local surface = pond.entity.surface
-  -- local tiles = {}
-  -- for x, y in Area.spiral_iterate(Position.Position.expand_to_area(pond.entity.position, 6)) do
-  -- tiles[#tiles+1] = {name="polluted-ground", position={x=x,y=y}}
-  -- end
-  -- surface.set_tiles(pond.tiles, true)
-  --
-  -- end
-  -- end
-  -- end
 end
 
 --Switches pond "intake" pumps/valves on or off based on power.
@@ -120,24 +93,6 @@ local function pond_active(pond)
     return true
   end
 end
-
--- local function empty_pond_gas(pond)
--- local fluid = pond.entity.fluidbox[1]
--- if fluid then
--- if (string.contains(fluid.type, "-gas") or string.contains (fluid.type, "gas-") and not gasses[fluid.type] == false)
--- or gasses[fluid.type] == true then
--- local surface, position = pond.entity.surface, pond.entity.position
--- surface.pollute(position, fluid.amount * _G.PYC.TAILINGS_POND.GAS_POLLUTE_MODIFIER)
--- doDebug("Pollutes" .. fluid.type)
--- pond.entity.fluidbox[1] = nil
--- return
--- elseif gasses[fluid.type] == false then
--- doDebug("NO pollution" .. fluid.type)
--- pond.entity.fluidbox[1] = nil
--- return
--- end
--- end
--- end
 
 --Sets animation frame based on tank filled percentage
 local function set_animation(pond)
