@@ -47,4 +47,7 @@ bobmods.lib.recipe.replace_ingredient("methanol-canister", "steel-plate", "alumi
 data.raw.recipe["fill-methanol-canister"].category="water-pump"
 data.raw.recipe["empty-methanol-canister"].category="water-pump"
 
+bobmods.lib.recipe.replace_ingredient("active-carbon", "water", "hydrogen")
+bobmods.lib.recipe.add_ingredient("active-carbon", {name="sodium-hydroxide", amount=15})
+
 --techs

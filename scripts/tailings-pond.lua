@@ -105,6 +105,20 @@ local function set_animation(pond)
   pond.sprite.orientation = fluid_per
 end
 
+-- --Reset all tailings_pond data
+-- --not ready to be reset yet.
+-- function tailings_pond.reset_tailings_ponds()
+--   doDebug("Resetting all tailings ponds")
+--   global.tailings_ponds = {}
+--   for _, surface in pairs(game.surfaces) do
+--     local entities = surface.find_entities_filtered{name="tailings-pond"}
+--     for _, entity in pairs(entities) do
+--
+--     end
+--   end
+-- end
+--Event.register(Event.reset_mod, tailings_pond.reset_tailings_ponds)
+
 function tailings_pond.create(event)
   if event.created_entity.name == "tailings-pond" then
 
