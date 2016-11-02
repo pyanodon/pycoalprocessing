@@ -1,7 +1,7 @@
 local interface = {}
 
 function interface.resetMod()
-  Event.dispatch(Event.reset_mod)
+  game.raise_event(Event.reset_mod, {})
 end
 
 function interface.resetUser()
@@ -52,5 +52,11 @@ function interface.config(key, value, silent)
   end
 end
 
+--Register with creative-mode for easy testing
+if remote.interfaces["creative-mode"] and remote.interfaces["creative-mode"]["register_remote_function_to_modding_ui"] then
+  remote.call("creative-mode", "register_remote_function_to_modding_ui", "PYC", "printGlob")
+  remote.call("creative-mode", "register_remote_function_to_modding_ui", "PYC", "resetMod")
+  if interface.console then remote.call("creative-mode", "register_remote_function_to_modding_ui", "PYC", "console") end
+end
 
 return interface

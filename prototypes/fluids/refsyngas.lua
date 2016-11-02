@@ -14,9 +14,10 @@ local refsyngas_from_filtered_syngas= {
   {
     {type="fluid", name="refsyngas", amount=4},
   },
-  main_product= "refsyngas",
+  --main_product= "refsyngas",
   icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
-  order = "d [refsyn-gas]",
+  subgroup = "py-syngas",
+  order = "b-a[refsyn-gas]",
 }
 
 local refsyngas_from_meth = {
@@ -37,9 +38,10 @@ local refsyngas_from_meth = {
     {type="fluid", name="acidgas", amount=6},
 
   },
-  main_product= "refsyngas",
+  --main_product= "refsyngas",
   icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
-  order = "e [refsyn-gas]",
+  subgroup = "py-syngas",
+  order = "b-b-[refsyn-gas]",
 }
 
 local refsyngas_from_meth_canister = {
@@ -61,9 +63,10 @@ local refsyngas_from_meth_canister = {
     {type="item", name="empty-methanol-canister", amount=1},
 
   },
-  main_product= "refsyngas",
+  --main_product= "refsyngas",
+  subgroup = "py-syngas",
   icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
-  order = "f [refsyn-gas]",
+  order = "b-c-[refsyn-gas]",
 }
 
 -------------------------------------------------------------------------------
