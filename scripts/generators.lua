@@ -106,7 +106,7 @@ function generators.on_configuration_changed(data)
     global.generators = global.generators or {}
     --global.archived_generators = global.archived_generators or {}
     global.gasturbinemk01 = nil --remove defunct table
-    global.archived_gasturbinemk01 =nil --remove defunct table
+    global.archived_gasturbinemk01 = nil --remove defunct table
     generators.reset_generators()
   end
 end
