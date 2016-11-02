@@ -37,6 +37,10 @@ local technology = {
     },
     {
       type = "unlock-recipe",
+      recipe = "treated-lumber"
+    },
+    {
+      type = "unlock-recipe",
       recipe = "syngas"
     },
 
