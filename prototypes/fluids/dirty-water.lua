@@ -1,31 +1,9 @@
 -------------------------------------------------------------------------------
 --[[recipes]]--
-local recipe1=
-{
-  type = "recipe",
-  name = "tailings",
-  category = "quenching-tower",
-  enabled = "false",
-  energy_required = 2,
-  ingredients ={
-    {type="fluid", name="tar", amount=20},
-    {type="fluid", name="water", amount=50},
-  },
-  results=
-  {
-    {type="fluid", name="dirty-water", amount=65},
-    {type="fluid", name="flue-gas", amount=15},
-    {type="item", name="zinc-ore", amount=1, probability=0.4},
-    {type="item", name="lead-ore", amount=1, probability=0.4},
-    {type="fluid", name="water-saline", amount=20},
-  },
-  main_product= "dirty-water",
-  icon = "__pycoalprocessing__/graphics/icons/dirty-water.png",
-  order = "e [syn-gas]",
-}
+
 -------------------------------------------------------------------------------
 --[[items]]--
-local item1=
+local dirty_water=
 {
   type = "fluid",
   name = "dirty-water",
@@ -40,9 +18,7 @@ local item1=
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--
-local entity1=nil
+
 -------------------------------------------------------------------------------
 --[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+data:extend({dirty_water})

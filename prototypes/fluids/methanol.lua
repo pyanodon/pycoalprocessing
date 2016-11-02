@@ -16,9 +16,10 @@ local methanol_from_syngas = {
 	{
 		{type="fluid", name="methanol", amount=4},
 	},
-	main_product= "methanol",
+	--main_product= "methanol",
 	icon = "__pycoalprocessing__/graphics/icons/methanol.png",
-	order = "e [methanol]",
+	subgroup = "py-methanol",
+	order = "a-[methanol]",
 }
 
 --bob-additions: methanol_from_hydrogen

@@ -30,7 +30,31 @@ local technology = {
     },
     {
       type = "unlock-recipe",
-      recipe = "tailings"
+      recipe = "tailings-copper-iron"
+    },
+    {
+      type = "unlock-recipe",
+      recipe = "tailings-nickel-zinc"
+    },
+    {
+      type = "unlock-recipe",
+      recipe = "tailings-tin-lead"
+    },
+    {
+      type = "unlock-recipe",
+      recipe = "tailings-gold-silver"
+    },
+    {
+      type = "unlock-recipe",
+      recipe = "tailings-bauxite-cobalt"
+    },
+    {
+      type = "unlock-recipe",
+      recipe = "tailings-rutile-tungsten"
+    },
+    {
+      type = "unlock-recipe",
+      recipe = "tailings-gem-ore"
     },
     {
       type = "unlock-recipe",
