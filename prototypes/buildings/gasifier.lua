@@ -67,7 +67,7 @@ local recipe1={
     {"steel-plate", 20},
     {"pipe", 20},
     {"iron-plate", 10},
-    {"storage-tank", 1},
+    --{"storage-tank", 1},
     {"electronic-circuit", 4},
 
   },
