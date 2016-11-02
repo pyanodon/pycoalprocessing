@@ -9,8 +9,8 @@ local recipe_tailings_pond = {
   ingredients =
   {
     {"small-pump", 1},
-    {"storage-tank", 4},
-    {"stone-brick", 20}
+    {"steel-plate", 10},
+    {"stone-brick", 100}
   },
   result = "tailings-pond"
 }
