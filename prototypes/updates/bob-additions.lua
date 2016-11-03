@@ -70,10 +70,10 @@ local recipe_salt_ex = {
   enabled = "false",
   energy_required = 4,
   ingredients ={
-    {type="fluid", name="water-saline", amount=2.5},
+    {type="fluid", name="water-saline", amount=10},
   },
   results={
-    {type="item", name="salt", amount=1},
+    {type="item", name="salt", amount=1, probability=0.4},
   },
   main_product= "salt",
   icon = "__pycoalprocessing__/graphics/icons/salt.png",
