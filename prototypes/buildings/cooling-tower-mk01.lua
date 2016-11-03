@@ -68,7 +68,7 @@ local entity1={
   },
   allowed_effects = {"speed"},
   crafting_categories = {"cooling"},
-  crafting_speed = 0.25,
+  crafting_speed = 0.75,
   energy_source =
   {
     type = "electric",
