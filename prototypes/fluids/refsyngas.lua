@@ -33,7 +33,7 @@ local refsyngas_from_meth = {
   results=
   {
     {type="fluid", name="refsyngas", amount=5},
-    {type="fluid", name="hydrogen", amount=3},
+    {type="fluid", name="water", amount=3}, --bob hydrogen
     {type="fluid", name="carbon-dioxide", amount=2},
     {type="fluid", name="acidgas", amount=6},
 
@@ -57,7 +57,7 @@ local refsyngas_from_meth_canister = {
   results=
   {
     {type="fluid", name="refsyngas", amount=5},
-    {type="fluid", name="hydrogen", amount=3},
+    {type="fluid", name="water", amount=3}, --bob hydrogen
     {type="fluid", name="carbon-dioxide", amount=2},
     {type="fluid", name="acidgas", amount=6},
     {type="item", name="empty-methanol-canister", amount=1},

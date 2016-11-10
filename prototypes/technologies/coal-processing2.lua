@@ -4,7 +4,7 @@ local technology = {
   icon = "__pycoalprocessing__/graphics/technology/coal-processing-technology2.png",
   icon_size = 128,
   order = "c-a",
-  prerequisites = {"electrolysis-1" , "coal-processing1"},
+  prerequisites = {"coal-processing1"},
   effects =
   {
 
@@ -20,10 +20,7 @@ local technology = {
       type = "unlock-recipe",
       recipe = "rectisol"
     },
-    {
-      type = "unlock-recipe",
-      recipe = "syngas2"
-    },
+
     {
       type = "unlock-recipe",
       recipe = "quenching-tower"
@@ -31,30 +28,6 @@ local technology = {
     {
       type = "unlock-recipe",
       recipe = "tailings-copper-iron"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "tailings-nickel-zinc"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "tailings-tin-lead"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "tailings-gold-silver"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "tailings-bauxite-cobalt"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "tailings-rutile-tungsten"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "tailings-gem-ore"
     },
     {
       type = "unlock-recipe",
@@ -76,10 +49,7 @@ local technology = {
       type = "unlock-recipe",
       recipe = "power-house"
     },
-    {
-      type = "unlock-recipe",
-      recipe = "tar-carbon"
-    },
+
     {
       type = "unlock-recipe",
       recipe = "gasturbinemk02"
@@ -88,10 +58,7 @@ local technology = {
       type = "unlock-recipe",
       recipe = "evaporator"
     },
-	{
-      type = "unlock-recipe",
-      recipe = "salt-ex"
-    },
+
 
   },
   unit =
