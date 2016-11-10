@@ -50,4 +50,10 @@ data.raw.recipe["empty-methanol-canister"].category="water-pump"
 bobmods.lib.recipe.replace_ingredient("active-carbon", "water", "hydrogen")
 bobmods.lib.recipe.add_ingredient("active-carbon", {name="sodium-hydroxide", amount=15})
 
+bobmods.lib.recipe.remove_result("refsyngas-from-meth", "water")
+bobmods.lib.recipe.remove_result("refsyngas-from-meth-canister", "water")
+bobmods.lib.recipe.add_result("refsyngas-from-meth", {type="fluid", name="hydrogen", amount=3})
+bobmods.lib.recipe.add_result("refsyngas-from-meth-canister", {type="fluid", name="hydrogen", amount=3})
+
+bobmods.lib.tech.add_prerequisite("coal-processing2", "electrolysis-1")
 --techs

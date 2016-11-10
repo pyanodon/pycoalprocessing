@@ -83,3 +83,12 @@ local recipe_salt_ex = {
 data:extend({methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen})
 
 bobmods.lib.tech.add_recipe_unlock("methanol-processing2", "methanol-from-hydrogen")
+bobmods.lib.tech.add_recipe_unlock("coal-processing2", "syngas2")
+bobmods.lib.tech.add_recipe_unlock("coal-processing2", "salt-ex")
+bobmods.lib.tech.add_recipe_unlock("coal-processing2", "tar-carbon")
+bobmods.lib.tech.add_recipe_unlock("coal-processing2", "tailings-nickel-zinc")
+bobmods.lib.tech.add_recipe_unlock("coal-processing2", "tailings-tin-lead")
+bobmods.lib.tech.add_recipe_unlock("coal-processing2", "tailings-gold-silver")
+bobmods.lib.tech.add_recipe_unlock("coal-processing2", "tailings-bauxite-cobalt")
+bobmods.lib.tech.add_recipe_unlock("coal-processing2", "tailings-rutile-tungsten")
+bobmods.lib.tech.add_recipe_unlock("coal-processing2", "tailings-gem-ore")
