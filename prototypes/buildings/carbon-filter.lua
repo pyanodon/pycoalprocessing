@@ -81,7 +81,7 @@ local entity1={
   },
   allowed_effects = {"consumption", "speed", "pollution"},
   crafting_categories = {"carbonfilter"},
-  crafting_speed = 0.3,
+  crafting_speed = 0.75,
   energy_source =
   {
     type = "electric",

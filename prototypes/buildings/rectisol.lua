@@ -102,7 +102,7 @@ local entity1={
   },
   allowed_effects = {"consumption", "speed", "productivity", "pollution"},
   crafting_categories = {"rectisol"},
-  crafting_speed = 0.5,
+  crafting_speed = 0.75,
   energy_source =
   {
     type = "electric",
