@@ -11,10 +11,7 @@ local technology = {
       type = "unlock-recipe",
       recipe = "methanol-from-syngas"
     },
-    {
-      type = "unlock-recipe",
-      recipe = "methanol-from-hydrogen"
-    },
+
     {
       type = "unlock-recipe",
       recipe = "refsyngas-from-meth"
