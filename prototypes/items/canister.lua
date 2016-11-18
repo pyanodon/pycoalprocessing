@@ -15,6 +15,7 @@ results = {
   {type = "item", name = "empty-methanol-canister", amount = 1},
 },
 icon = "__pycoalprocessing__/graphics/icons/canister.png",
+subgroup="py-items",
 order = "c [methanol]",
 }
 
@@ -33,6 +34,7 @@ local recipe_fill_canister = {
     {type="item", name="filled-methanol-canister", amount=1}
   },
   icon = "__pycoalprocessing__/graphics/icons/canister.png",
+  subgroup="py-items",
   order = "c [methanol]",
 }
 
@@ -54,6 +56,7 @@ local recipe_empty_canister = {
   },
   main_product= "methanol",
   icon = "__pycoalprocessing__/graphics/icons/canister.png",
+  subgroup="py-items",
   order = "d [methanol]",
 }
 -------------------------------------------------------------------------------
@@ -63,8 +66,8 @@ local empty_canister = {
   name = "empty-methanol-canister",
   icon = "__pycoalprocessing__/graphics/icons/canister.png",
   flags = {"goes-to-main-inventory"},
-  subgroup = "coal-processing",
-  order = "c[coal-processing]",
+  subgroup="py-items",
+  order = "d[coal-processing]",
   stack_size = 100
 }
 
@@ -73,8 +76,8 @@ local filled_canister = {
   name = "filled-methanol-canister",
   icon = "__pycoalprocessing__/graphics/icons/canister.png",
   flags = {"goes-to-main-inventory"},
-  subgroup = "coal-processing",
-  order = "c[coal-processing]",
+  subgroup="py-items",
+  order = "e[coal-processing]",
   stack_size = 100
 }
 
