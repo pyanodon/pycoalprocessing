@@ -12,7 +12,9 @@ local recipe1={
     {type="item", name="stone", amount=5},
   },
   result = "py-asphalt",
-  requester_paste_multiplier = 4
+  requester_paste_multiplier = 4,
+  subgroup = "py-items",
+  order = "a-asphalt",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
@@ -21,7 +23,8 @@ local item1= {
   name="py-asphalt",
   icon="__pycoalprocessing__/graphics/icons/py-asphalt-icon.png",
   flags={"goes-to-main-inventory"},
-  subgroup="coal-processing", order="a",
+  subgroup = "py-items",
+  order = "a-asphalt",
   stack_size = 500, default_request_amount = 150,
   place_as_tile = {result = "py-asphalt",condition_size = 2,condition = { "water-tile" }}
 }

@@ -43,8 +43,8 @@ local ash ={
   name = "ash",
   icon = "__pycoalprocessing__/graphics/icons/ash.png",
   flags = {"goes-to-main-inventory"},
-  subgroup = "coal-processing",
-  order = "c[coal-processing]",
+  subgroup = "py-items",
+  order = "ash",
   stack_size = 100
 }
 
@@ -55,8 +55,8 @@ local coke = {
   fuel_value = "10MJ",
   icon = "__pycoalprocessing__/graphics/icons/coke.png",
   flags = {"goes-to-main-inventory"},
-  subgroup = "coal-processing",
-  order = "b[coal-processing]",
+  subgroup = "py-items",
+  order = "coke",
   stack_size = 500
 }
 
@@ -68,8 +68,8 @@ local iron_oxide = {
   name = "iron-oxide",
   icon = "__pycoalprocessing__/graphics/icons/iron-oxide.png",
   flags = {"goes-to-main-inventory"},
-  subgroup = "coal-processing",
-  order = "a[coal-processing]",
+  subgroup = "py-items",
+  order = "iron-oxide",
   stack_size = 200
 }
 local recipe_iron_oxide = {
@@ -89,8 +89,8 @@ local active_carbon = {
   fuel_value = "25MJ",
   icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
   flags = {"goes-to-main-inventory"},
-  subgroup = "coal-processing",
-  order = "b[coal-processing]",
+  subgroup = "py-items",
+  order = "active-carbon",
   stack_size = 100
 }
 --uses bob nitrogen, bob sodium-hydroxide
@@ -109,9 +109,9 @@ local recipe_active_carbon = {
   results={
     {type="item", name="active-carbon", amount=2},
   },
-  main_product= "active-carbon",
   icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
-  order = "d [syn-gas]",
+  subgroup="py-items",
+  order = "active-carbon",
 }
 
 
@@ -120,8 +120,8 @@ local zinc_chloride = {
   name = "zinc-chloride",
   icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
   flags = {"goes-to-main-inventory"},
-  subgroup = "coal-processing",
-  order = "c[coal-processing]",
+  subgroup = "py-items",
+  order = "zinc-chloride",
   stack_size = 100
 }
 local recipe_zinc_chloride ={
@@ -139,9 +139,9 @@ local recipe_zinc_chloride ={
     {type="item", name="zinc-chloride", amount=1},
     --{type="fluid", name="hydrogen", amount=2}, --bob hydrogen
   },
-  main_product= "zinc-chloride",
+  subgroup = "py-items",
+  order = "zinc-chloride",
   icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
-  order = "d [syn-gas]",
 }
 
 data:extend(
