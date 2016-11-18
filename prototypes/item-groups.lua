@@ -16,27 +16,27 @@ data:extend(
     },
     {
       type = "item-subgroup",
-      name = "py-quenching-ores",
-      group = "coal-processing",
-      order = "b",
-    },
-    {
-      type = "item-subgroup",
       name = "py-items",
       group = "coal-processing",
       order = "c",
     },
     {
       type = "item-subgroup",
-      name = "py-syngas",
+      name = "py-quenching-ores",
       group = "coal-processing",
       order = "d",
     },
     {
       type = "item-subgroup",
-      name = "py-methanol",
+      name = "py-syngas",
       group = "coal-processing",
       order = "e",
+    },
+    {
+      type = "item-subgroup",
+      name = "py-methanol",
+      group = "coal-processing",
+      order = "f",
     },
   }
 )

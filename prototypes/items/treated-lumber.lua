@@ -17,8 +17,8 @@ local recipe_treated_lumber= {
     icons = {
       {icon = "__pycoalprocessing__/graphics/icons/treated-lumber.png"},
     },
-    subgroup = "py-quenching-ores",
-    order = "tailings-a",
+    subgroup = "py-items",
+    order = "treated-lumber",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
@@ -27,12 +27,12 @@ local treated_lumber = {
   name = "treated-lumber",
   icon = "__pycoalprocessing__/graphics/icons/treated-lumber.png",
   flags = {"goes-to-main-inventory"},
-  subgroup = "coal-processing",
-  order = "a[treated-lumber]",
+  subgroup = "py-items",
+  order = "treated-lumber",
   stack_size = 100
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--
-------------------------------------------------------------------------------- 
+-------------------------------------------------------------------------------
 --[[Extend Data]]--
 data:extend({recipe_treated_lumber, treated_lumber})
