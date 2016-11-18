@@ -144,6 +144,51 @@ local recipe_zinc_chloride ={
   icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
 }
 
+local coal_dirt_dust = {
+  type = "item",
+  name = "coal_dirt_dust",
+  icon = "__pycoalprocessing__/graphics/icons/coal_dirt_dust.png",
+  flags = {"goes-to-main-inventory"},
+  subgroup = "py-items",
+  order = "coal_dirt_dust",
+  stack_size = 500
+}
+local recipe_coal_dirt_dust ={
+  type = "recipe",
+  name = "coal_dirt_dust",
+  category = "evaporator",
+  enabled = "false",
+  energy_required = 2,
+  ingredients ={
+    {type="fluid", name="dirty-water", amount=50},
+  },
+  results={
+    {type="item", name="coal_dirt_dust", amount=1},
+  },
+  subgroup = "py-items",
+  order = "coal_dirt_dust",
+  icon = "__pycoalprocessing__/graphics/icons/coal_dirt_dust.png",
+}
+
+local recipe_fluegas_to_syngas ={
+  type = "recipe",
+  name = "fluegas_to_syngas",
+  category = "carbonfilter",
+  enabled = "false",
+  energy_required = 2,
+  ingredients ={
+    {type="fluid", name="flue-gas", amount=300},
+    {type="item", name="active-carbon", amount=5},
+
+  },
+  results={
+    {type="fluid", name="syngas", amount=30},
+  },
+  subgroup = "py-items",
+  order = "fluegas_to_syngas",
+  icon = "__pycoalprocessing__/graphics/icons/fluegas_to_syngas.png",
+}
+
 data:extend(
 {
   recipe_extract_sulfur,
@@ -155,6 +200,9 @@ data:extend(
   active_carbon,
   recipe_active_carbon,
   zinc_chloride,
-  recipe_zinc_chloride
+  recipe_zinc_chloride,
+  coal_dirt_dust,
+  recipe_coal_dirt_dust,
+  recipe_fluegas_to_syngas
   }
 )
