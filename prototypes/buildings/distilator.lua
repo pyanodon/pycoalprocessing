@@ -103,7 +103,7 @@ local entity1={
   {
     module_slots = 2
   },
-  allowed_effects = {"consumption", "speed", "pollution"},
+  allowed_effects = {"consumption", "speed", "pollution", "productivity"},
   crafting_categories = {"distilator"},
   crafting_speed = 0.75,
   energy_source =
@@ -202,7 +202,7 @@ local entity1={
       pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
       pipe_connections = {{ position = {4.5, 0.5} }}
     },
-
+    off_when_no_fluid_recipe = true
   },
   vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
   working_sound =
