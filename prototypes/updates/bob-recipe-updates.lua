@@ -25,9 +25,9 @@ bobmods.lib.recipe.replace_ingredient("tar-processing-unit", "pipe", "stone-pipe
 
 bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "pipe", "copper-pipe")
 bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-gear-wheel", "brass-gear-wheel")
-bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-plate", "brass-plate")
+bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-plate", "brass-alloy")
 
-bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "steel-plate", "lead-pipe")
+bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "steel-plate", "lead-plate")
 bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-gear-wheel", "steel-gear-wheel")
 bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-plate", "steel-bearing")
 
@@ -42,10 +42,12 @@ bobmods.lib.recipe.replace_ingredient("zinc-chloride", "water", "hydrogen-chlori
 bobmods.lib.recipe.remove_ingredient("zinc-chloride", "copper-plate")
 bobmods.lib.recipe.add_result("zinc-chloride", {name="hydrogen", amount=2})
 
-bobmods.lib.recipe.replace_ingredient("methanol-canister", "copper-plate", "brass-plate")
+bobmods.lib.recipe.replace_ingredient("methanol-canister", "copper-plate", "brass-alloy")
 bobmods.lib.recipe.replace_ingredient("methanol-canister", "steel-plate", "aluminium-plate")
-data.raw.recipe["fill-methanol-canister"].category="water-pump"
-data.raw.recipe["empty-methanol-canister"].category="water-pump"
+if data.raw["recipe-category"]["water-pump"] then
+  data.raw.recipe["fill-methanol-canister"].category="water-pump"
+  data.raw.recipe["empty-methanol-canister"].category="water-pump"
+end
 
 bobmods.lib.recipe.replace_ingredient("active-carbon", "water", "nitrogen")
 bobmods.lib.recipe.add_ingredient("active-carbon", {name="sodium-hydroxide", amount=7})
