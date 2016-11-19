@@ -58,4 +58,5 @@ bobmods.lib.recipe.add_result("refsyngas-from-meth", {type="fluid", name="hydrog
 bobmods.lib.recipe.add_result("refsyngas-from-meth-canister", {type="fluid", name="hydrogen", amount=3})
 
 bobmods.lib.tech.add_prerequisite("coal-processing2", "electrolysis-1")
---techs
+
+--Tech

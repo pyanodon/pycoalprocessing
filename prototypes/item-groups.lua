@@ -38,5 +38,11 @@ data:extend(
       group = "coal-processing",
       order = "f",
     },
+    {
+      type = "item-subgroup",
+      name = "py-fluids",
+      group = "coal-processing",
+      order = "z",
+    },
   }
 )
