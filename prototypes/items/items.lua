@@ -1,6 +1,4 @@
---Stuff from bobs:
---hydrogen-chloride, hydrogen, zinc-plate, carbon, nitrogen, sodium-hydroxide, zinc-ore, alumina
-
+-------------------------------------------------------------------------------
 --extract sulfur from acidgas
 local recipe_extract_sulfur ={
   type = "recipe",
@@ -15,10 +13,12 @@ local recipe_extract_sulfur ={
     {type="item", name="sulfur", amount=2,},
   },
   main_product= "sulfur",
-  icon = "__base__/graphics/icons/sulfur.png",
-  order = "d [syn-gas]",
+  --icon = "__base__/graphics/icons/sulfur.png",
+  icon = data.raw.item.sulfur.icon,
+  subgroup = "py-items",
+  order = "sulfur",
 }
-
+-------------------------------------------------------------------------------
 --Turn warm water into cooled water
 local recipe_cooling_water ={
   type = "recipe",
@@ -33,10 +33,12 @@ local recipe_cooling_water ={
     {type="fluid", name="water", amount=5, temperature=15},
   },
   main_product= "water",
+  subgroup = "py-fluids",
+  order = "water",
   icon = "__pycoalprocessing__/graphics/icons/cooling-water.png",
-  order = "d [syn-gas]",
-}
 
+}
+-------------------------------------------------------------------------------
 --NOT A GOOD NAME
 local ash ={
   type = "item",
@@ -47,7 +49,7 @@ local ash ={
   order = "ash",
   stack_size = 100
 }
-
+-------------------------------------------------------------------------------
 --NOT A GOOD NAME
 local coke = {
   type = "item",
@@ -59,7 +61,7 @@ local coke = {
   order = "coke",
   stack_size = 500
 }
-
+-------------------------------------------------------------------------------
 --SHOULD SMELT DIRECTLY TO PLATE
 --Iron ore is typically hidden as a product, smelt directly to iron plate instead
 --2x iron-oxide = 1x iron-plate in the same time it takes 1x iron-ore -> 1x plate
@@ -80,9 +82,7 @@ local recipe_iron_oxide = {
   ingredients = {{"iron-oxide", 2}},
   result = "iron-plate"
 }
-
-
-
+-------------------------------------------------------------------------------
 local active_carbon = {
   type = "item",
   name = "active-carbon",
@@ -93,7 +93,7 @@ local active_carbon = {
   order = "active-carbon",
   stack_size = 100
 }
---uses bob nitrogen, bob sodium-hydroxide
+-------------------------------------------------------------------------------
 local recipe_active_carbon = {
   type = "recipe",
   name = "active-carbon",
@@ -110,11 +110,9 @@ local recipe_active_carbon = {
     {type="item", name="active-carbon", amount=2},
   },
   icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
-  subgroup="py-items",
-  order = "active-carbon",
+  main_product= "active-carbon",
 }
-
-
+-------------------------------------------------------------------------------
 local zinc_chloride = {
   type = "item",
   name = "zinc-chloride",
@@ -124,7 +122,7 @@ local zinc_chloride = {
   order = "zinc-chloride",
   stack_size = 100
 }
-local recipe_zinc_chloride ={
+local recipe_zinc_chloride = {
   type = "recipe",
   name = "zinc-chloride",
   category = "chemistry",
@@ -139,9 +137,34 @@ local recipe_zinc_chloride ={
     {type="item", name="zinc-chloride", amount=1},
     --{type="fluid", name="hydrogen", amount=2}, --bob hydrogen
   },
-  subgroup = "py-items",
-  order = "zinc-chloride",
+  main_product = "zinc-chloride",
   icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
+}
+-------------------------------------------------------------------------------
+local tailings_dust = {
+  type = "item",
+  name = "tailings-dust",
+  icon = "__pycoalprocessing__/graphics/icons/tailings-dust.png",
+  flags = {"goes-to-main-inventory"},
+  subgroup = "py-items",
+  order = "tailings-dust",
+  stack_size = 5000
+}
+local recipe_tailings_dust = {
+  type = "recipe",
+  name = "tailings-dust",
+  category = "evaporator",
+  enabled = "false",
+  energy_required = 6,
+  ingredients ={
+    {type="fluid", name="dirty-water", amount=10},
+  },
+  results={
+    {type="item", name="tailings-dust", amount=6},
+    --{type="fluid", name="water", amount=4, temperature=100}
+  },
+  main_product = "tailings-dust",
+  icon = "__pycoalprocessing__/graphics/icons/tailings-dust.png",
 }
 
 data:extend(
@@ -155,6 +178,8 @@ data:extend(
   active_carbon,
   recipe_active_carbon,
   zinc_chloride,
-  recipe_zinc_chloride
+  recipe_zinc_chloride,
+  recipe_tailings_dust,
+  tailings_dust,
   }
 )
