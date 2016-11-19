@@ -49,6 +49,14 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
     end
   end
 
+  --More Floors
+  if data.raw.recipe["wood-floor"] then
+    local woodfloor = data.raw.recipe["wood-floor"]
+    woodfloor.ingredients = {
+      {"treated-lumber", 10},
+    }
+  end
+
   --Bio Industries
   if data.raw.recipe["bi-wooden-fence"] then
     local fence = data.raw.recipe["bi-wooden-fence"]
