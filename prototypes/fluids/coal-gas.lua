@@ -19,7 +19,7 @@ local recipe1=
   },
   main_product= "coal-gas",
   icon = "__pycoalprocessing__/graphics/icons/coalgas.png",
-  order = "a [coal-gas]",
+  --order = "a [coal-gas]",
 }
 -------------------------------------------------------------------------------
 --[[items]]--
@@ -35,6 +35,8 @@ local item1=
   max_temperature = 100,
   pressure_to_speed_ratio = 0.4,
   flow_to_energy_ratio = 0.59,
+  subgroup = "py-syngas",
+  order = "a-[coal-gas]"
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--

@@ -16,7 +16,6 @@ local recipe1=
   },
   main_product= "creosote",
   icon = "__pycoalprocessing__/graphics/icons/creosote.png",
-  order = "c [syn-gas]",
 }
 -------------------------------------------------------------------------------
 --[[items]]--
@@ -32,6 +31,8 @@ local item1=
   max_temperature = 100,
   pressure_to_speed_ratio = 0.4,
   flow_to_energy_ratio = 0.59,
+  subgroup = "py-fluids",
+  order = "creosote",
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--

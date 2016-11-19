@@ -59,8 +59,10 @@ local recipe_tar_carbon = {
     {type="item", name="carbon", amount=1},
   },
   main_product= "carbon",
-  icon = "__bobplates__/graphics/icons/carbon.png",
-  order = "d [syn-gas]",
+  subgroup = "py-items",
+  order = "carbon",
+  icon = data.raw.item.carbon.icon,
+  --"__bobplates__/graphics/icons/carbon.png",
 }
 
 local recipe_salt_ex = {
@@ -75,9 +77,11 @@ local recipe_salt_ex = {
   results={
     {type="item", name="salt", amount=1, probability=0.4},
   },
-  main_product= "salt",
+  main_product = "salt",
+  subgroup = "py-items",
+  order = "salt",
   icon = "__pycoalprocessing__/graphics/icons/salt.png",
-  order = "d [syn-gas]",
+
 }
 
 data:extend({methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen})
