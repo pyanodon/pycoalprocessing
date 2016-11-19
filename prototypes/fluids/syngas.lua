@@ -17,10 +17,8 @@ local recipe1=
     {type="fluid", name="tar", amount=3},
     {type="item", name="ash", amount=1, probability=0.5}
   },
-  --main_product= "syngas",
+  main_product= "syngas",
   icon = "__pycoalprocessing__/graphics/icons/syngas.png",
-  subgroup = "py-syngas",
-  order = "a-a-[syn-gas]",
 }
 
 
@@ -38,6 +36,8 @@ local item1=
   max_temperature = 100,
   pressure_to_speed_ratio = 0.4,
   flow_to_energy_ratio = 0.59,
+  subgroup = "py-syngas",
+  order = "a-a-[syn-gas]",
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--
