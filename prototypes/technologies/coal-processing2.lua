@@ -59,14 +59,13 @@ local technology = {
       recipe = "evaporator"
     },
 	{
-      type = "unlock-recipe",
-      recipe = "coal_dirt_dust"
-    },
-	{
 		type = "unlock-recipe",
 		recipe = "fluegas_to_syngas"
 	},
-
+  {
+      type = "unlock-recipe",
+      recipe = "tailings-dust"
+    },
   },
   unit =
   {
