@@ -2,12 +2,16 @@
 
 if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
   if PYC.USE_CREOSOTE_IN.rail then
-    local newrail=data.raw.recipe["rail"]
-    newrail.ingredients = {
-      {"stone", 1},
-      {"iron-stick", 2},
-      {"treated-lumber", 2}
-    }
+    if not data.raw.recipe["bi-rail-wood"] then
+      local newrail=data.raw.recipe["rail"]
+      newrail.ingredients = {
+        {"stone", 1},
+        {"iron-stick", 2},
+        {"treated-lumber", 2}
+      }
+    end
+
+    --Bio Industries
     if data.raw.recipe["bi-rail-wood"] then
       local biwoodrail = data.raw.recipe["bi-rail-wood"]
       biwoodrail.ingredients = {
@@ -26,6 +30,7 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
     }
     data:extend({newpole})
 
+    --Big Wooden Pole Mod
     if data.raw.recipe["big-wooden-pole"] then
       local bigpole = data.raw.recipe["big-wooden-pole"]
       bigpole.ingredients = {
@@ -34,8 +39,9 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
       }
     end
 
+    --Bio Industries
     if data.raw.recipe["bi-big-wooden-pole"] then
-      local bibigpole = data.raw.recipe["bi-bog-wooden-pole"]
+      local bibigpole = data.raw.recipe["bi-big-wooden-pole"]
       bibigpole.ingredients = {
         {"treated-lumber", 5},
         {"small-electric-pole", 2},
@@ -43,6 +49,15 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
     end
   end
 
+  --More Floors
+  if data.raw.recipe["wood-floor"] then
+    local woodfloor = data.raw.recipe["wood-floor"]
+    woodfloor.ingredients = {
+      {"treated-lumber", 10},
+    }
+  end
+
+  --Bio Industries
   if data.raw.recipe["bi-wooden-fence"] then
     local fence = data.raw.recipe["bi-wooden-fence"]
     fence.ingredients =
