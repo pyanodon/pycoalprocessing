@@ -8,5 +8,5 @@ if bobmods then
 end
 
 --Can't switch this until distilator is fixed
--- local liqcoal = data.raw["recipe"]["coal-liquefaction"]
--- liqcoal.category = "distilator"
+local liqcoal = data.raw["recipe"]["coal-liquefaction"]
+liqcoal.category = "distilator"
