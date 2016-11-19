@@ -58,6 +58,10 @@ local technology = {
       type = "unlock-recipe",
       recipe = "evaporator"
     },
+  {
+      type = "unlock-recipe",
+      recipe = "tailings-dust"
+    },
 
 
   },
