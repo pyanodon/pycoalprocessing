@@ -7,5 +7,5 @@
   "contact": "",
   "homepage": "https://mods.factorio.com/mods/pyanodon/pycoalprocessing",
   "description": "Adds coal processing lines to the game.",
-  "dependencies": ["base >= 0.14.0", "? bobplates", "? boblibrary", "? creative-mode"]
+  "dependencies": ["base >= 0.14.0", "? bobplates", "? boblibrary", "? Bio_Industries"]
 }
