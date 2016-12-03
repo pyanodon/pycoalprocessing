@@ -9,16 +9,14 @@ function quickstart.on_player_created(event)
   local simple_stack =
   {
     "deconstruction-planner",
-    "tailings-pond",
-    "magic-wand",
     "creative-mode_fluid-source",
     "creative-mode_energy-source",
     "creative-mode_super-electric-pole",
     "construction-robot",
     "pipe",
     "gasturbinemk01",
+    "distilator",
     "blueprint",
-    --"power-armor-mk2",
   }
 
   for _, item in pairs(simple_stack) do
