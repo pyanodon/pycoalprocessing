@@ -1,14 +1,45 @@
---luacheck: ignore table string Proto
+--luacheck: ignore table string
 -- utils.lua by binbinhfr, v1.0.10
 
 local author_name1 = "Nexela"
 local author_name2 = "Nexela"
 
+require("stdlib.game")
+require("stdlib.surface")
+require("stdlib.iterator")
 require("stdlib.table")
 require("stdlib.string")
 require("stdlib.time")
+
 require("stdlib.utils.colors")
+require("stdlib.utils.list")
 -------------------------------------------------------------------------------
+
+--@return Player Object
+function Game.get_valid_player(player_or_index)
+  if not player_or_index then
+    if game.player then return game.player
+    elseif game.players[1] then
+      return game.players[1]
+    end
+  elseif type(player_or_index) == "number" or type(player_or_index) == "string" then
+    if game.players[player_or_index] and game.players[player_or_index].valid then
+      return game.players[player_or_index]
+    end
+  elseif type(player_or_index) == "table" and player_or_index.valid then
+    return player_or_index
+  end
+  return false
+end
+
+function Game.valid_force(force)
+  if type(force) == "string" and game.forces[force] and game.forces[force].valid then
+    return true
+  elseif type(force) == "table" and game.forces[force.name] and game.forces[force.name].valid then
+    return true
+  end
+  return false
+end
 
 --------------------------------------------------------------------------------------
 function string.PrettyNumber( number )
@@ -68,8 +99,8 @@ function nearest_players( params )
 end
 
 --------------------------------------------------------------------------------------
-function flyingText(line, color, pos, surface)
-  color = color or defines.colors.RED
+function flying_text(line, color, pos, surface)
+  color = color or defines.colors.red
   line = line or "missing text" --If we for some reason didn't pass a message make a message
   if not pos then
     for _, p in pairs(game.players) do
@@ -233,6 +264,11 @@ function table.val_to_str ( v )
       if v == value then return v end
     end
     return nil
+  end
+
+  function table.add_values(tbl, key, val)
+    tbl[key] = (tbl[key] or 0) + val
+    return tbl
   end
 
   function table.getcount(tbl)

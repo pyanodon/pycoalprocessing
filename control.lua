@@ -24,12 +24,24 @@ Event.reset_mod = script.generate_event_name()
 Event.build_events = {defines.events.on_built_entity, defines.events.on_robot_built_entity}
 Event.death_events = {defines.events.on_preplayer_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}
 
+local function debug_fluids()
+  local header = "Fluid, Def Temp, Max Temp, Heat Cap, Press to Speed, Flow to Energy\n"
+  game.write_file("logs/pycoalprocessing/fluid_data.csv", header)
+  for _, fluid in pairs (game.fluid_prototypes) do
+    local string
+    --string = "["..fluid.name.."]"
+    string = fluid.name .. "," ..fluid.default_temperature .. "," .. fluid.max_temperature .. ",".. fluid.heat_capacity .. "," .. fluid.pressure_to_speed_ratio .. ","..fluid.flow_to_energy_ratio .. "\n"
+    game.write_file("logs/pycoalprocessing/fluid_data.csv",string,true)
+  end
+end
+
 
 -------------------------------------------------------------------------------
 --[[Log Init and updates]]
 --Master Init
 function MOD.on_init()
   doDebug(MOD.name .. " successfully installed")
+  if _G.PYC.DEBUG then debug_fluids() end
 end
 Event.register(Event.core_events.init, MOD.on_init)
 
