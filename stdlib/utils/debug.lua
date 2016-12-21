@@ -9,7 +9,7 @@ TODO log levels
 ]]
 
 function doDebug(msg, alert)
-    local level = MOD.config.get("loglevel", 1)
+    local level = MOD.config.get("LOGLEVEL", 1)
     if level == 0 and not alert then return end
 
     if (level >= 1 or alert) and type(msg) == "table" then

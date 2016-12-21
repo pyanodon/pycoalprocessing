@@ -1,10 +1,6 @@
 --- Color module
 -- @module Color
 
-require("stdlib.core")
-require("stdlib.game")
-Color = {}
-
 --Global color defines.
 --@usage: font_color=defines.colors.red to set a styles font color to red.
 defines.colors = {
@@ -33,5 +29,3 @@ defines.lightcolors = {
 	red = defines.colors.lightred, 	green = defines.colors.lightgreen, 	blue = defines.colors.lightblue,
 	yellow = defines.colors.orange, 	pink = defines.colors.purple,
 }
-
-return Color
