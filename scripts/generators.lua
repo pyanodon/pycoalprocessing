@@ -4,13 +4,27 @@ local MAX_TEMP = 100
 local base_1_14_10 = {21.5, 28, 34.5, 41, 47.5, 54, 60.5, 67, 73.5, 80, 86.5, 93, 99.5, 106}
 
 generators.fluid_data = {
-  ["syngas"] = {pollution = 0.3, eff = 0},
-  ["refsyngas"] = {pollution = 0.2, eff = 3},
+  ["syngas"]              = {pollution = 0.3, eff = 0},
+  ["refsyngas"]           = {pollution = 0.2, eff = 3},
+
   ["combustion-mixture1"] = {pollution = 0.1, eff=0},
-  ["light-oil"] = {pollution = 0.4, eff=-7},
-  ["petroleum-gas"] = {pollution = 0.3, eff = -9},
-  ["methanol"] = {pollution = 0.1, eff = -8},
-  --["water"] = {pollution = 0.0, eff = 50},
+  ["combustion-mixture2"] = {pollution = 0.05, eff=0},
+
+  ["coal-slurry"]         = {pollution = 0.05, eff=0},
+  ["ultra-critical-coal"] = {pollution = 0.05, eff=0},
+  ["super-critical-coal"] = {pollution = 0.05, eff=0},
+
+  ["diesel-fuel"]         = {pollution = 0.05, eff=0},
+  ["gasoline-fuel"]       = {pollution = 0.05, eff=0},
+
+  ["light-oil"]           = {pollution = 0.4, eff=-7},
+  ["petroleum-gas"]       = {pollution = 0.3, eff = -9},
+
+  ["methanol"]            = {pollution = 0.1, eff = -8},
+  ["hydrogen"]            = {pollution = 0.0, eff = 0},
+  --Testing liquids, remove before release.
+  ["water"]               = {pollution = 0.0, eff = 50},
+  ["oxygen"]              = {pollution = 0.0, eff = 0},
 }
 
 generators.generator_data = {
@@ -22,9 +36,9 @@ generators.generator_data = {
 
 --return the desired temperature based on effiency
 local function get_temp(eff, machine_eff)
-  -- 100% effiency is 100deg, mk04 is 70
-  --coal water gives us 35deg, ultra-coal=90deg
-  return (MAX_TEMP - (MAX_TEMP - machine_eff) + eff)
+  -- 100% effiency is 100deg, mk04 is 80
+  --coal water gives us 35deg, ultra-coal=100deg
+  return ((MAX_TEMP - (MAX_TEMP - machine_eff) + eff) + 0.05)
 end
 
 --Add the generator to our global table indexed by unit number
@@ -44,7 +58,7 @@ end
 
 --Reset all generator data
 function generators.reset_generators()
-  doDebug("Resetting all generators")
+  doDebug("PYcoalProcessing Resetting all generators")
   global.generators = {}
   for _, surface in pairs(game.surfaces) do
     local entites = surface.find_entities_filtered{type="generator"}
@@ -66,15 +80,18 @@ function generators.check_generators()
         local pot = generator.fluidbox[1]
         local pot_data = generators.fluid_data[pot.type]
         if pot_data then
+          --Set the temp based on effiency values
           pot.temperature = get_temp(pot_data.eff, generator.base_eff)
+
+          --push the pot to the entity
           generator.entity.fluidbox[1]=pot
-          --create pollution
+
+          --create pollution with liquid and generator pollution values.
           if pot.amount < 10 then
             generator.surface.pollute(generator.position, ((pot_data.pollution + generator.base_pollution)/2))
           end
         else
           --25deg or less stops providing electricity.
-          --might need to toggle between active and not?
           pot.temperature = 15
           generator.entity.fluidbox[1] = pot
         end
@@ -84,7 +101,6 @@ function generators.check_generators()
       global.generators[generator.index]=nil
     end
   end
-
 end
 
 function generators.on_init()

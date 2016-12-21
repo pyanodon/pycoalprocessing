@@ -39,7 +39,7 @@ function quickstart.on_player_joined_game(event)
   --local map = map
   local player = game.players[event.player_index]
   local surface = player.surface
-  local area = {{-200, -200}, {200, 200}}
+  local area = {{-250, -250}, {250, 250}}
   local entities = surface.find_entities(area)
   for _, entity in pairs(entities) do
     if entity.name ~= "player" then

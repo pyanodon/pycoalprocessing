@@ -84,8 +84,29 @@ local recipe_salt_ex = {
 
 }
 
-data:extend({methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen})
+local void_flue_gas = {
+  type = "recipe",
+  name = "void-flue-gas",
+  category = "void-fluid",
+  enabled = "false",
+  hidden = "true",
+  energy_required = 1,
+  ingredients =
+  {
+    {type="fluid", name="flue-gas", amount=2}
+  },
+  results=
+  {
+    {type="item", name="void", amount=1, probability=0},
+  },
+  subgroup = "void",
+  icon = "__pycoalprocessing__/graphics/icons/flue-gas.png",
+  order = "flue-gas"
+}
 
+data:extend({methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen, void_flue_gas})
+
+bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
 bobmods.lib.tech.add_recipe_unlock("methanol-processing2", "methanol-from-hydrogen")
 bobmods.lib.tech.add_recipe_unlock("coal-processing2", "syngas2")
 bobmods.lib.tech.add_recipe_unlock("coal-processing2", "salt-ex")

@@ -39,7 +39,7 @@ local entity1={
   max_health = 300,
   corpse = "big-remnants",
   effectivity = 45,
-  fluid_usage_per_tick = 0.05, --18/second
+  fluid_usage_per_tick = 0.05, --3/second
   resistances =
   {
     {

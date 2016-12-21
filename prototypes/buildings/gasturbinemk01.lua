@@ -38,8 +38,8 @@ local entity1={
   minable = {mining_time = 1, result = "gasturbinemk01"},
   max_health = 300,
   corpse = "big-remnants",
-  effectivity = 15,
-  fluid_usage_per_tick = 0.03, --18/second
+  effectivity = 15, --2.2mw
+  fluid_usage_per_tick = 0.05, --1.8/second
   resistances =
   {
     {
@@ -51,7 +51,6 @@ local entity1={
   selection_box = {{-1.53, -1.53}, {1.53, 1.53}},
   fluid_box ={
     base_area = 1,
-    --pipe_picture = Proto.pipes(), --invalid for generators?
     pipe_covers = Proto.pipe_covers(false, true, true, true),
     pipe_connections =
     {
