@@ -31,7 +31,7 @@ local methanol = {
   name = "methanol",
   icon = "__pycoalprocessing__/graphics/icons/methanol.png",
   default_temperature = 15,
-  heat_capacity = "3KJ",
+  heat_capacity = "1KJ",
   base_color = {r = 0.231, g = 0.776, b = 0.333},
   flow_color = {r = 0.231, g = 0.776, b = 0.333},
   max_temperature = 100,

@@ -61,7 +61,7 @@ local function scorch_earth(pond, tick)
         fluid.amount = fluid.amount / 2
         pond.fluid_per = .5
         pond.full = nil
-        --polluted ground is very difficult to walk on, it also ruins and path tiles near it.
+        --polluted ground is very difficult to walk on, it also ruins any path tiles near it.
         --TODO Issues when polluting near water.
         if string.contains(fluid.type, "dirty") or not string.contains(fluid.type, "water") then
           local tiles = {}
@@ -80,11 +80,12 @@ local function scorch_earth(pond, tick)
   else -- no fluid
     pond.fluid_per = 0
   end
+  --push the updated fluidbox to the entity.
   pond.entity.fluidbox[1] = fluid
 end
 
 --Switches pond "intake" pumps/valves on or off based on power.
-local function pond_active(pond)
+local function pond_active(pond) --luacheck: ignore
   if pond.spinner.energy <= 0 and pond.entity.active then
     pond.entity.active=false
     return false
@@ -125,7 +126,7 @@ function tailings_pond.create(event)
     local entity = event.created_entity
     --entity.rotatable=false
     entity.direction=defines.direction.north
-    entity.active=false
+    --entity.active=false
 
     local sprite = entity.surface.create_entity({name = "tailings-pond-sprite", force=entity.force, position = entity.position})
     sprite.orientation= 0
@@ -183,10 +184,10 @@ function tailings_pond.on_tick(event)
         scorch_earth(pond, event.tick)
 
         --Should pond be active, If it has no power then the "intake pumps" are turned off and will not allow it to fill.
-        pond_active(pond)
+        --sort of has issues though!
+        --pond_active(pond)
 
         --Set the animation needed based on fill level..
-
         set_animation(pond)
 
       end

@@ -1,12 +1,6 @@
 --Returns all rails under the current train.  additon to train.stdlib?
 
--- function Position.expand_to_area(pos, radius) --liberated from Factorio STDLIB
---     if #pos == 2 then
---         return { left_top = { x = pos[1] - radius, y = pos[2] - radius }, right_bottom = { x = pos[1] + radius, y = pos[2] + radius } }
---     end
---     return { left_top = { x = pos.x - radius, y = pos.y - radius}, right_bottom = { x = pos.x + radius, y = pos.y + radius } }
--- end
-
+local Position=require("stdlib.area.position")
 local debug_picker = {}
 debug_picker.name = "debug_picker"
 
