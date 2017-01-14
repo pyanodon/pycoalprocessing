@@ -5,7 +5,6 @@ PYC.TAILINGS_POND = {} -- Do not change
 --Messages and stuff for developers
 --These should be false in a release.
 PYC.DEBUG = true
-PYC.DEBUG_QUICKSTART = true
 
 --Changes some vanilla/mod recipes to use Creosate
 --USE_CREOSOTE_RECIPES, if false will disable use of creosote in vanilla recipes. if true
@@ -43,6 +42,16 @@ PYC.TAILINGS_POND.GAS = {
   ["nitrogen"] = false,
   ["nitrogen-dioxide"] = false,
   ["wind"] = false,
+}
+
+PYC.QUICKSTART = {
+  stacks = {
+    "blueprint",
+    "deconstruction-planner",
+    "gasturbinemk01",
+    "gasturbinemk02",
+  },
+  mod_name = "pyCoal"
 }
 
 return PYC

@@ -33,7 +33,8 @@ tailings_copper_iron.results[#tailings_copper_iron.results +1] = {type="item", n
 tailings_copper_iron.results[#tailings_copper_iron.results +1] = {type="item", name="iron-ore", amount=1, probability=0.4}
 data:extend({tailings_copper_iron})
 
-if _G.bobmods then
+--luacheck: globals bobmods
+if bobmods then
 tailings_tin_lead.name="tailings-tin-lead"
 tailings_tin_lead.order="tailings-b"
 tailings_tin_lead.icons[#tailings_tin_lead.icons +1] = {icon = "__pycoalprocessing__/graphics/icons/ores/tin-lead.png"}
