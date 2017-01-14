@@ -1,4 +1,5 @@
-local _TANK_SIZE = _G.PYC.TAILINGS_POND.TANK_SIZE
+--luacheck: no global
+local _TANK_SIZE = PYC.TAILINGS_POND.TANK_SIZE
 
 -------------------------------------------------------------------------------
 --[[Recipes]]--
@@ -112,10 +113,10 @@ local entity_tailings_pond =
   },
   circuit_connector_sprites =
   {
-    _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-    _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-    _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-    _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
+    get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
+    get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
+    get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
+    get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
   },
   circuit_wire_max_distance = 8.5
 }
@@ -131,7 +132,7 @@ local entity_tailings_pond_sprite =
   order="z[zebra]",
   corpse = "big-remnants",
   energy_per_hit_point = 1,
-  crash_trigger = _G.crash_trigger(),
+  crash_trigger = crash_trigger(),
   resistances =
   {
     {

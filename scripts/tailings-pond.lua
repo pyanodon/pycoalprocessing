@@ -4,11 +4,11 @@ local Position = require("stdlib.area.position")
 local Area = require ("stdlib.area.area")
 
 --list of ventable gasses
-local _gasses = _G.PYC.TAILINGS_POND.GAS
-local _scorch_chance = _G.PYC.TAILINGS_POND.SCORCH_CHANCE
-local _scorch_ticks = _G.PYC.TAILINGS_POND.SCORCH_TICKS
-local _tank_size = _G.PYC.TAILINGS_POND.TANK_SIZE
-local _pollution_mod = _G.PYC.TAILINGS_POND.GAS_POLLUTE_MODIFIER
+local _gasses = MOD.config.TAILINGS_POND.GAS
+local _scorch_chance = MOD.config.TAILINGS_POND.SCORCH_CHANCE
+local _scorch_ticks = MOD.config.TAILINGS_POND.SCORCH_TICKS
+local _tank_size = MOD.config.TAILINGS_POND.TANK_SIZE
+local _pollution_mod = MOD.config.TAILINGS_POND.GAS_POLLUTE_MODIFIER
 
 --Gets the terrain name at position
 local function get_terrain_name(surface, position) --luacheck: ignore

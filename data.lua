@@ -1,5 +1,6 @@
-if not _G.pysmods then _G.pysmods = {} end
-if not _G.pysmods.coalpro then _G.pysmods.coalpro = {} end
+--luacheck: no global
+if not pysmods then pysmods = {} end
+if not pysmods.coalpro then pysmods.coalpro = {} end
 
 --Settings and Helpers
 require("config") --Config variables
