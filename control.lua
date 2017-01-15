@@ -25,26 +25,14 @@ Event.death_events = {defines.events.on_preplayer_mined_item, defines.events.on_
 if MOD.config.DEBUG then
   QS = MOD.config.QUICKSTART --luacheck: globals QS
   require("stdlib.utils.quickstart")
+  require("debug_scripts")
 end
-
-local function debug_fluids()
-  local header = "Fluid, Def Temp, Max Temp, Heat Cap, Press to Speed, Flow to Energy\n"
-  game.write_file("logs/pycoalprocessing/fluid_data.csv", header)
-  for _, fluid in pairs (game.fluid_prototypes) do
-    local string
-    --string = "["..fluid.name.."]"
-    string = fluid.name .. "," ..fluid.default_temperature .. "," .. fluid.max_temperature .. ",".. fluid.heat_capacity .. "," .. fluid.pressure_to_speed_ratio .. ","..fluid.flow_to_energy_ratio .. "\n"
-    game.write_file("logs/pycoalprocessing/fluid_data.csv",string,true)
-  end
-end
-
 
 -------------------------------------------------------------------------------
 --[[Log Init and updates]]
 --Master Init
 function MOD.on_init()
   doDebug(MOD.name .. ": Installing", true)
-  if MOD.config.DEBUG then debug_fluids() end
 end
 Event.register(Event.core_events.init, MOD.on_init)
 
