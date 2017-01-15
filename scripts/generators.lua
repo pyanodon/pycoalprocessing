@@ -1,9 +1,9 @@
+-- Generators.lua base code liberated from KS Power.
 local generators = {}
 local MAX_TEMP = 100
 local MIN_TEMP = 15
 --luacheck: ignore base_1_14_10
 local base_1_14_10 = {21.5, 28, 34.5, 41, 47.5, 54, 60.5, 67, 73.5, 80, 86.5, 93, 99.5, 106}
---local List = require("stdlib/utils/list")
 
 local fluid_data = {
   ["syngas"] = {pollution = 0.30, eff = 12},
@@ -69,16 +69,6 @@ function generators.add_generator(entity)
     base_pollution = generator_data[entity.name].base_pollution,
     base_eff = generator_data[entity.name].base_eff,
   }
-  -- local generator = {
-  -- index = entity.unit_number,
-  -- name = entity.name,
-  -- entity = entity,
-  -- base_pollution = generators.generator_data[entity.name].base_pollution,
-  -- base_eff = generators.generator_data[entity.name].base_eff,
-  -- tick = game.tick,
-  -- }
-  -- global.generators[generator.index] = generator
-  -- List.push_right(global.tick_gens, entity.unit_number)
 end
 
 --Reset all generator data
@@ -137,17 +127,20 @@ function generators.check_generators()
 end
 
 function generators.on_tick()
-  if not global.generators then return end
-
+  --if not global.generators then return end
   local pots = global.generators
-  local interval = global.generator_interval
-  local tick = game.tick
-  for k, pot in pairs (pots) do
-    if (k + tick) % interval == 0 then
-      if not pot.fluidbox and pot.fluidbox.valid then
-        pots[k] = nil
-      else
-        heat_pot(pot)
+  if pots then
+    local interval = global.generator_interval
+    local tick = game.tick
+    for k, pot in pairs (pots) do
+      if (k + tick) % interval == 0 then
+        if not (pot.fluidbox and pot.fluidbox.valid) then
+          pots[k] = nil
+          global.generator_pot_count = global.generator_pot_count - 1
+          doDebug("Pot removed")
+        else
+          heat_pot(pot)
+        end
       end
     end
   end
@@ -159,7 +152,7 @@ Event.register(defines.events.on_tick, generators.on_tick)
 function generators.on_built_entity(event)
   if generator_data[event.created_entity.name] then
     generators.add_generator(event.created_entity)
-    doDebug("Generator added "..event.entity.unit_number)
+    doDebug("Generator added "..event.created_entity.unit_number)
   end
 end
 Event.register(Event.build_events, generators.on_built_entity)

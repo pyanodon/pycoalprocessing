@@ -1,10 +1,11 @@
---luacheck: ignore
+--luacheck: no global
 PYC = {} --Do not change
 PYC.TAILINGS_POND = {} -- Do not change
 
 --Messages and stuff for developers
 --These should be false in a release.
 PYC.DEBUG = true
+PYC.LOGLEVEL = 2
 
 --Changes some vanilla/mod recipes to use Creosate
 --USE_CREOSOTE_RECIPES, if false will disable use of creosote in vanilla recipes. if true
