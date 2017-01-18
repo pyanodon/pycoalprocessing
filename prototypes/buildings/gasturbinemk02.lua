@@ -36,10 +36,10 @@ local entity1={
   icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk02.png",
   flags = {"placeable-neutral","player-creation"},
   minable = {mining_time = 1, result = "gasturbinemk02"},
-  max_health = 300,
+  max_health = 500,
   corpse = "big-remnants",
-  effectivity = 400,
-  fluid_usage_per_tick = 0.005, --3/second
+  effectivity = 20,
+  fluid_usage_per_tick = 0.05,
   resistances =
   {
     {
