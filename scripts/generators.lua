@@ -49,7 +49,7 @@ local function set_temp(pot, box)
   end
 end
 
-local function generate_pollution(pot)
+local function generate_pollution(pot) --luacheck: ignore
 end
 
 local function heat_pot(pot)
@@ -72,7 +72,7 @@ end
 
 --Reset all generator data
 function generators.reset_generators()
-  doDebug("PYcoalProcessing Resetting all generators", true)
+  doDebug("Resetting all generators", true)
   global.generators = {}
   global.generator_pot_count = 0
   for _, surface in pairs(game.surfaces) do
@@ -126,7 +126,7 @@ end
 Event.register(Event.core_events.init, generators.on_init)
 
 function generators.on_configuration_changed(data)
-  if data.mod_changes and data.mod_changes[MOD.name] ~= nil then -- This Mod has changed
+  if data.mod_changes and data.mod_changes[MOD.name] then -- This Mod has changed
     doDebug("Updating Generators")
     global.archived_generators = nil
     global.gasturbinemk01 = nil --remove defunct table
