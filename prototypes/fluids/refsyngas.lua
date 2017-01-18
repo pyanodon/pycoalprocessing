@@ -12,7 +12,7 @@ local refsyngas_from_filtered_syngas= {
   },
   results=
   {
-    {type="fluid", name="refsyngas", amount=4},
+    {type="fluid", name="refsyngas", amount=5},
   },
   --main_product= "refsyngas",
   icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
@@ -32,7 +32,7 @@ local refsyngas_from_meth = {
   },
   results=
   {
-    {type="fluid", name="refsyngas", amount=5},
+    {type="fluid", name="refsyngas", amount=10},
     {type="fluid", name="water", amount=3}, --bob hydrogen
     {type="fluid", name="carbon-dioxide", amount=2},
     {type="fluid", name="acidgas", amount=6},
@@ -56,7 +56,7 @@ local refsyngas_from_meth_canister = {
   },
   results=
   {
-    {type="fluid", name="refsyngas", amount=5},
+    {type="fluid", name="refsyngas", amount=10},
     {type="fluid", name="water", amount=3}, --bob hydrogen
     {type="fluid", name="carbon-dioxide", amount=2},
     {type="fluid", name="acidgas", amount=6},
