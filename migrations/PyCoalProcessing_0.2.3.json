@@ -1,0 +1,10 @@
+{
+  "recipe":
+  [
+    ["treated-lumber", "treated-wood"]
+  ],
+  "item":
+  [
+    ["treated-lumber", "treated-wood"]
+  ]
+}
