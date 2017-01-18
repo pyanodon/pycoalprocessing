@@ -31,7 +31,11 @@ $(OUTPUT_DIR)/%: %
 	mkdir -p $(@D)
 	sed $(SED_EXPRS) $< > $@
 
-tag: git tag v$(VERSION_STRING)
+tag:
+	git tag -f v$(VERSION_STRING)
+
+check:
+	luacheck.bat control.lua
 
 package: package-copy $(OUT_FILES)
 	cd build && zip -r $(OUTPUT_NAME).zip $(OUTPUT_NAME)
