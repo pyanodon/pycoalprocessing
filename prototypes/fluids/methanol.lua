@@ -14,7 +14,7 @@ local methanol_from_syngas = {
 	},
 	results=
 	{
-		{type="fluid", name="methanol", amount=4},
+		{type="fluid", name="methanol", amount=5},
 	},
 	--main_product= "methanol",
 	icon = "__pycoalprocessing__/graphics/icons/methanol.png",
