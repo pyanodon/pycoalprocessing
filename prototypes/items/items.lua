@@ -107,7 +107,7 @@ local recipe_active_carbon = {
     --{type="item", name="sodium-hydroxide", amount=5},
   },
   results={
-    {type="item", name="active-carbon", amount=2},
+    {type="item", name="active-carbon", amount=3},
   },
   icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
   main_product= "active-carbon",
@@ -157,7 +157,7 @@ local recipe_tailings_dust = {
   enabled = "false",
   energy_required = 6,
   ingredients ={
-    {type="fluid", name="dirty-water", amount=10},
+    {type="fluid", name="dirty-water", amount=12},
   },
   results={
     {type="item", name="tailings-dust", amount=6},
