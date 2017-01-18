@@ -13,7 +13,7 @@ local recipe1=
 	  },
 	  results=
 	  {
-		{type="fluid", name="combustion-mixture1", amount=5},
+		{type="fluid", name="combustion-mixture1", amount=12},
 		{type="fluid", name="water", amount=20, temperature=100},
 	  },
 	  main_product= "combustion-mixture1",
