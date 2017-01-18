@@ -4,8 +4,8 @@ PYC.TAILINGS_POND = {} -- Do not change
 
 --Messages and stuff for developers
 --These should be false in a release.
-PYC.DEBUG = false
-PYC.LOGLEVEL = 0
+PYC.DEBUG = true
+PYC.LOGLEVEL = 2
 
 --Changes some vanilla/mod recipes to use Creosate
 --USE_CREOSOTE_RECIPES, if false will disable use of creosote in vanilla recipes. if true
@@ -51,6 +51,10 @@ PYC.QUICKSTART = {
     "deconstruction-planner",
     "gasturbinemk01",
     "gasturbinemk02",
+    "creative-mode_fluid-source",
+    "creative-mode_passive-energy-void",
+    "creative-mode_super-electric-pole",
+    "creative-mode_energy-source"
   },
   mod_name = "pyCoal"
 }

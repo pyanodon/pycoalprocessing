@@ -12,8 +12,10 @@ OUT_FILES := $(SED_FILES:%=$(OUTPUT_DIR)/%)
 SED_EXPRS := -e 's/{{MOD_NAME}}/$(PACKAGE_NAME)/g'
 SED_EXPRS += -e 's/{{VERSION}}/$(VERSION_STRING)/g'
 
-all: clean package
-release: clean package install_mod tag
+all: clean
+
+release: clean package tag
+
 package-copy: $(PKG_DIRS) $(PKG_FILES)
 	mkdir -p $(OUTPUT_DIR)
 ifneq ($(PKG_COPY),)
@@ -28,6 +30,8 @@ $(OUTPUT_DIR)/%.lua: %.lua
 $(OUTPUT_DIR)/%: %
 	mkdir -p $(@D)
 	sed $(SED_EXPRS) $< > $@
+
+tag: git tag v$(VERSION_STRING)
 
 package: package-copy $(OUT_FILES)
 	cd build && zip -r $(OUTPUT_NAME).zip $(OUTPUT_NAME)

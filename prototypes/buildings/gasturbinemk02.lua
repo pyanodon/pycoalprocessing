@@ -14,7 +14,7 @@ local recipe1={
     {"iron-gear-wheel", 40},
   },
   result= "gasturbinemk02",
-  icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk02.png",
+  --icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk02.png",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
@@ -23,7 +23,7 @@ local item1={
   name = "gasturbinemk02",
   icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk02.png",
   flags = {"goes-to-quickbar"},
-  subgroup = "coal-processing",
+  subgroup = "py-power",
   order = "a-d[gasturbinemk02]",
   place_result = "gasturbinemk02",
   stack_size = 10,

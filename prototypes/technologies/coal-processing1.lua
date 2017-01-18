@@ -37,7 +37,7 @@ local technology = {
     },
     {
       type = "unlock-recipe",
-      recipe = "treated-lumber"
+      recipe = "treated-wood"
     },
     {
       type = "unlock-recipe",
