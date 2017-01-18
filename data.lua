@@ -29,6 +29,7 @@ require("prototypes.items.tailings")
 
 --Tiles and Terrain
 require ("prototypes.tiles.py-asphalt")
+require ("prototypes.tiles.py-coal-tile")
 require ("prototypes.tiles.polluted-ground")
 
 --Fluids
