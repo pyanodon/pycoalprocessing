@@ -1,7 +1,7 @@
 -- Generators.lua base code liberated from KS Power.
 local generators = {}
 local MAX_TEMP = 100
-local MIN_TEMP = 15
+--local MIN_TEMP = 15
 --luacheck: ignore base_1_14_10
 local base_1_14_10 = {21.5, 28, 34.5, 41, 47.5, 54, 60.5, 67, 73.5, 80, 86.5, 93, 99.5, 106}
 
@@ -26,8 +26,8 @@ local fluid_data = {
   ["methanol"] = {pollution = 0.50, eff = 10},
   ["hydrogen"] = {pollution = 0.00, eff = 7},
   --Testing liquids, remove before release.
-  ["water"] = {pollution = 0.0, eff = 50},
-  ["oxygen"] = {pollution = 0.0, eff = 0},
+  -- ["water"] = {pollution = 0.0, eff = 50},
+  -- ["oxygen"] = {pollution = 0.0, eff = 0},
 }
 
 local generator_data = {
@@ -49,15 +49,14 @@ local function set_temp(pot, box)
   end
 end
 
+local function generate_pollution(pot)
+end
+
 local function heat_pot(pot)
   local box = pot.fluidbox[1]
   if not box then return end --Empty box
-  --local temp = get_temp(pot)
   box.temperature = set_temp(pot, box)
   pot.fluidbox[1] = box
-end
-
-local function generate_pollution(pot)
 end
 
 --Add the generator pot to a table
@@ -86,45 +85,6 @@ function generators.reset_generators()
   end
 end
 Event.register(Event.reset_mod, generators.reset_generators)
-
---check generators for fluid and set tempurature and pollution
-function generators.check_generators()
-  -- --for _, generator in pairs(global.generators) do
-  -- local generator = global.generators[index]
-  -- local tick = game.tick
-  -- if generator and generator.entity and generator.entity.valid then
-  -- List.push_right(global.tick_gens, index)
-  -- if generator.entity.fluidbox[1] then
-  -- local pot = generator.entity.fluidbox[1]
-  -- if pot then
-  -- local pot_data = generators.fluid_data[pot.type]
-  -- if pot_data then
-  -- --Set the temp based on effiency values
-  -- pot.temperature = get_temp(pot_data.eff, generator.base_eff)
-  -- --pot.amount = min(tick - (generator.tick or 0), 0)
-  -- generator.tick = tick
-  --
-  -- --push the pot to the entity
-  -- generator.entity.fluidbox[1]=pot
-  --
-  -- --create pollution with liquid and generator pollution values.
-  -- -- if pot.amount < 10 then
-  -- -- generator.surface.pollute(generator.position, ((pot_data.pollution + generator.base_pollution)/2))
-  -- -- end
-  -- else
-  -- --25deg or less stops providing electricity.
-  -- pot.temperature = 15
-  -- generator.entity.fluidbox[1] = pot
-  -- end
-  -- end
-  -- end
-  -- else
-  -- --generator invalid so lets remove it.
-  -- doDebug("removing invalid generator "..index)
-  -- global.generators[index]=nil
-  -- end
-  -- --end
-end
 
 function generators.on_tick()
   --if not global.generators then return end
