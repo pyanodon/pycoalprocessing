@@ -3,12 +3,12 @@ local tailings_pond = {}
 local Position = require("stdlib.area.position")
 local Area = require ("stdlib.area.area")
 
---list of ventable gasses
-local _gasses = MOD.config.TAILINGS_POND.GAS
-local _scorch_chance = MOD.config.TAILINGS_POND.SCORCH_CHANCE
-local _scorch_ticks = MOD.config.TAILINGS_POND.SCORCH_TICKS
-local _tank_size = MOD.config.TAILINGS_POND.TANK_SIZE
-local _pollution_mod = MOD.config.TAILINGS_POND.GAS_POLLUTE_MODIFIER
+local CFG = MOD.config.TAILINGS_POND
+local _gasses = CFG.GAS
+local _scorch_chance = CFG.SCORCH_CHANCE
+local _scorch_ticks = CFG.SCORCH_TICKS
+local _tank_size = CFG.TANK_SIZE
+local _pollution_mod = CFG.GAS_POLLUTE_MODIFIER
 
 --Gets the terrain name at position
 local function get_terrain_name(surface, position) --luacheck: ignore
@@ -24,10 +24,15 @@ local function get_unpolluted_terrain(surface, position) --luacheck: ignore
   return tiles
 end
 
+--Destroy any attachments or sprites attached to the entity.
+local function destroy_attachments(pond)
+  if pond.sprite and pond.sprite.valid then pond.sprite.destroy() end
+  if pond.spinner and pond.spinner.valid then pond.spinner.destroy() end
+end
+
 --Pond contains gases, lets spill them out. Only negative is this can be used as a "gas" void so...
 --If the gas is "polluting" create pollution, else just vent.
 local function empty_pond_gas(fluid, surface, position)
-
   if fluid then
     if (string.contains(fluid.type, "-gas") or string.contains (fluid.type, "gas-") and not _gasses[fluid.type] == false)
     or _gasses[fluid.type] == true then
@@ -38,7 +43,36 @@ local function empty_pond_gas(fluid, surface, position)
     end
     return fluid
   end
+end
 
+local function create_sprite(entity)
+  local sprite = entity.surface.create_entity({name = "tailings-pond-sprite", force=entity.force, position = entity.position})
+  sprite.orientation = 0
+  sprite.destructible = false
+  sprite.operable = false
+  sprite.rotatable = false
+  sprite.insert({name="coal",count=1})
+  return sprite
+end
+
+local function create_spinner(entity)
+  local spinner = entity.surface.create_entity({name = "tailings-pond-spinner", force=entity.force, position = entity.position})
+  spinner.insert({name="speed-module", count=1})
+  spinner.destructible = false
+  spinner.operable = false
+  return spinner
+end
+
+local function new_pond_data(entity, sprite, spinner)
+  return {
+    tick = game.tick,
+    index = entity.unit_number,
+    entity = entity,
+    sprite = sprite,
+    spinner = spinner,
+    full = nil,
+    fluid_per = 0,
+  }
 end
 
 --As the tailings pond get full they leak out and start polluting the ground around them
@@ -56,7 +90,7 @@ local function scorch_earth(pond, tick)
       if not pond.full then
         pond.full=tick
         pond.fluid_per = 1
-      elseif (tick >= (pond.full + _scorch_ticks)) and (_scorch_chance > 0 and math.random(1,100) <= _scorch_chance) then
+      elseif ((tick >= (pond.full + _scorch_ticks)) and (_scorch_chance > 0 and math.random(1,100) <= _scorch_chance)) or pond.spinner.energy == 0 then
         --spill fluid out here, if not water pollute.
         fluid.amount = fluid.amount / 2
         pond.fluid_per = .5
@@ -74,9 +108,7 @@ local function scorch_earth(pond, tick)
     else -- not full fluid
       --Get fluid percentage amount for animation from 0.25 starts first frame, .974 is end of last frame
       pond.fluid_per = tonumber( string.format("%.3f", (fluid.amount / _tank_size)))
-
     end
-
   else -- no fluid
     pond.fluid_per = 0
   end
@@ -84,87 +116,64 @@ local function scorch_earth(pond, tick)
   pond.entity.fluidbox[1] = fluid
 end
 
---Switches pond "intake" pumps/valves on or off based on power.
-local function pond_active(pond) --luacheck: ignore
-  if pond.spinner.energy <= 0 and pond.entity.active then
-    pond.entity.active=false
-    return false
-  elseif pond.spinner.energy > 0 and not pond.entity.active then
-    pond.entity.active=true
-    return true
-  end
-end
-
 --Sets animation frame based on tank filled percentage
 local function set_animation(pond)
   local fluid_per = pond.fluid_per
-
   --adjust percentage to match frames.
   if fluid_per > .974 then fluid_per = .974
   elseif fluid_per > 0 and fluid_per < 0.025 then fluid_per = 0.025 end
-
   pond.sprite.orientation = fluid_per
 end
 
--- --Reset all tailings_pond data
--- --not ready to be reset yet.
--- function tailings_pond.reset_tailings_ponds()
---   doDebug("Resetting all tailings ponds")
---   global.tailings_ponds = {}
---   for _, surface in pairs(game.surfaces) do
---     local entities = surface.find_entities_filtered{name="tailings-pond"}
---     for _, entity in pairs(entities) do
---
---     end
---   end
--- end
---Event.register(Event.reset_mod, tailings_pond.reset_tailings_ponds)
+-------------------------------------------------------------------------------
+--[[Events]]--
+
+--Reset all tailings_pond data
+function tailings_pond.reset_ponds()
+  doDebug("Resetting all tailings ponds", true)
+  global.tailings_ponds = {}
+  local ponds = global.tailings_ponds
+  for _, surface in pairs(game.surfaces) do
+    for _, pond in pairs(surface.find_entities_filtered{name="tailings-pond"}) do
+      --local search = Area.offset(pond.prototype.selection_box, pond.position)
+      local spinner = surface.find_entities_filtered{position=pond.position, name="tailings-pond-spinner", limit=1}[1]
+      local sprite = surface.find_entities_filtered{position=pond.position, name="tailings-pond-sprite", limit=1}[1]
+      if not sprite then
+        doDebug("Sprite not found for "..pond.unit_number)
+        sprite = create_sprite(pond)
+      end
+      if not spinner then
+        doDebug("Spinner not found for "..pond.unit_number)
+        spinner = create_spinner(pond)
+      end
+      local pond_data = new_pond_data(pond, sprite, spinner)
+      ponds[pond_data.index] = pond_data
+    end
+  end
+end
+Event.register(Event.reset_mod, tailings_pond.reset_ponds)
 
 function tailings_pond.create(event)
   if event.created_entity.name == "tailings-pond" then
-
-    local entity = event.created_entity
-    --entity.rotatable=false
-    entity.direction=defines.direction.north
-    --entity.active=false
-
-    local sprite = entity.surface.create_entity({name = "tailings-pond-sprite", force=entity.force, position = entity.position})
-    sprite.orientation= 0
-    sprite.destructible = false
-    sprite.operable=false
-    sprite.rotatable=false
-    sprite.insert({name="coal",count=1})
-
-    local spinner = entity.surface.create_entity({name = "tailings-pond-spinner", force=entity.force, position = entity.position})
-    spinner.insert({name="speed-module", count=1})
-    spinner.destructible = false
-    spinner.operable=false
-
     local ponds = global.tailings_ponds
-    local pond = {
-      tick = event.tick,
-      index = entity.unit_number,
-      entity = entity,
-      sprite = sprite,
-      spinner = spinner,
-      full = nil,
-      fluid_per = 0,
-      mt = {}
-    }
+    local entity = event.created_entity
+    entity.direction = defines.direction.north
+
+    local sprite = create_sprite(entity)
+    local spinner = create_spinner(entity)
+
+    local pond = new_pond_data(entity, sprite, spinner)
     ponds[pond.index] = pond
   end
 end
 Event.register(Event.build_events, tailings_pond.create)
 
---Destroy any attachments or sprites attached to the entity.
-local function destroy_attachments(pond)
-  if pond.sprite and pond.sprite.valid then pond.sprite.destroy() end
-  if pond.spinner and pond.spinner.valid then pond.spinner.destroy() end
-end
+
 
 function tailings_pond.destroy(event)
   if event.entity.name == "tailings-pond" then
     if global.tailings_ponds[event.entity.unit_number] then
+      doDebug("Destroying pond "..event.entity.unit_number)
       destroy_attachments(global.tailings_ponds[event.entity.unit_number])
       global.tailings_ponds[event.entity.unit_number]=nil
     end
@@ -172,24 +181,26 @@ function tailings_pond.destroy(event)
 end
 Event.register(Event.death_events, tailings_pond.destroy)
 
+function tailings_pond.boot_out(event)
+  local player=game.players[event.player_index]
+  if player.vehicle and player.vehicle.name == "tailings-pond-sprite" then
+    player.vehicle.passenger = false
+    player.teleport(player.position)
+  end
+end
+Event.register(defines.events.on_player_driving_changed_state, tailings_pond.boot_out)
+
 --Run tick handler every 30 ticks. In the future this will need to be spread out to itereate over a queing system.
 function tailings_pond.on_tick(event)
   if event.tick % 30 == 0 then
     local ponds=global.tailings_ponds
     for _, pond in pairs(ponds) do
       if pond.entity.valid and pond.sprite.valid then
-
         --Vent any gasses, also check for some bob gases.
-        -- if water then Pollute the ground, and drain some fluid
+        -- if liquid then Pollute the ground, and drain some fluid
         scorch_earth(pond, event.tick)
-
-        --Should pond be active, If it has no power then the "intake pumps" are turned off and will not allow it to fill.
-        --sort of has issues though!
-        --pond_active(pond)
-
         --Set the animation needed based on fill level..
         set_animation(pond)
-
       end
     end
   end
@@ -201,5 +212,14 @@ function tailings_pond.on_init()
   MOD.logfile.log("Init tailings_ponds")
 end
 Event.register(Event.core_events.init, tailings_pond.on_init)
+
+function tailings_pond.on_configuration_changed(data)
+  if data.mod_changes and data.mod_changes[MOD.name] then -- This Mod has changed
+    global.talinings_ponds = global.tailings_ponds or {}
+    tailings_pond.reset_ponds()
+    MOD.logfile.log("Config Changed tailings_ponds")
+  end
+end
+Event.register(Event.core_events.configuration_changed, tailings_pond.on_configuration_changed)
 
 return tailings_pond
