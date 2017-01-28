@@ -21,6 +21,28 @@ local recipe1=
   icon = "__pycoalprocessing__/graphics/icons/coalgas.png",
   --order = "a [coal-gas]",
 }
+
+local recipe2=
+{
+  type = "recipe",
+  name = "coal-gas-from-creosote",
+  category = "olefin",
+  enabled = "false",
+  energy_required = 3,
+  ingredients ={
+    {type="item", name="nichrome", amount=4},
+	{type="fluid", name="creosote", amount=40},
+	{type="fluid", name="hydrogen", amount=20},
+  },
+  results=
+  {
+    {type="fluid", name="coal-gas", amount=20},
+  },
+  main_product= "coal-gas",
+  icon = "__pycoalprocessing__/graphics/icons/coalgas.png",
+  --order = "a [coal-gas]",
+}
+
 -------------------------------------------------------------------------------
 --[[items]]--
 local item1=
@@ -44,5 +66,6 @@ local entity1=nil
 -------------------------------------------------------------------------------
 --[[Extend Data]]--
 if recipe1 then data:extend({recipe1}) end
+if recipe2 then data:extend({recipe2}) end
 if item1 then data:extend({item1}) end
 if entity1 then data:extend({entity1}) end

@@ -53,6 +53,14 @@ data:extend(
 	  type = "recipe-category",
       name = "dessulfurization",
     },
+	{
+	  type = "recipe-category",
+      name = "olefin",
+    },
+	{
+	  type = "recipe-category",
+      name = "soil-extraction",
+    },
 
 }
 )
