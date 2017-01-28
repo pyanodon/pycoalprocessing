@@ -15,11 +15,13 @@ require("prototypes.recipe-categories")
 --Technolgies
 require("prototypes.technologies.coal-processing1")
 require("prototypes.technologies.coal-processing2")
+require("prototypes.technologies.coal-processing3")
 require("prototypes.technologies.methanol-processing1")
 require("prototypes.technologies.methanol-processing2")
 require("prototypes.technologies.py-asphalt")
 require("prototypes.technologies.coolingmk01")
 require("prototypes.technologies.dessulfurization")
+require("prototypes.technologies.excavation01")
 
 --Items without entities
 require("prototypes.items.treated-lumber")
@@ -44,6 +46,9 @@ require("prototypes.fluids.dirty-water")
 require("prototypes.fluids.flue-gas")
 require("prototypes.fluids.combustion-mixture1")
 require("prototypes.fluids.water-saline")
+require("prototypes.fluids.aromatics")
+require("prototypes.fluids.diesel")
+require("prototypes.fluids.olefin")
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -61,6 +66,8 @@ require("prototypes.buildings.power-house")
 require("prototypes.buildings.cooling-tower-mk01")
 require("prototypes.buildings.evaporator")
 require("prototypes.buildings.dessulfurizator-unit")
+require("prototypes.buildings.olefin-plant")
+require("prototypes.buildings.soil-extractormk01")
 
 --move to syngas recipe stuff in data-updates?
 for _, v in pairs(data.raw.module) do
