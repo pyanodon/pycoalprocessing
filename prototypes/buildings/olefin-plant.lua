@@ -129,10 +129,10 @@ local entity1={
   working_visualisations =
   {
     {
-      north_position = {0.15, -0.79},
-      west_position = {0.15, -0.79},
-      south_position = {0.15, -0.79},
-      east_position = {0.15, -0.79},
+      north_position = {0.17, -0.53},
+      west_position = {0.17, -0.53},
+      south_position = {0.17, -0.53},
+      east_position = {0.17, -0.53},
       animation =
       {
         filename = "__pycoalprocessing__/graphics/entity/olefin-plant/olefin-plant.png",

@@ -119,6 +119,7 @@ local nexelit_ore = {
   name = "nexelit-ore",
   icon = "__pycoalprocessing__/graphics/icons/nexelit-ore.png",
   flags = {"goes-to-main-inventory"},
+  subgroup = "py-items",
   order = "g",
   stack_size = 300
 }
@@ -129,6 +130,7 @@ local drill_head = {
   name = "drill-head",
   icon = "__pycoalprocessing__/graphics/icons/drill-head.png",
   flags = {"goes-to-main-inventory"},
+  subgroup = "py-items",
   order = "g",
   stack_size = 200
 }

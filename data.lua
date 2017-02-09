@@ -33,6 +33,7 @@ require("prototypes.items.ground-borer-recipes")
 
 --Tiles and Terrain
 require ("prototypes.tiles.py-asphalt")
+require ("prototypes.tiles.py-coal-tile")
 require ("prototypes.tiles.polluted-ground")
 
 --Fluids
@@ -71,6 +72,7 @@ require("prototypes.buildings.dessulfurizator-unit")
 require("prototypes.buildings.olefin-plant")
 require("prototypes.buildings.soil-extractormk01")
 require("prototypes.buildings.ground-borer")
+require("prototypes.buildings.fts-reactor")
 
 --move to syngas recipe stuff in data-updates?
 for _, v in pairs(data.raw.module) do
