@@ -22,6 +22,7 @@ require("prototypes.technologies.py-asphalt")
 require("prototypes.technologies.coolingmk01")
 require("prototypes.technologies.dessulfurization")
 require("prototypes.technologies.excavation01")
+require("prototypes.technologies.excavation02")
 
 --Items without entities
 require("prototypes.items.treated-lumber")
