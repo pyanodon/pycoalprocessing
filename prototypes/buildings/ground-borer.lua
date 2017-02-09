@@ -106,7 +106,7 @@ local entity1={
   },
   allowed_effects = {"consumption", "speed", "productivity", "pollution"},
   crafting_categories = {"ground-borer"},
-  crafting_speed = 1.2,
+  crafting_speed = 0.5,
   energy_source =
   {
     type = "electric",
@@ -121,9 +121,10 @@ local entity1={
     filename = "__pycoalprocessing__/graphics/entity/ground-borer/ground-borer.png",
     width = 307,
     height = 311,
+	line_length = 6,
     frame_count = 30,
-    animation_speed = 0.6,
-    shift = {0.17, -0.53},
+    animation_speed = 0.8,
+    shift = {0.2, -0.03},
   },
 
 
@@ -132,27 +133,27 @@ local entity1={
     --1
     {
       production_type = "input",
-      pipe_picture = pipe_pictures(nil, {-0.00,-0.75}, nil, nil),
+      pipe_picture = pipe_pictures(nil, {-0.00,-0.70}, nil, nil),
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_area = 10,
       base_level = -1,
-      pipe_connections = {{ type="input", position = {-0.5, 4.5} }}
+      pipe_connections = {{ type="input", position = {0.0, 5.0} }}
     },
     --2
     {
       production_type = "input",
-      pipe_picture = pipe_pictures(nil, {-0.00,-0.75}, nil, nil),
+      pipe_picture = pipe_pictures(nil, {-0.00,-0.70}, nil, nil),
       pipe_covers = Proto.pipe_covers(true, true, true, true),
       base_area = 10,
       base_level = -1,
-      pipe_connections = {{ type="input", position = {0.5, 4.5} }}
+      pipe_connections = {{ type="input", position = {0.0, -5.0} }}
     },
   },
   vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
   working_sound =
   {
-    sound = { filename = "__pycoalprocessing__/sounds/olefin-plant.ogg" },
-    idle_sound = { filename = "__pycoalprocessing__/sounds/olefin-plant.ogg", volume = 0.75 },
+    sound = { filename = "__pycoalprocessing__/sounds/ground-borer.ogg" },
+    idle_sound = { filename = "__pycoalprocessing__/sounds/ground-borer.ogg", volume = 0.75 },
     apparent_volume = 2.5,
   },
 }

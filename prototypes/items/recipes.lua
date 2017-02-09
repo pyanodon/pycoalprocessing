@@ -119,8 +119,6 @@ local heavy_oil_from_coal_gas ={
   },
   main_product= "heavy-oil",
   icon = "__base__/graphics/icons/fluid/heavy-oil.png",
-  subgroup = "py-items",
-  order = "Water",
 }
 -------------------------------------------------------------------------------
 --LIGHT OIL FROM SYNGAS
@@ -141,8 +139,6 @@ local light_oil_from_syngas ={
   },
   main_product= "light-oil",
   icon = "__base__/graphics/icons/fluid/light-oil.png",
-  subgroup = "py-items",
-  order = "Water",
 }
 -------------------------------------------------------------------------------
 --PETGAS FROM REFSYNGAS
@@ -163,8 +159,6 @@ local petgas_from_refsyngas ={
   },
   main_product= "petroleum-gas",
   icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
-  subgroup = "py-items",
-  order = "Water",
 }
 -------------------------------------------------------------------------------
 --REFINED SYNGAS TO LIGHT OIL
@@ -182,11 +176,12 @@ local ref_to_light_oil = {
   },
   results={
     {type="fluid", name="light-oil", amount=40},
-	{type="fluid", name="water", amount=50, temperature=70},
+	{type="fluid", name="water", amount=50, temperature=100},
 	{type="fluid", name="carbon-dioxide", amount=20},
   },
   icon = "__pycoalprocessing__/graphics/icons/ref_to_light_oil.png",
-  order = "d [syn-gas]",
+  main_product= "light-oil",
+  order = "c",
 }
 -------------------------------------------------------------------------------
 --REFINED SYNGAS TO PETROLEUM GAS
@@ -204,11 +199,12 @@ local ref_to_petroleum_gas = {
   },
   results={
     {type="fluid", name="petroleum-gas", amount=60},
-	{type="fluid", name="water", amount=50, temperature=70},
+	{type="fluid", name="water", amount=50, temperature=100},
 	{type="fluid", name="carbon-dioxide", amount=10},
   },
   icon = "__pycoalprocessing__/graphics/icons/ref_to_petroleum_gas.png",
-  order = "d [syn-gas]",
+  main_product= "petroleum-gas",
+  order = "c",
 }
 -------------------------------------------------------------------------------
 --IRON OXIDE TO IRON PLATE
@@ -272,8 +268,6 @@ local recipe_fluegas_to_syngas ={
   results={
     {type="fluid", name="syngas", amount=30},
   },
-  subgroup = "py-syngas",
-  order = "fluegas_to_syngas",
   icon = "__pycoalprocessing__/graphics/icons/fluegas_to_syngas.png",
 }
 -------------------------------------------------------------------------------
@@ -290,8 +284,6 @@ local recipe_soil ={
   results={
     {type="item", name="soil", amount=5},
   },
-  subgroup = "py-items",
-  order = "soil",
   icon = "__pycoalprocessing__/graphics/icons/soil.png",
 }
 -------------------------------------------------------------------------------
@@ -313,11 +305,11 @@ local recipe_nichrome = {
 local recipe_drill_head = {
   type = "recipe",
   name = "drill-head",
-  category = "assembly",
+  category = "crafting",
   energy_required = 3,
   ingredients ={
     {type="item", name="steel-plate", amount=8},
-    {type="item", name="chromium", amount=5},
+    {type="item", name="chromium", amount=3},
 	{type="item", name="titanium-plate", amount=5},
   },
   results={

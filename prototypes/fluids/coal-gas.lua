@@ -18,31 +18,31 @@ local recipe1=
     {type="item", name="coke", amount=2},
   },
   main_product= "coal-gas",
-  icon = "__pycoalprocessing__/graphics/icons/coalgas.png",
+  icon = "__pycoalprocessing__/graphics/icons/coalgas-from-coal.png",
   --order = "a [coal-gas]",
 }
 
 local recipe2=
 {
   type = "recipe",
-  name = "coal-gas-from-creosote",
-  category = "olefin",
+  name = "coal-gas-from-wood",
+  category = "distilator",
   enabled = "false",
   energy_required = 3,
   ingredients ={
-    {type="item", name="nichrome", amount=4},
-	{type="fluid", name="creosote", amount=40},
-	{type="fluid", name="hydrogen", amount=20},
+    {type="item", name="raw-wood", amount=10},
   },
   results=
   {
-    {type="fluid", name="coal-gas", amount=20},
+    {type="fluid", name="coal-gas", amount=2},
+    {type="fluid", name="tar", amount=3},
+    {type="item", name="iron-oxide", amount=1, probability=0.5},
+    {type="item", name="coal", amount=10},
   },
   main_product= "coal-gas",
-  icon = "__pycoalprocessing__/graphics/icons/coalgas.png",
+  icon = "__pycoalprocessing__/graphics/icons/coalgas-from-wood.png",
   --order = "a [coal-gas]",
 }
-
 -------------------------------------------------------------------------------
 --[[items]]--
 local item1=
