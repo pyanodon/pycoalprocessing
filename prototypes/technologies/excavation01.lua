@@ -16,8 +16,18 @@ local technology = {
 		type = "unlock-recipe",
 		recipe = "soil-extractormk01"
 	},
-
-
+	{
+		type = "unlock-recipe",
+		recipe = "ground-borer"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "drill-head"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "mining-nexelit"
+	},
   },
  
   unit =

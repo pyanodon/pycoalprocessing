@@ -28,6 +28,8 @@ require("prototypes.items.treated-lumber")
 require("prototypes.items.items")
 require("prototypes.items.canister")
 require("prototypes.items.tailings")
+require("prototypes.items.recipes")
+require("prototypes.items.ground-borer-recipes")
 
 --Tiles and Terrain
 require ("prototypes.tiles.py-asphalt")
@@ -68,6 +70,7 @@ require("prototypes.buildings.evaporator")
 require("prototypes.buildings.dessulfurizator-unit")
 require("prototypes.buildings.olefin-plant")
 require("prototypes.buildings.soil-extractormk01")
+require("prototypes.buildings.ground-borer")
 
 --move to syngas recipe stuff in data-updates?
 for _, v in pairs(data.raw.module) do
