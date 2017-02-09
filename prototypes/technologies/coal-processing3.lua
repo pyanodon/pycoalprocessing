@@ -42,13 +42,20 @@ local technology = {
     },
 	{
 		type = "unlock-recipe",
-		recipe = "coal-gas-from-creosote"
+		recipe = "olefin"
     },
 	{
 		type = "unlock-recipe",
-		recipe = "olefin"
+		recipe = "fts-reactor"
     },
-
+	{
+		type = "unlock-recipe",
+		recipe = "ref_to_light_oil"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "ref_to_petroleum_gas"
+    },
   },
  
   unit =

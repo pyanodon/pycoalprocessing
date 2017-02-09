@@ -14,8 +14,8 @@ local mining_nexelit ={
     {type="item", name="nexelit-ore", amount=15,},
   },
   main_product= "nexelit-ore",
-  icon = "__base__/graphics/icons/drilling/drilling-nexelit.png",
-  order = "g [py-drilling]",
+  icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-nexelit.png",
+  order = "g [coal-processing]",
 }
 
 data:extend({

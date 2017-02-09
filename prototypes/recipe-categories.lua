@@ -61,6 +61,13 @@ data:extend(
 	  type = "recipe-category",
       name = "soil-extraction",
     },
-
+	{
+	  type = "recipe-category",
+      name = "ground-borer",
+    },
+	{
+	  type = "recipe-category",
+      name = "fts-reactor",
+    },
 }
 )
