@@ -2,11 +2,11 @@
 require("stdlib.event.event")
 require("stdlib.config.config")
 
-local QS = Config.new(QS or {})
+local QS = Config.new(QS or (MOD and MOD.config and MOD.config.quickstart) or {})
 
 if remote.interfaces["quickstart-script"] then
-  game.print("Existing quickstart script - "..remote.call("quickstart-script", "creative_mode_quickstart_registerd_to"))
-  return remote.call("quickstart-script", "registerd_to")
+  if game then game.print("Existing quickstart script - "..remote.call("quickstart-script", "creative_mode_quickstart_registered_to")) end
+  return remote.call("quickstart-script", "registered_to")
 end
 local qs_interface = {}
 qs_interface.creative_mode_quickstart_registerd_to = function()
@@ -14,7 +14,7 @@ qs_interface.creative_mode_quickstart_registerd_to = function()
   return QS.get("mod_name", "not-set")
 end
 qs_interface.registered_to = function()
-  return QS.get("mod_name", "not-set")
+  return (MOD and MOD.name) or QS.get("mod_name", "not-set")
 end
 remote.add_interface("quickstart-script", qs_interface)
 
