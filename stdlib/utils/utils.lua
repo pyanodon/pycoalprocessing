@@ -4,17 +4,7 @@
 local author_name1 = "Nexela"
 local author_name2 = "Nexela"
 
-require("stdlib.game")
-require("stdlib.surface")
---require("stdlib.iterator")
-require("stdlib.table")
-require("stdlib.string")
-require("stdlib.time")
-
-require("stdlib.utils.colors")
---require("stdlib.utils.list")
 -------------------------------------------------------------------------------
-
 --@return Player Object
 function Game.get_valid_player(player_or_index)
   if not player_or_index then
@@ -206,6 +196,22 @@ end
 
 -----------------------------------------------------------------------------------
 --Additional Table Helpers
+
+function table.raw_merge(tblA, tblB, safe_merge)
+    --safe_merge, only merge tblB[k] if it does not already exsist in tblA
+    if safe_merge then
+        for k, v in pairs(tblB) do
+            if not rawget(tblA, k) then
+                rawset(tblA, k, v)
+            end
+        end
+    else
+        for k, v in pairs(tblB) do
+            rawset(tblA, k, v)
+        end
+    end
+    return tblA
+end
 
 function table.val_to_str ( v )
   if "string" == type( v ) then
