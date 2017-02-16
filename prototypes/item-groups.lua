@@ -34,6 +34,12 @@ data:extend(
     },
     {
       type = "item-subgroup",
+      name = "py-items-hpf",
+      group = "coal-processing",
+      order = "c-1",
+    },
+    {
+      type = "item-subgroup",
       name = "py-quenching-ores",
       group = "coal-processing",
       order = "d",
