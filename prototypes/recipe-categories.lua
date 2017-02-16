@@ -53,6 +53,21 @@ data:extend(
 	  type = "recipe-category",
       name = "desulfurization",
     },
-
+	{
+	  type = "recipe-category",
+      name = "olefin",
+    },
+	{
+	  type = "recipe-category",
+      name = "soil-extraction",
+    },
+	{
+	  type = "recipe-category",
+      name = "ground-borer",
+    },
+	{
+	  type = "recipe-category",
+      name = "fts-reactor",
+    },
 }
 )
