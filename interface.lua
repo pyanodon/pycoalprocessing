@@ -59,7 +59,7 @@ function interface.config(key, value, silent)
 end
 
 --Require the awesome console for quick script debugging
-interface.console = require("stdlib.utils.console")
+interface.console = require("stdlib.debug.console")
 
 --Register with creative-mode for easy testing
 if remote.interfaces["creative-mode"] and remote.interfaces["creative-mode"]["register_remote_function_to_modding_ui"] then
