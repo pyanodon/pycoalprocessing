@@ -74,7 +74,7 @@ end
 
 --Reset all generator data
 function generators.reset_generators()
-    MOD.log("Resetting all generators", true)
+    MOD.log("Resetting all generators", 1)
     global.generators = {}
     global.generator_pot_count = 0
     for _, surface in pairs(game.surfaces) do
