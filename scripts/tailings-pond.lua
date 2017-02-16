@@ -129,7 +129,7 @@ end
 
 --Reset all tailings_pond data
 function tailings_pond.reset_ponds()
-    MOD.log("Resetting all tailings ponds", true)
+    MOD.log("Resetting all tailings ponds", 1)
     global.tailings_ponds = {}
     local ponds = global.tailings_ponds
     for _, surface in pairs(game.surfaces) do
@@ -206,7 +206,7 @@ Event.register(defines.events.on_tick, tailings_pond.on_tick)
 
 function tailings_pond.on_init()
     global.tailings_ponds={}
-    MOD.logfile.log("Init tailings_ponds")
+    MOD.log("Init tailings_ponds")
 end
 Event.register(Event.core_events.init, tailings_pond.on_init)
 
@@ -214,7 +214,7 @@ function tailings_pond.on_configuration_changed(data)
     if data.mod_changes and data.mod_changes[MOD.name] then -- This Mod has changed
         global.talinings_ponds = global.tailings_ponds or {}
         tailings_pond.reset_ponds()
-        MOD.logfile.log("Config Changed tailings_ponds")
+        MOD.log("Config Changed tailings_ponds")
     end
 end
 Event.register(Event.core_events.configuration_changed, tailings_pond.on_configuration_changed)

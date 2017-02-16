@@ -34,10 +34,10 @@ Event.register(Event.core_events.init, MOD.on_init)
 --Master update checker
 function MOD.on_configuration_changed(data)
   if data.mod_changes ~= nil then
-    MOD.log(MOD.name .. ": mod changes detected")
+    MOD.log("mod changes detected")
     local changes = data.mod_changes[MOD.name]
     if changes ~= nil then -- This Mod has changed
-      MOD.log(MOD.name .." Updated from ".. tostring(changes.old_version) .. " to " .. tostring(changes.new_version), 2)
+      MOD.log("Updated from ".. tostring(changes.old_version) .. " to " .. tostring(changes.new_version), 2)
     end
   end
 end

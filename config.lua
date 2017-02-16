@@ -1,11 +1,12 @@
 --luacheck: no global
 PYC = {} --Do not change
 PYC.TAILINGS_POND = {} -- Do not change
+PYC.control = {}
 
 --Messages and stuff for developers
 --These should be false in a release.
 PYC.DEBUG = true
-PYC.LOGLEVEL = 2
+PYC.control.loglevel = 2
 
 --Changes some vanilla/mod recipes to use Creosate
 --USE_CREOSOTE_RECIPES, if false will disable use of creosote in vanilla recipes. if true
@@ -45,7 +46,7 @@ PYC.TAILINGS_POND.GAS = {
   ["wind"] = false,
 }
 
-PYC.QUICKSTART = {
+PYC.quickstart = {
   stacks = {
     "blueprint",
     "deconstruction-planner",
