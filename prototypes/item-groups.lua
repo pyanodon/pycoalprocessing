@@ -58,6 +58,12 @@ data:extend(
     },
     {
       type = "item-subgroup",
+      name = "py-drilling",
+      group = "coal-processing",
+      order = "g",
+    },
+    {
+      type = "item-subgroup",
       name = "py-fluids",
       group = "coal-processing",
       order = "z",
