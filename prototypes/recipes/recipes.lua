@@ -87,25 +87,6 @@ local cooling_water ={
 }
 
 -------------------------------------------------------------------------------
---EXTRACTION OF SALT
-local salt_ex = {
-  type = "recipe",
-  name = "salt-ex",
-  category = "evaporator",
-  enabled = "false",
-  energy_required = 4,
-  ingredients ={
-    {type="fluid", name="water-saline", amount=10},
-  },
-  results={
-    {type="item", name="salt", amount=1},
-  },
-  main_product= "salt",
-  icon = "__pycoalprocessing__/graphics/icons/salt.png",
-  order = "d [syn-gas]",
-}
-
--------------------------------------------------------------------------------
 --FLUEGAS TO SYNGAS
 local fluegas_to_syngas ={
     type = "recipe",
@@ -195,7 +176,7 @@ local ref_to_light_oil = {
   enabled = "false",
   energy_required = 2,
   ingredients ={
-    {type="fluid", name="hydrogen", amount=25},
+    --{type="fluid", name="hydrogen", amount=25},
 	{type="fluid", name="water", amount=50},
 	{type="fluid", name="refsyngas", amount=15},
 
@@ -218,7 +199,7 @@ local ref_to_petroleum_gas = {
   enabled = "false",
   energy_required = 2,
   ingredients ={
-    {type="fluid", name="hydrogen", amount=35},
+    --{type="fluid", name="hydrogen", amount=35},
 	{type="fluid", name="water", amount=50},
 	{type="fluid", name="refsyngas", amount=15},
 
@@ -237,5 +218,5 @@ local ref_to_petroleum_gas = {
 data:extend{
   raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
   ref_to_petroleum_gas, ref_to_light_oil, petgas_from_refsyngas, light_oil_from_syngas,
-  heavy_oil_from_coal_gas, salt_ex,
+  heavy_oil_from_coal_gas,
 }

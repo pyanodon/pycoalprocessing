@@ -15,7 +15,8 @@ local recipe1=
 	  results=
 	  {
 		{type="fluid", name="aromatics", amount=15},
-		{type="fluid", name="hydrogen", amount=10},
+		{type="fluid", name="water", amount=10},
+		--{type="fluid", name="hydrogen", amount=10},
 	  },
 	  main_product= "aromatics",
 	  icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
