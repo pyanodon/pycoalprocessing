@@ -1,10 +1,10 @@
 local technology = {
   type = "technology",
-  name = "methanol-processing2",
-  icon = "__pycoalprocessing__/graphics/technology/coal-processing-technology-methanol2.png",
+  name = "methanol-processing-2",
+  icon = "__pycoalprocessing__/graphics/technology/methanol-processing-2.png",
   icon_size = 128,
   order = "c-b",
-  prerequisites = {"methanol-processing1"},
+  prerequisites = {"methanol-processing-1"},
   effects =
   {
     {

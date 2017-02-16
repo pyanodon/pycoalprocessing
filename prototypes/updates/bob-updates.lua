@@ -31,8 +31,8 @@ bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "steel-plate", "lead
 bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-gear-wheel", "steel-gear-wheel")
 bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-plate", "steel-bearing")
 
-bobmods.lib.recipe.replace_ingredient("dessulfurizator-unit", "steel-plate", "titanium-plate")
-bobmods.lib.recipe.replace_ingredient("dessulfurizator-unit", "iron-plate", "invar-alloy")
+bobmods.lib.recipe.replace_ingredient("desulfurizator-unit", "steel-plate", "titanium-plate")
+bobmods.lib.recipe.replace_ingredient("desulfurizator-unit", "iron-plate", "invar-alloy")
 
 --items
 bobmods.lib.recipe.replace_ingredient("methanol-from-syngas", "iron-ore", "zinc-ore")
@@ -42,11 +42,11 @@ bobmods.lib.recipe.replace_ingredient("zinc-chloride", "water", "hydrogen-chlori
 bobmods.lib.recipe.remove_ingredient("zinc-chloride", "copper-plate")
 bobmods.lib.recipe.add_result("zinc-chloride", {name="hydrogen", amount=2})
 
-bobmods.lib.recipe.replace_ingredient("methanol-canister", "copper-plate", "brass-alloy")
-bobmods.lib.recipe.replace_ingredient("methanol-canister", "steel-plate", "aluminium-plate")
+bobmods.lib.recipe.replace_ingredient("empty-gas-canister", "copper-plate", "brass-alloy")
+bobmods.lib.recipe.replace_ingredient("empty-gas-canister", "steel-plate", "aluminium-plate")
 if data.raw["recipe-category"]["water-pump"] then
-  data.raw.recipe["fill-methanol-canister"].category="water-pump"
-  data.raw.recipe["empty-methanol-canister"].category="water-pump"
+  data.raw.recipe["fill-methanol-gas-canister"].category="water-pump"
+  data.raw.recipe["empty-methanol-gas-canister"].category="water-pump"
 end
 
 bobmods.lib.recipe.replace_ingredient("active-carbon", "water", "nitrogen")
@@ -57,6 +57,6 @@ bobmods.lib.recipe.remove_result("refsyngas-from-meth-canister", "water")
 bobmods.lib.recipe.add_result("refsyngas-from-meth", {type="fluid", name="hydrogen", amount=3})
 bobmods.lib.recipe.add_result("refsyngas-from-meth-canister", {type="fluid", name="hydrogen", amount=3})
 
-bobmods.lib.tech.add_prerequisite("coal-processing2", "electrolysis-1")
+bobmods.lib.tech.add_prerequisite("coal-processing-2", "electrolysis-1")
 
 --Tech
