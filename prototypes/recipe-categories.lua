@@ -51,7 +51,7 @@ data:extend(
     },
 	{
 	  type = "recipe-category",
-      name = "dessulfurization",
+      name = "desulfurization",
     },
 
 }

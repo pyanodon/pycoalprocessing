@@ -54,7 +54,7 @@ end
 --[[Recipes]]--
 local recipe1={
   type = "recipe",
-  name = "dessulfurizator-unit",
+  name = "desulfurizator-unit",
   energy_requiered = 17,
   enabled = false,
   ingredients =
@@ -66,30 +66,30 @@ local recipe1={
     {"iron-plate", 50}, --bob invar-alloy
 
   },
-  result= "dessulfurizator-unit",
-  icon = "__pycoalprocessing__/graphics/icons/dessulfurizator-unit.png",
+  result= "desulfurizator-unit",
+  icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit.png",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
 local item1= {
   type = "item",
-  name = "dessulfurizator-unit",
-  icon = "__pycoalprocessing__/graphics/icons/dessulfurizator-unit.png",
+  name = "desulfurizator-unit",
+  icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit.png",
   flags = {"goes-to-quickbar"},
   subgroup = "coal-processing",
-  order = "a-c[dessulfurizator-unit]",
-  place_result = "dessulfurizator-unit",
+  order = "a-c[desulfurizator-unit]",
+  place_result = "desulfurizator-unit",
   stack_size = 5,
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--
 local entity1={
   type = "assembling-machine",
-  name = "dessulfurizator-unit",
-  icon = "__pycoalprocessing__/graphics/icons/dessulfurizator-unit.png",
+  name = "desulfurizator-unit",
+  icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit.png",
   flags = {"placeable-neutral","player-creation"},
-  minable = {mining_time = 1, result = "dessulfurizator-unit"},
-  fast_replaceable_group = "dessulfurizator-unit",
+  minable = {mining_time = 1, result = "desulfurizator-unit"},
+  fast_replaceable_group = "desulfurizator-unit",
   max_health = 500,
   corpse = "big-remnants",
   dying_explosion = "medium-explosion",
@@ -100,7 +100,7 @@ local entity1={
     module_slots = 3
   },
   allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-  crafting_categories = {"dessulfurization"},
+  crafting_categories = {"desulfurization"},
   crafting_speed = 0.5,
   energy_source =
   {
@@ -113,7 +113,7 @@ local entity1={
 
   animation =
   {
-    filename = "__pycoalprocessing__/graphics/entity/dessulfurizator-unit/dessulfurizator-anim.png",
+    filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/desulfurizator-anim.png",
     width = 196,
     height = 202,
     frame_count = 15,
