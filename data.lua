@@ -4,7 +4,7 @@ if not pysmods.coalpro then pysmods.coalpro = {} end
 
 --Settings and Helpers
 require("config") --Config variables
-require("stdlib.utils.utils") --Usefull script helper functions
+require("stdlib.colors.colors")
 require("stdlib.utils.protohelpers") --Prototype helper functions
 
 --Groups
@@ -21,6 +21,9 @@ require("prototypes.technologies.methanol-processing2")
 require("prototypes.technologies.py-asphalt")
 require("prototypes.technologies.coolingmk01")
 require("prototypes.technologies.dessulfurization")
+
+--Recipes without items
+require("prototypes.recipes.recipes")
 
 --Items without entities
 require("prototypes.items.treated-wood")
