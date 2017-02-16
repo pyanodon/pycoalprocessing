@@ -1,19 +1,16 @@
 --require Logger and Config libraries
-require("stdlib.log.logger")
-require("stdlib.config.config")
+require("stdlib.loader")
 
 --Set up default MOD global variables
 MOD = {}
 MOD.name = "pycoalprocessing"
+MOD.fullname = "PyCoalProcessing"
 MOD.IF = "PYC"
 MOD.path = "__pycoalprocessing__"
 MOD.config = require("config")
 MOD.logfile = Logger.new(MOD.name, "info", true, {log_ticks = true})
-
-require("stdlib.utils.debug") -- require debug functions (requires Mod.logfile be set)
-require("stdlib.utils.utils")  -- string, table, time, colors
-require("stdlib.event.event") --Event system
-require("stdlib.gui.gui") --Gui system
+MOD.logfile.file_name = MOD.logfile.file_name:gsub("logs/", "", 1)
+MOD.log = require("stdlib.debug.debug")
 
 --Generate any custom events
 Event.reset_mod = script.generate_event_name()
@@ -23,26 +20,24 @@ Event.death_events = {defines.events.on_preplayer_mined_item, defines.events.on_
 --Require Quickstart for quicker mod testing when creating a character.
 --WARNING, This is for mod testing and can ruin existing worlds.
 if MOD.config.DEBUG then
-  QS = MOD.config.QUICKSTART --luacheck: globals QS
-  require("stdlib.utils.quickstart")
-  require("debug_scripts")
+  require("stdlib.debug.quickstart")
 end
 
 -------------------------------------------------------------------------------
 --[[Log Init and updates]]
 --Master Init
 function MOD.on_init()
-  doDebug(MOD.name .. ": Installing", true)
+  MOD.log("Installing", 1)
 end
 Event.register(Event.core_events.init, MOD.on_init)
 
 --Master update checker
 function MOD.on_configuration_changed(data)
   if data.mod_changes ~= nil then
-    doDebug(MOD.name .. ": mod changes detected")
+    MOD.log(MOD.name .. ": mod changes detected")
     local changes = data.mod_changes[MOD.name]
     if changes ~= nil then -- This Mod has changed
-      doDebug(MOD.name .." Updated from ".. tostring(changes.old_version) .. " to " .. tostring(changes.new_version), true)
+      MOD.log(MOD.name .." Updated from ".. tostring(changes.old_version) .. " to " .. tostring(changes.new_version), 2)
     end
   end
 end
