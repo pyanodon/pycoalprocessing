@@ -1,43 +1,4 @@
--------------------------------------------------------------------------------
---extract sulfur from acidgas
-local recipe_extract_sulfur ={
-  type = "recipe",
-  name = "extract-sulfur",
-  category = "dessulfurization",
-  enabled = "false",
-  energy_required = 1,
-  ingredients ={
-    {type="fluid", name="acidgas", amount=10,},
-  },
-  results={
-    {type="item", name="sulfur", amount=2,},
-  },
-  main_product= "sulfur",
-  --icon = "__base__/graphics/icons/sulfur.png",
-  icon = data.raw.item.sulfur.icon,
-  subgroup = "py-items",
-  order = "sulfur",
-}
--------------------------------------------------------------------------------
---Turn warm water into cooled water
-local recipe_cooling_water ={
-  type = "recipe",
-  name = "cooling-water",
-  category = "cooling",
-  enabled = "false",
-  energy_required = 1,
-  ingredients ={
-    {type="fluid", name="water", amount=5, temperature=100},
-  },
-  results={
-    {type="fluid", name="water", amount=5, temperature=15},
-  },
-  main_product= "water",
-  subgroup = "py-fluids",
-  order = "water",
-  icon = "__pycoalprocessing__/graphics/icons/cooling-water.png",
 
-}
 -------------------------------------------------------------------------------
 --NOT A GOOD NAME
 local ash ={
@@ -62,7 +23,6 @@ local coke = {
   stack_size = 500
 }
 -------------------------------------------------------------------------------
---SHOULD SMELT DIRECTLY TO PLATE
 --Iron ore is typically hidden as a product, smelt directly to iron plate instead
 --2x iron-oxide = 1x iron-plate in the same time it takes 1x iron-ore -> 1x plate
 local iron_oxide = {
@@ -83,17 +43,6 @@ local recipe_iron_oxide = {
   result = "iron-plate"
 }
 -------------------------------------------------------------------------------
-local active_carbon = {
-  type = "item",
-  name = "active-carbon",
-  fuel_value = "25MJ",
-  icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
-  flags = {"goes-to-main-inventory"},
-  subgroup = "py-items",
-  order = "active-carbon",
-  stack_size = 100
-}
--------------------------------------------------------------------------------
 local recipe_active_carbon = {
   type = "recipe",
   name = "active-carbon",
@@ -109,8 +58,19 @@ local recipe_active_carbon = {
   results={
     {type="item", name="active-carbon", amount=3},
   },
+  -- icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
+  -- main_product= "active-carbon",
+}
+-------------------------------------------------------------------------------
+local active_carbon = {
+  type = "item",
+  name = "active-carbon",
+  fuel_value = "25MJ",
   icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
-  main_product= "active-carbon",
+  flags = {"goes-to-main-inventory"},
+  subgroup = "py-items-hpf",
+  order = "hpf-[active-carbon]",
+  stack_size = 100
 }
 -------------------------------------------------------------------------------
 local zinc_chloride = {
@@ -164,32 +124,13 @@ local recipe_tailings_dust = {
     --{type="fluid", name="water", amount=4, temperature=100}
   },
   main_product = "tailings-dust",
-  icon = "__pycoalprocessing__/graphics/icons/coal_dirt_dust.png",
+  -- icon = "__pycoalprocessing__/graphics/icons/coal_dirt_dust.png",
 }
+-------------------------------------------------------------------------------
 
-local recipe_fluegas_to_syngas ={
-  type = "recipe",
-  name = "fluegas_to_syngas",
-  category = "carbonfilter",
-  enabled = "false",
-  energy_required = 2,
-  ingredients ={
-    {type="fluid", name="flue-gas", amount=300},
-    {type="item", name="active-carbon", amount=5},
-
-  },
-  results={
-    {type="fluid", name="syngas", amount=30},
-  },
-  subgroup = "py-syngas",
-  order = "fluegas_to_syngas",
-  icon = "__pycoalprocessing__/graphics/icons/fluegas_to_syngas.png",
-}
 
 data:extend(
 {
-  recipe_extract_sulfur,
-  recipe_cooling_water,
   ash,
   coke,
   iron_oxide,
@@ -198,7 +139,6 @@ data:extend(
   recipe_active_carbon,
   zinc_chloride,
   recipe_zinc_chloride,
-  recipe_fluegas_to_syngas,
   recipe_tailings_dust,
   tailings_dust,
   }

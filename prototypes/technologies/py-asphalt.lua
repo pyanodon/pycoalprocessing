@@ -1,10 +1,10 @@
 local technology = {
   type = "technology",
   name = "py-asphalt",
-  icon = "__pycoalprocessing__/graphics/technology/coal-processing-technology-asf.png",
+  icon = "__pycoalprocessing__/graphics/technology/py-asphalt.png",
   icon_size = 128,
   order = "c-a",
-  prerequisites = {"concrete" , "coal-processing2"},
+  prerequisites = {"concrete" , "coal-processing-2"},
   effects =
   {
 
