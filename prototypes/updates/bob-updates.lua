@@ -82,7 +82,8 @@ remove_result("refsyngas-from-meth-canister", "water")
 add_result("refsyngas-from-meth", {type="fluid", name="hydrogen", amount=3})
 add_result("refsyngas-from-meth-canister", {type="fluid", name="hydrogen", amount=3})
 
-replace_ing("olefin", "water", {type="fluid", name="hydrogen", amount=60})
+remove_ing("olefin", "water")
+add_ing("olefin", {type="fluid", name="hydrogen", amount=60})
 
 remove_result("aromatics", "water")
 add_result("aromatics", {type="fluid", name="hydrogen", amount=10})
