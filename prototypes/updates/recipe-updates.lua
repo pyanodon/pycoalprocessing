@@ -7,7 +7,7 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
       newrail.ingredients = {
         {"stone", 1},
         {"iron-stick", 2},
-        {"treated-lumber", 2}
+        {"treated-wood", 2}
       }
     end
 
@@ -17,7 +17,7 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
       biwoodrail.ingredients = {
         {"stone", 1},
         {"iron-stick", 2},
-        {"treated-lumber", 2}
+        {"treated-wood", 2}
       }
     end
   end
@@ -34,7 +34,7 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
     if data.raw.recipe["big-wooden-pole"] then
       local bigpole = data.raw.recipe["big-wooden-pole"]
       bigpole.ingredients = {
-        {"treated-lumber", 5},
+        {"treated-wood", 5},
         {"copper-cable", 8}
       }
     end
@@ -43,7 +43,7 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
     if data.raw.recipe["bi-big-wooden-pole"] then
       local bibigpole = data.raw.recipe["bi-big-wooden-pole"]
       bibigpole.ingredients = {
-        {"treated-lumber", 5},
+        {"treated-wood", 5},
         {"small-electric-pole", 2},
       }
     end
@@ -53,7 +53,7 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
   if data.raw.recipe["wood-floor"] then
     local woodfloor = data.raw.recipe["wood-floor"]
     woodfloor.ingredients = {
-      {"treated-lumber", 10},
+      {"treated-wood", 10},
     }
   end
 
@@ -62,7 +62,7 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
     local fence = data.raw.recipe["bi-wooden-fence"]
     fence.ingredients =
     {
-      {"treated-lumber", 2},
+      {"treated-wood", 2},
       {"raw-wood", 2},
     }
   end

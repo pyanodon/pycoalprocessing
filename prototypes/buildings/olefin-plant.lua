@@ -72,7 +72,6 @@ local recipe1={
 
   },
   result= "olefin-plant",
-  icon = "__pycoalprocessing__/graphics/icons/olefin-plant.png",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--

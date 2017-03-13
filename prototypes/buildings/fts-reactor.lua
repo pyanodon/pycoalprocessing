@@ -72,7 +72,6 @@ local recipe1={
     {"advanced-circuit", 10},
   },
   result= "fts-reactor",
-  icon = "__pycoalprocessing__/graphics/icons/fts-reactor.png",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
@@ -115,7 +114,7 @@ local entity1={
   },
   energy_usage = "300kW",
   ingredient_count = 5,
-  
+
   animation ={
    layers={
     {
@@ -192,8 +191,8 @@ local entity1={
       pipe_picture=pipe_pictures(nil, nil, nil, nil),
       base_level = 1,
       pipe_connections = {{position = {-3.0, -2.0} }}
-    },	
-	
+    },
+
 
   },
   vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },

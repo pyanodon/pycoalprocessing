@@ -1,62 +1,101 @@
---luacheck: globals bobmods
+-------------------------------------------------------------------------------
+--[[bob-updates.lua]]-- luacheck: globals bobmods
+-------------------------------------------------------------------------------
+local replace_ing = bobmods.lib.recipe.replace_ingredient
+local remove_ing = bobmods.lib.recipe.remove_ingredient
+local add_ing = bobmods.lib.recipe.add_ingredient
+local add_result = bobmods.lib.recipe.add_result
+local remove_result = bobmods.lib.recipe.remove_result
+local add_prerequisite = bobmods.lib.tech.add_prerequisite
 
---Entity recipe ingredients
-bobmods.lib.recipe.replace_ingredient("distilator", "pipe", "copper-pipe")
+-------------------------------------------------------------------------------
+--[[Entities]]--
+-------------------------------------------------------------------------------
+replace_ing("distilator", "pipe", "copper-pipe")
 
-bobmods.lib.recipe.replace_ingredient("gasturbinemk02", "pipe", "bronze-pipe")
-bobmods.lib.recipe.replace_ingredient("gasturbinemk02", "iron-plate", "invar-alloy")
+replace_ing("gasturbinemk02", "pipe", "bronze-pipe")
+replace_ing("gasturbinemk02", "iron-plate", "invar-alloy")
 
-bobmods.lib.recipe.replace_ingredient("hpf", "stone-brick", "glass")
-bobmods.lib.recipe.replace_ingredient("hpf", "iron-gear-wheel", "steel-bearing")
-bobmods.lib.recipe.replace_ingredient("hpf", "iron-plate", "invar-alloy")
+replace_ing("hpf", "stone-brick", "glass")
+replace_ing("hpf", "iron-gear-wheel", "steel-bearing")
+replace_ing("hpf", "iron-plate", "invar-alloy")
 
-bobmods.lib.recipe.replace_ingredient("methanol-reactor", "chemical-plant", "electrolyser")
-bobmods.lib.recipe.replace_ingredient("methanol-reactor", "iron-gear-wheel", "steel-bearing")
+replace_ing("methanol-reactor", "chemical-plant", "electrolyser")
+replace_ing("methanol-reactor", "iron-gear-wheel", "steel-bearing")
 
-bobmods.lib.recipe.replace_ingredient("power-house", "iron-gear-wheel", "steel-bearing")
-bobmods.lib.recipe.replace_ingredient("power-house", "iron-plate", "lead-plate")
+replace_ing("power-house", "iron-gear-wheel", "steel-bearing")
+replace_ing("power-house", "iron-plate", "lead-plate")
 
-bobmods.lib.recipe.replace_ingredient("quenching-tower", "pipe", "stone-pipe")
+replace_ing("quenching-tower", "pipe", "stone-pipe")
 
-bobmods.lib.recipe.replace_ingredient("tailings-pond", "small-pump", "water-pump")
+replace_ing("tailings-pond", "small-pump", "water-pump")
 
-bobmods.lib.recipe.replace_ingredient("tar-processing-unit", "electronic-circuit", "basic-circuit-board")
-bobmods.lib.recipe.replace_ingredient("tar-processing-unit", "pipe", "stone-pipe")
+replace_ing("tar-processing-unit", "electronic-circuit", "basic-circuit-board")
+replace_ing("tar-processing-unit", "pipe", "stone-pipe")
 
-bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "pipe", "copper-pipe")
-bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-gear-wheel", "brass-gear-wheel")
-bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-plate", "brass-alloy")
+replace_ing("cooling-tower-mk01", "pipe", "copper-pipe")
+replace_ing("cooling-tower-mk01", "iron-gear-wheel", "brass-gear-wheel")
+replace_ing("cooling-tower-mk01", "iron-plate", "brass-alloy")
 
-bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "steel-plate", "lead-plate")
-bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-gear-wheel", "steel-gear-wheel")
-bobmods.lib.recipe.replace_ingredient("cooling-tower-mk01", "iron-plate", "steel-bearing")
+replace_ing("cooling-tower-mk01", "steel-plate", "lead-plate")
+replace_ing("cooling-tower-mk01", "iron-gear-wheel", "steel-gear-wheel")
+replace_ing("cooling-tower-mk01", "iron-plate", "steel-bearing")
 
-bobmods.lib.recipe.replace_ingredient("dessulfurizator-unit", "steel-plate", "titanium-plate")
-bobmods.lib.recipe.replace_ingredient("dessulfurizator-unit", "iron-plate", "invar-alloy")
+replace_ing("desulfurizator-unit", "steel-plate", "titanium-plate")
+replace_ing("desulfurizator-unit", "iron-plate", "invar-alloy")
 
---items
-bobmods.lib.recipe.replace_ingredient("methanol-from-syngas", "iron-ore", "zinc-ore")
+replace_ing("soil-extractormk01", "steel-plate", "brass-alloy")
+replace_ing("soil-extractormk01", "iron-gear-wheel", "brass-gear-wheel")
 
-bobmods.lib.recipe.replace_ingredient("zinc-chloride", "iron-plate", "zinc-plate")
-bobmods.lib.recipe.replace_ingredient("zinc-chloride", "water", "hydrogen-chloride")
-bobmods.lib.recipe.remove_ingredient("zinc-chloride", "copper-plate")
-bobmods.lib.recipe.add_result("zinc-chloride", {name="hydrogen", amount=2})
+replace_ing("olefin-plant", "chemical-plant", "electrolyser")
+replace_ing("olefin-plant", "iron-gear-wheel", "steel-bearing")
 
-bobmods.lib.recipe.replace_ingredient("methanol-canister", "copper-plate", "brass-alloy")
-bobmods.lib.recipe.replace_ingredient("methanol-canister", "steel-plate", "aluminium-plate")
+replace_ing("ground-borer", "iron-gear-wheel", "titanium-bearing")
+replace_ing("ground-borer", "iron-plate", "titanium-plate")
+
+replace_ing("fts-reactor", "stone-brick", "glass")
+replace_ing("fts-reactor", "iron-gear-wheel", "steel-bearing")
+replace_ing("fts-reactor", "iron-plate", "invar-alloy")
+
+-------------------------------------------------------------------------------
+--[[Items]]--
+-------------------------------------------------------------------------------
+replace_ing("methanol-from-syngas", "iron-ore", "zinc-ore")
+
+replace_ing("zinc-chloride", "iron-plate", "zinc-plate")
+replace_ing("zinc-chloride", "water", "hydrogen-chloride")
+remove_ing("zinc-chloride", "copper-plate")
+add_result("zinc-chloride", {name="hydrogen", amount=2})
+
+replace_ing("empty-gas-canister", "copper-plate", "brass-alloy")
+replace_ing("empty-gas-canister", "steel-plate", "aluminium-plate")
 if data.raw["recipe-category"]["water-pump"] then
-  data.raw.recipe["fill-methanol-canister"].category="water-pump"
-  data.raw.recipe["empty-methanol-canister"].category="water-pump"
+  data.raw.recipe["fill-methanol-gas-canister"].category="water-pump"
+  data.raw.recipe["empty-methanol-gas-canister"].category="water-pump"
 end
 
-bobmods.lib.recipe.replace_ingredient("active-carbon", "water", "nitrogen")
-bobmods.lib.recipe.add_ingredient("active-carbon", {name="sodium-hydroxide", amount=7})
+replace_ing("active-carbon", "water", "nitrogen")
+add_ing("active-carbon", {name="sodium-hydroxide", amount=7})
 
-bobmods.lib.recipe.remove_result("refsyngas-from-meth", "water")
-bobmods.lib.recipe.remove_result("refsyngas-from-meth-canister", "water")
-bobmods.lib.recipe.add_result("refsyngas-from-meth", {type="fluid", name="hydrogen", amount=3})
-bobmods.lib.recipe.add_result("refsyngas-from-meth-canister", {type="fluid", name="hydrogen", amount=3})
+remove_result("refsyngas-from-meth", "water")
+remove_result("refsyngas-from-meth-canister", "water")
+add_result("refsyngas-from-meth", {type="fluid", name="hydrogen", amount=3})
+add_result("refsyngas-from-meth-canister", {type="fluid", name="hydrogen", amount=3})
 
-bobmods.lib.tech.add_prerequisite("coal-processing2", "electrolysis-1")
+replace_ing("olefin", "water", {type="fluid", name="hydrogen", amount=60})
 
---Tech
+remove_result("aromatics", "water")
+add_result("aromatics", {type="fluid", name="hydrogen", amount=10})
+
+replace_ing("nichrome", "water", "nitrogen")
+replace_ing("nichrome", "iron-plate", "nickel-plate")
+
+replace_ing("drill-head", "iron-plate", "titanium-plate")
+
+add_ing("ref_to_light_oil", {type="fluid", name="hydrogen", amount=25})
+add_ing("ref_to_petroleum_gas", {type="fluid", name="hydrogen", amount=35})
+
+-------------------------------------------------------------------------------
+--[[Tech]]--
+-------------------------------------------------------------------------------
+add_prerequisite("coal-processing-2", "electrolysis-1")
