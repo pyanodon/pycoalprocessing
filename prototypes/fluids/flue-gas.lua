@@ -1,9 +1,8 @@
 -------------------------------------------------------------------------------
---[[recipes]]--
-local recipe1=nil
+--[[flue-gas]]--
 -------------------------------------------------------------------------------
---[[items]]--
-local item1=
+--[[fluid]]--
+local fluid =
 {
   type = "fluid",
   name = "flue-gas",
@@ -16,11 +15,7 @@ local item1=
   pressure_to_speed_ratio = 0.4,
   flow_to_energy_ratio = 0.59,
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1=nil
+
 -------------------------------------------------------------------------------
 --[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+data:extend({fluid})

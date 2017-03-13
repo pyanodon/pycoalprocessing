@@ -1,11 +1,11 @@
 local technology =
 {
   type = "technology",
-  name = "methanol-processing1",
-  icon = "__pycoalprocessing__/graphics/technology/coal-processing-technology-methanol1.png",
+  name = "methanol-processing-1",
+  icon = "__pycoalprocessing__/graphics/technology/methanol-processing-1.png",
   icon_size = 128,
   order = "c-a",
-  prerequisites = {"coal-processing2"},
+  prerequisites = {"coal-processing-2"},
   effects =
   {
 
@@ -15,15 +15,15 @@ local technology =
     },
     {
       type = "unlock-recipe",
-      recipe = "methanol-canister"
+      recipe = "empty-gas-canister"
     },
     {
       type = "unlock-recipe",
-      recipe = "empty-methanol-canister"
+      recipe = "empty-methanol-gas-canister"
     },
     {
       type = "unlock-recipe",
-      recipe = "fill-methanol-canister"
+      recipe = "fill-methanol-gas-canister"
     },
   },
   unit =

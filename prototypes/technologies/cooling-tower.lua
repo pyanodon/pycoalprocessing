@@ -1,10 +1,10 @@
 local technology = {
   type = "technology",
-  name = "cooling-tower-mk01",
-  icon = "__pycoalprocessing__/graphics/technology/coolingmk01.png",
+  name = "cooling-tower",
+  icon = "__pycoalprocessing__/graphics/technology/cooling-tower.png",
   icon_size = 128,
   order = "c-a",
-  prerequisites = {"electric-engine" , "coal-processing1"},
+  prerequisites = {"electric-engine" , "coal-processing-1"},
   effects =
   {
 

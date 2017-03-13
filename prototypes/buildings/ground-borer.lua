@@ -65,14 +65,13 @@ local recipe1={
   ingredients =
   {
     {"electric-mining-drill", 3},
-    {"soil-extractormk01", 2}, 
+    {"soil-extractormk01", 2},
     {"electronic-circuit", 30},
-    {"titanium-plate", 150},
-    {"iron-gear-wheel", 15}, --bob steel-bearing
+    {"iron-plate", 150}, --bob titanium-plate
+    {"iron-gear-wheel", 15}, --bob titanium-bearing
 
   },
   result= "ground-borer",
-  icon = "__pycoalprocessing__/graphics/icons/ground-borer.png",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--

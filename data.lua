@@ -1,9 +1,10 @@
-if not _G.pysmods then _G.pysmods = {} end
-if not _G.pysmods.coalpro then _G.pysmods.coalpro = {} end
+--luacheck: no global
+if not pysmods then pysmods = {} end
+if not pysmods.coalpro then pysmods.coalpro = {} end
 
 --Settings and Helpers
 require("config") --Config variables
-require("stdlib.utils.utils") --Usefull script helper functions
+require("stdlib.colors.colors")
 require("stdlib.utils.protohelpers") --Prototype helper functions
 
 --Groups
@@ -13,24 +14,26 @@ require("prototypes.item-groups")
 require("prototypes.recipe-categories")
 
 --Technolgies
-require("prototypes.technologies.coal-processing1")
-require("prototypes.technologies.coal-processing2")
-require("prototypes.technologies.coal-processing3")
-require("prototypes.technologies.methanol-processing1")
-require("prototypes.technologies.methanol-processing2")
+require("prototypes.technologies.coal-processing-1")
+require("prototypes.technologies.coal-processing-2")
+require("prototypes.technologies.coal-processing-3")
+require("prototypes.technologies.methanol-processing-1")
+require("prototypes.technologies.methanol-processing-2")
 require("prototypes.technologies.py-asphalt")
-require("prototypes.technologies.coolingmk01")
-require("prototypes.technologies.dessulfurization")
-require("prototypes.technologies.excavation01")
-require("prototypes.technologies.excavation02")
+require("prototypes.technologies.cooling-tower")
+require("prototypes.technologies.desulfurization")
+require("prototypes.technologies.excavation-1")
+require("prototypes.technologies.excavation-2")
+
+--Recipes without items
+require("prototypes.recipes.recipes")
+require("prototypes.recipes.ground-borer-recipes")
 
 --Items without entities
-require("prototypes.items.treated-lumber")
+require("prototypes.items.treated-wood")
 require("prototypes.items.items")
 require("prototypes.items.canister")
 require("prototypes.items.tailings")
-require("prototypes.items.recipes")
-require("prototypes.items.ground-borer-recipes")
 
 --Tiles and Terrain
 require ("prototypes.tiles.py-asphalt")
@@ -69,7 +72,7 @@ require("prototypes.buildings.hpf")
 require("prototypes.buildings.power-house")
 require("prototypes.buildings.cooling-tower-mk01")
 require("prototypes.buildings.evaporator")
-require("prototypes.buildings.dessulfurizator-unit")
+require("prototypes.buildings.desulfurizator-unit")
 require("prototypes.buildings.olefin-plant")
 require("prototypes.buildings.soil-extractormk01")
 require("prototypes.buildings.ground-borer")

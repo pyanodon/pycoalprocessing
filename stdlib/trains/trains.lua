@@ -69,18 +69,12 @@ end
 -- @tparam Table criteria Table with any keys supported by the <a href="Surface.html#find_all_entities">Surface</a> module.</p>
 --  <p>If the name key isn't supplied, this will default to 'diesel-locomotive'</p>
 --  <p>If the surface key isn't supplied, this will default to 1</p>
--- @return A list of train details tables, if any are found matching the criteria. Otherwise the empty list.
--- <p>
---  <table>
---      <tr><td>train (LuaTrain)</td><td>The LuaTrain instance</td></tr>
---      <tr><td>id (int)</td><td>The id of the train</td></tr>
---  </table>
--- </p>
+-- @return A list of train details tables, if any are found matching the criteria. Otherwise the empty list. <table><tr><td>train (LuaTrain)</td><td>The LuaTrain instance</td></tr><tr><td>id (int)</td><td>The id of the train</td></tr></table>
 function Trains.find_filtered(criteria)
     criteria = criteria or {}
 
     -- Ensuure surface is set
-    criteria.surface =  criteria.surface or 'nauvis'
+    criteria.surface = criteria.surface or 'nauvis'
 
     -- Make sure 'locomotive' is specified as the type by default
     criteria.type = criteria.type or 'locomotive'
@@ -91,15 +85,14 @@ function Trains.find_filtered(criteria)
     -- Distinguish trains
     local train_data = find_distinct_trains(locomotives)
 
-    --- Apply filters
-    -- State
-    if not (criteria.state == nil) then
+    --- Apply state filters
+    if criteria.state then
         train_data = table.filter(train_data, function(data)
             return data.train.state == criteria.state
         end)
     end
 
-    return train_data;
+    return train_data
 end
 
 --- Find the id of a LuaTrain instance
@@ -134,9 +127,10 @@ function Trains._on_locomotive_changed()
 
         local event_data = {
             old_id = renaming.old_id,
-            new_id = renaming.new_id
+            new_id = renaming.new_id,
+            name = Trains.on_train_id_changed
         }
-        Event.dispatch(Trains.on_train_id_changed, event_data)
+        Event.dispatch(event_data)
     end
 end
 --- Event fired when a new locomotive has been created
@@ -231,7 +225,7 @@ Event.register(defines.events.on_robot_mined, filter_event('item_stack', 'diesel
 Event.register(defines.events.on_built_entity, filter_event('created_entity', 'diesel-locomotive', Trains._on_locomotive_created))
 Event.register(defines.events.on_robot_built_entity, filter_event('created_entity', 'diesel-locomotive', Trains._on_locomotive_created))
 
--- Then call some of our own code to initialize ourselves
-Trains._registry = create_train_registry()
+-- When the mod is initialized the first time
+Event.register(Event.core_events.init, function() Trains._registry = create_train_registry() end)
 
 return Trains

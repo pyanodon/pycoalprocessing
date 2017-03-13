@@ -4,17 +4,7 @@
 local author_name1 = "Nexela"
 local author_name2 = "Nexela"
 
-require("stdlib.game")
-require("stdlib.surface")
-require("stdlib.iterator")
-require("stdlib.table")
-require("stdlib.string")
-require("stdlib.time")
-
-require("stdlib.utils.colors")
-require("stdlib.utils.list")
 -------------------------------------------------------------------------------
-
 --@return Player Object
 function Game.get_valid_player(player_or_index)
   if not player_or_index then
@@ -144,7 +134,7 @@ end
 --------------------------------------------------------------------------------------
 function table.add_list(list, obj)
   -- to avoid duplicates...
-  for i, obj2 in pairs(list) do
+  for _, obj2 in pairs(list) do
     if obj2 == obj then
       return(false)
     end
@@ -207,6 +197,22 @@ end
 -----------------------------------------------------------------------------------
 --Additional Table Helpers
 
+function table.raw_merge(tblA, tblB, safe_merge)
+    --safe_merge, only merge tblB[k] if it does not already exsist in tblA
+    if safe_merge then
+        for k, v in pairs(tblB) do
+            if not rawget(tblA, k) then
+                rawset(tblA, k, v)
+            end
+        end
+    else
+        for k, v in pairs(tblB) do
+            rawset(tblA, k, v)
+        end
+    end
+    return tblA
+end
+
 function table.val_to_str ( v )
   if "string" == type( v ) then
     v = string.gsub( v, "\n", "\\n" )
@@ -249,7 +255,7 @@ function table.val_to_str ( v )
   function table.arraytostring(...)
     local s = ""
 
-    for i, v in ipairs({...}) do
+    for _, v in ipairs({...}) do
       s = s .." " .. tostring(v)
     end
     return s
@@ -260,7 +266,7 @@ function table.val_to_str ( v )
     if type(tbl) ~= "table" then
       if tostring(value) == tostring(tbl) then return value else return nil end
     end
-    for k, v in ipairs(tbl) do
+    for _, v in ipairs(tbl) do
       if v == value then return v end
     end
     return nil
