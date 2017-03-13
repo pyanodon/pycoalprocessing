@@ -1,10 +1,10 @@
 local technology = {
   type = "technology",
-  name = "excavation01",
-  icon = "__pycoalprocessing__/graphics/technology/borer01.png",
+  name = "excavation-1",
+  icon = "__pycoalprocessing__/graphics/technology/excavation-1.png",
   icon_size = 128,
   order = "c-a",
-  prerequisites = {"coal-processing3", "titanium-processing"},
+  prerequisites = {"coal-processing-3"}, --bob titatnium-processing
   effects =
   {
 
@@ -29,7 +29,7 @@ local technology = {
 		recipe = "mining-nexelit"
 	},
   },
- 
+
   unit =
   {
     count = 45,
@@ -42,4 +42,3 @@ local technology = {
   },
 }
 data:extend({technology})
-

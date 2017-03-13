@@ -68,12 +68,11 @@ local recipe1={
     {"engine-unit", 4},
     {"advanced-circuit", 10},
     {"steel-plate", 40}, -- bob brass-alloy
-	{"storage-tank", 1}, 
+	  {"storage-tank", 1},
     {"iron-gear-wheel", 15}, --bob brass-gear-wheel
 
   },
   result= "soil-extractormk01",
-  icon = "__pycoalprocessing__/graphics/icons/soil-extractormk01.png",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--

@@ -12,13 +12,31 @@ data:extend(
       type = "item-subgroup",
       name = "coal-processing",
       group = "coal-processing",
-      order = "a",
+      order = "a1",
+    },
+    {
+      type = "item-subgroup",
+      name = "py-power",
+      group = "coal-processing",
+      order = "a2",
+    },
+    {
+      type = "item-subgroup",
+      name = "py-fluid-handling",
+      group = "coal-processing",
+      order = "a2",
     },
     {
       type = "item-subgroup",
       name = "py-items",
       group = "coal-processing",
       order = "c",
+    },
+    {
+      type = "item-subgroup",
+      name = "py-items-hpf",
+      group = "coal-processing",
+      order = "c-1",
     },
     {
       type = "item-subgroup",
