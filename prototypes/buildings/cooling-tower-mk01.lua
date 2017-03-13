@@ -34,7 +34,6 @@ local recipe1={
 
   },
   result= "cooling-tower-mk01",
-  icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
@@ -43,7 +42,7 @@ local item1= {
   name = "cooling-tower-mk01",
   icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
   flags = {"goes-to-quickbar"},
-  subgroup = "coal-processing",
+  subgroup = "py-fluid-handling",
   order = "a-c[cooling-tower-mk01]",
   place_result = "cooling-tower-mk01",
   stack_size = 5,

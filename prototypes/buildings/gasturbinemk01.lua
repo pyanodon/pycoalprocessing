@@ -14,7 +14,7 @@ local recipe1={
     {"iron-gear-wheel", 40},
   },
   result= "gasturbinemk01",
-  icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk01.png",
+  --icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk01.png",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
@@ -23,7 +23,7 @@ local item1={
   name = "gasturbinemk01",
   icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk01.png",
   flags = {"goes-to-quickbar"},
-  subgroup = "coal-processing",
+  subgroup = "py-power",
   order = "a-d[gasturbinemk01]",
   place_result = "gasturbinemk01",
   stack_size = 15,
@@ -38,8 +38,8 @@ local entity1={
   minable = {mining_time = 1, result = "gasturbinemk01"},
   max_health = 300,
   corpse = "big-remnants",
-  effectivity = 15, --2.2mw
-  fluid_usage_per_tick = 0.05, --1.8/second
+  effectivity = 10,
+  fluid_usage_per_tick = 0.05,
   resistances =
   {
     {

@@ -1,11 +1,12 @@
---luacheck: ignore
+--luacheck: no global
 PYC = {} --Do not change
 PYC.TAILINGS_POND = {} -- Do not change
+PYC.control = {}
 
 --Messages and stuff for developers
 --These should be false in a release.
-PYC.DEBUG = false
-PYC.DEBUG_QUICKSTART = false
+PYC.DEBUG = true
+PYC.control.loglevel = 2
 
 --Changes some vanilla/mod recipes to use Creosate
 --USE_CREOSOTE_RECIPES, if false will disable use of creosote in vanilla recipes. if true
@@ -43,6 +44,20 @@ PYC.TAILINGS_POND.GAS = {
   ["nitrogen"] = false,
   ["nitrogen-dioxide"] = false,
   ["wind"] = false,
+}
+
+PYC.quickstart = {
+  stacks = {
+    "blueprint",
+    "deconstruction-planner",
+    "gasturbinemk01",
+    "gasturbinemk02",
+    "creative-mode_fluid-source",
+    "creative-mode_passive-energy-void",
+    "creative-mode_super-electric-pole",
+    "creative-mode_energy-source"
+  },
+  mod_name = "pyCoal"
 }
 
 return PYC
