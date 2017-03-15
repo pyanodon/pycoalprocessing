@@ -24,6 +24,7 @@ require("prototypes.technologies.cooling-tower")
 require("prototypes.technologies.desulfurization")
 require("prototypes.technologies.excavation-1")
 require("prototypes.technologies.excavation-2")
+require("prototypes.technologies.separation")
 
 --Recipes without items
 require("prototypes.recipes.recipes")
@@ -77,6 +78,10 @@ require("prototypes.buildings.olefin-plant")
 require("prototypes.buildings.soil-extractormk01")
 require("prototypes.buildings.ground-borer")
 require("prototypes.buildings.fts-reactor")
+require("prototypes.buildings.solid-separator")
+require("prototypes.buildings.washer")
+require("prototypes.buildings.classifier")
+
 
 --move to syngas recipe stuff in data-updates?
 for _, v in pairs(data.raw.module) do
