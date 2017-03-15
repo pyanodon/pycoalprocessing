@@ -18,7 +18,7 @@ local technology = {
     },
 	{
 		type = "unlock-recipe",
-		recipe = "chromium"
+		recipe = "making_chromium"
     },
 	{
 		type = "unlock-recipe",
