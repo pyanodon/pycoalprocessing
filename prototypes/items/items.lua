@@ -22,16 +22,7 @@ local chromium ={
     stack_size = 100
 }
 -------------------------------------------------------------------------------
---GRAVEL
-local gravel = {
-    type = "item",
-    name = "gravel",
-    icon = "__pycoalprocessing__/graphics/icons/gravel.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "gravel",
-    stack_size = 300
-}
+
 
 -------------------------------------------------------------------------------
 --NOT A GOOD NAME
