@@ -60,7 +60,7 @@ end
 local recipe1={
   type = "recipe",
   name = "soil-extractormk01",
-  energy_requiered = 45,
+  energy_requiered = 100,
   enabled = false,
   ingredients =
   {
@@ -106,7 +106,7 @@ local entity1={
   },
   allowed_effects = {"consumption", "speed", "productivity", "pollution"},
   crafting_categories = {"soil-extraction"},
-  crafting_speed = 2.5,
+  crafting_speed = 1.5,
   energy_source =
   {
     type = "electric",
