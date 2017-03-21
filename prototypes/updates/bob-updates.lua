@@ -66,6 +66,10 @@ replace_ing("solid-separator", "iron-stick", "brass-bearing")
 replace_ing("classifier", "steel-plate", "titanium-plate")
 replace_ing("classifier", "iron-gear-wheel", "brass-bearing")
 
+replace_ing("advanced-foundry", "iron-plate", "titanium-plate")
+replace_ing("advanced-foundry", "concrete", "glass")
+replace_ing("advanced-foundry", "steel-plate", "titanium-bearing")
+
 -------------------------------------------------------------------------------
 --[[Items]]--
 -------------------------------------------------------------------------------
