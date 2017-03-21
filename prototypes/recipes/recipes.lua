@@ -12,9 +12,9 @@ local making_chromium ={
     energy_required = 1,
     ingredients ={
         {type="fluid", name="carbon-dioxide", amount=10},
-		{type="item", name="chromite_sand", amount=5},
-		{type="item", name="coke", amount=5},
-		{type="item", name="limestone", amount=5},
+        {type="item", name="chromite_sand", amount=5},
+        {type="item", name="coke", amount=5},
+        {type="item", name="limestone", amount=5},
     },
     results={
         {type="item", name="chromium", amount=1,},
@@ -144,8 +144,8 @@ local coarse_classification ={
     },
     results={
         {type="item", name="stone", amount=5},
-		{type="item", name="iron-oxide", amount=2},
-		{type="item", name="gravel", amount=4},
+        {type="item", name="iron-oxide", amount=2},
+        {type="item", name="gravel", amount=4},
     },
     main_product= "gravel",
     icon = "__pycoalprocessing__/graphics/icons/class-coarse.png",
@@ -165,7 +165,7 @@ local pure_sand_classification ={
     },
     results={
         {type="item", name="rich_dust", amount=5},
-		{type="item", name="gravel", amount=2},
+        {type="item", name="gravel", amount=2},
     },
     main_product= "rich_dust",
     icon = "__pycoalprocessing__/graphics/icons/class-pure-sand.png",
@@ -186,9 +186,9 @@ local soil_separation ={
     },
     results={
         {type="item", name="sand", amount=7},
-		{type="item", name="coarse", amount=3},
-		{type="item", name="limestone", amount=4},
-		{type="item", name="organics", amount=2},
+        {type="item", name="coarse", amount=3},
+        {type="item", name="limestone", amount=4},
+        {type="item", name="organics", amount=2},
     },
     main_product= "sand",
     icon = "__pycoalprocessing__/graphics/icons/soil-separation.png",
@@ -208,7 +208,7 @@ local richdust_separation ={
     },
     results={
         {type="item", name="iron-oxide", amount=2},
-		{type="item", name="chromite_sand", amount=6},
+        {type="item", name="chromite_sand", amount=6},
 
     },
     main_product= "chromite_sand",
@@ -230,7 +230,7 @@ local tailings_separation ={
     },
     results={
         {type="item", name="coal_dust", amount=8},
-		{type="item", name="rich_dust", amount=2},
+        {type="item", name="rich_dust", amount=2},
 
     },
     main_product= "rich_dust",
@@ -249,11 +249,11 @@ local sand_washing ={
     energy_required = 1,
     ingredients ={
         {type="item", name="sand", amount=10},
-		{type="fluid", name="water", amount=20},
+        {type="fluid", name="water", amount=20},
     },
     results={
         {type="item", name="pure_sand", amount=8},
-		{type="fluid", name="dirty-water", amount=8},
+        {type="fluid", name="dirty-water", amount=8},
 
     },
     main_product= "pure_sand",
@@ -271,11 +271,11 @@ local organics_processing ={
     energy_required = 2,
     ingredients ={
         {type="item", name="organics", amount=10},
-		{type="item", name="nexelit_plate", amount=5},
+        {type="item", name="nexelit_plate", amount=5},
     },
     results={
         {type="fluid", name="methanol", amount=10},
-		{type="fluid", name="syngas", amount=10},
+        {type="fluid", name="syngas", amount=10},
 
     },
     main_product= "methanol",
@@ -294,7 +294,7 @@ local sand_casting ={
     energy_required = 1,
     ingredients ={
         {type="item", name="sand", amount=10},
-		{type="fluid", name="creosote", amount=15},
+        {type="fluid", name="creosote", amount=15},
     },
     results={
         {type="item", name="sand_casting", amount=4},
@@ -315,7 +315,7 @@ local tar_oil ={
     energy_required = 1,
     ingredients ={
         {type="item", name="nexelit_plate", amount=2},
-		{type="fluid", name="tar", amount=50},
+        {type="fluid", name="tar", amount=50},
     },
     results={
         {type="fluid", name="crude-oil", amount=30},
@@ -327,11 +327,10 @@ local tar_oil ={
     order = "c",
 }
 
-
 -------------------------------------------------------------------------------
 data:extend{
-  raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
-  soil_separation, richdust_separation, sand_washing, tailings_separation,
-  making_chromium, coarse_classification, pure_sand_classification, organics_processing,
-  sand_casting, tar_oil
+    raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
+    soil_separation, richdust_separation, sand_washing, tailings_separation,
+    making_chromium, coarse_classification, pure_sand_classification, organics_processing,
+    sand_casting, tar_oil
 }
