@@ -21,17 +21,16 @@ local chromium ={
     order = "chromium",
     stack_size = 100
 }
-
---temporary for testing
-local recipe_chromium = {
-    type = "recipe",
-    name = "chromium",
-    category = "smelting",
-    energy_required = 0.5,
-    ingredients ={
-        {type="item", name="steel-plate", amount=3},
-    },
-    result = "chromium"
+-------------------------------------------------------------------------------
+--GRAVEL
+local gravel = {
+    type = "item",
+    name = "gravel",
+    icon = "__pycoalprocessing__/graphics/icons/gravel.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "gravel",
+    stack_size = 300
 }
 
 -------------------------------------------------------------------------------
@@ -83,7 +82,7 @@ local iron_oxide = {
     order = "iron-oxide",
     stack_size = 200
 }
-
+--ACTIVE CARBON
 -------------------------------------------------------------------------------
 local recipe_active_carbon = {
     type = "recipe",
@@ -160,12 +159,12 @@ local recipe_tailings_dust = {
         --{type="fluid", name="water", amount=4, temperature=100}
     },
     main_product = "tailings-dust",
-    icon = "__pycoalprocessing__/graphics/icons/coal_dirt_dust.png",
+    icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
 }
 local tailings_dust = {
     type = "item",
     name = "tailings-dust",
-    icon = "__pycoalprocessing__/graphics/icons/coal_dirt_dust.png",
+    icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "tailings-dust",
@@ -238,11 +237,101 @@ local drill_head = {
 }
 
 -------------------------------------------------------------------------------
+--SAND
+local sand ={
+    type = "item",
+    name = "sand",
+    icon = "__pycoalprocessing__/graphics/icons/sand.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "sand",
+    stack_size = 500
+}
+
+-------------------------------------------------------------------------------
+--PURE SAND
+local pure_sand ={
+    type = "item",
+    name = "pure_sand",
+    icon = "__pycoalprocessing__/graphics/icons/pure-sand.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "pure-sand",
+    stack_size = 500
+}
+-------------------------------------------------------------------------------
+--LIMESTONE
+local limestone ={
+    type = "item",
+    name = "limestone",
+    icon = "__pycoalprocessing__/graphics/icons/limestone.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "limestone",
+    stack_size = 300
+}
+-------------------------------------------------------------------------------
+--ORGANICS
+local organics ={
+    type = "item",
+    name = "organics",
+    icon = "__pycoalprocessing__/graphics/icons/organics.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "organics",
+    stack_size = 300
+}
+-------------------------------------------------------------------------------
+--COARSE FRACTION
+local coarse ={
+    type = "item",
+    name = "coarse",
+    icon = "__pycoalprocessing__/graphics/icons/coarse.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "coarse",
+    stack_size = 500
+}
+-------------------------------------------------------------------------------
+--RICH DUST
+local rich_dust ={
+    type = "item",
+    name = "rich_dust",
+    icon = "__pycoalprocessing__/graphics/icons/richdust.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "rich_dust",
+    stack_size = 500
+}
+-------------------------------------------------------------------------------
+--COAL DUST
+local coal_dust ={
+    type = "item",
+    name = "coal_dust",
+    icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "coal_dust",
+    stack_size = 500
+}
+-------------------------------------------------------------------------------
+--CHROMITE SAND
+local chromite_sand ={
+    type = "item",
+    name = "chromite_sand",
+    icon = "__pycoalprocessing__/graphics/icons/chromite_sand.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "chromite_sand",
+    stack_size = 500
+
+}
+
+-------------------------------------------------------------------------------
 data:extend(
     {
         ash,
         chromium,
-        recipe_chromium,
         coke,
         recipe_nichrome,
         nichrome,
@@ -257,6 +346,14 @@ data:extend(
         soil,
         nexelit_ore,
         recipe_drill_head,
-        drill_head
+        drill_head,
+		sand,
+		limestone,
+		organics,
+		coarse,
+		rich_dust,
+		coal_dust,
+		pure_sand,
+		chromite_sand
     }
 )

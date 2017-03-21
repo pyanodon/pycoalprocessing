@@ -69,5 +69,17 @@ data:extend(
 	  type = "recipe-category",
       name = "fts-reactor",
     },
+	{
+	  type = "recipe-category",
+      name = "solid-separator",
+    },
+	{
+	  type = "recipe-category",
+      name = "washer",
+    },
+	{
+	  type = "recipe-category",
+      name = "classifier",
+    },
 }
 )
