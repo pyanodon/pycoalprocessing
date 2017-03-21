@@ -13,7 +13,7 @@ require("prototypes.item-groups")
 --Categories
 require("prototypes.recipe-categories")
 
---Technolgies
+--Technologies
 require("prototypes.technologies.coal-processing-1")
 require("prototypes.technologies.coal-processing-2")
 require("prototypes.technologies.coal-processing-3")
@@ -29,6 +29,9 @@ require("prototypes.technologies.separation")
 --Recipes without items
 require("prototypes.recipes.recipes")
 require("prototypes.recipes.ground-borer-recipes")
+require("prototypes.recipes.fts-reactor-recipes")
+require("prototypes.recipes.olefin-plant-recipes")
+require("prototypes.recipes.advanced-foundry-recipes")
 
 --Items without entities
 require("prototypes.items.treated-wood")
@@ -53,6 +56,7 @@ require("prototypes.fluids.tar")
 require("prototypes.fluids.dirty-water")
 require("prototypes.fluids.flue-gas")
 require("prototypes.fluids.combustion-mixture1")
+require("prototypes.fluids.combustion-mixture2")
 require("prototypes.fluids.water-saline")
 require("prototypes.fluids.aromatics")
 require("prototypes.fluids.diesel")
@@ -62,6 +66,7 @@ require("prototypes.fluids.olefin")
 require("prototypes.buildings.distilator")
 require("prototypes.buildings.gasturbinemk01")
 require("prototypes.buildings.gasturbinemk02")
+require("prototypes.buildings.gasturbinemk03")
 require("prototypes.buildings.gasifier")
 require("prototypes.buildings.carbon-filter")
 require("prototypes.buildings.tar-processing-unit")
@@ -81,6 +86,7 @@ require("prototypes.buildings.fts-reactor")
 require("prototypes.buildings.solid-separator")
 require("prototypes.buildings.washer")
 require("prototypes.buildings.classifier")
+require("prototypes.buildings.advanced-foundry")
 
 
 --move to syngas recipe stuff in data-updates?
