@@ -106,7 +106,7 @@ local entity1={
   },
   allowed_effects = {"consumption", "speed", "productivity", "pollution"},
   crafting_categories = {"soil-extraction"},
-  crafting_speed = 1.5,
+  crafting_speed = 1.0,
   energy_source =
   {
     type = "electric",
