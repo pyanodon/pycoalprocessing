@@ -315,6 +315,17 @@ local coal_dust ={
     stack_size = 500
 }
 -------------------------------------------------------------------------------
+--GRAVEL
+local gravel ={
+    type = "item",
+    name = "gravel",
+    icon = "__pycoalprocessing__/graphics/icons/gravel.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "gravel",
+    stack_size = 300
+}
+-------------------------------------------------------------------------------
 --CHROMITE SAND
 local chromite_sand ={
     type = "item",
@@ -326,7 +337,30 @@ local chromite_sand ={
     stack_size = 500
 
 }
+-------------------------------------------------------------------------------
+--NEXELIT-PLATE
+local nexelit_plate ={
+    type = "item",
+    name = "nexelit_plate",
+    icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "nexelit-plate",
+    stack_size = 100
 
+}
+-------------------------------------------------------------------------------
+--SAND-CASTING
+local sand_casting ={
+    type = "item",
+    name = "sand_casting",
+    icon = "__pycoalprocessing__/graphics/icons/sand-casting.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "sand-casting",
+    stack_size = 200
+
+}
 -------------------------------------------------------------------------------
 data:extend(
     {
@@ -351,9 +385,12 @@ data:extend(
 		limestone,
 		organics,
 		coarse,
+		gravel,
 		rich_dust,
 		coal_dust,
 		pure_sand,
-		chromite_sand
+		chromite_sand,
+		nexelit_plate,
+		sand_casting
     }
 )
