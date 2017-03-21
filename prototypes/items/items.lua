@@ -23,7 +23,6 @@ local chromium ={
 }
 -------------------------------------------------------------------------------
 
-
 -------------------------------------------------------------------------------
 --NOT A GOOD NAME
 local coke = {
@@ -64,6 +63,15 @@ local nichrome = {
 --IRON OXIDE
 --Iron ore is typically hidden as a product, smelt directly to iron plate instead
 --2x iron-oxide = 1x iron-plate in the same time it takes 1x iron-ore -> 1x plate
+local recipe_iron_oxide = {
+    type = "recipe",
+    name = "iron-oxide",
+    category = "smelting",
+    energy_required = 3.5,
+    ingredients = {{"iron-oxide", 2}},
+    result = "iron-plate"
+}
+
 local iron_oxide = {
     type = "item",
     name = "iron-oxide",
@@ -73,6 +81,7 @@ local iron_oxide = {
     order = "iron-oxide",
     stack_size = 200
 }
+
 --ACTIVE CARBON
 -------------------------------------------------------------------------------
 local recipe_active_carbon = {
@@ -360,6 +369,7 @@ data:extend(
         coke,
         recipe_nichrome,
         nichrome,
+        recipe_iron_oxide,
         iron_oxide,
         recipe_active_carbon,
         active_carbon,
@@ -372,16 +382,16 @@ data:extend(
         nexelit_ore,
         recipe_drill_head,
         drill_head,
-		sand,
-		limestone,
-		organics,
-		coarse,
-		gravel,
-		rich_dust,
-		coal_dust,
-		pure_sand,
-		chromite_sand,
-		nexelit_plate,
-		sand_casting
+        sand,
+        limestone,
+        organics,
+        coarse,
+        gravel,
+        rich_dust,
+        coal_dust,
+        pure_sand,
+        chromite_sand,
+        nexelit_plate,
+        sand_casting
     }
 )
