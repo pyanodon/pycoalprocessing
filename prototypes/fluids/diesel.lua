@@ -1,27 +1,4 @@
 -------------------------------------------------------------------------------
---[[recipes]]--
-local recipe1=
-	{
-	  type = "recipe",
-	  name = "diesel",
-	  category = "olefin",
-	  enabled = "false",
-	  energy_required = 2,
-	  ingredients ={
-		{type="item", name="chromium", amount=2},
-		{type="fluid", name="methanol", amount=15},
-		{type="fluid", name="carbon-dioxide", amount=20},
-	  },
-	  results=
-	  {
-		{type="fluid", name="diesel", amount=15},
-		{type="fluid", name="olefin", amount=10},
-	  },
-	  main_product= "diesel",
-	  icon = "__pycoalprocessing__/graphics/icons/diesel.png",
-	  --order = "b-c [syn-gas]",
-	}
--------------------------------------------------------------------------------
 --[[items]]--
 local item1=
 {
@@ -43,6 +20,5 @@ local item1=
 local entity1=nil
 -------------------------------------------------------------------------------
 --[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
 if item1 then data:extend({item1}) end
 if entity1 then data:extend({entity1}) end
