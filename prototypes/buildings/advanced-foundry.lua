@@ -65,7 +65,7 @@ local recipe1={
   ingredients =
   {
     {"copper-cable", 30},
-    {"titanium-plate", 20},
+    {"iron-plate", 20}, --titanium-plate
     {"concrete", 60}, --bob glass
     {"olefin-plant", 1}, --bob steel-bearing
     {"steel-plate", 70},  --bob invar-alloy
