@@ -81,5 +81,9 @@ data:extend(
 	  type = "recipe-category",
       name = "classifier",
     },
+	{
+	  type = "recipe-category",
+      name = "advanced-foundry",
+    },
 }
 )
