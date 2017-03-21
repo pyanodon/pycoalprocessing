@@ -38,6 +38,10 @@ local technology = {
     },
 	{
 		type = "unlock-recipe",
+		recipe = "diesel2"
+    },
+	{
+		type = "unlock-recipe",
 		recipe = "aromatics"
     },
 	{
@@ -54,7 +58,35 @@ local technology = {
     },
 	{
 		type = "unlock-recipe",
-		recipe = "ref_to_petroleum_gas"
+		recipe = "advanced-foundry"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "nexelit_plate"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "sand_casting"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "organics_processing"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "sulfuric_petgas"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "tar_oil"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "combustion-mixture2"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "gasturbinemk03"
     },
   },
 
