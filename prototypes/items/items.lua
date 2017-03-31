@@ -22,7 +22,16 @@ local chromium ={
     stack_size = 100
 }
 -------------------------------------------------------------------------------
-
+--GRAVEL
+local gravel = {
+    type = "item",
+    name = "gravel",
+    icon = "__pycoalprocessing__/graphics/icons/gravel.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "gravel",
+    stack_size = 300
+}
 
 -------------------------------------------------------------------------------
 --NOT A GOOD NAME
@@ -353,6 +362,95 @@ local sand_casting ={
 
 }
 -------------------------------------------------------------------------------
+-- LITHIUM PEROXIDE
+local recipe_lithium_peroxide = {
+    type = "recipe",
+    name = "lithium-peroxide",
+    category = "chemistry",
+    energy_required = 5,
+    ingredients ={
+        {type="fluid", name="lithia-water", amount=30},
+        {type="fluid", name="hydrogen-peroxide", amount=10},
+    },
+    results={
+        {type="item", name="lithium-peroxide", amount=5},
+    },
+}
+
+local lithium_peroxide = {
+    type = "item",
+    name = "lithium-peroxide",
+    icon = "__pycoalprocessing__/graphics/icons/lithium-peroxide.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 200
+}
+-------------------------------------------------------------------------------
+-- NEXELIT CARTRIDGE
+local recipe_nexelit_cartridge = {
+    type = "recipe",
+    name = "nexelit-cartridge",
+    category = "crafting",
+    energy_required = 4,
+    ingredients ={
+        {type="item", name="lithium-peroxide", amount=25},
+        {type="item", name="nexelit_plate", amount=10},
+    },
+    results={
+        {type="item", name="nexelit-cartridge", amount=1},
+    },
+}
+
+local nexelit_cartridge = {
+    type = "item",
+    name = "nexelit-cartridge",
+    icon = "__pycoalprocessing__/graphics/icons/nexelit-cartridge.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- SATURATED NEXELIT CARTRIDGE
+local saturated_nexelit_cartridge = {
+    type = "item",
+    name = "saturated-nexelit-cartridge",
+    icon = "__pycoalprocessing__/graphics/icons/saturated-nexelit-cartridge.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- LIME
+local recipe_lime = {
+    type = "recipe",
+    name = "lime",
+    category = "hpf",
+    energy_required = 5,
+    ingredients ={
+        {type="item", name="coke", amount=25},
+        {type="item", name="limestone", amount=10},
+    },
+    results={
+        {type="item", name="lime", amount=10},
+		{type="fluid", name="carbon-dioxide", amount=10},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/lime.png",
+	subgroup = "py-items",
+	order = "g",
+}
+local lime = {
+    type = "item",
+    name = "lime",
+    icon = "__pycoalprocessing__/graphics/icons/lime.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
 data:extend(
     {
         ash,
@@ -382,6 +480,13 @@ data:extend(
 		pure_sand,
 		chromite_sand,
 		nexelit_plate,
-		sand_casting
+		sand_casting,
+		recipe_lithium_peroxide,
+		lithium_peroxide,
+		recipe_nexelit_cartridge,
+		nexelit_cartridge,
+		saturated_nexelit_cartridge,
+		recipe_lime,
+		lime
     }
 )
