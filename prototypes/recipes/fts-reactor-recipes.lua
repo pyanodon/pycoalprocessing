@@ -108,9 +108,32 @@ local sulfuric_petgas ={
   main_product= "sulfuric-acid",
   order = "c",
 }
+-------------------------------------------------------------------------------
+--COMBUSTION MIXTURE01 FROM OLEFINS	
+local combustion_olefin ={
+  type = "recipe",
+  name = "combustion-olefin",
+  category = "fts-reactor",
+  enabled = "false",
+  energy_required = 2,
+  ingredients ={
+    {type="fluid", name="olefin", amount=30},
+	{type="fluid", name="water", amount=50},
+	{type="fluid", name="hydrogen", amount=15},
+	{type="item", name="nichrome", amount=5},
 
+  },
+  results={
+    {type="fluid", name="carbon-dioxide", amount=10},
+	{type="fluid", name="water", amount=50, temperature=100},
+	{type="fluid", name="combustion-mixture1", amount=30},
+  },
+  icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
+  main_product= "combustion-mixture1",
+  order = "c",
+}
 
 data:extend{
 	heavy_oil_from_coal_gas, light_oil_from_syngas, petgas_from_refsyngas, ref_to_light_oil,
-	sulfuric_petgas
+	sulfuric_petgas, combustion_olefin
 }

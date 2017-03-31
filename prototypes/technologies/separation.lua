@@ -10,27 +10,11 @@ local technology = {
 
     {
       type = "unlock-recipe",
-      recipe = "solid-separator"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "washer"
-    },
-    {
-      type = "unlock-recipe",
       recipe = "richdust_separation"
     },
     {
       type = "unlock-recipe",
       recipe = "tailings_separation"
-    },
-	{
-      type = "unlock-recipe",
-      recipe = "soil_separation"
-    },
-	{
-      type = "unlock-recipe",
-      recipe = "sand_washing"
     },
 	{
       type = "unlock-recipe",
@@ -44,6 +28,11 @@ local technology = {
       type = "unlock-recipe",
       recipe = "coarse_classification"
     },
+	{
+      type = "unlock-recipe",
+      recipe = "coal-slurry"
+    },
+
   },
   unit =
   {

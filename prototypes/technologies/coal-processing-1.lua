@@ -51,7 +51,38 @@ local technology = {
       type = "unlock-recipe",
       recipe = "syngas"
     },
-
+    {
+      type = "unlock-recipe",
+      recipe = "glass-sand"
+    },
+	{
+      type = "unlock-recipe",
+      recipe = "soil_separation"
+    },
+    {
+      type = "unlock-recipe",
+      recipe = "solid-separator"
+    },
+    {
+      type = "unlock-recipe",
+      recipe = "washer"
+    },
+	{
+      type = "unlock-recipe",
+      recipe = "sand_washing"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "soil"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "soil-extractormk01"
+	},
+    {
+            type = "unlock-recipe",
+            recipe = "hpf"
+    },
   },
   unit =
   {

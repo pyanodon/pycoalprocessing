@@ -89,5 +89,9 @@ data:extend(
 	  type = "recipe-category",
       name = "co2",
     },
+	{
+	  type = "recipe-category",
+      name = "fluid-separator",
+    },
 }
 )
