@@ -25,6 +25,7 @@ require("prototypes.technologies.desulfurization")
 require("prototypes.technologies.excavation-1")
 require("prototypes.technologies.excavation-2")
 require("prototypes.technologies.separation")
+require("prototypes.technologies.fuel-production")
 
 --Recipes without items
 require("prototypes.recipes.recipes")
@@ -61,6 +62,9 @@ require("prototypes.fluids.water-saline")
 require("prototypes.fluids.aromatics")
 require("prototypes.fluids.diesel")
 require("prototypes.fluids.olefin")
+require("prototypes.fluids.hydrogen-peroxide")
+require("prototypes.fluids.anthraquinone")
+require("prototypes.fluids.slacked-lime")
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -87,12 +91,14 @@ require("prototypes.buildings.solid-separator")
 require("prototypes.buildings.washer")
 require("prototypes.buildings.classifier")
 require("prototypes.buildings.advanced-foundry")
+require("prototypes.buildings.co2-absorber")
+
 
 --move to syngas recipe stuff in data-updates?
 for _, v in pairs(data.raw.module) do
-    if v.name:find("productivity%-module") and v.limitation then
-        for _, recipe in ipairs({"syngas"}) do
-            table.insert(v.limitation, recipe)
-        end
+  if v.name:find("productivity%-module") and v.limitation then
+    for _, recipe in ipairs({"syngas"}) do
+      table.insert(v.limitation, recipe)
     end
+  end
 end
