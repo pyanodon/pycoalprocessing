@@ -383,6 +383,7 @@ local co2_cooking ={
     },
     results={
         {type="fluid", name="carbon-dioxide", amount=15},
+		{type="item", name="ash", amount=1},
 
     },
     main_product= "carbon-dioxide",
@@ -391,9 +392,31 @@ local co2_cooking ={
     order = "c",
 }
 -------------------------------------------------------------------------------
+--GLASS PRODUCTION
+local glass ={
+    type = "recipe",
+    name = "glass-sand",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+        {type="item", name="pure_sand", amount=30},
+		{type="fluid", name="oxygen", amount=10},
+		{type="item", name="quartz", amount=5},
+    },
+    results={
+		{type="item", name="glass", amount=10},
+
+    },
+    main_product= "glass",
+    icon = "__bobplates__/graphics/icons/glass.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
 data:extend{
   raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
   soil_separation, richdust_separation, sand_washing, tailings_separation,
   making_chromium, coarse_classification, pure_sand_classification, organics_processing,
-  sand_casting, tar_oil, absorb_air_pollution, slacked_lime, co2_cooking
+  sand_casting, tar_oil, absorb_air_pollution, slacked_lime, co2_cooking, glass
 }

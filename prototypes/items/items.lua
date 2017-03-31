@@ -310,6 +310,7 @@ local coal_dust ={
     name = "coal_dust",
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
     flags = {"goes-to-main-inventory"},
+	fuel_value = "6MJ",
     subgroup = "py-items",
     order = "coal_dust",
     stack_size = 500
@@ -450,6 +451,34 @@ local lime = {
     order = "g",
     stack_size = 100
 }
+--FUEL ROD MK01
+-------------------------------------------------------------------------------
+local recipe_fuelrod_mk01 = {
+    type = "recipe",
+    name = "fuelrod-mk01",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 3.5,
+    ingredients ={
+        {type="item", name="iron-plate", amount=4},
+        {type="item", name="nexelit-ore", amount=25},
+        {type="item", name="coke", amount=5},
+    },
+    results={
+        {type="item", name="fuelrod-mk01", amount=1},
+    },
+}
+
+local fuelrod_mk01 = {
+    type = "item",
+    name = "fuelrod-mk01",
+    fuel_value = "150MJ",
+    icon = "__pycoalprocessing__/graphics/icons/fuelrod-mk01.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items-hpf",
+    order = "hpf-[active-carbon]",
+    stack_size = 50
+}
 -------------------------------------------------------------------------------
 data:extend(
     {
@@ -487,6 +516,8 @@ data:extend(
 		nexelit_cartridge,
 		saturated_nexelit_cartridge,
 		recipe_lime,
-		lime
+		lime,
+		recipe_fuelrod_mk01,
+		fuelrod_mk01
     }
 )
