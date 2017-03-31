@@ -60,6 +60,23 @@ local technology = {
 		type = "unlock-recipe",
 		recipe = "anthraquinone"
     },
+	{
+		type = "unlock-recipe",
+		recipe = "fuelrod-mk01"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "olefin-petgas"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "gasoline"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "combustion-olefin"
+    },
+
   },
 
   unit =

@@ -72,6 +72,10 @@ local technology = {
 		type = "unlock-recipe",
 		recipe = "slacked-lime"
     },
+	{
+		type = "unlock-recipe",
+		recipe = "iron_plate"
+    },
   },
 
   unit =

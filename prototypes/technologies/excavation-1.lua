@@ -10,14 +10,6 @@ local technology = {
 
 	{
 		type = "unlock-recipe",
-		recipe = "soil"
-	},
-	{
-		type = "unlock-recipe",
-		recipe = "soil-extractormk01"
-	},
-	{
-		type = "unlock-recipe",
 		recipe = "ground-borer"
 	},
 	{

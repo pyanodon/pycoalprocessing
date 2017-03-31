@@ -31,10 +31,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "hpf"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "zinc-chloride"
         },
         {
@@ -73,6 +69,14 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "raw-wood-to-coal"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "fluid-separator"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "coal-slurry"
         },
     },
     unit =
