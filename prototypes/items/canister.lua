@@ -70,6 +70,7 @@ local recipe_empty_canister = {
 -------------------------------------------------------------------------------
 --[[Items]]--
 
+
 local filled_canister = {
     type = "item",
     name = "filled-methanol-gas-canister",
