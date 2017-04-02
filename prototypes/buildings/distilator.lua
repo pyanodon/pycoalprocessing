@@ -61,14 +61,13 @@ local recipe1={
   type = "recipe",
   name = "distilator",
   energy_requiered = 10,
-  enabled = false,
+  enabled = true,
   ingredients =
   {
-    {"steel-plate", 20},
+    {"copper-plate", 20},
     {"pipe", 10}, --copper-pipe in bobmods
     {"iron-plate", 10},
-    --{"storage-tank", 2}, --Storage tank not available in red tech. oops
-    {"electronic-circuit", 2}
+    {"basic-circuit-board", 3}
   },
   result= "distilator",
   icon = "__pycoalprocessing__/graphics/icons/distilator.png",
