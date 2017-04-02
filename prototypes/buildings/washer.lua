@@ -57,13 +57,12 @@ local recipe1={
   type = "recipe",
   name = "washer",
   energy_required = 4,
-  enabled = "false",
+  enabled = "true",
   ingredients ={
-    {"titanium-plate", 10},
     {"iron-plate", 10},
     {"pipe", 25}, --bob steel-pipe
-    {"plastic-bar", 60},
-    {"advanced-circuit", 2},
+    {"stone-brick", 30},
+    {"basic-circuit-board", 2},
   },
   result= "washer",
   icon = "__pycoalprocessing__/graphics/icons/washer.png",

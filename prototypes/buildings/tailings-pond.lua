@@ -6,11 +6,11 @@ local _TANK_SIZE = PYC.TAILINGS_POND.TANK_SIZE
 local recipe_tailings_pond = {
   type = "recipe",
   name = "tailings-pond",
-  enabled = "false",
+  enabled = "true",
   ingredients =
   {
-    {"small-pump", 1},
-    {"steel-plate", 10},
+    {"pipe", 10},
+    {"iron-plate", 10},
     {"stone-brick", 100}
   },
   result = "tailings-pond"

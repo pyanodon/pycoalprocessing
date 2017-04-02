@@ -20,6 +20,10 @@ local technology = {
 		type = "unlock-recipe",
 		recipe = "mining-nexelit"
 	},
+	{
+		type = "unlock-recipe",
+		recipe = "drill-head"
+	},
   },
 
   unit =

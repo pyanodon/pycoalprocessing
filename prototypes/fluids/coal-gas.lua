@@ -7,7 +7,7 @@ local recipe1 =
     type = "recipe",
     name = "coal-gas",
     category = "distilator",
-    enabled = "false",
+    enabled = "true",
     energy_required = 3,
     ingredients ={
         {type="item", name="coal", amount=10},
@@ -29,7 +29,7 @@ local recipe2 =
     type = "recipe",
     name = "coal-gas-from-wood",
     category = "distilator",
-    enabled = "false",
+    enabled = "true",
     energy_required = 3,
     ingredients ={
         {type="item", name="raw-wood", amount=10},

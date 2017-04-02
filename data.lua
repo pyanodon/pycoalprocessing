@@ -59,8 +59,10 @@ require("prototypes.fluids.flue-gas")
 require("prototypes.fluids.combustion-mixture1")
 require("prototypes.fluids.combustion-mixture2")
 require("prototypes.fluids.water-saline")
+require("prototypes.fluids.water-mineralized")
 require("prototypes.fluids.aromatics")
 require("prototypes.fluids.diesel")
+require("prototypes.fluids.gasoline")
 require("prototypes.fluids.olefin")
 require("prototypes.fluids.hydrogen-peroxide")
 require("prototypes.fluids.anthraquinone")
@@ -94,6 +96,7 @@ require("prototypes.buildings.classifier")
 require("prototypes.buildings.advanced-foundry")
 require("prototypes.buildings.co2-absorber")
 require("prototypes.buildings.fluid-separator")
+require("prototypes.buildings.fawogae-plantation")
 
 
 --move to syngas recipe stuff in data-updates?

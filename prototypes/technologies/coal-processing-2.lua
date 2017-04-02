@@ -4,7 +4,7 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/coal-processing-2.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-1"},
+    prerequisites = {"steel-processing","coal-processing-1"},
     effects =
     {
 
@@ -20,7 +20,6 @@ local technology = {
             type = "unlock-recipe",
             recipe = "rectisol"
         },
-
         {
             type = "unlock-recipe",
             recipe = "quenching-tower"
@@ -78,6 +77,7 @@ local technology = {
             type = "unlock-recipe",
             recipe = "coal-slurry"
         },
+
     },
     unit =
     {
