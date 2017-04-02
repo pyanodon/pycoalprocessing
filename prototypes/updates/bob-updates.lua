@@ -16,9 +16,9 @@ replace_ing("distilator", "pipe", "copper-pipe")
 replace_ing("gasturbinemk02", "pipe", "bronze-pipe")
 replace_ing("gasturbinemk02", "iron-plate", "invar-alloy")
 
-replace_ing("hpf", "stone-brick", "glass")
-replace_ing("hpf", "iron-gear-wheel", "steel-bearing")
-replace_ing("hpf", "iron-plate", "invar-alloy")
+--replace_ing("hpf", "stone-brick", "glass")
+--replace_ing("hpf", "iron-gear-wheel", "steel-bearing")
+--replace_ing("hpf", "iron-plate", "invar-alloy")
 
 replace_ing("methanol-reactor", "chemical-plant", "electrolyser")
 replace_ing("methanol-reactor", "iron-gear-wheel", "steel-bearing")
@@ -44,8 +44,8 @@ replace_ing("cooling-tower-mk01", "iron-plate", "steel-bearing")
 replace_ing("desulfurizator-unit", "steel-plate", "titanium-plate")
 replace_ing("desulfurizator-unit", "iron-plate", "invar-alloy")
 
-replace_ing("soil-extractormk01", "steel-plate", "brass-alloy")
-replace_ing("soil-extractormk01", "iron-gear-wheel", "brass-gear-wheel")
+--replace_ing("soil-extractormk01", "steel-plate", "brass-alloy")
+--replace_ing("soil-extractormk01", "iron-gear-wheel", "brass-gear-wheel")
 
 replace_ing("olefin-plant", "chemical-plant", "electrolyser")
 replace_ing("olefin-plant", "iron-gear-wheel", "steel-bearing")

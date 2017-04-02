@@ -61,15 +61,14 @@ local recipe1={
   type = "recipe",
   name = "hpf",
   energy_requiered = 10,
-  enabled = false,
+  enabled = true,
   ingredients =
   {
-    {"concrete", 20},
-    {"steel-plate", 20},
-    {"stone-brick", 10}, --bob glass
+    {"stone-brick", 20},
+    {"copper-plate", 20},
     {"iron-gear-wheel", 5}, --bob steel-bearing
     {"iron-plate", 10},  --bob invar-alloy
-    {"advanced-circuit", 10},
+    {"basic-circuit-board", 3},
   },
   result= "hpf",
   icon = "__pycoalprocessing__/graphics/icons/hpf.png",

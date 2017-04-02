@@ -9,14 +9,6 @@ local technology = {
   {
     {
       type = "unlock-recipe",
-      recipe = "tailings-pond"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "distilator"
-    },
-    {
-      type = "unlock-recipe",
       recipe = "gasifier"
     },
     {
@@ -30,14 +22,6 @@ local technology = {
     {
       type = "unlock-recipe",
       recipe = "coal-gas"
-    },
-	{
-		type = "unlock-recipe",
-		recipe = "coal-gas-from-wood"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "coal-gas-from-wood"
     },
     {
       type = "unlock-recipe",
@@ -53,40 +37,13 @@ local technology = {
     },
     {
       type = "unlock-recipe",
-      recipe = "glass-sand"
+      recipe = "water-mineralized"
     },
-	{
-      type = "unlock-recipe",
-      recipe = "soil_separation"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "solid-separator"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "washer"
-    },
-	{
-      type = "unlock-recipe",
-      recipe = "sand_washing"
-    },
-	{
-		type = "unlock-recipe",
-		recipe = "soil"
-	},
-	{
-		type = "unlock-recipe",
-		recipe = "soil-extractormk01"
-	},
-    {
-            type = "unlock-recipe",
-            recipe = "hpf"
-    },
+
   },
   unit =
   {
-    count = 50,
+    count = 30,
     ingredients = {
       {"science-pack-1", 1},
     },

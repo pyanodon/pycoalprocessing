@@ -76,6 +76,22 @@ local technology = {
 		type = "unlock-recipe",
 		recipe = "iron_plate"
     },
+	{
+		type = "unlock-recipe",
+		recipe = "lithium-peroxide"
+	},
+	{
+		type = "unlock-recipe",
+		recipe = "nexelit-cartridge"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "solid-separator"
+    },
+	{
+		type = "unlock-recipe",
+		recipe = "soil_separation"
+    },
   },
 
   unit =

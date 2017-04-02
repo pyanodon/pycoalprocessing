@@ -15,3 +15,6 @@ end
 if angelsmods then
   require("prototypes.updates.angel-updates")
 end
+
+--science pack 1 override
+data.raw.tool["science-pack-1"].icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png"
