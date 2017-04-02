@@ -180,15 +180,15 @@ local soil_separation ={
     name = "soil_separation",
     category = "solid-separator",
     enabled = "false",
-    energy_required = 1,
+    energy_required = 3,
     ingredients ={
-        {type="item", name="soil", amount=10},
+        {type="item", name="soil", amount=40},
     },
     results={
-        {type="item", name="sand", amount=7},
+        {type="item", name="sand", amount=5},
 		{type="item", name="coarse", amount=3},
-		{type="item", name="limestone", amount=4},
-		{type="item", name="organics", amount=2},
+		{type="item", name="limestone", amount=3},
+		{type="item", name="organics", amount=1},
     },
     main_product= "sand",
     icon = "__pycoalprocessing__/graphics/icons/soil-separation.png",
@@ -245,7 +245,7 @@ local sand_washing ={
     type = "recipe",
     name = "sand_washing",
     category = "washer",
-    enabled = "false",
+    enabled = "true",
     energy_required = 4,
     ingredients ={
         {type="item", name="sand", amount=10},
@@ -397,11 +397,11 @@ local glass ={
     type = "recipe",
     name = "glass-sand",
     category = "hpf",
-    enabled = "false",
+    enabled = "true",
     energy_required = 3,
     ingredients ={
         {type="item", name="pure_sand", amount=30},
-		{type="fluid", name="oxygen", amount=10},
+		{type="fluid", name="coal-gas", amount=10},
 		{type="item", name="quartz", amount=5},
     },
     results={
@@ -414,9 +414,109 @@ local glass ={
     order = "c",
 }
 -------------------------------------------------------------------------------
+--FAWOGAE SUBSTRATE
+local fawogae_substrate ={
+    type = "recipe",
+    name = "fawogae-substrate",
+    category = "crafting",
+    enabled = "true",
+    energy_required = 3.5,
+    ingredients ={
+        {type="item", name="fawogae", amount=15},
+		{type="item", name="coke", amount=10},
+    },
+    results={
+		{type="item", name="fawogae-substrate", amount=5},
+
+    },
+    main_product= "fawogae-substrate",
+    icon = "__pycoalprocessing__/graphics/icons/fawogae-substrate.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
+--WATER MINERALIZED - FROM ANGELS
+local mineralized_water ={
+    type = "recipe",
+    name = "water-mineralized",
+    category = "washer",
+    enabled = "false",
+    energy_required = 2.5,
+    ingredients ={
+        {type="item", name="coarse", amount=5},
+        {type="fluid", name="water", amount=25},
+    },
+    results={
+		{type="item", name="stone", amount=3},
+        {type="fluid", name="water-mineralized", amount=15},
+
+    },
+    main_product= "water-mineralized",
+    icon = "__pycoalprocessing__/graphics/icons/coarse-washer.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
+--FLASK
+local flask ={
+    type = "recipe",
+    name = "flask",
+ --   category = "crafting",
+    enabled = "true",
+    energy_required = 2,
+    ingredients ={
+        {type="item", name="glass", amount=10},
+		{type="item", name="raw-wood", amount=5},
+    },
+	result = "flask",
+    icon = "__pycoalprocessing__/graphics/icons/flask.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
+--CRAFTING SCIENCE PACK-01 "should overlay the vanilla one"
+local science_pack01 ={
+    type = "recipe",
+    name = "science-pack-1",
+ --   category = "crafting",
+    enabled = "true",
+    energy_required = 4,
+    ingredients ={
+        {type="item", name="fawogae-substrate", amount=20},
+		{type="item", name="flask", amount=5},
+    },
+	result = "science-pack-1",
+    icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
+--BASIC SAND PRODUCTION
+local soil_washing ={
+    type = "recipe",
+    name = "soil-washing",
+    category = "washer",
+    enabled = "true",
+    energy_required = 4,
+    ingredients ={
+        {type="item", name="soil", amount=30},
+		{type="fluid", name="water", amount=60},
+    },
+    results={
+		{type="item", name="sand", amount=5},
+		{type="fluid", name="dirty-water", amount=10},
+
+    },
+    main_product= "sand",
+    icon = "__pycoalprocessing__/graphics/icons/soil-washer.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
 data:extend{
   raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
   soil_separation, richdust_separation, sand_washing, tailings_separation,
   making_chromium, coarse_classification, pure_sand_classification, organics_processing,
-  sand_casting, tar_oil, absorb_air_pollution, slacked_lime, co2_cooking, glass
+  sand_casting, tar_oil, absorb_air_pollution, slacked_lime, co2_cooking, glass, fawogae_substrate,
+  mineralized_water, science_pack01, soil_washing, flask
 }

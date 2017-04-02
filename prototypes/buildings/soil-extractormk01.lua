@@ -61,15 +61,14 @@ local recipe1={
   type = "recipe",
   name = "soil-extractormk01",
   energy_requiered = 100,
-  enabled = false,
+  enabled = true,
   ingredients =
   {
-    {"electric-mining-drill", 2},
-    {"engine-unit", 4},
-    {"advanced-circuit", 10},
-    {"steel-plate", 40}, -- bob brass-alloy
-	  {"storage-tank", 1},
-    {"iron-gear-wheel", 15}, --bob brass-gear-wheel
+    {"burner-mining-drill", 2},
+    {"basic-circuit-board", 10},
+    {"iron-plate", 30}, 
+	{"copper-cable", 5},
+    {"iron-gear-wheel", 15}, 
 
   },
   result= "soil-extractormk01",
@@ -106,7 +105,7 @@ local entity1={
   },
   allowed_effects = {"consumption", "speed", "productivity", "pollution"},
   crafting_categories = {"soil-extraction"},
-  crafting_speed = 1.0,
+  crafting_speed = 0.8,
   energy_source =
   {
     type = "electric",

@@ -51,6 +51,7 @@ local recipe_nichrome = {
     type = "recipe",
     name = "nichrome",
     category = "hpf",
+	enabled = "false",
     energy_required = 2.5,
     ingredients ={
         {type="fluid", name="water", amount=10}, -- bob nitrogen
@@ -112,6 +113,7 @@ local active_carbon = {
     stack_size = 100
 }
 
+--ZINC CHLORIDE
 -------------------------------------------------------------------------------
 local recipe_zinc_chloride ={
     type = "recipe",
@@ -177,8 +179,8 @@ local recipe_soil ={
     type = "recipe",
     name = "soil",
     category = "soil-extraction",
-    enabled = "false",
-    energy_required = 1,
+    enabled = "true",
+    energy_required = 2,
     ingredients ={
         {type="fluid", name="water", amount=100},
     },
@@ -215,6 +217,7 @@ local recipe_drill_head = {
     type = "recipe",
     name = "drill-head",
     category = "crafting",
+	enabled = "false",
     energy_required = 3,
     ingredients ={
         {type="item", name="steel-plate", amount=8},
@@ -368,6 +371,7 @@ local recipe_lithium_peroxide = {
     type = "recipe",
     name = "lithium-peroxide",
     category = "chemistry",
+	enabled = "false",
     energy_required = 5,
     ingredients ={
         {type="fluid", name="lithia-water", amount=30},
@@ -393,6 +397,7 @@ local recipe_nexelit_cartridge = {
     type = "recipe",
     name = "nexelit-cartridge",
     category = "crafting",
+	enabled = "false",
     energy_required = 4,
     ingredients ={
         {type="item", name="lithium-peroxide", amount=25},
@@ -429,6 +434,7 @@ local recipe_lime = {
     type = "recipe",
     name = "lime",
     category = "hpf",
+	enabled = "false",
     energy_required = 5,
     ingredients ={
         {type="item", name="coke", amount=25},
@@ -480,6 +486,54 @@ local fuelrod_mk01 = {
     stack_size = 50
 }
 -------------------------------------------------------------------------------
+--FAWOGAE PRODUCTION
+-------------------------------------------------------------------------------
+local recipe_fawogae = {
+    type = "recipe",
+    name = "fawogae",
+    category = "fawogae",
+    enabled = "true",
+    energy_required = 5.0,
+    ingredients ={
+        {type="fluid", name="water", amount=90},
+    },
+    results={
+        {type="item", name="fawogae", amount=5},
+    },
+}
+
+local fawogae = {
+    type = "item",
+    name = "fawogae",
+    icon = "__pycoalprocessing__/graphics/icons/fawogae-icon.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "z",
+    stack_size = 300
+}
+-------------------------------------------------------------------------------
+-- FAWOGAE SUBSTRATE
+local fawogae_substrate = {
+    type = "item",
+    name = "fawogae-substrate",
+    icon = "__pycoalprocessing__/graphics/icons/fawogae-substrate.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- FLASK
+local flask = {
+    type = "item",
+    name = "flask",
+    icon = "__pycoalprocessing__/graphics/icons/flask.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 50
+}
+-------------------------------------------------------------------------------
 data:extend(
     {
         ash,
@@ -518,6 +572,10 @@ data:extend(
 		recipe_lime,
 		lime,
 		recipe_fuelrod_mk01,
-		fuelrod_mk01
+		fuelrod_mk01,
+		recipe_fawogae,
+		fawogae,
+		fawogae_substrate,
+		flask
     }
 )

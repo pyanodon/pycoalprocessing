@@ -93,5 +93,9 @@ data:extend(
 	  type = "recipe-category",
       name = "fluid-separator",
     },
+	{
+	  type = "recipe-category",
+      name = "fawogae",
+    },
 }
 )
