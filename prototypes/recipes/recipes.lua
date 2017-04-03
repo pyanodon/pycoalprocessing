@@ -12,9 +12,9 @@ local making_chromium ={
     energy_required = 1,
     ingredients ={
         {type="fluid", name="carbon-dioxide", amount=10},
-		{type="item", name="chromite_sand", amount=5},
-		{type="item", name="coke", amount=5},
-		{type="item", name="limestone", amount=5},
+        {type="item", name="chromite_sand", amount=5},
+        {type="item", name="coke", amount=5},
+        {type="item", name="limestone", amount=5},
     },
     results={
         {type="item", name="chromium", amount=1,},
@@ -144,8 +144,8 @@ local coarse_classification ={
     },
     results={
         {type="item", name="stone", amount=5},
-		{type="item", name="iron-oxide", amount=2},
-		{type="item", name="gravel", amount=4},
+        {type="item", name="iron-oxide", amount=2},
+        {type="item", name="gravel", amount=4},
     },
     main_product= "gravel",
     icon = "__pycoalprocessing__/graphics/icons/class-coarse.png",
@@ -165,7 +165,7 @@ local pure_sand_classification ={
     },
     results={
         {type="item", name="rich_dust", amount=5},
-		{type="item", name="gravel", amount=2},
+        {type="item", name="gravel", amount=2},
     },
     main_product= "rich_dust",
     icon = "__pycoalprocessing__/graphics/icons/class-pure-sand.png",
@@ -186,9 +186,9 @@ local soil_separation ={
     },
     results={
         {type="item", name="sand", amount=5},
-		{type="item", name="coarse", amount=3},
-		{type="item", name="limestone", amount=3},
-		{type="item", name="organics", amount=1},
+        {type="item", name="coarse", amount=3},
+        {type="item", name="limestone", amount=3},
+        {type="item", name="organics", amount=1},
     },
     main_product= "sand",
     icon = "__pycoalprocessing__/graphics/icons/soil-separation.png",
@@ -208,7 +208,7 @@ local richdust_separation ={
     },
     results={
         {type="item", name="iron-oxide", amount=2},
-		{type="item", name="chromite_sand", amount=6},
+        {type="item", name="chromite_sand", amount=6},
 
     },
     main_product= "chromite_sand",
@@ -230,7 +230,7 @@ local tailings_separation ={
     },
     results={
         {type="item", name="coal_dust", amount=8},
-		{type="item", name="rich_dust", amount=2},
+        {type="item", name="rich_dust", amount=2},
 
     },
     main_product= "rich_dust",
@@ -249,11 +249,11 @@ local sand_washing ={
     energy_required = 4,
     ingredients ={
         {type="item", name="sand", amount=10},
-		{type="fluid", name="water", amount=20},
+        {type="fluid", name="water", amount=20},
     },
     results={
         {type="item", name="pure_sand", amount=8},
-		{type="fluid", name="dirty-water", amount=8},
+        {type="fluid", name="dirty-water", amount=8},
 
     },
     main_product= "pure_sand",
@@ -271,11 +271,11 @@ local organics_processing ={
     energy_required = 2,
     ingredients ={
         {type="item", name="organics", amount=10},
-		{type="item", name="nexelit_plate", amount=5},
+        {type="item", name="nexelit_plate", amount=5},
     },
     results={
         {type="fluid", name="methanol", amount=10},
-		{type="fluid", name="syngas", amount=10},
+        {type="fluid", name="syngas", amount=10},
 
     },
     main_product= "methanol",
@@ -294,7 +294,7 @@ local sand_casting ={
     energy_required = 1,
     ingredients ={
         {type="item", name="sand", amount=10},
-		{type="fluid", name="creosote", amount=15},
+        {type="fluid", name="creosote", amount=15},
     },
     results={
         {type="item", name="sand_casting", amount=4},
@@ -315,7 +315,7 @@ local tar_oil ={
     energy_required = 1,
     ingredients ={
         {type="item", name="nexelit_plate", amount=2},
-		{type="fluid", name="tar", amount=50},
+        {type="fluid", name="tar", amount=50},
     },
     results={
         {type="fluid", name="crude-oil", amount=30},
@@ -328,7 +328,7 @@ local tar_oil ={
 }
 
 -------------------------------------------------------------------------------
---"AIR POLLUTION" ABSORBER	
+--"AIR POLLUTION" ABSORBER
 local absorb_air_pollution ={
     type = "recipe",
     name = "air_pollution",
@@ -348,7 +348,7 @@ local absorb_air_pollution ={
     order = "c",
 }
 -------------------------------------------------------------------------------
---SLACKED LIME	
+--SLACKED LIME
 local slacked_lime ={
     type = "recipe",
     name = "slacked-lime",
@@ -357,7 +357,7 @@ local slacked_lime ={
     energy_required = 3,
     ingredients ={
         {type="item", name="lime", amount=5},
-		{type="fluid", name="water", amount=20},
+        {type="fluid", name="water", amount=20},
     },
     results={
         {type="fluid", name="slacked-lime", amount=5},
@@ -378,38 +378,16 @@ local co2_cooking ={
     energy_required = 3,
     ingredients ={
         {type="item", name="saturated-nexelit-cartridge", amount=1},
-		{type="fluid", name="slacked-lime", amount=10},
-		{type="item", name="active-carbon", amount=2},
+        {type="fluid", name="slacked-lime", amount=10},
+        {type="item", name="active-carbon", amount=2},
     },
     results={
         {type="fluid", name="carbon-dioxide", amount=15},
-		{type="item", name="ash", amount=1},
+        {type="item", name="ash", amount=1},
 
     },
     main_product= "carbon-dioxide",
     icon = "__pycoalprocessing__/graphics/icons/co2.png",
-    subgroup = "py-items",
-    order = "c",
-}
--------------------------------------------------------------------------------
---GLASS PRODUCTION
-local glass ={
-    type = "recipe",
-    name = "glass-sand",
-    category = "hpf",
-    enabled = "true",
-    energy_required = 3,
-    ingredients ={
-        {type="item", name="pure_sand", amount=30},
-		{type="fluid", name="coal-gas", amount=10},
-		{type="item", name="quartz", amount=5},
-    },
-    results={
-		{type="item", name="glass", amount=10},
-
-    },
-    main_product= "glass",
-    icon = "__bobplates__/graphics/icons/glass.png",
     subgroup = "py-items",
     order = "c",
 }
@@ -423,10 +401,10 @@ local fawogae_substrate ={
     energy_required = 3.5,
     ingredients ={
         {type="item", name="fawogae", amount=15},
-		{type="item", name="coke", amount=10},
+        {type="item", name="coke", amount=10},
     },
     results={
-		{type="item", name="fawogae-substrate", amount=5},
+        {type="item", name="fawogae-substrate", amount=5},
 
     },
     main_product= "fawogae-substrate",
@@ -447,7 +425,7 @@ local mineralized_water ={
         {type="fluid", name="water", amount=25},
     },
     results={
-		{type="item", name="stone", amount=3},
+        {type="item", name="stone", amount=3},
         {type="fluid", name="water-mineralized", amount=15},
 
     },
@@ -461,14 +439,15 @@ local mineralized_water ={
 local flask ={
     type = "recipe",
     name = "flask",
- --   category = "crafting",
+    -- category = "crafting",
     enabled = "true",
     energy_required = 2,
     ingredients ={
-        {type="item", name="glass", amount=10},
-		{type="item", name="raw-wood", amount=5},
+        {type="item", name="iron-plate", amount=10},
+        --{type="item", name="glass", amount=10},
+        {type="item", name="raw-wood", amount=5},
     },
-	result = "flask",
+    result = "flask",
     icon = "__pycoalprocessing__/graphics/icons/flask.png",
     subgroup = "py-items",
     order = "c",
@@ -478,14 +457,14 @@ local flask ={
 local science_pack01 ={
     type = "recipe",
     name = "science-pack-1",
- --   category = "crafting",
+    -- category = "crafting",
     enabled = "true",
     energy_required = 4,
     ingredients ={
         {type="item", name="fawogae-substrate", amount=20},
-		{type="item", name="flask", amount=5},
+        {type="item", name="flask", amount=5},
     },
-	result = "science-pack-1",
+    result = "science-pack-1",
     icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png",
     subgroup = "py-items",
     order = "c",
@@ -500,11 +479,11 @@ local soil_washing ={
     energy_required = 4,
     ingredients ={
         {type="item", name="soil", amount=30},
-		{type="fluid", name="water", amount=60},
+        {type="fluid", name="water", amount=60},
     },
     results={
-		{type="item", name="sand", amount=5},
-		{type="fluid", name="dirty-water", amount=10},
+        {type="item", name="sand", amount=5},
+        {type="fluid", name="dirty-water", amount=10},
 
     },
     main_product= "sand",
@@ -514,9 +493,9 @@ local soil_washing ={
 }
 -------------------------------------------------------------------------------
 data:extend{
-  raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
-  soil_separation, richdust_separation, sand_washing, tailings_separation,
-  making_chromium, coarse_classification, pure_sand_classification, organics_processing,
-  sand_casting, tar_oil, absorb_air_pollution, slacked_lime, co2_cooking, glass, fawogae_substrate,
-  mineralized_water, science_pack01, soil_washing, flask
+    raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
+    soil_separation, richdust_separation, sand_washing, tailings_separation,
+    making_chromium, coarse_classification, pure_sand_classification, organics_processing,
+    sand_casting, tar_oil, absorb_air_pollution, slacked_lime, co2_cooking, fawogae_substrate,
+    mineralized_water, science_pack01, soil_washing, flask
 }

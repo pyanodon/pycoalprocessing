@@ -12,6 +12,7 @@ local add_prerequisite = bobmods.lib.tech.add_prerequisite
 --[[Entities]]--
 -------------------------------------------------------------------------------
 replace_ing("distilator", "pipe", "copper-pipe")
+replace_ing("distilator", "electronic-circuit", "basic-circuit-board")
 
 replace_ing("gasturbinemk02", "pipe", "bronze-pipe")
 replace_ing("gasturbinemk02", "iron-plate", "invar-alloy")
@@ -19,6 +20,7 @@ replace_ing("gasturbinemk02", "iron-plate", "invar-alloy")
 --replace_ing("hpf", "stone-brick", "glass")
 --replace_ing("hpf", "iron-gear-wheel", "steel-bearing")
 --replace_ing("hpf", "iron-plate", "invar-alloy")
+replace_ing("hpf", "electronic-circuit", "basic-circuit-board")
 
 replace_ing("methanol-reactor", "chemical-plant", "electrolyser")
 replace_ing("methanol-reactor", "iron-gear-wheel", "steel-bearing")
@@ -46,6 +48,7 @@ replace_ing("desulfurizator-unit", "iron-plate", "invar-alloy")
 
 --replace_ing("soil-extractormk01", "steel-plate", "brass-alloy")
 --replace_ing("soil-extractormk01", "iron-gear-wheel", "brass-gear-wheel")
+replace_ing("soil-extractormk01", "electronic-circuit", "basic-circuit-board")
 
 replace_ing("olefin-plant", "chemical-plant", "electrolyser")
 replace_ing("olefin-plant", "iron-gear-wheel", "steel-bearing")
@@ -57,6 +60,21 @@ replace_ing("fts-reactor", "stone-brick", "glass")
 replace_ing("fts-reactor", "iron-gear-wheel", "steel-bearing")
 replace_ing("fts-reactor", "iron-plate", "invar-alloy")
 
+replace_ing("washer", "electronic-circuit", "basic-circuit-board")
+replace_ing("washer", "pipe", "steel-pipe")
+
+replace_ing("fawogae-plantation", "electronic-circuit", "basic-circuit-board")
+
+replace_ing("advanced-foundry", "iron-plate", "titanium-plate") --bob titanium-plate
+replace_ing("advanced-foundry", "concrete", "glass") --bob glass
+--replace_ing("advanced-foundry"), "olefin-plant", steel-bearing} --bob steel-bearing
+replace_ing("advanced-foundry", "steel-plate", "invar-alloy") --bob invar-alloy
+
+replace_ing("solid-separator", "iron-plate", "titanium-plate")
+replace_ing("solid-separator", "iron-gear-wheel", "brass-gear-wheel")
+
+replace_ing("classifier", "iron-plate", "titanium-plate")
+replace_ing("classifier", "iron-stick", "brass-gear-wheel")
 -------------------------------------------------------------------------------
 --[[Items]]--
 -------------------------------------------------------------------------------
@@ -70,8 +88,8 @@ add_result("zinc-chloride", {name="hydrogen", amount=2})
 replace_ing("empty-gas-canister", "copper-plate", "brass-alloy")
 replace_ing("empty-gas-canister", "steel-plate", "aluminium-plate")
 if data.raw["recipe-category"]["water-pump"] then
-  data.raw.recipe["fill-methanol-gas-canister"].category="water-pump"
-  data.raw.recipe["empty-methanol-gas-canister"].category="water-pump"
+    data.raw.recipe["fill-methanol-gas-canister"].category="water-pump"
+    data.raw.recipe["empty-methanol-gas-canister"].category="water-pump"
 end
 
 replace_ing("active-carbon", "water", "nitrogen")
@@ -91,10 +109,24 @@ add_result("aromatics", {type="fluid", name="hydrogen", amount=10})
 replace_ing("nichrome", "water", "nitrogen")
 replace_ing("nichrome", "iron-plate", "nickel-plate")
 
+replace_ing("hydrogen-peroxide", "iron-plate", "nickel-plate")
+
 replace_ing("drill-head", "iron-plate", "titanium-plate")
+
+remove_ing("gasoline", "water")
+add_ing("gasoline", {type="fluid", name="hydrogen", amount=20})
+
+remove_ing("lithium-peroxide", "water")
+add_ing("lithium-peroxide", {type="fluid", name="lithia-water", amount=30})
+
+remove_ing("anthraquinone", "water")
+add_ing("anthraquinone", {type="fluid", name="liquid-air", amount=60})
+
+replace_ing("flask", "iron-plate", "glass")
 
 add_ing("ref_to_light_oil", {type="fluid", name="hydrogen", amount=25})
 add_ing("ref_to_petroleum_gas", {type="fluid", name="hydrogen", amount=35})
+add_ing("combustion_olefin", {type="fluid", name="hydrogen", amount=15})
 
 -------------------------------------------------------------------------------
 --[[Tech]]--
