@@ -20,26 +20,26 @@ Event.death_events = {defines.events.on_preplayer_mined_item, defines.events.on_
 --Require Quickstart for quicker mod testing when creating a character.
 --WARNING, This is for mod testing and can ruin existing worlds.
 if MOD.config.DEBUG then
-    require("stdlib.debug.quickstart")
+  require("stdlib.debug.quickstart")
 end
 
 -------------------------------------------------------------------------------
 --[[Log Init and updates]]
 --Master Init
 function MOD.on_init()
-    MOD.log("Installing", 1)
+  MOD.log("Installing", 1)
 end
 Event.register(Event.core_events.init, MOD.on_init)
 
 --Master update checker
 function MOD.on_configuration_changed(data)
-    if data.mod_changes ~= nil then
-        MOD.log("mod changes detected")
-        local changes = data.mod_changes[MOD.name]
-        if changes ~= nil then -- This Mod has changed
-            MOD.log("Updated from ".. tostring(changes.old_version) .. " to " .. tostring(changes.new_version), 2)
-        end
+  if data.mod_changes ~= nil then
+    MOD.log("mod changes detected")
+    local changes = data.mod_changes[MOD.name]
+    if changes ~= nil then -- This Mod has changed
+      MOD.log("Updated from ".. tostring(changes.old_version) .. " to " .. tostring(changes.new_version), 2)
     end
+  end
 end
 Event.register(Event.core_events.configuration_changed, MOD.on_configuration_changed)
 -------------------------------------------------------------------------------
