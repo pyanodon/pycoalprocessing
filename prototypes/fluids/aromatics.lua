@@ -1,6 +1,6 @@
 -------------------------------------------------------------------------------
 --[[items]]--
-local fluid =
+local item1=
 {
   type = "fluid",
   name = "aromatics",
@@ -15,5 +15,9 @@ local fluid =
 	order = "z-[aromatics]"
 }
 -------------------------------------------------------------------------------
+--[[Entites]]--
+local entity1=nil
+-------------------------------------------------------------------------------
 --[[Extend Data]]--
-data:extend({fluid})
+if item1 then data:extend({item1}) end
+if entity1 then data:extend({entity1}) end
