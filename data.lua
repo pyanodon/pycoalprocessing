@@ -98,12 +98,11 @@ require("prototypes.buildings.co2-absorber")
 require("prototypes.buildings.fluid-separator")
 require("prototypes.buildings.fawogae-plantation")
 
-
 --move to syngas recipe stuff in data-updates?
 for _, v in pairs(data.raw.module) do
-  if v.name:find("productivity%-module") and v.limitation then
-    for _, recipe in ipairs({"syngas"}) do
-      table.insert(v.limitation, recipe)
+    if v.name:find("productivity%-module") and v.limitation then
+        for _, recipe in ipairs({"syngas"}) do
+            table.insert(v.limitation, recipe)
+        end
     end
-  end
 end

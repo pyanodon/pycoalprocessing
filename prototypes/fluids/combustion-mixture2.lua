@@ -12,8 +12,8 @@ local recipe1 =
     ingredients ={
         {type="fluid", name="refsyngas", amount=10},
         {type="fluid", name="water", amount=50},
-		{type="fluid", name="light-oil", amount=5},
-		{type="item", name="nichrome", amount=10},
+        {type="fluid", name="light-oil", amount=5},
+        {type="item", name="nichrome", amount=10},
     },
     results=
     {
