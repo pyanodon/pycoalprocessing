@@ -7,13 +7,13 @@ require("prototypes.updates.other-updates")
 
 --update recipes to use bobmods
 if bobmods and bobmods.lib then
-  require("prototypes.updates.bob-updates")
-  require("prototypes.updates.bob-additions")
+    require("prototypes.updates.bob-updates")
+    require("prototypes.updates.bob-additions")
 end
 
 --angel-updates
 if angelsmods then
-  require("prototypes.updates.angel-updates")
+    require("prototypes.updates.angel-updates")
 end
 
 --science pack 1 override

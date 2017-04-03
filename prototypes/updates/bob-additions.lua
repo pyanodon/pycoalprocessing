@@ -104,7 +104,30 @@ local void_flue_gas = {
     order = "flue-gas"
 }
 
-data:extend({methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen, void_flue_gas})
+-------------------------------------------------------------------------------
+--GLASS PRODUCTION
+local glass ={
+    type = "recipe",
+    name = "glass-sand",
+    category = "hpf",
+    enabled = "true",
+    energy_required = 3,
+    ingredients ={
+        {type="item", name="pure_sand", amount=30},
+        {type="fluid", name="coal-gas", amount=10},
+        {type="item", name="quartz", amount=5},
+    },
+    results={
+        {type="item", name="glass", amount=10},
+
+    },
+    main_product= "glass",
+    icon = "__bobplates__/graphics/icons/glass.png",
+    subgroup = "py-items",
+    order = "c",
+}
+
+data:extend({methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen, void_flue_gas, glass})
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
 bobmods.lib.tech.add_recipe_unlock("methanol-processing-2", "methanol-from-hydrogen")
