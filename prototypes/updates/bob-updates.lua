@@ -16,9 +16,9 @@ replace_ing("distilator", "pipe", "copper-pipe")
 replace_ing("gasturbinemk02", "pipe", "bronze-pipe")
 replace_ing("gasturbinemk02", "iron-plate", "invar-alloy")
 
-replace_ing("hpf", "stone-brick", "glass")
-replace_ing("hpf", "iron-gear-wheel", "steel-bearing")
-replace_ing("hpf", "iron-plate", "invar-alloy")
+--replace_ing("hpf", "stone-brick", "glass")
+--replace_ing("hpf", "iron-gear-wheel", "steel-bearing")
+--replace_ing("hpf", "iron-plate", "invar-alloy")
 
 replace_ing("methanol-reactor", "chemical-plant", "electrolyser")
 replace_ing("methanol-reactor", "iron-gear-wheel", "steel-bearing")
@@ -44,8 +44,8 @@ replace_ing("cooling-tower-mk01", "iron-plate", "steel-bearing")
 replace_ing("desulfurizator-unit", "steel-plate", "titanium-plate")
 replace_ing("desulfurizator-unit", "iron-plate", "invar-alloy")
 
-replace_ing("soil-extractormk01", "steel-plate", "brass-alloy")
-replace_ing("soil-extractormk01", "iron-gear-wheel", "brass-gear-wheel")
+--replace_ing("soil-extractormk01", "steel-plate", "brass-alloy")
+--replace_ing("soil-extractormk01", "iron-gear-wheel", "brass-gear-wheel")
 
 replace_ing("olefin-plant", "chemical-plant", "electrolyser")
 replace_ing("olefin-plant", "iron-gear-wheel", "steel-bearing")
@@ -56,19 +56,6 @@ replace_ing("ground-borer", "iron-plate", "titanium-plate")
 replace_ing("fts-reactor", "stone-brick", "glass")
 replace_ing("fts-reactor", "iron-gear-wheel", "steel-bearing")
 replace_ing("fts-reactor", "iron-plate", "invar-alloy")
-
-replace_ing("washer", "steel-plate", "titanium-plate")
-replace_ing("washer", "pipe", "steel-pipe")
-
-replace_ing("solid-separator", "steel-plate", "titanium-plate")
-replace_ing("solid-separator", "iron-stick", "brass-bearing")
-
-replace_ing("classifier", "steel-plate", "titanium-plate")
-replace_ing("classifier", "iron-gear-wheel", "brass-bearing")
-
-replace_ing("advanced-foundry", "iron-plate", "titanium-plate")
-replace_ing("advanced-foundry", "concrete", "glass")
-replace_ing("advanced-foundry", "steel-plate", "titanium-bearing")
 
 -------------------------------------------------------------------------------
 --[[Items]]--
