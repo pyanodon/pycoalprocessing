@@ -13,10 +13,10 @@ PYC.control.loglevel = 2
 --then any recipes that are true in USE_CREOSOTE_IN will use creosote.
 PYC.USE_CREOSOTE_RECIPES = true
 PYC.USE_CREOSOTE_IN = {
-  --Rail tracks
-  rail = true,
-  --Medium power pole, big wooden power pole
-  power_poles = true,
+    --Rail tracks
+    rail = true,
+    --Medium power pole, big wooden power pole
+    power_poles = true,
 }
 
 --Tank size, how much of a fluid the tank can hold
@@ -32,32 +32,31 @@ PYC.TAILINGS_POND.GAS_POLLUTE_MODIFIER = .15
 PYC.TAILINGS_POND.SCORCH_CHANCE = 3 --default 3
 PYC.TAILINGS_POND.SCORCH_TICKS = 36000 --default: 36000 (this will check every 10 minutes)
 
-
 --List of Gas fluids, true values cause pollution when vented, all gasses with gas in the name fall under this category
 PYC.TAILINGS_POND.GAS = {
-  ["chlorine"] = true,
-  ["hydrogen-chloride"] = true,
-  ["sulfur-dioxide"] = true,
-  ["oxygen"] = false,
-  ["hydrogen"] = false,
-  ["carbon-dioxide"] = false,
-  ["nitrogen"] = false,
-  ["nitrogen-dioxide"] = false,
-  ["wind"] = false,
+    ["chlorine"] = true,
+    ["hydrogen-chloride"] = true,
+    ["sulfur-dioxide"] = true,
+    ["oxygen"] = false,
+    ["hydrogen"] = false,
+    ["carbon-dioxide"] = false,
+    ["nitrogen"] = false,
+    ["nitrogen-dioxide"] = false,
+    ["wind"] = false,
 }
 
 PYC.quickstart = {
-  stacks = {
-    "blueprint",
-    "deconstruction-planner",
-    "gasturbinemk01",
-    "gasturbinemk02",
-    "creative-mode_fluid-source",
-    "creative-mode_passive-energy-void",
-    "creative-mode_super-electric-pole",
-    "creative-mode_energy-source"
-  },
-  mod_name = "pyCoal"
+    stacks = {
+        "blueprint",
+        "deconstruction-planner",
+        "gasturbinemk01",
+        "gasturbinemk02",
+        "creative-mode_fluid-source",
+        "creative-mode_passive-energy-void",
+        "creative-mode_super-electric-pole",
+        "creative-mode_energy-source"
+    },
+    mod_name = "pyCoal"
 }
 
 return PYC
