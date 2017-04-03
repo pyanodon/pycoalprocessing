@@ -329,17 +329,6 @@ local coal_dust ={
     stack_size = 500
 }
 -------------------------------------------------------------------------------
---GRAVEL
-local gravel ={
-    type = "item",
-    name = "gravel",
-    icon = "__pycoalprocessing__/graphics/icons/gravel.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "gravel",
-    stack_size = 300
-}
--------------------------------------------------------------------------------
 --CHROMITE SAND
 local chromite_sand ={
     type = "item",
@@ -349,7 +338,6 @@ local chromite_sand ={
     subgroup = "py-items",
     order = "chromite_sand",
     stack_size = 500
-
 }
 -------------------------------------------------------------------------------
 --NEXELIT-PLATE
