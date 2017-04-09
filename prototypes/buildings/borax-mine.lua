@@ -3,10 +3,10 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     if shift_north then
         north =
         {
-            filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/long-pipe-north.png",
+            filename = "__pycoalprocessing__/graphics/entity/borax-mine/top-connection.png",
             priority = "low",
-            width = 30,
-            height = 44,
+            width = 288,
+            height = 288,
             --shift = {0.03125, 0.3125}
             shift = shift_north
         }
@@ -16,10 +16,10 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     if shift_south then
         south =
         {
-            filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/pipe-south.png",
+            filename = "__pycoalprocessing__/graphics/entity/borax-mine/bottom-connection.png",
             priority = "extra-high",
-            width = 40,
-            height = 45,
+            width = 288,
+            height = 288,
             --shift = {0.03125, -1.0625}
             shift = shift_south
         }
@@ -29,10 +29,10 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     if shift_west then
         west =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-west.png",
+            filename = "__pycoalprocessing__/graphics/entity/borax-mine/left-connection.png",
             priority = "extra-high",
-            width = 40,
-            height = 45,
+            width = 288,
+            height = 288,
             --shift = {0.8125, 0}
             shift = shift_west
         }
@@ -42,10 +42,10 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     if shift_east then
         east =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-east.png",
+            filename = "__pycoalprocessing__/graphics/entity/borax-mine/right-connection.png",
             priority = "extra-high",
-            width = 40,
-            height = 45,
+            width = 288,
+            height = 288,
             --shift = {-0.78125, 0.15625}
             shift = shift_east
         }
@@ -59,90 +59,104 @@ end
 --[[Recipes]]--
 local recipe1={
     type = "recipe",
-    name = "soil-extractormk01",
-    energy_requiered = 100,
-    enabled = true,
+    name = "borax-mine",
+    energy_requiered = 25,
+    enabled = false,
     ingredients =
     {
-        {"burner-mining-drill", 2},
-        {"electronic-circuit", 10}, --bob basic-circuit-board
-        {"iron-plate", 30},
-        {"copper-cable", 5},
-        {"iron-gear-wheel", 15},
+        {"electric-mining-drill", 2},
+        {"soil-extractormk01", 1},
+        {"electronic-circuit", 20}, -- bob basic-electronic-circuit-board
+        {"steel-plate", 150}, 
+        {"iron-gear-wheel", 15}, --bob steel-bearing
+		{"transport-belt", 30},
 
     },
-    result= "soil-extractormk01",
+    result= "borax-mine",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
 local item1={
     type = "item",
-    name = "soil-extractormk01",
-    icon = "__pycoalprocessing__/graphics/icons/soil-extractormk01.png",
+    name = "borax-mine",
+    icon = "__pycoalprocessing__/graphics/icons/borax-mine.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[soil-extractormk01]",
-    place_result = "soil-extractormk01",
+    order = "a-c[borax-mine]",
+    place_result = "borax-mine",
     stack_size = 10,
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--
 local entity1={
     type = "assembling-machine",
-    name = "soil-extractormk01",
-    icon = "__pycoalprocessing__/graphics/icons/soil-extractormk01.png",
+    name = "borax-mine",
+    icon = "__pycoalprocessing__/graphics/icons/borax-mine.png",
     flags = {"placeable-neutral","player-creation"},
-    minable = {mining_time = 1, result = "soil-extractormk01"},
-    fast_replaceable_group = "soil-extractormk01",
-    max_health = 300,
+    minable = {mining_time = 1, result = "borax-mine"},
+    fast_replaceable_group = "borax-mine",
+    max_health = 700,
     corpse = "big-remnants",
-    dying_explosion = "medium-explosion",
-    collision_box = {{-3.48, -3.48}, {3.48, 3.48}},
-    selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
+    dying_explosion = "big-explosion",
+    collision_box = {{-4.3, -4.3}, {4.3, 4.3}},
+    selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
     module_specification =
     {
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {"soil-extraction"},
+    crafting_categories = {"borax"},
     crafting_speed = 0.3,
     energy_source =
     {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.01,
+        emissions = 0.06,
     },
-    energy_usage = "400kW",
-    ingredient_count = 2,
+    energy_usage = "420kW",
+    ingredient_count = 4,
 
-    animation =
-    {
-        filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/soil-extractormk01.png",
-        width = 235,
-        height = 266,
-        frame_count = 30,
-        line_length = 6,
-        animation_speed = 0.8,
-        shift = {0.16, -0.609},
+    animation ={
+		layers={
+				{
+				filename = "__pycoalprocessing__/graphics/entity/borax-mine/bottom-borax.png",
+				width = 288,
+				height = 144,
+				line_length = 7,
+				frame_count = 90,
+				animation_speed = 0.9,
+				shift = {0.0, 2.25},
+				},
+				{
+				filename = "__pycoalprocessing__/graphics/entity/borax-mine/top-borax.png",
+				width = 288,
+				height = 144,
+				line_length = 7,
+				frame_count = 90,
+				animation_speed = 0.9,
+				shift = {0.0, -2.25},
+				},
+			}
     },
 
     fluid_boxes =
     {
+        --1
         {
             production_type = "input",
-            -- pipe_picture = Proto.pipes("assembler", {0.05, 0.65}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_picture = pipe_pictures({-0.0,4.9}, {-0.0,-4.9}, {4.9,0.0}, {-4.9,0.0}),
             pipe_covers = Proto.pipe_covers(true, true, true, true),
-            pipe_picture=pipe_pictures({0,1}, {0,-1}, nil, nil),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {4.0, 0.0} }}
+            pipe_connections = {{ type="input", position = {0.0, 5.0} }}
         },
+
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
     {
-        sound = { filename = "__pycoalprocessing__/sounds/soil-extractormk01.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/soil-extractormk01.ogg", volume = 0.45 },
+        sound = { filename = "__pycoalprocessing__/sounds/borax-mine.ogg" },
+        idle_sound = { filename = "__pycoalprocessing__/sounds/borax-mine.ogg", volume = 1.25 },
         apparent_volume = 2.5,
     },
 }

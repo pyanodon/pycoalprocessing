@@ -65,6 +65,9 @@ replace_ing("washer", "pipe", "steel-pipe")
 
 replace_ing("fawogae-plantation", "electronic-circuit", "basic-circuit-board")
 
+replace_ing("ulric-corral", "electronic-circuit", "basic-circuit-board")
+replace_ing("ulric-corral", "iron-gear-wheel", "steel-bearing")
+
 replace_ing("advanced-foundry", "iron-plate", "titanium-plate") --bob titanium-plate
 replace_ing("advanced-foundry", "concrete", "glass") --bob glass
 --replace_ing("advanced-foundry"), "olefin-plant", steel-bearing} --bob steel-bearing
@@ -75,6 +78,13 @@ replace_ing("solid-separator", "iron-gear-wheel", "brass-gear-wheel")
 
 replace_ing("classifier", "iron-plate", "titanium-plate")
 replace_ing("classifier", "iron-stick", "brass-gear-wheel")
+
+replace_ing("borax-mine", "electronic-circuit", "basic-electronic-circuit-board")
+replace_ing("borax-mine", "iron-gear-wheel", "steel-bearing")
+
+replace_ing("ralesia-plantation", "electronic-circuit", "basic-electronic-circuit-board")
+replace_ing("ralesia-plantation", "pipe", "steel-pipe")
+
 -------------------------------------------------------------------------------
 --[[Items]]--
 -------------------------------------------------------------------------------

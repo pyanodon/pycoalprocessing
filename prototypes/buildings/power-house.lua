@@ -63,7 +63,7 @@ local entity1={
     animation =
     {
         filename = "__pycoalprocessing__/graphics/entity/power-house/powerhouse-anim.png",
-        width = 233,
+        width = 256,
         height = 234,
         frame_count = 30,
         line_length = 6,
