@@ -3,11 +3,11 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     if shift_north then
         north =
         {
-            filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/long-pipe-north.png",
+            filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/top.png",
             priority = "low",
-            width = 30,
-            height = 44,
-            --shift = {0.03125, 0.3125}
+            width = 224,
+            height = 230,
+            --shift = {0.0, -0.163},
             shift = shift_north
         }
     else
@@ -16,11 +16,11 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     if shift_south then
         south =
         {
-            filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/pipe-south.png",
+            filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/bottom.png",
             priority = "extra-high",
-            width = 40,
-            height = 45,
-            --shift = {0.03125, -1.0625}
+            width = 224,
+            height = 230,
+            --shift = {0.0, -0.163},
             shift = shift_south
         }
     else
@@ -29,10 +29,10 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     if shift_west then
         west =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-west.png",
+            filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/left.png",
             priority = "extra-high",
-            width = 40,
-            height = 45,
+            width = 224,
+            height = 230,
             --shift = {0.8125, 0}
             shift = shift_west
         }
@@ -42,10 +42,10 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     if shift_east then
         east =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-east.png",
+            filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/right.png",
             priority = "extra-high",
-            width = 40,
-            height = 45,
+            width = 224,
+            height = 230,
             --shift = {-0.78125, 0.15625}
             shift = shift_east
         }
@@ -59,91 +59,95 @@ end
 --[[Recipes]]--
 local recipe1={
     type = "recipe",
-    name = "soil-extractormk01",
+    name = "ralesia-plantation",
     energy_requiered = 100,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
-        {"burner-mining-drill", 2},
-        {"electronic-circuit", 10}, --bob basic-circuit-board
+        {"soil", 400},
+        {"pipe", 15}, -- bob steel pipe
+        {"electronic-circuit", 25}, -- bob basic-electronic-circuit-board
+        {"glass", 100},
         {"iron-plate", 30},
-        {"copper-cable", 5},
-        {"iron-gear-wheel", 15},
+        {"treated-wood", 50},
+		{"small-lamp", 20},
 
     },
-    result= "soil-extractormk01",
+    result= "ralesia-plantation",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
 local item1={
     type = "item",
-    name = "soil-extractormk01",
-    icon = "__pycoalprocessing__/graphics/icons/soil-extractormk01.png",
+    name = "ralesia-plantation",
+    icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[soil-extractormk01]",
-    place_result = "soil-extractormk01",
+    order = "a-b[ralesia-plantation]",
+    place_result = "ralesia-plantation",
     stack_size = 10,
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--
 local entity1={
     type = "assembling-machine",
-    name = "soil-extractormk01",
-    icon = "__pycoalprocessing__/graphics/icons/soil-extractormk01.png",
+    name = "ralesia-plantation",
+    icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon.png",
     flags = {"placeable-neutral","player-creation"},
-    minable = {mining_time = 1, result = "soil-extractormk01"},
-    fast_replaceable_group = "soil-extractormk01",
+    minable = {mining_time = 1, result = "ralesia-plantation"},
+    fast_replaceable_group = "ralesia-plantation",
     max_health = 300,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    collision_box = {{-3.48, -3.48}, {3.48, 3.48}},
+    collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification =
     {
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {"soil-extraction"},
-    crafting_speed = 0.3,
+    crafting_categories = {"ralesia"},
+    crafting_speed = 0.1,
     energy_source =
     {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.01,
     },
-    energy_usage = "400kW",
-    ingredient_count = 2,
+    energy_usage = "200kW",
+    ingredient_count = 1,
 
     animation =
     {
-        filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/soil-extractormk01.png",
-        width = 235,
-        height = 266,
-        frame_count = 30,
-        line_length = 6,
-        animation_speed = 0.8,
-        shift = {0.16, -0.609},
+        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/ralesia-plantation.png",
+        width = 224,
+        height = 230,
+        frame_count = 50,
+        line_length = 8,
+        animation_speed = 2,
+		run_mode = "forward-then-backward",
+        shift = {0.0, -0.163},
     },
 
     fluid_boxes =
     {
+        --1
         {
             production_type = "input",
-            -- pipe_picture = Proto.pipes("assembler", {0.05, 0.65}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_picture = pipe_pictures({-0.0,3.837}, {-0.0,-3.837}, {4.0,0.0}, {-4.0,0.0}),
             pipe_covers = Proto.pipe_covers(true, true, true, true),
-            pipe_picture=pipe_pictures({0,1}, {0,-1}, nil, nil),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {4.0, 0.0} }}
+            pipe_connections = {{ type="input", position = {0.0, 4.0} }}
         },
+
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
     {
-        sound = { filename = "__pycoalprocessing__/sounds/soil-extractormk01.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/soil-extractormk01.ogg", volume = 0.45 },
-        apparent_volume = 2.5,
+        sound = { filename = "__pycoalprocessing__/sounds/ralesia-plantation.ogg", volume = 0.5 },
+        idle_sound = { filename = "__pycoalprocessing__/sounds/ralesia-plantation.ogg", volume = 0.35 },
+        apparent_volume = 0.2,
     },
 }
 -------------------------------------------------------------------------------

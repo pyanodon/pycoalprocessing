@@ -97,5 +97,17 @@ data:extend(
             type = "recipe-category",
             name = "fawogae",
         },
+        {
+            type = "recipe-category",
+            name = "ralesia",
+        },
+        {
+            type = "recipe-category",
+            name = "ulric",
+        },
+        {
+            type = "recipe-category",
+            name = "borax",
+        },
     }
 )

@@ -39,7 +39,84 @@ local technology = {
             type = "unlock-recipe",
             recipe = "water-mineralized"
         },
-
+        {
+            type = "unlock-recipe",
+            recipe = "ulric-corral"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "bonemeal"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "borax-mine"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "raw-borax"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "borax_washing"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "ralesia-plantation"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "ralesia"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "rich-clay"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "ground-sample01"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "bio-sample01"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "alien-sample01"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "equipment-chassi"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "lab-instrument"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "lens"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "boron-trioxide"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "ralesia-seeds"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "diborane"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "boric-acid"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "science-pack-2"
+        },
+		
+		
     },
     unit =
     {
