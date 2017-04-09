@@ -68,6 +68,8 @@ require("prototypes.fluids.hydrogen-peroxide")
 require("prototypes.fluids.anthraquinone")
 require("prototypes.fluids.slacked-lime")
 require("prototypes.fluids.coal-slurry")
+require("prototypes.fluids.diborane")
+require("prototypes.fluids.boric-acid")
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -97,6 +99,9 @@ require("prototypes.buildings.advanced-foundry")
 require("prototypes.buildings.co2-absorber")
 require("prototypes.buildings.fluid-separator")
 require("prototypes.buildings.fawogae-plantation")
+require("prototypes.buildings.ulric-corral")
+require("prototypes.buildings.borax-mine")
+require("prototypes.buildings.ralesia-plantation")
 
 --move to syngas recipe stuff in data-updates?
 for _, v in pairs(data.raw.module) do

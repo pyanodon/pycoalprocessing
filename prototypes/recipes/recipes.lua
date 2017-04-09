@@ -470,6 +470,23 @@ local science_pack01 ={
     order = "c",
 }
 -------------------------------------------------------------------------------
+--CRAFTING SCIENCE PACK-02 "should overlay the vanilla one"
+local science_pack02 ={
+    type = "recipe",
+    name = "science-pack-2",
+    -- category = "crafting",
+    enabled = "false",
+    energy_required = 4,
+    ingredients ={
+        {type="item", name="lab-instrument", amount=1},
+        {type="item", name="alien-sample01", amount=2},
+    },
+    result = "science-pack-2",
+    icon = "__pycoalprocessing__/graphics/icons/science-pack-2.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
 --BASIC SAND PRODUCTION
 local soil_washing ={
     type = "recipe",
@@ -491,11 +508,273 @@ local soil_washing ={
     subgroup = "py-items",
     order = "c",
 }
+--BONEMEAL PRODUCTION
+-------------------------------------------------------------------------------
+local recipe_bonemeal = {
+    type = "recipe",
+    name = "bonemeal",
+    category = "ulric",
+    enabled = "false",
+    energy_required = 6.0,
+    ingredients ={
+        {type="item", name="ralesia", amount=10},
+    },
+    results={
+        {type="item", name="bonemeal", amount=5},
+    },
+    main_product= "bonemeal",
+    icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--RAW BORAX PRODUCTION
+-------------------------------------------------------------------------------
+local recipe_rawborax = {
+    type = "recipe",
+    name = "raw-borax",
+    category = "borax",
+    enabled = "false",
+    energy_required = 4.5,
+    ingredients ={
+        {type="fluid", name="syngas", amount=15},
+    },
+    results={
+        {type="item", name="raw-borax", amount=4},
+    },
+    main_product= "raw-borax",
+    icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--BORAX WASHING
+-------------------------------------------------------------------------------
+local recipe_borax = {
+    type = "recipe",
+    name = "borax_washing",
+    category = "washer",
+    enabled = "false",
+    energy_required = 7.0,
+    ingredients ={
+        {type="fluid", name="water", amount=15},
+		{type="item", name="raw-borax", amount=10},
+    },
+    results={
+        {type="item", name="borax", amount=4},
+		{type="fluid", name="dirty-water", amount=10},
+    },
+    main_product= "borax",
+    icon = "__pycoalprocessing__/graphics/icons/borax-washer.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--RALESIA PRODUCTION
+-------------------------------------------------------------------------------
+local recipe_ralesia = {
+    type = "recipe",
+    name = "ralesia",
+    category = "ralesia",
+    enabled = "false",
+    energy_required = 7.5,
+    ingredients ={
+        {type="fluid", name="hydrogen", amount=50},
+		{type="item", name="soil", amount=50},
+    },
+    results={
+        {type="item", name="ralesia", amount=5},
+    },
+    main_product= "ralesia",
+    icon = "__pycoalprocessing__/graphics/icons/ralesia.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--RALESIA SEEDS
+-------------------------------------------------------------------------------
+local recipe_ralesia_seeds = {
+    type = "recipe",
+    name = "ralesia-seeds",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 5.5,
+    ingredients ={
+        {type="item", name="ralesia", amount=5},
+    },
+    results={
+        {type="item", name="ralesia-seeds", amount=15},
+    },
+    main_product= "ralesia-seeds",
+    icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--RICH CLAY
+-------------------------------------------------------------------------------
+local recipe_rich_clay = {
+    type = "recipe",
+    name = "rich-clay",
+    category = "crafting-with-fluid",
+    enabled = "false",
+    energy_required = 6,
+    ingredients ={
+        {type="item", name="ash", amount=30},
+		{type="fluid", name="water", amount=50},
+    },
+    results={
+        {type="item", name="rich-clay", amount=10},
+    },
+    main_product= "rich-clay",
+    icon = "__pycoalprocessing__/graphics/icons/rich-clay.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--GROUND SAMPLE01
+-------------------------------------------------------------------------------
+local recipe_ground_sample01 = {
+    type = "recipe",
+    name = "ground-sample01",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 5,
+    ingredients ={
+        {type="item", name="rich-clay", amount=5},
+		{type="item", name="soil", amount=15},
+    },
+    results={
+        {type="item", name="ground-sample01", amount=1},
+    },
+    main_product= "ground-sample01",
+    icon = "__pycoalprocessing__/graphics/icons/ground-sample01.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--BIOLOGICAL SAMPLE01
+-------------------------------------------------------------------------------
+local recipe_bio_sample01 = {
+    type = "recipe",
+    name = "bio-sample01",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 6,
+    ingredients ={
+        {type="item", name="ralesia-seeds", amount=20},
+		{type="item", name="bonemeal", amount=5},
+    },
+    results={
+        {type="item", name="bio-sample01", amount=2},
+    },
+    main_product= "bio-sample01",
+    icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--ALIEN SAMPLE01
+-------------------------------------------------------------------------------
+local recipe_alien_sample01 = {
+    type = "recipe",
+    name = "alien-sample01",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 10,
+    ingredients ={
+        {type="item", name="bio-sample01", amount=2},
+		{type="item", name="ground-sample01", amount=25},
+    },
+    results={
+        {type="item", name="alien-sample01", amount=2},
+    },
+    main_product= "alien-sample01",
+    icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--EQUIPMENT CHASSI
+-------------------------------------------------------------------------------
+local recipe_equipment_chassi = {
+    type = "recipe",
+    name = "equipment-chassi",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 7,
+    ingredients ={
+        {type="item", name="iron-plate", amount=4},
+		{type="item", name="bronze-alloy", amount=10},
+    },
+    results={
+        {type="item", name="equipment-chassi", amount=2},
+    },
+    main_product= "equipment-chassi",
+    icon = "__pycoalprocessing__/graphics/icons/equipment-chassi.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--LAB INSTRUMENT
+-------------------------------------------------------------------------------
+local recipe_lab_instrument = {
+    type = "recipe",
+    name = "lab-instrument",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 7,
+    ingredients ={
+        {type="item", name="lens", amount=4},
+		{type="item", name="equipment-chassi", amount=1},
+    },
+    results={
+        {type="item", name="lab-instrument", amount=1},
+    },
+    main_product= "lab-instrument",
+    icon = "__pycoalprocessing__/graphics/icons/lab-instrument.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--BORON TRIOXIDE
+-------------------------------------------------------------------------------
+local recipe_boron_trioxide = {
+    type = "recipe",
+    name = "boron-trioxide",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+        {type="fluid", name="boric-acid", amount=20},
+		{type="item", name="coke", amount=1},
+    },
+    results={
+        {type="item", name="boron-trioxide", amount=1},
+    },
+    main_product= "boron-trioxide",
+    icon = "__pycoalprocessing__/graphics/icons/boron-trioxide.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--OPTICAL SET "lens"
+-------------------------------------------------------------------------------
+local recipe_lens = {
+    type = "recipe",
+    name = "lens",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+        {type="item", name="glass", amount=10},
+		{type="item", name="boron-trioxide", amount=1},
+    },
+    results={
+        {type="item", name="lens", amount=2},
+    },
+    main_product= "lens",
+    icon = "__pycoalprocessing__/graphics/icons/lens.png",
+    subgroup = "py-items",
+    order = "c",
+}
+
 -------------------------------------------------------------------------------
 data:extend{
     raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
     soil_separation, richdust_separation, sand_washing, tailings_separation,
     making_chromium, coarse_classification, pure_sand_classification, organics_processing,
     sand_casting, tar_oil, absorb_air_pollution, slacked_lime, co2_cooking, fawogae_substrate,
-    mineralized_water, science_pack01, soil_washing, flask
+    mineralized_water, science_pack01, soil_washing, flask, recipe_bonemeal, recipe_rawborax,
+	recipe_borax, recipe_ralesia, recipe_rich_clay, recipe_ground_sample01, recipe_bio_sample01,
+	science_pack02, recipe_alien_sample01, recipe_ralesia_seeds, recipe_equipment_chassi, 
+	recipe_lab_instrument, recipe_boron_trioxide, recipe_lens
 }

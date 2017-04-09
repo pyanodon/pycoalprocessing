@@ -195,7 +195,7 @@ local recipe_soil ={
         {type="fluid", name="water", amount=100},
     },
     results={
-        {type="item", name="soil", amount=5},
+        {type="item", name="soil", amount=10},
     },
     icon = "__pycoalprocessing__/graphics/icons/soil.png",
 }
@@ -532,6 +532,149 @@ local flask = {
     order = "g",
     stack_size = 50
 }
+--BONEMEAL
+-------------------------------------------------------------------------------
+local bonemeal = {
+    type = "item",
+    name = "bonemeal",
+    icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "z",
+    stack_size = 300
+}
+-------------------------------------------------------------------------------
+-- RAW BORAX
+local rawborax = {
+    type = "item",
+    name = "raw-borax",
+    icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- BORAX
+local borax = {
+    type = "item",
+    name = "borax",
+    icon = "__pycoalprocessing__/graphics/icons/borax.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- RALESIA
+local ralesia = {
+    type = "item",
+    name = "ralesia",
+    icon = "__pycoalprocessing__/graphics/icons/ralesia.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 200
+}
+-------------------------------------------------------------------------------
+-- RICH CLAY
+local rich_clay = {
+    type = "item",
+    name = "rich-clay",
+    icon = "__pycoalprocessing__/graphics/icons/rich-clay.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- GROUND SAMPLE 01
+local ground_sample01 = {
+    type = "item",
+    name = "ground-sample01",
+    icon = "__pycoalprocessing__/graphics/icons/ground-sample01.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- BIO SAMPLE 01
+local bio_sample01 = {
+    type = "item",
+    name = "bio-sample01",
+    icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- ALIEN SAMPLE 01
+local alien_sample01 = {
+    type = "item",
+    name = "alien-sample01",
+    icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- EQUIPMENT CHASSI
+local equipment_chassi = {
+    type = "item",
+    name = "equipment-chassi",
+    icon = "__pycoalprocessing__/graphics/icons/equipment-chassi.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- LAB INSTRUMENT
+local lab_instrument = {
+    type = "item",
+    name = "lab-instrument",
+    icon = "__pycoalprocessing__/graphics/icons/lab-instrument.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- LENS
+local lens = {
+    type = "item",
+    name = "lens",
+    icon = "__pycoalprocessing__/graphics/icons/lens.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- BORON TRIOXIDE
+local boron_trioxide = {
+    type = "item",
+    name = "boron-trioxide",
+    icon = "__pycoalprocessing__/graphics/icons/boron-trioxide.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- RALESIA SEEDS
+local ralesia_seeds = {
+    type = "item",
+    name = "ralesia-seeds",
+    icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
 -------------------------------------------------------------------------------
 data:extend(
     {
@@ -576,6 +719,19 @@ data:extend(
         recipe_fawogae,
         fawogae,
         fawogae_substrate,
-        flask
+        flask,
+		bonemeal,
+		rawborax,
+		borax,
+		ralesia,
+		rich_clay,
+		ground_sample01,
+		bio_sample01,
+		alien_sample01,
+		equipment_chassi,
+		lab_instrument,
+		lens,
+		boron_trioxide,
+		ralesia_seeds
     }
 )
