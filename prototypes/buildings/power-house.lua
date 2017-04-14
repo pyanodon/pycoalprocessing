@@ -50,7 +50,7 @@ local entity1={
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"combustion"},
-    crafting_speed = 1.25,
+    crafting_speed = 0.9,
     energy_source =
     {
         type = "electric",
@@ -63,7 +63,7 @@ local entity1={
     animation =
     {
         filename = "__pycoalprocessing__/graphics/entity/power-house/powerhouse-anim.png",
-        width = 256,
+        width = 233,
         height = 234,
         frame_count = 30,
         line_length = 6,
