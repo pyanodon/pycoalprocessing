@@ -64,9 +64,9 @@ local recipe1={
     ingredients =
     {
         {"processing-unit", 20},
-        {"pipe", 20}, -- bob bronze-pipe
-        {"nexelit_plate", 50},
-        {"iron-plate", 70}, -- bob invar-alloy
+        {"pipe", 20}, --updated-bob bronze-pipe
+        {"nexelit-plate", 50},
+        {"iron-plate", 70}, --updated-bob invar-alloy
         {"gasturbinemk02", 2},
     },
     result= "gasturbinemk03",

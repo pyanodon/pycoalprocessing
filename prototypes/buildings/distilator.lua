@@ -67,7 +67,7 @@ local recipe1={
         {"copper-plate", 20},
         {"pipe", 10}, --copper-pipe in bobmods
         {"iron-plate", 10},
-        {"electronic-circuit", 3} --bob basic-circuit-board
+        {"electronic-circuit", 3} --updated-bob basic-circuit-board
     },
     result= "distilator",
     icon = "__pycoalprocessing__/graphics/icons/distilator.png",

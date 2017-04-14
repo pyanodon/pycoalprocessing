@@ -1,6 +1,6 @@
 --luacheck: globals bobmods
 
---bob mods is present, add hydrogen processing
+--updated-bob mods is present, add hydrogen processing
 local methanol_from_hydrogen = {
     type = "recipe",
     name = "methanol-from-hydrogen",
@@ -113,7 +113,7 @@ local glass ={
     enabled = "true",
     energy_required = 3,
     ingredients ={
-        {type="item", name="pure_sand", amount=30},
+        {type="item", name="pure-sand", amount=30},
         {type="fluid", name="coal-gas", amount=10},
         {type="item", name="quartz", amount=5},
     },
@@ -152,4 +152,4 @@ bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-zinc")
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-silver")
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-quartz")
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-rutile")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-nickle")
+bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-nickel")

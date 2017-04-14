@@ -55,7 +55,7 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "fluegas_to_syngas"
+            recipe = "fluegas_to-syngas"
         },
         {
             type = "unlock-recipe",

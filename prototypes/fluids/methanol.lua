@@ -12,7 +12,7 @@ local methanol_from_syngas = {
 
         {type="fluid", name="syngas", amount=5},
         {type="item", name="copper-ore", amount=2},
-        {type="item", name="iron-ore", amount=1}, --bob zinc-ore
+        {type="item", name="iron-ore", amount=1}, --updated-bob zinc-ore
     },
     results=
     {
@@ -24,7 +24,7 @@ local methanol_from_syngas = {
     order = "a-[methanol]",
 }
 
---bob-additions: methanol_from_hydrogen
+--updated-bob-additions: methanol_from_hydrogen
 
 -------------------------------------------------------------------------------
 --[[fluids]]--
