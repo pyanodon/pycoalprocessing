@@ -68,10 +68,10 @@ replace_ing("fawogae-plantation", "electronic-circuit", "basic-circuit-board")
 replace_ing("ulric-corral", "electronic-circuit", "basic-circuit-board")
 replace_ing("ulric-corral", "iron-gear-wheel", "steel-bearing")
 
-replace_ing("advanced-foundry", "iron-plate", "titanium-plate") --bob titanium-plate
-replace_ing("advanced-foundry", "concrete", "glass") --bob glass
---replace_ing("advanced-foundry"), "olefin-plant", steel-bearing} --bob steel-bearing
-replace_ing("advanced-foundry", "steel-plate", "invar-alloy") --bob invar-alloy
+replace_ing("advanced-foundry", "iron-plate", "titanium-plate") --updated-bob titanium-plate
+replace_ing("advanced-foundry", "concrete", "glass") --updated-bob glass
+--replace_ing("advanced-foundry"), "olefin-plant", steel-bearing} --updated-bob steel-bearing
+replace_ing("advanced-foundry", "steel-plate", "invar-alloy") --updated-bob invar-alloy
 
 replace_ing("solid-separator", "iron-plate", "titanium-plate")
 replace_ing("solid-separator", "iron-gear-wheel", "brass-gear-wheel")
@@ -84,6 +84,10 @@ replace_ing("borax-mine", "iron-gear-wheel", "steel-bearing")
 
 replace_ing("ralesia-plantation", "electronic-circuit", "basic-electronic-circuit-board")
 replace_ing("ralesia-plantation", "pipe", "steel-pipe")
+replace_ing("ralesia-plantation", "stone", "glass")
+
+replace_ing("ulric-corral", "iron-gear-wheel", "steel-bearing")
+replace_ing("ulric-corral", "electronic-circuit", "basic-electronic-circuit-board")
 
 -------------------------------------------------------------------------------
 --[[Items]]--
@@ -98,8 +102,8 @@ add_result("zinc-chloride", {name="hydrogen", amount=2})
 replace_ing("empty-gas-canister", "copper-plate", "brass-alloy")
 replace_ing("empty-gas-canister", "steel-plate", "aluminium-plate")
 if data.raw["recipe-category"]["water-pump"] then
-    data.raw.recipe["fill-methanol-gas-canister"].category="water-pump"
-    data.raw.recipe["empty-methanol-gas-canister"].category="water-pump"
+    data.raw.recipe["fill-methanol-gas-canister"].category = "water-pump"
+    data.raw.recipe["empty-methanol-gas-canister"].category = "water-pump"
 end
 
 replace_ing("active-carbon", "water", "nitrogen")
@@ -137,6 +141,18 @@ replace_ing("flask", "iron-plate", "glass")
 add_ing("ref_to_light_oil", {type="fluid", name="hydrogen", amount=25})
 add_ing("ref_to_petroleum_gas", {type="fluid", name="hydrogen", amount=35})
 add_ing("combustion_olefin", {type="fluid", name="hydrogen", amount=15})
+
+replace_ing("ralesia", "water", "hydrogen")
+
+replace_ing("equipment-chassi", "copper-plate", "bronze-alloy")
+
+replace_ing("lens", "stone", "glass")
+
+replace_ing("diborane", "water", "hydrogen")
+
+if data.raw["recipe-category"]["electrolysis"] then
+    data.raw.recipe["diborane"].category = "electrolysis"
+end
 
 -------------------------------------------------------------------------------
 --[[Tech]]--

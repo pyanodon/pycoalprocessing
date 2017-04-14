@@ -66,9 +66,9 @@ local recipe1={
     {
         {"stone-brick", 20},
         {"copper-plate", 20},
-        {"iron-gear-wheel", 5}, --bob steel-bearing
-        {"iron-plate", 10}, --bob invar-alloy
-        {"electronic-circuit", 3}, --bob basic-circuit-board
+        {"iron-gear-wheel", 5}, --updated-bob steel-bearing
+        {"iron-plate", 10}, --updated-bob invar-alloy
+        {"electronic-circuit", 3}, --updated-bob basic-circuit-board
     },
     result= "hpf",
     icon = "__pycoalprocessing__/graphics/icons/hpf.png",

@@ -18,7 +18,7 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "nexelit_plate"
+            recipe = "nexelit-plate"
         },
         {
             type = "unlock-recipe",

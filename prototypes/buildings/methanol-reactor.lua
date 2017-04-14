@@ -65,10 +65,10 @@ local recipe1={
     ingredients =
     {
         {"gasturbinemk01", 1},
-        {"chemical-plant", 1}, --bob electrolyser
+        {"chemical-plant", 1}, --updated-bob electrolyser
         {"electronic-circuit", 25},
         {"steel-plate", 20},
-        {"iron-gear-wheel", 15}, --bob steel-bearing
+        {"iron-gear-wheel", 15}, --updated-bob steel-bearing
 
     },
     result= "methanol-reactor",

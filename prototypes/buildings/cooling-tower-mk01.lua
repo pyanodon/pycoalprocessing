@@ -28,9 +28,9 @@ local recipe1={
         {"storage-tank", 1},
         {"small-pump", 1},
         {"advanced-circuit", 5},
-        {"pipe", 20}, -- bob copper-pipe
-        {"iron-gear-wheel", 15}, --bob brass-gear-wheel
-        {"iron-plate", 30}, --bob brass-plate
+        {"pipe", 20}, --updated-bob copper-pipe
+        {"iron-gear-wheel", 15}, --updated-bob brass-gear-wheel
+        {"iron-plate", 30}, --updated-bob brass-plate
 
     },
     result= "cooling-tower-mk01",

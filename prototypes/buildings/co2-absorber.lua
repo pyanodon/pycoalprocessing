@@ -11,7 +11,7 @@ local recipe1={
         {"advanced-circuit", 30},
         {"steel-plate", 50},
         {"carbon-filter", 2},
-        {"nexelit_plate", 50},
+        {"nexelit-plate", 50},
 
     },
     result= "co2_absorber",

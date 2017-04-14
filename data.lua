@@ -4,8 +4,8 @@ if not pysmods.coalpro then pysmods.coalpro = {} end
 
 --Settings and Helpers
 require("config") --Config variables
-require("stdlib.colors.colors")
-require("stdlib.utils.protohelpers") --Prototype helper functions
+require("stdlib.color.color")
+require("stdlib.data.protohelpers") --Prototype helper functions
 
 --Groups
 require("prototypes.item-groups")

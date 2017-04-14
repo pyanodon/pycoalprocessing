@@ -72,7 +72,7 @@ local olefin=
     energy_required = 2,
     ingredients ={
         {type="item", name="chromium", amount=2},
-        {type="fluid", name="water", amount=60}, --bob {type="fluid", name="hydrogen", amount=60},
+        {type="fluid", name="water", amount=60}, --updated-bob hydrogen
         {type="fluid", name="carbon-dioxide", amount=20},
     },
     results=

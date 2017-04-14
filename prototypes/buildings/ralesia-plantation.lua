@@ -65,13 +65,12 @@ local recipe1={
     ingredients =
     {
         {"soil", 400},
-        {"pipe", 15}, -- bob steel pipe
-        {"electronic-circuit", 25}, -- bob basic-electronic-circuit-board
-        {"glass", 100},
+        {"pipe", 15}, --updated-bob steel pipe
+        {"electronic-circuit", 25}, --updated-bob basic-electronic-circuit-board
+        {"stone", 100}, --updated-bob glass
         {"iron-plate", 30},
         {"treated-wood", 50},
-		{"small-lamp", 20},
-
+        {"small-lamp", 20},
     },
     result= "ralesia-plantation",
 }
@@ -125,7 +124,7 @@ local entity1={
         frame_count = 50,
         line_length = 8,
         animation_speed = 2,
-		run_mode = "forward-then-backward",
+        run_mode = "forward-then-backward",
         shift = {0.0, -0.163},
     },
 

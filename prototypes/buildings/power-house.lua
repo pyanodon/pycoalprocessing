@@ -11,8 +11,8 @@ local recipe1={
         {"small-pump", 1},
         {"electronic-circuit", 25},
         {"steel-plate", 20},
-        {"iron-gear-wheel", 15}, --bob steel-bearing
-        {"iron-plate", 30}, --bob lead-plate
+        {"iron-gear-wheel", 15}, --updated-bob steel-bearing
+        {"iron-plate", 30}, --updated-bob lead-plate
 
     },
     result= "power-house",
