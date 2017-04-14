@@ -444,7 +444,7 @@ local flask ={
     energy_required = 2,
     ingredients ={
         {type="item", name="iron-plate", amount=10},
-        --{type="item", name="glass", amount=10},
+        --{type="item", name="glass", amount=10}, --updated bob add glass
         {type="item", name="raw-wood", amount=5},
     },
     result = "flask",
