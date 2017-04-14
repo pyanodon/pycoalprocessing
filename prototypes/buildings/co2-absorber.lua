@@ -2,7 +2,7 @@
 --[[Recipes]]--
 local recipe1={
     type = "recipe",
-    name = "co2_absorber",
+    name = "co2-absorber",
     energy_requiered = 15,
     enabled = false,
     ingredients =
@@ -11,32 +11,32 @@ local recipe1={
         {"advanced-circuit", 30},
         {"steel-plate", 50},
         {"carbon-filter", 2},
-        {"nexelit_plate", 50},
+        {"nexelit-plate", 50},
 
     },
-    result= "co2_absorber",
+    result= "co2-absorber",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
 local item1={
     type = "item",
-    name = "co2_absorber",
+    name = "co2-absorber",
     icon = "__pycoalprocessing__/graphics/icons/co2-absorber.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "a-c[co2_absorber]",
-    place_result = "co2_absorber",
+    place_result = "co2-absorber",
     stack_size = 10,
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--
 local entity1={
     type = "assembling-machine",
-    name = "co2_absorber",
+    name = "co2-absorber",
     icon = "__pycoalprocessing__/graphics/icons/co2-absorber.png",
     flags = {"placeable-neutral","player-creation"},
-    minable = {mining_time = 1, result = "co2_absorber"},
-    fast_replaceable_group = "co2_absorber",
+    minable = {mining_time = 1, result = "co2-absorber"},
+    fast_replaceable_group = "co2-absorber",
     max_health = 400,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",

@@ -65,10 +65,10 @@ local recipe1={
     ingredients =
     {
         {"copper-cable", 30},
-        {"iron-plate", 20}, --bob titanium-plate
-        {"concrete", 60}, --bob glass
-        {"olefin-plant", 1}, --bob steel-bearing
-        {"steel-plate", 70}, --bob invar-alloy
+        {"iron-plate", 20}, --updated-bob titanium-plate
+        {"concrete", 60}, --updated-bob glass
+        {"olefin-plant", 1}, --updated-bob steel-bearing
+        {"steel-plate", 70}, --updated-bob invar-alloy
         {"advanced-circuit", 50},
     },
     result= "advanced-foundry",
@@ -104,7 +104,7 @@ local entity1={
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {"advanced-foundry"},
+    crafting_categories = {"advanced-foundry", "smelting"},
     crafting_speed = 0.6,
     energy_source =
     {

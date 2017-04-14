@@ -4,7 +4,7 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/excavation-1.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-3"}, --bob titatnium-processing
+    prerequisites = {"coal-processing-3"}, --updated-bob titatnium-processing
     effects =
     {
 
