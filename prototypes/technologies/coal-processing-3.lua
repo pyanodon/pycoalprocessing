@@ -14,7 +14,7 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "making_chromium"
+            recipe = "making-chromium"
         },
         {
             type = "unlock-recipe",
@@ -22,11 +22,11 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "sand_casting"
+            recipe = "sand-casting"
         },
         {
             type = "unlock-recipe",
-            recipe = "organics_processing"
+            recipe = "organics-processing"
         },
         {
             type = "unlock-recipe",
@@ -46,7 +46,7 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "co2_absorber"
+            recipe = "co2-absorber"
         },
         {
             type = "unlock-recipe",
@@ -54,7 +54,7 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "air_pollution"
+            recipe = "air-pollution"
         },
         {
             type = "unlock-recipe",
@@ -62,7 +62,7 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "organics_processing"
+            recipe = "organics-processing"
         },
         {
             type = "unlock-recipe",
@@ -86,7 +86,7 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "soil_separation"
+            recipe = "soil-separation"
         },
     },
 

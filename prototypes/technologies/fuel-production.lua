@@ -22,7 +22,7 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "petgas_from_refsyngas"
+            recipe = "petgas_from-refsyngas"
         },
         {
             type = "unlock-recipe",
@@ -46,15 +46,15 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "ref_to_light_oil"
+            recipe = "ref_to_light-oil"
         },
         {
             type = "unlock-recipe",
-            recipe = "sulfuric_petgas"
+            recipe = "sulfuric-petgas"
         },
         {
             type = "unlock-recipe",
-            recipe = "tar_oil"
+            recipe = "tar-oil"
         },
         {
             type = "unlock-recipe",
