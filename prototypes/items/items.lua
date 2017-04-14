@@ -265,7 +265,7 @@ local sand ={
 --PURE SAND
 local pure_sand ={
     type = "item",
-    name = "pure_sand",
+    name = "pure-sand",
     icon = "__pycoalprocessing__/graphics/icons/pure-sand.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -309,34 +309,34 @@ local coarse ={
 --RICH DUST
 local rich_dust ={
     type = "item",
-    name = "rich_dust",
+    name = "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/richdust.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
-    order = "rich_dust",
+    order = "rich-dust",
     stack_size = 500
 }
 -------------------------------------------------------------------------------
 --COAL DUST
 local coal_dust ={
     type = "item",
-    name = "coal_dust",
+    name = "coal-dust",
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
     flags = {"goes-to-main-inventory"},
     fuel_value = "6MJ",
     subgroup = "py-items",
-    order = "coal_dust",
+    order = "coal-dust",
     stack_size = 500
 }
 -------------------------------------------------------------------------------
 --CHROMITE SAND
 local chromite_sand ={
     type = "item",
-    name = "chromite_sand",
+    name = "chromite-sand",
     icon = "__pycoalprocessing__/graphics/icons/chromite_sand.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
-    order = "chromite_sand",
+    order = "chromite-sand",
     stack_size = 500
 }
 -------------------------------------------------------------------------------
@@ -355,7 +355,7 @@ local nexelit_plate ={
 --SAND-CASTING
 local sand_casting ={
     type = "item",
-    name = "sand_casting",
+    name = "sand-casting",
     icon = "__pycoalprocessing__/graphics/icons/sand-casting.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",

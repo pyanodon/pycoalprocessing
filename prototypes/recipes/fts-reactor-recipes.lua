@@ -44,7 +44,7 @@ local light_oil_from_syngas ={
 --PETGAS FROM REFSYNGAS
 local petgas_from_refsyngas ={
     type = "recipe",
-    name = "petgas_from_refsyngas",
+    name = "petgas_from-refsyngas",
     category = "fts-reactor",
     enabled = "false",
     energy_required = 1.5,
@@ -64,7 +64,7 @@ local petgas_from_refsyngas ={
 --REFINED SYNGAS TO LIGHT OIL
 local ref_to_light_oil ={
     type = "recipe",
-    name = "ref_to_light_oil",
+    name = "ref_to_light-oil",
     category = "fts-reactor",
     enabled = "false",
     energy_required = 2,
@@ -88,7 +88,7 @@ local ref_to_light_oil ={
 --SULFURIC ACID FROM PETGAS
 local sulfuric_petgas ={
     type = "recipe",
-    name = "sulfuric_petgas",
+    name = "sulfuric-petgas",
     category = "fts-reactor",
     enabled = "false",
     energy_required = 2,

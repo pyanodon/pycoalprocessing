@@ -6,13 +6,13 @@
 --Making Chromium
 local making_chromium ={
     type = "recipe",
-    name = "making_chromium",
+    name = "making-chromium",
     category = "hpf",
     enabled = "false",
     energy_required = 1,
     ingredients ={
         {type="fluid", name="carbon-dioxide", amount=10},
-        {type="item", name="chromite_sand", amount=5},
+        {type="item", name="chromite-sand", amount=5},
         {type="item", name="coke", amount=5},
         {type="item", name="limestone", amount=5},
     },
@@ -114,7 +114,7 @@ local cooling_water ={
 --FLUEGAS TO SYNGAS
 local fluegas_to_syngas ={
     type = "recipe",
-    name = "fluegas_to_syngas",
+    name = "fluegas_to-syngas",
     category = "carbonfilter",
     enabled = "false",
     energy_required = 2,
@@ -127,7 +127,7 @@ local fluegas_to_syngas ={
         {type="fluid", name="syngas", amount=30},
     },
     subgroup = "py-syngas",
-    order = "fluegas_to_syngas",
+    order = "fluegas_to-syngas",
     icon = "__pycoalprocessing__/graphics/icons/fluegas_to_syngas.png",
 }
 
@@ -135,7 +135,7 @@ local fluegas_to_syngas ={
 --COARSE CLASSIFICATION
 local coarse_classification ={
     type = "recipe",
-    name = "coarse_classification",
+    name = "coarse-classification",
     category = "classifier",
     enabled = "false",
     energy_required = 1,
@@ -156,18 +156,18 @@ local coarse_classification ={
 --PURE SAND CLASSIFICATION
 local pure_sand_classification ={
     type = "recipe",
-    name = "pure_sand_classification",
+    name = "pure_sand-classification",
     category = "classifier",
     enabled = "false",
     energy_required = 1,
     ingredients ={
-        {type="item", name="pure_sand", amount=16},
+        {type="item", name="pure-sand", amount=16},
     },
     results={
-        {type="item", name="rich_dust", amount=5},
+        {type="item", name="rich-dust", amount=5},
         {type="item", name="gravel", amount=2},
     },
-    main_product= "rich_dust",
+    main_product= "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/class-pure-sand.png",
     subgroup = "py-items",
     order = "classifier",
@@ -177,7 +177,7 @@ local pure_sand_classification ={
 --SOIL SEPARATION
 local soil_separation ={
     type = "recipe",
-    name = "soil_separation",
+    name = "soil-separation",
     category = "solid-separator",
     enabled = "false",
     energy_required = 3,
@@ -199,19 +199,19 @@ local soil_separation ={
 --RICH DUST SEPARATION
 local richdust_separation ={
     type = "recipe",
-    name = "richdust_separation",
+    name = "richdust-separation",
     category = "solid-separator",
     enabled = "false",
     energy_required = 1,
     ingredients ={
-        {type="item", name="rich_dust", amount=10},
+        {type="item", name="rich-dust", amount=10},
     },
     results={
         {type="item", name="iron-oxide", amount=2},
-        {type="item", name="chromite_sand", amount=6},
+        {type="item", name="chromite-sand", amount=6},
 
     },
-    main_product= "chromite_sand",
+    main_product= "chromite-sand",
     icon = "__pycoalprocessing__/graphics/icons/richdust-separation.png",
     subgroup = "py-items",
     order = "richdust",
@@ -221,7 +221,7 @@ local richdust_separation ={
 --TAILINGS SEPARATION
 local tailings_separation ={
     type = "recipe",
-    name = "tailings_separation",
+    name = "tailings-separation",
     category = "solid-separator",
     enabled = "false",
     energy_required = 1,
@@ -229,11 +229,11 @@ local tailings_separation ={
         {type="item", name="tailings-dust", amount=15},
     },
     results={
-        {type="item", name="coal_dust", amount=8},
-        {type="item", name="rich_dust", amount=2},
+        {type="item", name="coal-dust", amount=8},
+        {type="item", name="rich-dust", amount=2},
 
     },
-    main_product= "rich_dust",
+    main_product= "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/tailings_separation.png",
     subgroup = "py-items",
     order = "richdust",
@@ -243,7 +243,7 @@ local tailings_separation ={
 --SAND WASHING
 local sand_washing ={
     type = "recipe",
-    name = "sand_washing",
+    name = "sand-washing",
     category = "washer",
     enabled = "true",
     energy_required = 4,
@@ -252,11 +252,11 @@ local sand_washing ={
         {type="fluid", name="water", amount=20},
     },
     results={
-        {type="item", name="pure_sand", amount=8},
+        {type="item", name="pure-sand", amount=8},
         {type="fluid", name="dirty-water", amount=8},
 
     },
-    main_product= "pure_sand",
+    main_product= "pure-sand",
     icon = "__pycoalprocessing__/graphics/icons/sand-washer.png",
     subgroup = "py-items",
     order = "c",
@@ -265,7 +265,7 @@ local sand_washing ={
 --ORGANICS PROCESSING
 local organics_processing ={
     type = "recipe",
-    name = "organics_processing",
+    name = "organics-processing",
     category = "gasifier",
     enabled = "false",
     energy_required = 2,
@@ -288,7 +288,7 @@ local organics_processing ={
 --SAND CASTING
 local sand_casting ={
     type = "recipe",
-    name = "sand_casting",
+    name = "sand-casting",
     category = "tar",
     enabled = "false",
     energy_required = 1,
@@ -297,10 +297,10 @@ local sand_casting ={
         {type="fluid", name="creosote", amount=15},
     },
     results={
-        {type="item", name="sand_casting", amount=4},
+        {type="item", name="sand-casting", amount=4},
 
     },
-    main_product= "sand_casting",
+    main_product= "sand-casting",
     icon = "__pycoalprocessing__/graphics/icons/sand-casting.png",
     subgroup = "py-items",
     order = "c",
@@ -309,7 +309,7 @@ local sand_casting ={
 --TAR to CRUDE OIL
 local tar_oil ={
     type = "recipe",
-    name = "tar_oil",
+    name = "tar-oil",
     category = "tar",
     enabled = "false",
     energy_required = 1,
@@ -331,7 +331,7 @@ local tar_oil ={
 --"AIR POLLUTION" ABSORBER
 local absorb_air_pollution ={
     type = "recipe",
-    name = "air_pollution",
+    name = "air-pollution",
     category = "co2",
     enabled = "false",
     energy_required = 3.5,
@@ -550,7 +550,7 @@ local recipe_rawborax = {
 -------------------------------------------------------------------------------
 local recipe_borax = {
     type = "recipe",
-    name = "borax_washing",
+    name = "borax-washing",
     category = "washer",
     enabled = "false",
     energy_required = 7.0,

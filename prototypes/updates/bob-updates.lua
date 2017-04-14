@@ -138,8 +138,8 @@ add_ing("anthraquinone", {type="fluid", name="liquid-air", amount=60})
 
 replace_ing("flask", "iron-plate", "glass")
 
-add_ing("ref_to_light_oil", {type="fluid", name="hydrogen", amount=25})
---add_ing("ref_to_petroleum_gas", {type="fluid", name="hydrogen", amount=35})
+add_ing("ref_to_light-oil", {type="fluid", name="hydrogen", amount=25})
+--add_ing("ref_to_petroleum-gas", {type="fluid", name="hydrogen", amount=35})
 add_ing("combustion-olefin", {type="fluid", name="hydrogen", amount=15})
 
 replace_ing("ralesia", "water", "hydrogen")

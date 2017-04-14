@@ -113,7 +113,7 @@ local glass ={
     enabled = "true",
     energy_required = 3,
     ingredients ={
-        {type="item", name="pure_sand", amount=30},
+        {type="item", name="pure-sand", amount=30},
         {type="fluid", name="coal-gas", amount=10},
         {type="item", name="quartz", amount=5},
     },
