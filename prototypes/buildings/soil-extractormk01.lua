@@ -65,7 +65,7 @@ local recipe1={
     ingredients =
     {
         {"burner-mining-drill", 2},
-        {"electronic-circuit", 10}, --bob basic-circuit-board
+        {"electronic-circuit", 10}, --updated-bob basic-circuit-board
         {"iron-plate", 30},
         {"copper-cable", 5},
         {"iron-gear-wheel", 15},
@@ -105,7 +105,7 @@ local entity1={
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"soil-extraction"},
-    crafting_speed = 0.8,
+    crafting_speed = 0.3,
     energy_source =
     {
         type = "electric",
@@ -122,7 +122,7 @@ local entity1={
         height = 266,
         frame_count = 30,
         line_length = 6,
-        animation_speed = 0.3,
+        animation_speed = 0.8,
         shift = {0.16, -0.609},
     },
 
