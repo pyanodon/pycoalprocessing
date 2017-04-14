@@ -54,8 +54,8 @@ local recipe_nichrome = {
     enabled = "false",
     energy_required = 2.5,
     ingredients ={
-        {type="fluid", name="water", amount=10}, -- bob nitrogen
-        {type="item", name="iron-plate", amount=10}, --bob nickel-plate
+        {type="fluid", name="water", amount=10}, --updated-bob nitrogen
+        {type="item", name="iron-plate", amount=10}, --updated-bob nickel-plate
         {type="item", name="chromium", amount=5},
     },
     result = "nichrome"
@@ -102,7 +102,7 @@ local recipe_active_carbon = {
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="water", amount=10}, -- bob nitrogen
+        {type="fluid", name="water", amount=10}, --updated-bob nitrogen
         {type="item", name="zinc-chloride", amount=2},
         {type="item", name="coke", amount=25},
         --{type="item", name="sodium-hydroxide", amount=5},
@@ -132,13 +132,13 @@ local recipe_zinc_chloride ={
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="water", amount=2}, --bob hydrogen-chloride
-        {type="item", name="iron-plate", amount=1}, --bob zinc-plate
-        {type="item", name="copper-plate", amount=1}, --bob --remove
+        {type="fluid", name="water", amount=2}, --updated-bob hydrogen-chloride
+        {type="item", name="iron-plate", amount=1}, --updated-bob zinc-plate
+        {type="item", name="copper-plate", amount=1}, --updated-bob --remove
     },
     results={
         {type="item", name="zinc-chloride", amount=1},
-        --{type="fluid", name="hydrogen", amount=2}, --bob hydrogen
+        --{type="fluid", name="hydrogen", amount=2}, --updated-bob hydrogen
     },
     main_product= "zinc-chloride",
     icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
@@ -232,7 +232,7 @@ local recipe_drill_head = {
     ingredients ={
         {type="item", name="steel-plate", amount=8},
         {type="item", name="chromium", amount=3},
-        {type="item", name="iron-plate", amount=5}, --bob titanium-plate
+        {type="item", name="iron-plate", amount=5}, --updated-bob titanium-plate
     },
     results={
         {type="item", name="drill-head", amount=2},
@@ -343,7 +343,7 @@ local chromite_sand ={
 --NEXELIT-PLATE
 local nexelit_plate ={
     type = "item",
-    name = "nexelit_plate",
+    name = "nexelit-plate",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -400,7 +400,7 @@ local recipe_nexelit_cartridge = {
     energy_required = 4,
     ingredients ={
         {type="item", name="lithium-peroxide", amount=25},
-        {type="item", name="nexelit_plate", amount=10},
+        {type="item", name="nexelit-plate", amount=10},
     },
     results={
         {type="item", name="nexelit-cartridge", amount=1},
@@ -720,18 +720,18 @@ data:extend(
         fawogae,
         fawogae_substrate,
         flask,
-		bonemeal,
-		rawborax,
-		borax,
-		ralesia,
-		rich_clay,
-		ground_sample01,
-		bio_sample01,
-		alien_sample01,
-		equipment_chassi,
-		lab_instrument,
-		lens,
-		boron_trioxide,
-		ralesia_seeds
+        bonemeal,
+        rawborax,
+        borax,
+        ralesia,
+        rich_clay,
+        ground_sample01,
+        bio_sample01,
+        alien_sample01,
+        equipment_chassi,
+        lab_instrument,
+        lens,
+        boron_trioxide,
+        ralesia_seeds
     }
 )

@@ -9,7 +9,7 @@ local diborane= {
     enabled = "false",
     energy_required = 7,
     ingredients ={
-        {type="fluid", name="hydrogen", amount=25},
+        {type="fluid", name="water", amount=25},
         {type="item", name="borax", amount=10},
     },
     results=

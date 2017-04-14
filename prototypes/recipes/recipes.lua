@@ -271,7 +271,7 @@ local organics_processing ={
     energy_required = 2,
     ingredients ={
         {type="item", name="organics", amount=10},
-        {type="item", name="nexelit_plate", amount=5},
+        {type="item", name="nexelit-plate", amount=5},
     },
     results={
         {type="fluid", name="methanol", amount=10},
@@ -314,7 +314,7 @@ local tar_oil ={
     enabled = "false",
     energy_required = 1,
     ingredients ={
-        {type="item", name="nexelit_plate", amount=2},
+        {type="item", name="nexelit-plate", amount=2},
         {type="fluid", name="tar", amount=50},
     },
     results={
@@ -556,11 +556,11 @@ local recipe_borax = {
     energy_required = 7.0,
     ingredients ={
         {type="fluid", name="water", amount=15},
-		{type="item", name="raw-borax", amount=10},
+        {type="item", name="raw-borax", amount=10},
     },
     results={
         {type="item", name="borax", amount=4},
-		{type="fluid", name="dirty-water", amount=10},
+        {type="fluid", name="dirty-water", amount=10},
     },
     main_product= "borax",
     icon = "__pycoalprocessing__/graphics/icons/borax-washer.png",
@@ -576,8 +576,8 @@ local recipe_ralesia = {
     enabled = "false",
     energy_required = 7.5,
     ingredients ={
-        {type="fluid", name="hydrogen", amount=50},
-		{type="item", name="soil", amount=50},
+        {type="fluid", name="water", amount=50}, --updated-bob hydrogen
+        {type="item", name="soil", amount=50},
     },
     results={
         {type="item", name="ralesia", amount=5},
@@ -616,7 +616,7 @@ local recipe_rich_clay = {
     energy_required = 6,
     ingredients ={
         {type="item", name="ash", amount=30},
-		{type="fluid", name="water", amount=50},
+        {type="fluid", name="water", amount=50},
     },
     results={
         {type="item", name="rich-clay", amount=10},
@@ -636,7 +636,7 @@ local recipe_ground_sample01 = {
     energy_required = 5,
     ingredients ={
         {type="item", name="rich-clay", amount=5},
-		{type="item", name="soil", amount=15},
+        {type="item", name="soil", amount=15},
     },
     results={
         {type="item", name="ground-sample01", amount=1},
@@ -656,7 +656,7 @@ local recipe_bio_sample01 = {
     energy_required = 6,
     ingredients ={
         {type="item", name="ralesia-seeds", amount=20},
-		{type="item", name="bonemeal", amount=5},
+        {type="item", name="bonemeal", amount=5},
     },
     results={
         {type="item", name="bio-sample01", amount=2},
@@ -676,7 +676,7 @@ local recipe_alien_sample01 = {
     energy_required = 10,
     ingredients ={
         {type="item", name="bio-sample01", amount=2},
-		{type="item", name="ground-sample01", amount=25},
+        {type="item", name="ground-sample01", amount=25},
     },
     results={
         {type="item", name="alien-sample01", amount=2},
@@ -696,7 +696,7 @@ local recipe_equipment_chassi = {
     energy_required = 7,
     ingredients ={
         {type="item", name="iron-plate", amount=4},
-		{type="item", name="bronze-alloy", amount=10},
+        {type="item", name="copper-plate", amount=10}, --updated-bob bronze-alloy
     },
     results={
         {type="item", name="equipment-chassi", amount=2},
@@ -716,7 +716,7 @@ local recipe_lab_instrument = {
     energy_required = 7,
     ingredients ={
         {type="item", name="lens", amount=4},
-		{type="item", name="equipment-chassi", amount=1},
+        {type="item", name="equipment-chassi", amount=1},
     },
     results={
         {type="item", name="lab-instrument", amount=1},
@@ -736,7 +736,7 @@ local recipe_boron_trioxide = {
     energy_required = 3,
     ingredients ={
         {type="fluid", name="boric-acid", amount=20},
-		{type="item", name="coke", amount=1},
+        {type="item", name="coke", amount=1},
     },
     results={
         {type="item", name="boron-trioxide", amount=1},
@@ -755,8 +755,8 @@ local recipe_lens = {
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="item", name="glass", amount=10},
-		{type="item", name="boron-trioxide", amount=1},
+        {type="item", name="stone", amount=10}, --updated-bob glass
+        {type="item", name="boron-trioxide", amount=1},
     },
     results={
         {type="item", name="lens", amount=2},
@@ -774,7 +774,7 @@ data:extend{
     making_chromium, coarse_classification, pure_sand_classification, organics_processing,
     sand_casting, tar_oil, absorb_air_pollution, slacked_lime, co2_cooking, fawogae_substrate,
     mineralized_water, science_pack01, soil_washing, flask, recipe_bonemeal, recipe_rawborax,
-	recipe_borax, recipe_ralesia, recipe_rich_clay, recipe_ground_sample01, recipe_bio_sample01,
-	science_pack02, recipe_alien_sample01, recipe_ralesia_seeds, recipe_equipment_chassi, 
-	recipe_lab_instrument, recipe_boron_trioxide, recipe_lens
+    recipe_borax, recipe_ralesia, recipe_rich_clay, recipe_ground_sample01, recipe_bio_sample01,
+    science_pack02, recipe_alien_sample01, recipe_ralesia_seeds, recipe_equipment_chassi,
+    recipe_lab_instrument, recipe_boron_trioxide, recipe_lens
 }

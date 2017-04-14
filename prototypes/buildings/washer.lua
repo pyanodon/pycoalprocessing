@@ -60,9 +60,9 @@ local recipe1={
     enabled = "true",
     ingredients ={
         {"iron-plate", 10},
-        {"pipe", 25}, --bob steel-pipe
+        {"pipe", 25}, --updated-bob steel-pipe
         {"stone-brick", 30},
-        {"electronic-circuit", 2}, --bob basic-circuit-board
+        {"electronic-circuit", 2}, --updated-bob basic-circuit-board
     },
     result= "washer",
     icon = "__pycoalprocessing__/graphics/icons/washer.png",

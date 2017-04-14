@@ -66,7 +66,7 @@ local recipe1={
     {
         {"soil", 300},
         {"pipe", 15},
-        {"electronic-circuit", 10}, --bob basic-circuit-board
+        {"electronic-circuit", 10}, --updated-bob basic-circuit-board
         {"copper-cable", 25},
         {"iron-plate", 40},
         {"raw-wood", 150},
