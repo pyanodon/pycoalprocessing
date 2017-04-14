@@ -10,7 +10,7 @@ local nexelit_plate ={
         {type="item", name="nexelit-ore", amount=2},
         {type="fluid", name="petroleum-gas", amount=15},
         {type="item", name="limestone", amount=2},
-        {type="item", name="sand_casting", amount=1},
+        {type="item", name="sand-casting", amount=1},
     },
     results=
     {
@@ -43,7 +43,7 @@ for _, recipe in pairs(table.filter(data.raw.recipe, function(v) return v.catego
             ing1,
             {type="item", name="fuelrod-mk01", amount=1},
             {type="item", name="limestone", amount=2},
-            {type="item", name="sand_casting", amount=1},
+            {type="item", name="sand-casting", amount=1},
         },
         results = res,
         icon = recipe.icon,

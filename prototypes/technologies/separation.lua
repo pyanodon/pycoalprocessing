@@ -10,11 +10,11 @@ local technology = {
 
         {
             type = "unlock-recipe",
-            recipe = "richdust_separation"
+            recipe = "richdust-separation"
         },
         {
             type = "unlock-recipe",
-            recipe = "tailings_separation"
+            recipe = "tailings-separation"
         },
         {
             type = "unlock-recipe",
@@ -22,11 +22,11 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "pure_sand_classification"
+            recipe = "pure_sand-classification"
         },
         {
             type = "unlock-recipe",
-            recipe = "coarse_classification"
+            recipe = "coarse-classification"
         },
         {
             type = "unlock-recipe",
