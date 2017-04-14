@@ -1,6 +1,6 @@
 --luacheck: globals bobmods
 
---bob mods is present, add hydrogen processing
+--updated-bob mods is present, add hydrogen processing
 local methanol_from_hydrogen = {
     type = "recipe",
     name = "methanol-from-hydrogen",

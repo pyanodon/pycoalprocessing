@@ -66,10 +66,10 @@ local recipe1={
     {
         {"electric-mining-drill", 2},
         {"soil-extractormk01", 1},
-        {"electronic-circuit", 20}, -- bob basic-electronic-circuit-board
-        {"steel-plate", 150}, 
-        {"iron-gear-wheel", 15}, --bob steel-bearing
-		{"transport-belt", 30},
+        {"electronic-circuit", 20}, --updated-bob basic-electronic-circuit-board
+        {"steel-plate", 150},
+        {"iron-gear-wheel", 15}, --updated-bob steel-bearing
+        {"transport-belt", 30},
 
     },
     result= "borax-mine",
@@ -117,26 +117,26 @@ local entity1={
     ingredient_count = 4,
 
     animation ={
-		layers={
-				{
-				filename = "__pycoalprocessing__/graphics/entity/borax-mine/bottom-borax.png",
-				width = 288,
-				height = 144,
-				line_length = 7,
-				frame_count = 90,
-				animation_speed = 0.9,
-				shift = {0.0, 2.25},
-				},
-				{
-				filename = "__pycoalprocessing__/graphics/entity/borax-mine/top-borax.png",
-				width = 288,
-				height = 144,
-				line_length = 7,
-				frame_count = 90,
-				animation_speed = 0.9,
-				shift = {0.0, -2.25},
-				},
-			}
+        layers={
+            {
+                filename = "__pycoalprocessing__/graphics/entity/borax-mine/bottom-borax.png",
+                width = 288,
+                height = 144,
+                line_length = 7,
+                frame_count = 90,
+                animation_speed = 0.9,
+                shift = {0.0, 2.25},
+            },
+            {
+                filename = "__pycoalprocessing__/graphics/entity/borax-mine/top-borax.png",
+                width = 288,
+                height = 144,
+                line_length = 7,
+                frame_count = 90,
+                animation_speed = 0.9,
+                shift = {0.0, -2.25},
+            },
+        }
     },
 
     fluid_boxes =
