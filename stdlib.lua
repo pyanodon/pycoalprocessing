@@ -1,10 +1,9 @@
-require("stdlib.game")
-require("stdlib.surface")
+--stdlib table mutates
 require("stdlib.table")
 require("stdlib.string")
-require("stdlib.time")
-require("stdlib.colors.colors")
-require("stdlib.utils.utils")
+require("stdlib.color.defines")
+
+--stdlib Globals
 require("stdlib.log.logger")
 require("stdlib.config.config")
 require("stdlib.event.event")

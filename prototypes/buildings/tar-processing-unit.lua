@@ -61,7 +61,7 @@ local recipe1={
     ingredients ={
         {"steel-plate", 20},
         {"iron-plate", 10},
-        {"pipe", 15}, --bob stone-pipe
+        {"pipe", 15}, --updated-bob stone-pipe
         {"steel-furnace", 1},
         {"electronic-circuit", 7},
     },

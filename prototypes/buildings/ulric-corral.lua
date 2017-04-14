@@ -9,9 +9,9 @@ local recipe1={
     {
         {"steel-plate", 20},
         {"stone-brick", 10},
-        {"iron-gear-wheel", 5}, --bob steel-bearing
-        {"iron-plate", 10}, 
-        {"electronic-circuit", 10}, --bob basic-circuit-board
+        {"iron-gear-wheel", 5}, --updated-bob steel-bearing
+        {"iron-plate", 10},
+        {"electronic-circuit", 10}, --updated-bob basic-circuit-board
     },
     result= "ulric-corral",
 }
@@ -58,29 +58,29 @@ local entity1={
     ingredient_count = 4,
 
     animation =
-	{
-	layers={
-			{
-            filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-corral-base.png",
-            width = 256,
-            height = 256,
-			frame_count = 60,
-			line_length = 8,
-            shift = {0.0, 0.0},
-			animation_speed = 1.4
-			},
-			{
-            filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-corral-top.png",
-            width = 256,
-            height = 12,
-			frame_count = 60,
-			line_length = 8,
-            shift = {0.0, -4.0},
-			animation_speed = 1.4
-			},
-		}
-	},
-	working_visualisations =
+    {
+        layers={
+            {
+                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-corral-base.png",
+                width = 256,
+                height = 256,
+                frame_count = 60,
+                line_length = 8,
+                shift = {0.0, 0.0},
+                animation_speed = 1.4
+            },
+            {
+                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-corral-top.png",
+                width = 256,
+                height = 12,
+                frame_count = 60,
+                line_length = 8,
+                shift = {0.0, -4.0},
+                animation_speed = 1.4
+            },
+        }
+    },
+    working_visualisations =
     {
         {
             north_position = {1.78, -1.34},
@@ -94,7 +94,7 @@ local entity1={
                 line_length = 20,
                 width = 96,
                 height = 16,
-				run_mode = "forward-then-backward",
+                run_mode = "forward-then-backward",
                 animation_speed = 0.2
             }
         },
@@ -110,7 +110,7 @@ local entity1={
                 line_length = 10,
                 width = 192,
                 height = 128,
-				animation_speed = 0.2
+                animation_speed = 0.2
             }
         },
         {
@@ -125,11 +125,11 @@ local entity1={
                 line_length = 64,
                 width = 32,
                 height = 48,
-				run_mode = "forward-then-backward",
+                run_mode = "forward-then-backward",
                 animation_speed = 0.55
             }
         },
-		{
+        {
             north_position = {-2.0, 2.56},
             west_position = {-2.0, 2.56},
             south_position = {-2.0, 2.56},
@@ -144,7 +144,7 @@ local entity1={
                 animation_speed = 0.6
             }
         },
-		{
+        {
             north_position = {2.5, 2.81},
             west_position = {2.5, 2.81},
             south_position = {2.5, 2.81},
@@ -159,7 +159,7 @@ local entity1={
                 animation_speed = 0.6
             }
         },
-		{
+        {
             north_position = {1.81, 3.12},
             west_position = {1.81, 3.12},
             south_position = {1.81, 3.12},
@@ -174,7 +174,7 @@ local entity1={
                 animation_speed = 0.6
             }
         },
-		{
+        {
             north_position = {-2.0, 3.0},
             west_position = {-2.0, 3.0},
             south_position = {-2.0, 3.0},
@@ -189,7 +189,7 @@ local entity1={
                 animation_speed = 0.5
             }
         },
-		{
+        {
             north_position = {2.56, 1.0},
             west_position = {2.56, 1.0},
             south_position = {2.56, 1.0},
@@ -204,7 +204,7 @@ local entity1={
                 animation_speed = 0.5
             }
         },
-		{
+        {
             north_position = {1.87, 0.46},
             west_position = {1.87, 0.46},
             south_position = {1.87, 0.46},

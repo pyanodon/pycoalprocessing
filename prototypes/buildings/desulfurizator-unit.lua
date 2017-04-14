@@ -62,8 +62,8 @@ local recipe1={
         {"storage-tank", 3},
         {"chemical-plant", 1},
         {"electronic-circuit", 40},
-        {"steel-plate", 20}, -- bob titanium-plate
-        {"iron-plate", 50}, --bob invar-alloy
+        {"steel-plate", 20}, --updated-bob titanium-plate
+        {"iron-plate", 50}, --updated-bob invar-alloy
 
     },
     result= "desulfurizator-unit",

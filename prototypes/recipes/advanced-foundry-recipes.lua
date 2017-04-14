@@ -2,7 +2,7 @@
 --NEXELIT PLATE
 local nexelit_plate ={
     type = "recipe",
-    name = "nexelit_plate",
+    name = "nexelit-plate",
     category = "advanced-foundry",
     enabled = "false",
     energy_required = 2,
@@ -14,9 +14,9 @@ local nexelit_plate ={
     },
     results=
     {
-        {type="item", name="nexelit_plate", amount=2},
+        {type="item", name="nexelit-plate", amount=2},
     },
-    main_product= "nexelit_plate",
+    main_product= "nexelit-plate",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
 }
 -------------------------------------------------------------------------------

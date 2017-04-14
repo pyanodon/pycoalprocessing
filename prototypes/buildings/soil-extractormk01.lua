@@ -65,7 +65,7 @@ local recipe1={
     ingredients =
     {
         {"burner-mining-drill", 2},
-        {"electronic-circuit", 10}, --bob basic-circuit-board
+        {"electronic-circuit", 10}, --updated-bob basic-circuit-board
         {"iron-plate", 30},
         {"copper-cable", 5},
         {"iron-gear-wheel", 15},

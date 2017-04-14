@@ -66,9 +66,9 @@ local recipe1={
     {
         {"concrete", 20},
         {"steel-plate", 20},
-        {"stone-brick", 10}, --bob glass
-        {"iron-gear-wheel", 5}, --bob steel-bearing
-        {"iron-plate", 10}, --bob invar-alloy
+        {"stone-brick", 10}, --updated-bob glass
+        {"iron-gear-wheel", 5}, --updated-bob steel-bearing
+        {"iron-plate", 10}, --updated-bob invar-alloy
         {"advanced-circuit", 10},
     },
     result= "fts-reactor",

@@ -67,8 +67,8 @@ local recipe1={
         {"electric-mining-drill", 3},
         {"soil-extractormk01", 2},
         {"electronic-circuit", 30},
-        {"iron-plate", 150}, --bob titanium-plate
-        {"iron-gear-wheel", 15}, --bob titanium-bearing
+        {"iron-plate", 150}, --updated-bob titanium-plate
+        {"iron-gear-wheel", 15}, --updated-bob titanium-bearing
 
     },
     result= "ground-borer",

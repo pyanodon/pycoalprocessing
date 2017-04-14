@@ -10,8 +10,8 @@ local recipe1={
         {"assembling-machine-2", 5},
         {"advanced-circuit", 10},
         {"transport-belt", 30},
-        {"iron-plate", 20}, --bob titanium-plate
-        {"iron-gear-wheel", 50}, --bob brass-bearing
+        {"iron-plate", 20}, --updated-bob titanium-plate
+        {"iron-gear-wheel", 50}, --updated-bob brass-bearing
     },
     result= "classifier",
 }
