@@ -26,7 +26,7 @@ local recipe1={
     {
         {"concrete", 50},
         {"iron-stick", 50},
-        {"pipe", 10}, --bob stone-pipe
+        {"pipe", 10}, --updated-bob stone-pipe
         {"small-pump", 2},
         {"advanced-circuit", 15},
     },

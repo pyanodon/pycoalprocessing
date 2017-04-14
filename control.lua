@@ -1,5 +1,5 @@
 --require Logger and Config libraries
-require("stdlib.loader")
+require("stdlib")
 
 --Set up default MOD global variables
 MOD = {}

@@ -1,4 +1,4 @@
-![pYCoalHeader](https://dl.dropboxusercontent.com/u/5754543/cabecalho.jpg "pY Coal Processing")
+![pYCoalHeader](http://i.imgur.com/StlIACh.jpg "pY Coal Processing")
 
 ##### Coal finally has more uses!
 
@@ -16,7 +16,7 @@ Available on the mod portal at https://mods.factorio.com/mods/pyanodon/pycoalpro
 * Recipe tweaks to various mods
 
 ##### Technologies:
-![pYcoalTechs](https://dl.dropboxusercontent.com/u/5754543/organogram-green.jpg "Technologies")
+![pYcoalTechs](http://i.imgur.com/ls3FQ8G.jpg "Technologies")
 
 ##### Todo:
 

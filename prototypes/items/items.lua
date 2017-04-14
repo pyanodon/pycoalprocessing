@@ -54,8 +54,8 @@ local recipe_nichrome = {
     enabled = "false",
     energy_required = 2.5,
     ingredients ={
-        {type="fluid", name="water", amount=10}, -- bob nitrogen
-        {type="item", name="iron-plate", amount=10}, --bob nickel-plate
+        {type="fluid", name="water", amount=10}, --updated-bob nitrogen
+        {type="item", name="iron-plate", amount=10}, --updated-bob nickel-plate
         {type="item", name="chromium", amount=5},
     },
     result = "nichrome"
@@ -102,7 +102,7 @@ local recipe_active_carbon = {
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="water", amount=10}, -- bob nitrogen
+        {type="fluid", name="water", amount=10}, --updated-bob nitrogen
         {type="item", name="zinc-chloride", amount=2},
         {type="item", name="coke", amount=25},
         --{type="item", name="sodium-hydroxide", amount=5},
@@ -132,13 +132,13 @@ local recipe_zinc_chloride ={
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="water", amount=2}, --bob hydrogen-chloride
-        {type="item", name="iron-plate", amount=1}, --bob zinc-plate
-        {type="item", name="copper-plate", amount=1}, --bob --remove
+        {type="fluid", name="water", amount=2}, --updated-bob hydrogen-chloride
+        {type="item", name="iron-plate", amount=1}, --updated-bob zinc-plate
+        {type="item", name="copper-plate", amount=1}, --updated-bob --remove
     },
     results={
         {type="item", name="zinc-chloride", amount=1},
-        --{type="fluid", name="hydrogen", amount=2}, --bob hydrogen
+        --{type="fluid", name="hydrogen", amount=2}, --updated-bob hydrogen
     },
     main_product= "zinc-chloride",
     icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
@@ -195,7 +195,7 @@ local recipe_soil ={
         {type="fluid", name="water", amount=100},
     },
     results={
-        {type="item", name="soil", amount=5},
+        {type="item", name="soil", amount=10},
     },
     icon = "__pycoalprocessing__/graphics/icons/soil.png",
 }
@@ -232,7 +232,7 @@ local recipe_drill_head = {
     ingredients ={
         {type="item", name="steel-plate", amount=8},
         {type="item", name="chromium", amount=3},
-        {type="item", name="iron-plate", amount=5}, --bob titanium-plate
+        {type="item", name="iron-plate", amount=5}, --updated-bob titanium-plate
     },
     results={
         {type="item", name="drill-head", amount=2},
@@ -265,7 +265,7 @@ local sand ={
 --PURE SAND
 local pure_sand ={
     type = "item",
-    name = "pure_sand",
+    name = "pure-sand",
     icon = "__pycoalprocessing__/graphics/icons/pure-sand.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -309,41 +309,41 @@ local coarse ={
 --RICH DUST
 local rich_dust ={
     type = "item",
-    name = "rich_dust",
+    name = "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/richdust.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
-    order = "rich_dust",
+    order = "rich-dust",
     stack_size = 500
 }
 -------------------------------------------------------------------------------
 --COAL DUST
 local coal_dust ={
     type = "item",
-    name = "coal_dust",
+    name = "coal-dust",
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
     flags = {"goes-to-main-inventory"},
     fuel_value = "6MJ",
     subgroup = "py-items",
-    order = "coal_dust",
+    order = "coal-dust",
     stack_size = 500
 }
 -------------------------------------------------------------------------------
 --CHROMITE SAND
 local chromite_sand ={
     type = "item",
-    name = "chromite_sand",
+    name = "chromite-sand",
     icon = "__pycoalprocessing__/graphics/icons/chromite_sand.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
-    order = "chromite_sand",
+    order = "chromite-sand",
     stack_size = 500
 }
 -------------------------------------------------------------------------------
 --NEXELIT-PLATE
 local nexelit_plate ={
     type = "item",
-    name = "nexelit_plate",
+    name = "nexelit-plate",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -355,7 +355,7 @@ local nexelit_plate ={
 --SAND-CASTING
 local sand_casting ={
     type = "item",
-    name = "sand_casting",
+    name = "sand-casting",
     icon = "__pycoalprocessing__/graphics/icons/sand-casting.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -400,7 +400,7 @@ local recipe_nexelit_cartridge = {
     energy_required = 4,
     ingredients ={
         {type="item", name="lithium-peroxide", amount=25},
-        {type="item", name="nexelit_plate", amount=10},
+        {type="item", name="nexelit-plate", amount=10},
     },
     results={
         {type="item", name="nexelit-cartridge", amount=1},
@@ -532,6 +532,149 @@ local flask = {
     order = "g",
     stack_size = 50
 }
+--BONEMEAL
+-------------------------------------------------------------------------------
+local bonemeal = {
+    type = "item",
+    name = "bonemeal",
+    icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "z",
+    stack_size = 300
+}
+-------------------------------------------------------------------------------
+-- RAW BORAX
+local rawborax = {
+    type = "item",
+    name = "raw-borax",
+    icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- BORAX
+local borax = {
+    type = "item",
+    name = "borax",
+    icon = "__pycoalprocessing__/graphics/icons/borax.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- RALESIA
+local ralesia = {
+    type = "item",
+    name = "ralesia",
+    icon = "__pycoalprocessing__/graphics/icons/ralesia.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 200
+}
+-------------------------------------------------------------------------------
+-- RICH CLAY
+local rich_clay = {
+    type = "item",
+    name = "rich-clay",
+    icon = "__pycoalprocessing__/graphics/icons/rich-clay.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- GROUND SAMPLE 01
+local ground_sample01 = {
+    type = "item",
+    name = "ground-sample01",
+    icon = "__pycoalprocessing__/graphics/icons/ground-sample01.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- BIO SAMPLE 01
+local bio_sample01 = {
+    type = "item",
+    name = "bio-sample01",
+    icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- ALIEN SAMPLE 01
+local alien_sample01 = {
+    type = "item",
+    name = "alien-sample01",
+    icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- EQUIPMENT CHASSI
+local equipment_chassi = {
+    type = "item",
+    name = "equipment-chassi",
+    icon = "__pycoalprocessing__/graphics/icons/equipment-chassi.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- LAB INSTRUMENT
+local lab_instrument = {
+    type = "item",
+    name = "lab-instrument",
+    icon = "__pycoalprocessing__/graphics/icons/lab-instrument.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- LENS
+local lens = {
+    type = "item",
+    name = "lens",
+    icon = "__pycoalprocessing__/graphics/icons/lens.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- BORON TRIOXIDE
+local boron_trioxide = {
+    type = "item",
+    name = "boron-trioxide",
+    icon = "__pycoalprocessing__/graphics/icons/boron-trioxide.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- RALESIA SEEDS
+local ralesia_seeds = {
+    type = "item",
+    name = "ralesia-seeds",
+    icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
 -------------------------------------------------------------------------------
 data:extend(
     {
@@ -576,6 +719,19 @@ data:extend(
         recipe_fawogae,
         fawogae,
         fawogae_substrate,
-        flask
+        flask,
+        bonemeal,
+        rawborax,
+        borax,
+        ralesia,
+        rich_clay,
+        ground_sample01,
+        bio_sample01,
+        alien_sample01,
+        equipment_chassi,
+        lab_instrument,
+        lens,
+        boron_trioxide,
+        ralesia_seeds
     }
 )

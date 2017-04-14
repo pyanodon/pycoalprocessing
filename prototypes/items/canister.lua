@@ -7,8 +7,8 @@ local recipe_canister = {
     enabled=false,
     energy_required = 3,
     ingredients = {
-        {type="item", name="steel-plate", amount = 2}, --bob aluminium-plate
-        {type="item", name="copper-plate", amount = 1}, -- bob brass-plate
+        {type="item", name="steel-plate", amount = 2}, --updated-bob aluminium-plate
+        {type="item", name="copper-plate", amount = 1}, --updated-bob brass-plate
     },
     results = {
         {type = "item", name = "empty-gas-canister", amount = 1},
@@ -33,7 +33,7 @@ local recipe_fill_canister = {
     type = "recipe",
     name = "fill-methanol-gas-canister",
     localised_name = {"recipe-name.fill-methanol-gas-canister"},
-    category = "crafting-with-fluid", --bob bob-pump
+    category = "crafting-with-fluid", --updated-bob bob-pump
     enabled = "false",
     energy_required = 3,
     ingredients ={
