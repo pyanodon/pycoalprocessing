@@ -74,10 +74,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "iron_plate"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "lithium-peroxide"
         },
         {
