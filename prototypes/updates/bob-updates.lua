@@ -79,15 +79,15 @@ replace_ing("solid-separator", "iron-gear-wheel", "brass-gear-wheel")
 replace_ing("classifier", "iron-plate", "titanium-plate")
 replace_ing("classifier", "iron-stick", "brass-gear-wheel")
 
-replace_ing("borax-mine", "electronic-circuit", "basic-electronic-circuit-board")
+replace_ing("borax-mine", "electronic-circuit", "basic-circuit-board")
 replace_ing("borax-mine", "iron-gear-wheel", "steel-bearing")
 
-replace_ing("ralesia-plantation", "electronic-circuit", "basic-electronic-circuit-board")
+replace_ing("ralesia-plantation", "electronic-circuit", "basic-circuit-board")
 replace_ing("ralesia-plantation", "pipe", "steel-pipe")
 replace_ing("ralesia-plantation", "stone", "glass")
 
 replace_ing("ulric-corral", "iron-gear-wheel", "steel-bearing")
-replace_ing("ulric-corral", "electronic-circuit", "basic-electronic-circuit-board")
+replace_ing("ulric-corral", "electronic-circuit", "basic-circuit-board")
 
 -------------------------------------------------------------------------------
 --[[Items]]--
@@ -139,8 +139,8 @@ add_ing("anthraquinone", {type="fluid", name="liquid-air", amount=60})
 replace_ing("flask", "iron-plate", "glass")
 
 add_ing("ref_to_light_oil", {type="fluid", name="hydrogen", amount=25})
-add_ing("ref_to_petroleum_gas", {type="fluid", name="hydrogen", amount=35})
-add_ing("combustion_olefin", {type="fluid", name="hydrogen", amount=15})
+--add_ing("ref_to_petroleum_gas", {type="fluid", name="hydrogen", amount=35})
+add_ing("combustion-olefin", {type="fluid", name="hydrogen", amount=15})
 
 replace_ing("ralesia", "water", "hydrogen")
 
