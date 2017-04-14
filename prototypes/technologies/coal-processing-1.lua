@@ -57,7 +57,7 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "borax_washing"
+            recipe = "borax-washing"
         },
         {
             type = "unlock-recipe",
