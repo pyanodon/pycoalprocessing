@@ -58,9 +58,21 @@ data:extend(
         },
         {
             type = "item-subgroup",
-            name = "py-drilling",
+            name = "py-crusher",
             group = "coal-processing",
             order = "g",
+        },
+        {
+            type = "item-subgroup",
+            name = "py-drilling",
+            group = "coal-processing",
+            order = "h",
+        },
+        {
+            type = "item-subgroup",
+            name = "py-mill",
+            group = "coal-processing",
+            order = "i",
         },
         {
             type = "item-subgroup",

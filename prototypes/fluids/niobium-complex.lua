@@ -2,38 +2,39 @@
 local recipe1 =
 {
      type = "recipe",
-    name = "aromatics2",
-    category = "gasifier",
+    name = "niobium-complex",
+    category = "chemistry",
     enabled = "false",
     energy_required = 2.0,
     ingredients ={
-        {type="fluid", name="refsyngas", amount=15},
-		{type="fluid", name="hydrogen", amount=50},
-		{type="item", name="organics", amount=10},
+        {type="fluid", name="organic-solvent", amount=5},
+		{type="fluid", name="hydrogen-chloride", amount=10},
+		{type="item", name="niobium-concentrate", amount=10},
     },
     results={
-        {type="fluid", name="aromatics", amount=30},
+        {type="fluid", name="niobium-complex", amount=10},
     },
-	main_product= "aromatics",
-    icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
-    subgroup = "py-syngas",
+	main_product= "niobium-complex",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",
+    subgroup = "py-fluid-handling",
     order = "c",
 }
 -------------------------------------------------------------------------------
---[[items]]--
+--[[niobium-complex]]--
 local item1=
 {
     type = "fluid",
-    name = "aromatics",
-    icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
+    name = "niobium-complex",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",
     default_temperature = 15,
-    base_color = {r = 0.74, g = 0.403, b = 0.388},
-    flow_color = {r = 0.74, g = 0.403, b = 0.388},
+    heat_capacity = "1KJ",
+    base_color = {r = 0.482, g = 0.607, b = 0.650},
+    flow_color = {r = 0.482, g = 0.607, b = 0.650},
     max_temperature = 100,
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59,
-    subgroup = "py-syngas",
-    order = "z-[aromatics]"
+    subgroup = "py-fluid-handling",
+    order = "z-[niobium-complex]"
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--

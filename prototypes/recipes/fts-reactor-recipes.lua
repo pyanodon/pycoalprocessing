@@ -125,15 +125,40 @@ local combustion_olefin ={
     },
     results={
         {type="fluid", name="carbon-dioxide", amount=10},
-        {type="fluid", name="water", amount=50, temperature=100},
+        {type="fluid", name="water", amount=50},
         {type="fluid", name="combustion-mixture1", amount=30},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
     main_product= "combustion-mixture1",
     order = "c",
 }
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+--RARE EARTH BENEFICIATION
+local rare_earth_beneficiation ={
+    type = "recipe",
+    name = "rare-earth-beneficiation",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 4,
+    ingredients ={
+        {type="fluid", name="sulfuric-acid", amount=20},
+        {type="fluid", name="water", amount=100, temperature=100},
+        {type="item", name="rare-earth-dust", amount=10},
+
+    },
+    results={
+        {type="item", name="rich-dust", amount=5},
+        {type="fluid", name="rare-earth-mud", amount=25},
+        {type="item", name="sand", amount=10},
+    },
+    icon = "__pycoalprocessing__/graphics/icons/rare-earth-mud.png",
+    main_product= "rare-earth-mud",
+    order = "c",
+}
+
 
 data:extend{
     heavy_oil_from_coal_gas, light_oil_from_syngas, petgas_from_refsyngas, ref_to_light_oil,
-    sulfuric_petgas, combustion_olefin
+    sulfuric_petgas, combustion_olefin, rare_earth_beneficiation
 }

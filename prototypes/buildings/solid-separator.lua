@@ -8,10 +8,10 @@ local recipe1={
     ingredients =
     {
         {"assembling-machine-1", 5},
-        {"advanced-circuit", 30},
+        {"advanced-circuit", 30}, --updated bob basic-electronic-circuit-board
         {"steel-plate", 50},
-        {"iron-plate", 20}, --updated-bob titanium-plate
-        {"iron-stick", 50}, --updated-bob brass-bearing
+        {"iron-plate", 20},
+        {"iron-gear-wheel", 50}, --updated-bob brass-gear-wheel
     },
     result= "solid-separator",
 }

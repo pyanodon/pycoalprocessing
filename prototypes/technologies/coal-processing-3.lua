@@ -10,14 +10,6 @@ local technology = {
 
         {
             type = "unlock-recipe",
-            recipe = "nichrome"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "making-chromium"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "nexelit-plate"
         },
         {
@@ -79,14 +71,6 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "nexelit-cartridge"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "solid-separator"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "soil-separation"
         },
     },
 

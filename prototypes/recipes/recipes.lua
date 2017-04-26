@@ -8,8 +8,8 @@ local making_chromium ={
     type = "recipe",
     name = "making-chromium",
     category = "hpf",
-    enabled = "false",
-    energy_required = 1,
+    enabled = false,
+    energy_required = 2.5,
     ingredients ={
         {type="fluid", name="carbon-dioxide", amount=10},
         {type="item", name="chromite-sand", amount=5},
@@ -17,7 +17,7 @@ local making_chromium ={
         {type="item", name="limestone", amount=5},
     },
     results={
-        {type="item", name="chromium", amount=1,},
+        {type="item", name="chromium", amount=10,},
     },
     main_product= "chromium",
     icon = "__pycoalprocessing__/graphics/icons/chromium.png",
@@ -159,12 +159,12 @@ local pure_sand_classification ={
     name = "pure_sand-classification",
     category = "classifier",
     enabled = "false",
-    energy_required = 1,
+    energy_required = 4,
     ingredients ={
         {type="item", name="pure-sand", amount=16},
     },
     results={
-        {type="item", name="rich-dust", amount=5},
+        {type="item", name="rich-dust", amount=10},
         {type="item", name="gravel", amount=2},
     },
     main_product= "rich-dust",
@@ -188,7 +188,7 @@ local soil_separation ={
         {type="item", name="sand", amount=5},
         {type="item", name="coarse", amount=3},
         {type="item", name="limestone", amount=3},
-        {type="item", name="organics", amount=1},
+        {type="item", name="organics", amount=3},
     },
     main_product= "sand",
     icon = "__pycoalprocessing__/graphics/icons/soil-separation.png",
@@ -400,11 +400,11 @@ local fawogae_substrate ={
     enabled = "true",
     energy_required = 3.5,
     ingredients ={
-        {type="item", name="fawogae", amount=15},
-        {type="item", name="coke", amount=10},
+        {type="item", name="fawogae", amount=10},
+        {type="item", name="coke", amount=5},
     },
     results={
-        {type="item", name="fawogae-substrate", amount=5},
+        {type="item", name="fawogae-substrate", amount=10},
 
     },
     main_product= "fawogae-substrate",
@@ -461,10 +461,12 @@ local science_pack01 ={
     enabled = "true",
     energy_required = 4,
     ingredients ={
-        {type="item", name="fawogae-substrate", amount=20},
-        {type="item", name="flask", amount=5},
+        {type="item", name="fawogae-substrate", amount=10},
+        {type="item", name="flask", amount=2},
     },
-    result = "science-pack-1",
+    results={
+        {type="item", name="science-pack-1", amount=2,},
+    },
     icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png",
     subgroup = "py-items",
     order = "c",
@@ -481,7 +483,9 @@ local science_pack02 ={
         {type="item", name="lab-instrument", amount=1},
         {type="item", name="alien-sample01", amount=2},
     },
-    result = "science-pack-2",
+    results={
+        {type="item", name="science-pack-2", amount=2,},
+    },
     icon = "__pycoalprocessing__/graphics/icons/science-pack-2.png",
     subgroup = "py-items",
     order = "c",
@@ -499,7 +503,7 @@ local soil_washing ={
         {type="fluid", name="water", amount=60},
     },
     results={
-        {type="item", name="sand", amount=5},
+        {type="item", name="sand", amount=8},
         {type="fluid", name="dirty-water", amount=10},
 
     },
@@ -615,7 +619,7 @@ local recipe_rich_clay = {
     enabled = "false",
     energy_required = 6,
     ingredients ={
-        {type="item", name="ash", amount=30},
+        {type="item", name="ash", amount=20},
         {type="fluid", name="water", amount=50},
     },
     results={
@@ -636,10 +640,10 @@ local recipe_ground_sample01 = {
     energy_required = 5,
     ingredients ={
         {type="item", name="rich-clay", amount=5},
-        {type="item", name="soil", amount=15},
+        {type="item", name="soil", amount=10},
     },
     results={
-        {type="item", name="ground-sample01", amount=1},
+        {type="item", name="ground-sample01", amount=5},
     },
     main_product= "ground-sample01",
     icon = "__pycoalprocessing__/graphics/icons/ground-sample01.png",
@@ -676,7 +680,7 @@ local recipe_alien_sample01 = {
     energy_required = 10,
     ingredients ={
         {type="item", name="bio-sample01", amount=2},
-        {type="item", name="ground-sample01", amount=25},
+        {type="item", name="ground-sample01", amount=15},
     },
     results={
         {type="item", name="alien-sample01", amount=2},
@@ -759,14 +763,112 @@ local recipe_lens = {
         {type="item", name="boron-trioxide", amount=1},
     },
     results={
-        {type="item", name="lens", amount=2},
+        {type="item", name="lens", amount=3},
     },
     main_product= "lens",
     icon = "__pycoalprocessing__/graphics/icons/lens.png",
     subgroup = "py-items",
     order = "c",
 }
-
+--STONE to GRAVEL
+-------------------------------------------------------------------------------
+local recipe_stone_gravel = {
+    type = "recipe",
+    name = "stone-to-gravel",
+    category = "crusher",
+    enabled = "false",
+    energy_required = 1,
+    ingredients ={
+        {type="item", name="stone", amount=20},
+    },
+    results={
+        {type="item", name="gravel", amount=15},
+    },
+    icon = "__pycoalprocessing__/graphics/icons/crush-stone.png",
+    subgroup = "py-crusher",
+    order = "c",
+}
+--GREAVEL to SAND
+-------------------------------------------------------------------------------
+local recipe_gravel_sand = {
+    type = "recipe",
+    name = "gravel-to-sand",
+    category = "crusher",
+    enabled = "false",
+    energy_required = 1,
+    ingredients ={
+        {type="item", name="gravel", amount=20},
+    },
+    results={
+        {type="item", name="sand", amount=15},
+    },
+    icon = "__pycoalprocessing__/graphics/icons/crush-gravel.png",
+    subgroup = "py-crusher",
+    order = "c",
+}
+--OLEOCHEMICALS
+-------------------------------------------------------------------------------
+local recipe_oleochemicals = {
+    type = "recipe",
+    name = "oleochemicals",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 2.5,
+    ingredients ={
+        {type="item", name="mukmoux-fat", amount=20},
+		{type="item", name="nichrome", amount=2},
+		{type="fluid", name="water", amount=80},
+    },
+    results={
+        {type="fluid", name="oleochemicals", amount=15},
+		{type="fluid", name="glycerol", amount=5},
+		{type="fluid", name="water", amount=80, temperature=100},
+    },
+	main_product= "oleochemicals",
+    icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
+    subgroup = "py-fluid-handling",
+    order = "c",
+}
+--ORGANIC SOLVENT
+-------------------------------------------------------------------------------
+local recipe_organic_solvent = {
+    type = "recipe",
+    name = "organic-solvent",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 2.5,
+    ingredients ={
+        {type="item", name="active-carbon", amount=5},
+		{type="fluid", name="oleochemicals", amount=20},
+		{type="fluid", name="aromatics", amount=20},
+    },
+    results={
+        {type="fluid", name="organic-solvent", amount=10},
+    },
+	main_product= "organic-solvent",
+    icon = "__pycoalprocessing__/graphics/icons/organic-solvent.png",
+    subgroup = "py-fluid-handling",
+    order = "c",
+}
+--CO2 FROM ORGANICS
+-------------------------------------------------------------------------------
+local recipe_co2_organics = {
+    type = "recipe",
+    name = "co2-organics",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+		{type="item", name="organics", amount=10},
+    },
+    results={
+        {type="fluid", name="carbon-dioxide", amount=40},
+    },
+	main_product= "carbon-dioxide",
+    icon = "__pycoalprocessing__/graphics/icons/carbon-dioxide.png",
+    subgroup = "py-items",
+    order = "c",
+}
 -------------------------------------------------------------------------------
 data:extend{
     raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
@@ -776,5 +878,6 @@ data:extend{
     mineralized_water, science_pack01, soil_washing, flask, recipe_bonemeal, recipe_rawborax,
     recipe_borax, recipe_ralesia, recipe_rich_clay, recipe_ground_sample01, recipe_bio_sample01,
     science_pack02, recipe_alien_sample01, recipe_ralesia_seeds, recipe_equipment_chassi,
-    recipe_lab_instrument, recipe_boron_trioxide, recipe_lens
+    recipe_lab_instrument, recipe_boron_trioxide, recipe_lens, recipe_stone_gravel, recipe_gravel_sand,
+	recipe_oleochemicals, recipe_organic_solvent, recipe_co2_organics
 }
