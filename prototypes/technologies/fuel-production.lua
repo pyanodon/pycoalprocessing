@@ -42,10 +42,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "fts-reactor"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "ref_to_light-oil"
         },
         {

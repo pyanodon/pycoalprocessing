@@ -115,6 +115,26 @@ local technology = {
             type = "unlock-recipe",
             recipe = "science-pack-2"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "ore-crusher"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "ball-mill"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "stone-to-gravel"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "gravel-to-sand"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "py-tank-1500"
+        },
     },
     unit =
     {
