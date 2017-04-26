@@ -51,7 +51,7 @@ local recipe_tar_carbon = {
     name = "tar-carbon",
     category = "tar",
     enabled = "false",
-    energy_required = 4,
+    energy_required = 2,
     ingredients ={
         {type="fluid", name="tar", amount=2},
     },
@@ -113,9 +113,9 @@ local glass ={
     enabled = "true",
     energy_required = 3,
     ingredients ={
-        {type="item", name="pure-sand", amount=30},
-        {type="fluid", name="coal-gas", amount=10},
-        {type="item", name="quartz", amount=5},
+        {type="item", name="pure-sand", amount=20},
+        {type="fluid", name="coal-gas", amount=15},
+        {type="item", name="quartz", amount=10},
     },
     results={
         {type="item", name="glass", amount=10},

@@ -4,7 +4,7 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/coal-processing-2.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"steel-processing","coal-processing-1"},
+    prerequisites = {"separation","coal-processing-1"},
     effects =
     {
 
@@ -77,7 +77,78 @@ local technology = {
             type = "unlock-recipe",
             recipe = "coal-slurry"
         },
-
+        {
+            type = "unlock-recipe",
+            recipe = "niobium-mine"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "niobium-ore"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "niobium-powder"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "niobium-dust"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "niobium-concentrate"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "mukmoux-pasture"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "mukmoux-fat"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "oleochemicals"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "organic-solvent"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "niobium-oxide"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "niobium-complex"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "niobium-plate"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "nichrome"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "making-chromium"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "richdust-separation"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "drill-head"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "aromatics2"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "tailings-separation"
+        },
     },
     unit =
     {

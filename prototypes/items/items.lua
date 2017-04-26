@@ -658,6 +658,7 @@ local lens = {
 local boron_trioxide = {
     type = "item",
     name = "boron-trioxide",
+	enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/boron-trioxide.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -669,11 +670,275 @@ local boron_trioxide = {
 local ralesia_seeds = {
     type = "item",
     name = "ralesia-seeds",
+	enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
+}
+--NIOBIUM ORE
+-------------------------------------------------------------------------------
+local recipe_niobium_ore = {
+    type = "recipe",
+    name = "niobium-ore",
+    category = "niobium",
+    enabled = "false",
+    energy_required = 7,
+    ingredients ={
+        {type="item", name="drill-head", amount=1},
+        {type="fluid", name="refsyngas", amount=10},
+    },
+    results={
+        {type="item", name="niobium-ore", amount=10},
+    },
+}
+
+local niobium_ore = {
+    type = "item",
+    name = "niobium-ore",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-ore.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items-hpf",
+    order = "g",
+    stack_size = 100
+}
+--NIOBIUM POWDER
+-------------------------------------------------------------------------------
+local recipe_niobium_powder = {
+    type = "recipe",
+    name = "niobium-powder",
+    category = "crusher",
+    enabled = "false",
+    energy_required = 3.5,
+    ingredients ={
+        {type="item", name="niobium-ore", amount=5},
+    },
+    results={
+        {type="item", name="niobium-powder", amount=5},
+		{type="item", name="stone", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/crush-niobium.png",
+	main_product = "niobium-powder",
+}
+
+local niobium_powder = {
+    type = "item",
+    name = "niobium-powder",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-powder.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-crusher",
+    --order = "g",
+    stack_size = 100
+}
+--NIOBIUM DUST
+-------------------------------------------------------------------------------
+local recipe_niobium_dust = {
+    type = "recipe",
+    name = "niobium-dust",
+    category = "ball-mill",
+    enabled = "false",
+    energy_required = 5,
+    ingredients ={
+        {type="item", name="niobium-powder", amount=5},
+    },
+    results={
+        {type="item", name="niobium-dust", amount=5},
+		{type="item", name="gravel", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/niobium-dust.png",
+	main_product = "niobium-dust",
+}
+
+local niobium_dust = {
+    type = "item",
+    name = "niobium-dust",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-dust.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-mill",
+    --order = "g",
+    stack_size = 100
+}
+--NIOBIUM CONCENTRATE
+-------------------------------------------------------------------------------
+local recipe_niobium_concentrate = {
+    type = "recipe",
+    name = "niobium-concentrate",
+    category = "classifier",
+    enabled = "false",
+    energy_required = 5,
+    ingredients ={
+        {type="item", name="niobium-dust", amount=5},
+    },
+    results={
+        {type="item", name="niobium-concentrate", amount=5},
+		{type="item", name="sand", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/class-niobium.png",
+	main_product = "niobium-concentrate",
+}
+
+local niobium_concentrate = {
+    type = "item",
+    name = "niobium-concentrate",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-concentrate.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 100
+}
+--MUKMOUX FAT
+-------------------------------------------------------------------------------
+local recipe_mukmoux_fat = {
+    type = "recipe",
+    name = "mukmoux-fat",
+    category = "mukmoux",
+    enabled = "false",
+    energy_required = 7.2,
+    ingredients ={
+        {type="item", name="fawogae", amount=5},
+		{type="item", name="ralesia-seeds", amount=50},
+    },
+    results={
+        {type="item", name="mukmoux-fat", amount=10},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
+	main_product = "mukmoux-fat",
+}
+
+local mukmoux_fat = {
+    type = "item",
+    name = "mukmoux-fat",
+    icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 50
+}
+--NIOBIUM OXIDE
+-------------------------------------------------------------------------------
+local recipe_niobium_oxide = {
+    type = "recipe",
+    name = "niobium-oxide",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 1.5,
+    ingredients ={
+        {type="fluid", name="nitrogen-dioxide", amount=30},
+		{type="fluid", name="niobium-complex", amount=10},
+    },
+    results={
+        {type="item", name="niobium-oxide", amount=10},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/niobium-oxide.png",
+	main_product = "niobium-oxide",
+}
+
+local niobium_oxide = {
+    type = "item",
+    name = "niobium-oxide",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-oxide.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 50
+}
+--NIOBIUM PLATE
+-------------------------------------------------------------------------------
+local recipe_niobium_plate = {
+    type = "recipe",
+    name = "niobium-plate",
+    category = "electrolysis",
+    enabled = "false",
+    energy_required = 1.5,
+    ingredients ={
+        {type="item", name="salt", amount=20},
+		{type="item", name="niobium-oxide", amount=6},
+    },
+    results={
+        {type="item", name="niobium-plate", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/niobium-plate.png",
+	main_product = "niobium-plate",
+}
+
+local niobium_plate = {
+    type = "item",
+    name = "niobium-plate",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-plate.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 50
+}
+-------------------------------------------------------------------------------
+-- RARE-EARTH ORE
+local rare_earth_ore = {
+    type = "item",
+    name = "rare-earth-ore",
+    icon = "__pycoalprocessing__/graphics/icons/rare-earth-ore.png",
+	enabled = "false",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 500
+}
+--RARE-EARTH-POWDER
+-------------------------------------------------------------------------------
+local recipe_rare_earth_powder = {
+    type = "recipe",
+    name = "rare-earth-powder",
+    category = "crusher",
+    enabled = "false",
+    energy_required = 4.0,
+    ingredients ={
+        {type="item", name="rare-earth-ore", amount=10},
+    },
+    results={
+        {type="item", name="rare-earth-powder", amount=8},
+		{type="item", name="stone", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/crush-rare-earth.png",
+	main_product = "rare-earth-powder",
+}
+
+local rare_earth_powder = {
+    type = "item",
+    name = "rare-earth-powder",
+    icon = "__pycoalprocessing__/graphics/icons/rare-earth-powder.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-crusher",
+    --order = "g",
+    stack_size = 200
+}
+
+--RARE-EARTH-DUST
+-------------------------------------------------------------------------------
+local recipe_rare_earth_dust = {
+    type = "recipe",
+    name = "rare-earth-dust",
+    category = "ball-mill",
+    enabled = "false",
+    energy_required = 5.0,
+    ingredients ={
+        {type="item", name="rare-earth-powder", amount=8},
+    },
+    results={
+        {type="item", name="rare-earth-dust", amount=5},
+		{type="item", name="gravel", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/rare-earth-dust.png",
+	main_product = "rare-earth-dust",
+}
+
+local rare_earth_dust = {
+    type = "item",
+    name = "rare-earth-dust",
+    icon = "__pycoalprocessing__/graphics/icons/rare-earth-dust.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-crusher",
+    --order = "g",
+    stack_size = 200
 }
 -------------------------------------------------------------------------------
 data:extend(
@@ -732,6 +997,25 @@ data:extend(
         lab_instrument,
         lens,
         boron_trioxide,
-        ralesia_seeds
+        ralesia_seeds,
+		recipe_niobium_ore,
+		niobium_ore,
+		recipe_niobium_powder,
+		niobium_powder,
+		recipe_niobium_dust,
+		niobium_dust,
+		recipe_niobium_concentrate,
+		niobium_concentrate,
+		recipe_mukmoux_fat,
+		mukmoux_fat,
+		recipe_niobium_oxide,
+		niobium_oxide,
+		recipe_niobium_plate,
+		niobium_plate,
+		rare_earth_ore,
+		recipe_rare_earth_powder,
+		rare_earth_powder,
+		recipe_rare_earth_dust,
+		rare_earth_dust
     }
 )
