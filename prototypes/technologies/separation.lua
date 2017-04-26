@@ -4,18 +4,10 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/separation.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"excavation-1"},
+    prerequisites = {"coal-processing-1"},
     effects =
     {
 
-        {
-            type = "unlock-recipe",
-            recipe = "richdust-separation"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "tailings-separation"
-        },
         {
             type = "unlock-recipe",
             recipe = "classifier"
@@ -32,15 +24,25 @@ local technology = {
             type = "unlock-recipe",
             recipe = "coal-slurry"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "co2-organics"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "solid-separator"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "soil-separation"
+        },
 
     },
     unit =
     {
-        count = 30,
+        count = 35,
         ingredients = {
             {"science-pack-1", 2},
-            {"science-pack-2", 2},
-            {"science-pack-3", 1},
         },
         time = 55
     },

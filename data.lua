@@ -28,6 +28,7 @@ require("prototypes.technologies.excavation-1")
 require("prototypes.technologies.excavation-2")
 require("prototypes.technologies.separation")
 require("prototypes.technologies.fuel-production")
+require("prototypes.technologies.rare-earth")
 
 --Recipes without items
 require("prototypes.recipes.recipes")
@@ -72,6 +73,11 @@ require("prototypes.fluids.slacked-lime")
 require("prototypes.fluids.coal-slurry")
 require("prototypes.fluids.diborane")
 require("prototypes.fluids.boric-acid")
+require("prototypes.fluids.oleochemicals")
+require("prototypes.fluids.glycerol")
+require("prototypes.fluids.organic-solvent")
+require("prototypes.fluids.niobium-complex")
+require("prototypes.fluids.rare-earth-mud")
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -104,6 +110,12 @@ require("prototypes.buildings.fawogae-plantation")
 require("prototypes.buildings.ulric-corral")
 require("prototypes.buildings.borax-mine")
 require("prototypes.buildings.ralesia-plantation")
+require("prototypes.buildings.niobium-mine")
+require("prototypes.buildings.ore-crusher")
+require("prototypes.buildings.ball-mill")
+require("prototypes.buildings.mukmoux-pasture")
+require("prototypes.buildings.py-tank-1500")
+require("prototypes.buildings.rare-earth-extractor")
 
 --move to syngas recipe stuff in data-updates?
 for _, v in pairs(data.raw.module) do

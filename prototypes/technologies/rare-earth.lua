@@ -1,0 +1,43 @@
+local technology = {
+    type = "technology",
+    name = "rare-earth",
+    icon = "__pycoalprocessing__/graphics/technology/rare-earth-tech.png",
+    icon_size = 128,
+    order = "c-a",
+    prerequisites = {"coal-processing-2"},
+    effects =
+    {
+
+        {
+            type = "unlock-recipe",
+            recipe = "rare-earth-extractor"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "fts-reactor"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "rare-earth-powder"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "rare-earth-dust"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "rare-earth-beneficiation"
+        },
+
+    },
+    unit =
+    {
+        count = 55,
+        ingredients = {
+            {"science-pack-1", 2},
+			{"science-pack-2", 1},
+        },
+        time = 55
+    },
+}
+data:extend({technology})

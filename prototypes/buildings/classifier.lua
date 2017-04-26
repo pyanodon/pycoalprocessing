@@ -52,7 +52,7 @@ local entity1={
     {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.03,
+        emissions = 0.03 / 2.6,
     },
     energy_usage = "170kW",
     ingredient_count = 3,
