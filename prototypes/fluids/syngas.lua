@@ -15,9 +15,9 @@ local recipe1 =
     },
     results=
     {
-        {type="fluid", name="syngas", amount=4},
+        {type="fluid", name="syngas", amount=7},
         {type="fluid", name="tar", amount=3},
-        {type="item", name="ash", amount=1, probability=0.5}
+        {type="item", name="ash", amount=1}
     },
     main_product= "syngas",
     icon = "__pycoalprocessing__/graphics/icons/syngas.png",

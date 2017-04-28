@@ -8,10 +8,10 @@ local recipe1={
     ingredients =
     {
         {"assembling-machine-2", 5},
-        {"advanced-circuit", 10},
+        {"electronic-circuit", 10}, --updated-bob brass-bearing
         {"transport-belt", 30},
-        {"iron-plate", 20}, --updated-bob titanium-plate
-        {"iron-gear-wheel", 50}, --updated-bob brass-bearing
+        {"iron-plate", 20}, 
+        {"iron-gear-wheel", 50}, 
     },
     result= "classifier",
 }

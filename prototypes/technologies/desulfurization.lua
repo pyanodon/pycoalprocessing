@@ -16,6 +16,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "extract-sulfur"
         },
+		{
+            type = "unlock-recipe",
+            recipe = "fts-reactor"
+        },
 
     },
     unit =
