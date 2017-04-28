@@ -149,6 +149,11 @@ local technology = {
             type = "unlock-recipe",
             recipe = "tailings-separation"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "aromatic-organic"
+        },
+
     },
     unit =
     {

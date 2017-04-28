@@ -4,7 +4,7 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/py-asphalt.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"concrete" , "coal-processing-2"},
+    prerequisites = {"concrete" , "coal-processing-1"},
     effects =
     {
 

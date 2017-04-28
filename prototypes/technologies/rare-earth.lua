@@ -14,10 +14,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "fts-reactor"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "rare-earth-powder"
         },
         {
@@ -32,10 +28,11 @@ local technology = {
     },
     unit =
     {
-        count = 55,
+        count = 40,
         ingredients = {
-            {"science-pack-1", 2},
-			{"science-pack-2", 1},
+            {"science-pack-1", 3},
+			{"science-pack-2", 2},
+			{"science-pack-3", 1},
         },
         time = 55
     },
