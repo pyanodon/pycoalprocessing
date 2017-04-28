@@ -135,6 +135,18 @@ local technology = {
             type = "unlock-recipe",
             recipe = "py-tank-1500"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "py-tank-4000"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "py-tank-6500"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "py-tank-8000"
+        },
     },
     unit =
     {

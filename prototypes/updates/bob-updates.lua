@@ -14,6 +14,8 @@ local add_prerequisite = bobmods.lib.tech.add_prerequisite
 replace_ing("distilator", "pipe", "copper-pipe")
 replace_ing("distilator", "electronic-circuit", "basic-circuit-board")
 
+replace_ing("classifier", "electronic-circuit", "basic-electronic-circuit-board")
+
 replace_ing("gasturbinemk02", "pipe", "bronze-pipe")
 replace_ing("gasturbinemk02", "iron-plate", "invar-alloy")
 

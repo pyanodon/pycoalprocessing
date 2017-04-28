@@ -10,8 +10,7 @@ local recipe1={
         {"soil", 500},
         {"steel-plate", 100},
         {"storage-tank", 5}, 
-        {"nexelit-plate", 60},
-        {"advanced-circuit", 30}, --updated-bob electronic-logic-board
+        {"advanced-circuit", 10}, --updated-bob electronic-logic-board
     },
     result= "mukmoux-pasture",
 }
