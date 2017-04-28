@@ -8,7 +8,7 @@ local recipe1={
     ingredients =
     {
         {"assembling-machine-1", 5},
-        {"advanced-circuit", 30}, --updated bob basic-electronic-circuit-board
+        {"electronic-circuit", 30}, --updated bob basic-electronic-circuit-board
         {"steel-plate", 50},
         {"iron-plate", 20},
         {"iron-gear-wheel", 50}, --updated-bob brass-gear-wheel

@@ -14,15 +14,11 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "pure_sand-classification"
+            recipe = "sand-classification"
         },
         {
             type = "unlock-recipe",
             recipe = "coarse-classification"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "coal-slurry"
         },
         {
             type = "unlock-recipe",

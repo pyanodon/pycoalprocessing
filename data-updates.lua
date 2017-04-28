@@ -20,3 +20,5 @@ end
 data.raw.tool["science-pack-1"].icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png"
 --science pack 2 override
 data.raw.tool["science-pack-2"].icon = "__pycoalprocessing__/graphics/icons/science-pack-2.png"
+--science pack 3 override
+data.raw.tool["science-pack-3"].icon = "__pycoalprocessing__/graphics/icons/science-pack-3.png"

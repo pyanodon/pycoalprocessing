@@ -108,7 +108,7 @@ local recipe_active_carbon = {
         --{type="item", name="sodium-hydroxide", amount=5},
     },
     results={
-        {type="item", name="active-carbon", amount=3},
+        {type="item", name="active-carbon", amount=5},
     },
 }
 
@@ -940,7 +940,302 @@ local rare_earth_dust = {
     --order = "g",
     stack_size = 200
 }
+--GLASS CORE
 -------------------------------------------------------------------------------
+local recipe_glass_core = {
+    type = "recipe",
+    name = "glass-core",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 3.5,
+    ingredients ={
+        {type="item", name="glass", amount=10},
+		{type="item", name="silver-plate", amount=3},
+		{type="item", name="sulfur", amount=4},
+    },
+    results={
+        {type="item", name="glass-core", amount=1},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/glass-core.png",
+	main_product = "glass-core",
+}
+
+local glass_core = {
+    type = "item",
+	enabled = "false",
+    name = "glass-core",
+    icon = "__pycoalprocessing__/graphics/icons/glass-core.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items-hpf",
+    --order = "g",
+    stack_size = 200
+}
+--CLADDING
+-------------------------------------------------------------------------------
+local recipe_cladding = {
+    type = "recipe",
+    name = "cladding",
+    category = "crafting-with-fluid",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+        {type="item", name="glass", amount=5},
+		{type="fluid", name="niobium-complex", amount=8},
+    },
+    results={
+        {type="item", name="cladding", amount=1},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/cladding.png",
+	main_product = "cladding",
+}
+
+local cladding = {
+    type = "item",
+	enabled = "false",
+    name = "cladding",
+    icon = "__pycoalprocessing__/graphics/icons/cladding.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--PPD
+-------------------------------------------------------------------------------
+local recipe_ppd = {
+    type = "recipe",
+    name = "ppd",
+    category = "electrolysis",
+    enabled = "false",
+    energy_required = 4,
+    ingredients ={
+        {type="fluid", name="hydrogen", amount=50},
+		{type="fluid", name="aromatics", amount=5},
+    },
+    results={
+        {type="item", name="ppd", amount=10},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/ppd.png",
+	main_product = "ppd",
+}
+
+local ppd = {
+    type = "item",
+	enabled = "false",
+    name = "ppd",
+    icon = "__pycoalprocessing__/graphics/icons/ppd.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 500
+}
+
+--KEVLAR
+-------------------------------------------------------------------------------
+local recipe_kevlar = {
+    type = "recipe",
+    name = "kevlar",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 6.0,
+    ingredients ={
+		{type="item", name="ppd", amount=5},
+        {type="fluid", name="tpa", amount=5},
+		{type="fluid", name="organic-solvent", amount=10},
+    },
+    results={
+        {type="item", name="kevlar", amount=5},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/kevlar.png",
+	main_product = "kevlar",
+}
+
+local kevlar = {
+    type = "item",
+	enabled = "false",
+    name = "kevlar",
+    icon = "__pycoalprocessing__/graphics/icons/kevlar.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--KEVLAR COATING
+-------------------------------------------------------------------------------
+local recipe_kevlar_coating = {
+    type = "recipe",
+    name = "kevlar-coating",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="copper-coating", amount=1},
+		{type="item", name="kevlar", amount=1},
+		
+    },
+    results={
+        {type="item", name="kevlar-coating", amount=1},
+    },
+	main_product= "kevlar-coating",
+    icon = "__pycoalprocessing__/graphics/icons/kevlar-coating.png",
+}
+
+local kevlar_coating = {
+    type = "item",
+	enabled = "false",
+    name = "kevlar-coating",
+    icon = "__pycoalprocessing__/graphics/icons/kevlar-coating.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--NbFe ALLOY
+-------------------------------------------------------------------------------
+local recipe_nbfe_alloy = {
+    type = "recipe",
+    name = "nbfe-alloy",
+    category = "smelting",
+    enabled = "false",
+    energy_required = 4.0,
+    ingredients ={
+		{type="item", name="iron-plate", amount=15},
+        {type="item", name="niobium-plate", amount=3},
+    },
+    results={
+        {type="item", name="nbfe-alloy", amount=1},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/nbfe-alloy.png",
+	main_product = "nbfe-alloy",
+}
+
+local nbfe_alloy = {
+    type = "item",
+	enabled = "false",
+    name = "nbfe-alloy",
+    icon = "__pycoalprocessing__/graphics/icons/nbfe-alloy.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--NbFe COATING
+-------------------------------------------------------------------------------
+local recipe_nbfe_coating = {
+    type = "recipe",
+    name = "nbfe-coating",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="kevlar-coating", amount=1},
+		{type="item", name="nbfe-alloy", amount=1},
+		
+    },
+    results={
+        {type="item", name="nbfe-coating", amount=1},
+    },
+	main_product= "nbfe-coating",
+    icon = "__pycoalprocessing__/graphics/icons/nbfe-coating.png",
+}
+
+local nbfe_coating = {
+    type = "item",
+	enabled = "false",
+    name = "nbfe-coating",
+    icon = "__pycoalprocessing__/graphics/icons/nbfe-coating.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--ATTACH CLADDING TO GLASS CORE
+-------------------------------------------------------------------------------
+local recipe_cladded_core = {
+    type = "recipe",
+    name = "cladded-core",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+		{type="item", name="cladding", amount=1},
+		{type="item", name="glass-core", amount=1},
+    },
+    results={
+        {type="item", name="cladded-core", amount=1},
+    },
+	main_product= "cladded-core",
+    icon = "__pycoalprocessing__/graphics/icons/cladded-core.png",
+}
+local cladded_core = {
+    type = "item",
+	enabled = "false",
+    name = "cladded-core",
+    icon = "__pycoalprocessing__/graphics/icons/cladded-core.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--COPPER COATING
+-------------------------------------------------------------------------------
+local recipe_copper_coating = {
+    type = "recipe",
+    name = "copper-coating",
+    category = "electrolysis",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="copper-plate", amount=10},
+		{type="item", name="cladded-core", amount=1},
+		{type="fluid", name="water-mineralized", amount=15},
+		
+    },
+    results={
+        {type="item", name="copper-coating", amount=1},
+    },
+	main_product= "copper-coating",
+    icon = "__pycoalprocessing__/graphics/icons/copper-coating.png",
+}
+local copper_coating = {
+    type = "item",
+	enabled = "false",
+    name = "copper-coating",
+    icon = "__pycoalprocessing__/graphics/icons/copper-coating.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--OPTICAL FIBER
+-------------------------------------------------------------------------------
+local recipe_optical_fiber = {
+    type = "recipe",
+    name = "optical-fiber",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="plastic-bar", amount=2},
+		{type="item", name="nbfe-coating", amount=1},
+		
+    },
+    results={
+        {type="item", name="optical-fiber", amount=1},
+    },
+	main_product= "optical-fiber",
+    icon = "__pycoalprocessing__/graphics/icons/optical-fiber.png",
+}
+local optical_fiber = {
+    type = "item",
+	enabled = "false",
+    name = "optical-fiber",
+    icon = "__pycoalprocessing__/graphics/icons/optical-fiber.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+ -------------------------------------------------------------------------------
 data:extend(
     {
         ash,
@@ -1016,6 +1311,26 @@ data:extend(
 		recipe_rare_earth_powder,
 		rare_earth_powder,
 		recipe_rare_earth_dust,
-		rare_earth_dust
+		rare_earth_dust,
+		recipe_glass_core,
+		glass_core,
+		recipe_cladding,
+		cladding,
+		recipe_cladded_core,
+		cladded_core,
+		recipe_copper_coating,
+		copper_coating,
+		recipe_kevlar,
+		kevlar,
+		recipe_kevlar_coating,
+		kevlar_coating,
+		recipe_ppd,
+		ppd,
+		recipe_nbfe_alloy,
+		nbfe_alloy,
+		recipe_nbfe_coating,
+		nbfe_coating,
+		recipe_optical_fiber,
+		optical_fiber
     }
 )
