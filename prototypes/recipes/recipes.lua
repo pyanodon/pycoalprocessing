@@ -9,15 +9,15 @@ local making_chromium ={
     name = "making-chromium",
     category = "hpf",
     enabled = false,
-    energy_required = 2.5,
+    energy_required = 5.5,
     ingredients ={
         {type="fluid", name="carbon-dioxide", amount=10},
-        {type="item", name="chromite-sand", amount=5},
+        {type="item", name="chromite-sand", amount=15},
         {type="item", name="coke", amount=5},
-        {type="item", name="limestone", amount=5},
+        {type="item", name="limestone", amount=3},
     },
     results={
-        {type="item", name="chromium", amount=10,},
+        {type="item", name="chromium", amount=5,},
     },
     main_product= "chromium",
     icon = "__pycoalprocessing__/graphics/icons/chromium.png",
@@ -117,7 +117,7 @@ local fluegas_to_syngas ={
     name = "fluegas_to-syngas",
     category = "carbonfilter",
     enabled = "false",
-    energy_required = 2,
+    energy_required = 7,
     ingredients ={
         {type="fluid", name="flue-gas", amount=300},
         {type="item", name="active-carbon", amount=5},
@@ -182,7 +182,7 @@ local soil_separation ={
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="item", name="soil", amount=40},
+        {type="item", name="soil", amount=30},
     },
     results={
         {type="item", name="sand", amount=5},
@@ -312,7 +312,7 @@ local tar_oil ={
     name = "tar-oil",
     category = "tar",
     enabled = "false",
-    energy_required = 1,
+    energy_required = 2.5,
     ingredients ={
         {type="item", name="nexelit-plate", amount=2},
         {type="fluid", name="tar", amount=50},
@@ -599,7 +599,7 @@ local recipe_ralesia = {
     name = "ralesia",
     category = "ralesia",
     enabled = "false",
-    energy_required = 7.5,
+    energy_required = 7.7,
     ingredients ={
         {type="fluid", name="water", amount=50}, --updated-bob hydrogen
         {type="item", name="soil", amount=50},
@@ -834,7 +834,7 @@ local recipe_oleochemicals = {
     name = "oleochemicals",
     category = "fts-reactor",
     enabled = "false",
-    energy_required = 2.5,
+    energy_required = 7.5,
     ingredients ={
         {type="item", name="mukmoux-fat", amount=20},
 		{type="item", name="nichrome", amount=2},
@@ -842,7 +842,7 @@ local recipe_oleochemicals = {
     },
     results={
         {type="fluid", name="oleochemicals", amount=15},
-		{type="fluid", name="glycerol", amount=5},
+		{type="fluid", name="glycerol", amount=10},
 		{type="fluid", name="water", amount=80, temperature=100},
     },
 	main_product= "oleochemicals",
@@ -860,7 +860,7 @@ local recipe_organic_solvent = {
     energy_required = 2.5,
     ingredients ={
         {type="item", name="active-carbon", amount=5},
-		{type="fluid", name="oleochemicals", amount=20},
+		{type="item", name="bonemeal", amount=20},
 		{type="fluid", name="aromatics", amount=20},
     },
     results={
@@ -903,14 +903,386 @@ local recipe_aromatic_organic = {
 		{type="item", name="ralesia", amount=5},
     },
     results={
-        {type="fluid", name="aromatics", amount=30},
+        {type="fluid", name="aromatics", amount=20},
     },
 	main_product= "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
     subgroup = "py-items",
     order = "c",
 }
-
+--PETGAS/METANOL FROM ORGANIC SOLVENT
+-------------------------------------------------------------------------------
+local recipe_petgas_methanol = {
+    type = "recipe",
+    name = "petgas-methanol",
+    category = "fluid-separator",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+		{type="fluid", name="organic-solvent", amount=10},
+		{type="fluid", name="olefin", amount=10},
+    },
+    results={
+        {type="fluid", name="petroleum-gas", amount=10},
+		{type="fluid", name="methanol", amount=10},
+    },
+	main_product= "methanol",
+    icon = "__pycoalprocessing__/graphics/icons/petgas-methanol.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--OLEOCHEMICAL-TO-HEAVY OIL
+-------------------------------------------------------------------------------
+local recipe_oleo_heavy = {
+    type = "recipe",
+    name = "oleo-heavy",
+    category = "fluid-separator",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+		{type="fluid", name="oleochemicals", amount=10},
+		{type="fluid", name="sulfuric-acid", amount=20},
+    },
+    results={
+        {type="fluid", name="heavy-oil", amount=15},
+		{type="fluid", name="flue-gas", amount=50},
+		{type="item", name="sulfur", amount=5},
+    },
+	main_product= "heavy-oil",
+    icon = "__pycoalprocessing__/graphics/icons/oleo-heavy.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--BONEMEAL TO ORGANIC SOLVENT
+-------------------------------------------------------------------------------
+local recipe_bone_solvent = {
+    type = "recipe",
+    name = "bone-solvent",
+    category = "carbonfilter",
+    enabled = "false",
+    energy_required = 5,
+    ingredients ={
+		{type="fluid", name="olefin", amount=10},
+		{type="item", name="bonemeal", amount=20},
+    },
+    results={
+        {type="fluid", name="organic-solvent", amount=5},
+    },
+	main_product= "organic-solvent",
+    icon = "__pycoalprocessing__/graphics/icons/bone-solvent.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--DIRTY-WATER TO ACID GAS
+-------------------------------------------------------------------------------
+local recipe_dirty_acid = {
+    type = "recipe",
+    name = "dirty-acid",
+    category = "carbonfilter",
+    enabled = "false",
+    energy_required = 5,
+    ingredients ={
+		{type="item", name="biofilm", amount=1},
+		{type="fluid", name="dirty-water", amount=20},
+    },
+    results={
+        {type="fluid", name="acidgas", amount=4},
+    },
+	main_product= "acidgas",
+    icon = "__pycoalprocessing__/graphics/icons/acidgas.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--DIRTY-WATER TO WATER
+-------------------------------------------------------------------------------
+local recipe_filtration_dirty_water = {
+    type = "recipe",
+    name = "filtration-dirty-water",
+    category = "carbonfilter",
+    enabled = "false",
+    energy_required = 5.5,
+    ingredients ={
+		{type="item", name="filtration-media", amount=1},
+		{type="fluid", name="dirty-water", amount=50},
+    },
+    results={
+        {type="fluid", name="water", amount=50},
+		{type="item", name="ash", amount=2},
+    },
+	main_product= "water",
+    icon = "__pycoalprocessing__/graphics/icons/filtration-dirty-water.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--OLEFIN FILTRATION
+-------------------------------------------------------------------------------
+local recipe_olefin_filtration = {
+    type = "recipe",
+    name = "olefin-filtration",
+    category = "carbonfilter",
+    enabled = "false",
+    energy_required = 4,
+    ingredients ={
+		{type="item", name="zinc-chloride", amount=5},
+		{type="fluid", name="olefin", amount=40},
+    },
+    results={
+        {type="fluid", name="methanol", amount=20},
+    },
+	main_product= "methanol",
+    icon = "__pycoalprocessing__/graphics/icons/methanol.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--COAL GAS TO SYNGAS
+-------------------------------------------------------------------------------
+local recipe_coalgas_syngas = {
+    type = "recipe",
+    name = "coalgas-syngas",
+    category = "carbonfilter",
+    enabled = "false",
+    energy_required = 5.5,
+    ingredients ={
+		{type="item", name="active-carbon", amount=3},
+		{type="fluid", name="coal-gas", amount=30},
+    },
+    results={
+        {type="fluid", name="syngas", amount=15},
+		{type="item", name="sulfur", amount=5},
+		{type="item", name="ash", amount=1},
+    },
+	main_product= "syngas",
+    icon = "__pycoalprocessing__/graphics/icons/syngas.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--OLEOCHEMICALS TO CRUDE OIL
+-------------------------------------------------------------------------------
+local recipe_oleo_oil = {
+    type = "recipe",
+    name = "oleochemicals-crude-oil",
+    category = "carbonfilter",
+    enabled = "false",
+    energy_required = 5.0,
+    ingredients ={
+		{type="item", name="filtration-media", amount=1},
+		{type="fluid", name="oleochemicals", amount=30},
+    },
+    results={
+        {type="fluid", name="crude-oil", amount=40},
+    },
+	main_product= "crude-oil",
+    icon = "__pycoalprocessing__/graphics/icons/oleochemicals-crude-oil.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--COAL TO COAL DUST
+-------------------------------------------------------------------------------
+local recipe_coal_dust = {
+    type = "recipe",
+    name = "coal-dust",
+    category = "ball-mill",
+    enabled = "false",
+    energy_required = 4.0,
+    ingredients ={
+		{type="item", name="coal", amount=5},
+    },
+    results={
+        {type="item", name="coal-dust", amount=10},
+    },
+	main_product= "coal-dust",
+    icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--SAND BRICK
+-------------------------------------------------------------------------------
+local recipe_sand_brick = {
+    type = "recipe",
+    name = "sand-brick",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+		{type="item", name="sand", amount=30},
+		{type="item", name="rich-clay", amount=35},
+    },
+    results={
+        {type="item", name="stone-brick", amount=3},
+    },
+	main_product= "stone-brick",
+    icon = "__base__/graphics/icons/stone-brick.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
+--TAILINGS CLASSIFICATION
+local tailings_classification ={
+    type = "recipe",
+    name = "tailings-classification",
+    category = "classifier",
+    enabled = "false",
+    energy_required = 2.5,
+    ingredients ={
+        {type="item", name="tailings-dust", amount=15},
+    },
+    results={
+        {type="item", name="coal-dust", amount=5},
+        {type="item", name="lead-ore", amount=5},
+		{type="item", name="tin-ore", amount=3},
+    },
+    main_product= "coal-dust",
+    icon = "__pycoalprocessing__/graphics/icons/class-tailings.png",
+    subgroup = "py-items",
+    order = "richdust",
+}
+-------------------------------------------------------------------------------
+--SYNGAS DISTILATION
+local recipe_syngas_distilation ={
+    type = "recipe",
+    name = "syngas-distilation",
+    category = "distilator",
+    enabled = "false",
+    energy_required = 1.5,
+    ingredients ={
+        {type="fluid", name="syngas", amount=15},
+    },
+    results={
+        {type="fluid", name="hydrogen", amount=10},
+        {type="fluid", name="carbon-dioxide", amount=5},
+    },
+    main_product= "hydrogen",
+    icon = "__pycoalprocessing__/graphics/icons/syngas-distilation.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--TAR DISTILATION
+local recipe_tar_distilation ={
+    type = "recipe",
+    name = "tar-distilation",
+    category = "distilator",
+    enabled = "false",
+    energy_required = 2.5,
+    ingredients ={
+        {type="fluid", name="tar", amount=15},
+    },
+    results={
+        {type="fluid", name="flue-gas", amount=50},
+        {type="fluid", name="carbon-dioxide", amount=10},
+		{type="fluid", name="aromatics", amount=10},
+		{type="item", name="rich-clay", amount=10},
+    },
+    main_product= "carbon-dioxide",
+    icon = "__pycoalprocessing__/graphics/icons/tar-distilation.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--OLEOCHEMICALS DISTILATION
+local recipe_oleochemicals_distilation ={
+    type = "recipe",
+    name = "oleochemicals-distilation",
+    category = "distilator",
+    enabled = "false",
+    energy_required = 2.5,
+    ingredients ={
+        {type="fluid", name="oleochemicals", amount=25},
+		{type="fluid", name="oxygen", amount=40},
+    },
+    results={
+        {type="fluid", name="syngas", amount=50},
+        {type="fluid", name="petroleum-gas", amount=10},
+		{type="fluid", name="acidgas", amount=10},
+		{type="item", name="coal", amount=10},
+    },
+    main_product= "syngas",
+    icon = "__pycoalprocessing__/graphics/icons/oleochemicals-distilation.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--TAR GASIFICATON
+local recipe_tar_gasification ={
+    type = "recipe",
+    name = "tar-gasification",
+    category = "gasifier",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+        {type="fluid", name="tar", amount=25},
+		{type="fluid", name="liquid-air", amount=60},
+    },
+    results={
+        {type="fluid", name="coal-gas", amount=20},
+        {type="fluid", name="flue-gas", amount=40},
+		{type="item", name="ash", amount=3},
+    },
+    main_product= "coal-gas",
+    icon = "__pycoalprocessing__/graphics/icons/tar-gasification.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--OLEOCHEMICALS GASIFICATON
+local recipe_oleo_gasification ={
+    type = "recipe",
+    name = "oleo-gasification",
+    category = "gasifier",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+        {type="fluid", name="oleochemicals", amount=20},
+		{type="fluid", name="syngas", amount=20},
+		{type="fluid", name="oxygen", amount=25},
+    },
+    results={
+        {type="fluid", name="aromatics", amount=20},
+        {type="fluid", name="tar", amount=30},
+    },
+    main_product= "aromatics",
+    icon = "__pycoalprocessing__/graphics/icons/oleo-gasification.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--TAR to CRUDE OIL
+local recipe_tar_oil ={
+    type = "recipe",
+    name = "tar-oil",
+    category = "tar",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+        {type="fluid", name="tar", amount=30},
+    },
+    results={
+        {type="fluid", name="crude-oil", amount=15},
+    },
+    main_product= "crude-oil",
+    icon = "__pycoalprocessing__/graphics/icons/tar-oil.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--COAL from FAWOAGE
+local recipe_coal_fawogae ={
+    type = "recipe",
+    name = "coal-fawogae",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+        {type="item", name="fawogae", amount=20},
+    },
+    results={
+        {type="item", name="coal", amount=8},
+    },
+    main_product= "coal",
+    icon = "__pycoalprocessing__/graphics/icons/coal-fawogae.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
 
 -------------------------------------------------------------------------------
 data:extend{
@@ -923,5 +1295,9 @@ data:extend{
     science_pack02, recipe_alien_sample01, recipe_ralesia_seeds, recipe_equipment_chassi,
     recipe_lab_instrument, recipe_boron_trioxide, recipe_lens, recipe_stone_gravel, recipe_gravel_sand,
 	recipe_oleochemicals, recipe_organic_solvent, recipe_co2_organics, recipe_aromatic_organic,
-	science_pack03,
+	science_pack03, recipe_petgas_methanol, recipe_oleo_heavy, recipe_bone_solvent, recipe_dirty_acid,
+	recipe_filtration_dirty_water, recipe_olefin_filtration, recipe_coalgas_syngas, recipe_oleo_oil,
+	recipe_sand_brick, tailings_classification, recipe_syngas_distilation, recipe_tar_distilation,
+	recipe_oleochemicals_distilation, recipe_tar_gasification, recipe_oleo_gasification, recipe_coal_dust,
+	recipe_tar_oil, recipe_coal_fawogae
 }

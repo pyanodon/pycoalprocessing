@@ -1,68 +1,58 @@
 local technology = {
     type = "technology",
-    name = "separation",
-    icon = "__pycoalprocessing__/graphics/technology/separation.png",
+    name = "filtration",
+    icon = "__pycoalprocessing__/graphics/technology/filtration.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-1"},
+    prerequisites = {"coal-processing-2"},
     effects =
     {
-
         {
             type = "unlock-recipe",
-            recipe = "classifier"
+            recipe = "carbon-filter"
         },
         {
             type = "unlock-recipe",
-            recipe = "sand-classification"
+            recipe = "refsyngas-from-filtered-syngas"
         },
         {
             type = "unlock-recipe",
-            recipe = "coarse-classification"
+            recipe = "fluegas_to-syngas"
         },
         {
             type = "unlock-recipe",
-            recipe = "tailings-classification"
+            recipe = "bone-solvent"
         },
         {
             type = "unlock-recipe",
-            recipe = "co2-organics"
+            recipe = "biofilm"
         },
         {
             type = "unlock-recipe",
-            recipe = "solid-separator"
+            recipe = "dirty-acid"
         },
         {
             type = "unlock-recipe",
-            recipe = "soil-separation"
+            recipe = "filtration-media"
         },
         {
             type = "unlock-recipe",
-            recipe = "fluid-separator"
+            recipe = "filtration-dirty-water"
         },
         {
             type = "unlock-recipe",
-            recipe = "petgas-methanol"
+            recipe = "coalgas-syngas"
         },
         {
             type = "unlock-recipe",
-            recipe = "oleo-heavy"
+            recipe = "oleochemicals-crude-oil"
         },
-        {
-            type = "unlock-recipe",
-            recipe = "tailings-separation"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "lime"
-        },
-
     },
     unit =
     {
-        count = 35,
+        count = 40,
         ingredients = {
-            {"science-pack-1", 2},
+            {"science-pack-1", 1},
         },
         time = 55
     },

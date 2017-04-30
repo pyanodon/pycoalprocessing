@@ -120,6 +120,8 @@ end
 replace_ing("active-carbon", "water", "nitrogen")
 add_ing("active-carbon", {name="sodium-hydroxide", amount=7})
 
+add_ing("advanced-circuit", {name="optical-fiber", amount=2})
+
 remove_result("refsyngas-from-meth", "water")
 remove_result("refsyngas-from-meth-canister", "water")
 add_result("refsyngas-from-meth", {type="fluid", name="hydrogen", amount=3})

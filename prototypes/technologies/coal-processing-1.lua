@@ -147,6 +147,18 @@ local technology = {
             type = "unlock-recipe",
             recipe = "py-tank-8000"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "tar-distilation"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "tar-gasification"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "coal-fawogae"
+        },
     },
     unit =
     {

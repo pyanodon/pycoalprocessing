@@ -4,18 +4,10 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/coal-processing-2.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"separation","coal-processing-1"},
+    prerequisites = {"separation","coal-processing-1","desulfurization"},
     effects =
     {
 
-        {
-            type = "unlock-recipe",
-            recipe = "carbon-filter"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "refsyngas-from-filtered-syngas"
-        },
         {
             type = "unlock-recipe",
             recipe = "rectisol"
@@ -44,7 +36,6 @@ local technology = {
             type = "unlock-recipe",
             recipe = "power-house"
         },
-
         {
             type = "unlock-recipe",
             recipe = "gasturbinemk02"
@@ -52,10 +43,6 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "evaporator"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "fluegas_to-syngas"
         },
         {
             type = "unlock-recipe",
@@ -68,10 +55,6 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "raw-wood-to-coal"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "fluid-separator"
         },
         {
             type = "unlock-recipe",
@@ -147,13 +130,36 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "tailings-separation"
+            recipe = "aromatic-organic"
         },
         {
             type = "unlock-recipe",
-            recipe = "aromatic-organic"
+            recipe = "coal-dust"
         },
-
+        {
+            type = "unlock-recipe",
+            recipe = "sand-brick"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "syngas-distilation"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "oleochemicals-distilation"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "oleo-gasification"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "tar-oil"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "coal-briquette"
+        },
     },
     unit =
     {
