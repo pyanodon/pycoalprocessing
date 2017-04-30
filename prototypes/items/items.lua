@@ -323,7 +323,7 @@ local coal_dust ={
     name = "coal-dust",
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
     flags = {"goes-to-main-inventory"},
-    fuel_value = "6MJ",
+    fuel_value = "7MJ",
     subgroup = "py-items",
     order = "coal-dust",
     stack_size = 500
@@ -1235,6 +1235,96 @@ local optical_fiber = {
     --order = "g",
     stack_size = 200
 }
+--BIOFILM
+-------------------------------------------------------------------------------
+local recipe_biofilm = {
+    type = "recipe",
+    name = "biofilm",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="fawogae-substrate", amount=20},
+		{type="item", name="lime", amount=5},
+		{type="item", name="organics", amount=5},
+    },
+    results={
+        {type="item", name="biofilm", amount=1},
+    },
+	main_product= "biofilm",
+    icon = "__pycoalprocessing__/graphics/icons/biofilm.png",
+}
+local biofilm = {
+    type = "item",
+	enabled = "false",
+    name = "biofilm",
+    icon = "__pycoalprocessing__/graphics/icons/biofilm.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--MEDIA FILTER
+-------------------------------------------------------------------------------
+local recipe_filtration_media = {
+    type = "recipe",
+    name = "filtration-media",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="sand", amount=30},
+		{type="item", name="active-carbon", amount=3},
+		{type="item", name="gravel", amount=25},
+		{type="item", name="glass", amount=5},
+    },
+    results={
+        {type="item", name="filtration-media", amount=1},
+    },
+	main_product= "filtration-media",
+    icon = "__pycoalprocessing__/graphics/icons/filtration-media.png",
+}
+local filtration_media = {
+    type = "item",
+	enabled = "false",
+    name = "filtration-media",
+    icon = "__pycoalprocessing__/graphics/icons/filtration-media.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--COAL-BRIQUETTE
+-------------------------------------------------------------------------------
+local recipe_coal_briquette = {
+    type = "recipe",
+    name = "coal-briquette",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="coal-dust", amount=35},
+		{type="fluid", name="glycerol", amount=10},
+		{type="fluid", name="creosote", amount=15},
+		{type="fluid", name="tar", amount=5},
+    },
+    results={
+        {type="item", name="coal-briquette", amount=2},
+    },
+	main_product= "coal-briquette",
+    icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
+}
+local coal_briquette = {
+    type = "item",
+	enabled = "false",
+    name = "coal-briquette",
+	fuel_value = "20MJ",
+    icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
  -------------------------------------------------------------------------------
 data:extend(
     {
@@ -1331,6 +1421,12 @@ data:extend(
 		recipe_nbfe_coating,
 		nbfe_coating,
 		recipe_optical_fiber,
-		optical_fiber
+		optical_fiber,
+		recipe_biofilm,
+		biofilm,
+		recipe_filtration_media,
+		filtration_media,
+		recipe_coal_briquette,
+		coal_briquette
     }
 )

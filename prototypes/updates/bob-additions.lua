@@ -11,7 +11,7 @@ local methanol_from_hydrogen = {
         {type="fluid", name="carbon-dioxide", amount=3},
         {type="fluid", name="hydrogen", amount=5},
         {type="item", name="zinc-ore", amount=1},
-        {type="item", name="alumina", amount=2}, },
+        {type="item", name="nichrome", amount=2}, },
     results=
     {
         {type="fluid", name="methanol", amount=4},
