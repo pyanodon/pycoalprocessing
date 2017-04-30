@@ -10,7 +10,7 @@ local refsyngas_from_filtered_syngas= {
     energy_required = 4,
     ingredients ={
         {type="fluid", name="syngas", amount=10},
-        {type="item", name="active-carbon", amount=5},
+        {type="item", name="active-carbon", amount=3},
     },
     results=
     {

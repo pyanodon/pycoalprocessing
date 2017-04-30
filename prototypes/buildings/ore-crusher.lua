@@ -66,7 +66,7 @@ local recipe1={
     {
         {"car", 2},
         {"iron-plate", 20},
-        {"engine-unit", 10},
+        {"engine-unit", 5},
         {"steel-plate", 70}, --updated-bob invar-alloy
         {"electronic-circuit", 20}, --updated-bob basic-electronic-circuit-board 
     },

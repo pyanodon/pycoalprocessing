@@ -14,7 +14,7 @@ local diborane= {
     },
     results=
     {
-        {type="fluid", name="diborane", amount=5},
+        {type="fluid", name="diborane", amount=15},
     },
     main_product= "diborane",
     icon = "__pycoalprocessing__/graphics/icons/diborane.png",

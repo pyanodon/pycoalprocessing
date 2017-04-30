@@ -18,10 +18,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "organics-processing"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "combustion-mixture2"
         },
         {
@@ -63,10 +59,6 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "slacked-lime"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "lithium-peroxide"
         },
         {
             type = "unlock-recipe",

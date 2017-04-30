@@ -156,9 +156,31 @@ local rare_earth_beneficiation ={
     main_product= "rare-earth-mud",
     order = "c",
 }
-
+-------------------------------------------------------------------------------
+--DIRTY-WATER REACTION
+local recipe_dirty_reaction ={
+    type = "recipe",
+    name = "dirty-reaction",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 5.3,
+    ingredients ={
+        {type="fluid", name="dirty-water", amount=80},
+		{type="fluid", name="water", amount=100},
+		{type="fluid", name="aromatics", amount=45},
+    },
+    results={
+        {type="fluid", name="crude-oil", amount=50},
+		{type="fluid", name="water", amount=100, temperature=100},
+        {type="fluid", name="olefin", amount=30},
+    },
+    main_product= "crude-oil",
+    icon = "__pycoalprocessing__/graphics/icons/dirty-reaction.png",
+    subgroup = "py-items",
+    order = "c",
+}
 
 data:extend{
     heavy_oil_from_coal_gas, light_oil_from_syngas, petgas_from_refsyngas, ref_to_light_oil,
-    sulfuric_petgas, combustion_olefin, rare_earth_beneficiation
+    sulfuric_petgas, combustion_olefin, rare_earth_beneficiation, recipe_dirty_reaction
 }

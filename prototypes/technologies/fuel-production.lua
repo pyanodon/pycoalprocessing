@@ -72,6 +72,14 @@ local technology = {
             type = "unlock-recipe",
             recipe = "combustion-olefin"
         },
+		{
+            type = "unlock-recipe",
+            recipe = "refolefin"
+        },
+		{
+            type = "unlock-recipe",
+            recipe = "olefin-filtration"
+        },
 
     },
 
