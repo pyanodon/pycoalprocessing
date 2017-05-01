@@ -160,6 +160,14 @@ local technology = {
             type = "unlock-recipe",
             recipe = "coal-briquette"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "lube-glycerol"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "resin-glycerol"
+        },
     },
     unit =
     {

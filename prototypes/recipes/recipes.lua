@@ -834,16 +834,16 @@ local recipe_oleochemicals = {
     name = "oleochemicals",
     category = "fts-reactor",
     enabled = "false",
-    energy_required = 7.5,
+    energy_required = 10,
     ingredients ={
         {type="item", name="mukmoux-fat", amount=20},
 		{type="item", name="nichrome", amount=2},
-		{type="fluid", name="water", amount=80},
+		{type="fluid", name="water", amount=200},
     },
     results={
         {type="fluid", name="oleochemicals", amount=15},
 		{type="fluid", name="glycerol", amount=10},
-		{type="fluid", name="water", amount=80, temperature=100},
+		{type="fluid", name="water", amount=200, temperature=100},
     },
 	main_product= "oleochemicals",
     icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
@@ -1283,6 +1283,66 @@ local recipe_coal_fawogae ={
     subgroup = "py-items",
     order = "a [coal-gas]",
 }
+-------------------------------------------------------------------------------
+--LUBRICANT FROM GLYCEROL
+local recipe_lube_glycerol ={
+    type = "recipe",
+    name = "lube-glycerol",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+        {type="fluid", name="glycerol", amount=10},
+		{type="fluid", name="lithia-water", amount=20},
+    },
+    results={
+        {type="fluid", name="lubricant", amount=10},
+    },
+    main_product= "lubricant",
+    icon = "__pycoalprocessing__/graphics/icons/lube-glycerol.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--EXPLOSIVES FROM GLYCEROL
+local recipe_explosives_glycerol ={
+    type = "recipe",
+    name = "explosive-glycerol",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+        {type="fluid", name="glycerol", amount=10},
+		{type="fluid", name="sulfuric-acid", amount=15},
+    },
+    results={
+        {type="item", name="explosives", amount=5},
+    },
+    main_product= "explosives",
+    icon = "__pycoalprocessing__/graphics/icons/resin-glycerol.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--RESIN FROM GLYCEROL
+local recipe_resin_glycerol ={
+    type = "recipe",
+    name = "resin-glycerol",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+        {type="fluid", name="glycerol", amount=15},
+		{type="item", name="coke", amount=5},
+    },
+    results={
+        {type="item", name="resin", amount=10},
+    },
+    main_product= "resin",
+    icon = "__bobplates__/graphics/icons/resin.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
 
 -------------------------------------------------------------------------------
 data:extend{
@@ -1299,5 +1359,5 @@ data:extend{
 	recipe_filtration_dirty_water, recipe_olefin_filtration, recipe_coalgas_syngas, recipe_oleo_oil,
 	recipe_sand_brick, tailings_classification, recipe_syngas_distilation, recipe_tar_distilation,
 	recipe_oleochemicals_distilation, recipe_tar_gasification, recipe_oleo_gasification, recipe_coal_dust,
-	recipe_tar_oil, recipe_coal_fawogae
+	recipe_tar_oil, recipe_coal_fawogae, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol
 }
