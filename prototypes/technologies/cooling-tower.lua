@@ -14,6 +14,10 @@ local technology = {
         },
         {
             type = "unlock-recipe",
+            recipe = "cooling-tower-mk02"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "cooling-water"
         },
 
