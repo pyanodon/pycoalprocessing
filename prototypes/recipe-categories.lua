@@ -129,5 +129,9 @@ data:extend(
             type = "recipe-category",
             name = "rare-earth",
         },
+        {
+            type = "recipe-category",
+            name = "advanced-crafting",
+        },
     }
 )
