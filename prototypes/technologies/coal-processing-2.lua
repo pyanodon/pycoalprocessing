@@ -168,6 +168,18 @@ local technology = {
             type = "unlock-recipe",
             recipe = "resin-glycerol"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "acetylene"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "rich-re"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "automated-factory"
+        },
     },
     unit =
     {

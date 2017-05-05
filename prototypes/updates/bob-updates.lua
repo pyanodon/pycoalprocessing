@@ -82,6 +82,8 @@ replace_ing("solid-separator", "advanced-circuit", "basic-electronic-circuit-boa
 --replace_ing("classifier", "iron-plate", "titanium-plate")
 replace_ing("classifier", "iron-stick", "brass-gear-wheel")
 
+replace_ing("automated-factory", "electronic-circuit", "basic-electronic-circuit-board")
+
 replace_ing("borax-mine", "electronic-circuit", "basic-circuit-board")
 replace_ing("borax-mine", "iron-gear-wheel", "steel-bearing")
 
@@ -104,6 +106,9 @@ replace_ing("mukmoux-pasture", "advanced-circuit", "electronic-logic-board")
 --[[Items]]--
 -------------------------------------------------------------------------------
 replace_ing("methanol-from-syngas", "iron-ore", "zinc-ore")
+
+replace_ing("alumina", "bauxite-ore", "crushed-bauxite")
+replace_ing("lead-oxide", "lead-ore", "crushed-lead")
 
 replace_ing("zinc-chloride", "iron-plate", "zinc-plate")
 replace_ing("zinc-chloride", "water", "hydrogen-chloride")

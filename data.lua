@@ -27,6 +27,7 @@ require("prototypes.technologies.cooling-tower")
 require("prototypes.technologies.desulfurization")
 require("prototypes.technologies.excavation-1")
 require("prototypes.technologies.excavation-2")
+require("prototypes.technologies.crusher")
 require("prototypes.technologies.separation")
 require("prototypes.technologies.fuel-production")
 require("prototypes.technologies.fine-electronics")
@@ -35,6 +36,7 @@ require("prototypes.technologies.fine-electronics")
 --Recipes without items
 require("prototypes.recipes.recipes")
 require("prototypes.recipes.ground-borer-recipes")
+require("prototypes.recipes.crusher-recipes")
 require("prototypes.recipes.fts-reactor-recipes")
 require("prototypes.recipes.olefin-plant-recipes")
 require("prototypes.recipes.advanced-foundry-recipes")
@@ -47,6 +49,7 @@ require("prototypes.items.tailings")
 
 --Tiles and Terrain
 require ("prototypes.tiles.py-asphalt")
+require ("prototypes.tiles.py-limestone")
 require ("prototypes.tiles.py-coal-tile")
 require ("prototypes.tiles.polluted-ground")
 
@@ -81,6 +84,7 @@ require("prototypes.fluids.organic-solvent")
 require("prototypes.fluids.niobium-complex")
 require("prototypes.fluids.rare-earth-mud")
 require("prototypes.fluids.tpa")
+require("prototypes.fluids.acetylene")
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -123,7 +127,8 @@ require("prototypes.buildings.py-tank-4000")
 require("prototypes.buildings.py-tank-5000")
 require("prototypes.buildings.py-tank-6500")
 require("prototypes.buildings.py-tank-8000")
-require("prototypes.buildings.rare-earth-extractor")
+require("prototypes.buildings.automated-factory")
+--require("prototypes.buildings.rare-earth-extractor")
 
 --move to syngas recipe stuff in data-updates?
 for _, v in pairs(data.raw.module) do
