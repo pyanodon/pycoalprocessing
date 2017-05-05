@@ -64,11 +64,11 @@ local recipe1={
     enabled = false,
     ingredients =
     {
-        {"car", 2},
-        {"iron-plate", 20},
-        {"engine-unit", 5},
-        {"steel-plate", 70}, --updated-bob invar-alloy
-        {"electronic-circuit", 20}, --updated-bob basic-electronic-circuit-board 
+        {"car", 1},
+        {"iron-plate", 25},
+        {"engine-unit", 4},
+        {"steel-plate", 30}, --updated-bob invar-alloy
+        {"electronic-circuit", 15}, --updated-bob basic-electronic-circuit-board 
     },
     result= "ore-crusher",
 }
