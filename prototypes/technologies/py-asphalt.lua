@@ -16,6 +16,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "py-coal-tile"
         },
+		        {
+            type = "unlock-recipe",
+            recipe = "py-limestone"
+        },
     },
     unit =
     {
