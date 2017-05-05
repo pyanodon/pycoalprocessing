@@ -705,23 +705,6 @@ local niobium_ore = {
 }
 --NIOBIUM POWDER
 -------------------------------------------------------------------------------
-local recipe_niobium_powder = {
-    type = "recipe",
-    name = "niobium-powder",
-    category = "crusher",
-    enabled = "false",
-    energy_required = 3.5,
-    ingredients ={
-        {type="item", name="niobium-ore", amount=5},
-    },
-    results={
-        {type="item", name="niobium-powder", amount=5},
-		{type="item", name="stone", amount=2},
-    },
-	icon = "__pycoalprocessing__/graphics/icons/crush-niobium.png",
-	main_product = "niobium-powder",
-}
-
 local niobium_powder = {
     type = "item",
     name = "niobium-powder",
@@ -1325,6 +1308,166 @@ local coal_briquette = {
     --order = "g",
     stack_size = 200
 }
+-------------------------------------------------------------------------------
+-- CALCIUM CARBIDE
+local recipe_calcium_carbide = {
+    type = "recipe",
+    name = "calcium-carbide",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 4,
+    ingredients ={
+        {type="item", name="coke", amount=10},
+        {type="item", name="lime", amount=2},
+    },
+    results={
+        {type="item", name="calcium-carbide", amount=10},
+    },
+    icon = "__pycoalprocessing__/graphics/icons/calcium-carbide.png",
+    subgroup = "py-items",
+    order = "g",
+}
+local calcium_carbide = {
+    type = "item",
+    name = "calcium-carbide",
+    icon = "__pycoalprocessing__/graphics/icons/calcium-carbide.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- CRUSHED IRON
+local crushed_iron = {
+    type = "item",
+    name = "crushed-iron",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-iron.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED COPPER
+local crushed_copper = {
+    type = "item",
+    name = "crushed-copper",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-copper.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED BAUXITE
+local crushed_bauxite = {
+    type = "item",
+    name = "crushed-bauxite",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-bauxite.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED GOLD
+local crushed_gold = {
+    type = "item",
+    name = "crushed-gold",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-gold.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED LEAD
+local crushed_lead = {
+    type = "item",
+    name = "crushed-lead",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-lead.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED NICKEL
+local crushed_nickel = {
+    type = "item",
+    name = "crushed-nickel",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-nickel.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED RUTILE
+local crushed_rutile = {
+    type = "item",
+    name = "crushed-rutile",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-rutile.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED SILVER
+local crushed_silver = {
+    type = "item",
+    name = "crushed-silver",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-silver.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED TIN
+local crushed_tin = {
+    type = "item",
+    name = "crushed-tin",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tin.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED TUNGSTEN
+local crushed_tungsten = {
+    type = "item",
+    name = "crushed-tungsten",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tungsten.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED ZINC
+local crushed_zinc = {
+    type = "item",
+    name = "crushed-zinc",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-zinc.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
  -------------------------------------------------------------------------------
 data:extend(
     {
@@ -1385,7 +1528,6 @@ data:extend(
         ralesia_seeds,
 		recipe_niobium_ore,
 		niobium_ore,
-		recipe_niobium_powder,
 		niobium_powder,
 		recipe_niobium_dust,
 		niobium_dust,
@@ -1427,6 +1569,19 @@ data:extend(
 		recipe_filtration_media,
 		filtration_media,
 		recipe_coal_briquette,
-		coal_briquette
+		coal_briquette,
+		recipe_calcium_carbide,
+		calcium_carbide,
+		crushed_iron,
+		crushed_copper,
+		crushed_bauxite,
+		crushed_gold,
+		crushed_lead,
+		crushed_nickel,
+		crushed_rutile,
+		crushed_silver,
+		crushed_tin,
+		crushed_tungsten,
+		crushed_zinc
     }
 )

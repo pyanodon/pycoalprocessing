@@ -204,7 +204,7 @@ local richdust_separation ={
     enabled = "false",
     energy_required = 1,
     ingredients ={
-        {type="item", name="rich-dust", amount=10},
+        {type="item", name="rich-dust", amount=25},
     },
     results={
         {type="item", name="iron-oxide", amount=2},
@@ -791,42 +791,6 @@ local recipe_lens = {
     subgroup = "py-items",
     order = "c",
 }
---STONE to GRAVEL
--------------------------------------------------------------------------------
-local recipe_stone_gravel = {
-    type = "recipe",
-    name = "stone-to-gravel",
-    category = "crusher",
-    enabled = "false",
-    energy_required = 1,
-    ingredients ={
-        {type="item", name="stone", amount=20},
-    },
-    results={
-        {type="item", name="gravel", amount=15},
-    },
-    icon = "__pycoalprocessing__/graphics/icons/crush-stone.png",
-    subgroup = "py-crusher",
-    order = "c",
-}
---GREAVEL to SAND
--------------------------------------------------------------------------------
-local recipe_gravel_sand = {
-    type = "recipe",
-    name = "gravel-to-sand",
-    category = "crusher",
-    enabled = "false",
-    energy_required = 1,
-    ingredients ={
-        {type="item", name="gravel", amount=20},
-    },
-    results={
-        {type="item", name="sand", amount=15},
-    },
-    icon = "__pycoalprocessing__/graphics/icons/crush-gravel.png",
-    subgroup = "py-crusher",
-    order = "c",
-}
 --OLEOCHEMICALS
 -------------------------------------------------------------------------------
 local recipe_oleochemicals = {
@@ -1336,14 +1300,175 @@ local recipe_resin_glycerol ={
 		{type="item", name="coke", amount=5},
     },
     results={
-        {type="item", name="resin", amount=10},
+        {type="item", name="resin", amount=20},
     },
     main_product= "resin",
     icon = "__bobplates__/graphics/icons/resin.png",
     subgroup = "py-items",
     order = "a [coal-gas]",
 }
-
+-------------------------------------------------------------------------------
+--RARE EARTH MUD FROM DIRTY-WATER
+local recipe_re_dirtywater ={
+    type = "recipe",
+    name = "remud-dirty-water",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+        {type="fluid", name="dirty-water", amount=25},
+		{type="fluid", name="slacked-lime", amount=10},
+    },
+    results={
+        {type="fluid", name="rare-earth-mud", amount=5},
+    },
+    main_product= "rare-earth-mud",
+    icon = "__pycoalprocessing__/graphics/icons/remud-dirty-water.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--RICH DUST FROM RARE EARTH MUD
+local recipe_richdust_remud ={
+    type = "recipe",
+    name = "rich-re",
+    category = "evaporator",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+        {type="fluid", name="rare-earth-mud", amount=15},
+    },
+    results={
+        {type="item", name="rich-dust", amount=5},
+    },
+    main_product= "rich-dust",
+    icon = "__pycoalprocessing__/graphics/icons/rich-re.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+--SMELT CRUSHED IRON
+local recipe_crushed_iron = {
+    type = "recipe",
+    name = "crushed-iron",
+    category = "smelting",
+	enabled = "false",
+    energy_required = 3.5,
+    ingredients = {{"crushed-iron", 1}},
+    result = "iron-plate",
+	result_count = 2,
+}
+--SMELT CRUSHED COPPER
+local recipe_crushed_copper = {
+    type = "recipe",
+    name = "crushed-copper",
+    category = "smelting",
+	enabled = "false",
+    energy_required = 3.5,
+    ingredients = {{"crushed-copper", 1}},
+    result = "copper-plate",
+	result_count = 2,
+}
+--SMELT CRUSHED TIN
+local recipe_crushed_tin = {
+    type = "recipe",
+    name = "crushed-tin",
+    category = "smelting",
+	enabled = "false",
+    energy_required = 3.5,
+    ingredients = {{"crushed-tin", 1}},
+	result = "tin-plate",
+	result_count = 2,
+}
+--SMELT CRUSHED LEAD
+local recipe_crushed_lead = {
+    type = "recipe",
+    name = "crushed-lead",
+    category = "smelting",
+	enabled = "false",
+    energy_required = 3.5,
+    ingredients = {{"crushed-lead", 1}},
+	result = "lead-plate",
+	result_count = 2,
+}
+--SMELT CRUSHED SILVER
+local recipe_crushed_silver = {
+    type = "recipe",
+    name = "crushed-silver",
+    category = "smelting",
+	enabled = "false",
+    energy_required = 3.5,
+    ingredients = {{"crushed-silver", 1}},
+    results={
+        {type="item", name="silver-plate", amount=2},
+    },
+}
+--BOB SMELT GOLD |override?|
+local recipe_crushed_gold = {
+    type = "recipe",
+    name = "crushed-silver",
+    category = "chemical-furnace",
+    energy_required = 3.5,
+	enabled = "false",
+    ingredients =
+    {
+      {type="item", name="crushed-gold", amount=1},
+      {type="fluid", name="chlorine", amount=0.5}
+    },
+	result = "gold-plate",
+	result_count = 2,
+}
+--BOB SMELT ZINC |override?|
+local recipe_crushed_zinc = {
+    type = "recipe",
+    name = "crushed-zinc",
+    category = "electrolysis",
+    energy_required = 3.5,
+	enabled = "false",
+    ingredients =
+    {
+      {type="item", name="crushed-zinc", amount=1},
+      {type="fluid", name="sulfuric-acid", amount=1}
+    },
+	result = "zinc-plate",
+	result_count = 2,
+}
+--BOB SMELT NICKEL |override?|
+local recipe_crushed_nickel = {
+    type = "recipe",
+    name = "crushed-nickel",
+    category = "electrolysis",
+    energy_required = 3.5,
+    enabled = "false",
+    ingredients =
+    {
+      {type="item", name="crushed-nickel", amount=1},
+      {type="fluid", name="oxygen", amount=1}
+    },
+    results=
+    {
+      {type="fluid", name="sulfur-dioxide", amount=2},
+      {type="item", name="nickel-plate", amount=2}
+    },
+    main_product= "nickel-plate",
+    icon = "__bobplates__/graphics/icons/plate/nickel-plate.png",
+    order = "c-a-f[nickel-plate]",
+}
+--BOB SMELT RUTILE |override?|
+local recipe_crushed_rutile = {
+    type = "recipe",
+    name = "crushed-rutile",
+    category = "electrolysis",
+    energy_required = 6,
+    enabled = "false",
+    ingredients =
+    {
+      {type="item", name="calcium-chloride", amount=2},
+      {type="item", name="carbon", amount=1},
+      {type="item", name="crushed-rutile", amount=2}
+    },
+    result = "titanium-plate",
+    result_count = 4,
+}
 -------------------------------------------------------------------------------
 data:extend{
     raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
@@ -1353,11 +1478,14 @@ data:extend{
     mineralized_water, science_pack01, soil_washing, flask, recipe_bonemeal, recipe_rawborax,
     recipe_borax, recipe_ralesia, recipe_rich_clay, recipe_ground_sample01, recipe_bio_sample01,
     science_pack02, recipe_alien_sample01, recipe_ralesia_seeds, recipe_equipment_chassi,
-    recipe_lab_instrument, recipe_boron_trioxide, recipe_lens, recipe_stone_gravel, recipe_gravel_sand,
+    recipe_lab_instrument, recipe_boron_trioxide, recipe_lens, 
 	recipe_oleochemicals, recipe_organic_solvent, recipe_co2_organics, recipe_aromatic_organic,
 	science_pack03, recipe_petgas_methanol, recipe_oleo_heavy, recipe_bone_solvent, recipe_dirty_acid,
 	recipe_filtration_dirty_water, recipe_olefin_filtration, recipe_coalgas_syngas, recipe_oleo_oil,
 	recipe_sand_brick, tailings_classification, recipe_syngas_distilation, recipe_tar_distilation,
 	recipe_oleochemicals_distilation, recipe_tar_gasification, recipe_oleo_gasification, recipe_coal_dust,
-	recipe_tar_oil, recipe_coal_fawogae, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol
+	recipe_tar_oil, recipe_coal_fawogae, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol,
+	recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron, recipe_crushed_tin,
+	recipe_crushed_lead, recipe_crushed_silver, recipe_crushed_gold, recipe_crushed_zinc, recipe_crushed_nickel,
+	recipe_crushed_rutile
 }

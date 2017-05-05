@@ -54,10 +54,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "lime"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "slacked-lime"
         },
         {
