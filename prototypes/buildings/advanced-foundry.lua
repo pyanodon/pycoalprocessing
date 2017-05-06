@@ -104,7 +104,7 @@ local entity1={
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {"advanced-foundry", "smelting"},
+    crafting_categories = {"advanced-foundry", "smelting", "chemical-furnace", "mixing-furnace"},
     crafting_speed = 0.6,
     energy_source =
     {
@@ -158,7 +158,7 @@ local entity1={
             base_level = 1,
             pipe_connections = {{position = {-3.4, -0.5} }}
         },
-
+	off_when_no_fluid_recipe = true
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =

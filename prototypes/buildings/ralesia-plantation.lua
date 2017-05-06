@@ -106,7 +106,7 @@ local entity1={
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"ralesia"},
-    crafting_speed = 0.1,
+    crafting_speed = 0.2,
     energy_source =
     {
         type = "electric",
@@ -123,7 +123,7 @@ local entity1={
         height = 230,
         frame_count = 50,
         line_length = 8,
-        animation_speed = 2,
+        animation_speed = 2.3,
         run_mode = "forward-then-backward",
         shift = {0.0, -0.163},
     },
@@ -144,9 +144,9 @@ local entity1={
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
     {
-        sound = { filename = "__pycoalprocessing__/sounds/ralesia-plantation.ogg", volume = 0.5 },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/ralesia-plantation.ogg", volume = 0.35 },
-        apparent_volume = 0.2,
+        sound = { filename = "__pycoalprocessing__/sounds/ralesia-plantation.ogg", volume = 1.2 },
+        idle_sound = { filename = "__pycoalprocessing__/sounds/ralesia-plantation.ogg", volume = 0.70 },
+        apparent_volume = 2.5,
     },
 }
 -------------------------------------------------------------------------------

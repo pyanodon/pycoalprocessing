@@ -25,9 +25,7 @@ local recipe1={
     enabled = false,
     ingredients =
     {
-        {"storage-tank", 1},
-        {"small-pump", 1},
-        {"advanced-circuit", 5},
+        {"electronic-circuit", 5},
         {"pipe", 20}, --updated-bob copper-pipe
         {"iron-gear-wheel", 15}, --updated-bob brass-gear-wheel
         {"iron-plate", 30}, --updated-bob brass-plate
@@ -67,7 +65,7 @@ local entity1={
     },
     allowed_effects = {"speed"},
     crafting_categories = {"cooling"},
-    crafting_speed = 0.75,
+    crafting_speed = 0.55,
     energy_source =
     {
         type = "electric",

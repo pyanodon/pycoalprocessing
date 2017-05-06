@@ -108,7 +108,7 @@ local recipe_active_carbon = {
         --{type="item", name="sodium-hydroxide", amount=5},
     },
     results={
-        {type="item", name="active-carbon", amount=3},
+        {type="item", name="active-carbon", amount=5},
     },
 }
 
@@ -323,7 +323,7 @@ local coal_dust ={
     name = "coal-dust",
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
     flags = {"goes-to-main-inventory"},
-    fuel_value = "6MJ",
+    fuel_value = "7MJ",
     subgroup = "py-items",
     order = "coal-dust",
     stack_size = 500
@@ -658,6 +658,7 @@ local lens = {
 local boron_trioxide = {
     type = "item",
     name = "boron-trioxide",
+	enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/boron-trioxide.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -669,13 +670,805 @@ local boron_trioxide = {
 local ralesia_seeds = {
     type = "item",
     name = "ralesia-seeds",
+	enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
 }
+--NIOBIUM ORE
 -------------------------------------------------------------------------------
+local recipe_niobium_ore = {
+    type = "recipe",
+    name = "niobium-ore",
+    category = "niobium",
+    enabled = "false",
+    energy_required = 7,
+    ingredients ={
+        {type="item", name="drill-head", amount=1},
+        {type="fluid", name="refsyngas", amount=10},
+    },
+    results={
+        {type="item", name="niobium-ore", amount=10},
+    },
+}
+
+local niobium_ore = {
+    type = "item",
+    name = "niobium-ore",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-ore.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items-hpf",
+    order = "g",
+    stack_size = 100
+}
+--NIOBIUM POWDER
+-------------------------------------------------------------------------------
+local niobium_powder = {
+    type = "item",
+    name = "niobium-powder",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-powder.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-crusher",
+    --order = "g",
+    stack_size = 100
+}
+--NIOBIUM DUST
+-------------------------------------------------------------------------------
+local recipe_niobium_dust = {
+    type = "recipe",
+    name = "niobium-dust",
+    category = "ball-mill",
+    enabled = "false",
+    energy_required = 5,
+    ingredients ={
+        {type="item", name="niobium-powder", amount=5},
+    },
+    results={
+        {type="item", name="niobium-dust", amount=5},
+		{type="item", name="gravel", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/niobium-dust.png",
+	main_product = "niobium-dust",
+}
+
+local niobium_dust = {
+    type = "item",
+    name = "niobium-dust",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-dust.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-mill",
+    --order = "g",
+    stack_size = 100
+}
+--NIOBIUM CONCENTRATE
+-------------------------------------------------------------------------------
+local recipe_niobium_concentrate = {
+    type = "recipe",
+    name = "niobium-concentrate",
+    category = "classifier",
+    enabled = "false",
+    energy_required = 5,
+    ingredients ={
+        {type="item", name="niobium-dust", amount=5},
+    },
+    results={
+        {type="item", name="niobium-concentrate", amount=5},
+		{type="item", name="sand", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/class-niobium.png",
+	main_product = "niobium-concentrate",
+}
+
+local niobium_concentrate = {
+    type = "item",
+    name = "niobium-concentrate",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-concentrate.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 100
+}
+--MUKMOUX FAT
+-------------------------------------------------------------------------------
+local recipe_mukmoux_fat = {
+    type = "recipe",
+    name = "mukmoux-fat",
+    category = "mukmoux",
+    enabled = "false",
+    energy_required = 7.2,
+    ingredients ={
+        {type="item", name="fawogae", amount=5},
+		{type="item", name="ralesia-seeds", amount=50},
+    },
+    results={
+        {type="item", name="mukmoux-fat", amount=10},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
+	main_product = "mukmoux-fat",
+}
+
+local mukmoux_fat = {
+    type = "item",
+    name = "mukmoux-fat",
+    icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 50
+}
+--NIOBIUM OXIDE
+-------------------------------------------------------------------------------
+local recipe_niobium_oxide = {
+    type = "recipe",
+    name = "niobium-oxide",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 1.5,
+    ingredients ={
+        {type="fluid", name="nitrogen-dioxide", amount=30},
+		{type="fluid", name="niobium-complex", amount=10},
+    },
+    results={
+        {type="item", name="niobium-oxide", amount=10},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/niobium-oxide.png",
+	main_product = "niobium-oxide",
+}
+
+local niobium_oxide = {
+    type = "item",
+    name = "niobium-oxide",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-oxide.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 50
+}
+--NIOBIUM PLATE
+-------------------------------------------------------------------------------
+local recipe_niobium_plate = {
+    type = "recipe",
+    name = "niobium-plate",
+    category = "electrolysis",
+    enabled = "false",
+    energy_required = 1.5,
+    ingredients ={
+        {type="item", name="salt", amount=20},
+		{type="item", name="niobium-oxide", amount=6},
+    },
+    results={
+        {type="item", name="niobium-plate", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/niobium-plate.png",
+	main_product = "niobium-plate",
+}
+
+local niobium_plate = {
+    type = "item",
+    name = "niobium-plate",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-plate.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 50
+}
+-------------------------------------------------------------------------------
+-- RARE-EARTH ORE
+local rare_earth_ore = {
+    type = "item",
+    name = "rare-earth-ore",
+    icon = "__pycoalprocessing__/graphics/icons/rare-earth-ore.png",
+	enabled = "false",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 500
+}
+--RARE-EARTH-POWDER
+-------------------------------------------------------------------------------
+local recipe_rare_earth_powder = {
+    type = "recipe",
+    name = "rare-earth-powder",
+    category = "crusher",
+    enabled = "false",
+    energy_required = 4.0,
+    ingredients ={
+        {type="item", name="rare-earth-ore", amount=10},
+    },
+    results={
+        {type="item", name="rare-earth-powder", amount=8},
+		{type="item", name="stone", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/crush-rare-earth.png",
+	main_product = "rare-earth-powder",
+}
+
+local rare_earth_powder = {
+    type = "item",
+    name = "rare-earth-powder",
+    icon = "__pycoalprocessing__/graphics/icons/rare-earth-powder.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-crusher",
+    --order = "g",
+    stack_size = 200
+}
+
+--RARE-EARTH-DUST
+-------------------------------------------------------------------------------
+local recipe_rare_earth_dust = {
+    type = "recipe",
+    name = "rare-earth-dust",
+    category = "ball-mill",
+    enabled = "false",
+    energy_required = 5.0,
+    ingredients ={
+        {type="item", name="rare-earth-powder", amount=8},
+    },
+    results={
+        {type="item", name="rare-earth-dust", amount=5},
+		{type="item", name="gravel", amount=2},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/rare-earth-dust.png",
+	main_product = "rare-earth-dust",
+}
+
+local rare_earth_dust = {
+    type = "item",
+    name = "rare-earth-dust",
+    icon = "__pycoalprocessing__/graphics/icons/rare-earth-dust.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-crusher",
+    --order = "g",
+    stack_size = 200
+}
+--GLASS CORE
+-------------------------------------------------------------------------------
+local recipe_glass_core = {
+    type = "recipe",
+    name = "glass-core",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 3.5,
+    ingredients ={
+        {type="item", name="glass", amount=10},
+		{type="item", name="silver-plate", amount=3},
+		{type="item", name="sulfur", amount=4},
+    },
+    results={
+        {type="item", name="glass-core", amount=1},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/glass-core.png",
+	main_product = "glass-core",
+}
+
+local glass_core = {
+    type = "item",
+	enabled = "false",
+    name = "glass-core",
+    icon = "__pycoalprocessing__/graphics/icons/glass-core.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items-hpf",
+    --order = "g",
+    stack_size = 200
+}
+--CLADDING
+-------------------------------------------------------------------------------
+local recipe_cladding = {
+    type = "recipe",
+    name = "cladding",
+    category = "crafting-with-fluid",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+        {type="item", name="glass", amount=5},
+		{type="fluid", name="niobium-complex", amount=8},
+    },
+    results={
+        {type="item", name="cladding", amount=1},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/cladding.png",
+	main_product = "cladding",
+}
+
+local cladding = {
+    type = "item",
+	enabled = "false",
+    name = "cladding",
+    icon = "__pycoalprocessing__/graphics/icons/cladding.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--PPD
+-------------------------------------------------------------------------------
+local recipe_ppd = {
+    type = "recipe",
+    name = "ppd",
+    category = "electrolysis",
+    enabled = "false",
+    energy_required = 4,
+    ingredients ={
+        {type="fluid", name="hydrogen", amount=50},
+		{type="fluid", name="aromatics", amount=5},
+    },
+    results={
+        {type="item", name="ppd", amount=10},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/ppd.png",
+	main_product = "ppd",
+}
+
+local ppd = {
+    type = "item",
+	enabled = "false",
+    name = "ppd",
+    icon = "__pycoalprocessing__/graphics/icons/ppd.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 500
+}
+
+--KEVLAR
+-------------------------------------------------------------------------------
+local recipe_kevlar = {
+    type = "recipe",
+    name = "kevlar",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 6.0,
+    ingredients ={
+		{type="item", name="ppd", amount=5},
+        {type="fluid", name="tpa", amount=5},
+		{type="fluid", name="organic-solvent", amount=10},
+    },
+    results={
+        {type="item", name="kevlar", amount=5},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/kevlar.png",
+	main_product = "kevlar",
+}
+
+local kevlar = {
+    type = "item",
+	enabled = "false",
+    name = "kevlar",
+    icon = "__pycoalprocessing__/graphics/icons/kevlar.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--KEVLAR COATING
+-------------------------------------------------------------------------------
+local recipe_kevlar_coating = {
+    type = "recipe",
+    name = "kevlar-coating",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="copper-coating", amount=1},
+		{type="item", name="kevlar", amount=1},
+
+    },
+    results={
+        {type="item", name="kevlar-coating", amount=1},
+    },
+	main_product= "kevlar-coating",
+    icon = "__pycoalprocessing__/graphics/icons/kevlar-coating.png",
+}
+
+local kevlar_coating = {
+    type = "item",
+	enabled = "false",
+    name = "kevlar-coating",
+    icon = "__pycoalprocessing__/graphics/icons/kevlar-coating.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--NbFe ALLOY
+-------------------------------------------------------------------------------
+local recipe_nbfe_alloy = {
+    type = "recipe",
+    name = "nbfe-alloy",
+    category = "smelting",
+    enabled = "false",
+    energy_required = 4.0,
+    ingredients ={
+		{type="item", name="iron-plate", amount=15},
+        {type="item", name="niobium-plate", amount=3},
+    },
+    results={
+        {type="item", name="nbfe-alloy", amount=1},
+    },
+	icon = "__pycoalprocessing__/graphics/icons/nbfe-alloy.png",
+	main_product = "nbfe-alloy",
+}
+
+local nbfe_alloy = {
+    type = "item",
+	enabled = "false",
+    name = "nbfe-alloy",
+    icon = "__pycoalprocessing__/graphics/icons/nbfe-alloy.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--NbFe COATING
+-------------------------------------------------------------------------------
+local recipe_nbfe_coating = {
+    type = "recipe",
+    name = "nbfe-coating",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="kevlar-coating", amount=1},
+		{type="item", name="nbfe-alloy", amount=1},
+
+    },
+    results={
+        {type="item", name="nbfe-coating", amount=1},
+    },
+	main_product= "nbfe-coating",
+    icon = "__pycoalprocessing__/graphics/icons/nbfe-coating.png",
+}
+
+local nbfe_coating = {
+    type = "item",
+	enabled = "false",
+    name = "nbfe-coating",
+    icon = "__pycoalprocessing__/graphics/icons/nbfe-coating.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--ATTACH CLADDING TO GLASS CORE
+-------------------------------------------------------------------------------
+local recipe_cladded_core = {
+    type = "recipe",
+    name = "cladded-core",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+		{type="item", name="cladding", amount=1},
+		{type="item", name="glass-core", amount=1},
+    },
+    results={
+        {type="item", name="cladded-core", amount=1},
+    },
+	main_product= "cladded-core",
+    icon = "__pycoalprocessing__/graphics/icons/cladded-core.png",
+}
+local cladded_core = {
+    type = "item",
+	enabled = "false",
+    name = "cladded-core",
+    icon = "__pycoalprocessing__/graphics/icons/cladded-core.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--COPPER COATING
+-------------------------------------------------------------------------------
+local recipe_copper_coating = {
+    type = "recipe",
+    name = "copper-coating",
+    category = "electrolysis",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="copper-plate", amount=10},
+		{type="item", name="cladded-core", amount=1},
+		{type="fluid", name="water-mineralized", amount=15},
+
+    },
+    results={
+        {type="item", name="copper-coating", amount=1},
+    },
+	main_product= "copper-coating",
+    icon = "__pycoalprocessing__/graphics/icons/copper-coating.png",
+}
+local copper_coating = {
+    type = "item",
+	enabled = "false",
+    name = "copper-coating",
+    icon = "__pycoalprocessing__/graphics/icons/copper-coating.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--OPTICAL FIBER
+-------------------------------------------------------------------------------
+local recipe_optical_fiber = {
+    type = "recipe",
+    name = "optical-fiber",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="plastic-bar", amount=2},
+		{type="item", name="nbfe-coating", amount=1},
+
+    },
+    results={
+        {type="item", name="optical-fiber", amount=1},
+    },
+	main_product= "optical-fiber",
+    icon = "__pycoalprocessing__/graphics/icons/optical-fiber.png",
+}
+local optical_fiber = {
+    type = "item",
+	enabled = "false",
+    name = "optical-fiber",
+    icon = "__pycoalprocessing__/graphics/icons/optical-fiber.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--BIOFILM
+-------------------------------------------------------------------------------
+local recipe_biofilm = {
+    type = "recipe",
+    name = "biofilm",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="fawogae-substrate", amount=20},
+		{type="item", name="lime", amount=5},
+		{type="item", name="organics", amount=5},
+    },
+    results={
+        {type="item", name="biofilm", amount=1},
+    },
+	main_product= "biofilm",
+    icon = "__pycoalprocessing__/graphics/icons/biofilm.png",
+}
+local biofilm = {
+    type = "item",
+	enabled = "false",
+    name = "biofilm",
+    icon = "__pycoalprocessing__/graphics/icons/biofilm.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--MEDIA FILTER
+-------------------------------------------------------------------------------
+local recipe_filtration_media = {
+    type = "recipe",
+    name = "filtration-media",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="sand", amount=30},
+		{type="item", name="active-carbon", amount=3},
+		{type="item", name="gravel", amount=25},
+		{type="item", name="glass", amount=5},
+    },
+    results={
+        {type="item", name="filtration-media", amount=1},
+    },
+	main_product= "filtration-media",
+    icon = "__pycoalprocessing__/graphics/icons/filtration-media.png",
+}
+local filtration_media = {
+    type = "item",
+	enabled = "false",
+    name = "filtration-media",
+    icon = "__pycoalprocessing__/graphics/icons/filtration-media.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+--COAL-BRIQUETTE
+-------------------------------------------------------------------------------
+local recipe_coal_briquette = {
+    type = "recipe",
+    name = "coal-briquette",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+		{type="item", name="coal-dust", amount=35},
+		{type="fluid", name="glycerol", amount=10},
+		{type="fluid", name="creosote", amount=15},
+		{type="fluid", name="tar", amount=5},
+    },
+    results={
+        {type="item", name="coal-briquette", amount=2},
+    },
+	main_product= "coal-briquette",
+    icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
+}
+local coal_briquette = {
+    type = "item",
+	enabled = "false",
+    name = "coal-briquette",
+	fuel_value = "20MJ",
+    icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    --order = "g",
+    stack_size = 200
+}
+-------------------------------------------------------------------------------
+-- CALCIUM CARBIDE
+local recipe_calcium_carbide = {
+    type = "recipe",
+    name = "calcium-carbide",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 4,
+    ingredients ={
+        {type="item", name="coke", amount=10},
+        {type="item", name="lime", amount=2},
+    },
+    results={
+        {type="item", name="calcium-carbide", amount=10},
+    },
+    icon = "__pycoalprocessing__/graphics/icons/calcium-carbide.png",
+    subgroup = "py-items",
+    order = "g",
+}
+local calcium_carbide = {
+    type = "item",
+    name = "calcium-carbide",
+    icon = "__pycoalprocessing__/graphics/icons/calcium-carbide.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 100
+}
+-------------------------------------------------------------------------------
+-- CRUSHED IRON
+local crushed_iron = {
+    type = "item",
+    name = "crushed-iron",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-iron.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED COPPER
+local crushed_copper = {
+    type = "item",
+    name = "crushed-copper",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-copper.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED BAUXITE
+local crushed_bauxite = {
+    type = "item",
+    name = "crushed-bauxite",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-bauxite.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED GOLD
+local crushed_gold = {
+    type = "item",
+    name = "crushed-gold",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-gold.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED LEAD
+local crushed_lead = {
+    type = "item",
+    name = "crushed-lead",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-lead.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED NICKEL
+local crushed_nickel = {
+    type = "item",
+    name = "crushed-nickel",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-nickel.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED RUTILE
+local crushed_rutile = {
+    type = "item",
+    name = "crushed-rutile",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-rutile.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED SILVER
+local crushed_silver = {
+    type = "item",
+    name = "crushed-silver",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-silver.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED TIN
+local crushed_tin = {
+    type = "item",
+    name = "crushed-tin",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tin.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED TUNGSTEN
+local crushed_tungsten = {
+    type = "item",
+    name = "crushed-tungsten",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tungsten.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED ZINC
+local crushed_zinc = {
+    type = "item",
+    name = "crushed-zinc",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-zinc.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+ -------------------------------------------------------------------------------
 data:extend(
     {
         ash,
@@ -732,6 +1525,63 @@ data:extend(
         lab_instrument,
         lens,
         boron_trioxide,
-        ralesia_seeds
+        ralesia_seeds,
+		recipe_niobium_ore,
+		niobium_ore,
+		niobium_powder,
+		recipe_niobium_dust,
+		niobium_dust,
+		recipe_niobium_concentrate,
+		niobium_concentrate,
+		recipe_mukmoux_fat,
+		mukmoux_fat,
+		recipe_niobium_oxide,
+		niobium_oxide,
+		recipe_niobium_plate,
+		niobium_plate,
+		rare_earth_ore,
+		recipe_rare_earth_powder,
+		rare_earth_powder,
+		recipe_rare_earth_dust,
+		rare_earth_dust,
+		recipe_glass_core,
+		glass_core,
+		recipe_cladding,
+		cladding,
+		recipe_cladded_core,
+		cladded_core,
+		recipe_copper_coating,
+		copper_coating,
+		recipe_kevlar,
+		kevlar,
+		recipe_kevlar_coating,
+		kevlar_coating,
+		recipe_ppd,
+		ppd,
+		recipe_nbfe_alloy,
+		nbfe_alloy,
+		recipe_nbfe_coating,
+		nbfe_coating,
+		recipe_optical_fiber,
+		optical_fiber,
+		recipe_biofilm,
+		biofilm,
+		recipe_filtration_media,
+		filtration_media,
+		recipe_coal_briquette,
+		coal_briquette,
+		recipe_calcium_carbide,
+		calcium_carbide,
+		crushed_iron,
+		crushed_copper,
+		crushed_bauxite,
+		crushed_gold,
+		crushed_lead,
+		crushed_nickel,
+		crushed_rutile,
+		crushed_silver,
+		crushed_tin,
+		crushed_tungsten,
+		crushed_zinc
     }
 )

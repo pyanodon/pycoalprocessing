@@ -160,8 +160,7 @@ local entity1={
             production_type = "output",
             pipe_picture = Proto.pipes("assembler", {0.05, 0.65}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
             pipe_covers = Proto.pipe_covers(false, true, true, true),
-            base_area = 10,
-            base_level = -1,
+            base_level = 1,
             pipe_connections = {{ type="input", position = {0.0, 3.0} }}
         },
         off_when_no_fluid_recipe = true

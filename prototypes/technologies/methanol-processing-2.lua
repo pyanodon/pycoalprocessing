@@ -20,6 +20,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "refsyngas-from-meth-canister"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "oleo-methanol"
+        },
     },
     unit =
     {
