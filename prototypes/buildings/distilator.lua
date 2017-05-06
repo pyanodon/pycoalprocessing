@@ -133,7 +133,8 @@ local entity1={
         {
             production_type = "input",
             pipe_covers = Proto.pipe_covers(true, true, true, true),
-            base_level = 1,
+            base_area = 10,
+            base_level = -1,
             pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
             pipe_connections = {{ position = {-0.5, -4.5} }}
         },
@@ -150,7 +151,8 @@ local entity1={
         {
             production_type = "input",
             pipe_covers = Proto.pipe_covers(true, true, true, true),
-            base_level = 1,
+            base_area = 10,
+            base_level = -1,
             pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
             pipe_connections = {{ position = {-0.5, 4.5} }}
         },
@@ -167,7 +169,8 @@ local entity1={
         {
             production_type = "input",
             pipe_covers = Proto.pipe_covers(true, true, true, true),
-            base_level = 1,
+            base_area = 10,
+            base_level = -1,
             pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
             pipe_connections = {{ position = {-4.5, -0.5} }}
         },
@@ -184,7 +187,8 @@ local entity1={
         {
             production_type = "input",
             pipe_covers = Proto.pipe_covers(true, true, true, true),
-            base_level = 1,
+            base_area = 10,
+            base_level = -1,
             pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
             pipe_connections = {{ position = {4.5, -0.5} }}
         },

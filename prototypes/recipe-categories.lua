@@ -109,5 +109,29 @@ data:extend(
             type = "recipe-category",
             name = "borax",
         },
+        {
+            type = "recipe-category",
+            name = "niobium",
+        },
+        {
+            type = "recipe-category",
+            name = "crusher",
+        },
+        {
+            type = "recipe-category",
+            name = "ball-mill",
+        },
+        {
+            type = "recipe-category",
+            name = "mukmoux",
+        },
+        {
+            type = "recipe-category",
+            name = "rare-earth",
+        },
+        {
+            type = "recipe-category",
+            name = "advanced-crafting",
+        },
     }
 )

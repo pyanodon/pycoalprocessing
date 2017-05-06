@@ -168,8 +168,8 @@ local entity1={
     working_sound =
     {
         sound = { filename = "__pycoalprocessing__/sounds/fluid-separator.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/fluid-separator.ogg", volume = 1.00 },
-        apparent_volume = 2.5,
+        idle_sound = { filename = "__pycoalprocessing__/sounds/fluid-separator.ogg", volume = 0.65 },
+        apparent_volume = 1.2,
     },
 }
 -------------------------------------------------------------------------------

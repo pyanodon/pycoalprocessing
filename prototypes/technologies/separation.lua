@@ -4,25 +4,17 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/separation.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"excavation-1"},
+    prerequisites = {"coal-processing-1"},
     effects =
     {
 
-        {
-            type = "unlock-recipe",
-            recipe = "richdust-separation"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "tailings-separation"
-        },
         {
             type = "unlock-recipe",
             recipe = "classifier"
         },
         {
             type = "unlock-recipe",
-            recipe = "pure_sand-classification"
+            recipe = "sand-classification"
         },
         {
             type = "unlock-recipe",
@@ -30,17 +22,51 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "coal-slurry"
+            recipe = "tailings-classification"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "co2-organics"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "solid-separator"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "soil-separation"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "fluid-separator"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "petgas-methanol"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "oleo-heavy"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "tailings-separation"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "lime"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "calcium-carbide"
         },
 
     },
     unit =
     {
-        count = 30,
+        count = 35,
         ingredients = {
             {"science-pack-1", 2},
-            {"science-pack-2", 2},
-            {"science-pack-3", 1},
         },
         time = 55
     },

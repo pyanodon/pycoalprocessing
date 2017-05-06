@@ -127,6 +127,29 @@ local gasoline=
     icon = "__pycoalprocessing__/graphics/icons/gasoline.png",
     --order = "b-c [syn-gas]",
 }
+-------------------------------------------------------------------------------
+--REFSYNGAS-to-olefins
+local refolefin=
+{
+    type = "recipe",
+    name = "refolefin",
+    category = "olefin",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+        {type="fluid", name="refsyngas", amount=20},
+        {type="item", name="nichrome", amount=5},
+    },
+    results=
+    {
+        {type="fluid", name="olefin", amount=25},
+    },
+    main_product= "olefin",
+    icon = "__pycoalprocessing__/graphics/icons/olefin.png",
+    --order = "b-c [syn-gas]",
+}
+
+
 data:extend{
-    diesel, aromatics, olefin, diesel2, olefin_petgas, gasoline
+    diesel, aromatics, olefin, diesel2, olefin_petgas, gasoline, refolefin
 }
