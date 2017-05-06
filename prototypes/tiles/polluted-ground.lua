@@ -26,12 +26,11 @@ local polluted_ground=
             },
             {
                 picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground4.png",
-                count = 22,
+                count = 16,
                 line_length = 11,
                 size = 4,
                 probability = 1,
-                weights = {0.090, 0.125, 0.125, 0.125, 0.125, 0.125, 0.125, 0.025, 0.125, 0.005, 0.010, 0.100, 0.100, 0.010, 0.020, 0.020, 0.010, 0.100, 0.025, 0.100, 0.100, 0.100}
-            },
+                weights = {0.090, 0.025, 0.125, 0.005, 0.010, 0.100, 0.100, 0.010, 0.020, 0.020, 0.010, 0.100, 0.025, 0.100, 0.100, 0.100}            },
         },
         inner_corner =
         {

@@ -104,7 +104,7 @@ local entity1={
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {"advanced-foundry", "smelting", "chemical-furnace", "mixing-furnace"},
+    crafting_categories = {"advanced-foundry", "smelting"},
     crafting_speed = 0.6,
     energy_source =
     {

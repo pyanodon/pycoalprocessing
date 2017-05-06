@@ -94,8 +94,9 @@ local entity1={
     minable = {mining_time = 1, result = "gasturbinemk03"},
     max_health = 500,
     corpse = "big-remnants",
-    effectivity = 30,
-    fluid_usage_per_tick = 0.08,
+    effectivity = 5,
+    fluid_usage_per_tick = 1,
+    maximum_temperature = 500,
     resistances =
     {
         {
@@ -105,8 +106,14 @@ local entity1={
     },
     collision_box = {{-4.4, -4.4}, {4.4, 4.4}},
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
+    fluid_input = {
+        name = "water",
+        amount = 0.0,
+        minimum_temperature = 100.0
+    },
     fluid_box ={
         base_area = 1,
+        base_level = -1,
         pipe_covers = Proto.pipe_covers(false, true, false, false),
         pipe_picture=pipe_pictures({0,0}, {0,0}, {0,0}, {0,0}),
         pipe_connections =

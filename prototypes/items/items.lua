@@ -39,6 +39,7 @@ local coke = {
     type = "item",
     name = "coke",
     fuel_value = "10MJ",
+    fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/coke.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -116,6 +117,7 @@ local active_carbon = {
     type = "item",
     name = "active-carbon",
     fuel_value = "25MJ",
+    fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items-hpf",
@@ -324,6 +326,7 @@ local coal_dust ={
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
     flags = {"goes-to-main-inventory"},
     fuel_value = "7MJ",
+    fuel_category = "chemical",
     subgroup = "py-items",
     order = "coal-dust",
     stack_size = 500
@@ -478,6 +481,7 @@ local fuelrod_mk01 = {
     type = "item",
     name = "fuelrod-mk01",
     fuel_value = "150MJ",
+    fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/fuelrod-mk01.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items-hpf",
@@ -807,7 +811,7 @@ local recipe_niobium_oxide = {
     enabled = "false",
     energy_required = 1.5,
     ingredients ={
-        {type="fluid", name="nitrogen-dioxide", amount=30},
+        {type="fluid", name="water", amount=30}, --Added Bob nitrogen-dioxide
 		{type="fluid", name="niobium-complex", amount=10},
     },
     results={
@@ -991,7 +995,7 @@ local recipe_ppd = {
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="hydrogen", amount=50},
+        {type="fluid", name="water", amount=50},  --Added Bob hydrogen
 		{type="fluid", name="aromatics", amount=5},
     },
     results={
@@ -1302,6 +1306,7 @@ local coal_briquette = {
 	enabled = "false",
     name = "coal-briquette",
 	fuel_value = "20MJ",
+    fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
