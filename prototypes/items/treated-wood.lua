@@ -25,6 +25,7 @@ local treated_lumber = {
     subgroup = "py-items",
     order = "treated-wood",
     fuel_value = "3MJ",
+    fuel_category = "chemical",
     stack_size = 100
 }
 -------------------------------------------------------------------------------

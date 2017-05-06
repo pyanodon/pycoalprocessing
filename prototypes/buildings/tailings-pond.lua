@@ -77,6 +77,7 @@ local entity_tailings_pond =
             height = 185
         },
         flow_sprite = Proto.empty_sprite,
+        gas_flow = Proto.empty_animation,
     },
     flow_length_in_ticks = 360,
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -163,7 +164,7 @@ local entity_tailings_pond_sprite =
             },
         }
     },
-    sound_minimum_speed = 0;
+    sound_minimum_speed = 1;
     rotation_speed = 0.015,
     inventory_size = 0
 }

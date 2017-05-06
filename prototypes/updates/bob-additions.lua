@@ -147,9 +147,195 @@ local tungsten_powder ={
     order = "c",
 }
 
+--SMELT CRUSHED TIN
+local recipe_crushed_tin = {
+    type = "recipe",
+    name = "crushed-tin",
+    category = "smelting",
+    enabled = "false",
+    energy_required = 3.5,
+    ingredients = {{"crushed-tin", 1}},
+    result = "tin-plate",
+    result_count = 2,
+}
+--SMELT CRUSHED LEAD
+local recipe_crushed_lead = {
+    type = "recipe",
+    name = "crushed-lead",
+    category = "smelting",
+    enabled = "false",
+    energy_required = 3.5,
+    ingredients = {{"crushed-lead", 1}},
+    result = "lead-plate",
+    result_count = 2,
+}
+--SMELT CRUSHED SILVER
+local recipe_crushed_silver = {
+    type = "recipe",
+    name = "crushed-silver",
+    category = "smelting",
+    enabled = "false",
+    energy_required = 3.5,
+    ingredients = {{"crushed-silver", 1}},
+    results={
+        {type="item", name="silver-plate", amount=2},
+    },
+}
+--BOB SMELT GOLD |override?|
+local recipe_crushed_gold = {
+    type = "recipe",
+    name = "crushed-silver",
+    category = "chemical-furnace",
+    energy_required = 3.5,
+    enabled = "false",
+    ingredients =
+    {
+        {type="item", name="crushed-gold", amount=1},
+        {type="fluid", name="chlorine", amount=0.5}
+    },
+    result = "gold-plate",
+    result_count = 2,
+}
+--BOB SMELT ZINC |override?|
+local recipe_crushed_zinc = {
+    type = "recipe",
+    name = "crushed-zinc",
+    category = "electrolysis",
+    energy_required = 3.5,
+    enabled = "false",
+    ingredients =
+    {
+        {type="item", name="crushed-zinc", amount=1},
+        {type="fluid", name="sulfuric-acid", amount=1}
+    },
+    result = "zinc-plate",
+    result_count = 2,
+}
+--BOB SMELT NICKEL |override?|
+local recipe_crushed_nickel = {
+    type = "recipe",
+    name = "crushed-nickel",
+    category = "electrolysis",
+    energy_required = 3.5,
+    enabled = "false",
+    ingredients =
+    {
+        {type="item", name="crushed-nickel", amount=1},
+        {type="fluid", name="oxygen", amount=1}
+    },
+    results=
+    {
+        {type="fluid", name="sulfur-dioxide", amount=2},
+        {type="item", name="nickel-plate", amount=2}
+    },
+    main_product= "nickel-plate",
+    icon = "__bobplates__/graphics/icons/plate/nickel-plate.png",
+    order = "c-a-f[nickel-plate]",
+}
+--BOB SMELT RUTILE |override?|
+local recipe_crushed_rutile = {
+    type = "recipe",
+    name = "crushed-rutile",
+    category = "electrolysis",
+    energy_required = 6,
+    enabled = "false",
+    ingredients =
+    {
+        {type="item", name="calcium-chloride", amount=2},
+        {type="item", name="carbon", amount=1},
+        {type="item", name="crushed-rutile", amount=2}
+    },
+    result = "titanium-plate",
+    result_count = 4,
+}
 
-data:extend({methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen,
- void_flue_gas, glass, tungsten_powder})
+-------------------------------------------------------------------------------
+--LUBRICANT FROM GLYCEROL
+local recipe_lube_glycerol ={
+    type = "recipe",
+    name = "lube-glycerol",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+        {type="fluid", name="glycerol", amount=10},
+		{type="fluid", name="lithia-water", amount=20},
+    },
+    results={
+        {type="fluid", name="lubricant", amount=10},
+    },
+    main_product= "lubricant",
+    icon = "__pycoalprocessing__/graphics/icons/lube-glycerol.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--EXPLOSIVES FROM GLYCEROL
+local recipe_explosives_glycerol ={
+    type = "recipe",
+    name = "explosive-glycerol",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients ={
+        {type="fluid", name="glycerol", amount=10},
+		{type="fluid", name="sulfuric-acid", amount=15},
+    },
+    results={
+        {type="item", name="explosives", amount=5},
+    },
+    main_product= "explosives",
+    icon = "__pycoalprocessing__/graphics/icons/resin-glycerol.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--RESIN FROM GLYCEROL
+local recipe_resin_glycerol ={
+    type = "recipe",
+    name = "resin-glycerol",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients ={
+        {type="fluid", name="glycerol", amount=15},
+		{type="item", name="coke", amount=5},
+    },
+    results={
+        {type="item", name="resin", amount=20},
+    },
+    main_product= "resin",
+    icon = "__bobplates__/graphics/icons/resin.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+-------------------------------------------------------------------------------
+--SYNGAS DISTILATION
+local recipe_syngas_distilation ={
+    type = "recipe",
+    name = "syngas-distilation",
+    category = "distilator",
+    enabled = "false",
+    energy_required = 1.5,
+    ingredients ={
+        {type="fluid", name="syngas", amount=15},
+    },
+    results={
+        {type="fluid", name="hydrogen", amount=10},
+        {type="fluid", name="carbon-dioxide", amount=5},
+    },
+    main_product= "hydrogen",
+    icon = "__pycoalprocessing__/graphics/icons/syngas-distilation.png",
+    subgroup = "py-items",
+    order = "a [coal-gas]",
+}
+
+data:extend{
+    methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen,
+    void_flue_gas, glass, tungsten_powder, recipe_crushed_tin, recipe_syngas_distilation,
+    recipe_crushed_lead, recipe_crushed_silver, recipe_crushed_gold, recipe_crushed_zinc, recipe_crushed_nickel,
+    recipe_crushed_rutile, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol,
+}
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
 bobmods.lib.tech.add_recipe_unlock("methanol-processing-2", "methanol-from-hydrogen")

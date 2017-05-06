@@ -168,9 +168,20 @@ replace_ing("lens", "stone", "glass")
 
 replace_ing("diborane", "water", "hydrogen")
 
+replace_ing("oleochemicals-distilation", "water", "oxygen")
+replace_ing("oleo-gasification", "water", "oxygen")
+replace_ing("tar-gasification", "water", "liquid-air")
+replace_ing("niobium-dioxide", "water", "nitrogen-dioxide")
+replace_ing("ppd", "water", "hydrogen")
+replace_ing("aromatics2", "water", "hydrogen")
+
 if data.raw["recipe-category"]["electrolysis"] then
     data.raw.recipe["diborane"].category = "electrolysis"
 end
+
+local foundry = data.raw["assembling-machine"]["advanced-foundry"]
+foundry.crafting_categories[#foundry.crafting_categories+1] = "chemical-furnace"
+foundry.crafting_categories[#foundry.crafting_categories+1] = "mixing-furnace"
 
 -------------------------------------------------------------------------------
 --[[Tech]]--
