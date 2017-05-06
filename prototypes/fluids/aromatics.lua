@@ -8,7 +8,7 @@ local recipe1 =
     energy_required = 2.0,
     ingredients ={
         {type="fluid", name="refsyngas", amount=15},
-		{type="fluid", name="hydrogen", amount=50},
+		{type="fluid", name="water", amount=50}, --Added Bob hydrogen
 		{type="item", name="organics", amount=10},
     },
     results={

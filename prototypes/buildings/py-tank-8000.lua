@@ -8,8 +8,8 @@ local recipe1={
     ingredients =
     {
         {"py-tank-4000", 1},
-		{"pipe", 12},
-		{"iron-stick", 40},
+        {"pipe", 12},
+        {"iron-stick", 40},
         {"steel-plate", 40},
     },
     result= "py-tank-8000",
@@ -40,70 +40,71 @@ local entity1={
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     fluid_box =
     {
-      base_area = 800,
-      pipe_covers = pipecoverspictures(),
-      pipe_connections =
-      {
-        { position = {0.5, -3.5} },
-		{ position = {-0.5, -3.5} },
-        { position = {3.5, 0.5} },
-		{ position = {3.5, -0.5} },
-        { position = {0.5, 3.5} },
-		{ position = {-0.5, 3.5} },
-        { position = {-3.5, 0.5} },
-		{ position = {-3.5, -0.5} },
-      },
+        base_area = 800,
+        pipe_covers = pipecoverspictures(),
+        pipe_connections =
+        {
+            { position = {0.5, -3.5} },
+            { position = {-0.5, -3.5} },
+            { position = {3.5, 0.5} },
+            { position = {3.5, -0.5} },
+            { position = {0.5, 3.5} },
+            { position = {-0.5, 3.5} },
+            { position = {-3.5, 0.5} },
+            { position = {-3.5, -0.5} },
+        },
     },
     window_bounding_box = {{-0.0, 0.0}, {0.0, 0.0}},
     pictures =
     {
-      picture =
-      {
-        sheet =
+        picture =
         {
-          filename = "__pycoalprocessing__/graphics/entity/py-tank-8000/py-tank-8000.png",
-          priority = "extra-high",
-          frames = 1,
-          width = 231,
-          height = 257,
-          shift = {0.55, -0.55}
-        }
-      },
-      fluid_background =
-      {
-        filename = "__base__/graphics/entity/storage-tank/fluid-background.png",
-        priority = "extra-high",
-        width = 32,
-        height = 15,
-		shift = {-0.0, -2.0}
-      },
-      window_background =
-      {
-        filename = "__base__/graphics/entity/storage-tank/window-background.png",
-        priority = "extra-high",
-        width = 17,
-        height = 24,
-		shift = {-0.0, -2.0}
-      },
-      flow_sprite =
-      {
-        filename = "__base__/graphics/entity/pipe/fluid-flow-low-temperature.png",
-        priority = "extra-high",
-        width = 160,
-        height = 20,
-		shift = {-0.0, -2.0}
-      }
+            sheet =
+            {
+                filename = "__pycoalprocessing__/graphics/entity/py-tank-8000/py-tank-8000.png",
+                priority = "extra-high",
+                frames = 1,
+                width = 231,
+                height = 257,
+                shift = {0.55, -0.55}
+            }
+        },
+        fluid_background =
+        {
+            filename = "__base__/graphics/entity/storage-tank/fluid-background.png",
+            priority = "extra-high",
+            width = 32,
+            height = 15,
+            shift = {-0.0, -2.0}
+        },
+        window_background =
+        {
+            filename = "__base__/graphics/entity/storage-tank/window-background.png",
+            priority = "extra-high",
+            width = 17,
+            height = 24,
+            shift = {-0.0, -2.0}
+        },
+        flow_sprite =
+        {
+            filename = "__base__/graphics/entity/pipe/fluid-flow-low-temperature.png",
+            priority = "extra-high",
+            width = 160,
+            height = 20,
+            shift = {-0.0, -2.0}
+        },
+        gas_flow = Proto.empty_animation,
     },
     flow_length_in_ticks = 360,
-    vehicle_impact_sound =  { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
+    vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
     {
-      sound = {
-          filename = "__base__/sound/storage-tank.ogg",
-          volume = 0.8
-      },
-      apparent_volume = 1.5,
-      max_sounds_per_type = 3
+        sound = {
+            filename = "__base__/sound/storage-tank.ogg",
+            volume = 0.8
+        },
+        apparent_volume = 1.5,
+        max_sounds_per_type = 3
     },
 }
 -------------------------------------------------------------------------------
