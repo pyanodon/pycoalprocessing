@@ -4,7 +4,7 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/desulfurization.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"sulfur-processing" , "fluid-handling", "coal-processing-2"},
+    prerequisites = {"sulfur-processing" , "fluid-handling", "coal-processing-1"},
     effects =
     {
 
@@ -16,7 +16,18 @@ local technology = {
             type = "unlock-recipe",
             recipe = "extract-sulfur"
         },
-
+		{
+            type = "unlock-recipe",
+            recipe = "fts-reactor"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "dirty-reaction"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "explosive-glycerol"
+        },
     },
     unit =
     {

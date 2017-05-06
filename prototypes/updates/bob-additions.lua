@@ -11,7 +11,7 @@ local methanol_from_hydrogen = {
         {type="fluid", name="carbon-dioxide", amount=3},
         {type="fluid", name="hydrogen", amount=5},
         {type="item", name="zinc-ore", amount=1},
-        {type="item", name="alumina", amount=2}, },
+        {type="item", name="nichrome", amount=2}, },
     results=
     {
         {type="fluid", name="methanol", amount=4},
@@ -51,7 +51,7 @@ local recipe_tar_carbon = {
     name = "tar-carbon",
     category = "tar",
     enabled = "false",
-    energy_required = 4,
+    energy_required = 2,
     ingredients ={
         {type="fluid", name="tar", amount=2},
     },
@@ -113,9 +113,9 @@ local glass ={
     enabled = "true",
     energy_required = 3,
     ingredients ={
-        {type="item", name="pure-sand", amount=30},
+        {type="item", name="pure-sand", amount=15},
         {type="fluid", name="coal-gas", amount=10},
-        {type="item", name="quartz", amount=5},
+        {type="item", name="quartz", amount=8},
     },
     results={
         {type="item", name="glass", amount=10},
@@ -126,8 +126,30 @@ local glass ={
     subgroup = "py-items",
     order = "c",
 }
+-------------------------------------------------------------------------------
+-- TUNGSTEN POWDER
+local tungsten_powder ={
+    type = "recipe",
+    name = "tungsten-powder",
+    category = "ball-mill",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+        {type="item", name="crushed-tungsten", amount=10},
+    },
+    results={
+        {type="item", name="powdered-tungsten", amount=10},
 
-data:extend({methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen, void_flue_gas, glass})
+    },
+    main_product= "powdered-tungsten",
+    icon = "__bobplates__/graphics/icons/powdered-tungsten.png",
+    subgroup = "py-items",
+    order = "c",
+}
+
+
+data:extend({methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen,
+ void_flue_gas, glass, tungsten_powder})
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
 bobmods.lib.tech.add_recipe_unlock("methanol-processing-2", "methanol-from-hydrogen")
@@ -153,3 +175,29 @@ bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-silver")
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-quartz")
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-rutile")
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-nickel")
+
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-silver")
+--bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-cobalt")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-bauxite")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-gold")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-lead")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-tin")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-tungsten")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-zinc")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-silver")
+--bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-quartz")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-rutile")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-nickel")
+
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-silver")
+--bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-cobalt")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-bauxite")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-gold")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-lead")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-tin")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-tungsten")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-zinc")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-silver")
+--bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-quartz")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-rutile")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-nickel")

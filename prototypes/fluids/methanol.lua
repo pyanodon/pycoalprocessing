@@ -24,6 +24,30 @@ local methanol_from_syngas = {
     order = "a-[methanol]",
 }
 
+-------------------------------------------------------------------------------
+--OLEOCHEMICALS-to-METHANOL
+local oleo_methanol=
+{
+    type = "recipe",
+    name = "oleo-methanol",
+    category = "methanol",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+        {type="fluid", name="oleochemicals", amount=10},
+		{type="item", name="chromium", amount=5},
+    },
+    results=
+    {
+        {type="fluid", name="methanol", amount=25},
+		{type="fluid", name="water", amount=15},
+    },
+    main_product= "methanol",
+    icon = "__pycoalprocessing__/graphics/icons/methanol-oleochemicals.png",
+    --order = "b-c [syn-gas]",
+}
+
+
 --updated-bob-additions: methanol_from_hydrogen
 
 -------------------------------------------------------------------------------
@@ -43,4 +67,4 @@ local methanol = {
 
 -------------------------------------------------------------------------------
 --[[Extend Data]]--
-data:extend({methanol_from_syngas, methanol})
+data:extend({methanol_from_syngas, oleo_methanol, methanol})
