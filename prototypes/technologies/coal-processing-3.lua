@@ -10,23 +10,11 @@ local technology = {
 
         {
             type = "unlock-recipe",
-            recipe = "nichrome"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "making-chromium"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "nexelit-plate"
         },
         {
             type = "unlock-recipe",
             recipe = "sand-casting"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "organics-processing"
         },
         {
             type = "unlock-recipe",
@@ -66,27 +54,11 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "lime"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "slacked-lime"
         },
         {
             type = "unlock-recipe",
-            recipe = "lithium-peroxide"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "nexelit-cartridge"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "solid-separator"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "soil-separation"
         },
     },
 

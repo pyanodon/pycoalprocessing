@@ -14,6 +14,8 @@ local add_prerequisite = bobmods.lib.tech.add_prerequisite
 replace_ing("distilator", "pipe", "copper-pipe")
 replace_ing("distilator", "electronic-circuit", "basic-circuit-board")
 
+replace_ing("classifier", "electronic-circuit", "basic-electronic-circuit-board")
+
 replace_ing("gasturbinemk02", "pipe", "bronze-pipe")
 replace_ing("gasturbinemk02", "iron-plate", "invar-alloy")
 
@@ -59,6 +61,7 @@ replace_ing("ground-borer", "iron-plate", "titanium-plate")
 replace_ing("fts-reactor", "stone-brick", "glass")
 replace_ing("fts-reactor", "iron-gear-wheel", "steel-bearing")
 replace_ing("fts-reactor", "iron-plate", "invar-alloy")
+replace_ing("fts-reactor", "electronic-circuit", "basic-electronic-circuit-board")
 
 replace_ing("washer", "electronic-circuit", "basic-circuit-board")
 replace_ing("washer", "pipe", "steel-pipe")
@@ -73,11 +76,13 @@ replace_ing("advanced-foundry", "concrete", "glass") --updated-bob glass
 --replace_ing("advanced-foundry"), "olefin-plant", steel-bearing} --updated-bob steel-bearing
 replace_ing("advanced-foundry", "steel-plate", "invar-alloy") --updated-bob invar-alloy
 
-replace_ing("solid-separator", "iron-plate", "titanium-plate")
 replace_ing("solid-separator", "iron-gear-wheel", "brass-gear-wheel")
+replace_ing("solid-separator", "advanced-circuit", "basic-electronic-circuit-board")
 
-replace_ing("classifier", "iron-plate", "titanium-plate")
+--replace_ing("classifier", "iron-plate", "titanium-plate")
 replace_ing("classifier", "iron-stick", "brass-gear-wheel")
+
+replace_ing("automated-factory", "electronic-circuit", "basic-electronic-circuit-board")
 
 replace_ing("borax-mine", "electronic-circuit", "basic-circuit-board")
 replace_ing("borax-mine", "iron-gear-wheel", "steel-bearing")
@@ -89,10 +94,21 @@ replace_ing("ralesia-plantation", "stone", "glass")
 replace_ing("ulric-corral", "iron-gear-wheel", "steel-bearing")
 replace_ing("ulric-corral", "electronic-circuit", "basic-circuit-board")
 
+replace_ing("ore-crusher", "steel-plate", "invar-alloy")
+replace_ing("ore-chusher", "electronic-circuit", "basic-electronic-circuit-board")
+add_ing("ore-crusher", {name="rubber", amount=10})
+
+add_ing("ball-mill", {name="steel-bearing-ball", amount=1000})
+
+replace_ing("mukmoux-pasture", "advanced-circuit", "electronic-logic-board")
+
 -------------------------------------------------------------------------------
 --[[Items]]--
 -------------------------------------------------------------------------------
 replace_ing("methanol-from-syngas", "iron-ore", "zinc-ore")
+
+replace_ing("alumina", "bauxite-ore", "crushed-bauxite")
+replace_ing("lead-oxide", "lead-ore", "crushed-lead")
 
 replace_ing("zinc-chloride", "iron-plate", "zinc-plate")
 replace_ing("zinc-chloride", "water", "hydrogen-chloride")
@@ -108,6 +124,8 @@ end
 
 replace_ing("active-carbon", "water", "nitrogen")
 add_ing("active-carbon", {name="sodium-hydroxide", amount=7})
+
+add_ing("advanced-circuit", {name="optical-fiber", amount=2})
 
 remove_result("refsyngas-from-meth", "water")
 remove_result("refsyngas-from-meth-canister", "water")
@@ -125,7 +143,7 @@ replace_ing("nichrome", "iron-plate", "nickel-plate")
 
 replace_ing("hydrogen-peroxide", "iron-plate", "nickel-plate")
 
-replace_ing("drill-head", "iron-plate", "titanium-plate")
+--replace_ing("drill-head", "iron-plate", "titanium-plate")
 
 remove_ing("gasoline", "water")
 add_ing("gasoline", {type="fluid", name="hydrogen", amount=20})
