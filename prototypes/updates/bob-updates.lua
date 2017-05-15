@@ -32,7 +32,7 @@ replace_ing("power-house", "iron-plate", "lead-plate")
 
 replace_ing("quenching-tower", "pipe", "stone-pipe")
 
-replace_ing("tailings-pond", "small-pump", "water-pump")
+replace_ing("tailings-pond", "pump", "water-pump")
 
 replace_ing("tar-processing-unit", "electronic-circuit", "basic-circuit-board")
 replace_ing("tar-processing-unit", "pipe", "stone-pipe")

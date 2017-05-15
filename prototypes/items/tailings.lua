@@ -34,7 +34,6 @@ tailings_copper_iron.results[#tailings_copper_iron.results +1] = {type="item", n
 tailings_copper_iron.results[#tailings_copper_iron.results +1] = {type="item", name="iron-ore", amount=1, probability=0.4}
 data:extend({tailings_copper_iron})
 
---luacheck: globals bobmods
 if bobmods then
     tailings_tin_lead.name="tailings-tin-lead"
     tailings_tin_lead.localised_name = {"recipe-name.tailings-ore-extraction", {"item-name.tin-ore"}, {"item-name.lead-ore"}, {"fluid-name.tar"}}

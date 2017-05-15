@@ -1,5 +1,4 @@
---luacheck: no global
-PYC = {} --Do not change
+local PYC = {} --Do not change
 PYC.TAILINGS_POND = {} -- Do not change
 PYC.control = {}
 
@@ -20,7 +19,7 @@ PYC.USE_CREOSOTE_IN = {
 }
 
 --Tank size, how much of a fluid the tank can hold
-PYC.TAILINGS_POND.TANK_SIZE = 10000 --default 10000
+PYC.TAILINGS_POND.TANK_SIZE = 100000 --default 10000
 
 --Does gas entering the tailings pond cause pollution when vented
 --default=.15 off=0
@@ -47,13 +46,12 @@ PYC.TAILINGS_POND.GAS = {
 
 PYC.quickstart = {
     stacks = {
-        "blueprint",
-        "deconstruction-planner",
         "gasturbinemk01",
         "gasturbinemk02",
         "creative-mode_fluid-source",
+        "creative-mode_matter-source",
         "creative-mode_passive-energy-void",
-        "creative-mode_super-electric-pole",
+        "creative-mode_super-substation",
         "creative-mode_energy-source"
     },
     mod_name = "pyCoal"

@@ -42,7 +42,7 @@ local _filter_ing = function(v)
         elseif recipe.normal.result then
             res = {{type = "item", name = recipe.normal.result or recipe.normal.result[1], amount = 8}}
         elseif recipe.normal.results then
-            res = table.deepcopy(recipe.results.normal)
+            res = table.deepcopy(recipe.normal.results)
         end
 
 

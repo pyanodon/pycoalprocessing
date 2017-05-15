@@ -1,3 +1,5 @@
+local Prototype = require("stdlib.data.prototype")
+
 local pipe_pictures = function(shift_north, shift_south)
     local north, south, east, west
     if shift_north then
@@ -7,27 +9,25 @@ local pipe_pictures = function(shift_north, shift_south)
             priority = "extra-high",
             width = 44,
             height = 32,
-            --shift = {0.03125, 0.3125}
             shift = shift_north
         }
     else
-        north = Proto.empty_sprite
+        north = Prototype.empty_sprite
     end
     if shift_south then
         south =
         {
-            filename = "__base__/graphics/entity/assembling-machine-2/pipe-south.png",
+            filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-pipe-S.png",
             priority = "extra-high",
             width = 41,
             height = 40,
-            --shift = {0.03125, -1.0625}
             shift = shift_south
         }
     else
-        south = Proto.empty_sprite
+        south = Prototype.empty_sprite
     end
-    west = Proto.empty_sprite
-    east = Proto.empty_sprite
+    west = Prototype.empty_sprite
+    east = Prototype.empty_sprite
     return {north=north, south=south, west=west, east=east}
 end
 
@@ -105,9 +105,9 @@ local entity1={
     {
         {
             production_type = "input",
-            --pipe_picture = Proto.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.55, 0.15}),
+            --pipe_picture = Prototype.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.55, 0.15}),
             pipe_picture = pipe_pictures({0.0, 0.65}, {0.05, -0.9}),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {3.0, -0.0} }}
@@ -115,9 +115,9 @@ local entity1={
 
         {
             production_type = "output",
-            --pipe_picture = Proto.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.55, 0.15}),
+            --pipe_picture = Prototype.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.55, 0.15}),
             pipe_picture = pipe_pictures({0.0, 0.65}, {0.05, -0.9}),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             base_level = 1,
             pipe_connections = {{ position = {-3.0, -0.0} }}
         },

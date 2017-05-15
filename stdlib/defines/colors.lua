@@ -1,6 +1,11 @@
 --Global color defines.
 --@usage: font_color=defines.colors.red to set a styles font color to red.
---defines = defines or {}
+
+-- defines table is automatically required in all mod loading stages.
+-- luacheck: ignore 122/defines
+-- Ignore assinging to read only defines table. defines table is not ready only, however
+-- marking it this way allows warnings to be generated when trying to assign values
+
 defines.colors = {
     white = {r = 1.00, g = 1.00, b = 1.00},
     black = {r = 0.00, g = 0.00, b = 0.00},
