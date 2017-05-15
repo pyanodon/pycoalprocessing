@@ -1,12 +1,12 @@
 --- Tile module
---- <p>A tile represents a 1x1 area on a surface in factorio
+--- <p>A tile represents a 1x1 area on a surface in factorio.
 -- @module Tile
 
-local fail_if_missing = require 'stdlib/core'
+local fail_if_missing = require 'stdlib/core'['fail_if_missing']
 local Position = require 'stdlib/area/position'
 local Chunk = require 'stdlib/area/chunk'
 
-local Tile = {}
+Tile = {} --luacheck: allow defined top
 --local MAX_UINT = 4294967296
 
 --- Calculates the tile coordinates for the position given
@@ -37,9 +37,9 @@ function Tile.adjacent(surface, position, diagonal, tile_name)
     fail_if_missing(surface, "missing surface argument")
     fail_if_missing(position, "missing position argument")
 
-    local offsets = {{0, 1}, {1, 0}, {0, - 1}, { - 1, 0}}
+    local offsets = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}
     if diagonal then
-        offsets = {{0, 1}, {1, 1}, {1, 0}, { - 1, 1}, { - 1, 0}, { - 1, - 1}, {0, - 1}, {1, - 1}}
+        offsets = {{0, 1}, {1, 1}, {1, 0}, {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}}
     end
     local adjacent_tiles = {}
     for _, offset in pairs(offsets) do
@@ -119,3 +119,5 @@ function Tile.get_index(tile_pos)
     fail_if_missing(tile_pos, "missing tile_pos argument")
     return bit32.band(bit32.bor(bit32.lshift(bit32.band(tile_pos.x, 0x1F), 5), bit32.band(tile_pos.y, 0x1F)), 0x3FF)
 end
+
+return Tile

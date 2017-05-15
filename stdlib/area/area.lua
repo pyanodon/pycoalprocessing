@@ -1,10 +1,11 @@
 --- Area module
+-- <p>For working with bounding boxes.
 -- @module Area
 
-local fail_if_missing = require 'stdlib/core'
+local fail_if_missing = require 'stdlib/core'['fail_if_missing']
 local Position = require 'stdlib/area/position'
 
-local Area = {}
+Area = {} --luacheck: allow defined top
 
 --- Creates an area from the 2 positions p1 and p2
 -- @param x1 x-position of left_top, first point
@@ -14,14 +15,6 @@ local Area = {}
 -- @return Area tabled area
 function Area.construct(x1, y1, x2, y2)
     return { left_top = Position.construct(x1, y1), right_bottom = Position.construct(x2, y2) }
-end
-
---- Returns the size of the space contained in the 2d area </br>
--- <b>Deprecated</b>, Area.area is misleading. See: Area.size
--- @param area the area
--- @return size of the area
-function Area.area(area)
-    return Area.size(area)
 end
 
 --- Returns the size of the space contained in the 2d area
@@ -119,7 +112,7 @@ function Area.round_to_integer(area)
     local left_top = Position.to_table(area.left_top)
     local right_bottom = Position.to_table(area.right_bottom)
     return {left_top = {x = math.floor(left_top.x), y = math.floor(left_top.y)},
-    right_bottom = {x = math.ceil(right_bottom.x), y = math.ceil(right_bottom.y)}}
+        right_bottom = {x = math.ceil(right_bottom.x), y = math.ceil(right_bottom.y)}}
 end
 
 --- Iterates an area.
@@ -133,7 +126,7 @@ function Area.iterate(area)
     fail_if_missing(area, "missing area value")
 
     local iterator = {idx = 0}
-    function iterator.iterate(area2) --luacheck: ignore
+    function iterator.iterate(area) --luacheck: ignore area
         local rx = area.right_bottom.x - area.left_top.x + 1
         local dx = iterator.idx % rx
         local dy = math.floor(iterator.idx / rx)
@@ -175,7 +168,7 @@ function Area.spiral_iterate(area)
     local dy = -1
     local iterator = {list = {}, idx = 1}
     for _ = 1, math.max(rx, ry) * math.max(rx, ry) do
-        if - (half_x) <= x and x <= half_x and - (half_y) <= y and y <= half_y then
+        if -(half_x) <= x and x <= half_x and -(half_y) <= y and y <= half_y then
             table.insert(iterator.list, {x, y})
         end
         if x == y or (x < 0 and x == -y) or (x > 0 and x == 1 - y) then
@@ -219,14 +212,6 @@ function Area.normalize(area)
     end
 
     return Area.construct(left_top.x, left_top.y, right_bottom.x, right_bottom.y)
-end
-
---- Creates a new area, a modified copy of the original, such that left and right x, up and down y are normalized, where left.x < right.x, left.y < right.y order
--- <b>Deprecated</b>, Area.adjust is ambigious. See: Area.normalize
--- @param area the area to adjust
--- @return a adjusted area, always { left_top = {x = ..., y = ...}, right_bottom = {x = ..., y = ...} }
-function Area.adjust(area)
-    return Area.normalize(area)
 end
 
 --- Converts an area in the array format to an array in the table format

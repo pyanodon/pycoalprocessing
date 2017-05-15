@@ -1,6 +1,6 @@
---other-updates.lua: Updates to other mods that may be used.
---luacheck: globals bobmods
-
+-------------------------------------------------------------------------------
+--[[Update other mods]]--
+-------------------------------------------------------------------------------
 --update recipes for Bergius-Process
 if data.raw.technology["Bergius-Process"] then
     --Remove bobs coal cracking

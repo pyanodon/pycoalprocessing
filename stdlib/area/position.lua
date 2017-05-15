@@ -1,9 +1,10 @@
 --- Position module
+-- <p>For working with x, y coordinates.
 -- @module Position
 
-local Position = {}
+local fail_if_missing = require 'stdlib/core'['fail_if_missing']
 
-local fail_if_missing = require 'stdlib/core'
+Position = {} --luacheck: allow defined top
 
 --- Creates a table representing the position from x and y
 -- @param x x-position
@@ -196,10 +197,45 @@ end
 function Position.tostring(pos)
     fail_if_missing(pos, "missing position argument")
     if #pos == 2 then
-    return "Position {x = " .. pos[1] .. ", y = " .. pos[2] .. "}"
-else
-return "Position {x = " .. pos.x .. ", y = " .. pos.y .. "}"
+        return "Position {x = " .. pos[1] .. ", y = " .. pos[2] .. "}"
+    else
+        return "Position {x = " .. pos.x .. ", y = " .. pos.y .. "}"
+    end
 end
+
+--- Increment a position each time it is called
+-- @param position the position to start with
+-- @param inc_x optional increment x by this amount
+-- @param inc_y optional increment y by this amount
+-- @return a function closure that returns an incrememnted position
+function Position.increment(position, inc_x, inc_y)
+    local x, y = position.x, position.y
+    inc_x, inc_y = inc_x or 0, inc_y or 0
+
+    return function(new_inc_x, new_inc_y)
+        x = x + (new_inc_x or inc_x)
+        y = y + (new_inc_y or inc_y)
+        return {x = x, y = y}
+    end
+end
+
+
+local opposites = {
+    [defines.direction.north] = defines.direction.south,
+    [defines.direction.south] = defines.direction.north,
+    [defines.direction.east] = defines.direction.west,
+    [defines.direction.west] = defines.direction.east,
+    [defines.direction.northeast] = defines.direction.southwest,
+    [defines.direction.southwest] = defines.direction.northeast,
+    [defines.direction.northwest] = defines.direction.southeast,
+    [defines.direction.southeast] = defines.direction.northwest,
+}
+
+--- Returns the opposite direction - Adapted from Factorio util.lua
+-- @param direction the defines.direction to get the opposite of
+-- @return the opposite direction
+function Position.opposite_direction(direction)
+    return opposites[direction or defines.direction.north]
 end
 
 return Position

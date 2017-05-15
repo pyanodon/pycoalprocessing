@@ -1,13 +1,10 @@
---luacheck: no global
-if not pysmods then pysmods = {} end
-if not pysmods.coalpro then pysmods.coalpro = {} end
-
 --Settings and Helpers
 require("config") --Config variables
+
 require("stdlib.table")
 require("stdlib.string")
-require("stdlib.color.color")
-require("stdlib.data.protohelpers") --Prototype helper functions
+require("stdlib.defines.colors")
+require("stdlib.defines.time")
 
 --Groups
 require("prototypes.item-groups")
@@ -129,12 +126,3 @@ require("prototypes.buildings.py-tank-6500")
 require("prototypes.buildings.py-tank-8000")
 require("prototypes.buildings.automated-factory")
 --require("prototypes.buildings.rare-earth-extractor")
-
---move to syngas recipe stuff in data-updates?
-for _, v in pairs(data.raw.module) do
-    if v.name:find("productivity%-module") and v.limitation then
-        for _, recipe in ipairs({"syngas"}) do
-            table.insert(v.limitation, recipe)
-        end
-    end
-end

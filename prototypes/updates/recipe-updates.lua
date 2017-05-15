@@ -1,4 +1,4 @@
---luacheck: ignore PYC
+local PYC = require("config")
 
 if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
     if PYC.USE_CREOSOTE_IN.rail then

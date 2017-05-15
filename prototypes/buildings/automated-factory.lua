@@ -1,3 +1,5 @@
+local Prototype = require("stdlib.data.prototype")
+
 local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     local north, south, east, west
     if shift_north then
@@ -7,50 +9,46 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
             priority = "extra-high",
             width = 244,
             height = 280,
-            --shift = {0.03125, 0.3125}
             shift = shift_north
         }
     else
-        north = Proto.empty_sprite
+        north = Prototype.empty_sprite
     end
     if shift_south then
         south =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-south.png",
+            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-S.png",
             priority = "extra-high",
             width = 40,
             height = 45,
-            --shift = {0.03125, 0.0625},
             shift = shift_south
         }
     else
-        south = Proto.empty_sprite
+        south = Prototype.empty_sprite
     end
     if shift_west then
         west =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-west.png",
+            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-W.png",
             priority = "extra-high",
             width = 40,
             height = 45,
-            --shift = {0.8125, 0}
             shift = shift_west
         }
     else
-        west = Proto.empty_sprite
+        west = Prototype.empty_sprite
     end
     if shift_east then
         east =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-east.png",
+            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-E.png",
             priority = "extra-high",
             width = 40,
             height = 45,
-            --shift = {-0.78125, 0.15625}
             shift = shift_east
         }
     else
-        east = Proto.empty_sprite
+        east = Prototype.empty_sprite
     end
     return {north=north, south=south, west=west, east=east}
 end
@@ -67,7 +65,7 @@ local recipe1={
         {"iron-plate", 20},
         {"engine-unit", 2},
         {"steel-plate", 35}, --updated-bob invar-alloy
-        {"electronic-circuit", 10}, --updated-bob basic-electronic-circuit-board 
+        {"electronic-circuit", 10}, --updated-bob basic-electronic-circuit-board
     },
     result= "automated-factory",
 }
@@ -141,7 +139,7 @@ local entity1={
         {
             production_type = "input",
             pipe_picture = pipe_pictures({0.3, 3.06}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
-            pipe_covers = Proto.pipe_covers(false, true, true, true),
+            pipe_covers = Prototype.pipe_covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {0.0, 4.0} }}
@@ -149,18 +147,18 @@ local entity1={
         {
             production_type = "input",
             pipe_picture = pipe_pictures({0.3, 3.06}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
-            pipe_covers = Proto.pipe_covers(false, true, true, true),
+            pipe_covers = Prototype.pipe_covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {0.0, -4.0} }}
-        },	
+        },
         {
             production_type = "output",
             pipe_picture = pipe_pictures({0.3, 3.06}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
-            pipe_covers = Proto.pipe_covers(false, true, true, true),
+            pipe_covers = Prototype.pipe_covers(false, true, true, true),
             base_level = 1,
             pipe_connections = {{ type="input", position = {2.0, 4.0} }}
-        },			
+        },
 		off_when_no_fluid_recipe = true
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
