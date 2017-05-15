@@ -1,60 +1,3 @@
-local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
-    local north, south, east, west
-    if shift_north then
-        north =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-north.png",
-            priority = "medium",
-            width = 30,
-            height = 44,
-            --shift = {0.03125, 0.3125}
-            shift = shift_north
-        }
-    else
-        north = Proto.empty_sprite
-    end
-    if shift_south then
-        south =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-south.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            --shift = {0.03125, 0.0625},
-            shift = shift_south
-        }
-    else
-        south = Proto.empty_sprite
-    end
-    if shift_west then
-        west =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-west.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            --shift = {0.8125, 0}
-            shift = shift_west
-        }
-    else
-        west = Proto.empty_sprite
-    end
-    if shift_east then
-        east =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-east.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            --shift = {-0.78125, 0.15625}
-            shift = shift_east
-        }
-    else
-        east = Proto.empty_sprite
-    end
-    return {north=north, south=south, west=west, east=east}
-end
-
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe1={
@@ -68,7 +11,7 @@ local recipe1={
         {"iron-plate", 25},
         {"engine-unit", 4},
         {"steel-plate", 30}, --updated-bob invar-alloy
-        {"electronic-circuit", 15}, --updated-bob basic-electronic-circuit-board 
+        {"electronic-circuit", 15}, --updated-bob basic-electronic-circuit-board
     },
     result= "ore-crusher",
 }

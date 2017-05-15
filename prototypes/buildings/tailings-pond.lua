@@ -1,5 +1,6 @@
---luacheck: no global
-local _TANK_SIZE = PYC.TAILINGS_POND.TANK_SIZE
+local Prototype = require("stdlib.data.prototype")
+local get_circuit_connector_sprites = _G.get_circuit_connector_sprites
+local _TANK_SIZE = require("config")["TAILINGS_POND"]["TANK_SIZE"]
 
 -------------------------------------------------------------------------------
 --[[Recipes]]--
@@ -45,7 +46,7 @@ local entity_tailings_pond =
     fluid_box =
     {
         base_area = (_TANK_SIZE / 10),
-        pipe_covers = Proto.pipe_covers(true, true, true, true),
+        pipe_covers = Prototype.pipe_covers(true, true, true, true),
         pipe_connections = {
             {position = {0, -3}},
             {position = {0, 3}},
@@ -68,7 +69,7 @@ local entity_tailings_pond =
                 shift = {0, 0}
             }
         },
-        fluid_background = Proto.empty_sprite,
+        fluid_background = Prototype.empty_sprite,
         window_background =
         {
             filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-empty-window-2.png",
@@ -76,8 +77,8 @@ local entity_tailings_pond =
             width = 171,
             height = 185
         },
-        flow_sprite = Proto.empty_sprite,
-        gas_flow = Proto.empty_animation,
+        flow_sprite = Prototype.empty_sprite,
+        gas_flow = Prototype.empty_animation,
     },
     flow_length_in_ticks = 360,
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
@@ -124,7 +125,7 @@ local entity_tailings_pond_sprite =
     type = "car",
     name = "tailings-pond-sprite",
     icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
-    max_health = 0,
+    max_health = 100,
     energy_per_hit_point = 1,
     collision_box = {{-0.1, -.1}, {.1,.1}},
     collision_mask = {"floor-layer"},
@@ -173,12 +174,13 @@ local entity_tailings_pond_spinner = {
     type = "beacon",
     name = "tailings-pond-spinner",
     icon = "__pycoalprocessing__/graphics/icons/tailings-spinner.png",
-    max_health = 0,
+    max_health = 200,
+    flags = {"not-blueprintable"},
     collision_box = entity_tailings_pond.collision_box,
     selectable_in_game = false,
     collision_mask = {"floor-layer"},
     allowed_effects = {"consumption", "speed", "pollution"},
-    base_picture = Proto.empty_sprite,
+    base_picture = Prototype.empty_sprite,
     animation =
     {
         filename = "__pycoalprocessing__/graphics/entity/tailings-pond/spinner.png",
@@ -199,7 +201,7 @@ local entity_tailings_pond_spinner = {
         shift = { -1.140625, 1.484375},
         animation_speed = 0.25
     },
-    radius_visualisation_picture = Proto.empty_sprite,
+    radius_visualisation_picture = Prototype.empty_sprite,
     supply_area_distance = 0,
     energy_source =
     {
@@ -226,7 +228,7 @@ local entity_tailings_pond_power_source = { --luacheck: ignore
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.2, mining_time = 0.5, result = "tailings-pond"},
     order="z",
-    max_health = 0,
+    max_health = 200,
     corpse = "small-remnants",
     collision_box = {{-0.01, -0.01}, {0.01, 0.01}},
     selection_box = {{-0, -0}, {0, 0}},
