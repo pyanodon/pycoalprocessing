@@ -1,3 +1,5 @@
+local Prototype = require("stdlib.data.prototype")
+
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe1={
@@ -8,7 +10,7 @@ local recipe1={
     ingredients =
     {
         {"gasturbinemk01", 1},
-        {"small-pump", 1},
+        {"pump", 1},
         {"electronic-circuit", 25},
         {"steel-plate", 20},
         {"iron-gear-wheel", 15}, --updated-bob steel-bearing
@@ -95,39 +97,39 @@ local entity1={
     {
         {
             production_type = "input",
-            pipe_picture = Proto.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
-            pipe_covers = Proto.pipe_covers(false, true, true, true),
+            pipe_picture = Prototype.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_covers = Prototype.pipe_covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {-1.0, -3.9} }}
         },
         {
             production_type = "input",
-            pipe_covers = Proto.pipe_covers(false, true, true, true),
+            pipe_covers = Prototype.pipe_covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_picture = Proto.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_picture = Prototype.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
             pipe_connections = {{ type="input", position = {0.0, -3.9} }}
         },
         {
             production_type = "input",
-            pipe_covers = Proto.pipe_covers(false, true, true, true),
+            pipe_covers = Prototype.pipe_covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_picture = Proto.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_picture = Prototype.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
             pipe_connections = {{ type="input", position = {1.0, -3.9} }}
         },
         {
             production_type = "output",
-            pipe_covers = Proto.pipe_covers(false, true, true, true),
+            pipe_covers = Prototype.pipe_covers(false, true, true, true),
             base_level = 1,
-            pipe_picture = Proto.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_picture = Prototype.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
             pipe_connections = {{ type="output" , position = {-3.9, 1.0} }}
         },
         {
             production_type = "output",
-            pipe_picture = Proto.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
-            pipe_covers = Proto.pipe_covers(false, true, true, true),
+            pipe_picture = Prototype.pipes("assembler", {0.1, 0.40}, {-0.00, -0.75}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_covers = Prototype.pipe_covers(false, true, true, true),
             base_level = 1,
             pipe_connections = {{ type="output" , position = {-3.9, 0.0} }}
         },

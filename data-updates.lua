@@ -1,4 +1,3 @@
---luacheck: no global
 --update recipes for creosote
 require("prototypes.updates.recipe-updates")
 
@@ -14,6 +13,15 @@ end
 --angel-updates
 if angelsmods then
     require("prototypes.updates.angel-updates")
+end
+
+--move to syngas recipe stuff in data-updates?
+for _, v in pairs(data.raw.module) do
+    if v.name:find("productivity%-module") and v.limitation then
+        for _, recipe in ipairs({"syngas"}) do
+            table.insert(v.limitation, recipe)
+        end
+    end
 end
 
 --science pack 1 override

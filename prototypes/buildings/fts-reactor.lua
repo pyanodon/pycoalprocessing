@@ -1,56 +1,55 @@
+local Prototype = require("stdlib.data.prototype")
+
+
 local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     local north, south, east, west
     if shift_north then
         north =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-north.png",
+            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-N.png",
             priority = "medium",
             width = 30,
             height = 44,
-            --shift = {0.03125, 0.3125}
             shift = shift_north
         }
     else
-        north = Proto.empty_sprite
+        north = Prototype.empty_sprite
     end
     if shift_south then
         south =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-south.png",
+            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-S.png",
             priority = "extra-high",
             width = 40,
             height = 45,
-            --shift = {0.03125, -1.0625}
             shift = shift_south
         }
     else
-        south = Proto.empty_sprite
+        south = Prototype.empty_sprite
     end
     if shift_west then
         west =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-west.png",
+            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-W.png",
             priority = "extra-high",
             width = 40,
             height = 45,
-            --shift = {0.8125, 0}
             shift = shift_west
         }
     else
-        west = Proto.empty_sprite
+        west = Prototype.empty_sprite
     end
     if shift_east then
         east =
         {
-            filename = "__base__/graphics/entity/assembling-machine-3/pipe-east.png",
+            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-E.png",
             priority = "extra-high",
             width = 40,
             height = 45,
-            --shift = {-0.78125, 0.15625}
             shift = shift_east
         }
     else
-        east = Proto.empty_sprite
+        east = Prototype.empty_sprite
     end
     return {north=north, south=south, west=west, east=east}
 end
@@ -69,7 +68,7 @@ local recipe1={
         {"stone-brick", 10}, --updated-bob glass
         {"iron-gear-wheel", 5}, --updated-bob steel-bearing
         {"iron-plate", 10}, --updated-bob invar-alloy
-        {"electronic-circuit", 20}, --updated-bob basic-electronic-circuit-board 
+        {"electronic-circuit", 20}, --updated-bob basic-electronic-circuit-board
     },
     result= "fts-reactor",
 }
@@ -143,7 +142,7 @@ local entity1={
         {
             production_type = "input",
             --pipe_picture = floatationpipepictures(),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             pipe_picture=pipe_pictures({0,1}, {0,-1}, nil, nil),
             base_area = 10,
             base_level = -1,
@@ -152,7 +151,7 @@ local entity1={
         {
             production_type = "input",
             --pipe_picture = floatationpipepictures(),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             pipe_picture=pipe_pictures({0,1}, {0,-1}, nil, nil),
             base_area = 10,
             base_level = -1,
@@ -161,7 +160,7 @@ local entity1={
         {
             production_type = "input",
             --pipe_picture = floatationpipepictures(),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             pipe_picture=pipe_pictures({0,1}, {0,-1}, nil, nil),
             base_area = 10,
             base_level = -1,
@@ -171,7 +170,7 @@ local entity1={
         {
             production_type = "output",
             --pipe_picture = floatationpipepictures(),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             pipe_picture=pipe_pictures(nil, nil, nil, nil),
             base_level = 1,
             pipe_connections = {{position = {-3.0, -0.0} }}
@@ -179,7 +178,7 @@ local entity1={
         {
             production_type = "output",
             --pipe_picture = floatationpipepictures(),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             pipe_picture=pipe_pictures(nil, nil, nil, nil),
             base_level = 1,
             pipe_connections = {{position = {-3.0, -1.0} }}
@@ -187,7 +186,7 @@ local entity1={
         {
             production_type = "output",
             --pipe_picture = floatationpipepictures(),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             pipe_picture=pipe_pictures(nil, nil, nil, nil),
             base_level = 1,
             pipe_connections = {{position = {-3.0, -2.0} }}

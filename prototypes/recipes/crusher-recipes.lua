@@ -88,8 +88,7 @@ local crushing_gravel = {
 
 data:extend{crushing_iron, crushing_copper, crushing_stone, crushing_gravel, niobium_powder}
 
-if bobmods then --luacheck: globals bobmods
-
+if bobmods then
 --BAUXITE
 local crushing_bauxite ={
     type = "recipe",

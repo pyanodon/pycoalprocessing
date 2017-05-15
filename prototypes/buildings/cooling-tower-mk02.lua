@@ -1,17 +1,19 @@
+local Prototype = require("stdlib.data.prototype")
+
 local pipe_pictures = function(shift_south)
     local north, south, east, west
-    north = Proto.empty_sprite
+    north = Prototype.empty_sprite
     if shift_south then
         south =
         {
-            filename = "__base__/graphics/entity/assembling-machine-2/pipe-south.png",
+            filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-pipe-S.png",
             priority = "extra-high",
             width = 40,
             height = 45,
             shift = shift_south
         }
-        west = Proto.empty_sprite
-        east = Proto.empty_sprite
+        west = Prototype.empty_sprite
+        east = Prototype.empty_sprite
         return {north=north, south=south, west=west, east=east}
     end
 end
@@ -26,7 +28,7 @@ local recipe1={
     ingredients =
     {
         {"storage-tank", 1},
-        {"small-pump", 2},
+        {"pump", 2},
         {"advanced-circuit", 5},
         {"pipe", 30}, --updated-bob copper-pipe
         {"iron-plate", 30}, --updated-bob brass-plate
@@ -112,7 +114,7 @@ local entity1={
         {
             production_type = "input",
             pipe_picture = pipe_pictures({-0.05, -0.8}),
-            pipe_covers = Proto.pipe_covers(false, true, true, true),
+            pipe_covers = Prototype.pipe_covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {1.0, -3.0} }}
@@ -120,7 +122,7 @@ local entity1={
         {
             production_type = "output",
             pipe_picture = pipe_pictures({-0.05, -0.8}),
-            pipe_covers = Proto.pipe_covers(false, true, true, true),
+            pipe_covers = Prototype.pipe_covers(false, true, true, true),
             base_level = 1,
             pipe_connections = {{ type="output" , position = {-1.0, -3.0} }}
         },

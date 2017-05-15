@@ -1,17 +1,18 @@
+local Prototype = require("stdlib.data.prototype")
+
 local pipe_pictures = function(shift_south)
     local north, south, east, west
-    north = Proto.empty_sprite
+    north = Prototype.empty_sprite
     south =
     {
-        filename = "__base__/graphics/entity/assembling-machine-3/pipe-south.png",
+        filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-S.png",
         priority = "extra-high",
         width = 40,
         height = 45,
-        --shift = {0.03125, -1.0625}
         shift = shift_south
     }
-    west = Proto.empty_sprite
-    east = Proto.empty_sprite
+    west = Prototype.empty_sprite
+    east = Prototype.empty_sprite
     return {north=north, south=south, west=west, east=east}
 end
 
@@ -27,7 +28,7 @@ local recipe1={
         {"concrete", 50},
         {"iron-stick", 50},
         {"pipe", 10}, --updated-bob stone-pipe
-        {"small-pump", 2},
+        {"pump", 2},
         {"advanced-circuit", 15},
     },
     result= "quenching-tower",
@@ -109,7 +110,7 @@ local entity1={
         {
             production_type = "input",
             pipe_picture = pipe_pictures({0.0, -1.0}),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {4.0, -1.0} }}
@@ -117,7 +118,7 @@ local entity1={
         {
             production_type = "input",
             pipe_picture = pipe_pictures({0.0, -1.0}),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {4.0, 1.0} }}
@@ -126,21 +127,21 @@ local entity1={
         {
             production_type = "output",
             pipe_picture = pipe_pictures({0.0, -1.0}),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             base_level = 1,
             pipe_connections = {{ position = {-4.0, -1.0} }}
         },
         {
             production_type = "output",
             pipe_picture = pipe_pictures({0.0, -1.0}),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             base_level = 1,
             pipe_connections = {{ position = {-4.0, 1.0} }}
         },
         {
             production_type = "output",
             pipe_picture = pipe_pictures({0.0, -1.0}),
-            pipe_covers = Proto.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.pipe_covers(true, true, true, true),
             base_level = 1,
             pipe_connections = {{ position = {-1.0, 4.0} }}
         },

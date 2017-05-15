@@ -38,7 +38,7 @@ local mining_stone ={
 }
 data:extend{mining_nexelit, mining_stone}
 
-if bobmods then --luacheck: globals bobmods
+if bobmods then
 
     --BAUXITE
     local mining_bauxite ={

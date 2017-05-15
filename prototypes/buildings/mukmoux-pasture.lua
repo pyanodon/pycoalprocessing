@@ -9,7 +9,7 @@ local recipe1={
     {
         {"soil", 500},
         {"steel-plate", 100},
-        {"storage-tank", 5}, 
+        {"storage-tank", 5},
         {"advanced-circuit", 10}, --updated-bob electronic-logic-board
     },
     result= "mukmoux-pasture",
@@ -51,22 +51,22 @@ local entity1={
     {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.05  / 4,
+        emissions = 0.05 / 4,
     },
     energy_usage = "190kW",
     ingredient_count = 2,
 
     animation =
     {
-        
-    filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-pasture.png",
-    width = 320,
-    height = 363,
-    frame_count = 1,
-    line_length = 1,
-    shift = {0.0, -0.5},
+
+        filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-pasture.png",
+        width = 320,
+        height = 363,
+        frame_count = 1,
+        line_length = 1,
+        shift = {0.0, -0.5},
     },
-	
+
     working_visualisations =
     {
         {

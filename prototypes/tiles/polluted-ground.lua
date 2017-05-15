@@ -1,4 +1,5 @@
---luacheck: no global
+local sand_vehicle_speed_modifier = _G.sand_vehicle_speed_modifier
+
 local polluted_ground=
 {
     type = "tile",
