@@ -465,7 +465,7 @@ local science_pack01 ={
         {type="item", name="flask", amount=2},
     },
     results={
-        {type="item", name="science-pack-1", amount=2,},
+        {type="item", name="science-pack-1", amount=3,},
     },
     icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png",
     subgroup = "py-items",
@@ -505,7 +505,7 @@ local science_pack03 ={
 		{type="item", name="iron-plate", amount=10},
     },
     results={
-        {type="item", name="science-pack-3", amount=2,},
+        {type="item", name="science-pack-3", amount=3,},
     },
     icon = "__pycoalprocessing__/graphics/icons/science-pack-3.png",
     subgroup = "py-items",
@@ -624,7 +624,7 @@ local recipe_ralesia_seeds = {
         {type="item", name="ralesia", amount=5},
     },
     results={
-        {type="item", name="ralesia-seeds", amount=15},
+        {type="item", name="ralesia-seeds", amount=8},
     },
     main_product= "ralesia-seeds",
     icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
