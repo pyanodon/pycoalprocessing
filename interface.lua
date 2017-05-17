@@ -1,4 +1,3 @@
-require("stdlib/config/config")
 local interface = {}
 
 function interface.write_global(name) --Dumps the global to player and logfile
