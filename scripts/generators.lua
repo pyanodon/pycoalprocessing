@@ -72,22 +72,6 @@ function generators.add_generator(entity)
     }
 end
 
---Reset all generator data
-function generators.reset_generators()
-    MOD.log("Resetting all generators", 1)
-    global.generators = {}
-    global.generator_pot_count = 0
-    for _, surface in pairs(game.surfaces) do
-        local entites = surface.find_entities_filtered{type="generator"}
-        for _, entity in pairs(entites) do
-            if generator_data[entity.name] then
-                generators.add_generator(entity)
-            end
-        end
-    end
-end
-Event.register(Event.reset_mod, generators.reset_generators)
-
 function generators.on_tick()
     --if not global.generators then return end
     local pots = global.generators
