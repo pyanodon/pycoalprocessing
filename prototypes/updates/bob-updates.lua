@@ -107,6 +107,12 @@ replace_ing("mukmoux-pasture", "advanced-circuit", "electronic-logic-board")
 -------------------------------------------------------------------------------
 replace_ing("methanol-from-syngas", "iron-ore", "zinc-ore")
 
+replace_ing("flying-robot-frame", "steel-plate", "niobium-plate")
+
+add_ing("laser-turret", {name="lens", amount=1})
+
+replace_ing("superior-circuit-board", "gold-plate", "nexelit-plate")
+
 replace_ing("alumina", "bauxite-ore", "crushed-bauxite")
 replace_ing("lead-oxide", "lead-ore", "crushed-lead")
 
@@ -126,6 +132,12 @@ replace_ing("active-carbon", "water", "nitrogen")
 add_ing("active-carbon", {name="sodium-hydroxide", amount=7})
 
 add_ing("advanced-circuit", {name="optical-fiber", amount=2})
+
+add_ing("fibreglass-board", {name="glass", amount=2})
+
+replace_ing("circuit-board", "ferric-chloride-solution", "boric-acid")
+replace_ing("superior-circuit-board", "ferric-chloride-solution", "boric-acid")
+replace_ing("multi-layer-circuit-board", "ferric-chloride-solution", "boric-acid")
 
 remove_result("refsyngas-from-meth", "water")
 remove_result("refsyngas-from-meth-canister", "water")
