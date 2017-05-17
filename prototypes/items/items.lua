@@ -787,7 +787,7 @@ local recipe_mukmoux_fat = {
 		{type="item", name="ralesia-seeds", amount=50},
     },
     results={
-        {type="item", name="mukmoux-fat", amount=10},
+        {type="item", name="mukmoux-fat", amount=15},
     },
 	icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
 	main_product = "mukmoux-fat",
@@ -1140,7 +1140,7 @@ local nbfe_coating = {
 local recipe_cladded_core = {
     type = "recipe",
     name = "cladded-core",
-    category = "crafting",
+    category = "advanced-crafting",
     enabled = "false",
     energy_required = 2.0,
     ingredients ={
@@ -1198,7 +1198,7 @@ local copper_coating = {
 local recipe_optical_fiber = {
     type = "recipe",
     name = "optical-fiber",
-    category = "crafting",
+    category = "advanced-crafting",
     enabled = "false",
     energy_required = 3.0,
     ingredients ={
@@ -1207,7 +1207,7 @@ local recipe_optical_fiber = {
 
     },
     results={
-        {type="item", name="optical-fiber", amount=1},
+        {type="item", name="optical-fiber", amount=3},
     },
 	main_product= "optical-fiber",
     icon = "__pycoalprocessing__/graphics/icons/optical-fiber.png",
