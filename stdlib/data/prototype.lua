@@ -160,8 +160,8 @@ function Prototype.pipe_covers(n, s, e, w)
     if n == true then n = {
             filename = "__base__/graphics/entity/pipe-covers/pipe-cover-north.png",
             priority = "extra-high",
-            width = 44,
-            height = 32
+            width = 64,
+            height = 64
         }
     else
         n = Prototype.empty_sprite
@@ -170,8 +170,8 @@ function Prototype.pipe_covers(n, s, e, w)
         e = {
             filename = "__base__/graphics/entity/pipe-covers/pipe-cover-east.png",
             priority = "extra-high",
-            width = 32,
-            height = 32
+            width = 64,
+            height = 64
         }
     else
         e = Prototype.empty_sprite
@@ -181,8 +181,8 @@ function Prototype.pipe_covers(n, s, e, w)
         {
             filename = "__base__/graphics/entity/pipe-covers/pipe-cover-south.png",
             priority = "extra-high",
-            width = 46,
-            height = 52
+            width = 64,
+            height = 64
         }
     else
         s = Prototype.empty_sprite
@@ -192,8 +192,8 @@ function Prototype.pipe_covers(n, s, e, w)
         {
             filename = "__base__/graphics/entity/pipe-covers/pipe-cover-west.png",
             priority = "extra-high",
-            width = 32,
-            height = 32
+            width = 64,
+            height = 64
         }
     else
         w = Prototype.empty_sprite
