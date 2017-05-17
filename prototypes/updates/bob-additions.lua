@@ -286,7 +286,7 @@ local recipe_explosives_glycerol ={
         {type="item", name="explosives", amount=5},
     },
     main_product= "explosives",
-    icon = "__pycoalprocessing__/graphics/icons/resin-glycerol.png",
+    icon = "__base__/graphics/icons/explosives.png",
     subgroup = "py-items",
     order = "a [coal-gas]",
 }
@@ -306,7 +306,7 @@ local recipe_resin_glycerol ={
         {type="item", name="resin", amount=20},
     },
     main_product= "resin",
-    icon = "__bobplates__/graphics/icons/resin.png",
+    icon = "__pycoalprocessing__/graphics/icons/resin-glycerol.png",
     subgroup = "py-items",
     order = "a [coal-gas]",
 }
