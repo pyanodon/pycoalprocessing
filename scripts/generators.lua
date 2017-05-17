@@ -104,7 +104,7 @@ Event.register(Event.build_events, generators.on_built_entity)
 --[[Init]]
 
 function generators.on_init()
-    generators.reset_generators()
+    --generators.reset_generators()
 end
 Event.register(Event.core_events.init, generators.on_init)
 
@@ -114,7 +114,7 @@ function generators.on_configuration_changed(data)
         global.archived_generators = nil
         global.gasturbinemk01 = nil --remove defunct table
         global.archived_gasturbinemk01 = nil --remove defunct table
-        generators.reset_generators()
+        --generators.reset_generators()
     end
 end
 Event.register(Event.core_events.configuration_changed, generators.on_configuration_changed)
