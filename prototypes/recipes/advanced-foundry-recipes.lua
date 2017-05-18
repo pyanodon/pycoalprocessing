@@ -8,7 +8,7 @@ local nexelit_plate ={
     energy_required = 2,
     ingredients ={
         {type="item", name="nexelit-ore", amount=2},
-        {type="fluid", name="petroleum-gas", amount=15},
+        {type="fluid", name="petroleum-gas", amount=150},
         {type="item", name="limestone", amount=2},
         {type="item", name="sand-casting", amount=1},
     },

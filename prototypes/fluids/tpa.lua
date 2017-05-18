@@ -9,13 +9,13 @@ local tpa= {
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="aromatics", amount=10},
-        {type="fluid", name="liquid-air", amount=60},
+        {type="fluid", name="aromatics", amount=100},
+        {type="fluid", name="liquid-air", amount=600},
         {type="item", name="cobalt-ore", amount=2},
     },
     results=
     {
-        {type="fluid", name="tpa", amount=5},
+        {type="fluid", name="tpa", amount=50},
     },
     main_product= "tpa",
     icon = "__pycoalprocessing__/graphics/icons/tpa.png",

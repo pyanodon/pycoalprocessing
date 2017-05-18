@@ -9,12 +9,12 @@ local boric_acid= {
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="fluid", name="diborane", amount=10},
-        {type="fluid", name="water", amount=50},
+        {type="fluid", name="diborane", amount=100},
+        {type="fluid", name="water", amount=500},
     },
     results=
     {
-        {type="fluid", name="boric-acid", amount=50},
+        {type="fluid", name="boric-acid", amount=500},
     },
     main_product= "boric-acid",
     icon = "__pycoalprocessing__/graphics/icons/boric-acid.png",
