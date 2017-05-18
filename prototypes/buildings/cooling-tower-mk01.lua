@@ -1,23 +1,14 @@
-local Prototype = require("stdlib.data.prototype")
+local Prototype = require("stdlib.prototype.prototype")
 
-local pipe_pictures = function(shift_south)
-    local north, south, east, west
-    north = Prototype.empty_sprite
-    if shift_south then
-        south =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/cooling-tower-mk01/pipe-ending-down.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            shift = shift_south
-        }
-        west = Prototype.empty_sprite
-        east = Prototype.empty_sprite
-        return {north=north, south=south, west=west, east=east}
-    end
-end
-
+local pipes = {
+    south =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/cooling-tower-mk01/pipe-ending-down.png",
+        priority = "extra-high",
+        width = 40,
+        height = 45,
+    }
+}
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe1={
@@ -92,16 +83,16 @@ local entity1={
     {
         {
             production_type = "input",
-            pipe_picture = pipe_pictures({-0.05, -0.8}),
-            pipe_covers = Prototype.pipe_covers(false, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", nil, {-0.05, -0.8}, nil, nil, pipes),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {2.0, 0.0} }}
         },
         {
             production_type = "output",
-            pipe_picture = pipe_pictures({-0.05, -0.8}),
-            pipe_covers = Prototype.pipe_covers(false, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", nil, {-0.05, -0.8}, nil, nil, pipes),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_level = 1,
             pipe_connections = {{ type="output" , position = {-2.0, 0.0} }}
         },

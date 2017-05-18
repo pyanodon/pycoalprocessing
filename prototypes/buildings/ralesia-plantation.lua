@@ -1,57 +1,35 @@
-local Prototype = require("stdlib.data.prototype")
+local Prototype = require("stdlib.prototype.prototype")
 
-local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
-    local north, south, east, west
-    if shift_north then
-        north =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/top.png",
-            priority = "low",
-            width = 224,
-            height = 230,
-            shift = shift_north
-        }
-    else
-        north = Prototype.empty_sprite
-    end
-    if shift_south then
-        south =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/bottom.png",
-            priority = "extra-high",
-            width = 224,
-            height = 230,
-            shift = shift_south
-        }
-    else
-        south = Prototype.empty_sprite
-    end
-    if shift_west then
-        west =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/left.png",
-            priority = "extra-high",
-            width = 224,
-            height = 230,
-            shift = shift_west
-        }
-    else
-        west = Prototype.empty_sprite
-    end
-    if shift_east then
-        east =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/right.png",
-            priority = "extra-high",
-            width = 224,
-            height = 230,
-            shift = shift_east
-        }
-    else
-        east = Prototype.empty_sprite
-    end
-    return {north=north, south=south, west=west, east=east}
-end
+local pipes = {
+    north =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/top.png",
+        priority = "low",
+        width = 224,
+        height = 230,
+    },
+    south =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/bottom.png",
+        priority = "extra-high",
+        width = 224,
+        height = 230,
+    },
+    west =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/left.png",
+        priority = "extra-high",
+        width = 224,
+        height = 230,
+    },
+    east =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/right.png",
+        priority = "extra-high",
+        width = 224,
+        height = 230,
+    }
+}
 
 -------------------------------------------------------------------------------
 --[[Recipes]]--
@@ -131,8 +109,8 @@ local entity1={
         --1
         {
             production_type = "input",
-            pipe_picture = pipe_pictures({-0.0,3.837}, {-0.0,-3.837}, {4.0,0.0}, {-4.0,0.0}),
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {-0.0,3.837}, {-0.0,-3.837}, {4.0,0.0}, {-4.0,0.0}, pipes),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {0.0, 4.0} }}

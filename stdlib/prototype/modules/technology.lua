@@ -1,0 +1,3 @@
+local Technology = {}
+
+return Technology
