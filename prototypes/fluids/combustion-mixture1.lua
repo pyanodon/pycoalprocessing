@@ -10,13 +10,13 @@ local recipe1 =
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="fluid", name="refsyngas", amount=5},
-        {type="fluid", name="water", amount=20},
+        {type="fluid", name="refsyngas", amount=50},
+        {type="fluid", name="water", amount=200},
     },
     results=
     {
-        {type="fluid", name="combustion-mixture1", amount=12},
-        {type="fluid", name="water", amount=20, temperature=100},
+        {type="fluid", name="combustion-mixture1", amount=120},
+        {type="fluid", name="water", amount=200, temperature=100},
     },
     main_product= "combustion-mixture1",
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",

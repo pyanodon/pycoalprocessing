@@ -9,13 +9,13 @@ local methanol_from_hydrogen = {
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="fluid", name="carbon-dioxide", amount=3},
-        {type="fluid", name="hydrogen", amount=5},
+        {type="fluid", name="carbon-dioxide", amount=30},
+        {type="fluid", name="hydrogen", amount=50},
         {type="item", name="zinc-ore", amount=1},
         {type="item", name="nichrome", amount=2}, },
     results=
     {
-        {type="fluid", name="methanol", amount=4},
+        {type="fluid", name="methanol", amount=40},
     },
     --main_product= "methanol",
     subgroup = "py-methanol",
@@ -30,14 +30,14 @@ local syngas_from_coal_oxygen = {
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="fluid", name="coal-gas", amount=4},
-        {type="fluid", name="oxygen", amount=5},
-        {type="fluid", name="water", amount=10},
+        {type="fluid", name="coal-gas", amount=40},
+        {type="fluid", name="oxygen", amount=50},
+        {type="fluid", name="water", amount=100},
     },
     results=
     {
-        {type="fluid", name="syngas", amount=7},
-        {type="fluid", name="tar", amount=3},
+        {type="fluid", name="syngas", amount=70},
+        {type="fluid", name="tar", amount=30},
         {type="item", name="ash", amount=1}
     },
     --main_product= "syngas",
@@ -54,7 +54,7 @@ local recipe_tar_carbon = {
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="fluid", name="tar", amount=2},
+        {type="fluid", name="tar", amount=20},
     },
     results={
         {type="item", name="carbon", amount=1},
@@ -73,7 +73,7 @@ local recipe_salt_ex = {
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="water-saline", amount=10},
+        {type="fluid", name="water-saline", amount=100},
     },
     results={
         {type="item", name="salt", amount=1, probability=0.4},
@@ -94,7 +94,7 @@ local void_flue_gas = {
     energy_required = 1,
     ingredients =
     {
-        {type="fluid", name="flue-gas", amount=2}
+        {type="fluid", name="flue-gas", amount=20}
     },
     results=
     {
@@ -115,7 +115,7 @@ local glass ={
     energy_required = 3,
     ingredients ={
         {type="item", name="pure-sand", amount=15},
-        {type="fluid", name="coal-gas", amount=10},
+        {type="fluid", name="coal-gas", amount=100},
         {type="item", name="quartz", amount=8},
     },
     results={
@@ -192,7 +192,7 @@ local recipe_crushed_gold = {
     ingredients =
     {
         {type="item", name="crushed-gold", amount=1},
-        {type="fluid", name="chlorine", amount=0.5}
+        {type="fluid", name="chlorine", amount=5}
     },
     result = "gold-plate",
     result_count = 2,
@@ -207,7 +207,7 @@ local recipe_crushed_zinc = {
     ingredients =
     {
         {type="item", name="crushed-zinc", amount=1},
-        {type="fluid", name="sulfuric-acid", amount=1}
+        {type="fluid", name="sulfuric-acid", amount=10}
     },
     result = "zinc-plate",
     result_count = 2,
@@ -222,11 +222,11 @@ local recipe_crushed_nickel = {
     ingredients =
     {
         {type="item", name="crushed-nickel", amount=1},
-        {type="fluid", name="oxygen", amount=1}
+        {type="fluid", name="oxygen", amount=10}
     },
     results=
     {
-        {type="fluid", name="sulfur-dioxide", amount=2},
+        {type="fluid", name="sulfur-dioxide", amount=20},
         {type="item", name="nickel-plate", amount=2}
     },
     main_product= "nickel-plate",
@@ -259,11 +259,11 @@ local recipe_lube_glycerol ={
     enabled = "false",
     energy_required = 2.0,
     ingredients ={
-        {type="fluid", name="glycerol", amount=10},
-		{type="fluid", name="lithia-water", amount=20},
+        {type="fluid", name="glycerol", amount=100},
+		{type="fluid", name="lithia-water", amount=200},
     },
     results={
-        {type="fluid", name="lubricant", amount=10},
+        {type="fluid", name="lubricant", amount=100},
     },
     main_product= "lubricant",
     icon = "__pycoalprocessing__/graphics/icons/lube-glycerol.png",
@@ -279,8 +279,8 @@ local recipe_explosives_glycerol ={
     enabled = "false",
     energy_required = 2.0,
     ingredients ={
-        {type="fluid", name="glycerol", amount=10},
-		{type="fluid", name="sulfuric-acid", amount=15},
+        {type="fluid", name="glycerol", amount=100},
+		{type="fluid", name="sulfuric-acid", amount=150},
     },
     results={
         {type="item", name="explosives", amount=5},
@@ -299,7 +299,7 @@ local recipe_resin_glycerol ={
     enabled = "false",
     energy_required = 3.0,
     ingredients ={
-        {type="fluid", name="glycerol", amount=15},
+        {type="fluid", name="glycerol", amount=150},
 		{type="item", name="coke", amount=5},
     },
     results={
@@ -319,11 +319,11 @@ local recipe_syngas_distilation ={
     enabled = "false",
     energy_required = 1.5,
     ingredients ={
-        {type="fluid", name="syngas", amount=15},
+        {type="fluid", name="syngas", amount=150},
     },
     results={
-        {type="fluid", name="hydrogen", amount=10},
-        {type="fluid", name="carbon-dioxide", amount=5},
+        {type="fluid", name="hydrogen", amount=100},
+        {type="fluid", name="carbon-dioxide", amount=50},
     },
     main_product= "hydrogen",
     icon = "__pycoalprocessing__/graphics/icons/syngas-distilation.png",

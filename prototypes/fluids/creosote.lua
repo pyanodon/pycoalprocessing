@@ -10,11 +10,11 @@ local recipe1 =
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="fluid", name="tar", amount=10},
+        {type="fluid", name="tar", amount=100},
     },
     results=
     {
-        {type="fluid", name="creosote", amount=5},
+        {type="fluid", name="creosote", amount=50},
     },
     main_product= "creosote",
     icon = "__pycoalprocessing__/graphics/icons/creosote.png",

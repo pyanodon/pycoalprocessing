@@ -152,7 +152,7 @@ local entity1={
             production_type = "output",
             --pipe_picture = floatationpipepictures(),
             pipe_covers = Prototype.pipe_covers(true, true, true, true),
-            pipe_picture=pipe_pictures(nil, {0,-1.0}, nil, nil),
+            pipe_picture=pipe_pictures(nil, {0,-1}, nil, nil),
             base_level = 1,
             pipe_connections = {{position = {-3.4, -0.5} }}
         },
