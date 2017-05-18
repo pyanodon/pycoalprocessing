@@ -11,7 +11,7 @@ local making_chromium ={
     enabled = false,
     energy_required = 5.5,
     ingredients ={
-        {type="fluid", name="carbon-dioxide", amount=10},
+        {type="fluid", name="carbon-dioxide", amount=100},
         {type="item", name="chromite-sand", amount=15},
         {type="item", name="coke", amount=5},
         {type="item", name="limestone", amount=3},
@@ -79,7 +79,7 @@ local extract_sulfur ={
     enabled = "false",
     energy_required = 1,
     ingredients ={
-        {type="fluid", name="acidgas", amount=10,},
+        {type="fluid", name="acidgas", amount=100,},
     },
     results={
         {type="item", name="sulfur", amount=2,},
@@ -99,10 +99,10 @@ local cooling_water ={
     enabled = "false",
     energy_required = 1,
     ingredients ={
-        {type="fluid", name="water", amount=5, temperature=100},
+        {type="fluid", name="water", amount=50, temperature=100},
     },
     results={
-        {type="fluid", name="water", amount=5, temperature=15},
+        {type="fluid", name="water", amount=50, temperature=15},
     },
     main_product= "water",
     subgroup = "py-fluids",
@@ -119,12 +119,12 @@ local fluegas_to_syngas ={
     enabled = "false",
     energy_required = 7,
     ingredients ={
-        {type="fluid", name="flue-gas", amount=300},
+        {type="fluid", name="flue-gas", amount=3000},
         {type="item", name="active-carbon", amount=5},
 
     },
     results={
-        {type="fluid", name="syngas", amount=30},
+        {type="fluid", name="syngas", amount=300},
     },
     subgroup = "py-syngas",
     order = "fluegas_to-syngas",
@@ -249,11 +249,11 @@ local sand_washing ={
     energy_required = 4,
     ingredients ={
         {type="item", name="sand", amount=10},
-        {type="fluid", name="water", amount=20},
+        {type="fluid", name="water", amount=200},
     },
     results={
         {type="item", name="pure-sand", amount=8},
-        {type="fluid", name="dirty-water", amount=8},
+        {type="fluid", name="dirty-water", amount=80},
 
     },
     main_product= "pure-sand",
@@ -274,8 +274,8 @@ local organics_processing ={
         {type="item", name="nexelit-plate", amount=5},
     },
     results={
-        {type="fluid", name="methanol", amount=10},
-        {type="fluid", name="syngas", amount=10},
+        {type="fluid", name="methanol", amount=100},
+        {type="fluid", name="syngas", amount=100},
 
     },
     main_product= "methanol",
@@ -294,7 +294,7 @@ local sand_casting ={
     energy_required = 1,
     ingredients ={
         {type="item", name="sand", amount=10},
-        {type="fluid", name="creosote", amount=15},
+        {type="fluid", name="creosote", amount=150},
     },
     results={
         {type="item", name="sand-casting", amount=4},
@@ -315,10 +315,10 @@ local tar_oil ={
     energy_required = 2.5,
     ingredients ={
         {type="item", name="nexelit-plate", amount=2},
-        {type="fluid", name="tar", amount=50},
+        {type="fluid", name="tar", amount=500},
     },
     results={
-        {type="fluid", name="crude-oil", amount=30},
+        {type="fluid", name="crude-oil", amount=300},
 
     },
     main_product= "crude-oil",
@@ -357,10 +357,10 @@ local slacked_lime ={
     energy_required = 3,
     ingredients ={
         {type="item", name="lime", amount=5},
-        {type="fluid", name="water", amount=20},
+        {type="fluid", name="water", amount=200},
     },
     results={
-        {type="fluid", name="slacked-lime", amount=5},
+        {type="fluid", name="slacked-lime", amount=50},
 
     },
     main_product= "slacked-lime",
@@ -378,11 +378,11 @@ local co2_cooking ={
     energy_required = 3,
     ingredients ={
         {type="item", name="saturated-nexelit-cartridge", amount=1},
-        {type="fluid", name="slacked-lime", amount=10},
+        {type="fluid", name="slacked-lime", amount=100},
         {type="item", name="active-carbon", amount=2},
     },
     results={
-        {type="fluid", name="carbon-dioxide", amount=15},
+        {type="fluid", name="carbon-dioxide", amount=150},
         {type="item", name="ash", amount=1},
 
     },
@@ -422,11 +422,11 @@ local mineralized_water ={
     energy_required = 2.5,
     ingredients ={
         {type="item", name="coarse", amount=5},
-        {type="fluid", name="water", amount=25},
+        {type="fluid", name="water", amount=250},
     },
     results={
         {type="item", name="stone", amount=3},
-        {type="fluid", name="water-mineralized", amount=15},
+        {type="fluid", name="water-mineralized", amount=150},
 
     },
     main_product= "water-mineralized",
@@ -521,11 +521,11 @@ local soil_washing ={
     energy_required = 4,
     ingredients ={
         {type="item", name="soil", amount=30},
-        {type="fluid", name="water", amount=60},
+        {type="fluid", name="water", amount=600},
     },
     results={
         {type="item", name="sand", amount=10},
-        {type="fluid", name="dirty-water", amount=10},
+        {type="fluid", name="dirty-water", amount=100},
 
     },
     main_product= "sand",
@@ -561,7 +561,7 @@ local recipe_rawborax = {
     enabled = "false",
     energy_required = 4.5,
     ingredients ={
-        {type="fluid", name="syngas", amount=15},
+        {type="fluid", name="syngas", amount=150},
     },
     results={
         {type="item", name="raw-borax", amount=4},
@@ -580,12 +580,12 @@ local recipe_borax = {
     enabled = "false",
     energy_required = 7.0,
     ingredients ={
-        {type="fluid", name="water", amount=15},
+        {type="fluid", name="water", amount=150},
         {type="item", name="raw-borax", amount=10},
     },
     results={
         {type="item", name="borax", amount=4},
-        {type="fluid", name="dirty-water", amount=10},
+        {type="fluid", name="dirty-water", amount=100},
     },
     main_product= "borax",
     icon = "__pycoalprocessing__/graphics/icons/borax-washer.png",
@@ -601,7 +601,7 @@ local recipe_ralesia = {
     enabled = "false",
     energy_required = 7.7,
     ingredients ={
-        {type="fluid", name="water", amount=50}, --updated-bob hydrogen
+        {type="fluid", name="water", amount=500}, --updated-bob hydrogen
         {type="item", name="soil", amount=50},
     },
     results={
@@ -641,7 +641,7 @@ local recipe_rich_clay = {
     energy_required = 6,
     ingredients ={
         {type="item", name="ash", amount=20},
-        {type="fluid", name="water", amount=50},
+        {type="fluid", name="water", amount=500},
     },
     results={
         {type="item", name="rich-clay", amount=10},
@@ -760,7 +760,7 @@ local recipe_boron_trioxide = {
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="fluid", name="boric-acid", amount=20},
+        {type="fluid", name="boric-acid", amount=200},
         {type="item", name="coke", amount=1},
     },
     results={
@@ -802,12 +802,12 @@ local recipe_oleochemicals = {
     ingredients ={
         {type="item", name="mukmoux-fat", amount=20},
 		{type="item", name="nichrome", amount=2},
-		{type="fluid", name="water", amount=200},
+		{type="fluid", name="water", amount=2000},
     },
     results={
-        {type="fluid", name="oleochemicals", amount=15},
-		{type="fluid", name="glycerol", amount=10},
-		{type="fluid", name="water", amount=200, temperature=100},
+        {type="fluid", name="oleochemicals", amount=150},
+		{type="fluid", name="glycerol", amount=100},
+		{type="fluid", name="water", amount=2000, temperature=100},
     },
 	main_product= "oleochemicals",
     icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
@@ -825,10 +825,10 @@ local recipe_organic_solvent = {
     ingredients ={
         {type="item", name="active-carbon", amount=5},
 		{type="item", name="bonemeal", amount=20},
-		{type="fluid", name="aromatics", amount=20},
+		{type="fluid", name="aromatics", amount=200},
     },
     results={
-        {type="fluid", name="organic-solvent", amount=20},
+        {type="fluid", name="organic-solvent", amount=200},
     },
 	main_product= "organic-solvent",
     icon = "__pycoalprocessing__/graphics/icons/organic-solvent.png",
@@ -847,7 +847,7 @@ local recipe_co2_organics = {
 		{type="item", name="organics", amount=10},
     },
     results={
-        {type="fluid", name="carbon-dioxide", amount=40},
+        {type="fluid", name="carbon-dioxide", amount=400},
     },
 	main_product= "carbon-dioxide",
     icon = "__pycoalprocessing__/graphics/icons/carbon-dioxide.png",
@@ -867,7 +867,7 @@ local recipe_aromatic_organic = {
 		{type="item", name="ralesia", amount=5},
     },
     results={
-        {type="fluid", name="aromatics", amount=20},
+        {type="fluid", name="aromatics", amount=200},
     },
 	main_product= "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
@@ -883,12 +883,12 @@ local recipe_petgas_methanol = {
     enabled = "false",
     energy_required = 3,
     ingredients ={
-		{type="fluid", name="organic-solvent", amount=10},
-		{type="fluid", name="olefin", amount=10},
+		{type="fluid", name="organic-solvent", amount=100},
+		{type="fluid", name="olefin", amount=100},
     },
     results={
-        {type="fluid", name="petroleum-gas", amount=10},
-		{type="fluid", name="methanol", amount=10},
+        {type="fluid", name="petroleum-gas", amount=100},
+		{type="fluid", name="methanol", amount=100},
     },
 	main_product= "methanol",
     icon = "__pycoalprocessing__/graphics/icons/petgas-methanol.png",
@@ -904,12 +904,12 @@ local recipe_oleo_heavy = {
     enabled = "false",
     energy_required = 3,
     ingredients ={
-		{type="fluid", name="oleochemicals", amount=10},
-		{type="fluid", name="sulfuric-acid", amount=20},
+		{type="fluid", name="oleochemicals", amount=100},
+		{type="fluid", name="sulfuric-acid", amount=200},
     },
     results={
-        {type="fluid", name="heavy-oil", amount=15},
-		{type="fluid", name="flue-gas", amount=50},
+        {type="fluid", name="heavy-oil", amount=150},
+		{type="fluid", name="flue-gas", amount=500},
 		{type="item", name="sulfur", amount=5},
     },
 	main_product= "heavy-oil",
@@ -926,11 +926,11 @@ local recipe_bone_solvent = {
     enabled = "false",
     energy_required = 5,
     ingredients ={
-		{type="fluid", name="olefin", amount=10},
+		{type="fluid", name="olefin", amount=100},
 		{type="item", name="bonemeal", amount=20},
     },
     results={
-        {type="fluid", name="organic-solvent", amount=5},
+        {type="fluid", name="organic-solvent", amount=50},
     },
 	main_product= "organic-solvent",
     icon = "__pycoalprocessing__/graphics/icons/bone-solvent.png",
@@ -947,10 +947,10 @@ local recipe_dirty_acid = {
     energy_required = 5,
     ingredients ={
 		{type="item", name="biofilm", amount=1},
-		{type="fluid", name="dirty-water", amount=20},
+		{type="fluid", name="dirty-water", amount=200},
     },
     results={
-        {type="fluid", name="acidgas", amount=4},
+        {type="fluid", name="acidgas", amount=40},
     },
 	main_product= "acidgas",
     icon = "__pycoalprocessing__/graphics/icons/acidgas.png",
@@ -967,10 +967,10 @@ local recipe_filtration_dirty_water = {
     energy_required = 5.5,
     ingredients ={
 		{type="item", name="filtration-media", amount=1},
-		{type="fluid", name="dirty-water", amount=50},
+		{type="fluid", name="dirty-water", amount=500},
     },
     results={
-        {type="fluid", name="water", amount=50},
+        {type="fluid", name="water", amount=500},
 		{type="item", name="ash", amount=2},
     },
 	main_product= "water",
@@ -988,10 +988,10 @@ local recipe_olefin_filtration = {
     energy_required = 4,
     ingredients ={
 		{type="item", name="zinc-chloride", amount=5},
-		{type="fluid", name="olefin", amount=40},
+		{type="fluid", name="olefin", amount=400},
     },
     results={
-        {type="fluid", name="methanol", amount=20},
+        {type="fluid", name="methanol", amount=200},
     },
 	main_product= "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",
@@ -1008,10 +1008,10 @@ local recipe_coalgas_syngas = {
     energy_required = 5.5,
     ingredients ={
 		{type="item", name="active-carbon", amount=3},
-		{type="fluid", name="coal-gas", amount=30},
+		{type="fluid", name="coal-gas", amount=300},
     },
     results={
-        {type="fluid", name="syngas", amount=15},
+        {type="fluid", name="syngas", amount=150},
 		{type="item", name="sulfur", amount=5},
 		{type="item", name="ash", amount=1},
     },
@@ -1030,10 +1030,10 @@ local recipe_oleo_oil = {
     energy_required = 5.0,
     ingredients ={
 		{type="item", name="filtration-media", amount=1},
-		{type="fluid", name="oleochemicals", amount=30},
+		{type="fluid", name="oleochemicals", amount=300},
     },
     results={
-        {type="fluid", name="crude-oil", amount=40},
+        {type="fluid", name="crude-oil", amount=400},
     },
 	main_product= "crude-oil",
     icon = "__pycoalprocessing__/graphics/icons/oleochemicals-crude-oil.png",
@@ -1113,9 +1113,9 @@ local recipe_tar_distilation ={
         {type="fluid", name="tar", amount=15},
     },
     results={
-        {type="fluid", name="flue-gas", amount=50},
-        {type="fluid", name="carbon-dioxide", amount=10},
-		{type="fluid", name="aromatics", amount=10},
+        {type="fluid", name="flue-gas", amount=500},
+        {type="fluid", name="carbon-dioxide", amount=100},
+		{type="fluid", name="aromatics", amount=100},
 		{type="item", name="rich-clay", amount=10},
     },
     main_product= "carbon-dioxide",
@@ -1132,13 +1132,13 @@ local recipe_oleochemicals_distilation ={
     enabled = "false",
     energy_required = 2.5,
     ingredients ={
-        {type="fluid", name="oleochemicals", amount=25},
-		{type="fluid", name="water", amount=40}, --Added Bob oxygen
+        {type="fluid", name="oleochemicals", amount=250},
+		{type="fluid", name="water", amount=400}, --Added Bob oxygen
     },
     results={
-        {type="fluid", name="syngas", amount=50},
-        {type="fluid", name="petroleum-gas", amount=10},
-		{type="fluid", name="acidgas", amount=10},
+        {type="fluid", name="syngas", amount=500},
+        {type="fluid", name="petroleum-gas", amount=100},
+		{type="fluid", name="acidgas", amount=100},
 		{type="item", name="coal", amount=10},
     },
     main_product= "syngas",
@@ -1155,12 +1155,12 @@ local recipe_tar_gasification ={
     enabled = "false",
     energy_required = 3.0,
     ingredients ={
-        {type="fluid", name="tar", amount=25},
-		{type="fluid", name="water", amount=60}, --Add Bob liquid-air
+        {type="fluid", name="tar", amount=250},
+		{type="fluid", name="water", amount=600}, --Add Bob liquid-air
     },
     results={
-        {type="fluid", name="coal-gas", amount=20},
-        {type="fluid", name="flue-gas", amount=40},
+        {type="fluid", name="coal-gas", amount=200},
+        {type="fluid", name="flue-gas", amount=400},
 		{type="item", name="ash", amount=3},
     },
     main_product= "coal-gas",
@@ -1177,13 +1177,13 @@ local recipe_oleo_gasification ={
     enabled = "false",
     energy_required = 3.0,
     ingredients ={
-        {type="fluid", name="oleochemicals", amount=20},
-		{type="fluid", name="syngas", amount=20},
-		{type="fluid", name="water", amount=25}, --Added Bob oxygen
+        {type="fluid", name="oleochemicals", amount=200},
+		{type="fluid", name="syngas", amount=200},
+		{type="fluid", name="water", amount=250}, --Added Bob oxygen
     },
     results={
-        {type="fluid", name="aromatics", amount=20},
-        {type="fluid", name="tar", amount=30},
+        {type="fluid", name="aromatics", amount=200},
+        {type="fluid", name="tar", amount=300},
     },
     main_product= "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/oleo-gasification.png",
@@ -1199,10 +1199,10 @@ local recipe_tar_oil ={
     enabled = "false",
     energy_required = 3.0,
     ingredients ={
-        {type="fluid", name="tar", amount=30},
+        {type="fluid", name="tar", amount=300},
     },
     results={
-        {type="fluid", name="crude-oil", amount=15},
+        {type="fluid", name="crude-oil", amount=150},
     },
     main_product= "crude-oil",
     icon = "__pycoalprocessing__/graphics/icons/tar-oil.png",
@@ -1237,11 +1237,11 @@ local recipe_re_dirtywater ={
     enabled = "false",
     energy_required = 3.0,
     ingredients ={
-        {type="fluid", name="dirty-water", amount=25},
-		{type="fluid", name="slacked-lime", amount=10},
+        {type="fluid", name="dirty-water", amount=250},
+		{type="fluid", name="slacked-lime", amount=100},
     },
     results={
-        {type="fluid", name="rare-earth-mud", amount=5},
+        {type="fluid", name="rare-earth-mud", amount=50},
     },
     main_product= "rare-earth-mud",
     icon = "__pycoalprocessing__/graphics/icons/remud-dirty-water.png",
@@ -1257,7 +1257,7 @@ local recipe_richdust_remud ={
     enabled = "false",
     energy_required = 3.0,
     ingredients ={
-        {type="fluid", name="rare-earth-mud", amount=15},
+        {type="fluid", name="rare-earth-mud", amount=150},
     },
     results={
         {type="item", name="rich-dust", amount=5},

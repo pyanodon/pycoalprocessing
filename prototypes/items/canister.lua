@@ -37,7 +37,7 @@ local recipe_fill_canister = {
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="fluid", name="methanol", amount=10},
+        {type="fluid", name="methanol", amount=100},
         {type="item", name="empty-gas-canister", amount=1},
     },
     results=
@@ -61,7 +61,7 @@ local recipe_empty_canister = {
     results=
     {
         {type="item", name="empty-gas-canister", amount=1},
-        {type="fluid", name="methanol", amount=10},
+        {type="fluid", name="methanol", amount=100},
     },
     icon = "__pycoalprocessing__/graphics/icons/canister.png",
     subgroup="py-items",

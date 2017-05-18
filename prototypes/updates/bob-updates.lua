@@ -119,7 +119,7 @@ replace_ing("lead-oxide", "lead-ore", "crushed-lead")
 replace_ing("zinc-chloride", "iron-plate", "zinc-plate")
 replace_ing("zinc-chloride", "water", "hydrogen-chloride")
 remove_ing("zinc-chloride", "copper-plate")
-add_result("zinc-chloride", {name="hydrogen", amount=2})
+add_result("zinc-chloride", {name="hydrogen", amount=20})
 
 replace_ing("empty-gas-canister", "copper-plate", "brass-alloy")
 replace_ing("empty-gas-canister", "steel-plate", "aluminium-plate")
@@ -141,14 +141,14 @@ replace_ing("multi-layer-circuit-board", "ferric-chloride-solution", "boric-acid
 
 remove_result("refsyngas-from-meth", "water")
 remove_result("refsyngas-from-meth-canister", "water")
-add_result("refsyngas-from-meth", {type="fluid", name="hydrogen", amount=3})
-add_result("refsyngas-from-meth-canister", {type="fluid", name="hydrogen", amount=3})
+add_result("refsyngas-from-meth", {type="fluid", name="hydrogen", amount=30})
+add_result("refsyngas-from-meth-canister", {type="fluid", name="hydrogen", amount=30})
 
 remove_ing("olefin", "water")
-add_ing("olefin", {type="fluid", name="hydrogen", amount=60})
+add_ing("olefin", {type="fluid", name="hydrogen", amount=600})
 
 remove_result("aromatics", "water")
-add_result("aromatics", {type="fluid", name="hydrogen", amount=10})
+add_result("aromatics", {type="fluid", name="hydrogen", amount=100})
 
 replace_ing("nichrome", "water", "nitrogen")
 replace_ing("nichrome", "iron-plate", "nickel-plate")
@@ -158,19 +158,19 @@ replace_ing("hydrogen-peroxide", "iron-plate", "nickel-plate")
 --replace_ing("drill-head", "iron-plate", "titanium-plate")
 
 remove_ing("gasoline", "water")
-add_ing("gasoline", {type="fluid", name="hydrogen", amount=20})
+add_ing("gasoline", {type="fluid", name="hydrogen", amount=200})
 
 remove_ing("lithium-peroxide", "water")
-add_ing("lithium-peroxide", {type="fluid", name="lithia-water", amount=30})
+add_ing("lithium-peroxide", {type="fluid", name="lithia-water", amount=300})
 
 remove_ing("anthraquinone", "water")
-add_ing("anthraquinone", {type="fluid", name="liquid-air", amount=60})
+add_ing("anthraquinone", {type="fluid", name="liquid-air", amount=600})
 
 replace_ing("flask", "iron-plate", "glass")
 
-add_ing("ref_to_light-oil", {type="fluid", name="hydrogen", amount=25})
---add_ing("ref_to_petroleum-gas", {type="fluid", name="hydrogen", amount=35})
-add_ing("combustion-olefin", {type="fluid", name="hydrogen", amount=15})
+add_ing("ref_to_light-oil", {type="fluid", name="hydrogen", amount=250})
+--add_ing("ref_to_petroleum-gas", {type="fluid", name="hydrogen", amount=350})
+add_ing("combustion-olefin", {type="fluid", name="hydrogen", amount=150})
 
 replace_ing("ralesia", "water", "hydrogen")
 
