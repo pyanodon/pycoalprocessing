@@ -1,5 +1,14 @@
 local Prototype = require("stdlib.prototype.prototype")
 
+local pipes = {
+    north =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-north.png",
+        priority = "low",
+        width = 196,
+        height = 202,
+    }
+}
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe1={
@@ -63,7 +72,7 @@ local entity1={
 
     animation =
     {
-        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/desulfurizator-anim.png",
+        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-anim.png",
         width = 196,
         height = 202,
         frame_count = 15,
@@ -76,19 +85,18 @@ local entity1={
     {
         {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2",  nil, {-0.00, -0.75}, {0.65, 0.10}, {-0.65, 0.10}),
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3",  nil, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipes),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {3.5, 1.5} }}
         },
         {
-            production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", nil, {-0.00, -0.75}, {0.65, 0.10}, {-0.65, 0.10}),
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            base_area = 10,
-            base_level = -1,
-            pipe_connections = {{ type="input", position = {3.5, -1.5} }}
+            production_type = "output",
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipes),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+            base_level = 1,
+            pipe_connections = {{ type="output", position = {3.5, -1.5} }}
         },
 
     },

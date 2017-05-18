@@ -3,10 +3,10 @@ local Prototype = require("stdlib.prototype.prototype")
 local pipes = {
     north =
     {
-        filename = "__pycoalprocessing__/graphics/entity/carbon-filter/pipe-north.png",
-        priority = "extra-high",
+        filename = "__pycoalprocessing__/graphics/entity/carbon-filter/top.png",
+        priority = "low",
         width = 44,
-        height = 32,
+        height = 25,
     }
 }
 
@@ -84,7 +84,7 @@ local entity1={
     {
         {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0.0, 0.65}, {0, -0.8}, nil, nil, pipes),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", nil, {0, -0.95}, nil, nil, pipes),
             pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
@@ -92,10 +92,10 @@ local entity1={
         },
         {
             production_type = "output",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0.0, 0.65}, {0,-0.8}, nil, nil, pipes),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", nil, {0,-0.95}, nil, nil, pipes),
             pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_level = 1,
-            pipe_connections = {{ position = {-3.0, -0.0} }}
+            pipe_connections = {{ type="output", position = {-3.0, -0.0} }}
         },
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
