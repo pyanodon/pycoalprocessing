@@ -10,13 +10,13 @@ local methanol_from_syngas = {
     energy_required = 2,
     ingredients ={
 
-        {type="fluid", name="syngas", amount=5},
+        {type="fluid", name="syngas", amount=50},
         {type="item", name="copper-ore", amount=2},
         {type="item", name="iron-ore", amount=1}, --updated-bob zinc-ore
     },
     results=
     {
-        {type="fluid", name="methanol", amount=5},
+        {type="fluid", name="methanol", amount=50},
     },
     --main_product= "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",
@@ -34,13 +34,13 @@ local oleo_methanol=
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="fluid", name="oleochemicals", amount=10},
+        {type="fluid", name="oleochemicals", amount=100},
 		{type="item", name="chromium", amount=5},
     },
     results=
     {
-        {type="fluid", name="methanol", amount=25},
-		{type="fluid", name="water", amount=15},
+        {type="fluid", name="methanol", amount=250},
+		{type="fluid", name="water", amount=150},
     },
     main_product= "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol-oleochemicals.png",

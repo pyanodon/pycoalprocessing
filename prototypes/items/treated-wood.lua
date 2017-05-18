@@ -7,7 +7,7 @@ local recipe_treated_lumber= {
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="fluid", name="creosote", amount=10},
+        {type="fluid", name="creosote", amount=100},
         {type="item", name="wood", amount=1},
     },
     results=

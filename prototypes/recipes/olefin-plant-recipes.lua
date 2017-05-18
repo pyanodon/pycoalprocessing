@@ -8,13 +8,13 @@ local diesel ={
     energy_required = 1.5,
     ingredients ={
         {type="item", name="chromium", amount=2},
-        {type="fluid", name="methanol", amount=15},
-        {type="fluid", name="carbon-dioxide", amount=20},
+        {type="fluid", name="methanol", amount=150},
+        {type="fluid", name="carbon-dioxide", amount=200},
     },
     results=
     {
-        {type="fluid", name="diesel", amount=15},
-        {type="fluid", name="olefin", amount=10},
+        {type="fluid", name="diesel", amount=150},
+        {type="fluid", name="olefin", amount=100},
     },
     main_product= "diesel",
     icon = "__pycoalprocessing__/graphics/icons/diesel.png",
@@ -29,11 +29,11 @@ local diesel2 ={
     energy_required = 1.5,
     ingredients ={
         {type="item", name="chromium", amount=2},
-        {type="fluid", name="olefin", amount=20},
+        {type="fluid", name="olefin", amount=200},
     },
     results=
     {
-        {type="fluid", name="diesel", amount=15},
+        {type="fluid", name="diesel", amount=150},
     },
     main_product= "diesel",
     icon = "__pycoalprocessing__/graphics/icons/diesel.png",
@@ -48,13 +48,13 @@ local aromatics={
     energy_required = 2,
     ingredients ={
         {type="item", name="chromium", amount=2},
-        {type="fluid", name="olefin", amount=20},
-        {type="fluid", name="water", amount=20},
+        {type="fluid", name="olefin", amount=200},
+        {type="fluid", name="water", amount=200},
     },
     results=
     {
-        {type="fluid", name="aromatics", amount=15},
-        {type="fluid", name="water", amount=10},
+        {type="fluid", name="aromatics", amount=150},
+        {type="fluid", name="water", amount=100},
         --{type="fluid", name="hydrogen", amount=10},
     },
     main_product= "aromatics",
@@ -72,12 +72,12 @@ local olefin=
     energy_required = 2,
     ingredients ={
         {type="item", name="chromium", amount=2},
-        {type="fluid", name="water", amount=60}, --updated-bob hydrogen
-        {type="fluid", name="carbon-dioxide", amount=20},
+        {type="fluid", name="water", amount=600}, --updated-bob hydrogen
+        {type="fluid", name="carbon-dioxide", amount=200},
     },
     results=
     {
-        {type="fluid", name="olefin", amount=20},
+        {type="fluid", name="olefin", amount=200},
     },
     main_product= "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
@@ -93,13 +93,13 @@ local olefin_petgas=
     enabled = "false",
     energy_required = 2.8,
     ingredients ={
-        {type="fluid", name="olefin", amount=30},
-        {type="fluid", name="carbon-dioxide", amount=20},
+        {type="fluid", name="olefin", amount=300},
+        {type="fluid", name="carbon-dioxide", amount=200},
     },
     results=
     {
-        {type="fluid", name="petroleum-gas", amount=15},
-        {type="fluid", name="light-oil", amount=15},
+        {type="fluid", name="petroleum-gas", amount=150},
+        {type="fluid", name="light-oil", amount=150},
     },
     main_product= "petroleum-gas",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
@@ -115,13 +115,13 @@ local gasoline=
     enabled = "false",
     energy_required = 2.8,
     ingredients ={
-        {type="fluid", name="olefin", amount=30},
+        {type="fluid", name="olefin", amount=300},
         --{type="fluid", name="hydrogen", amount=20},
-        {type="fluid", name="light-oil", amount=20},
+        {type="fluid", name="light-oil", amount=200},
     },
     results=
     {
-        {type="fluid", name="gasoline", amount=15},
+        {type="fluid", name="gasoline", amount=150},
     },
     main_product= "gasoline",
     icon = "__pycoalprocessing__/graphics/icons/gasoline.png",
@@ -137,12 +137,12 @@ local refolefin=
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="fluid", name="refsyngas", amount=20},
+        {type="fluid", name="refsyngas", amount=200},
         {type="item", name="nichrome", amount=5},
     },
     results=
     {
-        {type="fluid", name="olefin", amount=25},
+        {type="fluid", name="olefin", amount=250},
     },
     main_product= "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
