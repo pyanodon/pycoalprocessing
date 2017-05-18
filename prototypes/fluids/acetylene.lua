@@ -9,13 +9,13 @@ local acetylene= {
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="fluid", name="water", amount=30},
+        {type="fluid", name="water", amount=300},
         {type="item", name="calcium-carbide", amount=2},
     },
     results=
     {
-        {type="fluid", name="acetylene", amount=10},
-		{type="fluid", name="slacked-lime", amount=5},
+        {type="fluid", name="acetylene", amount=100},
+		{type="fluid", name="slacked-lime", amount=50},
     },
     main_product= "acetylene",
     icon = "__pycoalprocessing__/graphics/icons/acetylene.png",

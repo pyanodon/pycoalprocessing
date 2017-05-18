@@ -9,13 +9,13 @@ local hydrogen_peroxide= {
     enabled = "false",
     energy_required = 2.7,
     ingredients ={
-        {type="fluid", name="anthraquinone", amount=10},
+        {type="fluid", name="anthraquinone", amount=100},
         --{type="item", name="nickel-plate", amount=5},
         {type="item", name="iron-plate", amount=5}
     },
     results=
     {
-        {type="fluid", name="hydrogen-peroxide", amount=5},
+        {type="fluid", name="hydrogen-peroxide", amount=50},
     },
     main_product= "hydrogen-peroxide",
     icon = "__pycoalprocessing__/graphics/icons/hydrogen-peroxide.png",
