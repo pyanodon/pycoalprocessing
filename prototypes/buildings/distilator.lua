@@ -98,11 +98,7 @@ local entity1={
             pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
-<<<<<<< HEAD
             pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
-=======
-            pipe_picture = pipe_pictures(false, {-0.00, -0.0}, {0.0, -0.00}, {-0.0, 0.0}),
->>>>>>> 03f777ecd706984cdcddf91749ea606fb92c69a8
             pipe_connections = {{ position = {-0.5, 4.5} }}
         },
         --South, right
