@@ -14,8 +14,8 @@ local recipe1 =
     },
     results=
     {
-        {type="fluid", name="coal-gas", amount=4},
-        {type="fluid", name="tar", amount=5},
+        {type="fluid", name="coal-gas", amount=40},
+        {type="fluid", name="tar", amount=50},
         {type="item", name="iron-oxide", amount=1, probability=0.5},
         {type="item", name="coke", amount=2},
     },
@@ -37,7 +37,7 @@ local recipe2 =
     results=
     {
         {type="fluid", name="coal-gas", amount=2},
-        {type="fluid", name="tar", amount=3},
+        {type="fluid", name="tar", amount=30},
         {type="item", name="iron-oxide", amount=1, probability=0.5},
         {type="item", name="coal", amount=10},
     },

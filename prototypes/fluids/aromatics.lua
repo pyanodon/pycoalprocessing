@@ -7,12 +7,12 @@ local recipe1 =
     enabled = "false",
     energy_required = 2.0,
     ingredients ={
-        {type="fluid", name="refsyngas", amount=15},
-		{type="fluid", name="water", amount=50}, --Added Bob hydrogen
+        {type="fluid", name="refsyngas", amount=150},
+		{type="fluid", name="water", amount=500}, --Added Bob hydrogen
 		{type="item", name="organics", amount=10},
     },
     results={
-        {type="fluid", name="aromatics", amount=30},
+        {type="fluid", name="aromatics", amount=300},
     },
 	main_product= "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",

@@ -9,12 +9,12 @@ local refsyngas_from_filtered_syngas= {
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="syngas", amount=10},
+        {type="fluid", name="syngas", amount=100},
         {type="item", name="active-carbon", amount=3},
     },
     results=
     {
-        {type="fluid", name="refsyngas", amount=5},
+        {type="fluid", name="refsyngas", amount=70},
     },
     --main_product= "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
@@ -29,15 +29,15 @@ local refsyngas_from_meth = {
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="fluid", name="syngas", amount=10},
-        {type="fluid", name="methanol", amount=10},
+        {type="fluid", name="syngas", amount=100},
+        {type="fluid", name="methanol", amount=100},
     },
     results=
     {
-        {type="fluid", name="refsyngas", amount=10},
-        {type="fluid", name="water", amount=3}, --updated-bob hydrogen
-        {type="fluid", name="carbon-dioxide", amount=2},
-        {type="fluid", name="acidgas", amount=6},
+        {type="fluid", name="refsyngas", amount=100},
+        {type="fluid", name="water", amount=30}, --updated-bob hydrogen
+        {type="fluid", name="carbon-dioxide", amount=20},
+        {type="fluid", name="acidgas", amount=60},
 
     },
     --main_product= "refsyngas",
@@ -53,15 +53,15 @@ local refsyngas_from_meth_canister = {
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="fluid", name="syngas", amount=10},
+        {type="fluid", name="syngas", amount=100},
         {type="item", name="filled-methanol-gas-canister", amount=1},
     },
     results=
     {
-        {type="fluid", name="refsyngas", amount=10},
-        {type="fluid", name="water", amount=3}, --updated-bob hydrogen
-        {type="fluid", name="carbon-dioxide", amount=2},
-        {type="fluid", name="acidgas", amount=6},
+        {type="fluid", name="refsyngas", amount=100},
+        {type="fluid", name="water", amount=30}, --updated-bob hydrogen
+        {type="fluid", name="carbon-dioxide", amount=20},
+        {type="fluid", name="acidgas", amount=60},
         {type="item", name="empty-gas-canister", amount=1},
 
     },

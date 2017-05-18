@@ -6,14 +6,14 @@ local tailings_copper_iron ={
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="fluid", name="tar", amount=20},
-        {type="fluid", name="water", amount=50},
+        {type="fluid", name="tar", amount=200},
+        {type="fluid", name="water", amount=500},
     },
     results=
     {
-        {type="fluid", name="dirty-water", amount=50},
-        {type="fluid", name="flue-gas", amount=15},
-        {type="fluid", name="water-saline", amount=20},
+        {type="fluid", name="dirty-water", amount=500},
+        {type="fluid", name="flue-gas", amount=150},
+        {type="fluid", name="water-saline", amount=200},
     },
     icons = {
         {icon = "__pycoalprocessing__/graphics/icons/dirty-water.png"},
