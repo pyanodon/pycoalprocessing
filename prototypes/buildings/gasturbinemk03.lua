@@ -1,4 +1,4 @@
-local Prototype = require("stdlib.data.prototype")
+local Prototype = require("stdlib.prototype.prototype")
 
 local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
     local north, south, east, west
@@ -12,7 +12,7 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
             shift = shift_north
         }
     else
-        north = Prototype.empty_sprite
+        north = Prototype.empty_sprite()
     end
     if shift_south then
         south =
@@ -24,7 +24,7 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
             shift = shift_south
         }
     else
-        south = Prototype.empty_sprite
+        south = Prototype.empty_sprite()
     end
     if shift_west then
         west =
@@ -36,7 +36,7 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
             shift = shift_west
         }
     else
-        west = Prototype.empty_sprite
+        west = Prototype.empty_sprite()
     end
     if shift_east then
         east =
@@ -48,7 +48,7 @@ local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
             shift = shift_east
         }
     else
-        east = Prototype.empty_sprite
+        east = Prototype.empty_sprite()
     end
     return {north=north, south=south, west=west, east=east}
 end
@@ -112,7 +112,7 @@ local entity1={
     fluid_box ={
         base_area = 1,
         base_level = -1,
-        pipe_covers = Prototype.pipe_covers(false, true, false, false),
+        pipe_covers = Prototype.Pipes.covers(false, true, false, false),
         pipe_picture=pipe_pictures({0,0}, {0,0}, {0,0}, {0,0}),
         pipe_connections =
         {

@@ -1,4 +1,4 @@
-local Prototype = require("stdlib.data.prototype")
+local Prototype = require("stdlib.prototype.prototype")
 local get_circuit_connector_sprites = _G.get_circuit_connector_sprites
 local _TANK_SIZE = require("config")["TAILINGS_POND"]["TANK_SIZE"]
 
@@ -68,7 +68,7 @@ local entity_tailings_pond =
     fluid_box =
     {
         base_area = (_TANK_SIZE / 100),
-        pipe_covers = Prototype.pipe_covers(true, true, true, true),
+        pipe_covers = Prototype.Pipes.covers(true, true, true, true),
         pipe_connections = {
             {position = {0, -3}},
             {position = {0, 3}},
@@ -91,7 +91,7 @@ local entity_tailings_pond =
                 shift = {0, 0}
             }
         },
-        fluid_background = Prototype.empty_sprite,
+        fluid_background = Prototype.empty_sprite(),
         window_background =
         {
             filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-empty-window-2.png",
@@ -100,8 +100,8 @@ local entity_tailings_pond =
             height = 185,
             shift = {.265, .5}
         },
-        flow_sprite = Prototype.empty_sprite,
-        gas_flow = Prototype.empty_animation,
+        flow_sprite = Prototype.empty_sprite(),
+        gas_flow = Prototype.empty_animation(),
     },
     flow_length_in_ticks = 360,
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
