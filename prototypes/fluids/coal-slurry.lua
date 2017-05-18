@@ -10,12 +10,12 @@ local recipe1 =
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="fluid", name="dirty-water", amount=25},
+        {type="fluid", name="dirty-water", amount=250},
     },
     results=
     {
-        {type="fluid", name="water", amount=10},
-        {type="fluid", name="coal-slurry", amount=15},
+        {type="fluid", name="water", amount=100},
+        {type="fluid", name="coal-slurry", amount=150},
     },
     main_product= "coal-slurry",
     icon = "__pycoalprocessing__/graphics/icons/coal-slurry.png",
