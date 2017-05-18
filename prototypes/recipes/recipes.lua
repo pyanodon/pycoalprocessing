@@ -1003,7 +1003,7 @@ local recipe_olefin_filtration = {
 local recipe_coalgas_syngas = {
     type = "recipe",
     name = "coalgas-syngas",
-    category = "carbonfilter",
+    category = "desulfurization",
     enabled = "false",
     energy_required = 5.5,
     ingredients ={
@@ -1110,7 +1110,7 @@ local recipe_tar_distilation ={
     enabled = "false",
     energy_required = 2.5,
     ingredients ={
-        {type="fluid", name="tar", amount=15},
+        {type="fluid", name="tar", amount=150},
     },
     results={
         {type="fluid", name="flue-gas", amount=500},
