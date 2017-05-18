@@ -41,7 +41,7 @@ function Pipes.pictures(pictures, shift_north, shift_south, shift_west, shift_ea
         } or empty_sprite(),
     }
     for direction, image in pairs(replacements or {}) do
-        if not new_pictures[direction].filename == "__core__/graphics/empty.png" then
+        if not (new_pictures[direction].filename == "__core__/graphics/empty.png") then
             new_pictures[direction].filename = image.filename
             new_pictures[direction].width = image.width
             new_pictures[direction].height = image.height
@@ -52,9 +52,9 @@ function Pipes.pictures(pictures, shift_north, shift_south, shift_west, shift_ea
 end
 
 --return pipe covers for true directions.
-function Pipes.covers(n, s, e, w)
-    if (n == nil and s == nil and e == nil and w == nil) then
-        n, s, e, w = true, true, true, true
+function Pipes.covers(n, s, w, e)
+    if (n == nil and s == nil and w == nil and e == nil) then
+        n, s, w, e = true, true, true, true
     end
 
     n = n and {
