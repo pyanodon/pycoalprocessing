@@ -9,14 +9,14 @@ local anthraquinone= {
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="fluid", name="aromatics", amount=10},
+        {type="fluid", name="aromatics", amount=100},
         --{type="fluid", name="liquid-air", amount=60},
-        {type="fluid", name="water", amount=30},
+        {type="fluid", name="water", amount=300},
         {type="item", name="chromium", amount=2},
     },
     results=
     {
-        {type="fluid", name="anthraquinone", amount=5},
+        {type="fluid", name="anthraquinone", amount=50},
     },
     main_product= "anthraquinone",
     icon = "__pycoalprocessing__/graphics/icons/anthraquinone.png",

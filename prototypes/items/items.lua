@@ -55,7 +55,7 @@ local recipe_nichrome = {
     enabled = "false",
     energy_required = 2.5,
     ingredients ={
-        {type="fluid", name="water", amount=10}, --updated-bob nitrogen
+        {type="fluid", name="water", amount=100}, --updated-bob nitrogen
         {type="item", name="iron-plate", amount=10}, --updated-bob nickel-plate
         {type="item", name="chromium", amount=5},
     },
@@ -103,7 +103,7 @@ local recipe_active_carbon = {
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="water", amount=10}, --updated-bob nitrogen
+        {type="fluid", name="water", amount=100}, --updated-bob nitrogen
         {type="item", name="zinc-chloride", amount=2},
         {type="item", name="coke", amount=25},
         --{type="item", name="sodium-hydroxide", amount=5},
@@ -134,7 +134,7 @@ local recipe_zinc_chloride ={
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="water", amount=2}, --updated-bob hydrogen-chloride
+        {type="fluid", name="water", amount=20}, --updated-bob hydrogen-chloride
         {type="item", name="iron-plate", amount=1}, --updated-bob zinc-plate
         {type="item", name="copper-plate", amount=1}, --updated-bob --remove
     },
@@ -166,7 +166,7 @@ local recipe_tailings_dust = {
     enabled = "false",
     energy_required = 6,
     ingredients ={
-        {type="fluid", name="dirty-water", amount=10},
+        {type="fluid", name="dirty-water", amount=100},
     },
     results={
         {type="item", name="tailings-dust", amount=6},
@@ -194,7 +194,7 @@ local recipe_soil ={
     enabled = "true",
     energy_required = 2,
     ingredients ={
-        {type="fluid", name="water", amount=100},
+        {type="fluid", name="water", amount=1000},
     },
     results={
         {type="item", name="soil", amount=10},
@@ -376,8 +376,8 @@ local recipe_lithium_peroxide = {
     energy_required = 5,
     ingredients ={
         --{type="fluid", name="lithia-water", amount=30},
-        {type="fluid", name="water", amount=30},
-        {type="fluid", name="hydrogen-peroxide", amount=10},
+        {type="fluid", name="water", amount=300},
+        {type="fluid", name="hydrogen-peroxide", amount=100},
     },
     results={
         {type="item", name="lithium-peroxide", amount=5},
@@ -444,7 +444,7 @@ local recipe_lime = {
     },
     results={
         {type="item", name="lime", amount=10},
-        {type="fluid", name="carbon-dioxide", amount=10},
+        {type="fluid", name="carbon-dioxide", amount=100},
     },
     icon = "__pycoalprocessing__/graphics/icons/lime.png",
     subgroup = "py-items",
@@ -498,7 +498,7 @@ local recipe_fawogae = {
     enabled = "true",
     energy_required = 5.0,
     ingredients ={
-        {type="fluid", name="water", amount=90},
+        {type="fluid", name="water", amount=900},
     },
     results={
         {type="item", name="fawogae", amount=5},
@@ -691,7 +691,7 @@ local recipe_niobium_ore = {
     energy_required = 7,
     ingredients ={
         {type="item", name="drill-head", amount=1},
-        {type="fluid", name="refsyngas", amount=10},
+        {type="fluid", name="refsyngas", amount=100},
     },
     results={
         {type="item", name="niobium-ore", amount=10},
@@ -811,8 +811,8 @@ local recipe_niobium_oxide = {
     enabled = "false",
     energy_required = 1.5,
     ingredients ={
-        {type="fluid", name="water", amount=30}, --Added Bob nitrogen-dioxide
-		{type="fluid", name="niobium-complex", amount=10},
+        {type="fluid", name="water", amount=300}, --Added Bob nitrogen-dioxide
+		{type="fluid", name="niobium-complex", amount=100},
     },
     results={
         {type="item", name="niobium-oxide", amount=10},
@@ -967,7 +967,7 @@ local recipe_cladding = {
     energy_required = 2.0,
     ingredients ={
         {type="item", name="glass", amount=5},
-		{type="fluid", name="niobium-complex", amount=8},
+		{type="fluid", name="niobium-complex", amount=80},
     },
     results={
         {type="item", name="cladding", amount=1},
@@ -995,8 +995,8 @@ local recipe_ppd = {
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="fluid", name="water", amount=50},  --Added Bob hydrogen
-		{type="fluid", name="aromatics", amount=5},
+        {type="fluid", name="water", amount=500},  --Added Bob hydrogen
+		{type="fluid", name="aromatics", amount=50},
     },
     results={
         {type="item", name="ppd", amount=10},
@@ -1026,8 +1026,8 @@ local recipe_kevlar = {
     energy_required = 6.0,
     ingredients ={
 		{type="item", name="ppd", amount=5},
-        {type="fluid", name="tpa", amount=5},
-		{type="fluid", name="organic-solvent", amount=10},
+        {type="fluid", name="tpa", amount=50},
+		{type="fluid", name="organic-solvent", amount=100},
     },
     results={
         {type="item", name="kevlar", amount=5},
@@ -1174,7 +1174,7 @@ local recipe_copper_coating = {
     ingredients ={
 		{type="item", name="copper-plate", amount=10},
 		{type="item", name="cladded-core", amount=1},
-		{type="fluid", name="water-mineralized", amount=15},
+		{type="fluid", name="water-mineralized", amount=150},
 
     },
     results={
@@ -1291,9 +1291,9 @@ local recipe_coal_briquette = {
     energy_required = 3.0,
     ingredients ={
 		{type="item", name="coal-dust", amount=35},
-		{type="fluid", name="glycerol", amount=10},
-		{type="fluid", name="creosote", amount=15},
-		{type="fluid", name="tar", amount=5},
+		{type="fluid", name="glycerol", amount=100},
+		{type="fluid", name="creosote", amount=150},
+		{type="fluid", name="tar", amount=50},
     },
     results={
         {type="item", name="coal-briquette", amount=2},
