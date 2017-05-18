@@ -1,57 +1,35 @@
-local Prototype = require("stdlib.data.prototype")
+local Prototype = require("stdlib.prototype.prototype")
 
-local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
-    local north, south, east, west
-    if shift_north then
-        north =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/top.png",
-            priority = "low",
-            width = 231,
-            height = 237,
-            shift = shift_north
-        }
-    else
-        north = Prototype.empty_sprite
-    end
-    if shift_south then
-        south =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/bottom.png",
-            priority = "extra-high",
-            width = 231,
-            height = 237,
-            shift = shift_south
-        }
-    else
-        south = Prototype.empty_sprite
-    end
-    if shift_west then
-        west =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/left.png",
-            priority = "very-low",
-            width = 231,
-            height = 237,
-            shift = shift_west
-        }
-    else
-        west = Prototype.empty_sprite
-    end
-    if shift_east then
-        east =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/right.png",
-            priority = "extra-high",
-            width = 231,
-            height = 237,
-            shift = shift_east
-        }
-    else
-        east = Prototype.empty_sprite
-    end
-    return {north=north, south=south, west=west, east=east}
-end
+local pipes = {
+    north =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/top.png",
+        priority = "low",
+        width = 231,
+        height = 237,
+    },
+    south =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/bottom.png",
+        priority = "extra-high",
+        width = 231,
+        height = 237,
+    },
+    west =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/left.png",
+        priority = "very-low",
+        width = 231,
+        height = 237,
+    },
+    east =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/right.png",
+        priority = "extra-high",
+        width = 231,
+        height = 237,
+    }
+}
 
 -------------------------------------------------------------------------------
 --[[Recipes]]--
@@ -108,7 +86,7 @@ local entity1={
     {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.05  / 3,
+        emissions = 0.05 / 3,
     },
     energy_usage = "430kW",
     ingredient_count = 4,
@@ -141,8 +119,8 @@ local entity1={
         --1
         {
             production_type = "input",
-            pipe_picture = pipe_pictures({-2.9,3.9}, {3.1,-3.9}, {4.08,3.2}, {-3.9,-2.8}),
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {-2.9,3.9}, {3.1,-3.9}, {4.08,3.2}, {-3.9,-2.8}, pipes),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {-3.0, 4.0} }}

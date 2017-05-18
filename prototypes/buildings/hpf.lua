@@ -1,57 +1,14 @@
-local Prototype = require("stdlib.data.prototype")
+local Prototype = require("stdlib.prototype.prototype")
 
-local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
-    local north, south, east, west
-    if shift_north then
-        north =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/hpf/long-pipe-north.png",
-            priority = "medium",
-            width = 30,
-            height = 44,
-            shift = shift_north
-        }
-    else
-        north = Prototype.empty_sprite
-    end
-    if shift_south then
-        south =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-S.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            shift = shift_south
-        }
-    else
-        south = Prototype.empty_sprite
-    end
-    if shift_west then
-        west =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-W.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            shift = shift_west
-        }
-    else
-        west = Prototype.empty_sprite
-    end
-    if shift_east then
-        east =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-E.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            shift = shift_east
-        }
-    else
-        east = Prototype.empty_sprite
-    end
-    return {north=north, south=south, west=west, east=east}
-end
+local pipes = {
+    north =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/hpf/long-pipe-north.png",
+        priority = "medium",
+        width = 30,
+        height = 44,
+    }
+}
 
 -------------------------------------------------------------------------------
 --[[Recipes]]--
@@ -165,20 +122,20 @@ local entity1={
         {
             production_type = "input",
             --pipe_picture = floatationpipepictures(),
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
-            pipe_picture=pipe_pictures({0,1}, {0,-1}, nil, nil),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+            pipe_picture=Prototype.Pipes.pictures("assembling-machine-3", {0,1}, {0,-1}, nil, nil, pipes),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {3.0, -0.0} }}
         },
         {
             production_type = "output",
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
-            pipe_picture=pipe_pictures({0,1}, {0,-1}, nil, nil),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+            pipe_picture=Prototype.Pipes.pictures("assembling-machine-3", {0,1}, {0,-1}, nil, nil, pipes),
             base_level = 1,
             pipe_connections = {{ type="output" , position = {-3.0, -0.0} }}
         },
-		off_when_no_fluid_recipe = true
+        off_when_no_fluid_recipe = true
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =

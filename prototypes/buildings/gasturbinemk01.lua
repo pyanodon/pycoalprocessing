@@ -1,4 +1,4 @@
-local Prototype = require("stdlib.data.prototype")
+local Prototype = require("stdlib.prototype.prototype")
 
 -------------------------------------------------------------------------------
 --[[Recipes]]--
@@ -60,7 +60,7 @@ local entity1={
     fluid_box ={
         base_area = 1,
         base_level = -1,
-        pipe_covers = Prototype.pipe_covers(false, true, true, true),
+        pipe_covers = Prototype.Pipes.covers(false, true, true, true),
         pipe_connections =
         {
             { position = {0.00, 2.00} },

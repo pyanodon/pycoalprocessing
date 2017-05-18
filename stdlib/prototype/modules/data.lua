@@ -5,7 +5,39 @@ local fail_if_missing = require 'stdlib/core'['fail_if_missing']
 require 'stdlib/string'
 require 'stdlib/table'
 
-Data = {} --luacheck: allow defined top
+local Data = {}
+
+function Data.subgroup_order(data_type, name, subgroup, order)
+    local data = data.raw[data_type] and data.raw[data_type][name]
+    if data then
+        data.subgroup = subgroup or data.subgroup
+        data.order = order or data.order
+    end
+end
+
+function Data.replace_icon(data_type, name, icon, size)
+    local data = data.raw[data_type] and data.raw[data_type][name]
+    if data then
+        if type(icon) == "table" then
+            data.icons = icon
+            data.icon = nil
+        else
+            data.icon = icon
+            data.icon_size = size or data.icon_size
+        end
+    end
+end
+
+function Data.get_icons(data_type, name, copy)
+    local data = data.raw[data_type] and data.raw[data_type][name]
+    return data and copy and table.deepcopy(data.icons) or data and data.icons
+end
+
+function Data.get_icon(data_type, name)
+    local data = data.raw[data_type] and data.raw[data_type][name]
+    return data and data.icon
+end
+
 
 --- Selects all data values where the key matches the selector pattern.
 -- The selector pattern is divided into groups. The pattern should have a colon character `:` to denote the selection for each group.
