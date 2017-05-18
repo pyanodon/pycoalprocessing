@@ -129,5 +129,5 @@ require("prototypes.buildings.automated-factory")
 
 if PYC.DEBUG then
     local developer = require("stdlib/prototype/prototypes/developer")
-    developer.make_chunk_markers("PickerExtended")
+    developer.make_chunk_markers("pycoalprocessing")
 end
