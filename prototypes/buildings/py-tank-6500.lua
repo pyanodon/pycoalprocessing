@@ -1,4 +1,4 @@
-local Prototype = require("stdlib.data.prototype")
+local Prototype = require("stdlib.prototype.prototype")
 local pipecoverspictures = _G.pipecoverspictures
 
 -------------------------------------------------------------------------------
@@ -92,7 +92,7 @@ local entity1={
             height = 20,
             shift = {-0.0, -2.0}
         },
-        gas_flow = Prototype.empty_animation,
+        gas_flow = Prototype.empty_animation(),
     },
     flow_length_in_ticks = 360,
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },

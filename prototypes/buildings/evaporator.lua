@@ -1,4 +1,4 @@
-local Prototype = require("stdlib.data.prototype")
+local Prototype = require("stdlib.prototype.prototype")
 
 -------------------------------------------------------------------------------
 --[[Recipes]]--
@@ -95,16 +95,16 @@ local entity1={
     {
         {
             production_type = "input",
-            pipe_picture = Prototype.pipes("assembler", {0.05, 0.65}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
-            pipe_covers = Prototype.pipe_covers(false, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0.05, 0.65}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {3.0, 0.0} }}
         },
         {
             production_type = "output",
-            pipe_picture = Prototype.pipes("assembler", {0.05, 0.65}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
-            pipe_covers = Prototype.pipe_covers(false, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0.05, 0.65}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_level = 1,
             pipe_connections = {{ type="input", position = {0.0, 3.0} }}
         },

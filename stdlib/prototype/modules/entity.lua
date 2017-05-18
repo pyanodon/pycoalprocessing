@@ -1,0 +1,3 @@
+local Entity = {}
+
+return Entity

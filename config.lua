@@ -45,16 +45,32 @@ PYC.TAILINGS_POND.GAS = {
 }
 
 PYC.quickstart = {
+    mod_name = "pyCoal",
+    clear_items = true,
+    power_armor = "power-armor-mk2",
+    equipment = {
+        "creative-mode_super-fusion-reactor-equipment",
+        "personal-roboport-mk2-equipment",
+        "belt-immunity-equipment"
+    },
+    starter_tracks = true,
+    destroy_everything = true,
+    disable_rso_starting = true,
+    disable_rso_chunk = true,
+    floor_tile = "lab-dark-1",
+    floor_tile_alt = "lab-dark-2",
+    make_train = true,
+    area_box = {{-250, -250}, {250, 250}},
+    chunk_bounds = true,
+    center_map_tag = true,
+    setup_power = true,
     stacks = {
-        "gasturbinemk01",
-        "gasturbinemk02",
         "creative-mode_fluid-source",
         "creative-mode_matter-source",
         "creative-mode_passive-energy-void",
         "creative-mode_super-substation",
         "creative-mode_energy-source"
     },
-    mod_name = "pyCoal"
 }
 
 return PYC

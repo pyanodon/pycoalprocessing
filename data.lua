@@ -1,5 +1,5 @@
 --Settings and Helpers
-require("config") --Config variables
+local PYC = require("config") --Config variables
 
 require("stdlib.table")
 require("stdlib.string")
@@ -126,3 +126,8 @@ require("prototypes.buildings.py-tank-6500")
 require("prototypes.buildings.py-tank-8000")
 require("prototypes.buildings.automated-factory")
 --require("prototypes.buildings.rare-earth-extractor")
+
+if PYC.DEBUG then
+    local developer = require("stdlib/prototype/prototypes/developer")
+    developer.make_chunk_markers("PickerExtended")
+end

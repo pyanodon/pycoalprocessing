@@ -1,57 +1,4 @@
-local Prototype = require("stdlib.data.prototype")
-
-local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
-    local north, south, east, west
-    if shift_north then
-        north =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-N.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            shift = shift_north
-        }
-    else
-        north = Prototype.empty_sprite
-    end
-    if shift_south then
-        south =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-S.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            shift = shift_south
-        }
-    else
-        south = Prototype.empty_sprite
-    end
-    if shift_west then
-        west =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-W.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            shift = shift_west
-        }
-    else
-        west = Prototype.empty_sprite
-    end
-    if shift_east then
-        east =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-E.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-            shift = shift_east
-        }
-    else
-        east = Prototype.empty_sprite
-    end
-    return {north=north, south=south, west=west, east=east}
-end
+local Prototype = require("stdlib.prototype.prototype")
 
 -------------------------------------------------------------------------------
 --[[Recipes]]--
@@ -130,72 +77,72 @@ local entity1={
         --North, left
         {
             production_type = "input",
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
             pipe_connections = {{ position = {-0.5, -4.5} }}
         },
         --North, right
         {
             production_type = "output",
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_level = 1,
-            pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
             pipe_connections = {{ position = {0.5, -4.5} }}
         },
 
         --South, left
         {
             production_type = "input",
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
             pipe_connections = {{ position = {-0.5, 4.5} }}
         },
         --South, right
         {
             production_type = "output",
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_level = 1,
-            pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
             pipe_connections = {{ position = {0.5, 4.5} }}
         },
 
         --West, top
         {
             production_type = "input",
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
             pipe_connections = {{ position = {-4.5, -0.5} }}
         },
         --West, bottom
         {
             production_type = "output",
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_level = 1,
-            pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
             pipe_connections = {{ position = {-4.5, 0.5} }}
         },
 
         --East, top
         {
             production_type = "input",
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}), --.05
             pipe_connections = {{ position = {4.5, -0.5} }}
         },
         --East, bottom
         {
             production_type = "output",
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_level = 1,
-            pipe_picture = pipe_pictures(false, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.75}, {0.7, -0.00}, {-0.6, 0.15}),
             pipe_connections = {{ position = {4.5, 0.5} }}
         },
         off_when_no_fluid_recipe = true

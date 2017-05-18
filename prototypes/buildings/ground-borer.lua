@@ -1,61 +1,4 @@
-local Prototype = require("stdlib.data.prototype")
-
-local pipe_pictures = function(shift_north, shift_south, shift_west, shift_east)
-    local north, south, east, west
-    if shift_north then
-        north =
-        {
-            filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/long-pipe-north.png",
-            priority = "low",
-            width = 30,
-            height = 44,
-
-            shift = shift_north
-        }
-    else
-        north = Prototype.empty_sprite
-    end
-    if shift_south then
-        south =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-S.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-
-            shift = shift_south
-        }
-    else
-        south = Prototype.empty_sprite
-    end
-    if shift_west then
-        west =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-W.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-
-            shift = shift_west
-        }
-    else
-        west = Prototype.empty_sprite
-    end
-    if shift_east then
-        east =
-        {
-            filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-E.png",
-            priority = "extra-high",
-            width = 40,
-            height = 45,
-
-            shift = shift_east
-        }
-    else
-        east = Prototype.empty_sprite
-    end
-    return {north=north, south=south, west=west, east=east}
-end
+local Prototype = require("stdlib.prototype.prototype")
 
 -------------------------------------------------------------------------------
 --[[Recipes]]--
@@ -133,8 +76,8 @@ local entity1={
         --1
         {
             production_type = "input",
-            pipe_picture = pipe_pictures(nil, {-0.00,-0.70}, nil, nil),
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00,-0.70}, nil, nil),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {0.0, 5.0} }}
@@ -142,8 +85,8 @@ local entity1={
         --2
         {
             production_type = "input",
-            pipe_picture = pipe_pictures(nil, {-0.00,-0.70}, nil, nil),
-            pipe_covers = Prototype.pipe_covers(true, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00,-0.70}, nil, nil),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {0.0, -5.0} }}
