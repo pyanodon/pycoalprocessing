@@ -170,7 +170,7 @@ local recipe_tailings_dust = {
     },
     results={
         {type="item", name="tailings-dust", amount=6},
-        --{type="fluid", name="water", amount=4, temperature=100}
+        {type="fluid", name="acidgas", amount=30, probability=0.5}
     },
     main_product = "tailings-dust",
     icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
@@ -809,7 +809,7 @@ local recipe_niobium_oxide = {
     name = "niobium-oxide",
     category = "chemistry",
     enabled = "false",
-    energy_required = 1.5,
+    energy_required = 3.5,
     ingredients ={
         {type="fluid", name="water", amount=300}, --Added Bob nitrogen-dioxide
 		{type="fluid", name="niobium-complex", amount=100},
@@ -837,7 +837,7 @@ local recipe_niobium_plate = {
     name = "niobium-plate",
     category = "electrolysis",
     enabled = "false",
-    energy_required = 1.5,
+    energy_required = 3.5,
     ingredients ={
         {type="item", name="salt", amount=20},
 		{type="item", name="niobium-oxide", amount=6},
