@@ -9,7 +9,15 @@ local pipes = {
         height = 44,
     }
 }
-
+local pipes2 = {
+    north =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/washer/north.png",
+        priority = "low",
+        width = 241,
+        height = 241,
+    }
+}
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe1={
@@ -82,7 +90,7 @@ local entity1={
     {
         {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", nil, {-0.05, -0.8}, nil, {-0.81, 0.075}, pipes),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {1.17,2.78}, {-0.05, -0.8}, nil, nil, pipes2),
             pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
@@ -91,10 +99,11 @@ local entity1={
         {
             production_type = "output",
             pipe_covers = Prototype.Pipes.covers(true, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", nil, {-0.05, -0.8}, nil, {-0.81, 0.075}, pipes),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", nil, {-0.05, -0.8}, nil, nil, pipes),
             base_level = 1,
             pipe_connections = {{ position = {0.5, -3.5} }}
         },
+        off_when_no_fluid_recipe = true
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =

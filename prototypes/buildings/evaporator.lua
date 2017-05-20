@@ -1,5 +1,15 @@
 local Prototype = require("stdlib.prototype.prototype")
 
+local pipes = {
+    south =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/evaporator/south.png",
+        priority = "extra-high",
+        width = 168,
+        height = 194,
+    }
+}
+
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe1={
@@ -95,7 +105,7 @@ local entity1={
     {
         {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0.05, 0.65}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0.06, 0.48}, {0.12, -3.0}, nil, nil, pipes),
             pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
@@ -103,10 +113,10 @@ local entity1={
         },
         {
             production_type = "output",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0.05, 0.65}, {-0.00, -0.83}, {0.55, 0.15}, {-0.5, 0.15}),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0.06, 0.48}, {0.12, -3.0}, nil, nil, pipes),
             pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_level = 1,
-            pipe_connections = {{ type="input", position = {0.0, 3.0} }}
+            pipe_connections = {{ type="output", position = {-3.0, 0.0} }}
         },
         off_when_no_fluid_recipe = true
     },

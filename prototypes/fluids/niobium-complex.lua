@@ -5,7 +5,7 @@ local recipe1 =
     name = "niobium-complex",
     category = "chemistry",
     enabled = "false",
-    energy_required = 2.0,
+    energy_required = 3.5,
     ingredients ={
         {type="fluid", name="organic-solvent", amount=50},
 		{type="fluid", name="hydrogen-chloride", amount=100},

@@ -78,25 +78,26 @@ local entity1={
         frame_count = 25,
         line_length = 5,
         shift = {0.1, -0.125},
-        animation_speed = 2
+        animation_speed = 1.5
     },
     fluid_boxes =
     {
         {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0, -0.5}, {0, -0.95}, nil, nil, pipes),
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0, 0.36}, {0, -0.95}, nil, nil, pipes),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {3.0, -0.0} }}
         },
         {
             production_type = "output",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0, -0.5}, {0,-0.95}, nil, nil, pipes),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0, 0.36}, {0,-0.95}, nil, nil, pipes),
             pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_level = 1,
             pipe_connections = {{ type="output", position = {-3.0, -0.0} }}
         },
+        off_when_no_fluid_recipe = true
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =

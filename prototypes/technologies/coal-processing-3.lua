@@ -14,6 +14,10 @@ local technology = {
         },
         {
             type = "unlock-recipe",
+            recipe = "tar-oil"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "sand-casting"
         },
         {
