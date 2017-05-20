@@ -1191,25 +1191,6 @@ local recipe_oleo_gasification ={
     order = "a [coal-gas]",
 }
 -------------------------------------------------------------------------------
---TAR to CRUDE OIL
-local recipe_tar_oil ={
-    type = "recipe",
-    name = "tar-oil",
-    category = "tar",
-    enabled = "false",
-    energy_required = 3.0,
-    ingredients ={
-        {type="fluid", name="tar", amount=300},
-    },
-    results={
-        {type="fluid", name="crude-oil", amount=150},
-    },
-    main_product= "crude-oil",
-    icon = "__pycoalprocessing__/graphics/icons/tar-oil.png",
-    subgroup = "py-items",
-    order = "a [coal-gas]",
-}
--------------------------------------------------------------------------------
 --COAL from FAWOAGE
 local recipe_coal_fawogae ={
     type = "recipe",
@@ -1261,6 +1242,7 @@ local recipe_richdust_remud ={
     },
     results={
         {type="item", name="rich-dust", amount=5},
+		{type="fluid", name="flue-gas", amount=100},
     },
     main_product= "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/rich-re.png",
@@ -1305,6 +1287,5 @@ data:extend{
 	recipe_filtration_dirty_water, recipe_olefin_filtration, recipe_coalgas_syngas, recipe_oleo_oil,
 	recipe_sand_brick, tailings_classification, recipe_tar_distilation,
 	recipe_oleochemicals_distilation, recipe_tar_gasification, recipe_oleo_gasification, recipe_coal_dust,
-	recipe_tar_oil, recipe_coal_fawogae,
-	recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron,
+	 recipe_coal_fawogae, recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron,
 }

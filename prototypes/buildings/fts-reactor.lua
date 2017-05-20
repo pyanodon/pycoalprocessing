@@ -113,21 +113,21 @@ local entity1={
         {
             production_type = "output",
             pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, nil, nil, nil),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0,-1}, nil, nil),
             base_level = 1,
             pipe_connections = {{position = {-3.0, -0.0} }}
         },
         {
             production_type = "output",
             pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, nil, nil, nil),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0,-1}, nil, nil),
             base_level = 1,
             pipe_connections = {{position = {-3.0, -1.0} }}
         },
         {
             production_type = "output",
             pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, nil, nil, nil),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0,-1}, nil, nil),
             base_level = 1,
             pipe_connections = {{position = {-3.0, -2.0} }}
         },

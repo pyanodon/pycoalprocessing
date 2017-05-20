@@ -39,18 +39,18 @@ local entity1={
     minable = {hardness = 0.2, mining_time = 3, result = "py-tank-5000"},
     max_health = 500,
     corpse = "medium-remnants",
-    collision_box = {{-1.3, -1.3}, {1.3, 1.3}},
-    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    collision_box = {{-2.45, -2.45}, {2.45, 2.45}},
+    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     fluid_box =
     {
         base_area = 500,
         pipe_covers = pipecoverspictures(),
         pipe_connections =
         {
-            { position = {0, -2} },
-            { position = {2, 0} },
-            { position = {0, 2} },
-            { position = {-2, 0} },
+            { position = {0, -3.0} },
+            { position = {3.0, 0} },
+            { position = {0, 3} },
+            { position = {-3, 0} },
         },
     },
     window_bounding_box = {{-0.0, 0.0}, {0.0, 0.0}},
@@ -64,8 +64,8 @@ local entity1={
                 priority = "extra-high",
                 frames = 1,
                 width = 187,
-                height = 381,
-                shift = {0.28, -3.606}
+                height = 397,
+                shift = {0.28, -3.356}
             }
         },
         fluid_background =

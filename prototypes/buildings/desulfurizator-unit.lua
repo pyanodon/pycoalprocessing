@@ -1,9 +1,19 @@
 local Prototype = require("stdlib.prototype.prototype")
 
-local pipes = {
+local pipe_left = {
     north =
     {
-        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-north.png",
+        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-north1.png",
+        priority = "low",
+        width = 196,
+        height = 202,
+    }
+}
+
+local pipes_right = {
+    north =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-north2.png",
         priority = "low",
         width = 196,
         height = 202,
@@ -85,16 +95,16 @@ local entity1={
     {
         {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3",  nil, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipes),
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3",  {1.55,3.4}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_left),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {3.5, 1.5} }}
         },
         {
             production_type = "output",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipes),
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {1.55,3.4}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_right),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_level = 1,
             pipe_connections = {{ type="output", position = {3.5, -1.5} }}
         },
