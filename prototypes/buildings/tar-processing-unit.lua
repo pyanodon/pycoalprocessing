@@ -1,13 +1,13 @@
 local Prototype = require("stdlib.prototype.prototype")
 
 local pipes = {
-    south =
+    north =
     {
-        filename = "__pycoalprocessing__/graphics/entity/tar-processing-unit/pipe-ending-down.png",
+        filename = "__pycoalprocessing__/graphics/entity/tar-processing-unit/north.png",
         priority = "extra-high",
-        width = 40,
-        height = 45,
-    }
+        width = 236,
+        height = 235,
+    },
 }
 
 -------------------------------------------------------------------------------
@@ -100,19 +100,20 @@ local entity1={
     {
         {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.05, -0.8}, nil, {-0.81, 0.075}, pipes),
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {0.15,3.8}, {-0.0, -0.95}, nil, nil, pipes),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {0, 4} }}
         },
         {
             production_type = "output",
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.05, -0.8}, nil, {-0.81, 0.075}, pipes),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {0.15,3.8}, {-0.0, -0.95}, nil, nil, pipes),
             base_level = 1,
-            pipe_connections = {{ position = {0, -4} }}
+            pipe_connections = {{ type="output", position = {0, -4} }}
         },
+        off_when_no_fluid_recipe = true
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
