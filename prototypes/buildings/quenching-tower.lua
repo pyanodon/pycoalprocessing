@@ -1,5 +1,37 @@
 local Prototype = require("stdlib.prototype.prototype")
 
+local pipes = {
+    north =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/top-right.png",
+        priority = "low",
+        width = 232,
+        height = 252,
+    },
+    south =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/south-left.png",
+        priority = "extra-high",
+        width = 232,
+        height = 252,
+    }
+}
+local pipes2 = {
+    north =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/top-left.png",
+        priority = "low",
+        width = 232,
+        height = 252,
+    },
+	    south =
+    {
+        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/south-right.png",
+        priority = "extra-high",
+        width = 232,
+        height = 252,
+    }
+}
 -------------------------------------------------------------------------------
 --[[Recipes]]--
 local recipe1={
@@ -62,47 +94,29 @@ local entity1={
 
     animation =
     {
-        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/quenching-tower.png",
+        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/quenching-tower-anim.png",
         width = 232,
-        height = 241,
-        frame_count = 1,
-        --animation_speed = 0.5,
-        shift = {0.05, 0.0},
-    },
-
-    working_visualisations =
-    {
-        {
-            north_position = {0.05, 0},
-            west_position = {0.05, 0},
-            south_position = {0.05, 0},
-            east_position = {0.05, 0},
-            animation =
-            {
-                filename = "__pycoalprocessing__/graphics/entity/quenching-tower/quenching-tower-anim.png",
-                frame_count = 60,
-                line_length = 8,
-                width = 232,
-                height = 241,
-                animation_speed = 0.75
-            }
-        },
+        height = 252,
+        frame_count = 60,
+		line_length = 8,
+        animation_speed = 0.75,
+        shift = {0.08, 0.0},
     },
 
     fluid_boxes =
     {
         {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0.0, -1.0}),
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+			pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {1.08,4.0}, {-0.82,-4.0}, nil, nil, pipes2),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {4.0, -1.0} }}
         },
         {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0.0, -1.0}),
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+			pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {-0.82,4.0}, {1.12,-4.0}, nil, nil, pipes),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {4.0, 1.0} }}
@@ -110,26 +124,26 @@ local entity1={
 
         {
             production_type = "output",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0.0, -1.0}),
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+			pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {-0.82,4.0}, {1.12,-4.0}, nil, nil, pipes),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_level = 1,
-            pipe_connections = {{ position = {-4.0, -1.0} }}
+            pipe_connections = {{ type="output", position = {-4.0, -1.0} }}
         },
         {
             production_type = "output",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0.0, -1.0}),
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+			pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {1.08,4.0}, {-0.82,-4.0}, nil, nil, pipes2),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_level = 1,
-            pipe_connections = {{ position = {-4.0, 1.0} }}
+            pipe_connections = {{ type="output", position = {-4.0, 1.0} }}
         },
         {
             production_type = "output",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0.0, -1.0}),
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+			pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {-0.82,4.0}, {1.12,-4.0}, nil, nil, pipes),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_level = 1,
-            pipe_connections = {{ position = {-1.0, 4.0} }}
+            pipe_connections = {{ type="output", position = {-1.0, 4.0} }}
         },
-
+	off_when_no_fluid_recipe = true
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
