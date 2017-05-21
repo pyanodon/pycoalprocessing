@@ -125,6 +125,7 @@ require("prototypes.buildings.py-tank-5000")
 require("prototypes.buildings.py-tank-6500")
 require("prototypes.buildings.py-tank-8000")
 require("prototypes.buildings.automated-factory")
+--require("prototypes.buildings.niobium-pipes")
 --require("prototypes.buildings.rare-earth-extractor")
 
 if PYC.DEBUG then
