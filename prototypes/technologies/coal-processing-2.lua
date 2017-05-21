@@ -176,6 +176,7 @@ local technology = {
             type = "unlock-recipe",
             recipe = "automated-factory"
         },
+
     },
     unit =
     {
