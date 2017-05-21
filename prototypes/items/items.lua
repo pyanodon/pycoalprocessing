@@ -1473,6 +1473,30 @@ local crushed_zinc = {
     order = "g",
     stack_size = 1000
 }
+-------------------------------------------------------------------------------
+-- NIOBIUM PIPE
+local niobium_pipe = {
+    type = "item",
+    name = "niobium-pipe",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-pipe.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 200
+}
+-------------------------------------------------------------------------------
+-- NIOBIUM PIPE-TO-GROUND
+local niobium_pipe_to_ground = {
+    type = "item",
+    name = "niobium-pipe-to-ground",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-pipe-to-ground.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 200
+}
  -------------------------------------------------------------------------------
 data:extend(
     {
@@ -1587,6 +1611,8 @@ data:extend(
 		crushed_silver,
 		crushed_tin,
 		crushed_tungsten,
-		crushed_zinc
+		crushed_zinc,
+		niobium_pipe,
+		niobium_pipe_to_ground
     }
 )

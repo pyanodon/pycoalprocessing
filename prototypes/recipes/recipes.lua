@@ -1271,7 +1271,31 @@ local recipe_crushed_copper = {
     result = "copper-plate",
 	result_count = 2,
 }
-
+--NIOBIUM PIPES
+local recipe_niobium_pipe = {
+    type = "recipe",
+    name = "niobium-pipe",
+    category = "crafting",
+	enabled = "false",
+    energy_required = 2,
+    ingredients = {{"niobium-plate", 1}},
+    result = "niobium-pipe",
+	result_count = 2,
+}
+--NIOBIUM PIPES TO GROUND
+local recipe_niobium_pipe_to_groud = {
+    type = "recipe",
+    name = "niobium-pipe-to-ground",
+    category = "crafting",
+	enabled = "false",
+    energy_required = 2,
+    ingredients = {
+		{"niobium-pipe", 10},
+		{"niobium-plate", 1},
+		},
+    result = "niobium-pipe-to-ground",
+	result_count = 2,
+}
 -------------------------------------------------------------------------------
 data:extend{
     raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
@@ -1288,4 +1312,5 @@ data:extend{
 	recipe_sand_brick, tailings_classification, recipe_tar_distilation,
 	recipe_oleochemicals_distilation, recipe_tar_gasification, recipe_oleo_gasification, recipe_coal_dust,
 	 recipe_coal_fawogae, recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron,
+	recipe_niobium_pipe, recipe_niobium_pipe_to_ground
 }
