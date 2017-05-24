@@ -27,7 +27,7 @@ local recipe1={
     enabled = "true",
     ingredients ={
         {"iron-plate", 10},
-        {"pipe", 25}, --updated-bob steel-pipe
+        {"pipe", 25},
         {"stone-brick", 30},
         {"electronic-circuit", 2}, --updated-bob basic-circuit-board
     },
