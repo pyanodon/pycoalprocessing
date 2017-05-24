@@ -36,7 +36,7 @@ local pipes = {
 local recipe1={
     type = "recipe",
     name = "borax-mine",
-    energy_requiered = 25,
+    energy_required = 25,
     enabled = false,
     ingredients =
     {

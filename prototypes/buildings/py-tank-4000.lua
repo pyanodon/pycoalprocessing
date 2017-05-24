@@ -6,7 +6,7 @@ local pipecoverspictures = _G.pipecoverspictures
 local recipe1={
     type = "recipe",
     name = "py-tank-4000",
-    energy_requiered = 35,
+    energy_required = 35,
     enabled = false,
     ingredients =
     {
@@ -23,7 +23,7 @@ local item1={
     name = "py-tank-4000",
     icon = "__pycoalprocessing__/graphics/icons/py-tank-4000.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "coal-processing",
+    subgroup = "py-fluid-handling",
     order = "a-c[py-items]",
     place_result = "py-tank-4000",
     stack_size = 10,
@@ -40,6 +40,7 @@ local entity1={
     corpse = "medium-remnants",
     collision_box = {{-1.3, -1.3}, {1.3, 1.3}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    two_direction_only = true,
     fluid_box =
     {
         base_area = 400,
@@ -75,22 +76,9 @@ local entity1={
             height = 15,
             shift = {-0.0, -2.0}
         },
-        window_background =
-        {
-            filename = "__base__/graphics/entity/storage-tank/window-background.png",
-            priority = "extra-high",
-            width = 17,
-            height = 24,
-            shift = {-0.0, -2.0}
-        },
-        flow_sprite =
-        {
-            filename = "__base__/graphics/entity/pipe/fluid-flow-low-temperature.png",
-            priority = "extra-high",
-            width = 160,
-            height = 20,
-            shift = {-0.0, -2.0}
-        },
+        fluid_background = Prototype.empty_sprite(),
+        window_background = Prototype.empty_sprite(),
+        flow_sprite = Prototype.empty_sprite(),
         gas_flow = Prototype.empty_animation(),
     },
     flow_length_in_ticks = 360,

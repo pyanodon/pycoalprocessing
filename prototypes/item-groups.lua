@@ -26,7 +26,7 @@ data:extend{
             type = "item-subgroup",
             name = "py-fluid-handling",
             group = "coal-processing",
-            order = "a2",
+            order = "a3",
         },
         {
             type = "item-subgroup",

@@ -36,7 +36,7 @@ local pipes = {
 local recipe1={
     type = "recipe",
     name = "niobium-mine",
-    energy_requiered = 25,
+    energy_required = 25,
     enabled = false,
     ingredients =
     {

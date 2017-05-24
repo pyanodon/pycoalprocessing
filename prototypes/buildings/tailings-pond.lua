@@ -64,7 +64,7 @@ local entity_tailings_pond =
     corpse = "big-remnants",
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-    two_direction_only = false,
+    two_direction_only = true,
     fluid_box =
     {
         base_area = (_TANK_SIZE / 100),

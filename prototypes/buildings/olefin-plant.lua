@@ -5,7 +5,7 @@ local Prototype = require("stdlib.prototype.prototype")
 local recipe1={
     type = "recipe",
     name = "olefin-plant",
-    energy_requiered = 15,
+    energy_required = 15,
     enabled = false,
     ingredients =
     {
