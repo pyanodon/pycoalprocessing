@@ -19,6 +19,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "tar-processing-unit"
         },
+		{
+            type = "unlock-recipe",
+            recipe = "tar-carbon"
+        },
         {
             type = "unlock-recipe",
             recipe = "coal-gas"
