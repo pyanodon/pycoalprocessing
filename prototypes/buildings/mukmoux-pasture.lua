@@ -3,7 +3,7 @@
 local recipe1={
     type = "recipe",
     name = "mukmoux-pasture",
-    energy_requiered = 10,
+    energy_required = 10,
     enabled = false,
     ingredients =
     {

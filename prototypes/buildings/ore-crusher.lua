@@ -3,7 +3,7 @@
 local recipe1={
     type = "recipe",
     name = "ore-crusher",
-    energy_requiered = 10,
+    energy_required = 10,
     enabled = false,
     ingredients =
     {

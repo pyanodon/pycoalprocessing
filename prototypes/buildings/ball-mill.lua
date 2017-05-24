@@ -3,7 +3,7 @@
 local recipe1={
     type = "recipe",
     name = "ball-mill",
-    energy_requiered = 35,
+    energy_required = 35,
     enabled = false,
     ingredients =
     {

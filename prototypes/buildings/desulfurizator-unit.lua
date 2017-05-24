@@ -5,18 +5,18 @@ local pipe_left = {
     {
         filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-north1.png",
         priority = "low",
-        width = 196,
-        height = 202,
+        width = 64,
+        height = 64,
     }
 }
 
-local pipes_right = {
+local pipe_right = {
     north =
     {
         filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-north2.png",
         priority = "low",
-        width = 196,
-        height = 202,
+        width = 64,
+        height = 64,
     }
 }
 -------------------------------------------------------------------------------
@@ -24,7 +24,7 @@ local pipes_right = {
 local recipe1={
     type = "recipe",
     name = "desulfurizator-unit",
-    energy_requiered = 17,
+    energy_required = 17,
     enabled = false,
     ingredients =
     {
@@ -94,21 +94,20 @@ local entity1={
     fluid_boxes =
     {
         {
+            production_type = "output",
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {-0.05, 1.25}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_right),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+            base_level = 1,
+            pipe_connections = {{ type="output", position = {3.5, -1.5} }}
+        },
+        {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3",  {1.55,3.4}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_left),
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3",  {0.25, 1.25}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_left),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{ type="input", position = {3.5, 1.5} }}
         },
-        {
-            production_type = "output",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {1.55,3.4}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_right),
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            base_level = 1,
-            pipe_connections = {{ type="output", position = {3.5, -1.5} }}
-        },
-
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =

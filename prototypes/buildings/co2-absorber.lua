@@ -3,7 +3,7 @@
 local recipe1={
     type = "recipe",
     name = "co2-absorber",
-    energy_requiered = 15,
+    energy_required = 15,
     enabled = false,
     ingredients =
     {
