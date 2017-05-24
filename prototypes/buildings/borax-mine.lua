@@ -74,7 +74,7 @@ local entity1={
     max_health = 700,
     corpse = "big-remnants",
     dying_explosion = "big-explosion",
-    collision_box = {{-4.3, -4.3}, {4.3, 4.3}},
+    collision_box = {{-4.1, -4.1}, {4.1, 4.1}},
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
     module_specification =
     {

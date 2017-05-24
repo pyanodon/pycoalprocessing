@@ -10,7 +10,7 @@ local recipe1={
     enabled = false,
     ingredients =
     {
-        {"py-tank-1500", 40},
+        {"py-tank-1500", 4},
         {"iron-stick", 40},
         {"pipe", 8},
         {"steel-plate", 30},

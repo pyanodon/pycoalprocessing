@@ -21,7 +21,7 @@ local recipe1={
         {"steel-plate", 20},
         {"iron-plate", 10},
         {"pipe", 15}, --updated-bob stone-pipe
-        {"steel-furnace", 1},
+        {"stone-furnace", 1},
         {"electronic-circuit", 7},
     },
     result= "tar-processing-unit",

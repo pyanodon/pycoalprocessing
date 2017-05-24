@@ -48,8 +48,6 @@ replace_ing("cooling-tower-mk01", "iron-plate", "steel-bearing")
 replace_ing("desulfurizator-unit", "steel-plate", "titanium-plate")
 replace_ing("desulfurizator-unit", "iron-plate", "invar-alloy")
 
---replace_ing("soil-extractormk01", "steel-plate", "brass-alloy")
---replace_ing("soil-extractormk01", "iron-gear-wheel", "brass-gear-wheel")
 replace_ing("soil-extractormk01", "electronic-circuit", "basic-circuit-board")
 
 replace_ing("olefin-plant", "chemical-plant", "electrolyser")
@@ -64,7 +62,6 @@ replace_ing("fts-reactor", "iron-plate", "invar-alloy")
 replace_ing("fts-reactor", "electronic-circuit", "basic-electronic-circuit-board")
 
 replace_ing("washer", "electronic-circuit", "basic-circuit-board")
-replace_ing("washer", "pipe", "steel-pipe")
 
 replace_ing("fawogae-plantation", "electronic-circuit", "basic-circuit-board")
 
