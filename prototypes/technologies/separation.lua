@@ -42,14 +42,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "petgas-methanol"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "oleo-heavy"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "tailings-separation"
         },
         {

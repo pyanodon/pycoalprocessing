@@ -176,6 +176,14 @@ local technology = {
             type = "unlock-recipe",
             recipe = "automated-factory"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "petgas-methanol"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "oleo-heavy"
+        },
 
     },
     unit =
