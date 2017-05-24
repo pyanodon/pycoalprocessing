@@ -3,7 +3,7 @@
 local recipe1={
     type = "recipe",
     name = "classifier",
-    energy_requiered = 35,
+    energy_required = 35,
     enabled = false,
     ingredients =
     {

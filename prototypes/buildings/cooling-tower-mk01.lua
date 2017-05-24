@@ -5,7 +5,7 @@ local Prototype = require("stdlib.prototype.prototype")
 local recipe1={
     type = "recipe",
     name = "cooling-tower-mk01",
-    energy_requiered = 17,
+    energy_required = 17,
     enabled = false,
     ingredients =
     {

@@ -15,7 +15,7 @@ local pipes = {
 local recipe1={
     type = "recipe",
     name = "carbon-filter",
-    energy_requiered = 10,
+    energy_required = 10,
     enabled = false,
     ingredients =
     {

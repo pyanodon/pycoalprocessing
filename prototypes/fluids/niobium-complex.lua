@@ -16,7 +16,7 @@ local recipe1 =
     },
 	main_product= "niobium-complex",
     icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",
-    subgroup = "py-fluid-handling",
+    subgroup = "py-fluids",
     order = "c",
 }
 -------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ local item1=
     max_temperature = 100,
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59,
-    subgroup = "py-fluid-handling",
+    subgroup = "py-fluids",
     order = "z-[niobium-complex]"
 }
 -------------------------------------------------------------------------------

@@ -22,7 +22,7 @@ local pipes = {
 local recipe1={
     type = "recipe",
     name = "soil-extractormk01",
-    energy_requiered = 100,
+    energy_required = 100,
     enabled = true,
     ingredients =
     {
