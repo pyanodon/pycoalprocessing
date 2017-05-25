@@ -10,8 +10,7 @@ local anthraquinone= {
     energy_required = 3,
     ingredients ={
         {type="fluid", name="aromatics", amount=100},
-        --{type="fluid", name="liquid-air", amount=60},
-        {type="fluid", name="water", amount=300},
+        {type="fluid", name="steam", amount=600}, --update-bob liquid-air
         {type="item", name="chromium", amount=2},
     },
     results=

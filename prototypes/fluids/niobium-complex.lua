@@ -1,20 +1,20 @@
 --[[recipes]]--
 local recipe1 =
 {
-     type = "recipe",
+    type = "recipe",
     name = "niobium-complex",
     category = "chemistry",
     enabled = "false",
     energy_required = 3.5,
     ingredients ={
         {type="fluid", name="organic-solvent", amount=50},
-		{type="fluid", name="hydrogen-chloride", amount=100},
-		{type="item", name="niobium-concentrate", amount=10},
+        {type="fluid", name="water", amount=100}, --updated-bob hydrogen-chloride
+        {type="item", name="niobium-concentrate", amount=10},
     },
     results={
         {type="fluid", name="niobium-complex", amount=100},
     },
-	main_product= "niobium-complex",
+    main_product= "niobium-complex",
     icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",
     subgroup = "py-fluids",
     order = "c",

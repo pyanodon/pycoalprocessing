@@ -5,7 +5,7 @@
 local boric_acid= {
     type = "recipe",
     name = "boric-acid",
-    category = "electrolysis", --updated-bob electrolysis
+    category = "chemistry", --updated-bob electrolysis
     enabled = "false",
     energy_required = 2,
     ingredients ={

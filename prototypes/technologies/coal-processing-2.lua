@@ -142,10 +142,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "syngas-distilation"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "oleochemicals-distilation"
         },
         {
@@ -155,14 +151,6 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "coal-briquette"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "lube-glycerol"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "resin-glycerol"
         },
         {
             type = "unlock-recipe",

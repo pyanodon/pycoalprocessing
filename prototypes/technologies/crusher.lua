@@ -39,10 +39,6 @@ local technology = {
             type = "unlock-recipe",
             recipe = "crushed-copper"
         },
-        {
-            type = "unlock-recipe",
-            recipe = "tungsten-powder"
-        },
     },
     unit =
     {
