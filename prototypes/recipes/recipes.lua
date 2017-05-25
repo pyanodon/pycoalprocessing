@@ -182,10 +182,10 @@ local soil_separation ={
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="item", name="soil", amount=30},
+        {type="item", name="soil", amount=20},
     },
     results={
-        {type="item", name="sand", amount=5},
+        {type="item", name="sand", amount=15},
         {type="item", name="coarse", amount=3},
         {type="item", name="limestone", amount=3},
         {type="item", name="organics", amount=3},

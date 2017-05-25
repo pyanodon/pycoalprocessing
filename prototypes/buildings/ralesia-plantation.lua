@@ -36,7 +36,7 @@ local pipes = {
 local recipe1={
     type = "recipe",
     name = "ralesia-plantation",
-    energy_required = 100,
+    energy_required = 10,
     enabled = false,
     ingredients =
     {
