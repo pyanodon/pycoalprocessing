@@ -602,7 +602,7 @@ local recipe_ralesia = {
     energy_required = 7.7,
     ingredients ={
         {type="fluid", name="water", amount=500}, --updated-bob hydrogen
-        {type="item", name="soil", amount=50},
+        {type="item", name="soil", amount=35},
     },
     results={
         {type="item", name="ralesia", amount=7},
@@ -640,7 +640,7 @@ local recipe_rich_clay = {
     enabled = "false",
     energy_required = 6,
     ingredients ={
-        {type="item", name="ash", amount=20},
+        {type="item", name="ash", amount=25},
         {type="fluid", name="water", amount=500},
     },
     results={
@@ -701,10 +701,10 @@ local recipe_alien_sample01 = {
     energy_required = 10,
     ingredients ={
         {type="item", name="bio-sample01", amount=4},
-        {type="item", name="ground-sample01", amount=10},
+        {type="item", name="ground-sample01", amount=15},
     },
     results={
-        {type="item", name="alien-sample01", amount=2},
+        {type="item", name="alien-sample01", amount=3},
     },
     main_product= "alien-sample01",
     icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
