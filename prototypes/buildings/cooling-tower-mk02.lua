@@ -23,7 +23,7 @@ local recipe1={
         {"pump", 2},
         {"advanced-circuit", 5},
         {"pipe", 30}, --updated-bob copper-pipe
-        {"iron-plate", 30}, --updated-bob brass-plate
+        {"iron-plate", 30}, --updated-bob brass-allloy
         {"concrete", 50},
 
     },
