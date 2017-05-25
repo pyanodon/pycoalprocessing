@@ -24,10 +24,6 @@ local technology = {
             type = "unlock-recipe",
             recipe = "dirty-reaction"
         },
-        {
-            type = "unlock-recipe",
-            recipe = "explosive-glycerol"
-        },
     },
     unit =
     {

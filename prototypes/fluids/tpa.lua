@@ -10,8 +10,8 @@ local tpa= {
     energy_required = 4,
     ingredients ={
         {type="fluid", name="aromatics", amount=100},
-        {type="fluid", name="liquid-air", amount=600},
-        {type="item", name="cobalt-ore", amount=2},
+        {type="fluid", name="steam", amount=600}, -- updated-bob liquid-air
+        {type="item", name="copper-ore", amount=2}, --updated-bob cobalt-ore
     },
     results=
     {

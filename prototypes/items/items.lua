@@ -835,11 +835,11 @@ local niobium_oxide = {
 local recipe_niobium_plate = {
     type = "recipe",
     name = "niobium-plate",
-    category = "electrolysis",
+    category = "chemistry",  --updated-bob electrolysis
     enabled = "false",
     energy_required = 3.5,
     ingredients ={
-        {type="item", name="salt", amount=20},
+        {type="item", name="coal", amount=20}, --updated-bob salt
 		{type="item", name="niobium-oxide", amount=6},
     },
     results={
@@ -936,8 +936,8 @@ local recipe_glass_core = {
     enabled = "false",
     energy_required = 3.5,
     ingredients ={
-        {type="item", name="glass", amount=10},
-		{type="item", name="silver-plate", amount=3},
+        {type="item", name="sand", amount=10}, --updated-bob glass
+		{type="item", name="steel-plate", amount=3}, --updated-bob silver-plate
 		{type="item", name="sulfur", amount=4},
     },
     results={
@@ -966,7 +966,7 @@ local recipe_cladding = {
     enabled = "false",
     energy_required = 2.0,
     ingredients ={
-        {type="item", name="glass", amount=5},
+        {type="item", name="sand", amount=5}, --updated-bob glass
 		{type="fluid", name="niobium-complex", amount=80},
     },
     results={
@@ -991,7 +991,7 @@ local cladding = {
 local recipe_ppd = {
     type = "recipe",
     name = "ppd",
-    category = "electrolysis",
+    category = "chemistry",  --updated-bob electrolysis
     enabled = "false",
     energy_required = 4,
     ingredients ={
@@ -1168,7 +1168,7 @@ local cladded_core = {
 local recipe_copper_coating = {
     type = "recipe",
     name = "copper-coating",
-    category = "electrolysis",
+    category = "chemistry",  --updated-bob electrolysis
     enabled = "false",
     energy_required = 3.0,
     ingredients ={
@@ -1263,7 +1263,7 @@ local recipe_filtration_media = {
 		{type="item", name="sand", amount=30},
 		{type="item", name="active-carbon", amount=3},
 		{type="item", name="gravel", amount=25},
-		{type="item", name="glass", amount=5},
+        --updated-bob add glass
     },
     results={
         {type="item", name="filtration-media", amount=1},
@@ -1360,114 +1360,6 @@ local crushed_copper = {
     name = "crushed-copper",
 	enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-copper.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
--------------------------------------------------------------------------------
--- CRUSHED BAUXITE
-local crushed_bauxite = {
-    type = "item",
-    name = "crushed-bauxite",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-bauxite.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
--------------------------------------------------------------------------------
--- CRUSHED GOLD
-local crushed_gold = {
-    type = "item",
-    name = "crushed-gold",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-gold.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
--------------------------------------------------------------------------------
--- CRUSHED LEAD
-local crushed_lead = {
-    type = "item",
-    name = "crushed-lead",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-lead.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
--------------------------------------------------------------------------------
--- CRUSHED NICKEL
-local crushed_nickel = {
-    type = "item",
-    name = "crushed-nickel",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-nickel.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
--------------------------------------------------------------------------------
--- CRUSHED RUTILE
-local crushed_rutile = {
-    type = "item",
-    name = "crushed-rutile",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-rutile.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
--------------------------------------------------------------------------------
--- CRUSHED SILVER
-local crushed_silver = {
-    type = "item",
-    name = "crushed-silver",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-silver.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
--------------------------------------------------------------------------------
--- CRUSHED TIN
-local crushed_tin = {
-    type = "item",
-    name = "crushed-tin",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tin.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
--------------------------------------------------------------------------------
--- CRUSHED TUNGSTEN
-local crushed_tungsten = {
-    type = "item",
-    name = "crushed-tungsten",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tungsten.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 1000
-}
--------------------------------------------------------------------------------
--- CRUSHED ZINC
-local crushed_zinc = {
-    type = "item",
-    name = "crushed-zinc",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-zinc.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -1603,15 +1495,6 @@ data:extend(
 		calcium_carbide,
 		crushed_iron,
 		crushed_copper,
-		crushed_bauxite,
-		crushed_gold,
-		crushed_lead,
-		crushed_nickel,
-		crushed_rutile,
-		crushed_silver,
-		crushed_tin,
-		crushed_tungsten,
-		crushed_zinc,
 		niobium_pipe,
 		niobium_pipe_to_ground
     }

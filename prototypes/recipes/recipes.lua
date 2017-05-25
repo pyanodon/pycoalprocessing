@@ -500,8 +500,8 @@ local science_pack03 ={
     energy_required = 4.5,
     ingredients ={
         {type="item", name="optical-fiber", amount=1},
-        {type="item", name="basic-electronic-circuit-board", amount=1},
-        {type="item", name="insulated-cable", amount=15},
+        {type="item", name="electronic-circuit", amount=1},
+        {type="item", name="copper-cable", amount=15},  --updated-bob insulated-cable
         {type="item", name="iron-plate", amount=10},
     },
     results={
@@ -1092,8 +1092,8 @@ local tailings_classification ={
     },
     results={
         {type="item", name="coal-dust", amount=5},
-        {type="item", name="lead-ore", amount=5},
-        {type="item", name="tin-ore", amount=3},
+        {type="item", name="copper-ore", amount=5}, --updated-bob lead-ore
+        {type="item", name="iron-ore", amount=3}, --updated-bob tin-ore
     },
     main_product= "coal-dust",
     icon = "__pycoalprocessing__/graphics/icons/class-tailings.png",
@@ -1133,7 +1133,7 @@ local recipe_oleochemicals_distilation ={
     energy_required = 2.5,
     ingredients ={
         {type="fluid", name="oleochemicals", amount=250},
-        {type="fluid", name="water", amount=400}, --Added Bob oxygen
+        {type="fluid", name="water", amount=400}, --updated-bob oxygen
     },
     results={
         {type="fluid", name="syngas", amount=500},
@@ -1156,7 +1156,7 @@ local recipe_tar_gasification ={
     energy_required = 3.0,
     ingredients ={
         {type="fluid", name="tar", amount=250},
-        {type="fluid", name="water", amount=600}, --Add Bob liquid-air
+        {type="fluid", name="steam", amount=600}, --updated-bob liquid-air
     },
     results={
         {type="fluid", name="coal-gas", amount=200},
@@ -1179,7 +1179,7 @@ local recipe_oleo_gasification ={
     ingredients ={
         {type="fluid", name="oleochemicals", amount=200},
         {type="fluid", name="syngas", amount=200},
-        {type="fluid", name="water", amount=250}, --Added Bob oxygen
+        {type="fluid", name="water", amount=250}, --updated-bob oxygen
     },
     results={
         {type="fluid", name="aromatics", amount=200},
