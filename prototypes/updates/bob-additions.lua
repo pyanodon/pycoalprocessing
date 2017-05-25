@@ -331,24 +331,140 @@ local recipe_syngas_distilation ={
     order = "a [coal-gas]",
 }
 
+-- CRUSHED BAUXITE
+local crushed_bauxite = {
+    type = "item",
+    name = "crushed-bauxite",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-bauxite.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED GOLD
+local crushed_gold = {
+    type = "item",
+    name = "crushed-gold",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-gold.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED LEAD
+local crushed_lead = {
+    type = "item",
+    name = "crushed-lead",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-lead.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED NICKEL
+local crushed_nickel = {
+    type = "item",
+    name = "crushed-nickel",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-nickel.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED RUTILE
+local crushed_rutile = {
+    type = "item",
+    name = "crushed-rutile",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-rutile.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED SILVER
+local crushed_silver = {
+    type = "item",
+    name = "crushed-silver",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-silver.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED TIN
+local crushed_tin = {
+    type = "item",
+    name = "crushed-tin",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tin.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED TUNGSTEN
+local crushed_tungsten = {
+    type = "item",
+    name = "crushed-tungsten",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tungsten.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
+-- CRUSHED ZINC
+local crushed_zinc = {
+    type = "item",
+    name = "crushed-zinc",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-zinc.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+
 data:extend{
     methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen,
     void_flue_gas, glass, tungsten_powder, recipe_crushed_tin, recipe_syngas_distilation,
     recipe_crushed_lead, recipe_crushed_silver, recipe_crushed_gold, recipe_crushed_zinc, recipe_crushed_nickel,
     recipe_crushed_rutile, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol,
+    crushed_bauxite, crushed_gold, crushed_lead, crushed_nickel, crushed_rutile, crushed_silver,
+    crushed_tin, crushed_tungsten, crushed_zinc,
 }
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
 bobmods.lib.tech.add_recipe_unlock("methanol-processing-2", "methanol-from-hydrogen")
+bobmods.lib.tech.add_recipe_unlock("desulfurization", "explosive-glycerol")
+
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "syngas2")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "salt-ex")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tar-carbon")
+bobmods.lib.tech.add_recipe_unlock("coal-processing-1", "tar-carbon")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-nickel-zinc")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-tin-lead")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-gold-silver")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-bauxite-cobalt")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-rutile-tungsten")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-gem-ore")
+
+bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "syngas-distilation")
+bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "lube-glycerol")
+bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "resin-glycerol")
 
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-silver")
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-cobalt")
@@ -375,6 +491,7 @@ bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-silver")
 --bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-quartz")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-rutile")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-nickel")
+bobmods.lib.tech.add_recipe_unlock("crusher", "tungsten-powder")
 
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-silver")
 --bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-cobalt")
