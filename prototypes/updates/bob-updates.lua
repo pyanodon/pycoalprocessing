@@ -72,7 +72,7 @@ replace_ing("advanced-foundry", "concrete", "glass") --updated-bob glass
 replace_ing("advanced-foundry", "steel-plate", "invar-alloy") --updated-bob invar-alloy
 --replace_ing("advanced-foundry"), "olefin-plant", steel-bearing} --updated-bob steel-bearing
 
-replace_ing("solid-separator", "iron-gear-wheel", "brass-gear-wheel")
+replace_ing("solid-separator", "iron-gear-wheel", "steel-gear-wheel")
 replace_ing("solid-separator", "advanced-circuit", "basic-electronic-circuit-board")
 
 replace_ing("classifier", "iron-stick", "brass-gear-wheel")
