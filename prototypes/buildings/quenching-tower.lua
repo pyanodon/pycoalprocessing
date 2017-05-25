@@ -45,7 +45,7 @@ local recipe1={
         {"iron-stick", 50},
         {"pipe", 10}, --updated-bob stone-pipe
         {"pump", 2},
-        {"electronic-circuit", 15},
+        {"advanced-circuit", 15},
     },
     result= "quenching-tower",
     icon = "__pycoalprocessing__/graphics/icons/quenching-tower.png",
