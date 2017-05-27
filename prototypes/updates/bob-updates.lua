@@ -30,8 +30,6 @@ replace_ing("methanol-reactor", "iron-gear-wheel", "steel-bearing")
 replace_ing("power-house", "iron-gear-wheel", "steel-bearing")
 replace_ing("power-house", "iron-plate", "lead-plate")
 
-replace_ing("power-house", "iron-plate", "lead-plate")
-
 replace_ing("evaporator", "steel-plate", "lead-plate")
 replace_ing("evaporator", "iron-plate", "steel-gear-wheel")
 replace_ing("evaporator", "iron-gear-wheel", "steel-bearing")
