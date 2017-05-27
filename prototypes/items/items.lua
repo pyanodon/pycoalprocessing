@@ -1236,7 +1236,7 @@ local recipe_biofilm = {
 		{type="item", name="organics", amount=5},
     },
     results={
-        {type="item", name="biofilm", amount=1},
+        {type="item", name="biofilm", amount=2},
     },
 	main_product= "biofilm",
     icon = "__pycoalprocessing__/graphics/icons/biofilm.png",
