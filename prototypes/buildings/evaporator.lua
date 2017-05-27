@@ -21,7 +21,7 @@ local recipe1={
     {
         {"gasturbinemk01", 1},
         {"chemical-plant", 1},
-        {"advanced-circuit", 10},
+        {"electronic-circuit", 10},
         {"steel-plate", 40}, --updated-bob lead-plate
         {"iron-plate", 40}, --updated-bob steel-gear-wheel
         {"iron-gear-wheel", 15}, --updated-bob steel-bearing
