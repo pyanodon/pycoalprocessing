@@ -704,7 +704,7 @@ local recipe_alien_sample01 = {
         {type="item", name="ground-sample01", amount=15},
     },
     results={
-        {type="item", name="alien-sample01", amount=3},
+        {type="item", name="alien-sample01", amount=4},
     },
     main_product= "alien-sample01",
     icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
