@@ -30,7 +30,11 @@ replace_ing("methanol-reactor", "iron-gear-wheel", "steel-bearing")
 replace_ing("power-house", "iron-gear-wheel", "steel-bearing")
 replace_ing("power-house", "iron-plate", "lead-plate")
 
-replace_ing("quenching-tower", "pipe", "stone-pipe")
+replace_ing("power-house", "iron-plate", "lead-plate")
+
+replace_ing("evaporator", "steel-plate", "lead-plate")
+replace_ing("evaporator", "iron-plate", "steel-gear-wheel")
+replace_ing("evaporator", "iron-gear-wheel", "steel-bearing")
 
 replace_ing("tailings-pond", "pump", "water-pump")
 
@@ -44,7 +48,6 @@ replace_ing("cooling-tower-mk01", "iron-plate", "brass-alloy")
 replace_ing("cooling-tower-mk02", "pipe", "copper-pipe")
 replace_ing("cooling-tower-mk02", "iron-plate", "brass-alloy")
 
-replace_ing("desulfurizator-unit", "steel-plate", "titanium-plate")
 replace_ing("desulfurizator-unit", "iron-plate", "invar-alloy")
 
 replace_ing("soil-extractormk01", "electronic-circuit", "basic-circuit-board")
