@@ -36,11 +36,11 @@ local pipes = {
 local recipe1={
     type = "recipe",
     name = "ralesia-plantation",
-    energy_required = 10,
+    energy_required = 7,
     enabled = false,
     ingredients =
     {
-        {"soil", 400},
+        {"soil", 300},
         {"pipe", 15}, --updated-bob steel pipe
         {"electronic-circuit", 25}, --updated-bob basic-electronic-circuit-board
         {"stone", 100}, --updated-bob glass
@@ -74,7 +74,7 @@ local entity1={
     max_health = 300,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
+    collision_box = {{-3.2, -3.2}, {3.2, 3.2}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification =
     {
