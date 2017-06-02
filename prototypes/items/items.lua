@@ -105,7 +105,7 @@ local recipe_active_carbon = {
     ingredients ={
         {type="fluid", name="water", amount=100}, --updated-bob nitrogen
         {type="item", name="zinc-chloride", amount=2},
-        {type="item", name="coke", amount=25},
+        {type="item", name="coke", amount=20},
         --{type="item", name="sodium-hydroxide", amount=5},
     },
     results={

@@ -9,16 +9,7 @@ local technology = {
     {
         {
             type = "unlock-recipe",
-            recipe = "methanol-from-syngas"
-        },
-
-        {
-            type = "unlock-recipe",
             recipe = "refsyngas-from-meth"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "refsyngas-from-meth-canister"
         },
         {
             type = "unlock-recipe",

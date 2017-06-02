@@ -36,8 +36,8 @@ local refsyngas_from_meth = {
     {
         {type="fluid", name="refsyngas", amount=100},
         {type="fluid", name="water", amount=30}, --updated-bob hydrogen
-        {type="fluid", name="carbon-dioxide", amount=20},
-        {type="fluid", name="acidgas", amount=60},
+        {type="fluid", name="carbon-dioxide", amount=30},
+        {type="fluid", name="acidgas", amount=65},
 
     },
     --main_product= "refsyngas",
