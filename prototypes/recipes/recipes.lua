@@ -605,7 +605,7 @@ local recipe_ralesia = {
         {type="item", name="soil", amount=35},
     },
     results={
-        {type="item", name="ralesia", amount=7},
+        {type="item", name="ralesia", amount=10},
     },
     main_product= "ralesia",
     icon = "__pycoalprocessing__/graphics/icons/ralesia.png",
@@ -680,11 +680,11 @@ local recipe_bio_sample01 = {
     enabled = "false",
     energy_required = 6,
     ingredients ={
-        {type="item", name="ralesia-seeds", amount=20},
+        {type="item", name="ralesia-seeds", amount=18},
         {type="item", name="bonemeal", amount=10},
     },
     results={
-        {type="item", name="bio-sample01", amount=2},
+        {type="item", name="bio-sample01", amount=4},
     },
     main_product= "bio-sample01",
     icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
