@@ -180,8 +180,78 @@ local recipe_dirty_reaction ={
     subgroup = "py-items",
     order = "c",
 }
+-------------------------------------------------------------------------------
+--HEAVY OIL TO COAL GAS
+local recipe_heavy_to_coalgas ={
+    type = "recipe",
+    name = "heavyoil-to-coal-gas",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 9.3,
+    ingredients ={
+        {type="fluid", name="heavy-oil", amount=500},
+		{type="fluid", name="water", amount=2000},
+		{type="item", name="zinc-chloride", amount=5},
+    },
+    results={
+        {type="fluid", name="coal-gas", amount=350},
+		{type="fluid", name="water", amount=2000, temperature=100},
+        {type="fluid", name="tar", amount=200},
+    },
+    main_product= "coal-gas",
+    icon = "__pycoalprocessing__/graphics/icons/heavy-oil-to-coalgas.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
+--LIGHT OIL TO SYNGAS
+local recipe_light_to_syngas ={
+    type = "recipe",
+    name = "lightoil-to-syngas",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 9.3,
+    ingredients ={
+        {type="fluid", name="light-oil", amount=500},
+		{type="fluid", name="water", amount=2000},
+		{type="item", name="active-carbon", amount=5},
+    },
+    results={
+        {type="fluid", name="syngas", amount=350},
+		{type="fluid", name="water", amount=2000, temperature=100},
+        {type="fluid", name="tar", amount=200},
+    },
+    main_product= "syngas",
+    icon = "__pycoalprocessing__/graphics/icons/light-oil-to-syngas.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
+--PETGAS TO REFSYNGAS
+local recipe_petgas_to_refsyngas ={
+    type = "recipe",
+    name = "petgas-to-refsyngas",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 9.3,
+    ingredients ={
+        {type="fluid", name="petroleum-gas", amount=500},
+		{type="fluid", name="water", amount=2000},
+		{type="item", name="chromium", amount=5},
+    },
+    results={
+        {type="fluid", name="refsyngas", amount=350},
+		{type="fluid", name="water", amount=2000, temperature=100},
+        {type="fluid", name="tar", amount=200},
+    },
+    main_product= "refsyngas",
+    icon = "__pycoalprocessing__/graphics/icons/petgas-to-refsyngas.png",
+    subgroup = "py-items",
+    order = "c",
+}
 
 data:extend{
     heavy_oil_from_coal_gas, light_oil_from_syngas, petgas_from_refsyngas, ref_to_light_oil,
-    sulfuric_petgas, combustion_olefin, rare_earth_beneficiation, recipe_dirty_reaction
+    sulfuric_petgas, combustion_olefin, rare_earth_beneficiation, recipe_dirty_reaction,
+	recipe_heavy_to_coalgas, recipe_light_to_syngas, recipe_petgas_to_refsyngas
 }

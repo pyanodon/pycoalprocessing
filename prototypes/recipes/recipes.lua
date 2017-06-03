@@ -1296,6 +1296,91 @@ local recipe_niobium_pipe_to_ground = {
     result = "niobium-pipe-to-ground",
     result_count = 2,
 }
+--EXTRACT SULFUR FROM CRUDEOIL
+-------------------------------------------------------------------------------
+local recipe_sulfur_crudeoil = {
+    type = "recipe",
+    name = "sulfur-crudeoil",
+    category = "desulfurization",
+    enabled = "false",
+    energy_required = 5.5,
+    ingredients ={
+        {type="fluid", name="crude-oil", amount=400},
+		{type="item", name="iron-ore", amount=600}, --updated-bob salt
+    },
+    results={
+        {type="fluid", name="crude-oil", amount=300},
+        {type="item", name="sulfur", amount=10},
+        {type="item", name="ash", amount=1},
+    },
+    main_product= "sulfur",
+    icon = "__base__/graphics/icons/sulfur.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--EXTRACT SULFUR FROM HEAVYOIL
+-------------------------------------------------------------------------------
+local recipe_sulfur_heavyoil = {
+    type = "recipe",
+    name = "sulfur-heavyoil",
+    category = "desulfurization",
+    enabled = "false",
+    energy_required = 6.5,
+    ingredients ={
+        {type="fluid", name="heavy-oil", amount=300},
+    },
+    results={
+        {type="fluid", name="light-oil", amount=200},
+        {type="item", name="sulfur", amount=5},
+        {type="item", name="ash", amount=1},
+    },
+    main_product= "sulfur",
+    icon = "__base__/graphics/icons/sulfur.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--EXTRACT SULFUR FROM LIGHTOIL
+-------------------------------------------------------------------------------
+local recipe_sulfur_lightoil = {
+    type = "recipe",
+    name = "sulfur-lightoil",
+    category = "desulfurization",
+    enabled = "false",
+    energy_required = 7.5,
+    ingredients ={
+        {type="fluid", name="light-oil", amount=200},
+    },
+    results={
+        {type="fluid", name="petroleum-gas", amount=100},
+        {type="item", name="sulfur", amount=3},
+        {type="item", name="ash", amount=1},
+    },
+    main_product= "sulfur",
+    icon = "__base__/graphics/icons/sulfur.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--EXTRACT SULFUR FROM PETGAS
+-------------------------------------------------------------------------------
+local recipe_sulfur_petgas = {
+    type = "recipe",
+    name = "sulfur-petgas",
+    category = "desulfurization",
+    enabled = "false",
+    energy_required = 8.5,
+    ingredients ={
+        {type="fluid", name="petroleum-gas", amount=100},
+    },
+    results={
+        {type="fluid", name="syngas", amount=50},
+        {type="item", name="sulfur", amount=1},
+        {type="item", name="ash", amount=1},
+    },
+    main_product= "sulfur",
+    icon = "__base__/graphics/icons/sulfur.png",
+    subgroup = "py-items",
+    order = "c",
+}
 -------------------------------------------------------------------------------
 data:extend{
     raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
@@ -1312,5 +1397,6 @@ data:extend{
     recipe_sand_brick, tailings_classification, recipe_tar_distilation,
     recipe_oleochemicals_distilation, recipe_tar_gasification, recipe_oleo_gasification, recipe_coal_dust,
     recipe_coal_fawogae, recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron,
-    recipe_niobium_pipe, recipe_niobium_pipe_to_ground
+    recipe_niobium_pipe, recipe_niobium_pipe_to_ground, recipe_sulfur_heavyoil, recipe_sulfur_lightoil, 
+	recipe_sulfur_petgas, recipe_sulfur_crudeoil
 }

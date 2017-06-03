@@ -64,6 +64,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "nexelit-cartridge"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "lightoil-to-syngas"
+        },
     },
 
     unit =
