@@ -80,6 +80,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "olefin-filtration"
         },
+		{
+            type = "unlock-recipe",
+            recipe = "petgas-to-refsyngas"
+        },
 
     },
 
