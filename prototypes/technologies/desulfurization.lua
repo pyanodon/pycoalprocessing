@@ -24,6 +24,26 @@ local technology = {
             type = "unlock-recipe",
             recipe = "dirty-reaction"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "coalgas-syngas"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "sulfur-crudeoil"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "sulfur-heavyoil"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "sulfur-lightoil"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "sulfur-petgas"
+        },
     },
     unit =
     {

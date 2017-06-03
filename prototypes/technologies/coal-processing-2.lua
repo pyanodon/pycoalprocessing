@@ -172,6 +172,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "oleo-heavy"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "heavyoil-to-coal-gas"
+        },
 
     },
     unit =
