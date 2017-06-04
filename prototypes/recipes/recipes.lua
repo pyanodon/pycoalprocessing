@@ -161,7 +161,7 @@ local sand_classification ={
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="item", name="sand", amount=16},
+        {type="item", name="sand", amount=10},
     },
     results={
         {type="item", name="rich-dust", amount=10},
@@ -208,7 +208,7 @@ local richdust_separation ={
     },
     results={
         {type="item", name="iron-oxide", amount=2},
-        {type="item", name="chromite-sand", amount=6},
+        {type="item", name="chromite-sand", amount=10},
 
     },
     main_product= "chromite-sand",
@@ -1199,7 +1199,7 @@ local recipe_coal_fawogae ={
     enabled = "false",
     energy_required = 2.0,
     ingredients ={
-        {type="item", name="fawogae", amount=20},
+        {type="item", name="fawogae", amount=10},
     },
     results={
         {type="item", name="coal", amount=8},
@@ -1378,6 +1378,25 @@ local recipe_sulfur_petgas = {
     },
     main_product= "sulfur",
     icon = "__base__/graphics/icons/sulfur.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--ORGANIC MATTER FROM RAW-WOOD
+-------------------------------------------------------------------------------
+local recipe_organics_from_rawwood = {
+    type = "recipe",
+    name = "organics-from-wood",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 2,
+    ingredients ={
+        {type="item", name="raw-wood", amount=20},
+    },
+    results={
+        {type="item", name="organics", amount=20},
+    },
+    main_product= "organics",
+    icon = "__pycoalprocessing__/graphics/icons/organics.png",
     subgroup = "py-items",
     order = "c",
 }

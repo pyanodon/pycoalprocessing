@@ -176,6 +176,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "heavyoil-to-coal-gas"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "organics-from-wood"
+        },
 
     },
     unit =
