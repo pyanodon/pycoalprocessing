@@ -1417,5 +1417,5 @@ data:extend{
     recipe_oleochemicals_distilation, recipe_tar_gasification, recipe_oleo_gasification, recipe_coal_dust,
     recipe_coal_fawogae, recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron,
     recipe_niobium_pipe, recipe_niobium_pipe_to_ground, recipe_sulfur_heavyoil, recipe_sulfur_lightoil, 
-	recipe_sulfur_petgas, recipe_sulfur_crudeoil
+	recipe_sulfur_petgas, recipe_sulfur_crudeoil, recipe_organics_from_rawwood
 }
