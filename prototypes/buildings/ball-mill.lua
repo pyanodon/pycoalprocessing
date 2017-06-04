@@ -72,7 +72,7 @@ local entity1={
     working_sound =
     {
         sound = { filename = "__pycoalprocessing__/sounds/niobium-mine.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/niobium-mine.ogg", volume = 0.55 },
+        idle_sound = { filename = "__pycoalprocessing__/sounds/niobium-mine.ogg", volume = 0.65 },
         apparent_volume = 2.5,
     },
 }
