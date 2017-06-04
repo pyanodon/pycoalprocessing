@@ -755,7 +755,7 @@ local recipe_niobium_concentrate = {
     enabled = "false",
     energy_required = 5,
     ingredients ={
-        {type="item", name="niobium-dust", amount=5},
+        {type="item", name="niobium-dust", amount=15},
     },
     results={
         {type="item", name="niobium-concentrate", amount=5},

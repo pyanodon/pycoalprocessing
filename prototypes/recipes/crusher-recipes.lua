@@ -6,7 +6,7 @@ local niobium_powder = {
     enabled = "false",
     energy_required = 3.5,
     ingredients ={
-        {type="item", name="niobium-ore", amount=5},
+        {type="item", name="niobium-ore", amount=10},
     },
     results={
         {type="item", name="niobium-powder", amount=5},
