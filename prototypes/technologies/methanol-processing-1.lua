@@ -15,6 +15,10 @@ local technology =
         },
         {
             type = "unlock-recipe",
+            recipe = "rectisol"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "empty-gas-canister"
         },
         {
