@@ -501,7 +501,7 @@ local science_pack03 ={
     ingredients ={
         {type="item", name="optical-fiber", amount=1},
         {type="item", name="electronic-circuit", amount=1},
-        {type="item", name="copper-cable", amount=15},  --updated-bob insulated-cable
+        {type="item", name="copper-cable", amount=8},  --updated-bob insulated-cable
         {type="item", name="iron-plate", amount=10},
     },
     results={
