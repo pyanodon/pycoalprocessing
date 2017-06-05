@@ -10,10 +10,6 @@ local technology = {
 
         {
             type = "unlock-recipe",
-            recipe = "rectisol"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "quenching-tower"
         },
         {
