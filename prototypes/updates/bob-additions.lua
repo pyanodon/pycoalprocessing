@@ -36,7 +36,7 @@ local syngas_from_coal_oxygen = {
     },
     results=
     {
-        {type="fluid", name="syngas", amount=70},
+        {type="fluid", name="syngas", amount=100},
         {type="fluid", name="tar", amount=30},
         {type="item", name="ash", amount=1}
     },
