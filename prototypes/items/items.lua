@@ -197,7 +197,7 @@ local recipe_soil ={
         {type="fluid", name="water", amount=1000},
     },
     results={
-        {type="item", name="soil", amount=10},
+        {type="item", name="soil", amount=12},
     },
     icon = "__pycoalprocessing__/graphics/icons/soil.png",
 }
@@ -501,7 +501,7 @@ local recipe_fawogae = {
         {type="fluid", name="water", amount=900},
     },
     results={
-        {type="item", name="fawogae", amount=5},
+        {type="item", name="fawogae", amount=8},
     },
 }
 
