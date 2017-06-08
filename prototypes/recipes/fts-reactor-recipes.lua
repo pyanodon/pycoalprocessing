@@ -14,7 +14,7 @@ local heavy_oil_from_coal_gas ={
     results={
         {type="fluid", name="heavy-oil", amount=250},
         {type="fluid", name="tar", amount=200},
-        {type="fluid", name="water", amount=2000, temperature=100},
+        {type="fluid", name="steam", amount=2000, temperature=165},
     },
     main_product= "heavy-oil",
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",
@@ -35,7 +35,7 @@ local light_oil_from_syngas ={
     results={
         {type="fluid", name="light-oil", amount=300},
         {type="fluid", name="olefin", amount=150},
-        {type="fluid", name="water", amount=2000, temperature=100},
+        {type="fluid", name="steam", amount=2000, temperature=165},
     },
     main_product= "light-oil",
     icon = "__base__/graphics/icons/fluid/light-oil.png",
@@ -76,7 +76,7 @@ local ref_to_light_oil ={
     },
     results={
         {type="fluid", name="light-oil", amount=400},
-        {type="fluid", name="water", amount=2000, temperature=100},
+        {type="fluid", name="steam", amount=2000, temperature=165},
         {type="fluid", name="carbon-dioxide", amount=200},
     },
     icon = "__pycoalprocessing__/graphics/icons/ref_to_light_oil.png",
@@ -101,7 +101,7 @@ local sulfuric_petgas ={
     },
     results={
         {type="fluid", name="aromatics", amount=100},
-        {type="fluid", name="water", amount=2000, temperature=100},
+        {type="fluid", name="steam", amount=2000, temperature=165},
         {type="fluid", name="sulfuric-acid", amount=500},
     },
     icon = "__pycoalprocessing__/graphics/icons/sulfuric-petgas.png",
@@ -125,7 +125,7 @@ local combustion_olefin ={
     },
     results={
         {type="fluid", name="carbon-dioxide", amount=100},
-        {type="fluid", name="water", amount=2000, temperature=100},
+        {type="fluid", name="steam", amount=2000, temperature=165},
         {type="fluid", name="combustion-mixture1", amount=300},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
@@ -150,7 +150,7 @@ local rare_earth_beneficiation ={
     results={
         {type="item", name="rich-dust", amount=5},
         {type="fluid", name="rare-earth-mud", amount=250},
-		{type="fluid", name="water", amount=2000, temperature=100},
+		{type="fluid", name="steam", amount=2000, temperature=165},
         {type="item", name="sand", amount=10},
     },
     icon = "__pycoalprocessing__/graphics/icons/rare-earth-mud.png",
@@ -172,7 +172,7 @@ local recipe_dirty_reaction ={
     },
     results={
         {type="fluid", name="crude-oil", amount=500},
-		{type="fluid", name="water", amount=2000, temperature=100},
+		{type="fluid", name="steam", amount=2000, temperature=165},
         {type="fluid", name="olefin", amount=300},
     },
     main_product= "crude-oil",
@@ -195,7 +195,7 @@ local recipe_heavy_to_coalgas ={
     },
     results={
         {type="fluid", name="coal-gas", amount=350},
-		{type="fluid", name="water", amount=2000, temperature=100},
+		{type="fluid", name="steam", amount=2000, temperature=165},
         {type="fluid", name="tar", amount=200},
     },
     main_product= "coal-gas",
@@ -218,7 +218,7 @@ local recipe_light_to_syngas ={
     },
     results={
         {type="fluid", name="syngas", amount=350},
-		{type="fluid", name="water", amount=2000, temperature=100},
+		{type="fluid", name="steam", amount=2000, temperature=165},
         {type="fluid", name="tar", amount=200},
     },
     main_product= "syngas",
@@ -241,7 +241,7 @@ local recipe_petgas_to_refsyngas ={
     },
     results={
         {type="fluid", name="refsyngas", amount=350},
-		{type="fluid", name="water", amount=2000, temperature=100},
+		{type="fluid", name="steam", amount=2000, temperature=165},
         {type="fluid", name="tar", amount=200},
     },
     main_product= "refsyngas",

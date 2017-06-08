@@ -91,18 +91,18 @@ local extract_sulfur ={
 }
 
 -------------------------------------------------------------------------------
---Turn warm water into cooled water
+--Turn STEAM into cooled water
 local cooling_water ={
     type = "recipe",
     name = "cooling-water",
     category = "cooling",
     enabled = "false",
-    energy_required = 1,
+    energy_required = 1.5,
     ingredients ={
-        {type="fluid", name="water", amount=50, temperature=100},
+        {type="fluid", name="steam", amount=150, temperature=165},
     },
     results={
-        {type="fluid", name="water", amount=50, temperature=15},
+        {type="fluid", name="water", amount=150, temperature=15},
     },
     main_product= "water",
     subgroup = "py-fluids",
@@ -1156,7 +1156,7 @@ local recipe_tar_gasification ={
     energy_required = 3.0,
     ingredients ={
         {type="fluid", name="tar", amount=250},
-        {type="fluid", name="steam", amount=600}, --updated-bob liquid-air
+        {type="fluid", name="water", amount=600}, --updated-bob liquid-air
     },
     results={
         {type="fluid", name="coal-gas", amount=200},
@@ -1202,7 +1202,7 @@ local recipe_coal_fawogae ={
         {type="item", name="fawogae", amount=10},
     },
     results={
-        {type="item", name="coal", amount=8},
+        {type="item", name="coal", amount=10},
     },
     main_product= "coal",
     icon = "__pycoalprocessing__/graphics/icons/coal-fawogae.png",
