@@ -185,7 +185,7 @@ local soil_separation ={
         {type="item", name="soil", amount=20},
     },
     results={
-        {type="item", name="sand", amount=15},
+        {type="item", name="sand", amount=13},
         {type="item", name="coarse", amount=3},
         {type="item", name="limestone", amount=3},
         {type="item", name="organics", amount=3},
@@ -421,12 +421,12 @@ local mineralized_water ={
     enabled = "false",
     energy_required = 2.5,
     ingredients ={
-        {type="item", name="coarse", amount=5},
+        {type="item", name="coarse", amount=100},
         {type="fluid", name="water", amount=250},
     },
     results={
-        {type="item", name="stone", amount=3},
-        {type="fluid", name="water-mineralized", amount=150},
+        {type="item", name="stone", amount=4},
+        {type="fluid", name="water-mineralized", amount=200},
 
     },
     main_product= "water-mineralized",
@@ -1110,7 +1110,7 @@ local recipe_tar_distilation ={
     enabled = "false",
     energy_required = 2.5,
     ingredients ={
-        {type="fluid", name="tar", amount=150},
+        {type="fluid", name="tar", amount=350},
     },
     results={
         {type="fluid", name="flue-gas", amount=500},

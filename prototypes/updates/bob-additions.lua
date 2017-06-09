@@ -54,10 +54,10 @@ local recipe_tar_carbon = {
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="fluid", name="tar", amount=20},
+        {type="fluid", name="tar", amount=40},
     },
     results={
-        {type="item", name="carbon", amount=1},
+        {type="item", name="carbon", amount=4},
     },
     main_product= "carbon",
     subgroup = "py-items",
