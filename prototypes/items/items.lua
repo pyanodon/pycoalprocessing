@@ -694,7 +694,7 @@ local recipe_niobium_ore = {
         {type="fluid", name="refsyngas", amount=100},
     },
     results={
-        {type="item", name="niobium-ore", amount=10},
+        {type="item", name="niobium-ore", amount=12},
     },
 }
 
@@ -758,7 +758,7 @@ local recipe_niobium_concentrate = {
         {type="item", name="niobium-dust", amount=15},
     },
     results={
-        {type="item", name="niobium-concentrate", amount=5},
+        {type="item", name="niobium-concentrate", amount=10},
 		{type="item", name="sand", amount=2},
     },
 	icon = "__pycoalprocessing__/graphics/icons/class-niobium.png",
@@ -967,7 +967,7 @@ local recipe_cladding = {
     energy_required = 2.0,
     ingredients ={
         {type="item", name="sand", amount=5}, --updated-bob glass
-		{type="fluid", name="niobium-complex", amount=80},
+		{type="fluid", name="niobium-complex", amount=60},
     },
     results={
         {type="item", name="cladding", amount=1},
