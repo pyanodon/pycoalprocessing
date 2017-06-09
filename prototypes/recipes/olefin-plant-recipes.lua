@@ -7,7 +7,7 @@ local diesel ={
     enabled = "false",
     energy_required = 1.5,
     ingredients ={
-        {type="item", name="chromium", amount=2},
+        {type="item", name="nexelit-plate", amount=2},
         {type="fluid", name="methanol", amount=150},
         {type="fluid", name="carbon-dioxide", amount=200},
     },
@@ -28,7 +28,7 @@ local diesel2 ={
     enabled = "false",
     energy_required = 1.5,
     ingredients ={
-        {type="item", name="chromium", amount=2},
+        {type="item", name="nexelit-plate", amount=2},
         {type="fluid", name="olefin", amount=200},
     },
     results=
@@ -47,7 +47,7 @@ local aromatics={
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="item", name="chromium", amount=2},
+        {type="item", name="nexelit-plate", amount=2},
         {type="fluid", name="olefin", amount=200},
         {type="fluid", name="water", amount=200},
     },
@@ -71,7 +71,7 @@ local olefin=
     enabled = "false",
     energy_required = 2,
     ingredients ={
-        {type="item", name="chromium", amount=2},
+        {type="item", name="nexelit-plate", amount=2},
         {type="fluid", name="water", amount=600}, --updated-bob hydrogen
         {type="fluid", name="carbon-dioxide", amount=200},
     },
@@ -116,6 +116,7 @@ local gasoline=
     energy_required = 2.8,
     ingredients ={
         {type="fluid", name="olefin", amount=300},
+		{type="item", name="nexelit-plate", amount=5},
         --{type="fluid", name="hydrogen", amount=20},
         {type="fluid", name="light-oil", amount=200},
     },
@@ -138,7 +139,7 @@ local refolefin=
     energy_required = 3,
     ingredients ={
         {type="fluid", name="refsyngas", amount=200},
-        {type="item", name="nichrome", amount=5},
+        {type="item", name="nexelit-plate", amount=5},
     },
     results=
     {
