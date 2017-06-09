@@ -1174,11 +1174,11 @@ local recipe_copper_coating = {
     ingredients ={
 		{type="item", name="copper-plate", amount=10},
 		{type="item", name="cladded-core", amount=1},
-		{type="fluid", name="water-mineralized", amount=150},
+		{type="fluid", name="water-mineralized", amount=250},
 
     },
     results={
-        {type="item", name="copper-coating", amount=1},
+        {type="item", name="copper-coating", amount=2},
     },
 	main_product= "copper-coating",
     icon = "__pycoalprocessing__/graphics/icons/copper-coating.png",
