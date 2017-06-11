@@ -297,7 +297,7 @@ local sand_casting ={
         {type="fluid", name="creosote", amount=150},
     },
     results={
-        {type="item", name="sand-casting", amount=4},
+        {type="item", name="sand-casting", amount=2},
 
     },
     main_product= "sand-casting",
@@ -1400,6 +1400,171 @@ local recipe_organics_from_rawwood = {
     subgroup = "py-items",
     order = "c",
 }
+--CREOSOTE TO AROMATICS
+-------------------------------------------------------------------------------
+local recipe_creosote_to_aromatics = {
+    type = "recipe",
+    name = "creosote-to-aromatics",
+    category = "tar",
+    enabled = "false",
+    energy_required = 2,
+    ingredients ={
+        {type="fluid", name="creosote", amount=150},
+    },
+    results={
+        {type="fluid", name="aromatics", amount=100},
+    },
+    main_product= "aromatics",
+    icon = "__pycoalprocessing__/graphics/icons/creosote-aromatics.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--AROMATICS TO LUBRICANT
+-------------------------------------------------------------------------------
+local recipe_aromatics_to_lubricant = {
+    type = "recipe",
+    name = "aromatics-to-lubricant",
+    category = "desulfurization",
+    enabled = "false",
+    energy_required = 5,
+    ingredients ={
+        {type="fluid", name="aromatics", amount=150},
+    },
+    results={
+        {type="fluid", name="lubricant", amount=100},
+		{type="item", name="sulfur", amount=1},
+    },
+    main_product= "lubricant",
+    icon = "__pycoalprocessing__/graphics/icons/aromatics-lubricant.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--AROMATICS TO RUBBER
+-------------------------------------------------------------------------------
+local recipe_aromatics_to_rubber = {
+    type = "recipe",
+    name = "aromatics-to-rubber",
+    category = "methanol",
+    enabled = "false",
+    energy_required = 1.5,
+    ingredients ={
+        {type="fluid", name="aromatics", amount=60},
+		{type="fluid", name="syngas", amount=40},
+    },
+    results={
+        {type="item", name="rubber", amount=1},
+    },
+    main_product= "rubber",
+    icon = "__pycoalprocessing__/graphics/icons/aromatics-rubber.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--AROMATICS TO PLASTIC
+-------------------------------------------------------------------------------
+local recipe_aromatics_to_plastic = {
+    type = "recipe",
+    name = "aromatics-to-plastic",
+    category = "methanol",
+    enabled = "false",
+    energy_required = 1.5,
+    ingredients ={
+        {type="fluid", name="aromatics", amount=40},
+		{type="fluid", name="syngas", amount=60},
+    },
+    results={
+        {type="item", name="plastic-bar", amount=1},
+    },
+    main_product= "plastic-bar",
+    icon = "__pycoalprocessing__/graphics/icons/aromatics-rubber.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--SODIUM-SULFUR BATTERY
+-------------------------------------------------------------------------------
+local recipe_nas_battery = {
+    type = "recipe",
+    name = "nas-battery",
+    category = "advanced-crafting",
+    enabled = "false",
+    energy_required = 5,
+    ingredients ={
+        {type="item", name="sulfur", amount=20},
+		{type="item", name="salt", amount=60}, --bobs sodium-hydroxide
+		{type="item", name="steel-plate", amount=1},
+		{type="item", name="chromium", amount=1},
+    },
+    results={
+        {type="item", name="battery", amount=6},
+    },
+    main_product= "battery",
+    icon = "__pycoalprocessing__/graphics/icons/nas-battery.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--COKE from COAL
+-------------------------------------------------------------------------------
+local recipe_coke_coal = {
+    type = "recipe",
+    name = "coke-coal",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 2,
+    ingredients ={
+        {type="item", name="coal", amount=5},
+    },
+    results={
+        {type="item", name="coke", amount=5},
+    },
+    main_product= "coke",
+    icon = "__pycoalprocessing__/graphics/icons/coke.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--CONCRETE from RICHCLAY
+-------------------------------------------------------------------------------
+local recipe_concrete_richclay = {
+    type = "recipe",
+    name = "concrete-richclay",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 2,
+    ingredients ={
+        {type="item", name="rich-clay", amount=15},
+		{type="fluid", name="sulfuric-acid", amount=50},
+    },
+    results={
+        {type="item", name="concrete", amount=6},
+    },
+    main_product= "concrete",
+    icon = "__base__/graphics/icons/concrete.png",
+    subgroup = "py-items",
+    order = "c",
+}
+--DISTILATION of STONE
+-------------------------------------------------------------------------------
+local recipe_stone_distilation = {
+    type = "recipe",
+    name = "stone-distilation",
+    category = "distilator",
+    enabled = "false",
+    energy_required = 2,
+    ingredients ={
+        {type="item", name="stone", amount=50},
+		{type="fluid", name="water", amount=200},
+    },
+    results={
+        {type="item", name="tailings-dust", amount=30},
+		{type="item", name="coarse", amount=25},
+		{type="fluid", name="tar", amount=100},
+		{type="fluid", name="rare-earth-mud", amount=30},
+		{type="fluid", name="dirty-water", amount=100},
+    },
+    main_product= "tar",
+    icon = "__pycoalprocessing__/graphics/icons/tar.png",
+    subgroup = "py-items",
+    order = "c",
+}
+
 -------------------------------------------------------------------------------
 data:extend{
     raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
@@ -1415,7 +1580,9 @@ data:extend{
     recipe_filtration_dirty_water, recipe_olefin_filtration, recipe_coalgas_syngas, recipe_oleo_oil,
     recipe_sand_brick, tailings_classification, recipe_tar_distilation,
     recipe_oleochemicals_distilation, recipe_tar_gasification, recipe_oleo_gasification, recipe_coal_dust,
-    recipe_coal_fawogae, recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron,
+    recipe_coal_fawogae, recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron, 
     recipe_niobium_pipe, recipe_niobium_pipe_to_ground, recipe_sulfur_heavyoil, recipe_sulfur_lightoil, 
-	recipe_sulfur_petgas, recipe_sulfur_crudeoil, recipe_organics_from_rawwood
+	recipe_sulfur_petgas, recipe_sulfur_crudeoil, recipe_organics_from_rawwood, recipe_creosote_to_aromatics, 
+	recipe_aromatics_to_lubricant, recipe_aromatics_to_rubber, recipe_aromatics_to_plastic, recipe_nas_battery, 
+	recipe_coke_coal, recipe_concrete_richclay, recipe_stone_distilation
 }

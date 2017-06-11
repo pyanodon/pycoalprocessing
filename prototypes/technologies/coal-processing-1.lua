@@ -147,6 +147,14 @@ local technology = {
             type = "unlock-recipe",
             recipe = "coal-fawogae"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "coke-coal"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "stone-distilation"
+        },
     },
     unit =
     {
