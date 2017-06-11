@@ -63,7 +63,7 @@ local entity1={
     {
       filename = "__pycoalprocessing__/graphics/entity/accumulator-mk01/accumulator-charging.png",
       width = 157,
-      height = 224,
+      height = 244,
       line_length = 10,
       frame_count = 40,
       shift = {0.43, -1.781},
@@ -75,7 +75,7 @@ local entity1={
     {
       filename = "__pycoalprocessing__/graphics/entity/accumulator-mk01/accumulator-discharging.png",
       width = 157,
-      height = 224,
+      height = 244,
       line_length = 10,
       frame_count = 40,
       shift = {0.43, -1.781},
@@ -88,8 +88,8 @@ local entity1={
     {
       sound =
       {
-        filename = "__base__/sound/accumulator-working.ogg",
-        volume = 1
+        filename = "__pycoalprocessing__/sounds/accumulator.ogg",
+        volume = 0.4
       },
       idle_sound = {
         filename = "__base__/sound/accumulator-idle.ogg",
