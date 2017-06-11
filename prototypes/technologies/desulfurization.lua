@@ -44,6 +44,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "sulfur-petgas"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "aromatics-to-lubricant"
+        },
     },
     unit =
     {

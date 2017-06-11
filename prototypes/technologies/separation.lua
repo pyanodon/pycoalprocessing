@@ -52,6 +52,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "calcium-carbide"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "creosote-to-aromatics"
+        },
 
     },
     unit =

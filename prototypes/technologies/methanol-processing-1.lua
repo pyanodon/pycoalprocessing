@@ -37,6 +37,14 @@ local technology =
             type = "unlock-recipe",
             recipe = "fill-methanol-gas-canister"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "aromatics-to-rubber"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "aromatics-to-plastic"
+        },
     },
     unit =
     {
