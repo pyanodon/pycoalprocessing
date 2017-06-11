@@ -175,6 +175,9 @@ replace_ing("circuit-board", "ferric-chloride-solution", "boric-acid")
 replace_ing("superior-circuit-board", "ferric-chloride-solution", "boric-acid")
 replace_ing("multi-layer-circuit-board", "ferric-chloride-solution", "boric-acid")
 replace_ing("cladding", "sand", "glass")
+replace_ing("aromatics-to-rubber", "plastic-bar", "rubber")
+replace_ing("nas-battery", "salt", "sodium-hydroxide")
+
 --replace_ing("drill-head", "iron-plate", "titanium-plate")
 
 replace_ing("empty-gas-canister", "copper-plate", "brass-alloy")

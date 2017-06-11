@@ -5,13 +5,14 @@ local Prototype = require("stdlib.prototype.prototype")
 local recipe1={
     type = "recipe",
     name = "accumulator-mk01",
-    energy_required = 15,
+    energy_required = 5,
     enabled = false,
     ingredients =
     {
-        {"electronic-circuit", 10},
-        {"steel-plate", 40}, --updated-bob lead-plate
-        {"iron-plate", 40}, --updated-bob steel-gear-wheel
+        {"battery", 20},
+        {"steel-plate", 20},
+        {"iron-plate", 40},
+		{"copper-plate", 40},
 		{"nexelit-plate", 50},
 		{"niobium-plate", 10},
 
@@ -89,7 +90,7 @@ local entity1={
       sound =
       {
         filename = "__pycoalprocessing__/sounds/accumulator.ogg",
-        volume = 0.4
+        volume = 0.6
       },
       idle_sound = {
         filename = "__base__/sound/accumulator-idle.ogg",

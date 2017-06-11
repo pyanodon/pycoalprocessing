@@ -7,7 +7,7 @@ local ash ={
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "ash",
-    stack_size = 100
+    stack_size = 1000
 }
 
 -------------------------------------------------------------------------------

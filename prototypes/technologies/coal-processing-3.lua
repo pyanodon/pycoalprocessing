@@ -14,6 +14,10 @@ local technology = {
         },
         {
             type = "unlock-recipe",
+            recipe = "steel-plate2"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "tar-oil"
         },
         {

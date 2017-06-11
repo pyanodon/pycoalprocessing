@@ -20,6 +20,29 @@ local nexelit_plate ={
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
 }
 -------------------------------------------------------------------------------
+--STEEL PLATE - cant change the base one,so i did that.
+local steel_plate2 ={
+    type = "recipe",
+    name = "steel-plate2",
+    category = "advanced-foundry",
+    enabled = "false",
+    energy_required = 2,
+    ingredients ={
+        {type="item", name="crushed-iron", amount=2},
+        {type="item", name="coke", amount=2},
+		{type="item", name="fuelrod-mk01", amount=2},
+        {type="item", name="limestone", amount=2},
+        {type="item", name="sand-casting", amount=1},
+    },
+    results=
+    {
+        {type="item", name="steel-plate", amount=8},
+    },
+    main_product= "steel-plate",
+    icon = "__base__/graphics/icons/steel-plate.png",
+}
+
+-------------------------------------------------------------------------------
 
 --Make foundry recipes from smelting recipes with 1 ingredient.
 local list = {}
@@ -68,4 +91,4 @@ local _filter_ing = function(v)
     end
     data:extend(list)
 
-    data:extend{nexelit_plate}
+    data:extend{nexelit_plate,steel_plate2}
