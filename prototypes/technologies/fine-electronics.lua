@@ -54,6 +54,10 @@ local technology = {
         },
         {
             type = "unlock-recipe",
+            recipe = "nas-battery"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "science-pack-3"
         },
 

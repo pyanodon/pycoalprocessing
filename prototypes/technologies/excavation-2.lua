@@ -11,6 +11,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "mining-stone"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "mining-limestone"
+        },
     },
     unit =
     {
