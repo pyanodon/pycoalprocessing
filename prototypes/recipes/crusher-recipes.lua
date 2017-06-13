@@ -143,6 +143,24 @@ if bobmods then
         icon = "__pycoalprocessing__/graphics/icons/crush-lead.png",
         order = "b [py-crusher]",
     }
+    --QUARTZ
+    local crushing_quartz ={
+        type = "recipe",
+        name = "crushing-lead",
+        category = "crusher",
+        enabled = "false",
+        energy_required = 1,
+        ingredients ={
+            {type="item", name="quartz", amount=5,},
+        },
+        results={
+            {type="item", name="crushed-quartz", amount=5,},
+            {type="item", name="stone", amount=1,},
+        },
+        main_product= "crushed-quartz",
+        icon = "__pycoalprocessing__/graphics/icons/crush-quartz.png",
+        order = "b [py-crusher]",
+    }
     --NICKEL
     local crushing_nickel ={
         type = "recipe",
@@ -256,6 +274,7 @@ if bobmods then
         crushing_bauxite,
         crushing_gold,
         crushing_lead,
+		crushing_quartz,
         crushing_nickel,
         crushing_rutile,
         crushing_silver,

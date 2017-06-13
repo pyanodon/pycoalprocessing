@@ -426,7 +426,7 @@ local mineralized_water ={
     },
     results={
         {type="item", name="stone", amount=4},
-        {type="fluid", name="water-mineralized", amount=200},
+        {type="fluid", name="water-mineralized", amount=250},
 
     },
     main_product= "water-mineralized",

@@ -6,7 +6,7 @@ local mining_nexelit ={
     enabled = "false",
     energy_required = 0.75,
     ingredients ={
-        {type="fluid", name="lubricant", amount=200,},
+        {type="fluid", name="lubricant", amount=100,},
         {type="fluid", name="coal-gas", amount=100,},
         {type="item", name="drill-head", amount=3,},
     },
@@ -25,7 +25,7 @@ local mining_stone ={
     enabled = "false",
     energy_required = 1.2,
     ingredients ={
-        {type="fluid", name="lubricant", amount=200,},
+        {type="fluid", name="lubricant", amount=100,},
         {type="fluid", name="coal-gas", amount=100,},
         {type="item", name="drill-head", amount=3,},
     },
@@ -44,7 +44,7 @@ local mining_limestone ={
     enabled = "false",
     energy_required = 1.2,
     ingredients ={
-        {type="fluid", name="lubricant", amount=200,},
+        {type="fluid", name="lubricant", amount=100,},
         {type="fluid", name="coal-gas", amount=100,},
         {type="item", name="drill-head", amount=3,},
     },
@@ -68,7 +68,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
@@ -87,7 +87,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
@@ -106,7 +106,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
@@ -125,7 +125,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
@@ -144,7 +144,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
@@ -163,7 +163,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
@@ -182,7 +182,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
@@ -201,7 +201,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
@@ -220,7 +220,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
@@ -239,7 +239,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
@@ -258,7 +258,7 @@ if bobmods then
         enabled = "false",
         energy_required = 1.2,
         ingredients ={
-            {type="fluid", name="lubricant", amount=200,},
+            {type="fluid", name="lubricant", amount=100,},
             {type="fluid", name="coal-gas", amount=100,},
             {type="item", name="drill-head", amount=3,},
         },
