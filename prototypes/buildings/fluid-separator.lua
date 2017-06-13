@@ -89,6 +89,16 @@ local entity1={
             base_level = 1,
             pipe_connections = {{ type="output", position = {-1.0, -4.0} }}
         },
+		
+        --South3
+        {
+            production_type = "input",
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {-0.00,-0.95}, nil, nil),
+            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
+            base_area = 10,
+            base_level = -1,
+            pipe_connections = {{ type="input", position = {0.0, 4.0} }}
+        },
 
         --South
         {
@@ -97,7 +107,7 @@ local entity1={
             pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {1.0, 4.0} }}
+            pipe_connections = {{ type="input", position = {2.0, 4.0} }}
         },
         --South2
         {
@@ -106,7 +116,7 @@ local entity1={
             pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {-1.0, 4.0} }}
+            pipe_connections = {{ type="input", position = {-2.0, 4.0} }}
         },
     },
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },

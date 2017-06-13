@@ -473,7 +473,7 @@ local recipe_fuelrod_mk01 = {
         {type="item", name="coke", amount=5},
     },
     results={
-        {type="item", name="fuelrod-mk01", amount=1},
+        {type="item", name="fuelrod-mk01", amount=2},
     },
 }
 
@@ -1174,7 +1174,7 @@ local recipe_copper_coating = {
     ingredients ={
 		{type="item", name="copper-plate", amount=10},
 		{type="item", name="cladded-core", amount=1},
-		{type="fluid", name="water-mineralized", amount=250},
+		{type="fluid", name="water-mineralized", amount=100},
 
     },
     results={
