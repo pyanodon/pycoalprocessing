@@ -128,6 +128,28 @@ local glass ={
     order = "c",
 }
 -------------------------------------------------------------------------------
+--GLASS PRODUCTION2
+local glass2 ={
+    type = "recipe",
+    name = "glass-sand2",
+    category = "hpf",
+    enabled = "true",
+    energy_required = 2.5,
+    ingredients ={
+        {type="item", name="pure-sand", amount=15},
+        {type="fluid", name="coal-gas", amount=100},
+        {type="item", name="crushed-quartz", amount=4},
+    },
+    results={
+        {type="item", name="glass", amount=14},
+
+    },
+    main_product= "glass",
+    icon = "__bobplates__/graphics/icons/glass.png",
+    subgroup = "py-items",
+    order = "c",
+}
+-------------------------------------------------------------------------------
 -- TUNGSTEN POWDER
 local tungsten_powder ={
     type = "recipe",
@@ -403,6 +425,18 @@ local crushed_silver = {
     stack_size = 1000
 }
 -------------------------------------------------------------------------------
+-- CRUSHED QUARTZ
+local crushed_quartz = {
+    type = "item",
+    name = "crushed-quartz",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-quartz.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "g",
+    stack_size = 1000
+}
+-------------------------------------------------------------------------------
 -- CRUSHED TIN
 local crushed_tin = {
     type = "item",
@@ -441,9 +475,9 @@ local crushed_zinc = {
 
 data:extend{
     methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen,
-    void_flue_gas, glass, tungsten_powder, recipe_crushed_tin, recipe_syngas_distilation,
+    void_flue_gas, glass, glass2, tungsten_powder, recipe_crushed_tin, recipe_syngas_distilation,
     recipe_crushed_lead, recipe_crushed_silver, recipe_crushed_gold, recipe_crushed_zinc, recipe_crushed_nickel,
-    recipe_crushed_rutile, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol,
+    recipe_crushed_rutile, crushed_quartz, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol,
     crushed_bauxite, crushed_gold, crushed_lead, crushed_nickel, crushed_rutile, crushed_silver,
     crushed_tin, crushed_tungsten, crushed_zinc,
 }
@@ -488,7 +522,7 @@ bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-tin")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-tungsten")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-zinc")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-silver")
---bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-quartz")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-quartz")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-rutile")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-nickel")
 bobmods.lib.tech.add_recipe_unlock("crusher", "tungsten-powder")
@@ -502,6 +536,6 @@ bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-tin")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-tungsten")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-zinc")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-silver")
---bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-quartz")
+bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-quartz")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-rutile")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-nickel")
