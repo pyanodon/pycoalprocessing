@@ -11,7 +11,7 @@ local making_chromium ={
     enabled = false,
     energy_required = 5.5,
     ingredients ={
-        {type="fluid", name="carbon-dioxide", amount=100},
+        {type="fluid", name="carbon-dioxide", amount=150},
         {type="item", name="chromite-sand", amount=15},
         {type="item", name="coke", amount=5},
         {type="item", name="limestone", amount=3},
@@ -140,7 +140,7 @@ local coarse_classification ={
     enabled = "false",
     energy_required = 1,
     ingredients ={
-        {type="item", name="coarse", amount=5},
+        {type="item", name="coarse", amount=20},
     },
     results={
         {type="item", name="stone", amount=5},
@@ -161,7 +161,7 @@ local sand_classification ={
     enabled = "false",
     energy_required = 4,
     ingredients ={
-        {type="item", name="sand", amount=10},
+        {type="item", name="sand", amount=12},
     },
     results={
         {type="item", name="rich-dust", amount=10},
