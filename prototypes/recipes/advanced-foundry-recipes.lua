@@ -30,7 +30,7 @@ local steel_plate2 ={
     ingredients ={
         {type="item", name="crushed-iron", amount=2},
         {type="item", name="coke", amount=2},
-		{type="item", name="fuelrod-mk01", amount=2},
+		{type="item", name="fuelrod-mk01", amount=1},
         {type="item", name="limestone", amount=2},
         {type="item", name="sand-casting", amount=1},
     },

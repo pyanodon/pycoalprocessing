@@ -141,8 +141,10 @@ replace_ing("anthraquinone", "steam", "liquid-air")
 replace_ing("flask", "iron-plate", "glass")
 
 add_ing("ref_to_light-oil", {type="fluid", name="hydrogen", amount=250})
---add_ing("ref_to_petroleum-gas", {type="fluid", name="hydrogen", amount=350})
+
 add_ing("combustion-olefin", {type="fluid", name="hydrogen", amount=150})
+
+replace_ing("niobium-oxide", "water", "nitrogen-dioxide")
 
 add_ing("filtration-media", {type="item", name="glass", amount=5})
 
