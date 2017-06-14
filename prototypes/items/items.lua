@@ -237,7 +237,7 @@ local recipe_drill_head = {
         {type="item", name="iron-plate", amount=5}, --updated-bob titanium-plate
     },
     results={
-        {type="item", name="drill-head", amount=2},
+        {type="item", name="drill-head", amount=4},
     },
 }
 
@@ -730,7 +730,7 @@ local recipe_niobium_dust = {
         {type="item", name="niobium-powder", amount=5},
     },
     results={
-        {type="item", name="niobium-dust", amount=5},
+        {type="item", name="niobium-dust", amount=10},
 		{type="item", name="gravel", amount=2},
     },
 	icon = "__pycoalprocessing__/graphics/icons/niobium-dust.png",
@@ -753,7 +753,7 @@ local recipe_niobium_concentrate = {
     name = "niobium-concentrate",
     category = "classifier",
     enabled = "false",
-    energy_required = 5,
+    energy_required = 4,
     ingredients ={
         {type="item", name="niobium-dust", amount=15},
     },
@@ -812,7 +812,7 @@ local recipe_niobium_oxide = {
     energy_required = 3.5,
     ingredients ={
         {type="fluid", name="water", amount=300}, --Added Bob nitrogen-dioxide
-		{type="fluid", name="niobium-complex", amount=100},
+		{type="fluid", name="niobium-complex", amount=50},
     },
     results={
         {type="item", name="niobium-oxide", amount=10},
