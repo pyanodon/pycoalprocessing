@@ -807,7 +807,7 @@ local recipe_oleochemicals = {
     results={
         {type="fluid", name="oleochemicals", amount=150},
         {type="fluid", name="glycerol", amount=100},
-        {type="fluid", name="water", amount=2000, temperature=100},
+        {type="fluid", name="steam", amount=2000, temperature=165},
     },
     main_product= "oleochemicals",
     icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
