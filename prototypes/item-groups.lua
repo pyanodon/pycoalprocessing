@@ -30,6 +30,12 @@ data:extend{
         },
         {
             type = "item-subgroup",
+            name = "py-extraction",
+            group = "coal-processing",
+            order = "a4",
+        },
+        {
+            type = "item-subgroup",
             name = "py-items",
             group = "coal-processing",
             order = "c",
@@ -39,6 +45,18 @@ data:extend{
             name = "py-items-hpf",
             group = "coal-processing",
             order = "c-1",
+        },
+        {
+            type = "item-subgroup",
+            name = "py-items-class",
+            group = "coal-processing",
+            order = "c-2",
+        },
+        {
+            type = "item-subgroup",
+            name = "py-washer",
+            group = "coal-processing",
+            order = "c-3",
         },
         {
             type = "item-subgroup",
@@ -75,6 +93,18 @@ data:extend{
             name = "py-mill",
             group = "coal-processing",
             order = "i",
+        },
+        {
+            type = "item-subgroup",
+            name = "py-filter",
+            group = "coal-processing",
+            order = "j",
+        },
+        {
+            type = "item-subgroup",
+            name = "py-sulfur",
+            group = "coal-processing",
+            order = "k",
         },
         {
             type = "item-subgroup",

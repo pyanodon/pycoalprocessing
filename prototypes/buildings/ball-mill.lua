@@ -23,7 +23,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/ball-mill.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[ball-mill]",
+    order = "d",
     place_result = "ball-mill",
     stack_size = 10,
 }

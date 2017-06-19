@@ -57,8 +57,8 @@ local item1={
     name = "borax-mine",
     icon = "__pycoalprocessing__/graphics/icons/borax-mine.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "coal-processing",
-    order = "a-c[borax-mine]",
+    subgroup = "py-extraction",
+    order = "a",
     place_result = "borax-mine",
     stack_size = 10,
 }

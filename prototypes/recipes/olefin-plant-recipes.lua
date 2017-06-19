@@ -18,6 +18,8 @@ local diesel ={
     },
     main_product= "diesel",
     icon = "__pycoalprocessing__/graphics/icons/diesel.png",
+	subgroup = "py-fluids",
+	order = "d1",
 }
 -------------------------------------------------------------------------------
 --DIESEL2
@@ -37,6 +39,8 @@ local diesel2 ={
     },
     main_product= "diesel",
     icon = "__pycoalprocessing__/graphics/icons/diesel.png",
+	subgroup = "py-fluids",
+	order = "d2",
 }
 -------------------------------------------------------------------------------
 --AROMATICS
@@ -59,7 +63,8 @@ local aromatics={
     },
     main_product= "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
-    --order = "b-c [syn-gas]",
+	subgroup = "py-fluids",
+	order = "d3",
 }
 -------------------------------------------------------------------------------
 --OLEFIN
@@ -81,7 +86,8 @@ local olefin=
     },
     main_product= "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
-    --order = "b-c [syn-gas]",
+	subgroup = "py-fluids",
+	order = "d4",
 }
 -------------------------------------------------------------------------------
 --OLEFIN-to-petgas and light-oil
@@ -103,7 +109,8 @@ local olefin_petgas=
     },
     main_product= "petroleum-gas",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
-    --order = "b-c [syn-gas]",
+	subgroup = "py-fluids",
+	order = "d5",
 }
 -------------------------------------------------------------------------------
 --OLEFIN-to-gasoline
@@ -126,7 +133,8 @@ local gasoline=
     },
     main_product= "gasoline",
     icon = "__pycoalprocessing__/graphics/icons/gasoline.png",
-    --order = "b-c [syn-gas]",
+	subgroup = "py-fluids",
+	order = "d6",
 }
 -------------------------------------------------------------------------------
 --REFSYNGAS-to-olefins
@@ -147,7 +155,8 @@ local refolefin=
     },
     main_product= "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
-    --order = "b-c [syn-gas]",
+	subgroup = "py-fluids",
+	order = "d7",
 }
 
 

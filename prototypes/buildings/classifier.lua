@@ -23,7 +23,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/classifier.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[classifier]",
+    order = "f",
     place_result = "classifier",
     stack_size = 10,
 }

@@ -34,7 +34,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/automated-factory.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-d[coal-processing]",
+    order = "c",
     place_result = "automated-factory",
     stack_size = 10,
 }

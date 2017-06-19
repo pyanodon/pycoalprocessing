@@ -44,7 +44,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/rectisol.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[rectisol]",
+    order = "v",
     place_result = "rectisol",
     stack_size = 10,
 }

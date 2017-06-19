@@ -21,8 +21,8 @@ local item1={
     name = "mukmoux-pasture",
     icon = "__pycoalprocessing__/graphics/icons/mukmoux-pasture.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "coal-processing",
-    order = "a-d[mukmoux-pasture]",
+    subgroup = "py-extraction",
+    order = "d",
     place_result = "mukmoux-pasture",
     stack_size = 10,
 }

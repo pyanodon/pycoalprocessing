@@ -23,7 +23,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/solid-separator.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[solid-separator]",
+    order = "x",
     place_result = "solid-separator",
     stack_size = 10,
 }

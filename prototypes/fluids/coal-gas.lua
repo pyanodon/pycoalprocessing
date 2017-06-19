@@ -21,7 +21,8 @@ local recipe1 =
     },
     main_product= "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/coalgas-from-coal.png",
-    --order = "a [coal-gas]",
+	subgroup = "py-syngas",
+    order = "e",
 }
 
 local recipe2 =
@@ -43,7 +44,8 @@ local recipe2 =
     },
     main_product= "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/coalgas-from-wood.png",
-    --order = "a [coal-gas]",
+	subgroup = "py-syngas",
+    order = "f",
 }
 
 -------------------------------------------------------------------------------

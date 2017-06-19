@@ -15,7 +15,8 @@ local mining_nexelit ={
     },
     main_product= "nexelit-ore",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-nexelit.png",
-    order = "g [coal-processing]",
+	subgroup = "py-drilling",
+	order = "a",
 }
 --STONE
 local mining_stone ={
@@ -34,7 +35,8 @@ local mining_stone ={
     },
     main_product= "stone",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-stone.png",
-    order = "g [coal-processing]",
+	subgroup = "py-drilling",
+	order = "b",
 }
 --LIMESTONE
 local mining_limestone ={
@@ -53,7 +55,8 @@ local mining_limestone ={
     },
     main_product= "limestone",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-limestone.png",
-    order = "g [coal-processing]",
+	subgroup = "py-drilling",
+	order = "c",
 }
 
 data:extend{mining_nexelit, mining_stone, mining_limestone}
@@ -77,7 +80,8 @@ if bobmods then
         },
         main_product= "bauxite-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-bauxite.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "d",
     }
     --COBALT
     local mining_cobalt ={
@@ -96,7 +100,8 @@ if bobmods then
         },
         main_product= "cobalt-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-cobalt.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "e",
     }
     --GOLD
     local mining_gold ={
@@ -115,7 +120,8 @@ if bobmods then
         },
         main_product= "gold-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-gold.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "f",
     }
     --LEAD
     local mining_lead ={
@@ -134,7 +140,8 @@ if bobmods then
         },
         main_product= "lead-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-lead.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "g",
     }
     --NICKEL
     local mining_nickel ={
@@ -153,7 +160,8 @@ if bobmods then
         },
         main_product= "nickel-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-nickel.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "h",
     }
     --QUARTZ
     local mining_quartz ={
@@ -172,7 +180,8 @@ if bobmods then
         },
         main_product= "quartz",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-quartz.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "i",
     }
     --RUTILE
     local mining_rutile ={
@@ -191,7 +200,8 @@ if bobmods then
         },
         main_product= "rutile-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-rutile.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "j",
     }
     --SILVER
     local mining_silver ={
@@ -210,7 +220,8 @@ if bobmods then
         },
         main_product= "silver-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-silver.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "k",
     }
     --TIN
     local mining_tin ={
@@ -229,7 +240,8 @@ if bobmods then
         },
         main_product= "tin-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-tin.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "l",
     }
     --TUNGSTEN
     local mining_tungsten ={
@@ -248,7 +260,8 @@ if bobmods then
         },
         main_product= "tungsten-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-tungsten.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "m",
     }
     --ZINC
     local mining_zinc ={
@@ -267,7 +280,8 @@ if bobmods then
         },
         main_product= "zinc-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-zinc.png",
-        order = "g [coal-processing]",
+		subgroup = "py-drilling",
+		order = "n",
     }
 
     data:extend{
