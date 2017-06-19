@@ -28,7 +28,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/accumulator-mk01.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[evaporator]",
+    order = "a",
     place_result = "accumulator-mk01",
     stack_size = 50,
 }

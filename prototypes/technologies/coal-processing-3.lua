@@ -50,6 +50,14 @@ local technology = {
         },
         {
             type = "unlock-recipe",
+            recipe = "glycerol-hydrogen"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "glycerol-syngas"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "air-pollution"
         },
         {
@@ -67,6 +75,10 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "nexelit-cartridge"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "oleo-solidfuel"
         },
         {
             type = "unlock-recipe",

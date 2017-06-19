@@ -57,8 +57,8 @@ local item1={
     name = "ralesia-plantation",
     icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "coal-processing",
-    order = "a-b[ralesia-plantation]",
+    subgroup = "py-extraction",
+    order = "f",
     place_result = "ralesia-plantation",
     stack_size = 10,
 }

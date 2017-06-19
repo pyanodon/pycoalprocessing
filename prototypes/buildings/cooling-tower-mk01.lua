@@ -24,8 +24,8 @@ local item1= {
     name = "cooling-tower-mk01",
     icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "py-fluid-handling",
-    order = "a-c[cooling-tower-mk01]",
+    subgroup = "coal-processing",
+    order = "h",
     place_result = "cooling-tower-mk01",
     stack_size = 5,
 }

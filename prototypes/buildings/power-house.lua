@@ -58,7 +58,7 @@ local item1= {
     icon = "__pycoalprocessing__/graphics/icons/power-house.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[power-house]",
+    order = "t",
     place_result = "power-house",
     stack_size = 5,
 }

@@ -26,7 +26,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/fluid-separator.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[fluid-separator]",
+    order = "m",
     place_result = "fluid-separator",
     stack_size = 10,
 }

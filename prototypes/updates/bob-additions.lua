@@ -20,7 +20,7 @@ local methanol_from_hydrogen = {
     --main_product= "methanol",
     subgroup = "py-methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",
-    order = "b-[methanol]",
+    order = "b",
 }
 
 local syngas_from_coal_oxygen = {
@@ -124,8 +124,8 @@ local glass ={
     },
     main_product= "glass",
     icon = "__bobplates__/graphics/icons/glass.png",
-    subgroup = "py-items",
-    order = "c",
+    subgroup = "py-items-hpf",
+    order = "i",
 }
 -------------------------------------------------------------------------------
 --GLASS PRODUCTION2
@@ -146,8 +146,8 @@ local glass2 ={
     },
     main_product= "glass",
     icon = "__bobplates__/graphics/icons/glass.png",
-    subgroup = "py-items",
-    order = "c",
+    subgroup = "py-items-hpf",
+    order = "j",
 }
 -------------------------------------------------------------------------------
 -- TUNGSTEN POWDER
@@ -329,8 +329,8 @@ local recipe_resin_glycerol ={
     },
     main_product= "resin",
     icon = "__pycoalprocessing__/graphics/icons/resin-glycerol.png",
-    subgroup = "py-items",
-    order = "a [coal-gas]",
+    subgroup = "py-items-hpf",
+    order = "k",
 }
 -------------------------------------------------------------------------------
 --SYNGAS DISTILATION

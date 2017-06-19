@@ -98,6 +98,7 @@ add_ing("ore-crusher", {name="rubber", amount=10})
 add_ing("ball-mill", {name="steel-bearing-ball", amount=1000})
 
 replace_ing("mukmoux-pasture", "advanced-circuit", "electronic-logic-board")
+replace_ing("glycerol-hydrogen", "water", "liquid-air")
 
 -------------------------------------------------------------------------------
 --[[Items]]--
@@ -195,6 +196,7 @@ if data.raw["recipe-category"]["electrolysis"] then
     data.raw.recipe["niobium-plate"].category = "electrolysis"
     data.raw.recipe["ppd"].category = "electrolysis"
     data.raw.recipe["copper-coating"].category = "electrolysis"
+	data.raw.recipe["glycerol-hydrogen"].category = "electrolysis"
 end
 
 local foundry = data.raw["assembling-machine"]["advanced-foundry"]

@@ -25,7 +25,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/distilator.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a[distilator]",
+    order = "k",
     place_result = "distilator",
     stack_size = 10,
 }

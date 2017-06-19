@@ -26,7 +26,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/advanced-foundry.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-d[advanced-foundry]",
+    order = "b",
     place_result = "advanced-foundry",
     stack_size = 10,
 }

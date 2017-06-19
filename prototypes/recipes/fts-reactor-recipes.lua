@@ -18,6 +18,8 @@ local heavy_oil_from_coal_gas ={
     },
     main_product= "heavy-oil",
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",
+	subgroup = "py-fluid-handling",
+	order = "h",
 }
 -------------------------------------------------------------------------------
 --LIGHT OIL FROM SYNGAS
@@ -39,6 +41,8 @@ local light_oil_from_syngas ={
     },
     main_product= "light-oil",
     icon = "__base__/graphics/icons/fluid/light-oil.png",
+	subgroup = "py-fluid-handling",
+	order = "h1",
 }
 -------------------------------------------------------------------------------
 --PETGAS FROM REFSYNGAS
@@ -59,6 +63,8 @@ local petgas_from_refsyngas ={
     },
     main_product= "petroleum-gas",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
+	subgroup = "py-fluid-handling",
+	order = "h2",
 }
 -------------------------------------------------------------------------------
 --REFINED SYNGAS TO LIGHT OIL
@@ -81,7 +87,8 @@ local ref_to_light_oil ={
     },
     icon = "__pycoalprocessing__/graphics/icons/ref_to_light_oil.png",
     main_product= "light-oil",
-    order = "c",
+	subgroup = "py-fluid-handling",
+	order = "h4",
 }
 
 -------------------------------------------------------------------------------
@@ -106,7 +113,8 @@ local sulfuric_petgas ={
     },
     icon = "__pycoalprocessing__/graphics/icons/sulfuric-petgas.png",
     main_product= "sulfuric-acid",
-    order = "c",
+	subgroup = "py-fluid-handling",
+	order = "h5",
 }
 -------------------------------------------------------------------------------
 --COMBUSTION MIXTURE01 FROM OLEFINS
@@ -130,7 +138,8 @@ local combustion_olefin ={
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
     main_product= "combustion-mixture1",
-    order = "c",
+	subgroup = "py-fluid-handling",
+	order = "h6",
 }
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
@@ -155,7 +164,8 @@ local rare_earth_beneficiation ={
     },
     icon = "__pycoalprocessing__/graphics/icons/rare-earth-mud.png",
     main_product= "rare-earth-mud",
-    order = "c",
+	subgroup = "py-fluid-handling",
+	order = "h7",
 }
 -------------------------------------------------------------------------------
 --DIRTY-WATER REACTION
@@ -177,8 +187,8 @@ local recipe_dirty_reaction ={
     },
     main_product= "crude-oil",
     icon = "__pycoalprocessing__/graphics/icons/dirty-reaction.png",
-    subgroup = "py-items",
-    order = "c",
+	subgroup = "py-fluid-handling",
+	order = "h8",
 }
 -------------------------------------------------------------------------------
 --HEAVY OIL TO COAL GAS
@@ -200,8 +210,8 @@ local recipe_heavy_to_coalgas ={
     },
     main_product= "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/heavy-oil-to-coalgas.png",
-    subgroup = "py-items",
-    order = "c",
+	subgroup = "py-fluid-handling",
+	order = "h9",
 }
 -------------------------------------------------------------------------------
 --LIGHT OIL TO SYNGAS
@@ -223,8 +233,8 @@ local recipe_light_to_syngas ={
     },
     main_product= "syngas",
     icon = "__pycoalprocessing__/graphics/icons/light-oil-to-syngas.png",
-    subgroup = "py-items",
-    order = "c",
+	subgroup = "py-fluid-handling",
+	order = "h10",
 }
 -------------------------------------------------------------------------------
 --PETGAS TO REFSYNGAS
@@ -246,12 +256,33 @@ local recipe_petgas_to_refsyngas ={
     },
     main_product= "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/petgas-to-refsyngas.png",
-    subgroup = "py-items",
-    order = "c",
+	subgroup = "py-fluid-handling",
+	order = "h11",
 }
-
+--GLYCEROL to SYNGAS
+-------------------------------------------------------------------------------
+local recipe_glycerol_syngas = {
+    type = "recipe",
+    name = "glycerol-syngas",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 5,
+    ingredients ={
+		{type="fluid", name="glycerol", amount=200},
+		{type="fluid", name="water", amount=2000},
+    },
+    results={
+		{type="fluid", name="syngas", amount=200},
+		{type="fluid", name="steam", amount=2000, temperature=165},
+		{type="item", name="ash", amount=5},
+    },
+    main_product= "syngas",
+    icon = "__pycoalprocessing__/graphics/icons/glycerol-syngas.png",
+	subgroup = "py-fluid-handling",
+	order = "h12",
+}
 data:extend{
     heavy_oil_from_coal_gas, light_oil_from_syngas, petgas_from_refsyngas, ref_to_light_oil,
     sulfuric_petgas, combustion_olefin, rare_earth_beneficiation, recipe_dirty_reaction,
-	recipe_heavy_to_coalgas, recipe_light_to_syngas, recipe_petgas_to_refsyngas
+	recipe_heavy_to_coalgas, recipe_light_to_syngas, recipe_petgas_to_refsyngas, recipe_glycerol_syngas
 }

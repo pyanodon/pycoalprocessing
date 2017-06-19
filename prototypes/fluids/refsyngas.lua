@@ -19,7 +19,7 @@ local refsyngas_from_filtered_syngas= {
     --main_product= "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
     subgroup = "py-syngas",
-    order = "b-a[refsyn-gas]",
+    order = "h",
 }
 
 local refsyngas_from_meth = {
@@ -43,7 +43,7 @@ local refsyngas_from_meth = {
     --main_product= "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
     subgroup = "py-syngas",
-    order = "b-b-[refsyn-gas]",
+    order = "i",
 }
 
 local refsyngas_from_meth_canister = {
@@ -68,7 +68,7 @@ local refsyngas_from_meth_canister = {
     --main_product= "refsyngas",
     subgroup = "py-syngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
-    order = "b-c-[refsyn-gas]",
+    order = "j",
 }
 
 -------------------------------------------------------------------------------

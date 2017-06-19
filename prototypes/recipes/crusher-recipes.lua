@@ -14,6 +14,8 @@ local niobium_powder = {
     },
     icon = "__pycoalprocessing__/graphics/icons/crush-niobium.png",
     main_product = "niobium-powder",
+	subgroup = "py-crusher",
+    order = "a",
 }
 --IRON
 local crushing_iron ={
@@ -31,7 +33,8 @@ local crushing_iron ={
     },
     main_product= "crushed-iron",
     icon = "__pycoalprocessing__/graphics/icons/crush-iron.png",
-    order = "a [py-crusher]",
+	subgroup = "py-crusher",
+    order = "b",
 }
 --COPPER
 local crushing_copper ={
@@ -49,7 +52,8 @@ local crushing_copper ={
     },
     main_product= "crushed-copper",
     icon = "__pycoalprocessing__/graphics/icons/crush-copper.png",
-    order = "b [py-crusher]",
+	subgroup = "py-crusher",
+    order = "c",
 }
 --STONE to GRAVEL
 -------------------------------------------------------------------------------
@@ -66,7 +70,8 @@ local crushing_stone = {
         {type="item", name="gravel", amount=15},
     },
     icon = "__pycoalprocessing__/graphics/icons/crush-stone.png",
-    order = "c [py-crusher]",
+	subgroup = "py-crusher",
+    order = "d",
 }
 --GREAVEL to SAND
 -------------------------------------------------------------------------------
@@ -83,7 +88,8 @@ local crushing_gravel = {
         {type="item", name="sand", amount=15},
     },
     icon = "__pycoalprocessing__/graphics/icons/crush-gravel.png",
-    order = "d [py-crusher]",
+	subgroup = "py-crusher",
+    order = "e",
 }
 
 data:extend{crushing_iron, crushing_copper, crushing_stone, crushing_gravel, niobium_powder}
@@ -105,7 +111,8 @@ if bobmods then
         },
         main_product= "crushed-bauxite",
         icon = "__pycoalprocessing__/graphics/icons/crush-bauxite.png",
-        order = "b [py-crusher]",
+		subgroup = "py-crusher",
+		order = "f",
     }
     --GOLD
     local crushing_gold ={
@@ -123,7 +130,8 @@ if bobmods then
         },
         main_product= "crushed-gold",
         icon = "__pycoalprocessing__/graphics/icons/crush-gold.png",
-        order = "b [py-crusher]",
+		subgroup = "py-crusher",
+		order = "g",
     }
     --LEAD
     local crushing_lead ={
@@ -141,7 +149,8 @@ if bobmods then
         },
         main_product= "crushed-lead",
         icon = "__pycoalprocessing__/graphics/icons/crush-lead.png",
-        order = "b [py-crusher]",
+		subgroup = "py-crusher",
+		order = "h",
     }
     --QUARTZ
     local crushing_quartz ={
@@ -159,7 +168,8 @@ if bobmods then
         },
         main_product= "crushed-quartz",
         icon = "__pycoalprocessing__/graphics/icons/crush-quartz.png",
-        order = "b [py-crusher]",
+		subgroup = "py-crusher",
+		order = "i",
     }
     --NICKEL
     local crushing_nickel ={
@@ -177,7 +187,8 @@ if bobmods then
         },
         main_product= "crushed-nickel",
         icon = "__pycoalprocessing__/graphics/icons/crush-nickel.png",
-        order = "b [py-crusher]",
+		subgroup = "py-crusher",
+		order = "j",
     }
     --RUTILE
     local crushing_rutile ={
@@ -195,7 +206,8 @@ if bobmods then
         },
         main_product= "crushed-rutile",
         icon = "__pycoalprocessing__/graphics/icons/crush-rutile.png",
-        order = "b [py-crusher]",
+		subgroup = "py-crusher",
+		order = "k",
     }
     --SILVER
     local crushing_silver ={
@@ -213,7 +225,8 @@ if bobmods then
         },
         main_product= "crushed-silver",
         icon = "__pycoalprocessing__/graphics/icons/crush-silver.png",
-        order = "b [py-crusher]",
+		subgroup = "py-crusher",
+		order = "l",
     }
     --TIN
     local crushing_tin ={
@@ -231,7 +244,8 @@ if bobmods then
         },
         main_product= "crushed-tin",
         icon = "__pycoalprocessing__/graphics/icons/crush-tin.png",
-        order = "b [py-crusher]",
+		subgroup = "py-crusher",
+		order = "m",
     }
     --TUNGSTEN
     local crushing_tungsten ={
@@ -249,7 +263,8 @@ if bobmods then
         },
         main_product= "crushed-tungsten",
         icon = "__pycoalprocessing__/graphics/icons/crush-tungsten.png",
-        order = "b [py-crusher]",
+		subgroup = "py-crusher",
+		order = "n",
     }
     --ZINC
     local crushing_zinc ={
@@ -267,7 +282,8 @@ if bobmods then
         },
         main_product= "crushed-zinc",
         icon = "__pycoalprocessing__/graphics/icons/crush-zinc.png",
-        order = "b [py-crusher]",
+		subgroup = "py-crusher",
+		order = "o",
     }
 
     data:extend{

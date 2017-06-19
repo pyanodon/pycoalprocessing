@@ -16,8 +16,8 @@ local recipe1 =
     },
 	main_product= "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
-    subgroup = "py-syngas",
-    order = "c",
+    subgroup = "py-fluids",
+    order = "a",
 }
 -------------------------------------------------------------------------------
 --[[items]]--

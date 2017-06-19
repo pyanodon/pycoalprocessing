@@ -26,7 +26,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/olefin-plant.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[olefin-plant]",
+    order = "r",
     place_result = "olefin-plant",
     stack_size = 10,
 }

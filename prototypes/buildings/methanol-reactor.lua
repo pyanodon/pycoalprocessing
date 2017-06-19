@@ -37,7 +37,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/methanol-reactor.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[methanol-reactor]",
+    order = "q",
     place_result = "methanol-reactor",
     stack_size = 10,
 }

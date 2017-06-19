@@ -25,8 +25,8 @@ local item1={
     name = "ground-borer",
     icon = "__pycoalprocessing__/graphics/icons/ground-borer.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "coal-processing",
-    order = "a-c[ground-borer]",
+    subgroup = "py-extraction",
+    order = "c",
     place_result = "ground-borer",
     stack_size = 10,
 }

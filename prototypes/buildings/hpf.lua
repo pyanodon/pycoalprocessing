@@ -36,7 +36,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/hpf.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-d[hpf]",
+    order = "p",
     place_result = "hpf",
     stack_size = 10,
 }
