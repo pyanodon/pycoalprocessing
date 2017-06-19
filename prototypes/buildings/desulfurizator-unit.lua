@@ -46,7 +46,7 @@ local item1= {
     icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[desulfurizator-unit]",
+    order = "j",
     place_result = "desulfurizator-unit",
     stack_size = 5,
 }

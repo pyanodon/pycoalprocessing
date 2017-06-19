@@ -45,8 +45,8 @@ local item_tailings_pond = {
     name = "tailings-pond",
     icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "py-fluid-handling",
-    order = "t",
+    subgroup = "coal-processing",
+    order = "z",
     place_result = "tailings-pond",
     stack_size = 50
 }

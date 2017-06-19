@@ -58,7 +58,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/quenching-tower.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[quenching-tower]",
+    order = "u",
     place_result = "quenching-tower",
     stack_size = 10,
 }

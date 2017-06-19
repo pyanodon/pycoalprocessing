@@ -26,7 +26,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/fts-reactor.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-d[fts-reactor]",
+    order = "n",
     place_result = "fts-reactor",
     stack_size = 10,
 }

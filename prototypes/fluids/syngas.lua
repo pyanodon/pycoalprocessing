@@ -21,6 +21,8 @@ local recipe1 =
     },
     main_product= "syngas",
     icon = "__pycoalprocessing__/graphics/icons/syngas.png",
+	subgroup = "py-syngas",
+    order = "g",
 }
 
 -------------------------------------------------------------------------------

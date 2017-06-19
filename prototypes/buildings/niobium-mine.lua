@@ -56,8 +56,8 @@ local item1={
     name = "niobium-mine",
     icon = "__pycoalprocessing__/graphics/icons/niobium-mine.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "coal-processing",
-    order = "a-c[niobium-mine]",
+    subgroup = "py-extraction",
+    order = "e",
     place_result = "niobium-mine",
     stack_size = 10,
 }

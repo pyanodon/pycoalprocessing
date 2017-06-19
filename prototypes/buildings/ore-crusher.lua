@@ -23,7 +23,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/ore-crusher.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-d[ore-crusher]",
+    order = "s",
     place_result = "ore-crusher",
     stack_size = 10,
 }

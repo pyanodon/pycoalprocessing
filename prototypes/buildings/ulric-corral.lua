@@ -22,8 +22,8 @@ local item1={
     name = "ulric-corral",
     icon = "__pycoalprocessing__/graphics/icons/ulric-corral.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "coal-processing",
-    order = "a-d[ulric-corral]",
+    subgroup = "py-extraction",
+    order = "h",
     place_result = "ulric-corral",
     stack_size = 10,
 }

@@ -35,7 +35,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[tar-processing-unit]",
+    order = "z1",
     place_result = "tar-processing-unit",
     stack_size = 10,
 }

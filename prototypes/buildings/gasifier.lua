@@ -37,7 +37,7 @@ local item1= {
     icon = "__pycoalprocessing__/graphics/icons/gasifier.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[gasifier]",
+    order = "o",
     place_result = "gasifier",
     stack_size = 5,
 }
