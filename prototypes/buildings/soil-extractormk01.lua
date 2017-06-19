@@ -42,8 +42,8 @@ local item1={
     name = "soil-extractormk01",
     icon = "__pycoalprocessing__/graphics/icons/soil-extractormk01.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "coal-processing",
-    order = "a-c[soil-extractormk01]",
+    subgroup = "py-extraction",
+    order = "g",
     place_result = "soil-extractormk01",
     stack_size = 10,
 }

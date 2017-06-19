@@ -36,7 +36,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/carbon-filter.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-b[carbon-filter]",
+    order = "e",
     place_result = "carbon-filter",
     stack_size = 10,
 }

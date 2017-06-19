@@ -21,7 +21,7 @@ local methanol_from_syngas = {
     --main_product= "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",
     subgroup = "py-methanol",
-    order = "a-[methanol]",
+    order = "a",
 }
 
 -------------------------------------------------------------------------------
@@ -44,7 +44,8 @@ local oleo_methanol=
     },
     main_product= "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol-oleochemicals.png",
-    --order = "b-c [syn-gas]",
+	subgroup = "py-methanol",
+    order = "c",
 }
 
 

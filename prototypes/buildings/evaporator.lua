@@ -38,7 +38,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/evaporator.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[evaporator]",
+    order = "l",
     place_result = "evaporator",
     stack_size = 10,
 }

@@ -351,7 +351,7 @@ local nexelit_plate ={
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "nexelit-plate",
-    stack_size = 100
+    stack_size = 300
 
 }
 -------------------------------------------------------------------------------
@@ -439,7 +439,7 @@ local recipe_lime = {
     enabled = "false",
     energy_required = 5,
     ingredients ={
-        {type="item", name="coke", amount=25},
+        {type="item", name="coke", amount=15},
         {type="item", name="limestone", amount=10},
     },
     results={
@@ -473,7 +473,7 @@ local recipe_fuelrod_mk01 = {
         {type="item", name="coke", amount=5},
     },
     results={
-        {type="item", name="fuelrod-mk01", amount=2},
+        {type="item", name="fuelrod-mk01", amount=3},
     },
 }
 
@@ -486,7 +486,7 @@ local fuelrod_mk01 = {
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items-hpf",
     order = "hpf-[active-carbon]",
-    stack_size = 50
+    stack_size = 200
 }
 -------------------------------------------------------------------------------
 --FAWOGAE PRODUCTION
@@ -763,6 +763,8 @@ local recipe_niobium_concentrate = {
     },
 	icon = "__pycoalprocessing__/graphics/icons/class-niobium.png",
 	main_product = "niobium-concentrate",
+    subgroup = "py-items-class",
+    order = "d",
 }
 
 local niobium_concentrate = {
@@ -770,8 +772,8 @@ local niobium_concentrate = {
     name = "niobium-concentrate",
     icon = "__pycoalprocessing__/graphics/icons/niobium-concentrate.png",
     flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    --order = "g",
+    subgroup = "py-items-class",
+    order = "d",
     stack_size = 100
 }
 --MUKMOUX FAT
@@ -1305,7 +1307,7 @@ local coal_briquette = {
     type = "item",
 	enabled = "false",
     name = "coal-briquette",
-	fuel_value = "20MJ",
+	fuel_value = "60MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
     flags = {"goes-to-main-inventory"},

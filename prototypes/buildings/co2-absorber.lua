@@ -24,7 +24,7 @@ local item1={
     icon = "__pycoalprocessing__/graphics/icons/co2-absorber.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
-    order = "a-c[co2_absorber]",
+    order = "g",
     place_result = "co2-absorber",
     stack_size = 10,
 }
@@ -48,12 +48,12 @@ local entity1={
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"co2"},
-    crafting_speed = 0.4,
+    crafting_speed = 0.3,
     energy_source =
     {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = -1.7,
+        emissions = -20,
     },
     energy_usage = "160kW",
     ingredient_count = 3,
@@ -65,7 +65,7 @@ local entity1={
         height = 280,
         frame_count = 31,
         line_length = 7,
-        animation_speed = 0.8,
+        animation_speed = 0.85,
         shift = {0.83, -0.869},
     },
 

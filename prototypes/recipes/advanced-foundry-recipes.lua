@@ -18,6 +18,8 @@ local nexelit_plate ={
     },
     main_product= "nexelit-plate",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
+	subgroup = "py-items",
+	order = "a1",
 }
 -------------------------------------------------------------------------------
 --STEEL PLATE - cant change the base one,so i did that.
@@ -40,6 +42,8 @@ local steel_plate2 ={
     },
     main_product= "steel-plate",
     icon = "__base__/graphics/icons/steel-plate.png",
+	subgroup = "py-items",
+	order = "a2",
 }
 
 -------------------------------------------------------------------------------

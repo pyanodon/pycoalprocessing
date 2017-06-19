@@ -42,8 +42,8 @@ local item1={
     name = "fawogae-plantation",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-plantation-icon.png",
     flags = {"goes-to-quickbar"},
-    subgroup = "coal-processing",
-    order = "a-c[fawogae-plantation]",
+    subgroup = "py-extraction",
+    order = "b",
     place_result = "fawogae-plantation",
     stack_size = 10,
 }
