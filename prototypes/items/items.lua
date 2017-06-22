@@ -1377,6 +1377,7 @@ local niobium_pipe = {
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
+	place_result = "niobium-pipe",
     stack_size = 200
 }
 -------------------------------------------------------------------------------
@@ -1389,6 +1390,7 @@ local niobium_pipe_to_ground = {
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
+	place_result = "niobium-pipe-to-ground",
     stack_size = 200
 }
  -------------------------------------------------------------------------------
