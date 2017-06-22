@@ -48,15 +48,15 @@ local entity1={
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"co2"},
-    crafting_speed = 0.3,
+    crafting_speed = 1,
     energy_source =
     {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = -20,
+        emissions = -0.9,
     },
-    energy_usage = "160kW",
-    ingredient_count = 3,
+    energy_usage = "200kW",
+    ingredient_count = 1,
 
     animation =
     {
@@ -65,7 +65,7 @@ local entity1={
         height = 280,
         frame_count = 31,
         line_length = 7,
-        animation_speed = 0.85,
+        animation_speed = 0.5,
         shift = {0.83, -0.869},
     },
 
