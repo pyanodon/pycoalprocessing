@@ -187,7 +187,7 @@ local soil_separation ={
     results={
         {type="item", name="sand", amount=13},
         {type="item", name="coarse", amount=3},
-        {type="item", name="limestone", amount=3},
+        {type="item", name="limestone", amount=2},
         {type="item", name="organics", amount=3},
     },
     main_product= "sand",
@@ -294,7 +294,7 @@ local sand_casting ={
     energy_required = 1,
     ingredients ={
         {type="item", name="sand", amount=10},
-        {type="fluid", name="creosote", amount=150},
+        {type="fluid", name="creosote", amount=100},
     },
     results={
         {type="item", name="sand-casting", amount=2},
@@ -334,7 +334,7 @@ local absorb_air_pollution ={
     name = "air-pollution",
     category = "co2",
     enabled = "false",
-    energy_required = 10,
+    energy_required = 40,
     ingredients ={
         {type="item", name="nexelit-cartridge", amount=1},
     },
@@ -1275,7 +1275,6 @@ local recipe_crushed_copper = {
 local recipe_niobium_pipe = {
     type = "recipe",
     name = "niobium-pipe",
-    category = "crafting",
     enabled = "false",
     energy_required = 2,
     ingredients = {{"niobium-plate", 1}},
@@ -1286,7 +1285,6 @@ local recipe_niobium_pipe = {
 local recipe_niobium_pipe_to_ground = {
     type = "recipe",
     name = "niobium-pipe-to-ground",
-    category = "crafting",
     enabled = "false",
     energy_required = 2,
     ingredients = {
@@ -1555,7 +1553,7 @@ local recipe_stone_distilation = {
     results={
         {type="item", name="tailings-dust", amount=30},
 		{type="item", name="coarse", amount=25},
-		{type="fluid", name="tar", amount=100},
+		{type="fluid", name="tar", amount=200},
 		{type="fluid", name="rare-earth-mud", amount=30},
 		{type="fluid", name="dirty-water", amount=100},
     },

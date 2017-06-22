@@ -1,4 +1,6 @@
-py_pipepictures = function()
+data.raw["pipe-to-ground"]["pipe-to-ground"].fast_replaceable_group = "pipe-to-ground"
+
+function py_pipepictures()
   return {
     straight_vertical_single =
     {
@@ -320,21 +322,21 @@ py_pipepictures = function()
       filename = "__pycoalprocessing__/graphics/entity/niobium-pipe/fluid-flow-low-temperature.png",
       priority = "extra-high",
       width = 160,
-      height = 18
+      height = 20
     },
     middle_temperature_flow =
     {
       filename = "__pycoalprocessing__/graphics/entity/niobium-pipe/fluid-flow-medium-temperature.png",
       priority = "extra-high",
       width = 160,
-      height = 18
+      height = 20
     },
     high_temperature_flow =
     {
       filename = "__pycoalprocessing__/graphics/entity/niobium-pipe/fluid-flow-high-temperature.png",
       priority = "extra-high",
       width = 160,
-      height = 18
+      height = 20
     },
     gas_flow =
     {
@@ -369,7 +371,7 @@ data:extend(
     icon = "__pycoalprocessing__/graphics/icons/niobium-pipe.png",
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.3, mining_time = 0.5, result = "niobium-pipe"},
-    max_health = 50,
+    max_health = 200,
     corpse = "small-remnants",
     resistances =
     {
@@ -392,6 +394,7 @@ data:extend(
         { position = {-1, 0} }
       },
     },
+    pictures = py_pipepictures(),
     working_sound =
     {
       sound = {
@@ -410,7 +413,7 @@ data:extend(
   {
     type = "pipe-to-ground",
     name = "niobium-pipe-to-ground",
-    icon = "__pycoalprocessing__/graphics/icons/pipe/niobium-pipe-to-ground.png",
+    icon = "__pycoalprocessing__/graphics/icons/niobium-pipe-to-ground.png",
     flags = {"placeable-neutral", "player-creation"},
     minable = {hardness = 0.3, mining_time = 0.5, result = "niobium-pipe-to-ground"},
     max_health = 50,
@@ -509,5 +512,6 @@ data:extend(
         }
       },
     },
-	},
-  })
+  },
+ }
+ )
