@@ -10,7 +10,7 @@ local recipe1={
     {
         {type="fluid", name="creosote", amount=10},
         {type="item", name="ash", amount=3},
-        {type="item", name="limestone", amount=3},
+        {type="item", name="limestone", amount=5},
     },
     result = "py-limestone",
     requester_paste_multiplier = 4,
