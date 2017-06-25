@@ -31,7 +31,7 @@ local item1={
 -------------------------------------------------------------------------------
 --[[Entites]]--
 local entity1={
-    type = "assembling-machine",
+    type = "furnace",
     name = "co2-absorber",
     icon = "__pycoalprocessing__/graphics/icons/co2-absorber.png",
     flags = {"placeable-neutral","player-creation"},
@@ -48,15 +48,18 @@ local entity1={
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"co2"},
+    source_inventory_size = 1,
+    result_inventory_size = 1,
     crafting_speed = 1,
     energy_source =
     {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = -0.9,
+        emissions = -50,
     },
     energy_usage = "200kW",
     ingredient_count = 1,
+	module_slots = 0,
 
     animation =
     {

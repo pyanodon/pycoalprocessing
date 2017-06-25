@@ -293,8 +293,8 @@ local sand_casting ={
     enabled = "false",
     energy_required = 1,
     ingredients ={
-        {type="item", name="sand", amount=10},
-        {type="fluid", name="creosote", amount=100},
+        {type="item", name="sand", amount=5},
+        {type="fluid", name="creosote", amount=20},
     },
     results={
         {type="item", name="sand-casting", amount=2},
