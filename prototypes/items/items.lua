@@ -468,8 +468,8 @@ local recipe_fuelrod_mk01 = {
     enabled = "false",
     energy_required = 3.5,
     ingredients ={
-        {type="item", name="iron-plate", amount=4},
-        {type="item", name="nexelit-ore", amount=25},
+        {type="item", name="iron-plate", amount=2},
+        {type="item", name="nexelit-ore", amount=10},
         {type="item", name="coke", amount=5},
     },
     results={
@@ -813,7 +813,7 @@ local recipe_niobium_oxide = {
     enabled = "false",
     energy_required = 3.5,
     ingredients ={
-        {type="fluid", name="water", amount=300}, --Added Bob nitrogen-dioxide
+        {type="fluid", name="water", amount=250}, --Added Bob nitrogen-dioxide
 		{type="fluid", name="niobium-complex", amount=50},
     },
     results={
@@ -1176,7 +1176,7 @@ local recipe_copper_coating = {
     ingredients ={
 		{type="item", name="copper-plate", amount=10},
 		{type="item", name="cladded-core", amount=1},
-		{type="fluid", name="water-mineralized", amount=100},
+		{type="fluid", name="water-mineralized", amount=50},
 
     },
     results={

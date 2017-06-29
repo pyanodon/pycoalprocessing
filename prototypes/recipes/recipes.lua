@@ -422,7 +422,7 @@ local mineralized_water ={
     energy_required = 2.5,
     ingredients ={
         {type="item", name="coarse", amount=100},
-        {type="fluid", name="water", amount=250},
+        {type="fluid", name="water", amount=300},
     },
     results={
         {type="item", name="stone", amount=4},
