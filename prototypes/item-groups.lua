@@ -108,6 +108,12 @@ data:extend{
         },
         {
             type = "item-subgroup",
+            name = "py-extractor",
+            group = "coal-processing",
+            order = "l",
+        },
+        {
+            type = "item-subgroup",
             name = "py-fluids",
             group = "coal-processing",
             order = "z",

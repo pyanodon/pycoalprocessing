@@ -16,6 +16,26 @@ local technology = {
             type = "unlock-recipe",
             recipe = "mining-nexelit"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "sand-extractor"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "extract-sand"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "extract-gravel"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "extract-stone"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "extract-richdust"
+        },
     },
 
     unit =

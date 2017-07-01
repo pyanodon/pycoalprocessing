@@ -37,6 +37,7 @@ require("prototypes.recipes.crusher-recipes")
 require("prototypes.recipes.fts-reactor-recipes")
 require("prototypes.recipes.olefin-plant-recipes")
 require("prototypes.recipes.advanced-foundry-recipes")
+require("prototypes.recipes.sand-extractor-recipes")
 
 --Items without entities
 require("prototypes.items.treated-wood")
@@ -126,7 +127,8 @@ require("prototypes.buildings.py-tank-6500")
 require("prototypes.buildings.py-tank-8000")
 require("prototypes.buildings.automated-factory")
 require("prototypes.buildings.accumulator-mk01")
---require("prototypes.buildings.niobium-pipes")
+require("prototypes.buildings.niobium-pipes")
+require("prototypes.buildings.sand-extractor")
 --require("prototypes.buildings.rare-earth-extractor")
 
 if PYC.DEBUG then

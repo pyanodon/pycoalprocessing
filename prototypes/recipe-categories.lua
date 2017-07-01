@@ -125,6 +125,10 @@ data:extend{
     },
     {
         type = "recipe-category",
+        name = "sand-extractor",
+    },
+    {
+        type = "recipe-category",
         name = "mukmoux",
     },
     {
