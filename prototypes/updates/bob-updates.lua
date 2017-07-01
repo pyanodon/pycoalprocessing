@@ -98,11 +98,16 @@ add_ing("ore-crusher", {name="rubber", amount=10})
 add_ing("ball-mill", {name="steel-bearing-ball", amount=1000})
 
 replace_ing("mukmoux-pasture", "advanced-circuit", "electronic-logic-board")
-replace_ing("glycerol-hydrogen", "water", "liquid-air")
+
+replace_ing("sand-extractor", "iron-gear-wheel", "brass-gear-wheel")
+replace_ing("sand-extractor", "electronic-circuit", "basic-electronic-circuit-board")
+
 
 -------------------------------------------------------------------------------
 --[[Items]]--
 -------------------------------------------------------------------------------
+
+replace_ing("glycerol-hydrogen", "water", "liquid-air")
 add_ing("laser-turret", {name="lens", amount=1})
 
 replace_ing("superior-circuit-board", "gold-plate", "nexelit-plate")

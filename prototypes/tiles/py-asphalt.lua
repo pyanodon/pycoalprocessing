@@ -10,7 +10,7 @@ local recipe1={
     {
         {type="fluid", name="tar", amount=10},
         {type="item", name="ash", amount=3},
-        {type="item", name="stone", amount=5},
+        {type="item", name="gravel", amount=5},
     },
     result = "py-asphalt",
     requester_paste_multiplier = 4,
