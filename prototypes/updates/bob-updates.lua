@@ -107,7 +107,16 @@ replace_ing("sand-extractor", "electronic-circuit", "basic-electronic-circuit-bo
 --[[Items]]--
 -------------------------------------------------------------------------------
 
+
+
 replace_ing("glycerol-hydrogen", "water", "liquid-air")
+remove_result("glycerol-hydrogen", "petroleum-gas")
+add_result("glycerol-hydrogen", {type="fluid", name="hydrogen", amount=100})
+
+remove_result("aromatics-to-rubber", "crude-oil")
+add_result("aromatics-to-rubber", {type="item", name="rubber", amount=1})
+
+
 add_ing("laser-turret", {name="lens", amount=1})
 
 replace_ing("superior-circuit-board", "gold-plate", "nexelit-plate")
@@ -184,7 +193,7 @@ replace_ing("superior-circuit-board", "ferric-chloride-solution", "boric-acid")
 replace_ing("multi-layer-circuit-board", "ferric-chloride-solution", "boric-acid")
 replace_ing("cladding", "sand", "glass")
 replace_ing("aromatics-to-rubber", "plastic-bar", "rubber")
-replace_ing("nas-battery", "salt", "sodium-hydroxide")
+replace_ing("nas-battery", "copper-ore", "sodium-hydroxide")
 
 --replace_ing("drill-head", "iron-plate", "titanium-plate")
 
