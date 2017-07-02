@@ -1450,9 +1450,8 @@ local recipe_aromatics_to_rubber = {
 		{type="fluid", name="syngas", amount=40},
     },
     results={
-        {type="item", name="rubber", amount=1},
+        {type="fluid", name="crude-oil", amount=100}, --bobs rubber
     },
-    main_product= "rubber",
     icon = "__pycoalprocessing__/graphics/icons/aromatics-rubber.png",
     subgroup = "py-items",
     order = "w",
@@ -1487,7 +1486,7 @@ local recipe_nas_battery = {
     energy_required = 5,
     ingredients ={
         {type="item", name="sulfur", amount=20},
-		{type="item", name="salt", amount=60}, --bobs sodium-hydroxide
+		{type="item", name="copper-ore", amount=60}, --bobs sodium-hydroxide
 		{type="item", name="steel-plate", amount=1},
 		{type="item", name="chromium", amount=1},
     },
@@ -1594,9 +1593,8 @@ local recipe_glycerol_hydrogen = {
 		{type="fluid", name="water", amount=200}, --updated-bob liquid-air
     },
     results={
-		{type="fluid", name="hydrogen", amount=100}, 
+		{type="fluid", name="petroleum-gas", amount=100}, 
     },
-    main_product= "hydrogen",
     icon = "__pycoalprocessing__/graphics/icons/glycerol-hydrogen.png",
     subgroup = "py-fluid-handling",
     order = "o",
