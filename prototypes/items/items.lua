@@ -1393,6 +1393,18 @@ local niobium_pipe_to_ground = {
 	place_result = "niobium-pipe-to-ground",
     stack_size = 200
 }
+-------------------------------------------------------------------------------
+-- LOG
+local item_log = {
+    type = "item",
+    name = "log",
+	enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/log.png",
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "a2",
+    stack_size = 100
+}
  -------------------------------------------------------------------------------
 data:extend(
     {
@@ -1500,6 +1512,7 @@ data:extend(
 		crushed_iron,
 		crushed_copper,
 		niobium_pipe,
-		niobium_pipe_to_ground
+		niobium_pipe_to_ground,
+		item_log
     }
 )

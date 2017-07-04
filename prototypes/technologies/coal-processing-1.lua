@@ -155,6 +155,30 @@ local technology = {
             type = "unlock-recipe",
             recipe = "stone-distilation"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "botanical-nursery"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "wpu"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "log1"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "log2"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "log3"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "log-wood"
+        },
     },
     unit =
     {
