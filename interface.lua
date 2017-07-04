@@ -12,9 +12,9 @@ end
 interface.console = require("stdlib.debug.console")
 
 --Register with creative-mode for easy testing
-if remote.interfaces["creative-mode"] and remote.interfaces["creative-mode"]["register_remote_function_to_modding_ui"] then
-    remote.call("creative-mode", "register_remote_function_to_modding_ui", "PYC", "write_global")
-    remote.call("creative-mode", "register_remote_function_to_modding_ui", "PYC", "console")
-end
+--if remote.interfaces["creative-mode"] and remote.interfaces["creative-mode"]["register_remote_function_to_modding_ui"] then
+--    remote.call("creative-mode", "register_remote_function_to_modding_ui", "PYC", "write_global")
+--    remote.call("creative-mode", "register_remote_function_to_modding_ui", "PYC", "console")
+--end
 
 return interface

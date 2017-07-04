@@ -406,8 +406,8 @@ data:extend(
       match_volume_to_activity = true,
       max_sounds_per_type = 3
     },
-    horizontal_window_bounding_box = {{-0.25, -0.25}, {0.25, 0.15625}},
-    vertical_window_bounding_box = {{-0.28125, -0.40625}, {0.03125, 0.125}},
+	horizontal_window_bounding_box = {{-0.3125, -0.25}, {0.3125, 0.25}},
+    vertical_window_bounding_box = {{-0.28125, -0.46875}, {0.03125, 0.125}},
   },
 
   {
