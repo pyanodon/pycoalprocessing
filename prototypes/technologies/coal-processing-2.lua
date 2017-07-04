@@ -184,7 +184,23 @@ local technology = {
             type = "unlock-recipe",
             recipe = "organics-from-wood"
         },
-
+        {
+            type = "unlock-recipe",
+            recipe = "log4"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "log5"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "log6"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "log-organics"
+        },
+		
     },
     unit =
     {

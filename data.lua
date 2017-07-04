@@ -129,6 +129,8 @@ require("prototypes.buildings.automated-factory")
 require("prototypes.buildings.accumulator-mk01")
 require("prototypes.buildings.niobium-pipes")
 require("prototypes.buildings.sand-extractor")
+require("prototypes.buildings.botanical-nursery")
+require("prototypes.buildings.wpu")
 --require("prototypes.buildings.rare-earth-extractor")
 
 if PYC.DEBUG then

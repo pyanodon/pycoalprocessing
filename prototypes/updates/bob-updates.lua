@@ -102,6 +102,8 @@ replace_ing("mukmoux-pasture", "advanced-circuit", "electronic-logic-board")
 replace_ing("sand-extractor", "iron-gear-wheel", "brass-gear-wheel")
 replace_ing("sand-extractor", "electronic-circuit", "basic-electronic-circuit-board")
 
+add_ing("botanical-nursery", {name="glass", amount=10})
+replace_ing("botanical-nursery", "electronic-circuit", "basic-circuit-board")
 
 -------------------------------------------------------------------------------
 --[[Items]]--
@@ -221,3 +223,15 @@ foundry.crafting_categories[#foundry.crafting_categories+1] = "mixing-furnace"
 --[[Tech]]--
 -------------------------------------------------------------------------------
 add_prerequisite("coal-processing-2", "electrolysis-1")
+
+
+-------------------------------------------------------------------------------
+--[[Categories]]--
+-------------------------------------------------------------------------------
+
+data.raw.recipe["bob-resin-wood"].category = "wpu"
+data.raw.recipe["polishing-wheel"].category = "wpu"
+data.raw.recipe["wooden-board"].category = "wpu"
+data.raw.recipe["phenolic-board"].category = "wpu"
+
+
