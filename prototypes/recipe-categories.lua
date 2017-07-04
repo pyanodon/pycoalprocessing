@@ -139,4 +139,12 @@ data:extend{
         type = "recipe-category",
         name = "advanced-crafting",
     },
+    {
+        type = "recipe-category",
+        name = "nursery",
+    },
+    {
+        type = "recipe-category",
+        name = "wpu",
+    },
 }

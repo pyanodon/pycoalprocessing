@@ -1600,6 +1600,160 @@ local recipe_glycerol_hydrogen = {
     order = "o",
 }
 
+--LOG PRODUCING 01
+-------------------------------------------------------------------------------
+local recipe_log1 = {
+    type = "recipe",
+    name = "log1",
+    category = "nursery",
+    enabled = "false",
+    energy_required = 120,
+    ingredients ={
+    },
+    results={
+		{type="item", name="log", amount=1}, 
+    },
+    icon = "__pycoalprocessing__/graphics/icons/log.png",
+    subgroup = "py-items",
+    order = "c6",
+}
+
+--LOG PRODUCING 02
+-------------------------------------------------------------------------------
+local recipe_log2 = {
+    type = "recipe",
+    name = "log2",
+    category = "nursery",
+    enabled = "false",
+    energy_required = 100,
+    ingredients ={
+		{type="fluid", name="water", amount=500}, 
+    },
+    results={
+		{type="item", name="log", amount=1}, 
+    },
+    icon = "__pycoalprocessing__/graphics/icons/log2.png",
+    subgroup = "py-items",
+    order = "c7",
+}
+
+--LOG PRODUCING 03
+-------------------------------------------------------------------------------
+local recipe_log3 = {
+    type = "recipe",
+    name = "log3",
+    category = "nursery",
+    enabled = "false",
+    energy_required = 80,
+    ingredients ={
+		{type="fluid", name="water", amount=500}, 
+		{type="item", name="ash", amount=30},
+    },
+    results={
+		{type="item", name="log", amount=1}, 
+    },
+    icon = "__pycoalprocessing__/graphics/icons/log3.png",
+    subgroup = "py-items",
+    order = "c8",
+}
+
+--LOG PRODUCING 04
+-------------------------------------------------------------------------------
+local recipe_log4 = {
+    type = "recipe",
+    name = "log4",
+    category = "nursery",
+    enabled = "false",
+    energy_required = 60,
+    ingredients ={
+		{type="fluid", name="water", amount=500}, 
+		{type="fluid", name="carbon-dioxide", amount=300}, 
+    },
+    results={
+		{type="item", name="log", amount=1}, 
+    },
+    icon = "__pycoalprocessing__/graphics/icons/log4.png",
+    subgroup = "py-items",
+    order = "c9",
+}
+
+--LOG PRODUCING 05
+-------------------------------------------------------------------------------
+local recipe_log5 = {
+    type = "recipe",
+    name = "log5",
+    category = "nursery",
+    enabled = "false",
+    energy_required = 40,
+    ingredients ={
+		{type="fluid", name="dirty-water", amount=500}, 
+		{type="fluid", name="carbon-dioxide", amount=300}, 
+    },
+    results={
+		{type="item", name="log", amount=1}, 
+    },
+    icon = "__pycoalprocessing__/graphics/icons/log5.png",
+    subgroup = "py-items",
+    order = "c9",
+}
+
+--LOG PRODUCING 06
+-------------------------------------------------------------------------------
+local recipe_log6 = {
+    type = "recipe",
+    name = "log6",
+    category = "nursery",
+    enabled = "false",
+    energy_required = 20,
+    ingredients ={
+		{type="fluid", name="dirty-water", amount=500}, 
+		{type="item", name="ash", amount=30},
+		{type="fluid", name="carbon-dioxide", amount=350}, 
+    },
+    results={
+		{type="item", name="log", amount=1}, 
+    },
+    icon = "__pycoalprocessing__/graphics/icons/log5.png",
+    subgroup = "py-items",
+    order = "c9",
+}
+
+--LOG-TO-RAW-WOOD
+-------------------------------------------------------------------------------
+local recipe_log_wood = {
+    type = "recipe",
+    name = "log-wood",
+    category = "wpu",
+    enabled = "false",
+    energy_required = 25,
+    ingredients ={
+		{type="item", name="log", amount=1},
+    },
+    results={
+		{type="item", name="raw-wood", amount=2}, 
+    },
+    icon = data.raw.item["raw-wood"].icon,
+    subgroup = "py-items",
+    order = "a7",
+}
+--LOG-TO-ORGANIC-MATTER
+-------------------------------------------------------------------------------
+local recipe_log_organics = {
+    type = "recipe",
+    name = "log-organics",
+    category = "wpu",
+    enabled = "false",
+    energy_required = 20,
+    ingredients ={
+		{type="item", name="log", amount=1},
+    },
+    results={
+		{type="item", name="organics", amount=50}, 
+    },
+    icon = "__pycoalprocessing__/graphics/icons/organics.png",
+    subgroup = "py-items",
+    order = "a8",
+}
 -------------------------------------------------------------------------------
 data:extend{
     raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
@@ -1620,5 +1774,6 @@ data:extend{
 	recipe_sulfur_petgas, recipe_sulfur_crudeoil, recipe_organics_from_rawwood, recipe_creosote_to_aromatics, 
 	recipe_aromatics_to_lubricant, recipe_aromatics_to_rubber, recipe_aromatics_to_plastic, recipe_nas_battery, 
 	recipe_coke_coal, recipe_concrete_richclay, recipe_stone_distilation, recipe_oleo_solidfuel, 
-	recipe_glycerol_hydrogen
+	recipe_glycerol_hydrogen, recipe_log1, recipe_log2, recipe_log3, recipe_log4, recipe_log5, recipe_log6, 
+	recipe_log_wood, recipe_log_organics
 }
