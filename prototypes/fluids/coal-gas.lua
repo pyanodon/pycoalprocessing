@@ -48,6 +48,30 @@ local recipe2 =
     order = "f",
 }
 
+local recipe3 =
+{
+    type = "recipe",
+    name = "coal-gas-from-coke",
+    category = "distilator",
+    enabled = "true",
+    energy_required = 5,
+    ingredients ={
+        {type="item", name="coke", amount=20},
+    },
+    results=
+    {
+        {type="fluid", name="coal-gas", amount=20},
+        {type="fluid", name="tar", amount=20},
+        {type="item", name="ash", amount=1},
+    },
+    main_product= "coal-gas",
+    icon = "__pycoalprocessing__/graphics/icons/coalgas-from-coke.png",
+	subgroup = "py-syngas",
+    order = "f",
+}
+
+
+
 -------------------------------------------------------------------------------
 --[[fluids]]--
 local fluid =
@@ -69,4 +93,4 @@ local fluid =
 
 -------------------------------------------------------------------------------
 --[[Extend Data]]--
-data:extend({recipe1, recipe2, fluid})
+data:extend({recipe1, recipe2, recipe3, fluid})

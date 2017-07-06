@@ -161,10 +161,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "wpu"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "log1"
         },
         {

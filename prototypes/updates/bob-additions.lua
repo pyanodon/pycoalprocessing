@@ -473,13 +473,33 @@ local crushed_zinc = {
     stack_size = 1000
 }
 
+--WOOD-TO-WOODEN BOARD override bobs?
+-------------------------------------------------------------------------------
+local wooden_board = {
+    type = "recipe",
+    name = "wood-board",
+    category = "wpu",
+    enabled = "true",
+    energy_required = 1.5,
+    ingredients ={
+		{type="item", name="wood", amount=1},
+    },
+    results={
+		{type="item", name="wooden-board", amount=1}, 
+    },
+	icon = "__bobelectronics__/graphics/icons/wooden-board.png",
+    subgroup = "py-items",
+    order = "a8",
+}
+
+
 data:extend{
     methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen,
     void_flue_gas, glass, glass2, tungsten_powder, recipe_crushed_tin, recipe_syngas_distilation,
     recipe_crushed_lead, recipe_crushed_silver, recipe_crushed_gold, recipe_crushed_zinc, recipe_crushed_nickel,
     recipe_crushed_rutile, crushed_quartz, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol,
     crushed_bauxite, crushed_gold, crushed_lead, crushed_nickel, crushed_rutile, crushed_silver,
-    crushed_tin, crushed_tungsten, crushed_zinc,
+    crushed_tin, crushed_tungsten, crushed_zinc, wooden_board
 }
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")

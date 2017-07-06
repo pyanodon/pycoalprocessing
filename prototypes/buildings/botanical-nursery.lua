@@ -77,7 +77,7 @@ local entity1={
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification =
     {
-        module_slots = 4
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"nursery"},
