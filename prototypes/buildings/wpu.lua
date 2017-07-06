@@ -6,15 +6,14 @@ local recipe1={
     type = "recipe",
     name = "wpu",
     energy_required = 10,
-    enabled = false,
+    enabled = true,
     ingredients =
     {
         {"raw-wood", 20},
-        {"steel-plate", 20},
-        {"iron-plate", 50},
-		{"electric-mining-drill", 2},
+        {"iron-plate", 20},
+		{"iron-gear-wheel", 15},
+		{"burner-mining-drill", 2},
 		{"copper-cable", 50},
-        {"electronic-circuit", 10}, --updated-bob basic-circuit-board
     },
     result= "wpu",
 }
@@ -69,7 +68,7 @@ local entity1={
                 line_length = 21,
                 frame_count = 130,
                 shift = {-1.5, -1.328},
-                animation_speed = 0.3,
+                animation_speed = 0.4,
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/wpu/right.png",
@@ -78,7 +77,7 @@ local entity1={
                 line_length = 21,
                 frame_count = 130,
                 shift = {1.5, -1.328},
-                animation_speed = 0.3,
+                animation_speed = 0.4,
             },
         }
     },

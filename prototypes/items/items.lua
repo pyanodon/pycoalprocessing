@@ -470,7 +470,7 @@ local recipe_fuelrod_mk01 = {
     ingredients ={
         {type="item", name="iron-plate", amount=2},
         {type="item", name="nexelit-ore", amount=10},
-        {type="item", name="coke", amount=5},
+        {type="item", name="coke", amount=10},
     },
     results={
         {type="item", name="fuelrod-mk01", amount=3},
@@ -1399,6 +1399,8 @@ local item_log = {
     type = "item",
     name = "log",
 	enabled = "false",
+	fuel_value = "10MJ",
+	fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/log.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
