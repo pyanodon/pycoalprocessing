@@ -137,6 +137,9 @@ add_ing("active-carbon", {name="sodium-hydroxide", amount=7})
 add_ing("advanced-circuit", {name="optical-fiber", amount=2})
 add_ing("fibreglass-board", {name="glass", amount=2})
 
+remove_result("bob-resin-wood", "resin")
+add_result("bob-resin-wood", {type="item", name="resin", amount=3})
+
 remove_result("refsyngas-from-meth", "water")
 remove_result("refsyngas-from-meth-canister", "water")
 add_result("refsyngas-from-meth", {type="fluid", name="hydrogen", amount=30})
@@ -229,9 +232,9 @@ add_prerequisite("coal-processing-2", "electrolysis-1")
 --[[Categories]]--
 -------------------------------------------------------------------------------
 
+data.raw.recipe["bob-resin-wood"].energy_required = 10
 data.raw.recipe["bob-resin-wood"].category = "wpu"
 data.raw.recipe["polishing-wheel"].category = "wpu"
-data.raw.recipe["wooden-board"].category = "wpu"
+data.raw.recipe["wooden-board"].energy_required = 10
 data.raw.recipe["phenolic-board"].category = "wpu"
-
 
