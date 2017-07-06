@@ -32,4 +32,4 @@ data.raw.tool["science-pack-2"].icon = "__pycoalprocessing__/graphics/icons/scie
 data.raw.tool["science-pack-3"].icon = "__pycoalprocessing__/graphics/icons/science-pack-3.png"
 
 
-data.raw.recipe["wood"].category = "wpu"
+data.raw.recipe["wood"].energy_required = 15

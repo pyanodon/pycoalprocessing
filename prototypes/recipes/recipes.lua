@@ -40,12 +40,12 @@ local raw_wood_to_coal = {
     subgroup = "py-items-hpf",
     order = "b",
     ingredients = {
-        {type="item", name="raw-wood", amount=1}
+        {type="item", name="raw-wood", amount=10}
     },
     results = {
-        {type="item", name="coal", amount=1}
+        {type="item", name="coal", amount=10}
     },
-    energy_required=5
+    energy_required=3
 }
 
 local wood_to_coal = {
@@ -67,7 +67,7 @@ local wood_to_coal = {
     results = {
         {type="item", name="coal", amount=1}
     },
-    energy_required=5
+    energy_required=0.5
 }
 
 -------------------------------------------------------------------------------
@@ -1607,11 +1607,11 @@ local recipe_log1 = {
     name = "log1",
     category = "nursery",
     enabled = "false",
-    energy_required = 120,
+    energy_required = 80,
     ingredients ={
     },
     results={
-		{type="item", name="log", amount=1}, 
+		{type="item", name="log", amount=2}, 
     },
     icon = "__pycoalprocessing__/graphics/icons/log.png",
     subgroup = "py-items",
@@ -1625,12 +1625,12 @@ local recipe_log2 = {
     name = "log2",
     category = "nursery",
     enabled = "false",
-    energy_required = 100,
+    energy_required = 60,
     ingredients ={
 		{type="fluid", name="water", amount=500}, 
     },
     results={
-		{type="item", name="log", amount=1}, 
+		{type="item", name="log", amount=2, probability=1.5}, 
     },
     icon = "__pycoalprocessing__/graphics/icons/log2.png",
     subgroup = "py-items",
@@ -1644,13 +1644,13 @@ local recipe_log3 = {
     name = "log3",
     category = "nursery",
     enabled = "false",
-    energy_required = 80,
+    energy_required = 40,
     ingredients ={
 		{type="fluid", name="water", amount=500}, 
 		{type="item", name="ash", amount=30},
     },
     results={
-		{type="item", name="log", amount=1}, 
+		{type="item", name="log", amount=2}, 
     },
     icon = "__pycoalprocessing__/graphics/icons/log3.png",
     subgroup = "py-items",
@@ -1664,13 +1664,13 @@ local recipe_log4 = {
     name = "log4",
     category = "nursery",
     enabled = "false",
-    energy_required = 60,
+    energy_required = 30,
     ingredients ={
 		{type="fluid", name="water", amount=500}, 
 		{type="fluid", name="carbon-dioxide", amount=300}, 
     },
     results={
-		{type="item", name="log", amount=1}, 
+		{type="item", name="log", amount=2}, 
     },
     icon = "__pycoalprocessing__/graphics/icons/log4.png",
     subgroup = "py-items",
@@ -1684,13 +1684,13 @@ local recipe_log5 = {
     name = "log5",
     category = "nursery",
     enabled = "false",
-    energy_required = 40,
+    energy_required = 20,
     ingredients ={
 		{type="fluid", name="dirty-water", amount=500}, 
 		{type="fluid", name="carbon-dioxide", amount=300}, 
     },
     results={
-		{type="item", name="log", amount=1}, 
+		{type="item", name="log", amount=2}, 
     },
     icon = "__pycoalprocessing__/graphics/icons/log5.png",
     subgroup = "py-items",
@@ -1704,14 +1704,14 @@ local recipe_log6 = {
     name = "log6",
     category = "nursery",
     enabled = "false",
-    energy_required = 20,
+    energy_required = 15,
     ingredients ={
 		{type="fluid", name="dirty-water", amount=500}, 
 		{type="item", name="ash", amount=30},
 		{type="fluid", name="carbon-dioxide", amount=350}, 
     },
     results={
-		{type="item", name="log", amount=1}, 
+		{type="item", name="log", amount=3}, 
     },
     icon = "__pycoalprocessing__/graphics/icons/log5.png",
     subgroup = "py-items",
@@ -1725,12 +1725,12 @@ local recipe_log_wood = {
     name = "log-wood",
     category = "wpu",
     enabled = "false",
-    energy_required = 25,
+    energy_required = 8,
     ingredients ={
 		{type="item", name="log", amount=1},
     },
     results={
-		{type="item", name="raw-wood", amount=2}, 
+		{type="item", name="raw-wood", amount=5}, 
     },
     icon = data.raw.item["raw-wood"].icon,
     subgroup = "py-items",
@@ -1743,7 +1743,7 @@ local recipe_log_organics = {
     name = "log-organics",
     category = "wpu",
     enabled = "false",
-    energy_required = 20,
+    energy_required = 10,
     ingredients ={
 		{type="item", name="log", amount=1},
     },
@@ -1754,7 +1754,27 @@ local recipe_log_organics = {
     subgroup = "py-items",
     order = "a8",
 }
+
+--raw-wood-to-wood
 -------------------------------------------------------------------------------
+local recipe_raw_wood = {
+    type = "recipe",
+    name = "raw-to-wood",
+    category = "wpu",
+    enabled = "true",
+    energy_required = 5,
+    ingredients ={
+		{type="item", name="raw-wood", amount=1},
+    },
+    results={
+		{type="item", name="wood", amount=2}, 
+    },
+	icon = data.raw.item["wood"].icon,
+    subgroup = "py-items",
+    order = "a8",
+}
+
+------------------------------------------------------------------------------
 data:extend{
     raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
     soil_separation, richdust_separation, sand_washing, tailings_separation,
@@ -1775,5 +1795,5 @@ data:extend{
 	recipe_aromatics_to_lubricant, recipe_aromatics_to_rubber, recipe_aromatics_to_plastic, recipe_nas_battery, 
 	recipe_coke_coal, recipe_concrete_richclay, recipe_stone_distilation, recipe_oleo_solidfuel, 
 	recipe_glycerol_hydrogen, recipe_log1, recipe_log2, recipe_log3, recipe_log4, recipe_log5, recipe_log6, 
-	recipe_log_wood, recipe_log_organics
+	recipe_log_wood, recipe_log_organics, recipe_raw_wood
 }
