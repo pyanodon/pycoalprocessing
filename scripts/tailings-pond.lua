@@ -52,14 +52,6 @@ local function create_sprite(entity)
     return sprite
 end
 
--- local function create_spinner(entity)
--- local spinner = entity.surface.create_entity({name = "tailings-pond-spinner", force=entity.force, position = entity.position})
--- spinner.insert({name="speed-module", count=1})
--- spinner.destructible = false
--- spinner.operable = false
--- return spinner
--- end
-
 local function new_pond_data(entity, sprite)
     return {
         tick = game.tick,
@@ -169,7 +161,7 @@ end
 Event.register(defines.events.on_tick, tailings_pond.on_tick)
 
 function tailings_pond.on_init()
-    global.tailings_ponds={}
+    global.tailings_ponds = {}
 end
 Event.register(Event.core_events.init, tailings_pond.on_init)
 

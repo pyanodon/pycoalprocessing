@@ -69,7 +69,7 @@ local polluted_ground=
         }
     },
     --map_color={r=0.6 , g=0.1 , b=0.6, a=0.5},
-    map_color = defines.colors.brown,
+    map_color = defines.color.brown,
     ageing=0.0002,
     vehicle_friction_modifier = sand_vehicle_speed_modifier
 }
