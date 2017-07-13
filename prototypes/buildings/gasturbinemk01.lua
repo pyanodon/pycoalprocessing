@@ -40,8 +40,8 @@ local entity1={
     minable = {mining_time = 1, result = "gasturbinemk01"},
     max_health = 300,
     corpse = "big-remnants",
-    effectivity = 3,
-    fluid_usage_per_tick = .5,
+    effectivity = 0.3,
+    fluid_usage_per_tick = 1,
     maximum_temperature = 1000,
     resistances =
     {
@@ -53,7 +53,7 @@ local entity1={
     collision_box = {{-1.49, -1.49}, {1.49, 1.49}},
     selection_box = {{-1.53, -1.53}, {1.53, 1.53}},
     fluid_input = {
-        name = "steam",
+        name = "combustion-mixture1",
         amount = 0.0,
         minimum_temperature = 500.0
     },

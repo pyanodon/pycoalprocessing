@@ -26,14 +26,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "combustion-mixture2"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "gasturbinemk03"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "hydrogen-peroxide"
         },
         {
