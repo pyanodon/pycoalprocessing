@@ -42,7 +42,7 @@ local entity1={
     corpse = "big-remnants",
     effectivity = 4,
     fluid_usage_per_tick = 1,
-    maximum_temperature = 500,
+    maximum_temperature = 1000,
     resistances =
     {
         {
@@ -55,7 +55,7 @@ local entity1={
     fluid_input = {
         name = "water",
         amount = 0.0,
-        minimum_temperature = 100.0
+        minimum_temperature = 500.0
     },
     fluid_box ={
         base_area = 1,
