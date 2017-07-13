@@ -40,7 +40,6 @@ local recipe1={
     ingredients =
     {
         {"gasturbinemk01", 1},
-        {"pump", 1},
         {"electronic-circuit", 25},
         {"steel-plate", 20},
         {"iron-gear-wheel", 15}, --updated-bob steel-bearing
@@ -82,7 +81,7 @@ local entity1={
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"combustion"},
-    crafting_speed = 0.9,
+    crafting_speed = 1,
     energy_source =
     {
         type = "electric",

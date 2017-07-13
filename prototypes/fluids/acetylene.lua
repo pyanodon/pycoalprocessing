@@ -7,10 +7,10 @@ local acetylene= {
     name = "acetylene",
     category = "chemistry",
     enabled = "false",
-    energy_required = 3,
+    energy_required = 8,
     ingredients ={
         {type="fluid", name="water", amount=300},
-        {type="item", name="calcium-carbide", amount=2},
+        {type="item", name="calcium-carbide", amount=20},
     },
     results=
     {

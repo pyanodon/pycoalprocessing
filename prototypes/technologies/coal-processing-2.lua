@@ -26,18 +26,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "combustion-mixture1"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "power-house"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "gasturbinemk02"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "evaporator"
         },
         {
@@ -155,6 +143,10 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "coal-briquette"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "calcium-carbide"
         },
         {
             type = "unlock-recipe",

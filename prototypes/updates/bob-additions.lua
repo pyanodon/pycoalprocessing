@@ -492,6 +492,27 @@ local wooden_board = {
     order = "a8",
 }
 
+--HYDROGEN to CM1
+local hydrogen_c = {
+    type = "recipe",
+    name = "hydrogen-combustion",
+    category = "combustion",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+        {type="fluid", name="hydrogen", amount=200},
+		{type="fluid", name="water", amount=500},
+		{type="item", name="coke", amount=20},
+    },
+    results={
+        {type="fluid", name="combustion-mixture1", amount=100, temperature=520},
+        {type="fluid", name="steam", amount=500, temperature=165},
+    },
+    icon = "__pycoalprocessing__/graphics/icons/combustion-hydrogen.png",
+    main_product = "combustion-mixture1",
+	subgroup = "py-combustion",
+    order = "k",
+}
 
 data:extend{
     methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen,
@@ -499,7 +520,7 @@ data:extend{
     recipe_crushed_lead, recipe_crushed_silver, recipe_crushed_gold, recipe_crushed_zinc, recipe_crushed_nickel,
     recipe_crushed_rutile, crushed_quartz, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol,
     crushed_bauxite, crushed_gold, crushed_lead, crushed_nickel, crushed_rutile, crushed_silver,
-    crushed_tin, crushed_tungsten, crushed_zinc, wooden_board
+    crushed_tin, crushed_tungsten, crushed_zinc, wooden_board, hydrogen_c
 }
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
@@ -519,6 +540,8 @@ bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-gem-ore")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "syngas-distilation")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "lube-glycerol")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "resin-glycerol")
+
+bobmods.lib.tech.add_recipe_unlock("energy1", "hydrogen-combustion")
 
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-silver")
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-cobalt")
