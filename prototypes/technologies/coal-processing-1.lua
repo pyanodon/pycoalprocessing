@@ -13,10 +13,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "gasturbinemk01"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "tar-processing-unit"
         },
         {
@@ -114,26 +110,6 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "science-pack-2"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "py-tank-1500"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "py-tank-4000"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "py-tank-5000"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "py-tank-6500"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "py-tank-8000"
         },
         {
             type = "unlock-recipe",

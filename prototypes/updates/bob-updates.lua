@@ -40,8 +40,7 @@ replace_ing("tar-processing-unit", "electronic-circuit", "basic-circuit-board")
 replace_ing("tar-processing-unit", "pipe", "stone-pipe")
 
 replace_ing("cooling-tower-mk01", "pipe", "copper-pipe")
-replace_ing("cooling-tower-mk01", "iron-gear-wheel", "brass-gear-wheel")
-replace_ing("cooling-tower-mk01", "iron-plate", "brass-alloy")
+replace_ing("cooling-tower-mk01", "iron-plate", "bronze-alloy")
 
 replace_ing("cooling-tower-mk02", "pipe", "copper-pipe")
 replace_ing("cooling-tower-mk02", "iron-plate", "brass-alloy")

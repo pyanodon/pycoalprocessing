@@ -87,14 +87,14 @@ local item1={
 local entity1={
     type = "generator",
     name = "gasturbinemk03",
-    icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk02.png",
+    icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk03.png",
     flags = {"placeable-neutral","player-creation"},
     minable = {mining_time = 1, result = "gasturbinemk03"},
     max_health = 500,
     corpse = "big-remnants",
-    effectivity = 5,
-    fluid_usage_per_tick = 1,
-    maximum_temperature = 500,
+    effectivity = 1.3,
+    fluid_usage_per_tick = 3,
+    maximum_temperature = 1000,
     resistances =
     {
         {
@@ -105,19 +105,20 @@ local entity1={
     collision_box = {{-4.4, -4.4}, {4.4, 4.4}},
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
     fluid_input = {
-        name = "water",
+        name = "combustion-mixture1",
         amount = 0.0,
-        minimum_temperature = 100.0
+        minimum_temperature = 500.0
     },
     fluid_box ={
         base_area = 1,
         base_level = -1,
         pipe_covers = Prototype.Pipes.covers(false, true, false, false),
         pipe_picture=pipe_pictures({0,0}, {0,0}, {0,0}, {0,0}),
+        production_type = "input-output",
         pipe_connections =
         {
-            { position = {4.9, 0.0} },
-            { position = {-4.9, 0.0} },
+            {type = "input-output", position = {4.9, 0.0} },
+            {type = "input-output", position = {-4.9, 0.0} },
         },
     },
 

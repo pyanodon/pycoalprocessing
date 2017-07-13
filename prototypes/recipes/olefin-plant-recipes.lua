@@ -35,7 +35,7 @@ local diesel2 ={
     },
     results=
     {
-        {type="fluid", name="diesel", amount=150},
+        {type="fluid", name="diesel", amount=200},
     },
     main_product= "diesel",
     icon = "__pycoalprocessing__/graphics/icons/diesel.png",
@@ -146,7 +146,7 @@ local refolefin=
     enabled = "false",
     energy_required = 3,
     ingredients ={
-        {type="fluid", name="refsyngas", amount=200},
+        {type="fluid", name="refsyngas", amount=250},
         {type="item", name="nexelit-plate", amount=5},
     },
     results=
