@@ -114,6 +114,12 @@ data:extend{
         },
         {
             type = "item-subgroup",
+            name = "py-combustion",
+            group = "coal-processing",
+            order = "m",
+        },
+        {
+            type = "item-subgroup",
             name = "py-fluids",
             group = "coal-processing",
             order = "z",

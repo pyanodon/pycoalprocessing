@@ -15,6 +15,11 @@ local technology = {
             type = "unlock-recipe",
             recipe = "oleo-methanol"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "methanol-combustion"
+        },
+
     },
     unit =
     {
