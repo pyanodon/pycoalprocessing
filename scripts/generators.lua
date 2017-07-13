@@ -63,7 +63,7 @@ end
 
 --Add the generator pot to a table
 function generators.add_generator(entity)
-    global.generator_pot_count = global.generator_pot_count + 1
+    global.generator_pot_count = (global.generator_pot_count or 0) + 1
     global.generator_interval = math.ceil(global.generator_pot_count/200)
     global.generators[global.generator_pot_count] = {
         fluidbox = entity.fluidbox,
@@ -90,10 +90,11 @@ function generators.on_tick()
         end
     end
 end
-Event.register(defines.events.on_tick, generators.on_tick)
+--Event.register(defines.events.on_tick, generators.on_tick)
 
 function generators.on_built_entity(event)
     if generator_data[event.created_entity.name] then
+        global.generators = global.generators or {}
         generators.add_generator(event.created_entity)
         MOD.log("Generator added "..event.created_entity.unit_number)
     end
@@ -104,17 +105,17 @@ Event.register(Event.build_events, generators.on_built_entity)
 --[[Init]]
 
 function generators.on_init()
-    --generators.reset_generators()
+    global.generators = {}
 end
 Event.register(Event.core_events.init, generators.on_init)
 
 function generators.on_configuration_changed(data)
     if data.mod_changes and data.mod_changes[MOD.name] then -- This Mod has changed
         MOD.log("Updating Generators")
+        global.generators = global.generators or {}
         global.archived_generators = nil
         global.gasturbinemk01 = nil --remove defunct table
         global.archived_gasturbinemk01 = nil --remove defunct table
-        --generators.reset_generators()
     end
 end
 Event.register(Event.core_events.configuration_changed, generators.on_configuration_changed)

@@ -3,7 +3,7 @@ local PYC = require("config") --Config variables
 
 require("stdlib.table")
 require("stdlib.string")
-require("stdlib.defines.colors")
+require("stdlib.defines.color")
 require("stdlib.defines.time")
 
 --Groups
