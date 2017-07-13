@@ -41,8 +41,8 @@ local entity1={
     max_health = 300,
     corpse = "big-remnants",
     effectivity = 3,
-    fluid_usage_per_tick = 1,
-    maximum_temperature = 500,
+    fluid_usage_per_tick = .5,
+    maximum_temperature = 1000,
     resistances =
     {
         {
@@ -53,18 +53,19 @@ local entity1={
     collision_box = {{-1.49, -1.49}, {1.49, 1.49}},
     selection_box = {{-1.53, -1.53}, {1.53, 1.53}},
     fluid_input = {
-        name = "water",
+        name = "steam",
         amount = 0.0,
-        minimum_temperature = 100.0
+        minimum_temperature = 500.0
     },
     fluid_box ={
         base_area = 1,
         base_level = -1,
         pipe_covers = Prototype.Pipes.covers(false, true, true, true),
+        production_type = "input-output",
         pipe_connections =
         {
-            { position = {0.00, 2.00} },
-            { position = {0.00, -2.00} },
+            {type = "input-output", position = {0.00, 2.00} },
+            {type = "input-output", position = {0.00, -2.00} },
         },
     },
 
