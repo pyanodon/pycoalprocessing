@@ -8,7 +8,7 @@ local coalgas = {
     ingredients ={
         {type="fluid", name="coal-gas", amount=100},
 		{type="fluid", name="water", amount=500},
-		{type="item", name="coke", amount=20},
+		{type="item", name="coke", amount=5},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=50, temperature=500},
@@ -29,7 +29,7 @@ local coal_slurry = {
     ingredients ={
         {type="fluid", name="coal-slurry", amount=100},
 		{type="fluid", name="water", amount=500},
-		{type="item", name="coke", amount=20},
+		{type="item", name="coke", amount=5},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=50, temperature=550},
@@ -50,7 +50,7 @@ local syngas = {
     ingredients ={
         {type="fluid", name="syngas", amount=100},
 		{type="fluid", name="water", amount=500},
-		{type="item", name="coke", amount=20},
+		{type="item", name="coke", amount=5},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=600},
@@ -71,7 +71,7 @@ local diborane = {
     ingredients ={
         {type="fluid", name="diborane", amount=100},
 		{type="fluid", name="water", amount=500},
-		{type="item", name="coke", amount=20},
+		{type="item", name="coke", amount=5},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=600},
@@ -92,7 +92,7 @@ local methanol = {
     ingredients ={
         {type="fluid", name="methanol", amount=100},
 		{type="fluid", name="water", amount=500},
-		{type="item", name="coke", amount=20},
+		{type="item", name="coke", amount=5},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=650},
@@ -113,7 +113,7 @@ local refsyngas = {
     ingredients ={
         {type="fluid", name="refsyngas", amount=100},
 		{type="fluid", name="water", amount=500},
-		{type="item", name="coke", amount=20},
+		{type="item", name="coke", amount=5},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=700},
@@ -134,7 +134,7 @@ local acetylene = {
     ingredients ={
         {type="fluid", name="acetylene", amount=100},
 		{type="fluid", name="water", amount=500},
-		{type="item", name="coke", amount=20},
+		{type="item", name="coke", amount=5},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=670},
@@ -197,7 +197,7 @@ local gasoline = {
     ingredients ={
         {type="fluid", name="gasoline", amount=100},
 		{type="fluid", name="water", amount=1000},
-		{type="item", name="coke", amount=20},
+		{type="item", name="coke", amount=5},
 		{type="item", name="fuelrod-mk01", amount=1},
     },
     results={

@@ -502,7 +502,7 @@ local hydrogen_c = {
     ingredients ={
         {type="fluid", name="hydrogen", amount=200},
 		{type="fluid", name="water", amount=500},
-		{type="item", name="coke", amount=20},
+		{type="item", name="coke", amount=5},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=520},
