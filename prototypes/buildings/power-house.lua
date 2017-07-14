@@ -133,14 +133,14 @@ local entity1={
             pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_level = 1,
             pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {-0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_left),
-            pipe_connections = {{ type="output" , position = {-3.9, 1.0} }}
+            pipe_connections = {{ type="output" , position = {-1.0, 3.9} }}
         },
         {
             production_type = "output",
             pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", {0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_mid),
             pipe_covers = Prototype.Pipes.covers(true, true, true, true),
             base_level = 1,
-            pipe_connections = {{ type="output" , position = {-3.9, 0.0} }}
+            pipe_connections = {{ type="output" , position = {1.0, 3.9} }}
         },
         off_when_no_fluid_recipe = true
     },
