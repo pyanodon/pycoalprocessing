@@ -92,8 +92,8 @@ local entity1={
     minable = {mining_time = 1, result = "gasturbinemk03"},
     max_health = 500,
     corpse = "big-remnants",
-    effectivity = 1.3,
-    fluid_usage_per_tick = 3,
+    effectivity = 1.35,
+    fluid_usage_per_tick = 1.5,
     maximum_temperature = 1000,
     resistances =
     {
