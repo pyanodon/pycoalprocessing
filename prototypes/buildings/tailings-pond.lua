@@ -10,13 +10,12 @@ local function make_tailings_variants()
     for y=0, 555-185, 185 do
         for x=0, 1710-171, 171 do
             pictures[#pictures + 1] = {
-                filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-fluid-sheet2.png",
+                filename = "__pycoalprocessing__/graphics/entity/tailings-pond/fluid-sheet.png",
                 priority="extra-high",
                 width = 171,
                 height = 185,
                 x=x,
                 y=y,
-                shift = {-0.5, -0.5}
             }
         end
     end
@@ -83,22 +82,20 @@ local entity_tailings_pond =
         {
             sheet =
             {
-                filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-mask-2.png",
+                filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-frame.png",
                 priority = "high",
                 frames = 1,
                 width = 171,
                 height = 185,
-                shift = {0, 0}
             }
         },
         fluid_background = Prototype.empty_sprite(),
         window_background =
         {
-            filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-empty-window-2.png",
+            filename = "__pycoalprocessing__/graphics/entity/tailings-pond/window-background.png",
             priority = "low",
             width = 171,
             height = 185,
-            shift = {.265, .5}
         },
         flow_sprite = Prototype.empty_sprite(),
         gas_flow = Prototype.empty_animation(),
@@ -149,7 +146,7 @@ local entity_tailings_pond_sprite =
     name = "tailings-pond-sprite",
     selectable_in_game = false,
     render_layer = "object",
-    flags = {"not-blueprintable", "not-deconstructable"},
+    flags = {"not-blueprintable", "not-deconstructable", "placeable-off-grid"},
     max_health = 100,
     collision_box = nil,
     collision_mask = {},
