@@ -12,7 +12,7 @@ local coalgas = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=50, temperature=500},
-        {type="fluid", name="steam", amount=500, temperature=165},
+        {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-coalgas.png",
     main_product = "combustion-mixture1",
@@ -33,7 +33,7 @@ local coal_slurry = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=50, temperature=550},
-        {type="fluid", name="steam", amount=500, temperature=165},
+        {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-coal-slurry.png",
     main_product = "combustion-mixture1",
@@ -54,7 +54,7 @@ local syngas = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=600},
-        {type="fluid", name="steam", amount=500, temperature=165},
+        {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-syngas.png",
     main_product = "combustion-mixture1",
@@ -75,7 +75,7 @@ local diborane = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=600},
-        {type="fluid", name="steam", amount=500, temperature=165},
+        {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-diborane.png",
     main_product = "combustion-mixture1",
@@ -96,7 +96,7 @@ local methanol = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=650},
-        {type="fluid", name="steam", amount=500, temperature=165},
+        {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-methanol.png",
     main_product = "combustion-mixture1",
@@ -117,7 +117,7 @@ local refsyngas = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=700},
-        {type="fluid", name="steam", amount=500, temperature=165},
+        {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-refsyngas.png",
     main_product = "combustion-mixture1",
@@ -138,7 +138,7 @@ local acetylene = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=670},
-        {type="fluid", name="steam", amount=500, temperature=165},
+        {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-acetylene.png",
     main_product = "combustion-mixture1",
@@ -159,7 +159,7 @@ local olefin = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=80, temperature=750},
-        {type="fluid", name="steam", amount=1000, temperature=165},
+        {type="fluid", name="steam", amount=1000, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-olefin.png",
     main_product = "combustion-mixture1",
@@ -180,7 +180,7 @@ local diesel = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=80, temperature=800},
-        {type="fluid", name="steam", amount=1000, temperature=165},
+        {type="fluid", name="steam", amount=1000, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-diesel.png",
     main_product = "combustion-mixture1",
@@ -202,7 +202,7 @@ local gasoline = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=80, temperature=850},
-        {type="fluid", name="steam", amount=1000, temperature=165},
+        {type="fluid", name="steam", amount=1000, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-gasoline.png",
     main_product = "combustion-mixture1",
