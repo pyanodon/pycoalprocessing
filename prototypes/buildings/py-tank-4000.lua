@@ -68,14 +68,6 @@ local entity1={
                 shift = {1.0, -1.5}
             }
         },
-        fluid_background =
-        {
-            filename = "__base__/graphics/entity/storage-tank/fluid-background.png",
-            priority = "extra-high",
-            width = 32,
-            height = 15,
-            shift = {-0.0, -2.0}
-        },
         fluid_background = Prototype.empty_sprite(),
         window_background = Prototype.empty_sprite(),
         flow_sprite = Prototype.empty_sprite(),

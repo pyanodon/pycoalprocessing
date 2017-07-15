@@ -33,6 +33,7 @@ end
 --Pond contains gases, lets spill them out. Only negative is this can be used as a "gas" void so...
 --If the gas is "polluting" create pollution, else just vent.
 local function empty_pond_gas(fluid, surface, position)
+    --TODO check fluid temp to gas_temp
     if fluid then
         if (string.contains(fluid.type, "-gas") or string.contains (fluid.type, "gas-") and not _gasses[fluid.type] == false)
         or _gasses[fluid.type] == true then
@@ -126,7 +127,6 @@ function tailings_pond.create(event)
         local entity = event.created_entity
         entity.direction = defines.direction.north
         local sprite = create_sprite(entity)
-        --local spinner = create_spinner(entity)
         local pond = new_pond_data(entity, sprite)
         ponds[pond.index] = pond
     end
@@ -167,8 +167,12 @@ Event.register(Event.core_events.init, tailings_pond.on_init)
 
 function tailings_pond.on_configuration_changed(data)
     if data.mod_changes and data.mod_changes[MOD.name] then -- This Mod has changed
-        global.talinings_ponds = global.tailings_ponds or {}
-        tailings_pond.reset_ponds()
+        global.tailings_ponds = global.tailings_ponds or {}
+        for _, pond in pairs(global.tailings_ponds) do
+            if pond.sprite then
+                pond.sprite.teleport(pond.entity.position)
+            end
+        end
     end
 end
 Event.register(Event.core_events.configuration_changed, tailings_pond.on_configuration_changed)
