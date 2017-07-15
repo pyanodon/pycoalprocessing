@@ -506,7 +506,7 @@ local hydrogen_c = {
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=520},
-        {type="fluid", name="steam", amount=500, temperature=165},
+        {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-hydrogen.png",
     main_product = "combustion-mixture1",
