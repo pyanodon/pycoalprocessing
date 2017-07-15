@@ -99,7 +99,7 @@ local cooling_water ={
     enabled = "false",
     energy_required = 1.5,
     ingredients ={
-        {type="fluid", name="steam", amount=150, temperature=165},
+        {type="fluid", name="steam", amount=150, temperature=60},
     },
     results={
         {type="fluid", name="water", amount=150, temperature=15},
@@ -564,7 +564,7 @@ local recipe_rawborax = {
         {type="fluid", name="syngas", amount=150},
     },
     results={
-        {type="item", name="raw-borax", amount=4},
+        {type="item", name="raw-borax", amount=5},
     },
     main_product= "raw-borax",
     icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
@@ -807,7 +807,7 @@ local recipe_oleochemicals = {
     results={
         {type="fluid", name="oleochemicals", amount=150},
         {type="fluid", name="glycerol", amount=100},
-        {type="fluid", name="steam", amount=2000, temperature=165},
+        {type="fluid", name="steam", amount=2000, temperature=60},
     },
     main_product= "oleochemicals",
     icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
