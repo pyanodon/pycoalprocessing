@@ -89,7 +89,7 @@ local entity1={
             base_level = 1,
             pipe_connections = {{ type="output", position = {-1.0, -4.0} }}
         },
-		
+
         --South3
         {
             production_type = "input",

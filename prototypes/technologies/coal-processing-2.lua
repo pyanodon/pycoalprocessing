@@ -7,7 +7,6 @@ local technology = {
     prerequisites = {"separation","coal-processing-1","desulfurization"},
     effects =
     {
-
         {
             type = "unlock-recipe",
             recipe = "quenching-tower"
@@ -192,7 +191,6 @@ local technology = {
             type = "unlock-recipe",
             recipe = "log-organics"
         },
-		
     },
     unit =
     {

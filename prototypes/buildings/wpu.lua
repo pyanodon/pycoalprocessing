@@ -1,4 +1,4 @@
-local Prototype = require("stdlib.prototype.prototype")
+--local Prototype = require("stdlib.prototype.prototype")
 
 -------------------------------------------------------------------------------
 --[[Recipes]]--
