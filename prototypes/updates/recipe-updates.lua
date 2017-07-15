@@ -70,14 +70,15 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
 end
 
 --ADDING NIOBIUM INTO LOW DENSITY STRUCTURE
+local part
 
-local part = data.raw.recipe["low-density-structure"]
+part = data.raw.recipe["low-density-structure"]
 part.normal.ingredients[#part.normal.ingredients + 1] = {type = "item", name = "niobium-plate", amount = 5}
 
-local part = data.raw.recipe["low-density-structure"]
+part = data.raw.recipe["low-density-structure"]
 part.expensive.ingredients[#part.expensive.ingredients + 1] = {type = "item", name = "niobium-plate", amount = 10}
 
 --ADDING FUELROD INTO ROCKET-FUEL INTO ROCKET-FUEL
 
-local part = data.raw.recipe["rocket-fuel"]
+part = data.raw.recipe["rocket-fuel"]
 part.ingredients[#part.ingredients + 1] = {type = "item", name = "fuelrod-mk01", amount = 2}

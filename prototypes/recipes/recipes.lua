@@ -251,8 +251,8 @@ local sand_washing ={
         {type="item", name="sand", amount=10},
         {type="fluid", name="water", amount=200},
     },
-    results={
-        {type="item", name="pure-sand", amount=8},
+    results={{type="item", name="pure-sand", amount=8},
+
         {type="fluid", name="dirty-water", amount=80},
 
     },
@@ -1593,7 +1593,7 @@ local recipe_glycerol_hydrogen = {
 		{type="fluid", name="water", amount=200}, --updated-bob liquid-air
     },
     results={
-		{type="fluid", name="petroleum-gas", amount=100}, 
+		{type="fluid", name="petroleum-gas", amount=100},
     },
     icon = "__pycoalprocessing__/graphics/icons/glycerol-hydrogen.png",
     subgroup = "py-fluid-handling",
@@ -1611,7 +1611,7 @@ local recipe_log1 = {
     ingredients ={
     },
     results={
-		{type="item", name="log", amount=2}, 
+		{type="item", name="log", amount=2},
     },
     icon = "__pycoalprocessing__/graphics/icons/log.png",
     subgroup = "py-items",
@@ -1627,10 +1627,10 @@ local recipe_log2 = {
     enabled = "false",
     energy_required = 60,
     ingredients ={
-		{type="fluid", name="water", amount=500}, 
+		{type="fluid", name="water", amount=500},
     },
     results={
-		{type="item", name="log", amount=2, probability=1.5}, 
+		{type="item", name="log", amount=2, probability=1.5},
     },
     icon = "__pycoalprocessing__/graphics/icons/log2.png",
     subgroup = "py-items",
@@ -1646,11 +1646,11 @@ local recipe_log3 = {
     enabled = "false",
     energy_required = 40,
     ingredients ={
-		{type="fluid", name="water", amount=500}, 
+		{type="fluid", name="water", amount=500},
 		{type="item", name="ash", amount=30},
     },
     results={
-		{type="item", name="log", amount=2}, 
+		{type="item", name="log", amount=2},
     },
     icon = "__pycoalprocessing__/graphics/icons/log3.png",
     subgroup = "py-items",
@@ -1666,11 +1666,11 @@ local recipe_log4 = {
     enabled = "false",
     energy_required = 30,
     ingredients ={
-		{type="fluid", name="water", amount=500}, 
-		{type="fluid", name="carbon-dioxide", amount=300}, 
+		{type="fluid", name="water", amount=500},
+		{type="fluid", name="carbon-dioxide", amount=300},
     },
     results={
-		{type="item", name="log", amount=2}, 
+		{type="item", name="log", amount=2},
     },
     icon = "__pycoalprocessing__/graphics/icons/log4.png",
     subgroup = "py-items",
@@ -1686,11 +1686,11 @@ local recipe_log5 = {
     enabled = "false",
     energy_required = 20,
     ingredients ={
-		{type="fluid", name="dirty-water", amount=500}, 
-		{type="fluid", name="carbon-dioxide", amount=300}, 
+		{type="fluid", name="dirty-water", amount=500},
+		{type="fluid", name="carbon-dioxide", amount=300},
     },
     results={
-		{type="item", name="log", amount=2}, 
+		{type="item", name="log", amount=2},
     },
     icon = "__pycoalprocessing__/graphics/icons/log5.png",
     subgroup = "py-items",
@@ -1706,12 +1706,12 @@ local recipe_log6 = {
     enabled = "false",
     energy_required = 15,
     ingredients ={
-		{type="fluid", name="dirty-water", amount=500}, 
+		{type="fluid", name="dirty-water", amount=500},
 		{type="item", name="ash", amount=30},
-		{type="fluid", name="carbon-dioxide", amount=350}, 
+		{type="fluid", name="carbon-dioxide", amount=350},
     },
     results={
-		{type="item", name="log", amount=3}, 
+		{type="item", name="log", amount=3},
     },
     icon = "__pycoalprocessing__/graphics/icons/log5.png",
     subgroup = "py-items",
@@ -1730,7 +1730,7 @@ local recipe_log_wood = {
 		{type="item", name="log", amount=1},
     },
     results={
-		{type="item", name="raw-wood", amount=5}, 
+		{type="item", name="raw-wood", amount=5},
     },
     icon = data.raw.item["raw-wood"].icon,
     subgroup = "py-items",
@@ -1748,7 +1748,7 @@ local recipe_log_organics = {
 		{type="item", name="log", amount=1},
     },
     results={
-		{type="item", name="organics", amount=50}, 
+		{type="item", name="organics", amount=50},
     },
     icon = "__pycoalprocessing__/graphics/icons/organics.png",
     subgroup = "py-items",
@@ -1767,7 +1767,7 @@ local recipe_raw_wood = {
 		{type="item", name="raw-wood", amount=1},
     },
     results={
-		{type="item", name="wood", amount=2}, 
+		{type="item", name="wood", amount=2},
     },
 	icon = data.raw.item["wood"].icon,
     subgroup = "py-items",
@@ -1789,11 +1789,11 @@ data:extend{
     recipe_filtration_dirty_water, recipe_olefin_filtration, recipe_coalgas_syngas, recipe_oleo_oil,
     recipe_sand_brick, tailings_classification, recipe_tar_distilation,
     recipe_oleochemicals_distilation, recipe_tar_gasification, recipe_oleo_gasification, recipe_coal_dust,
-    recipe_coal_fawogae, recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron, 
-    recipe_niobium_pipe, recipe_niobium_pipe_to_ground, recipe_sulfur_heavyoil, recipe_sulfur_lightoil, 
-	recipe_sulfur_petgas, recipe_sulfur_crudeoil, recipe_organics_from_rawwood, recipe_creosote_to_aromatics, 
-	recipe_aromatics_to_lubricant, recipe_aromatics_to_rubber, recipe_aromatics_to_plastic, recipe_nas_battery, 
-	recipe_coke_coal, recipe_concrete_richclay, recipe_stone_distilation, recipe_oleo_solidfuel, 
-	recipe_glycerol_hydrogen, recipe_log1, recipe_log2, recipe_log3, recipe_log4, recipe_log5, recipe_log6, 
+    recipe_coal_fawogae, recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron,
+    recipe_niobium_pipe, recipe_niobium_pipe_to_ground, recipe_sulfur_heavyoil, recipe_sulfur_lightoil,
+	recipe_sulfur_petgas, recipe_sulfur_crudeoil, recipe_organics_from_rawwood, recipe_creosote_to_aromatics,
+	recipe_aromatics_to_lubricant, recipe_aromatics_to_rubber, recipe_aromatics_to_plastic, recipe_nas_battery,
+	recipe_coke_coal, recipe_concrete_richclay, recipe_stone_distilation, recipe_oleo_solidfuel,
+	recipe_glycerol_hydrogen, recipe_log1, recipe_log2, recipe_log3, recipe_log4, recipe_log5, recipe_log6,
 	recipe_log_wood, recipe_log_organics, recipe_raw_wood
 }

@@ -99,7 +99,7 @@ local entity1={
         line_length = 7,
         frame_count = 35,
         animation_speed = 0.4,
-		run_mode = "forward-then-backward",
+        run_mode = "forward-then-backward",
         shift = {0.1, 0.1},
     },
     fluid_boxes =
@@ -133,7 +133,7 @@ local entity1={
     vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
     working_sound =
     {
-        sound = { filename = "__pycoalprocessing__/sounds/botanical-nursery.ogg", volume = 1.8 }, 
+        sound = { filename = "__pycoalprocessing__/sounds/botanical-nursery.ogg", volume = 1.8 },
         idle_sound = { filename = "__pycoalprocessing__/sounds/botanical-nursery.ogg", volume = 0.95 },
         apparent_volume = 2.5,
     },

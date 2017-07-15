@@ -282,7 +282,7 @@ local recipe_lube_glycerol ={
     energy_required = 2.0,
     ingredients ={
         {type="fluid", name="glycerol", amount=100},
-		{type="fluid", name="lithia-water", amount=200},
+        {type="fluid", name="lithia-water", amount=200},
     },
     results={
         {type="fluid", name="lubricant", amount=100},
@@ -302,7 +302,7 @@ local recipe_explosives_glycerol ={
     energy_required = 2.0,
     ingredients ={
         {type="fluid", name="glycerol", amount=100},
-		{type="fluid", name="sulfuric-acid", amount=150},
+        {type="fluid", name="sulfuric-acid", amount=150},
     },
     results={
         {type="item", name="explosives", amount=5},
@@ -322,7 +322,7 @@ local recipe_resin_glycerol ={
     energy_required = 3.0,
     ingredients ={
         {type="fluid", name="glycerol", amount=150},
-		{type="item", name="coke", amount=5},
+        {type="item", name="coke", amount=5},
     },
     results={
         {type="item", name="resin", amount=20},
@@ -357,7 +357,7 @@ local recipe_syngas_distilation ={
 local crushed_bauxite = {
     type = "item",
     name = "crushed-bauxite",
-	enabled = "false",
+    enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-bauxite.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -369,7 +369,7 @@ local crushed_bauxite = {
 local crushed_gold = {
     type = "item",
     name = "crushed-gold",
-	enabled = "false",
+    enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-gold.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -381,7 +381,7 @@ local crushed_gold = {
 local crushed_lead = {
     type = "item",
     name = "crushed-lead",
-	enabled = "false",
+    enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-lead.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -393,7 +393,7 @@ local crushed_lead = {
 local crushed_nickel = {
     type = "item",
     name = "crushed-nickel",
-	enabled = "false",
+    enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-nickel.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -405,7 +405,7 @@ local crushed_nickel = {
 local crushed_rutile = {
     type = "item",
     name = "crushed-rutile",
-	enabled = "false",
+    enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-rutile.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -417,7 +417,7 @@ local crushed_rutile = {
 local crushed_silver = {
     type = "item",
     name = "crushed-silver",
-	enabled = "false",
+    enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-silver.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -429,7 +429,7 @@ local crushed_silver = {
 local crushed_quartz = {
     type = "item",
     name = "crushed-quartz",
-	enabled = "false",
+    enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-quartz.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -441,7 +441,7 @@ local crushed_quartz = {
 local crushed_tin = {
     type = "item",
     name = "crushed-tin",
-	enabled = "false",
+    enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tin.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -453,7 +453,7 @@ local crushed_tin = {
 local crushed_tungsten = {
     type = "item",
     name = "crushed-tungsten",
-	enabled = "false",
+    enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tungsten.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -465,7 +465,7 @@ local crushed_tungsten = {
 local crushed_zinc = {
     type = "item",
     name = "crushed-zinc",
-	enabled = "false",
+    enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-zinc.png",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -482,12 +482,12 @@ local wooden_board = {
     enabled = "true",
     energy_required = 1.5,
     ingredients ={
-		{type="item", name="wood", amount=1},
+        {type="item", name="wood", amount=1},
     },
     results={
-		{type="item", name="wooden-board", amount=1}, 
+        {type="item", name="wooden-board", amount=1},
     },
-	icon = "__bobelectronics__/graphics/icons/wooden-board.png",
+    icon = "__bobelectronics__/graphics/icons/wooden-board.png",
     subgroup = "py-items",
     order = "a8",
 }
@@ -501,8 +501,8 @@ local hydrogen_c = {
     energy_required = 3,
     ingredients ={
         {type="fluid", name="hydrogen", amount=200},
-		{type="fluid", name="water", amount=500},
-		{type="item", name="coke", amount=5},
+        {type="fluid", name="water", amount=500},
+        {type="item", name="coke", amount=5},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=520},
@@ -510,7 +510,7 @@ local hydrogen_c = {
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-hydrogen.png",
     main_product = "combustion-mixture1",
-	subgroup = "py-combustion",
+    subgroup = "py-combustion",
     order = "k",
 }
 
