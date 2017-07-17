@@ -36,12 +36,6 @@ function MOD.on_configuration_changed(event)
         local changes = event.data.mod_changes[MOD.name]
         if changes then -- This Mod has changed
             MOD.log("Updated from ".. tostring(changes.old_version) .. " to " .. tostring(changes.new_version), 2)
-            if changes.new_version == "0.2.6" then
-                MOD.log("Resetting all technologies")
-                for _, force in pairs(game.forces) do
-                    force.reset_technology_effects()
-                end
-            end
         end
     end
 end
