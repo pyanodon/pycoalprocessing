@@ -1611,7 +1611,7 @@ local recipe_log1 = {
     ingredients ={
     },
     results={
-		{type="item", name="log", amount=2},
+		{type="item", name="log", amount=3},
     },
     icon = "__pycoalprocessing__/graphics/icons/log.png",
     subgroup = "py-items",
@@ -1630,7 +1630,7 @@ local recipe_log2 = {
 		{type="fluid", name="water", amount=500},
     },
     results={
-		{type="item", name="log", amount=2, probability=1.5},
+		{type="item", name="log", amount=3},
     },
     icon = "__pycoalprocessing__/graphics/icons/log2.png",
     subgroup = "py-items",
@@ -1650,7 +1650,7 @@ local recipe_log3 = {
 		{type="item", name="ash", amount=30},
     },
     results={
-		{type="item", name="log", amount=2},
+		{type="item", name="log", amount=3},
     },
     icon = "__pycoalprocessing__/graphics/icons/log3.png",
     subgroup = "py-items",
@@ -1670,7 +1670,7 @@ local recipe_log4 = {
 		{type="fluid", name="carbon-dioxide", amount=300},
     },
     results={
-		{type="item", name="log", amount=2},
+		{type="item", name="log", amount=3},
     },
     icon = "__pycoalprocessing__/graphics/icons/log4.png",
     subgroup = "py-items",
@@ -1690,7 +1690,7 @@ local recipe_log5 = {
 		{type="fluid", name="carbon-dioxide", amount=300},
     },
     results={
-		{type="item", name="log", amount=2},
+		{type="item", name="log", amount=3},
     },
     icon = "__pycoalprocessing__/graphics/icons/log5.png",
     subgroup = "py-items",
