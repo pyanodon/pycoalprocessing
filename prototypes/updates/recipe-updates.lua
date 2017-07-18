@@ -66,19 +66,28 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
             {"raw-wood", 2},
         }
     end
-
 end
 
 --ADDING NIOBIUM INTO LOW DENSITY STRUCTURE
-local part
-
-part = data.raw.recipe["low-density-structure"]
-part.normal.ingredients[#part.normal.ingredients + 1] = {type = "item", name = "niobium-plate", amount = 5}
-
-part = data.raw.recipe["low-density-structure"]
-part.expensive.ingredients[#part.expensive.ingredients + 1] = {type = "item", name = "niobium-plate", amount = 10}
+do
+    local part
+    part = data.raw.recipe["low-density-structure"]
+    part.normal.ingredients[#part.normal.ingredients + 1] = {type = "item", name = "niobium-plate", amount = 5}
+    part = data.raw.recipe["low-density-structure"]
+    part.expensive.ingredients[#part.expensive.ingredients + 1] = {type = "item", name = "niobium-plate", amount = 10}
+end
 
 --ADDING FUELROD INTO ROCKET-FUEL INTO ROCKET-FUEL
-
-part = data.raw.recipe["rocket-fuel"]
-part.ingredients[#part.ingredients + 1] = {type = "item", name = "fuelrod-mk01", amount = 2}
+do
+    local part = data.raw.recipe["rocket-fuel"]
+    local normal = {type = "item", name = "fuelrod-mk01", amount = 2}
+    local expensive = {type = "item", name = "fuelrod-mk01", amount = 4}
+    if part.normal then
+        part.normal.ingredients[#part.normal.ingredients + 1] = normal
+        if part.expensive then
+            part.expensive.ingredients[#part.expensive.ingredients + 1] = expensive
+        end
+    else
+        part.ingredients[#part.ingredients + 1] = normal
+    end
+end
