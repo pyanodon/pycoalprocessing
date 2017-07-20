@@ -281,8 +281,30 @@ local recipe_glycerol_syngas = {
 	subgroup = "py-fluid-handling",
 	order = "h12",
 }
+--COAL-BRIQUETTE
+-------------------------------------------------------------------------------
+local recipe_coal_briquette = {
+    type = "recipe",
+    name = "coal-briquette",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 1,
+    ingredients ={
+		{type="item", name="coal-dust", amount=35},
+		{type="fluid", name="glycerol", amount=100},
+		{type="fluid", name="creosote", amount=150},
+		{type="fluid", name="tar", amount=50},
+    },
+    results={
+        {type="item", name="coal-briquette", amount=1},
+    },
+	main_product= "coal-briquette",
+    icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
+}
+
 data:extend{
     heavy_oil_from_coal_gas, light_oil_from_syngas, petgas_from_refsyngas, ref_to_light_oil,
     sulfuric_petgas, combustion_olefin, rare_earth_beneficiation, recipe_dirty_reaction,
-	recipe_heavy_to_coalgas, recipe_light_to_syngas, recipe_petgas_to_refsyngas, recipe_glycerol_syngas
+	recipe_heavy_to_coalgas, recipe_light_to_syngas, recipe_petgas_to_refsyngas, recipe_glycerol_syngas,
+	recipe_coal_briquette
 }

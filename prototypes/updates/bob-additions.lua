@@ -11,7 +11,7 @@ local methanol_from_hydrogen = {
     ingredients ={
         {type="fluid", name="carbon-dioxide", amount=30},
         {type="fluid", name="hydrogen", amount=50},
-        {type="item", name="zinc-ore", amount=1},
+        {type="item", name="zinc-plate", amount=1},
         {type="item", name="nichrome", amount=2}, },
     results=
     {
