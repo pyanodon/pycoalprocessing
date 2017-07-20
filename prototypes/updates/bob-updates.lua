@@ -130,6 +130,9 @@ replace_ing("zinc-chloride", "water", "hydrogen-chloride")
 remove_ing("zinc-chloride", "copper-plate")
 add_result("zinc-chloride", {name="hydrogen", amount=20})
 
+add_result("ash-separation", {type="item", name="cobalt-ore", amount=1, probability=0.3})
+
+
 replace_ing("active-carbon", "water", "nitrogen")
 add_ing("active-carbon", {name="sodium-hydroxide", amount=7})
 
@@ -167,7 +170,7 @@ replace_ing("niobium-oxide", "water", "nitrogen-dioxide")
 
 add_ing("filtration-media", {type="item", name="glass", amount=5})
 
-replace_ing("methanol-from-syngas", "iron-ore", "zinc-ore")
+replace_ing("methanol-from-syngas", "iron-plate", "zinc-plate")
 replace_ing("flying-robot-frame", "steel-plate", "niobium-plate")
 replace_ing("ralesia", "water", "hydrogen")
 replace_ing("equipment-chassi", "copper-plate", "bronze-alloy")

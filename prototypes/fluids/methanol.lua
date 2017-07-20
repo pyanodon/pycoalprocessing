@@ -11,8 +11,8 @@ local methanol_from_syngas = {
     ingredients ={
 
         {type="fluid", name="syngas", amount=50},
-        {type="item", name="copper-ore", amount=2},
-        {type="item", name="iron-ore", amount=1}, --updated-bob zinc-ore
+        {type="item", name="copper-plate", amount=2},
+        {type="item", name="iron-plate", amount=1}, --updated-bob zinc-plate
     },
     results=
     {

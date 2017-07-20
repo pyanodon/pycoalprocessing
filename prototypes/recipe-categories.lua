@@ -18,7 +18,6 @@ data:extend{
         type = "recipe-category",
         name = "carbonfilter",
     },
-
     {
         type = "recipe-category",
         name = "gasifier",

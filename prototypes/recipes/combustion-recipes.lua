@@ -209,6 +209,51 @@ local gasoline = {
 	subgroup = "py-combustion",
     order = "j",
 }
+--SUPERCRITICAL COAL
+local supercritical = {
+    type = "recipe",
+    name = "supercritical-combustion",
+    category = "combustion",
+    enabled = "false",
+    energy_required = 4,
+    ingredients ={
+        {type="fluid", name="light-oil", amount=100},
+        {type="fluid", name="refsyngas", amount=50},
+		{type="fluid", name="water", amount=1000},
+		{type="item", name="coal-briquette", amount=5},
+    },
+    results={
+        {type="fluid", name="combustion-mixture1", amount=100, temperature=900},
+        {type="fluid", name="steam", amount=1000, temperature=60},
+    },
+    icon = "__pycoalprocessing__/graphics/icons/combustion-super-critical.png",
+    main_product = "combustion-mixture1",
+	subgroup = "py-combustion",
+    order = "k",
+}
+
+--ULTRASUPERCRITICAL COAL
+local ultrasupercritical = {
+    type = "recipe",
+    name = "ultrasupercritical-combustion",
+    category = "combustion",
+    enabled = "false",
+    energy_required = 4,
+    ingredients ={
+        {type="fluid", name="petroleum-gas", amount=100},
+        {type="fluid", name="refsyngas", amount=50},
+		{type="fluid", name="water", amount=1000},
+		{type="item", name="coal-briquette", amount=5},
+    },
+    results={
+        {type="fluid", name="combustion-mixture1", amount=100, temperature=1000},
+        {type="fluid", name="steam", amount=1000, temperature=60},
+    },
+    icon = "__pycoalprocessing__/graphics/icons/combustion-ultra-super-critical.png",
+    main_product = "combustion-mixture1",
+	subgroup = "py-combustion",
+    order = "l",
+}
 
 
 data:extend{
@@ -221,5 +266,7 @@ data:extend{
 			acetylene,
 			olefin,
 			diesel,
-			gasoline
+			gasoline,
+			supercritical,
+			ultrasupercritical
 }
