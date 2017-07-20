@@ -56,6 +56,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "creosote-to-aromatics"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "ash-separation"
+        },
 
     },
     unit =

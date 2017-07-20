@@ -23,6 +23,14 @@ local technology = {
             type = "unlock-recipe",
             recipe = "olefin-combustion"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "supercritical-combustion"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "ultrasupercritical-combustion"
+        },
     },
     unit =
     {
