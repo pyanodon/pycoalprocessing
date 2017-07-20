@@ -1774,6 +1774,27 @@ local recipe_raw_wood = {
     order = "a8",
 }
 
+--ASH SEPARATION
+-------------------------------------------------------------------------------
+local recipe_ash_separation = {
+    type = "recipe",
+    name = "ash-separation",
+    category = "solid-separator",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+		{type="item", name="ash", amount=100},
+    },
+    results={
+		{type="item", name="coal-dust", amount=2},
+		{type="item", name="iron-oxide", amount=1, probability=0.5},
+    },
+    icon = "__pycoalprocessing__/graphics/icons/ash-separation.png",
+    subgroup = "py-items-class",
+    order = "f",
+}
+
+
 ------------------------------------------------------------------------------
 data:extend{
     raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
@@ -1795,5 +1816,5 @@ data:extend{
 	recipe_aromatics_to_lubricant, recipe_aromatics_to_rubber, recipe_aromatics_to_plastic, recipe_nas_battery,
 	recipe_coke_coal, recipe_concrete_richclay, recipe_stone_distilation, recipe_oleo_solidfuel,
 	recipe_glycerol_hydrogen, recipe_log1, recipe_log2, recipe_log3, recipe_log4, recipe_log5, recipe_log6,
-	recipe_log_wood, recipe_log_organics, recipe_raw_wood
+	recipe_log_wood, recipe_log_organics, recipe_raw_wood, recipe_ash_separation
 }

@@ -468,7 +468,7 @@ local recipe_fuelrod_mk01 = {
     enabled = "false",
     energy_required = 3.5,
     ingredients ={
-        {type="item", name="iron-plate", amount=2},
+        {type="item", name="niobium-plate", amount=2},
         {type="item", name="nexelit-ore", amount=10},
         {type="item", name="coke", amount=10},
     },
@@ -1283,26 +1283,8 @@ local filtration_media = {
     --order = "g",
     stack_size = 200
 }
---COAL-BRIQUETTE
 -------------------------------------------------------------------------------
-local recipe_coal_briquette = {
-    type = "recipe",
-    name = "coal-briquette",
-    category = "fts-reactor",
-    enabled = "false",
-    energy_required = 3.0,
-    ingredients ={
-		{type="item", name="coal-dust", amount=35},
-		{type="fluid", name="glycerol", amount=100},
-		{type="fluid", name="creosote", amount=150},
-		{type="fluid", name="tar", amount=50},
-    },
-    results={
-        {type="item", name="coal-briquette", amount=2},
-    },
-	main_product= "coal-briquette",
-    icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
-}
+-- COAL BRIQUETTE
 local coal_briquette = {
     type = "item",
 	enabled = "false",
@@ -1507,7 +1489,6 @@ data:extend(
 		biofilm,
 		recipe_filtration_media,
 		filtration_media,
-		recipe_coal_briquette,
 		coal_briquette,
 		recipe_calcium_carbide,
 		calcium_carbide,
