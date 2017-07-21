@@ -1,5 +1,6 @@
 PACKAGE_NAME := $(shell cat info.json|jq -r .name)
 VERSION_STRING := $(shell cat info.json|jq -r .version)
+TOKEN := $(shell cat .token)
 OUTPUT_NAME := $(PACKAGE_NAME)_$(VERSION_STRING)
 BUILD_DIR := .build
 OUTPUT_DIR := $(BUILD_DIR)/$(OUTPUT_NAME)
@@ -32,6 +33,9 @@ git: tag
 	git checkout develop
 	git push --all
 	git push --tags
+
+github-release:
+	curl --data '{"tag_name": "v$(VERSION_STRING)","target_commitish": "master","name": "vv$(VERSION_STRING)","body": "Release of version $(VERSION_STRING)","draft": true,"prerelease": false}' https://api.github.com/repos/:owner/:repository/releases?access_token=:$TOKEN
 
 package-copy: $(PKG_DIRS) $(PKG_FILES)
 	@mkdir -p $(OUTPUT_DIR)
