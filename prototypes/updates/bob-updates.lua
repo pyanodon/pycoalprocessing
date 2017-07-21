@@ -8,6 +8,13 @@ local add_result = bobmods.lib.recipe.add_result
 local remove_result = bobmods.lib.recipe.remove_result
 local add_prerequisite = bobmods.lib.tech.add_prerequisite
 
+local change_value = function(recipe_str, field, val)
+    local recipe = data.raw.recipe[recipe_str]
+    if recipe then
+        recipe[field] = val
+    end
+end
+
 -------------------------------------------------------------------------------
 --[[Entities]]--
 -------------------------------------------------------------------------------
@@ -229,14 +236,11 @@ foundry.crafting_categories[#foundry.crafting_categories+1] = "mixing-furnace"
 -------------------------------------------------------------------------------
 add_prerequisite("coal-processing-2", "electrolysis-1")
 
-
 -------------------------------------------------------------------------------
 --[[Categories]]--
 -------------------------------------------------------------------------------
-
-data.raw.recipe["bob-resin-wood"].energy_required = 10
-data.raw.recipe["bob-resin-wood"].category = "wpu"
-data.raw.recipe["polishing-wheel"].category = "wpu"
-data.raw.recipe["wooden-board"].energy_required = 10
-data.raw.recipe["phenolic-board"].category = "wpu"
-
+change_value("bob-resin-wood", "energy_required", 10)
+change_value("bob-resin-wood", "category", "wpu")
+change_value("polishing-wheel", "category", "wpu")
+change_value("wooden-board", "energy_required", 10)
+change_value("phenolic-board", "category", "wpu")
