@@ -77,6 +77,7 @@ local entity1={
             animation =
             {
                 filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-left.png",
+				scale = 1.2,
                 frame_count = 158,
                 line_length = 26,
                 width = 76,
@@ -92,6 +93,7 @@ local entity1={
             animation =
             {
                 filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-right.png",
+				scale = 1.2,
                 frame_count = 158,
                 line_length = 14,
                 width = 142,
@@ -107,6 +109,7 @@ local entity1={
             animation =
             {
                 filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-top.png",
+				scale = 1.2,
                 frame_count = 158,
                 line_length = 20,
                 width = 100,
