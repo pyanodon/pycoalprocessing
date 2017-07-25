@@ -7,6 +7,7 @@ OUTPUT_DIR := $(BUILD_DIR)/$(OUTPUT_NAME)
 CONFIG = ./$(OUTPUT_DIR)/config.lua
 MODS_DIRECTORY := ../.mods.15
 ##MOD_LINK := $(shell find $(MODS_DIRECTORY)/$(OUTPUT_NAME) -mindepth 1 -maxdepth 1 -type d)
+PARSER := ". | map(select(.tag_name == \"$(VERSION_STRING)\"))[0].assets | map(select(.name == \"$(OUTPUT_NAME).zip\"))[0].id"
 
 PKG_COPY := $(wildcard *.md) $(wildcard .*.md) $(wildcard graphics) $(wildcard locale) $(wildcard sounds)
 
@@ -35,7 +36,8 @@ git: tag
 	git push --tags
 
 github-release:
-	curl --data '{"tag_name": "v$(VERSION_STRING)","target_commitish": "master","name": "vv$(VERSION_STRING)","body": "Release of version $(VERSION_STRING)","draft": true,"prerelease": false}' https://api.github.com/repos/:owner/:repository/releases?access_token=:$TOKEN
+	curl --data '{"tag_name": "v$(VERSION_STRING)","target_commitish": "master","name": "v$(VERSION_STRING)","body": "Release of version $(VERSION_STRING)","draft": false,"prerelease": false}' https://api.github.com/repos/pyanodon/pYCoalprocesing/releases?access_token=$(TOKEN);
+	#curl 'https://api.github.com/repos/pyanodon/pYCoalprocesing/releases/v$(VERSION_STRING)/assets?access_token=$(TOKEN)&name=$(OUTPUT_NAME).zip' --header 'Content-Type: application/zip' --upload-file $(BUILD_DIR)/$(OUTPUT_NAME).zip -X POST;
 
 package-copy: $(PKG_DIRS) $(PKG_FILES)
 	@mkdir -p $(OUTPUT_DIR)
