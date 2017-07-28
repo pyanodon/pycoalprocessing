@@ -36,7 +36,7 @@ local entity1= {
     minable = {hardness = 0.2, mining_time = 0.5, result = "py-coal-tile"},
     mined_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
     collision_mask = {"ground-tile"},
-    walking_speed_modifier = 1.2,
+    walking_speed_modifier = 1.4,
     layer = 61,
     variants =
     {
