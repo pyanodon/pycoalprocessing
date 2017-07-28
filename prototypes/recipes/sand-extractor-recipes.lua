@@ -9,7 +9,7 @@ local extract_sand = {
         {type="item", name="iron-stick", amount=1},
     },
     results={
-        {type="item", name="sand", amount=2},
+        {type="item", name="sand", amount=10},
     },
     icon = "__pycoalprocessing__/graphics/icons/extraction-sand.png",
     main_product = "sand",
@@ -28,7 +28,7 @@ local extract_gravel = {
         {type="item", name="iron-stick", amount=2},
     },
     results={
-        {type="item", name="gravel", amount=2},
+        {type="item", name="gravel", amount=10},
     },
     icon = "__pycoalprocessing__/graphics/icons/extraction-gravel.png",
     main_product = "gravel",
@@ -47,7 +47,7 @@ local extract_stone = {
         {type="item", name="iron-stick", amount=2},
     },
     results={
-        {type="item", name="stone", amount=2},
+        {type="item", name="stone", amount=10},
     },
     icon = "__pycoalprocessing__/graphics/icons/extraction-stone.png",
     main_product = "stone",
@@ -66,7 +66,7 @@ local extract_richdust = {
         {type="item", name="iron-stick", amount=2},
     },
     results={
-        {type="item", name="rich-dust", amount=3},
+        {type="item", name="rich-dust", amount=15},
     },
     icon = "__pycoalprocessing__/graphics/icons/extraction-richdust.png",
     main_product = "rich-dust",

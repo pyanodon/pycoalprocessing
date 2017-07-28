@@ -54,7 +54,7 @@ local entity1={
         usage_priority = "secondary-input",
         emissions = 0.01 / 4,
     },
-    energy_usage = "250kW",
+    energy_usage = "150kW",
     ingredient_count = 1,
 
     animation =

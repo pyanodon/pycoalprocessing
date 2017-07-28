@@ -137,7 +137,7 @@ replace_ing("zinc-chloride", "water", "hydrogen-chloride")
 remove_ing("zinc-chloride", "copper-plate")
 add_result("zinc-chloride", {name="hydrogen", amount=20})
 
-add_result("ash-separation", {type="item", name="cobalt-ore", amount=1, probability=0.3})
+add_result("ash-separation", {type="item", name="cobalt-ore", amount=3, probability=0.3})
 
 
 replace_ing("active-carbon", "water", "nitrogen")
