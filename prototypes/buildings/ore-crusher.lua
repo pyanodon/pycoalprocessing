@@ -2,7 +2,7 @@
 --[[Recipes]]--
 local recipe1={
     type = "recipe",
-    name = "ore-crusher",
+    name = "jaw-crusher",
     energy_required = 10,
     enabled = false,
     ingredients =
@@ -13,29 +13,29 @@ local recipe1={
         {"steel-plate", 30}, --updated-bob invar-alloy
         {"electronic-circuit", 15}, --updated-bob basic-electronic-circuit-board
     },
-    result= "ore-crusher",
+    result= "jaw-crusher",
 }
 -------------------------------------------------------------------------------
 --[[Items]]--
 local item1={
     type = "item",
-    name = "ore-crusher",
+    name = "jaw-crusher",
     icon = "__pycoalprocessing__/graphics/icons/ore-crusher.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "s",
-    place_result = "ore-crusher",
+    place_result = "jaw-crusher",
     stack_size = 10,
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--
 local entity1={
     type = "assembling-machine",
-    name = "ore-crusher",
+    name = "jaw-crusher",
     icon = "__pycoalprocessing__/graphics/icons/ore-crusher.png",
     flags = {"placeable-neutral","player-creation"},
-    minable = {mining_time = 1, result = "ore-crusher"},
-    fast_replaceable_group = "ore-crusher",
+    minable = {mining_time = 1, result = "jaw-crusher"},
+    fast_replaceable_group = "jaw-crusher",
     max_health = 600,
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",

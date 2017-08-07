@@ -9,7 +9,7 @@ local technology = {
     {
 		{
             type = "unlock-recipe",
-            recipe = "ore-crusher"
+            recipe = "jaw-crusher"
         },
         {
             type = "unlock-recipe",
