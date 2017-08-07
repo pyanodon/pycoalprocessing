@@ -1551,8 +1551,8 @@ local recipe_stone_distilation = {
     },
     results={
         {type="item", name="tailings-dust", amount=30},
-		{type="item", name="coarse", amount=25},
-		{type="fluid", name="tar", amount=200},
+		{type="item", name="coarse", amount=15},
+		{type="fluid", name="tar", amount=500},
 		{type="fluid", name="rare-earth-mud", amount=30},
 		{type="fluid", name="dirty-water", amount=100},
     },
@@ -1593,7 +1593,7 @@ local recipe_glycerol_hydrogen = {
 		{type="fluid", name="water", amount=200}, --updated-bob liquid-air
     },
     results={
-		{type="fluid", name="petroleum-gas", amount=100},
+		{type="fluid", name="petroleum-gas", amount=300}, --updated-bob hydrogen
     },
     icon = "__pycoalprocessing__/graphics/icons/glycerol-hydrogen.png",
     subgroup = "py-fluid-handling",

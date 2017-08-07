@@ -119,7 +119,7 @@ replace_ing("botanical-nursery", "electronic-circuit", "basic-circuit-board")
 
 replace_ing("glycerol-hydrogen", "water", "liquid-air")
 remove_result("glycerol-hydrogen", "petroleum-gas")
-add_result("glycerol-hydrogen", {type="fluid", name="hydrogen", amount=100})
+add_result("glycerol-hydrogen", {type="fluid", name="hydrogen", amount=300})
 
 remove_result("aromatics-to-rubber", "crude-oil")
 add_result("aromatics-to-rubber", {type="item", name="rubber", amount=1})

@@ -14,7 +14,7 @@ local recipe1 =
     },
     results=
     {
-        {type="fluid", name="creosote", amount=50},
+        {type="fluid", name="creosote", amount=80},
     },
     main_product= "creosote",
     icon = "__pycoalprocessing__/graphics/icons/creosote.png",

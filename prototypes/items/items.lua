@@ -691,7 +691,7 @@ local recipe_niobium_ore = {
     energy_required = 7,
     ingredients ={
         {type="item", name="drill-head", amount=1},
-        {type="fluid", name="refsyngas", amount=100},
+        {type="fluid", name="refsyngas", amount=70},
     },
     results={
         {type="item", name="niobium-ore", amount=12},
@@ -1262,7 +1262,7 @@ local recipe_filtration_media = {
     enabled = "false",
     energy_required = 3.0,
     ingredients ={
-		{type="item", name="sand", amount=30},
+		{type="item", name="pure-sand", amount=30},
 		{type="item", name="active-carbon", amount=3},
 		{type="item", name="gravel", amount=25},
         --updated-bob add glass
@@ -1289,7 +1289,7 @@ local coal_briquette = {
     type = "item",
 	enabled = "false",
     name = "coal-briquette",
-	fuel_value = "60MJ",
+	fuel_value = "180MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
     flags = {"goes-to-main-inventory"},

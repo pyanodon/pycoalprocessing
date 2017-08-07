@@ -220,7 +220,7 @@ local supercritical = {
         {type="fluid", name="light-oil", amount=100},
         {type="fluid", name="refsyngas", amount=50},
 		{type="fluid", name="water", amount=1000},
-		{type="item", name="coal-briquette", amount=5},
+		{type="item", name="coal-briquette", amount=3},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=900},
@@ -243,7 +243,7 @@ local ultrasupercritical = {
         {type="fluid", name="petroleum-gas", amount=100},
         {type="fluid", name="refsyngas", amount=50},
 		{type="fluid", name="water", amount=1000},
-		{type="item", name="coal-briquette", amount=5},
+		{type="item", name="coal-briquette", amount=3},
     },
     results={
         {type="fluid", name="combustion-mixture1", amount=100, temperature=1000},
