@@ -97,9 +97,9 @@ replace_ing("ralesia-plantation", "stone", "glass")
 replace_ing("ulric-corral", "iron-gear-wheel", "steel-bearing")
 replace_ing("ulric-corral", "electronic-circuit", "basic-circuit-board")
 
-replace_ing("ore-crusher", "steel-plate", "invar-alloy")
+replace_ing("jaw-crusher", "steel-plate", "invar-alloy")
 replace_ing("ore-chusher", "electronic-circuit", "basic-electronic-circuit-board")
-add_ing("ore-crusher", {name="rubber", amount=10})
+add_ing("jaw-crusher", {name="rubber", amount=10})
 
 add_ing("ball-mill", {name="steel-bearing-ball", amount=1000})
 
