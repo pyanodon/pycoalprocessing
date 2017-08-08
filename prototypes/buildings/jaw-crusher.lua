@@ -20,7 +20,7 @@ local recipe1={
 local item1={
     type = "item",
     name = "jaw-crusher",
-    icon = "__pycoalprocessing__/graphics/icons/ore-crusher.png",
+    icon = "__pycoalprocessing__/graphics/icons/jaw-crusher.png",
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "s",
@@ -32,7 +32,7 @@ local item1={
 local entity1={
     type = "assembling-machine",
     name = "jaw-crusher",
-    icon = "__pycoalprocessing__/graphics/icons/ore-crusher.png",
+    icon = "__pycoalprocessing__/graphics/icons/jaw-crusher.png",
     flags = {"placeable-neutral","player-creation"},
     minable = {mining_time = 1, result = "jaw-crusher"},
     fast_replaceable_group = "jaw-crusher",
@@ -60,7 +60,7 @@ local entity1={
     animation ={
         layers={
             {
-                filename = "__pycoalprocessing__/graphics/entity/ore-crusher/sprite-left.png",
+                filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-left.png",
                 width = 96,
                 height = 256,
                 line_length = 21,
@@ -69,7 +69,7 @@ local entity1={
                 animation_speed = 0.85,
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/ore-crusher/sprite-mid.png",
+                filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-mid.png",
                 width = 96,
                 height = 256,
                 line_length = 21,
@@ -78,7 +78,7 @@ local entity1={
                 animation_speed = 0.85,
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/ore-crusher/sprite-right.png",
+                filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-right.png",
                 width = 32,
                 height = 256,
                 line_length = 64,

@@ -124,4 +124,10 @@ data:extend{
             group = "coal-processing",
             order = "z",
         },
+        {
+            type = "item-subgroup",
+            name = "py-unsorted",
+            group = "coal-processing",
+            order = "zzzz",
+        },
     }
