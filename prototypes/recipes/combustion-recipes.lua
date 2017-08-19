@@ -36,7 +36,7 @@ local coal_slurry = {
         {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-coal-slurry.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "a",
 }
@@ -57,7 +57,7 @@ local syngas = {
         {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-syngas.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "c",
 }
@@ -78,7 +78,7 @@ local diborane = {
         {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-diborane.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "d",
 }
@@ -99,7 +99,7 @@ local methanol = {
         {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-methanol.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "e",
 }
@@ -120,7 +120,7 @@ local refsyngas = {
         {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-refsyngas.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "f",
 }
@@ -141,7 +141,7 @@ local acetylene = {
         {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-acetylene.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "g",
 }
@@ -162,7 +162,7 @@ local olefin = {
         {type="fluid", name="steam", amount=1000, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-olefin.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "h",
 }
@@ -183,7 +183,7 @@ local diesel = {
         {type="fluid", name="steam", amount=1000, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-diesel.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "i",
 }
@@ -205,7 +205,7 @@ local gasoline = {
         {type="fluid", name="steam", amount=1000, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-gasoline.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "j",
 }
@@ -227,7 +227,7 @@ local supercritical = {
         {type="fluid", name="steam", amount=1000, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-super-critical.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "k",
 }
@@ -250,7 +250,7 @@ local ultrasupercritical = {
         {type="fluid", name="steam", amount=1000, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-ultra-super-critical.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "l",
 }
