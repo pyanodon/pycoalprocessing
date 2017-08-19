@@ -531,7 +531,7 @@ local hydrogen_c = {
         {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-hydrogen.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "k",
 }
