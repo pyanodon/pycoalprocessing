@@ -5,7 +5,7 @@ PYC.control = {}
 --Messages and stuff for developers
 --These should be false in a release.
 PYC.DEBUG = false
-PYC.control.loglevel = 2
+PYC.control.loglevel = 0
 
 --Changes some vanilla/mod recipes to use Creosate
 --USE_CREOSOTE_RECIPES, if false will disable use of creosote in vanilla recipes. if true
