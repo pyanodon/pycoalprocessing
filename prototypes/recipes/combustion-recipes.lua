@@ -15,7 +15,7 @@ local coalgas = {
         {type="fluid", name="steam", amount=500, temperature=60},
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-coalgas.png",
-    main_product = "combustion-mixture1",
+    --main_product = "combustion-mixture1",
 	subgroup = "py-combustion",
     order = "a",
 }

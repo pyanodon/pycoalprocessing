@@ -149,6 +149,28 @@ local glass2 ={
     subgroup = "py-items-hpf",
     order = "j",
 }
+
+-------------------------------------------------------------------------------
+--GLASS PRODUCTION3 - compatibility with angels
+local glass3 ={
+    type = "recipe",
+    name = "glass-sand3",
+    category = "smelting",
+    enabled = "true",
+    energy_required = 5,
+    ingredients ={
+        {type="item", name="sand", amount=20},
+    },
+    results={
+        {type="item", name="glass", amount=1},
+
+    },
+    --main_product= "glass",
+    icon = "__bobplates__/graphics/icons/glass.png",
+    subgroup = "py-items",
+    order = "j",
+}
+
 -------------------------------------------------------------------------------
 -- TUNGSTEN POWDER
 local tungsten_powder ={
@@ -207,7 +229,7 @@ local recipe_crushed_silver = {
 --BOB SMELT GOLD |override?|
 local recipe_crushed_gold = {
     type = "recipe",
-    name = "crushed-silver",
+    name = "crushed-gold",
     category = "chemical-furnace",
     energy_required = 3.5,
     enabled = "false",
@@ -513,6 +535,26 @@ local hydrogen_c = {
     subgroup = "py-combustion",
     order = "k",
 }
+--SODIUM HYDROXIDE
+-------------------------------------------------------------------------------
+local sodium_hydroxide = {
+    type = "recipe",
+    name = "py-sodium-hydroxide",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 8,
+    ingredients ={
+		{type="fluid", name="slacked-lime", amount=50},
+		{type="item", name="salt", amount=20},
+    },
+    results={
+		{type="item", name="sodium-hydroxide", amount=10},
+		{type="item", name="limestone", amount=5},
+    },
+	icon = "__bobplates__/graphics/icons/sodium-hydroxide.png",
+    subgroup = "py-items",
+    order = "a8",
+}
 
 data:extend{
     methanol_from_hydrogen, recipe_tar_carbon, recipe_salt_ex, syngas_from_coal_oxygen,
@@ -520,7 +562,7 @@ data:extend{
     recipe_crushed_lead, recipe_crushed_silver, recipe_crushed_gold, recipe_crushed_zinc, recipe_crushed_nickel,
     recipe_crushed_rutile, crushed_quartz, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol,
     crushed_bauxite, crushed_gold, crushed_lead, crushed_nickel, crushed_rutile, crushed_silver,
-    crushed_tin, crushed_tungsten, crushed_zinc, wooden_board, hydrogen_c
+    crushed_tin, crushed_tungsten, crushed_zinc, wooden_board, hydrogen_c, glass3, sodium_hydroxide
 }
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")

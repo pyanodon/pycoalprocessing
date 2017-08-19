@@ -1794,7 +1794,6 @@ local recipe_ash_separation = {
     order = "f",
 }
 
-
 ------------------------------------------------------------------------------
 data:extend{
     raw_wood_to_coal, wood_to_coal, extract_sulfur, cooling_water, fluegas_to_syngas,
