@@ -191,10 +191,6 @@ local technology = {
             type = "unlock-recipe",
             recipe = "log-organics"
         },
-        {
-            type = "unlock-recipe",
-            recipe = "py-sodium-hydroxide"
-        },
     },
     unit =
     {
