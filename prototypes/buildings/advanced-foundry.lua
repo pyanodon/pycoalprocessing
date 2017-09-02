@@ -58,7 +58,7 @@ local entity1={
         emissions = 0.05,
     },
     energy_usage = "270kW",
-    ingredient_count = 5,
+    ingredient_count = 10,
 
     animation ={
         layers={
