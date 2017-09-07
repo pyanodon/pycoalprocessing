@@ -90,6 +90,9 @@ require("prototypes.fluids.rare-earth-mud")
 require("prototypes.fluids.tpa")
 require("prototypes.fluids.acetylene")
 
+--Walls
+require("prototypes.wall.poorman-wood-fence")
+
 --Buildings
 require("prototypes.buildings.distilator")
 require("prototypes.buildings.gasturbinemk01")

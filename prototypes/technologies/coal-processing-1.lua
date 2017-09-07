@@ -151,6 +151,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "log-wood"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "poorman-wood-fence"
+        },
     },
     unit =
     {
