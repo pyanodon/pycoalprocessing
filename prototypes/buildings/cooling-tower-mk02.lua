@@ -50,6 +50,7 @@ local entity1={
     name = "cooling-tower-mk02",
     icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk02.png",
     flags = {"placeable-neutral","player-creation"},
+    fixed_recipe = "cooling-water",
     minable = {mining_time = 1, result = "cooling-tower-mk02"},
     fast_replaceable_group = "cooling-tower-mk02",
     max_health = 300,
