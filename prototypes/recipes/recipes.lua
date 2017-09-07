@@ -95,14 +95,15 @@ local extract_sulfur ={
 local cooling_water ={
     type = "recipe",
     name = "cooling-water",
+    hidden = true,
     category = "cooling",
     enabled = "false",
     energy_required = 1.5,
     ingredients ={
-        {type="fluid", name="steam", amount=150, temperature=60},
+        {type="fluid", name="steam", amount=150},
     },
     results={
-        {type="fluid", name="water", amount=150, temperature=15},
+        {type="fluid", name="water", amount=150},
     },
     main_product= "water",
     subgroup = "py-fluids",
