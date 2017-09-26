@@ -3,14 +3,14 @@
 --[[Recipes]]--
 local recipe1={
     type = "recipe",
-    name = "poorman-wood-fence",
+    name = "wood-fence",
     category = "crafting",
-    enabled = true,
+    enabled = false,
     ingredients =
     {
-        {type="item", name="raw-wood", amount=3},
+        {type="item", name="treated-wood", amount=2},
     },
-    result = "poorman-wood-fence",
+    result = "wood-fence",
     subgroup = "py-items",
     order = "zz",
 }
@@ -18,25 +18,25 @@ local recipe1={
 --[[Items]]--
 local item1= {
     type="item",
-    name="poorman-wood-fence",
-    icon="__pycoalprocessing__/graphics/icons/poorman-wood-fence.png",
+    name="wood-fence",
+    icon="__pycoalprocessing__/graphics/icons/wood-fence.png",
     flags={"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "z",
-	place_result = "poorman-wood-fence",
+	place_result = "wood-fence",
     stack_size = 500,
 }
 -------------------------------------------------------------------------------
 --[[Entites]]--
 local entity1= {
 		type = "wall",
-		name = "poorman-wood-fence",
-		icon = "__pycoalprocessing__/graphics/icons/poorman-wood-fence.png",		
+		name = "wood-fence",
+		icon = "__pycoalprocessing__/graphics/icons/wood-fence.png",		
 		flags = {"placeable-neutral", "player-creation"},
 		collision_box = {{-0.29, -0.29}, {0.29, 0.29}},
 		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
 		--drawing_box = {{-1.5,-1.5},{1.5,1.5}},
-		minable = {mining_time = 1, result = "poorman-wood-fence"},
+		minable = {mining_time = 1, result = "wood-fence"},
 		max_health = 100,
 		corpse = "wall-remnants",
 		repair_sound = { filename = "__base__/sound/manual-repair-simple.ogg" },
@@ -77,68 +77,64 @@ local entity1= {
 		},
 		resistances =
 		{
-			{ type = "physical", decrease = 5, percent = 30 },
-			{ type = "explosion", decrease = 2, percent = 30 },
-			{ type = "fire", percent = 10 },
-			{ type = "acid", percent = 10 },
+			{ type = "physical", decrease = 5, percent = 40 },
+			{ type = "explosion", decrease = 2, percent = 40 },
+			{ type = "fire", percent = 20 },
+			{ type = "acid", percent = 20 },
 		},
 		pictures =
 		{
 			single ={{
-					filename = "__pycoalprocessing__/graphics/walls/poorman-wood-fence/single.png",
-					priority = "extra-high", width = 32, height = 40, shift = {0, -0.2}
+					filename = "__pycoalprocessing__/graphics/walls/wood-fence/single.png",
+					priority = "extra-high", width = 32, height = 49, shift = {0, -0.0}
 				}},
 			straight_vertical =
 			{
 				{
-					filename = "__pycoalprocessing__/graphics/walls/poorman-wood-fence/vertical.png",
-					priority = "extra-high", width = 32, height = 45, shift = {0, -0.2}
+					filename = "__pycoalprocessing__/graphics/walls/wood-fence/vertical.png",
+					priority = "extra-high", width = 32, height = 55, shift = {0, -0.0}
 				},
 			},
 			straight_horizontal =
 			{
 				{
-					filename = "__pycoalprocessing__/graphics/walls/poorman-wood-fence/horizontal-2.png",
-					priority = "extra-high", width = 32, height = 40, shift = {0, -0.2}
-				},
-				{
-					filename = "__pycoalprocessing__/graphics/walls/poorman-wood-fence/horizontal-1.png",
-					priority = "extra-high", width = 32, height = 40, shift = {0, -0.2}
+					filename = "__pycoalprocessing__/graphics/walls/wood-fence/horizontal.png",
+					priority = "extra-high", width = 32, height = 48, shift = {0, -0.0}
 				},
 			},
 			corner_right_down =
 			{
 				{
-					filename = "__pycoalprocessing__/graphics/walls/poorman-wood-fence/corner-right.png",
-					priority = "extra-high", width = 32, height = 40, shift = {0, -0.2}
+					filename = "__pycoalprocessing__/graphics/walls/wood-fence/corner-right.png",
+					priority = "extra-high", width = 32, height = 48, shift = {0, -0.0}
 				}
 			},
 			corner_left_down =
 			{
 				{
-					filename = "__pycoalprocessing__/graphics/walls/poorman-wood-fence/corner-left.png",
-					priority = "extra-high", width = 32, height = 40, shift = {0, -0.19}
+					filename = "__pycoalprocessing__/graphics/walls/wood-fence/corner-left.png",
+					priority = "extra-high", width = 44, height = 48, shift = {0.2, -0.0}
 				}
 			},
 			t_up =
 			{
 				{
-					filename = "__pycoalprocessing__/graphics/walls/poorman-wood-fence/t-down.png",
-					priority = "extra-high", width = 32, height = 45, shift = {0, -0.2}
+					filename = "__pycoalprocessing__/graphics/walls/wood-fence/t-down.png",
+					priority = "extra-high", width = 32, height = 48, shift = {0, -0.0}
 				}
 			},
 			ending_right =
 			{
 				{
-					filename = "__pycoalprocessing__/graphics/walls/poorman-wood-fence/end-left.png",
-					priority = "extra-high", width = 32, height = 40, shift = {0, -0.2}
+					filename = "__pycoalprocessing__/graphics/walls/wood-fence/end-right.png",
+					priority = "extra-high", width = 32, height = 48, shift = {0, -0.0}
 				}
 			},
 			ending_left =
 			{
 				{
-					filename = "__pycoalprocessing__/graphics/walls/poorman-wood-fence/end-right.png",
-					priority = "extra-high", width = 32, height = 38, shift = {0, -0.2}
+					filename = "__pycoalprocessing__/graphics/walls/wood-fence/end-left.png",
+					priority = "extra-high", width = 32, height = 48, shift = {0, -0.0}
 				}
 			}
 		}
