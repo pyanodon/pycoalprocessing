@@ -24,6 +24,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "concrete-richclay"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "concrete-wall"
+        },
     },
     unit =
     {
