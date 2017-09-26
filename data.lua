@@ -92,6 +92,8 @@ require("prototypes.fluids.acetylene")
 
 --Walls
 require("prototypes.wall.poorman-wood-fence")
+require("prototypes.wall.wood-fence")
+require("prototypes.wall.concrete-wall")
 
 --Buildings
 require("prototypes.buildings.distilator")
