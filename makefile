@@ -95,7 +95,7 @@ nodebug:
 	echo No Config Files
 
 check:
-	@luacheck .
+	@luacheck . -q --codes
 
 package: package-copy $(OUT_FILES) nodebug
 	@cd $(BUILD_DIR) && zip -rq $(OUTPUT_NAME).zip $(OUTPUT_NAME)
