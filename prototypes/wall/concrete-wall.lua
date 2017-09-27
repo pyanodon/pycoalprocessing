@@ -133,7 +133,7 @@ local entity1= {
 			{
 				{
 					filename = "__pycoalprocessing__/graphics/walls/concrete-wall/t-down.png",
-					priority = "extra-high", width = 32, height = 46, shift = {0, -0.08}
+					priority = "extra-high", width = 32, height = 46, shift = {0, -0.00}
 				}
 			},
 			ending_right =
