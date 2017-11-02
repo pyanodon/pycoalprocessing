@@ -1350,31 +1350,7 @@ local crushed_copper = {
     stack_size = 1000
 }
 -------------------------------------------------------------------------------
--- NIOBIUM PIPE
-local niobium_pipe = {
-    type = "item",
-    name = "niobium-pipe",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/niobium-pipe.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-	place_result = "niobium-pipe",
-    stack_size = 200
-}
--------------------------------------------------------------------------------
--- NIOBIUM PIPE-TO-GROUND
-local niobium_pipe_to_ground = {
-    type = "item",
-    name = "niobium-pipe-to-ground",
-	enabled = "false",
-    icon = "__pycoalprocessing__/graphics/icons/niobium-pipe-to-ground.png",
-    flags = {"goes-to-main-inventory"},
-    subgroup = "py-items",
-    order = "g",
-	place_result = "niobium-pipe-to-ground",
-    stack_size = 200
-}
+
 -------------------------------------------------------------------------------
 -- LOG
 local item_log = {
@@ -1494,8 +1470,6 @@ data:extend(
 		calcium_carbide,
 		crushed_iron,
 		crushed_copper,
-		niobium_pipe,
-		niobium_pipe_to_ground,
 		item_log
     }
 )

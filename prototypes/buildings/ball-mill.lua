@@ -9,7 +9,6 @@ local recipe1={
     {
         {"assembling-machine-2", 1},
         {"concrete", 50},
-		{"py-asphalt", 50},
         {"copper-plate", 30},
         {"steel-plate", 40},
     },
