@@ -1272,29 +1272,7 @@ local recipe_crushed_copper = {
     result = "copper-plate",
     result_count = 2,
 }
---NIOBIUM PIPES
-local recipe_niobium_pipe = {
-    type = "recipe",
-    name = "niobium-pipe",
-    enabled = "false",
-    energy_required = 2,
-    ingredients = {{"niobium-plate", 1}},
-    result = "niobium-pipe",
-    result_count = 2,
-}
---NIOBIUM PIPES TO GROUND
-local recipe_niobium_pipe_to_ground = {
-    type = "recipe",
-    name = "niobium-pipe-to-ground",
-    enabled = "false",
-    energy_required = 2,
-    ingredients = {
-        {"niobium-pipe", 10},
-        {"niobium-plate", 1},
-    },
-    result = "niobium-pipe-to-ground",
-    result_count = 2,
-}
+
 --EXTRACT SULFUR FROM CRUDEOIL
 -------------------------------------------------------------------------------
 local recipe_sulfur_crudeoil = {
@@ -1518,26 +1496,7 @@ local recipe_coke_coal = {
     subgroup = "py-items-hpf",
     order = "h",
 }
---CONCRETE from RICHCLAY
--------------------------------------------------------------------------------
-local recipe_concrete_richclay = {
-    type = "recipe",
-    name = "concrete-richclay",
-    category = "hpf",
-    enabled = "false",
-    energy_required = 2,
-    ingredients ={
-        {type="item", name="rich-clay", amount=15},
-		{type="fluid", name="sulfuric-acid", amount=50},
-    },
-    results={
-        {type="item", name="concrete", amount=6},
-    },
-    main_product= "concrete",
-    icon = "__base__/graphics/icons/concrete.png",
-    subgroup = "py-items-hpf",
-    order = "i",
-}
+
 --DISTILATION of STONE
 -------------------------------------------------------------------------------
 local recipe_stone_distilation = {
@@ -1811,10 +1770,10 @@ data:extend{
     recipe_sand_brick, tailings_classification, recipe_tar_distilation,
     recipe_oleochemicals_distilation, recipe_tar_gasification, recipe_oleo_gasification, recipe_coal_dust,
     recipe_coal_fawogae, recipe_re_dirtywater, recipe_richdust_remud, recipe_crushed_copper, recipe_crushed_iron,
-    recipe_niobium_pipe, recipe_niobium_pipe_to_ground, recipe_sulfur_heavyoil, recipe_sulfur_lightoil,
+    recipe_sulfur_heavyoil, recipe_sulfur_lightoil,
 	recipe_sulfur_petgas, recipe_sulfur_crudeoil, recipe_organics_from_rawwood, recipe_creosote_to_aromatics,
 	recipe_aromatics_to_lubricant, recipe_aromatics_to_rubber, recipe_aromatics_to_plastic, recipe_nas_battery,
-	recipe_coke_coal, recipe_concrete_richclay, recipe_stone_distilation, recipe_oleo_solidfuel,
+	recipe_coke_coal, recipe_stone_distilation, recipe_oleo_solidfuel,
 	recipe_glycerol_hydrogen, recipe_log1, recipe_log2, recipe_log3, recipe_log4, recipe_log5, recipe_log6,
 	recipe_log_wood, recipe_log_organics, recipe_raw_wood, recipe_ash_separation
 }

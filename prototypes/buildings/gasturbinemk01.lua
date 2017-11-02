@@ -62,6 +62,8 @@ local entity1={
         base_level = -1,
         pipe_covers = Prototype.Pipes.covers(false, true, true, true),
         production_type = "input-output",
+        filter = "combustion-mixture1",
+        minimum_temperature = 500.0,
         pipe_connections =
         {
             {type = "input-output", position = {0.00, 2.00} },

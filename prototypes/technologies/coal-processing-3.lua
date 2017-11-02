@@ -76,10 +76,6 @@ local technology = {
             type = "unlock-recipe",
             recipe = "lightoil-to-syngas"
         },
-        {
-            type = "unlock-recipe",
-            recipe = "accumulator-mk01"
-        },
     },
 
     unit =

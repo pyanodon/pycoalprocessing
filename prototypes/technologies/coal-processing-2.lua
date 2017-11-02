@@ -93,14 +93,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "niobium-pipe"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "niobium-pipe-to-ground"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "nichrome"
         },
         {
