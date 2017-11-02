@@ -1,5 +1,4 @@
 local Prototype = require("stdlib.prototype.prototype")
-local get_circuit_connector_sprites = _G.get_circuit_connector_sprites
 local _TANK_SIZE = require("config")["TAILINGS_POND"]["TANK_SIZE"]
 
 -------------------------------------------------------------------------------
@@ -114,31 +113,37 @@ local entity_tailings_pond =
     circuit_wire_connection_points =
     {
         {
-            shadow = { red = {0, 0}, green = {0,0}},
+            shadow = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}},
             wire = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}}
         },
         {
-            shadow = { red = {0, 0}, green = {0,0}},
+            shadow = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}},
             wire = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}}
         },
         {
-            shadow = { red = {0, 0}, green = {0,0}},
+            shadow = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}},
             wire = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}}
         },
         {
-            shadow = { red = {0, 0}, green = {0,0}},
+            shadow = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}},
             wire = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}}
         }
     },
-    circuit_connector_sprites =
-    {
-        get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-        get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-        get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-        get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-    },
-    circuit_wire_max_distance = 8.5
+    circuit_connector_sprites = nil,
+    circuit_wire_max_distance = 9
 }
+
+if _G.get_circuit_connector_sprites then
+    entity_tailings_pond.circuit_connector_sprites = {
+        _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
+        _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
+        _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
+        _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
+    }
+else
+    entity_tailings_pond.circuit_connector_sprites = _G.circuit_connector_definitions["storage-tank"].sprites
+end
+
 
 local entity_tailings_pond_sprite =
 {

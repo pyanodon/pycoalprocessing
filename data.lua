@@ -19,10 +19,10 @@ require("prototypes.technologies.coal-processing-3")
 require("prototypes.technologies.energy-1")
 require("prototypes.technologies.energy-2")
 require("prototypes.technologies.energy-3")
-require("prototypes.technologies.storage-tanks")
+
 require("prototypes.technologies.methanol-processing-1")
 require("prototypes.technologies.methanol-processing-2")
-require("prototypes.technologies.py-asphalt")
+
 require("prototypes.technologies.filtration")
 require("prototypes.technologies.cooling-tower-1")
 require("prototypes.technologies.cooling-tower-2")
@@ -44,6 +44,7 @@ require("prototypes.recipes.fts-reactor-recipes")
 require("prototypes.recipes.olefin-plant-recipes")
 require("prototypes.recipes.advanced-foundry-recipes")
 require("prototypes.recipes.sand-extractor-recipes")
+require("prototypes.recipes.concrete-richclay")
 
 --Items without entities
 require("prototypes.items.treated-wood")
@@ -52,9 +53,7 @@ require("prototypes.items.canister")
 require("prototypes.items.tailings")
 
 --Tiles and Terrain
-require ("prototypes.tiles.py-asphalt")
-require ("prototypes.tiles.py-limestone")
-require ("prototypes.tiles.py-coal-tile")
+
 require ("prototypes.tiles.polluted-ground")
 
 --Fluids
@@ -90,10 +89,7 @@ require("prototypes.fluids.rare-earth-mud")
 require("prototypes.fluids.tpa")
 require("prototypes.fluids.acetylene")
 
---Walls
-require("prototypes.wall.poorman-wood-fence")
-require("prototypes.wall.wood-fence")
-require("prototypes.wall.concrete-wall")
+
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -131,14 +127,10 @@ require("prototypes.buildings.niobium-mine")
 require("prototypes.buildings.jaw-crusher")
 require("prototypes.buildings.ball-mill")
 require("prototypes.buildings.mukmoux-pasture")
-require("prototypes.buildings.py-tank-1500")
-require("prototypes.buildings.py-tank-4000")
-require("prototypes.buildings.py-tank-5000")
-require("prototypes.buildings.py-tank-6500")
-require("prototypes.buildings.py-tank-8000")
+
 require("prototypes.buildings.automated-factory")
-require("prototypes.buildings.accumulator-mk01")
-require("prototypes.buildings.niobium-pipes")
+
+
 require("prototypes.buildings.sand-extractor")
 require("prototypes.buildings.botanical-nursery")
 require("prototypes.buildings.wpu")

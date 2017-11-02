@@ -110,6 +110,8 @@ local entity1={
         minimum_temperature = 500.0
     },
     fluid_box ={
+        filter = "combustion-mixture1",
+        minimum_temperature = 500.0,
         base_area = 1,
         base_level = -1,
         pipe_covers = Prototype.Pipes.covers(false, true, false, false),
