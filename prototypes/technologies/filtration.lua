@@ -47,6 +47,10 @@ local technology = {
             type = "unlock-recipe",
             recipe = "oleochemicals-crude-oil"
         },
+        {
+            type = "unlock-recipe",
+            recipe = "fluegas-filtration"
+        },
     },
     unit =
     {

@@ -1753,6 +1753,24 @@ local recipe_ash_separation = {
     subgroup = "py-items-class",
     order = "f",
 }
+--FLUEGAS FILTRATION
+-------------------------------------------------------------------------------
+local fluegas_filtration = {
+    type = "recipe",
+    name = "fluegas-filtration",
+    category = "carbonfilter",
+    enabled = "false",
+    energy_required = 1,
+    ingredients ={
+		{type="fluid", name="flue-gas", amount=100},
+    },
+    results={
+		{type="item", name="ash", amount=2},
+    },
+    icon = "__pycoalprocessing__/graphics/icons/ash.png",
+    subgroup = "py-items",
+    order = "g",
+}
 
 ------------------------------------------------------------------------------
 data:extend{
@@ -1775,5 +1793,5 @@ data:extend{
 	recipe_aromatics_to_lubricant, recipe_aromatics_to_rubber, recipe_aromatics_to_plastic, recipe_nas_battery,
 	recipe_coke_coal, recipe_stone_distilation, recipe_oleo_solidfuel,
 	recipe_glycerol_hydrogen, recipe_log1, recipe_log2, recipe_log3, recipe_log4, recipe_log5, recipe_log6,
-	recipe_log_wood, recipe_log_organics, recipe_raw_wood, recipe_ash_separation
+	recipe_log_wood, recipe_log_organics, recipe_raw_wood, recipe_ash_separation, fluegas_filtration
 }
