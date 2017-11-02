@@ -85,6 +85,26 @@ local recipe_salt_ex = {
 
 }
 
+local recipe_saline = {
+    type = "recipe",
+    name = "saline",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 1,
+    ingredients ={
+        {type="fluid", name="water", amount=100},
+		{type="item", name="salt", amount=10},
+    },
+    results={
+        {type="fluid", name="water-saline", amount=100},
+    },
+    main_product = "water-saline",
+    subgroup = "py-items",
+    order = "saline",
+    icon = "__pycoalprocessing__/graphics/icons/water-saline.png",
+
+}
+
 local void_flue_gas = {
     type = "recipe",
     name = "void-flue-gas",
@@ -571,6 +591,7 @@ bobmods.lib.tech.add_recipe_unlock("desulfurization", "explosive-glycerol")
 
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "syngas2")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "salt-ex")
+bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "saline")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-1", "tar-carbon")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-nickel-zinc")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-tin-lead")
