@@ -6,7 +6,7 @@ local recipe1={
     type = "recipe",
     name = "gasturbinemk01",
     energy_required = 10,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
         {"steel-plate", 15},

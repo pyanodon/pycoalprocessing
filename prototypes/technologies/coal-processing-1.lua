@@ -13,6 +13,10 @@ local technology = {
         },
         {
             type = "unlock-recipe",
+            recipe = "hpf"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "tar-processing-unit"
         },
         {

@@ -78,6 +78,10 @@ local technology = {
         },
 		{
             type = "unlock-recipe",
+            recipe = "aromaticsolefin"
+        },
+		{
+            type = "unlock-recipe",
             recipe = "olefin-filtration"
         },
 		{

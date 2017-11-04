@@ -158,8 +158,29 @@ local refolefin=
 	subgroup = "py-fluids",
 	order = "d7",
 }
+-------------------------------------------------------------------------------
+--AROMATICS-TO-OLEFINS
+local aromaticsolefin=
+{
+    type = "recipe",
+    name = "aromaticsolefin",
+    category = "olefin",
+    enabled = "false",
+    energy_required = 3,
+    ingredients ={
+        {type="fluid", name="aromatics", amount=300},
+    },
+    results=
+    {
+        {type="fluid", name="olefin", amount=280},
+    },
+    main_product= "olefin",
+    icon = "__pycoalprocessing__/graphics/icons/olefin.png",
+	subgroup = "py-fluids",
+	order = "d8	",
+}
 
 
 data:extend{
-    diesel, aromatics, olefin, diesel2, olefin_petgas, gasoline, refolefin
+    diesel, aromatics, olefin, diesel2, olefin_petgas, gasoline, refolefin, aromaticsolefin
 }
