@@ -16,7 +16,7 @@ local recipe1={
     type = "recipe",
     name = "hpf",
     energy_required = 10,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
         {"stone-brick", 20},

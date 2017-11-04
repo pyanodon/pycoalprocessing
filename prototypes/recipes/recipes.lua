@@ -1286,7 +1286,7 @@ local recipe_sulfur_crudeoil = {
 		{type="item", name="iron-ore", amount=600}, --updated-bob salt
     },
     results={
-        {type="fluid", name="crude-oil", amount=300},
+        {type="fluid", name="heavy-oil", amount=300},
         {type="item", name="sulfur", amount=10},
         {type="item", name="ash", amount=1},
     },
