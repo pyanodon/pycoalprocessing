@@ -1268,7 +1268,7 @@ local recipe_filtration_media = {
         --updated-bob add glass
     },
     results={
-        {type="item", name="filtration-media", amount=1},
+        {type="item", name="filtration-media", amount=3},
     },
 	main_product= "filtration-media",
     icon = "__pycoalprocessing__/graphics/icons/filtration-media.png",
