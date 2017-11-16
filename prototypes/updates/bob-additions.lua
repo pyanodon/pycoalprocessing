@@ -582,7 +582,7 @@ data:extend{
     recipe_crushed_lead, recipe_crushed_silver, recipe_crushed_gold, recipe_crushed_zinc, recipe_crushed_nickel,
     recipe_crushed_rutile, crushed_quartz, recipe_lube_glycerol, recipe_explosives_glycerol, recipe_resin_glycerol,
     crushed_bauxite, crushed_gold, crushed_lead, crushed_nickel, crushed_rutile, crushed_silver,
-    crushed_tin, crushed_tungsten, crushed_zinc, wooden_board, hydrogen_c, glass3, sodium_hydroxide
+    crushed_tin, crushed_tungsten, crushed_zinc, wooden_board, hydrogen_c, glass3, sodium_hydroxide, recipe_saline
 }
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
