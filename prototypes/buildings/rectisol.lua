@@ -130,7 +130,7 @@ local entity1={
             pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {4.0, -1.0} }}
+            pipe_connections = {{ type="input", position = {4.0, -2.0} }}
         },
         {
             production_type = "input",
@@ -138,9 +138,16 @@ local entity1={
             pipe_covers = Prototype.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {4.0, 1.0} }}
+            pipe_connections = {{ type="input", position = {4.0, 2.0} }}
         },
-
+        {
+            production_type = "input",
+            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {0.0, 0.65}, {-0.05, -0.53}, nil, nil, pipes),
+            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
+            base_area = 10,
+            base_level = -1,
+            pipe_connections = {{ type="input", position = {4.0, 0.0} }}
+        },
         {
             production_type = "output",
             pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", {0.0, 0.65}, {-0.05, -0.53}, nil, nil, pipes),
