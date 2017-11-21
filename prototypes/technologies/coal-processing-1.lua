@@ -21,10 +21,6 @@ local technology = {
         },
         {
             type = "unlock-recipe",
-            recipe = "coal-gas"
-        },
-        {
-            type = "unlock-recipe",
             recipe = "creosote"
         },
         {
