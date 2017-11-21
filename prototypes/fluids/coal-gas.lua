@@ -37,10 +37,10 @@ local recipe2 =
     },
     results=
     {
-        {type="fluid", name="coal-gas", amount=2},
+        {type="fluid", name="coal-gas", amount=10},
         {type="fluid", name="tar", amount=30},
         {type="item", name="iron-oxide", amount=1, probability=0.5},
-        {type="item", name="coal", amount=12},
+        {type="item", name="coal", amount=10},
     },
     main_product= "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/coalgas-from-wood.png",
