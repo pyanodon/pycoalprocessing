@@ -1,30 +1,24 @@
--------------------------------------------------------------------------------
---[[coal-slurry-fuel]]--
--------------------------------------------------------------------------------
---[[recipes]]--
-local recipe1 =
-{
+--[[coal-slurry-fuel]] --
+
+local recipe1 = {
     type = "recipe",
     name = "coal-slurry",
     category = "fluid-separator",
     enabled = "false",
     energy_required = 2,
-    ingredients ={
-        {type="fluid", name="dirty-water", amount=250},
+    ingredients = {
+        {type = "fluid", name = "dirty-water", amount = 250}
     },
-    results=
-    {
-        {type="fluid", name="water", amount=100},
-        {type="fluid", name="coal-slurry", amount=150},
+    results = {
+        {type = "fluid", name = "water", amount = 100},
+        {type = "fluid", name = "coal-slurry", amount = 150}
     },
-    main_product= "coal-slurry",
-    icon = "__pycoalprocessing__/graphics/icons/coal-slurry.png",
+    main_product = "coal-slurry",
+    icon = "__pycoalprocessing__/graphics/icons/coal-slurry.png"
     --order = "b-c [syn-gas]",
 }
--------------------------------------------------------------------------------
---[[fluids]]--
-local fluid =
-{
+
+local fluid = {
     type = "fluid",
     name = "coal-slurry",
     icon = "__pycoalprocessing__/graphics/icons/coal-slurry.png",
@@ -39,6 +33,4 @@ local fluid =
     order = "z-[coal-slurry]"
 }
 
--------------------------------------------------------------------------------
---[[Extend Data]]--
-data:extend({recipe1, fluid})
+data:extend {recipe1, fluid}

@@ -5,8 +5,7 @@ local technology = {
     icon_size = 128,
     order = "c-b",
     prerequisites = {"methanol-processing-1"},
-    effects =
-    {
+    effects = {
         {
             type = "unlock-recipe",
             recipe = "refsyngas-from-meth"
@@ -18,17 +17,15 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "methanol-combustion"
-        },
-
+        }
     },
-    unit =
-    {
+    unit = {
         count = 150,
         ingredients = {
             {"science-pack-1", 1},
-            {"science-pack-2", 1},
+            {"science-pack-2", 1}
         },
         time = 35
-    },
+    }
 }
-data:extend({technology})
+data:extend {technology}

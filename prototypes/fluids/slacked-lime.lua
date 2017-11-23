@@ -1,7 +1,4 @@
--------------------------------------------------------------------------------
---[[items]]--
-local item1=
-{
+local fluid = {
     type = "fluid",
     name = "slacked-lime",
     icon = "__pycoalprocessing__/graphics/icons/slacked-lime.png",
@@ -14,10 +11,5 @@ local item1=
     subgroup = "py-syngas",
     order = "z-[slacked-lime]"
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1=nil
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {fluid}

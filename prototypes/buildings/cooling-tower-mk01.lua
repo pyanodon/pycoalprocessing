@@ -1,25 +1,20 @@
-local Prototype = require("stdlib.prototype.prototype")
+local Pipes = require("stdlib.data.pipes")
 
--------------------------------------------------------------------------------
---[[Recipes]]--
-local recipe1={
+local recipe1 = {
     type = "recipe",
     name = "cooling-tower-mk01",
     energy_required = 17,
     enabled = false,
-    ingredients =
-    {
+    ingredients = {
         {"electronic-circuit", 5},
-        {"pipe", 20}, --updated-bob copper-pipe
-        {"iron-gear-wheel", 15}, --updated-bob brass-gear-wheel
-        {"iron-plate", 30}, --updated-bob brass-plate
-
+        {"pipe", 20}, --bob copper-pipe
+        {"iron-gear-wheel", 15}, --bob brass-gear-wheel
+        {"iron-plate", 30} --bob brass-plate
     },
-    result= "cooling-tower-mk01",
+    result = "cooling-tower-mk01"
 }
--------------------------------------------------------------------------------
---[[Items]]--
-local item1= {
+
+local item1 = {
     type = "item",
     name = "cooling-tower-mk01",
     icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
@@ -27,15 +22,14 @@ local item1= {
     subgroup = "coal-processing",
     order = "h",
     place_result = "cooling-tower-mk01",
-    stack_size = 5,
+    stack_size = 5
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1={
+
+local entity1 = {
     type = "assembling-machine",
     name = "cooling-tower-mk01",
     icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
-    flags = {"placeable-neutral","player-creation"},
+    flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "cooling-tower-mk01"},
     fast_replaceable_group = "cooling-tower-mk01",
     max_health = 300,
@@ -44,62 +38,51 @@ local entity1={
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     fixed_recipe = "cooling-water",
-    module_specification =
-    {
+    module_specification = {
         module_slots = 1
     },
     allowed_effects = {"speed"},
     crafting_categories = {"cooling"},
     crafting_speed = 0.55,
-    energy_source =
-    {
+    energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.00,
+        emissions = 0.00
     },
     energy_usage = "70kW",
     ingredient_count = 1,
-
-    animation =
-    {
+    animation = {
         filename = "__pycoalprocessing__/graphics/entity/cooling-tower-mk01/cooling-tower-mk01.png",
         width = 113,
         height = 133,
         frame_count = 30,
         line_length = 10,
         animation_speed = 2,
-        shift = {0.20, -0.4},
+        shift = {0.20, -0.4}
     },
-
-    fluid_boxes =
-    {
+    fluid_boxes = {
         {
             production_type = "input",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", nil, {-0.0, -0.9}, nil, nil),
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
+            pipe_picture = Pipes.pictures("assembling-machine-2", nil, {-0.0, -0.9}, nil, nil),
+            pipe_covers = Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {2.0, 0.0} }}
+            pipe_connections = {{type = "input", position = {2.0, 0.0}}}
         },
         {
             production_type = "output",
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-2", nil, {-0.0, -0.9}, nil, nil),
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
+            pipe_picture = Pipes.pictures("assembling-machine-2", nil, {-0.0, -0.9}, nil, nil),
+            pipe_covers = Pipes.covers(false, true, true, true),
             base_level = 1,
-            pipe_connections = {{ type="output" , position = {-2.0, 0.0} }}
-        },
-
+            pipe_connections = {{type = "output", position = {-2.0, 0.0}}}
+        }
     },
-    vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    working_sound =
-    {
-        sound = { filename = "__pycoalprocessing__/sounds/cooling-tower-mk01.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/cooling-tower-mk01.ogg", volume = 0.35 },
-        apparent_volume = 2.5,
-    },
+    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+    working_sound = {
+        sound = {filename = "__pycoalprocessing__/sounds/cooling-tower-mk01.ogg"},
+        idle_sound = {filename = "__pycoalprocessing__/sounds/cooling-tower-mk01.ogg", volume = 0.35},
+        apparent_volume = 2.5
+    }
 }
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {recipe1, item1, entity1}

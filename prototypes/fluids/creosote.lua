@@ -1,28 +1,20 @@
--------------------------------------------------------------------------------
---[[creosote]]--
--------------------------------------------------------------------------------
---[[recipes]]--
-local recipe1 =
-{
+local recipe1 = {
     type = "recipe",
     name = "creosote",
     category = "tar",
     enabled = "false",
     energy_required = 3,
-    ingredients ={
-        {type="fluid", name="tar", amount=100},
+    ingredients = {
+        {type = "fluid", name = "tar", amount = 100}
     },
-    results=
-    {
-        {type="fluid", name="creosote", amount=80},
+    results = {
+        {type = "fluid", name = "creosote", amount = 80}
     },
-    main_product= "creosote",
-    icon = "__pycoalprocessing__/graphics/icons/creosote.png",
+    main_product = "creosote",
+    icon = "__pycoalprocessing__/graphics/icons/creosote.png"
 }
--------------------------------------------------------------------------------
---[[fluids]]--
-local fluid =
-{
+
+local fluid = {
     type = "fluid",
     name = "creosote",
     icon = "__pycoalprocessing__/graphics/icons/creosote.png",
@@ -34,9 +26,7 @@ local fluid =
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59,
     subgroup = "py-fluids",
-    order = "creosote",
+    order = "creosote"
 }
 
--------------------------------------------------------------------------------
---[[Extend Data]]--
-data:extend({recipe1, fluid})
+data:extend {recipe1, fluid}

@@ -5,8 +5,7 @@ local technology = {
     icon_size = 128,
     order = "c-a",
     prerequisites = {"coal-processing-1"},
-    effects =
-    {
+    effects = {
         {
             type = "unlock-recipe",
             recipe = "gasturbinemk01"
@@ -26,15 +25,14 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "power-house"
-        },
+        }
     },
-    unit =
-    {
+    unit = {
         count = 30,
         ingredients = {
-            {"science-pack-1", 1},
+            {"science-pack-1", 1}
         },
         time = 45
-    },
+    }
 }
-data:extend({technology})
+data:extend {technology}

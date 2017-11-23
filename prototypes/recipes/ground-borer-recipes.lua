@@ -1,290 +1,289 @@
 --NEXELIT
-local mining_nexelit ={
+local mining_nexelit = {
     type = "recipe",
     name = "mining-nexelit",
     category = "ground-borer",
     enabled = "false",
     energy_required = 0.75,
-    ingredients ={
-        {type="fluid", name="lubricant", amount=100,},
-        {type="fluid", name="coal-gas", amount=100,},
-        {type="item", name="drill-head", amount=3,},
+    ingredients = {
+        {type = "fluid", name = "lubricant", amount = 100},
+        {type = "fluid", name = "coal-gas", amount = 100},
+        {type = "item", name = "drill-head", amount = 3}
     },
-    results={
-        {type="item", name="nexelit-ore", amount=15,},
+    results = {
+        {type = "item", name = "nexelit-ore", amount = 15}
     },
-    main_product= "nexelit-ore",
+    main_product = "nexelit-ore",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-nexelit.png",
-	subgroup = "py-drilling",
-	order = "a",
+    subgroup = "py-drilling",
+    order = "a"
 }
 --STONE
-local mining_stone ={
+local mining_stone = {
     type = "recipe",
     name = "mining-stone",
     category = "ground-borer",
     enabled = "false",
     energy_required = 1.2,
-    ingredients ={
-        {type="fluid", name="lubricant", amount=100,},
-        {type="fluid", name="coal-gas", amount=100,},
-        {type="item", name="drill-head", amount=3,},
+    ingredients = {
+        {type = "fluid", name = "lubricant", amount = 100},
+        {type = "fluid", name = "coal-gas", amount = 100},
+        {type = "item", name = "drill-head", amount = 3}
     },
-    results={
-        {type="item", name="stone", amount=20,},
+    results = {
+        {type = "item", name = "stone", amount = 20}
     },
-    main_product= "stone",
+    main_product = "stone",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-stone.png",
-	subgroup = "py-drilling",
-	order = "b",
+    subgroup = "py-drilling",
+    order = "b"
 }
 --LIMESTONE
-local mining_limestone ={
+local mining_limestone = {
     type = "recipe",
     name = "mining-limestone",
     category = "ground-borer",
     enabled = "false",
     energy_required = 1.2,
-    ingredients ={
-        {type="fluid", name="lubricant", amount=100,},
-        {type="fluid", name="coal-gas", amount=100,},
-        {type="item", name="drill-head", amount=3,},
+    ingredients = {
+        {type = "fluid", name = "lubricant", amount = 100},
+        {type = "fluid", name = "coal-gas", amount = 100},
+        {type = "item", name = "drill-head", amount = 3}
     },
-    results={
-        {type="item", name="limestone", amount=20,},
+    results = {
+        {type = "item", name = "limestone", amount = 20}
     },
-    main_product= "limestone",
+    main_product = "limestone",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-limestone.png",
-	subgroup = "py-drilling",
-	order = "c",
+    subgroup = "py-drilling",
+    order = "c"
 }
 
-data:extend{mining_nexelit, mining_stone, mining_limestone}
+data:extend {mining_nexelit, mining_stone, mining_limestone}
 
 if bobmods then
-
     --BAUXITE
-    local mining_bauxite ={
+    local mining_bauxite = {
         type = "recipe",
         name = "mining-bauxite",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="bauxite-ore", amount=20,},
+        results = {
+            {type = "item", name = "bauxite-ore", amount = 20}
         },
-        main_product= "bauxite-ore",
+        main_product = "bauxite-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-bauxite.png",
-		subgroup = "py-drilling",
-		order = "d",
+        subgroup = "py-drilling",
+        order = "d"
     }
     --COBALT
-    local mining_cobalt ={
+    local mining_cobalt = {
         type = "recipe",
         name = "mining-cobalt",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="cobalt-ore", amount=20,},
+        results = {
+            {type = "item", name = "cobalt-ore", amount = 20}
         },
-        main_product= "cobalt-ore",
+        main_product = "cobalt-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-cobalt.png",
-		subgroup = "py-drilling",
-		order = "e",
+        subgroup = "py-drilling",
+        order = "e"
     }
     --GOLD
-    local mining_gold ={
+    local mining_gold = {
         type = "recipe",
         name = "mining-gold",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="gold-ore", amount=20,},
+        results = {
+            {type = "item", name = "gold-ore", amount = 20}
         },
-        main_product= "gold-ore",
+        main_product = "gold-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-gold.png",
-		subgroup = "py-drilling",
-		order = "f",
+        subgroup = "py-drilling",
+        order = "f"
     }
     --LEAD
-    local mining_lead ={
+    local mining_lead = {
         type = "recipe",
         name = "mining-lead",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="lead-ore", amount=20,},
+        results = {
+            {type = "item", name = "lead-ore", amount = 20}
         },
-        main_product= "lead-ore",
+        main_product = "lead-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-lead.png",
-		subgroup = "py-drilling",
-		order = "g",
+        subgroup = "py-drilling",
+        order = "g"
     }
     --NICKEL
-    local mining_nickel ={
+    local mining_nickel = {
         type = "recipe",
         name = "mining-nickel",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="nickel-ore", amount=20,},
+        results = {
+            {type = "item", name = "nickel-ore", amount = 20}
         },
-        main_product= "nickel-ore",
+        main_product = "nickel-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-nickel.png",
-		subgroup = "py-drilling",
-		order = "h",
+        subgroup = "py-drilling",
+        order = "h"
     }
     --QUARTZ
-    local mining_quartz ={
+    local mining_quartz = {
         type = "recipe",
         name = "mining-quartz",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="quartz", amount=20,},
+        results = {
+            {type = "item", name = "quartz", amount = 20}
         },
-        main_product= "quartz",
+        main_product = "quartz",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-quartz.png",
-		subgroup = "py-drilling",
-		order = "i",
+        subgroup = "py-drilling",
+        order = "i"
     }
     --RUTILE
-    local mining_rutile ={
+    local mining_rutile = {
         type = "recipe",
         name = "mining-rutile",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="rutile-ore", amount=20,},
+        results = {
+            {type = "item", name = "rutile-ore", amount = 20}
         },
-        main_product= "rutile-ore",
+        main_product = "rutile-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-rutile.png",
-		subgroup = "py-drilling",
-		order = "j",
+        subgroup = "py-drilling",
+        order = "j"
     }
     --SILVER
-    local mining_silver ={
+    local mining_silver = {
         type = "recipe",
         name = "mining-silver",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="silver-ore", amount=20,},
+        results = {
+            {type = "item", name = "silver-ore", amount = 20}
         },
-        main_product= "silver-ore",
+        main_product = "silver-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-silver.png",
-		subgroup = "py-drilling",
-		order = "k",
+        subgroup = "py-drilling",
+        order = "k"
     }
     --TIN
-    local mining_tin ={
+    local mining_tin = {
         type = "recipe",
         name = "mining-tin",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="tin-ore", amount=20,},
+        results = {
+            {type = "item", name = "tin-ore", amount = 20}
         },
-        main_product= "tin-ore",
+        main_product = "tin-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-tin.png",
-		subgroup = "py-drilling",
-		order = "l",
+        subgroup = "py-drilling",
+        order = "l"
     }
     --TUNGSTEN
-    local mining_tungsten ={
+    local mining_tungsten = {
         type = "recipe",
         name = "mining-tungsten",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="tungsten-ore", amount=20,},
+        results = {
+            {type = "item", name = "tungsten-ore", amount = 20}
         },
-        main_product= "tungsten-ore",
+        main_product = "tungsten-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-tungsten.png",
-		subgroup = "py-drilling",
-		order = "m",
+        subgroup = "py-drilling",
+        order = "m"
     }
     --ZINC
-    local mining_zinc ={
+    local mining_zinc = {
         type = "recipe",
         name = "mining-zinc",
         category = "ground-borer",
         enabled = "false",
         energy_required = 1.2,
-        ingredients ={
-            {type="fluid", name="lubricant", amount=100,},
-            {type="fluid", name="coal-gas", amount=100,},
-            {type="item", name="drill-head", amount=3,},
+        ingredients = {
+            {type = "fluid", name = "lubricant", amount = 100},
+            {type = "fluid", name = "coal-gas", amount = 100},
+            {type = "item", name = "drill-head", amount = 3}
         },
-        results={
-            {type="item", name="zinc-ore", amount=20,},
+        results = {
+            {type = "item", name = "zinc-ore", amount = 20}
         },
-        main_product= "zinc-ore",
+        main_product = "zinc-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-zinc.png",
-		subgroup = "py-drilling",
-		order = "n",
+        subgroup = "py-drilling",
+        order = "n"
     }
 
-    data:extend{
+    data:extend {
         mining_bauxite,
         mining_cobalt,
         mining_gold,

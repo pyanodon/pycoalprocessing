@@ -1,23 +1,19 @@
--------------------------------------------------------------------------------
---[[Recipes]]--
-local recipe1={
+local recipe1 = {
     type = "recipe",
     name = "classifier",
     energy_required = 35,
     enabled = false,
-    ingredients =
-    {
+    ingredients = {
         {"assembling-machine-2", 5},
-        {"electronic-circuit", 10}, --updated-bob brass-bearing
+        {"electronic-circuit", 10}, --bob brass-bearing
         {"transport-belt", 30},
-        {"iron-plate", 20}, --updated-bob titanium-plate
-        {"iron-gear-wheel", 50}, --updated-bob brass-bearing
+        {"iron-plate", 20}, --bob titanium-plate
+        {"iron-gear-wheel", 50} --bob brass-bearing
     },
-    result= "classifier",
+    result = "classifier"
 }
--------------------------------------------------------------------------------
---[[Items]]--
-local item1={
+
+local item1 = {
     type = "item",
     name = "classifier",
     icon = "__pycoalprocessing__/graphics/icons/classifier.png",
@@ -25,15 +21,14 @@ local item1={
     subgroup = "coal-processing",
     order = "f",
     place_result = "classifier",
-    stack_size = 10,
+    stack_size = 10
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1={
+
+local entity1 = {
     type = "assembling-machine",
     name = "classifier",
     icon = "__pycoalprocessing__/graphics/icons/classifier.png",
-    flags = {"placeable-neutral","player-creation"},
+    flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "classifier"},
     fast_replaceable_group = "classifier",
     max_health = 400,
@@ -41,43 +36,34 @@ local entity1={
     dying_explosion = "medium-explosion",
     collision_box = {{-3.45, -3.45}, {3.45, 3.45}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
-    module_specification =
-    {
+    module_specification = {
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"classifier"},
     crafting_speed = 0.65,
-    energy_source =
-    {
+    energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.03 / 2.6,
+        emissions = 0.03 / 2.6
     },
     energy_usage = "170kW",
     ingredient_count = 3,
-
-    animation =
-    {
+    animation = {
         filename = "__pycoalprocessing__/graphics/entity/classifier/classifier.png",
         width = 256,
         height = 257,
         frame_count = 34,
         line_length = 8,
         animation_speed = 0.9,
-        shift = {0.495, -0.48},
+        shift = {0.495, -0.48}
     },
-
-    vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55 },
-    working_sound =
-    {
-        sound = { filename = "__pycoalprocessing__/sounds/classifier.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/classifier.ogg", volume = 0.55 },
-        apparent_volume = 2.5,
-    },
+    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55},
+    working_sound = {
+        sound = {filename = "__pycoalprocessing__/sounds/classifier.ogg"},
+        idle_sound = {filename = "__pycoalprocessing__/sounds/classifier.ogg", volume = 0.55},
+        apparent_volume = 2.5
+    }
 }
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {recipe1, item1, entity1}

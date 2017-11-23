@@ -4,10 +4,8 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/excavation-1.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-3"}, --updated-bob titatnium-processing
-    effects =
-    {
-
+    prerequisites = {"coal-processing-3"}, --bob titatnium-processing
+    effects = {
         {
             type = "unlock-recipe",
             recipe = "ground-borer"
@@ -35,18 +33,16 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "extract-richdust"
-        },
+        }
     },
-
-    unit =
-    {
+    unit = {
         count = 45,
         ingredients = {
             {"science-pack-1", 1},
             {"science-pack-2", 1},
-            {"science-pack-3", 1},
+            {"science-pack-3", 1}
         },
         time = 35
-    },
+    }
 }
-data:extend({technology})
+data:extend {technology}

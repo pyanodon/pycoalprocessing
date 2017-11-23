@@ -5,9 +5,7 @@ local technology = {
     icon_size = 128,
     order = "c-a",
     prerequisites = {"coal-processing-2", "methanol-processing-2"},
-    effects =
-    {
-
+    effects = {
         {
             type = "unlock-recipe",
             recipe = "nexelit-plate"
@@ -75,18 +73,16 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "lightoil-to-syngas"
-        },
+        }
     },
-
-    unit =
-    {
+    unit = {
         count = 50,
         ingredients = {
             {"science-pack-1", 1},
             {"science-pack-2", 1},
-            {"science-pack-3", 2},
+            {"science-pack-3", 2}
         },
         time = 35
-    },
+    }
 }
-data:extend({technology})
+data:extend {technology}
