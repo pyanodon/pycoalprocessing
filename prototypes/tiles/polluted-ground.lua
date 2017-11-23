@@ -1,18 +1,15 @@
 local sand_vehicle_speed_modifier = _G.sand_vehicle_speed_modifier
 
-local polluted_ground=
-{
+local polluted_ground = {
     type = "tile",
     name = "polluted-ground",
     collision_mask = {"ground-tile"},
     walking_speed_modifier = .50,
     --autoplace = autoplace_settings("polluted-ground", {{{35, 0.3}, {-5, 0.1}}}),
-    autoplace=nil,
+    autoplace = nil,
     layer = 36,
-    variants =
-    {
-        main =
-        {
+    variants = {
+        main = {
             {
                 picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground1.png",
                 count = 16,
@@ -31,26 +28,23 @@ local polluted_ground=
                 line_length = 11,
                 size = 4,
                 probability = 1,
-                weights = {0.090, 0.025, 0.125, 0.005, 0.010, 0.100, 0.100, 0.010, 0.020, 0.020, 0.010, 0.100, 0.025, 0.100, 0.100, 0.100}            },
+                weights = {0.090, 0.025, 0.125, 0.005, 0.010, 0.100, 0.100, 0.010, 0.020, 0.020, 0.010, 0.100, 0.025, 0.100, 0.100, 0.100}
+            }
         },
-        inner_corner =
-        {
+        inner_corner = {
             picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground-inner-corner.png",
             count = 8
         },
-        outer_corner =
-        {
+        outer_corner = {
             picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground-outer-corner.png",
             count = 8
         },
-        side =
-        {
+        side = {
             picture = "__pycoalprocessing__/graphics/tiles/polluted-ground/polluted-ground-side.png",
             count = 8
         }
     },
-    walking_sound =
-    {
+    walking_sound = {
         {
             filename = "__base__/sound/walking/sand-01.ogg",
             volume = 0.8
@@ -70,8 +64,8 @@ local polluted_ground=
     },
     --map_color={r=0.6 , g=0.1 , b=0.6, a=0.5},
     map_color = defines.color.brown,
-    ageing=0.0002,
+    ageing = 0.0002,
     vehicle_friction_modifier = sand_vehicle_speed_modifier
 }
 
-data:extend({polluted_ground})
+data:extend {polluted_ground}

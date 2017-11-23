@@ -1,9 +1,4 @@
--------------------------------------------------------------------------------
---[[acidgas]]--
--------------------------------------------------------------------------------
---[[fluids]]--
-local fluid=
-{
+local fluid = {
     type = "fluid",
     name = "acidgas",
     icon = "__pycoalprocessing__/graphics/icons/acidgas.png",
@@ -12,11 +7,9 @@ local fluid=
     base_color = {r = 0.741, g = 0.788, b = 0.196},
     flow_color = {r = 0.741, g = 0.788, b = 0.196},
     max_temperature = 100,
-	gas_temperature = 15,
+    gas_temperature = 15,
     pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59,
+    flow_to_energy_ratio = 0.59
 }
 
--------------------------------------------------------------------------------
---[[Extend Data]]--
-data:extend({fluid})
+data:extend {fluid}

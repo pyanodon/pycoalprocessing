@@ -1,10 +1,46 @@
---- Recipe module
--- @module Recipe
-
-local fail_if_missing = require 'stdlib/core'['fail_if_missing']
-local Data = require 'stdlib/prototype/modules/data'
-
 local Recipe = {}
+local data_select = require('stdlib/data/modules/data_select')
+
+-- this metatable is set on recipes, to control access to ingredients and results
+Recipe._item_metatable = {
+    new = function(item) --luacheck: ignore item
+        local self = { }
+        self.__index = function(tbl, key)
+            if type(key) == 'number' then
+                local keys = { 'name', 'amount' }
+                local val = rawget(tbl, keys[key])
+                -- amount defaults to one
+                if not val and keys[key] == 'amount' then
+                    return 1
+                end
+                return val
+            elseif type(key) == 'string' then
+                local keys = { name = 1, amount = 2 }
+                local val = rawget(tbl, keys[key])
+                -- amount defaults to one
+                if not val and key == 'amount' then
+                    return 1
+                end
+                return val
+            end
+            return rawget(tbl, key)
+        end
+
+        self.__newindex = function(tbl, key, value)
+            if type(key) == 'number' and #tbl == 0 then
+                local keys = { 'name', 'amount' }
+                rawset(tbl, keys[key], value)
+            elseif type(key) == 'string' and #tbl > 0 then
+                local keys = { name = 1, amount = 2 }
+                rawset(tbl, keys[key], value)
+            else
+                return rawset(tbl, key, value)
+            end
+        end
+
+        return self
+    end
+}
 
 --- Selects all recipe values where the key matches the selector pattern.
 -- The selector pattern is divided into groups. The pattern should have a colon character `:` to denote the selection for each group.
@@ -19,7 +55,7 @@ local Recipe = {}
 -- @param pattern to search with
 -- @return table containing the elements matching the selector pattern, or an empty table if there was no matches
 function Recipe.select(pattern)
-    fail_if_missing(pattern, "missing pattern argument")
+    Recipe.fail_if_missing(pattern, "missing pattern argument")
 
     local results = {}
     local parts = string.split(pattern, ":")
@@ -27,7 +63,7 @@ function Recipe.select(pattern)
 
     if inner_field_pattern then
         -- Data.select --> { { recipe }, { recipe } }
-        for _, recipe in pairs(Data.select('recipe:' .. pattern)) do
+        for _, recipe in pairs(data_select.select('recipe:' .. pattern)) do
             for field_key, field_value in pairs(recipe) do
                 -- field_key --> ingredients, field_value --> { { 'copper-ore', 1} }
                 if string.match(field_key, inner_field_pattern) then
@@ -57,50 +93,10 @@ function Recipe.select(pattern)
             end
         end
     else
-        return Recipe.format_items(Data.select('recipe:' .. pattern))
+        return Recipe.format_items(data_select.select('recipe:' .. pattern))
     end
-    setmetatable(results, Data._select_metatable.new(results))
+    setmetatable(results, data_select._select_metatable.new(results))
     return results
-end
-
--- this metatable is set on recipes, to control access to ingredients and results
-Recipe._item_metatable = {}
-Recipe._item_metatable.new = function(item)  --luacheck: ignore item
-    local self = { }
-    self.__index = function(tbl, key)
-        if type(key) == 'number' then
-            local keys = { 'name', 'amount' }
-            local val = rawget(tbl, keys[key])
-            -- amount defaults to one
-            if not val and keys[key] == 'amount' then
-                return 1
-            end
-            return val
-        elseif type(key) == 'string' then
-            local keys = { name = 1, amount = 2 }
-            local val = rawget(tbl, keys[key])
-            -- amount defaults to one
-            if not val and key == 'amount' then
-                return 1
-            end
-            return val
-        end
-        return rawget(tbl, key)
-    end
-
-    self.__newindex = function(tbl, key, value)
-        if type(key) == 'number' and #tbl == 0 then
-            local keys = { 'name', 'amount' }
-            rawset(tbl, keys[key], value)
-        elseif type(key) == 'string' and #tbl > 0 then
-            local keys = { name = 1, amount = 2 }
-            rawset(tbl, keys[key], value)
-        else
-            return rawset(tbl, key, value)
-        end
-    end
-
-    return self
 end
 
 function Recipe.format_items(recipes)

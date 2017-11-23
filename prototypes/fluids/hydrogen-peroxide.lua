@@ -1,32 +1,21 @@
--------------------------------------------------------------------------------
---[[hydrogen-peroxide]]--
--------------------------------------------------------------------------------
---[[recipes]]--
-local hydrogen_peroxide= {
+local hydrogen_peroxide = {
     type = "recipe",
     name = "hydrogen-peroxide",
     category = "carbonfilter",
     enabled = "false",
     energy_required = 2.7,
-    ingredients ={
-        {type="fluid", name="anthraquinone", amount=100},
+    ingredients = {
+        {type = "fluid", name = "anthraquinone", amount = 100},
         --{type="item", name="nickel-plate", amount=5},
-        {type="item", name="iron-plate", amount=5}
+        {type = "item", name = "iron-plate", amount = 5}
     },
-    results=
-    {
-        {type="fluid", name="hydrogen-peroxide", amount=50},
+    results = {
+        {type = "fluid", name = "hydrogen-peroxide", amount = 50}
     },
-    main_product= "hydrogen-peroxide",
-    icon = "__pycoalprocessing__/graphics/icons/hydrogen-peroxide.png",
-    subgroup = "py-syngas",
-    order = "z-[hydrogen-peroxide]",
+    main_product = "hydrogen-peroxide",
 }
 
--------------------------------------------------------------------------------
---[[fluids]]--
-local fluid =
-{
+local fluid = {
     type = "fluid",
     name = "hydrogen-peroxide",
     icon = "__pycoalprocessing__/graphics/icons/hydrogen-peroxide.png",
@@ -40,6 +29,4 @@ local fluid =
     order = "z-[hydrogen-peroxide]"
 }
 
--------------------------------------------------------------------------------
---[[Extend Data]]--
-data:extend({fluid, hydrogen_peroxide})
+data:extend {fluid, hydrogen_peroxide}

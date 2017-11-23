@@ -98,10 +98,12 @@ check:
 	@luacheck . -q --codes
 
 package: package-copy $(OUT_FILES) nodebug
+	@cp -r stdlib $(BUILD_DIR)/$(OUTPUT_NAME)/stdlib
 	@cd $(BUILD_DIR) && zip -rq $(OUTPUT_NAME).zip $(OUTPUT_NAME)
 	@echo $(OUTPUT_NAME).zip ready
 
 optimize-package: package-copy $(OUT_FILES) nodebug optimize2
+	@cp -r stdlib $(BUILD_DIR)/$(OUTPUT_NAME)/stdlib
 	@cd $(BUILD_DIR) && zip -rq $(OUTPUT_NAME).zip $(OUTPUT_NAME)
 	@echo $(OUTPUT_NAME).zip ready
 

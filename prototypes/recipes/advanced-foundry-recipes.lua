@@ -1,53 +1,49 @@
--------------------------------------------------------------------------------
 --NEXELIT PLATE
-local nexelit_plate ={
+local nexelit_plate = {
     type = "recipe",
     name = "nexelit-plate",
     category = "advanced-foundry",
     enabled = "false",
     energy_required = 2,
-    ingredients ={
-        {type="item", name="nexelit-ore", amount=2},
-        {type="fluid", name="petroleum-gas", amount=150},
-        {type="item", name="limestone", amount=2},
-        {type="item", name="sand-casting", amount=1},
+    ingredients = {
+        {type = "item", name = "nexelit-ore", amount = 2},
+        {type = "fluid", name = "petroleum-gas", amount = 150},
+        {type = "item", name = "limestone", amount = 2},
+        {type = "item", name = "sand-casting", amount = 1}
     },
-    results=
-    {
-        {type="item", name="nexelit-plate", amount=2},
+    results = {
+        {type = "item", name = "nexelit-plate", amount = 2}
     },
-    main_product= "nexelit-plate",
+    main_product = "nexelit-plate",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
     subgroup = "py-items",
-    order = "a1",
+    order = "a1"
 }
--------------------------------------------------------------------------------
+
 --STEEL PLATE - cant change the base one,so i did that.
-local steel_plate2 ={
+local steel_plate2 = {
     type = "recipe",
     name = "steel-plate2",
     category = "advanced-foundry",
     enabled = "false",
     energy_required = 2,
-    ingredients ={
-        {type="item", name="crushed-iron", amount=2},
-        {type="item", name="coke", amount=2},
-        {type="item", name="fuelrod-mk01", amount=1},
-        {type="item", name="limestone", amount=2},
-        {type="item", name="sand-casting", amount=1},
+    ingredients = {
+        {type = "item", name = "crushed-iron", amount = 2},
+        {type = "item", name = "coke", amount = 2},
+        {type = "item", name = "fuelrod-mk01", amount = 1},
+        {type = "item", name = "limestone", amount = 2},
+        {type = "item", name = "sand-casting", amount = 1}
     },
-    results=
-    {
-        {type="item", name="steel-plate", amount=8},
+    results = {
+        {type = "item", name = "steel-plate", amount = 8}
     },
-    main_product= "steel-plate",
+    main_product = "steel-plate",
     icon = "__base__/graphics/icons/steel-plate.png",
     subgroup = "py-items",
-    order = "a2",
+    order = "a2"
 }
 
-data:extend{nexelit_plate,steel_plate2}
--------------------------------------------------------------------------------
+data:extend {nexelit_plate, steel_plate2}
 
 --Make foundry recipes from smelting recipes with 1 ingredient.
 local list = {}
@@ -58,11 +54,12 @@ local _filter_ing = function(v)
 end
 
 for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
-
-    local ing1 = (recipe.ingredients and recipe.ingredients[1].name and recipe.ingredients[1])
-    or (recipe.ingredients and {type="item", name=recipe.ingredients[1][1], amount=recipe.ingredients[1][2] * 5})
-    ing1 = ing1 or (recipe.normal and recipe.normal.ingredients and recipe.normal.ingredients[1].name and recipe.normal.ingredients[1])
-    or (recipe.normal and {type="item", name=recipe.normal.ingredients[1][1], amount=recipe.normal.ingredients[1][2] * 5})
+    local ing1 =
+        (recipe.ingredients and recipe.ingredients[1].name and recipe.ingredients[1]) or
+        (recipe.ingredients and {type = "item", name = recipe.ingredients[1][1], amount = recipe.ingredients[1][2] * 5})
+    ing1 =
+        ing1 or (recipe.normal and recipe.normal.ingredients and recipe.normal.ingredients[1].name and recipe.normal.ingredients[1]) or
+        (recipe.normal and {type = "item", name = recipe.normal.ingredients[1][1], amount = recipe.normal.ingredients[1][2] * 5})
 
     local res
     if recipe.result then
@@ -77,15 +74,15 @@ for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
 
     local new = {
         type = "recipe",
-        name = "advanced-foundry-"..recipe.name,
+        name = "advanced-foundry-" .. recipe.name,
         category = "advanced-foundry",
         enabled = true,
         energy_required = 3,
         ingredients = {
             ing1,
-            {type="item", name="fuelrod-mk01", amount=1},
-            {type="item", name="limestone", amount=2},
-            {type="item", name="sand-casting", amount=1},
+            {type = "item", name = "fuelrod-mk01", amount = 1},
+            {type = "item", name = "limestone", amount = 2},
+            {type = "item", name = "sand-casting", amount = 1}
         },
         results = res,
         icon = recipe.icon,
@@ -97,6 +94,7 @@ for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
         new.subgroup = "py-unsorted"
         new.order = "a"
     end
-    list[#list+1] = new
+    list[#list + 1] = new
 end
+
 data:extend(list)

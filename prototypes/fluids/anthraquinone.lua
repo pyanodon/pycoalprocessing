@@ -1,32 +1,24 @@
--------------------------------------------------------------------------------
---[[anthraquinone]]--
--------------------------------------------------------------------------------
---[[recipes]]--
-local anthraquinone= {
+local anthraquinone = {
     type = "recipe",
     name = "anthraquinone",
     category = "rectisol",
     enabled = "false",
     energy_required = 3,
-    ingredients ={
-        {type="fluid", name="aromatics", amount=100},
-        {type="fluid", name="steam", amount=600}, --update-bob liquid-air
-        {type="item", name="chromium", amount=2},
+    ingredients = {
+        {type = "fluid", name = "aromatics", amount = 100},
+        {type = "fluid", name = "steam", amount = 600}, --update-bob liquid-air
+        {type = "item", name = "chromium", amount = 2}
     },
-    results=
-    {
-        {type="fluid", name="anthraquinone", amount=50},
+    results = {
+        {type = "fluid", name = "anthraquinone", amount = 50}
     },
-    main_product= "anthraquinone",
+    main_product = "anthraquinone",
     icon = "__pycoalprocessing__/graphics/icons/anthraquinone.png",
     subgroup = "py-syngas",
-    order = "z-[anthraquinone]",
+    order = "z-[anthraquinone]"
 }
 
--------------------------------------------------------------------------------
---[[fluids]]--
-local fluid =
-{
+local fluid = {
     type = "fluid",
     name = "anthraquinone",
     icon = "__pycoalprocessing__/graphics/icons/anthraquinone.png",
@@ -40,6 +32,4 @@ local fluid =
     order = "z-[anthraquinone]"
 }
 
--------------------------------------------------------------------------------
---[[Extend Data]]--
 data:extend({fluid, anthraquinone})

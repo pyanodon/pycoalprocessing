@@ -1,36 +1,31 @@
-local Prototype = require("stdlib.prototype.prototype")
+local Pipes = require("stdlib.data.pipes")
 
 local pipes = {
-    north =
-    {
+    north = {
         filename = "__pycoalprocessing__/graphics/entity/hpf/long-pipe-north.png",
         priority = "medium",
         width = 30,
-        height = 44,
+        height = 44
     }
 }
 
--------------------------------------------------------------------------------
---[[Recipes]]--
-local recipe1={
+local recipe1 = {
     type = "recipe",
     name = "hpf",
     energy_required = 10,
     enabled = false,
-    ingredients =
-    {
+    ingredients = {
         {"stone-brick", 20},
         {"copper-plate", 20},
-        {"iron-gear-wheel", 5}, --updated-bob steel-bearing
-        {"iron-plate", 10}, --updated-bob invar-alloy
-        {"electronic-circuit", 3}, --updated-bob basic-circuit-board
+        {"iron-gear-wheel", 5}, --bob steel-bearing
+        {"iron-plate", 10}, --bob invar-alloy
+        {"electronic-circuit", 3} --bob basic-circuit-board
     },
-    result= "hpf",
-    icon = "__pycoalprocessing__/graphics/icons/hpf.png",
+    result = "hpf",
+    icon = "__pycoalprocessing__/graphics/icons/hpf.png"
 }
--------------------------------------------------------------------------------
---[[Items]]--
-local item1={
+
+local item1 = {
     type = "item",
     name = "hpf",
     icon = "__pycoalprocessing__/graphics/icons/hpf.png",
@@ -38,15 +33,14 @@ local item1={
     subgroup = "coal-processing",
     order = "p",
     place_result = "hpf",
-    stack_size = 10,
+    stack_size = 10
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1={
+
+local entity1 = {
     type = "assembling-machine",
     name = "hpf",
     icon = "__pycoalprocessing__/graphics/icons/hpf.png",
-    flags = {"placeable-neutral","player-creation"},
+    flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "hpf"},
     fast_replaceable_group = "hpf",
     max_health = 300,
@@ -54,42 +48,35 @@ local entity1={
     dying_explosion = "medium-explosion",
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-    module_specification =
-    {
+    module_specification = {
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"hpf"},
     crafting_speed = 0.75,
-    energy_source =
-    {
+    energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.03 / 2,
+        emissions = 0.03 / 2
     },
     energy_usage = "370kW",
     ingredient_count = 5,
-
-    animation =
-    {
+    animation = {
         priority = "high",
         filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-off.png",
         width = 167,
         height = 173,
         frame_count = 1,
         --animation_speed = 0.5,
-        shift = {0.1, 0.0},
+        shift = {0.1, 0.0}
     },
-
-    working_visualisations =
-    {
+    working_visualisations = {
         {
             north_position = {0.1, 0},
             west_position = {0.1, 0},
             south_position = {0.1, 0},
             east_position = {0.1, 0},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-anim.png",
                 priority = "medium",
                 frame_count = 50,
@@ -104,8 +91,7 @@ local entity1={
             west_position = {1.543, -2.68},
             south_position = {1.543, -2.68},
             east_position = {1.543, -2.68},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/hpf/smoke-anim.png",
                 priority = "extra-high",
                 frame_count = 80,
@@ -114,39 +100,32 @@ local entity1={
                 height = 44,
                 animation_speed = 0.3
             }
-        },
+        }
     },
-
-    fluid_boxes =
-    {
+    fluid_boxes = {
         {
             production_type = "input",
-            --pipe_picture = floatationpipepictures(),
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
-            pipe_picture=Prototype.Pipes.pictures("assembling-machine-3", {0,1}, {0,-0.9}, nil, nil, pipes),
+            pipe_covers = Pipes.covers(true, true, true, true),
+            pipe_picture = Pipes.pictures("assembling-machine-3", {0, 1}, {0, -0.9}, nil, nil, pipes),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {3.0, -0.0} }}
+            pipe_connections = {{type = "input", position = {3.0, -0.0}}}
         },
         {
             production_type = "output",
-            pipe_covers = Prototype.Pipes.covers(true, true, true, true),
-            pipe_picture=Prototype.Pipes.pictures("assembling-machine-3", {0,1}, {0,-0.9}, nil, nil, pipes),
+            pipe_covers = Pipes.covers(true, true, true, true),
+            pipe_picture = Pipes.pictures("assembling-machine-3", {0, 1}, {0, -0.9}, nil, nil, pipes),
             base_level = 1,
-            pipe_connections = {{ type="output" , position = {-3.0, -0.0} }}
+            pipe_connections = {{type = "output", position = {-3.0, -0.0}}}
         },
         off_when_no_fluid_recipe = true
     },
-    vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    working_sound =
-    {
-        sound = { filename = "__pycoalprocessing__/sounds/hpf.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/hpf.ogg", volume = 0.5 },
-        apparent_volume = 2.5,
-    },
+    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+    working_sound = {
+        sound = {filename = "__pycoalprocessing__/sounds/hpf.ogg"},
+        idle_sound = {filename = "__pycoalprocessing__/sounds/hpf.ogg", volume = 0.5},
+        apparent_volume = 2.5
+    }
 }
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {recipe1, item1, entity1}
