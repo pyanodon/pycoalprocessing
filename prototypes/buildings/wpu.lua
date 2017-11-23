@@ -1,25 +1,19 @@
---local Prototype = require("stdlib.prototype.prototype")
-
--------------------------------------------------------------------------------
---[[Recipes]]--
-local recipe1={
+local recipe1 = {
     type = "recipe",
     name = "wpu",
     energy_required = 10,
     enabled = true,
-    ingredients =
-    {
+    ingredients = {
         {"raw-wood", 20},
         {"iron-plate", 20},
-		{"iron-gear-wheel", 15},
-		{"burner-mining-drill", 2},
-		{"copper-cable", 50},
+        {"iron-gear-wheel", 15},
+        {"burner-mining-drill", 2},
+        {"copper-cable", 50}
     },
-    result= "wpu",
+    result = "wpu"
 }
--------------------------------------------------------------------------------
---[[Items]]--
-local item1={
+
+local item1 = {
     type = "item",
     name = "wpu",
     icon = "__pycoalprocessing__/graphics/icons/wpu.png",
@@ -27,15 +21,14 @@ local item1={
     subgroup = "coal-processing",
     order = "c",
     place_result = "wpu",
-    stack_size = 10,
+    stack_size = 10
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1={
+
+local entity1 = {
     type = "assembling-machine",
     name = "wpu",
     icon = "__pycoalprocessing__/graphics/icons/wpu.png",
-    flags = {"placeable-neutral","player-creation"},
+    flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "wpu"},
     fast_replaceable_group = "wpu",
     max_health = 800,
@@ -43,24 +36,21 @@ local entity1={
     dying_explosion = "medium-explosion",
     collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
-    module_specification =
-    {
+    module_specification = {
         module_slots = 5
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"wpu"},
     crafting_speed = 1,
-    energy_source =
-    {
+    energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.06,
+        emissions = 0.06
     },
     energy_usage = "150kW",
     ingredient_count = 3,
-
-    animation ={
-        layers={
+    animation = {
+        layers = {
             {
                 filename = "__pycoalprocessing__/graphics/entity/wpu/left.png",
                 width = 96,
@@ -68,7 +58,7 @@ local entity1={
                 line_length = 21,
                 frame_count = 130,
                 shift = {-1.5, -1.328},
-                animation_speed = 0.4,
+                animation_speed = 0.4
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/wpu/right.png",
@@ -77,21 +67,16 @@ local entity1={
                 line_length = 21,
                 frame_count = 130,
                 shift = {1.5, -1.328},
-                animation_speed = 0.4,
-            },
+                animation_speed = 0.4
+            }
         }
     },
-
-    vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    working_sound =
-    {
-        sound = { filename = "__pycoalprocessing__/sounds/wpu.ogg", volume = 1.0 },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/wpu.ogg", volume = 0.6 },
-        apparent_volume = 2.5,
-    },
+    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+    working_sound = {
+        sound = {filename = "__pycoalprocessing__/sounds/wpu.ogg", volume = 1.0},
+        idle_sound = {filename = "__pycoalprocessing__/sounds/wpu.ogg", volume = 0.6},
+        apparent_volume = 2.5
+    }
 }
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {recipe1, item1, entity1}

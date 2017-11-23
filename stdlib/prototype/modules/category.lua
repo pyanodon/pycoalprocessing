@@ -1,3 +1,0 @@
-local Category = {}
-
-return Category

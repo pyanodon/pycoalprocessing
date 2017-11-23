@@ -5,8 +5,7 @@ local technology = {
     icon_size = 128,
     order = "c-a",
     prerequisites = {"steel-processing"},
-    effects =
-    {
+    effects = {
         {
             type = "unlock-recipe",
             recipe = "gasifier"
@@ -150,15 +149,14 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "log-wood"
-        },
+        }
     },
-    unit =
-    {
+    unit = {
         count = 30,
         ingredients = {
-            {"science-pack-1", 1},
+            {"science-pack-1", 1}
         },
         time = 35
-    },
+    }
 }
-data:extend({technology})
+data:extend {technology}

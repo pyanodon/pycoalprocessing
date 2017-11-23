@@ -1,14 +1,11 @@
-local technology =
-{
+local technology = {
     type = "technology",
     name = "methanol-processing-1",
     icon = "__pycoalprocessing__/graphics/technology/methanol-processing-1.png",
     icon_size = 128,
     order = "c-a",
     prerequisites = {"coal-processing-2"},
-    effects =
-    {
-
+    effects = {
         {
             type = "unlock-recipe",
             recipe = "methanol-reactor"
@@ -44,17 +41,15 @@ local technology =
         {
             type = "unlock-recipe",
             recipe = "aromatics-to-plastic"
-        },
-
+        }
     },
-    unit =
-    {
+    unit = {
         count = 100,
         ingredients = {
             {"science-pack-1", 1},
-            {"science-pack-2", 1},
+            {"science-pack-2", 1}
         },
         time = 30
-    },
+    }
 }
-data:extend({technology})
+data:extend {technology}

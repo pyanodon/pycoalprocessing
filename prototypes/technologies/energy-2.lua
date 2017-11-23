@@ -4,9 +4,8 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/energy-2.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"energy1" , "methanol-processing-2"},
-    effects =
-    {
+    prerequisites = {"energy1", "methanol-processing-2"},
+    effects = {
         {
             type = "unlock-recipe",
             recipe = "gasturbinemk02"
@@ -22,16 +21,15 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "acetylene-combustion"
-        },
+        }
     },
-    unit =
-    {
+    unit = {
         count = 100,
         ingredients = {
             {"science-pack-1", 1},
-            {"science-pack-2", 1},
+            {"science-pack-2", 1}
         },
         time = 45
-    },
+    }
 }
-data:extend({technology})
+data:extend {technology}

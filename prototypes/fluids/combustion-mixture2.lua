@@ -1,33 +1,27 @@
--------------------------------------------------------------------------------
---[[combustion-mixture1]]--
--------------------------------------------------------------------------------
---[[recipes]]--
-local recipe1 =
-{
+--[[combustion-mixture1]] --
+
+local recipe1 = {
     type = "recipe",
     name = "combustion-mixture2",
     category = "combustion",
     enabled = "false",
     energy_required = 2,
-    ingredients ={
-        {type="fluid", name="refsyngas", amount=100},
-        {type="fluid", name="water", amount=500},
-        {type="fluid", name="light-oil", amount=50},
-        {type="item", name="nichrome", amount=10},
+    ingredients = {
+        {type = "fluid", name = "refsyngas", amount = 100},
+        {type = "fluid", name = "water", amount = 500},
+        {type = "fluid", name = "light-oil", amount = 50},
+        {type = "item", name = "nichrome", amount = 10}
     },
-    results=
-    {
-        {type="fluid", name="combustion-mixture2", amount=200},
-        {type="fluid", name="water", amount=500, temperature=100},
+    results = {
+        {type = "fluid", name = "combustion-mixture2", amount = 200},
+        {type = "fluid", name = "water", amount = 500, temperature = 100}
     },
-    main_product= "combustion-mixture2",
-    icon = "__pycoalprocessing__/graphics/icons/combustion-mixture2.png",
+    main_product = "combustion-mixture2",
+    --icon = "__pycoalprocessing__/graphics/icons/combustion-mixture2.png"
     --order = "b-c [syn-gas]",
 }
--------------------------------------------------------------------------------
---[[fluids]]--
-local fluid =
-{
+
+local fluid = {
     type = "fluid",
     name = "combustion-mixture2",
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture2.png",
@@ -42,6 +36,4 @@ local fluid =
     order = "z-[combustion-mixture2]"
 }
 
--------------------------------------------------------------------------------
---[[Extend Data]]--
-data:extend({recipe1, fluid})
+data:extend {recipe1, fluid}
