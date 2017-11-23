@@ -1,28 +1,24 @@
---[[recipes]]--
-local recipe1 =
-{
+local recipe1 = {
     type = "recipe",
     name = "niobium-complex",
     category = "chemistry",
     enabled = "false",
     energy_required = 3.5,
-    ingredients ={
-        {type="fluid", name="organic-solvent", amount=50},
-        {type="fluid", name="water", amount=100}, --updated-bob hydrogen-chloride
-        {type="item", name="niobium-concentrate", amount=10},
+    ingredients = {
+        {type = "fluid", name = "organic-solvent", amount = 50},
+        {type = "fluid", name = "water", amount = 100}, --bob hydrogen-chloride
+        {type = "item", name = "niobium-concentrate", amount = 10}
     },
-    results={
-        {type="fluid", name="niobium-complex", amount=100},
+    results = {
+        {type = "fluid", name = "niobium-complex", amount = 100}
     },
-    main_product= "niobium-complex",
+    main_product = "niobium-complex",
     icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",
     subgroup = "py-fluids",
-    order = "c",
+    order = "c"
 }
--------------------------------------------------------------------------------
---[[niobium-complex]]--
-local item1=
-{
+
+local fluid = {
     type = "fluid",
     name = "niobium-complex",
     icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",
@@ -36,11 +32,5 @@ local item1=
     subgroup = "py-fluids",
     order = "z-[niobium-complex]"
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1=nil
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if item1 then data:extend({item1}) end
-if recipe1 then data:extend({recipe1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {recipe1, fluid}

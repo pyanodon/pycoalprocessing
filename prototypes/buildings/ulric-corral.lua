@@ -1,23 +1,19 @@
--------------------------------------------------------------------------------
---[[Recipes]]--
-local recipe1={
+local recipe1 = {
     type = "recipe",
     name = "ulric-corral",
     energy_required = 10,
     enabled = false,
-    ingredients =
-    {
+    ingredients = {
         {"steel-plate", 20},
         {"stone-brick", 10},
-        {"iron-gear-wheel", 5}, --updated-bob steel-bearing
+        {"iron-gear-wheel", 5}, --bob steel-bearing
         {"iron-plate", 10},
-        {"electronic-circuit", 10}, --updated-bob basic-circuit-board
+        {"electronic-circuit", 10} --bob basic-circuit-board
     },
-    result= "ulric-corral",
+    result = "ulric-corral"
 }
--------------------------------------------------------------------------------
---[[Items]]--
-local item1={
+
+local item1 = {
     type = "item",
     name = "ulric-corral",
     icon = "__pycoalprocessing__/graphics/icons/ulric-corral.png",
@@ -25,15 +21,14 @@ local item1={
     subgroup = "py-extraction",
     order = "h",
     place_result = "ulric-corral",
-    stack_size = 10,
+    stack_size = 10
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1={
+
+local entity1 = {
     type = "assembling-machine",
     name = "ulric-corral",
     icon = "__pycoalprocessing__/graphics/icons/ulric-corral.png",
-    flags = {"placeable-neutral","player-creation"},
+    flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ulric-corral"},
     fast_replaceable_group = "ulric-corral",
     max_health = 100,
@@ -41,25 +36,21 @@ local entity1={
     dying_explosion = "big-explosion",
     collision_box = {{-3.9, -3.9}, {3.9, 3.9}},
     selection_box = {{-4.0, -4.0}, {4.0, 4.0}},
-    module_specification =
-    {
+    module_specification = {
         module_slots = 2
     },
     allowed_effects = {"consumption", "productivity", "pollution"},
     crafting_categories = {"ulric"},
     crafting_speed = 0.15,
-    energy_source =
-    {
+    energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.01,
+        emissions = 0.01
     },
     energy_usage = "150kW",
     ingredient_count = 4,
-
-    animation =
-    {
-        layers={
+    animation = {
+        layers = {
             {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-corral-base.png",
                 width = 256,
@@ -77,18 +68,16 @@ local entity1={
                 line_length = 8,
                 shift = {0.0, -4.0},
                 animation_speed = 1.4
-            },
+            }
         }
     },
-    working_visualisations =
-    {
+    working_visualisations = {
         {
             north_position = {1.78, -1.34},
             west_position = {1.78, -1.34},
             south_position = {1.78, -1.34},
             east_position = {1.78, -1.34},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/verificador.png",
                 frame_count = 49,
                 line_length = 20,
@@ -103,8 +92,7 @@ local entity1={
             west_position = {-0.88, 0.62},
             south_position = {-0.88, 0.62},
             east_position = {-0.88, 0.62},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-andante-spritesheet.png",
                 frame_count = 145,
                 line_length = 10,
@@ -118,8 +106,7 @@ local entity1={
             west_position = {-0.25, 1.62},
             south_position = {-0.25, 1.62},
             east_position = {-0.25, 1.62},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-middle-pastando-spritesheet.png",
                 frame_count = 317,
                 line_length = 64,
@@ -134,8 +121,7 @@ local entity1={
             west_position = {-2.0, 2.56},
             south_position = {-2.0, 2.56},
             east_position = {-2.0, 2.56},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-cub-spritesheet.png",
                 frame_count = 120,
                 line_length = 60,
@@ -149,8 +135,7 @@ local entity1={
             west_position = {2.5, 2.81},
             south_position = {2.5, 2.81},
             east_position = {2.5, 2.81},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-right-cub-spritesheet.png",
                 frame_count = 120,
                 line_length = 60,
@@ -164,8 +149,7 @@ local entity1={
             west_position = {1.81, 3.12},
             south_position = {1.81, 3.12},
             east_position = {1.81, 3.12},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-pink-cub-spritesheet.png",
                 frame_count = 320,
                 line_length = 50,
@@ -179,8 +163,7 @@ local entity1={
             west_position = {-2.0, 3.0},
             south_position = {-2.0, 3.0},
             east_position = {-2.0, 3.0},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-mother-spritesheet.png",
                 frame_count = 200,
                 line_length = 20,
@@ -194,8 +177,7 @@ local entity1={
             west_position = {2.56, 1.0},
             south_position = {2.56, 1.0},
             east_position = {2.56, 1.0},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-mid-right-stand-spritesheet.png",
                 frame_count = 120,
                 line_length = 60,
@@ -209,8 +191,7 @@ local entity1={
             west_position = {1.87, 0.46},
             south_position = {1.87, 0.46},
             east_position = {1.87, 0.46},
-            animation =
-            {
+            animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-right-pastando-spritesheet.png",
                 frame_count = 200,
                 line_length = 32,
@@ -218,19 +199,14 @@ local entity1={
                 height = 64,
                 animation_speed = 0.5
             }
-        },
+        }
     },
-
-    vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    working_sound =
-    {
-        sound = { filename = "__pycoalprocessing__/sounds/ulric-corral.ogg", volume = 0.55 },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/ulric-corral.ogg", volume = 0.25 },
-        apparent_volume = 0.45,
-    },
+    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+    working_sound = {
+        sound = {filename = "__pycoalprocessing__/sounds/ulric-corral.ogg", volume = 0.55},
+        idle_sound = {filename = "__pycoalprocessing__/sounds/ulric-corral.ogg", volume = 0.25},
+        apparent_volume = 0.45
+    }
 }
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {recipe1, item1, entity1}

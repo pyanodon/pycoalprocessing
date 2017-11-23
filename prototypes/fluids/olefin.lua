@@ -1,7 +1,4 @@
--------------------------------------------------------------------------------
---[[fluids]]--
-local fluid=
-{
+local fluid = {
     type = "fluid",
     name = "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
@@ -16,6 +13,4 @@ local fluid=
     order = "z-[olefin]"
 }
 
--------------------------------------------------------------------------------
---[[Extend Data]]--
-data:extend({fluid})
+data:extend {fluid}

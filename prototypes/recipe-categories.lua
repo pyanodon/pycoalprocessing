@@ -1,149 +1,148 @@
--------------------------------------------------------------------------------
---[[Recipe Categories]]--
--------------------------------------------------------------------------------
-data:extend{
+--[[Recipe Categories]] --
+
+data:extend {
     {
         type = "recipe-category",
-        name = "coal-processing",
+        name = "coal-processing"
     },
     {
         type = "recipe-category",
-        name = "distilator",
+        name = "distilator"
     },
     {
         type = "recipe-category",
-        name = "rectisol",
+        name = "rectisol"
     },
     {
         type = "recipe-category",
-        name = "carbonfilter",
+        name = "carbonfilter"
     },
     {
         type = "recipe-category",
-        name = "gasifier",
+        name = "gasifier"
     },
     {
         type = "recipe-category",
-        name = "tar",
+        name = "tar"
     },
     {
         type = "recipe-category",
-        name = "methanol",
+        name = "methanol"
     },
     {
         type = "recipe-category",
-        name = "hpf",
+        name = "hpf"
     },
     {
         type = "recipe-category",
-        name = "quenching-tower",
+        name = "quenching-tower"
     },
     {
         type = "recipe-category",
-        name = "combustion",
+        name = "combustion"
     },
     {
         type = "recipe-category",
-        name = "cooling",
+        name = "cooling"
     },
     {
         type = "recipe-category",
-        name = "evaporator",
+        name = "evaporator"
     },
     {
         type = "recipe-category",
-        name = "desulfurization",
+        name = "desulfurization"
     },
     {
         type = "recipe-category",
-        name = "olefin",
+        name = "olefin"
     },
     {
         type = "recipe-category",
-        name = "soil-extraction",
+        name = "soil-extraction"
     },
     {
         type = "recipe-category",
-        name = "ground-borer",
+        name = "ground-borer"
     },
     {
         type = "recipe-category",
-        name = "fts-reactor",
+        name = "fts-reactor"
     },
     {
         type = "recipe-category",
-        name = "solid-separator",
+        name = "solid-separator"
     },
     {
         type = "recipe-category",
-        name = "washer",
+        name = "washer"
     },
     {
         type = "recipe-category",
-        name = "classifier",
+        name = "classifier"
     },
     {
         type = "recipe-category",
-        name = "advanced-foundry",
+        name = "advanced-foundry"
     },
     {
         type = "recipe-category",
-        name = "co2",
+        name = "co2"
     },
     {
         type = "recipe-category",
-        name = "fluid-separator",
+        name = "fluid-separator"
     },
     {
         type = "recipe-category",
-        name = "fawogae",
+        name = "fawogae"
     },
     {
         type = "recipe-category",
-        name = "ralesia",
+        name = "ralesia"
     },
     {
         type = "recipe-category",
-        name = "ulric",
+        name = "ulric"
     },
     {
         type = "recipe-category",
-        name = "borax",
+        name = "borax"
     },
     {
         type = "recipe-category",
-        name = "niobium",
+        name = "niobium"
     },
     {
         type = "recipe-category",
-        name = "crusher",
+        name = "crusher"
     },
     {
         type = "recipe-category",
-        name = "ball-mill",
+        name = "ball-mill"
     },
     {
         type = "recipe-category",
-        name = "sand-extractor",
+        name = "sand-extractor"
     },
     {
         type = "recipe-category",
-        name = "mukmoux",
+        name = "mukmoux"
     },
     {
         type = "recipe-category",
-        name = "rare-earth",
+        name = "rare-earth"
     },
     {
         type = "recipe-category",
-        name = "advanced-crafting",
+        name = "advanced-crafting"
     },
     {
         type = "recipe-category",
-        name = "nursery",
+        name = "nursery"
     },
     {
         type = "recipe-category",
-        name = "wpu",
-    },
+        name = "wpu"
+    }
 }

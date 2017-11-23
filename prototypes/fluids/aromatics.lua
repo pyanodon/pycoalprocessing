@@ -1,28 +1,24 @@
---[[recipes]]--
-local recipe1 =
-{
-     type = "recipe",
+local recipe1 = {
+    type = "recipe",
     name = "aromatics2",
     category = "gasifier",
     enabled = "false",
     energy_required = 2.0,
-    ingredients ={
-        {type="fluid", name="refsyngas", amount=150},
-		{type="fluid", name="water", amount=500}, --Added Bob hydrogen
-		{type="item", name="organics", amount=10},
+    ingredients = {
+        {type = "fluid", name = "refsyngas", amount = 150},
+        {type = "fluid", name = "water", amount = 500}, --Added Bob hydrogen
+        {type = "item", name = "organics", amount = 10}
     },
-    results={
-        {type="fluid", name="aromatics", amount=300},
+    results = {
+        {type = "fluid", name = "aromatics", amount = 300}
     },
-	main_product= "aromatics",
+    main_product = "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
     subgroup = "py-fluids",
-    order = "a",
+    order = "a"
 }
--------------------------------------------------------------------------------
---[[items]]--
-local item1=
-{
+
+local item1 = {
     type = "fluid",
     name = "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
@@ -35,11 +31,5 @@ local item1=
     subgroup = "py-syngas",
     order = "z-[aromatics]"
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1=nil
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if item1 then data:extend({item1}) end
-if recipe1 then data:extend({recipe1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {recipe1, item1}

@@ -5,9 +5,7 @@ local technology = {
     icon_size = 128,
     order = "c-a",
     prerequisites = {"coal-processing-1"},
-    effects =
-    {
-
+    effects = {
         {
             type = "unlock-recipe",
             recipe = "classifier"
@@ -59,16 +57,14 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "ash-separation"
-        },
-
+        }
     },
-    unit =
-    {
+    unit = {
         count = 35,
         ingredients = {
-            {"science-pack-1", 2},
+            {"science-pack-1", 2}
         },
         time = 55
-    },
+    }
 }
-data:extend({technology})
+data:extend {technology}

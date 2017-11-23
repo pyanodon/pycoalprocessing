@@ -1,10 +1,7 @@
 --Settings and Helpers
 local PYC = require("config") --Config variables
 
-require("stdlib.table")
-require("stdlib.string")
-require("stdlib.defines.color")
-require("stdlib.defines.time")
+require("stdlib.core")
 
 --Groups
 require("prototypes.item-groups")
@@ -16,6 +13,7 @@ require("prototypes.recipe-categories")
 require("prototypes.technologies.coal-processing-1")
 require("prototypes.technologies.coal-processing-2")
 require("prototypes.technologies.coal-processing-3")
+
 require("prototypes.technologies.energy-1")
 require("prototypes.technologies.energy-2")
 require("prototypes.technologies.energy-3")
@@ -23,17 +21,18 @@ require("prototypes.technologies.energy-3")
 require("prototypes.technologies.methanol-processing-1")
 require("prototypes.technologies.methanol-processing-2")
 
-require("prototypes.technologies.filtration")
 require("prototypes.technologies.cooling-tower-1")
 require("prototypes.technologies.cooling-tower-2")
-require("prototypes.technologies.desulfurization")
+
 require("prototypes.technologies.excavation-1")
 require("prototypes.technologies.excavation-2")
+
+require("prototypes.technologies.filtration")
+require("prototypes.technologies.desulfurization")
 require("prototypes.technologies.crusher")
 require("prototypes.technologies.separation")
 require("prototypes.technologies.fuel-production")
 require("prototypes.technologies.fine-electronics")
---require("prototypes.technologies.rare-earth")
 
 --Recipes without items
 require("prototypes.recipes.recipes")
@@ -53,8 +52,7 @@ require("prototypes.items.canister")
 require("prototypes.items.tailings")
 
 --Tiles and Terrain
-
-require ("prototypes.tiles.polluted-ground")
+require("prototypes.tiles.polluted-ground")
 
 --Fluids
 require("prototypes.fluids.acidgas")
@@ -88,8 +86,6 @@ require("prototypes.fluids.niobium-complex")
 require("prototypes.fluids.rare-earth-mud")
 require("prototypes.fluids.tpa")
 require("prototypes.fluids.acetylene")
-
-
 
 --Buildings
 require("prototypes.buildings.distilator")
@@ -130,13 +126,11 @@ require("prototypes.buildings.mukmoux-pasture")
 
 require("prototypes.buildings.automated-factory")
 
-
 require("prototypes.buildings.sand-extractor")
 require("prototypes.buildings.botanical-nursery")
 require("prototypes.buildings.wpu")
---require("prototypes.buildings.rare-earth-extractor")
 
 if PYC.DEBUG then
-    local developer = require("stdlib/prototype/prototypes/developer")
+    local developer = require("stdlib/data/developer/developer")
     developer.make_chunk_markers("pycoalprocessing")
 end

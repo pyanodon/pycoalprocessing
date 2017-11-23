@@ -1,25 +1,20 @@
--------------------------------------------------------------------------------
---[[refsyngas]]--
--------------------------------------------------------------------------------
---[[recipes]]--
-local refsyngas_from_filtered_syngas= {
+local refsyngas_from_filtered_syngas = {
     type = "recipe",
     name = "refsyngas-from-filtered-syngas",
     category = "carbonfilter",
     enabled = "false",
     energy_required = 4,
-    ingredients ={
-        {type="fluid", name="syngas", amount=100},
-        {type="item", name="active-carbon", amount=3},
+    ingredients = {
+        {type = "fluid", name = "syngas", amount = 100},
+        {type = "item", name = "active-carbon", amount = 3}
     },
-    results=
-    {
-        {type="fluid", name="refsyngas", amount=70},
+    results = {
+        {type = "fluid", name = "refsyngas", amount = 70}
     },
     --main_product= "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
     subgroup = "py-syngas",
-    order = "h",
+    order = "h"
 }
 
 local refsyngas_from_meth = {
@@ -28,22 +23,20 @@ local refsyngas_from_meth = {
     category = "rectisol",
     enabled = "false",
     energy_required = 2,
-    ingredients ={
-        {type="fluid", name="syngas", amount=100},
-        {type="fluid", name="methanol", amount=100},
+    ingredients = {
+        {type = "fluid", name = "syngas", amount = 100},
+        {type = "fluid", name = "methanol", amount = 100}
     },
-    results=
-    {
-        {type="fluid", name="refsyngas", amount=100},
-        {type="fluid", name="water", amount=30}, --updated-bob hydrogen
-        {type="fluid", name="carbon-dioxide", amount=30},
-        {type="fluid", name="acidgas", amount=65},
-
+    results = {
+        {type = "fluid", name = "refsyngas", amount = 100},
+        {type = "fluid", name = "water", amount = 30}, --bob hydrogen
+        {type = "fluid", name = "carbon-dioxide", amount = 30},
+        {type = "fluid", name = "acidgas", amount = 65}
     },
     --main_product= "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
     subgroup = "py-syngas",
-    order = "i",
+    order = "i"
 }
 
 local refsyngas_from_meth_canister = {
@@ -52,29 +45,24 @@ local refsyngas_from_meth_canister = {
     category = "rectisol",
     enabled = "false",
     energy_required = 2,
-    ingredients ={
-        {type="fluid", name="syngas", amount=100},
-        {type="item", name="filled-methanol-gas-canister", amount=1},
+    ingredients = {
+        {type = "fluid", name = "syngas", amount = 100},
+        {type = "item", name = "filled-methanol-gas-canister", amount = 1}
     },
-    results=
-    {
-        {type="fluid", name="refsyngas", amount=100},
-        {type="fluid", name="water", amount=30}, --updated-bob hydrogen
-        {type="fluid", name="carbon-dioxide", amount=20},
-        {type="fluid", name="acidgas", amount=60},
-        {type="item", name="empty-gas-canister", amount=1},
-
+    results = {
+        {type = "fluid", name = "refsyngas", amount = 100},
+        {type = "fluid", name = "water", amount = 30}, --bob hydrogen
+        {type = "fluid", name = "carbon-dioxide", amount = 20},
+        {type = "fluid", name = "acidgas", amount = 60},
+        {type = "item", name = "empty-gas-canister", amount = 1}
     },
     --main_product= "refsyngas",
     subgroup = "py-syngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
-    order = "j",
+    order = "j"
 }
 
--------------------------------------------------------------------------------
---[[fluids]]--
-local refsyngas =
-{
+local refsyngas = {
     type = "fluid",
     name = "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
@@ -83,11 +71,9 @@ local refsyngas =
     base_color = {r = 0.8, g = 0.239, b = 0.129},
     flow_color = {r = 0.8, g = 0.239, b = 0.129},
     max_temperature = 100,
-	gas_temperature = 15,
+    gas_temperature = 15,
     pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59,
+    flow_to_energy_ratio = 0.59
 }
 
--------------------------------------------------------------------------------
---[[Extend Data]]--
-data:extend({refsyngas, refsyngas_from_filtered_syngas, refsyngas_from_meth, refsyngas_from_meth_canister})
+data:extend {refsyngas, refsyngas_from_filtered_syngas, refsyngas_from_meth, refsyngas_from_meth_canister}

@@ -1,32 +1,24 @@
--------------------------------------------------------------------------------
---[[tpa]]--
--------------------------------------------------------------------------------
---[[recipes]]--
-local tpa= {
+local tpa = {
     type = "recipe",
     name = "tpa",
     category = "rectisol",
     enabled = "false",
     energy_required = 4,
-    ingredients ={
-        {type="fluid", name="aromatics", amount=100},
-        {type="fluid", name="steam", amount=600}, -- updated-bob liquid-air
-        {type="item", name="copper-ore", amount=2}, --updated-bob cobalt-ore
+    ingredients = {
+        {type = "fluid", name = "aromatics", amount = 100},
+        {type = "fluid", name = "steam", amount = 600}, -- updated-bob liquid-air
+        {type = "item", name = "copper-ore", amount = 2} --bob cobalt-ore
     },
-    results=
-    {
-        {type="fluid", name="tpa", amount=50},
+    results = {
+        {type = "fluid", name = "tpa", amount = 50}
     },
-    main_product= "tpa",
+    main_product = "tpa",
     icon = "__pycoalprocessing__/graphics/icons/tpa.png",
     subgroup = "py-syngas",
-    order = "z-[tpa]",
+    order = "z-[tpa]"
 }
 
--------------------------------------------------------------------------------
---[[fluids]]--
-local fluid =
-{
+local fluid = {
     type = "fluid",
     name = "tpa",
     icon = "__pycoalprocessing__/graphics/icons/tpa.png",
@@ -40,6 +32,4 @@ local fluid =
     order = "z-[tpa]"
 }
 
--------------------------------------------------------------------------------
---[[Extend Data]]--
-data:extend({fluid, tpa})
+data:extend {fluid, tpa}

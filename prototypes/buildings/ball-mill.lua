@@ -1,22 +1,18 @@
--------------------------------------------------------------------------------
---[[Recipes]]--
-local recipe1={
+local recipe1 = {
     type = "recipe",
     name = "ball-mill",
     energy_required = 35,
     enabled = false,
-    ingredients =
-    {
+    ingredients = {
         {"assembling-machine-2", 1},
         {"concrete", 50},
         {"copper-plate", 30},
-        {"steel-plate", 40},
+        {"steel-plate", 40}
     },
-    result= "ball-mill",
+    result = "ball-mill"
 }
--------------------------------------------------------------------------------
---[[Items]]--
-local item1={
+
+local item1 = {
     type = "item",
     name = "ball-mill",
     icon = "__pycoalprocessing__/graphics/icons/ball-mill.png",
@@ -24,15 +20,14 @@ local item1={
     subgroup = "coal-processing",
     order = "d",
     place_result = "ball-mill",
-    stack_size = 10,
+    stack_size = 10
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1={
+
+local entity1 = {
     type = "assembling-machine",
     name = "ball-mill",
     icon = "__pycoalprocessing__/graphics/icons/ball-mill.png",
-    flags = {"placeable-neutral","player-creation"},
+    flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ball-mill"},
     fast_replaceable_group = "ball-mill",
     max_health = 400,
@@ -40,43 +35,34 @@ local entity1={
     dying_explosion = "medium-explosion",
     collision_box = {{-2.9, -2.9}, {2.9, 2.9}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
-    module_specification =
-    {
+    module_specification = {
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"ball-mill"},
     crafting_speed = 0.65,
-    energy_source =
-    {
+    energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.05 / 2.6,
+        emissions = 0.05 / 2.6
     },
     energy_usage = "200kW",
     ingredient_count = 2,
-
-    animation =
-    {
+    animation = {
         filename = "__pycoalprocessing__/graphics/entity/ball-mill/ball-mill.png",
         width = 215,
         height = 198,
         frame_count = 80,
         line_length = 8,
         animation_speed = 0.9,
-        shift = {0.318, -0.12},
+        shift = {0.318, -0.12}
     },
-
-    vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55 },
-    working_sound =
-    {
-        sound = { filename = "__pycoalprocessing__/sounds/niobium-mine.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/niobium-mine.ogg", volume = 0.65 },
-        apparent_volume = 2.5,
-    },
+    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55},
+    working_sound = {
+        sound = {filename = "__pycoalprocessing__/sounds/niobium-mine.ogg"},
+        idle_sound = {filename = "__pycoalprocessing__/sounds/niobium-mine.ogg", volume = 0.65},
+        apparent_volume = 2.5
+    }
 }
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {recipe1, item1, entity1}

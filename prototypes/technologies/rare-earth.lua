@@ -5,9 +5,7 @@ local technology = {
     icon_size = 128,
     order = "c-a",
     prerequisites = {"coal-processing-2"},
-    effects =
-    {
-
+    effects = {
         {
             type = "unlock-recipe",
             recipe = "rare-earth-extractor"
@@ -23,18 +21,16 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "rare-earth-beneficiation"
-        },
-
+        }
     },
-    unit =
-    {
+    unit = {
         count = 40,
         ingredients = {
             {"science-pack-1", 3},
-			{"science-pack-2", 2},
-			{"science-pack-3", 1},
+            {"science-pack-2", 2},
+            {"science-pack-3", 1}
         },
         time = 55
-    },
+    }
 }
-data:extend({technology})
+data:extend {technology}

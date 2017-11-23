@@ -5,8 +5,7 @@ local technology = {
     icon_size = 128,
     order = "c-a",
     prerequisites = {"excavation-1"},
-    effects =
-    {
+    effects = {
         {
             type = "unlock-recipe",
             recipe = "mining-stone"
@@ -14,17 +13,16 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "mining-limestone"
-        },
+        }
     },
-    unit =
-    {
+    unit = {
         count = 50,
         ingredients = {
             {"science-pack-1", 1},
             {"science-pack-2", 1},
-            {"science-pack-3", 1},
+            {"science-pack-3", 1}
         },
         time = 35
-    },
+    }
 }
-data:extend({technology})
+data:extend {technology}

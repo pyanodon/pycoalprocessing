@@ -1,6 +1,5 @@
--------------------------------------------------------------------------------
---[[Update other mods]]--
--------------------------------------------------------------------------------
+--[[Update other mods]] --
+
 --update recipes for Bergius-Process
 if data.raw.technology["Bergius-Process"] then
     --Remove bobs coal cracking

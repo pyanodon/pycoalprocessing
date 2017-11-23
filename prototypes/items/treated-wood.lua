@@ -1,22 +1,18 @@
--------------------------------------------------------------------------------
---[[Recipes]]--
-local recipe_treated_lumber= {
+local recipe_treated_lumber = {
     type = "recipe",
     name = "treated-wood",
     category = "crafting-with-fluid",
     enabled = "false",
     energy_required = 2,
-    ingredients ={
-        {type="fluid", name="creosote", amount=100},
-        {type="item", name="wood", amount=1},
+    ingredients = {
+        {type = "fluid", name = "creosote", amount = 100},
+        {type = "item", name = "wood", amount = 1}
     },
-    results=
-    {
-        {type="item", name="treated-wood", amount=2},
-    },
+    results = {
+        {type = "item", name = "treated-wood", amount = 2}
+    }
 }
--------------------------------------------------------------------------------
---[[Items]]--
+
 local treated_lumber = {
     type = "item",
     name = "treated-wood",
@@ -28,8 +24,5 @@ local treated_lumber = {
     fuel_category = "chemical",
     stack_size = 100
 }
--------------------------------------------------------------------------------
---[[Entites]]--
--------------------------------------------------------------------------------
---[[Extend Data]]--
-data:extend({recipe_treated_lumber, treated_lumber})
+
+data:extend {recipe_treated_lumber, treated_lumber}

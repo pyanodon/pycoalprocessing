@@ -1,31 +1,25 @@
--------------------------------------------------------------------------------
---[[boric-acid]]--
--------------------------------------------------------------------------------
---[[recipes]]--
-local boric_acid= {
+--[[boric-acid]] --
+
+local boric_acid = {
     type = "recipe",
     name = "boric-acid",
-    category = "gasifier", --updated-bob electrolysis
+    category = "gasifier", --bob electrolysis
     enabled = "false",
     energy_required = 2,
-    ingredients ={
-        {type="fluid", name="diborane", amount=100},
-        {type="fluid", name="water", amount=500},
+    ingredients = {
+        {type = "fluid", name = "diborane", amount = 100},
+        {type = "fluid", name = "water", amount = 500}
     },
-    results=
-    {
-        {type="fluid", name="boric-acid", amount=500},
+    results = {
+        {type = "fluid", name = "boric-acid", amount = 500}
     },
-    main_product= "boric-acid",
+    main_product = "boric-acid",
     icon = "__pycoalprocessing__/graphics/icons/boric-acid.png",
     subgroup = "py-syngas",
-    order = "z-[boric-acid]",
+    order = "z-[boric-acid]"
 }
 
--------------------------------------------------------------------------------
---[[fluids]]--
-local fluid =
-{
+local fluid = {
     type = "fluid",
     name = "boric-acid",
     icon = "__pycoalprocessing__/graphics/icons/boric-acid.png",
@@ -39,6 +33,4 @@ local fluid =
     order = "z-[boric-acid]"
 }
 
--------------------------------------------------------------------------------
---[[Extend Data]]--
-data:extend({fluid, boric_acid})
+data:extend {fluid, boric_acid}

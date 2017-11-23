@@ -1,7 +1,4 @@
--------------------------------------------------------------------------------
---[[oleochemicals]]--
-local item1=
-{
+local fluid = {
     type = "fluid",
     name = "oleochemicals",
     icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
@@ -15,10 +12,5 @@ local item1=
     subgroup = "py-fluids",
     order = "z-[oleochemicals]"
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1=nil
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {fluid}

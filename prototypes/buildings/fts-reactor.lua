@@ -1,26 +1,22 @@
-local Prototype = require("stdlib.prototype.prototype")
+local Pipes = require("stdlib.data.pipes")
 
--------------------------------------------------------------------------------
---[[Recipes]]--
-local recipe1={
+local recipe1 = {
     type = "recipe",
     name = "fts-reactor",
     energy_required = 10,
     enabled = false,
-    ingredients =
-    {
+    ingredients = {
         {"concrete", 20},
         {"steel-plate", 20},
-        {"stone-brick", 10}, --updated-bob glass
-        {"iron-gear-wheel", 5}, --updated-bob steel-bearing
-        {"iron-plate", 10}, --updated-bob invar-alloy
-        {"electronic-circuit", 20}, --updated-bob basic-electronic-circuit-board
+        {"stone-brick", 10}, --bob glass
+        {"iron-gear-wheel", 5}, --bob steel-bearing
+        {"iron-plate", 10}, --bob invar-alloy
+        {"electronic-circuit", 20} --bob basic-electronic-circuit-board
     },
-    result= "fts-reactor",
+    result = "fts-reactor"
 }
--------------------------------------------------------------------------------
---[[Items]]--
-local item1={
+
+local item1 = {
     type = "item",
     name = "fts-reactor",
     icon = "__pycoalprocessing__/graphics/icons/fts-reactor.png",
@@ -28,15 +24,14 @@ local item1={
     subgroup = "coal-processing",
     order = "n",
     place_result = "fts-reactor",
-    stack_size = 10,
+    stack_size = 10
 }
--------------------------------------------------------------------------------
---[[Entites]]--
-local entity1={
+
+local entity1 = {
     type = "assembling-machine",
     name = "fts-reactor",
     icon = "__pycoalprocessing__/graphics/icons/fts-reactor.png",
-    flags = {"placeable-neutral","player-creation"},
+    flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "fts-reactor"},
     fast_replaceable_group = "fts-reactor",
     max_health = 300,
@@ -44,24 +39,21 @@ local entity1={
     dying_explosion = "medium-explosion",
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-    module_specification =
-    {
+    module_specification = {
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"fts-reactor"},
     crafting_speed = 0.75,
-    energy_source =
-    {
+    energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.05,
+        emissions = 0.05
     },
     energy_usage = "300kW",
     ingredient_count = 5,
-
-    animation ={
-        layers={
+    animation = {
+        layers = {
             {
                 filename = "__pycoalprocessing__/graphics/entity/fts-reactor/base-anim.png",
                 width = 192,
@@ -69,7 +61,7 @@ local entity1={
                 line_length = 10,
                 frame_count = 99,
                 shift = {0.507, 0},
-                animation_speed = 0.75,
+                animation_speed = 0.75
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/fts-reactor/top-anim.png",
@@ -78,71 +70,63 @@ local entity1={
                 line_length = 11,
                 frame_count = 99,
                 shift = {-0.243, -6.0},
-                animation_speed = 0.75,
-            },
+                animation_speed = 0.75
+            }
         }
     },
-
-    fluid_boxes =
-    {
+    fluid_boxes = {
         {
             production_type = "input",
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0,-0.9}, nil, nil),
+            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_picture = Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {3.0, -0.0} }}
+            pipe_connections = {{type = "input", position = {3.0, -0.0}}}
         },
         {
             production_type = "input",
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0,-0.9}, nil, nil),
+            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_picture = Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {3.0, 2.0} }}
+            pipe_connections = {{type = "input", position = {3.0, 2.0}}}
         },
         {
             production_type = "input",
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0,-0.9}, nil, nil),
+            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_picture = Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{ type="input", position = {3.0, -2.0} }}
-        },
-
-        {
-            production_type = "output",
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0,-0.9}, nil, nil),
-            base_level = 1,
-            pipe_connections = {{position = {-3.0, -0.0} }}
+            pipe_connections = {{type = "input", position = {3.0, -2.0}}}
         },
         {
             production_type = "output",
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0,-0.9}, nil, nil),
+            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_picture = Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_level = 1,
-            pipe_connections = {{position = {-3.0, 2.0} }}
+            pipe_connections = {{position = {-3.0, -0.0}}}
         },
         {
             production_type = "output",
-            pipe_covers = Prototype.Pipes.covers(false, true, true, true),
-            pipe_picture = Prototype.Pipes.pictures("assembling-machine-3", nil, {0,-0.9}, nil, nil),
+            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_picture = Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_level = 1,
-            pipe_connections = {{position = {-3.0, -2.0} }}
+            pipe_connections = {{position = {-3.0, 2.0}}}
         },
-
+        {
+            production_type = "output",
+            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_picture = Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
+            base_level = 1,
+            pipe_connections = {{position = {-3.0, -2.0}}}
+        }
     },
-    vehicle_impact_sound = { filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65 },
-    working_sound =
-    {
-        sound = { filename = "__pycoalprocessing__/sounds/evaporator.ogg" },
-        idle_sound = { filename = "__pycoalprocessing__/sounds/evaporator.ogg", volume = 0.5 },
-        apparent_volume = 2.5,
-    },
+    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+    working_sound = {
+        sound = {filename = "__pycoalprocessing__/sounds/evaporator.ogg"},
+        idle_sound = {filename = "__pycoalprocessing__/sounds/evaporator.ogg", volume = 0.5},
+        apparent_volume = 2.5
+    }
 }
--------------------------------------------------------------------------------
---[[Extend Data]]--
-if recipe1 then data:extend({recipe1}) end
-if item1 then data:extend({item1}) end
-if entity1 then data:extend({entity1}) end
+
+data:extend {recipe1, item1, entity1}

@@ -1,6 +1,6 @@
 local PYC = {} --Do not change
-PYC.TAILINGS_POND = {} -- Do not change
-PYC.control = {}
+PYC.TAILINGS_POND = {} --Do not change
+PYC.control = {} --Do not change
 
 --Messages and stuff for developers
 --These should be false in a release.
@@ -15,11 +15,8 @@ PYC.USE_CREOSOTE_IN = {
     --Rail tracks
     rail = true,
     --Medium power pole, big wooden power pole
-    power_poles = true,
+    power_poles = true
 }
-
---Tank size, how much of a fluid the tank can hold
-PYC.TAILINGS_POND.TANK_SIZE = 100000 --default 10000
 
 --Does gas entering the tailings pond cause pollution when vented
 --default=.15 off=0
@@ -41,7 +38,7 @@ PYC.TAILINGS_POND.GAS = {
     ["carbon-dioxide"] = false,
     ["nitrogen"] = false,
     ["nitrogen-dioxide"] = false,
-    ["wind"] = false,
+    ["wind"] = false
 }
 
 PYC.quickstart = {
@@ -70,7 +67,7 @@ PYC.quickstart = {
         "creative-mode_passive-energy-void",
         "creative-mode_super-substation",
         "creative-mode_energy-source"
-    },
+    }
 }
 
 return PYC
