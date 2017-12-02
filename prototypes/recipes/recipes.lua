@@ -399,7 +399,7 @@ local mineralized_water = {
     enabled = "false",
     energy_required = 2.5,
     ingredients = {
-        {type = "item", name = "coarse", amount = 100},
+        {type = "item", name = "coarse", amount = 50},
         {type = "fluid", name = "water", amount = 300}
     },
     results = {
@@ -1254,10 +1254,10 @@ local recipe_sulfur_crudeoil = {
     name = "sulfur-crudeoil",
     category = "desulfurization",
     enabled = "false",
-    energy_required = 5.5,
+    energy_required = 3,
     ingredients = {
         {type = "fluid", name = "crude-oil", amount = 400},
-        {type = "item", name = "iron-ore", amount = 600} --bob salt
+        {type = "item", name = "iron-ore", amount = 400} --bob salt
     },
     results = {
         {type = "fluid", name = "heavy-oil", amount = 300},
@@ -1276,7 +1276,7 @@ local recipe_sulfur_heavyoil = {
     name = "sulfur-heavyoil",
     category = "desulfurization",
     enabled = "false",
-    energy_required = 6.5,
+    energy_required = 3,
     ingredients = {
         {type = "fluid", name = "heavy-oil", amount = 300}
     },
@@ -1297,7 +1297,7 @@ local recipe_sulfur_lightoil = {
     name = "sulfur-lightoil",
     category = "desulfurization",
     enabled = "false",
-    energy_required = 7.5,
+    energy_required = 3,
     ingredients = {
         {type = "fluid", name = "light-oil", amount = 200}
     },
@@ -1318,7 +1318,7 @@ local recipe_sulfur_petgas = {
     name = "sulfur-petgas",
     category = "desulfurization",
     enabled = "false",
-    energy_required = 8.5,
+    energy_required = 3,
     ingredients = {
         {type = "fluid", name = "petroleum-gas", amount = 100}
     },
@@ -1743,6 +1743,24 @@ local fluegas_filtration = {
     subgroup = "py-items",
     order = "g"
 }
+--COAL DUST to ASH
+
+local coaldust_ash = {
+    type = "recipe",
+    name = "coaldust-ash",
+    category = "hpf",
+    enabled = "false",
+    energy_required = 1,
+    ingredients = {
+        {type = "item", name = "coal-dust", amount = 50}
+    },
+    results = {
+        {type = "item", name = "ash", amount = 1}
+    },
+    icon = "__pycoalprocessing__/graphics/icons/ash.png",
+    subgroup = "py-items",
+    order = "g"
+}
 
 ------------------------------------------------------------------------------
 data:extend {
@@ -1832,5 +1850,6 @@ data:extend {
     recipe_log_organics,
     recipe_raw_wood,
     recipe_ash_separation,
-    fluegas_filtration
+    fluegas_filtration,
+	coaldust_ash
 }

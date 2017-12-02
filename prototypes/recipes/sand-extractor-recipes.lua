@@ -74,4 +74,23 @@ local extract_richdust = {
     order = "d"
 }
 
-data:extend {extract_sand, extract_gravel, extract_stone, extract_richdust}
+--EXTRACT COARSE
+local extract_coarse = {
+    type = "recipe",
+    name = "extract-coarse",
+    category = "sand-extractor",
+    enabled = "false",
+    energy_required = 7,
+    ingredients = {
+        {type = "item", name = "iron-stick", amount = 2}
+    },
+    results = {
+        {type = "item", name = "coarse", amount = 10}
+    },
+    icon = "__pycoalprocessing__/graphics/icons/extraction-coarse.png",
+    main_product = "coarse",
+    subgroup = "py-extractor",
+    order = "c"
+}
+
+data:extend {extract_sand, extract_gravel, extract_stone, extract_richdust, extract_coarse}

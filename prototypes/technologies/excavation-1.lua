@@ -32,6 +32,10 @@ local technology = {
         },
         {
             type = "unlock-recipe",
+            recipe = "extract-coarse"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "extract-richdust"
         }
     },

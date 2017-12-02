@@ -68,7 +68,7 @@ local recipe_salt_ex = {
     name = "salt-ex",
     category = "evaporator",
     enabled = "false",
-    energy_required = 4,
+    energy_required = 2,
     ingredients = {
         {type = "fluid", name = "water-saline", amount = 100}
     },
@@ -562,6 +562,24 @@ local sodium_hydroxide = {
     order = "a8"
 }
 
+--COAL DUST to CARBON
+local coaldust_carbon = {
+    type = "recipe",
+    name = "coaldust-carbon",
+    category = "crafting",
+    enabled = "false",
+    energy_required = 2,
+    ingredients = {
+        {type = "item", name = "coal-dust", amount = 20}
+    },
+    results = {
+        {type = "item", name = "carbon", amount = 1},
+    },
+    icon = "__bobplates__/graphics/icons/carbon.png",
+    subgroup = "py-items",
+    order = "m"
+}
+
 data:extend {
     methanol_from_hydrogen,
     recipe_tar_carbon,
@@ -596,7 +614,8 @@ data:extend {
     hydrogen_c,
     glass3,
     sodium_hydroxide,
-    recipe_saline
+    recipe_saline,
+	coaldust_carbon
 }
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
@@ -635,6 +654,7 @@ bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-rutile")
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-nickel")
 
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-silver")
+bobmods.lib.tech.add_recipe_unlock("crusher", "coaldust-carbon")
 --bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-cobalt")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-bauxite")
 bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-gold")
