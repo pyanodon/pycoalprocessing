@@ -73,6 +73,10 @@ local technology = {
         {
             type = "unlock-recipe",
             recipe = "lightoil-to-syngas"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "coaldust-ash"
         }
     },
     unit = {
