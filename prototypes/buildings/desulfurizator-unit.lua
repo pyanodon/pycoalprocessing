@@ -61,7 +61,7 @@ local entity1 = {
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"desulfurization"},
-    crafting_speed = 0.5,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
