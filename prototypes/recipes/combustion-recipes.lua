@@ -165,7 +165,7 @@ local olefin = {
         {type = "item", name = "coke", amount = 30}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 80, temperature = 750},
+        {type = "fluid", name = "combustion-mixture1", amount = 100, temperature = 750},
         {type = "fluid", name = "steam", amount = 1000, temperature = 60}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-olefin.png",
@@ -187,7 +187,7 @@ local diesel = {
         {type = "item", name = "fuelrod-mk01", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 80, temperature = 800},
+        {type = "fluid", name = "combustion-mixture1", amount = 100, temperature = 800},
         {type = "fluid", name = "steam", amount = 1000, temperature = 60}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-diesel.png",
@@ -210,7 +210,7 @@ local gasoline = {
         {type = "item", name = "fuelrod-mk01", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 80, temperature = 850},
+        {type = "fluid", name = "combustion-mixture1", amount = 100, temperature = 850},
         {type = "fluid", name = "steam", amount = 1000, temperature = 60}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-gasoline.png",
