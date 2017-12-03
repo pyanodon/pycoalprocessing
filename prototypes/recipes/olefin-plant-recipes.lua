@@ -7,7 +7,7 @@ local diesel = {
     energy_required = 1.5,
     ingredients = {
         {type = "item", name = "nexelit-plate", amount = 2},
-        {type = "fluid", name = "methanol", amount = 150},
+        {type = "fluid", name = "methanol", amount = 100},
         {type = "fluid", name = "carbon-dioxide", amount = 200}
     },
     results = {
@@ -72,7 +72,7 @@ local olefin = {
     energy_required = 2,
     ingredients = {
         {type = "item", name = "nexelit-plate", amount = 2},
-        {type = "fluid", name = "water", amount = 600}, --bob hydrogen
+        {type = "fluid", name = "water", amount = 400}, --bob hydrogen
         {type = "fluid", name = "carbon-dioxide", amount = 200}
     },
     results = {
