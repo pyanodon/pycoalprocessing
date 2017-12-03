@@ -7,12 +7,12 @@ local nexelit_plate = {
     energy_required = 2,
     ingredients = {
         {type = "item", name = "nexelit-ore", amount = 2},
-        {type = "fluid", name = "petroleum-gas", amount = 150},
+        {type = "fluid", name = "petroleum-gas", amount = 100},
         {type = "item", name = "limestone", amount = 2},
         {type = "item", name = "sand-casting", amount = 1}
     },
     results = {
-        {type = "item", name = "nexelit-plate", amount = 2}
+        {type = "item", name = "nexelit-plate", amount = 4}
     },
     main_product = "nexelit-plate",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
