@@ -51,6 +51,14 @@ function Core.save_options(this, opts)
     return this
 end
 
+function Core.get_object(object, class)
+    if type(object) == "table" then
+        return object.name and object.type == class and object
+    elseif type(object) == "string" then
+        return data.raw[class][object]
+    end
+end
+
 function Core.extend(this, proto)
     data:extend(this.valid and this:valid() and {this} or proto)
 end
