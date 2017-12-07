@@ -460,6 +460,7 @@ Recipe._mt = {
     type = "recipe",
     __index = Recipe,
     __call = Recipe.get,
+    __tostring = Recipe.tostring
 }
 
 return Recipe
