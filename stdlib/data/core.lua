@@ -63,6 +63,14 @@ function Core.extend(this, proto)
     data:extend(this.valid and this:valid() and {this} or proto)
 end
 
+function Core.extended(this)
+    return this.name and this.type and data.raw[this.type][this.name]
+end
+
+function Core.tostring(this)
+    return this.name and this.type and this.name or ""
+end
+
 --- Quick to use empty picture.
 -- @treturn table an empty pictures table
 function Core.empty_picture()
