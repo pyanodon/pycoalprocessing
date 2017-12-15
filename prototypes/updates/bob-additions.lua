@@ -555,7 +555,7 @@ local sodium_hydroxide = {
     },
     results = {
         {type = "item", name = "sodium-hydroxide", amount = 10},
-        {type = "item", name = "limestone", amount = 5}
+        {type = "item", name = "limestone", amount = 1}
     },
     icon = "__bobplates__/graphics/icons/sodium-hydroxide.png",
     subgroup = "py-items",
