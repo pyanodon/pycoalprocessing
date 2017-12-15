@@ -761,7 +761,7 @@ local recipe_mukmoux_fat = {
     energy_required = 7.2,
     ingredients = {
         {type = "item", name = "fawogae", amount = 5},
-        {type = "item", name = "ralesia-seeds", amount = 50}
+        {type = "item", name = "ralesia-seeds", amount = 30}
     },
     results = {
         {type = "item", name = "mukmoux-fat", amount = 15}
