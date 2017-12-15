@@ -230,10 +230,10 @@ local supercritical = {
         {type = "fluid", name = "light-oil", amount = 100},
         {type = "fluid", name = "refsyngas", amount = 50},
         {type = "fluid", name = "water", amount = 1000},
-        {type = "item", name = "coal-briquette", amount = 3}
+        {type = "item", name = "coal-briquette", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 100, temperature = 900},
+        {type = "fluid", name = "combustion-mixture1", amount = 250, temperature = 900},
         {type = "fluid", name = "steam", amount = 1000, temperature = 60}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-super-critical.png",
@@ -253,10 +253,10 @@ local ultrasupercritical = {
         {type = "fluid", name = "petroleum-gas", amount = 100},
         {type = "fluid", name = "refsyngas", amount = 50},
         {type = "fluid", name = "water", amount = 1000},
-        {type = "item", name = "coal-briquette", amount = 3}
+        {type = "item", name = "coal-briquette", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 100, temperature = 1000},
+        {type = "fluid", name = "combustion-mixture1", amount = 250, temperature = 1000},
         {type = "fluid", name = "steam", amount = 1000, temperature = 60}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-ultra-super-critical.png",
