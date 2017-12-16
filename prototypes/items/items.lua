@@ -185,7 +185,7 @@ local recipe_soil = {
     enabled = "true",
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "water", amount = 1000}
+        {type = "fluid", name = "water", amount = 500}
     },
     results = {
         {type = "item", name = "soil", amount = 12}
