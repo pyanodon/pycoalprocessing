@@ -577,7 +577,7 @@ local recipe_ralesia = {
     enabled = "false",
     energy_required = 7.7,
     ingredients = {
-        {type = "fluid", name = "water", amount = 500}, --bob hydrogen
+        {type = "fluid", name = "water", amount = 300}, --bob hydrogen
         {type = "item", name = "soil", amount = 35}
     },
     results = {
