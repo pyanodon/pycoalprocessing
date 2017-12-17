@@ -1257,7 +1257,7 @@ local recipe_sulfur_crudeoil = {
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "crude-oil", amount = 400},
-        {type = "item", name = "iron-ore", amount = 400} --bob salt
+        {type = "item", name = "iron-ore", amount = 100} --bob salt
     },
     results = {
         {type = "fluid", name = "heavy-oil", amount = 300},
