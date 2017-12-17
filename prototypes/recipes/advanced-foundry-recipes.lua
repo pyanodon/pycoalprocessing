@@ -35,7 +35,7 @@ local steel_plate2 = {
         {type = "item", name = "sand-casting", amount = 1}
     },
     results = {
-        {type = "item", name = "steel-plate", amount = 8}
+        {type = "item", name = "steel-plate", amount = 12}
     },
     main_product = "steel-plate",
     icon = "__base__/graphics/icons/steel-plate.png",
@@ -63,11 +63,11 @@ for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
 
     local res
     if recipe.result then
-        res = {{type = "item", name = recipe.result or recipe.result[1], amount = 8}}
+        res = {{type = "item", name = recipe.result or recipe.result[1], amount = 12}}
     elseif recipe.results then
         res = table.deepcopy(recipe.results)
     elseif recipe.normal.result then
-        res = {{type = "item", name = recipe.normal.result or recipe.normal.result[1], amount = 8}}
+        res = {{type = "item", name = recipe.normal.result or recipe.normal.result[1], amount = 12}}
     elseif recipe.normal.results then
         res = table.deepcopy(recipe.normal.results)
     end
