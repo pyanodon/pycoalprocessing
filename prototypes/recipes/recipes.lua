@@ -804,7 +804,7 @@ local recipe_organic_solvent = {
         {type = "fluid", name = "aromatics", amount = 200}
     },
     results = {
-        {type = "fluid", name = "organic-solvent", amount = 300}
+        {type = "fluid", name = "organic-solvent", amount = 350}
     },
     main_product = "organic-solvent",
     icon = "__pycoalprocessing__/graphics/icons/organic-solvent.png",
