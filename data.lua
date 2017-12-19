@@ -1,5 +1,5 @@
 --Settings and Helpers
-local PYC = require("config") --Config variables
+local PYC = require("config") -- configuration variables
 
 require("stdlib.core")
 

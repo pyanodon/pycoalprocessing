@@ -33,7 +33,7 @@ This work is licensed under the Creative Commons Attribution-NonCommercial-NoDer
 
 ### Issues
 
-Report all bugs on github or on the forum post
+Report all bugs on GitHub or on the forum post
 
 <https://github.com/pyanodon/pYCoalprocesing/issues>
 
