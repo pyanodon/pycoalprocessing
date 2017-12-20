@@ -800,11 +800,11 @@ local recipe_organic_solvent = {
     energy_required = 2.5,
     ingredients = {
         {type = "item", name = "active-carbon", amount = 5},
-        {type = "item", name = "bonemeal", amount = 20},
+        {type = "item", name = "bonemeal", amount = 15},
         {type = "fluid", name = "aromatics", amount = 200}
     },
     results = {
-        {type = "fluid", name = "organic-solvent", amount = 350}
+        {type = "fluid", name = "organic-solvent", amount = 400}
     },
     main_product = "organic-solvent",
     icon = "__pycoalprocessing__/graphics/icons/organic-solvent.png",
