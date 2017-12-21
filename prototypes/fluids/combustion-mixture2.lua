@@ -17,14 +17,13 @@ local recipe1 = {
         {type = "fluid", name = "water", amount = 500, temperature = 100}
     },
     main_product = "combustion-mixture2",
-    --icon = "__pycoalprocessing__/graphics/icons/combustion-mixture2.png"
-    --order = "b-c [syn-gas]",
 }
 
 local fluid = {
     type = "fluid",
     name = "combustion-mixture2",
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture2.png",
+    icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.811, g = 0.325, b = 0.0},

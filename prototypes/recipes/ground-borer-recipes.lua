@@ -15,6 +15,7 @@ local mining_nexelit = {
     },
     main_product = "nexelit-ore",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-nexelit.png",
+    icon_size = 32,
     subgroup = "py-drilling",
     order = "a"
 }
@@ -35,6 +36,7 @@ local mining_stone = {
     },
     main_product = "stone",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-stone.png",
+    icon_size = 32,
     subgroup = "py-drilling",
     order = "b"
 }
@@ -55,6 +57,7 @@ local mining_limestone = {
     },
     main_product = "limestone",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-limestone.png",
+    icon_size = 32,
     subgroup = "py-drilling",
     order = "c"
 }
@@ -79,6 +82,7 @@ if bobmods then
         },
         main_product = "bauxite-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-bauxite.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "d"
     }
@@ -99,6 +103,7 @@ if bobmods then
         },
         main_product = "cobalt-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-cobalt.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "e"
     }
@@ -119,6 +124,7 @@ if bobmods then
         },
         main_product = "gold-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-gold.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "f"
     }
@@ -139,6 +145,7 @@ if bobmods then
         },
         main_product = "lead-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-lead.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "g"
     }
@@ -159,6 +166,7 @@ if bobmods then
         },
         main_product = "nickel-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-nickel.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "h"
     }
@@ -179,6 +187,7 @@ if bobmods then
         },
         main_product = "quartz",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-quartz.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "i"
     }
@@ -199,6 +208,7 @@ if bobmods then
         },
         main_product = "rutile-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-rutile.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "j"
     }
@@ -219,6 +229,7 @@ if bobmods then
         },
         main_product = "silver-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-silver.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "k"
     }
@@ -239,6 +250,7 @@ if bobmods then
         },
         main_product = "tin-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-tin.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "l"
     }
@@ -259,6 +271,7 @@ if bobmods then
         },
         main_product = "tungsten-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-tungsten.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "m"
     }
@@ -279,6 +292,7 @@ if bobmods then
         },
         main_product = "zinc-ore",
         icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-zinc.png",
+        icon_size = 32,
         subgroup = "py-drilling",
         order = "n"
     }

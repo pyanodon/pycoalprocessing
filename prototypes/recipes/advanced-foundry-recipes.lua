@@ -16,6 +16,7 @@ local nexelit_plate = {
     },
     main_product = "nexelit-plate",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a1"
 }
@@ -39,6 +40,7 @@ local steel_plate2 = {
     },
     main_product = "steel-plate",
     icon = "__base__/graphics/icons/steel-plate.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a2"
 }
@@ -87,6 +89,7 @@ for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
         results = res,
         icon = recipe.icon,
         icons = recipe.icons,
+        icon_size = 32,
         main_product = data.raw.item[res[1].name] and res[1].name or nil
     }
     log(new.name)

@@ -1,7 +1,8 @@
 --Recipes without new item results
+local Recipe = require("stdlib/data/recipe")
 
 --Making Chromium
-local making_chromium = {
+Recipe {
     type = "recipe",
     name = "making-chromium",
     category = "hpf",
@@ -18,20 +19,22 @@ local making_chromium = {
     },
     main_product = "chromium",
     icon = "__pycoalprocessing__/graphics/icons/chromium.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "a"
 }
 
 --Create coal from wood
-local raw_wood_to_coal = {
+Recipe {
     type = "recipe",
     name = "raw-wood-to-coal",
     localised_name = {"recipe-name.wood-to-coal", {"item-name.raw-wood"}, {"item-name.coal"}},
     localised_description = {"recipe-description.wood-to-coal", {"item-name.raw-wood"}, {"item-name.coal"}},
     icons = {
-        {icon = data.raw.item["coal"].icon},
-        {icon = data.raw.item["raw-wood"].icon, tint = {a = .5}}
+        {icon = data.raw.item["coal"].icon, icon_size = 32},
+        {icon = data.raw.item["raw-wood"].icon, tint = {a = .5}, icon_size = 32}
     },
+    icon_size = 32,
     enabled = false,
     category = "hpf",
     subgroup = "py-items-hpf",
@@ -45,15 +48,16 @@ local raw_wood_to_coal = {
     energy_required = 3
 }
 
-local wood_to_coal = {
+Recipe {
     type = "recipe",
     name = "wood-to-coal",
     localised_name = {"recipe-name.wood-to-coal", {"item-name.wood"}, {"item-name.coal"}},
     localised_description = {"recipe-description.wood-to-coal", {"item-name.wood"}, {"item-name.coal"}},
     icons = {
-        {icon = data.raw.item["coal"].icon},
-        {icon = data.raw.item["wood"].icon, tint = {a = .5}}
+        {icon = data.raw.item["coal"].icon, icon_size = 32},
+        {icon = data.raw.item["wood"].icon, tint = {a = .5}, icon_size = 32}
     },
+    icon_size = 32,
     enabled = false,
     category = "hpf",
     subgroup = "py-items-hpf",
@@ -68,7 +72,7 @@ local wood_to_coal = {
 }
 
 --Extract sulfur from acidgas
-local extract_sulfur = {
+Recipe {
     type = "recipe",
     name = "extract-sulfur",
     category = "desulfurization",
@@ -82,12 +86,13 @@ local extract_sulfur = {
     },
     main_product = "sulfur",
     icon = data.raw.item.sulfur.icon,
+    icon_size = 32,
     subgroup = "py-sulfur",
     order = "a"
 }
 
 --Turn STEAM into cooled water
-local cooling_water = {
+Recipe {
     type = "recipe",
     name = "cooling-water",
     hidden = true,
@@ -103,11 +108,12 @@ local cooling_water = {
     main_product = "water",
     subgroup = "py-fluids",
     order = "a",
-    icon = "__pycoalprocessing__/graphics/icons/cooling-water.png"
+    icon = "__pycoalprocessing__/graphics/icons/cooling-water.png",
+    icon_size = 32,
 }
 
 --FLUEGAS TO SYNGAS
-local fluegas_to_syngas = {
+Recipe {
     type = "recipe",
     name = "fluegas_to-syngas",
     category = "carbonfilter",
@@ -122,11 +128,12 @@ local fluegas_to_syngas = {
     },
     subgroup = "py-syngas",
     order = "a",
-    icon = "__pycoalprocessing__/graphics/icons/fluegas_to_syngas.png"
+    icon = "__pycoalprocessing__/graphics/icons/fluegas_to_syngas.png",
+    icon_size = 32,
 }
 
 --COARSE CLASSIFICATION
-local coarse_classification = {
+Recipe {
     type = "recipe",
     name = "coarse-classification",
     category = "classifier",
@@ -142,12 +149,13 @@ local coarse_classification = {
     },
     main_product = "gravel",
     icon = "__pycoalprocessing__/graphics/icons/class-coarse.png",
+    icon_size = 32,
     subgroup = "py-items-class",
     order = "a"
 }
 
 --SAND CLASSIFICATION
-local sand_classification = {
+Recipe {
     type = "recipe",
     name = "sand-classification",
     category = "classifier",
@@ -162,12 +170,13 @@ local sand_classification = {
     },
     main_product = "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/class-pure-sand.png",
+    icon_size = 32,
     subgroup = "py-items-class",
     order = "b"
 }
 
 --SOIL SEPARATION
-local soil_separation = {
+Recipe {
     type = "recipe",
     name = "soil-separation",
     category = "solid-separator",
@@ -184,12 +193,13 @@ local soil_separation = {
     },
     main_product = "sand",
     icon = "__pycoalprocessing__/graphics/icons/soil-separation.png",
+    icon_size = 32,
     subgroup = "py-items-class",
     order = "e"
 }
 
 --RICH DUST SEPARATION
-local richdust_separation = {
+Recipe {
     type = "recipe",
     name = "richdust-separation",
     category = "solid-separator",
@@ -204,12 +214,13 @@ local richdust_separation = {
     },
     main_product = "chromite-sand",
     icon = "__pycoalprocessing__/graphics/icons/richdust-separation.png",
+    icon_size = 32,
     subgroup = "py-items-class",
     order = "f"
 }
 
 --TAILINGS SEPARATION
-local tailings_separation = {
+Recipe {
     type = "recipe",
     name = "tailings-separation",
     category = "solid-separator",
@@ -224,12 +235,13 @@ local tailings_separation = {
     },
     main_product = "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/tailings_separation.png",
+    icon_size = 32,
     subgroup = "py-items-class",
     order = "g"
 }
 
 --SAND WASHING
-local sand_washing = {
+Recipe {
     type = "recipe",
     name = "sand-washing",
     category = "washer",
@@ -245,12 +257,13 @@ local sand_washing = {
     },
     main_product = "pure-sand",
     icon = "__pycoalprocessing__/graphics/icons/sand-washer.png",
+    icon_size = 32,
     subgroup = "py-washer",
     order = "a"
 }
 
 --ORGANICS PROCESSING
-local organics_processing = {
+Recipe {
     type = "recipe",
     name = "organics-processing",
     category = "gasifier",
@@ -266,12 +279,13 @@ local organics_processing = {
     },
     main_product = "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",
+    icon_size = 32,
     subgroup = "py-methanol",
     order = "d"
 }
 
 --SAND CASTING
-local sand_casting = {
+Recipe {
     type = "recipe",
     name = "sand-casting",
     category = "tar",
@@ -286,12 +300,13 @@ local sand_casting = {
     },
     main_product = "sand-casting",
     icon = "__pycoalprocessing__/graphics/icons/sand-casting.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a"
 }
 
 --TAR to CRUDE OIL
-local tar_oil = {
+Recipe {
     type = "recipe",
     name = "tar-oil",
     category = "tar",
@@ -306,12 +321,13 @@ local tar_oil = {
     },
     main_product = "crude-oil",
     icon = "__pycoalprocessing__/graphics/icons/tar-oil.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "c"
 }
 
 --"AIR POLLUTION" ABSORBER
-local absorb_air_pollution = {
+Recipe {
     type = "recipe",
     name = "air-pollution",
     category = "co2",
@@ -325,12 +341,13 @@ local absorb_air_pollution = {
     },
     main_product = "saturated-nexelit-cartridge",
     icon = "__pycoalprocessing__/graphics/icons/co2-absorber-icon.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "d"
 }
 
 --SLACKED LIME
-local slacked_lime = {
+Recipe {
     type = "recipe",
     name = "slacked-lime",
     category = "chemistry",
@@ -345,12 +362,13 @@ local slacked_lime = {
     },
     main_product = "slacked-lime",
     icon = "__pycoalprocessing__/graphics/icons/slacked-lime.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "e"
 }
 
 --CO2 PRODUCTION
-local co2_cooking = {
+Recipe {
     type = "recipe",
     name = "co2",
     category = "hpf",
@@ -367,12 +385,13 @@ local co2_cooking = {
     },
     main_product = "carbon-dioxide",
     icon = "__pycoalprocessing__/graphics/icons/co2.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "d"
 }
 
 --FAWOGAE SUBSTRATE
-local fawogae_substrate = {
+Recipe {
     type = "recipe",
     name = "fawogae-substrate",
     category = "crafting",
@@ -387,12 +406,13 @@ local fawogae_substrate = {
     },
     main_product = "fawogae-substrate",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-substrate.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "f"
 }
 
 --WATER MINERALIZED - FROM ANGELS
-local mineralized_water = {
+Recipe {
     type = "recipe",
     name = "water-mineralized",
     category = "washer",
@@ -408,12 +428,13 @@ local mineralized_water = {
     },
     main_product = "water-mineralized",
     icon = "__pycoalprocessing__/graphics/icons/coarse-washer.png",
+    icon_size = 32,
     subgroup = "py-washer",
     order = "b"
 }
 
 --FLASK
-local flask = {
+Recipe {
     type = "recipe",
     name = "flask",
     -- category = "crafting",
@@ -426,12 +447,13 @@ local flask = {
     },
     result = "flask",
     icon = "__pycoalprocessing__/graphics/icons/flask.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "f"
 }
 
 --CRAFTING SCIENCE PACK-01 "should overlay the vanilla one"
-local science_pack01 = {
+Recipe {
     type = "recipe",
     name = "science-pack-1",
     -- category = "crafting",
@@ -445,12 +467,13 @@ local science_pack01 = {
         {type = "item", name = "science-pack-1", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a1"
 }
 
 --CRAFTING SCIENCE PACK-02 "should overlay the vanilla one"
-local science_pack02 = {
+Recipe {
     type = "recipe",
     name = "science-pack-2",
     -- category = "crafting",
@@ -464,12 +487,13 @@ local science_pack02 = {
         {type = "item", name = "science-pack-2", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/science-pack-2.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a2"
 }
 
 --CRAFTING SCIENCE PACK-03 "should overlay the vanilla one"
-local science_pack03 = {
+Recipe {
     type = "recipe",
     name = "science-pack-3",
     -- category = "crafting",
@@ -485,12 +509,13 @@ local science_pack03 = {
         {type = "item", name = "science-pack-3", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/science-pack-3.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a3"
 }
 
 --BASIC SAND PRODUCTION
-local soil_washing = {
+Recipe {
     type = "recipe",
     name = "soil-washing",
     category = "washer",
@@ -506,12 +531,13 @@ local soil_washing = {
     },
     main_product = "sand",
     icon = "__pycoalprocessing__/graphics/icons/soil-washer.png",
+    icon_size = 32,
     subgroup = "py-washer",
     order = "c"
 }
 --BONEMEAL PRODUCTION
 
-local recipe_bonemeal = {
+Recipe {
     type = "recipe",
     name = "bonemeal",
     category = "ulric",
@@ -525,12 +551,13 @@ local recipe_bonemeal = {
     },
     main_product = "bonemeal",
     icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "g"
 }
 --RAW BORAX PRODUCTION
 
-local recipe_rawborax = {
+Recipe {
     type = "recipe",
     name = "raw-borax",
     category = "borax",
@@ -544,12 +571,13 @@ local recipe_rawborax = {
     },
     main_product = "raw-borax",
     icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "h"
 }
 --BORAX WASHING
 
-local recipe_borax = {
+Recipe {
     type = "recipe",
     name = "borax-washing",
     category = "washer",
@@ -565,12 +593,13 @@ local recipe_borax = {
     },
     main_product = "borax",
     icon = "__pycoalprocessing__/graphics/icons/borax-washer.png",
+    icon_size = 32,
     subgroup = "py-washer",
     order = "d"
 }
 --RALESIA PRODUCTION
 
-local recipe_ralesia = {
+Recipe {
     type = "recipe",
     name = "ralesia",
     category = "ralesia",
@@ -585,12 +614,13 @@ local recipe_ralesia = {
     },
     main_product = "ralesia",
     icon = "__pycoalprocessing__/graphics/icons/ralesia.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "h"
 }
 --RALESIA SEEDS
 
-local recipe_ralesia_seeds = {
+Recipe {
     type = "recipe",
     name = "ralesia-seeds",
     category = "crafting",
@@ -604,12 +634,13 @@ local recipe_ralesia_seeds = {
     },
     main_product = "ralesia-seeds",
     icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "i"
 }
 --RICH CLAY
 
-local recipe_rich_clay = {
+Recipe {
     type = "recipe",
     name = "rich-clay",
     category = "crafting-with-fluid",
@@ -624,12 +655,13 @@ local recipe_rich_clay = {
     },
     main_product = "rich-clay",
     icon = "__pycoalprocessing__/graphics/icons/rich-clay.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "j"
 }
 --GROUND SAMPLE01
 
-local recipe_ground_sample01 = {
+Recipe {
     type = "recipe",
     name = "ground-sample01",
     category = "crafting",
@@ -644,12 +676,13 @@ local recipe_ground_sample01 = {
     },
     main_product = "ground-sample01",
     icon = "__pycoalprocessing__/graphics/icons/ground-sample01.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "k"
 }
 --BIOLOGICAL SAMPLE01
 
-local recipe_bio_sample01 = {
+Recipe {
     type = "recipe",
     name = "bio-sample01",
     category = "crafting",
@@ -664,12 +697,13 @@ local recipe_bio_sample01 = {
     },
     main_product = "bio-sample01",
     icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "l"
 }
 --ALIEN SAMPLE01
 
-local recipe_alien_sample01 = {
+Recipe {
     type = "recipe",
     name = "alien-sample01",
     category = "crafting",
@@ -684,12 +718,13 @@ local recipe_alien_sample01 = {
     },
     main_product = "alien-sample01",
     icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "m"
 }
 --EQUIPMENT CHASSI
 
-local recipe_equipment_chassi = {
+Recipe {
     type = "recipe",
     name = "equipment-chassi",
     category = "crafting",
@@ -704,12 +739,13 @@ local recipe_equipment_chassi = {
     },
     main_product = "equipment-chassi",
     icon = "__pycoalprocessing__/graphics/icons/equipment-chassi.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "n"
 }
 --LAB INSTRUMENT
 
-local recipe_lab_instrument = {
+Recipe {
     type = "recipe",
     name = "lab-instrument",
     category = "crafting",
@@ -724,12 +760,13 @@ local recipe_lab_instrument = {
     },
     main_product = "lab-instrument",
     icon = "__pycoalprocessing__/graphics/icons/lab-instrument.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "o"
 }
 --BORON TRIOXIDE
 
-local recipe_boron_trioxide = {
+Recipe {
     type = "recipe",
     name = "boron-trioxide",
     category = "hpf",
@@ -744,12 +781,13 @@ local recipe_boron_trioxide = {
     },
     main_product = "boron-trioxide",
     icon = "__pycoalprocessing__/graphics/icons/boron-trioxide.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "e"
 }
 --OPTICAL SET "lens"
 
-local recipe_lens = {
+Recipe {
     type = "recipe",
     name = "lens",
     category = "hpf",
@@ -764,12 +802,13 @@ local recipe_lens = {
     },
     main_product = "lens",
     icon = "__pycoalprocessing__/graphics/icons/lens.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "f"
 }
 --OLEOCHEMICALS
 
-local recipe_oleochemicals = {
+Recipe {
     type = "recipe",
     name = "oleochemicals",
     category = "fts-reactor",
@@ -787,12 +826,13 @@ local recipe_oleochemicals = {
     },
     main_product = "oleochemicals",
     icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
 }
 --ORGANIC SOLVENT
 
-local recipe_organic_solvent = {
+Recipe {
     type = "recipe",
     name = "organic-solvent",
     category = "chemistry",
@@ -808,12 +848,13 @@ local recipe_organic_solvent = {
     },
     main_product = "organic-solvent",
     icon = "__pycoalprocessing__/graphics/icons/organic-solvent.png",
+    icon_size = 32,
     subgroup = "py-fluids",
     order = "c"
 }
 --CO2 FROM ORGANICS
 
-local recipe_co2_organics = {
+Recipe {
     type = "recipe",
     name = "co2-organics",
     category = "hpf",
@@ -827,12 +868,13 @@ local recipe_co2_organics = {
     },
     main_product = "carbon-dioxide",
     icon = "__pycoalprocessing__/graphics/icons/carbon-dioxide.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "f"
 }
 --AROMATICS FROM ORGANICS
 
-local recipe_aromatic_organic = {
+Recipe {
     type = "recipe",
     name = "aromatic-organic",
     category = "gasifier",
@@ -847,12 +889,13 @@ local recipe_aromatic_organic = {
     },
     main_product = "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "r"
 }
 --PETGAS/METANOL FROM ORGANIC SOLVENT
 
-local recipe_petgas_methanol = {
+Recipe {
     type = "recipe",
     name = "petgas-methanol",
     category = "fluid-separator",
@@ -868,12 +911,13 @@ local recipe_petgas_methanol = {
     },
     main_product = "methanol",
     icon = "__pycoalprocessing__/graphics/icons/petgas-methanol.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
 }
 --OLEOCHEMICAL-TO-HEAVY OIL
 
-local recipe_oleo_heavy = {
+Recipe {
     type = "recipe",
     name = "oleo-heavy",
     category = "fluid-separator",
@@ -890,12 +934,13 @@ local recipe_oleo_heavy = {
     },
     main_product = "heavy-oil",
     icon = "__pycoalprocessing__/graphics/icons/oleo-heavy.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "d"
 }
 --BONEMEAL TO ORGANIC SOLVENT
 
-local recipe_bone_solvent = {
+Recipe {
     type = "recipe",
     name = "bone-solvent",
     category = "carbonfilter",
@@ -910,12 +955,13 @@ local recipe_bone_solvent = {
     },
     main_product = "organic-solvent",
     icon = "__pycoalprocessing__/graphics/icons/bone-solvent.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "e"
 }
 --DIRTY-WATER TO ACID GAS
 
-local recipe_dirty_acid = {
+Recipe {
     type = "recipe",
     name = "dirty-acid",
     category = "carbonfilter",
@@ -930,12 +976,13 @@ local recipe_dirty_acid = {
     },
     main_product = "acidgas",
     icon = "__pycoalprocessing__/graphics/icons/acidgas.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "f"
 }
 --DIRTY-WATER TO WATER
 
-local recipe_filtration_dirty_water = {
+Recipe {
     type = "recipe",
     name = "filtration-dirty-water",
     category = "carbonfilter",
@@ -951,12 +998,13 @@ local recipe_filtration_dirty_water = {
     },
     main_product = "water",
     icon = "__pycoalprocessing__/graphics/icons/filtration-dirty-water.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "g"
 }
 --OLEFIN FILTRATION
 
-local recipe_olefin_filtration = {
+Recipe {
     type = "recipe",
     name = "olefin-filtration",
     category = "carbonfilter",
@@ -971,12 +1019,13 @@ local recipe_olefin_filtration = {
     },
     main_product = "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h"
 }
 --COAL GAS TO SYNGAS
 
-local recipe_coalgas_syngas = {
+Recipe {
     type = "recipe",
     name = "coalgas-syngas",
     category = "desulfurization",
@@ -993,12 +1042,13 @@ local recipe_coalgas_syngas = {
     },
     main_product = "syngas",
     icon = "__pycoalprocessing__/graphics/icons/syngas.png",
+    icon_size = 32,
     subgroup = "py-syngas",
     order = "b"
 }
 --OLEOCHEMICALS TO CRUDE OIL
 
-local recipe_oleo_oil = {
+Recipe {
     type = "recipe",
     name = "oleochemicals-crude-oil",
     category = "carbonfilter",
@@ -1013,12 +1063,13 @@ local recipe_oleo_oil = {
     },
     main_product = "crude-oil",
     icon = "__pycoalprocessing__/graphics/icons/oleochemicals-crude-oil.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h"
 }
 --COAL TO COAL DUST
 
-local recipe_coal_dust = {
+Recipe {
     type = "recipe",
     name = "coal-dust",
     category = "ball-mill",
@@ -1032,12 +1083,13 @@ local recipe_coal_dust = {
     },
     main_product = "coal-dust",
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "r"
 }
 --SAND BRICK
 
-local recipe_sand_brick = {
+Recipe {
     type = "recipe",
     name = "sand-brick",
     category = "crafting",
@@ -1052,12 +1104,13 @@ local recipe_sand_brick = {
     },
     main_product = "stone-brick",
     icon = "__base__/graphics/icons/stone-brick.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "s"
 }
 
 --TAILINGS CLASSIFICATION
-local tailings_classification = {
+Recipe {
     type = "recipe",
     name = "tailings-classification",
     category = "classifier",
@@ -1073,12 +1126,13 @@ local tailings_classification = {
     },
     main_product = "coal-dust",
     icon = "__pycoalprocessing__/graphics/icons/class-tailings.png",
+    icon_size = 32,
     subgroup = "py-items-class",
     order = "c"
 }
 
 --TAR DISTILATION
-local recipe_tar_distilation = {
+Recipe {
     type = "recipe",
     name = "tar-distilation",
     category = "distilator",
@@ -1095,12 +1149,13 @@ local recipe_tar_distilation = {
     },
     main_product = "carbon-dioxide",
     icon = "__pycoalprocessing__/graphics/icons/tar-distilation.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "t"
 }
 
 --OLEOCHEMICALS DISTILATION
-local recipe_oleochemicals_distilation = {
+Recipe {
     type = "recipe",
     name = "oleochemicals-distilation",
     category = "distilator",
@@ -1118,12 +1173,13 @@ local recipe_oleochemicals_distilation = {
     },
     main_product = "syngas",
     icon = "__pycoalprocessing__/graphics/icons/oleochemicals-distilation.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "i"
 }
 
 --TAR GASIFICATON
-local recipe_tar_gasification = {
+Recipe {
     type = "recipe",
     name = "tar-gasification",
     category = "gasifier",
@@ -1140,12 +1196,13 @@ local recipe_tar_gasification = {
     },
     main_product = "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/tar-gasification.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "j"
 }
 
 --OLEOCHEMICALS GASIFICATON
-local recipe_oleo_gasification = {
+Recipe {
     type = "recipe",
     name = "oleo-gasification",
     category = "gasifier",
@@ -1162,12 +1219,13 @@ local recipe_oleo_gasification = {
     },
     main_product = "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/oleo-gasification.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "k"
 }
 
 --COAL from FAWOAGE
-local recipe_coal_fawogae = {
+Recipe {
     type = "recipe",
     name = "coal-fawogae",
     category = "hpf",
@@ -1181,12 +1239,13 @@ local recipe_coal_fawogae = {
     },
     main_product = "coal",
     icon = "__pycoalprocessing__/graphics/icons/coal-fawogae.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "g"
 }
 
 --RARE EARTH MUD FROM DIRTY-WATER
-local recipe_re_dirtywater = {
+Recipe {
     type = "recipe",
     name = "remud-dirty-water",
     category = "chemistry",
@@ -1201,12 +1260,13 @@ local recipe_re_dirtywater = {
     },
     main_product = "rare-earth-mud",
     icon = "__pycoalprocessing__/graphics/icons/remud-dirty-water.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "l"
 }
 
 --RICH DUST FROM RARE EARTH MUD
-local recipe_richdust_remud = {
+Recipe {
     type = "recipe",
     name = "rich-re",
     category = "evaporator",
@@ -1221,11 +1281,12 @@ local recipe_richdust_remud = {
     },
     main_product = "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/rich-re.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "u"
 }
 --SMELT CRUSHED IRON
-local recipe_crushed_iron = {
+Recipe {
     type = "recipe",
     name = "crushed-iron",
     category = "smelting",
@@ -1236,7 +1297,7 @@ local recipe_crushed_iron = {
     result_count = 2
 }
 --SMELT CRUSHED COPPER
-local recipe_crushed_copper = {
+Recipe {
     type = "recipe",
     name = "crushed-copper",
     category = "smelting",
@@ -1249,7 +1310,7 @@ local recipe_crushed_copper = {
 
 --EXTRACT SULFUR FROM CRUDEOIL
 
-local recipe_sulfur_crudeoil = {
+Recipe {
     type = "recipe",
     name = "sulfur-crudeoil",
     category = "desulfurization",
@@ -1266,12 +1327,13 @@ local recipe_sulfur_crudeoil = {
     },
     main_product = "sulfur",
     icon = "__base__/graphics/icons/sulfur.png",
+    icon_size = 32,
     subgroup = "py-sulfur",
     order = "b"
 }
 --EXTRACT SULFUR FROM HEAVYOIL
 
-local recipe_sulfur_heavyoil = {
+Recipe {
     type = "recipe",
     name = "sulfur-heavyoil",
     category = "desulfurization",
@@ -1287,12 +1349,13 @@ local recipe_sulfur_heavyoil = {
     },
     main_product = "sulfur",
     icon = "__base__/graphics/icons/sulfur.png",
+    icon_size = 32,
     subgroup = "py-sulfur",
     order = "c"
 }
 --EXTRACT SULFUR FROM LIGHTOIL
 
-local recipe_sulfur_lightoil = {
+Recipe {
     type = "recipe",
     name = "sulfur-lightoil",
     category = "desulfurization",
@@ -1308,12 +1371,13 @@ local recipe_sulfur_lightoil = {
     },
     main_product = "sulfur",
     icon = "__base__/graphics/icons/sulfur.png",
+    icon_size = 32,
     subgroup = "py-sulfur",
     order = "d"
 }
 --EXTRACT SULFUR FROM PETGAS
 
-local recipe_sulfur_petgas = {
+Recipe {
     type = "recipe",
     name = "sulfur-petgas",
     category = "desulfurization",
@@ -1329,12 +1393,13 @@ local recipe_sulfur_petgas = {
     },
     main_product = "sulfur",
     icon = "__base__/graphics/icons/sulfur.png",
+    icon_size = 32,
     subgroup = "py-sulfur",
     order = "e"
 }
 --ORGANIC MATTER FROM RAW-WOOD
 
-local recipe_organics_from_rawwood = {
+Recipe {
     type = "recipe",
     name = "organics-from-wood",
     category = "crafting",
@@ -1348,12 +1413,13 @@ local recipe_organics_from_rawwood = {
     },
     main_product = "organics",
     icon = "__pycoalprocessing__/graphics/icons/organics.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "v"
 }
 --CREOSOTE TO AROMATICS
 
-local recipe_creosote_to_aromatics = {
+Recipe {
     type = "recipe",
     name = "creosote-to-aromatics",
     category = "tar",
@@ -1367,12 +1433,13 @@ local recipe_creosote_to_aromatics = {
     },
     main_product = "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/creosote-aromatics.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "m"
 }
 --AROMATICS TO LUBRICANT
 
-local recipe_aromatics_to_lubricant = {
+Recipe {
     type = "recipe",
     name = "aromatics-to-lubricant",
     category = "desulfurization",
@@ -1387,12 +1454,13 @@ local recipe_aromatics_to_lubricant = {
     },
     main_product = "lubricant",
     icon = "__pycoalprocessing__/graphics/icons/aromatics-lubricant.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "n"
 }
 --AROMATICS TO RUBBER
 
-local recipe_aromatics_to_rubber = {
+Recipe {
     type = "recipe",
     name = "aromatics-to-rubber",
     category = "methanol",
@@ -1406,12 +1474,13 @@ local recipe_aromatics_to_rubber = {
         {type = "fluid", name = "crude-oil", amount = 100} --bobs rubber
     },
     icon = "__pycoalprocessing__/graphics/icons/aromatics-rubber.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "w"
 }
 --AROMATICS TO PLASTIC
 
-local recipe_aromatics_to_plastic = {
+Recipe {
     type = "recipe",
     name = "aromatics-to-plastic",
     category = "methanol",
@@ -1426,12 +1495,13 @@ local recipe_aromatics_to_plastic = {
     },
     main_product = "plastic-bar",
     icon = "__pycoalprocessing__/graphics/icons/aromatics-rubber.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "x"
 }
 --SODIUM-SULFUR BATTERY
 
-local recipe_nas_battery = {
+Recipe {
     type = "recipe",
     name = "nas-battery",
     category = "advanced-crafting",
@@ -1448,12 +1518,13 @@ local recipe_nas_battery = {
     },
     main_product = "battery",
     icon = "__pycoalprocessing__/graphics/icons/nas-battery.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "y"
 }
 --COKE from COAL
 
-local recipe_coke_coal = {
+Recipe {
     type = "recipe",
     name = "coke-coal",
     category = "hpf",
@@ -1467,13 +1538,14 @@ local recipe_coke_coal = {
     },
     main_product = "coke",
     icon = "__pycoalprocessing__/graphics/icons/coke.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "h"
 }
 
 --DISTILATION of STONE
 
-local recipe_stone_distilation = {
+Recipe {
     type = "recipe",
     name = "stone-distilation",
     category = "distilator",
@@ -1492,12 +1564,13 @@ local recipe_stone_distilation = {
     },
     main_product = "tar",
     icon = "__pycoalprocessing__/graphics/icons/tar.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "z"
 }
 --OLEOCHEMICALS TO SOLID FUEL
 
-local recipe_oleo_solidfuel = {
+Recipe {
     type = "recipe",
     name = "oleo-solidfuel",
     category = "methanol",
@@ -1511,12 +1584,13 @@ local recipe_oleo_solidfuel = {
     },
     main_product = "solid-fuel",
     icon = "__pycoalprocessing__/graphics/icons/oleo-solid-fuel.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
 }
 --GLYCEROL to HYDROGEN
 
-local recipe_glycerol_hydrogen = {
+Recipe {
     type = "recipe",
     name = "glycerol-hydrogen",
     category = "chemistry", --bob electrolysis
@@ -1530,13 +1604,14 @@ local recipe_glycerol_hydrogen = {
         {type = "fluid", name = "petroleum-gas", amount = 300} --bob hydrogen
     },
     icon = "__pycoalprocessing__/graphics/icons/glycerol-hydrogen.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "o"
 }
 
 --LOG PRODUCING 01
 
-local recipe_log1 = {
+Recipe {
     type = "recipe",
     name = "log1",
     category = "nursery",
@@ -1547,13 +1622,14 @@ local recipe_log1 = {
         {type = "item", name = "log", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/log.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "c6"
 }
 
 --LOG PRODUCING 02
 
-local recipe_log2 = {
+Recipe {
     type = "recipe",
     name = "log2",
     category = "nursery",
@@ -1566,13 +1642,14 @@ local recipe_log2 = {
         {type = "item", name = "log", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/log2.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "c7"
 }
 
 --LOG PRODUCING 03
 
-local recipe_log3 = {
+Recipe {
     type = "recipe",
     name = "log3",
     category = "nursery",
@@ -1586,13 +1663,14 @@ local recipe_log3 = {
         {type = "item", name = "log", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/log3.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "c8"
 }
 
 --LOG PRODUCING 04
 
-local recipe_log4 = {
+Recipe {
     type = "recipe",
     name = "log4",
     category = "nursery",
@@ -1606,13 +1684,14 @@ local recipe_log4 = {
         {type = "item", name = "log", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/log4.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "c9"
 }
 
 --LOG PRODUCING 05
 
-local recipe_log5 = {
+Recipe {
     type = "recipe",
     name = "log5",
     category = "nursery",
@@ -1626,13 +1705,14 @@ local recipe_log5 = {
         {type = "item", name = "log", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/log5.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "c9"
 }
 
 --LOG PRODUCING 06
 
-local recipe_log6 = {
+Recipe {
     type = "recipe",
     name = "log6",
     category = "nursery",
@@ -1647,12 +1727,13 @@ local recipe_log6 = {
         {type = "item", name = "log", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/log5.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "c9"
 }
 
 --LOG-TO-RAW-WOOD
-local recipe_log_wood = {
+Recipe {
     type = "recipe",
     name = "log-wood",
     category = "wpu",
@@ -1665,12 +1746,13 @@ local recipe_log_wood = {
         {type = "item", name = "raw-wood", amount = 5}
     },
     icon = data.raw.item["raw-wood"].icon,
+    icon_size = 32,
     subgroup = "py-items",
     order = "a7"
 }
 --LOG-TO-ORGANIC-MATTER
 
-local recipe_log_organics = {
+Recipe {
     type = "recipe",
     name = "log-organics",
     category = "wpu",
@@ -1683,13 +1765,14 @@ local recipe_log_organics = {
         {type = "item", name = "organics", amount = 50}
     },
     icon = "__pycoalprocessing__/graphics/icons/organics.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a8"
 }
 
 --raw-wood-to-wood
 
-local recipe_raw_wood = {
+Recipe {
     type = "recipe",
     name = "raw-to-wood",
     category = "wpu",
@@ -1702,13 +1785,14 @@ local recipe_raw_wood = {
         {type = "item", name = "wood", amount = 2}
     },
     icon = data.raw.item["wood"].icon,
+    icon_size = 32,
     subgroup = "py-items",
     order = "a8"
 }
 
 --ASH SEPARATION
 
-local recipe_ash_separation = {
+Recipe {
     type = "recipe",
     name = "ash-separation",
     category = "solid-separator",
@@ -1722,12 +1806,13 @@ local recipe_ash_separation = {
         {type = "item", name = "iron-oxide", amount = 1, probability = 0.5}
     },
     icon = "__pycoalprocessing__/graphics/icons/ash-separation.png",
+    icon_size = 32,
     subgroup = "py-items-class",
     order = "f"
 }
 --FLUEGAS FILTRATION
 
-local fluegas_filtration = {
+Recipe {
     type = "recipe",
     name = "fluegas-filtration",
     category = "carbonfilter",
@@ -1740,12 +1825,13 @@ local fluegas_filtration = {
         {type = "item", name = "ash", amount = 2}
     },
     icon = "__pycoalprocessing__/graphics/icons/ash.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "g"
 }
 --COAL DUST to ASH
 
-local coaldust_ash = {
+Recipe {
     type = "recipe",
     name = "coaldust-ash",
     category = "hpf",
@@ -1758,98 +1844,7 @@ local coaldust_ash = {
         {type = "item", name = "ash", amount = 1}
     },
     icon = "__pycoalprocessing__/graphics/icons/ash.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "g"
-}
-
-------------------------------------------------------------------------------
-data:extend {
-    raw_wood_to_coal,
-    wood_to_coal,
-    extract_sulfur,
-    cooling_water,
-    fluegas_to_syngas,
-    soil_separation,
-    richdust_separation,
-    sand_washing,
-    tailings_separation,
-    making_chromium,
-    coarse_classification,
-    sand_classification,
-    organics_processing,
-    sand_casting,
-    tar_oil,
-    absorb_air_pollution,
-    slacked_lime,
-    co2_cooking,
-    fawogae_substrate,
-    mineralized_water,
-    science_pack01,
-    soil_washing,
-    flask,
-    recipe_bonemeal,
-    recipe_rawborax,
-    recipe_borax,
-    recipe_ralesia,
-    recipe_rich_clay,
-    recipe_ground_sample01,
-    recipe_bio_sample01,
-    science_pack02,
-    recipe_alien_sample01,
-    recipe_ralesia_seeds,
-    recipe_equipment_chassi,
-    recipe_lab_instrument,
-    recipe_boron_trioxide,
-    recipe_lens,
-    recipe_oleochemicals,
-    recipe_organic_solvent,
-    recipe_co2_organics,
-    recipe_aromatic_organic,
-    science_pack03,
-    recipe_petgas_methanol,
-    recipe_oleo_heavy,
-    recipe_bone_solvent,
-    recipe_dirty_acid,
-    recipe_filtration_dirty_water,
-    recipe_olefin_filtration,
-    recipe_coalgas_syngas,
-    recipe_oleo_oil,
-    recipe_sand_brick,
-    tailings_classification,
-    recipe_tar_distilation,
-    recipe_oleochemicals_distilation,
-    recipe_tar_gasification,
-    recipe_oleo_gasification,
-    recipe_coal_dust,
-    recipe_coal_fawogae,
-    recipe_re_dirtywater,
-    recipe_richdust_remud,
-    recipe_crushed_copper,
-    recipe_crushed_iron,
-    recipe_sulfur_heavyoil,
-    recipe_sulfur_lightoil,
-    recipe_sulfur_petgas,
-    recipe_sulfur_crudeoil,
-    recipe_organics_from_rawwood,
-    recipe_creosote_to_aromatics,
-    recipe_aromatics_to_lubricant,
-    recipe_aromatics_to_rubber,
-    recipe_aromatics_to_plastic,
-    recipe_nas_battery,
-    recipe_coke_coal,
-    recipe_stone_distilation,
-    recipe_oleo_solidfuel,
-    recipe_glycerol_hydrogen,
-    recipe_log1,
-    recipe_log2,
-    recipe_log3,
-    recipe_log4,
-    recipe_log5,
-    recipe_log6,
-    recipe_log_wood,
-    recipe_log_organics,
-    recipe_raw_wood,
-    recipe_ash_separation,
-    fluegas_filtration,
-	coaldust_ash
 }

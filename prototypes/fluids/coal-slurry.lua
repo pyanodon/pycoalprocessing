@@ -14,14 +14,13 @@ local recipe1 = {
         {type = "fluid", name = "coal-slurry", amount = 150}
     },
     main_product = "coal-slurry",
-    icon = "__pycoalprocessing__/graphics/icons/coal-slurry.png"
-    --order = "b-c [syn-gas]",
 }
 
 local fluid = {
     type = "fluid",
     name = "coal-slurry",
     icon = "__pycoalprocessing__/graphics/icons/coal-slurry.png",
+    icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.247, g = 0.247, b = 0.247},

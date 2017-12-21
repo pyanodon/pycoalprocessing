@@ -29,13 +29,13 @@ local recipe1 = {
         {"steel-plate", 20}
     },
     result = "rectisol",
-    icon = "__pycoalprocessing__/graphics/icons/rectisol.png"
 }
 
 local item1 = {
     type = "item",
     name = "rectisol",
     icon = "__pycoalprocessing__/graphics/icons/rectisol.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "v",
@@ -47,6 +47,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "rectisol",
     icon = "__pycoalprocessing__/graphics/icons/rectisol.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "rectisol"},
     fast_replaceable_group = "rectisol",

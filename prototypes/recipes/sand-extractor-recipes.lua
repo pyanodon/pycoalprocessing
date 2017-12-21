@@ -12,6 +12,7 @@ local extract_sand = {
         {type = "item", name = "sand", amount = 10}
     },
     icon = "__pycoalprocessing__/graphics/icons/extraction-sand.png",
+    icon_size = 32,
     main_product = "sand",
     subgroup = "py-extractor",
     order = "a"
@@ -31,6 +32,7 @@ local extract_gravel = {
         {type = "item", name = "gravel", amount = 10}
     },
     icon = "__pycoalprocessing__/graphics/icons/extraction-gravel.png",
+    icon_size = 32,
     main_product = "gravel",
     subgroup = "py-extractor",
     order = "b"
@@ -50,6 +52,7 @@ local extract_stone = {
         {type = "item", name = "stone", amount = 10}
     },
     icon = "__pycoalprocessing__/graphics/icons/extraction-stone.png",
+    icon_size = 32,
     main_product = "stone",
     subgroup = "py-extractor",
     order = "c"
@@ -69,6 +72,7 @@ local extract_richdust = {
         {type = "item", name = "rich-dust", amount = 15}
     },
     icon = "__pycoalprocessing__/graphics/icons/extraction-richdust.png",
+    icon_size = 32,
     main_product = "rich-dust",
     subgroup = "py-extractor",
     order = "d"
@@ -88,6 +92,7 @@ local extract_coarse = {
         {type = "item", name = "coarse", amount = 10}
     },
     icon = "__pycoalprocessing__/graphics/icons/extraction-coarse.png",
+    icon_size = 32,
     main_product = "coarse",
     subgroup = "py-extractor",
     order = "c"

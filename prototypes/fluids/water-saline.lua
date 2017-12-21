@@ -2,6 +2,7 @@ local fluid = {
     type = "fluid",
     name = "water-saline",
     icon = "__pycoalprocessing__/graphics/icons/water-saline.png",
+    icon_size = 32,
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 0.9, g = 0.9, b = 1},

@@ -19,6 +19,7 @@ local fluid = {
     type = "fluid",
     name = "hydrogen-peroxide",
     icon = "__pycoalprocessing__/graphics/icons/hydrogen-peroxide.png",
+    icon_size = 32,
     default_temperature = 15,
     base_color = {r = 0.674, g = 1, b = 0.929},
     flow_color = {r = 0.674, g = 1, b = 0.929},

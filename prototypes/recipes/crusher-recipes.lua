@@ -13,6 +13,7 @@ local niobium_powder = {
         {type = "item", name = "stone", amount = 2}
     },
     icon = "__pycoalprocessing__/graphics/icons/crush-niobium.png",
+    icon_size = 32,
     main_product = "niobium-powder",
     subgroup = "py-crusher",
     order = "a"
@@ -34,6 +35,7 @@ local crushing_iron = {
     },
     main_product = "crushed-iron",
     icon = "__pycoalprocessing__/graphics/icons/crush-iron.png",
+    icon_size = 32,
     subgroup = "py-crusher",
     order = "b"
 }
@@ -54,6 +56,7 @@ local crushing_copper = {
     },
     main_product = "crushed-copper",
     icon = "__pycoalprocessing__/graphics/icons/crush-copper.png",
+    icon_size = 32,
     subgroup = "py-crusher",
     order = "c"
 }
@@ -72,6 +75,7 @@ local crushing_stone = {
         {type = "item", name = "gravel", amount = 15}
     },
     icon = "__pycoalprocessing__/graphics/icons/crush-stone.png",
+    icon_size = 32,
     subgroup = "py-crusher",
     order = "d"
 }
@@ -90,6 +94,7 @@ local crushing_gravel = {
         {type = "item", name = "sand", amount = 15}
     },
     icon = "__pycoalprocessing__/graphics/icons/crush-gravel.png",
+    icon_size = 32,
     subgroup = "py-crusher",
     order = "e"
 }
@@ -113,6 +118,7 @@ if bobmods then
         },
         main_product = "crushed-bauxite",
         icon = "__pycoalprocessing__/graphics/icons/crush-bauxite.png",
+        icon_size = 32,
         subgroup = "py-crusher",
         order = "f"
     }
@@ -132,6 +138,7 @@ if bobmods then
         },
         main_product = "crushed-gold",
         icon = "__pycoalprocessing__/graphics/icons/crush-gold.png",
+        icon_size = 32,
         subgroup = "py-crusher",
         order = "g"
     }
@@ -151,6 +158,7 @@ if bobmods then
         },
         main_product = "crushed-lead",
         icon = "__pycoalprocessing__/graphics/icons/crush-lead.png",
+        icon_size = 32,
         subgroup = "py-crusher",
         order = "h"
     }
@@ -170,6 +178,7 @@ if bobmods then
         },
         main_product = "crushed-quartz",
         icon = "__pycoalprocessing__/graphics/icons/crush-quartz.png",
+        icon_size = 32,
         subgroup = "py-crusher",
         order = "i"
     }
@@ -189,6 +198,7 @@ if bobmods then
         },
         main_product = "crushed-nickel",
         icon = "__pycoalprocessing__/graphics/icons/crush-nickel.png",
+        icon_size = 32,
         subgroup = "py-crusher",
         order = "j"
     }
@@ -208,6 +218,7 @@ if bobmods then
         },
         main_product = "crushed-rutile",
         icon = "__pycoalprocessing__/graphics/icons/crush-rutile.png",
+        icon_size = 32,
         subgroup = "py-crusher",
         order = "k"
     }
@@ -227,6 +238,7 @@ if bobmods then
         },
         main_product = "crushed-silver",
         icon = "__pycoalprocessing__/graphics/icons/crush-silver.png",
+        icon_size = 32,
         subgroup = "py-crusher",
         order = "l"
     }
@@ -246,6 +258,7 @@ if bobmods then
         },
         main_product = "crushed-tin",
         icon = "__pycoalprocessing__/graphics/icons/crush-tin.png",
+        icon_size = 32,
         subgroup = "py-crusher",
         order = "m"
     }
@@ -265,6 +278,7 @@ if bobmods then
         },
         main_product = "crushed-tungsten",
         icon = "__pycoalprocessing__/graphics/icons/crush-tungsten.png",
+        icon_size = 32,
         subgroup = "py-crusher",
         order = "n"
     }
@@ -284,6 +298,7 @@ if bobmods then
         },
         main_product = "crushed-zinc",
         icon = "__pycoalprocessing__/graphics/icons/crush-zinc.png",
+        icon_size = 32,
         subgroup = "py-crusher",
         order = "o"
     }

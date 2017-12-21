@@ -17,6 +17,7 @@ local treated_lumber = {
     type = "item",
     name = "treated-wood",
     icon = "__pycoalprocessing__/graphics/icons/treated-wood.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "treated-wood",

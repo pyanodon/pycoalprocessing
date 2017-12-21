@@ -2,6 +2,7 @@ local fluid = {
     type = "fluid",
     name = "glycerol",
     icon = "__pycoalprocessing__/graphics/icons/glycerol.png",
+    icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.913, g = 0.890, b = 0.6},

@@ -1,6 +1,7 @@
 --[[New stuff when bobs is present]] --
+local Data = require("stdlib/data/data")
 
-local methanol_from_hydrogen = {
+Data {
     type = "recipe",
     name = "methanol-from-hydrogen",
     category = "methanol",
@@ -18,10 +19,11 @@ local methanol_from_hydrogen = {
     --main_product= "methanol",
     subgroup = "py-methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",
+    icon_size = 32,
     order = "b"
 }
 
-local syngas_from_coal_oxygen = {
+Data {
     type = "recipe",
     name = "syngas2",
     category = "gasifier",
@@ -39,12 +41,13 @@ local syngas_from_coal_oxygen = {
     },
     --main_product= "syngas",
     icon = "__pycoalprocessing__/graphics/icons/syngas.png",
+    icon_size = 32,
     subgroup = "py-syngas",
     order = "a-b-[syn-gas]"
 }
 
 --uses bob_carbon
-local recipe_tar_carbon = {
+Data {
     type = "recipe",
     name = "tar-carbon",
     category = "tar",
@@ -59,11 +62,12 @@ local recipe_tar_carbon = {
     main_product = "carbon",
     subgroup = "py-items",
     order = "carbon",
-    icon = data.raw.item.carbon.icon
+    icon = data.raw.item.carbon.icon,
+    icon_size = 32,
     --"__bobplates__/graphics/icons/carbon.png",
 }
 
-local recipe_salt_ex = {
+Data {
     type = "recipe",
     name = "salt-ex",
     category = "evaporator",
@@ -78,10 +82,11 @@ local recipe_salt_ex = {
     main_product = "salt",
     subgroup = "py-items",
     order = "salt",
-    icon = "__pycoalprocessing__/graphics/icons/salt.png"
+    icon = "__pycoalprocessing__/graphics/icons/salt.png",
+    icon_size = 32,
 }
 
-local recipe_saline = {
+Data {
     type = "recipe",
     name = "saline",
     category = "chemistry",
@@ -97,10 +102,11 @@ local recipe_saline = {
     main_product = "water-saline",
     subgroup = "py-items",
     order = "saline",
-    icon = "__pycoalprocessing__/graphics/icons/water-saline.png"
+    icon = "__pycoalprocessing__/graphics/icons/water-saline.png",
+    icon_size = 32,
 }
 
-local void_flue_gas = {
+Data {
     type = "recipe",
     name = "void-flue-gas",
     category = "void-fluid",
@@ -115,11 +121,12 @@ local void_flue_gas = {
     },
     subgroup = "void",
     icon = "__pycoalprocessing__/graphics/icons/flue-gas.png",
+    icon_size = 32,
     order = "flue-gas"
 }
 
 --GLASS PRODUCTION
-local glass = {
+Data {
     type = "recipe",
     name = "glass-sand",
     category = "hpf",
@@ -135,12 +142,13 @@ local glass = {
     },
     main_product = "glass",
     icon = "__bobplates__/graphics/icons/glass.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "i"
 }
 
 --GLASS PRODUCTION2
-local glass2 = {
+Data {
     type = "recipe",
     name = "glass-sand2",
     category = "hpf",
@@ -156,12 +164,13 @@ local glass2 = {
     },
     main_product = "glass",
     icon = "__bobplates__/graphics/icons/glass.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "j"
 }
 
 --GLASS PRODUCTION3 - compatibility with angels
-local glass3 = {
+Data {
     type = "recipe",
     name = "glass-sand3",
     category = "smelting",
@@ -175,12 +184,13 @@ local glass3 = {
     },
     --main_product= "glass",
     icon = "__bobplates__/graphics/icons/glass.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "j"
 }
 
 -- TUNGSTEN POWDER
-local tungsten_powder = {
+Data {
     type = "recipe",
     name = "tungsten-powder",
     category = "ball-mill",
@@ -194,12 +204,13 @@ local tungsten_powder = {
     },
     main_product = "powdered-tungsten",
     icon = "__bobplates__/graphics/icons/powdered-tungsten.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "c"
 }
 
 --SMELT CRUSHED TIN
-local recipe_crushed_tin = {
+Data {
     type = "recipe",
     name = "crushed-tin",
     category = "smelting",
@@ -211,7 +222,7 @@ local recipe_crushed_tin = {
 }
 
 --SMELT CRUSHED LEAD
-local recipe_crushed_lead = {
+Data {
     type = "recipe",
     name = "crushed-lead",
     category = "smelting",
@@ -223,7 +234,7 @@ local recipe_crushed_lead = {
 }
 
 --SMELT CRUSHED SILVER
-local recipe_crushed_silver = {
+Data {
     type = "recipe",
     name = "crushed-silver",
     category = "smelting",
@@ -236,7 +247,7 @@ local recipe_crushed_silver = {
 }
 
 --BOB SMELT GOLD |override?|
-local recipe_crushed_gold = {
+Data {
     type = "recipe",
     name = "crushed-gold",
     category = "chemical-furnace",
@@ -251,7 +262,7 @@ local recipe_crushed_gold = {
 }
 
 --BOB SMELT ZINC |override?|
-local recipe_crushed_zinc = {
+Data {
     type = "recipe",
     name = "crushed-zinc",
     category = "electrolysis",
@@ -266,7 +277,7 @@ local recipe_crushed_zinc = {
 }
 
 --BOB SMELT NICKEL |override?|
-local recipe_crushed_nickel = {
+Data {
     type = "recipe",
     name = "crushed-nickel",
     category = "electrolysis",
@@ -282,11 +293,12 @@ local recipe_crushed_nickel = {
     },
     main_product = "nickel-plate",
     icon = "__bobplates__/graphics/icons/plate/nickel-plate.png",
+    icon_size = 32,
     order = "c-a-f[nickel-plate]"
 }
 
 --BOB SMELT RUTILE |override?|
-local recipe_crushed_rutile = {
+Data {
     type = "recipe",
     name = "crushed-rutile",
     category = "electrolysis",
@@ -302,7 +314,7 @@ local recipe_crushed_rutile = {
 }
 
 --LUBRICANT FROM GLYCEROL
-local recipe_lube_glycerol = {
+Data {
     type = "recipe",
     name = "lube-glycerol",
     category = "chemistry",
@@ -317,12 +329,13 @@ local recipe_lube_glycerol = {
     },
     main_product = "lubricant",
     icon = "__pycoalprocessing__/graphics/icons/lube-glycerol.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a [coal-gas]"
 }
 
 --EXPLOSIVES FROM GLYCEROL
-local recipe_explosives_glycerol = {
+Data {
     type = "recipe",
     name = "explosive-glycerol",
     category = "chemistry",
@@ -337,12 +350,13 @@ local recipe_explosives_glycerol = {
     },
     main_product = "explosives",
     icon = "__base__/graphics/icons/explosives.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a [coal-gas]"
 }
 
 --RESIN FROM GLYCEROL
-local recipe_resin_glycerol = {
+Data {
     type = "recipe",
     name = "resin-glycerol",
     category = "hpf",
@@ -357,12 +371,13 @@ local recipe_resin_glycerol = {
     },
     main_product = "resin",
     icon = "__pycoalprocessing__/graphics/icons/resin-glycerol.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "k"
 }
 
 --SYNGAS DISTILATION
-local recipe_syngas_distilation = {
+Data {
     type = "recipe",
     name = "syngas-distilation",
     category = "distilator",
@@ -377,16 +392,18 @@ local recipe_syngas_distilation = {
     },
     main_product = "hydrogen",
     icon = "__pycoalprocessing__/graphics/icons/syngas-distilation.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a [coal-gas]"
 }
 
 -- CRUSHED BAUXITE
-local crushed_bauxite = {
+Data {
     type = "item",
     name = "crushed-bauxite",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-bauxite.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -394,11 +411,12 @@ local crushed_bauxite = {
 }
 
 -- CRUSHED GOLD
-local crushed_gold = {
+Data {
     type = "item",
     name = "crushed-gold",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-gold.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -406,11 +424,12 @@ local crushed_gold = {
 }
 
 -- CRUSHED LEAD
-local crushed_lead = {
+Data {
     type = "item",
     name = "crushed-lead",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-lead.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -418,11 +437,12 @@ local crushed_lead = {
 }
 
 -- CRUSHED NICKEL
-local crushed_nickel = {
+Data {
     type = "item",
     name = "crushed-nickel",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-nickel.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -430,11 +450,12 @@ local crushed_nickel = {
 }
 
 -- CRUSHED RUTILE
-local crushed_rutile = {
+Data {
     type = "item",
     name = "crushed-rutile",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-rutile.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -442,11 +463,12 @@ local crushed_rutile = {
 }
 
 -- CRUSHED SILVER
-local crushed_silver = {
+Data {
     type = "item",
     name = "crushed-silver",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-silver.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -454,11 +476,12 @@ local crushed_silver = {
 }
 
 -- CRUSHED QUARTZ
-local crushed_quartz = {
+Data {
     type = "item",
     name = "crushed-quartz",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-quartz.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -466,11 +489,12 @@ local crushed_quartz = {
 }
 
 -- CRUSHED TIN
-local crushed_tin = {
+Data {
     type = "item",
     name = "crushed-tin",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tin.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -478,11 +502,12 @@ local crushed_tin = {
 }
 
 -- CRUSHED TUNGSTEN
-local crushed_tungsten = {
+Data {
     type = "item",
     name = "crushed-tungsten",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tungsten.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -490,11 +515,12 @@ local crushed_tungsten = {
 }
 
 -- CRUSHED ZINC
-local crushed_zinc = {
+Data {
     type = "item",
     name = "crushed-zinc",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-zinc.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -503,7 +529,7 @@ local crushed_zinc = {
 
 --WOOD-TO-WOODEN BOARD override bobs?
 
-local wooden_board = {
+Data {
     type = "recipe",
     name = "wood-board",
     category = "wpu",
@@ -516,12 +542,13 @@ local wooden_board = {
         {type = "item", name = "wooden-board", amount = 1}
     },
     icon = "__bobelectronics__/graphics/icons/wooden-board.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a8"
 }
 
 --HYDROGEN to CM1
-local hydrogen_c = {
+Data {
     type = "recipe",
     name = "hydrogen-combustion",
     category = "combustion",
@@ -537,13 +564,14 @@ local hydrogen_c = {
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-hydrogen.png",
+    icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "k"
 }
 
 --SODIUM HYDROXIDE
-local sodium_hydroxide = {
+Data {
     type = "recipe",
     name = "py-sodium-hydroxide",
     category = "chemistry",
@@ -558,12 +586,13 @@ local sodium_hydroxide = {
         {type = "item", name = "limestone", amount = 1}
     },
     icon = "__bobplates__/graphics/icons/sodium-hydroxide.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "a8"
 }
 
 --COAL DUST to CARBON
-local coaldust_carbon = {
+Data {
     type = "recipe",
     name = "coaldust-carbon",
     category = "crafting",
@@ -576,46 +605,9 @@ local coaldust_carbon = {
         {type = "item", name = "carbon", amount = 1},
     },
     icon = "__bobplates__/graphics/icons/carbon.png",
+    icon_size = 32,
     subgroup = "py-items",
     order = "m"
-}
-
-data:extend {
-    methanol_from_hydrogen,
-    recipe_tar_carbon,
-    recipe_salt_ex,
-    syngas_from_coal_oxygen,
-    void_flue_gas,
-    glass,
-    glass2,
-    tungsten_powder,
-    recipe_crushed_tin,
-    recipe_syngas_distilation,
-    recipe_crushed_lead,
-    recipe_crushed_silver,
-    recipe_crushed_gold,
-    recipe_crushed_zinc,
-    recipe_crushed_nickel,
-    recipe_crushed_rutile,
-    crushed_quartz,
-    recipe_lube_glycerol,
-    recipe_explosives_glycerol,
-    recipe_resin_glycerol,
-    crushed_bauxite,
-    crushed_gold,
-    crushed_lead,
-    crushed_nickel,
-    crushed_rutile,
-    crushed_silver,
-    crushed_tin,
-    crushed_tungsten,
-    crushed_zinc,
-    wooden_board,
-    hydrogen_c,
-    glass3,
-    sodium_hydroxide,
-    recipe_saline,
-	coaldust_carbon
 }
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")

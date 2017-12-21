@@ -17,6 +17,7 @@ local recipe1 = {
     },
     main_product = "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/coalgas-from-coal.png",
+    icon_size = 32,
     subgroup = "py-syngas",
     order = "e"
 }
@@ -38,6 +39,7 @@ local recipe2 = {
     },
     main_product = "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/coalgas-from-wood.png",
+    icon_size = 32,
     subgroup = "py-syngas",
     order = "f"
 }
@@ -58,6 +60,7 @@ local recipe3 = {
     },
     main_product = "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/coalgas-from-coke.png",
+    icon_size = 32,
     subgroup = "py-syngas",
     order = "f"
 }
@@ -66,6 +69,7 @@ local fluid = {
     type = "fluid",
     name = "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/coalgas.png",
+    icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.921, g = 0.776, b = 0.541},
