@@ -16,6 +16,7 @@ local diesel = {
     },
     main_product = "diesel",
     icon = "__pycoalprocessing__/graphics/icons/diesel.png",
+    icon_size = 32,
     subgroup = "py-fluids",
     order = "d1"
 }
@@ -36,6 +37,7 @@ local diesel2 = {
     },
     main_product = "diesel",
     icon = "__pycoalprocessing__/graphics/icons/diesel.png",
+    icon_size = 32,
     subgroup = "py-fluids",
     order = "d2"
 }
@@ -59,6 +61,7 @@ local aromatics = {
     },
     main_product = "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
+    icon_size = 32,
     subgroup = "py-fluids",
     order = "d3"
 }
@@ -80,6 +83,7 @@ local olefin = {
     },
     main_product = "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
+    icon_size = 32,
     subgroup = "py-fluids",
     order = "d4"
 }
@@ -101,6 +105,7 @@ local olefin_petgas = {
     },
     main_product = "petroleum-gas",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
+    icon_size = 32,
     subgroup = "py-fluids",
     order = "d5"
 }
@@ -123,6 +128,7 @@ local gasoline = {
     },
     main_product = "gasoline",
     icon = "__pycoalprocessing__/graphics/icons/gasoline.png",
+    icon_size = 32,
     subgroup = "py-fluids",
     order = "d6"
 }
@@ -143,6 +149,7 @@ local refolefin = {
     },
     main_product = "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
+    icon_size = 32,
     subgroup = "py-fluids",
     order = "d7"
 }
@@ -162,6 +169,7 @@ local aromaticsolefin = {
     },
     main_product = "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
+    icon_size = 32,
     subgroup = "py-fluids",
     order = "d8	"
 }

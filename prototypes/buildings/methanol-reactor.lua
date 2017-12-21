@@ -22,13 +22,13 @@ local recipe1 = {
         {"iron-gear-wheel", 15} --bob steel-bearing
     },
     result = "methanol-reactor",
-    icon = "__pycoalprocessing__/graphics/icons/methanol-reactor.png"
 }
 
 local item1 = {
     type = "item",
     name = "methanol-reactor",
     icon = "__pycoalprocessing__/graphics/icons/methanol-reactor.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "q",
@@ -40,6 +40,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "methanol-reactor",
     icon = "__pycoalprocessing__/graphics/icons/methanol-reactor.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "methanol-reactor"},
     fast_replaceable_group = "methanol-reactor",

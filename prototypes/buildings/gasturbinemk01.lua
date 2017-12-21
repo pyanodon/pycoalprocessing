@@ -13,13 +13,13 @@ local recipe1 = {
         {"iron-gear-wheel", 40}
     },
     result = "gasturbinemk01"
-    --icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk01.png",
 }
 
 local item1 = {
     type = "item",
     name = "gasturbinemk01",
     icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk01.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "py-power",
     order = "a-d[gasturbinemk01]",
@@ -31,6 +31,7 @@ local entity1 = {
     type = "generator",
     name = "gasturbinemk01",
     icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk01.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "gasturbinemk01"},
     max_health = 300,

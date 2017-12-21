@@ -12,16 +12,13 @@ local tpa = {
     results = {
         {type = "fluid", name = "tpa", amount = 50}
     },
-    main_product = "tpa",
-    icon = "__pycoalprocessing__/graphics/icons/tpa.png",
-    subgroup = "py-syngas",
-    order = "z-[tpa]"
 }
 
 local fluid = {
     type = "fluid",
     name = "tpa",
     icon = "__pycoalprocessing__/graphics/icons/tpa.png",
+    icon_size = 32,
     default_temperature = 15,
     base_color = {r = 0.937, g = 0.803, b = 0.007},
     flow_color = {r = 0.937, g = 0.803, b = 0.007},

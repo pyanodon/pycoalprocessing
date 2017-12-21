@@ -2,6 +2,7 @@ local fluid = {
     type = "fluid",
     name = "organic-solvent",
     icon = "__pycoalprocessing__/graphics/icons/organic-solvent.png",
+    icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.172, g = 0.705, b = 0.447},
@@ -14,4 +15,3 @@ local fluid = {
 }
 
 data:extend {fluid}
-

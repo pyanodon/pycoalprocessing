@@ -1,8 +1,11 @@
+local Data = require("stdlib/data/data")
 --NOT A GOOD NAME
-local ash = {
+
+Data {
     type = "item",
     name = "ash",
     icon = "__pycoalprocessing__/graphics/icons/ash.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "ash",
@@ -10,10 +13,11 @@ local ash = {
 }
 
 --CHROMIUM
-local chromium = {
+Data {
     type = "item",
     name = "chromium",
     icon = "__pycoalprocessing__/graphics/icons/chromium.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "chromium",
@@ -21,10 +25,11 @@ local chromium = {
 }
 
 --GRAVEL
-local gravel = {
+Data {
     type = "item",
     name = "gravel",
     icon = "__pycoalprocessing__/graphics/icons/gravel.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "gravel",
@@ -32,12 +37,13 @@ local gravel = {
 }
 
 --NOT A GOOD NAME
-local coke = {
+Data {
     type = "item",
     name = "coke",
     fuel_value = "10MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/coke.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "coke",
@@ -45,7 +51,7 @@ local coke = {
 }
 
 --NICHROME
-local recipe_nichrome = {
+Data {
     type = "recipe",
     name = "nichrome",
     category = "hpf",
@@ -58,10 +64,11 @@ local recipe_nichrome = {
     },
     result = "nichrome"
 }
-local nichrome = {
+Data {
     type = "item",
     name = "nichrome",
     icon = "__pycoalprocessing__/graphics/icons/nichrome.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "nichrome",
@@ -71,7 +78,7 @@ local nichrome = {
 --IRON OXIDE
 --Iron ore is typically hidden as a product, smelt directly to iron plate instead
 --2x iron-oxide = 1x iron-plate in the same time it takes 1x iron-ore -> 1x plate
-local recipe_iron_oxide = {
+Data {
     type = "recipe",
     name = "iron-oxide",
     category = "smelting",
@@ -80,10 +87,11 @@ local recipe_iron_oxide = {
     result = "iron-plate"
 }
 
-local iron_oxide = {
+Data {
     type = "item",
     name = "iron-oxide",
     icon = "__pycoalprocessing__/graphics/icons/iron-oxide.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "iron-oxide",
@@ -91,7 +99,7 @@ local iron_oxide = {
 }
 
 --ACTIVE CARBON
-local recipe_active_carbon = {
+Data {
     type = "recipe",
     name = "active-carbon",
     category = "hpf",
@@ -107,12 +115,13 @@ local recipe_active_carbon = {
         {type = "item", name = "active-carbon", amount = 5}
     }
 }
-local active_carbon = {
+Data {
     type = "item",
     name = "active-carbon",
     fuel_value = "25MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items-hpf",
     order = "hpf-[active-carbon]",
@@ -120,7 +129,7 @@ local active_carbon = {
 }
 
 --ZINC CHLORIDE
-local recipe_zinc_chloride = {
+Data {
     type = "recipe",
     name = "zinc-chloride",
     category = "chemistry",
@@ -137,13 +146,15 @@ local recipe_zinc_chloride = {
     },
     main_product = "zinc-chloride",
     icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
+    icon_size = 32,
     order = "d [syn-gas]"
 }
 
-local zinc_chloride = {
+Data {
     type = "item",
     name = "zinc-chloride",
     icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "zinc-chloride",
@@ -151,7 +162,7 @@ local zinc_chloride = {
 }
 
 --TAILINGS DUST
-local recipe_tailings_dust = {
+Data {
     type = "recipe",
     name = "tailings-dust",
     category = "evaporator",
@@ -165,12 +176,14 @@ local recipe_tailings_dust = {
         {type = "fluid", name = "acidgas", amount = 30, probability = 0.5}
     },
     main_product = "tailings-dust",
-    icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png"
+    icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
+    icon_size = 32,
 }
-local tailings_dust = {
+Data {
     type = "item",
     name = "tailings-dust",
     icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "tailings-dust",
@@ -178,7 +191,7 @@ local tailings_dust = {
 }
 
 -- SOIL
-local recipe_soil = {
+Data {
     type = "recipe",
     name = "soil",
     category = "soil-extraction",
@@ -190,12 +203,12 @@ local recipe_soil = {
     results = {
         {type = "item", name = "soil", amount = 12}
     },
-    icon = "__pycoalprocessing__/graphics/icons/soil.png"
 }
-local soil = {
+Data {
     type = "item",
     name = "soil",
     icon = "__pycoalprocessing__/graphics/icons/soil.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "soil",
@@ -203,10 +216,11 @@ local soil = {
 }
 
 -- NEXELIT-ORE
-local nexelit_ore = {
+Data {
     type = "item",
     name = "nexelit-ore",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-ore.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -214,7 +228,7 @@ local nexelit_ore = {
 }
 
 -- DRILL-HEAD
-local recipe_drill_head = {
+Data {
     type = "recipe",
     name = "drill-head",
     category = "crafting",
@@ -229,10 +243,11 @@ local recipe_drill_head = {
         {type = "item", name = "drill-head", amount = 4}
     }
 }
-local drill_head = {
+Data {
     type = "item",
     name = "drill-head",
     icon = "__pycoalprocessing__/graphics/icons/drill-head.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -240,10 +255,11 @@ local drill_head = {
 }
 
 --SAND
-local sand = {
+Data {
     type = "item",
     name = "sand",
     icon = "__pycoalprocessing__/graphics/icons/sand.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "sand",
@@ -251,10 +267,11 @@ local sand = {
 }
 
 --PURE SAND
-local pure_sand = {
+Data {
     type = "item",
     name = "pure-sand",
     icon = "__pycoalprocessing__/graphics/icons/pure-sand.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "pure-sand",
@@ -262,10 +279,11 @@ local pure_sand = {
 }
 
 --LIMESTONE
-local limestone = {
+Data {
     type = "item",
     name = "limestone",
     icon = "__pycoalprocessing__/graphics/icons/limestone.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "limestone",
@@ -273,10 +291,11 @@ local limestone = {
 }
 
 --ORGANICS
-local organics = {
+Data {
     type = "item",
     name = "organics",
     icon = "__pycoalprocessing__/graphics/icons/organics.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "organics",
@@ -284,10 +303,11 @@ local organics = {
 }
 
 --COARSE FRACTION
-local coarse = {
+Data {
     type = "item",
     name = "coarse",
     icon = "__pycoalprocessing__/graphics/icons/coarse.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "coarse",
@@ -295,10 +315,11 @@ local coarse = {
 }
 
 --RICH DUST
-local rich_dust = {
+Data {
     type = "item",
     name = "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/richdust.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "rich-dust",
@@ -306,10 +327,11 @@ local rich_dust = {
 }
 
 --COAL DUST
-local coal_dust = {
+Data {
     type = "item",
     name = "coal-dust",
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     fuel_value = "7MJ",
     fuel_category = "chemical",
@@ -319,10 +341,11 @@ local coal_dust = {
 }
 
 --CHROMITE SAND
-local chromite_sand = {
+Data {
     type = "item",
     name = "chromite-sand",
     icon = "__pycoalprocessing__/graphics/icons/chromite_sand.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "chromite-sand",
@@ -330,10 +353,11 @@ local chromite_sand = {
 }
 
 --NEXELIT-PLATE
-local nexelit_plate = {
+Data {
     type = "item",
     name = "nexelit-plate",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "nexelit-plate",
@@ -341,10 +365,11 @@ local nexelit_plate = {
 }
 
 --SAND-CASTING
-local sand_casting = {
+Data {
     type = "item",
     name = "sand-casting",
     icon = "__pycoalprocessing__/graphics/icons/sand-casting.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "sand-casting",
@@ -352,7 +377,7 @@ local sand_casting = {
 }
 
 -- LITHIUM PEROXIDE
-local recipe_lithium_peroxide = {
+Data {
     type = "recipe",
     name = "lithium-peroxide",
     category = "chemistry",
@@ -367,10 +392,11 @@ local recipe_lithium_peroxide = {
         {type = "item", name = "lithium-peroxide", amount = 5}
     }
 }
-local lithium_peroxide = {
+Data {
     type = "item",
     name = "lithium-peroxide",
     icon = "__pycoalprocessing__/graphics/icons/lithium-peroxide.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -378,7 +404,7 @@ local lithium_peroxide = {
 }
 
 -- NEXELIT CARTRIDGE
-local recipe_nexelit_cartridge = {
+Data {
     type = "recipe",
     name = "nexelit-cartridge",
     category = "crafting",
@@ -392,10 +418,11 @@ local recipe_nexelit_cartridge = {
         {type = "item", name = "nexelit-cartridge", amount = 1}
     }
 }
-local nexelit_cartridge = {
+Data {
     type = "item",
     name = "nexelit-cartridge",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-cartridge.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -403,10 +430,11 @@ local nexelit_cartridge = {
 }
 
 -- SATURATED NEXELIT CARTRIDGE
-local saturated_nexelit_cartridge = {
+Data {
     type = "item",
     name = "saturated-nexelit-cartridge",
     icon = "__pycoalprocessing__/graphics/icons/saturated-nexelit-cartridge.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -414,7 +442,7 @@ local saturated_nexelit_cartridge = {
 }
 
 -- LIME
-local recipe_lime = {
+Data {
     type = "recipe",
     name = "lime",
     category = "hpf",
@@ -428,14 +456,13 @@ local recipe_lime = {
         {type = "item", name = "lime", amount = 10},
         {type = "fluid", name = "carbon-dioxide", amount = 100}
     },
-    icon = "__pycoalprocessing__/graphics/icons/lime.png",
-    subgroup = "py-items",
-    order = "g"
+    main_product = "lime"
 }
-local lime = {
+Data {
     type = "item",
     name = "lime",
     icon = "__pycoalprocessing__/graphics/icons/lime.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -443,7 +470,7 @@ local lime = {
 }
 
 --FUEL ROD MK01
-local recipe_fuelrod_mk01 = {
+Data {
     type = "recipe",
     name = "fuelrod-mk01",
     category = "hpf",
@@ -458,12 +485,13 @@ local recipe_fuelrod_mk01 = {
         {type = "item", name = "fuelrod-mk01", amount = 3}
     }
 }
-local fuelrod_mk01 = {
+Data {
     type = "item",
     name = "fuelrod-mk01",
     fuel_value = "150MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/fuelrod-mk01.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items-hpf",
     order = "hpf-[active-carbon]",
@@ -471,7 +499,7 @@ local fuelrod_mk01 = {
 }
 
 --FAWOGAE PRODUCTION
-local recipe_fawogae = {
+Data {
     type = "recipe",
     name = "fawogae",
     category = "fawogae",
@@ -484,10 +512,11 @@ local recipe_fawogae = {
         {type = "item", name = "fawogae", amount = 8}
     }
 }
-local fawogae = {
+Data {
     type = "item",
     name = "fawogae",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-icon.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "z",
@@ -495,10 +524,11 @@ local fawogae = {
 }
 
 -- FAWOGAE SUBSTRATE
-local fawogae_substrate = {
+Data {
     type = "item",
     name = "fawogae-substrate",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-substrate.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -506,10 +536,11 @@ local fawogae_substrate = {
 }
 
 -- FLASK
-local flask = {
+Data {
     type = "item",
     name = "flask",
     icon = "__pycoalprocessing__/graphics/icons/flask.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -517,10 +548,11 @@ local flask = {
 }
 
 --BONEMEAL
-local bonemeal = {
+Data {
     type = "item",
     name = "bonemeal",
     icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "z",
@@ -528,10 +560,11 @@ local bonemeal = {
 }
 
 -- RAW BORAX
-local rawborax = {
+Data {
     type = "item",
     name = "raw-borax",
     icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -539,10 +572,11 @@ local rawborax = {
 }
 
 -- BORAX
-local borax = {
+Data {
     type = "item",
     name = "borax",
     icon = "__pycoalprocessing__/graphics/icons/borax.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -550,10 +584,11 @@ local borax = {
 }
 
 -- RALESIA
-local ralesia = {
+Data {
     type = "item",
     name = "ralesia",
     icon = "__pycoalprocessing__/graphics/icons/ralesia.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -561,10 +596,11 @@ local ralesia = {
 }
 
 -- RICH CLAY
-local rich_clay = {
+Data {
     type = "item",
     name = "rich-clay",
     icon = "__pycoalprocessing__/graphics/icons/rich-clay.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -572,10 +608,11 @@ local rich_clay = {
 }
 
 -- GROUND SAMPLE 01
-local ground_sample01 = {
+Data {
     type = "item",
     name = "ground-sample01",
     icon = "__pycoalprocessing__/graphics/icons/ground-sample01.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -583,10 +620,11 @@ local ground_sample01 = {
 }
 
 -- BIO SAMPLE 01
-local bio_sample01 = {
+Data {
     type = "item",
     name = "bio-sample01",
     icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -594,10 +632,11 @@ local bio_sample01 = {
 }
 
 -- ALIEN SAMPLE 01
-local alien_sample01 = {
+Data {
     type = "item",
     name = "alien-sample01",
     icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -605,10 +644,11 @@ local alien_sample01 = {
 }
 
 -- EQUIPMENT CHASSI
-local equipment_chassi = {
+Data {
     type = "item",
     name = "equipment-chassi",
     icon = "__pycoalprocessing__/graphics/icons/equipment-chassi.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -616,10 +656,11 @@ local equipment_chassi = {
 }
 
 -- LAB INSTRUMENT
-local lab_instrument = {
+Data {
     type = "item",
     name = "lab-instrument",
     icon = "__pycoalprocessing__/graphics/icons/lab-instrument.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -627,10 +668,11 @@ local lab_instrument = {
 }
 
 -- LENS
-local lens = {
+Data {
     type = "item",
     name = "lens",
     icon = "__pycoalprocessing__/graphics/icons/lens.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -638,11 +680,12 @@ local lens = {
 }
 
 -- BORON TRIOXIDE
-local boron_trioxide = {
+Data {
     type = "item",
     name = "boron-trioxide",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/boron-trioxide.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -650,11 +693,12 @@ local boron_trioxide = {
 }
 
 -- RALESIA SEEDS
-local ralesia_seeds = {
+Data {
     type = "item",
     name = "ralesia-seeds",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -662,7 +706,7 @@ local ralesia_seeds = {
 }
 
 --NIOBIUM ORE
-local recipe_niobium_ore = {
+Data {
     type = "recipe",
     name = "niobium-ore",
     category = "niobium",
@@ -676,10 +720,11 @@ local recipe_niobium_ore = {
         {type = "item", name = "niobium-ore", amount = 12}
     }
 }
-local niobium_ore = {
+Data {
     type = "item",
     name = "niobium-ore",
     icon = "__pycoalprocessing__/graphics/icons/niobium-ore.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items-hpf",
     order = "g",
@@ -687,17 +732,18 @@ local niobium_ore = {
 }
 
 --NIOBIUM POWDER
-local niobium_powder = {
+Data {
     type = "item",
     name = "niobium-powder",
     icon = "__pycoalprocessing__/graphics/icons/niobium-powder.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-crusher",
     stack_size = 100
 }
 
 --NIOBIUM DUST
-local recipe_niobium_dust = {
+Data {
     type = "recipe",
     name = "niobium-dust",
     category = "ball-mill",
@@ -710,13 +756,13 @@ local recipe_niobium_dust = {
         {type = "item", name = "niobium-dust", amount = 10},
         {type = "item", name = "gravel", amount = 2}
     },
-    icon = "__pycoalprocessing__/graphics/icons/niobium-dust.png",
     main_product = "niobium-dust"
 }
-local niobium_dust = {
+Data {
     type = "item",
     name = "niobium-dust",
     icon = "__pycoalprocessing__/graphics/icons/niobium-dust.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-mill",
     --order = "g",
@@ -724,7 +770,7 @@ local niobium_dust = {
 }
 
 --NIOBIUM CONCENTRATE
-local recipe_niobium_concentrate = {
+Data {
     type = "recipe",
     name = "niobium-concentrate",
     category = "classifier",
@@ -737,15 +783,13 @@ local recipe_niobium_concentrate = {
         {type = "item", name = "niobium-concentrate", amount = 10},
         {type = "item", name = "sand", amount = 2}
     },
-    icon = "__pycoalprocessing__/graphics/icons/class-niobium.png",
     main_product = "niobium-concentrate",
-    subgroup = "py-items-class",
-    order = "d"
 }
-local niobium_concentrate = {
+Data {
     type = "item",
     name = "niobium-concentrate",
     icon = "__pycoalprocessing__/graphics/icons/niobium-concentrate.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items-class",
     order = "d",
@@ -753,7 +797,7 @@ local niobium_concentrate = {
 }
 
 --MUKMOUX FAT
-local recipe_mukmoux_fat = {
+Data {
     type = "recipe",
     name = "mukmoux-fat",
     category = "mukmoux",
@@ -766,13 +810,13 @@ local recipe_mukmoux_fat = {
     results = {
         {type = "item", name = "mukmoux-fat", amount = 15}
     },
-    icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
     main_product = "mukmoux-fat"
 }
-local mukmoux_fat = {
+Data {
     type = "item",
     name = "mukmoux-fat",
     icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -780,7 +824,7 @@ local mukmoux_fat = {
 }
 
 --NIOBIUM OXIDE
-local recipe_niobium_oxide = {
+Data {
     type = "recipe",
     name = "niobium-oxide",
     category = "chemistry",
@@ -793,13 +837,13 @@ local recipe_niobium_oxide = {
     results = {
         {type = "item", name = "niobium-oxide", amount = 10}
     },
-    icon = "__pycoalprocessing__/graphics/icons/niobium-oxide.png",
     main_product = "niobium-oxide"
 }
-local niobium_oxide = {
+Data {
     type = "item",
     name = "niobium-oxide",
     icon = "__pycoalprocessing__/graphics/icons/niobium-oxide.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -807,7 +851,7 @@ local niobium_oxide = {
 }
 
 --NIOBIUM PLATE
-local recipe_niobium_plate = {
+Data {
     type = "recipe",
     name = "niobium-plate",
     category = "chemistry", --bob electrolysis
@@ -820,13 +864,13 @@ local recipe_niobium_plate = {
     results = {
         {type = "item", name = "niobium-plate", amount = 2}
     },
-    icon = "__pycoalprocessing__/graphics/icons/niobium-plate.png",
     main_product = "niobium-plate"
 }
-local niobium_plate = {
+Data {
     type = "item",
     name = "niobium-plate",
     icon = "__pycoalprocessing__/graphics/icons/niobium-plate.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -834,10 +878,11 @@ local niobium_plate = {
 }
 
 -- RARE-EARTH ORE
-local rare_earth_ore = {
+Data {
     type = "item",
     name = "rare-earth-ore",
     icon = "__pycoalprocessing__/graphics/icons/rare-earth-ore.png",
+    icon_size = 32,
     enabled = "false",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
@@ -846,7 +891,7 @@ local rare_earth_ore = {
 }
 
 --RARE-EARTH-POWDER
-local recipe_rare_earth_powder = {
+Data {
     type = "recipe",
     name = "rare-earth-powder",
     category = "crusher",
@@ -859,13 +904,13 @@ local recipe_rare_earth_powder = {
         {type = "item", name = "rare-earth-powder", amount = 8},
         {type = "item", name = "stone", amount = 2}
     },
-    icon = "__pycoalprocessing__/graphics/icons/crush-rare-earth.png",
     main_product = "rare-earth-powder"
 }
-local rare_earth_powder = {
+Data {
     type = "item",
     name = "rare-earth-powder",
     icon = "__pycoalprocessing__/graphics/icons/rare-earth-powder.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-crusher",
     --order = "g",
@@ -873,7 +918,7 @@ local rare_earth_powder = {
 }
 
 --RARE-EARTH-DUST
-local recipe_rare_earth_dust = {
+Data {
     type = "recipe",
     name = "rare-earth-dust",
     category = "ball-mill",
@@ -886,13 +931,13 @@ local recipe_rare_earth_dust = {
         {type = "item", name = "rare-earth-dust", amount = 5},
         {type = "item", name = "gravel", amount = 2}
     },
-    icon = "__pycoalprocessing__/graphics/icons/rare-earth-dust.png",
     main_product = "rare-earth-dust"
 }
-local rare_earth_dust = {
+Data {
     type = "item",
     name = "rare-earth-dust",
     icon = "__pycoalprocessing__/graphics/icons/rare-earth-dust.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-crusher",
     --order = "g",
@@ -900,7 +945,7 @@ local rare_earth_dust = {
 }
 
 --GLASS CORE
-local recipe_glass_core = {
+Data {
     type = "recipe",
     name = "glass-core",
     category = "hpf",
@@ -914,14 +959,14 @@ local recipe_glass_core = {
     results = {
         {type = "item", name = "glass-core", amount = 1}
     },
-    icon = "__pycoalprocessing__/graphics/icons/glass-core.png",
     main_product = "glass-core"
 }
-local glass_core = {
+Data {
     type = "item",
     enabled = "false",
     name = "glass-core",
     icon = "__pycoalprocessing__/graphics/icons/glass-core.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items-hpf",
     --order = "g",
@@ -929,7 +974,7 @@ local glass_core = {
 }
 
 --CLADDING
-local recipe_cladding = {
+Data {
     type = "recipe",
     name = "cladding",
     category = "crafting-with-fluid",
@@ -942,14 +987,14 @@ local recipe_cladding = {
     results = {
         {type = "item", name = "cladding", amount = 1}
     },
-    icon = "__pycoalprocessing__/graphics/icons/cladding.png",
     main_product = "cladding"
 }
-local cladding = {
+Data {
     type = "item",
     enabled = "false",
     name = "cladding",
     icon = "__pycoalprocessing__/graphics/icons/cladding.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -957,7 +1002,7 @@ local cladding = {
 }
 
 --PPD
-local recipe_ppd = {
+Data {
     type = "recipe",
     name = "ppd",
     category = "chemistry", --bob electrolysis
@@ -970,14 +1015,14 @@ local recipe_ppd = {
     results = {
         {type = "item", name = "ppd", amount = 10}
     },
-    icon = "__pycoalprocessing__/graphics/icons/ppd.png",
     main_product = "ppd"
 }
-local ppd = {
+Data {
     type = "item",
     enabled = "false",
     name = "ppd",
     icon = "__pycoalprocessing__/graphics/icons/ppd.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -985,7 +1030,7 @@ local ppd = {
 }
 
 --KEVLAR
-local recipe_kevlar = {
+Data {
     type = "recipe",
     name = "kevlar",
     category = "chemistry",
@@ -999,14 +1044,14 @@ local recipe_kevlar = {
     results = {
         {type = "item", name = "kevlar", amount = 5}
     },
-    icon = "__pycoalprocessing__/graphics/icons/kevlar.png",
     main_product = "kevlar"
 }
-local kevlar = {
+Data {
     type = "item",
     enabled = "false",
     name = "kevlar",
     icon = "__pycoalprocessing__/graphics/icons/kevlar.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -1014,7 +1059,7 @@ local kevlar = {
 }
 
 --KEVLAR COATING
-local recipe_kevlar_coating = {
+Data {
     type = "recipe",
     name = "kevlar-coating",
     category = "crafting",
@@ -1028,13 +1073,13 @@ local recipe_kevlar_coating = {
         {type = "item", name = "kevlar-coating", amount = 1}
     },
     main_product = "kevlar-coating",
-    icon = "__pycoalprocessing__/graphics/icons/kevlar-coating.png"
 }
-local kevlar_coating = {
+Data {
     type = "item",
     enabled = "false",
     name = "kevlar-coating",
     icon = "__pycoalprocessing__/graphics/icons/kevlar-coating.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -1042,7 +1087,7 @@ local kevlar_coating = {
 }
 
 --NbFe ALLOY
-local recipe_nbfe_alloy = {
+Data {
     type = "recipe",
     name = "nbfe-alloy",
     category = "hpf", --bobs smelting
@@ -1055,14 +1100,14 @@ local recipe_nbfe_alloy = {
     results = {
         {type = "item", name = "nbfe-alloy", amount = 1}
     },
-    icon = "__pycoalprocessing__/graphics/icons/nbfe-alloy.png",
     main_product = "nbfe-alloy"
 }
-local nbfe_alloy = {
+Data {
     type = "item",
     enabled = "false",
     name = "nbfe-alloy",
     icon = "__pycoalprocessing__/graphics/icons/nbfe-alloy.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -1070,7 +1115,7 @@ local nbfe_alloy = {
 }
 
 --NbFe COATING
-local recipe_nbfe_coating = {
+Data {
     type = "recipe",
     name = "nbfe-coating",
     category = "crafting",
@@ -1084,13 +1129,13 @@ local recipe_nbfe_coating = {
         {type = "item", name = "nbfe-coating", amount = 1}
     },
     main_product = "nbfe-coating",
-    icon = "__pycoalprocessing__/graphics/icons/nbfe-coating.png"
 }
-local nbfe_coating = {
+Data {
     type = "item",
     enabled = "false",
     name = "nbfe-coating",
     icon = "__pycoalprocessing__/graphics/icons/nbfe-coating.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -1098,7 +1143,7 @@ local nbfe_coating = {
 }
 
 --ATTACH CLADDING TO GLASS CORE
-local recipe_cladded_core = {
+Data {
     type = "recipe",
     name = "cladded-core",
     category = "advanced-crafting",
@@ -1112,13 +1157,13 @@ local recipe_cladded_core = {
         {type = "item", name = "cladded-core", amount = 1}
     },
     main_product = "cladded-core",
-    icon = "__pycoalprocessing__/graphics/icons/cladded-core.png"
 }
-local cladded_core = {
+Data {
     type = "item",
     enabled = "false",
     name = "cladded-core",
     icon = "__pycoalprocessing__/graphics/icons/cladded-core.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -1126,7 +1171,7 @@ local cladded_core = {
 }
 
 --COPPER COATING
-local recipe_copper_coating = {
+Data {
     type = "recipe",
     name = "copper-coating",
     category = "chemistry", --bob electrolysis
@@ -1141,13 +1186,13 @@ local recipe_copper_coating = {
         {type = "item", name = "copper-coating", amount = 2}
     },
     main_product = "copper-coating",
-    icon = "__pycoalprocessing__/graphics/icons/copper-coating.png"
 }
-local copper_coating = {
+Data {
     type = "item",
     enabled = "false",
     name = "copper-coating",
     icon = "__pycoalprocessing__/graphics/icons/copper-coating.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -1155,7 +1200,7 @@ local copper_coating = {
 }
 
 --OPTICAL FIBER
-local recipe_optical_fiber = {
+Data {
     type = "recipe",
     name = "optical-fiber",
     category = "advanced-crafting",
@@ -1169,13 +1214,13 @@ local recipe_optical_fiber = {
         {type = "item", name = "optical-fiber", amount = 3}
     },
     main_product = "optical-fiber",
-    icon = "__pycoalprocessing__/graphics/icons/optical-fiber.png"
 }
-local optical_fiber = {
+Data {
     type = "item",
     enabled = "false",
     name = "optical-fiber",
     icon = "__pycoalprocessing__/graphics/icons/optical-fiber.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -1183,7 +1228,7 @@ local optical_fiber = {
 }
 
 --BIOFILM
-local recipe_biofilm = {
+Data {
     type = "recipe",
     name = "biofilm",
     category = "crafting",
@@ -1198,13 +1243,13 @@ local recipe_biofilm = {
         {type = "item", name = "biofilm", amount = 2}
     },
     main_product = "biofilm",
-    icon = "__pycoalprocessing__/graphics/icons/biofilm.png"
 }
-local biofilm = {
+Data {
     type = "item",
     enabled = "false",
     name = "biofilm",
     icon = "__pycoalprocessing__/graphics/icons/biofilm.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -1212,7 +1257,7 @@ local biofilm = {
 }
 
 --MEDIA FILTER
-local recipe_filtration_media = {
+Data {
     type = "recipe",
     name = "filtration-media",
     category = "crafting",
@@ -1228,27 +1273,28 @@ local recipe_filtration_media = {
         {type = "item", name = "filtration-media", amount = 3}
     },
     main_product = "filtration-media",
-    icon = "__pycoalprocessing__/graphics/icons/filtration-media.png"
 }
-local filtration_media = {
+Data {
     type = "item",
     enabled = "false",
     name = "filtration-media",
     icon = "__pycoalprocessing__/graphics/icons/filtration-media.png",
     flags = {"goes-to-main-inventory"},
+    icon_size = 32,
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
 }
 
 -- COAL BRIQUETTE
-local coal_briquette = {
+Data {
     type = "item",
     enabled = "false",
     name = "coal-briquette",
     fuel_value = "180MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     --order = "g",
@@ -1256,7 +1302,7 @@ local coal_briquette = {
 }
 
 -- CALCIUM CARBIDE
-local recipe_calcium_carbide = {
+Data {
     type = "recipe",
     name = "calcium-carbide",
     category = "hpf",
@@ -1269,14 +1315,12 @@ local recipe_calcium_carbide = {
     results = {
         {type = "item", name = "calcium-carbide", amount = 10}
     },
-    icon = "__pycoalprocessing__/graphics/icons/calcium-carbide.png",
-    subgroup = "py-items",
-    order = "g"
 }
-local calcium_carbide = {
+Data {
     type = "item",
     name = "calcium-carbide",
     icon = "__pycoalprocessing__/graphics/icons/calcium-carbide.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -1284,11 +1328,12 @@ local calcium_carbide = {
 }
 
 -- CRUSHED IRON
-local crushed_iron = {
+Data {
     type = "item",
     name = "crushed-iron",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-iron.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -1296,11 +1341,12 @@ local crushed_iron = {
 }
 
 -- CRUSHED COPPER
-local crushed_copper = {
+Data {
     type = "item",
     name = "crushed-copper",
     enabled = "false",
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-copper.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
@@ -1308,123 +1354,16 @@ local crushed_copper = {
 }
 
 -- LOG
-local item_log = {
+Data {
     type = "item",
     name = "log",
     enabled = "false",
     fuel_value = "10MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/log.png",
+    icon_size = 32,
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "a2",
     stack_size = 100
 }
-
-data:extend(
-    {
-        ash,
-        chromium,
-        coke,
-        recipe_nichrome,
-        nichrome,
-        recipe_iron_oxide,
-        iron_oxide,
-        recipe_active_carbon,
-        active_carbon,
-        zinc_chloride,
-        recipe_zinc_chloride,
-        recipe_tailings_dust,
-        tailings_dust,
-        recipe_soil,
-        soil,
-        nexelit_ore,
-        recipe_drill_head,
-        drill_head,
-        sand,
-        limestone,
-        organics,
-        coarse,
-        gravel,
-        rich_dust,
-        coal_dust,
-        pure_sand,
-        chromite_sand,
-        nexelit_plate,
-        sand_casting,
-        recipe_lithium_peroxide,
-        lithium_peroxide,
-        recipe_nexelit_cartridge,
-        nexelit_cartridge,
-        saturated_nexelit_cartridge,
-        recipe_lime,
-        lime,
-        recipe_fuelrod_mk01,
-        fuelrod_mk01,
-        recipe_fawogae,
-        fawogae,
-        fawogae_substrate,
-        flask,
-        bonemeal,
-        rawborax,
-        borax,
-        ralesia,
-        rich_clay,
-        ground_sample01,
-        bio_sample01,
-        alien_sample01,
-        equipment_chassi,
-        lab_instrument,
-        lens,
-        boron_trioxide,
-        ralesia_seeds,
-        recipe_niobium_ore,
-        niobium_ore,
-        niobium_powder,
-        recipe_niobium_dust,
-        niobium_dust,
-        recipe_niobium_concentrate,
-        niobium_concentrate,
-        recipe_mukmoux_fat,
-        mukmoux_fat,
-        recipe_niobium_oxide,
-        niobium_oxide,
-        recipe_niobium_plate,
-        niobium_plate,
-        rare_earth_ore,
-        recipe_rare_earth_powder,
-        rare_earth_powder,
-        recipe_rare_earth_dust,
-        rare_earth_dust,
-        recipe_glass_core,
-        glass_core,
-        recipe_cladding,
-        cladding,
-        recipe_cladded_core,
-        cladded_core,
-        recipe_copper_coating,
-        copper_coating,
-        recipe_kevlar,
-        kevlar,
-        recipe_kevlar_coating,
-        kevlar_coating,
-        recipe_ppd,
-        ppd,
-        recipe_nbfe_alloy,
-        nbfe_alloy,
-        recipe_nbfe_coating,
-        nbfe_coating,
-        recipe_optical_fiber,
-        optical_fiber,
-        recipe_biofilm,
-        biofilm,
-        recipe_filtration_media,
-        filtration_media,
-        coal_briquette,
-        recipe_calcium_carbide,
-        calcium_carbide,
-        crushed_iron,
-        crushed_copper,
-        item_log
-    }
-)
