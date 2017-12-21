@@ -13,15 +13,13 @@ local recipe1 = {
         {type = "fluid", name = "aromatics", amount = 300}
     },
     main_product = "aromatics",
-    icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
-    subgroup = "py-fluids",
-    order = "a"
 }
 
 local item1 = {
     type = "fluid",
     name = "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
+    icon_size = 32,
     default_temperature = 15,
     base_color = {r = 0.74, g = 0.403, b = 0.388},
     flow_color = {r = 0.74, g = 0.403, b = 0.388},

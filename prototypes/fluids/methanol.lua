@@ -12,8 +12,6 @@ local methanol_from_syngas = {
     results = {
         {type = "fluid", name = "methanol", amount = 50}
     },
-    --main_product= "methanol",
-    icon = "__pycoalprocessing__/graphics/icons/methanol.png",
     subgroup = "py-methanol",
     order = "a"
 }
@@ -35,6 +33,7 @@ local oleo_methanol = {
     },
     main_product = "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol-oleochemicals.png",
+    icon_size = 32,
     subgroup = "py-methanol",
     order = "c"
 }
@@ -45,6 +44,7 @@ local methanol = {
     type = "fluid",
     name = "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",
+    icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.231, g = 0.776, b = 0.333},

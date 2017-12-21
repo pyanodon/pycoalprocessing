@@ -17,6 +17,7 @@ local heavy_oil_from_coal_gas = {
     },
     main_product = "heavy-oil",
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h"
 }
@@ -40,6 +41,7 @@ local light_oil_from_syngas = {
     },
     main_product = "light-oil",
     icon = "__base__/graphics/icons/fluid/light-oil.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h1"
 }
@@ -62,6 +64,7 @@ local petgas_from_refsyngas = {
     },
     main_product = "petroleum-gas",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h2"
 }
@@ -84,6 +87,7 @@ local ref_to_light_oil = {
         {type = "fluid", name = "carbon-dioxide", amount = 200}
     },
     icon = "__pycoalprocessing__/graphics/icons/ref_to_light_oil.png",
+    icon_size = 32,
     main_product = "light-oil",
     subgroup = "py-fluid-handling",
     order = "h4"
@@ -108,6 +112,7 @@ local sulfuric_petgas = {
         {type = "fluid", name = "sulfuric-acid", amount = 500}
     },
     icon = "__pycoalprocessing__/graphics/icons/sulfuric-petgas.png",
+    icon_size = 32,
     main_product = "sulfuric-acid",
     subgroup = "py-fluid-handling",
     order = "h5"
@@ -132,6 +137,7 @@ local combustion_olefin = {
         {type = "fluid", name = "combustion-mixture1", amount = 300}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
+    icon_size = 32,
     main_product = "combustion-mixture1",
     subgroup = "py-fluid-handling",
     order = "h6"
@@ -156,6 +162,7 @@ local rare_earth_beneficiation = {
         {type = "item", name = "sand", amount = 10}
     },
     icon = "__pycoalprocessing__/graphics/icons/rare-earth-mud.png",
+    icon_size = 32,
     main_product = "rare-earth-mud",
     subgroup = "py-fluid-handling",
     order = "h7"
@@ -180,6 +187,7 @@ local recipe_dirty_reaction = {
     },
     main_product = "crude-oil",
     icon = "__pycoalprocessing__/graphics/icons/dirty-reaction.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h8"
 }
@@ -203,6 +211,7 @@ local recipe_heavy_to_coalgas = {
     },
     main_product = "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/heavy-oil-to-coalgas.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h9"
 }
@@ -226,6 +235,7 @@ local recipe_light_to_syngas = {
     },
     main_product = "syngas",
     icon = "__pycoalprocessing__/graphics/icons/light-oil-to-syngas.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h10"
 }
@@ -249,6 +259,7 @@ local recipe_petgas_to_refsyngas = {
     },
     main_product = "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/petgas-to-refsyngas.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h11"
 }
@@ -271,6 +282,7 @@ local recipe_glycerol_syngas = {
     },
     main_product = "syngas",
     icon = "__pycoalprocessing__/graphics/icons/glycerol-syngas.png",
+    icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h12"
 }
@@ -292,7 +304,8 @@ local recipe_coal_briquette = {
         {type = "item", name = "coal-briquette", amount = 1}
     },
     main_product = "coal-briquette",
-    icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png"
+    icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
+    icon_size = 32,
 }
 
 data:extend {

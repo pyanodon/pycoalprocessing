@@ -15,6 +15,7 @@ local recipe_concrete_richclay = {
     main_product = "concrete",
     category = "hpf",
     icon = "__base__/graphics/icons/concrete.png",
+    icon_size = 32,
     subgroup = "py-items-hpf",
     order = "i"
 }

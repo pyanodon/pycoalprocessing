@@ -29,13 +29,13 @@ local recipe1 = {
         {"electronic-circuit", 2} --bob basic-circuit-board
     },
     result = "washer",
-    icon = "__pycoalprocessing__/graphics/icons/washer.png"
 }
 
 local item1 = {
     type = "item",
     name = "washer",
     icon = "__pycoalprocessing__/graphics/icons/washer.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "z2",
@@ -47,6 +47,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "washer",
     icon = "__pycoalprocessing__/graphics/icons/washer.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "washer"},
     fast_replaceable_group = "washer",

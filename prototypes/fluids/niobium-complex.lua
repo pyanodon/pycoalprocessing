@@ -12,8 +12,6 @@ local recipe1 = {
     results = {
         {type = "fluid", name = "niobium-complex", amount = 100}
     },
-    main_product = "niobium-complex",
-    icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",
     subgroup = "py-fluids",
     order = "c"
 }
@@ -22,6 +20,7 @@ local fluid = {
     type = "fluid",
     name = "niobium-complex",
     icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",
+    icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.482, g = 0.607, b = 0.650},

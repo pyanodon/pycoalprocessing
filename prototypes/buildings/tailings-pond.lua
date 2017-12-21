@@ -33,6 +33,7 @@ local item_tailings_pond = {
     type = "item",
     name = "tailings-pond",
     icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "z",
@@ -44,6 +45,7 @@ local entity_tailings_pond = {
     type = "storage-tank",
     name = "tailings-pond",
     icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
+    icon_size = 32,
     flags = {"placeable-player", "player-creation"},
     minable = {hardness = 0.2, mining_time = 3, result = "tailings-pond"},
     max_health = 500,
@@ -110,26 +112,9 @@ local entity_tailings_pond = {
             wire = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}}
         }
     },
-    circuit_connector_sprites = nil,
-    circuit_wire_max_distance = 9
+    circuit_wire_max_distance = 9,
+    circuit_connector_sprites = _G.circuit_connector_definitions["storage-tank"].sprites
 }
-
-if _G.get_circuit_connector_sprites then
-    entity_tailings_pond.circuit_connector_sprites = {
-        _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-        _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-        _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-        _G.get_circuit_connector_sprites({2.546875, -2.4375}, nil, 0)
-    }
-else
-    --entity_tailings_pond.circuit_connector_sprites = _G.circuit_connector_definitions["storage-tank"].sprites
-    entity_tailings_pond.circuit_connector_sprites = {
-        _G.make_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-        _G.make_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-        _G.make_circuit_connector_sprites({2.546875, -2.4375}, nil, 0),
-        _G.make_circuit_connector_sprites({2.546875, -2.4375}, nil, 0)
-    }
-end
 
 local entity_tailings_pond_sprite = {
     type = "simple-entity-with-force",

@@ -22,13 +22,13 @@ local recipe1 = {
         {"electronic-circuit", 3} --bob basic-circuit-board
     },
     result = "hpf",
-    icon = "__pycoalprocessing__/graphics/icons/hpf.png"
 }
 
 local item1 = {
     type = "item",
     name = "hpf",
     icon = "__pycoalprocessing__/graphics/icons/hpf.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "p",
@@ -40,6 +40,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "hpf",
     icon = "__pycoalprocessing__/graphics/icons/hpf.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "hpf"},
     fast_replaceable_group = "hpf",

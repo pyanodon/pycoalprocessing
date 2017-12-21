@@ -11,13 +11,13 @@ local recipe1 = {
         {type = "fluid", name = "creosote", amount = 80}
     },
     main_product = "creosote",
-    icon = "__pycoalprocessing__/graphics/icons/creosote.png"
 }
 
 local fluid = {
     type = "fluid",
     name = "creosote",
     icon = "__pycoalprocessing__/graphics/icons/creosote.png",
+    icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.360, g = 0.250, b = 0.070},

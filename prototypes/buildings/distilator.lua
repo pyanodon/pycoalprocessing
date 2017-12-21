@@ -12,13 +12,13 @@ local recipe1 = {
         {"electronic-circuit", 3} --bob basic-circuit-board
     },
     result = "distilator",
-    icon = "__pycoalprocessing__/graphics/icons/distilator.png"
 }
 
 local item1 = {
     type = "item",
     name = "distilator",
     icon = "__pycoalprocessing__/graphics/icons/distilator.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "k",
@@ -30,6 +30,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "distilator",
     icon = "__pycoalprocessing__/graphics/icons/distilator.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "distilator"},
     fast_replaceable_group = "distilator",
