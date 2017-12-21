@@ -22,13 +22,13 @@ local recipe1 = {
         {"iron-gear-wheel", 30}
     },
     result = "carbon-filter",
-    icon = "__pycoalprocessing__/graphics/icons/carbon-filter.png"
 }
 
 local item1 = {
     type = "item",
     name = "carbon-filter",
     icon = "__pycoalprocessing__/graphics/icons/carbon-filter.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "e",
@@ -40,6 +40,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "carbon-filter",
     icon = "__pycoalprocessing__/graphics/icons/carbon-filter.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "carbon-filter"},
     fast_replaceable_group = "carbon-filter",

@@ -2,6 +2,7 @@ local fluid = {
     type = "fluid",
     name = "water-mineralized",
     icon = "__pycoalprocessing__/graphics/icons/water-mineralized.png",
+    icon_size = 32,
     default_temperature = 25,
     heat_capacity = "1KJ",
     base_color = {r = 0.7, g = 0.7, b = 0.6},

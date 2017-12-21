@@ -2,6 +2,7 @@ local fluid = {
     type = "fluid",
     name = "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
+    icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.6, g = 0.388, b = 0.745},

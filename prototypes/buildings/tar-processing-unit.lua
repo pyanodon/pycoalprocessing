@@ -22,13 +22,13 @@ local recipe1 = {
         {"electronic-circuit", 7}
     },
     result = "tar-processing-unit",
-    icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit.png"
 }
 
 local item1 = {
     type = "item",
     name = "tar-processing-unit",
     icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "z1",
@@ -40,6 +40,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "tar-processing-unit",
     icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "tar-processing-unit"},
     fast_replaceable_group = "tar-processing-unit",

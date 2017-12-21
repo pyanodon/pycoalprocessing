@@ -23,13 +23,13 @@ local recipe1 = {
         {"iron-gear-wheel", 15} --bob steel-bearing
     },
     result = "evaporator",
-    icon = "__pycoalprocessing__/graphics/icons/evaporator.png"
 }
 
 local item1 = {
     type = "item",
     name = "evaporator",
     icon = "__pycoalprocessing__/graphics/icons/evaporator.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "l",
@@ -41,6 +41,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "evaporator",
     icon = "__pycoalprocessing__/graphics/icons/evaporator.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "evaporator"},
     fast_replaceable_group = "evaporator",

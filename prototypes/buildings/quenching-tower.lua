@@ -42,13 +42,13 @@ local recipe1 = {
         {"electronic-circuit", 15}
     },
     result = "quenching-tower",
-    icon = "__pycoalprocessing__/graphics/icons/quenching-tower.png"
 }
 
 local item1 = {
     type = "item",
     name = "quenching-tower",
     icon = "__pycoalprocessing__/graphics/icons/quenching-tower.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "u",
@@ -60,6 +60,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "quenching-tower",
     icon = "__pycoalprocessing__/graphics/icons/quenching-tower.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "quenching-tower"},
     fast_replaceable_group = "quenching-tower",

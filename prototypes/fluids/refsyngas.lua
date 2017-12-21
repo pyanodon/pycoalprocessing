@@ -11,8 +11,6 @@ local refsyngas_from_filtered_syngas = {
     results = {
         {type = "fluid", name = "refsyngas", amount = 70}
     },
-    --main_product= "refsyngas",
-    icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
     subgroup = "py-syngas",
     order = "h"
 }
@@ -33,8 +31,8 @@ local refsyngas_from_meth = {
         {type = "fluid", name = "carbon-dioxide", amount = 30},
         {type = "fluid", name = "acidgas", amount = 65}
     },
-    --main_product= "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
+    icon_size = 32,
     subgroup = "py-syngas",
     order = "i"
 }
@@ -59,6 +57,7 @@ local refsyngas_from_meth_canister = {
     --main_product= "refsyngas",
     subgroup = "py-syngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
+    icon_size = 32,
     order = "j"
 }
 
@@ -66,6 +65,7 @@ local refsyngas = {
     type = "fluid",
     name = "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
+    icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.8, g = 0.239, b = 0.129},

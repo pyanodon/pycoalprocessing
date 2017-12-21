@@ -13,15 +13,13 @@ local acetylene = {
         {type = "fluid", name = "slacked-lime", amount = 50}
     },
     main_product = "acetylene",
-    icon = "__pycoalprocessing__/graphics/icons/acetylene.png",
-    subgroup = "py-syngas",
-    order = "z-[acetylene]"
 }
 
 local fluid = {
     type = "fluid",
     name = "acetylene",
     icon = "__pycoalprocessing__/graphics/icons/acetylene.png",
+    icon_size = 32,
     default_temperature = 15,
     base_color = {r = 0.862, g = 0.388, b = 0.713},
     flow_color = {r = 0.862, g = 0.388, b = 0.713},

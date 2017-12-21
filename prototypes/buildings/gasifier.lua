@@ -22,13 +22,13 @@ local recipe1 = {
         {"electronic-circuit", 4}
     },
     result = "gasifier",
-    icon = "__pycoalprocessing__/graphics/icons/gasifier.png"
 }
 
 local item1 = {
     type = "item",
     name = "gasifier",
     icon = "__pycoalprocessing__/graphics/icons/gasifier.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "o",
@@ -40,6 +40,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "gasifier",
     icon = "__pycoalprocessing__/graphics/icons/gasifier.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "gasifier"},
     fast_replaceable_group = "gasifier",

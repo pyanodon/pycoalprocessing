@@ -40,13 +40,13 @@ local recipe1 = {
         {"iron-plate", 30} --bob lead-plate
     },
     result = "power-house",
-    icon = "__pycoalprocessing__/graphics/icons/power-house.png"
 }
 
 local item1 = {
     type = "item",
     name = "power-house",
     icon = "__pycoalprocessing__/graphics/icons/power-house.png",
+    icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "t",
@@ -58,6 +58,7 @@ local entity1 = {
     type = "assembling-machine",
     name = "power-house",
     icon = "__pycoalprocessing__/graphics/icons/power-house.png",
+    icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "power-house"},
     fast_replaceable_group = "power-house",
