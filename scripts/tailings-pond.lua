@@ -38,13 +38,13 @@ end
 local function empty_pond_gas(fluid, surface, position)
     if fluid then
         if
-            fluid.temperature >= game.fluid_prototypes[fluid.type].gas_temperature or
-                (fluid.type:contains("-gas") or fluid.type:contains("gas-") and not _gasses[fluid.type] == false) or
-                _gasses[fluid.type] == true
+            fluid.temperature >= game.fluid_prototypes[fluid.name].gas_temperature or
+                (fluid.name:contains("-gas") or fluid.name:contains("gas-") and not _gasses[fluid.name] == false) or
+                _gasses[fluid.name] == true
          then
             surface.pollute(position, fluid.amount * _pollution_mod)
             return nil
-        elseif _gasses[fluid.type] == false then
+        elseif _gasses[fluid.name] == false then
             return nil
         end
         return fluid
@@ -58,12 +58,12 @@ local function create_sprite(entity)
     return sprite
 end
 
-local function new_pond_data(entity, sprite)
+local function new_pond_data(entity)
     return {
         tick = game.tick,
         index = entity.unit_number,
         entity = entity,
-        sprite = sprite,
+        sprite = create_sprite(entity),
         full = nil,
         fluid_per = 0
     }
@@ -91,7 +91,7 @@ local function scorch_earth(pond, tick)
                 pond.full = nil
                 --polluted ground is very difficult to walk on, it also ruins any path tiles near it.
                 --TODO Issues when polluting near water.
-                if string.contains(fluid.type, "dirty") or not string.contains(fluid.type, "water") then
+                if fluid.name:contains("dirty") or not fluid.name:contains("water") then
                     local tiles = {}
                     for x, y in Area.spiral_iterate(Position.expand_to_area(pond.entity.position, 6)) do
                         tiles[#tiles + 1] = {name = "polluted-ground", position = {x = x, y = y}}
@@ -128,8 +128,7 @@ function tailings_pond.create(event)
         local ponds = global.tailings_ponds
         local entity = event.created_entity
         entity.direction = defines.direction.north
-        local sprite = create_sprite(entity)
-        local pond = new_pond_data(entity, sprite)
+        local pond = new_pond_data(entity)
         ponds[pond.index] = pond
     end
 end
@@ -150,12 +149,16 @@ function tailings_pond.on_tick(event)
     if event.tick % 30 == 0 then
         local ponds = global.tailings_ponds
         for _, pond in pairs(ponds) do
-            if pond.entity.valid and pond.sprite and pond.sprite.valid then
+            if pond.entity.valid then
+                if pond.sprite and pond.sprite.valid then
                 --Vent any gasses, also check for some bob gases.
                 -- if liquid then Pollute the ground, and drain some fluid
                 scorch_earth(pond, event.tick)
                 --Set the animation needed based on fill level..
                 set_animation(pond)
+                else
+                    pond.sprite = create_sprite(pond.entity)
+                end
             end
         end
     end
@@ -170,11 +173,6 @@ Event.register(Event.core_events.init, tailings_pond.on_init)
 function tailings_pond.on_configuration_changed(data)
     if data.mod_changes and data.mod_changes[MOD.name] then -- This Mod has changed
         global.tailings_ponds = global.tailings_ponds or {}
-        for _, pond in pairs(global.tailings_ponds) do
-            if pond.sprite then
-                pond.sprite.teleport(pond.entity.position)
-            end
-        end
     end
 end
 Event.register(Event.core_events.configuration_changed, tailings_pond.on_configuration_changed)

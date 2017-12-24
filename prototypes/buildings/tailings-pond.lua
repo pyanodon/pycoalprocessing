@@ -117,7 +117,7 @@ local entity_tailings_pond = {
 }
 
 local entity_tailings_pond_sprite = {
-    type = "simple-entity-with-force",
+    type = "simple-entity-with-owner",
     name = "tailings-pond-sprite",
     selectable_in_game = false,
     render_layer = "object",
