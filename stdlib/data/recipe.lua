@@ -4,8 +4,8 @@
 local Recipe = {}
 setmetatable(Recipe, {__index = require("stdlib/data/core")})
 
-local Item = require('stdlib/data/item')
-local Fluid = require('stdlib/data/fluid')
+local Item = require("stdlib/data/item")
+local Fluid = require("stdlib/data/fluid")
 
 --- Returns a valid recipe object reference. This is the main getter
 -- @tparam string|table recipe The recipe to use, if string the recipe must be in data.raw.recipe, tables are not verified
@@ -19,7 +19,7 @@ function Recipe:get(recipe, opts)
     if object then
         return setmetatable(object, Recipe._mt):extend(object.update_data):save_options(opts)
     else
-        local msg = "Recipe: "..tostring(recipe).." does not exist."
+        local msg = "Recipe: " .. tostring(recipe) .. " does not exist."
         self.log(msg, opts)
     end
     return self
@@ -73,7 +73,7 @@ local function format(ingredient, result_count)
                 object = {
                     type = "item",
                     name = ingredient[1],
-                    amount = ingredient[2] or 1,
+                    amount = ingredient[2] or 1
                 }
             end
         end
@@ -204,7 +204,6 @@ end
 -- @treturn self
 function Recipe:make_difficult(expensive_energy)
     if self:valid("recipe") and not self.normal then
-
         --convert all ingredients
         local normal, expensive = {}, {}
         for _, ingredient in ipairs(self.ingredients) do
@@ -252,7 +251,7 @@ end
 -- @treturn self
 function Recipe:change_category(category_name, make_new)
     if self:valid() then
-        local Category = require('stdlib/data/category')
+        local Category = require("stdlib/data/category")
         self.category = (Category(category_name, "recipe-category", make_new):valid() and category_name) or self.category
     end
     return self
@@ -284,10 +283,13 @@ end
 -- @tparam boolean enabled Enable or disable the recipe
 -- @treturn self
 function Recipe:set_enabled(enabled)
-    if self.normal then
-        self.normal.enabled = enabled
-        self.expensive.enabled = enabled
-        self.enabled = enabled
+    if self:valid() then
+        if self.normal then
+            self.normal.enabled = enabled
+            self.expensive.enabled = enabled
+        else
+            self.enabled = enabled
+        end
     end
     return self
 end
@@ -355,12 +357,11 @@ end
 -- @tparam[opt=false] boolean for_expensive
 function Recipe:remove_main_product(for_normal, for_expensive)
     if self:valid("recipe") then
-
         if self.normal then
             if for_normal or (for_normal == nil and for_expensive == nil) then
                 self.normal.main_product = nil
             end
-            if for_expensive or (for_normal == nil and for_expensive == nil)then
+            if for_expensive or (for_normal == nil and for_expensive == nil) then
                 self.expensive.main_product = nil
             end
         elseif for_normal or (for_normal == nil and for_expensive == nil) then
@@ -369,7 +370,6 @@ function Recipe:remove_main_product(for_normal, for_expensive)
     end
     return self
 end
-
 
 --- Add a new product to results, converts if needed
 -- @tparam string|Concepts.product normal
@@ -381,14 +381,13 @@ function Recipe:add_result(normal, expensive, main_product)
         self:convert_results()
         self:set_main_product(main_product, normal, expensive)
 
-        -- if self.normal then
-        --     if normal then
-        --     end
-        --     if expensive then
-        --     end
-        -- elseif normal then
-        -- end
-
+    -- if self.normal then
+    --     if normal then
+    --     end
+    --     if expensive then
+    --     end
+    -- elseif normal then
+    -- end
     end
     return self
 end
@@ -403,14 +402,13 @@ function Recipe:remove_result(normal, expensive, main_product)
         self:convert_results()
         self:set_main_product(main_product, normal, expensive)
 
-        -- if self.normal then
-        --     if normal then
-        --     end
-        --     if expensive then
-        --     end
-        -- elseif normal then
-        -- end
-
+    -- if self.normal then
+    --     if normal then
+    --     end
+    --     if expensive then
+    --     end
+    -- elseif normal then
+    -- end
     end
     return self
 end
@@ -429,13 +427,13 @@ function Recipe:replace_result(result_name, normal, expensive, main_product)
             self:remove_result(result_name, expensive and result_name)
             self:set_main_product(main_product, normal, expensive)
 
-            -- if self.normal then
-            --     if normal then
-            --     end
-            --     if expensive then
-            --     end
-            -- elseif normal then
-            -- end
+        -- if self.normal then
+        --     if normal then
+        --     end
+        --     if expensive then
+        --     end
+        -- elseif normal then
+        -- end
         end
     end
     return self
