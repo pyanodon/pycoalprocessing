@@ -4,7 +4,7 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/fuel-production.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-3", "excavation-1"},
+    prerequisites = {"excavation-1"},
     effects = {
         {
             type = "unlock-recipe",
