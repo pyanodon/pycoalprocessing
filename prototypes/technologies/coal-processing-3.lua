@@ -4,7 +4,7 @@ local technology = {
     icon = "__pycoalprocessing__/graphics/technology/coal-processing-3.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-2", "methanol-processing-2"},
+    prerequisites = {"methanol-processing-2"},
     effects = {
         {
             type = "unlock-recipe",
