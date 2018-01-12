@@ -1,30 +1,17 @@
 --- Recipe class
 -- @classmod Recipe
 
-local Recipe = {}
-setmetatable(Recipe, {__index = require("stdlib/data/core")})
+local Recipe = {
+    _class = "Recipe"
+}
+setmetatable(Recipe, {__index = require("stdlib/data/data")})
 
 local Item = require("stdlib/data/item")
-local Fluid = require("stdlib/data/fluid")
 
---- Returns a valid recipe object reference. This is the main getter
--- @tparam string|table recipe The recipe to use, if string the recipe must be in data.raw.recipe, tables are not verified
--- @tparam table opts Logging options to pass
--- @treturn Recipe
-function Recipe:get(recipe, opts)
-    self.fail_if_missing(recipe, "recipe is required")
-
-    local object = self.get_object(recipe, "recipe")
-
-    if object then
-        return setmetatable(object, Recipe._mt):extend(object.update_data):save_options(opts)
-    else
-        local msg = "Recipe: " .. tostring(recipe) .. " does not exist."
-        self.log(msg, opts)
-    end
-    return self
+function Recipe:_get(recipe)
+    return self:get(recipe, "recipe")
 end
-Recipe:set_caller(Recipe.get)
+Recipe:set_caller(Recipe._get)
 
 -- Returns a formated ingredient or prodcut table
 local function format(ingredient, result_count)
@@ -55,13 +42,7 @@ local function format(ingredient, result_count)
         if ingredient.valid and ingredient:valid() then
             return ingredient
         elseif ingredient.name then
-            local item
-            if ingredient.type and ingredient.type == "fluid" then
-                item = Fluid(ingredient.name)
-            else
-                item = Item(ingredient.name, nil)
-            end
-            if item:valid() then
+            if Item(ingredient.name, ingredient.type):valid() then
                 object = table.deepcopy(ingredient)
                 if not object.amount and not (object.amount_min and object.amount_max and object.probability) then
                     error("Result table requires amount or probabilities")
@@ -69,7 +50,8 @@ local function format(ingredient, result_count)
             end
         elseif #ingredient > 0 then
             -- Can only be item types not fluid
-            if Item(ingredient[1]):valid() then
+            local item = Item(ingredient[1])
+            if item:valid() and item.type ~= "fluid" then
                 object = {
                     type = "item",
                     name = ingredient[1],
@@ -79,15 +61,10 @@ local function format(ingredient, result_count)
         end
     elseif type(ingredient) == "string" then
         -- Our shortcut so we need to check it
-        if Item(ingredient):valid() then
+        local item = Item(ingredient)
+        if item:valid() then
             object = {
-                type = "item",
-                name = ingredient,
-                amount = result_count or 1
-            }
-        elseif Fluid(ingredient):valid() then
-            object = {
-                type = "fluid",
+                type = item.type == "fluid" and "fluid" or "item",
                 name = ingredient,
                 amount = result_count or 1
             }
@@ -442,7 +419,7 @@ end
 Recipe._mt = {
     type = "recipe",
     __index = Recipe,
-    __call = Recipe.get,
+    __call = Recipe._get,
     __tostring = Recipe.tostring
 }
 
