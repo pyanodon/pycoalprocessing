@@ -1,4 +1,4 @@
-local technology = {
+Technology {
     type = "technology",
     name = "excavation-1",
     icon = "__pycoalprocessing__/graphics/technology/excavation-1.png",
@@ -49,4 +49,3 @@ local technology = {
         time = 35
     }
 }
-data:extend {technology}

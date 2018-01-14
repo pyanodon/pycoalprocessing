@@ -1,5 +1,3 @@
-local Pipes = require("stdlib.data.pipes")
-
 local function make_tailings_variants()
     local pictures = {}
     for y = 0, 555 - 185, 185 do
@@ -17,7 +15,7 @@ local function make_tailings_variants()
     return pictures
 end
 
-local recipe_tailings_pond = {
+Recipe {
     type = "recipe",
     name = "tailings-pond",
     enabled = "true",
@@ -29,7 +27,7 @@ local recipe_tailings_pond = {
     result = "tailings-pond"
 }
 
-local item_tailings_pond = {
+Item {
     type = "item",
     name = "tailings-pond",
     icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
@@ -41,7 +39,7 @@ local item_tailings_pond = {
     stack_size = 50
 }
 
-local entity_tailings_pond = {
+Entity {
     type = "storage-tank",
     name = "tailings-pond",
     icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
@@ -116,7 +114,7 @@ local entity_tailings_pond = {
     circuit_connector_sprites = _G.circuit_connector_definitions["storage-tank"].sprites
 }
 
-local entity_tailings_pond_sprite = {
+Entity {
     type = "simple-entity-with-owner",
     name = "tailings-pond-sprite",
     selectable_in_game = false,
@@ -126,11 +124,4 @@ local entity_tailings_pond_sprite = {
     collision_box = nil,
     collision_mask = {},
     pictures = make_tailings_variants()
-}
-
-data:extend {
-    recipe_tailings_pond,
-    item_tailings_pond,
-    entity_tailings_pond,
-    entity_tailings_pond_sprite
 }

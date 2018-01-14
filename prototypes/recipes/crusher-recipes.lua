@@ -1,5 +1,5 @@
 --NIOBIUM POWDER
-local niobium_powder = {
+Recipe {
     type = "recipe",
     name = "niobium-powder",
     category = "crusher",
@@ -20,7 +20,7 @@ local niobium_powder = {
 }
 
 --IRON
-local crushing_iron = {
+Recipe {
     type = "recipe",
     name = "crushing-iron",
     category = "crusher",
@@ -41,7 +41,7 @@ local crushing_iron = {
 }
 
 --COPPER
-local crushing_copper = {
+Recipe {
     type = "recipe",
     name = "crushing-copper",
     category = "crusher",
@@ -62,7 +62,7 @@ local crushing_copper = {
 }
 
 --STONE to GRAVEL
-local crushing_stone = {
+Recipe {
     type = "recipe",
     name = "stone-to-gravel",
     category = "crusher",
@@ -81,7 +81,7 @@ local crushing_stone = {
 }
 
 --GRAVEL to SAND
-local crushing_gravel = {
+Recipe {
     type = "recipe",
     name = "gravel-to-sand",
     category = "crusher",
@@ -99,11 +99,9 @@ local crushing_gravel = {
     order = "e"
 }
 
-data:extend {crushing_iron, crushing_copper, crushing_stone, crushing_gravel, niobium_powder}
-
 if bobmods then
     --BAUXITE
-    local crushing_bauxite = {
+    Recipe {
         type = "recipe",
         name = "crushing-bauxite",
         category = "crusher",
@@ -123,7 +121,7 @@ if bobmods then
         order = "f"
     }
     --GOLD
-    local crushing_gold = {
+    Recipe {
         type = "recipe",
         name = "crushing-gold",
         category = "crusher",
@@ -143,7 +141,7 @@ if bobmods then
         order = "g"
     }
     --LEAD
-    local crushing_lead = {
+    Recipe {
         type = "recipe",
         name = "crushing-lead",
         category = "crusher",
@@ -163,7 +161,7 @@ if bobmods then
         order = "h"
     }
     --QUARTZ
-    local crushing_quartz = {
+    Recipe {
         type = "recipe",
         name = "crushing-lead",
         category = "crusher",
@@ -183,7 +181,7 @@ if bobmods then
         order = "i"
     }
     --NICKEL
-    local crushing_nickel = {
+    Recipe {
         type = "recipe",
         name = "crushing-nickel",
         category = "crusher",
@@ -203,7 +201,7 @@ if bobmods then
         order = "j"
     }
     --RUTILE
-    local crushing_rutile = {
+    Recipe {
         type = "recipe",
         name = "crushing-rutile",
         category = "crusher",
@@ -223,7 +221,7 @@ if bobmods then
         order = "k"
     }
     --SILVER
-    local crushing_silver = {
+    Recipe {
         type = "recipe",
         name = "crushing-silver",
         category = "crusher",
@@ -243,7 +241,7 @@ if bobmods then
         order = "l"
     }
     --TIN
-    local crushing_tin = {
+    Recipe {
         type = "recipe",
         name = "crushing-tin",
         category = "crusher",
@@ -263,7 +261,7 @@ if bobmods then
         order = "m"
     }
     --TUNGSTEN
-    local crushing_tungsten = {
+    Recipe {
         type = "recipe",
         name = "crushing-tungsten",
         category = "crusher",
@@ -283,7 +281,7 @@ if bobmods then
         order = "n"
     }
     --ZINC
-    local crushing_zinc = {
+    Recipe {
         type = "recipe",
         name = "crushing-zinc",
         category = "crusher",
@@ -301,18 +299,5 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "o"
-    }
-
-    data:extend {
-        crushing_bauxite,
-        crushing_gold,
-        crushing_lead,
-        crushing_quartz,
-        crushing_nickel,
-        crushing_rutile,
-        crushing_silver,
-        crushing_tin,
-        crushing_tungsten,
-        crushing_zinc
     }
 end

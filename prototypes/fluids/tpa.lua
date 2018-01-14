@@ -1,4 +1,4 @@
-local tpa = {
+Recipe {
     type = "recipe",
     name = "tpa",
     category = "rectisol",
@@ -11,10 +11,10 @@ local tpa = {
     },
     results = {
         {type = "fluid", name = "tpa", amount = 50}
-    },
+    }
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "tpa",
     icon = "__pycoalprocessing__/graphics/icons/tpa.png",
@@ -28,5 +28,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "z-[tpa]"
 }
-
-data:extend {fluid, tpa}
