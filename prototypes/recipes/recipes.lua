@@ -421,7 +421,9 @@ Recipe {
         --{type="item", name="glass", amount=8}, --updated bob add glass
         {type = "item", name = "raw-wood", amount = 5}
     },
-    result = "flask",
+    results = {
+      {"flask", 1}
+    },
     icon = "__pycoalprocessing__/graphics/icons/flask.png",
     icon_size = 32,
     subgroup = "py-items",
@@ -1227,7 +1229,9 @@ Recipe {
     enabled = "false",
     energy_required = 3.5,
     ingredients = {{"crushed-iron", 1}},
-    result = "iron-plate",
+    results = {
+      {"iron-plate", 1}
+    },
     result_count = 2
 }
 
@@ -1238,7 +1242,9 @@ Recipe {
     enabled = "false",
     energy_required = 3.5,
     ingredients = {{"crushed-copper", 1}},
-    result = "copper-plate",
+    results = {
+      {"copper-plate", 1}
+    },
     result_count = 2
 }
 

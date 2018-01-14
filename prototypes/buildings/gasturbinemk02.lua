@@ -10,7 +10,9 @@ Recipe {
         {"iron-plate", 30}, --bob invar-alloy
         {"iron-gear-wheel", 40}
     },
-    result = "gasturbinemk02"
+    results = {
+      {"gasturbinemk02", 1}
+    }
 }
 
 Item {

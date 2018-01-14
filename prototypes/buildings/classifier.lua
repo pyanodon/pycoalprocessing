@@ -10,7 +10,9 @@ Recipe {
         {"iron-plate", 20}, --bob titanium-plate
         {"iron-gear-wheel", 50} --bob brass-bearing
     },
-    result = "classifier"
+    results = {
+      {"classifier", 1}
+    }
 }
 
 Item {

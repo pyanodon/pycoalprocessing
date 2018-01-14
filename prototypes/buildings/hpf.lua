@@ -19,7 +19,9 @@ Recipe {
         {"iron-plate", 10}, --bob invar-alloy
         {"electronic-circuit", 3} --bob basic-circuit-board
     },
-    result = "hpf",
+    results = {
+      {"hpf", 1}
+    },
 }
 
 Item {

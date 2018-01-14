@@ -19,7 +19,9 @@ Recipe {
         --{"storage-tank", 1},
         {"electronic-circuit", 4}
     },
-    result = "gasifier",
+    results = {
+      {"gasifier", 1}
+    },
 }
 
 Item {
