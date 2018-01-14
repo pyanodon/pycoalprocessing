@@ -11,7 +11,9 @@ Recipe {
         {"iron-plate", 10}, --bob invar-alloy
         {"electronic-circuit", 20} --bob basic-electronic-circuit-board
     },
-    result = "fts-reactor"
+    results = {
+      {"fts-reactor", 1}
+    }
 }
 
 Item {

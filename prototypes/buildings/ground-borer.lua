@@ -10,7 +10,9 @@ Recipe {
         {"iron-plate", 150}, --bob titanium-plate
         {"iron-gear-wheel", 15} --bob titanium-bearing
     },
-    result = "ground-borer"
+    results = {
+      {"ground-borer", 1}
+    }
 }
 
 Item {

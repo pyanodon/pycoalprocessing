@@ -1,7 +1,4 @@
---[[New stuff when bobs is present]] --
-local Data = require("stdlib/data/data")
-
-Data {
+Recipe {
     type = "recipe",
     name = "methanol-from-hydrogen",
     category = "methanol",
@@ -23,7 +20,7 @@ Data {
     order = "b"
 }
 
-Data {
+Recipe {
     type = "recipe",
     name = "syngas2",
     category = "gasifier",
@@ -47,7 +44,7 @@ Data {
 }
 
 --uses bob_carbon
-Data {
+Recipe {
     type = "recipe",
     name = "tar-carbon",
     category = "tar",
@@ -67,7 +64,7 @@ Data {
     --"__bobplates__/graphics/icons/carbon.png",
 }
 
-Data {
+Recipe {
     type = "recipe",
     name = "salt-ex",
     category = "evaporator",
@@ -86,7 +83,7 @@ Data {
     icon_size = 32,
 }
 
-Data {
+Recipe {
     type = "recipe",
     name = "saline",
     category = "chemistry",
@@ -106,7 +103,7 @@ Data {
     icon_size = 32,
 }
 
-Data {
+Recipe {
     type = "recipe",
     name = "void-flue-gas",
     category = "void-fluid",
@@ -126,7 +123,7 @@ Data {
 }
 
 --GLASS PRODUCTION
-Data {
+Recipe {
     type = "recipe",
     name = "glass-sand",
     category = "hpf",
@@ -148,7 +145,7 @@ Data {
 }
 
 --GLASS PRODUCTION2
-Data {
+Recipe {
     type = "recipe",
     name = "glass-sand2",
     category = "hpf",
@@ -170,7 +167,7 @@ Data {
 }
 
 --GLASS PRODUCTION3 - compatibility with angels
-Data {
+Recipe {
     type = "recipe",
     name = "glass-sand3",
     category = "smelting",
@@ -190,7 +187,7 @@ Data {
 }
 
 -- TUNGSTEN POWDER
-Data {
+Recipe {
     type = "recipe",
     name = "tungsten-powder",
     category = "ball-mill",
@@ -210,31 +207,35 @@ Data {
 }
 
 --SMELT CRUSHED TIN
-Data {
+Recipe {
     type = "recipe",
     name = "crushed-tin",
     category = "smelting",
     enabled = "false",
     energy_required = 3.5,
     ingredients = {{"crushed-tin", 1}},
-    result = "tin-plate",
+    results = {
+      {"tin-plate", 1}
+    },
     result_count = 2
 }
 
 --SMELT CRUSHED LEAD
-Data {
+Recipe {
     type = "recipe",
     name = "crushed-lead",
     category = "smelting",
     enabled = "false",
     energy_required = 3.5,
     ingredients = {{"crushed-lead", 1}},
-    result = "lead-plate",
+    results = {
+      {"lead-plate", 1}
+    },
     result_count = 2
 }
 
 --SMELT CRUSHED SILVER
-Data {
+Recipe {
     type = "recipe",
     name = "crushed-silver",
     category = "smelting",
@@ -247,7 +248,7 @@ Data {
 }
 
 --BOB SMELT GOLD |override?|
-Data {
+Recipe {
     type = "recipe",
     name = "crushed-gold",
     category = "chemical-furnace",
@@ -257,12 +258,14 @@ Data {
         {type = "item", name = "crushed-gold", amount = 1},
         {type = "fluid", name = "chlorine", amount = 5}
     },
-    result = "gold-plate",
+    results = {
+      {"gold-plate", 1}
+    },
     result_count = 2
 }
 
 --BOB SMELT ZINC |override?|
-Data {
+Recipe {
     type = "recipe",
     name = "crushed-zinc",
     category = "electrolysis",
@@ -272,12 +275,14 @@ Data {
         {type = "item", name = "crushed-zinc", amount = 1},
         {type = "fluid", name = "sulfuric-acid", amount = 10}
     },
-    result = "zinc-plate",
+    results = {
+      {"zinc-plate", 1}
+    },
     result_count = 2
 }
 
 --BOB SMELT NICKEL |override?|
-Data {
+Recipe {
     type = "recipe",
     name = "crushed-nickel",
     category = "electrolysis",
@@ -298,7 +303,7 @@ Data {
 }
 
 --BOB SMELT RUTILE |override?|
-Data {
+Recipe {
     type = "recipe",
     name = "crushed-rutile",
     category = "electrolysis",
@@ -309,12 +314,14 @@ Data {
         {type = "item", name = "carbon", amount = 1},
         {type = "item", name = "crushed-rutile", amount = 2}
     },
-    result = "titanium-plate",
+    results = {
+      {"titanium-plate", 1}
+    },
     result_count = 4
 }
 
 --LUBRICANT FROM GLYCEROL
-Data {
+Recipe {
     type = "recipe",
     name = "lube-glycerol",
     category = "chemistry",
@@ -335,7 +342,7 @@ Data {
 }
 
 --EXPLOSIVES FROM GLYCEROL
-Data {
+Recipe {
     type = "recipe",
     name = "explosive-glycerol",
     category = "chemistry",
@@ -356,7 +363,7 @@ Data {
 }
 
 --RESIN FROM GLYCEROL
-Data {
+Recipe {
     type = "recipe",
     name = "resin-glycerol",
     category = "hpf",
@@ -377,7 +384,7 @@ Data {
 }
 
 --SYNGAS DISTILATION
-Data {
+Recipe {
     type = "recipe",
     name = "syngas-distilation",
     category = "distilator",
@@ -398,7 +405,7 @@ Data {
 }
 
 -- CRUSHED BAUXITE
-Data {
+Item {
     type = "item",
     name = "crushed-bauxite",
     enabled = "false",
@@ -411,7 +418,7 @@ Data {
 }
 
 -- CRUSHED GOLD
-Data {
+Item {
     type = "item",
     name = "crushed-gold",
     enabled = "false",
@@ -424,7 +431,7 @@ Data {
 }
 
 -- CRUSHED LEAD
-Data {
+Item {
     type = "item",
     name = "crushed-lead",
     enabled = "false",
@@ -437,7 +444,7 @@ Data {
 }
 
 -- CRUSHED NICKEL
-Data {
+Item {
     type = "item",
     name = "crushed-nickel",
     enabled = "false",
@@ -450,7 +457,7 @@ Data {
 }
 
 -- CRUSHED RUTILE
-Data {
+Item {
     type = "item",
     name = "crushed-rutile",
     enabled = "false",
@@ -463,7 +470,7 @@ Data {
 }
 
 -- CRUSHED SILVER
-Data {
+Item {
     type = "item",
     name = "crushed-silver",
     enabled = "false",
@@ -476,7 +483,7 @@ Data {
 }
 
 -- CRUSHED QUARTZ
-Data {
+Item {
     type = "item",
     name = "crushed-quartz",
     enabled = "false",
@@ -489,7 +496,7 @@ Data {
 }
 
 -- CRUSHED TIN
-Data {
+Item {
     type = "item",
     name = "crushed-tin",
     enabled = "false",
@@ -502,7 +509,7 @@ Data {
 }
 
 -- CRUSHED TUNGSTEN
-Data {
+Item {
     type = "item",
     name = "crushed-tungsten",
     enabled = "false",
@@ -515,7 +522,7 @@ Data {
 }
 
 -- CRUSHED ZINC
-Data {
+Item {
     type = "item",
     name = "crushed-zinc",
     enabled = "false",
@@ -529,7 +536,7 @@ Data {
 
 --WOOD-TO-WOODEN BOARD override bobs?
 
-Data {
+Recipe {
     type = "recipe",
     name = "wood-board",
     category = "wpu",
@@ -548,7 +555,7 @@ Data {
 }
 
 --HYDROGEN to CM1
-Data {
+Recipe {
     type = "recipe",
     name = "hydrogen-combustion",
     category = "combustion",
@@ -571,7 +578,7 @@ Data {
 }
 
 --SODIUM HYDROXIDE
-Data {
+Recipe {
     type = "recipe",
     name = "py-sodium-hydroxide",
     category = "chemistry",
@@ -592,7 +599,7 @@ Data {
 }
 
 --COAL DUST to CARBON
-Data {
+Recipe {
     type = "recipe",
     name = "coaldust-carbon",
     category = "crafting",

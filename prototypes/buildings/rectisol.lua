@@ -26,7 +26,9 @@ Recipe {
         {"iron-plate", 25},
         {"steel-plate", 20}
     },
-    result = "rectisol",
+    results = {
+      {"rectisol", 1}
+    },
 }
 
 Item {

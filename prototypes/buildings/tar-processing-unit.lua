@@ -19,7 +19,9 @@ Recipe {
         {"stone-furnace", 1},
         {"electronic-circuit", 7}
     },
-    result = "tar-processing-unit",
+    results = {
+      {"tar-processing-unit", 1}
+    },
 }
 
 Item {

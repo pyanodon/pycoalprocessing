@@ -39,7 +39,9 @@ Recipe {
         {"pump", 2},
         {"electronic-circuit", 15}
     },
-    result = "quenching-tower",
+    results = {
+      {"quenching-tower", 1}
+    },
 }
 
 Item {

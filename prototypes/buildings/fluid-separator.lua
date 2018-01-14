@@ -10,7 +10,9 @@ Recipe {
         {"pipe", 40},
         {"iron-gear-wheel", 15} --bob steel-bearing
     },
-    result = "fluid-separator"
+    results = {
+      {"fluid-separator", 1}
+    }
 }
 
 Item {

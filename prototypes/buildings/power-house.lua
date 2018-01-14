@@ -37,7 +37,9 @@ Recipe {
         {"iron-gear-wheel", 15}, --bob steel-bearing
         {"iron-plate", 30} --bob lead-plate
     },
-    result = "power-house",
+    results = {
+      {"power-house", 1}
+    },
 }
 
 Item {

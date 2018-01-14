@@ -20,7 +20,9 @@ Recipe {
         {"iron-plate", 40}, --bob steel-gear-wheel
         {"iron-gear-wheel", 15} --bob steel-bearing
     },
-    result = "evaporator",
+    results = {
+      {"evaporator", 1}
+    },
 }
 
 Item {

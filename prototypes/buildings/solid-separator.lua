@@ -10,7 +10,9 @@ Recipe {
         {"iron-plate", 20},
         {"iron-gear-wheel", 50} --bob brass-gear-wheel
     },
-    result = "solid-separator"
+    results = {
+      {"solid-separator", 1}
+    }
 }
 
 Item {
