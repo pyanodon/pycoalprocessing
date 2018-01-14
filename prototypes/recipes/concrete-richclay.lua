@@ -1,6 +1,6 @@
 --CONCRETE from RICHCLAY
 
-local recipe_concrete_richclay = {
+Recipe {
     type = "recipe",
     name = "concrete-richclay",
     enabled = "false",
@@ -18,12 +18,4 @@ local recipe_concrete_richclay = {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "i"
-}
-
-local effects = data.raw.technology["coal-processing-1"].effects
-effects[#effects + 1] = {
-    type = "unlock-recipe",
-    recipe = "concrete-richclay"
-}
-
-data:extend {recipe_concrete_richclay}
+}:add_unlock("coal-processing-1")

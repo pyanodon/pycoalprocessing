@@ -1,6 +1,4 @@
---[[combustion-mixture1]] --
-
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "combustion-mixture2",
     category = "combustion",
@@ -19,7 +17,7 @@ local recipe1 = {
     main_product = "combustion-mixture2",
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "combustion-mixture2",
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture2.png",
@@ -34,5 +32,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "z-[combustion-mixture2]"
 }
-
-data:extend {recipe1, fluid}

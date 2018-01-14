@@ -1,6 +1,4 @@
---[[combustion-mixture1]] --
-
-local fluid = {
+Fluid {
     type = "fluid",
     name = "combustion-mixture1",
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
@@ -15,5 +13,3 @@ local fluid = {
     subgroup = "py-combustion",
     order = "z-[combustion-mixture1]"
 }
-
-data:extend {fluid}

@@ -1,4 +1,4 @@
-local acetylene = {
+Recipe {
     type = "recipe",
     name = "acetylene",
     category = "chemistry",
@@ -15,7 +15,7 @@ local acetylene = {
     main_product = "acetylene",
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "acetylene",
     icon = "__pycoalprocessing__/graphics/icons/acetylene.png",
@@ -30,5 +30,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "z-[acetylene]"
 }
-
-data:extend {fluid, acetylene}

@@ -1,6 +1,4 @@
-local Pipes = require("stdlib.data.pipes")
-
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "advanced-foundry",
     energy_required = 10,
@@ -16,7 +14,7 @@ local recipe1 = {
     result = "advanced-foundry"
 }
 
-local item1 = {
+Item {
     type = "item",
     name = "advanced-foundry",
     icon = "__pycoalprocessing__/graphics/icons/advanced-foundry.png",
@@ -28,7 +26,7 @@ local item1 = {
     stack_size = 10
 }
 
-local entity1 = {
+Entity {
     type = "assembling-machine",
     name = "advanced-foundry",
     icon = "__pycoalprocessing__/graphics/icons/advanced-foundry.png",
@@ -101,5 +99,3 @@ local entity1 = {
         apparent_volume = 2.5
     }
 }
-
-data:extend {recipe1, item1, entity1}

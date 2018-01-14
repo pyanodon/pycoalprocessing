@@ -1,6 +1,4 @@
---[[coal-slurry-fuel]] --
-
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "coal-slurry",
     category = "fluid-separator",
@@ -16,7 +14,7 @@ local recipe1 = {
     main_product = "coal-slurry",
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "coal-slurry",
     icon = "__pycoalprocessing__/graphics/icons/coal-slurry.png",
@@ -31,5 +29,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "z-[coal-slurry]"
 }
-
-data:extend {recipe1, fluid}

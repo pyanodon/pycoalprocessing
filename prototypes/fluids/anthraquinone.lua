@@ -1,4 +1,4 @@
-local anthraquinone = {
+Recipe {
     type = "recipe",
     name = "anthraquinone",
     category = "rectisol",
@@ -11,11 +11,10 @@ local anthraquinone = {
     },
     results = {
         {type = "fluid", name = "anthraquinone", amount = 50}
-    },
-    main_product = "anthraquinone",
+    }
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "anthraquinone",
     icon = "__pycoalprocessing__/graphics/icons/anthraquinone.png",
@@ -29,5 +28,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "z-[anthraquinone]"
 }
-
-data:extend({fluid, anthraquinone})

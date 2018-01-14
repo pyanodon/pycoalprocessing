@@ -1,4 +1,4 @@
-local fluid = {
+Fluid {
     type = "fluid",
     name = "oleochemicals",
     icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
@@ -13,5 +13,3 @@ local fluid = {
     subgroup = "py-fluids",
     order = "z-[oleochemicals]"
 }
-
-data:extend {fluid}

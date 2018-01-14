@@ -1,5 +1,4 @@
---NEXELIT
-local mining_nexelit = {
+Recipe {
     type = "recipe",
     name = "mining-nexelit",
     category = "ground-borer",
@@ -19,8 +18,8 @@ local mining_nexelit = {
     subgroup = "py-drilling",
     order = "a"
 }
---STONE
-local mining_stone = {
+
+Recipe {
     type = "recipe",
     name = "mining-stone",
     category = "ground-borer",
@@ -40,8 +39,8 @@ local mining_stone = {
     subgroup = "py-drilling",
     order = "b"
 }
---LIMESTONE
-local mining_limestone = {
+
+Recipe {
     type = "recipe",
     name = "mining-limestone",
     category = "ground-borer",
@@ -62,11 +61,8 @@ local mining_limestone = {
     order = "c"
 }
 
-data:extend {mining_nexelit, mining_stone, mining_limestone}
-
 if bobmods then
-    --BAUXITE
-    local mining_bauxite = {
+    Recipe {
         type = "recipe",
         name = "mining-bauxite",
         category = "ground-borer",
@@ -86,8 +82,8 @@ if bobmods then
         subgroup = "py-drilling",
         order = "d"
     }
-    --COBALT
-    local mining_cobalt = {
+
+    Recipe {
         type = "recipe",
         name = "mining-cobalt",
         category = "ground-borer",
@@ -107,8 +103,8 @@ if bobmods then
         subgroup = "py-drilling",
         order = "e"
     }
-    --GOLD
-    local mining_gold = {
+
+    Recipe {
         type = "recipe",
         name = "mining-gold",
         category = "ground-borer",
@@ -128,8 +124,8 @@ if bobmods then
         subgroup = "py-drilling",
         order = "f"
     }
-    --LEAD
-    local mining_lead = {
+
+    Recipe {
         type = "recipe",
         name = "mining-lead",
         category = "ground-borer",
@@ -149,8 +145,8 @@ if bobmods then
         subgroup = "py-drilling",
         order = "g"
     }
-    --NICKEL
-    local mining_nickel = {
+
+    Recipe {
         type = "recipe",
         name = "mining-nickel",
         category = "ground-borer",
@@ -170,8 +166,8 @@ if bobmods then
         subgroup = "py-drilling",
         order = "h"
     }
-    --QUARTZ
-    local mining_quartz = {
+
+    Recipe {
         type = "recipe",
         name = "mining-quartz",
         category = "ground-borer",
@@ -191,8 +187,8 @@ if bobmods then
         subgroup = "py-drilling",
         order = "i"
     }
-    --RUTILE
-    local mining_rutile = {
+
+    Recipe {
         type = "recipe",
         name = "mining-rutile",
         category = "ground-borer",
@@ -212,8 +208,8 @@ if bobmods then
         subgroup = "py-drilling",
         order = "j"
     }
-    --SILVER
-    local mining_silver = {
+
+    Recipe {
         type = "recipe",
         name = "mining-silver",
         category = "ground-borer",
@@ -233,8 +229,8 @@ if bobmods then
         subgroup = "py-drilling",
         order = "k"
     }
-    --TIN
-    local mining_tin = {
+
+    Recipe {
         type = "recipe",
         name = "mining-tin",
         category = "ground-borer",
@@ -254,8 +250,8 @@ if bobmods then
         subgroup = "py-drilling",
         order = "l"
     }
-    --TUNGSTEN
-    local mining_tungsten = {
+
+    Recipe {
         type = "recipe",
         name = "mining-tungsten",
         category = "ground-borer",
@@ -275,8 +271,8 @@ if bobmods then
         subgroup = "py-drilling",
         order = "m"
     }
-    --ZINC
-    local mining_zinc = {
+
+    Recipe {
         type = "recipe",
         name = "mining-zinc",
         category = "ground-borer",
@@ -295,19 +291,5 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "n"
-    }
-
-    data:extend {
-        mining_bauxite,
-        mining_cobalt,
-        mining_gold,
-        mining_lead,
-        mining_nickel,
-        mining_quartz,
-        mining_rutile,
-        mining_silver,
-        mining_tin,
-        mining_tungsten,
-        mining_zinc
     }
 end

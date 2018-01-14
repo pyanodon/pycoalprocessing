@@ -1,6 +1,4 @@
-local Pipes = require("stdlib.data.pipes")
-
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "olefin-plant",
     energy_required = 15,
@@ -15,7 +13,7 @@ local recipe1 = {
     result = "olefin-plant"
 }
 
-local item1 = {
+Item {
     type = "item",
     name = "olefin-plant",
     icon = "__pycoalprocessing__/graphics/icons/olefin-plant.png",
@@ -27,7 +25,7 @@ local item1 = {
     stack_size = 10
 }
 
-local entity1 = {
+Entity {
     type = "assembling-machine",
     name = "olefin-plant",
     icon = "__pycoalprocessing__/graphics/icons/olefin-plant.png",
@@ -121,5 +119,3 @@ local entity1 = {
         apparent_volume = 2.5
     }
 }
-
-data:extend {recipe1, item1, entity1}

@@ -1,11 +1,10 @@
 local sand_vehicle_speed_modifier = _G.sand_vehicle_speed_modifier
 
-local polluted_ground = {
+Data {
     type = "tile",
     name = "polluted-ground",
     collision_mask = {"ground-tile"},
     walking_speed_modifier = .50,
-    --autoplace = autoplace_settings("polluted-ground", {{{35, 0.3}, {-5, 0.1}}}),
     autoplace = nil,
     layer = 36,
     variants = {
@@ -62,10 +61,7 @@ local polluted_ground = {
             volume = 0.8
         }
     },
-    --map_color={r=0.6 , g=0.1 , b=0.6, a=0.5},
     map_color = defines.color.brown,
     ageing = 0.0002,
     vehicle_friction_modifier = sand_vehicle_speed_modifier
 }
-
-data:extend {polluted_ground}

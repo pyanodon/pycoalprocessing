@@ -1,4 +1,4 @@
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "syngas",
     category = "gasifier",
@@ -16,7 +16,7 @@ local recipe1 = {
     main_product = "syngas",
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "syngas",
     icon = "__pycoalprocessing__/graphics/icons/syngas.png",
@@ -32,5 +32,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "a-a-[syn-gas]"
 }
-
-data:extend {recipe1, fluid}

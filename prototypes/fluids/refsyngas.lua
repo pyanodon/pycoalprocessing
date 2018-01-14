@@ -1,4 +1,4 @@
-local refsyngas_from_filtered_syngas = {
+Recipe {
     type = "recipe",
     name = "refsyngas-from-filtered-syngas",
     category = "carbonfilter",
@@ -10,12 +10,10 @@ local refsyngas_from_filtered_syngas = {
     },
     results = {
         {type = "fluid", name = "refsyngas", amount = 70}
-    },
-    subgroup = "py-syngas",
-    order = "h"
+    }
 }
 
-local refsyngas_from_meth = {
+Recipe {
     type = "recipe",
     name = "refsyngas-from-meth",
     category = "rectisol",
@@ -31,13 +29,10 @@ local refsyngas_from_meth = {
         {type = "fluid", name = "carbon-dioxide", amount = 30},
         {type = "fluid", name = "acidgas", amount = 65}
     },
-    icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
-    icon_size = 32,
-    subgroup = "py-syngas",
-    order = "i"
+    main_product= "refsyngas"
 }
 
-local refsyngas_from_meth_canister = {
+Recipe {
     type = "recipe",
     name = "refsyngas-from-meth-canister",
     category = "rectisol",
@@ -54,14 +49,10 @@ local refsyngas_from_meth_canister = {
         {type = "fluid", name = "acidgas", amount = 60},
         {type = "item", name = "empty-gas-canister", amount = 1}
     },
-    --main_product= "refsyngas",
-    subgroup = "py-syngas",
-    icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
-    icon_size = 32,
-    order = "j"
+    main_product= "refsyngas"
 }
 
-local refsyngas = {
+Fluid {
     type = "fluid",
     name = "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
@@ -75,5 +66,3 @@ local refsyngas = {
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59
 }
-
-data:extend {refsyngas, refsyngas_from_filtered_syngas, refsyngas_from_meth, refsyngas_from_meth_canister}

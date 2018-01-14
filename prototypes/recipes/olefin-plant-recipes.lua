@@ -1,5 +1,4 @@
---DIESEL
-local diesel = {
+Recipe {
     type = "recipe",
     name = "diesel",
     category = "olefin",
@@ -21,8 +20,7 @@ local diesel = {
     order = "d1"
 }
 
---DIESEL2
-local diesel2 = {
+Recipe {
     type = "recipe",
     name = "diesel2",
     category = "olefin",
@@ -42,8 +40,7 @@ local diesel2 = {
     order = "d2"
 }
 
---AROMATICS
-local aromatics = {
+Recipe {
     type = "recipe",
     name = "aromatics",
     category = "olefin",
@@ -66,8 +63,7 @@ local aromatics = {
     order = "d3"
 }
 
---OLEFIN
-local olefin = {
+Recipe {
     type = "recipe",
     name = "olefin",
     category = "olefin",
@@ -88,8 +84,7 @@ local olefin = {
     order = "d4"
 }
 
---OLEFIN-to-petgas and light-oil
-local olefin_petgas = {
+Recipe {
     type = "recipe",
     name = "olefin-petgas",
     category = "fluid-separator",
@@ -110,8 +105,7 @@ local olefin_petgas = {
     order = "d5"
 }
 
---OLEFIN-to-gasoline
-local gasoline = {
+Recipe {
     type = "recipe",
     name = "gasoline",
     category = "fluid-separator",
@@ -133,8 +127,7 @@ local gasoline = {
     order = "d6"
 }
 
---REFSYNGAS-to-olefins
-local refolefin = {
+Recipe {
     type = "recipe",
     name = "refolefin",
     category = "olefin",
@@ -154,8 +147,7 @@ local refolefin = {
     order = "d7"
 }
 
---AROMATICS-TO-OLEFINS
-local aromaticsolefin = {
+Recipe {
     type = "recipe",
     name = "aromaticsolefin",
     category = "olefin",
@@ -172,15 +164,4 @@ local aromaticsolefin = {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d8	"
-}
-
-data:extend {
-    diesel,
-    aromatics,
-    olefin,
-    diesel2,
-    olefin_petgas,
-    gasoline,
-    refolefin,
-    aromaticsolefin
 }
