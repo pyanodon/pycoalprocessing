@@ -1,4 +1,4 @@
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "ulric-corral",
     energy_required = 10,
@@ -13,7 +13,7 @@ local recipe1 = {
     result = "ulric-corral"
 }
 
-local item1 = {
+Item {
     type = "item",
     name = "ulric-corral",
     icon = "__pycoalprocessing__/graphics/icons/ulric-corral.png",
@@ -25,7 +25,7 @@ local item1 = {
     stack_size = 10
 }
 
-local entity1 = {
+Entity {
     type = "assembling-machine",
     name = "ulric-corral",
     icon = "__pycoalprocessing__/graphics/icons/ulric-corral.png",
@@ -210,5 +210,3 @@ local entity1 = {
         apparent_volume = 0.45
     }
 }
-
-data:extend {recipe1, item1, entity1}

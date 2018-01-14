@@ -1,4 +1,4 @@
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "niobium-complex",
     category = "chemistry",
@@ -16,7 +16,7 @@ local recipe1 = {
     order = "c"
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "niobium-complex",
     icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",
@@ -31,5 +31,3 @@ local fluid = {
     subgroup = "py-fluids",
     order = "z-[niobium-complex]"
 }
-
-data:extend {recipe1, fluid}

@@ -1,4 +1,4 @@
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "sand-extractor",
     energy_required = 10,
@@ -13,7 +13,7 @@ local recipe1 = {
     result = "sand-extractor"
 }
 
-local item1 = {
+Item {
     type = "item",
     name = "sand-extractor",
     icon = "__pycoalprocessing__/graphics/icons/sand-extractor.png",
@@ -25,7 +25,7 @@ local item1 = {
     stack_size = 10
 }
 
-local entity1 = {
+Entity {
     type = "assembling-machine",
     name = "sand-extractor",
     icon = "__pycoalprocessing__/graphics/icons/sand-extractor.png",
@@ -67,5 +67,3 @@ local entity1 = {
         apparent_volume = 0.45
     }
 }
-
-data:extend {recipe1, item1, entity1}

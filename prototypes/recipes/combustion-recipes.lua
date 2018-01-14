@@ -1,5 +1,5 @@
 --COALGAS to CM1
-local coalgas = {
+Recipe {
     type = "recipe",
     name = "coalgas-combustion",
     category = "combustion",
@@ -22,7 +22,7 @@ local coalgas = {
 }
 
 --COALSLURRY to CM1
-local coal_slurry = {
+Recipe {
     type = "recipe",
     name = "coalslurry-combustion",
     category = "combustion",
@@ -45,7 +45,7 @@ local coal_slurry = {
 }
 
 --SYNGAS to CM1
-local syngas = {
+Recipe {
     type = "recipe",
     name = "syngas-combustion",
     category = "combustion",
@@ -68,7 +68,7 @@ local syngas = {
 }
 
 --DIBORANE to CM1
-local diborane = {
+Recipe {
     type = "recipe",
     name = "diborane-combustion",
     category = "combustion",
@@ -91,7 +91,7 @@ local diborane = {
 }
 
 --METHANOL to CM1
-local methanol = {
+Recipe {
     type = "recipe",
     name = "methanol-combustion",
     category = "combustion",
@@ -114,7 +114,7 @@ local methanol = {
 }
 
 --REFSYNGAS to CM1
-local refsyngas = {
+Recipe {
     type = "recipe",
     name = "refsyngas-combustion",
     category = "combustion",
@@ -137,7 +137,7 @@ local refsyngas = {
 }
 
 --ACETYLENE to CM1
-local acetylene = {
+Recipe {
     type = "recipe",
     name = "acetylene-combustion",
     category = "combustion",
@@ -160,7 +160,7 @@ local acetylene = {
 }
 
 --OLEFIN to CM1
-local olefin = {
+Recipe {
     type = "recipe",
     name = "olefin-combustion",
     category = "combustion",
@@ -183,7 +183,7 @@ local olefin = {
 }
 
 --DIESEL to CM1
-local diesel = {
+Recipe {
     type = "recipe",
     name = "diesel-combustion",
     category = "combustion",
@@ -206,7 +206,7 @@ local diesel = {
 }
 
 --GASOLINE to CM1
-local gasoline = {
+Recipe {
     type = "recipe",
     name = "gasoline-combustion",
     category = "combustion",
@@ -230,7 +230,7 @@ local gasoline = {
 }
 
 --SUPERCRITICAL COAL
-local supercritical = {
+Recipe {
     type = "recipe",
     name = "supercritical-combustion",
     category = "combustion",
@@ -254,7 +254,7 @@ local supercritical = {
 }
 
 --ULTRASUPERCRITICAL COAL
-local ultrasupercritical = {
+Recipe {
     type = "recipe",
     name = "ultrasupercritical-combustion",
     category = "combustion",
@@ -275,19 +275,4 @@ local ultrasupercritical = {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "l"
-}
-
-data:extend {
-    coalgas,
-    syngas,
-    coal_slurry,
-    methanol,
-    refsyngas,
-    diborane,
-    acetylene,
-    olefin,
-    diesel,
-    gasoline,
-    supercritical,
-    ultrasupercritical
 }

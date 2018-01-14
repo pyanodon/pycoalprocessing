@@ -1,6 +1,4 @@
---[[dirty-water]] --
-
-local dirty_water = {
+Fluid {
     type = "fluid",
     name = "dirty-water",
     icon = "__pycoalprocessing__/graphics/icons/dirty-water.png",
@@ -13,5 +11,3 @@ local dirty_water = {
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59
 }
-
-data:extend {dirty_water}

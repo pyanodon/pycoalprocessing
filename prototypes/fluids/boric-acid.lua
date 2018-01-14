@@ -1,6 +1,4 @@
---[[boric-acid]] --
-
-local boric_acid = {
+Recipe {
     type = "recipe",
     name = "boric-acid",
     category = "gasifier", --bob electrolysis
@@ -12,11 +10,10 @@ local boric_acid = {
     },
     results = {
         {type = "fluid", name = "boric-acid", amount = 500}
-    },
-    main_product = "boric-acid",
+    }
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "boric-acid",
     icon = "__pycoalprocessing__/graphics/icons/boric-acid.png",
@@ -30,5 +27,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "z-[boric-acid]"
 }
-
-data:extend {fluid, boric_acid}

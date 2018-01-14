@@ -1,5 +1,3 @@
---[[Recipe Categories]] --
-
 data:extend {
     {
         type = "recipe-category",

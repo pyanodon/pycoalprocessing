@@ -1,4 +1,4 @@
-local recipe_treated_lumber = {
+Recipe {
     type = "recipe",
     name = "treated-wood",
     category = "crafting-with-fluid",
@@ -13,7 +13,7 @@ local recipe_treated_lumber = {
     }
 }
 
-local treated_lumber = {
+Item {
     type = "item",
     name = "treated-wood",
     icon = "__pycoalprocessing__/graphics/icons/treated-wood.png",
@@ -25,5 +25,3 @@ local treated_lumber = {
     fuel_category = "chemical",
     stack_size = 100
 }
-
-data:extend {recipe_treated_lumber, treated_lumber}

@@ -1,4 +1,4 @@
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "creosote",
     category = "tar",
@@ -13,7 +13,7 @@ local recipe1 = {
     main_product = "creosote",
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "creosote",
     icon = "__pycoalprocessing__/graphics/icons/creosote.png",
@@ -28,5 +28,3 @@ local fluid = {
     subgroup = "py-fluids",
     order = "creosote"
 }
-
-data:extend {recipe1, fluid}

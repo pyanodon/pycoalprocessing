@@ -1,4 +1,4 @@
-local fluid = {
+Fluid {
     type = "fluid",
     name = "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
@@ -13,5 +13,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "z-[olefin]"
 }
-
-data:extend {fluid}

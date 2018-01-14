@@ -1,4 +1,4 @@
-local hydrogen_peroxide = {
+Recipe {
     type = "recipe",
     name = "hydrogen-peroxide",
     category = "carbonfilter",
@@ -11,11 +11,10 @@ local hydrogen_peroxide = {
     },
     results = {
         {type = "fluid", name = "hydrogen-peroxide", amount = 50}
-    },
-    main_product = "hydrogen-peroxide",
+    }
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "hydrogen-peroxide",
     icon = "__pycoalprocessing__/graphics/icons/hydrogen-peroxide.png",
@@ -29,5 +28,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "z-[hydrogen-peroxide]"
 }
-
-data:extend {fluid, hydrogen_peroxide}

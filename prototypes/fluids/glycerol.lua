@@ -1,4 +1,4 @@
-local fluid = {
+Fluid {
     type = "fluid",
     name = "glycerol",
     icon = "__pycoalprocessing__/graphics/icons/glycerol.png",
@@ -13,5 +13,3 @@ local fluid = {
     subgroup = "py-fluids",
     order = "z-[glycerol]"
 }
-
-data:extend {fluid}

@@ -1,7 +1,3 @@
---Recipes without new item results
-local Recipe = require("stdlib/data/recipe")
-
---Making Chromium
 Recipe {
     type = "recipe",
     name = "making-chromium",
@@ -24,7 +20,6 @@ Recipe {
     order = "a"
 }
 
---Create coal from wood
 Recipe {
     type = "recipe",
     name = "raw-wood-to-coal",
@@ -71,7 +66,6 @@ Recipe {
     energy_required = 0.5
 }
 
---Extract sulfur from acidgas
 Recipe {
     type = "recipe",
     name = "extract-sulfur",
@@ -91,7 +85,6 @@ Recipe {
     order = "a"
 }
 
---Turn STEAM into cooled water
 Recipe {
     type = "recipe",
     name = "cooling-water",
@@ -109,10 +102,9 @@ Recipe {
     subgroup = "py-fluids",
     order = "a",
     icon = "__pycoalprocessing__/graphics/icons/cooling-water.png",
-    icon_size = 32,
+    icon_size = 32
 }
 
---FLUEGAS TO SYNGAS
 Recipe {
     type = "recipe",
     name = "fluegas_to-syngas",
@@ -129,10 +121,9 @@ Recipe {
     subgroup = "py-syngas",
     order = "a",
     icon = "__pycoalprocessing__/graphics/icons/fluegas_to_syngas.png",
-    icon_size = 32,
+    icon_size = 32
 }
 
---COARSE CLASSIFICATION
 Recipe {
     type = "recipe",
     name = "coarse-classification",
@@ -154,7 +145,6 @@ Recipe {
     order = "a"
 }
 
---SAND CLASSIFICATION
 Recipe {
     type = "recipe",
     name = "sand-classification",
@@ -175,7 +165,6 @@ Recipe {
     order = "b"
 }
 
---SOIL SEPARATION
 Recipe {
     type = "recipe",
     name = "soil-separation",
@@ -198,7 +187,6 @@ Recipe {
     order = "e"
 }
 
---RICH DUST SEPARATION
 Recipe {
     type = "recipe",
     name = "richdust-separation",
@@ -219,7 +207,6 @@ Recipe {
     order = "f"
 }
 
---TAILINGS SEPARATION
 Recipe {
     type = "recipe",
     name = "tailings-separation",
@@ -240,7 +227,6 @@ Recipe {
     order = "g"
 }
 
---SAND WASHING
 Recipe {
     type = "recipe",
     name = "sand-washing",
@@ -262,7 +248,6 @@ Recipe {
     order = "a"
 }
 
---ORGANICS PROCESSING
 Recipe {
     type = "recipe",
     name = "organics-processing",
@@ -284,7 +269,6 @@ Recipe {
     order = "d"
 }
 
---SAND CASTING
 Recipe {
     type = "recipe",
     name = "sand-casting",
@@ -305,7 +289,6 @@ Recipe {
     order = "a"
 }
 
---TAR to CRUDE OIL
 Recipe {
     type = "recipe",
     name = "tar-oil",
@@ -326,7 +309,6 @@ Recipe {
     order = "c"
 }
 
---"AIR POLLUTION" ABSORBER
 Recipe {
     type = "recipe",
     name = "air-pollution",
@@ -346,7 +328,6 @@ Recipe {
     order = "d"
 }
 
---SLACKED LIME
 Recipe {
     type = "recipe",
     name = "slacked-lime",
@@ -367,7 +348,6 @@ Recipe {
     order = "e"
 }
 
---CO2 PRODUCTION
 Recipe {
     type = "recipe",
     name = "co2",
@@ -390,7 +370,6 @@ Recipe {
     order = "d"
 }
 
---FAWOGAE SUBSTRATE
 Recipe {
     type = "recipe",
     name = "fawogae-substrate",
@@ -411,7 +390,6 @@ Recipe {
     order = "f"
 }
 
---WATER MINERALIZED - FROM ANGELS
 Recipe {
     type = "recipe",
     name = "water-mineralized",
@@ -433,11 +411,9 @@ Recipe {
     order = "b"
 }
 
---FLASK
 Recipe {
     type = "recipe",
     name = "flask",
-    -- category = "crafting",
     enabled = "true",
     energy_required = 2,
     ingredients = {
@@ -452,11 +428,9 @@ Recipe {
     order = "f"
 }
 
---CRAFTING SCIENCE PACK-01 "should overlay the vanilla one"
 Recipe {
     type = "recipe",
     name = "science-pack-1",
-    -- category = "crafting",
     enabled = "true",
     energy_required = 4,
     ingredients = {
@@ -472,11 +446,9 @@ Recipe {
     order = "a1"
 }
 
---CRAFTING SCIENCE PACK-02 "should overlay the vanilla one"
 Recipe {
     type = "recipe",
     name = "science-pack-2",
-    -- category = "crafting",
     enabled = "false",
     energy_required = 4,
     ingredients = {
@@ -492,11 +464,9 @@ Recipe {
     order = "a2"
 }
 
---CRAFTING SCIENCE PACK-03 "should overlay the vanilla one"
 Recipe {
     type = "recipe",
     name = "science-pack-3",
-    -- category = "crafting",
     enabled = "false",
     energy_required = 4.5,
     ingredients = {
@@ -514,7 +484,6 @@ Recipe {
     order = "a3"
 }
 
---BASIC SAND PRODUCTION
 Recipe {
     type = "recipe",
     name = "soil-washing",
@@ -535,7 +504,6 @@ Recipe {
     subgroup = "py-washer",
     order = "c"
 }
---BONEMEAL PRODUCTION
 
 Recipe {
     type = "recipe",
@@ -555,7 +523,6 @@ Recipe {
     subgroup = "py-items",
     order = "g"
 }
---RAW BORAX PRODUCTION
 
 Recipe {
     type = "recipe",
@@ -575,7 +542,6 @@ Recipe {
     subgroup = "py-items",
     order = "h"
 }
---BORAX WASHING
 
 Recipe {
     type = "recipe",
@@ -597,7 +563,6 @@ Recipe {
     subgroup = "py-washer",
     order = "d"
 }
---RALESIA PRODUCTION
 
 Recipe {
     type = "recipe",
@@ -618,7 +583,6 @@ Recipe {
     subgroup = "py-items",
     order = "h"
 }
---RALESIA SEEDS
 
 Recipe {
     type = "recipe",
@@ -638,7 +602,6 @@ Recipe {
     subgroup = "py-items",
     order = "i"
 }
---RICH CLAY
 
 Recipe {
     type = "recipe",
@@ -659,7 +622,6 @@ Recipe {
     subgroup = "py-items",
     order = "j"
 }
---GROUND SAMPLE01
 
 Recipe {
     type = "recipe",
@@ -680,7 +642,6 @@ Recipe {
     subgroup = "py-items",
     order = "k"
 }
---BIOLOGICAL SAMPLE01
 
 Recipe {
     type = "recipe",
@@ -701,7 +662,6 @@ Recipe {
     subgroup = "py-items",
     order = "l"
 }
---ALIEN SAMPLE01
 
 Recipe {
     type = "recipe",
@@ -722,7 +682,6 @@ Recipe {
     subgroup = "py-items",
     order = "m"
 }
---EQUIPMENT CHASSI
 
 Recipe {
     type = "recipe",
@@ -743,7 +702,6 @@ Recipe {
     subgroup = "py-items",
     order = "n"
 }
---LAB INSTRUMENT
 
 Recipe {
     type = "recipe",
@@ -764,7 +722,6 @@ Recipe {
     subgroup = "py-items",
     order = "o"
 }
---BORON TRIOXIDE
 
 Recipe {
     type = "recipe",
@@ -785,7 +742,6 @@ Recipe {
     subgroup = "py-items-hpf",
     order = "e"
 }
---OPTICAL SET "lens"
 
 Recipe {
     type = "recipe",
@@ -806,7 +762,6 @@ Recipe {
     subgroup = "py-items-hpf",
     order = "f"
 }
---OLEOCHEMICALS
 
 Recipe {
     type = "recipe",
@@ -830,7 +785,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "c"
 }
---ORGANIC SOLVENT
 
 Recipe {
     type = "recipe",
@@ -852,7 +806,6 @@ Recipe {
     subgroup = "py-fluids",
     order = "c"
 }
---CO2 FROM ORGANICS
 
 Recipe {
     type = "recipe",
@@ -872,7 +825,6 @@ Recipe {
     subgroup = "py-items-hpf",
     order = "f"
 }
---AROMATICS FROM ORGANICS
 
 Recipe {
     type = "recipe",
@@ -893,7 +845,6 @@ Recipe {
     subgroup = "py-items",
     order = "r"
 }
---PETGAS/METANOL FROM ORGANIC SOLVENT
 
 Recipe {
     type = "recipe",
@@ -915,7 +866,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "c"
 }
---OLEOCHEMICAL-TO-HEAVY OIL
 
 Recipe {
     type = "recipe",
@@ -938,7 +888,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "d"
 }
---BONEMEAL TO ORGANIC SOLVENT
 
 Recipe {
     type = "recipe",
@@ -959,7 +908,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "e"
 }
---DIRTY-WATER TO ACID GAS
 
 Recipe {
     type = "recipe",
@@ -980,7 +928,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "f"
 }
---DIRTY-WATER TO WATER
 
 Recipe {
     type = "recipe",
@@ -1002,7 +949,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "g"
 }
---OLEFIN FILTRATION
 
 Recipe {
     type = "recipe",
@@ -1023,7 +969,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "h"
 }
---COAL GAS TO SYNGAS
 
 Recipe {
     type = "recipe",
@@ -1046,7 +991,6 @@ Recipe {
     subgroup = "py-syngas",
     order = "b"
 }
---OLEOCHEMICALS TO CRUDE OIL
 
 Recipe {
     type = "recipe",
@@ -1067,7 +1011,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "h"
 }
---COAL TO COAL DUST
 
 Recipe {
     type = "recipe",
@@ -1087,7 +1030,6 @@ Recipe {
     subgroup = "py-items",
     order = "r"
 }
---SAND BRICK
 
 Recipe {
     type = "recipe",
@@ -1109,7 +1051,6 @@ Recipe {
     order = "s"
 }
 
---TAILINGS CLASSIFICATION
 Recipe {
     type = "recipe",
     name = "tailings-classification",
@@ -1131,7 +1072,6 @@ Recipe {
     order = "c"
 }
 
---TAR DISTILATION
 Recipe {
     type = "recipe",
     name = "tar-distilation",
@@ -1154,7 +1094,6 @@ Recipe {
     order = "t"
 }
 
---OLEOCHEMICALS DISTILATION
 Recipe {
     type = "recipe",
     name = "oleochemicals-distilation",
@@ -1178,7 +1117,6 @@ Recipe {
     order = "i"
 }
 
---TAR GASIFICATON
 Recipe {
     type = "recipe",
     name = "tar-gasification",
@@ -1201,7 +1139,6 @@ Recipe {
     order = "j"
 }
 
---OLEOCHEMICALS GASIFICATON
 Recipe {
     type = "recipe",
     name = "oleo-gasification",
@@ -1224,7 +1161,6 @@ Recipe {
     order = "k"
 }
 
---COAL from FAWOAGE
 Recipe {
     type = "recipe",
     name = "coal-fawogae",
@@ -1244,7 +1180,6 @@ Recipe {
     order = "g"
 }
 
---RARE EARTH MUD FROM DIRTY-WATER
 Recipe {
     type = "recipe",
     name = "remud-dirty-water",
@@ -1265,7 +1200,6 @@ Recipe {
     order = "l"
 }
 
---RICH DUST FROM RARE EARTH MUD
 Recipe {
     type = "recipe",
     name = "rich-re",
@@ -1285,7 +1219,7 @@ Recipe {
     subgroup = "py-items",
     order = "u"
 }
---SMELT CRUSHED IRON
+
 Recipe {
     type = "recipe",
     name = "crushed-iron",
@@ -1296,7 +1230,7 @@ Recipe {
     result = "iron-plate",
     result_count = 2
 }
---SMELT CRUSHED COPPER
+
 Recipe {
     type = "recipe",
     name = "crushed-copper",
@@ -1307,8 +1241,6 @@ Recipe {
     result = "copper-plate",
     result_count = 2
 }
-
---EXTRACT SULFUR FROM CRUDEOIL
 
 Recipe {
     type = "recipe",
@@ -1331,7 +1263,6 @@ Recipe {
     subgroup = "py-sulfur",
     order = "b"
 }
---EXTRACT SULFUR FROM HEAVYOIL
 
 Recipe {
     type = "recipe",
@@ -1353,7 +1284,6 @@ Recipe {
     subgroup = "py-sulfur",
     order = "c"
 }
---EXTRACT SULFUR FROM LIGHTOIL
 
 Recipe {
     type = "recipe",
@@ -1375,7 +1305,6 @@ Recipe {
     subgroup = "py-sulfur",
     order = "d"
 }
---EXTRACT SULFUR FROM PETGAS
 
 Recipe {
     type = "recipe",
@@ -1397,7 +1326,6 @@ Recipe {
     subgroup = "py-sulfur",
     order = "e"
 }
---ORGANIC MATTER FROM RAW-WOOD
 
 Recipe {
     type = "recipe",
@@ -1417,7 +1345,6 @@ Recipe {
     subgroup = "py-items",
     order = "v"
 }
---CREOSOTE TO AROMATICS
 
 Recipe {
     type = "recipe",
@@ -1437,7 +1364,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "m"
 }
---AROMATICS TO LUBRICANT
 
 Recipe {
     type = "recipe",
@@ -1458,7 +1384,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "n"
 }
---AROMATICS TO RUBBER
 
 Recipe {
     type = "recipe",
@@ -1478,7 +1403,6 @@ Recipe {
     subgroup = "py-items",
     order = "w"
 }
---AROMATICS TO PLASTIC
 
 Recipe {
     type = "recipe",
@@ -1499,7 +1423,6 @@ Recipe {
     subgroup = "py-items",
     order = "x"
 }
---SODIUM-SULFUR BATTERY
 
 Recipe {
     type = "recipe",
@@ -1522,7 +1445,6 @@ Recipe {
     subgroup = "py-items",
     order = "y"
 }
---COKE from COAL
 
 Recipe {
     type = "recipe",
@@ -1542,8 +1464,6 @@ Recipe {
     subgroup = "py-items-hpf",
     order = "h"
 }
-
---DISTILATION of STONE
 
 Recipe {
     type = "recipe",
@@ -1568,7 +1488,6 @@ Recipe {
     subgroup = "py-items",
     order = "z"
 }
---OLEOCHEMICALS TO SOLID FUEL
 
 Recipe {
     type = "recipe",
@@ -1588,7 +1507,6 @@ Recipe {
     subgroup = "py-fluid-handling",
     order = "c"
 }
---GLYCEROL to HYDROGEN
 
 Recipe {
     type = "recipe",
@@ -1609,8 +1527,6 @@ Recipe {
     order = "o"
 }
 
---LOG PRODUCING 01
-
 Recipe {
     type = "recipe",
     name = "log1",
@@ -1626,8 +1542,6 @@ Recipe {
     subgroup = "py-items",
     order = "c6"
 }
-
---LOG PRODUCING 02
 
 Recipe {
     type = "recipe",
@@ -1646,8 +1560,6 @@ Recipe {
     subgroup = "py-items",
     order = "c7"
 }
-
---LOG PRODUCING 03
 
 Recipe {
     type = "recipe",
@@ -1668,8 +1580,6 @@ Recipe {
     order = "c8"
 }
 
---LOG PRODUCING 04
-
 Recipe {
     type = "recipe",
     name = "log4",
@@ -1689,8 +1599,6 @@ Recipe {
     order = "c9"
 }
 
---LOG PRODUCING 05
-
 Recipe {
     type = "recipe",
     name = "log5",
@@ -1709,8 +1617,6 @@ Recipe {
     subgroup = "py-items",
     order = "c9"
 }
-
---LOG PRODUCING 06
 
 Recipe {
     type = "recipe",
@@ -1732,7 +1638,6 @@ Recipe {
     order = "c9"
 }
 
---LOG-TO-RAW-WOOD
 Recipe {
     type = "recipe",
     name = "log-wood",
@@ -1750,7 +1655,6 @@ Recipe {
     subgroup = "py-items",
     order = "a7"
 }
---LOG-TO-ORGANIC-MATTER
 
 Recipe {
     type = "recipe",
@@ -1770,8 +1674,6 @@ Recipe {
     order = "a8"
 }
 
---raw-wood-to-wood
-
 Recipe {
     type = "recipe",
     name = "raw-to-wood",
@@ -1789,8 +1691,6 @@ Recipe {
     subgroup = "py-items",
     order = "a8"
 }
-
---ASH SEPARATION
 
 Recipe {
     type = "recipe",
@@ -1810,7 +1710,6 @@ Recipe {
     subgroup = "py-items-class",
     order = "f"
 }
---FLUEGAS FILTRATION
 
 Recipe {
     type = "recipe",
@@ -1829,7 +1728,6 @@ Recipe {
     subgroup = "py-items",
     order = "g"
 }
---COAL DUST to ASH
 
 Recipe {
     type = "recipe",
