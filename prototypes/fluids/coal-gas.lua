@@ -1,6 +1,4 @@
---[[coal-gas]] --
-
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "coal-gas",
     category = "distilator",
@@ -22,7 +20,7 @@ local recipe1 = {
     order = "e"
 }
 
-local recipe2 = {
+Recipe {
     type = "recipe",
     name = "coal-gas-from-wood",
     category = "distilator",
@@ -44,7 +42,7 @@ local recipe2 = {
     order = "f"
 }
 
-local recipe3 = {
+Recipe {
     type = "recipe",
     name = "coal-gas-from-coke",
     category = "distilator",
@@ -65,7 +63,7 @@ local recipe3 = {
     order = "f"
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/coalgas.png",
@@ -81,5 +79,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "a-[coal-gas]"
 }
-
-data:extend {recipe1, recipe2, recipe3, fluid}

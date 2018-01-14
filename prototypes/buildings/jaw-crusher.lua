@@ -1,4 +1,4 @@
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "jaw-crusher",
     energy_required = 10,
@@ -13,7 +13,7 @@ local recipe1 = {
     result = "jaw-crusher"
 }
 
-local item1 = {
+Item {
     type = "item",
     name = "jaw-crusher",
     icon = "__pycoalprocessing__/graphics/icons/jaw-crusher.png",
@@ -25,7 +25,7 @@ local item1 = {
     stack_size = 10
 }
 
-local entity1 = {
+Entity {
     type = "assembling-machine",
     name = "jaw-crusher",
     icon = "__pycoalprocessing__/graphics/icons/jaw-crusher.png",
@@ -89,5 +89,3 @@ local entity1 = {
         apparent_volume = 2.5
     }
 }
-
-data:extend {recipe1, item1, entity1}

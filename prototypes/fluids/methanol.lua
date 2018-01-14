@@ -1,4 +1,4 @@
-local methanol_from_syngas = {
+Recipe {
     type = "recipe",
     name = "methanol-from-syngas",
     category = "methanol",
@@ -16,8 +16,7 @@ local methanol_from_syngas = {
     order = "a"
 }
 
---OLEOCHEMICALS-to-METHANOL
-local oleo_methanol = {
+Recipe {
     type = "recipe",
     name = "oleo-methanol",
     category = "methanol",
@@ -40,7 +39,7 @@ local oleo_methanol = {
 
 --bob-additions: methanol_from_hydrogen
 
-local methanol = {
+Fluid {
     type = "fluid",
     name = "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",
@@ -53,5 +52,3 @@ local methanol = {
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59
 }
-
-data:extend {methanol_from_syngas, oleo_methanol, methanol}

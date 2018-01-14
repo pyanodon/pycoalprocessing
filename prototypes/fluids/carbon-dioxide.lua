@@ -1,6 +1,4 @@
---[[carbon-dioxide]] --
-
-local fluid = {
+Fluid {
     type = "fluid",
     name = "carbon-dioxide",
     icon = "__pycoalprocessing__/graphics/icons/carbon-dioxide.png",
@@ -14,5 +12,3 @@ local fluid = {
     pressure_to_speed_ratio = 0.4,
     flow_to_energy_ratio = 0.59
 }
-
-data:extend {fluid}

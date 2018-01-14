@@ -1,5 +1,3 @@
---[[Item Groups and Subgroups]] --
-
 data:extend {
     {
         type = "item-group",

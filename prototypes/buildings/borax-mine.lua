@@ -1,5 +1,3 @@
-local Pipes = require("stdlib.data.pipes")
-
 local pipes = {
     north = {
         filename = "__pycoalprocessing__/graphics/entity/borax-mine/top-connection.png",
@@ -27,7 +25,7 @@ local pipes = {
     }
 }
 
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "borax-mine",
     energy_required = 25,
@@ -43,7 +41,7 @@ local recipe1 = {
     result = "borax-mine"
 }
 
-local item1 = {
+Item {
     type = "item",
     name = "borax-mine",
     icon = "__pycoalprocessing__/graphics/icons/borax-mine.png",
@@ -55,7 +53,7 @@ local item1 = {
     stack_size = 10
 }
 
-local entity1 = {
+Entity {
     type = "assembling-machine",
     name = "borax-mine",
     icon = "__pycoalprocessing__/graphics/icons/borax-mine.png",
@@ -121,5 +119,3 @@ local entity1 = {
         apparent_volume = 2.5
     }
 }
-
-data:extend {recipe1, item1, entity1}

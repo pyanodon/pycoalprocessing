@@ -1,5 +1,5 @@
 --NEXELIT PLATE
-local nexelit_plate = {
+Recipe {
     type = "recipe",
     name = "nexelit-plate",
     category = "advanced-foundry",
@@ -22,7 +22,7 @@ local nexelit_plate = {
 }
 
 --STEEL PLATE - cant change the base one,so i did that.
-local steel_plate2 = {
+Recipe {
     type = "recipe",
     name = "steel-plate2",
     category = "advanced-foundry",
@@ -44,8 +44,6 @@ local steel_plate2 = {
     subgroup = "py-items",
     order = "a2"
 }
-
-data:extend {nexelit_plate, steel_plate2}
 
 --Make foundry recipes from smelting recipes with 1 ingredient.
 local list = {}
@@ -92,7 +90,6 @@ for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
         icon_size = 32,
         main_product = data.raw.item[res[1].name] and res[1].name or nil
     }
-    log(new.name)
     if not new.main_product then
         new.subgroup = "py-unsorted"
         new.order = "a"

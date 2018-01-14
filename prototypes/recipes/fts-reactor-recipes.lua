@@ -1,5 +1,4 @@
---HEAVY OIL FROM COALGAS
-local heavy_oil_from_coal_gas = {
+Recipe {
     type = "recipe",
     name = "heavy-oil_from_coal-gas",
     category = "fts-reactor",
@@ -22,8 +21,7 @@ local heavy_oil_from_coal_gas = {
     order = "h"
 }
 
---LIGHT OIL FROM SYNGAS
-local light_oil_from_syngas = {
+Recipe {
     type = "recipe",
     name = "light-oil_from_syngas",
     category = "fts-reactor",
@@ -46,8 +44,7 @@ local light_oil_from_syngas = {
     order = "h1"
 }
 
---PETGAS FROM REFSYNGAS
-local petgas_from_refsyngas = {
+Recipe {
     type = "recipe",
     name = "petgas_from-refsyngas",
     category = "fts-reactor",
@@ -69,15 +66,13 @@ local petgas_from_refsyngas = {
     order = "h2"
 }
 
---REFINED SYNGAS TO LIGHT OIL
-local ref_to_light_oil = {
+Recipe {
     type = "recipe",
     name = "ref_to_light-oil",
     category = "fts-reactor",
     enabled = "false",
     energy_required = 10,
     ingredients = {
-        --{type="fluid", name="hydrogen", amount=25},
         {type = "fluid", name = "water", amount = 2000},
         {type = "fluid", name = "refsyngas", amount = 150}
     },
@@ -93,8 +88,7 @@ local ref_to_light_oil = {
     order = "h4"
 }
 
---SULFURIC ACID FROM PETGAS
-local sulfuric_petgas = {
+Recipe {
     type = "recipe",
     name = "sulfuric-petgas",
     category = "fts-reactor",
@@ -118,8 +112,7 @@ local sulfuric_petgas = {
     order = "h5"
 }
 
---COMBUSTION MIXTURE01 FROM OLEFINS
-local combustion_olefin = {
+Recipe {
     type = "recipe",
     name = "combustion-olefin",
     category = "fts-reactor",
@@ -128,7 +121,6 @@ local combustion_olefin = {
     ingredients = {
         {type = "fluid", name = "olefin", amount = 300},
         {type = "fluid", name = "water", amount = 2000},
-        --{type="fluid", name="hydrogen", amount=15},
         {type = "item", name = "nichrome", amount = 5}
     },
     results = {
@@ -143,8 +135,7 @@ local combustion_olefin = {
     order = "h6"
 }
 
---RARE EARTH BENEFICIATION
-local rare_earth_beneficiation = {
+Recipe {
     type = "recipe",
     name = "rare-earth-beneficiation",
     category = "fts-reactor",
@@ -168,8 +159,7 @@ local rare_earth_beneficiation = {
     order = "h7"
 }
 
---DIRTY-WATER REACTION
-local recipe_dirty_reaction = {
+Recipe {
     type = "recipe",
     name = "dirty-reaction",
     category = "fts-reactor",
@@ -192,8 +182,7 @@ local recipe_dirty_reaction = {
     order = "h8"
 }
 
---HEAVY OIL TO COAL GAS
-local recipe_heavy_to_coalgas = {
+Recipe {
     type = "recipe",
     name = "heavyoil-to-coal-gas",
     category = "fts-reactor",
@@ -216,8 +205,7 @@ local recipe_heavy_to_coalgas = {
     order = "h9"
 }
 
---LIGHT OIL TO SYNGAS
-local recipe_light_to_syngas = {
+Recipe {
     type = "recipe",
     name = "lightoil-to-syngas",
     category = "fts-reactor",
@@ -240,8 +228,7 @@ local recipe_light_to_syngas = {
     order = "h10"
 }
 
---PETGAS TO REFSYNGAS
-local recipe_petgas_to_refsyngas = {
+Recipe {
     type = "recipe",
     name = "petgas-to-refsyngas",
     category = "fts-reactor",
@@ -263,9 +250,8 @@ local recipe_petgas_to_refsyngas = {
     subgroup = "py-fluid-handling",
     order = "h11"
 }
---GLYCEROL to SYNGAS
 
-local recipe_glycerol_syngas = {
+Recipe {
     type = "recipe",
     name = "glycerol-syngas",
     category = "fts-reactor",
@@ -286,9 +272,8 @@ local recipe_glycerol_syngas = {
     subgroup = "py-fluid-handling",
     order = "h12"
 }
---COAL-BRIQUETTE
 
-local recipe_coal_briquette = {
+Recipe {
     type = "recipe",
     name = "coal-briquette",
     category = "fts-reactor",
@@ -305,21 +290,5 @@ local recipe_coal_briquette = {
     },
     main_product = "coal-briquette",
     icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
-    icon_size = 32,
-}
-
-data:extend {
-    heavy_oil_from_coal_gas,
-    light_oil_from_syngas,
-    petgas_from_refsyngas,
-    ref_to_light_oil,
-    sulfuric_petgas,
-    combustion_olefin,
-    rare_earth_beneficiation,
-    recipe_dirty_reaction,
-    recipe_heavy_to_coalgas,
-    recipe_light_to_syngas,
-    recipe_petgas_to_refsyngas,
-    recipe_glycerol_syngas,
-    recipe_coal_briquette
+    icon_size = 32
 }

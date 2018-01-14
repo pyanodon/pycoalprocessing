@@ -1,4 +1,4 @@
-local recipe1 = {
+Recipe {
     type = "recipe",
     name = "mukmoux-pasture",
     energy_required = 10,
@@ -12,7 +12,7 @@ local recipe1 = {
     result = "mukmoux-pasture"
 }
 
-local item1 = {
+Item {
     type = "item",
     name = "mukmoux-pasture",
     icon = "__pycoalprocessing__/graphics/icons/mukmoux-pasture.png",
@@ -24,7 +24,7 @@ local item1 = {
     stack_size = 10
 }
 
-local entity1 = {
+Entity {
     type = "assembling-machine",
     name = "mukmoux-pasture",
     icon = "__pycoalprocessing__/graphics/icons/mukmoux-pasture.png",
@@ -112,5 +112,3 @@ local entity1 = {
         apparent_volume = 0.45
     }
 }
-
-data:extend {recipe1, item1, entity1}

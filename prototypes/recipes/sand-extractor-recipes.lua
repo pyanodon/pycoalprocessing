@@ -1,5 +1,4 @@
---EXTRACT SAND
-local extract_sand = {
+Recipe {
     type = "recipe",
     name = "extract-sand",
     category = "sand-extractor",
@@ -18,8 +17,7 @@ local extract_sand = {
     order = "a"
 }
 
---EXTRACT GRAVEL
-local extract_gravel = {
+Recipe {
     type = "recipe",
     name = "extract-gravel",
     category = "sand-extractor",
@@ -38,8 +36,7 @@ local extract_gravel = {
     order = "b"
 }
 
---EXTRACT STONE
-local extract_stone = {
+Recipe {
     type = "recipe",
     name = "extract-stone",
     category = "sand-extractor",
@@ -58,8 +55,7 @@ local extract_stone = {
     order = "c"
 }
 
---EXTRACT RICH DUST
-local extract_richdust = {
+Recipe {
     type = "recipe",
     name = "extract-richdust",
     category = "sand-extractor",
@@ -78,8 +74,7 @@ local extract_richdust = {
     order = "d"
 }
 
---EXTRACT COARSE
-local extract_coarse = {
+Recipe {
     type = "recipe",
     name = "extract-coarse",
     category = "sand-extractor",
@@ -97,5 +92,3 @@ local extract_coarse = {
     subgroup = "py-extractor",
     order = "c"
 }
-
-data:extend {extract_sand, extract_gravel, extract_stone, extract_richdust, extract_coarse}

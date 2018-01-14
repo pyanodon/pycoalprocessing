@@ -1,4 +1,4 @@
-local diborane = {
+Recipe {
     type = "recipe",
     name = "diborane",
     category = "hpf",
@@ -10,11 +10,10 @@ local diborane = {
     },
     results = {
         {type = "fluid", name = "diborane", amount = 150}
-    },
-    main_product = "diborane",
+    }
 }
 
-local fluid = {
+Fluid {
     type = "fluid",
     name = "diborane",
     icon = "__pycoalprocessing__/graphics/icons/diborane.png",
@@ -29,5 +28,3 @@ local fluid = {
     subgroup = "py-syngas",
     order = "z-[diborane]"
 }
-
-data:extend {fluid, diborane}
