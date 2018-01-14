@@ -19,7 +19,9 @@ Recipe {
         {"steel-plate", 20},
         {"iron-gear-wheel", 15} --bob steel-bearing
     },
-    result = "methanol-reactor",
+    results = {
+      {"methanol-reactor", 1}
+    },
 }
 
 Item {

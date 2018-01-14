@@ -9,7 +9,9 @@ Recipe {
         {"storage-tank", 5},
         {"advanced-circuit", 10} --bob electronic-logic-board
     },
-    result = "mukmoux-pasture"
+    results = {
+      {"mukmoux-pasture", 1}
+    }
 }
 
 Item {

@@ -38,7 +38,9 @@ Recipe {
         {"iron-gear-wheel", 15}, --bob steel-bearing
         {"transport-belt", 30}
     },
-    result = "borax-mine"
+    results = {
+      {"borax-mine", 1}
+    }
 }
 
 Item {

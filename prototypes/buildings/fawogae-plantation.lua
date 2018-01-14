@@ -26,7 +26,9 @@ Recipe {
         {"iron-plate", 40},
         {"raw-wood", 150}
     },
-    result = "fawogae-plantation"
+    results = {
+      {"fawogae-plantation", 1}
+    }
 }
 
 Item {

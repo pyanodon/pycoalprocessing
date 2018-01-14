@@ -11,7 +11,9 @@ Recipe {
         {"steel-plate", 70}, --bob invar-alloy
         {"advanced-circuit", 50}
     },
-    result = "advanced-foundry"
+    results = {
+      {"advanced-foundry", 1}
+    }
 }
 
 Item {

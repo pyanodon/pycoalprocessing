@@ -10,7 +10,9 @@ Recipe {
         {"burner-mining-drill", 2},
         {"copper-cable", 50}
     },
-    result = "wpu"
+    results = {
+      {"wpu", 1}
+    }
 }
 
 Item {

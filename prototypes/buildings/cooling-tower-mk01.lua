@@ -9,7 +9,9 @@ Recipe {
         {"iron-gear-wheel", 15}, --bob brass-gear-wheel
         {"iron-plate", 30} --bob brass-plate
     },
-    result = "cooling-tower-mk01"
+    results = {
+      {"cooling-tower-mk01", 1}
+    }
 }
 
 Item {

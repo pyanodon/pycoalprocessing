@@ -28,7 +28,9 @@ Recipe {
         {"steel-plate", 20},
         {"iron-plate", 50} --bob invar-alloy
     },
-    result = "desulfurizator-unit"
+    results = {
+      {"desulfurizator-unit", 1}
+    }
 }
 
 Item {

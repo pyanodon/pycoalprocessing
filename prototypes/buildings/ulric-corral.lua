@@ -10,7 +10,9 @@ Recipe {
         {"iron-plate", 10},
         {"electronic-circuit", 10} --bob basic-circuit-board
     },
-    result = "ulric-corral"
+    results = {
+      {"ulric-corral", 1}
+    }
 }
 
 Item {

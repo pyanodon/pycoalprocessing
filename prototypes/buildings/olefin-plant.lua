@@ -10,7 +10,9 @@ Recipe {
         {"steel-plate", 40},
         {"iron-gear-wheel", 15} --bob steel-bearing
     },
-    result = "olefin-plant"
+    results = {
+      {"olefin-plant", 1}
+    }
 }
 
 Item {

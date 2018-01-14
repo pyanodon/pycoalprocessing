@@ -39,7 +39,9 @@ Recipe {
         {"treated-wood", 50},
         {"small-lamp", 20}
     },
-    result = "ralesia-plantation"
+    results = {
+      {"ralesia-plantation", 1}
+    }
 }
 
 Item {

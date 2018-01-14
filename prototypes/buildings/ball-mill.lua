@@ -9,7 +9,9 @@ Recipe {
         {"copper-plate", 30},
         {"steel-plate", 40}
     },
-    result = "ball-mill"
+    results = {
+      {"ball-mill", 1}
+    }
 }
 
 Item {

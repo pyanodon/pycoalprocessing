@@ -19,7 +19,9 @@ Recipe {
         {"iron-plate", 20},
         {"iron-gear-wheel", 30}
     },
-    result = "carbon-filter",
+    results = {
+      {"carbon-filter", 1}
+    },
 }
 
 Item {

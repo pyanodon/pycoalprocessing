@@ -25,7 +25,9 @@ Recipe {
         {"copper-cable", 5},
         {"iron-gear-wheel", 15}
     },
-    result = "soil-extractormk01"
+    results = {
+      {"soil-extractormk01", 1}
+    }
 }
 
 Item {

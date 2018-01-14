@@ -26,7 +26,9 @@ Recipe {
         {"stone-brick", 30},
         {"electronic-circuit", 2} --bob basic-circuit-board
     },
-    result = "washer",
+    results = {
+      {"washer", 1}
+    },
 }
 
 Item {

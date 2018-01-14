@@ -37,7 +37,9 @@ Recipe {
         {"raw-wood", 50},
         {"iron-plate", 35}
     },
-    result = "botanical-nursery"
+    results = {
+      {"botanical-nursery", 1}
+    }
 }
 
 Item {
