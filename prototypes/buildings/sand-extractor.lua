@@ -10,7 +10,9 @@ Recipe {
         {"iron-gear-wheel", 20}, --bob brass-gear-wheel
         {"electronic-circuit", 12} --bob basic-electronic-circuit-board
     },
-    result = "sand-extractor"
+    results = {
+      {"sand-extractor", 1}
+    }
 }
 
 Item {

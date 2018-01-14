@@ -60,7 +60,9 @@ Recipe {
         {"iron-plate", 70}, --bob invar-alloy
         {"gasturbinemk02", 2}
     },
-    result = "gasturbinemk03"
+    results = {
+      {"gasturbinemk03", 1}
+    }
 }
 
 Item {

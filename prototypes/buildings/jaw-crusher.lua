@@ -10,7 +10,9 @@ Recipe {
         {"steel-plate", 30}, --bob invar-alloy
         {"electronic-circuit", 15} --bob basic-electronic-circuit-board
     },
-    result = "jaw-crusher"
+    results = {
+      {"jaw-crusher", 1}
+    }
 }
 
 Item {

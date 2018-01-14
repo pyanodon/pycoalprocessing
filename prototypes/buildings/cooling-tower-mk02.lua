@@ -20,7 +20,9 @@ Recipe {
         {"iron-plate", 30}, --bob brass-allloy
         {"concrete", 50}
     },
-    result = "cooling-tower-mk02"
+    results = {
+      {"cooling-tower-mk02", 1}
+    }
 }
 
 Item {

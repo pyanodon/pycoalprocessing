@@ -10,7 +10,9 @@ Recipe {
         {"carbon-filter", 2},
         {"nexelit-plate", 50}
     },
-    result = "co2-absorber"
+    results = {
+      {"co2-absorber", 1}
+    }
 }
 
 Item {

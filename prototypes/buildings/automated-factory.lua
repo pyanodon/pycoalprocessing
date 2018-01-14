@@ -18,7 +18,9 @@ Recipe {
         {"steel-plate", 35}, --bob invar-alloy
         {"electronic-circuit", 10} --bob basic-electronic-circuit-board
     },
-    result = "automated-factory"
+    results = {
+      {"automated-factory", 1}
+    }
 }
 
 Item {

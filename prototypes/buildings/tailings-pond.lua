@@ -24,7 +24,9 @@ Recipe {
         {"iron-plate", 10},
         {"stone-brick", 100}
     },
-    result = "tailings-pond"
+    results = {
+      {"tailings-pond", 1}
+    }
 }
 
 Item {

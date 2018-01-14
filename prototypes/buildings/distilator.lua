@@ -9,7 +9,9 @@ Recipe {
         {"iron-plate", 10},
         {"electronic-circuit", 3} --bob basic-circuit-board
     },
-    result = "distilator",
+    results = {
+      {"distilator", 1}
+    },
 }
 
 Item {

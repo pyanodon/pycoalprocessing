@@ -10,7 +10,9 @@ Recipe {
         {"iron-stick", 30},
         {"iron-gear-wheel", 40}
     },
-    result = "gasturbinemk01"
+    results = {
+      {"gasturbinemk01", 1}
+    }
 }
 
 Item {

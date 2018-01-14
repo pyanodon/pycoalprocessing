@@ -37,7 +37,9 @@ Recipe {
         {"steel-plate", 30}, --bob titanium-plate
         {"iron-gear-wheel", 15} --bob titanium-bearing
     },
-    result = "niobium-mine"
+    results = {
+      {"niobium-mine", 1}
+    }
 }
 
 Item {

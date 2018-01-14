@@ -55,7 +55,9 @@ Recipe {
         {type = "item", name = "iron-plate", amount = 10}, --bob nickel-plate
         {type = "item", name = "chromium", amount = 5}
     },
-    result = "nichrome"
+    results = {
+      {"nichrome", 1}
+    }
 }
 
 Item {
@@ -75,7 +77,9 @@ Recipe {
     category = "smelting",
     energy_required = 3.5,
     ingredients = {{"iron-oxide", 2}},
-    result = "iron-plate"
+    results = {
+      {"iron-plate", 1}
+    }
 }
 Item {
     type = "item",
