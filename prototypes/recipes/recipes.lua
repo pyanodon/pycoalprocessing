@@ -1224,6 +1224,22 @@ Recipe {
 
 Recipe {
     type = "recipe",
+    name = "eva-ree-dust",
+    category = "evaporator",
+    enabled = "false",
+    energy_required = 3.0,
+    ingredients = {
+        {type = "fluid", name = "rare-earth-mud", amount = 250}
+    },
+    results = {
+        {type = "item", name = "rare-earth-dust", amount = 10},
+        {type = "fluid", name = "flue-gas", amount = 200}
+    },
+    main_product = "rare-earth-dust",
+}
+
+Recipe {
+    type = "recipe",
     name = "crushed-iron",
     category = "smelting",
     enabled = "false",
@@ -1751,4 +1767,24 @@ Recipe {
     icon_size = 32,
     subgroup = "py-items",
     order = "g"
+}
+
+Recipe {
+    type = "recipe",
+    name = "explosive-glycerol",
+    category = "chemistry",
+    enabled = "false",
+    energy_required = 2.0,
+    ingredients = {
+        {type = "fluid", name = "glycerol", amount = 100},
+        {type = "fluid", name = "sulfuric-acid", amount = 150}
+    },
+    results = {
+        {type = "item", name = "explosives", amount = 5}
+    },
+    main_product = "explosives",
+    icon = "__base__/graphics/icons/explosives.png",
+    icon_size = 32,
+    subgroup = "py-items",
+    order = "a [coal-gas]"
 }
