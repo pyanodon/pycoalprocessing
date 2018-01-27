@@ -181,6 +181,14 @@ Technology {
         {
             type = "unlock-recipe",
             recipe = "log-organics"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "eva-ree-dust"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "rare-earth-beneficiation"
         }
     },
     unit = {

@@ -1233,3 +1233,15 @@ Item {
     order = "a2",
     stack_size = 100
 }
+
+Item {
+    type = "item",
+    name = "rare-earth-dust",
+    enabled = "false",
+    icon = "__pycoalprocessing__/graphics/icons/rare-earth-dust.png",
+    icon_size = 32,
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "a2",
+    stack_size = 400
+}
