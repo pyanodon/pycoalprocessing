@@ -45,6 +45,10 @@ Technology {
         {
             type = "unlock-recipe",
             recipe = "aromatics-to-lubricant"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "explosive-glycerol"
         }
     },
     unit = {

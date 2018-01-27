@@ -144,13 +144,13 @@ Recipe {
     ingredients = {
         {type = "fluid", name = "sulfuric-acid", amount = 200},
         {type = "fluid", name = "water", amount = 2000},
-        {type = "item", name = "rare-earth-dust", amount = 10}
+        {type = "item", name = "rare-earth-dust", amount = 10},
     },
     results = {
         {type = "item", name = "rich-dust", amount = 5},
         {type = "fluid", name = "rare-earth-mud", amount = 250},
         {type = "fluid", name = "steam", amount = 2000, temperature = 60},
-        {type = "item", name = "sand", amount = 10}
+        {type = "item", name = "sand", amount = 10},
     },
     icon = "__pycoalprocessing__/graphics/icons/rare-earth-mud.png",
     icon_size = 32,
