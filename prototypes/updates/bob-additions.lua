@@ -64,6 +64,27 @@ Recipe {
     --"__bobplates__/graphics/icons/carbon.png",
 }
 
+--alternative silicon plate
+Recipe {
+    type = "recipe",
+    name = "silicon-plate2",
+    category = "electrolysis",
+    enabled = "false",
+    energy_required = 7,
+    ingredients = {
+        {type = "item", name = "crushed-quartz", amount = 5},
+		{type = "item", name = "carbon", amount = 1},
+		{type = "item", name = "calcium-chloride", amount = 4},
+    },
+    results = {
+        {type = "item", name = "silicon", amount = 5}
+    },
+    main_product = "silicon",
+    icon = data.raw.item.silicon.icon,
+    icon_size = 32,
+    --"__bobplates__/graphics/icons/carbon.png",
+}
+
 Recipe {
     type = "recipe",
     name = "salt-ex",
@@ -341,27 +362,6 @@ Recipe {
     order = "a [coal-gas]"
 }
 
---EXPLOSIVES FROM GLYCEROL
-Recipe {
-    type = "recipe",
-    name = "explosive-glycerol",
-    category = "chemistry",
-    enabled = "false",
-    energy_required = 2.0,
-    ingredients = {
-        {type = "fluid", name = "glycerol", amount = 100},
-        {type = "fluid", name = "sulfuric-acid", amount = 150}
-    },
-    results = {
-        {type = "item", name = "explosives", amount = 5}
-    },
-    main_product = "explosives",
-    icon = "__base__/graphics/icons/explosives.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "a [coal-gas]"
-}
-
 --RESIN FROM GLYCEROL
 Recipe {
     type = "recipe",
@@ -619,7 +619,6 @@ Recipe {
 
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
 bobmods.lib.tech.add_recipe_unlock("methanol-processing-2", "methanol-from-hydrogen")
-bobmods.lib.tech.add_recipe_unlock("desulfurization", "explosive-glycerol")
 
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "syngas2")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "salt-ex")
@@ -638,6 +637,8 @@ bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "lube-glycerol")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "resin-glycerol")
 
 bobmods.lib.tech.add_recipe_unlock("energy1", "hydrogen-combustion")
+
+bobmods.lib.tech.add_recipe_unlock("silicon-processing" , "silicon-plate2")
 
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-silver")
 bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-cobalt")
