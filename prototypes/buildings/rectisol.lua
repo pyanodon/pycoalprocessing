@@ -89,7 +89,7 @@ Entity {
                 line_length = 10,
                 width = 121,
                 height = 55,
-                animation_speed = 0.15
+                animation_speed = 0.35
             }
         },
         {
@@ -103,7 +103,7 @@ Entity {
                 line_length = 40,
                 width = 47,
                 height = 77,
-                animation_speed = 0.35
+                animation_speed = 0.45
             }
         }
     },
