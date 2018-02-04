@@ -40,7 +40,7 @@ Technology {
         },
         {
             type = "unlock-recipe",
-            recipe = "ref_to_light-oil"
+            recipe = "ref-to-light-oil"
         },
         {
             type = "unlock-recipe",

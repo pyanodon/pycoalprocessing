@@ -68,7 +68,7 @@ Recipe {
 
 Recipe {
     type = "recipe",
-    name = "ref_to_light-oil",
+    name = "ref-to-light-oil",
     category = "fts-reactor",
     enabled = "false",
     energy_required = 10,
