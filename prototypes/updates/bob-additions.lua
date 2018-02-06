@@ -617,8 +617,29 @@ Recipe {
     order = "m"
 }
 
+--alumina
+Recipe {
+    type = "recipe",
+    name = "alumina2",
+    category = "chemical-furnace",
+    enabled = "false",
+    energy_required = 2,
+    ingredients = {
+        {type = "item", name = "sodium-hydroxide", amount = 1},
+        {type = "item", name = "crushed-bauxite", amount = 1},
+    },
+    results = {
+        {type = "item", name = "alumina", amount = 2},
+    },
+    icon = "__bobplates__/graphics/icons/corundum.png",
+    icon_size = 32,
+    subgroup = "py-items",
+    order = "m"
+}
+
 bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
 bobmods.lib.tech.add_recipe_unlock("methanol-processing-2", "methanol-from-hydrogen")
+bobmods.lib.tech.add_recipe_unlock("aluminium-processing", "alumina2")
 
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "syngas2")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "salt-ex")
