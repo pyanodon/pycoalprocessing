@@ -1,138 +1,95 @@
 --[[bob-updates.lua]] -- luacheck: globals bobmods
 
-local replace_ing = bobmods.lib.recipe.replace_ingredient
-local remove_ing = bobmods.lib.recipe.remove_ingredient
-local add_ing = bobmods.lib.recipe.add_ingredient
 local add_result = bobmods.lib.recipe.add_result
 local remove_result = bobmods.lib.recipe.remove_result
-local add_prerequisite = bobmods.lib.tech.add_prerequisite
 
-local change_value = function(recipe_str, field, val)
-    local recipe = data.raw.recipe[recipe_str]
-    if recipe then
-        recipe[field] = val
-    end
-end
+Recipe("distilator"):rep_ing("pipe", "copper-pipe"):rep_ing("electronic-circuit", "basic-circuit-board")
 
-replace_ing("distilator", "pipe", "copper-pipe")
-replace_ing("distilator", "electronic-circuit", "basic-circuit-board")
+Recipe("classifier"):rep_ing("electronic-circuit", "basic-circuit-board")
 
-replace_ing("classifier", "electronic-circuit", "basic-electronic-circuit-board")
+Recipe("gasturbinemk02"):rep_ing("pipe", "bronze-pipe"):rep_ing("iron-plate", "invar-alloy")
 
-replace_ing("gasturbinemk02", "pipe", "bronze-pipe")
-replace_ing("gasturbinemk02", "iron-plate", "invar-alloy")
+Recipe("hpf"):rep_ing("electronic-circuit", "basic-circuit-board")
 
---replace_ing("hpf", "stone-brick", "glass")
---replace_ing("hpf", "iron-gear-wheel", "steel-bearing")
---replace_ing("hpf", "iron-plate", "invar-alloy")
-replace_ing("hpf", "electronic-circuit", "basic-circuit-board")
+Recipe("methanol-reactor"):rep_ing("chemical-plant", "electrolyser"):rep_ing("iron-gear-wheel", "steel-bearing")
 
-replace_ing("methanol-reactor", "chemical-plant", "electrolyser")
-replace_ing("methanol-reactor", "iron-gear-wheel", "steel-bearing")
+Recipe("power-house"):rep_ing("iron-gear-wheel", "steel-bearing"):rep_ing("iron-plate", "lead-plate")
 
-replace_ing("power-house", "iron-gear-wheel", "steel-bearing")
-replace_ing("power-house", "iron-plate", "lead-plate")
+Recipe("evaporator"):rep_ing("steel-plate", "lead-plate"):rep_ing("iron-plate", "steel-gear-wheel"):rep_ing("iron-gear-wheel", "steel-bearing")
 
-replace_ing("evaporator", "steel-plate", "lead-plate")
-replace_ing("evaporator", "iron-plate", "steel-gear-wheel")
-replace_ing("evaporator", "iron-gear-wheel", "steel-bearing")
+Recipe("tailings-pond"):rep_ing("pump", "water-pump")
 
-replace_ing("tailings-pond", "pump", "water-pump")
+Recipe("tar-processing-unit"):rep_ing("electronic-circuit", "basic-circuit-board"):rep_ing("pipe", "stone-pipe")
 
-replace_ing("tar-processing-unit", "electronic-circuit", "basic-circuit-board")
-replace_ing("tar-processing-unit", "pipe", "stone-pipe")
+Recipe("cooling-tower-mk01"):rep_ing("pipe", "copper-pipe"):rep_ing("iron-plate", "bronze-alloy")
 
-replace_ing("cooling-tower-mk01", "pipe", "copper-pipe")
-replace_ing("cooling-tower-mk01", "iron-plate", "bronze-alloy")
+Recipe("cooling-tower-mk02"):rep_ing("pipe", "copper-pipe"):rep_ing("iron-plate", "brass-alloy")
 
-replace_ing("cooling-tower-mk02", "pipe", "copper-pipe")
-replace_ing("cooling-tower-mk02", "iron-plate", "brass-alloy")
+Recipe("desulfurizator-unit"):rep_ing("iron-plate", "invar-alloy")
 
-replace_ing("desulfurizator-unit", "iron-plate", "invar-alloy")
+Recipe("soil-extractormk01"):rep_ing("electronic-circuit", "basic-circuit-board")
 
-replace_ing("soil-extractormk01", "electronic-circuit", "basic-circuit-board")
+Recipe("olefin-plant"):rep_ing("chemical-plant", "electrolyser"):rep_ing("iron-gear-wheel", "steel-bearing")
 
-replace_ing("olefin-plant", "chemical-plant", "electrolyser")
-replace_ing("olefin-plant", "iron-gear-wheel", "steel-bearing")
+Recipe("ground-borer"):rep_ing("iron-gear-wheel", "titanium-bearing"):rep_ing("iron-plate", "titanium-plate")
 
-replace_ing("ground-borer", "iron-gear-wheel", "titanium-bearing")
-replace_ing("ground-borer", "iron-plate", "titanium-plate")
+Recipe("fts-reactor"):rep_ing("stone-brick", "glass"):rep_ing("iron-gear-wheel", "steel-bearing"):rep_ing("iron-plate", "invar-alloy"):rep_ing("electronic-circuit", "basic-circuit-board")
 
-replace_ing("fts-reactor", "stone-brick", "glass")
-replace_ing("fts-reactor", "iron-gear-wheel", "steel-bearing")
-replace_ing("fts-reactor", "iron-plate", "invar-alloy")
-replace_ing("fts-reactor", "electronic-circuit", "basic-electronic-circuit-board")
+Recipe("washer"):rep_ing("electronic-circuit", "basic-circuit-board")
 
-replace_ing("washer", "electronic-circuit", "basic-circuit-board")
+Recipe("fawogae-plantation"):rep_ing("electronic-circuit", "basic-circuit-board")
 
-replace_ing("fawogae-plantation", "electronic-circuit", "basic-circuit-board")
+Recipe("ulric-corral"):rep_ing("electronic-circuit", "basic-circuit-board"):rep_ing("iron-gear-wheel", "steel-bearing")
 
-replace_ing("ulric-corral", "electronic-circuit", "basic-circuit-board")
-replace_ing("ulric-corral", "iron-gear-wheel", "steel-bearing")
+Recipe("advanced-foundry"):rep_ing("iron-plate", "titanium-plate"):rep_ing("concrete", "glass"):rep_ing("steel-plate", "invar-alloy")
 
-replace_ing("advanced-foundry", "iron-plate", "titanium-plate")
-replace_ing("advanced-foundry", "concrete", "glass")
-replace_ing("advanced-foundry", "steel-plate", "invar-alloy")
---replace_ing("advanced-foundry"), "olefin-plant", steel-bearing}
+Recipe("solid-separator"):rep_ing("iron-gear-wheel", "steel-gear-wheel")
+Recipe("solid-separator"):rep_ing("advanced-circuit", "basic-circuit-board")
 
-replace_ing("solid-separator", "iron-gear-wheel", "steel-gear-wheel")
-replace_ing("solid-separator", "advanced-circuit", "basic-electronic-circuit-board")
+Recipe("classifier"):rep_ing("iron-stick", "brass-gear-wheel")
 
-replace_ing("classifier", "iron-stick", "brass-gear-wheel")
---replace_ing("classifier", "iron-plate", "titanium-plate")
+Recipe("automated-factory"):rep_ing("electronic-circuit", "basic-circuit-board")
 
-replace_ing("automated-factory", "electronic-circuit", "basic-electronic-circuit-board")
+Recipe("borax-mine"):rep_ing("electronic-circuit", "basic-circuit-board")
+Recipe("borax-mine"):rep_ing("iron-gear-wheel", "steel-bearing")
 
-replace_ing("borax-mine", "electronic-circuit", "basic-circuit-board")
-replace_ing("borax-mine", "iron-gear-wheel", "steel-bearing")
+Recipe("ralesia-plantation"):rep_ing("electronic-circuit", "basic-circuit-board"):rep_ing("pipe", "steel-pipe"):rep_ing("stone", "glass")
 
-replace_ing("ralesia-plantation", "electronic-circuit", "basic-circuit-board")
-replace_ing("ralesia-plantation", "pipe", "steel-pipe")
-replace_ing("ralesia-plantation", "stone", "glass")
+Recipe("ulric-corral"):rep_ing("iron-gear-wheel", "steel-bearing"):rep_ing("electronic-circuit", "basic-circuit-board")
 
-replace_ing("ulric-corral", "iron-gear-wheel", "steel-bearing")
-replace_ing("ulric-corral", "electronic-circuit", "basic-circuit-board")
+Recipe("jaw-crusher"):rep_ing("steel-plate", "invar-alloy"):rep_ing("electronic-circuit", "basic-circuit-board"):add_ing({name = "rubber", amount = 10})
 
-replace_ing("jaw-crusher", "steel-plate", "invar-alloy")
-replace_ing("ore-chusher", "electronic-circuit", "basic-electronic-circuit-board")
-add_ing("jaw-crusher", {name = "rubber", amount = 10})
+Recipe("ball-mill"):add_ingredient({name = "steel-bearing-ball", amount = 1000})
 
-add_ing("ball-mill", {name = "steel-bearing-ball", amount = 1000})
+Recipe("sand-extractor"):rep_ing("iron-gear-wheel", "brass-gear-wheel"):rep_ing("electronic-circuit", "basic-circuit-board")
 
-replace_ing("mukmoux-pasture", "advanced-circuit", "electronic-logic-board")
+Recipe("botanical-nursery"):rep_ing("electronic-circuit", "basic-circuit-board"):add_ing({name = "glass", amount = 10})
 
-replace_ing("sand-extractor", "iron-gear-wheel", "brass-gear-wheel")
-replace_ing("sand-extractor", "electronic-circuit", "basic-electronic-circuit-board")
+Recipe("glycerol-hydrogen"):rep_ing("water", "liquid-air")
 
-add_ing("botanical-nursery", {name = "glass", amount = 10})
-replace_ing("botanical-nursery", "electronic-circuit", "basic-circuit-board")
-
-replace_ing("glycerol-hydrogen", "water", "liquid-air")
 remove_result("glycerol-hydrogen", "petroleum-gas")
 add_result("glycerol-hydrogen", {type = "fluid", name = "hydrogen", amount = 300})
 
 remove_result("aromatics-to-rubber", "crude-oil")
 add_result("aromatics-to-rubber", {type = "item", name = "rubber", amount = 1})
 
-add_ing("laser-turret", {name = "lens", amount = 1})
+Recipe("laser-turret"):add_ing({name = "lens", amount = 1})
 
-replace_ing("superior-circuit-board", "gold-plate", "nexelit-plate")
+Recipe("superior-circuit-board"):rep_ing("gold-plate", "nexelit-plate")
 
-replace_ing("alumina", "bauxite-ore", "crushed-bauxite")
-replace_ing("lead-oxide", "lead-ore", "crushed-lead")
+Recipe("alumina"):rep_ing("bauxite-ore", "crushed-bauxite")
 
-replace_ing("zinc-chloride", "iron-plate", "zinc-plate")
-replace_ing("zinc-chloride", "water", "hydrogen-chloride")
-remove_ing("zinc-chloride", "copper-plate")
+Recipe("lead-oxide"):rep_ing("lead-ore", "crushed-lead")
+
+Recipe("zinc-chloride"):rep_ing("iron-plate", "zinc-plate"):rep_ing("water", "hydrogen-chloride"):rem_ing("copper-plate")
+
 add_result("zinc-chloride", {name = "hydrogen", amount = 20})
-
 add_result("ash-separation", {type = "item", name = "cobalt-ore", amount = 3, probability = 0.3})
 
-replace_ing("active-carbon", "water", "nitrogen")
-add_ing("active-carbon", {name = "sodium-hydroxide", amount = 7})
+Recipe("active-carbon"):rep_ing("water", "nitrogen"):add_ing({name = "sodium-hydroxide", amount = 7})
 
-add_ing("advanced-circuit", {name = "optical-fiber", amount = 2})
-add_ing("fibreglass-board", {name = "glass", amount = 2})
+Recipe("advanced-circuit"):add_ing({name = "optical-fiber", amount = 2})
+Recipe("fibreglass-board"):add_ing({name = "glass", amount = 2})
 
 remove_result("bob-resin-wood", "resin")
 add_result("bob-resin-wood", {type = "item", name = "resin", amount = 3})
@@ -142,89 +99,84 @@ remove_result("refsyngas-from-meth-canister", "water")
 add_result("refsyngas-from-meth", {type = "fluid", name = "hydrogen", amount = 30})
 add_result("refsyngas-from-meth-canister", {type = "fluid", name = "hydrogen", amount = 30})
 
-remove_ing("olefin", "water")
-add_ing("olefin", {type = "fluid", name = "hydrogen", amount = 600})
+Recipe("olefin"):rem_ing("water"):add_ing({type = "fluid", name = "hydrogen", amount = 600})
 
 remove_result("aromatics", "water")
 add_result("aromatics", {type = "fluid", name = "hydrogen", amount = 100})
 
-remove_ing("gasoline", "water")
-add_ing("gasoline", {type = "fluid", name = "hydrogen", amount = 200})
+Recipe("gasoline"):rem_ing("gasoline", "water"):add_ing({type = "fluid", name = "hydrogen", amount = 200})
 
-remove_ing("lithium-peroxide", "water")
-add_ing("lithium-peroxide", {type = "fluid", name = "lithia-water", amount = 300})
+Recipe("lithium-peroxide"):rem_ing("water"):add_ing({type = "fluid", name = "lithia-water", amount = 300})
 
-replace_ing("anthraquinone", "steam", "liquid-air")
-replace_ing("flask", "iron-plate", "glass")
+Recipe("anthraquinone"):rep_ing("steam", "liquid-air")
+Recipe("flask"):rep_ing("iron-plate", "glass")
 
-add_ing("ref_to_light-oil", {type = "fluid", name = "hydrogen", amount = 250})
+Recipe("ref-to-light-oil"):add_ing({type = "fluid", name = "hydrogen", amount = 250})
 
-add_ing("combustion-olefin", {type = "fluid", name = "hydrogen", amount = 150})
+Recipe("combustion-olefin"):add_ing({type = "fluid", name = "hydrogen", amount = 150})
 
-replace_ing("niobium-oxide", "water", "nitrogen-dioxide")
+Recipe("niobium-oxide"):rep_ing("water", "nitrogen-dioxide")
 
-add_ing("filtration-media", {type = "item", name = "glass", amount = 5})
+Recipe("filtration-media"):add_ing({type = "item", name = "glass", amount = 5})
 
-replace_ing("methanol-from-syngas", "iron-plate", "zinc-plate")
-replace_ing("flying-robot-frame", "steel-plate", "niobium-plate")
-replace_ing("ralesia", "water", "hydrogen")
-replace_ing("equipment-chassi", "copper-plate", "bronze-alloy")
-replace_ing("lens", "stone", "glass")
-replace_ing("diborane", "water", "hydrogen")
-replace_ing("oleochemicals-distilation", "water", "oxygen")
-replace_ing("oleo-gasification", "water", "oxygen")
-replace_ing("tar-gasification", "water", "liquid-air")
-replace_ing("niobium-dioxide", "water", "nitrogen-dioxide")
-replace_ing("ppd", "water", "hydrogen")
-replace_ing("aromatics2", "water", "hydrogen")
-replace_ing("niobium-complex", "water", "hydrogen-chloride")
-replace_ing("tpa", "steam", "liquid-air")
-replace_ing("tpa", "copper-ore", "cobalt-ore")
-replace_ing("science-pack-3", "copper-cable", "insulated-cable")
-replace_ing("tailings-classification", "copper-ore", "lead-ore")
-replace_ing("tailings-classification", "iron-ore", "tin-ore")
-replace_ing("niobium-plate", "coal", "salt")
-replace_ing("sulfur-crudeoil", "iron-ore", "salt")
-replace_ing("glass-core", "sand", "glass")
-replace_ing("glass-core", "steel-plate", "silver-plate")
-replace_ing("nichrome", "water", "nitrogen")
-replace_ing("nichrome", "iron-plate", "nickel-plate")
-replace_ing("hydrogen-peroxide", "iron-plate", "nickel-plate")
-replace_ing("circuit-board", "ferric-chloride-solution", "boric-acid")
-replace_ing("superior-circuit-board", "ferric-chloride-solution", "boric-acid")
-replace_ing("multi-layer-circuit-board", "ferric-chloride-solution", "boric-acid")
-replace_ing("cladding", "sand", "glass")
-replace_ing("aromatics-to-rubber", "plastic-bar", "rubber")
-replace_ing("nas-battery", "copper-ore", "sodium-hydroxide")
+Recipe("methanol-from-syngas"):rep_ing("iron-plate", "zinc-plate")
+Recipe("flying-robot-frame"):rep_ing("steel-plate", "niobium-plate")
+Recipe("ralesia"):rep_ing("water", "hydrogen")
+Recipe("equipment-chassi"):rep_ing("copper-plate", "bronze-alloy")
+Recipe("lens"):rep_ing("stone", "glass")
+Recipe("diborane"):rep_ing("water", "hydrogen")
+Recipe("oleochemicals-distilation"):rep_ing("water", "oxygen")
+Recipe("oleo-gasification"):rep_ing("water", "oxygen")
+Recipe("tar-gasification"):rep_ing("water", "liquid-air")
+Recipe("ppd"):rep_ing("water", "hydrogen")
+Recipe("aromatics2"):rep_ing("water", "hydrogen")
+Recipe("niobium-complex"):rep_ing("water", "hydrogen-chloride")
+Recipe("tpa"):rep_ing("steam", "liquid-air")
+Recipe("tpa"):rep_ing("copper-ore", "cobalt-ore")
+Recipe("science-pack-3"):rep_ing("copper-cable", "insulated-cable")
+Recipe("tailings-classification"):rep_ing("copper-ore", "lead-ore")
+Recipe("tailings-classification"):rep_ing("iron-ore", "tin-ore")
+Recipe("niobium-plate"):rep_ing("coal", "salt")
+Recipe("sulfur-crudeoil"):rep_ing("iron-ore", "salt")
+Recipe("glass-core"):rep_ing("sand", "glass")
+Recipe("glass-core"):rep_ing("steel-plate", "silver-plate")
+Recipe("nichrome"):rep_ing("water", "nitrogen")
+Recipe("nichrome"):rep_ing("iron-plate", "nickel-plate")
+Recipe("hydrogen-peroxide"):rep_ing("iron-plate", "nickel-plate")
+Recipe("circuit-board"):rep_ing("ferric-chloride-solution", "boric-acid")
+Recipe("superior-circuit-board"):rep_ing("ferric-chloride-solution", "boric-acid")
+Recipe("multi-layer-circuit-board"):rep_ing("ferric-chloride-solution", "boric-acid")
+Recipe("cladding"):rep_ing("sand", "glass")
+Recipe("aromatics-to-rubber"):rep_ing("plastic-bar", "rubber")
+Recipe("nas-battery"):rep_ing("copper-ore", "sodium-hydroxide")
 
---replace_ing("drill-head", "iron-plate", "titanium-plate")
+Recipe("empty-gas-canister"):rep_ing("copper-plate", "brass-alloy")
+Recipe("empty-gas-canister"):rep_ing("steel-plate", "aluminium-plate")
 
-replace_ing("empty-gas-canister", "copper-plate", "brass-alloy")
-replace_ing("empty-gas-canister", "steel-plate", "aluminium-plate")
 if data.raw["recipe-category"]["water-pump"] then
-    data.raw.recipe["fill-methanol-gas-canister"].category = "water-pump"
-    data.raw.recipe["empty-methanol-gas-canister"].category = "water-pump"
+    Recipe("fill-methanol-gas-canister").category = "water-pump"
+    Recipe("empty-methanol-gas-canister").category = "water-pump"
 end
 
 if data.raw["recipe-category"]["electrolysis"] then
-    data.raw.recipe["diborane"].category = "electrolysis"
-    data.raw.recipe["boric-acid"].category = "electrolysis"
-    data.raw.recipe["niobium-plate"].category = "electrolysis"
-    data.raw.recipe["ppd"].category = "electrolysis"
-    data.raw.recipe["copper-coating"].category = "electrolysis"
-    data.raw.recipe["glycerol-hydrogen"].category = "electrolysis"
+    Recipe("diborane").category = "electrolysis"
+    Recipe("boric-acid").category = "electrolysis"
+    Recipe("niobium-plate").category = "electrolysis"
+    Recipe("ppd").category = "electrolysis"
+    Recipe("copper-coating").category = "electrolysis"
+    Recipe("glycerol-hydrogen").category = "electrolysis"
 end
 
 local foundry = data.raw["assembling-machine"]["advanced-foundry"]
 foundry.crafting_categories[#foundry.crafting_categories + 1] = "chemical-furnace"
 foundry.crafting_categories[#foundry.crafting_categories + 1] = "mixing-furnace"
 
-add_prerequisite("coal-processing-2", "electrolysis-1")
+Technology("coal-processing-2"):add_prereq("electrolysis-1")
 
-change_value("bob-resin-wood", "energy_required", 10)
-change_value("bob-resin-wood", "category", "wpu")
-change_value("polishing-wheel", "category", "wpu")
-change_value("wooden-board", "energy_required", 10)
-change_value("phenolic-board", "category", "wpu")
-change_value("nbfe-alloy", "category", "smelting")
-change_value("hpf", "enabled", true)
+Recipe("bob-resin-wood").energy_required = 10
+Recipe("bob-resin-wood").category = "wpu"
+Recipe("polishing-wheel").category = "wpu"
+Recipe("wooden-board").energy_required = 10
+Recipe("phenolic-board").category = "wpu"
+Recipe("nbfe-alloy").category ="smelting"
+Recipe("hpf").enabled = true

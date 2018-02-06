@@ -13,12 +13,11 @@ Recipe {
     results = {
         {type = "fluid", name = "methanol", amount = 40}
     },
-    --main_product= "methanol",
     subgroup = "py-methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",
     icon_size = 32,
     order = "b"
-}
+}:add_unlock("methanol-processing-2")
 
 Recipe {
     type = "recipe",
@@ -36,7 +35,6 @@ Recipe {
         {type = "fluid", name = "tar", amount = 30},
         {type = "item", name = "ash", amount = 1}
     },
-    --main_product= "syngas",
     icon = "__pycoalprocessing__/graphics/icons/syngas.png",
     icon_size = 32,
     subgroup = "py-syngas",
@@ -61,8 +59,7 @@ Recipe {
     order = "carbon",
     icon = data.raw.item.carbon.icon,
     icon_size = 32,
-    --"__bobplates__/graphics/icons/carbon.png",
-}
+}:add_unlock("coal-processing-1")
 
 --alternative silicon plate
 Recipe {
@@ -82,7 +79,6 @@ Recipe {
     main_product = "silicon",
     icon = data.raw.item.silicon.icon,
     icon_size = 32,
-    --"__bobplates__/graphics/icons/carbon.png",
 }
 
 Recipe {
@@ -141,7 +137,7 @@ Recipe {
     icon = "__pycoalprocessing__/graphics/icons/flue-gas.png",
     icon_size = 32,
     order = "flue-gas"
-}
+}:add_unlock("void-fluid")
 
 --GLASS PRODUCTION
 Recipe {
@@ -575,7 +571,7 @@ Recipe {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "k"
-}
+}:add_unlock("energy1")
 
 --SODIUM HYDROXIDE
 Recipe {
@@ -644,7 +640,6 @@ bobmods.lib.tech.add_recipe_unlock("aluminium-processing", "alumina2")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "syngas2")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "salt-ex")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "saline")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-1", "tar-carbon")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-nickel-zinc")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-tin-lead")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-gold-silver")
@@ -652,7 +647,6 @@ bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-bauxite-cobalt
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-rutile-tungsten")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-gem-ore")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "py-sodium-hydroxide")
-
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "syngas-distilation")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "lube-glycerol")
 bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "resin-glycerol")
