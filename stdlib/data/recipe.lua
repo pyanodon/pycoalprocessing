@@ -11,7 +11,7 @@ local Item = require("stdlib/data/item")
 function Recipe:_get(recipe)
     return self:get(recipe, "recipe")
 end
-Recipe:set_caller(function(recipe) Recipe:get(recipe, "recipe") end)
+Recipe:set_caller(Recipe._get)
 
 function Recipe:Products(products) --luacheck: ignore
     --if not products then return products table,
