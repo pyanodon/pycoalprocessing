@@ -1,3 +1,4 @@
+require("stdlib.data.data").create_data_globals()
 --update recipes for creosote
 require("prototypes.updates.recipe-updates")
 
