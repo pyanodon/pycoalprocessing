@@ -1,7 +1,6 @@
 --Settings and Helpers
 local PYC = require("config") -- configuration variables
 
-require("stdlib.core")
 require("stdlib.data.data").create_data_globals()
 
 --Groups

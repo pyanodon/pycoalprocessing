@@ -14,7 +14,7 @@ local Data = {
 } --luacheck: allow defined top
 setmetatable(Data, {__index = require("stdlib/core")})
 
-function Data.item_types()
+function Data.get_item_and_fluid_types()
     return {
         "item",
         "ammo",
@@ -411,7 +411,7 @@ function Data:get(object, object_type)
         new._extended = data.raw[object.type] and data.raw[object.type][object.name] == object
     elseif type(object) == "string" then
         --Get type from object_type, or fluid or item_types
-        local types = (object_type and {object_type}) or (self._class == "Item" and self.item_types())
+        local types = (object_type and {object_type}) or (self._class == "Item" and self.get_item_and_fluid_types())
         if types then
             for _, type in pairs(types) do
                 new = data.raw[type] and data.raw[type][object]
