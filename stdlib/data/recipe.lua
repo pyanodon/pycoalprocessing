@@ -230,17 +230,17 @@ function Recipe:make_difficult(expensive_energy)
     return self
 end
 
--- --- Change the recipe category
--- -- @tparam string category_name Crafting category
--- -- @tparam[opt] boolean make_new Create the category if it doesn't exist
--- -- @treturn self
--- function Recipe:change_category(category_name, make_new)
---     if self:valid() then
---         local Category = require("stdlib/data/category")
---         self.category = (Category(category_name, "recipe-category", make_new):valid() and category_name) or self.category
---     end
---     return self
--- end
+--- Change the recipe category
+-- @tparam string category_name Crafting category
+-- @tparam[opt] boolean make_new Create the category if it doesn't exist
+-- @treturn self
+function Recipe:change_category(category_name)
+    if self:valid() then
+        local Category = require("stdlib/data/category")
+        self.category = Category(category_name, "recipe-category"):valid() and category_name or self.category
+    end
+    return self
+end
 
 --- Add to technology as a recipe unlock
 -- @tparam string tech_name Name of the technology to add the unlock too
