@@ -96,7 +96,7 @@ function Technology:remove_effect(tech_name, unlock_type, name)
         if tech_name then
             local tech = Technology(tech_name):valid()
             if tech then
-                for index, effect in pairs(tech.effects) do
+                for index, effect in pairs(tech.effects or {}) do
                     if effect.type == "unlock-recipe" and effect.recipe == self.name then
                         table.remove(tech.effects, index)
                     end
@@ -104,9 +104,10 @@ function Technology:remove_effect(tech_name, unlock_type, name)
             end
         else
             for _, tech in pairs(data.raw["technology"]) do
-                for index, effect in pairs(tech.effects) do
+                for index, effect in pairs(tech.effects or {}) do
                     if effect.type == "unlock-recipe" and effect.recipe == self.name then
                         table.remove(tech.effects, index)
+                        log("REMOVEDREMOVED".. tech.name)
                     end
                 end
             end
