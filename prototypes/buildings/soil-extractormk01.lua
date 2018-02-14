@@ -80,8 +80,8 @@ Entity {
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_covers = Pipes.covers(true, true, true, true),
-            pipe_picture = Pipes.pictures("assembling-machine-3", {0, 1}, {0, -1}, nil, nil, pipes),
+            pipe_covers = Data.Pipes.covers(true, true, true, true),
+            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {0, 1}, {0, -1}, nil, nil, pipes),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {4.0, 0.0}}}
