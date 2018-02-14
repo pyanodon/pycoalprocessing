@@ -55,7 +55,7 @@ Entity {
     two_direction_only = true,
     fluid_box = {
         base_area = (100000 / 100),
-        pipe_covers = Pipes.covers(true, true, true, true),
+        pipe_covers = Data.Pipes.covers(true, true, true, true),
         pipe_connections = {
             {position = {0, -3}},
             {position = {0, 3}},
@@ -74,15 +74,15 @@ Entity {
                 height = 185
             }
         },
-        fluid_background = Pipes.empty_sprite(),
+        fluid_background = Data.Pipes.empty_sprite(),
         window_background = {
             filename = "__pycoalprocessing__/graphics/entity/tailings-pond/window-background.png",
             priority = "low",
             width = 171,
             height = 185
         },
-        flow_sprite = Pipes.empty_sprite(),
-        gas_flow = Pipes.empty_animation()
+        flow_sprite = Data.Pipes.empty_sprite(),
+        gas_flow = Data.Pipes.empty_animation()
     },
     flow_length_in_ticks = 360,
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},

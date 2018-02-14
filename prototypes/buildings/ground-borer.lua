@@ -66,8 +66,8 @@ Entity {
         --1
         {
             production_type = "input",
-            pipe_picture = Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.70}, nil, nil),
-            pipe_covers = Pipes.covers(true, true, true, true),
+            pipe_picture = Data.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.70}, nil, nil),
+            pipe_covers = Data.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {0.0, 5.0}}}
@@ -75,8 +75,8 @@ Entity {
         --2
         {
             production_type = "input",
-            pipe_picture = Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.70}, nil, nil),
-            pipe_covers = Pipes.covers(true, true, true, true),
+            pipe_picture = Data.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.70}, nil, nil),
+            pipe_covers = Data.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {0.0, -5.0}}}

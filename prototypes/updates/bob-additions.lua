@@ -531,7 +531,6 @@ Item {
 }
 
 --WOOD-TO-WOODEN BOARD override bobs?
-
 Recipe {
     type = "recipe",
     name = "wood-board",

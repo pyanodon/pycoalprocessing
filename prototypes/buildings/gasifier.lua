@@ -74,39 +74,39 @@ Entity {
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_picture = Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
-            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
+            pipe_covers = Data.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {4.5, -0.5}}}
         },
         {
             production_type = "input",
-            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_covers = Data.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_picture = Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
+            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
             pipe_connections = {{type = "input", position = {4.5, -2.5}}}
         },
         {
             production_type = "input",
-            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_covers = Data.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_picture = Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
+            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
             pipe_connections = {{type = "input", position = {4.5, 2.5}}}
         },
         {
             production_type = "output",
-            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_covers = Data.Pipes.covers(false, true, true, true),
             base_level = 1,
-            pipe_picture = Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
+            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
             pipe_connections = {{type = "output", position = {-4.5, -1.5}}}
         },
         {
             production_type = "output",
-            pipe_picture = Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.00, -0.95}, nil, nil, pipes),
-            pipe_covers = Pipes.covers(false, true, true, true),
+            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.00, -0.95}, nil, nil, pipes),
+            pipe_covers = Data.Pipes.covers(false, true, true, true),
             base_level = 1,
             pipe_connections = {{type = "output", position = {-4.5, 1.5}}}
         }
