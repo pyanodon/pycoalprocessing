@@ -107,8 +107,8 @@ Entity {
         --1
         {
             production_type = "input",
-            pipe_picture = Pipes.pictures("assembling-machine-3", {-0.0, 4.9}, {-0.0, -4.9}, {4.9, 0.0}, {-4.9, 0.0}, pipes),
-            pipe_covers = Pipes.covers(true, true, true, true),
+            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {-0.0, 4.9}, {-0.0, -4.9}, {4.9, 0.0}, {-4.9, 0.0}, pipes),
+            pipe_covers = Data.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {0.0, 5.0}}}
