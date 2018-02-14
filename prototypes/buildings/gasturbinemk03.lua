@@ -10,7 +10,7 @@ local pipe_pictures =
             shift = shift_north
         }
     else
-        north = Pipes.empty_sprite()
+        north = Data.Pipes.empty_sprite()
     end
     if shift_south then
         south = {
@@ -21,7 +21,7 @@ local pipe_pictures =
             shift = shift_south
         }
     else
-        south = Pipes.empty_sprite()
+        south = Data.Pipes.empty_sprite()
     end
     if shift_west then
         west = {
@@ -32,7 +32,7 @@ local pipe_pictures =
             shift = shift_west
         }
     else
-        west = Pipes.empty_sprite()
+        west = Data.Pipes.empty_sprite()
     end
     if shift_east then
         east = {
@@ -43,7 +43,7 @@ local pipe_pictures =
             shift = shift_east
         }
     else
-        east = Pipes.empty_sprite()
+        east = Data.Pipes.empty_sprite()
     end
     return {north = north, south = south, west = west, east = east}
 end
@@ -107,7 +107,7 @@ Entity {
         minimum_temperature = 500.0,
         base_area = 1,
         base_level = -1,
-        pipe_covers = Pipes.covers(false, true, false, false),
+        pipe_covers = Data.Pipes.covers(false, true, false, false),
         pipe_picture = pipe_pictures({0, 0}, {0, 0}, {0, 0}, {0, 0}),
         production_type = "input-output",
         pipe_connections = {
