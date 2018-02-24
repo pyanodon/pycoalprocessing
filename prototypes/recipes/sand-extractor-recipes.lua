@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "extract-sand",
     category = "sand-extractor",
@@ -17,7 +17,7 @@ Recipe {
     order = "a"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "extract-gravel",
     category = "sand-extractor",
@@ -36,7 +36,7 @@ Recipe {
     order = "b"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "extract-stone",
     category = "sand-extractor",
@@ -55,7 +55,7 @@ Recipe {
     order = "c"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "extract-richdust",
     category = "sand-extractor",
@@ -74,7 +74,7 @@ Recipe {
     order = "d"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "extract-coarse",
     category = "sand-extractor",

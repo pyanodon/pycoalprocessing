@@ -25,7 +25,7 @@ local pipes = {
     }
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "ralesia-plantation",
     energy_required = 7,
@@ -44,7 +44,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "ralesia-plantation",
     icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon.png",
@@ -56,7 +56,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "ralesia-plantation",
     icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon.png",
@@ -96,8 +96,8 @@ Entity {
         --1
         {
             production_type = "input",
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {0.0, 4.0}}}

@@ -1,5 +1,5 @@
 --NIOBIUM POWDER
-Recipe {
+RECIPE {
     type = "recipe",
     name = "niobium-powder",
     category = "crusher",
@@ -20,7 +20,7 @@ Recipe {
 }
 
 --IRON
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushing-iron",
     category = "crusher",
@@ -41,7 +41,7 @@ Recipe {
 }
 
 --COPPER
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushing-copper",
     category = "crusher",
@@ -62,7 +62,7 @@ Recipe {
 }
 
 --STONE to GRAVEL
-Recipe {
+RECIPE {
     type = "recipe",
     name = "stone-to-gravel",
     category = "crusher",
@@ -81,7 +81,7 @@ Recipe {
 }
 
 --GRAVEL to SAND
-Recipe {
+RECIPE {
     type = "recipe",
     name = "gravel-to-sand",
     category = "crusher",
@@ -101,7 +101,7 @@ Recipe {
 
 if bobmods then
     --BAUXITE
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "crushing-bauxite",
         category = "crusher",
@@ -121,7 +121,7 @@ if bobmods then
         order = "f"
     }
     --GOLD
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "crushing-gold",
         category = "crusher",
@@ -141,7 +141,7 @@ if bobmods then
         order = "g"
     }
     --LEAD
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "crushing-lead",
         category = "crusher",
@@ -161,7 +161,7 @@ if bobmods then
         order = "h"
     }
     --QUARTZ
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "crushing-lead",
         category = "crusher",
@@ -181,7 +181,7 @@ if bobmods then
         order = "i"
     }
     --NICKEL
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "crushing-nickel",
         category = "crusher",
@@ -201,7 +201,7 @@ if bobmods then
         order = "j"
     }
     --RUTILE
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "crushing-rutile",
         category = "crusher",
@@ -221,7 +221,7 @@ if bobmods then
         order = "k"
     }
     --SILVER
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "crushing-silver",
         category = "crusher",
@@ -241,7 +241,7 @@ if bobmods then
         order = "l"
     }
     --TIN
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "crushing-tin",
         category = "crusher",
@@ -261,7 +261,7 @@ if bobmods then
         order = "m"
     }
     --TUNGSTEN
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "crushing-tungsten",
         category = "crusher",
@@ -281,7 +281,7 @@ if bobmods then
         order = "n"
     }
     --ZINC
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "crushing-zinc",
         category = "crusher",

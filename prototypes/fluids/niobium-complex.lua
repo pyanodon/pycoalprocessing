@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "niobium-complex",
     category = "chemistry",
@@ -16,7 +16,7 @@ Recipe {
     order = "c"
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "niobium-complex",
     icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",

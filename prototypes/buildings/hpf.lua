@@ -7,7 +7,7 @@ local pipes = {
     }
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "hpf",
     energy_required = 10,
@@ -24,7 +24,7 @@ Recipe {
     },
 }
 
-Item {
+ITEM {
     type = "item",
     name = "hpf",
     icon = "__pycoalprocessing__/graphics/icons/hpf.png",
@@ -36,7 +36,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "hpf",
     icon = "__pycoalprocessing__/graphics/icons/hpf.png",
@@ -106,16 +106,16 @@ Entity {
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {0, 1}, {0, -0.9}, nil, nil, pipes),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0, 1}, {0, -0.9}, nil, nil, pipes),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {3.0, -0.0}}}
         },
         {
             production_type = "output",
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {0, 1}, {0, -0.9}, nil, nil, pipes),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0, 1}, {0, -0.9}, nil, nil, pipes),
             base_level = 1,
             pipe_connections = {{type = "output", position = {-3.0, -0.0}}}
         },

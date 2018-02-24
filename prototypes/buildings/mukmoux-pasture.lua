@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "mukmoux-pasture",
     energy_required = 10,
@@ -14,7 +14,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "mukmoux-pasture",
     icon = "__pycoalprocessing__/graphics/icons/mukmoux-pasture.png",
@@ -26,7 +26,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "mukmoux-pasture",
     icon = "__pycoalprocessing__/graphics/icons/mukmoux-pasture.png",

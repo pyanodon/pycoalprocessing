@@ -16,7 +16,7 @@ local pipe_right = {
     }
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "desulfurizator-unit",
     energy_required = 17,
@@ -33,7 +33,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "desulfurizator-unit",
     icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit.png",
@@ -45,7 +45,7 @@ Item {
     stack_size = 5
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "desulfurizator-unit",
     icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit.png",
@@ -83,15 +83,15 @@ Entity {
     fluid_boxes = {
         {
             production_type = "output",
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {-0.05, 1.25}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_right),
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {-0.05, 1.25}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_right),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
             pipe_connections = {{type = "output", position = {3.5, -1.5}}}
         },
         {
             production_type = "input",
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {0.25, 1.25}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_left),
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0.25, 1.25}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_left),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {3.5, 1.5}}}

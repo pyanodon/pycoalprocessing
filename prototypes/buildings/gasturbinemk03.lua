@@ -10,7 +10,7 @@ local pipe_pictures =
             shift = shift_north
         }
     else
-        north = Data.Pipes.empty_sprite()
+        north = DATA.Pipes.empty_sprite()
     end
     if shift_south then
         south = {
@@ -21,7 +21,7 @@ local pipe_pictures =
             shift = shift_south
         }
     else
-        south = Data.Pipes.empty_sprite()
+        south = DATA.Pipes.empty_sprite()
     end
     if shift_west then
         west = {
@@ -32,7 +32,7 @@ local pipe_pictures =
             shift = shift_west
         }
     else
-        west = Data.Pipes.empty_sprite()
+        west = DATA.Pipes.empty_sprite()
     end
     if shift_east then
         east = {
@@ -43,12 +43,12 @@ local pipe_pictures =
             shift = shift_east
         }
     else
-        east = Data.Pipes.empty_sprite()
+        east = DATA.Pipes.empty_sprite()
     end
     return {north = north, south = south, west = west, east = east}
 end
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "gasturbinemk03",
     energy_required = 10,
@@ -65,7 +65,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "gasturbinemk03",
     icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk03.png",
@@ -77,7 +77,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "generator",
     name = "gasturbinemk03",
     icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk03.png",
@@ -107,7 +107,7 @@ Entity {
         minimum_temperature = 500.0,
         base_area = 1,
         base_level = -1,
-        pipe_covers = Data.Pipes.covers(false, true, false, false),
+        pipe_covers = DATA.Pipes.covers(false, true, false, false),
         pipe_picture = pipe_pictures({0, 0}, {0, 0}, {0, 0}, {0, 0}),
         production_type = "input-output",
         pipe_connections = {

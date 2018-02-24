@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "classifier",
     energy_required = 35,
@@ -15,7 +15,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "classifier",
     icon = "__pycoalprocessing__/graphics/icons/classifier.png",
@@ -27,7 +27,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "classifier",
     icon = "__pycoalprocessing__/graphics/icons/classifier.png",

@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "tpa",
     category = "rectisol",
@@ -14,7 +14,7 @@ Recipe {
     }
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "tpa",
     icon = "__pycoalprocessing__/graphics/icons/tpa.png",
