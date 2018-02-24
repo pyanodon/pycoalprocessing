@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "ground-borer",
     energy_required = 15,
@@ -15,7 +15,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "ground-borer",
     icon = "__pycoalprocessing__/graphics/icons/ground-borer.png",
@@ -27,7 +27,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "ground-borer",
     icon = "__pycoalprocessing__/graphics/icons/ground-borer.png",
@@ -66,8 +66,8 @@ Entity {
         --1
         {
             production_type = "input",
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.70}, nil, nil),
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.70}, nil, nil),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {0.0, 5.0}}}
@@ -75,8 +75,8 @@ Entity {
         --2
         {
             production_type = "input",
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.70}, nil, nil),
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.70}, nil, nil),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {0.0, -5.0}}}

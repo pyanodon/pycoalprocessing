@@ -1,4 +1,4 @@
-Fluid {
+FLUID {
     type = "fluid",
     name = "rare-earth-mud",
     icon = "__pycoalprocessing__/graphics/icons/rare-earth-mud.png",

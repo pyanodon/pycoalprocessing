@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "sand-extractor",
     energy_required = 10,
@@ -15,7 +15,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "sand-extractor",
     icon = "__pycoalprocessing__/graphics/icons/sand-extractor.png",
@@ -27,7 +27,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "sand-extractor",
     icon = "__pycoalprocessing__/graphics/icons/sand-extractor.png",

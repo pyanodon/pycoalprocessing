@@ -1,15 +1,15 @@
-require("stdlib.data.data").create_data_globals()
+require("stdlib/data/data").create_data_globals()
 
 --update recipes for creosote
-require("prototypes.updates.recipe-updates")
+require("prototypes/updates/recipe-updates")
 
 --update data for other mods.
-require("prototypes.updates.other-updates")
+require("prototypes/updates/other-updates")
 
 --update recipes to use bobmods
 if mods["boblibrary"] then
-    require("prototypes.updates.bob-updates")
-    require("prototypes.updates.bob-additions")
+    require("prototypes/updates/bob-updates")
+    require("prototypes/updates/bob-additions")
 end
 
 for _, v in pairs(data.raw.module) do
@@ -27,4 +27,4 @@ data.raw.tool["science-pack-2"].icon = "__pycoalprocessing__/graphics/icons/scie
 --science pack 3 override
 data.raw.tool["science-pack-3"].icon = "__pycoalprocessing__/graphics/icons/science-pack-3.png"
 
-Recipe("wood"):set_fields{energy_required = 15}
+RECIPE("wood"):set_fields{energy_required = 15}

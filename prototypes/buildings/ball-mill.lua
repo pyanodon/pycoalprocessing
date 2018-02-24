@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "ball-mill",
     energy_required = 35,
@@ -14,7 +14,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "ball-mill",
     icon = "__pycoalprocessing__/graphics/icons/ball-mill.png",
@@ -26,7 +26,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "ball-mill",
     icon = "__pycoalprocessing__/graphics/icons/ball-mill.png",

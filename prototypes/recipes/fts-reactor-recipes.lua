@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "heavy-oil_from_coal-gas",
     category = "fts-reactor",
@@ -21,7 +21,7 @@ Recipe {
     order = "h"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "light-oil_from_syngas",
     category = "fts-reactor",
@@ -44,7 +44,7 @@ Recipe {
     order = "h1"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "petgas_from-refsyngas",
     category = "fts-reactor",
@@ -66,7 +66,7 @@ Recipe {
     order = "h2"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "ref-to-light-oil",
     category = "fts-reactor",
@@ -88,7 +88,7 @@ Recipe {
     order = "h4"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "sulfuric-petgas",
     category = "fts-reactor",
@@ -112,7 +112,7 @@ Recipe {
     order = "h5"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "combustion-olefin",
     category = "fts-reactor",
@@ -135,7 +135,7 @@ Recipe {
     order = "h6"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "rare-earth-beneficiation",
     category = "fts-reactor",
@@ -159,7 +159,7 @@ Recipe {
     order = "h7"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "dirty-reaction",
     category = "fts-reactor",
@@ -182,7 +182,7 @@ Recipe {
     order = "h8"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "heavyoil-to-coal-gas",
     category = "fts-reactor",
@@ -205,7 +205,7 @@ Recipe {
     order = "h9"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "lightoil-to-syngas",
     category = "fts-reactor",
@@ -228,7 +228,7 @@ Recipe {
     order = "h10"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "petgas-to-refsyngas",
     category = "fts-reactor",
@@ -251,7 +251,7 @@ Recipe {
     order = "h11"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "glycerol-syngas",
     category = "fts-reactor",
@@ -273,7 +273,7 @@ Recipe {
     order = "h12"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coal-briquette",
     category = "fts-reactor",

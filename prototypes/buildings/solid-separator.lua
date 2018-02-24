@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "solid-separator",
     energy_required = 15,
@@ -15,7 +15,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "solid-separator",
     icon = "__pycoalprocessing__/graphics/icons/solid-separator.png",
@@ -27,7 +27,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "solid-separator",
     icon = "__pycoalprocessing__/graphics/icons/solid-separator.png",

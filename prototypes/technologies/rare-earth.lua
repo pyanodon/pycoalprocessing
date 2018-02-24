@@ -1,4 +1,4 @@
-Technology {
+TECHNOLOGY {
     type = "technology",
     name = "rare-earth",
     icon = "__pycoalprocessing__/graphics/technology/rare-earth-tech.png",

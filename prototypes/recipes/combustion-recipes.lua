@@ -1,5 +1,5 @@
 --COALGAS to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coalgas-combustion",
     category = "combustion",
@@ -22,7 +22,7 @@ Recipe {
 }
 
 --COALSLURRY to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coalslurry-combustion",
     category = "combustion",
@@ -45,7 +45,7 @@ Recipe {
 }
 
 --SYNGAS to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "syngas-combustion",
     category = "combustion",
@@ -68,7 +68,7 @@ Recipe {
 }
 
 --DIBORANE to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "diborane-combustion",
     category = "combustion",
@@ -91,7 +91,7 @@ Recipe {
 }
 
 --METHANOL to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "methanol-combustion",
     category = "combustion",
@@ -114,7 +114,7 @@ Recipe {
 }
 
 --REFSYNGAS to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "refsyngas-combustion",
     category = "combustion",
@@ -137,7 +137,7 @@ Recipe {
 }
 
 --ACETYLENE to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "acetylene-combustion",
     category = "combustion",
@@ -160,7 +160,7 @@ Recipe {
 }
 
 --OLEFIN to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "olefin-combustion",
     category = "combustion",
@@ -183,7 +183,7 @@ Recipe {
 }
 
 --DIESEL to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "diesel-combustion",
     category = "combustion",
@@ -206,7 +206,7 @@ Recipe {
 }
 
 --GASOLINE to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "gasoline-combustion",
     category = "combustion",
@@ -230,7 +230,7 @@ Recipe {
 }
 
 --SUPERCRITICAL COAL
-Recipe {
+RECIPE {
     type = "recipe",
     name = "supercritical-combustion",
     category = "combustion",
@@ -254,7 +254,7 @@ Recipe {
 }
 
 --ULTRASUPERCRITICAL COAL
-Recipe {
+RECIPE {
     type = "recipe",
     name = "ultrasupercritical-combustion",
     category = "combustion",

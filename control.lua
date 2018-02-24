@@ -1,7 +1,4 @@
-require("stdlib.core")
-require("stdlib.config.config")
-require("stdlib.event.event")
-require("stdlib.event.gui")
+local Event = require("stdlib/event/event")
 
 --Set up default MOD global variables
 MOD = {}
@@ -32,11 +29,11 @@ Event.register(Event.core_events.configuration_changed, MOD.on_configuration_cha
 --Require Quickstart for quicker mod testing when creating a character.
 --WARNING, This is for mod testing and can ruin existing worlds.
 if MOD.config.DEBUG then
-    require("stdlib.utils.scripts.quickstart")
+    require("stdlib/utils/scripts/quickstart")
 end
 
 --Activate any scripts needed.
-require("scripts.tailings-pond")
+require("scripts/tailings-pond")
 
 --Add in our remote interfaces
 remote.add_interface(MOD.IF, MOD.interface)

@@ -1,4 +1,4 @@
-Technology {
+TECHNOLOGY {
     type = "technology",
     name = "fuel-production",
     icon = "__pycoalprocessing__/graphics/technology/fuel-production.png",

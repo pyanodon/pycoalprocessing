@@ -1,5 +1,5 @@
 --NEXELIT PLATE
-Recipe {
+RECIPE {
     type = "recipe",
     name = "nexelit-plate",
     category = "advanced-foundry",
@@ -22,7 +22,7 @@ Recipe {
 }
 
 --STEEL PLATE - cant change the base one,so i did that.
-Recipe {
+RECIPE {
     type = "recipe",
     name = "steel-plate2",
     category = "advanced-foundry",
