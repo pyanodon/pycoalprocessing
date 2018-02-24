@@ -1,4 +1,4 @@
-Fluid {
+FLUID {
     type = "fluid",
     name = "dirty-water",
     icon = "__pycoalprocessing__/graphics/icons/dirty-water.png",

@@ -25,7 +25,7 @@ local pipes = {
     }
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "borax-mine",
     energy_required = 25,
@@ -43,7 +43,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "borax-mine",
     icon = "__pycoalprocessing__/graphics/icons/borax-mine.png",
@@ -55,7 +55,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "borax-mine",
     icon = "__pycoalprocessing__/graphics/icons/borax-mine.png",
@@ -107,8 +107,8 @@ Entity {
         --1
         {
             production_type = "input",
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {-0.0, 4.9}, {-0.0, -4.9}, {4.9, 0.0}, {-4.9, 0.0}, pipes),
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {-0.0, 4.9}, {-0.0, -4.9}, {4.9, 0.0}, {-4.9, 0.0}, pipes),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {0.0, 5.0}}}

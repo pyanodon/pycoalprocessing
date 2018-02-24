@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "advanced-foundry",
     energy_required = 10,
@@ -16,7 +16,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "advanced-foundry",
     icon = "__pycoalprocessing__/graphics/icons/advanced-foundry.png",
@@ -28,7 +28,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "advanced-foundry",
     icon = "__pycoalprocessing__/graphics/icons/advanced-foundry.png",
@@ -79,16 +79,16 @@ Entity {
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {3.4, -0.5}}}
         },
         {
             production_type = "output",
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
             base_level = 1,
             pipe_connections = {{position = {-3.4, -0.5}}}
         },

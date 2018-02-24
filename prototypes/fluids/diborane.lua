@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "diborane",
     category = "hpf",
@@ -13,7 +13,7 @@ Recipe {
     }
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "diborane",
     icon = "__pycoalprocessing__/graphics/icons/diborane.png",

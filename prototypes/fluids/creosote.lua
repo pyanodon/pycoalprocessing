@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "creosote",
     category = "tar",
@@ -13,7 +13,7 @@ Recipe {
     main_product = "creosote",
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "creosote",
     icon = "__pycoalprocessing__/graphics/icons/creosote.png",

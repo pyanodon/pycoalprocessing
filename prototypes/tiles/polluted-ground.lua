@@ -1,6 +1,6 @@
 local sand_vehicle_speed_modifier = _G.sand_vehicle_speed_modifier
 
-Data {
+DATA {
     type = "tile",
     name = "polluted-ground",
     collision_mask = {"ground-tile"},

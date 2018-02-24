@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "anthraquinone",
     category = "rectisol",
@@ -14,7 +14,7 @@ Recipe {
     }
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "anthraquinone",
     icon = "__pycoalprocessing__/graphics/icons/anthraquinone.png",

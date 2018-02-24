@@ -25,7 +25,7 @@ local pipes = {
     }
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "niobium-mine",
     energy_required = 25,
@@ -42,7 +42,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "niobium-mine",
     icon = "__pycoalprocessing__/graphics/icons/niobium-mine.png",
@@ -54,7 +54,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "niobium-mine",
     icon = "__pycoalprocessing__/graphics/icons/niobium-mine.png",
@@ -106,8 +106,8 @@ Entity {
         --1
         {
             production_type = "input",
-            pipe_picture = Data.Pipes.pictures("assembling-machine-3", {-2.9, 3.9}, {3.1, -3.9}, {4.08, 3.2}, {-3.9, -2.8}, pipes),
-            pipe_covers = Data.Pipes.covers(true, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {-2.9, 3.9}, {3.1, -3.9}, {4.08, 3.2}, {-3.9, -2.8}, pipes),
+            pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {-3.0, 4.0}}}

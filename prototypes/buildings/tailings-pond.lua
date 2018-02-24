@@ -15,7 +15,7 @@ local function make_tailings_variants()
     return pictures
 end
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "tailings-pond",
     enabled = "true",
@@ -29,7 +29,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "tailings-pond",
     icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
@@ -41,7 +41,7 @@ Item {
     stack_size = 50
 }
 
-Entity {
+ENTITY {
     type = "storage-tank",
     name = "tailings-pond",
     icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
@@ -55,7 +55,7 @@ Entity {
     two_direction_only = true,
     fluid_box = {
         base_area = (100000 / 100),
-        pipe_covers = Data.Pipes.covers(true, true, true, true),
+        pipe_covers = DATA.Pipes.covers(true, true, true, true),
         pipe_connections = {
             {position = {0, -3}},
             {position = {0, 3}},
@@ -74,15 +74,15 @@ Entity {
                 height = 185
             }
         },
-        fluid_background = Data.Pipes.empty_sprite(),
+        fluid_background = DATA.Pipes.empty_sprite(),
         window_background = {
             filename = "__pycoalprocessing__/graphics/entity/tailings-pond/window-background.png",
             priority = "low",
             width = 171,
             height = 185
         },
-        flow_sprite = Data.Pipes.empty_sprite(),
-        gas_flow = Data.Pipes.empty_animation()
+        flow_sprite = DATA.Pipes.empty_sprite(),
+        gas_flow = DATA.Pipes.empty_animation()
     },
     flow_length_in_ticks = 360,
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
@@ -116,7 +116,7 @@ Entity {
     circuit_connector_sprites = _G.circuit_connector_definitions["storage-tank"].sprites
 }
 
-Entity {
+ENTITY {
     type = "simple-entity-with-owner",
     name = "tailings-pond-sprite",
     selectable_in_game = false,

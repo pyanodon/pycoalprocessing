@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "combustion-mixture2",
     category = "combustion",
@@ -17,7 +17,7 @@ Recipe {
     main_product = "combustion-mixture2",
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "combustion-mixture2",
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture2.png",

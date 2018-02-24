@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "syngas",
     category = "gasifier",
@@ -16,7 +16,7 @@ Recipe {
     main_product = "syngas",
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "syngas",
     icon = "__pycoalprocessing__/graphics/icons/syngas.png",

@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "diesel",
     category = "olefin",
@@ -20,7 +20,7 @@ Recipe {
     order = "d1"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "diesel2",
     category = "olefin",
@@ -40,7 +40,7 @@ Recipe {
     order = "d2"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "aromatics",
     category = "olefin",
@@ -63,7 +63,7 @@ Recipe {
     order = "d3"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "olefin",
     category = "olefin",
@@ -84,7 +84,7 @@ Recipe {
     order = "d4"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "olefin-petgas",
     category = "fluid-separator",
@@ -105,7 +105,7 @@ Recipe {
     order = "d5"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "gasoline",
     category = "fluid-separator",
@@ -127,7 +127,7 @@ Recipe {
     order = "d6"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "refolefin",
     category = "olefin",
@@ -147,7 +147,7 @@ Recipe {
     order = "d7"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "aromaticsolefin",
     category = "olefin",

@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "methanol-from-hydrogen",
     category = "methanol",
@@ -19,7 +19,7 @@ Recipe {
     order = "b"
 }:add_unlock("methanol-processing-2")
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "syngas2",
     category = "gasifier",
@@ -42,7 +42,7 @@ Recipe {
 }
 
 --uses bob_carbon
-Recipe {
+RECIPE {
     type = "recipe",
     name = "tar-carbon",
     category = "tar",
@@ -62,7 +62,7 @@ Recipe {
 }:add_unlock("coal-processing-1")
 
 --alternative silicon plate
-Recipe {
+RECIPE {
     type = "recipe",
     name = "silicon-plate2",
     category = "electrolysis",
@@ -81,7 +81,7 @@ Recipe {
     icon_size = 32,
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "salt-ex",
     category = "evaporator",
@@ -100,7 +100,7 @@ Recipe {
     icon_size = 32,
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "saline",
     category = "chemistry",
@@ -120,7 +120,7 @@ Recipe {
     icon_size = 32,
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "void-flue-gas",
     category = "void-fluid",
@@ -140,7 +140,7 @@ Recipe {
 }:add_unlock("void-fluid")
 
 --GLASS PRODUCTION
-Recipe {
+RECIPE {
     type = "recipe",
     name = "glass-sand",
     category = "hpf",
@@ -162,7 +162,7 @@ Recipe {
 }
 
 --GLASS PRODUCTION2
-Recipe {
+RECIPE {
     type = "recipe",
     name = "glass-sand2",
     category = "hpf",
@@ -184,7 +184,7 @@ Recipe {
 }
 
 --GLASS PRODUCTION3 - compatibility with angels
-Recipe {
+RECIPE {
     type = "recipe",
     name = "glass-sand3",
     category = "smelting",
@@ -204,7 +204,7 @@ Recipe {
 }
 
 -- TUNGSTEN POWDER
-Recipe {
+RECIPE {
     type = "recipe",
     name = "tungsten-powder",
     category = "ball-mill",
@@ -224,7 +224,7 @@ Recipe {
 }
 
 --SMELT CRUSHED TIN
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushed-tin",
     category = "smelting",
@@ -238,7 +238,7 @@ Recipe {
 }
 
 --SMELT CRUSHED LEAD
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushed-lead",
     category = "smelting",
@@ -252,7 +252,7 @@ Recipe {
 }
 
 --SMELT CRUSHED SILVER
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushed-silver",
     category = "smelting",
@@ -265,7 +265,7 @@ Recipe {
 }
 
 --BOB SMELT GOLD |override?|
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushed-gold",
     category = "chemical-furnace",
@@ -282,7 +282,7 @@ Recipe {
 }
 
 --BOB SMELT ZINC |override?|
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushed-zinc",
     category = "electrolysis",
@@ -299,7 +299,7 @@ Recipe {
 }
 
 --BOB SMELT NICKEL |override?|
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushed-nickel",
     category = "electrolysis",
@@ -320,7 +320,7 @@ Recipe {
 }
 
 --BOB SMELT RUTILE |override?|
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushed-rutile",
     category = "electrolysis",
@@ -338,7 +338,7 @@ Recipe {
 }
 
 --LUBRICANT FROM GLYCEROL
-Recipe {
+RECIPE {
     type = "recipe",
     name = "lube-glycerol",
     category = "chemistry",
@@ -359,7 +359,7 @@ Recipe {
 }
 
 --RESIN FROM GLYCEROL
-Recipe {
+RECIPE {
     type = "recipe",
     name = "resin-glycerol",
     category = "hpf",
@@ -380,7 +380,7 @@ Recipe {
 }
 
 --SYNGAS DISTILATION
-Recipe {
+RECIPE {
     type = "recipe",
     name = "syngas-distilation",
     category = "distilator",
@@ -401,7 +401,7 @@ Recipe {
 }
 
 -- CRUSHED BAUXITE
-Item {
+ITEM {
     type = "item",
     name = "crushed-bauxite",
     enabled = "false",
@@ -414,7 +414,7 @@ Item {
 }
 
 -- CRUSHED GOLD
-Item {
+ITEM {
     type = "item",
     name = "crushed-gold",
     enabled = "false",
@@ -427,7 +427,7 @@ Item {
 }
 
 -- CRUSHED LEAD
-Item {
+ITEM {
     type = "item",
     name = "crushed-lead",
     enabled = "false",
@@ -440,7 +440,7 @@ Item {
 }
 
 -- CRUSHED NICKEL
-Item {
+ITEM {
     type = "item",
     name = "crushed-nickel",
     enabled = "false",
@@ -453,7 +453,7 @@ Item {
 }
 
 -- CRUSHED RUTILE
-Item {
+ITEM {
     type = "item",
     name = "crushed-rutile",
     enabled = "false",
@@ -466,7 +466,7 @@ Item {
 }
 
 -- CRUSHED SILVER
-Item {
+ITEM {
     type = "item",
     name = "crushed-silver",
     enabled = "false",
@@ -479,7 +479,7 @@ Item {
 }
 
 -- CRUSHED QUARTZ
-Item {
+ITEM {
     type = "item",
     name = "crushed-quartz",
     enabled = "false",
@@ -492,7 +492,7 @@ Item {
 }
 
 -- CRUSHED TIN
-Item {
+ITEM {
     type = "item",
     name = "crushed-tin",
     enabled = "false",
@@ -505,7 +505,7 @@ Item {
 }
 
 -- CRUSHED TUNGSTEN
-Item {
+ITEM {
     type = "item",
     name = "crushed-tungsten",
     enabled = "false",
@@ -518,7 +518,7 @@ Item {
 }
 
 -- CRUSHED ZINC
-Item {
+ITEM {
     type = "item",
     name = "crushed-zinc",
     enabled = "false",
@@ -531,7 +531,7 @@ Item {
 }
 
 --WOOD-TO-WOODEN BOARD override bobs?
-Recipe {
+RECIPE {
     type = "recipe",
     name = "wood-board",
     category = "wpu",
@@ -550,7 +550,7 @@ Recipe {
 }
 
 --HYDROGEN to CM1
-Recipe {
+RECIPE {
     type = "recipe",
     name = "hydrogen-combustion",
     category = "combustion",
@@ -573,7 +573,7 @@ Recipe {
 }:add_unlock("energy1")
 
 --SODIUM HYDROXIDE
-Recipe {
+RECIPE {
     type = "recipe",
     name = "py-sodium-hydroxide",
     category = "chemistry",
@@ -594,7 +594,7 @@ Recipe {
 }
 
 --COAL DUST to CARBON
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coaldust-carbon",
     category = "crafting",
@@ -613,7 +613,7 @@ Recipe {
 }
 
 --alumina
-Recipe {
+RECIPE {
     type = "recipe",
     name = "alumina2",
     category = "chemical-furnace",

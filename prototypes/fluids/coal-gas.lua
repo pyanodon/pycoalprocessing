@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coal-gas",
     category = "distilator",
@@ -20,7 +20,7 @@ Recipe {
     order = "e"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coal-gas-from-wood",
     category = "distilator",
@@ -42,7 +42,7 @@ Recipe {
     order = "f"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coal-gas-from-coke",
     category = "distilator",
@@ -63,7 +63,7 @@ Recipe {
     order = "f"
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "coal-gas",
     icon = "__pycoalprocessing__/graphics/icons/coalgas.png",

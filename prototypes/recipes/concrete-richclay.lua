@@ -1,6 +1,6 @@
 --CONCRETE from RICHCLAY
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "concrete-richclay",
     enabled = "false",

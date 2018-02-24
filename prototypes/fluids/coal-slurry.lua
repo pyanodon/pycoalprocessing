@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coal-slurry",
     category = "fluid-separator",
@@ -14,7 +14,7 @@ Recipe {
     main_product = "coal-slurry",
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "coal-slurry",
     icon = "__pycoalprocessing__/graphics/icons/coal-slurry.png",

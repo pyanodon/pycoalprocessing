@@ -1,5 +1,5 @@
 ---Make empty canister in assembly machine.
-Recipe {
+RECIPE {
     type = "recipe",
     name = "empty-gas-canister",
     category = "crafting",
@@ -18,7 +18,7 @@ Recipe {
     order = "c [methanol]"
 }
 
-Item {
+ITEM {
     type = "item",
     name = "empty-gas-canister",
     icon = "__pycoalprocessing__/graphics/icons/canister.png",
@@ -29,7 +29,7 @@ Item {
     stack_size = 20
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "fill-methanol-gas-canister",
     localised_name = {"recipe-name.fill-methanol-gas-canister"},
@@ -49,7 +49,7 @@ Recipe {
 
 -- empty canister
 --duplicate recipe for use directly in rectisol
-Recipe {
+RECIPE {
     type = "recipe",
     name = "empty-methanol-gas-canister",
     category = "crafting-with-fluid",
@@ -68,7 +68,7 @@ Recipe {
     order = "canister-b-[empty-methanol-gas-canister]"
 }
 
-Item {
+ITEM {
     type = "item",
     name = "filled-methanol-gas-canister",
     icon = "__pycoalprocessing__/graphics/icons/canister.png",

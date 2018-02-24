@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "gasturbinemk02",
     energy_required = 10,
@@ -15,7 +15,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "gasturbinemk02",
     icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk02.png",
@@ -27,7 +27,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "generator",
     name = "gasturbinemk02",
     icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk02.png",
@@ -55,7 +55,7 @@ Entity {
     fluid_box = {
         base_area = 1,
         base_level = -1,
-        pipe_covers = Data.Pipes.covers(false, true, true, true),
+        pipe_covers = DATA.Pipes.covers(false, true, true, true),
         production_type = "input-output",
         filter = "combustion-mixture1",
         minimum_temperature = 500.0,

@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "jaw-crusher",
     energy_required = 10,
@@ -15,7 +15,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "jaw-crusher",
     icon = "__pycoalprocessing__/graphics/icons/jaw-crusher.png",
@@ -27,7 +27,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "jaw-crusher",
     icon = "__pycoalprocessing__/graphics/icons/jaw-crusher.png",

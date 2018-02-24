@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "mining-nexelit",
     category = "ground-borer",
@@ -19,7 +19,7 @@ Recipe {
     order = "a"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "mining-stone",
     category = "ground-borer",
@@ -40,7 +40,7 @@ Recipe {
     order = "b"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "mining-limestone",
     category = "ground-borer",
@@ -62,7 +62,7 @@ Recipe {
 }
 
 if bobmods then
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-bauxite",
         category = "ground-borer",
@@ -83,7 +83,7 @@ if bobmods then
         order = "d"
     }
 
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-cobalt",
         category = "ground-borer",
@@ -104,7 +104,7 @@ if bobmods then
         order = "e"
     }
 
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-gold",
         category = "ground-borer",
@@ -125,7 +125,7 @@ if bobmods then
         order = "f"
     }
 
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-lead",
         category = "ground-borer",
@@ -146,7 +146,7 @@ if bobmods then
         order = "g"
     }
 
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-nickel",
         category = "ground-borer",
@@ -167,7 +167,7 @@ if bobmods then
         order = "h"
     }
 
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-quartz",
         category = "ground-borer",
@@ -188,7 +188,7 @@ if bobmods then
         order = "i"
     }
 
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-rutile",
         category = "ground-borer",
@@ -209,7 +209,7 @@ if bobmods then
         order = "j"
     }
 
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-silver",
         category = "ground-borer",
@@ -230,7 +230,7 @@ if bobmods then
         order = "k"
     }
 
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-tin",
         category = "ground-borer",
@@ -251,7 +251,7 @@ if bobmods then
         order = "l"
     }
 
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-tungsten",
         category = "ground-borer",
@@ -272,7 +272,7 @@ if bobmods then
         order = "m"
     }
 
-    Recipe {
+    RECIPE {
         type = "recipe",
         name = "mining-zinc",
         category = "ground-borer",

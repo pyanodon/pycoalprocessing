@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "co2-absorber",
     energy_required = 15,
@@ -15,7 +15,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "co2-absorber",
     icon = "__pycoalprocessing__/graphics/icons/co2-absorber.png",
@@ -27,7 +27,7 @@ Item {
     stack_size = 10
 }
 
-Entity {
+ENTITY {
     type = "furnace",
     name = "co2-absorber",
     icon = "__pycoalprocessing__/graphics/icons/co2-absorber.png",
