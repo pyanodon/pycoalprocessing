@@ -6,10 +6,10 @@
 -- @see Concepts.BoundingBox
 -- @see Concepts.Position
 
-local Area = {_module_name = "Area"}
+local Area = {_module_name = 'Area'}
 setmetatable(Area, {__index = require('stdlib/core')})
 
-local fail_if_missing = Area.fail_if_missing
+local fail_if_not = Area.fail_if_not
 local Position = require('stdlib/area/position')
 
 --- By default area tables are mutated in place set this to true to make the tables immutable.
@@ -21,7 +21,7 @@ Area.immutable = false
 -- @tparam boolean new_copy return a new copy
 -- @treturn Concepts.BoundingBox a converted area
 function Area.new(area, new_copy)
-    fail_if_missing(area, 'missing area value')
+    fail_if_not(area, 'missing area value')
 
     if not (new_copy or Area.immutable) and getmetatable(area) == Area._mt then
         return area
@@ -29,10 +29,8 @@ function Area.new(area, new_copy)
 
     local left_top = Position.new(area.left_top or area[1], true)
     local right_bottom = Position.new(area.right_bottom or area[2], true)
-    local new_area = {left_top = left_top, right_bottom = right_bottom}
-    new_area.orientation = area.orientation
-
-    return setmetatable(new_area, Area._mt)
+    area = {left_top = left_top, right_bottom = right_bottom, orientation = area.orientation}
+    return setmetatable((new_copy or Area.immutable) and table.deepcopy(area) or area, Area._mt)
 end
 
 --- Creates an area from the two positions p1 and p2.
@@ -45,12 +43,12 @@ function Area.construct(...)
     local args = {...}
 
     --self was passed as first argument
-    local t = (type(args[1]) == "table" and 1) or 0
+    local t = (type(args[1]) == 'table' and 1) or 0
 
-    local lt_x, lt_y = args[1+t] or 0, args[2+t] or 0
-    local rb_x, rb_y = args[3+t] or 0, args[4+t]
+    local lt_x, lt_y = args[1 + t] or 0, args[2 + t] or 0
+    local rb_x, rb_y = args[3 + t] or 0, args[4 + t]
 
-    return Area.new{{lt_x, lt_y}, {rb_x, rb_y}}
+    return Area.new {{lt_x, lt_y}, {rb_x, rb_y}}
 end
 
 --- Creates an area that is a copy of the given area.
@@ -61,10 +59,12 @@ function Area.copy(area)
 end
 
 local function validate_vector(amount)
-    fail_if_missing(amount, 'Missing amount to shrink by')
+    fail_if_not(amount, 'Missing amount to shrink by')
 
     if type(amount) == 'number' then
-        if amount < 0 then error('Can not shrink or expand area by a negative amount!', 2) end
+        if amount < 0 then
+            error('Can not shrink or expand area by a negative amount!', 2)
+        end
         return amount, amount
     elseif type(amount) == 'table' and assert(amount[1], 'missing x vector') then
         return amount[1], assert(amount[2], 'missing y vector')
@@ -129,7 +129,7 @@ end
 -- @treturn Concepts.BoundingBox the adjusted bounding box
 function Area.adjust(area, vector)
     area = Area.new(area)
-    fail_if_missing(vector, 'missing vector value')
+    fail_if_not(vector, 'missing vector value')
 
     --shrink or expand on x vector
     if assert(vector[1], 'x vector missing') > 0 then
@@ -157,10 +157,10 @@ function Area.rotate(area)
     if w == h then
         return area -- no point rotating a square
     elseif h > w then
-        local rad = h/2 - w/2
+        local rad = h / 2 - w / 2
         return Area.adjust(area, {rad, -rad})
     elseif w > h then
-        local rad = w/2 - h/2
+        local rad = w / 2 - h / 2
         return Area.adjust(area, {-rad, rad})
     end
 end
@@ -186,7 +186,7 @@ end
 -- @treturn Concepts.BoundingBox the area translated
 function Area.translate(area, direction, distance)
     area = Area.new(area)
-    fail_if_missing(direction, 'missing direction argument')
+    fail_if_not(direction, 'missing direction argument')
     distance = distance or 1
 
     area.left_top = Position.translate(area.left_top, direction, distance)
@@ -205,8 +205,8 @@ end
 function Area.round_to_integer(area)
     area = Area.new(area)
 
-    area.left_top = Position{x = math.floor(area.left_top.x), y = math.floor(area.left_top.y)}
-    area.right_bottom = Position{x = math.ceil(area.right_bottom.x), y = math.ceil(area.right_bottom.y)}
+    area.left_top = Position {x = math.floor(area.left_top.x), y = math.floor(area.left_top.y)}
+    area.right_bottom = Position {x = math.ceil(area.right_bottom.x), y = math.ceil(area.right_bottom.y)}
     return area
 end
 
@@ -259,7 +259,7 @@ function Area.center(area)
     local dist_x = area.right_bottom.x - area.left_top.x
     local dist_y = area.right_bottom.y - area.left_top.y
 
-    return Position.new{area.left_top.x + (dist_x / 2), area.left_top.y + (dist_y / 2)}
+    return Position.new {area.left_top.x + (dist_x / 2), area.left_top.y + (dist_y / 2)}
 end
 
 --- Returns true if two areas are the same.
@@ -267,7 +267,9 @@ end
 -- @tparam Concepts.BoundingBox area2
 -- @treturn boolean true if areas are the same
 function Area.compare(area1, area2)
-    if not area1 or not area2 then return false end
+    if not area1 or not area2 then
+        return false
+    end
     area1 = Area.new(area1)
     area2 = Area.new(area2)
 
@@ -302,7 +304,9 @@ end
 -- @tparam Concepts.BoundingBox area2
 -- @treturn boolean is area1 the same size as area2
 function Area.equals(area1, area2)
-    if not area1 or not area2 then return false end
+    if not area1 or not area2 then
+        return false
+    end
     area1 = Area.new(area1)
     area2 = Area.new(area2)
 
@@ -314,7 +318,9 @@ end
 -- @tparam Concepts.BoundingBox area2
 -- @treturn boolean is area1 less than area2 in size
 function Area.less_than(area1, area2)
-    if not area1 or not area2 then return false end
+    if not area1 or not area2 then
+        return false
+    end
     area1 = Area.new(area1)
     area2 = Area.new(area2)
 
@@ -327,7 +333,9 @@ end
 -- @treturn boolean is area1 less than or equal to area2 in size
 -- @local
 function Area.less_than_eq(area1, area2)
-    if not area1 or not area2 then return false end
+    if not area1 or not area2 then
+        return false
+    end
     area1 = Area.new(area1)
     area2 = Area.new(area2)
 
@@ -357,12 +365,12 @@ function Area.tostring(area)
     --local right_bottom = 'right_bottom = '..Position.tostring(area.right_bottom)
     --local left_top = 'left_top = '..area.left_top:tostring()
     --local right_bottom = 'right_bottom = '..area.right_bottom:tostring()
-    local left_top = 'left_top = '..area.left_top
-    local right_bottom = 'right_bottom = '..area.right_bottom
+    local left_top = 'left_top = ' .. area.left_top
+    local right_bottom = 'right_bottom = ' .. area.right_bottom
 
-    local orientation = area.orientation and ', '..area.orientation or ''
+    local orientation = area.orientation and ', ' .. area.orientation or ''
 
-    return '{'..left_top..', '..right_bottom..orientation..'}'
+    return '{' .. left_top .. ', ' .. right_bottom .. orientation .. '}'
 end
 
 --- Iterates an area.
@@ -426,7 +434,9 @@ function Area.spiral_iterate(area)
     end
 
     function iterator.iterate()
-        if #iterator.list < iterator.idx then return end
+        if #iterator.list < iterator.idx then
+            return
+        end
         local x2, y2 = unpack(iterator.list[iterator.idx])
         iterator.idx = iterator.idx + 1
 
@@ -449,14 +459,6 @@ function Area.shrink_to_surface_size(area, surface)
     return area
 end
 
---- Set the metatable on a stored area without returning a new area. Usefull for restoring
--- metatables to saved areas in global
--- @tparam Concepts.BoundingBox area
--- @treturn area with metatable set
-function Area.setmetatable(area)
-    return Area._setmetatable(area, Area._mt)
-end
-
 --- Area tables are returned with these Metamethods attached.
 -- @table Metamethods
 Area._mt = {
@@ -472,7 +474,7 @@ Area._mt = {
 }
 
 local function _call(_, ...)
-    if type((...)) == "table" then
+    if type((...)) == 'table' then
         return Area.new((...))
     else
         return Area.construct(...)

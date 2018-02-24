@@ -1,3 +1,0 @@
-local Joules = {}
-
-return Joules
