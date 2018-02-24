@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "hydrogen-peroxide",
     category = "carbonfilter",
@@ -14,7 +14,7 @@ Recipe {
     }
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "hydrogen-peroxide",
     icon = "__pycoalprocessing__/graphics/icons/hydrogen-peroxide.png",

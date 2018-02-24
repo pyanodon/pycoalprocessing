@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "refsyngas-from-filtered-syngas",
     category = "carbonfilter",
@@ -13,7 +13,7 @@ Recipe {
     }
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "refsyngas-from-meth",
     category = "rectisol",
@@ -32,7 +32,7 @@ Recipe {
     main_product= "refsyngas"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "refsyngas-from-meth-canister",
     category = "rectisol",
@@ -52,7 +52,7 @@ Recipe {
     main_product= "refsyngas"
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "refsyngas",
     icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",

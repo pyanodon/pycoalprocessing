@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "aromatics2",
     category = "gasifier",
@@ -14,7 +14,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "fluid",
     name = "aromatics",
     icon = "__pycoalprocessing__/graphics/icons/aromatics.png",

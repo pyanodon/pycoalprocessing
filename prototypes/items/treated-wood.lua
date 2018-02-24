@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "treated-wood",
     category = "crafting-with-fluid",
@@ -13,7 +13,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "treated-wood",
     icon = "__pycoalprocessing__/graphics/icons/treated-wood.png",

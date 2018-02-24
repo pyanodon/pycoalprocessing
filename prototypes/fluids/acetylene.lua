@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "acetylene",
     category = "chemistry",
@@ -15,7 +15,7 @@ Recipe {
     main_product = "acetylene",
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "acetylene",
     icon = "__pycoalprocessing__/graphics/icons/acetylene.png",

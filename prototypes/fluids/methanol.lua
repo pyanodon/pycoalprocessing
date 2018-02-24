@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "methanol-from-syngas",
     category = "methanol",
@@ -16,7 +16,7 @@ Recipe {
     order = "a"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "oleo-methanol",
     category = "methanol",
@@ -39,7 +39,7 @@ Recipe {
 
 --bob-additions: methanol_from_hydrogen
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "methanol",
     icon = "__pycoalprocessing__/graphics/icons/methanol.png",

@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "boric-acid",
     category = "gasifier", --bob electrolysis
@@ -13,7 +13,7 @@ Recipe {
     }
 }
 
-Fluid {
+FLUID {
     type = "fluid",
     name = "boric-acid",
     icon = "__pycoalprocessing__/graphics/icons/boric-acid.png",

@@ -1,4 +1,4 @@
-Item {
+ITEM {
     type = "item",
     name = "ash",
     icon = "__pycoalprocessing__/graphics/icons/ash.png",
@@ -9,7 +9,7 @@ Item {
     stack_size = 1000
 }
 
-Item {
+ITEM {
     type = "item",
     name = "chromium",
     icon = "__pycoalprocessing__/graphics/icons/chromium.png",
@@ -20,7 +20,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "gravel",
     icon = "__pycoalprocessing__/graphics/icons/gravel.png",
@@ -31,7 +31,7 @@ Item {
     stack_size = 300
 }
 
-Item {
+ITEM {
     type = "item",
     name = "coke",
     fuel_value = "10MJ",
@@ -44,7 +44,7 @@ Item {
     stack_size = 500
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "nichrome",
     category = "hpf",
@@ -60,7 +60,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "nichrome",
     icon = "__pycoalprocessing__/graphics/icons/nichrome.png",
@@ -71,7 +71,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "iron-oxide",
     category = "smelting",
@@ -81,7 +81,7 @@ Recipe {
       {"iron-plate", 1}
     }
 }
-Item {
+ITEM {
     type = "item",
     name = "iron-oxide",
     icon = "__pycoalprocessing__/graphics/icons/iron-oxide.png",
@@ -92,7 +92,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "active-carbon",
     category = "hpf",
@@ -108,7 +108,7 @@ Recipe {
         {type = "item", name = "active-carbon", amount = 5}
     }
 }
-Item {
+ITEM {
     type = "item",
     name = "active-carbon",
     fuel_value = "25MJ",
@@ -121,7 +121,7 @@ Item {
     stack_size = 100
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "zinc-chloride",
     category = "chemistry",
@@ -142,7 +142,7 @@ Recipe {
     order = "d [syn-gas]"
 }
 
-Item {
+ITEM {
     type = "item",
     name = "zinc-chloride",
     icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
@@ -153,7 +153,7 @@ Item {
     stack_size = 100
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "tailings-dust",
     category = "evaporator",
@@ -170,7 +170,7 @@ Recipe {
     icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
     icon_size = 32
 }
-Item {
+ITEM {
     type = "item",
     name = "tailings-dust",
     icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
@@ -181,7 +181,7 @@ Item {
     stack_size = 1000
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "soil",
     category = "soil-extraction",
@@ -194,7 +194,7 @@ Recipe {
         {type = "item", name = "soil", amount = 12}
     }
 }
-Item {
+ITEM {
     type = "item",
     name = "soil",
     icon = "__pycoalprocessing__/graphics/icons/soil.png",
@@ -205,7 +205,7 @@ Item {
     stack_size = 1000
 }
 
-Item {
+ITEM {
     type = "item",
     name = "nexelit-ore",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-ore.png",
@@ -216,7 +216,7 @@ Item {
     stack_size = 300
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "drill-head",
     category = "crafting",
@@ -231,7 +231,7 @@ Recipe {
         {type = "item", name = "drill-head", amount = 4}
     }
 }
-Item {
+ITEM {
     type = "item",
     name = "drill-head",
     icon = "__pycoalprocessing__/graphics/icons/drill-head.png",
@@ -242,7 +242,7 @@ Item {
     stack_size = 200
 }
 
-Item {
+ITEM {
     type = "item",
     name = "sand",
     icon = "__pycoalprocessing__/graphics/icons/sand.png",
@@ -253,7 +253,7 @@ Item {
     stack_size = 500
 }
 
-Item {
+ITEM {
     type = "item",
     name = "pure-sand",
     icon = "__pycoalprocessing__/graphics/icons/pure-sand.png",
@@ -264,7 +264,7 @@ Item {
     stack_size = 500
 }
 
-Item {
+ITEM {
     type = "item",
     name = "limestone",
     icon = "__pycoalprocessing__/graphics/icons/limestone.png",
@@ -275,7 +275,7 @@ Item {
     stack_size = 300
 }
 
-Item {
+ITEM {
     type = "item",
     name = "organics",
     icon = "__pycoalprocessing__/graphics/icons/organics.png",
@@ -286,7 +286,7 @@ Item {
     stack_size = 300
 }
 
-Item {
+ITEM {
     type = "item",
     name = "coarse",
     icon = "__pycoalprocessing__/graphics/icons/coarse.png",
@@ -297,7 +297,7 @@ Item {
     stack_size = 500
 }
 
-Item {
+ITEM {
     type = "item",
     name = "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/richdust.png",
@@ -308,7 +308,7 @@ Item {
     stack_size = 500
 }
 
-Item {
+ITEM {
     type = "item",
     name = "coal-dust",
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
@@ -321,7 +321,7 @@ Item {
     stack_size = 500
 }
 
-Item {
+ITEM {
     type = "item",
     name = "chromite-sand",
     icon = "__pycoalprocessing__/graphics/icons/chromite_sand.png",
@@ -332,7 +332,7 @@ Item {
     stack_size = 500
 }
 
-Item {
+ITEM {
     type = "item",
     name = "nexelit-plate",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
@@ -343,7 +343,7 @@ Item {
     stack_size = 300
 }
 
-Item {
+ITEM {
     type = "item",
     name = "sand-casting",
     icon = "__pycoalprocessing__/graphics/icons/sand-casting.png",
@@ -354,7 +354,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "lithium-peroxide",
     category = "chemistry",
@@ -369,7 +369,7 @@ Recipe {
         {type = "item", name = "lithium-peroxide", amount = 5}
     }
 }
-Item {
+ITEM {
     type = "item",
     name = "lithium-peroxide",
     icon = "__pycoalprocessing__/graphics/icons/lithium-peroxide.png",
@@ -380,7 +380,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "nexelit-cartridge",
     category = "crafting",
@@ -394,7 +394,7 @@ Recipe {
         {type = "item", name = "nexelit-cartridge", amount = 1}
     }
 }
-Item {
+ITEM {
     type = "item",
     name = "nexelit-cartridge",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-cartridge.png",
@@ -405,7 +405,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "saturated-nexelit-cartridge",
     icon = "__pycoalprocessing__/graphics/icons/saturated-nexelit-cartridge.png",
@@ -416,7 +416,7 @@ Item {
     stack_size = 100
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "lime",
     category = "hpf",
@@ -432,7 +432,7 @@ Recipe {
     },
     main_product = "lime"
 }
-Item {
+ITEM {
     type = "item",
     name = "lime",
     icon = "__pycoalprocessing__/graphics/icons/lime.png",
@@ -443,7 +443,7 @@ Item {
     stack_size = 100
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "fuelrod-mk01",
     category = "hpf",
@@ -458,7 +458,7 @@ Recipe {
         {type = "item", name = "fuelrod-mk01", amount = 3}
     }
 }
-Item {
+ITEM {
     type = "item",
     name = "fuelrod-mk01",
     fuel_value = "150MJ",
@@ -471,7 +471,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "fawogae",
     category = "fawogae",
@@ -484,7 +484,7 @@ Recipe {
         {type = "item", name = "fawogae", amount = 8}
     }
 }
-Item {
+ITEM {
     type = "item",
     name = "fawogae",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-icon.png",
@@ -495,7 +495,7 @@ Item {
     stack_size = 300
 }
 
-Item {
+ITEM {
     type = "item",
     name = "fawogae-substrate",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-substrate.png",
@@ -506,7 +506,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "flask",
     icon = "__pycoalprocessing__/graphics/icons/flask.png",
@@ -517,7 +517,7 @@ Item {
     stack_size = 50
 }
 
-Item {
+ITEM {
     type = "item",
     name = "bonemeal",
     icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
@@ -528,7 +528,7 @@ Item {
     stack_size = 300
 }
 
-Item {
+ITEM {
     type = "item",
     name = "raw-borax",
     icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
@@ -539,7 +539,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "borax",
     icon = "__pycoalprocessing__/graphics/icons/borax.png",
@@ -550,7 +550,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "ralesia",
     icon = "__pycoalprocessing__/graphics/icons/ralesia.png",
@@ -561,7 +561,7 @@ Item {
     stack_size = 200
 }
 
-Item {
+ITEM {
     type = "item",
     name = "rich-clay",
     icon = "__pycoalprocessing__/graphics/icons/rich-clay.png",
@@ -572,7 +572,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "ground-sample01",
     icon = "__pycoalprocessing__/graphics/icons/ground-sample01.png",
@@ -583,7 +583,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "bio-sample01",
     icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
@@ -594,7 +594,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "alien-sample01",
     icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
@@ -605,7 +605,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "equipment-chassi",
     icon = "__pycoalprocessing__/graphics/icons/equipment-chassi.png",
@@ -616,7 +616,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "lab-instrument",
     icon = "__pycoalprocessing__/graphics/icons/lab-instrument.png",
@@ -627,7 +627,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "lens",
     icon = "__pycoalprocessing__/graphics/icons/lens.png",
@@ -638,7 +638,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "boron-trioxide",
     enabled = "false",
@@ -650,7 +650,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "ralesia-seeds",
     enabled = "false",
@@ -662,7 +662,7 @@ Item {
     stack_size = 100
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "niobium-ore",
     category = "niobium",
@@ -676,7 +676,7 @@ Recipe {
         {type = "item", name = "niobium-ore", amount = 12}
     }
 }
-Item {
+ITEM {
     type = "item",
     name = "niobium-ore",
     icon = "__pycoalprocessing__/graphics/icons/niobium-ore.png",
@@ -687,7 +687,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "niobium-powder",
     icon = "__pycoalprocessing__/graphics/icons/niobium-powder.png",
@@ -697,7 +697,7 @@ Item {
     stack_size = 100
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "niobium-dust",
     category = "ball-mill",
@@ -712,7 +712,7 @@ Recipe {
     },
     main_product = "niobium-dust"
 }
-Item {
+ITEM {
     type = "item",
     name = "niobium-dust",
     icon = "__pycoalprocessing__/graphics/icons/niobium-dust.png",
@@ -723,7 +723,7 @@ Item {
     stack_size = 100
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "niobium-concentrate",
     category = "classifier",
@@ -738,7 +738,7 @@ Recipe {
     },
     main_product = "niobium-concentrate"
 }
-Item {
+ITEM {
     type = "item",
     name = "niobium-concentrate",
     icon = "__pycoalprocessing__/graphics/icons/niobium-concentrate.png",
@@ -749,7 +749,7 @@ Item {
     stack_size = 100
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "mukmoux-fat",
     category = "mukmoux",
@@ -764,7 +764,7 @@ Recipe {
     },
     main_product = "mukmoux-fat"
 }
-Item {
+ITEM {
     type = "item",
     name = "mukmoux-fat",
     icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
@@ -775,7 +775,7 @@ Item {
     stack_size = 50
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "niobium-oxide",
     category = "chemistry",
@@ -790,7 +790,7 @@ Recipe {
     },
     main_product = "niobium-oxide"
 }
-Item {
+ITEM {
     type = "item",
     name = "niobium-oxide",
     icon = "__pycoalprocessing__/graphics/icons/niobium-oxide.png",
@@ -801,7 +801,7 @@ Item {
     stack_size = 50
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "niobium-plate",
     category = "chemistry", --bob electrolysis
@@ -816,7 +816,7 @@ Recipe {
     },
     main_product = "niobium-plate"
 }
-Item {
+ITEM {
     type = "item",
     name = "niobium-plate",
     icon = "__pycoalprocessing__/graphics/icons/niobium-plate.png",
@@ -827,7 +827,7 @@ Item {
     stack_size = 50
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "glass-core",
     category = "hpf",
@@ -843,7 +843,7 @@ Recipe {
     },
     main_product = "glass-core"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "glass-core",
@@ -855,7 +855,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "cladding",
     category = "crafting-with-fluid",
@@ -870,7 +870,7 @@ Recipe {
     },
     main_product = "cladding"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "cladding",
@@ -882,7 +882,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "ppd",
     category = "chemistry", --bob electrolysis
@@ -897,7 +897,7 @@ Recipe {
     },
     main_product = "ppd"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "ppd",
@@ -909,7 +909,7 @@ Item {
     stack_size = 500
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "kevlar",
     category = "chemistry",
@@ -925,7 +925,7 @@ Recipe {
     },
     main_product = "kevlar"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "kevlar",
@@ -937,7 +937,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "kevlar-coating",
     category = "crafting",
@@ -952,7 +952,7 @@ Recipe {
     },
     main_product = "kevlar-coating"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "kevlar-coating",
@@ -964,7 +964,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "nbfe-alloy",
     category = "hpf", --bobs smelting
@@ -979,7 +979,7 @@ Recipe {
     },
     main_product = "nbfe-alloy"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "nbfe-alloy",
@@ -991,7 +991,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "nbfe-coating",
     category = "crafting",
@@ -1006,7 +1006,7 @@ Recipe {
     },
     main_product = "nbfe-coating"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "nbfe-coating",
@@ -1018,7 +1018,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "cladded-core",
     category = "advanced-crafting",
@@ -1033,7 +1033,7 @@ Recipe {
     },
     main_product = "cladded-core"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "cladded-core",
@@ -1045,7 +1045,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "copper-coating",
     category = "chemistry", --bob electrolysis
@@ -1061,7 +1061,7 @@ Recipe {
     },
     main_product = "copper-coating"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "copper-coating",
@@ -1073,7 +1073,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "optical-fiber",
     category = "advanced-crafting",
@@ -1088,7 +1088,7 @@ Recipe {
     },
     main_product = "optical-fiber"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "optical-fiber",
@@ -1100,7 +1100,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "biofilm",
     category = "crafting",
@@ -1116,7 +1116,7 @@ Recipe {
     },
     main_product = "biofilm"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "biofilm",
@@ -1128,7 +1128,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "filtration-media",
     category = "crafting",
@@ -1145,7 +1145,7 @@ Recipe {
     },
     main_product = "filtration-media"
 }
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "filtration-media",
@@ -1157,7 +1157,7 @@ Item {
     stack_size = 200
 }
 
-Item {
+ITEM {
     type = "item",
     enabled = "false",
     name = "coal-briquette",
@@ -1171,7 +1171,7 @@ Item {
     stack_size = 200
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "calcium-carbide",
     category = "hpf",
@@ -1185,7 +1185,7 @@ Recipe {
         {type = "item", name = "calcium-carbide", amount = 10}
     }
 }
-Item {
+ITEM {
     type = "item",
     name = "calcium-carbide",
     icon = "__pycoalprocessing__/graphics/icons/calcium-carbide.png",
@@ -1196,7 +1196,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "crushed-iron",
     enabled = "false",
@@ -1208,7 +1208,7 @@ Item {
     stack_size = 1000
 }
 
-Item {
+ITEM {
     type = "item",
     name = "crushed-copper",
     enabled = "false",
@@ -1220,7 +1220,7 @@ Item {
     stack_size = 1000
 }
 
-Item {
+ITEM {
     type = "item",
     name = "log",
     enabled = "false",
@@ -1234,7 +1234,7 @@ Item {
     stack_size = 100
 }
 
-Item {
+ITEM {
     type = "item",
     name = "rare-earth-dust",
     enabled = "false",

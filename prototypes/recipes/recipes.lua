@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "making-chromium",
     category = "hpf",
@@ -20,7 +20,7 @@ Recipe {
     order = "a"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "raw-wood-to-coal",
     localised_name = {"recipe-name.wood-to-coal", {"item-name.raw-wood"}, {"item-name.coal"}},
@@ -43,7 +43,7 @@ Recipe {
     energy_required = 3
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "wood-to-coal",
     localised_name = {"recipe-name.wood-to-coal", {"item-name.wood"}, {"item-name.coal"}},
@@ -66,7 +66,7 @@ Recipe {
     energy_required = 0.5
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "extract-sulfur",
     category = "desulfurization",
@@ -85,7 +85,7 @@ Recipe {
     order = "a"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "cooling-water",
     hidden = true,
@@ -105,7 +105,7 @@ Recipe {
     icon_size = 32
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "fluegas_to-syngas",
     category = "carbonfilter",
@@ -124,7 +124,7 @@ Recipe {
     icon_size = 32
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coarse-classification",
     category = "classifier",
@@ -145,7 +145,7 @@ Recipe {
     order = "a"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "sand-classification",
     category = "classifier",
@@ -165,7 +165,7 @@ Recipe {
     order = "b"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "soil-separation",
     category = "solid-separator",
@@ -187,7 +187,7 @@ Recipe {
     order = "e"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "richdust-separation",
     category = "solid-separator",
@@ -207,7 +207,7 @@ Recipe {
     order = "f"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "tailings-separation",
     category = "solid-separator",
@@ -227,7 +227,7 @@ Recipe {
     order = "g"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "sand-washing",
     category = "washer",
@@ -248,7 +248,7 @@ Recipe {
     order = "a"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "organics-processing",
     category = "gasifier",
@@ -269,7 +269,7 @@ Recipe {
     order = "d"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "sand-casting",
     category = "tar",
@@ -289,7 +289,7 @@ Recipe {
     order = "a"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "tar-oil",
     category = "tar",
@@ -309,7 +309,7 @@ Recipe {
     order = "c"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "air-pollution",
     category = "co2",
@@ -328,7 +328,7 @@ Recipe {
     order = "d"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "slacked-lime",
     category = "chemistry",
@@ -348,7 +348,7 @@ Recipe {
     order = "e"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "co2",
     category = "hpf",
@@ -370,7 +370,7 @@ Recipe {
     order = "d"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "fawogae-substrate",
     category = "crafting",
@@ -390,7 +390,7 @@ Recipe {
     order = "f"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "water-mineralized",
     category = "washer",
@@ -411,7 +411,7 @@ Recipe {
     order = "b"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "flask",
     enabled = "true",
@@ -430,7 +430,7 @@ Recipe {
     order = "f"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "science-pack-1",
     enabled = "true",
@@ -448,7 +448,7 @@ Recipe {
     order = "a1"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "science-pack-2",
     enabled = "false",
@@ -466,7 +466,7 @@ Recipe {
     order = "a2"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "science-pack-3",
     enabled = "false",
@@ -486,7 +486,7 @@ Recipe {
     order = "a3"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "soil-washing",
     category = "washer",
@@ -507,7 +507,7 @@ Recipe {
     order = "c"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "bonemeal",
     category = "ulric",
@@ -526,7 +526,7 @@ Recipe {
     order = "g"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "raw-borax",
     category = "borax",
@@ -545,7 +545,7 @@ Recipe {
     order = "h"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "borax-washing",
     category = "washer",
@@ -566,7 +566,7 @@ Recipe {
     order = "d"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "ralesia",
     category = "ralesia",
@@ -586,7 +586,7 @@ Recipe {
     order = "h"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "ralesia-seeds",
     category = "crafting",
@@ -605,7 +605,7 @@ Recipe {
     order = "i"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "rich-clay",
     category = "crafting-with-fluid",
@@ -625,7 +625,7 @@ Recipe {
     order = "j"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "ground-sample01",
     category = "crafting",
@@ -645,7 +645,7 @@ Recipe {
     order = "k"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "bio-sample01",
     category = "crafting",
@@ -665,7 +665,7 @@ Recipe {
     order = "l"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "alien-sample01",
     category = "crafting",
@@ -685,7 +685,7 @@ Recipe {
     order = "m"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "equipment-chassi",
     category = "crafting",
@@ -705,7 +705,7 @@ Recipe {
     order = "n"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "lab-instrument",
     category = "crafting",
@@ -725,7 +725,7 @@ Recipe {
     order = "o"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "boron-trioxide",
     category = "hpf",
@@ -745,7 +745,7 @@ Recipe {
     order = "e"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "lens",
     category = "hpf",
@@ -765,7 +765,7 @@ Recipe {
     order = "f"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "oleochemicals",
     category = "fts-reactor",
@@ -788,7 +788,7 @@ Recipe {
     order = "c"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "organic-solvent",
     category = "chemistry",
@@ -809,7 +809,7 @@ Recipe {
     order = "c"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "co2-organics",
     category = "hpf",
@@ -828,7 +828,7 @@ Recipe {
     order = "f"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "aromatic-organic",
     category = "gasifier",
@@ -848,7 +848,7 @@ Recipe {
     order = "r"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "petgas-methanol",
     category = "fluid-separator",
@@ -869,7 +869,7 @@ Recipe {
     order = "c"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "oleo-heavy",
     category = "fluid-separator",
@@ -891,7 +891,7 @@ Recipe {
     order = "d"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "bone-solvent",
     category = "carbonfilter",
@@ -911,7 +911,7 @@ Recipe {
     order = "e"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "dirty-acid",
     category = "carbonfilter",
@@ -931,7 +931,7 @@ Recipe {
     order = "f"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "filtration-dirty-water",
     category = "carbonfilter",
@@ -952,7 +952,7 @@ Recipe {
     order = "g"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "olefin-filtration",
     category = "carbonfilter",
@@ -972,7 +972,7 @@ Recipe {
     order = "h"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coalgas-syngas",
     category = "desulfurization",
@@ -994,7 +994,7 @@ Recipe {
     order = "b"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "oleochemicals-crude-oil",
     category = "carbonfilter",
@@ -1014,7 +1014,7 @@ Recipe {
     order = "h"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coal-dust",
     category = "ball-mill",
@@ -1033,7 +1033,7 @@ Recipe {
     order = "r"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "sand-brick",
     category = "crafting",
@@ -1053,7 +1053,7 @@ Recipe {
     order = "s"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "tailings-classification",
     category = "classifier",
@@ -1074,7 +1074,7 @@ Recipe {
     order = "c"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "tar-distilation",
     category = "distilator",
@@ -1096,7 +1096,7 @@ Recipe {
     order = "t"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "oleochemicals-distilation",
     category = "distilator",
@@ -1119,7 +1119,7 @@ Recipe {
     order = "i"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "tar-gasification",
     category = "gasifier",
@@ -1141,7 +1141,7 @@ Recipe {
     order = "j"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "oleo-gasification",
     category = "gasifier",
@@ -1163,7 +1163,7 @@ Recipe {
     order = "k"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coal-fawogae",
     category = "hpf",
@@ -1182,7 +1182,7 @@ Recipe {
     order = "g"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "remud-dirty-water",
     category = "chemistry",
@@ -1202,7 +1202,7 @@ Recipe {
     order = "l"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "rich-re",
     category = "evaporator",
@@ -1222,7 +1222,7 @@ Recipe {
     order = "u"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "eva-ree-dust",
     category = "evaporator",
@@ -1238,7 +1238,7 @@ Recipe {
     main_product = "rare-earth-dust",
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushed-iron",
     category = "smelting",
@@ -1251,7 +1251,7 @@ Recipe {
     result_count = 2
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "crushed-copper",
     category = "smelting",
@@ -1264,7 +1264,7 @@ Recipe {
     result_count = 2
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "sulfur-crudeoil",
     category = "desulfurization",
@@ -1286,7 +1286,7 @@ Recipe {
     order = "b"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "sulfur-heavyoil",
     category = "desulfurization",
@@ -1307,7 +1307,7 @@ Recipe {
     order = "c"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "sulfur-lightoil",
     category = "desulfurization",
@@ -1328,7 +1328,7 @@ Recipe {
     order = "d"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "sulfur-petgas",
     category = "desulfurization",
@@ -1349,7 +1349,7 @@ Recipe {
     order = "e"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "organics-from-wood",
     category = "crafting",
@@ -1368,7 +1368,7 @@ Recipe {
     order = "v"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "creosote-to-aromatics",
     category = "tar",
@@ -1387,7 +1387,7 @@ Recipe {
     order = "m"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "aromatics-to-lubricant",
     category = "desulfurization",
@@ -1407,7 +1407,7 @@ Recipe {
     order = "n"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "aromatics-to-rubber",
     category = "methanol",
@@ -1426,7 +1426,7 @@ Recipe {
     order = "w"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "aromatics-to-plastic",
     category = "methanol",
@@ -1446,7 +1446,7 @@ Recipe {
     order = "x"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "nas-battery",
     category = "advanced-crafting",
@@ -1468,7 +1468,7 @@ Recipe {
     order = "y"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coke-coal",
     category = "hpf",
@@ -1487,7 +1487,7 @@ Recipe {
     order = "h"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "stone-distilation",
     category = "distilator",
@@ -1511,7 +1511,7 @@ Recipe {
     order = "z"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "oleo-solidfuel",
     category = "methanol",
@@ -1530,7 +1530,7 @@ Recipe {
     order = "c"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "glycerol-hydrogen",
     category = "chemistry", --bob electrolysis
@@ -1549,7 +1549,7 @@ Recipe {
     order = "o"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "log1",
     category = "nursery",
@@ -1565,7 +1565,7 @@ Recipe {
     order = "c6"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "log2",
     category = "nursery",
@@ -1583,7 +1583,7 @@ Recipe {
     order = "c7"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "log3",
     category = "nursery",
@@ -1602,7 +1602,7 @@ Recipe {
     order = "c8"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "log4",
     category = "nursery",
@@ -1621,7 +1621,7 @@ Recipe {
     order = "c9"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "log5",
     category = "nursery",
@@ -1640,7 +1640,7 @@ Recipe {
     order = "c9"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "log6",
     category = "nursery",
@@ -1660,7 +1660,7 @@ Recipe {
     order = "c9"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "log-wood",
     category = "wpu",
@@ -1678,7 +1678,7 @@ Recipe {
     order = "a7"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "log-organics",
     category = "wpu",
@@ -1696,7 +1696,7 @@ Recipe {
     order = "a8"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "raw-to-wood",
     category = "wpu",
@@ -1714,7 +1714,7 @@ Recipe {
     order = "a8"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "ash-separation",
     category = "solid-separator",
@@ -1733,7 +1733,7 @@ Recipe {
     order = "f"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "fluegas-filtration",
     category = "carbonfilter",
@@ -1751,7 +1751,7 @@ Recipe {
     order = "g"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "coaldust-ash",
     category = "hpf",
@@ -1769,7 +1769,7 @@ Recipe {
     order = "g"
 }
 
-Recipe {
+RECIPE {
     type = "recipe",
     name = "explosive-glycerol",
     category = "chemistry",

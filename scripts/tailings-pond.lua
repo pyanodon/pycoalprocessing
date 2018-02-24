@@ -1,7 +1,8 @@
 local tailings_pond = {}
 
-local Position = require("stdlib.area.position")
-local Area = require("stdlib.area.area")
+local Event = require("stdlib/event/event")
+local Position = require("stdlib/area/position")
+local Area = require("stdlib/area/area")
 
 local CFG = MOD.config.TAILINGS_POND
 local _gasses = CFG.GAS

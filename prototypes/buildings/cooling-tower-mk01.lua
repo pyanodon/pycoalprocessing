@@ -1,4 +1,4 @@
-Recipe {
+RECIPE {
     type = "recipe",
     name = "cooling-tower-mk01",
     energy_required = 17,
@@ -14,7 +14,7 @@ Recipe {
     }
 }
 
-Item {
+ITEM {
     type = "item",
     name = "cooling-tower-mk01",
     icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
@@ -26,7 +26,7 @@ Item {
     stack_size = 5
 }
 
-Entity {
+ENTITY {
     type = "assembling-machine",
     name = "cooling-tower-mk01",
     icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
@@ -65,16 +65,16 @@ Entity {
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_picture = Data.Pipes.pictures("assembling-machine-2", nil, {-0.0, -0.9}, nil, nil),
-            pipe_covers = Data.Pipes.covers(false, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", nil, {-0.0, -0.9}, nil, nil),
+            pipe_covers = DATA.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {2.0, 0.0}}}
         },
         {
             production_type = "output",
-            pipe_picture = Data.Pipes.pictures("assembling-machine-2", nil, {-0.0, -0.9}, nil, nil),
-            pipe_covers = Data.Pipes.covers(false, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", nil, {-0.0, -0.9}, nil, nil),
+            pipe_covers = DATA.Pipes.covers(false, true, true, true),
             base_level = 1,
             pipe_connections = {{type = "output", position = {-2.0, 0.0}}}
         }

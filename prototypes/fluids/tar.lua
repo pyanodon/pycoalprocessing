@@ -1,4 +1,4 @@
-Fluid {
+FLUID {
     type = "fluid",
     name = "tar",
     icon = "__pycoalprocessing__/graphics/icons/tar.png",
