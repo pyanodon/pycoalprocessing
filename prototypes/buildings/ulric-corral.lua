@@ -45,7 +45,7 @@ ENTITY {
     },
     allowed_effects = {"consumption", "productivity", "pollution"},
     crafting_categories = {"ulric"},
-    crafting_speed = 0.15,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
@@ -62,7 +62,7 @@ ENTITY {
                 frame_count = 60,
                 line_length = 8,
                 shift = {0.0, 0.0},
-                animation_speed = 1.4
+                animation_speed = 0.6
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-corral-top.png",
@@ -71,7 +71,7 @@ ENTITY {
                 frame_count = 60,
                 line_length = 8,
                 shift = {0.0, -4.0},
-                animation_speed = 1.4
+                animation_speed = 0.6
             }
         }
     },
@@ -88,7 +88,7 @@ ENTITY {
                 width = 96,
                 height = 16,
                 run_mode = "forward-then-backward",
-                animation_speed = 0.2
+                animation_speed = 0.6
             }
         },
         {
@@ -102,7 +102,7 @@ ENTITY {
                 line_length = 10,
                 width = 192,
                 height = 128,
-                animation_speed = 0.2
+                animation_speed = 0.5
             }
         },
         {

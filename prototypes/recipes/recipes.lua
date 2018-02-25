@@ -512,7 +512,7 @@ RECIPE {
     name = "bonemeal",
     category = "ulric",
     enabled = "false",
-    energy_required = 6.0,
+    energy_required = 45,
     ingredients = {
         {type = "item", name = "ralesia", amount = 10}
     },
