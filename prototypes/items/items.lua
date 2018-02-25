@@ -754,7 +754,7 @@ RECIPE {
     name = "mukmoux-fat",
     category = "mukmoux",
     enabled = "false",
-    energy_required = 7.2,
+    energy_required = 60,
     ingredients = {
         {type = "item", name = "fawogae", amount = 5},
         {type = "item", name = "ralesia-seeds", amount = 30}
