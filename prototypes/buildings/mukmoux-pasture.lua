@@ -44,7 +44,7 @@ ENTITY {
     },
     allowed_effects = {"consumption", "productivity", "pollution"},
     crafting_categories = {"mukmoux"},
-    crafting_speed = 0.15,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
@@ -73,7 +73,7 @@ ENTITY {
                 line_length = 26,
                 width = 76,
                 height = 138,
-                animation_speed = 0.2
+                animation_speed = 0.5
             }
         },
         {
@@ -88,7 +88,7 @@ ENTITY {
                 line_length = 14,
                 width = 142,
                 height = 128,
-                animation_speed = 0.2
+                animation_speed = 0.5
             }
         },
         {
@@ -103,7 +103,7 @@ ENTITY {
                 line_length = 20,
                 width = 100,
                 height = 47,
-                animation_speed = 0.55
+                animation_speed = 0.5
             }
         }
     },
