@@ -281,7 +281,7 @@ RECIPE {
     energy_required = 1,
     ingredients = {
         {type = "item", name = "coal-dust", amount = 35},
-        {type = "fluid", name = "glycerol", amount = 100},
+        {type = "fluid", name = "glycerol", amount = 20},
         {type = "fluid", name = "creosote", amount = 150},
         {type = "fluid", name = "tar", amount = 50}
     },
@@ -291,4 +291,27 @@ RECIPE {
     main_product = "coal-briquette",
     icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
     icon_size = 32
+}
+
+RECIPE {
+    type = "recipe",
+    name = "heavy-oleo",
+    category = "fts-reactor",
+    enabled = "false",
+    energy_required = 1,
+    ingredients = {
+        {type = "item", name = "chromium", amount = 1},
+        {type = "fluid", name = "water", amount = 2000},
+        {type = "fluid", name = "oleochemicals", amount = 100},
+        {type = "fluid", name = "sulfuric-acid", amount = 200}
+    },
+    results = {
+        {type = "fluid", name = "heavy-oil", amount = 200},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 60},
+    },
+    main_product = "heavy-oil",
+    icon = "__base__/graphics/icons/fluid/heavy-oil.png",
+    icon_size = 32,
+    subgroup = "py-fluid-handling",
+    order = "h12"
 }
