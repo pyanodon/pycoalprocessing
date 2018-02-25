@@ -189,6 +189,10 @@ TECHNOLOGY {
         {
             type = "unlock-recipe",
             recipe = "rare-earth-beneficiation"
+        },
+        {
+            type = "unlock-recipe",
+            recipe = "heavy-oleo"
         }
     },
     unit = {
