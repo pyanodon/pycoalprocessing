@@ -4,10 +4,10 @@
 -- @usage local Core = require('stdlib/core')
 
 --Global mutates
+require('stdlib/utils/globals')
 require('stdlib/utils/table')
 require('stdlib/utils/string')
 require('stdlib/utils/math')
-require('stdlib/utils/globals')
 
 --Defines Mutates
 require('stdlib/defines/color')
@@ -68,6 +68,14 @@ function Core.fail_if_not(var, msg)
         error(msg or 'incorrect or missing value', 3)
     end
     return false
+end
+
+function Core.log_and_print(msg)
+    if game and #game.connected_players > 0 then
+        log(msg)
+        game.print(msg)
+        return true
+    end
 end
 
 function Core.VALID_FILTER(v)
