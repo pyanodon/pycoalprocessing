@@ -142,5 +142,9 @@ data:extend {
     {
         type = "recipe-category",
         name = "wpu"
-    }
+    },
+    {
+        type = "resource-category",
+        name = "borax"
+    },
 }
