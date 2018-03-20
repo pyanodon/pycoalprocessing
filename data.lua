@@ -123,12 +123,13 @@ require("prototypes/buildings/niobium-mine")
 require("prototypes/buildings/jaw-crusher")
 require("prototypes/buildings/ball-mill")
 require("prototypes/buildings/mukmoux-pasture")
-
 require("prototypes/buildings/automated-factory")
-
 require("prototypes/buildings/sand-extractor")
 require("prototypes/buildings/botanical-nursery")
 require("prototypes/buildings/wpu")
+
+--ores
+require("prototypes.ores.borax")
 
 if PYC.DEBUG then
     local developer = require("stdlib/data/developer/developer")
