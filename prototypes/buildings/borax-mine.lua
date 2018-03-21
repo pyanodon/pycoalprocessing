@@ -3,25 +3,29 @@ local pipes = {
         filename = "__pycoalprocessing__/graphics/entity/borax-mine/top-connection.png",
         priority = "low",
         width = 288,
-        height = 288
+        height = 288,
+        shift = {0.0, 5.0},
     },
     south = {
         filename = "__pycoalprocessing__/graphics/entity/borax-mine/bottom-connection.png",
         priority = "extra-high",
         width = 288,
-        height = 288
+        height = 288,
+        shift = {0.0, -5.0},
     },
     west = {
         filename = "__pycoalprocessing__/graphics/entity/borax-mine/left-connection.png",
         priority = "extra-high",
         width = 288,
-        height = 288
+        height = 288,
+        shift = {5.0, 0.0},
     },
     east = {
         filename = "__pycoalprocessing__/graphics/entity/borax-mine/right-connection.png",
         priority = "extra-high",
         width = 288,
-        height = 288
+        height = 288,
+        shift = {-5.0, 0.0},
     }
 }
 
@@ -72,7 +76,7 @@ ENTITY {
     input_fluid_box = {
         production_type = "input-output",
         pipe_picture = _G.assembler2pipepictures(),
-        pipe_covers = _G.pipecoverspictures(),
+        pipe_covers = pipes,
         base_area = 1,
         height = 2,
         base_level = -1,
@@ -86,14 +90,14 @@ ENTITY {
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    mining_speed = 1,
+    mining_speed = 1.5,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02
     },
     energy_usage = "420kW",
-    mining_power = 1,
+    mining_power = 2,
     resource_searching_radius = 0.49,
     vector_to_place_result = {0, -4.65},
     radius_visualisation_picture = {

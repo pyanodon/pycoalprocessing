@@ -21,9 +21,9 @@ ENTITY {
     order = "a-b-a",
     map_color = {r = 0.917, g = 0.917, b = 0.917},
     highlight = true,
-    minimum = 500,
-    normal = 1500,
-    maximum = 6000,
+    minimum = 400,
+    normal = 1000,
+    maximum = 4000,
     minable = {
         hardness = 1.5,
         -- mining_particle = "borax-particle",
