@@ -55,7 +55,7 @@ ITEM {
 }
 
 ENTITY {
-    type = "assembling-machine",
+    type = "mining-drill",
     name = "niobium-mine",
     icon = "__pycoalprocessing__/graphics/icons/niobium-mine.png",
     icon_size = 32,
@@ -63,24 +63,42 @@ ENTITY {
     minable = {mining_time = 1, result = "niobium-mine"},
     fast_replaceable_group = "niobium-mine",
     max_health = 700,
+    resource_categories = {"niobium"},
     corpse = "big-remnants",
     dying_explosion = "big-explosion",
     collision_box = {{-3.3, -3.3}, {3.3, 3.3}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
+    input_fluid_box = {
+        production_type = "input-output",
+        pipe_picture = _G.assembler2pipepictures(),
+        pipe_covers = _G.pipecoverspictures(),
+        base_area = 1,
+        height = 2,
+        base_level = -1,
+        pipe_connections = {
+            {position = {-3, 4}},
+        }
+    },
     module_specification = {
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {"niobium"},
-    crafting_speed = 0.3,
+    mining_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.05 / 3
+        emissions = 0.03
     },
-    energy_usage = "430kW",
-    ingredient_count = 4,
-    animation = {
+    energy_usage = "550kW",
+    mining_power = 2,
+    resource_searching_radius = 3.49,
+    vector_to_place_result = {0, -3.65},
+    radius_visualisation_picture = {
+        filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-radius-visualization.png",
+        width = 12,
+        height = 12
+    },
+    animations = {
         layers = {
             {
                 filename = "__pycoalprocessing__/graphics/entity/niobium-mine/niobium-bottom.png",
@@ -88,7 +106,7 @@ ENTITY {
                 height = 113,
                 line_length = 8,
                 frame_count = 136,
-                animation_speed = 1,
+                animation_speed = 0.2,
                 shift = {-0.07, 1.765}
             },
             {
@@ -97,21 +115,57 @@ ENTITY {
                 height = 113,
                 line_length = 8,
                 frame_count = 136,
-                animation_speed = 1,
+                animation_speed = 0.2,
                 shift = {-0.07, -1.765}
             }
         }
     },
-    fluid_boxes = {
-        --1
-        {
-            production_type = "input",
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {-2.9, 3.9}, {3.1, -3.9}, {4.08, 3.2}, {-3.9, -2.8}, pipes),
-            pipe_covers = DATA.Pipes.covers(true, true, true, true),
-            base_area = 10,
-            base_level = -1,
-            pipe_connections = {{type = "input", position = {-3.0, 4.0}}}
-        }
+    input_fluid_patch_sprites =
+    {
+      north =
+      {
+        priority = "extra-high",
+        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/N.png",
+        line_length = 1,
+        width = 231,
+        height = 237,
+        frame_count = 1,
+        direction_count = 1,
+        shift = util.by_pixel(3, 0),
+      },
+      east =
+      {
+        priority = "extra-high",
+        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/E.png",
+        line_length = 1,
+        width = 231,
+        height = 237,
+        frame_count = 1,
+        direction_count = 1,
+        shift = util.by_pixel(3, 3),
+      },
+      south =
+      {
+        priority = "extra-high",
+        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/S.png",
+        line_length = 1,
+        width = 231,
+        height = 237,
+        frame_count = 1,
+        direction_count = 1,
+        shift = util.by_pixel(3, 0),
+      },
+      west =
+      {
+        priority = "extra-high",
+        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/W.png",
+        line_length = 1,
+        width = 231,
+        height = 237,
+        frame_count = 1,
+        direction_count = 1,
+        shift = util.by_pixel(4, 3),
+      }
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
