@@ -147,4 +147,8 @@ data:extend {
         type = "resource-category",
         name = "borax"
     },
+    {
+        type = "resource-category",
+        name = "niobium"
+    },
 }
