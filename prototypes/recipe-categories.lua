@@ -151,4 +151,8 @@ data:extend {
         type = "resource-category",
         name = "niobium"
     },
+    {
+        type = "fuel-category",
+        name = "drill"
+    },
 }

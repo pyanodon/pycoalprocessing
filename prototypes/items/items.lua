@@ -236,6 +236,8 @@ ITEM {
     name = "drill-head",
     icon = "__pycoalprocessing__/graphics/icons/drill-head.png",
     icon_size = 32,
+    fuel_value = "2MJ",
+    fuel_category = "drill",
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
