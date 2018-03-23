@@ -43,7 +43,7 @@ ENTITY {
         richness_multiplier = 1500,
         richness_multiplier_distance_bonus = 30,
         richness_base = 500,
-        coverage = 0.012,
+        coverage = 0.009,
         peaks = {
             {
                 noise_layer = "borax",

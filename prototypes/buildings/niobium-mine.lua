@@ -84,10 +84,21 @@ ENTITY {
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     mining_speed = 1,
-    energy_source = {
-        type = "electric",
-        usage_priority = "secondary-input",
-        emissions = 0.03
+    energy_source =
+    {
+      type = "burner",
+      fuel_category = "drill",
+      effectivity = 3,
+      fuel_inventory_size = 1,
+      emissions = 0.1 / 3,
+      smoke =
+      {
+        {
+          name = "smoke",
+          deviation = {0.1, 0.1},
+          frequency = 3
+        }
+      }
     },
     energy_usage = "550kW",
     mining_power = 2,
