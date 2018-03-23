@@ -1537,8 +1537,8 @@ RECIPE {
     enabled = "false",
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "glycerol", amount = 20},
-        {type = "fluid", name = "water", amount = 200} --bob liquid-air
+        {type = "fluid", name = "water", amount = 200}, --bob liquid-air
+		{type = "fluid", name = "glycerol", amount = 20}
     },
     results = {
         {type = "fluid", name = "petroleum-gas", amount = 300} --bob hydrogen
