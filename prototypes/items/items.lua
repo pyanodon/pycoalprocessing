@@ -58,8 +58,7 @@ RECIPE {
     results = {
       {"nichrome", 1}
     }
-}
-
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "nichrome",
@@ -107,7 +106,7 @@ RECIPE {
     results = {
         {type = "item", name = "active-carbon", amount = 5}
     }
-}
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "active-carbon",
@@ -140,7 +139,7 @@ RECIPE {
     icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
     icon_size = 32,
     order = "d [syn-gas]"
-}
+}:add_unlock("coal-processing-2")
 
 ITEM {
     type = "item",
@@ -169,7 +168,7 @@ RECIPE {
     main_product = "tailings-dust",
     icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
     icon_size = 32
-}
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "tailings-dust",
@@ -230,7 +229,7 @@ RECIPE {
     results = {
         {type = "item", name = "drill-head", amount = 4}
     }
-}
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "drill-head",
@@ -370,7 +369,7 @@ RECIPE {
     results = {
         {type = "item", name = "lithium-peroxide", amount = 5}
     }
-}
+}:add_unlock("coal-processing-3")
 ITEM {
     type = "item",
     name = "lithium-peroxide",
@@ -395,7 +394,7 @@ RECIPE {
     results = {
         {type = "item", name = "nexelit-cartridge", amount = 1}
     }
-}
+}:add_unlock("coal-processing-3")
 ITEM {
     type = "item",
     name = "nexelit-cartridge",
@@ -677,7 +676,7 @@ RECIPE {
     results = {
         {type = "item", name = "niobium-ore", amount = 12}
     }
-}
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "niobium-ore",
@@ -713,7 +712,7 @@ RECIPE {
         {type = "item", name = "gravel", amount = 2}
     },
     main_product = "niobium-dust"
-}
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "niobium-dust",
@@ -739,7 +738,7 @@ RECIPE {
         {type = "item", name = "sand", amount = 2}
     },
     main_product = "niobium-concentrate"
-}
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "niobium-concentrate",
@@ -765,7 +764,7 @@ RECIPE {
         {type = "item", name = "mukmoux-fat", amount = 15}
     },
     main_product = "mukmoux-fat"
-}
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "mukmoux-fat",
@@ -791,7 +790,7 @@ RECIPE {
         {type = "item", name = "niobium-oxide", amount = 10}
     },
     main_product = "niobium-oxide"
-}
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "niobium-oxide",
@@ -817,7 +816,7 @@ RECIPE {
         {type = "item", name = "niobium-plate", amount = 2}
     },
     main_product = "niobium-plate"
-}
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "niobium-plate",
@@ -1186,7 +1185,7 @@ RECIPE {
     results = {
         {type = "item", name = "calcium-carbide", amount = 10}
     }
-}
+}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "calcium-carbide",

@@ -4,6 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessing__/graphics/technology/coal-processing-1.png",
     icon_size = 128,
     order = "c-a",
+    upgrade = true,
     prerequisites = {"steel-processing"},
     effects = {
         {

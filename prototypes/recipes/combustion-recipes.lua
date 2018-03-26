@@ -19,7 +19,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "a"
-}
+}:add_unlock("energy-1")
 
 --COALSLURRY to CM1
 RECIPE {
@@ -42,7 +42,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "a"
-}
+}:add_unlock("energy-2")
 
 --SYNGAS to CM1
 RECIPE {
@@ -65,7 +65,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "c"
-}
+}:add_unlock("energy-1")
 
 --DIBORANE to CM1
 RECIPE {
@@ -88,7 +88,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "d"
-}
+}:add_unlock("energy-1")
 
 --METHANOL to CM1
 RECIPE {
@@ -134,7 +134,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "f"
-}
+}:add_unlock("energy-2")
 
 --ACETYLENE to CM1
 RECIPE {
@@ -157,7 +157,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "g"
-}
+}:add_unlock("energy-2")
 
 --OLEFIN to CM1
 RECIPE {
@@ -180,7 +180,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "h"
-}
+}:add_unlock("energy-3")
 
 --DIESEL to CM1
 RECIPE {
@@ -203,7 +203,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "i"
-}
+}:add_unlock("energy-3")
 
 --GASOLINE to CM1
 RECIPE {
@@ -227,7 +227,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "j"
-}
+}:add_unlock("energy-3")
 
 --SUPERCRITICAL COAL
 RECIPE {
@@ -251,7 +251,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "k"
-}
+}:add_unlock("energy-3")
 
 --ULTRASUPERCRITICAL COAL
 RECIPE {
@@ -275,4 +275,4 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "l"
-}
+}:add_unlock("energy-3")

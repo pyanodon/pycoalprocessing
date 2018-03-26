@@ -5,6 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     prerequisites = {"coal-processing-2"},
+    upgrade = true,
     effects = {
         {
             type = "unlock-recipe",

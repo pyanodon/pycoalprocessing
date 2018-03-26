@@ -131,8 +131,3 @@ require("prototypes/buildings/wpu")
 --ores
 require("prototypes.ores.borax")
 require("prototypes.ores.niobium")
-
-if PYC.DEBUG then
-    local developer = require("stdlib/data/developer/developer")
-    developer.make_chunk_markers("pycoalprocessing")
-end

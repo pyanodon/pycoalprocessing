@@ -1,16 +1,12 @@
 TECHNOLOGY {
     type = "technology",
-    name = "cooling-tower-mk2",
+    name = "cooling-tower-2",
     icon = "__pycoalprocessing__/graphics/technology/cooling-towermk02.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"cooling-tower-mk1", "coal-processing-2"},
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "cooling-tower-mk02"
-        }
-    },
+    upgrade = true,
+    prerequisites = {"coal-processing-2"},
+    effects = {},
     unit = {
         count = 20,
         ingredients = {
