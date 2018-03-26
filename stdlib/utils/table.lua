@@ -265,6 +265,40 @@ function M.dictionary_merge(tbl_a, tbl_b)
     return new_t
 end
 
+--- Compares 2 tables for inner equality.
+-- copied from factorio/data/core/lualib/util.lua
+-- @tparam table tbl_a
+-- @tparam table tbl_2
+-- @treturn boolean if the tables are the same
+function M.compare(tbl_a, tbl_b)
+    if tbl_a == tbl_b then
+        return true
+    end
+    for k, v in pairs(tbl_a) do
+        if type(v) == 'table' and type(tbl_b[k]) == 'table' then
+            if not M.compare(v, tbl_b[k]) then
+                return false
+            end
+        else
+            if (v ~= tbl_b[k]) then
+                return false
+            end
+        end
+    end
+    for k, v in pairs(tbl_b) do
+        if type(v) == 'table' and type(tbl_a[k]) == 'table' then
+            if not M.compare(v, tbl_a[k]) then
+                return false
+            end
+        else
+            if v ~= tbl_a[k] then
+                return false
+            end
+        end
+    end
+    return true
+end
+
 --- Creates a deep copy of table without copying Factorio objects.
 -- copied from factorio/data/core/lualib/util.lua
 -- @usage local copy = table.deepcopy[data.raw.["stone-furnace"]["stone-furnace"]] -- returns a copy of the stone furnace entity
@@ -278,6 +312,33 @@ function M.deepcopy(object)
         elseif this_object.__self then
             return this_object
         elseif lookup_table[this_object] then
+            return lookup_table[this_object]
+        end
+        local new_table = {}
+        lookup_table[this_object] = new_table
+        for index, value in pairs(this_object) do
+            new_table[_copy(index)] = _copy(value)
+        end
+        return setmetatable(new_table, getmetatable(this_object))
+    end
+    return _copy(object)
+end
+
+--- Creates a flexible deep copy of an object, recursively copying sub-objects
+-- @usage local copy = table.flexcopy(data.raw.["stone-furnace"]["stone-furnace"]) -- returns a copy of the stone furnace entity
+-- @tparam table object the table to copy
+-- @treturn table a copy of the table
+function M.flexcopy(object)
+    local lookup_table = {}
+    local function _copy(this_object)
+        if type(this_object) ~= 'table' then
+            return this_object
+        elseif this_object.__self then
+            return this_object
+        elseif lookup_table[this_object] then
+            return lookup_table[this_object]
+        elseif type(this_object._copy_with) == 'function' then
+            lookup_table[this_object] = this_object:_copy_with(_copy)
             return lookup_table[this_object]
         end
         local new_table = {}

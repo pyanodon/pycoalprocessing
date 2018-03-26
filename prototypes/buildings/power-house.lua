@@ -40,7 +40,7 @@ RECIPE {
     results = {
       {"power-house", 1}
     },
-}
+}:add_unlock("energy-1")
 
 ITEM {
     type = "item",

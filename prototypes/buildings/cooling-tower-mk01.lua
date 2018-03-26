@@ -12,7 +12,7 @@ RECIPE {
     results = {
       {"cooling-tower-mk01", 1}
     }
-}
+}:add_unlock("cooling-tower-1")
 
 ITEM {
     type = "item",

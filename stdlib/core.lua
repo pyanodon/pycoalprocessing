@@ -13,6 +13,8 @@ require('stdlib/utils/math')
 require('stdlib/defines/color')
 require('stdlib/defines/time')
 
+local Is = require('stdlib/utils/is')
+
 local Core = {
     _VERSION = '1.0.0',
     _DESCRIPTION = 'Factorio Lua Standard Library Project',
@@ -35,19 +37,6 @@ local Core = {
         OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
     ]],
     _module_name = 'Core',
-    _protect = function(this, caller, class_name)
-        local meta = getmetatable(this)
-        local name = this._module_name or class_name or 'Unknown'
-
-        if meta and not meta.__metatable then
-            meta.__metatable = meta
-            meta.__call = caller
-            meta.__newindex = function()
-                error('Attempt to mutate read-only ' .. name .. ' Module')
-            end
-        end
-        return this
-    end,
     _concat = function(lhs, rhs)
         --Sanitize to remove address
         return tostring(lhs):gsub('(%w+)%: %x+', '%1: (ADDR)') .. tostring(rhs):gsub('(%w+)%: %x+', '%1: (ADDR)')
@@ -56,19 +45,6 @@ local Core = {
         string_array_mt = require('stdlib/utils/classes/string_array')
     }
 }
-
-Core.Is = require('stdlib/utils/is')
-Core.Iter = require('stdlib/utils/iter')
-
---- Print msg if specified var evaluates to false.
--- @tparam Mixed var variable or expression to evaluate
--- @tparam[opt="incorrect or missing value"] string msg message
-function Core.fail_if_not(var, msg)
-    if not var then
-        error(msg or 'incorrect or missing value', 3)
-    end
-    return false
-end
 
 function Core.log_and_print(msg)
     if game and #game.connected_players > 0 then
@@ -123,7 +99,7 @@ function Core.create_stdlib_globals(files)
             PLAYER = 'stdlib/event/player',
             FORCE = 'stdlib/event/force'
         }
-    Core.fail_if_not(Core.Is.Table(files), 'files must be a dictionary of global names -> file paths')
+    Is.Assert.Table(files, 'files must be a dictionary of global names -> file paths')
 
     for glob, path in pairs(files) do
         _G[glob] = prequire((path:gsub('%.', '/'))) -- extra () required to emulate select(1)

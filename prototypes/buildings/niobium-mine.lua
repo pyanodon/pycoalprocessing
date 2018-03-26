@@ -40,7 +40,7 @@ RECIPE {
     results = {
       {"niobium-mine", 1}
     }
-}
+}:add_unlock("coal-processing-2")
 
 ITEM {
     type = "item",

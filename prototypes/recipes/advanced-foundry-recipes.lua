@@ -19,7 +19,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a1"
-}
+}:add_unlock("coal-processing-3")
 
 --STEEL PLATE - cant change the base one,so i did that.
 RECIPE {
@@ -43,7 +43,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a2"
-}
+}:add_unlock("coal-processing-3")
 
 --Make foundry recipes from smelting recipes with 1 ingredient.
 local list = {}

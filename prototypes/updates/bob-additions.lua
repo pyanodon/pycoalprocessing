@@ -39,7 +39,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-syngas",
     order = "a-b-[syn-gas]"
-}
+}:add_unlock("coal-processing-2")
 
 --uses bob_carbon
 RECIPE {
@@ -79,7 +79,7 @@ RECIPE {
     main_product = "silicon",
     icon = data.raw.item.silicon.icon,
     icon_size = 32,
-}
+}:add_unlock("silicon-processing")
 
 RECIPE {
     type = "recipe",
@@ -98,7 +98,7 @@ RECIPE {
     order = "salt",
     icon = "__pycoalprocessing__/graphics/icons/salt.png",
     icon_size = 32,
-}
+}:add_unlock("coal-processing-2")
 
 RECIPE {
     type = "recipe",
@@ -118,7 +118,7 @@ RECIPE {
     order = "saline",
     icon = "__pycoalprocessing__/graphics/icons/water-saline.png",
     icon_size = 32,
-}
+}:add_unlock("coal-processing-2")
 
 RECIPE {
     type = "recipe",
@@ -221,7 +221,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c"
-}
+}:add_unlock("crusher")
 
 --SMELT CRUSHED TIN
 RECIPE {
@@ -235,7 +235,7 @@ RECIPE {
       {"tin-plate", 1}
     },
     result_count = 2
-}
+}:add_unlock("crusher")
 
 --SMELT CRUSHED LEAD
 RECIPE {
@@ -249,7 +249,7 @@ RECIPE {
       {"lead-plate", 1}
     },
     result_count = 2
-}
+}:add_unlock("crusher")
 
 --SMELT CRUSHED SILVER
 RECIPE {
@@ -262,7 +262,7 @@ RECIPE {
     results = {
         {type = "item", name = "silver-plate", amount = 2}
     }
-}
+}:add_unlock("crusher")
 
 --BOB SMELT GOLD |override?|
 RECIPE {
@@ -279,7 +279,7 @@ RECIPE {
       {"gold-plate", 1}
     },
     result_count = 2
-}
+}:add_unlock("crusher")
 
 --BOB SMELT ZINC |override?|
 RECIPE {
@@ -296,7 +296,7 @@ RECIPE {
       {"zinc-plate", 1}
     },
     result_count = 2
-}
+}:add_unlock("crusher")
 
 --BOB SMELT NICKEL |override?|
 RECIPE {
@@ -317,7 +317,7 @@ RECIPE {
     icon = "__bobplates__/graphics/icons/plate/nickel-plate.png",
     icon_size = 32,
     order = "c-a-f[nickel-plate]"
-}
+}:add_unlock("crusher")
 
 --BOB SMELT RUTILE |override?|
 RECIPE {
@@ -335,7 +335,7 @@ RECIPE {
       {"titanium-plate", 1}
     },
     result_count = 4
-}
+}:add_unlock("crusher")
 
 --LUBRICANT FROM GLYCEROL
 RECIPE {
@@ -356,7 +356,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a [coal-gas]"
-}
+}:add_unlock("coal-processing-2")
 
 --RESIN FROM GLYCEROL
 RECIPE {
@@ -377,7 +377,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "k"
-}
+}:add_unlock("coal-processing-2")
 
 --SYNGAS DISTILATION
 RECIPE {
@@ -398,7 +398,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a [coal-gas]"
-}
+}:add_unlock("coal-processing-2")
 
 -- CRUSHED BAUXITE
 ITEM {
@@ -411,7 +411,7 @@ ITEM {
     subgroup = "py-items",
     order = "g",
     stack_size = 1000
-}
+}:add_unlock("crusher")
 
 -- CRUSHED GOLD
 ITEM {
@@ -570,7 +570,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "k"
-}:add_unlock("energy1")
+}:add_unlock("energy-1")
 
 --SODIUM HYDROXIDE
 RECIPE {
@@ -591,7 +591,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a8"
-}
+}:add_unlock("coal-processing-2")
 
 --COAL DUST to CARBON
 RECIPE {
@@ -610,7 +610,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "m"
-}
+}:add_unlock("crusher")
 
 --alumina
 RECIPE {
@@ -630,67 +630,4 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "m"
-}
-
-bobmods.lib.tech.add_recipe_unlock("void-fluid", "void-flue-gas")
-bobmods.lib.tech.add_recipe_unlock("methanol-processing-2", "methanol-from-hydrogen")
-bobmods.lib.tech.add_recipe_unlock("aluminium-processing", "alumina2")
-
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "syngas2")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "salt-ex")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "saline")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-nickel-zinc")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-tin-lead")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-gold-silver")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-bauxite-cobalt")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-rutile-tungsten")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "tailings-gem-ore")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "py-sodium-hydroxide")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "syngas-distilation")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "lube-glycerol")
-bobmods.lib.tech.add_recipe_unlock("coal-processing-2", "resin-glycerol")
-
-bobmods.lib.tech.add_recipe_unlock("energy1", "hydrogen-combustion")
-
-bobmods.lib.tech.add_recipe_unlock("silicon-processing" , "silicon-plate2")
-
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-silver")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-cobalt")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-bauxite")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-gold")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-lead")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-tin")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-tungsten")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-zinc")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-silver")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-quartz")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-rutile")
-bobmods.lib.tech.add_recipe_unlock("excavation-2", "mining-nickel")
-
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-silver")
-bobmods.lib.tech.add_recipe_unlock("crusher", "coaldust-carbon")
---bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-cobalt")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-bauxite")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-gold")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-lead")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-tin")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-tungsten")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-zinc")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-silver")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-quartz")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-rutile")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushed-nickel")
-bobmods.lib.tech.add_recipe_unlock("crusher", "tungsten-powder")
-
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-silver")
---bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-cobalt")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-bauxite")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-gold")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-lead")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-tin")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-tungsten")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-zinc")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-silver")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-quartz")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-rutile")
-bobmods.lib.tech.add_recipe_unlock("crusher", "crushing-nickel")
+}:add_unlock("aluminium-processing")

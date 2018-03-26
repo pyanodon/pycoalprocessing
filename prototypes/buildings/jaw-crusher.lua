@@ -13,7 +13,7 @@ RECIPE {
     results = {
       {"jaw-crusher", 1}
     }
-}
+}:add_unlock("crusher")
 
 ITEM {
     type = "item",
