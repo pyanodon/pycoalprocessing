@@ -1,0 +1,12 @@
+{
+    "technology": [
+        ["energy1", "energy-1"],
+        ["energy2", "energy-2"],
+        ["energy3", "energy-3"],
+        ["cooling-tower-mk1", "cooling-tower-1"],
+        ["cooling-tower-mk1", "cooling-tower-2"]
+    ],
+    "recipe": [
+        ["ref_to_light-oil", "ref-to-light-oil"]
+    ]
+}

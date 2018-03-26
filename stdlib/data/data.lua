@@ -18,6 +18,8 @@ local Data = {
 }
 setmetatable(Data, {__index = require('stdlib/core')})
 
+local Is = require('stdlib/utils/is')
+
 local item_and_fluid_types = {
     'item',
     'ammo',
@@ -110,7 +112,7 @@ end
 -- @tparam string mining_result
 -- @treturn self
 function Data:copy(new_name, mining_result)
-    self.fail_if_not(new_name, 'New name is required')
+    Is.Assert.String(new_name, 'New name is required')
     if self:valid() then
         mining_result = mining_result or new_name
         --local from = self.name
@@ -132,11 +134,13 @@ function Data:copy(new_name, mining_result)
 
         -- For recipes, should also to check results!!
         if copy.type == 'recipe' then
-            if copy.normal then
+            if copy.normal and copy.normal.result then
                 copy.normal.result = new_name
                 copy.expensive.result = new_name
             else
-                copy.result = new_name
+                if copy.result then
+                    copy.result = new_name
+                end
             end
         end
 
@@ -271,11 +275,11 @@ end
 -- @tparam[opt] table opts options to pass
 -- @treturn Object
 function Data:get(object, object_type, opts)
-    self.fail_if_not(object, 'object name string or table is required')
+    Is.Assert(object, 'object string or table is required')
 
     local new
     if type(object) == 'table' then
-        self.fail_if_not(object.type and object.name, 'Name and Type are required')
+        Is.Assert(object.type and object.name, 'Name and Type are required')
         new = object
         new._extended = data.raw[object.type] and data.raw[object.type][object.name] == object
     elseif type(object) == 'string' then
@@ -297,11 +301,17 @@ function Data:get(object, object_type, opts)
     if new then
         new._valid = self._class or 'data'
         new._opt = opts
+        new.flags = new.flags and setmetatable(new.flags, Data._classes.string_array_mt)
         return setmetatable(new, self._mt):extend()
     else
+        local trace = debug.traceback()
         local msg = (self._class and self._class or '') .. (self.name and '/' .. self.name or '') .. ' '
-        msg = msg .. (object_type and (object_type .. '/') or ' ') .. tostring(object) .. ' does not exist.'
-        log(msg)
+        msg = msg .. (object_type and (object_type .. '/') or '') .. tostring(object) .. ' does not exist.'
+
+        trace = trace:gsub('stack traceback:\n', ''):gsub('.*%(%.%.%.tail calls%.%.%.%)\n', ''):gsub(' in main chunk.*$', '')
+        trace = trace:gsub('%_%_.*%_%_%/stdlib/data.*\n', ''):gsub('\n', '->'):gsub('\t', '')
+        trace = msg .. '  [' .. trace .. ']'
+        log(trace)
     end
     return self
 end

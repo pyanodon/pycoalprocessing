@@ -14,7 +14,7 @@ RECIPE {
     results = {
       {"advanced-foundry", 1}
     }
-}
+}:add_unlock("coal-processing-3")
 
 ITEM {
     type = "item",

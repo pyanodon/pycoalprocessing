@@ -81,7 +81,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "d"
-    }
+    }:add_unlock("excavation-2")
 
     RECIPE {
         type = "recipe",
@@ -102,7 +102,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "e"
-    }
+    }:add_unlock("excavation-2")
 
     RECIPE {
         type = "recipe",
@@ -123,7 +123,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "f"
-    }
+    }:add_unlock("excavation-2")
 
     RECIPE {
         type = "recipe",
@@ -144,7 +144,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "g"
-    }
+    }:add_unlock("excavation-2")
 
     RECIPE {
         type = "recipe",
@@ -165,7 +165,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "h"
-    }
+    }:add_unlock("excavation-2")
 
     RECIPE {
         type = "recipe",
@@ -186,7 +186,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "i"
-    }
+    }:add_unlock("excavation-2")
 
     RECIPE {
         type = "recipe",
@@ -207,7 +207,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "j"
-    }
+    }:add_unlock("excavation-2")
 
     RECIPE {
         type = "recipe",
@@ -228,7 +228,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "k"
-    }
+    }:add_unlock("excavation-2")
 
     RECIPE {
         type = "recipe",
@@ -249,7 +249,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "l"
-    }
+    }:add_unlock("excavation-2")
 
     RECIPE {
         type = "recipe",
@@ -270,7 +270,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "m"
-    }
+    }:add_unlock("excavation-2")
 
     RECIPE {
         type = "recipe",
@@ -291,5 +291,5 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-drilling",
         order = "n"
-    }
+    }:add_unlock("excavation-2")
 end

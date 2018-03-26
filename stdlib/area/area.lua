@@ -15,6 +15,15 @@ local Position = require('stdlib/area/position')
 --- By default area tables are mutated in place set this to true to make the tables immutable.
 Area.immutable = false
 
+local function __call(_, ...)
+    if type((...)) == 'table' then
+        return Area.new(...)
+    else
+        return Area.construct(...)
+    end
+end
+Area:set_caller(__call)
+
 --- Converts an area in either array or table format to an area with a metatable.
 -- Returns itself if it already has a metatable
 -- @tparam Concepts.BoundingBox area the area to convert
@@ -62,9 +71,9 @@ end
 --- Loads the metatable into the passed Area without creating a new one.
 -- @tparam Concepts.BoundingBox pos the Area to load the metatable onto
 -- @treturn Concepts.BoundingBox the Area with metatable attached
-function Area.load(pos)
-    Is.Assert.Table(pos, 'position missing')
-    return setmetatable(pos, Area._mt)
+function Area.load(area)
+    Is.Assert.Area(area, 'area missing or malformed')
+    return setmetatable(area, Area._mt)
 end
 
 local function validate_vector(amount)
@@ -371,10 +380,6 @@ end
 function Area.tostring(area)
     area = Area.new(area)
 
-    --local left_top = 'left_top = '..Position.tostring(area.left_top)
-    --local right_bottom = 'right_bottom = '..Position.tostring(area.right_bottom)
-    --local left_top = 'left_top = '..area.left_top:tostring()
-    --local right_bottom = 'right_bottom = '..area.right_bottom:tostring()
     local left_top = 'left_top = ' .. area.left_top
     local right_bottom = 'right_bottom = ' .. area.right_bottom
 
@@ -482,14 +487,5 @@ Area._mt = {
     __concat = Area._concat, -- calls tostring on both sides of concat.
     __call = Area.copy -- Return a new copy
 }
-
-local function __call(_, ...)
-    if type((...)) == 'table' then
-        return Area.new(...)
-    else
-        return Area.construct(...)
-    end
-end
-Area:_protect(__call)
 
 return Area
