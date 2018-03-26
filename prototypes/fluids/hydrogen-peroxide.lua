@@ -12,7 +12,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "hydrogen-peroxide", amount = 50}
     }
-}
+}:add_unlock("coal-processing-3")
 
 FLUID {
     type = "fluid",

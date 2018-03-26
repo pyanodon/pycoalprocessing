@@ -1,36 +1,12 @@
 TECHNOLOGY {
     type = "technology",
-    name = "energy3",
+    name = "energy-3",
     icon = "__pycoalprocessing__/graphics/technology/energy-3.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"energy2", "fuel-production"},
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "gasturbinemk03"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "gasoline-combustion"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "diesel-combustion"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "olefin-combustion"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "supercritical-combustion"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "ultrasupercritical-combustion"
-        }
-    },
+    prerequisites = {"fuel-production"},
+    upgrade = true,
+    effects = {},
     unit = {
         count = 120,
         ingredients = {

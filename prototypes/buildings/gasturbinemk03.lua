@@ -63,7 +63,7 @@ RECIPE {
     results = {
       {"gasturbinemk03", 1}
     }
-}
+}:add_unlock("energy-3")
 
 ITEM {
     type = "item",

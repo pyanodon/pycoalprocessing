@@ -21,7 +21,7 @@ RECIPE {
     results = {
       {"automated-factory", 1}
     }
-}
+}:add_unlock("coal-processing-2")
 
 ITEM {
     type = "item",

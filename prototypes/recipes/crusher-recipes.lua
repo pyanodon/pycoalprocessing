@@ -17,7 +17,7 @@ RECIPE {
     main_product = "niobium-powder",
     subgroup = "py-crusher",
     order = "a"
-}
+}:add_unlock("crusher"):add_unlock("coal-processing-2")
 
 --IRON
 RECIPE {
@@ -38,7 +38,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-crusher",
     order = "b"
-}
+}:add_unlock("crusher")
 
 --COPPER
 RECIPE {
@@ -59,7 +59,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-crusher",
     order = "c"
-}
+}:add_unlock("crusher")
 
 --STONE to GRAVEL
 RECIPE {
@@ -78,7 +78,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-crusher",
     order = "d"
-}
+}:add_unlock("crusher")
 
 --GRAVEL to SAND
 RECIPE {
@@ -97,7 +97,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-crusher",
     order = "e"
-}
+}:add_unlock("crusher")
 
 if bobmods then
     --BAUXITE
@@ -119,7 +119,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "f"
-    }
+    }:add_unlock("crusher")
     --GOLD
     RECIPE {
         type = "recipe",
@@ -139,7 +139,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "g"
-    }
+    }:add_unlock("crusher")
     --LEAD
     RECIPE {
         type = "recipe",
@@ -159,7 +159,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "h"
-    }
+    }:add_unlock("crusher")
     --QUARTZ
     RECIPE {
         type = "recipe",
@@ -179,7 +179,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "i"
-    }
+    }:add_unlock("crusher")
     --NICKEL
     RECIPE {
         type = "recipe",
@@ -199,7 +199,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "j"
-    }
+    }:add_unlock("crusher")
     --RUTILE
     RECIPE {
         type = "recipe",
@@ -219,7 +219,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "k"
-    }
+    }:add_unlock("crusher")
     --SILVER
     RECIPE {
         type = "recipe",
@@ -239,7 +239,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "l"
-    }
+    }:add_unlock("crusher")
     --TIN
     RECIPE {
         type = "recipe",
@@ -259,7 +259,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "m"
-    }
+    }:add_unlock("crusher")
     --TUNGSTEN
     RECIPE {
         type = "recipe",
@@ -279,7 +279,7 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "n"
-    }
+    }:add_unlock("crusher")
     --ZINC
     RECIPE {
         type = "recipe",
@@ -299,5 +299,5 @@ if bobmods then
         icon_size = 32,
         subgroup = "py-crusher",
         order = "o"
-    }
+    }:add_unlock("crusher")
 end

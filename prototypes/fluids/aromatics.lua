@@ -12,7 +12,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "aromatics", amount = 300}
     }
-}
+}:add_unlock("coal-processing-2")
 
 ITEM {
     type = "fluid",
