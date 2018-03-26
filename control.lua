@@ -17,8 +17,8 @@ end
 Event.register(Event.core_events.init, MOD.on_init)
 
 function MOD.on_configuration_changed(event)
-    if event.data.mod_changes then
-        local changes = event.data.mod_changes[MOD.name]
+    if event.mod_changes then
+        local changes = event.mod_changes[MOD.name]
         if changes then -- This Mod has changed
             log("Updated from " .. tostring(changes.old_version) .. " to " .. tostring(changes.new_version))
         end
