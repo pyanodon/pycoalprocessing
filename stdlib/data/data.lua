@@ -20,6 +20,9 @@ setmetatable(Data, {__index = require('stdlib/core')})
 
 local Is = require('stdlib/utils/is')
 
+local _traceback = function() return '' end
+local traceback = debug and debug.traceback or _traceback
+
 local item_and_fluid_types = {
     'item',
     'ammo',
@@ -304,7 +307,7 @@ function Data:get(object, object_type, opts)
         new.flags = new.flags and setmetatable(new.flags, Data._classes.string_array_mt)
         return setmetatable(new, self._mt):extend()
     else
-        local trace = debug.traceback()
+        local trace = traceback()
         local msg = (self._class and self._class or '') .. (self.name and '/' .. self.name or '') .. ' '
         msg = msg .. (object_type and (object_type .. '/') or '') .. tostring(object) .. ' does not exist.'
 
