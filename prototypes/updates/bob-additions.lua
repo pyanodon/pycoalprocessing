@@ -411,7 +411,7 @@ ITEM {
     subgroup = "py-items",
     order = "g",
     stack_size = 1000
-}:add_unlock("crusher")
+}
 
 -- CRUSHED GOLD
 ITEM {
