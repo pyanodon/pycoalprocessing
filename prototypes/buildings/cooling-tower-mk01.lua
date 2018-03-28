@@ -45,7 +45,7 @@ ENTITY {
     },
     allowed_effects = {"speed"},
     crafting_categories = {"cooling"},
-    crafting_speed = 0.55,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
