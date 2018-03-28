@@ -59,21 +59,21 @@ ENTITY {
         height = 224,
         frame_count = 1,
         --animation_speed = 0.5,
-        shift = {0.174, -0.53}
+        shift = util.by_pixel(7, -16),
     },
     working_visualisations = {
         {
-            north_position = {0.174, -0.53},
-            west_position = {0.174, -0.53},
-            south_position = {0.174, -0.53},
-            east_position = {0.174, -0.53},
+            north_position = util.by_pixel(7.5, -16),
+            west_position = util.by_pixel(7.5, -16),
+            south_position = util.by_pixel(7.5, -16),
+            east_position = util.by_pixel(7.5, -16),
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/olefin-plant/olefin-plant.png",
                 frame_count = 69,
                 line_length = 9,
                 width = 205,
                 height = 224,
-                animation_speed = 0.25
+                animation_speed = 0.4
             }
         }
     },

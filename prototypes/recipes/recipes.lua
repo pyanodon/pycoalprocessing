@@ -91,7 +91,7 @@ RECIPE {
     hidden = true,
     category = "cooling",
     enabled = "false",
-    energy_required = 1.5,
+    energy_required = 2,
     ingredients = {
         {type = "fluid", name = "steam", amount = 150}
     },
