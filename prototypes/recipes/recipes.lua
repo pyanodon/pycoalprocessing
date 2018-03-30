@@ -91,12 +91,12 @@ RECIPE {
     hidden = true,
     category = "cooling",
     enabled = "false",
-    energy_required = 2,
+    energy_required = 4,
     ingredients = {
-        {type = "fluid", name = "steam", amount = 150}
+        {type = "fluid", name = "steam", amount = 400}
     },
     results = {
-        {type = "fluid", name = "water", amount = 150}
+        {type = "fluid", name = "water", amount = 400}
     },
     main_product = "water",
     subgroup = "py-fluids",

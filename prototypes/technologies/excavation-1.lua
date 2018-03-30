@@ -17,6 +17,10 @@ TECHNOLOGY {
         },
         {
             type = "unlock-recipe",
+            recipe = "mining-borax"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "sand-extractor"
         },
         {
