@@ -42,6 +42,48 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
+    name = "mining-borax",
+    category = "ground-borer",
+    enabled = "false",
+    energy_required = 3,
+    ingredients = {
+        {type = "fluid", name = "lubricant", amount = 100},
+        {type = "fluid", name = "coal-gas", amount = 100},
+        {type = "item", name = "drill-head", amount = 3}
+    },
+    results = {
+        {type = "item", name = "raw-borax", amount = 20}
+    },
+    main_product = "raw-borax",
+    icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-borax.png",
+    icon_size = 32,
+    subgroup = "py-drilling",
+    order = "b"
+}
+
+RECIPE {
+    type = "recipe",
+    name = "mining-niobium",
+    category = "ground-borer",
+    enabled = "false",
+    energy_required = 3,
+    ingredients = {
+        {type = "fluid", name = "lubricant", amount = 100},
+        {type = "fluid", name = "coal-gas", amount = 100},
+        {type = "item", name = "drill-head", amount = 3}
+    },
+    results = {
+        {type = "item", name = "niobium-ore", amount = 20}
+    },
+    main_product = "niobium-ore",
+    icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-niobium.png",
+    icon_size = 32,
+    subgroup = "py-drilling",
+    order = "b"
+}
+
+RECIPE {
+    type = "recipe",
     name = "mining-limestone",
     category = "ground-borer",
     enabled = "false",

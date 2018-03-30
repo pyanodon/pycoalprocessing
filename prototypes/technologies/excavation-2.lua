@@ -12,6 +12,10 @@ TECHNOLOGY {
         },
         {
             type = "unlock-recipe",
+            recipe = "mining-niobium"
+        },
+        {
+            type = "unlock-recipe",
             recipe = "mining-limestone"
         }
     },
