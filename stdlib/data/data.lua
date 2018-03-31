@@ -96,7 +96,7 @@ end
 -- @treturn self
 function Data:extend(force)
     if self and ((self.name and self.type) or self:valid()) then
-        if not self._extended or force then
+        if not self._extended or not self._skip_extend or force then
             local t = data.raw[self.type]
             if t == nil then
                 t = {}
@@ -153,24 +153,11 @@ function Data:copy(new_name, mining_result)
     end
 end
 
-function Data:execute(func, ...)
+function Data:Flags(create_flags)
     if self:valid() then
-        func(self, ...)
+        self.flags = create_flags and {} or self.flags
+        return self.flags and setmetatable(self.flags, Data._classes.string_array_mt)
     end
-    return self
-end
-
-function Data:Flags(has_flag_string)
-    if self:valid() then
-        if self.flags then
-            setmetatable(self.flags, Data._classes.string_array_mt)
-            if has_flag_string then
-                return self.flags:has(has_flag_string)
-            end
-            return self.flags
-        end
-    end
-    return self
 end
 
 function Data:add_flag(flag)
@@ -184,7 +171,39 @@ function Data:remove_flag(flag)
 end
 
 function Data:has_flag(flag)
-    return self:Flags(flag)
+    return self:Flags():has(flag)
+end
+
+--- Run a function if the object is valid.
+-- The object and any additional paramaters are passed to the function.
+-- @tparam function func then function to run.
+-- @treturn self
+function Data:execute(func, ...)
+    if self:valid() then
+        func(self, ...)
+    end
+    return self
+end
+
+--- Add or change a field.
+-- @tparam string field the field to change.
+-- @tparam mixed value the value to set on the field.
+-- @treturn self
+function Data:set_field(field, value)
+    if self:valid() then
+        rawset(self, field, value)
+    end
+    return self
+end
+Data.set = Data.set_field
+
+--- Get a field.
+-- @tparam string field
+-- @treturn nil|mixed the value of the field
+function Data:get_field(field)
+    if self:valid() then
+        return rawget(self, field)
+    end
 end
 
 --- Iterate a dictionary table and set fields on the object. Existing fields are overwritten.
@@ -266,6 +285,34 @@ function Data:get_icon()
     end
 end
 
+function Data:make_icons(...)
+    if self:valid() then
+        if not self.icons then
+            if self.icon then
+                self.icons = {{icon = self.icon, icon_size = self.icon_size}}
+                self.icon = nil
+            else
+                self.icons = {}
+            end
+        end
+        for _, icon in pairs({...}) do
+            self.icons[#self.icons + 1] = table.deepcopy(icon)
+        end
+    end
+    return self
+end
+
+function Data:set_icon_at(index, values)
+    if self:valid() then
+        if self.icons then
+            for k, v in pairs(values or {}) do
+                self.icons[index].k = v
+            end
+        end
+    end
+    return self
+end
+
 --- Get the objects name.
 -- @treturn string the objects name
 function Data:tostring()
@@ -304,8 +351,9 @@ function Data:get(object, object_type, opts)
     if new then
         new._valid = self._class or 'data'
         new._opt = opts
-        new.flags = new.flags and setmetatable(new.flags, Data._classes.string_array_mt)
-        return setmetatable(new, self._mt):extend()
+        setmetatable(new, self._mt)
+        new:Flags()
+        return new:extend()
     else
         local trace = traceback()
         local msg = (self._class and self._class or '') .. (self.name and '/' .. self.name or '') .. ' '

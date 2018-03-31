@@ -3,9 +3,7 @@
 
 -- luacheck: globals prequire rawtostring inline_if serpent inspect semver
 
-serpent = serpent or require('stdlib/utils/scripts/serpent')
-inspect = inspect or require('stdlib/utils/scripts/inspect')
-semver = semver or require('stdlib/utils/scripts/semver')
+serpent = serpent or require('stdlib/utils/vendor/serpent')
 
 --- Require a file that may not exist
 -- @tparam string module path to the module
