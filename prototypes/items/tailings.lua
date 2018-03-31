@@ -26,6 +26,11 @@ tailings_copper_iron.icons[#tailings_copper_iron.icons + 1] = {icon = "__pycoalp
 tailings_copper_iron.results[#tailings_copper_iron.results + 1] = {type = "item", name = "copper-ore", amount = 1, probability = 0.4}
 tailings_copper_iron.results[#tailings_copper_iron.results + 1] = {type = "item", name = "iron-ore", amount = 1, probability = 0.4}
 
+local tailings_borax_niobium = tailings_copper_iron:copy("tailings-borax-niobium"):add_unlock("coal-processing-2")
+tailings_borax_niobium.icons[#tailings_borax_niobium.icons + 1] = {icon = "__pycoalprocessing__/graphics/icons/ores/borax-niobium.png", icon_size = 32}
+tailings_borax_niobium.results[#tailings_borax_niobium.results + 1] = {type = "item", name = "raw-borax", amount = 1, probability = 0.4}
+tailings_borax_niobium.results[#tailings_borax_niobium.results + 1] = {type = "item", name = "niobium-ore", amount = 1, probability = 0.4}
+
 if bobmods then
     local tailings_nickel_zinc = tailings_copper_iron:copy("tailings-nickel-zinc"):add_unlock("coal-processing-2")
     local tailings_tin_lead = tailings_copper_iron:copy("tailings-tin-lead"):add_unlock("coal-processing-2")
