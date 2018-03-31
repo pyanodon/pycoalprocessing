@@ -1,6 +1,7 @@
 --- A double-linked list implementation
+-- @classmod LinkedList
+
 local Is = require('stdlib/utils/is')
-require('stdlib/utils/table')
 
 -- @class LinkedListNode
 -- @usage local llnode = linkedlist.append(item)
@@ -84,6 +85,8 @@ function LinkedList:from_stack(stack, allow_insane_sparseness)
     end
     table.sort(sparsekeys)
     local result = self._class:new()
+    -- subclasses could theoretically override the allow_insane_sparseness
+    -- object-level override in _class:new(), so respect their wishes here.
     result.allow_insane_sparseness = result.allow_insane_sparseness or allow_insane_sparseness
     local lastkey = 0
     for _,k in ipairs(sparsekeys) do
@@ -186,29 +189,34 @@ function LinkedList._mt.__index(self, k)
 end
 
 function LinkedList._mt.__newindex(self, k, v)
-    if type(k) ~= 'number' or math.floor(k) == k or k >= 1 then
+    if type(k) ~= 'number' or math.floor(k) ~= k or k < 1 then
         -- any non-special index goes straight into the table (the class is
         -- immutable, but the object may opt to override class functions)
-        return rawset(self, k , v)
+        return rawset(self, k, v)
     end
     local count = 1
     local node = self.next
     while node ~= self do
         if count == k then
-            node.item = k
+            node.item = v
             return nil
         end
         node = node.next
         count = count + 1
     end
-    -- They have requested a new special index be created.  Is it resonable?
-    Is.Assert(count <= 999 or self.allow_insane_sparseness,
+    -- They have requested a new node to be appended, perhaps with a certain
+    -- number of intervening empty nodes.  But, would the request create an
+    -- insanely sparse index?
+    Is.Assert(k - count < 999 or self.allow_insane_sparseness,
         'Setting requested index in linkedlist would create insanely sparse list')
     repeat
+        -- this is a bit gross; we increment count one /exta/ time here, on the
+        -- first iteration; so now count == self.length + 2
         count = count + 1
         node = self:append(nil)
-    until count == k
-    node.item = k
+        -- nb: count == self.length + 1
+    until count > k
+    node.item = v
 end
 
 function LinkedList:append(item)
@@ -314,14 +322,18 @@ function LinkedList:nodes()
 end
 
 function LinkedList:items()
+    -- we "need" a closure here in order to track the node, since it is not
+    -- returned by the iterator.
     local iter = self.nodeiter
     local node = self
     return function()
+        -- not much we can do about nils here so ignore them
         repeat
             node = iter(self, node)
-        -- not much we can do about nils here so ignore them
-        until node.item ~= nil
-        return node.item
+            if node and node.item ~= nil then
+                return node.item
+            end
+        until node == nil
     end
 end
 
@@ -329,19 +341,22 @@ function LinkedList:ipairs()
     local i = 0
     local node = self
     local iter = self.nodeiter
+    -- we kind-of "need" a closure here or else we'll end up having to
+    -- chase down the indexed node every iteration at potentially huge cost.
     return function()
-        node = iter(self, node)
-        if node then
+        repeat
             i = i + 1
-            return i, node and node.item or node
-        end
+            node = iter(self, node)
+            if node ~= nil and node.item ~= nil then
+                return i, node.item
+            end
+        until node == nil
     end
 end
 LinkedList._mt.__ipairs = LinkedList.ipairs
-LinkedList._mt.__pairs = LinkedList.ipairs
 
 function LinkedList:tostring()
-    local result = 'LinkedList.from_stack {'
+    local result = self._class_name .. ':from_stack {'
     local skipped = false
     local firstrep = true
     local count = 0
@@ -354,11 +369,11 @@ function LinkedList:tostring()
             noderep = 'false'
         elseif node.item then
             if Is.String(node.item) then
-                noderep = '"' .. tostring(node.item) .. '"'
+                noderep = '"' .. node.item .. '"'
             else
                 noderep = tostring(node.item)
             end
-        end -- else we skip it
+        end -- else it is nil and we skip it
         if noderep then
             if not firstrep then
                 result = result .. ', '
@@ -366,7 +381,8 @@ function LinkedList:tostring()
                 firstrep = false
             end
             if skipped then
-                -- Not perfectly right but the best we can do...
+                -- if any index has been skipped then we provide
+                -- explicit lua index syntax i.e., {[2] = 'foo'}
                 result = result .. '[' .. tostring(count) .. '] = '
             end
             result = result .. noderep
@@ -403,6 +419,4 @@ function LinkedList:validate_integrity()
     return true
 end
 
---LinkedListNode:_protect(nil, 'LinkedListNode')
-
-return LinkedList --:_protect()
+return LinkedList
