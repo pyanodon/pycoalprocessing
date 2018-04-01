@@ -13,7 +13,7 @@ RECIPE {
     results = {
         {"solid-separator", 1}
     }
-}:add_unlock("seperation")
+}:add_unlock("separation")
 
 ITEM {
     type = "item",
