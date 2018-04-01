@@ -37,7 +37,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-class",
     order = "a"
-}:add_unlock("seperation")
+}:add_unlock("separation")
 
 RECIPE {
     type = "recipe",
@@ -58,7 +58,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-class",
     order = "c"
-}:add_unlock("seperation")
+}:add_unlock("separation")
 
 RECIPE {
     type = "recipe",
@@ -77,7 +77,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "f"
-}:add_unlock("seperation")
+}:add_unlock("separation")
 
 RECIPE {
     type = "recipe",
@@ -99,7 +99,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-class",
     order = "e"
-}:add_unlock("seperation")
+}:add_unlock("separation")
 
 RECIPE {
     type = "recipe",
@@ -119,7 +119,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-class",
     order = "g"
-}:add_unlock("seperation")
+}:add_unlock("separation")
 
 RECIPE {
     type = "recipe",
@@ -138,7 +138,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "m"
-}:add_unlock("seperation")
+}:add_unlock("separation")
 
 RECIPE {
     type = "recipe",
@@ -157,4 +157,4 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-class",
     order = "f"
-}:add_unlock("seperation")
+}:add_unlock("separation")
