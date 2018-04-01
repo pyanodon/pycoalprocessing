@@ -11,7 +11,7 @@ RECIPE {
     type = "recipe",
     name = "tar-processing-unit",
     energy_required = 5,
-    enabled = "false",
+    enabled = false,
     ingredients = {
         {"steel-plate", 20},
         {"iron-plate", 10},
@@ -20,9 +20,9 @@ RECIPE {
         {"electronic-circuit", 7}
     },
     results = {
-      {"tar-processing-unit", 1}
-    },
-}
+        {"tar-processing-unit", 1}
+    }
+}:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",

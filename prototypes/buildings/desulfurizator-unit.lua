@@ -29,9 +29,9 @@ RECIPE {
         {"iron-plate", 50} --bob invar-alloy
     },
     results = {
-      {"desulfurizator-unit", 1}
+        {"desulfurizator-unit", 1}
     }
-}
+}:add_unlock("desulfurization")
 
 ITEM {
     type = "item",

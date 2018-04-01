@@ -6,44 +6,7 @@ TECHNOLOGY {
     order = "c-a",
     prerequisites = {"coal-processing-2"},
     upgrade = true,
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "methanol-reactor"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "rectisol"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "empty-gas-canister"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "refsyngas-from-meth-canister"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "methanol-from-syngas"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "empty-methanol-gas-canister"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "fill-methanol-gas-canister"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "aromatics-to-rubber"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "aromatics-to-plastic"
-        }
-    },
+    effects = {},
     unit = {
         count = 100,
         ingredients = {

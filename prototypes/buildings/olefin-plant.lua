@@ -11,9 +11,9 @@ RECIPE {
         {"iron-gear-wheel", 15} --bob steel-bearing
     },
     results = {
-      {"olefin-plant", 1}
+        {"olefin-plant", 1}
     }
-}
+}:add_unlock("fuel-production")
 
 ITEM {
     type = "item",
@@ -59,7 +59,7 @@ ENTITY {
         height = 224,
         frame_count = 1,
         --animation_speed = 0.5,
-        shift = util.by_pixel(7, -16),
+        shift = util.by_pixel(7, -16)
     },
     working_visualisations = {
         {

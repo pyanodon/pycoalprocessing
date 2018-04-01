@@ -11,9 +11,9 @@ RECIPE {
         {"iron-gear-wheel", 15} --bob steel-bearing
     },
     results = {
-      {"fluid-separator", 1}
+        {"fluid-separator", 1}
     }
-}
+}:add_unlock("seperation")
 
 ITEM {
     type = "item",

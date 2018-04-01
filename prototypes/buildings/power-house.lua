@@ -38,8 +38,8 @@ RECIPE {
         {"iron-plate", 30} --bob lead-plate
     },
     results = {
-      {"power-house", 1}
-    },
+        {"power-house", 1}
+    }
 }:add_unlock("energy-1")
 
 ITEM {

@@ -5,20 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     upgrade = true,
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "mining-stone"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "mining-niobium"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "mining-limestone"
-        }
-    },
+    effects = {},
     unit = {
         count = 50,
         ingredients = {

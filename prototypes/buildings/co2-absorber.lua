@@ -11,7 +11,7 @@ RECIPE {
         {"nexelit-plate", 50}
     },
     results = {
-      {"co2-absorber", 1}
+        {"co2-absorber", 1}
     }
 }:add_unlock("coal-processing-3")
 

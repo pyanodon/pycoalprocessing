@@ -11,7 +11,7 @@ RECIPE {
         {"copper-cable", 50}
     },
     results = {
-      {"wpu", 1}
+        {"wpu", 1}
     }
 }
 

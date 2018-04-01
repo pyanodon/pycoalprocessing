@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "anthraquinone",
     category = "rectisol",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "aromatics", amount = 100},
@@ -12,7 +12,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "anthraquinone", amount = 50}
     }
-}
+}:add_unlock("fuel-production")
 
 FLUID {
     type = "fluid",

@@ -27,9 +27,9 @@ RECIPE {
         {"steel-plate", 20}
     },
     results = {
-      {"rectisol", 1}
-    },
-}
+        {"rectisol", 1}
+    }
+}:add_unlock("methanol-processing-1")
 
 ITEM {
     type = "item",

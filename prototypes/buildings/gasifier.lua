@@ -20,9 +20,9 @@ RECIPE {
         {"electronic-circuit", 4}
     },
     results = {
-      {"gasifier", 1}
-    },
-}
+        {"gasifier", 1}
+    }
+}:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",

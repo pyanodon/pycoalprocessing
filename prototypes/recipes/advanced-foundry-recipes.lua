@@ -3,7 +3,7 @@ RECIPE {
     type = "recipe",
     name = "nexelit-plate",
     category = "advanced-foundry",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "item", name = "nexelit-ore", amount = 2},
@@ -26,7 +26,7 @@ RECIPE {
     type = "recipe",
     name = "steel-plate2",
     category = "advanced-foundry",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "item", name = "crushed-iron", amount = 2},
@@ -54,12 +54,8 @@ local _filter_ing = function(v)
 end
 
 for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
-    local ing1 =
-        (recipe.ingredients and recipe.ingredients[1].name and recipe.ingredients[1]) or
-        (recipe.ingredients and {type = "item", name = recipe.ingredients[1][1], amount = recipe.ingredients[1][2] * 5})
-    ing1 =
-        ing1 or (recipe.normal and recipe.normal.ingredients and recipe.normal.ingredients[1].name and recipe.normal.ingredients[1]) or
-        (recipe.normal and {type = "item", name = recipe.normal.ingredients[1][1], amount = recipe.normal.ingredients[1][2] * 5})
+    local ing1 = (recipe.ingredients and recipe.ingredients[1].name and recipe.ingredients[1]) or (recipe.ingredients and {type = "item", name = recipe.ingredients[1][1], amount = recipe.ingredients[1][2] * 5})
+    ing1 = ing1 or (recipe.normal and recipe.normal.ingredients and recipe.normal.ingredients[1].name and recipe.normal.ingredients[1]) or (recipe.normal and {type = "item", name = recipe.normal.ingredients[1][1], amount = recipe.normal.ingredients[1][2] * 5})
 
     local res
     if recipe.result then

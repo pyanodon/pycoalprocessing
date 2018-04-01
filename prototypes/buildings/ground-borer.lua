@@ -11,9 +11,9 @@ RECIPE {
         {"iron-gear-wheel", 15} --bob titanium-bearing
     },
     results = {
-      {"ground-borer", 1}
+        {"ground-borer", 1}
     }
-}
+}:add_unlock("excavation-1")
 
 ITEM {
     type = "item",

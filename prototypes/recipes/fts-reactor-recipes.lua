@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "heavy-oil_from_coal-gas",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 9,
     ingredients = {
         {type = "fluid", name = "coal-gas", amount = 350},
@@ -19,13 +19,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "light-oil_from_syngas",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 9,
     ingredients = {
         {type = "fluid", name = "syngas", amount = 300},
@@ -42,13 +42,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h1"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
-    name = "petgas_from-refsyngas",
+    name = "petgas-from-refsyngas",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 9.5,
     ingredients = {
         {type = "fluid", name = "refsyngas", amount = 250},
@@ -64,13 +64,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h2"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "ref-to-light-oil",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 10,
     ingredients = {
         {type = "fluid", name = "water", amount = 2000},
@@ -86,13 +86,13 @@ RECIPE {
     main_product = "light-oil",
     subgroup = "py-fluid-handling",
     order = "h4"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "sulfuric-petgas",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 9.5,
     ingredients = {
         {type = "fluid", name = "petroleum-gas", amount = 250},
@@ -110,13 +110,13 @@ RECIPE {
     main_product = "sulfuric-acid",
     subgroup = "py-fluid-handling",
     order = "h5"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "combustion-olefin",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 9.5,
     ingredients = {
         {type = "fluid", name = "olefin", amount = 300},
@@ -126,67 +126,20 @@ RECIPE {
     results = {
         {type = "fluid", name = "carbon-dioxide", amount = 100},
         {type = "fluid", name = "steam", amount = 2000, temperature = 60},
-        {type = "fluid", name = "combustion-mixture1", amount = 300, temperature=700},
+        {type = "fluid", name = "combustion-mixture1", amount = 300, temperature = 700}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
     icon_size = 32,
     main_product = "combustion-mixture1",
     subgroup = "py-fluid-handling",
     order = "h6"
-}
-
-RECIPE {
-    type = "recipe",
-    name = "rare-earth-beneficiation",
-    category = "fts-reactor",
-    enabled = "false",
-    energy_required = 8,
-    ingredients = {
-        {type = "fluid", name = "sulfuric-acid", amount = 200},
-        {type = "fluid", name = "water", amount = 2000},
-        {type = "item", name = "rare-earth-dust", amount = 10},
-    },
-    results = {
-        {type = "item", name = "rich-dust", amount = 5},
-        {type = "fluid", name = "rare-earth-mud", amount = 250},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 60},
-        {type = "item", name = "sand", amount = 10},
-    },
-    icon = "__pycoalprocessing__/graphics/icons/rare-earth-mud.png",
-    icon_size = 32,
-    main_product = "rare-earth-mud",
-    subgroup = "py-fluid-handling",
-    order = "h7"
-}
-
-RECIPE {
-    type = "recipe",
-    name = "dirty-reaction",
-    category = "fts-reactor",
-    enabled = "false",
-    energy_required = 9.3,
-    ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 800},
-        {type = "fluid", name = "water", amount = 2000},
-        {type = "fluid", name = "aromatics", amount = 450}
-    },
-    results = {
-        {type = "fluid", name = "crude-oil", amount = 500},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 60},
-        {type = "fluid", name = "olefin", amount = 300}
-    },
-    main_product = "crude-oil",
-    icon = "__pycoalprocessing__/graphics/icons/dirty-reaction.png",
-    icon_size = 32,
-    subgroup = "py-fluid-handling",
-    order = "h8"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "heavyoil-to-coal-gas",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 9.3,
     ingredients = {
         {type = "fluid", name = "heavy-oil", amount = 500},
@@ -209,7 +162,7 @@ RECIPE {
     type = "recipe",
     name = "lightoil-to-syngas",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 9.3,
     ingredients = {
         {type = "fluid", name = "light-oil", amount = 500},
@@ -232,7 +185,7 @@ RECIPE {
     type = "recipe",
     name = "petgas-to-refsyngas",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 9.3,
     ingredients = {
         {type = "fluid", name = "petroleum-gas", amount = 500},
@@ -249,13 +202,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h11"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "glycerol-syngas",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 5,
     ingredients = {
         {type = "fluid", name = "glycerol", amount = 200},
@@ -277,7 +230,7 @@ RECIPE {
     type = "recipe",
     name = "coal-briquette",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 1,
     ingredients = {
         {type = "item", name = "coal-dust", amount = 35},
@@ -297,7 +250,7 @@ RECIPE {
     type = "recipe",
     name = "heavy-oleo",
     category = "fts-reactor",
-    enabled = "false",
+    enabled = false,
     energy_required = 1,
     ingredients = {
         {type = "item", name = "chromium", amount = 1},
@@ -307,7 +260,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "heavy-oil", amount = 200},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 60},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 60}
     },
     main_product = "heavy-oil",
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",

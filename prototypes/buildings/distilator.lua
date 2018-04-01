@@ -10,8 +10,8 @@ RECIPE {
         {"electronic-circuit", 3} --bob basic-circuit-board
     },
     results = {
-      {"distilator", 1}
-    },
+        {"distilator", 1}
+    }
 }
 
 ITEM {

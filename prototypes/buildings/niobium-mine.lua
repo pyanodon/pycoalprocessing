@@ -1,30 +1,3 @@
-local pipes = {
-    north = {
-        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/top.png",
-        priority = "low",
-        width = 231,
-        height = 237
-    },
-    south = {
-        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/bottom.png",
-        priority = "extra-high",
-        width = 231,
-        height = 237
-    },
-    west = {
-        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/left.png",
-        priority = "very-low",
-        width = 231,
-        height = 237
-    },
-    east = {
-        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/right.png",
-        priority = "extra-high",
-        width = 231,
-        height = 237
-    }
-}
-
 RECIPE {
     type = "recipe",
     name = "niobium-mine",
@@ -38,7 +11,7 @@ RECIPE {
         {"iron-gear-wheel", 15} --bob titanium-bearing
     },
     results = {
-      {"niobium-mine", 1}
+        {"niobium-mine", 1}
     }
 }:add_unlock("coal-processing-2")
 
@@ -76,7 +49,7 @@ ENTITY {
         height = 2,
         base_level = -1,
         pipe_connections = {
-            {position = {-3, 4}},
+            {position = {-3, 4}}
         }
     },
     module_specification = {
@@ -84,21 +57,19 @@ ENTITY {
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     mining_speed = 1,
-    energy_source =
-    {
-      type = "burner",
-      fuel_category = "drill",
-      effectivity = 3,
-      fuel_inventory_size = 1,
-      emissions = 0.1 / 3,
-      smoke =
-      {
-        {
-          name = "smoke",
-          deviation = {0.1, 0.1},
-          frequency = 3
+    energy_source = {
+        type = "burner",
+        fuel_category = "drill",
+        effectivity = 3,
+        fuel_inventory_size = 1,
+        emissions = 0.1 / 3,
+        smoke = {
+            {
+                name = "smoke",
+                deviation = {0.1, 0.1},
+                frequency = 3
+            }
         }
-      }
     },
     energy_usage = "550kW",
     mining_power = 2,
@@ -131,52 +102,47 @@ ENTITY {
             }
         }
     },
-    input_fluid_patch_sprites =
-    {
-      north =
-      {
-        priority = "extra-high",
-        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/N.png",
-        line_length = 1,
-        width = 231,
-        height = 237,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(3, 0),
-      },
-      east =
-      {
-        priority = "extra-high",
-        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/E.png",
-        line_length = 1,
-        width = 231,
-        height = 237,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(3, 3),
-      },
-      south =
-      {
-        priority = "extra-high",
-        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/S.png",
-        line_length = 1,
-        width = 231,
-        height = 237,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(3, 0),
-      },
-      west =
-      {
-        priority = "extra-high",
-        filename = "__pycoalprocessing__/graphics/entity/niobium-mine/W.png",
-        line_length = 1,
-        width = 231,
-        height = 237,
-        frame_count = 1,
-        direction_count = 1,
-        shift = util.by_pixel(4, 3),
-      }
+    input_fluid_patch_sprites = {
+        north = {
+            priority = "extra-high",
+            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/N.png",
+            line_length = 1,
+            width = 231,
+            height = 237,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(3, 0)
+        },
+        east = {
+            priority = "extra-high",
+            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/E.png",
+            line_length = 1,
+            width = 231,
+            height = 237,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(3, 3)
+        },
+        south = {
+            priority = "extra-high",
+            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/S.png",
+            line_length = 1,
+            width = 231,
+            height = 237,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(3, 0)
+        },
+        west = {
+            priority = "extra-high",
+            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/W.png",
+            line_length = 1,
+            width = 231,
+            height = 237,
+            frame_count = 1,
+            direction_count = 1,
+            shift = util.by_pixel(4, 3)
+        }
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {

@@ -20,9 +20,9 @@ RECIPE {
         {"electronic-circuit", 3} --bob basic-circuit-board
     },
     results = {
-      {"hpf", 1}
-    },
-}
+        {"hpf", 1}
+    }
+}:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",

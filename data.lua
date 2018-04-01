@@ -1,6 +1,3 @@
---Settings and Helpers
-local PYC = require("config") -- configuration variables
-
 require("stdlib/data/data").create_data_globals()
 
 --Groups
@@ -34,8 +31,10 @@ require("prototypes/technologies/separation")
 require("prototypes/technologies/fuel-production")
 require("prototypes/technologies/fine-electronics")
 
---RECIPEs without items
+--RECIPEs without new items
 require("prototypes/recipes/recipes")
+require("prototypes/recipes/seperation-recipes")
+require("prototypes/recipes/desulfurization-recipes")
 require("prototypes/recipes/ground-borer-recipes")
 require("prototypes/recipes/crusher-recipes")
 require("prototypes/recipes/combustion-recipes")
@@ -43,13 +42,12 @@ require("prototypes/recipes/fts-reactor-recipes")
 require("prototypes/recipes/olefin-plant-recipes")
 require("prototypes/recipes/advanced-foundry-recipes")
 require("prototypes/recipes/sand-extractor-recipes")
-require("prototypes/recipes/concrete-richclay")
+require("prototypes/recipes/tailings-recipes")
 
---ITEMs without entities
+--ITEMs (and recipes with new items) without entities
 require("prototypes/items/treated-wood")
 require("prototypes/items/items")
 require("prototypes/items/canister")
-require("prototypes/items/tailings")
 
 --Tiles and Terrain
 require("prototypes/tiles/polluted-ground")

@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "hydrogen-peroxide",
     category = "carbonfilter",
-    enabled = "false",
+    enabled = false,
     energy_required = 2.7,
     ingredients = {
         {type = "fluid", name = "anthraquinone", amount = 100},

@@ -12,7 +12,7 @@ RECIPE {
         {"advanced-circuit", 50}
     },
     results = {
-      {"advanced-foundry", 1}
+        {"advanced-foundry", 1}
     }
 }:add_unlock("coal-processing-3")
 
