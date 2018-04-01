@@ -3,9 +3,6 @@ require("stdlib/data/data").create_data_globals()
 --update recipes for creosote
 require("prototypes/updates/recipe-updates")
 
---update data for other mods.
-require("prototypes/updates/other-updates")
-
 --update recipes to use bobmods
 if mods["boblibrary"] then
     require("prototypes/updates/bob-updates")

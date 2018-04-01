@@ -433,7 +433,7 @@ RECIPE {
         {type = "fluid", name = "carbon-dioxide", amount = 100}
     },
     main_product = "lime"
-}:add_unlock("seperation")
+}:add_unlock("separation")
 ITEM {
     type = "item",
     name = "lime",
@@ -1411,7 +1411,7 @@ RECIPE {
     results = {
         {type = "item", name = "calcium-carbide", amount = 10}
     }
-}:add_unlock("coal-processing-2"):add_unlock("seperation")
+}:add_unlock("coal-processing-2"):add_unlock("separation")
 ITEM {
     type = "item",
     name = "calcium-carbide",
