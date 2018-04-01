@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "acetylene",
     category = "chemistry",
-    enabled = "false",
+    enabled = false,
     energy_required = 8,
     ingredients = {
         {type = "fluid", name = "water", amount = 300},
@@ -12,7 +12,7 @@ RECIPE {
         {type = "fluid", name = "acetylene", amount = 100},
         {type = "fluid", name = "slacked-lime", amount = 50}
     },
-    main_product = "acetylene",
+    main_product = "acetylene"
 }:add_unlock("coal-processing-2")
 
 FLUID {

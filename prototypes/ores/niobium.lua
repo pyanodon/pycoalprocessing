@@ -16,7 +16,7 @@ ENTITY {
     name = "niobium",
     category = "niobium",
     icon = "__pycoalprocessing__/graphics/icons/niobium-ore.png",
-	icon_size = 32,
+    icon_size = 32,
     flags = {"placeable-neutral"},
     order = "a-b-a",
     map_color = {r = 0.403, g = 0.6, b = 0.701},

@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "syngas",
     category = "gasifier",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "coal-gas", amount = 40},
@@ -13,8 +13,8 @@ RECIPE {
         {type = "fluid", name = "tar", amount = 30},
         {type = "item", name = "ash", amount = 1}
     },
-    main_product = "syngas",
-}
+    main_product = "syngas"
+}:add_unlock("coal-processing-1")
 
 FLUID {
     type = "fluid",

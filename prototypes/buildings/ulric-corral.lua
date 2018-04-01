@@ -11,9 +11,9 @@ RECIPE {
         {"electronic-circuit", 10} --bob basic-circuit-board
     },
     results = {
-      {"ulric-corral", 1}
+        {"ulric-corral", 1}
     }
-}
+}:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",

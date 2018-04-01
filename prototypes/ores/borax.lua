@@ -16,7 +16,7 @@ ENTITY {
     name = "borax",
     category = "borax",
     icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
-	icon_size = 32,
+    icon_size = 32,
     flags = {"placeable-neutral"},
     order = "a-b-a",
     map_color = {r = 0.917, g = 0.917, b = 0.917},
@@ -48,7 +48,7 @@ ENTITY {
             {
                 noise_layer = "borax",
                 noise_octaves_difference = -1.5,
-                noise_persistence = 0.3,
+                noise_persistence = 0.3
             }
         }
     },

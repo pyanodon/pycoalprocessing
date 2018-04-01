@@ -7,6 +7,8 @@
         ["cooling-tower-mk2", "cooling-tower-2"]
     ],
     "recipe": [
+        ["petgas_from-refsyngas", "petgas-from-refsyngas"],
+        ["fluegas_to-syngas", "fluegas-to-syngas"],
         ["ref_to_light-oil", "ref-to-light-oil"]
     ]
 }

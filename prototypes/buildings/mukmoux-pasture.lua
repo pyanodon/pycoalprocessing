@@ -10,7 +10,7 @@ RECIPE {
         {"advanced-circuit", 10} --bob electronic-logic-board
     },
     results = {
-      {"mukmoux-pasture", 1}
+        {"mukmoux-pasture", 1}
     }
 }:add_unlock("coal-processing-2")
 

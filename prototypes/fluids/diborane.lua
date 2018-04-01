@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "diborane",
     category = "hpf",
-    enabled = "false",
+    enabled = false,
     energy_required = 7,
     ingredients = {
         {type = "fluid", name = "water", amount = 250},
@@ -11,7 +11,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "diborane", amount = 150}
     }
-}
+}:add_unlock("coal-processing-1")
 
 FLUID {
     type = "fluid",

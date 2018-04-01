@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "aromatics2",
     category = "gasifier",
-    enabled = "false",
+    enabled = false,
     energy_required = 2.0,
     ingredients = {
         {type = "fluid", name = "refsyngas", amount = 150},

@@ -11,9 +11,9 @@ RECIPE {
         {"electronic-circuit", 12} --bob basic-electronic-circuit-board
     },
     results = {
-      {"sand-extractor", 1}
+        {"sand-extractor", 1}
     }
-}
+}:add_unlock("excavation-1")
 
 ITEM {
     type = "item",

@@ -11,7 +11,7 @@ RECIPE {
         {"electronic-circuit", 15} --bob basic-electronic-circuit-board
     },
     results = {
-      {"jaw-crusher", 1}
+        {"jaw-crusher", 1}
     }
 }:add_unlock("crusher")
 

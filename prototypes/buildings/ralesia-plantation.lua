@@ -40,9 +40,9 @@ RECIPE {
         {"small-lamp", 20}
     },
     results = {
-      {"ralesia-plantation", 1}
+        {"ralesia-plantation", 1}
     }
-}
+}:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",

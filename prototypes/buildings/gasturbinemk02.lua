@@ -11,7 +11,7 @@ RECIPE {
         {"iron-gear-wheel", 40}
     },
     results = {
-      {"gasturbinemk02", 1}
+        {"gasturbinemk02", 1}
     }
 }:add_unlock("energy-2")
 

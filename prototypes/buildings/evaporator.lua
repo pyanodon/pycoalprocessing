@@ -21,8 +21,8 @@ RECIPE {
         {"iron-gear-wheel", 15} --bob steel-bearing
     },
     results = {
-      {"evaporator", 1}
-    },
+        {"evaporator", 1}
+    }
 }:add_unlock("coal-processing-2")
 
 ITEM {

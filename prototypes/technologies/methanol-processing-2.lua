@@ -5,20 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-b",
     upgrade = true,
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "refsyngas-from-meth"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "oleo-methanol"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "methanol-combustion"
-        }
-    },
+    effects = {},
     unit = {
         count = 150,
         ingredients = {
