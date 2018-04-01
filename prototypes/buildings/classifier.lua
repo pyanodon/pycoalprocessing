@@ -11,9 +11,9 @@ RECIPE {
         {"iron-gear-wheel", 50} --bob brass-bearing
     },
     results = {
-      {"classifier", 1}
+        {"classifier", 1}
     }
-}
+}:add_unlock("separation")
 
 ITEM {
     type = "item",

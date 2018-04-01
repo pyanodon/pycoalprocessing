@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "combustion-mixture2",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "refsyngas", amount = 100},
@@ -14,7 +14,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture2", amount = 200},
         {type = "fluid", name = "water", amount = 500, temperature = 100}
     },
-    main_product = "combustion-mixture2",
+    main_product = "combustion-mixture2"
 }
 
 FLUID {

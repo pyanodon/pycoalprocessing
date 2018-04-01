@@ -16,7 +16,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c [methanol]"
-}
+}:add_unlock("methanol-processing-1")
 
 ITEM {
     type = "item",
@@ -34,7 +34,7 @@ RECIPE {
     name = "fill-methanol-gas-canister",
     localised_name = {"recipe-name.fill-methanol-gas-canister"},
     category = "crafting-with-fluid", --bob bob-pump
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "methanol", amount = 100},
@@ -44,8 +44,8 @@ RECIPE {
         {type = "item", name = "filled-methanol-gas-canister", amount = 1}
     },
     icon = "__pycoalprocessing__/graphics/icons/canister.png",
-    icon_size = 32,
-}
+    icon_size = 32
+}:add_unlock("methanol-processing-1")
 
 -- empty canister
 --duplicate recipe for use directly in rectisol
@@ -53,7 +53,7 @@ RECIPE {
     type = "recipe",
     name = "empty-methanol-gas-canister",
     category = "crafting-with-fluid",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "item", name = "filled-methanol-gas-canister", amount = 1}
@@ -66,7 +66,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "canister-b-[empty-methanol-gas-canister]"
-}
+}:add_unlock("methanol-processing-1")
 
 ITEM {
     type = "item",

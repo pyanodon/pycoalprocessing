@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "coal-gas",
     category = "distilator",
-    enabled = "true",
+    enabled = true,
     energy_required = 3,
     ingredients = {
         {type = "item", name = "coal", amount = 10}
@@ -24,7 +24,7 @@ RECIPE {
     type = "recipe",
     name = "coal-gas-from-wood",
     category = "distilator",
-    enabled = "true",
+    enabled = true,
     energy_required = 3,
     ingredients = {
         {type = "item", name = "raw-wood", amount = 10}
@@ -46,7 +46,7 @@ RECIPE {
     type = "recipe",
     name = "coal-gas-from-coke",
     category = "distilator",
-    enabled = "true",
+    enabled = true,
     energy_required = 5,
     ingredients = {
         {type = "item", name = "coke", amount = 20}

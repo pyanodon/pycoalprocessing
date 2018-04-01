@@ -3,7 +3,7 @@ RECIPE {
     type = "recipe",
     name = "coalgas-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "coal-gas", amount = 100},
@@ -26,7 +26,7 @@ RECIPE {
     type = "recipe",
     name = "coalslurry-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "coal-slurry", amount = 100},
@@ -49,7 +49,7 @@ RECIPE {
     type = "recipe",
     name = "syngas-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "syngas", amount = 100},
@@ -72,7 +72,7 @@ RECIPE {
     type = "recipe",
     name = "diborane-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "diborane", amount = 100},
@@ -95,7 +95,7 @@ RECIPE {
     type = "recipe",
     name = "methanol-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "methanol", amount = 100},
@@ -111,14 +111,14 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "e"
-}
+}:add_unlock("methanol-processing-2")
 
 --REFSYNGAS to CM1
 RECIPE {
     type = "recipe",
     name = "refsyngas-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "refsyngas", amount = 100},
@@ -141,7 +141,7 @@ RECIPE {
     type = "recipe",
     name = "acetylene-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "acetylene", amount = 100},
@@ -164,7 +164,7 @@ RECIPE {
     type = "recipe",
     name = "olefin-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "olefin", amount = 100},
@@ -187,7 +187,7 @@ RECIPE {
     type = "recipe",
     name = "diesel-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "diesel", amount = 100},
@@ -210,7 +210,7 @@ RECIPE {
     type = "recipe",
     name = "gasoline-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "gasoline", amount = 100},
@@ -234,7 +234,7 @@ RECIPE {
     type = "recipe",
     name = "supercritical-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 4,
     ingredients = {
         {type = "fluid", name = "light-oil", amount = 100},
@@ -258,7 +258,7 @@ RECIPE {
     type = "recipe",
     name = "ultrasupercritical-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 4,
     ingredients = {
         {type = "fluid", name = "petroleum-gas", amount = 100},

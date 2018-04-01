@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "methanol-from-syngas",
     category = "methanol",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "syngas", amount = 50},
@@ -14,13 +14,13 @@ RECIPE {
     },
     subgroup = "py-methanol",
     order = "a"
-}
+}:add_unlock("methanol-processing-1")
 
 RECIPE {
     type = "recipe",
     name = "oleo-methanol",
     category = "methanol",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "oleochemicals", amount = 100},
@@ -35,7 +35,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-methanol",
     order = "c"
-}
+}:add_unlock("methanol-processing-2")
 
 --bob-additions: methanol_from_hydrogen
 

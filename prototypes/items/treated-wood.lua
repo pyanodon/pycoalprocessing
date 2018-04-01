@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "treated-wood",
     category = "crafting-with-fluid",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "creosote", amount = 100},
@@ -11,7 +11,7 @@ RECIPE {
     results = {
         {type = "item", name = "treated-wood", amount = 2}
     }
-}
+}:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",

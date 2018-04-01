@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "methanol-from-hydrogen",
     category = "methanol",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "carbon-dioxide", amount = 30},
@@ -23,7 +23,7 @@ RECIPE {
     type = "recipe",
     name = "syngas2",
     category = "gasifier",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "coal-gas", amount = 40},
@@ -46,7 +46,7 @@ RECIPE {
     type = "recipe",
     name = "tar-carbon",
     category = "tar",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "tar", amount = 40}
@@ -58,7 +58,7 @@ RECIPE {
     subgroup = "py-items",
     order = "carbon",
     icon = data.raw.item.carbon.icon,
-    icon_size = 32,
+    icon_size = 32
 }:add_unlock("coal-processing-1")
 
 --alternative silicon plate
@@ -66,26 +66,26 @@ RECIPE {
     type = "recipe",
     name = "silicon-plate2",
     category = "electrolysis",
-    enabled = "false",
+    enabled = false,
     energy_required = 7,
     ingredients = {
         {type = "item", name = "crushed-quartz", amount = 5},
-		{type = "item", name = "carbon", amount = 1},
-		{type = "item", name = "calcium-chloride", amount = 4},
+        {type = "item", name = "carbon", amount = 1},
+        {type = "item", name = "calcium-chloride", amount = 4}
     },
     results = {
         {type = "item", name = "silicon", amount = 5}
     },
     main_product = "silicon",
     icon = data.raw.item.silicon.icon,
-    icon_size = 32,
+    icon_size = 32
 }:add_unlock("silicon-processing")
 
 RECIPE {
     type = "recipe",
     name = "salt-ex",
     category = "evaporator",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "water-saline", amount = 100}
@@ -97,14 +97,14 @@ RECIPE {
     subgroup = "py-items",
     order = "salt",
     icon = "__pycoalprocessing__/graphics/icons/salt.png",
-    icon_size = 32,
+    icon_size = 32
 }:add_unlock("coal-processing-2")
 
 RECIPE {
     type = "recipe",
     name = "saline",
     category = "chemistry",
-    enabled = "false",
+    enabled = false,
     energy_required = 1,
     ingredients = {
         {type = "fluid", name = "water", amount = 100},
@@ -117,14 +117,14 @@ RECIPE {
     subgroup = "py-items",
     order = "saline",
     icon = "__pycoalprocessing__/graphics/icons/water-saline.png",
-    icon_size = 32,
+    icon_size = 32
 }:add_unlock("coal-processing-2")
 
 RECIPE {
     type = "recipe",
     name = "void-flue-gas",
     category = "void-fluid",
-    enabled = "false",
+    enabled = false,
     hidden = "true",
     energy_required = 1,
     ingredients = {
@@ -144,7 +144,7 @@ RECIPE {
     type = "recipe",
     name = "glass-sand",
     category = "hpf",
-    enabled = "true",
+    enabled = true,
     energy_required = 3,
     ingredients = {
         {type = "item", name = "pure-sand", amount = 15},
@@ -166,7 +166,7 @@ RECIPE {
     type = "recipe",
     name = "glass-sand2",
     category = "hpf",
-    enabled = "true",
+    enabled = true,
     energy_required = 2.5,
     ingredients = {
         {type = "item", name = "pure-sand", amount = 15},
@@ -188,7 +188,7 @@ RECIPE {
     type = "recipe",
     name = "glass-sand3",
     category = "smelting",
-    enabled = "true",
+    enabled = true,
     energy_required = 5,
     ingredients = {
         {type = "item", name = "sand", amount = 20}
@@ -208,7 +208,7 @@ RECIPE {
     type = "recipe",
     name = "tungsten-powder",
     category = "ball-mill",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "item", name = "crushed-tungsten", amount = 10}
@@ -228,11 +228,11 @@ RECIPE {
     type = "recipe",
     name = "crushed-tin",
     category = "smelting",
-    enabled = "false",
+    enabled = false,
     energy_required = 3.5,
     ingredients = {{"crushed-tin", 1}},
     results = {
-      {"tin-plate", 1}
+        {"tin-plate", 1}
     },
     result_count = 2
 }:add_unlock("crusher")
@@ -242,11 +242,11 @@ RECIPE {
     type = "recipe",
     name = "crushed-lead",
     category = "smelting",
-    enabled = "false",
+    enabled = false,
     energy_required = 3.5,
     ingredients = {{"crushed-lead", 1}},
     results = {
-      {"lead-plate", 1}
+        {"lead-plate", 1}
     },
     result_count = 2
 }:add_unlock("crusher")
@@ -256,7 +256,7 @@ RECIPE {
     type = "recipe",
     name = "crushed-silver",
     category = "smelting",
-    enabled = "false",
+    enabled = false,
     energy_required = 3.5,
     ingredients = {{"crushed-silver", 1}},
     results = {
@@ -270,13 +270,13 @@ RECIPE {
     name = "crushed-gold",
     category = "chemical-furnace",
     energy_required = 3.5,
-    enabled = "false",
+    enabled = false,
     ingredients = {
         {type = "item", name = "crushed-gold", amount = 1},
         {type = "fluid", name = "chlorine", amount = 5}
     },
     results = {
-      {"gold-plate", 1}
+        {"gold-plate", 1}
     },
     result_count = 2
 }:add_unlock("crusher")
@@ -287,13 +287,13 @@ RECIPE {
     name = "crushed-zinc",
     category = "electrolysis",
     energy_required = 3.5,
-    enabled = "false",
+    enabled = false,
     ingredients = {
         {type = "item", name = "crushed-zinc", amount = 1},
         {type = "fluid", name = "sulfuric-acid", amount = 10}
     },
     results = {
-      {"zinc-plate", 1}
+        {"zinc-plate", 1}
     },
     result_count = 2
 }:add_unlock("crusher")
@@ -304,7 +304,7 @@ RECIPE {
     name = "crushed-nickel",
     category = "electrolysis",
     energy_required = 3.5,
-    enabled = "false",
+    enabled = false,
     ingredients = {
         {type = "item", name = "crushed-nickel", amount = 1},
         {type = "fluid", name = "oxygen", amount = 10}
@@ -325,14 +325,14 @@ RECIPE {
     name = "crushed-rutile",
     category = "electrolysis",
     energy_required = 6,
-    enabled = "false",
+    enabled = false,
     ingredients = {
         {type = "item", name = "calcium-chloride", amount = 2},
         {type = "item", name = "carbon", amount = 1},
         {type = "item", name = "crushed-rutile", amount = 2}
     },
     results = {
-      {"titanium-plate", 1}
+        {"titanium-plate", 1}
     },
     result_count = 4
 }:add_unlock("crusher")
@@ -342,7 +342,7 @@ RECIPE {
     type = "recipe",
     name = "lube-glycerol",
     category = "chemistry",
-    enabled = "false",
+    enabled = false,
     energy_required = 2.0,
     ingredients = {
         {type = "fluid", name = "glycerol", amount = 100},
@@ -363,7 +363,7 @@ RECIPE {
     type = "recipe",
     name = "resin-glycerol",
     category = "hpf",
-    enabled = "false",
+    enabled = false,
     energy_required = 3.0,
     ingredients = {
         {type = "fluid", name = "glycerol", amount = 150},
@@ -384,7 +384,7 @@ RECIPE {
     type = "recipe",
     name = "syngas-distilation",
     category = "distilator",
-    enabled = "false",
+    enabled = false,
     energy_required = 1.5,
     ingredients = {
         {type = "fluid", name = "syngas", amount = 150}
@@ -404,7 +404,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "crushed-bauxite",
-    enabled = "false",
+    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-bauxite.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -417,7 +417,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-gold",
-    enabled = "false",
+    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-gold.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -430,7 +430,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-lead",
-    enabled = "false",
+    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-lead.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -443,7 +443,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-nickel",
-    enabled = "false",
+    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-nickel.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -456,7 +456,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-rutile",
-    enabled = "false",
+    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-rutile.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -469,7 +469,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-silver",
-    enabled = "false",
+    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-silver.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -482,7 +482,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-quartz",
-    enabled = "false",
+    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-quartz.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -495,7 +495,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-tin",
-    enabled = "false",
+    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tin.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -508,7 +508,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-tungsten",
-    enabled = "false",
+    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tungsten.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -521,7 +521,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-zinc",
-    enabled = "false",
+    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-zinc.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -535,7 +535,7 @@ RECIPE {
     type = "recipe",
     name = "wood-board",
     category = "wpu",
-    enabled = "true",
+    enabled = true,
     energy_required = 1.5,
     ingredients = {
         {type = "item", name = "wood", amount = 1}
@@ -554,7 +554,7 @@ RECIPE {
     type = "recipe",
     name = "hydrogen-combustion",
     category = "combustion",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "hydrogen", amount = 200},
@@ -577,7 +577,7 @@ RECIPE {
     type = "recipe",
     name = "py-sodium-hydroxide",
     category = "chemistry",
-    enabled = "false",
+    enabled = false,
     energy_required = 8,
     ingredients = {
         {type = "fluid", name = "slacked-lime", amount = 50},
@@ -598,13 +598,13 @@ RECIPE {
     type = "recipe",
     name = "coaldust-carbon",
     category = "crafting",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "item", name = "coal-dust", amount = 20}
     },
     results = {
-        {type = "item", name = "carbon", amount = 1},
+        {type = "item", name = "carbon", amount = 1}
     },
     icon = "__bobplates__/graphics/icons/carbon.png",
     icon_size = 32,
@@ -617,14 +617,14 @@ RECIPE {
     type = "recipe",
     name = "alumina2",
     category = "chemical-furnace",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "item", name = "sodium-hydroxide", amount = 1},
-        {type = "item", name = "crushed-bauxite", amount = 1},
+        {type = "item", name = "crushed-bauxite", amount = 1}
     },
     results = {
-        {type = "item", name = "alumina", amount = 2},
+        {type = "item", name = "alumina", amount = 2}
     },
     icon = "__bobplates__/graphics/icons/corundum.png",
     icon_size = 32,

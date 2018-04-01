@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "boric-acid",
     category = "gasifier", --bob electrolysis
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "diborane", amount = 100},
@@ -11,7 +11,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "boric-acid", amount = 500}
     }
-}
+}:add_unlock("coal-processing-1")
 
 FLUID {
     type = "fluid",

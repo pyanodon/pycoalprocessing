@@ -178,5 +178,5 @@ RECIPE("bob-resin-wood").category = "wpu"
 RECIPE("polishing-wheel").category = "wpu"
 RECIPE("wooden-board").energy_required = 10
 RECIPE("phenolic-board").category = "wpu"
-RECIPE("nbfe-alloy").category ="smelting"
+RECIPE("nbfe-alloy").category = "smelting"
 RECIPE("hpf").enabled = true

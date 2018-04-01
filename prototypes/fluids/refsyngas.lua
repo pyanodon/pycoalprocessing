@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "refsyngas-from-filtered-syngas",
     category = "carbonfilter",
-    enabled = "false",
+    enabled = false,
     energy_required = 4,
     ingredients = {
         {type = "fluid", name = "syngas", amount = 100},
@@ -11,13 +11,13 @@ RECIPE {
     results = {
         {type = "fluid", name = "refsyngas", amount = 70}
     }
-}
+}:add_unlock("filtration")
 
 RECIPE {
     type = "recipe",
     name = "refsyngas-from-meth",
     category = "rectisol",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "syngas", amount = 100},
@@ -29,14 +29,14 @@ RECIPE {
         {type = "fluid", name = "carbon-dioxide", amount = 30},
         {type = "fluid", name = "acidgas", amount = 65}
     },
-    main_product= "refsyngas"
-}
+    main_product = "refsyngas"
+}:add_unlock("methanol-processing-2")
 
 RECIPE {
     type = "recipe",
     name = "refsyngas-from-meth-canister",
     category = "rectisol",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "syngas", amount = 100},
@@ -49,8 +49,8 @@ RECIPE {
         {type = "fluid", name = "acidgas", amount = 60},
         {type = "item", name = "empty-gas-canister", amount = 1}
     },
-    main_product= "refsyngas"
-}
+    main_product = "refsyngas"
+}:add_unlock("methanol-processing-1")
 
 FLUID {
     type = "fluid",

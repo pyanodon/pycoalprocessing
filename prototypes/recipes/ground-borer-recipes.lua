@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "mining-nexelit",
     category = "ground-borer",
-    enabled = "false",
+    enabled = false,
     energy_required = 0.75,
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
@@ -17,13 +17,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-drilling",
     order = "a"
-}
+}:add_unlock("excavation-1")
 
 RECIPE {
     type = "recipe",
     name = "mining-stone",
     category = "ground-borer",
-    enabled = "false",
+    enabled = false,
     energy_required = 1.2,
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
@@ -38,13 +38,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-drilling",
     order = "b"
-}
+}:add_unlock("excavation-2")
 
 RECIPE {
     type = "recipe",
     name = "mining-borax",
     category = "ground-borer",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
@@ -59,13 +59,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-drilling",
     order = "b"
-}
+}:add_unlock("excavation-1")
 
 RECIPE {
     type = "recipe",
     name = "mining-niobium",
     category = "ground-borer",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
@@ -80,13 +80,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-drilling",
     order = "b"
-}
+}:add_unlock("excavation-2")
 
 RECIPE {
     type = "recipe",
     name = "mining-limestone",
     category = "ground-borer",
-    enabled = "false",
+    enabled = false,
     energy_required = 1.2,
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
@@ -101,14 +101,14 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-drilling",
     order = "c"
-}
+}:add_unlock("excavation-2")
 
 if bobmods then
     RECIPE {
         type = "recipe",
         name = "mining-bauxite",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
@@ -129,7 +129,7 @@ if bobmods then
         type = "recipe",
         name = "mining-cobalt",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
@@ -150,7 +150,7 @@ if bobmods then
         type = "recipe",
         name = "mining-gold",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
@@ -171,7 +171,7 @@ if bobmods then
         type = "recipe",
         name = "mining-lead",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
@@ -192,7 +192,7 @@ if bobmods then
         type = "recipe",
         name = "mining-nickel",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
@@ -213,7 +213,7 @@ if bobmods then
         type = "recipe",
         name = "mining-quartz",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
@@ -234,7 +234,7 @@ if bobmods then
         type = "recipe",
         name = "mining-rutile",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
@@ -255,7 +255,7 @@ if bobmods then
         type = "recipe",
         name = "mining-silver",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
@@ -276,7 +276,7 @@ if bobmods then
         type = "recipe",
         name = "mining-tin",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
@@ -297,7 +297,7 @@ if bobmods then
         type = "recipe",
         name = "mining-tungsten",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
@@ -318,7 +318,7 @@ if bobmods then
         type = "recipe",
         name = "mining-zinc",
         category = "ground-borer",
-        enabled = "false",
+        enabled = false,
         energy_required = 1.2,
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},

@@ -12,9 +12,9 @@ RECIPE {
         {"electronic-circuit", 20} --bob basic-electronic-circuit-board
     },
     results = {
-      {"fts-reactor", 1}
+        {"fts-reactor", 1}
     }
-}
+}:add_unlock("desulfurization")
 
 ITEM {
     type = "item",

@@ -1,9 +1,10 @@
-local tailings_copper_iron = RECIPE {
+local tailings_copper_iron =
+    RECIPE {
     type = "recipe",
     name = "tailings-copper-iron",
     localised_name = {"recipe-name.tailings-ore-extraction", {"item-name.copper-ore"}, {"item-name.iron-ore"}, {"fluid-name.tar"}},
     category = "quenching-tower",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "tar", amount = 200},
@@ -21,10 +22,6 @@ local tailings_copper_iron = RECIPE {
     subgroup = "py-quenching-ores",
     order = "tailings-a"
 }:add_unlock("coal-processing-2")
-
-tailings_copper_iron.icons[#tailings_copper_iron.icons + 1] = {icon = "__pycoalprocessing__/graphics/icons/ores/copper-iron.png", icon_size = 32}
-tailings_copper_iron.results[#tailings_copper_iron.results + 1] = {type = "item", name = "copper-ore", amount = 1, probability = 0.4}
-tailings_copper_iron.results[#tailings_copper_iron.results + 1] = {type = "item", name = "iron-ore", amount = 1, probability = 0.4}
 
 local tailings_borax_niobium = tailings_copper_iron:copy("tailings-borax-niobium"):add_unlock("coal-processing-2")
 tailings_borax_niobium.icons[#tailings_borax_niobium.icons + 1] = {icon = "__pycoalprocessing__/graphics/icons/ores/borax-niobium.png", icon_size = 32}
@@ -78,3 +75,8 @@ if bobmods then
     tailings_gemstones.results[#tailings_gemstones.results + 1] = {type = "item", name = "ruby-ore", amount = 1, probability = 0.5}
     tailings_gemstones.results[#tailings_gemstones.results + 1] = {type = "item", name = "sapphire-ore", amount = 1, probability = 0.4}
 end
+
+--Finally add the results to our original table (this would be so much easier when Recipe:Results is finished)
+tailings_copper_iron.icons[#tailings_copper_iron.icons + 1] = {icon = "__pycoalprocessing__/graphics/icons/ores/copper-iron.png", icon_size = 32}
+tailings_copper_iron.results[#tailings_copper_iron.results + 1] = {type = "item", name = "copper-ore", amount = 1, probability = 0.4}
+tailings_copper_iron.results[#tailings_copper_iron.results + 1] = {type = "item", name = "iron-ore", amount = 1, probability = 0.4}

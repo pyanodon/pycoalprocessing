@@ -3,7 +3,7 @@ RECIPE {
     type = "recipe",
     name = "niobium-powder",
     category = "crusher",
-    enabled = "false",
+    enabled = false,
     energy_required = 3.5,
     ingredients = {
         {type = "item", name = "niobium-ore", amount = 10}
@@ -24,7 +24,7 @@ RECIPE {
     type = "recipe",
     name = "crushing-iron",
     category = "crusher",
-    enabled = "false",
+    enabled = false,
     energy_required = 1,
     ingredients = {
         {type = "item", name = "iron-ore", amount = 5}
@@ -45,7 +45,7 @@ RECIPE {
     type = "recipe",
     name = "crushing-copper",
     category = "crusher",
-    enabled = "false",
+    enabled = false,
     energy_required = 1,
     ingredients = {
         {type = "item", name = "copper-ore", amount = 5}
@@ -66,7 +66,7 @@ RECIPE {
     type = "recipe",
     name = "stone-to-gravel",
     category = "crusher",
-    enabled = "false",
+    enabled = false,
     energy_required = 1,
     ingredients = {
         {type = "item", name = "stone", amount = 20}
@@ -85,7 +85,7 @@ RECIPE {
     type = "recipe",
     name = "gravel-to-sand",
     category = "crusher",
-    enabled = "false",
+    enabled = false,
     energy_required = 1,
     ingredients = {
         {type = "item", name = "gravel", amount = 20}
@@ -105,7 +105,7 @@ if bobmods then
         type = "recipe",
         name = "crushing-bauxite",
         category = "crusher",
-        enabled = "false",
+        enabled = false,
         energy_required = 1,
         ingredients = {
             {type = "item", name = "bauxite-ore", amount = 5}
@@ -125,7 +125,7 @@ if bobmods then
         type = "recipe",
         name = "crushing-gold",
         category = "crusher",
-        enabled = "false",
+        enabled = false,
         energy_required = 1,
         ingredients = {
             {type = "item", name = "gold-ore", amount = 5}
@@ -145,7 +145,7 @@ if bobmods then
         type = "recipe",
         name = "crushing-lead",
         category = "crusher",
-        enabled = "false",
+        enabled = false,
         energy_required = 1,
         ingredients = {
             {type = "item", name = "lead-ore", amount = 5}
@@ -165,7 +165,7 @@ if bobmods then
         type = "recipe",
         name = "crushing-lead",
         category = "crusher",
-        enabled = "false",
+        enabled = false,
         energy_required = 1,
         ingredients = {
             {type = "item", name = "quartz", amount = 5}
@@ -185,7 +185,7 @@ if bobmods then
         type = "recipe",
         name = "crushing-nickel",
         category = "crusher",
-        enabled = "false",
+        enabled = false,
         energy_required = 1,
         ingredients = {
             {type = "item", name = "nickel-ore", amount = 5}
@@ -205,7 +205,7 @@ if bobmods then
         type = "recipe",
         name = "crushing-rutile",
         category = "crusher",
-        enabled = "false",
+        enabled = false,
         energy_required = 1,
         ingredients = {
             {type = "item", name = "rutile-ore", amount = 5}
@@ -225,7 +225,7 @@ if bobmods then
         type = "recipe",
         name = "crushing-silver",
         category = "crusher",
-        enabled = "false",
+        enabled = false,
         energy_required = 1,
         ingredients = {
             {type = "item", name = "silver-ore", amount = 5}
@@ -245,7 +245,7 @@ if bobmods then
         type = "recipe",
         name = "crushing-tin",
         category = "crusher",
-        enabled = "false",
+        enabled = false,
         energy_required = 1,
         ingredients = {
             {type = "item", name = "tin-ore", amount = 5}
@@ -265,7 +265,7 @@ if bobmods then
         type = "recipe",
         name = "crushing-tungsten",
         category = "crusher",
-        enabled = "false",
+        enabled = false,
         energy_required = 1,
         ingredients = {
             {type = "item", name = "tungsten-ore", amount = 5}
@@ -285,7 +285,7 @@ if bobmods then
         type = "recipe",
         name = "crushing-zinc",
         category = "crusher",
-        enabled = "false",
+        enabled = false,
         energy_required = 1,
         ingredients = {
             {type = "item", name = "zinc-ore", amount = 5}

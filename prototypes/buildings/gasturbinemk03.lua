@@ -61,7 +61,7 @@ RECIPE {
         {"gasturbinemk02", 2}
     },
     results = {
-      {"gasturbinemk03", 1}
+        {"gasturbinemk03", 1}
     }
 }:add_unlock("energy-3")
 

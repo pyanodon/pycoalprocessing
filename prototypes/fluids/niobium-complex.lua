@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "niobium-complex",
     category = "chemistry",
-    enabled = "false",
+    enabled = false,
     energy_required = 3.5,
     ingredients = {
         {type = "fluid", name = "organic-solvent", amount = 50},
