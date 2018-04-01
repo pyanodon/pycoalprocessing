@@ -20,9 +20,9 @@ RECIPE {
         {"iron-gear-wheel", 30}
     },
     results = {
-      {"carbon-filter", 1}
-    },
-}
+        {"carbon-filter", 1}
+    }
+}:add_unlock("filtration")
 
 ITEM {
     type = "item",

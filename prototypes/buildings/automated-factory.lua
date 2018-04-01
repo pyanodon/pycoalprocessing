@@ -19,7 +19,7 @@ RECIPE {
         {"electronic-circuit", 10} --bob basic-electronic-circuit-board
     },
     results = {
-      {"automated-factory", 1}
+        {"automated-factory", 1}
     }
 }:add_unlock("coal-processing-2")
 

@@ -26,7 +26,7 @@ RECIPE {
         {"iron-gear-wheel", 15}
     },
     results = {
-      {"soil-extractormk01", 1}
+        {"soil-extractormk01", 1}
     }
 }
 

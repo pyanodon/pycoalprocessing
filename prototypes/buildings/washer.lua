@@ -19,7 +19,7 @@ RECIPE {
     type = "recipe",
     name = "washer",
     energy_required = 4,
-    enabled = "true",
+    enabled = true,
     ingredients = {
         {"iron-plate", 10},
         {"pipe", 25},
@@ -27,8 +27,8 @@ RECIPE {
         {"electronic-circuit", 2} --bob basic-circuit-board
     },
     results = {
-      {"washer", 1}
-    },
+        {"washer", 1}
+    }
 }
 
 ITEM {

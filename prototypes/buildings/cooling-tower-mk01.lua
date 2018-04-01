@@ -10,7 +10,7 @@ RECIPE {
         {"iron-plate", 30} --bob brass-plate
     },
     results = {
-      {"cooling-tower-mk01", 1}
+        {"cooling-tower-mk01", 1}
     }
 }:add_unlock("cooling-tower-1")
 

@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "tpa",
     category = "rectisol",
-    enabled = "false",
+    enabled = false,
     energy_required = 4,
     ingredients = {
         {type = "fluid", name = "aromatics", amount = 100},
@@ -12,7 +12,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "tpa", amount = 50}
     }
-}
+}:add_unlock("fine-electronics")
 
 FLUID {
     type = "fluid",

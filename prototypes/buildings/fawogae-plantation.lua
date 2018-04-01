@@ -27,7 +27,7 @@ RECIPE {
         {"raw-wood", 150}
     },
     results = {
-      {"fawogae-plantation", 1}
+        {"fawogae-plantation", 1}
     }
 }
 

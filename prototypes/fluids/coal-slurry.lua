@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "coal-slurry",
     category = "fluid-separator",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "dirty-water", amount = 250}
@@ -11,7 +11,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 100},
         {type = "fluid", name = "coal-slurry", amount = 150}
     },
-    main_product = "coal-slurry",
+    main_product = "coal-slurry"
 }:add_unlock("coal-processing-2")
 
 FLUID {

@@ -40,8 +40,8 @@ RECIPE {
         {"electronic-circuit", 15}
     },
     results = {
-      {"quenching-tower", 1}
-    },
+        {"quenching-tower", 1}
+    }
 }:add_unlock("coal-processing-2")
 
 ITEM {

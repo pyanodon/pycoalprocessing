@@ -10,7 +10,7 @@ RECIPE {
         {"steel-plate", 40}
     },
     results = {
-      {"ball-mill", 1}
+        {"ball-mill", 1}
     }
 }:add_unlock("crusher")
 

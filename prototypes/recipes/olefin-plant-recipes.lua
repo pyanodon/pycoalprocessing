@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "diesel",
     category = "olefin",
-    enabled = "false",
+    enabled = false,
     energy_required = 1.5,
     ingredients = {
         {type = "item", name = "nexelit-plate", amount = 2},
@@ -18,13 +18,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d1"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "diesel2",
     category = "olefin",
-    enabled = "false",
+    enabled = false,
     energy_required = 1.5,
     ingredients = {
         {type = "item", name = "nexelit-plate", amount = 2},
@@ -38,13 +38,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d2"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "aromatics",
     category = "olefin",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "item", name = "nexelit-plate", amount = 2},
@@ -61,13 +61,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d3"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "olefin",
     category = "olefin",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "item", name = "nexelit-plate", amount = 2},
@@ -82,13 +82,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d4"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "olefin-petgas",
     category = "fluid-separator",
-    enabled = "false",
+    enabled = false,
     energy_required = 2.8,
     ingredients = {
         {type = "fluid", name = "olefin", amount = 300},
@@ -103,13 +103,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d5"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "gasoline",
     category = "fluid-separator",
-    enabled = "false",
+    enabled = false,
     energy_required = 2.8,
     ingredients = {
         {type = "fluid", name = "olefin", amount = 300},
@@ -125,13 +125,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d6"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "refolefin",
     category = "olefin",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "refsyngas", amount = 250},
@@ -145,13 +145,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d7"
-}
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
     name = "aromaticsolefin",
     category = "olefin",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "aromatics", amount = 300}
@@ -164,4 +164,4 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d8	"
-}
+}:add_unlock("fuel-production")

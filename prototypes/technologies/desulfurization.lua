@@ -5,52 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     prerequisites = {"sulfur-processing", "fluid-handling", "coal-processing-1"},
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "desulfurizator-unit"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "extract-sulfur"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "fts-reactor"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "dirty-reaction"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "coalgas-syngas"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "sulfur-crudeoil"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "sulfur-heavyoil"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "sulfur-lightoil"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "sulfur-petgas"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "aromatics-to-lubricant"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "explosive-glycerol"
-        }
-    },
+    effects = {},
     unit = {
         count = 10,
         ingredients = {

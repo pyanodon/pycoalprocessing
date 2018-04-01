@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "creosote",
     category = "tar",
-    enabled = "false",
+    enabled = false,
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "tar", amount = 100}
@@ -10,8 +10,8 @@ RECIPE {
     results = {
         {type = "fluid", name = "creosote", amount = 80}
     },
-    main_product = "creosote",
-}
+    main_product = "creosote"
+}:add_unlock("coal-processing-1")
 
 FLUID {
     type = "fluid",

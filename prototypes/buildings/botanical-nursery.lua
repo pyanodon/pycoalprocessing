@@ -38,9 +38,9 @@ RECIPE {
         {"iron-plate", 35}
     },
     results = {
-      {"botanical-nursery", 1}
+        {"botanical-nursery", 1}
     }
-}
+}:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",

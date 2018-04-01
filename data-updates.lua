@@ -20,11 +20,8 @@ for _, v in pairs(data.raw.module) do
     end
 end
 
---science pack 1 override
-data.raw.tool["science-pack-1"].icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png"
---science pack 2 override
-data.raw.tool["science-pack-2"].icon = "__pycoalprocessing__/graphics/icons/science-pack-2.png"
---science pack 3 override
-data.raw.tool["science-pack-3"].icon = "__pycoalprocessing__/graphics/icons/science-pack-3.png"
+ITEM("science-pack-1", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-1.png")
+ITEM("science-pack-2", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-2.png")
+ITEM("science-pack-3", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-3.png")
 
-RECIPE("wood"):set_fields{energy_required = 15}
+RECIPE("wood"):set_fields {energy_required = 15}

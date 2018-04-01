@@ -20,9 +20,9 @@ RECIPE {
         {"iron-gear-wheel", 15} --bob steel-bearing
     },
     results = {
-      {"methanol-reactor", 1}
-    },
-}
+        {"methanol-reactor", 1}
+    }
+}:add_unlock("methanol-processing-1")
 
 ITEM {
     type = "item",

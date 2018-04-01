@@ -18,14 +18,14 @@ end
 RECIPE {
     type = "recipe",
     name = "tailings-pond",
-    enabled = "true",
+    enabled = true,
     ingredients = {
         {"pipe", 10},
         {"iron-plate", 10},
         {"stone-brick", 100}
     },
     results = {
-      {"tailings-pond", 1}
+        {"tailings-pond", 1}
     }
 }
 

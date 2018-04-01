@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "extract-sand",
     category = "sand-extractor",
-    enabled = "false",
+    enabled = false,
     energy_required = 2,
     ingredients = {
         {type = "item", name = "iron-stick", amount = 1}
@@ -15,13 +15,13 @@ RECIPE {
     main_product = "sand",
     subgroup = "py-extractor",
     order = "a"
-}
+}:add_unlock("excavation-1")
 
 RECIPE {
     type = "recipe",
     name = "extract-gravel",
     category = "sand-extractor",
-    enabled = "false",
+    enabled = false,
     energy_required = 5,
     ingredients = {
         {type = "item", name = "iron-stick", amount = 2}
@@ -34,13 +34,13 @@ RECIPE {
     main_product = "gravel",
     subgroup = "py-extractor",
     order = "b"
-}
+}:add_unlock("excavation-1")
 
 RECIPE {
     type = "recipe",
     name = "extract-stone",
     category = "sand-extractor",
-    enabled = "false",
+    enabled = false,
     energy_required = 7,
     ingredients = {
         {type = "item", name = "iron-stick", amount = 2}
@@ -53,13 +53,13 @@ RECIPE {
     main_product = "stone",
     subgroup = "py-extractor",
     order = "c"
-}
+}:add_unlock("excavation-1")
 
 RECIPE {
     type = "recipe",
     name = "extract-richdust",
     category = "sand-extractor",
-    enabled = "false",
+    enabled = false,
     energy_required = 10,
     ingredients = {
         {type = "item", name = "iron-stick", amount = 2}
@@ -72,13 +72,13 @@ RECIPE {
     main_product = "rich-dust",
     subgroup = "py-extractor",
     order = "d"
-}
+}:add_unlock("excavation-1")
 
 RECIPE {
     type = "recipe",
     name = "extract-coarse",
     category = "sand-extractor",
-    enabled = "false",
+    enabled = false,
     energy_required = 7,
     ingredients = {
         {type = "item", name = "iron-stick", amount = 2}
@@ -91,4 +91,4 @@ RECIPE {
     main_product = "coarse",
     subgroup = "py-extractor",
     order = "c"
-}
+}:add_unlock("excavation-1")

@@ -6,44 +6,7 @@ TECHNOLOGY {
     order = "c-a",
     upgrade = true,
     prerequisites = {"coal-processing-3"}, --bob titatnium-processing
-    effects = {
-        {
-            type = "unlock-recipe",
-            recipe = "ground-borer"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "mining-nexelit"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "mining-borax"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "sand-extractor"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "extract-sand"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "extract-gravel"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "extract-stone"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "extract-coarse"
-        },
-        {
-            type = "unlock-recipe",
-            recipe = "extract-richdust"
-        }
-    },
+    effects = {},
     unit = {
         count = 45,
         ingredients = {
