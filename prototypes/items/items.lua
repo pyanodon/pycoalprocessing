@@ -1069,7 +1069,7 @@ RECIPE {
         {type = "item", name = "glass-core", amount = 1}
     },
     main_product = "glass-core"
-}
+}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1080,7 +1080,7 @@ ITEM {
     subgroup = "py-items-hpf",
     --order = "g",
     stack_size = 200
-}:add_unlock("fine-electronics")
+}
 
 RECIPE {
     type = "recipe",
