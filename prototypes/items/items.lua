@@ -44,21 +44,6 @@ ITEM {
     stack_size = 500
 }
 
-RECIPE {
-    type = "recipe",
-    name = "nichrome",
-    category = "hpf",
-    enabled = false,
-    energy_required = 2.5,
-    ingredients = {
-        {type = "fluid", name = "water", amount = 100}, --bob nitrogen
-        {type = "item", name = "iron-plate", amount = 10}, --bob nickel-plate
-        {type = "item", name = "chromium", amount = 5}
-    },
-    results = {
-        {"nichrome", 1}
-    }
-}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "nichrome",
@@ -70,17 +55,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "iron-oxide",
-    enabled = true,
-    category = "smelting",
-    energy_required = 3.5,
-    ingredients = {{"iron-oxide", 2}},
-    results = {
-        {"iron-plate", 1}
-    }
-}
 ITEM {
     type = "item",
     name = "iron-oxide",
@@ -91,23 +65,6 @@ ITEM {
     order = "iron-oxide",
     stack_size = 200
 }
-
-RECIPE {
-    type = "recipe",
-    name = "active-carbon",
-    category = "hpf",
-    enabled = false,
-    energy_required = 4,
-    ingredients = {
-        {type = "fluid", name = "water", amount = 100}, --bob nitrogen
-        {type = "item", name = "zinc-chloride", amount = 2},
-        {type = "item", name = "coke", amount = 20}
-        --{type="item", name="sodium-hydroxide", amount=5},
-    },
-    results = {
-        {type = "item", name = "active-carbon", amount = 5}
-    }
-}:add_unlock("coal-processing-2")
 
 ITEM {
     type = "item",
@@ -122,27 +79,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "zinc-chloride",
-    category = "chemistry",
-    enabled = false,
-    energy_required = 4,
-    ingredients = {
-        {type = "fluid", name = "water", amount = 20}, --bob hydrogen-chloride
-        {type = "item", name = "iron-plate", amount = 1}, --bob zinc-plate
-        {type = "item", name = "copper-plate", amount = 1} --bob --remove
-    },
-    results = {
-        {type = "item", name = "zinc-chloride", amount = 1}
-        --{type="fluid", name="hydrogen", amount=2}, --bob hydrogen
-    },
-    main_product = "zinc-chloride",
-    icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
-    icon_size = 32,
-    order = "d [syn-gas]"
-}:add_unlock("coal-processing-2")
-
 ITEM {
     type = "item",
     name = "zinc-chloride",
@@ -154,23 +90,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "tailings-dust",
-    category = "evaporator",
-    enabled = false,
-    energy_required = 6,
-    ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 100}
-    },
-    results = {
-        {type = "item", name = "tailings-dust", amount = 6},
-        {type = "fluid", name = "acidgas", amount = 30, probability = 0.5}
-    },
-    main_product = "tailings-dust",
-    icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
-    icon_size = 32
-}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "tailings-dust",
@@ -182,19 +101,6 @@ ITEM {
     stack_size = 1000
 }
 
-RECIPE {
-    type = "recipe",
-    name = "soil",
-    category = "soil-extraction",
-    enabled = true,
-    energy_required = 2,
-    ingredients = {
-        {type = "fluid", name = "water", amount = 500}
-    },
-    results = {
-        {type = "item", name = "soil", amount = 12}
-    }
-}
 ITEM {
     type = "item",
     name = "soil",
@@ -217,21 +123,6 @@ ITEM {
     stack_size = 300
 }
 
-RECIPE {
-    type = "recipe",
-    name = "drill-head",
-    category = "crafting",
-    enabled = false,
-    energy_required = 3,
-    ingredients = {
-        {type = "item", name = "steel-plate", amount = 8},
-        {type = "item", name = "chromium", amount = 3},
-        {type = "item", name = "iron-plate", amount = 5} --bob titanium-plate
-    },
-    results = {
-        {type = "item", name = "drill-head", amount = 4}
-    }
-}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "drill-head",
@@ -357,21 +248,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "lithium-peroxide",
-    category = "chemistry",
-    enabled = false,
-    energy_required = 5,
-    ingredients = {
-        --{type="fluid", name="lithia-water", amount=30},
-        {type = "fluid", name = "water", amount = 300},
-        {type = "fluid", name = "hydrogen-peroxide", amount = 100}
-    },
-    results = {
-        {type = "item", name = "lithium-peroxide", amount = 5}
-    }
-}:add_unlock("coal-processing-3")
 ITEM {
     type = "item",
     name = "lithium-peroxide",
@@ -383,20 +259,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "nexelit-cartridge",
-    category = "crafting",
-    enabled = false,
-    energy_required = 4,
-    ingredients = {
-        {type = "item", name = "lithium-peroxide", amount = 25},
-        {type = "item", name = "nexelit-plate", amount = 10}
-    },
-    results = {
-        {type = "item", name = "nexelit-cartridge", amount = 1}
-    }
-}:add_unlock("coal-processing-3")
 ITEM {
     type = "item",
     name = "nexelit-cartridge",
@@ -419,22 +281,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "lime",
-    category = "hpf",
-    enabled = false,
-    energy_required = 5,
-    ingredients = {
-        {type = "item", name = "coke", amount = 15},
-        {type = "item", name = "limestone", amount = 10}
-    },
-    results = {
-        {type = "item", name = "lime", amount = 10},
-        {type = "fluid", name = "carbon-dioxide", amount = 100}
-    },
-    main_product = "lime"
-}:add_unlock("separation")
 ITEM {
     type = "item",
     name = "lime",
@@ -446,21 +292,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "fuelrod-mk01",
-    category = "hpf",
-    enabled = false,
-    energy_required = 3.5,
-    ingredients = {
-        {type = "item", name = "niobium-plate", amount = 2},
-        {type = "item", name = "nexelit-ore", amount = 10},
-        {type = "item", name = "coke", amount = 10}
-    },
-    results = {
-        {type = "item", name = "fuelrod-mk01", amount = 3}
-    }
-}:add_unlock("fuel-production")
 ITEM {
     type = "item",
     name = "fuelrod-mk01",
@@ -474,19 +305,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "fawogae",
-    category = "fawogae",
-    enabled = true,
-    energy_required = 5.0,
-    ingredients = {
-        {type = "fluid", name = "water", amount = 900}
-    },
-    results = {
-        {type = "item", name = "fawogae", amount = 8}
-    }
-}
 ITEM {
     type = "item",
     name = "fawogae",
@@ -520,25 +338,6 @@ ITEM {
     stack_size = 50
 }
 
-RECIPE {
-    type = "recipe",
-    name = "bonemeal",
-    category = "ulric",
-    enabled = false,
-    energy_required = 45,
-    ingredients = {
-        {type = "item", name = "ralesia", amount = 10}
-    },
-    results = {
-        {type = "item", name = "bonemeal", amount = 5}
-    },
-    main_product = "bonemeal",
-    icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "g"
-}:add_unlock("coal-processing-1")
-
 ITEM {
     type = "item",
     name = "bonemeal",
@@ -550,24 +349,6 @@ ITEM {
     stack_size = 300
 }
 
-RECIPE {
-    type = "recipe",
-    name = "raw-borax",
-    category = "borax",
-    enabled = false,
-    energy_required = 4.5,
-    ingredients = {
-        {type = "fluid", name = "syngas", amount = 150}
-    },
-    results = {
-        {type = "item", name = "raw-borax", amount = 5}
-    },
-    main_product = "raw-borax",
-    icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "h"
-}:add_unlock("coal-processing-1")
 ITEM {
     type = "item",
     name = "raw-borax",
@@ -590,26 +371,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "ralesia",
-    category = "ralesia",
-    enabled = false,
-    energy_required = 7.7,
-    ingredients = {
-        {type = "fluid", name = "water", amount = 300}, --bob hydrogen
-        {type = "item", name = "soil", amount = 35}
-    },
-    results = {
-        {type = "item", name = "ralesia", amount = 10}
-    },
-    main_product = "ralesia",
-    icon = "__pycoalprocessing__/graphics/icons/ralesia.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "h"
-}:add_unlock("coal-processing-1")
-
 ITEM {
     type = "item",
     name = "ralesia",
@@ -621,25 +382,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "rich-clay",
-    category = "crafting-with-fluid",
-    enabled = false,
-    energy_required = 6,
-    ingredients = {
-        {type = "item", name = "ash", amount = 25},
-        {type = "fluid", name = "water", amount = 500}
-    },
-    results = {
-        {type = "item", name = "rich-clay", amount = 10}
-    },
-    main_product = "rich-clay",
-    icon = "__pycoalprocessing__/graphics/icons/rich-clay.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "j"
-}:add_unlock("coal-processing-1")
 ITEM {
     type = "item",
     name = "rich-clay",
@@ -651,25 +393,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "ground-sample01",
-    category = "crafting",
-    enabled = false,
-    energy_required = 5,
-    ingredients = {
-        {type = "item", name = "rich-clay", amount = 5},
-        {type = "item", name = "soil", amount = 10}
-    },
-    results = {
-        {type = "item", name = "ground-sample01", amount = 10}
-    },
-    main_product = "ground-sample01",
-    icon = "__pycoalprocessing__/graphics/icons/ground-sample01.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "k"
-}:add_unlock("coal-processing-1")
 ITEM {
     type = "item",
     name = "ground-sample01",
@@ -681,25 +404,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "bio-sample01",
-    category = "crafting",
-    enabled = false,
-    energy_required = 6,
-    ingredients = {
-        {type = "item", name = "ralesia-seeds", amount = 18},
-        {type = "item", name = "bonemeal", amount = 10}
-    },
-    results = {
-        {type = "item", name = "bio-sample01", amount = 4}
-    },
-    main_product = "bio-sample01",
-    icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "l"
-}:add_unlock("coal-processing-1")
 ITEM {
     type = "item",
     name = "bio-sample01",
@@ -711,25 +415,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "alien-sample01",
-    category = "crafting",
-    enabled = false,
-    energy_required = 10,
-    ingredients = {
-        {type = "item", name = "bio-sample01", amount = 4},
-        {type = "item", name = "ground-sample01", amount = 15}
-    },
-    results = {
-        {type = "item", name = "alien-sample01", amount = 4}
-    },
-    main_product = "alien-sample01",
-    icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "m"
-}:add_unlock("coal-processing-1")
 ITEM {
     type = "item",
     name = "alien-sample01",
@@ -741,25 +426,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "equipment-chassi",
-    category = "crafting",
-    enabled = false,
-    energy_required = 7,
-    ingredients = {
-        {type = "item", name = "iron-plate", amount = 4},
-        {type = "item", name = "copper-plate", amount = 10} --bob bronze-alloy
-    },
-    results = {
-        {type = "item", name = "equipment-chassi", amount = 2}
-    },
-    main_product = "equipment-chassi",
-    icon = "__pycoalprocessing__/graphics/icons/equipment-chassi.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "n"
-}:add_unlock("coal-processing-1")
 ITEM {
     type = "item",
     name = "equipment-chassi",
@@ -771,25 +437,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "lab-instrument",
-    category = "crafting",
-    enabled = false,
-    energy_required = 7,
-    ingredients = {
-        {type = "item", name = "lens", amount = 3},
-        {type = "item", name = "equipment-chassi", amount = 2}
-    },
-    results = {
-        {type = "item", name = "lab-instrument", amount = 2}
-    },
-    main_product = "lab-instrument",
-    icon = "__pycoalprocessing__/graphics/icons/lab-instrument.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "o"
-}:add_unlock("coal-processing-1")
 ITEM {
     type = "item",
     name = "lab-instrument",
@@ -801,25 +448,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "lens",
-    category = "hpf",
-    enabled = false,
-    energy_required = 3,
-    ingredients = {
-        {type = "item", name = "stone", amount = 10}, --bob glass
-        {type = "item", name = "boron-trioxide", amount = 1}
-    },
-    results = {
-        {type = "item", name = "lens", amount = 3}
-    },
-    main_product = "lens",
-    icon = "__pycoalprocessing__/graphics/icons/lens.png",
-    icon_size = 32,
-    subgroup = "py-items-hpf",
-    order = "f"
-}:add_unlock("coal-processing-1")
 ITEM {
     type = "item",
     name = "lens",
@@ -831,25 +459,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "boron-trioxide",
-    category = "hpf",
-    enabled = false,
-    energy_required = 3,
-    ingredients = {
-        {type = "fluid", name = "boric-acid", amount = 200},
-        {type = "item", name = "coke", amount = 1}
-    },
-    results = {
-        {type = "item", name = "boron-trioxide", amount = 1}
-    },
-    main_product = "boron-trioxide",
-    icon = "__pycoalprocessing__/graphics/icons/boron-trioxide.png",
-    icon_size = 32,
-    subgroup = "py-items-hpf",
-    order = "e"
-}:add_unlock("coal-processing-1")
 ITEM {
     type = "item",
     name = "boron-trioxide",
@@ -862,24 +471,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "ralesia-seeds",
-    category = "crafting",
-    enabled = false,
-    energy_required = 5.5,
-    ingredients = {
-        {type = "item", name = "ralesia", amount = 5}
-    },
-    results = {
-        {type = "item", name = "ralesia-seeds", amount = 8}
-    },
-    main_product = "ralesia-seeds",
-    icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "i"
-}:add_unlock("coal-processing-1")
 ITEM {
     type = "item",
     name = "ralesia-seeds",
@@ -892,20 +483,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "niobium-ore",
-    category = "niobium",
-    enabled = false,
-    energy_required = 7,
-    ingredients = {
-        {type = "item", name = "drill-head", amount = 1},
-        {type = "fluid", name = "refsyngas", amount = 70}
-    },
-    results = {
-        {type = "item", name = "niobium-ore", amount = 12}
-    }
-}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "niobium-ore",
@@ -927,21 +504,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "niobium-dust",
-    category = "ball-mill",
-    enabled = false,
-    energy_required = 5,
-    ingredients = {
-        {type = "item", name = "niobium-powder", amount = 5}
-    },
-    results = {
-        {type = "item", name = "niobium-dust", amount = 10},
-        {type = "item", name = "gravel", amount = 2}
-    },
-    main_product = "niobium-dust"
-}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "niobium-dust",
@@ -953,21 +515,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "niobium-concentrate",
-    category = "classifier",
-    enabled = false,
-    energy_required = 4,
-    ingredients = {
-        {type = "item", name = "niobium-dust", amount = 15}
-    },
-    results = {
-        {type = "item", name = "niobium-concentrate", amount = 10},
-        {type = "item", name = "sand", amount = 2}
-    },
-    main_product = "niobium-concentrate"
-}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "niobium-concentrate",
@@ -979,21 +526,6 @@ ITEM {
     stack_size = 100
 }
 
-RECIPE {
-    type = "recipe",
-    name = "mukmoux-fat",
-    category = "mukmoux",
-    enabled = false,
-    energy_required = 60,
-    ingredients = {
-        {type = "item", name = "fawogae", amount = 5},
-        {type = "item", name = "ralesia-seeds", amount = 30}
-    },
-    results = {
-        {type = "item", name = "mukmoux-fat", amount = 15}
-    },
-    main_product = "mukmoux-fat"
-}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "mukmoux-fat",
@@ -1005,21 +537,6 @@ ITEM {
     stack_size = 50
 }
 
-RECIPE {
-    type = "recipe",
-    name = "niobium-oxide",
-    category = "chemistry",
-    enabled = false,
-    energy_required = 3.5,
-    ingredients = {
-        {type = "fluid", name = "water", amount = 250}, --Added Bob nitrogen-dioxide
-        {type = "fluid", name = "niobium-complex", amount = 50}
-    },
-    results = {
-        {type = "item", name = "niobium-oxide", amount = 10}
-    },
-    main_product = "niobium-oxide"
-}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "niobium-oxide",
@@ -1031,21 +548,6 @@ ITEM {
     stack_size = 50
 }
 
-RECIPE {
-    type = "recipe",
-    name = "niobium-plate",
-    category = "chemistry", --bob electrolysis
-    enabled = false,
-    energy_required = 3.5,
-    ingredients = {
-        {type = "item", name = "coal", amount = 20}, --bob salt
-        {type = "item", name = "niobium-oxide", amount = 6}
-    },
-    results = {
-        {type = "item", name = "niobium-plate", amount = 2}
-    },
-    main_product = "niobium-plate"
-}:add_unlock("coal-processing-2")
 ITEM {
     type = "item",
     name = "niobium-plate",
@@ -1057,22 +559,6 @@ ITEM {
     stack_size = 50
 }
 
-RECIPE {
-    type = "recipe",
-    name = "glass-core",
-    category = "hpf",
-    enabled = false,
-    energy_required = 3.5,
-    ingredients = {
-        {type = "item", name = "sand", amount = 10}, --bob glass
-        {type = "item", name = "steel-plate", amount = 3}, --bob silver-plate
-        {type = "item", name = "sulfur", amount = 4}
-    },
-    results = {
-        {type = "item", name = "glass-core", amount = 1}
-    },
-    main_product = "glass-core"
-}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1085,21 +571,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "cladding",
-    category = "crafting-with-fluid",
-    enabled = false,
-    energy_required = 2.0,
-    ingredients = {
-        {type = "item", name = "sand", amount = 5}, --bob glass
-        {type = "fluid", name = "niobium-complex", amount = 60}
-    },
-    results = {
-        {type = "item", name = "cladding", amount = 1}
-    },
-    main_product = "cladding"
-}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1112,21 +583,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "ppd",
-    category = "chemistry", --bob electrolysis
-    enabled = false,
-    energy_required = 4,
-    ingredients = {
-        {type = "fluid", name = "water", amount = 500}, --Added Bob hydrogen
-        {type = "fluid", name = "aromatics", amount = 50}
-    },
-    results = {
-        {type = "item", name = "ppd", amount = 10}
-    },
-    main_product = "ppd"
-}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1139,22 +595,6 @@ ITEM {
     stack_size = 500
 }
 
-RECIPE {
-    type = "recipe",
-    name = "kevlar",
-    category = "chemistry",
-    enabled = false,
-    energy_required = 6.0,
-    ingredients = {
-        {type = "item", name = "ppd", amount = 5},
-        {type = "fluid", name = "tpa", amount = 50},
-        {type = "fluid", name = "organic-solvent", amount = 100}
-    },
-    results = {
-        {type = "item", name = "kevlar", amount = 5}
-    },
-    main_product = "kevlar"
-}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1167,21 +607,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "kevlar-coating",
-    category = "crafting",
-    enabled = false,
-    energy_required = 3.0,
-    ingredients = {
-        {type = "item", name = "copper-coating", amount = 1},
-        {type = "item", name = "kevlar", amount = 1}
-    },
-    results = {
-        {type = "item", name = "kevlar-coating", amount = 1}
-    },
-    main_product = "kevlar-coating"
-}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1194,21 +619,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "nbfe-alloy",
-    category = "hpf", --bobs smelting
-    enabled = false,
-    energy_required = 4.0,
-    ingredients = {
-        {type = "item", name = "iron-plate", amount = 15},
-        {type = "item", name = "niobium-plate", amount = 3}
-    },
-    results = {
-        {type = "item", name = "nbfe-alloy", amount = 1}
-    },
-    main_product = "nbfe-alloy"
-}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1221,21 +631,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "nbfe-coating",
-    category = "crafting",
-    enabled = false,
-    energy_required = 3.0,
-    ingredients = {
-        {type = "item", name = "kevlar-coating", amount = 1},
-        {type = "item", name = "nbfe-alloy", amount = 1}
-    },
-    results = {
-        {type = "item", name = "nbfe-coating", amount = 1}
-    },
-    main_product = "nbfe-coating"
-}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1248,21 +643,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "cladded-core",
-    category = "advanced-crafting",
-    enabled = false,
-    energy_required = 2.0,
-    ingredients = {
-        {type = "item", name = "cladding", amount = 1},
-        {type = "item", name = "glass-core", amount = 1}
-    },
-    results = {
-        {type = "item", name = "cladded-core", amount = 1}
-    },
-    main_product = "cladded-core"
-}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1275,22 +655,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "copper-coating",
-    category = "chemistry", --bob electrolysis
-    enabled = false,
-    energy_required = 3.0,
-    ingredients = {
-        {type = "item", name = "copper-plate", amount = 10},
-        {type = "item", name = "cladded-core", amount = 1},
-        {type = "fluid", name = "water-mineralized", amount = 50}
-    },
-    results = {
-        {type = "item", name = "copper-coating", amount = 2}
-    },
-    main_product = "copper-coating"
-}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1303,21 +667,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "optical-fiber",
-    category = "advanced-crafting",
-    enabled = false,
-    energy_required = 3.0,
-    ingredients = {
-        {type = "item", name = "plastic-bar", amount = 2},
-        {type = "item", name = "nbfe-coating", amount = 1}
-    },
-    results = {
-        {type = "item", name = "optical-fiber", amount = 3}
-    },
-    main_product = "optical-fiber"
-}:add_unlock("fine-electronics")
 ITEM {
     type = "item",
     enabled = false,
@@ -1330,22 +679,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "biofilm",
-    category = "crafting",
-    enabled = false,
-    energy_required = 3.0,
-    ingredients = {
-        {type = "item", name = "fawogae-substrate", amount = 20},
-        {type = "item", name = "lime", amount = 5},
-        {type = "item", name = "organics", amount = 5}
-    },
-    results = {
-        {type = "item", name = "biofilm", amount = 2}
-    },
-    main_product = "biofilm"
-}:add_unlock("filtration")
 ITEM {
     type = "item",
     enabled = false,
@@ -1358,23 +691,6 @@ ITEM {
     stack_size = 200
 }
 
-RECIPE {
-    type = "recipe",
-    name = "filtration-media",
-    category = "crafting",
-    enabled = false,
-    energy_required = 3.0,
-    ingredients = {
-        {type = "item", name = "pure-sand", amount = 30},
-        {type = "item", name = "active-carbon", amount = 3},
-        {type = "item", name = "gravel", amount = 25}
-        --bob add glass
-    },
-    results = {
-        {type = "item", name = "filtration-media", amount = 3}
-    },
-    main_product = "filtration-media"
-}:add_unlock("filtration")
 ITEM {
     type = "item",
     enabled = false,
@@ -1400,21 +716,6 @@ ITEM {
     --order = "g",
     stack_size = 200
 }
-
-RECIPE {
-    type = "recipe",
-    name = "calcium-carbide",
-    category = "hpf",
-    enabled = false,
-    energy_required = 4,
-    ingredients = {
-        {type = "item", name = "coke", amount = 10},
-        {type = "item", name = "lime", amount = 2}
-    },
-    results = {
-        {type = "item", name = "calcium-carbide", amount = 10}
-    }
-}:add_unlock("coal-processing-2")
 
 ITEM {
     type = "item",
@@ -1475,4 +776,17 @@ ITEM {
     subgroup = "py-items",
     order = "a2",
     stack_size = 400
+}
+
+ITEM {
+    type = "item",
+    name = "treated-wood",
+    icon = "__pycoalprocessing__/graphics/icons/treated-wood.png",
+    icon_size = 32,
+    flags = {"goes-to-main-inventory"},
+    subgroup = "py-items",
+    order = "treated-wood",
+    fuel_value = "3MJ",
+    fuel_category = "chemical",
+    stack_size = 100
 }
