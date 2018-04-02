@@ -108,6 +108,7 @@ RECIPE {
         {type = "item", name = "active-carbon", amount = 5}
     }
 }:add_unlock("coal-processing-2")
+
 ITEM {
     type = "item",
     name = "active-carbon",
@@ -536,7 +537,8 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "g"
-}
+}:add_unlock("coal-processing-1")
+
 ITEM {
     type = "item",
     name = "bonemeal",
@@ -607,6 +609,7 @@ RECIPE {
     subgroup = "py-items",
     order = "h"
 }:add_unlock("coal-processing-1")
+
 ITEM {
     type = "item",
     name = "ralesia",
@@ -1411,7 +1414,8 @@ RECIPE {
     results = {
         {type = "item", name = "calcium-carbide", amount = 10}
     }
-}:add_unlock("coal-processing-2"):add_unlock("separation")
+}:add_unlock("coal-processing-2")
+
 ITEM {
     type = "item",
     name = "calcium-carbide",
