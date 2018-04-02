@@ -1,12 +1,14 @@
 require("stdlib/data/data").create_data_globals()
 
---Groups
+--(( Groups ))--
 require("prototypes/item-groups")
+--))
 
---Categories
+--(( Categories ))--
 require("prototypes/recipe-categories")
+--))
 
---Technologies
+--(( Technology ))--
 require("prototypes/technologies/coal-processing-1")
 require("prototypes/technologies/coal-processing-2")
 require("prototypes/technologies/coal-processing-3")
@@ -30,9 +32,16 @@ require("prototypes/technologies/crusher")
 require("prototypes/technologies/separation")
 require("prototypes/technologies/fuel-production")
 require("prototypes/technologies/fine-electronics")
+--))
 
---RECIPEs without new items
+--(( RESOURCEs ))--
+require("prototypes.ores.borax")
+require("prototypes.ores.niobium")
+--))
+
+--(( RECIPEs ))--
 require("prototypes/recipes/recipes")
+require("prototypes/recipes/coal-processing-recipes")
 require("prototypes/recipes/seperation-recipes")
 require("prototypes/recipes/desulfurization-recipes")
 require("prototypes/recipes/ground-borer-recipes")
@@ -43,16 +52,17 @@ require("prototypes/recipes/olefin-plant-recipes")
 require("prototypes/recipes/advanced-foundry-recipes")
 require("prototypes/recipes/sand-extractor-recipes")
 require("prototypes/recipes/tailings-recipes")
+--))
 
---ITEMs (and recipes with new items) without entities
-require("prototypes/items/treated-wood")
+--(( ITEMs ))--
 require("prototypes/items/items")
 require("prototypes/items/canister")
 
---Tiles and Terrain
+--(( TILEs ))--
 require("prototypes/tiles/polluted-ground")
+--))
 
---FLUIDs
+--(( FLUIDs ))--
 require("prototypes/fluids/acidgas")
 require("prototypes/fluids/carbon-dioxide")
 require("prototypes/fluids/coal-gas")
@@ -84,8 +94,9 @@ require("prototypes/fluids/niobium-complex")
 require("prototypes/fluids/rare-earth-mud")
 require("prototypes/fluids/tpa")
 require("prototypes/fluids/acetylene")
+--))
 
---Buildings
+--(( BUILDINGS ))--
 require("prototypes/buildings/distilator")
 require("prototypes/buildings/gasturbinemk01")
 require("prototypes/buildings/gasturbinemk02")
@@ -125,7 +136,4 @@ require("prototypes/buildings/automated-factory")
 require("prototypes/buildings/sand-extractor")
 require("prototypes/buildings/botanical-nursery")
 require("prototypes/buildings/wpu")
-
---ores
-require("prototypes.ores.borax")
-require("prototypes.ores.niobium")
+--))
