@@ -12,6 +12,8 @@ local abs = math.abs
 for k, v in pairs(string) do
     String[k] = v
 end
+local old_string_meta = getmetatable(string)
+setmetatable(string, {__index = String})
 
 --- Returns a copy of the string with any leading or trailing whitespace from the string removed.
 -- @tparam string s the string to remove leading or trailing whitespace from
@@ -142,7 +144,7 @@ local function _just(s, w, ch, left, right)
         end
         local f1, f2
         if left and right then
-            local rn =ceil((w - n) / 2)
+            local rn = ceil((w - n) / 2)
             local ln = w - n - rn
             f1 = ch:rep(ln)
             f2 = ch:rep(rn)
@@ -215,26 +217,28 @@ end
 
 --- Return the ordinal suffix for a number.
 -- @tparam number n
+-- @tparam boolean prepend_number if the passed number should be pre-pended
 -- @treturn string the ordinal suffix
 function String.ordinal_suffix(n, prepend_number)
     n = abs(n) % 100
     local d = n % 10
     if d == 1 and n ~= 11 then
-        return prepend_number and (n or '') .. 'st'
+        return (prepend_number and n or '') .. 'st'
     elseif d == 2 and n ~= 12 then
-        return prepend_number and (n or '') .. 'nd'
+        return (prepend_number and n or '') .. 'nd'
     elseif d == 3 and n ~= 13 then
-        return prepend_number and (n or '') .. 'rd'
+        return (prepend_number and n or '') .. 'rd'
     else
-        return prepend_number and (n or '') .. 'th'
+        return (prepend_number and n or '') .. 'th'
     end
 end
 
-for k, v in pairs(String) do
-    string[k] = v -- luacheck: globals string (Allow mutating global)
+-- Overwrite the global table 'string' if the flag is not set.
+if not _G._STDLIB_NO_STRING then
+    setmetatable(string, old_string_meta)
+    for k, v in pairs(String) do
+        _G.string[k] = v
+    end
 end
--- if debug and debug.setmetatable then
---      debug.setmetatable('', {__index = String})
--- end
 
 return String
