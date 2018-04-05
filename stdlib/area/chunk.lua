@@ -5,9 +5,9 @@
 -- @see Concepts.ChunkPosition
 
 local Chunk = {_module_name = 'Chunk'}
-setmetatable(Chunk, {__index = require('stdlib/core')})
+setmetatable(Chunk, require('stdlib/core'))
 
-local Is = Chunk.Is
+local Is = require('stdlib/utils/is')
 local Game = require('stdlib/game')
 local Position = require('stdlib/area/position')
 

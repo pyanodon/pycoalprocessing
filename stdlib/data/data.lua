@@ -16,12 +16,11 @@ local Data = {
         ['verbose'] = false
     }
 }
-setmetatable(Data, {__index = require('stdlib/core')})
+setmetatable(Data, require('stdlib/core'))
+Data.__call = Data.__call -- sets Data.__call to Core.__call, which returns self._caller
+Data.__index = Data
 
 local Is = require('stdlib/utils/is')
-
-local _traceback = function() return '' end
-local traceback = debug and debug.traceback or _traceback
 
 local item_and_fluid_types = {
     'item',
@@ -155,8 +154,8 @@ end
 
 function Data:Flags(create_flags)
     if self:valid() then
-        self.flags = create_flags and {} or self.flags
-        return self.flags and setmetatable(self.flags, Data._classes.string_array_mt)
+        self.flags = self.flags or {}
+        return self.flags and setmetatable(self.flags, require('stdlib/utils/classes/string_array'))
     end
 end
 
@@ -370,11 +369,11 @@ function Data:get(object, object_type, opts)
     end
     return self
 end
-Data:set_caller(Data.get)
+Data._caller = Data.get
 
 Data._mt = {
     __index = Data,
-    __call = Data.get,
+    __call = Data._caller,
     __tostring = Data.tostring
 }
 

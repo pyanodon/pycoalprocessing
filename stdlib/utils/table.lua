@@ -290,15 +290,9 @@ function Table.compare(tbl_a, tbl_b)
             end
         end
     end
-    for k, v in pairs(tbl_b) do
-        if type(v) == 'table' and type(tbl_a[k]) == 'table' then
-            if not Table.compare(v, tbl_a[k]) then
-                return false
-            end
-        else
-            if v ~= tbl_a[k] then
-                return false
-            end
+    for k in pairs(tbl_b) do
+        if tbl_a[k] == nil then
+            return false
         end
     end
     return true
@@ -318,6 +312,32 @@ function Table.deepcopy(object)
             return this_object
         elseif lookup_table[this_object] then
             return lookup_table[this_object]
+        end
+        local new_table = {}
+        lookup_table[this_object] = new_table
+        for index, value in pairs(this_object) do
+            new_table[_copy(index)] = _copy(value)
+        end
+        return setmetatable(new_table, getmetatable(this_object))
+    end
+    return _copy(object)
+end
+
+--- Creates a deep copy of a table without copying factorio objects
+-- internal table refs are also deepcopy. The resulting table should
+-- @usage local copy = table.fullcopy[data.raw.["stone-furnace"]["stone-furnace"]]
+-- -- returns a deepcopy of the stone furnace entity with no internal table references.
+-- @tparam table object the table to copy
+-- @treturn table a copy of the table
+function Table.fullcopy(object)
+    local lookup_table = {}
+    local function _copy(this_object)
+        if type(this_object) ~= 'table' then
+            return this_object
+        elseif this_object.__self then
+            return this_object
+        elseif lookup_table[this_object] then
+            return _copy(lookup_table[this_object])
         end
         local new_table = {}
         lookup_table[this_object] = new_table
@@ -513,12 +533,13 @@ Table.size = _G.table_size or _size
 -- @usage local a = {"v1", "v2"}
 -- table.array_to_bool(a) -- return {["v1"] = "v1", ["v2"]= "v2"}
 -- @tparam table tbl the table to convert
+-- @tparam[opt=false] boolean as_bool map to true instead of value
 -- @treturn table the converted table
-function Table.array_to_dictionary(tbl)
+function Table.array_to_dictionary(tbl, as_bool)
     local newtbl = {}
     for _, v in ipairs(tbl) do
         if type(v) == 'string' or type(v) == 'number' then
-            newtbl[v] = true
+            newtbl[v] = as_bool and true or v
         end
     end
     return newtbl
@@ -541,8 +562,9 @@ function Table.clear(tbl)
     return tbl
 end
 
-for k, v in pairs(Table) do
-    table[k] = v --luacheck: globals table
+-- Overwrite the global table 'table' if the flag is not set.
+if not _G._STDLIB_NO_TABLE then
+    _G.table = Table
 end
 
 return Table
