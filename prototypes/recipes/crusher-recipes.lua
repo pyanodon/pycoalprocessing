@@ -163,7 +163,7 @@ if bobmods then
     --QUARTZ
     RECIPE {
         type = "recipe",
-        name = "crushing-lead",
+        name = "crushing-quartz",
         category = "crusher",
         enabled = false,
         energy_required = 1,
