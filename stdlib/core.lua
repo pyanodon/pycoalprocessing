@@ -6,15 +6,7 @@
 --Global mutates
 require('stdlib/utils/globals')
 
--- require('stdlib/utils/table')
--- require('stdlib/utils/string')
--- require('stdlib/utils/math')
-
---Defines Mutates
-require('stdlib/defines/color')
-require('stdlib/defines/time')
-
---local Is = require('stdlib/utils/is')
+local Is = require('stdlib/utils/is')
 
 local Core = {
     _VERSION = '1.0.0',
@@ -42,15 +34,11 @@ local Core = {
         --Sanitize to remove address
         return tostring(lhs):gsub('(%w+)%: %x+', '%1: (ADDR)') .. tostring(rhs):gsub('(%w+)%: %x+', '%1: (ADDR)')
     end,
-    _classes = {
-        string_array_mt = require('stdlib/utils/classes/string_array')
-    },
-    Is = require('stdlib/utils/is'),
-    Inspect = require('stdlib/utils/vendor/inspect'),
-    Math = require('stdlib/utils/math'),
-    String = require('stdlib/utils/string'),
-    Table = require('stdlib/utils/table'),
+    __call = function(t, ...)
+        return t._caller(t, ...)
+    end
 }
+Core.__index = Core
 
 function Core.log_and_print(msg)
     if game and #game.connected_players > 0 then
@@ -62,19 +50,6 @@ end
 
 function Core.VALID_FILTER(v)
     return v and v.valid
-end
-
---- Sets the __call metamethod on the metatable.
--- @tparam table this The object to get the metatable for
--- @tparam function caller The function to set to __call
--- @treturn table with metatable attached
-function Core.set_caller(this, caller)
-    if getmetatable(this) then
-        getmetatable(this).__call = caller
-        return this
-    else
-        error('Metatable not found', 2)
-    end
 end
 
 --- load the stdlib into globals, by default it loads everything into an ALLCAPS name.
@@ -99,13 +74,13 @@ function Core.create_stdlib_globals(files)
             RESOURCE = 'stdlib/entity/resource',
             CONFIG = 'stdlib/config/config',
             LOGGER = 'stdlib/log/logger',
-            QUEUE = 'stdlib/queue/queue',
+            QUEUE = 'stdlib/lists/queue',
             EVENT = 'stdlib/event/event',
             GUI = 'stdlib/event/gui',
             PLAYER = 'stdlib/event/player',
             FORCE = 'stdlib/event/force'
         }
-    Core.Is.Assert.Table(files, 'files must be a dictionary of global names -> file paths')
+    Is.Assert.Table(files, 'files must be a dictionary of global names -> file paths')
 
     for glob, path in pairs(files) do
         _G[glob] = prequire((path:gsub('%.', '/'))) -- extra () required to emulate select(1)
