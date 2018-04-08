@@ -16,28 +16,14 @@ PNG_FILES := $(shell find ./graphics -iname '*.png' -type f)
 
 OUT_FILES := $(SED_FILES:%=$(OUTPUT_DIR)/%)
 
-SED_EXPRS := -e 's/{{MOD_NAME}}/$(PACKAGE_NAME)/g'
-SED_EXPRS += -e 's/{{VERSION}}/$(VERSION_STRING)/g'
-
-##@luac -p $@
-##@luacheck $@
+SED_EXPRS := -e 's/{{_MOD_NAME_}}/$(PACKAGE_NAME)/g'
+SED_EXPRS += -e 's/{{_MOD_VERSION_}}/$(VERSION_STRING)/g'
 
 all: clean
 
 release: clean check package
 
-optimized-release: clean check optimize-package
-
-git: tag
-	git checkout master
-	git merge develop master
-	git checkout develop
-	git push --all
-	git push --tags
-
-github-release:
-	curl --data '{"tag_name": "v$(VERSION_STRING)","target_commitish": "master","name": "v$(VERSION_STRING)","body": "Release of version $(VERSION_STRING)","draft": false,"prerelease": false}' https://api.github.com/repos/pyanodon/pYCoalprocesing/releases?access_token=$(TOKEN);
-	#curl 'https://api.github.com/repos/pyanodon/pYCoalprocesing/releases/v$(VERSION_STRING)/assets?access_token=$(TOKEN)&name=$(OUTPUT_NAME).zip' --header 'Content-Type: application/zip' --upload-file $(BUILD_DIR)/$(OUTPUT_NAME).zip -X POST;
+optimized-release: clean check tag optimize-package
 
 package-copy: $(PKG_DIRS) $(PKG_FILES)
 	@mkdir -p $(OUTPUT_DIR)
@@ -49,38 +35,20 @@ $(OUTPUT_DIR)/%.lua: %.lua
 	@mkdir -p $(@D)
 	@sed $(SED_EXPRS) $< > $@
 
-
 $(OUTPUT_DIR)/%: %
 	@mkdir -p $(@D)
 	@sed $(SED_EXPRS) $< > $@
 
-link2:
-	([ -d "$(MODS_DIRECTORY)/$(OUTPUT_NAME)" ]  && \
-	echo "Junction does not need updating.") || \
-	@[ -d "$(MODS_DIRECTORY)/$(PACKAGE_NAME)*" ] && \
-	echo "Updating Junction" && \
-	mv $(MODS_DIRCTORY)/$(PACKAGE_NAME)* $(MODS_DIRECTORY)/$(OUTPUT_NAME)
-
-link:
-	if test -d $(MODS_DIRECTORY)/$(PACKAGE_NAME)*; then \
-		if test -d $(MODS_DIRECTORY)/$(OUTPUT_NAME); then \
-			echo "Dont Update"; \
-		else \
-			echo "DO STUFF"; \
-		fi \
-	else \
-		echo "No Target to Link"; \
-	fi
+update-stdlib:
+	#copy stdlib-files from branch
+	git add stdlib/
+	git commit -m "STDLIB Update"
 
 tag:
 	git tag -f v$(VERSION_STRING)
+	git push --tags -f
 
-optimize1:
-	for name in $(PNG_FILES); do \
-		optipng -o8 $(OUTPUT_DIR)'/'$$name; \
-	done
-
-optimize2:
+optimize:
 	@echo Please wait, Optimizing Graphics.
 	@for name in $(PNG_FILES); do \
 		pngquant --skip-if-larger -q --strip --ext .png --force $(OUTPUT_DIR)'/'$$name; \
@@ -98,12 +66,10 @@ check:
 	@luacheck . -q --codes
 
 package: package-copy $(OUT_FILES) nodebug
-	@cp -r stdlib $(BUILD_DIR)/$(OUTPUT_NAME)/stdlib
 	@cd $(BUILD_DIR) && zip -rq $(OUTPUT_NAME).zip $(OUTPUT_NAME)
 	@echo $(OUTPUT_NAME).zip ready
 
-optimize-package: package-copy $(OUT_FILES) nodebug optimize2
-	@cp -r stdlib $(BUILD_DIR)/$(OUTPUT_NAME)/stdlib
+optimize-package: package-copy $(OUT_FILES) nodebug optimize tag
 	@cd $(BUILD_DIR) && zip -rq $(OUTPUT_NAME).zip $(OUTPUT_NAME)
 	@echo $(OUTPUT_NAME).zip ready
 
