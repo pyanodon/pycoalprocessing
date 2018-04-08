@@ -3,6 +3,7 @@
 
 local Recipe = {
     _class = 'recipe',
+    _module = 'Recipe',
     _ingredients_mt = require('stdlib/data/modules/ingredients'),
     _results_mt = require('stdlib/data/modules/results')
 }
@@ -10,6 +11,14 @@ setmetatable(Recipe, require('stdlib/data/data'))
 
 local Is = require('stdlib/utils/is')
 local Item = require('stdlib/data/item')
+
+--TODO
+--[[
+    Recipe:replace_ingredients --swap whole ingredients
+    Recipe:replace_results --swap whole results
+
+    Finish Recipe:xxx_result stuff
+]]
 
 function Recipe:_caller(recipe)
     local new = self:get(recipe, 'recipe')
@@ -179,7 +188,8 @@ local function format(ingredient, result_count)
     return object
 end
 
--- get items for difficulties
+-- Format items for difficulties
+-- If expensive is a boolean then return a copy of normal for expensive
 local function get_difficulties(normal, expensive)
     return format(normal), format((expensive == true and table.deepcopy(normal)) or expensive)
 end
@@ -364,7 +374,7 @@ Recipe.set_category = Recipe.change_category
 function Recipe:add_unlock(tech_name)
     if self:valid() then
         local Tech = require('stdlib/data/technology')
-        Tech.add_effect(self, tech_name)
+        Tech.add_effect(self, tech_name) --self is passed as a valid recipe
     end
     return self
 end
