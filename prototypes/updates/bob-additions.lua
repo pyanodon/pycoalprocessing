@@ -404,7 +404,6 @@ RECIPE {
 ITEM {
     type = "item",
     name = "crushed-bauxite",
-    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-bauxite.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -417,7 +416,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-gold",
-    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-gold.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -430,7 +428,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-lead",
-    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-lead.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -443,7 +440,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-nickel",
-    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-nickel.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -456,7 +452,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-rutile",
-    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-rutile.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -469,7 +464,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-silver",
-    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-silver.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -482,7 +476,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-quartz",
-    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-quartz.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -495,7 +488,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-tin",
-    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tin.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -508,7 +500,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-tungsten",
-    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-tungsten.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
@@ -521,7 +512,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-zinc",
-    enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-zinc.png",
     icon_size = 32,
     flags = {"goes-to-main-inventory"},
