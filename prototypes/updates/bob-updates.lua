@@ -78,7 +78,6 @@ RECIPE("laser-turret"):add_ing({name = "lens", amount = 1})
 RECIPE("superior-circuit-board"):rep_ing("gold-plate", "nexelit-plate")
 
 RECIPE("alumina"):rep_ing("bauxite-ore", "crushed-bauxite")
-
 RECIPE("lead-oxide"):rep_ing("lead-ore", "crushed-lead")
 
 RECIPE("zinc-chloride"):rep_ing("iron-plate", "zinc-plate"):rep_ing("water", "hydrogen-chloride"):rem_ing("copper-plate")
