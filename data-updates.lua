@@ -5,8 +5,8 @@ require("prototypes/updates/recipe-updates")
 
 --update recipes to use bobmods
 if mods["boblibrary"] then
-    require("prototypes/updates/bob-updates")
     require("prototypes/updates/bob-additions")
+    require("prototypes/updates/bob-updates")
 end
 
 for _, v in pairs(data.raw.module) do
