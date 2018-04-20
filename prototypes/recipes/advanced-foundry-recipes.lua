@@ -46,11 +46,25 @@ RECIPE {
 }:add_unlock("coal-processing-3")
 
 --Make foundry recipes from smelting recipes with 1 ingredient.
-local list = {}
 log("Creating additional foundry recipes")
 
 local _filter_ing = function(v)
     return v.category == "smelting" and (v.ingredients and #v.ingredients == 1) or (v.normal and v.normal.ingredients and #v.normal.ingredients == 1)
+end
+
+local function multiply(tab, count)
+    for _, result in pairs(tab) do
+        if result.amount then
+            result.amount = result.amount * count
+        elseif type(result[2]) == 'number' then
+            result[2] = result[2] * count
+        end
+    end
+    return tab
+end
+
+local function get_main(tab)
+    return tab[#tab].name or tab[#tab][1]
 end
 
 for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
@@ -61,14 +75,14 @@ for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
     if recipe.result then
         res = {{type = "item", name = recipe.result or recipe.result[1], amount = 12}}
     elseif recipe.results then
-        res = table.deepcopy(recipe.results)
+        res = multiply(table.deepcopy(recipe.results), 12)
     elseif recipe.normal.result then
         res = {{type = "item", name = recipe.normal.result or recipe.normal.result[1], amount = 12}}
     elseif recipe.normal.results then
-        res = table.deepcopy(recipe.normal.results)
+        res = multiply(table.deepcopy(recipe.normal.results), 12)
     end
 
-    local new = {
+    RECIPE {
         type = "recipe",
         name = "advanced-foundry-" .. recipe.name,
         category = "advanced-foundry",
@@ -84,13 +98,6 @@ for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
         icon = recipe.icon,
         icons = recipe.icons,
         icon_size = 32,
-        main_product = data.raw.item[res[1].name] and res[1].name or nil
+        main_product = recipe.main_product or #res > 1 and get_main(res) or nil
     }
-    if not new.main_product then
-        new.subgroup = "py-unsorted"
-        new.order = "a"
-    end
-    list[#list + 1] = new
 end
-
-data:extend(list)
