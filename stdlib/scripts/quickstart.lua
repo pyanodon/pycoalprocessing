@@ -5,11 +5,11 @@
 -- @usage
 -- -- For use with STDLIB Events
 -- if DEBUG then
---   require('stdlib/utils/scripts/quickstart').register_events()
+--   require('stdlib/scripts/quickstart').register_events()
 -- end
 -- @usage
 -- --If not using stdlibs event system
--- local quickstart = require('stdlib/utils/scripts/quickstart')
+-- local quickstart = require('stdlib/scripts/quickstart')
 -- script.on_event(defines.events.on_player_created, function()
 --  quickstart.on_player_created() -- can be wrapped in an if DEBUG type check
 -- end)
@@ -46,16 +46,6 @@ function quickstart.on_player_created(event)
         player.force.chart(surface, area)
 
         player.surface.always_day = QS.get('always_day', false)
-
-        if QS.get('cheat_mode', false) then
-            player.cheat_mode = true
-            player.force.research_all_technologies()
-            if player.character then
-                player.character_running_speed_modifier = 2
-                player.character_reach_distance_bonus = 100
-                player.character_build_distance_bonus = 100
-            end
-        end
 
         if QS.get('clear_items', false) then
             player.clear_items_inside()
@@ -289,6 +279,20 @@ function quickstart.on_player_created(event)
     end
 end
 Event.register(defines.events.on_player_created, quickstart.on_player_created)
+
+function quickstart.on_player_joined_game(event)
+    local player = game.players[event.player_index]
+    if QS.get('cheat_mode', false) then
+        player.cheat_mode = true
+        player.force.research_all_technologies()
+        if player.character then
+            player.character_running_speed_modifier = 2
+            player.character_reach_distance_bonus = 100
+            player.character_build_distance_bonus = 100
+        end
+    end
+end
+Event.register(defines.events.on_player_joined_game, quickstart.on_player_joined_game)
 
 quickstart.trackstring =
     [[
