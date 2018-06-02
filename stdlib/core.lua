@@ -35,8 +35,11 @@ local Core = {
         return tostring(lhs):gsub('(%w+)%: %x+', '%1: (ADDR)') .. tostring(rhs):gsub('(%w+)%: %x+', '%1: (ADDR)')
     end,
     __call = function(t, ...)
-        return t:_caller(...)
+        return t:__call(...)
     end,
+    _classes = {
+        string_array = require('stdlib/utils/classes/string_array')
+    }
 }
 Core.__index = Core
 
@@ -86,6 +89,17 @@ function Core.create_stdlib_globals(files)
         _G[glob] = prequire((path:gsub('%.', '/'))) -- extra () required to emulate select(1)
     end
     return Core
+end
+
+local function no_meta(item, path)
+    if path[#path] == inspect.METATABLE then
+        return {item._class or item._module or item.__class}
+    end
+    return item
+end
+
+function Core.inspect(self)
+    return inspect(self, {process = no_meta})
 end
 
 return Core
