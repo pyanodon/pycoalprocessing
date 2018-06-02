@@ -9,6 +9,6 @@ function interface.write_global(name) --Dumps the global to player and logfile
 end
 
 --Require the awesome console for quick script debugging
-interface.console = require("stdlib/utils/scripts/console")
+interface.console = require("stdlib/scripts/console")
 
 return interface
