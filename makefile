@@ -46,7 +46,6 @@ update-stdlib:
 
 tag:
 	git tag -f v$(VERSION_STRING)
-	git push --tags -f
 
 optimize:
 	@echo Please wait, Optimizing Graphics.
