@@ -346,7 +346,7 @@ ITEM {
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "z",
-    stack_size = 300
+    stack_size = 500
 }
 
 ITEM {
@@ -379,7 +379,7 @@ ITEM {
     flags = {"goes-to-main-inventory"},
     subgroup = "py-items",
     order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
