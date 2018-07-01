@@ -121,7 +121,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "olefin", amount = 300},
         {type = "fluid", name = "water", amount = 2000},
-        {type = "item", name = "nichrome", amount = 5}
+        {type = "item", name = "nichrome", amount = 4}
     },
     results = {
         {type = "fluid", name = "carbon-dioxide", amount = 100},
