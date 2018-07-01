@@ -549,10 +549,10 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "hydrogen", amount = 200},
         {type = "fluid", name = "water", amount = 500},
-        {type = "item", name = "coke", amount = 5}
+        {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 100, temperature = 520},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 520},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-hydrogen.png",
