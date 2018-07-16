@@ -343,9 +343,8 @@ RECIPE {
     energy_required = 3.5,
     ingredients = {{"crushed-iron", 1}},
     results = {
-        {"iron-plate", 1}
+        {"iron-plate", 2}
     },
-    result_count = 2
 }:add_unlock("crusher")
 
 RECIPE {
@@ -356,9 +355,8 @@ RECIPE {
     energy_required = 3.5,
     ingredients = {{"crushed-copper", 1}},
     results = {
-        {"copper-plate", 1}
+        {"copper-plate", 2}
     },
-    result_count = 2
 }:add_unlock("crusher")
 
 RECIPE {
