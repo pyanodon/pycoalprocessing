@@ -117,7 +117,7 @@ RECIPE {
         {type = "fluid", name = "petroleum-gas", amount = 100}
     },
     results = {
-        {type = "fluid", name = "syngas", amount = 50},
+        {type = "fluid", name = "syngas", amount = 90},
         {type = "item", name = "sulfur", amount = 1},
         {type = "item", name = "ash", amount = 1}
     },
