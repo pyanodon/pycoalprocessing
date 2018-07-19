@@ -60,7 +60,7 @@ ENTITY {
     energy_source = {
         type = "burner",
         fuel_category = "drill",
-        effectivity = 3,
+        effectivity = 4,
         fuel_inventory_size = 1,
         emissions = 0.1 / 3,
         smoke = {
@@ -72,8 +72,8 @@ ENTITY {
         }
     },
     energy_usage = "550kW",
-    mining_power = 2,
-    resource_searching_radius = 4.49,
+    mining_power = 3,
+    resource_searching_radius = 5.49,
     vector_to_place_result = {0, -3.65},
     radius_visualisation_picture = {
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-radius-visualization.png",
