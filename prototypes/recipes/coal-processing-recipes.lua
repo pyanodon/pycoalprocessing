@@ -801,7 +801,7 @@ RECIPE {
     results = {
         {type = "item", name = "log", amount = 3}
     },
-    icon = "__pycoalprocessing__/graphics/icons/log5.png",
+    icon = "__pycoalprocessing__/graphics/icons/log6.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "c9"
