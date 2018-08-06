@@ -7,7 +7,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
         {type = "fluid", name = "coal-gas", amount = 100},
-        {type = "item", name = "drill-head", amount = 3}
+        {type = "item", name = "drill-head", amount = 1}
     },
     results = {
         {type = "item", name = "nexelit-ore", amount = 15}
@@ -28,7 +28,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
         {type = "fluid", name = "coal-gas", amount = 100},
-        {type = "item", name = "drill-head", amount = 3}
+        {type = "item", name = "drill-head", amount = 1}
     },
     results = {
         {type = "item", name = "stone", amount = 20}
@@ -49,7 +49,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
         {type = "fluid", name = "coal-gas", amount = 100},
-        {type = "item", name = "drill-head", amount = 3}
+        {type = "item", name = "drill-head", amount = 1}
     },
     results = {
         {type = "item", name = "raw-borax", amount = 20}
@@ -70,7 +70,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
         {type = "fluid", name = "coal-gas", amount = 100},
-        {type = "item", name = "drill-head", amount = 3}
+        {type = "item", name = "drill-head", amount = 1}
     },
     results = {
         {type = "item", name = "niobium-ore", amount = 20}
@@ -91,7 +91,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
         {type = "fluid", name = "coal-gas", amount = 100},
-        {type = "item", name = "drill-head", amount = 3}
+        {type = "item", name = "drill-head", amount = 1}
     },
     results = {
         {type = "item", name = "limestone", amount = 20}
@@ -113,7 +113,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "bauxite-ore", amount = 20}
@@ -134,7 +134,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "cobalt-ore", amount = 20}
@@ -155,7 +155,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "gold-ore", amount = 20}
@@ -176,7 +176,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "lead-ore", amount = 20}
@@ -197,7 +197,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "nickel-ore", amount = 20}
@@ -218,7 +218,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "quartz", amount = 20}
@@ -239,7 +239,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "rutile-ore", amount = 20}
@@ -260,7 +260,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "silver-ore", amount = 20}
@@ -281,7 +281,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "tin-ore", amount = 20}
@@ -302,7 +302,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "tungsten-ore", amount = 20}
@@ -323,7 +323,7 @@ if bobmods then
         ingredients = {
             {type = "fluid", name = "lubricant", amount = 100},
             {type = "fluid", name = "coal-gas", amount = 100},
-            {type = "item", name = "drill-head", amount = 3}
+            {type = "item", name = "drill-head", amount = 1}
         },
         results = {
             {type = "item", name = "zinc-ore", amount = 20}
