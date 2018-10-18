@@ -21,9 +21,9 @@ ENTITY {
     order = "a-b-a",
     map_color = {r = 0.917, g = 0.917, b = 0.917},
     highlight = true,
-    minimum = 400,
-    normal = 1000,
-    maximum = 4000,
+    minimum = 200,
+    normal = 800,
+    maximum = 1000,
     minable = {
         hardness = 1.5,
         -- mining_particle = "borax-particle",
@@ -40,10 +40,10 @@ ENTITY {
         control = "borax",
         sharpness = 1,
         starting_area = true,
-        richness_multiplier = 1500,
+        richness_multiplier = 1000,
         richness_multiplier_distance_bonus = 30,
         richness_base = 500,
-        coverage = 0.009,
+        coverage = 0.005,
         peaks = {
             {
                 noise_layer = "borax",
