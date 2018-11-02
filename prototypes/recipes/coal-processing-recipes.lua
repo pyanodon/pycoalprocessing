@@ -520,7 +520,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "water", amount = 100}, --bob nitrogen
         {type = "item", name = "iron-plate", amount = 10}, --bob nickel-plate
-        {type = "item", name = "chromium", amount = 5}
+        {type = "item", name = "chromium", amount = 8}
     },
     results = {
         {"nichrome", 1}
