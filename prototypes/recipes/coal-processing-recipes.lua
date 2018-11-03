@@ -1191,7 +1191,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a"
-}:add_unlock("coal-processing-3")
+}:add_unlock("coal-processing-1")
 
 RECIPE {
     type = "recipe",
