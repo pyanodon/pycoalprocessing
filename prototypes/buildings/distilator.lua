@@ -44,7 +44,7 @@ ENTITY {
     },
     allowed_effects = {"consumption", "speed", "pollution", "productivity"},
     crafting_categories = {"distilator"},
-    crafting_speed = 0.75,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
