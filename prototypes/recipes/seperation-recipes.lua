@@ -70,7 +70,7 @@ RECIPE {
         {type = "item", name = "organics", amount = 10}
     },
     results = {
-        {type = "fluid", name = "carbon-dioxide", amount = 400}
+        {type = "fluid", name = "carbon-dioxide", amount = 300}
     },
     main_product = "carbon-dioxide",
     icon = "__pycoalprocessing__/graphics/icons/carbon-dioxide.png",
