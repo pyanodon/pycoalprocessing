@@ -286,7 +286,7 @@ RECIPE {
         {type = "item", name = "raw-borax", amount = 10}
     },
     results = {
-        {type = "item", name = "borax", amount = 4},
+        {type = "item", name = "borax", amount = 10},
         {type = "fluid", name = "dirty-water", amount = 100}
     },
     main_product = "borax",
