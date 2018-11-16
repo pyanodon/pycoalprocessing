@@ -98,6 +98,9 @@ require("prototypes/fluids/acetylene")
 
 --(( BUILDINGS ))--
 require("prototypes/buildings/distilator")
+require("prototypes/buildings/distilator-mk02")
+require("prototypes/buildings/distilator-mk03")
+require("prototypes/buildings/distilator-mk04")
 require("prototypes/buildings/gasturbinemk01")
 require("prototypes/buildings/gasturbinemk02")
 require("prototypes/buildings/gasturbinemk03")
