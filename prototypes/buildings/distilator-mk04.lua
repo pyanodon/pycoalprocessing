@@ -1,8 +1,8 @@
 RECIPE {
     type = "recipe",
-    name = "distilator",
+    name = "distilator-mk04",
     energy_required = 10,
-    enabled = true,
+    enabled = false,
     ingredients = {
         {"copper-plate", 20},
         {"pipe", 10}, --copper-pipe in bobmods
@@ -10,30 +10,30 @@ RECIPE {
         {"electronic-circuit", 3} --bob basic-circuit-board
     },
     results = {
-        {"distilator", 1}
+        {"distilator-mk04", 1}
     }
 }
 
 ITEM {
     type = "item",
-    name = "distilator",
-    icon = "__pycoalprocessing__/graphics/icons/distilator.png",
+    name = "distilator-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/distilator-mk04.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "k",
-    place_result = "distilator",
+    place_result = "distilator-mk04",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "distilator",
-    icon = "__pycoalprocessing__/graphics/icons/distilator.png",
+    name = "distilator-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/distilator-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "distilator"},
-    fast_replaceable_group = "distilator",
+    minable = {mining_time = 1, result = "distilator-mk04"},
+    fast_replaceable_group = "distilator-mk04",
     max_health = 300,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
@@ -44,18 +44,18 @@ ENTITY {
     },
     allowed_effects = {"consumption", "speed", "pollution", "productivity"},
     crafting_categories = {"distilator"},
-    crafting_speed = 1,
+    crafting_speed = 4,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02 / 2
     },
-    energy_usage = "300kW",
+    energy_usage = "600kW",
     ingredient_count = 4,
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/distilator/distilator-mk01.png",
+                filename = "__pycoalprocessing__/graphics/entity/distilator/distilator-mk04.png",
                 width = 283,
                 height = 266,
                 frame_count = 1,
