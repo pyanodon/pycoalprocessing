@@ -4,10 +4,9 @@ RECIPE {
     energy_required = 10,
     enabled = false,
     ingredients = {
-        {"copper-plate", 20},
-        {"pipe", 10}, --copper-pipe in bobmods
-        {"iron-plate", 10},
-        {"electronic-circuit", 3} --bob basic-circuit-board
+        {"distilator-mk03", 1},
+        {"pump", 4},
+        {"nbfe-alloy", 15},
     },
     results = {
         {"distilator-mk04", 1}
