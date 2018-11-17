@@ -1,78 +1,77 @@
 RECIPE {
     type = "recipe",
-    name = "advanced-foundry",
+    name = "advanced-foundry-mk03",
     energy_required = 10,
     enabled = false,
     ingredients = {
-        {"copper-cable", 30},
-        {"iron-plate", 20}, --bob titanium-plate
-        {"concrete", 60}, --bob glass
-        {"olefin-plant", 1}, --bob steel-bearing
-        {"steel-plate", 70}, --bob invar-alloy
-        {"advanced-circuit", 50}
+        {"advanced-foundry-mk02", 1},
+        {"concrete", 100},
+        {"processing-unit", 15},
+        {"niobium-plate", 10},
+        {"electric-engine-unit", 4},
     },
     results = {
-        {"advanced-foundry", 1}
+        {"advanced-foundry-mk03", 1}
     }
-}:add_unlock("coal-processing-3")
+}
 
 ITEM {
     type = "item",
-    name = "advanced-foundry",
-    icon = "__pycoalprocessing__/graphics/icons/advanced-foundry.png",
+    name = "advanced-foundry-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/advanced-foundry-mk03.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "b",
-    place_result = "advanced-foundry",
+    place_result = "advanced-foundry-mk03",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "advanced-foundry",
-    icon = "__pycoalprocessing__/graphics/icons/advanced-foundry.png",
+    name = "advanced-foundry-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/advanced-foundry-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "advanced-foundry"},
-    fast_replaceable_group = "advanced-foundry",
+    minable = {mining_time = 1, result = "advanced-foundry-mk03"},
+    fast_replaceable_group = "advanced-foundry-mk03",
     max_health = 600,
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-2.9, -2.9}, {2.9, 2.9}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     module_specification = {
-        module_slots = 4
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"advanced-foundry", "smelting"},
-    crafting_speed = 0.6,
+    crafting_speed = 3,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.05
     },
-    energy_usage = "270kW",
+    energy_usage = "470kW",
     ingredient_count = 10,
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/advanced-foundry/advanced-foundry-base.png",
+                filename = "__pycoalprocessing__/graphics/entity/advanced-foundry/advanced-foundry-base-mk03.png",
                 width = 224,
                 height = 224,
                 line_length = 9,
                 frame_count = 76,
                 shift = {0.3, -0.5},
-                animation_speed = 0.75
+                animation_speed = 0.2
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/advanced-foundry/advanced-foundry-top.png",
+                filename = "__pycoalprocessing__/graphics/entity/advanced-foundry/advanced-foundry-top-mk03.png",
                 width = 224,
                 height = 41,
                 line_length = 9,
                 frame_count = 76,
                 shift = {0.3, -4.63},
-                animation_speed = 0.75
+                animation_speed = 0.2
             }
         }
     },
