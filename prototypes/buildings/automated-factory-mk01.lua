@@ -9,51 +9,52 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "automated-factory",
+    name = "automated-factory-mk01",
     energy_required = 10,
     enabled = false,
     ingredients = {
-        {"iron-plate", 20},
-        {"engine-unit", 2},
-        {"steel-plate", 35}, --bob invar-alloy
-        {"electronic-circuit", 10} --bob basic-electronic-circuit-board
+        {"iron-plate", 40},
+        {"assembling-machine-1", 2},
+        {"iron-gear-wheel", 20},
+        {"inserter", 4},
+        {"electronic-circuit", 10}
     },
     results = {
-        {"automated-factory", 1}
+        {"automated-factory-mk01", 1}
     }
-}:add_unlock("coal-processing-2")
+}:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",
-    name = "automated-factory",
-    icon = "__pycoalprocessing__/graphics/icons/automated-factory.png",
+    name = "automated-factory-mk01",
+    icon = "__pycoalprocessing__/graphics/icons/automated-factory-mk01.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "c",
-    place_result = "automated-factory",
+    place_result = "automated-factory-mk01",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "automated-factory",
-    icon = "__pycoalprocessing__/graphics/icons/automated-factory.png",
+    name = "automated-factory-mk01",
+    icon = "__pycoalprocessing__/graphics/icons/automated-factory-mk01.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "automated-factory"},
-    fast_replaceable_group = "automated-factory",
+    minable = {mining_time = 1, result = "automated-factory-mk01"},
+    fast_replaceable_group = "automated-factory-mk01",
     max_health = 800,
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-3.3, -3.3}, {3.3, 3.3}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 6
+        module_slots = 3
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"crafting", "crafting-with-fluid", "advanced-crafting"},
-    crafting_speed = 3.5,
+    crafting_speed = 1.5,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
@@ -64,22 +65,22 @@ ENTITY {
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/automated-factory/left.png",
+                filename = "__pycoalprocessing__/graphics/entity/automated-factory/mk01-left.png",
                 width = 128,
                 height = 280,
                 line_length = 16,
                 frame_count = 101,
                 shift = {-1.5, -0.68},
-                animation_speed = 0.1
+                animation_speed = 0.5
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/automated-factory/right.png",
+                filename = "__pycoalprocessing__/graphics/entity/automated-factory/mk01-right.png",
                 width = 116,
                 height = 280,
                 line_length = 16,
                 frame_count = 101,
                 shift = {2.31, -0.68},
-                animation_speed = 0.1
+                animation_speed = 0.5
             }
         }
     },
