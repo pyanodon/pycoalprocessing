@@ -1295,25 +1295,6 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "glycerol-hydrogen",
-    category = "chemistry", --bob electrolysis
-    enabled = false,
-    energy_required = 3,
-    ingredients = {
-        {type = "fluid", name = "glycerol", amount = 20},
-        {type = "fluid", name = "water", amount = 200} --bob liquid-air
-    },
-    results = {
-        {type = "fluid", name = "petroleum-gas", amount = 300} --bob hydrogen
-    },
-    icon = "__pycoalprocessing__/graphics/icons/glycerol-hydrogen.png",
-    icon_size = 32,
-    subgroup = "py-fluid-handling",
-    order = "o"
-}:add_unlock("coal-processing-3")
-
-RECIPE {
-    type = "recipe",
     name = "coaldust-ash",
     category = "hpf",
     enabled = false,
