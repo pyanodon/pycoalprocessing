@@ -15,41 +15,40 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "fawogae-plantation",
+    name = "fawogae-plantation-mk03",
     energy_required = 10,
-    enabled = true,
+    enabled = false,
     ingredients = {
-        {"soil", 300},
-        {"pipe", 15},
-        {"electronic-circuit", 10}, --bob basic-circuit-board
-        {"copper-cable", 25},
-        {"iron-plate", 40},
-        {"raw-wood", 150}
+        {"fawogae-plantation-mk02", 1},
+        {"niobium-plate", 15},
+        {"processing-unit", 10},
+        {"treated-wood", 20}, --pyht fiberboard
+        {"niobium-pipe", 20},
     },
     results = {
-        {"fawogae-plantation", 1}
+        {"fawogae-plantation-mk03", 1}
     }
 }
 
 ITEM {
     type = "item",
-    name = "fawogae-plantation",
-    icon = "__pycoalprocessing__/graphics/icons/fawogae-plantation-icon.png",
+    name = "fawogae-plantation-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/fawogae-plantation-icon-mk03.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "py-extraction",
     order = "b",
-    place_result = "fawogae-plantation",
+    place_result = "fawogae-plantation-mk03",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "fawogae-plantation",
-    icon = "__pycoalprocessing__/graphics/icons/fawogae-plantation-icon.png",
+    name = "fawogae-plantation-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/fawogae-plantation-icon-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "fawogae-plantation"},
+    minable = {mining_time = 1, result = "fawogae-plantation-mk03"},
     fast_replaceable_group = "fawogae-plantation",
     max_health = 300,
     corpse = "big-remnants",
@@ -57,25 +56,25 @@ ENTITY {
     collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     module_specification = {
-        module_slots = 2
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"fawogae"},
-    crafting_speed = 0.3,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.01
     },
-    energy_usage = "200kW",
+    energy_usage = "400kW",
     ingredient_count = 1,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/fawogae-plantation/fawogae.png",
+        filename = "__pycoalprocessing__/graphics/entity/fawogae-plantation/fawogae-mk03.png",
         width = 200,
         height = 193,
         frame_count = 100,
         line_length = 10,
-        animation_speed = 3.0,
+        animation_speed = 0.6,
         shift = {0.13, -0.03}
     },
     fluid_boxes = {
