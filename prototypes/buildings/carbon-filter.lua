@@ -50,7 +50,7 @@ ENTITY {
     collision_box = {{-2.25, -2.25}, {2.25, 2.25}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     module_specification = {
-        module_slots = 3
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "pollution"},
     crafting_categories = {"carbonfilter"},

@@ -34,7 +34,7 @@ ENTITY {
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "distilator-mk02"},
-    fast_replaceable_group = "distilator-mk02",
+    fast_replaceable_group = "distilator",
     max_health = 300,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",

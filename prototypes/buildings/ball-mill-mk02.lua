@@ -5,7 +5,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"ball-mill-mk01", 1},
-        {"tin-plate", 30},
+        {"steel-plate", 30},
         {"engine-unit", 1},
         {"advanced-circuit", 5},
     },
