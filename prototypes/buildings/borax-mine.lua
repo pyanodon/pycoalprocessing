@@ -2,19 +2,18 @@ RECIPE {
     type = "recipe",
     name = "borax-mine",
     energy_required = 25,
-    enabled = false,
+    enabled = true,
     ingredients = {
-        {"electric-mining-drill", 2},
+        {"electric-mining-drill", 1},
         {"soil-extractormk01", 1},
         {"electronic-circuit", 20}, --bob basic-electronic-circuit-board
-        {"steel-plate", 150},
         {"iron-gear-wheel", 15}, --bob steel-bearing
-        {"transport-belt", 30}
+        {"transport-belt", 20}
     },
     results = {
         {"borax-mine", 1}
     }
-}:add_unlock("coal-processing-1")
+}
 
 ITEM {
     type = "item",
