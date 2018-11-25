@@ -32,7 +32,7 @@ ENTITY {
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "advanced-foundry-mk04"},
-    fast_replaceable_group = "advanced-foundry-mk04",
+    fast_replaceable_group = "advanced-foundry",
     max_health = 600,
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
