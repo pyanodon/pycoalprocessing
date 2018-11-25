@@ -1,39 +1,40 @@
 RECIPE {
     type = "recipe",
-    name = "fluid-separator",
+    name = "fluid-separator-mk02",
     energy_required = 15,
     enabled = false,
     ingredients = {
-        {"storage-tank", 4},
-        {"chemical-plant", 2}, --bob electrolyser
-        {"electronic-circuit", 15},
-        {"pipe", 40},
-        {"iron-gear-wheel", 15} --bob steel-bearing
+        {"fluid-separator", 1},
+        {"storage-tank", 1},
+        {"nexelit-plate", 10},
+        {"concrete", 40},
+        {"plastic-bar", 10},
+        {"advanced-circuit", 10}
     },
     results = {
-        {"fluid-separator", 1}
+        {"fluid-separator-mk02", 1}
     }
-}:add_unlock("separation")
+}:replace_ingredient('storage-tank', 'py-tank-3000')
 
 ITEM {
     type = "item",
-    name = "fluid-separator",
-    icon = "__pycoalprocessing__/graphics/icons/fluid-separator.png",
+    name = "fluid-separator-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/fluid-separator-mk02.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "m",
-    place_result = "fluid-separator",
+    place_result = "fluid-separator-mk02",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "fluid-separator",
-    icon = "__pycoalprocessing__/graphics/icons/fluid-separator.png",
+    name = "fluid-separator-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/fluid-separator-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "fluid-separator"},
+    minable = {mining_time = 1, result = "fluid-separator-mk02"},
     fast_replaceable_group = "fluid-separator",
     max_health = 400,
     corpse = "big-remnants",
@@ -41,20 +42,20 @@ ENTITY {
     collision_box = {{-3.25, -3.25}, {3.25, 3.25}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 2
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"fluid-separator"},
-    crafting_speed = 1,
+    crafting_speed = 2,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02
     },
-    energy_usage = "300kW",
+    energy_usage = "400kW",
     ingredient_count = 5,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/fluid-separator/fluid-separator.png",
+        filename = "__pycoalprocessing__/graphics/entity/fluid-separator/fluid-separator-mk02.png",
         width = 248,
         height = 260,
         frame_count = 1,
