@@ -33,14 +33,14 @@ ENTITY {
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ball-mill-mk03"},
-    fast_replaceable_group = "ball-mill-mk03",
+    fast_replaceable_group = "ball-mill",
     max_health = 400,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-2.9, -2.9}, {2.9, 2.9}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     module_specification = {
-        module_slots = 4
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"ball-mill"},

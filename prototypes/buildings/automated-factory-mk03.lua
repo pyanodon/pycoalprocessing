@@ -43,14 +43,14 @@ ENTITY {
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "automated-factory-mk03"},
-    fast_replaceable_group = "automated-factory-mk03",
+    fast_replaceable_group = "automated-factory",
     max_health = 800,
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-3.3, -3.3}, {3.3, 3.3}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 3
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"crafting", "crafting-with-fluid", "advanced-crafting"},
