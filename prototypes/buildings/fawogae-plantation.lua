@@ -57,11 +57,11 @@ ENTITY {
     collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     module_specification = {
-        module_slots = 4
+        module_slots = 2
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"fawogae"},
-    crafting_speed = 0.2,
+    crafting_speed = 0.3,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
@@ -75,7 +75,7 @@ ENTITY {
         height = 193,
         frame_count = 100,
         line_length = 10,
-        animation_speed = 3.2,
+        animation_speed = 3.0,
         shift = {0.13, -0.03}
     },
     fluid_boxes = {
