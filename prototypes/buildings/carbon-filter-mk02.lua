@@ -9,40 +9,41 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "carbon-filter",
+    name = "carbon-filter-mk02",
     energy_required = 10,
     enabled = false,
     ingredients = {
-        {"assembling-machine-2", 1},
-        {"pipe", 2},
-        {"engine-unit", 3},
-        {"iron-plate", 20},
-        {"iron-gear-wheel", 30}
+        {"carbon-filter", 1},
+        {"steam-engine", 1},
+        {"plastic-bar", 10},
+        {"engine-unit", 1},
+        {"nexelit-plate", 15},
+        {"advanced-circuit", 5},
     },
     results = {
-        {"carbon-filter", 1}
+        {"carbon-filter-mk02", 1}
     }
-}:add_unlock("filtration")
+}
 
 ITEM {
     type = "item",
-    name = "carbon-filter",
-    icon = "__pycoalprocessing__/graphics/icons/carbon-filter.png",
+    name = "carbon-filter-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/carbon-filter-mk02.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "e",
-    place_result = "carbon-filter",
+    place_result = "carbon-filter-mk02",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "carbon-filter",
-    icon = "__pycoalprocessing__/graphics/icons/carbon-filter.png",
+    name = "carbon-filter-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/carbon-filter-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "carbon-filter"},
+    minable = {mining_time = 1, result = "carbon-filter-mk02"},
     fast_replaceable_group = "carbon-filter",
     max_health = 150,
     corpse = "big-remnants",
@@ -54,23 +55,23 @@ ENTITY {
     },
     allowed_effects = {"consumption", "speed", "pollution"},
     crafting_categories = {"carbonfilter"},
-    crafting_speed = 0.75,
+    crafting_speed = 2,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02 / 2
     },
-    energy_usage = "100kW",
+    energy_usage = "200kW",
     ingredient_count = 4,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/carbon-filter/carbon-filter.png",
+        filename = "__pycoalprocessing__/graphics/entity/carbon-filter/carbon-filter-mk02.png",
         priority = "high",
         width = 171,
         height = 167,
         frame_count = 25,
         line_length = 5,
         shift = {0.1, -0.125},
-        animation_speed = 1.5
+        animation_speed = 1.2
     },
     fluid_boxes = {
         {

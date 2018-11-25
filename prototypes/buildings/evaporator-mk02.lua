@@ -1,6 +1,6 @@
 local pipes = {
     south = {
-        filename = "__pycoalprocessing__/graphics/entity/evaporator/south.png",
+        filename = "__pycoalprocessing__/graphics/entity/evaporator/south-mk02.png",
         priority = "extra-high",
         width = 168,
         height = 194
@@ -9,41 +9,39 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "evaporator",
+    name = "evaporator-mk02",
     energy_required = 15,
     enabled = false,
     ingredients = {
-        {"gasturbinemk01", 1},
-        {"chemical-plant", 1},
-        {"electronic-circuit", 10},
-        {"steel-plate", 40}, --bob lead-plate
-        {"iron-plate", 40}, --bob steel-gear-wheel
-        {"iron-gear-wheel", 15} --bob steel-bearing
+        {"evaporator", 1},
+        {"engine-unit", 1},
+        {"nexelit-plate", 10},
+        {"advanced-circuit", 10},
     },
     results = {
-        {"evaporator", 1}
+        {"evaporator-mk02", 1}
     }
-}:add_unlock("coal-processing-2")
+}
 
 ITEM {
     type = "item",
-    name = "evaporator",
-    icon = "__pycoalprocessing__/graphics/icons/evaporator.png",
+    name = "evaporator-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/evaporator-mk02.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "l",
-    place_result = "evaporator",
+    place_result = "evaporator-mk02",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "evaporator",
-    icon = "__pycoalprocessing__/graphics/icons/evaporator.png",
+    name = "evaporator-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/evaporator-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "evaporator"},
+    minable = {mining_time = 1, result = "evaporator-mk02"},
     fast_replaceable_group = "evaporator",
     max_health = 300,
     corpse = "big-remnants",
@@ -51,20 +49,20 @@ ENTITY {
     collision_box = {{-2.48, -2.48}, {2.48, 2.48}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     module_specification = {
-        module_slots = 2
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"evaporator"},
-    crafting_speed = 1,
+    crafting_speed = 2,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02 / 2
     },
-    energy_usage = "500kW",
+    energy_usage = "600kW",
     ingredient_count = 2,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/evaporator/evaporator-off.png",
+        filename = "__pycoalprocessing__/graphics/entity/evaporator/evaporator-off-mk02.png",
         width = 168,
         height = 177,
         frame_count = 1,
@@ -78,12 +76,12 @@ ENTITY {
             south_position = {0.1, -0.0},
             east_position = {0.1, -0.0},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/evaporator/evaporator-anim.png",
+                filename = "__pycoalprocessing__/graphics/entity/evaporator/evaporator-anim-mk02.png",
                 frame_count = 80,
                 line_length = 10,
                 width = 168,
                 height = 177,
-                animation_speed = 0.25
+                animation_speed = 0.2
             }
         }
     },

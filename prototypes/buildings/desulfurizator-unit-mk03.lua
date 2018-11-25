@@ -18,40 +18,40 @@ local pipe_right = {
 
 RECIPE {
     type = "recipe",
-    name = "desulfurizator-unit",
+    name = "desulfurizator-unit-mk03",
     energy_required = 17,
     enabled = false,
     ingredients = {
-        {"storage-tank", 3},
-        {"chemical-plant", 1},
-        {"electronic-circuit", 40},
-        {"steel-plate", 20},
-        {"iron-plate", 50} --bob invar-alloy
+        {"desulfurizator-unit-mk02", 1},
+        {"processing-unit", 5},
+        {"niobium-plate", 10},
+        {"electric-engine-unit", 4},
+        {"kevlar", 30}
     },
     results = {
-        {"desulfurizator-unit", 1}
+        {"desulfurizator-unit-mk03", 1}
     }
-}:add_unlock("desulfurization")
+}
 
 ITEM {
     type = "item",
-    name = "desulfurizator-unit",
-    icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit.png",
+    name = "desulfurizator-unit-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit-mk03.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "j",
-    place_result = "desulfurizator-unit",
+    place_result = "desulfurizator-unit-mk03",
     stack_size = 5
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "desulfurizator-unit",
-    icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit.png",
+    name = "desulfurizator-unit-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "desulfurizator-unit"},
+    minable = {mining_time = 1, result = "desulfurizator-unit-mk03"},
     fast_replaceable_group = "desulfurizator-unit",
     max_health = 500,
     corpse = "big-remnants",
@@ -59,25 +59,25 @@ ENTITY {
     collision_box = {{-2.9, -2.9}, {2.9, 2.9}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     module_specification = {
-        module_slots = 2
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"desulfurization"},
-    crafting_speed = 1,
+    crafting_speed = 3,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.05
     },
-    energy_usage = "250kW",
+    energy_usage = "450kW",
     ingredient_count = 1,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-anim.png",
+        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-anim-mk03.png",
         width = 196,
         height = 202,
         frame_count = 15,
         line_length = 5,
-        animation_speed = 0.75,
+        animation_speed = 0.6,
         shift = {0.06, -0.1}
     },
     fluid_boxes = {

@@ -1,39 +1,39 @@
 RECIPE {
     type = "recipe",
-    name = "borax-mine",
-    energy_required = 25,
-    enabled = true,
+    name = "borax-mine-mk03",
+    energy_required = 15,
+    enabled = false,
     ingredients = {
-        {"electric-mining-drill", 1},
-        {"soil-extractormk01", 1},
-        {"electronic-circuit", 20}, --bob basic-electronic-circuit-board
-        {"iron-gear-wheel", 15}, --bob steel-bearing
-        {"transport-belt", 20}
+        {"borax-mine-mk02", 1},
+        {"processing-unit", 20},
+        {"niobium-plate", 30},
+        {"electric-engine-unit", 6},
+        {"express-transport-belt", 15}
     },
     results = {
-        {"borax-mine", 1}
+        {"borax-mine-mk03", 1}
     }
 }
 
 ITEM {
     type = "item",
-    name = "borax-mine",
-    icon = "__pycoalprocessing__/graphics/icons/borax-mine.png",
+    name = "borax-mine-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/borax-mine-mk03.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "py-extraction",
     order = "a",
-    place_result = "borax-mine",
+    place_result = "borax-mine-mk03",
     stack_size = 10
 }
 
 ENTITY {
     type = "mining-drill",
-    name = "borax-mine",
-    icon = "__pycoalprocessing__/graphics/icons/borax-mine.png",
+    name = "borax-mine-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/borax-mine-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "borax-mine"},
+    minable = {mining_time = 1, result = "borax-mine-mk03"},
     fast_replaceable_group = "borax-mine",
     max_health = 700,
     resource_categories = {"borax"},
@@ -55,16 +55,16 @@ ENTITY {
         }
     },
     module_specification = {
-        module_slots = 4
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    mining_speed = 2,
+    mining_speed = 5,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02
     },
-    energy_usage = "420kW",
+    energy_usage = "750kW",
     mining_power = 2,
     resource_searching_radius = 5.49,
     vector_to_place_result = {0, -4.65},
@@ -76,21 +76,21 @@ ENTITY {
     animations = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/borax-mine/bottom-borax.png",
+                filename = "__pycoalprocessing__/graphics/entity/borax-mine/bottom-borax-mk03.png",
                 width = 288,
                 height = 144,
                 line_length = 7,
                 frame_count = 90,
-                animation_speed = 0.15,
+                animation_speed = 0.25,
                 shift = {0.0, 2.25}
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/borax-mine/top-borax.png",
+                filename = "__pycoalprocessing__/graphics/entity/borax-mine/top-borax-mk03.png",
                 width = 288,
                 height = 144,
                 line_length = 7,
                 frame_count = 90,
-                animation_speed = 0.15,
+                animation_speed = 0.25,
                 shift = {0.0, -2.25}
             }
         }
