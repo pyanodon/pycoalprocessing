@@ -14,7 +14,7 @@ RECIPE {
     results = {
         {"fluid-separator-mk03", 1}
     }
-}:replace_ingredient('storage-tank', 'py-tank-5000')
+}
 
 ITEM {
     type = "item",
