@@ -9,40 +9,38 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "hpf",
+    name = "hpf-mk04",
     energy_required = 10,
     enabled = false,
     ingredients = {
-        {"stone-brick", 20},
-        {"copper-plate", 20},
-        {"iron-gear-wheel", 5}, --bob steel-bearing
-        {"iron-plate", 10}, --bob invar-alloy
-        {"electronic-circuit", 3} --bob basic-circuit-board
+        {"hpf-mk03", 1},
+        {"low-density-structure", 20},
+        {"nbfe-alloy", 10},
     },
     results = {
-        {"hpf", 1}
+        {"hpf-mk04", 1}
     }
-}:add_unlock("coal-processing-1")
+}
 
 ITEM {
     type = "item",
-    name = "hpf",
-    icon = "__pycoalprocessing__/graphics/icons/hpf.png",
+    name = "hpf-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/hpf-mk04.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "p",
-    place_result = "hpf",
+    place_result = "hpf-mk04",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "hpf",
-    icon = "__pycoalprocessing__/graphics/icons/hpf.png",
+    name = "hpf-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/hpf-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "hpf"},
+    minable = {mining_time = 1, result = "hpf-mk04"},
     fast_replaceable_group = "hpf",
     max_health = 300,
     corpse = "medium-remnants",
@@ -50,21 +48,21 @@ ENTITY {
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     module_specification = {
-        module_slots = 2
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"hpf"},
-    crafting_speed = 0.5,
+    crafting_speed = 3.5,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.03 / 2
     },
-    energy_usage = "300kW",
+    energy_usage = "500kW",
     ingredient_count = 6,
     animation = {
         priority = "high",
-        filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-off.png",
+        filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-off-mk04.png",
         width = 167,
         height = 173,
         frame_count = 1,
@@ -78,13 +76,13 @@ ENTITY {
             south_position = {0.1, 0},
             east_position = {0.1, 0},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-anim.png",
+                filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-anim-mk04.png",
                 priority = "medium",
                 frame_count = 50,
                 line_length = 10,
                 width = 167,
                 height = 173,
-                animation_speed = 0.7
+                animation_speed = 0.2
             }
         },
         {
@@ -93,13 +91,13 @@ ENTITY {
             south_position = {1.543, -2.68},
             east_position = {1.543, -2.68},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/hpf/smoke-anim.png",
+                filename = "__pycoalprocessing__/graphics/entity/hpf/smoke-anim-mk04.png",
                 priority = "extra-high",
                 frame_count = 80,
                 line_length = 20,
                 width = 79,
                 height = 44,
-                animation_speed = 0.3
+                animation_speed = 0.1
             }
         }
     },
