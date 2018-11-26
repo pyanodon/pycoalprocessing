@@ -9,40 +9,41 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "gasifier",
+    name = "gasifier-mk03",
     energy_required = 10,
     enabled = false,
     ingredients = {
-        {"steel-plate", 20},
-        {"pipe", 20},
-        {"iron-plate", 10},
-        --{"storage-tank", 1},
-        {"electronic-circuit", 4}
+        {"gasifier-mk02", 1},
+        {"storage-tank", 1},
+        {"electric-engine-unit", 2},
+        {"kevlar", 15},
+        {"processing-unit", 10},
+        {"niobium-plate", 20},
     },
     results = {
-        {"gasifier", 1}
+        {"gasifier-mk03", 1}
     }
-}:add_unlock("coal-processing-1")
+}
 
 ITEM {
     type = "item",
-    name = "gasifier",
-    icon = "__pycoalprocessing__/graphics/icons/gasifier.png",
+    name = "gasifier-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/gasifier-mk03.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "o",
-    place_result = "gasifier",
+    place_result = "gasifier-mk03",
     stack_size = 5
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "gasifier",
-    icon = "__pycoalprocessing__/graphics/icons/gasifier.png",
+    name = "gasifier-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/gasifier-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "gasifier"},
+    minable = {mining_time = 1, result = "gasifier-mk03"},
     fast_replaceable_group = "gasifier",
     max_health = 350,
     corpse = "big-remnants",
@@ -50,26 +51,26 @@ ENTITY {
     collision_box = {{-3.9, -3.9}, {3.9, 3.9}},
     selection_box = {{-4, -4}, {4, 4}},
     module_specification = {
-        module_slots = 2
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"gasifier"},
-    crafting_speed = 1,
+    crafting_speed = 3,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02 / 2
     },
-    energy_usage = "300kW",
+    energy_usage = "500kW",
     ingredient_count = 8,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/gasifier/gasifier-anim.png",
+        filename = "__pycoalprocessing__/graphics/entity/gasifier/gasifier-anim-mk03.png",
         priority = "high",
         width = 269,
         height = 269,
         frame_count = 30,
         line_length = 6,
-        animation_speed = 1,
+        animation_speed = 0.3,
         shift = {0.15, 0.3}
     },
     fluid_boxes = {
