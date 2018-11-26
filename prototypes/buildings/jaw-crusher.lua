@@ -41,18 +41,18 @@ ENTITY {
     collision_box = {{-3.3, -3.3}, {3.3, 3.3}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 4
+        module_slots = 2
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"crusher"},
-    crafting_speed = 0.4,
+    crafting_speed = 0.5,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.05 / 2.6
     },
     energy_usage = "300kW",
-    ingredient_count = 3,
+    ingredient_count = 5,
     animation = {
         layers = {
             {
@@ -62,7 +62,7 @@ ENTITY {
                 line_length = 21,
                 frame_count = 161,
                 shift = {-2.0, -0.5},
-                animation_speed = 0.85
+                animation_speed = 0.9
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-mid.png",
@@ -71,7 +71,7 @@ ENTITY {
                 line_length = 21,
                 frame_count = 161,
                 shift = {1.0, -0.5},
-                animation_speed = 0.85
+                animation_speed = 0.9
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-right.png",
@@ -80,7 +80,7 @@ ENTITY {
                 line_length = 64,
                 frame_count = 161,
                 shift = {3.0, -0.5},
-                animation_speed = 0.85
+                animation_speed = 0.9
             }
         }
     },

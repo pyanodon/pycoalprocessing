@@ -50,18 +50,18 @@ ENTITY {
     collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
     selection_box = {{-3, -3}, {3, 3}},
     module_specification = {
-        module_slots = 5
+        module_slots = 3
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"methanol"},
-    crafting_speed = 0.75,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.01 / 2
     },
     energy_usage = "500kW",
-    ingredient_count = 5,
+    ingredient_count = 8,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/methanol-off.png",
         width = 202,
@@ -82,7 +82,7 @@ ENTITY {
                 line_length = 10,
                 width = 202,
                 height = 247,
-                animation_speed = 0.5
+                animation_speed = 0.4
             }
         }
     },

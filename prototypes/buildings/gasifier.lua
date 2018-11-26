@@ -50,18 +50,18 @@ ENTITY {
     collision_box = {{-3.9, -3.9}, {3.9, 3.9}},
     selection_box = {{-4, -4}, {4, 4}},
     module_specification = {
-        module_slots = 4
+        module_slots = 2
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"gasifier"},
-    crafting_speed = 1.25,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02 / 2
     },
-    energy_usage = "270kW",
-    ingredient_count = 4,
+    energy_usage = "300kW",
+    ingredient_count = 8,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/gasifier/gasifier-anim.png",
         priority = "high",
@@ -69,6 +69,7 @@ ENTITY {
         height = 269,
         frame_count = 30,
         line_length = 6,
+        animation_speed = 1,
         shift = {0.15, 0.3}
     },
     fluid_boxes = {

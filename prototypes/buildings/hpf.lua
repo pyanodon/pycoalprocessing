@@ -50,18 +50,18 @@ ENTITY {
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     module_specification = {
-        module_slots = 4
+        module_slots = 2
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"hpf"},
-    crafting_speed = 0.75,
+    crafting_speed = 0.5,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.03 / 2
     },
-    energy_usage = "370kW",
-    ingredient_count = 5,
+    energy_usage = "300kW",
+    ingredient_count = 6,
     animation = {
         priority = "high",
         filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-off.png",
