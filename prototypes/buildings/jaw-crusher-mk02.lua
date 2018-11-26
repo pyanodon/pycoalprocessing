@@ -1,39 +1,37 @@
 RECIPE {
     type = "recipe",
-    name = "jaw-crusher",
+    name = "jaw-crusher-mk02",
     energy_required = 10,
     enabled = false,
     ingredients = {
-        {"car", 1},
-        {"iron-plate", 25},
-        {"engine-unit", 4},
-        {"steel-plate", 30}, --bob invar-alloy
-        {"electronic-circuit", 15} --bob basic-electronic-circuit-board
+        {"jaw-crusher", 1},
+        {"nexelit-plate", 30},
+        {"advanced-circuit", 10}
     },
     results = {
-        {"jaw-crusher", 1}
+        {"jaw-crusher-mk02", 1}
     }
-}:add_unlock("crusher")
+}
 
 ITEM {
     type = "item",
-    name = "jaw-crusher",
-    icon = "__pycoalprocessing__/graphics/icons/jaw-crusher.png",
+    name = "jaw-crusher-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/jaw-crusher-mk02.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "s",
-    place_result = "jaw-crusher",
+    place_result = "jaw-crusher-mk02",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "jaw-crusher",
-    icon = "__pycoalprocessing__/graphics/icons/jaw-crusher.png",
+    name = "jaw-crusher-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/jaw-crusher-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "jaw-crusher"},
+    minable = {mining_time = 1, result = "jaw-crusher-mk02"},
     fast_replaceable_group = "jaw-crusher",
     max_health = 600,
     corpse = "medium-remnants",
@@ -41,46 +39,46 @@ ENTITY {
     collision_box = {{-3.3, -3.3}, {3.3, 3.3}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 2
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"crusher"},
-    crafting_speed = 0.5,
+    crafting_speed = 1.5,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.05 / 2.6
     },
-    energy_usage = "300kW",
+    energy_usage = "400kW",
     ingredient_count = 5,
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-left.png",
+                filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-left-mk02.png",
                 width = 96,
                 height = 256,
                 line_length = 21,
                 frame_count = 161,
                 shift = {-2.0, -0.5},
-                animation_speed = 0.9
+                animation_speed = 0.4
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-mid.png",
+                filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-mid-mk02.png",
                 width = 96,
                 height = 256,
                 line_length = 21,
                 frame_count = 161,
                 shift = {1.0, -0.5},
-                animation_speed = 0.9
+                animation_speed = 0.4
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-right.png",
+                filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-right-mk02.png",
                 width = 32,
                 height = 256,
                 line_length = 64,
                 frame_count = 161,
                 shift = {3.0, -0.5},
-                animation_speed = 0.9
+                animation_speed = 0.4
             }
         }
     },

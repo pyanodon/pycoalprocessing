@@ -9,40 +9,39 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "methanol-reactor",
+    name = "methanol-reactor-mk03",
     energy_required = 15,
     enabled = false,
     ingredients = {
-        {"gasturbinemk01", 1},
-        {"chemical-plant", 1}, --bob electrolyser
-        {"electronic-circuit", 25},
-        {"steel-plate", 20},
-        {"iron-gear-wheel", 15} --bob steel-bearing
+        {"methanol-reactor-mk02", 1},
+        {"processing-unit", 20},
+        {"niobium-plate", 30},
+        {"electric-engine-unit", 6},
     },
     results = {
-        {"methanol-reactor", 1}
+        {"methanol-reactor-mk03", 1}
     }
-}:add_unlock("methanol-processing-1")
+}
 
 ITEM {
     type = "item",
-    name = "methanol-reactor",
-    icon = "__pycoalprocessing__/graphics/icons/methanol-reactor.png",
+    name = "methanol-reactor-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/methanol-reactor-mk03.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "q",
-    place_result = "methanol-reactor",
+    place_result = "methanol-reactor-mk03",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "methanol-reactor",
-    icon = "__pycoalprocessing__/graphics/icons/methanol-reactor.png",
+    name = "methanol-reactor-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/methanol-reactor-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "methanol-reactor"},
+    minable = {mining_time = 1, result = "methanol-reactor-mk03"},
     fast_replaceable_group = "methanol-reactor",
     max_health = 300,
     corpse = "big-remnants",
@@ -50,20 +49,20 @@ ENTITY {
     collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
     selection_box = {{-3, -3}, {3, 3}},
     module_specification = {
-        module_slots = 3
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"methanol"},
-    crafting_speed = 1,
+    crafting_speed = 3,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.01 / 2
     },
-    energy_usage = "500kW",
+    energy_usage = "700kW",
     ingredient_count = 8,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/methanol-off.png",
+        filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/methanol-off-mk03.png",
         width = 202,
         height = 247,
         frame_count = 1,
@@ -77,12 +76,12 @@ ENTITY {
             south_position = {0.15, -0.79},
             east_position = {0.15, -0.79},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/methanol-anim.png",
+                filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/methanol-anim-mk03.png",
                 frame_count = 50,
                 line_length = 10,
                 width = 202,
                 height = 247,
-                animation_speed = 0.4
+                animation_speed = 0.2
             }
         }
     },
