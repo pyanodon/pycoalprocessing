@@ -57,11 +57,11 @@ ENTITY {
     collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 3
+        module_slots = 2
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"rectisol"},
-    crafting_speed = 0.75,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",

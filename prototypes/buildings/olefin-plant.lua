@@ -41,11 +41,11 @@ ENTITY {
     collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
     selection_box = {{-3, -3}, {3, 3}},
     module_specification = {
-        module_slots = 4
+        module_slots = 2
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"olefin"},
-    crafting_speed = 0.65,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
