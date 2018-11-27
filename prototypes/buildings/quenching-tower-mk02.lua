@@ -29,40 +29,39 @@ local pipes2 = {
 
 RECIPE {
     type = "recipe",
-    name = "quenching-tower",
+    name = "quenching-tower-mk02",
     energy_required = 10,
     enabled = false,
     ingredients = {
-        {"concrete", 50},
-        {"iron-stick", 50},
-        {"pipe", 10}, --bob stone-pipe
-        {"pump", 2},
-        {"electronic-circuit", 15}
+        {"quenching-tower", 1},
+        {"plastic-bar", 20},
+        {"pump", 4},
+        {"advanced-circuit", 15}
     },
     results = {
-        {"quenching-tower", 1}
+        {"quenching-tower-mk02", 1}
     }
-}:add_unlock("coal-processing-2")
+}
 
 ITEM {
     type = "item",
-    name = "quenching-tower",
-    icon = "__pycoalprocessing__/graphics/icons/quenching-tower.png",
+    name = "quenching-tower-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/quenching-tower-mk02.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "u",
-    place_result = "quenching-tower",
+    place_result = "quenching-tower-mk02",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "quenching-tower",
-    icon = "__pycoalprocessing__/graphics/icons/quenching-tower.png",
+    name = "quenching-tower-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/quenching-tower-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "quenching-tower"},
+    minable = {mining_time = 1, result = "quenching-tower-mk02"},
     fast_replaceable_group = "quenching-tower",
     max_health = 500,
     corpse = "big-remnants",
@@ -70,25 +69,25 @@ ENTITY {
     collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 2
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"quenching-tower"},
-    crafting_speed = 1,
+    crafting_speed = 2,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.01 / 2
     },
-    energy_usage = "300kW",
+    energy_usage = "400kW",
     ingredient_count = 7,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/quenching-tower-anim.png",
+        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/quenching-tower-anim-mk02.png",
         width = 232,
         height = 252,
         frame_count = 60,
         line_length = 8,
-        animation_speed = 0.7,
+        animation_speed = 0.5,
         shift = {0.08, 0.0}
     },
     fluid_boxes = {
