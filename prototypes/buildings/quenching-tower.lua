@@ -70,11 +70,11 @@ ENTITY {
     collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 4
+        module_slots = 2
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"quenching-tower"},
-    crafting_speed = 0.65,
+    crafting_speed = 1,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
@@ -88,7 +88,7 @@ ENTITY {
         height = 252,
         frame_count = 60,
         line_length = 8,
-        animation_speed = 0.75,
+        animation_speed = 0.7,
         shift = {0.08, 0.0}
     },
     fluid_boxes = {
