@@ -27,40 +27,38 @@ local pipe_right = {
 
 RECIPE {
     type = "recipe",
-    name = "power-house",
+    name = "power-house-mk04",
     energy_required = 17,
     enabled = false,
     ingredients = {
-        {"gasturbinemk01", 1},
-        {"electronic-circuit", 25},
-        {"steel-plate", 20},
-        {"iron-gear-wheel", 15}, --bob steel-bearing
-        {"iron-plate", 30} --bob lead-plate
+        {"power-house-mk03", 1},
+        {"low-density-structure", 5},
+        {"nbfe-alloy", 10},
     },
     results = {
-        {"power-house", 1}
+        {"power-house-mk04", 1}
     }
-}:add_unlock("energy-1")
+}
 
 ITEM {
     type = "item",
-    name = "power-house",
-    icon = "__pycoalprocessing__/graphics/icons/power-house.png",
+    name = "power-house-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/power-house-mk04.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "t",
-    place_result = "power-house",
+    place_result = "power-house-mk04",
     stack_size = 5
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "power-house",
-    icon = "__pycoalprocessing__/graphics/icons/power-house.png",
+    name = "power-house-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/power-house-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "power-house"},
+    minable = {mining_time = 1, result = "power-house-mk04"},
     fast_replaceable_group = "power-house",
     max_health = 300,
     corpse = "big-remnants",
@@ -68,25 +66,25 @@ ENTITY {
     collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 2
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"combustion"},
-    crafting_speed = 1,
+    crafting_speed = 4,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02 / 2
     },
-    energy_usage = "200kW",
-    ingredient_count = 4,
+    energy_usage = "500kW",
+    ingredient_count = 6,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/power-house/powerhouse-anim.png",
+        filename = "__pycoalprocessing__/graphics/entity/power-house/powerhouse-anim-mk04.png",
         width = 233,
         height = 234,
         frame_count = 30,
         line_length = 6,
-        animation_speed = 0.7,
+        animation_speed = 0.12,
         shift = {0.156, -0.165}
     },
     fluid_boxes = {

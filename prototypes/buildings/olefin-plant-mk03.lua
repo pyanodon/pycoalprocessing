@@ -1,39 +1,40 @@
 RECIPE {
     type = "recipe",
-    name = "olefin-plant",
+    name = "olefin-plant-mk03",
     energy_required = 15,
     enabled = false,
     ingredients = {
-        {"storage-tank", 4},
-        {"chemical-plant", 2}, --bob electrolyser
-        {"electronic-circuit", 30},
-        {"steel-plate", 40},
-        {"iron-gear-wheel", 15} --bob steel-bearing
+        {"olefin-plant-mk02", 1},
+        {"storage-tank", 3},
+        {"processing-unit", 15},
+        {"niobium-plate", 20},
+        {"pump", 4},
+        {"kevlar", 20}
     },
     results = {
-        {"olefin-plant", 1}
+        {"olefin-plant-mk03", 1}
     }
-}:add_unlock("fuel-production")
+}
 
 ITEM {
     type = "item",
-    name = "olefin-plant",
-    icon = "__pycoalprocessing__/graphics/icons/olefin-plant.png",
+    name = "olefin-plant-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/olefin-plant-mk03.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "r",
-    place_result = "olefin-plant",
+    place_result = "olefin-plant-mk03",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "olefin-plant",
-    icon = "__pycoalprocessing__/graphics/icons/olefin-plant.png",
+    name = "olefin-plant-mk03",
+    icon = "__pycoalprocessing__/graphics/icons/olefin-plant-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "olefin-plant"},
+    minable = {mining_time = 1, result = "olefin-plant-mk03"},
     fast_replaceable_group = "olefin-plant",
     max_health = 400,
     corpse = "big-remnants",
@@ -41,20 +42,20 @@ ENTITY {
     collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
     selection_box = {{-3, -3}, {3, 3}},
     module_specification = {
-        module_slots = 2
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"olefin"},
-    crafting_speed = 1,
+    crafting_speed = 3,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.03
     },
-    energy_usage = "350kW",
+    energy_usage = "550kW",
     ingredient_count = 5,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/olefin-plant/olefin-off.png",
+        filename = "__pycoalprocessing__/graphics/entity/olefin-plant/olefin-off-mk03.png",
         width = 205,
         height = 224,
         frame_count = 1,
@@ -68,12 +69,12 @@ ENTITY {
             south_position = util.by_pixel(7.5, -16),
             east_position = util.by_pixel(7.5, -16),
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/olefin-plant/olefin-plant.png",
+                filename = "__pycoalprocessing__/graphics/entity/olefin-plant/olefin-plant-mk03.png",
                 frame_count = 69,
                 line_length = 9,
                 width = 205,
                 height = 224,
-                animation_speed = 0.4
+                animation_speed = 0.2
             }
         }
     },

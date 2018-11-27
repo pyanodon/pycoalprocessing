@@ -15,41 +15,40 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "rectisol",
+    name = "rectisol-mk04",
     energy_required = 10,
     enabled = false,
     ingredients = {
-        {"assembling-machine-2", 2},
+        {"rectisol-mk03", 1},
         {"storage-tank", 2},
-        {"pipe", 20},
-        {"pump", 2},
-        {"iron-plate", 25},
-        {"steel-plate", 20}
+        {"kevlar", 30},
+        {"nbfe-alloy", 15},
+        {"low-density-structure", 10},
     },
     results = {
-        {"rectisol", 1}
+        {"rectisol-mk04", 1}
     }
-}:add_unlock("methanol-processing-1")
+}
 
 ITEM {
     type = "item",
-    name = "rectisol",
-    icon = "__pycoalprocessing__/graphics/icons/rectisol.png",
+    name = "rectisol-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/rectisol-mk04.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "v",
-    place_result = "rectisol",
+    place_result = "rectisol-mk04",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "rectisol",
-    icon = "__pycoalprocessing__/graphics/icons/rectisol.png",
+    name = "rectisol-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/rectisol-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "rectisol"},
+    minable = {mining_time = 1, result = "rectisol-mk04"},
     fast_replaceable_group = "rectisol",
     max_health = 150,
     corpse = "big-remnants",
@@ -57,20 +56,20 @@ ENTITY {
     collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 2
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"rectisol"},
-    crafting_speed = 1,
+    crafting_speed = 4,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02 / 2
     },
-    energy_usage = "300kW",
+    energy_usage = "600kW",
     ingredient_count = 7,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/rectisol/rectisol.png",
+        filename = "__pycoalprocessing__/graphics/entity/rectisol/rectisol-mk04.png",
         width = 250,
         height = 239,
         frame_count = 1,
@@ -84,12 +83,12 @@ ENTITY {
             south_position = {-1.07, 1.132},
             east_position = {-1.07, 1.132},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/rectisol/rec-tanks-anim.png",
+                filename = "__pycoalprocessing__/graphics/entity/rectisol/rec-tanks-anim-mk04.png",
                 frame_count = 80,
                 line_length = 10,
                 width = 121,
                 height = 55,
-                animation_speed = 0.35
+                animation_speed = 0.12
             }
         },
         {
@@ -98,7 +97,7 @@ ENTITY {
             south_position = {2.03, -1.28},
             east_position = {2.03, -1.28},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/rectisol/rec-lifter-anim.png",
+                filename = "__pycoalprocessing__/graphics/entity/rectisol/rec-lifter-anim-mk04.png",
                 frame_count = 80,
                 line_length = 40,
                 width = 47,
