@@ -17,39 +17,39 @@ local pipes2 = {
 
 RECIPE {
     type = "recipe",
-    name = "washer",
+    name = "washer-mk02",
     energy_required = 4,
-    enabled = true,
+    enabled = false,
     ingredients = {
-        {"iron-plate", 10},
-        {"pipe", 25},
-        {"stone-brick", 30},
-        {"electronic-circuit", 2} --bob basic-circuit-board
+        {"washer", 1},
+        {"engine-unit", 2},
+        {"advanced-circuit", 5},
+        {"nexelit-plate", 30}
     },
     results = {
-        {"washer", 1}
+        {"washer-mk02", 1}
     }
 }
 
 ITEM {
     type = "item",
-    name = "washer",
-    icon = "__pycoalprocessing__/graphics/icons/washer.png",
+    name = "washer-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/washer-mk02.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "z2",
-    place_result = "washer",
+    place_result = "washer-mk02",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "washer",
-    icon = "__pycoalprocessing__/graphics/icons/washer.png",
+    name = "washer-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/washer-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "washer"},
+    minable = {mining_time = 1, result = "washer-mk02"},
     fast_replaceable_group = "washer",
     max_health = 250,
     corpse = "big-remnants",
@@ -57,25 +57,25 @@ ENTITY {
     collision_box = {{-3.0, -3.0}, {3.0, 3.0}},
     selection_box = {{-3.1, -3.1}, {3.1, 3.1}},
     module_specification = {
-        module_slots = 3
+        module_slots = 2
     },
     allowed_effects = {"consumption", "speed", "pollution"},
     crafting_categories = {"washer"},
-    crafting_speed = 1,
+    crafting_speed = 2,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02 / 2
     },
-    energy_usage = "100kW",
+    energy_usage = "200kW",
     ingredient_count = 4,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/washer/washer.png",
+        filename = "__pycoalprocessing__/graphics/entity/washer/washer-mk02.png",
         width = 204,
         height = 204,
         frame_count = 80,
         line_length = 10,
-        animation_speed = 0.9,
+        animation_speed = 0.6,
         shift = {0.17, -0.17}
     },
     fluid_boxes = {

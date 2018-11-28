@@ -15,40 +15,40 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "soil-extractormk01",
+    name = "soil-extractormk02",
     energy_required = 10,
-    enabled = true,
+    enabled = false,
     ingredients = {
-        {"burner-mining-drill", 2},
-        {"electronic-circuit", 10}, --bob basic-circuit-board
-        {"iron-plate", 30},
-        {"copper-cable", 5},
-        {"iron-gear-wheel", 15}
+        {"soil-extractormk01", 1},
+        {"plastic-bar", 20},
+        {"pump", 4},
+        {"advanced-circuit", 15},
+        {"copper-cable", 50},
     },
     results = {
-        {"soil-extractormk01", 1}
+        {"soil-extractormk02", 1}
     }
 }
 
 ITEM {
     type = "item",
-    name = "soil-extractormk01",
-    icon = "__pycoalprocessing__/graphics/icons/soil-extractormk01.png",
+    name = "soil-extractormk02",
+    icon = "__pycoalprocessing__/graphics/icons/soil-extractormk02.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "py-extraction",
     order = "g",
-    place_result = "soil-extractormk01",
+    place_result = "soil-extractormk02",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "soil-extractormk01",
-    icon = "__pycoalprocessing__/graphics/icons/soil-extractormk01.png",
+    name = "soil-extractormk02",
+    icon = "__pycoalprocessing__/graphics/icons/soil-extractormk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "soil-extractormk01"},
+    minable = {mining_time = 1, result = "soil-extractormk02"},
     fast_replaceable_group = "soil-extractormk01",
     max_health = 300,
     corpse = "big-remnants",
@@ -56,25 +56,25 @@ ENTITY {
     collision_box = {{-3.48, -3.48}, {3.48, 3.48}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 3
+        module_slots = 2
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"soil-extraction"},
-    crafting_speed = 0.3,
+    crafting_speed = 0.6,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.01
     },
-    energy_usage = "400kW",
+    energy_usage = "500kW",
     ingredient_count = 2,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/soil-extractormk01.png",
+        filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/soil-extractormk02.png",
         width = 235,
         height = 266,
         frame_count = 30,
         line_length = 6,
-        animation_speed = 0.8,
+        animation_speed = 0.6,
         shift = {0.16, -0.609}
     },
     fluid_boxes = {
