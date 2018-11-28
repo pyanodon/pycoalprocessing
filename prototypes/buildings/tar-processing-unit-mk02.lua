@@ -9,40 +9,40 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "tar-processing-unit",
+    name = "tar-processing-unit-mk02",
     energy_required = 5,
     enabled = false,
     ingredients = {
-        {"steel-plate", 20},
-        {"iron-plate", 10},
-        {"pipe", 15}, --bob stone-pipe
-        {"stone-furnace", 1},
-        {"electronic-circuit", 7}
+        {"tar-processing-unit", 1},
+        {"nexelit-plate", 20},
+        {"concrete", 60},
+        {"plastic-bar", 10},
+        {"advanced-circuit", 10}
     },
     results = {
-        {"tar-processing-unit", 1}
+        {"tar-processing-unit-mk02", 1}
     }
-}:add_unlock("coal-processing-1")
+}
 
 ITEM {
     type = "item",
-    name = "tar-processing-unit",
-    icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit.png",
+    name = "tar-processing-unit-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit-mk02.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "z1",
-    place_result = "tar-processing-unit",
+    place_result = "tar-processing-unit-mk02",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "tar-processing-unit",
-    icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit.png",
+    name = "tar-processing-unit-mk02",
+    icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "tar-processing-unit"},
+    minable = {mining_time = 1, result = "tar-processing-unit-mk02"},
     fast_replaceable_group = "tar-processing-unit",
     max_health = 250,
     corpse = "big-remnants",
@@ -50,20 +50,20 @@ ENTITY {
     collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 2
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "pollution"},
     crafting_categories = {"tar"},
-    crafting_speed = 1,
+    crafting_speed = 2,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.02 / 2
     },
-    energy_usage = "100kW",
+    energy_usage = "200kW",
     ingredient_count = 4,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/tar-processing-unit/tar-processing.png",
+        filename = "__pycoalprocessing__/graphics/entity/tar-processing-unit/tar-processing-mk02.png",
         width = 236,
         height = 229,
         frame_count = 1,
@@ -76,7 +76,7 @@ ENTITY {
             south_position = {1.212, -0.07},
             east_position = {1.212, -0.07},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/tar-processing-unit/tar-anim.png",
+                filename = "__pycoalprocessing__/graphics/entity/tar-processing-unit/tar-anim-mk02.png",
                 frame_count = 40,
                 line_length = 8,
                 width = 96,

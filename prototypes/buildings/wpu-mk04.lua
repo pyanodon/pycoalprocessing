@@ -1,39 +1,37 @@
 RECIPE {
     type = "recipe",
-    name = "wpu",
+    name = "wpu-mk04",
     energy_required = 10,
-    enabled = true,
+    enabled = false,
     ingredients = {
-        {"raw-wood", 20},
-        {"iron-plate", 20},
-        {"iron-gear-wheel", 15},
-        {"burner-mining-drill", 2},
-        {"copper-cable", 50}
+        {"wpu-mk03", 1},
+        {"low-density-structure", 10},
+        {"nbfe-alloy", 10},
     },
     results = {
-        {"wpu", 1}
+        {"wpu-mk04", 1}
     }
 }
 
 ITEM {
     type = "item",
-    name = "wpu",
-    icon = "__pycoalprocessing__/graphics/icons/wpu.png",
+    name = "wpu-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/wpu-mk04.png",
     icon_size = 32,
     flags = {"goes-to-quickbar"},
     subgroup = "coal-processing",
     order = "c",
-    place_result = "wpu",
+    place_result = "wpu-mk04",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "wpu",
-    icon = "__pycoalprocessing__/graphics/icons/wpu.png",
+    name = "wpu-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/wpu-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "wpu"},
+    minable = {mining_time = 1, result = "wpu-mk04"},
     fast_replaceable_group = "wpu",
     max_health = 800,
     corpse = "medium-remnants",
@@ -41,37 +39,37 @@ ENTITY {
     collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     module_specification = {
-        module_slots = 3
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"wpu"},
-    crafting_speed = 1,
+    crafting_speed = 4,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions = 0.06
     },
-    energy_usage = "150kW",
+    energy_usage = "450kW",
     ingredient_count = 3,
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/wpu/left.png",
+                filename = "__pycoalprocessing__/graphics/entity/wpu/left-mk04.png",
                 width = 96,
                 height = 277,
                 line_length = 21,
                 frame_count = 130,
                 shift = {-1.5, -1.328},
-                animation_speed = 0.4
+                animation_speed = 0.12
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/wpu/right.png",
+                filename = "__pycoalprocessing__/graphics/entity/wpu/right-mk04.png",
                 width = 96,
                 height = 277,
                 line_length = 21,
                 frame_count = 130,
                 shift = {1.5, -1.328},
-                animation_speed = 0.4
+                animation_speed = 0.12
             }
         }
     },
