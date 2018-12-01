@@ -67,6 +67,8 @@ local function get_main(tab)
     return tab[#tab].name or tab[#tab][1]
 end
 
+if not mods["pyrawores"] then
+
 for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
     local ing1 = (recipe.ingredients and recipe.ingredients[1].name and recipe.ingredients[1]) or (recipe.ingredients and {type = "item", name = recipe.ingredients[1][1], amount = recipe.ingredients[1][2] * 5})
     ing1 = ing1 or (recipe.normal and recipe.normal.ingredients and recipe.normal.ingredients[1].name and recipe.normal.ingredients[1]) or (recipe.normal and {type = "item", name = recipe.normal.ingredients[1][1], amount = recipe.normal.ingredients[1][2] * 5})
@@ -100,4 +102,5 @@ for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
         icon_size = 32,
         main_product = recipe.main_product or #res > 1 and get_main(res) or nil
     }
+end
 end
