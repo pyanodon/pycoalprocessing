@@ -22,3 +22,5 @@ ITEM("science-pack-2", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/
 ITEM("science-pack-3", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-3.png")
 
 RECIPE("wood"):set_fields {energy_required = 15}
+
+require("prototypes/recipes/advanced-foundry-recipes")
