@@ -58,7 +58,7 @@ ENTITY {
         module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    mining_speed = 2,
+    mining_speed = 0.5,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
@@ -81,7 +81,7 @@ ENTITY {
                 height = 144,
                 line_length = 7,
                 frame_count = 90,
-                animation_speed = 0.15,
+                animation_speed = 0.1,
                 shift = {0.0, 2.25}
             },
             {
@@ -90,7 +90,7 @@ ENTITY {
                 height = 144,
                 line_length = 7,
                 frame_count = 90,
-                animation_speed = 0.15,
+                animation_speed = 0.1,
                 shift = {0.0, -2.25}
             }
         }
