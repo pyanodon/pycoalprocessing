@@ -71,7 +71,7 @@ ENTITY {
                 line_length = 16,
                 frame_count = 101,
                 shift = {-1.5, -0.68},
-                animation_speed = 0.5
+                animation_speed = 0.3
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/automated-factory/mk01-right.png",
@@ -80,7 +80,7 @@ ENTITY {
                 line_length = 16,
                 frame_count = 101,
                 shift = {2.31, -0.68},
-                animation_speed = 0.5
+                animation_speed = 0.3
             }
         }
     },
