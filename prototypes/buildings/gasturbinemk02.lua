@@ -88,9 +88,9 @@ ENTITY {
     smoke = {
         {
             name = "light-smoke",
-            north_position = {-0.312, -2.93},
-            east_position = {-1.5, -2},
-            frequency = 5 / 32,
+            north_position = {0.52, -3.1},
+            east_position = {0.52, -3.1},
+            frequency = 5 / 8,
             starting_vertical_speed = 0.08,
             slow_down_factor = 1,
             starting_frame_deviation = 60
