@@ -75,38 +75,10 @@ ENTITY {
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"quenching-tower"},
     crafting_speed = 3,
-    energy_source =
-    {
-      type = "burner",
-      fuel_category = "chemical",
-      effectivity = 1,
-      fuel_inventory_size = 1,
-      emissions = 0.1,
-      smoke =
-      {
-        {
-            name = "smoke",
-            north_position = {2.1, -1.9},
-            east_position = {2.1, -1.9},
-            west_position = {2.1, -1.9},
-            south_position = {2.1, -1.9},
-            frequency = 90,
-            starting_vertical_speed = 0.03,
-            slow_down_factor = 1,
-            starting_frame_deviation = 60
-        },
-        {
-            name = "turbine-smoke",
-            north_position = {1.9, -3.0},
-            east_position = {1.9, -3.0},
-            west_position = {1.9, -3.0},
-            south_position = {1.9, -3.0},
-            frequency = 90,
-            starting_vertical_speed = 0.02,
-            slow_down_factor = 1,
-            starting_frame_deviation = 60
-        },
-      },
+    energy_source = {
+        type = "electric",
+        usage_priority = "secondary-input",
+        emissions = 0.02 / 2
     },
     energy_usage = "500kW",
     ingredient_count = 7,
