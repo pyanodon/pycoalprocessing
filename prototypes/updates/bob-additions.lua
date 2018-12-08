@@ -1,5 +1,3 @@
-
-
 --uses bob_carbon
 RECIPE {
     type = "recipe",
@@ -141,7 +139,7 @@ RECIPE {
     subgroup = "py-items-hpf",
     order = "j"
 }
- 
+
 --GLASS PRODUCTION3 - compatibility with angels
 RECIPE {
     type = "recipe",
