@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "acetylene",
-    category = "gasifier",
+    category = "chemistry",
     enabled = false,
     energy_required = 8,
     ingredients = {
