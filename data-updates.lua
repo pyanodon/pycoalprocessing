@@ -3,12 +3,6 @@ require("stdlib/data/data").create_data_globals()
 --update recipes for creosote
 require("prototypes/updates/recipe-updates")
 
---update recipes to use bobmods
-if mods["boblibrary"] then
-    require("prototypes/updates/bob-additions")
-    require("prototypes/updates/bob-updates")
-end
-
 for _, v in pairs(data.raw.module) do
     if v.name:find("productivity%-module") and v.limitation then
         for _, recipe in ipairs({"syngas"}) do
