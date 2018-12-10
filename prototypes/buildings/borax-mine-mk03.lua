@@ -58,7 +58,7 @@ ENTITY {
         module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    mining_speed = 2,
+    mining_speed = 3,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
