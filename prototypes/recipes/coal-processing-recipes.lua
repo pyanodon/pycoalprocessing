@@ -1243,7 +1243,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 200}
     },
     results = {
-        {type = "fluid", name = "slacked-lime", amount = 150}
+        {type = "fluid", name = "slacked-lime", amount = 50}
     },
     main_product = "slacked-lime",
     icon = "__pycoalprocessing__/graphics/icons/slacked-lime.png",
