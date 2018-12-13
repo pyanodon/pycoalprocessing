@@ -80,7 +80,7 @@ ENTITY {
         emissions = 0.02 / 2
     },
     energy_usage = "600kW",
-    ingredient_count = 7,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/quenching-tower/quenching-tower-anim-mk04.png",
         width = 232,

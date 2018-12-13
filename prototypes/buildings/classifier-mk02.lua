@@ -52,7 +52,7 @@ ENTITY {
         emissions = 0.03 / 2.6
     },
     energy_usage = "270kW",
-    ingredient_count = 4,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/classifier/classifier-mk02.png",
         width = 256,

@@ -53,7 +53,7 @@ ENTITY {
         emissions = 0.01 / 4
     },
     energy_usage = "350kW",
-    ingredient_count = 5,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/sand-extractor/sand-extractor-mk03.png",
         width = 192,

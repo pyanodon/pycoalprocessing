@@ -52,7 +52,7 @@ ENTITY {
         emissions = 0.03
     },
     energy_usage = "250kW",
-    ingredient_count = 3,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/solid-separator/solid-separator-mk02.png",
         width = 249,

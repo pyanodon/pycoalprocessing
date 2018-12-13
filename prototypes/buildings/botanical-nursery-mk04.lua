@@ -77,7 +77,7 @@ ENTITY {
         emissions = 0.0
     },
     energy_usage = "430kW",
-    ingredient_count = 4,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/botanical-nursery/botanical-nursery-mk04.png",
         width = 260,

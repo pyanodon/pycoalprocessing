@@ -61,7 +61,7 @@ ENTITY {
         emissions = 0.02 / 2
     },
     energy_usage = "200kW",
-    ingredient_count = 4,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/tar-processing-unit/tar-processing-mk02.png",
         width = 236,

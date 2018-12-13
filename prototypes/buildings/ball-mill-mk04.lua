@@ -50,7 +50,7 @@ ENTITY {
         emissions = 0.05 / 2.6
     },
     energy_usage = "800kW",
-    ingredient_count = 6,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/ball-mill/ball-mill-mk04.png",
         width = 215,
