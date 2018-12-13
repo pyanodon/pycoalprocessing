@@ -105,7 +105,7 @@ ENTITY {
       },
     },
     energy_usage = "500kW",
-    ingredient_count = 6,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/power-house/powerhouse-anim-mk04.png",
         width = 233,

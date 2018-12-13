@@ -67,7 +67,7 @@ ENTITY {
         emissions = 0.02 / 2
     },
     energy_usage = "600kW",
-    ingredient_count = 7,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/rectisol/rectisol-mk04.png",
         width = 250,

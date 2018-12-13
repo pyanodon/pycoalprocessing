@@ -52,7 +52,7 @@ ENTITY {
         emissions = 0.06
     },
     energy_usage = "420kW",
-    ingredient_count = 4,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/ground-borer/ground-borer.png",
         width = 307,
