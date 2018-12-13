@@ -69,7 +69,7 @@ ENTITY {
         emissions = 0.05
     },
     energy_usage = "550kW",
-    ingredient_count = 1,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-anim-mk04.png",
         width = 196,
