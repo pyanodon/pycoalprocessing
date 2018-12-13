@@ -59,7 +59,7 @@ ENTITY {
         emissions = 0.03 / 2
     },
     energy_usage = "500kW",
-    ingredient_count = 6,
+    ingredient_count = 20,
     animation = {
         priority = "high",
         filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-off-mk04.png",

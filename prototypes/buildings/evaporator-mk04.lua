@@ -59,7 +59,7 @@ ENTITY {
         emissions = 0.02 / 2
     },
     energy_usage = "800kW",
-    ingredient_count = 2,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/evaporator/evaporator-off-mk04.png",
         width = 168,

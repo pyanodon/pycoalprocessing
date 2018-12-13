@@ -51,7 +51,7 @@ ENTITY {
         emissions = 0.05 / 4
     },
     energy_usage = "190kW",
-    ingredient_count = 5,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-pasture.png",
         width = 320,

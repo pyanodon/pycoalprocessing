@@ -63,7 +63,7 @@ ENTITY {
         emissions = 0.00
     },
     energy_usage = "120kW",
-    ingredient_count = 1,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/cooling-tower-mk02/cooling_tower_mk02.png",
         width = 192,

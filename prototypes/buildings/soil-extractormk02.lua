@@ -67,7 +67,7 @@ ENTITY {
         emissions = 0.01
     },
     energy_usage = "500kW",
-    ingredient_count = 2,
+    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/soil-extractormk02.png",
         width = 235,
