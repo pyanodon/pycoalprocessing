@@ -36,13 +36,13 @@ RECIPE {
         {"quenching-tower-mk02", 1},
         {"electric-engine-unit", 4},
         {"niobium-plate", 20},
-        {"niobium-pipe", 20},
+        {"pipe", 20},
         {"processing-unit", 10}
     },
     results = {
         {"quenching-tower-mk03", 1}
     }
-}
+}:replace_ingredient("pipe", "niobium-pipe")
 
 ITEM {
     type = "item",
