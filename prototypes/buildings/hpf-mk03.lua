@@ -17,12 +17,12 @@ RECIPE {
         {"electric-engine-unit", 1},
         {"kevlar", 10},
         {"processing-unit", 5},
-        {"niobium-pipe", 10},
+        {"pipe", 10},
     },
     results = {
         {"hpf-mk03", 1}
     }
-}
+}:replace_ingredient("pipe", "niobium-pipe")
 
 ITEM {
     type = "item",
