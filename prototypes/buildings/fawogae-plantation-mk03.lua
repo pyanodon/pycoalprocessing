@@ -23,12 +23,12 @@ RECIPE {
         {"niobium-plate", 15},
         {"processing-unit", 10},
         {"treated-wood", 20}, --pyht fiberboard
-        {"niobium-pipe", 20},
+        {"pipe", 20},
     },
     results = {
         {"fawogae-plantation-mk03", 1}
     }
-}
+}:replace_ingredient("pipe", "niobium-pipe")
 
 ITEM {
     type = "item",

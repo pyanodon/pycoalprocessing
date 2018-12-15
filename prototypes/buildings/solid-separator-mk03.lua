@@ -9,12 +9,12 @@ RECIPE {
         {"steel-plate", 15},
         {"niobium-plate", 20},
         {"processing-unit", 5},
-        {"niobium-pipe", 15},
+        {"pipe", 15},
     },
     results = {
         {"solid-separator-mk03", 1}
     }
-}
+}:replace_ingredient("pipe", "niobium-pipe")
 
 ITEM {
     type = "item",

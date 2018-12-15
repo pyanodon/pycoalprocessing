@@ -8,12 +8,12 @@ RECIPE {
         {"storage-tank", 1},
         {"low-density-structure", 10},
         {"nbfe-alloy", 5},
-        {"niobium-pipe", 15},
+        {"pipe", 15},
     },
     results = {
         {"fluid-separator-mk04", 1}
     }
-}
+}:replace_ingredient("pipe", "niobium-pipe")
 
 ITEM {
     type = "item",
