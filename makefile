@@ -1,13 +1,9 @@
 PACKAGE_NAME := $(shell cat info.json|jq -r .name)
 VERSION_STRING := $(shell cat info.json|jq -r .version)
-TOKEN := $(shell cat .token)
 OUTPUT_NAME := $(PACKAGE_NAME)_$(VERSION_STRING)
 BUILD_DIR := .build
 OUTPUT_DIR := $(BUILD_DIR)/$(OUTPUT_NAME)
 CONFIG = ./$(OUTPUT_DIR)/config.lua
-MODS_DIRECTORY := ../.mods.15
-##MOD_LINK := $(shell find $(MODS_DIRECTORY)/$(OUTPUT_NAME) -mindepth 1 -maxdepth 1 -type d)
-PARSER := ". | map(select(.tag_name == \"$(VERSION_STRING)\"))[0].assets | map(select(.name == \"$(OUTPUT_NAME).zip\"))[0].id"
 
 PKG_COPY := $(wildcard *.md) $(wildcard .*.md) $(wildcard graphics) $(wildcard locale) $(wildcard sounds)
 
@@ -38,11 +34,6 @@ $(OUTPUT_DIR)/%.lua: %.lua
 $(OUTPUT_DIR)/%: %
 	@mkdir -p $(@D)
 	@sed $(SED_EXPRS) $< > $@
-
-update-stdlib:
-	#copy stdlib-files from branch
-	git add stdlib/
-	git commit -m "STDLIB Update"
 
 tag:
 	git tag -f v$(VERSION_STRING)
