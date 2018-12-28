@@ -21,6 +21,8 @@ release: clean check package
 
 optimized-release: clean check tag optimize-package
 
+quick: clean package artifact
+
 package-copy: $(PKG_DIRS) $(PKG_FILES)
 	@mkdir -p $(OUTPUT_DIR)
 ifneq ($(PKG_COPY),)
@@ -66,3 +68,7 @@ optimize-package: package-copy $(OUT_FILES) nodebug optimize tag
 clean:
 	@rm -rf $(BUILD_DIR)
 	@echo Removing Build Directory.
+
+artifact:
+	@echo 'Making Artifacts'
+	@cd $(BUILD_DIR) && mkdir artifacts && cp $(OUTPUT_NAME).zip artifacts/$(OUTPUT_NAME).zip
