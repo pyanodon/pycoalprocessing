@@ -1,5 +1,7 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.11
+Version: 1.0.14
 Date: ??????
   Bugfixes:
-    - Fixes
+    - Fixed some tech-tree missing links.
+  Balances:
+    - Balanced some GB recipes.
