@@ -52,7 +52,7 @@ RECIPE {
         {type = "item", name = "drill-head", amount = 1}
     },
     results = {
-        {type = "item", name = "raw-borax", amount = 20}
+        {type = "item", name = "raw-borax", amount = 15}
     },
     main_product = "raw-borax",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-borax.png",
@@ -73,7 +73,7 @@ RECIPE {
         {type = "item", name = "drill-head", amount = 1}
     },
     results = {
-        {type = "item", name = "niobium-ore", amount = 20}
+        {type = "item", name = "niobium-ore", amount = 15}
     },
     main_product = "niobium-ore",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-niobium.png",
