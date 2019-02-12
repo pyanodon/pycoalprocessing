@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.15
+Date: ??????
+  Bugfixes:
+
+  Balances:
+    - wood now cost 10s.
+    - Added extra pipes to advanced foundry.
+    - Added extra recipes for combustion mixture.
+    - Prepare Advanced foundry to receive pYPH.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.14
 Date: ??????
   Bugfixes:
