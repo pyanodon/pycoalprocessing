@@ -1300,7 +1300,7 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "coal-dust", amount = 50}
+        {type = "item", name = "coal-dust", amount = 12}
     },
     results = {
         {type = "item", name = "ash", amount = 1}
