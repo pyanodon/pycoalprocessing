@@ -392,8 +392,7 @@ RECIPE {
         {type = "item", name = "tailings-dust", amount = 30},
         {type = "item", name = "coarse", amount = 15},
         {type = "fluid", name = "tar", amount = 500},
-        {type = "fluid", name = "rare-earth-mud", amount = 30},
-        {type = "fluid", name = "dirty-water", amount = 100}
+           {type = "fluid", name = "dirty-water", amount = 100}
     },
     main_product = "tar",
     icon = "__pycoalprocessing__/graphics/icons/tar.png",
