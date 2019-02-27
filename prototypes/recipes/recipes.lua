@@ -58,26 +58,6 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "remud-dirty-water",
-    category = "chemistry",
-    enabled = false,
-    energy_required = 3.0,
-    ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 250},
-        {type = "fluid", name = "slacked-lime", amount = 100}
-    },
-    results = {
-        {type = "fluid", name = "rare-earth-mud", amount = 50}
-    },
-    main_product = "rare-earth-mud",
-    icon = "__pycoalprocessing__/graphics/icons/remud-dirty-water.png",
-    icon_size = 32,
-    subgroup = "py-fluid-handling",
-    order = "l"
-}
-
-RECIPE {
-    type = "recipe",
     name = "soil-washing",
     category = "washer",
     enabled = true,
