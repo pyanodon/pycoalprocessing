@@ -4,7 +4,7 @@ RECIPE {
     energy_required = 10,
     enabled = true,
     ingredients = {
-        {"raw-wood", 20},
+        {"wood", 20},
         {"iron-plate", 20},
         {"iron-gear-wheel", 15},
         {"burner-mining-drill", 2},
@@ -20,7 +20,7 @@ ITEM {
     name = "wpu",
     icon = "__pycoalprocessing__/graphics/icons/wpu.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "c",
     place_result = "wpu",

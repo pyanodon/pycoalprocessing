@@ -21,7 +21,7 @@ ITEM {
     name = "olefin-plant-mk02",
     icon = "__pycoalprocessing__/graphics/icons/olefin-plant-mk02.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "r",
     place_result = "olefin-plant-mk02",

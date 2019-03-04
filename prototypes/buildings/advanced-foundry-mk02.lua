@@ -20,7 +20,7 @@ ITEM {
     name = "advanced-foundry-mk02",
     icon = "__pycoalprocessing__/graphics/icons/advanced-foundry-mk02.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "b",
     place_result = "advanced-foundry-mk02",

@@ -28,7 +28,7 @@ ITEM {
     name = "tar-processing-unit-mk04",
     icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit-mk04.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "z1",
     place_result = "tar-processing-unit-mk04",

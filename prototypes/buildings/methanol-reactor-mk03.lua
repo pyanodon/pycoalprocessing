@@ -3,7 +3,7 @@ local pipes = {
         filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/pipe-ending-down.png",
         priority = "extra-high",
         width = 40,
-        height = 45
+        height = 32
     }
 }
 
@@ -28,7 +28,7 @@ ITEM {
     name = "methanol-reactor-mk03",
     icon = "__pycoalprocessing__/graphics/icons/methanol-reactor-mk03.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "q",
     place_result = "methanol-reactor-mk03",

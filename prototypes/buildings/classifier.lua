@@ -20,7 +20,7 @@ ITEM {
     name = "classifier",
     icon = "__pycoalprocessing__/graphics/icons/classifier.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "f",
     place_result = "classifier",
