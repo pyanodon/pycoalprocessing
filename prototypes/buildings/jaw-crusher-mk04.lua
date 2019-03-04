@@ -18,7 +18,7 @@ ITEM {
     name = "jaw-crusher-mk04",
     icon = "__pycoalprocessing__/graphics/icons/jaw-crusher-mk04.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "s",
     place_result = "jaw-crusher-mk04",

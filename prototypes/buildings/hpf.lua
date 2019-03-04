@@ -29,7 +29,7 @@ ITEM {
     name = "hpf",
     icon = "__pycoalprocessing__/graphics/icons/hpf.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "p",
     place_result = "hpf",

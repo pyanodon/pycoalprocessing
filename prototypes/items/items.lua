@@ -3,7 +3,7 @@ ITEM {
     name = "ash",
     icon = "__pycoalprocessing__/graphics/icons/ash.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "ash",
     stack_size = 1000
@@ -14,7 +14,7 @@ ITEM {
     name = "chromium",
     icon = "__pycoalprocessing__/graphics/icons/chromium.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "chromium",
     stack_size = 100
@@ -25,7 +25,7 @@ ITEM {
     name = "gravel",
     icon = "__pycoalprocessing__/graphics/icons/gravel.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "gravel",
     stack_size = 300
@@ -38,7 +38,7 @@ ITEM {
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/coke.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "coke",
     stack_size = 500
@@ -49,7 +49,7 @@ ITEM {
     name = "nichrome",
     icon = "__pycoalprocessing__/graphics/icons/nichrome.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "nichrome",
     stack_size = 200
@@ -60,7 +60,7 @@ ITEM {
     name = "iron-oxide",
     icon = "__pycoalprocessing__/graphics/icons/iron-oxide.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "iron-oxide",
     stack_size = 200
@@ -73,7 +73,7 @@ ITEM {
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items-hpf",
     order = "hpf-[active-carbon]",
     stack_size = 100
@@ -84,7 +84,7 @@ ITEM {
     name = "zinc-chloride",
     icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "zinc-chloride",
     stack_size = 100
@@ -95,7 +95,7 @@ ITEM {
     name = "tailings-dust",
     icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "tailings-dust",
     stack_size = 1000
@@ -106,7 +106,7 @@ ITEM {
     name = "soil",
     icon = "__pycoalprocessing__/graphics/icons/soil.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "soil",
     stack_size = 1000
@@ -117,7 +117,7 @@ ITEM {
     name = "nexelit-ore",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-ore.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 300
@@ -130,7 +130,7 @@ ITEM {
     icon_size = 32,
     fuel_value = "2MJ",
     fuel_category = "drill",
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 200
@@ -141,7 +141,7 @@ ITEM {
     name = "sand",
     icon = "__pycoalprocessing__/graphics/icons/sand.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "sand",
     stack_size = 500
@@ -152,7 +152,7 @@ ITEM {
     name = "pure-sand",
     icon = "__pycoalprocessing__/graphics/icons/pure-sand.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "pure-sand",
     stack_size = 500
@@ -163,7 +163,7 @@ ITEM {
     name = "limestone",
     icon = "__pycoalprocessing__/graphics/icons/limestone.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "limestone",
     stack_size = 300
@@ -174,7 +174,7 @@ ITEM {
     name = "organics",
     icon = "__pycoalprocessing__/graphics/icons/organics.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "organics",
     stack_size = 300
@@ -185,7 +185,7 @@ ITEM {
     name = "coarse",
     icon = "__pycoalprocessing__/graphics/icons/coarse.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "coarse",
     stack_size = 500
@@ -196,7 +196,7 @@ ITEM {
     name = "rich-dust",
     icon = "__pycoalprocessing__/graphics/icons/richdust.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "rich-dust",
     stack_size = 500
@@ -207,7 +207,7 @@ ITEM {
     name = "coal-dust",
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     fuel_value = "7MJ",
     fuel_category = "chemical",
     subgroup = "py-items",
@@ -220,7 +220,7 @@ ITEM {
     name = "chromite-sand",
     icon = "__pycoalprocessing__/graphics/icons/chromite_sand.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "chromite-sand",
     stack_size = 500
@@ -231,7 +231,7 @@ ITEM {
     name = "nexelit-plate",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "nexelit-plate",
     stack_size = 300
@@ -242,7 +242,7 @@ ITEM {
     name = "sand-casting",
     icon = "__pycoalprocessing__/graphics/icons/sand-casting.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "sand-casting",
     stack_size = 200
@@ -253,7 +253,7 @@ ITEM {
     name = "lithium-peroxide",
     icon = "__pycoalprocessing__/graphics/icons/lithium-peroxide.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 200
@@ -264,7 +264,7 @@ ITEM {
     name = "nexelit-cartridge",
     icon = "__pycoalprocessing__/graphics/icons/nexelit-cartridge.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -275,7 +275,7 @@ ITEM {
     name = "saturated-nexelit-cartridge",
     icon = "__pycoalprocessing__/graphics/icons/saturated-nexelit-cartridge.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -286,7 +286,7 @@ ITEM {
     name = "lime",
     icon = "__pycoalprocessing__/graphics/icons/lime.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -299,7 +299,7 @@ ITEM {
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/fuelrod-mk01.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items-hpf",
     order = "hpf-[active-carbon]",
     stack_size = 200
@@ -310,7 +310,7 @@ ITEM {
     name = "fawogae",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-icon.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "z",
     stack_size = 300
@@ -321,7 +321,7 @@ ITEM {
     name = "fawogae-substrate",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-substrate.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -332,7 +332,7 @@ ITEM {
     name = "flask",
     icon = "__pycoalprocessing__/graphics/icons/flask.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 50
@@ -343,7 +343,7 @@ ITEM {
     name = "bonemeal",
     icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "z",
     stack_size = 500
@@ -354,7 +354,7 @@ ITEM {
     name = "raw-borax",
     icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -365,7 +365,7 @@ ITEM {
     name = "borax",
     icon = "__pycoalprocessing__/graphics/icons/borax.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -376,7 +376,7 @@ ITEM {
     name = "ralesia",
     icon = "__pycoalprocessing__/graphics/icons/ralesia.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 500
@@ -387,7 +387,7 @@ ITEM {
     name = "rich-clay",
     icon = "__pycoalprocessing__/graphics/icons/rich-clay.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -398,7 +398,7 @@ ITEM {
     name = "ground-sample01",
     icon = "__pycoalprocessing__/graphics/icons/ground-sample01.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -409,7 +409,7 @@ ITEM {
     name = "bio-sample01",
     icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -420,7 +420,7 @@ ITEM {
     name = "alien-sample01",
     icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -431,7 +431,7 @@ ITEM {
     name = "equipment-chassi",
     icon = "__pycoalprocessing__/graphics/icons/equipment-chassi.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -442,7 +442,7 @@ ITEM {
     name = "lab-instrument",
     icon = "__pycoalprocessing__/graphics/icons/lab-instrument.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -453,7 +453,7 @@ ITEM {
     name = "lens",
     icon = "__pycoalprocessing__/graphics/icons/lens.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -465,7 +465,7 @@ ITEM {
     enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/boron-trioxide.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -477,7 +477,7 @@ ITEM {
     enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -488,7 +488,7 @@ ITEM {
     name = "niobium-ore",
     icon = "__pycoalprocessing__/graphics/icons/niobium-ore.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items-hpf",
     order = "g",
     stack_size = 100
@@ -499,7 +499,7 @@ ITEM {
     name = "niobium-powder",
     icon = "__pycoalprocessing__/graphics/icons/niobium-powder.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-crusher",
     stack_size = 100
 }
@@ -509,7 +509,7 @@ ITEM {
     name = "niobium-dust",
     icon = "__pycoalprocessing__/graphics/icons/niobium-dust.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-mill",
     --order = "g",
     stack_size = 100
@@ -520,7 +520,7 @@ ITEM {
     name = "niobium-concentrate",
     icon = "__pycoalprocessing__/graphics/icons/niobium-concentrate.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items-class",
     order = "d",
     stack_size = 100
@@ -531,7 +531,7 @@ ITEM {
     name = "mukmoux-fat",
     icon = "__pycoalprocessing__/graphics/icons/mukmoux-fat.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 50
@@ -542,7 +542,7 @@ ITEM {
     name = "niobium-oxide",
     icon = "__pycoalprocessing__/graphics/icons/niobium-oxide.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 50
@@ -553,7 +553,7 @@ ITEM {
     name = "niobium-plate",
     icon = "__pycoalprocessing__/graphics/icons/niobium-plate.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 50
@@ -565,7 +565,7 @@ ITEM {
     name = "glass-core",
     icon = "__pycoalprocessing__/graphics/icons/glass-core.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items-hpf",
     --order = "g",
     stack_size = 200
@@ -577,7 +577,7 @@ ITEM {
     name = "cladding",
     icon = "__pycoalprocessing__/graphics/icons/cladding.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
@@ -589,7 +589,7 @@ ITEM {
     name = "ppd",
     icon = "__pycoalprocessing__/graphics/icons/ppd.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 500
@@ -601,7 +601,7 @@ ITEM {
     name = "kevlar",
     icon = "__pycoalprocessing__/graphics/icons/kevlar.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
@@ -613,7 +613,7 @@ ITEM {
     name = "kevlar-coating",
     icon = "__pycoalprocessing__/graphics/icons/kevlar-coating.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
@@ -625,7 +625,7 @@ ITEM {
     name = "nbfe-alloy",
     icon = "__pycoalprocessing__/graphics/icons/nbfe-alloy.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
@@ -637,7 +637,7 @@ ITEM {
     name = "nbfe-coating",
     icon = "__pycoalprocessing__/graphics/icons/nbfe-coating.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
@@ -649,7 +649,7 @@ ITEM {
     name = "cladded-core",
     icon = "__pycoalprocessing__/graphics/icons/cladded-core.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
@@ -661,7 +661,7 @@ ITEM {
     name = "copper-coating",
     icon = "__pycoalprocessing__/graphics/icons/copper-coating.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
@@ -673,7 +673,7 @@ ITEM {
     name = "optical-fiber",
     icon = "__pycoalprocessing__/graphics/icons/optical-fiber.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
@@ -685,7 +685,7 @@ ITEM {
     name = "biofilm",
     icon = "__pycoalprocessing__/graphics/icons/biofilm.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
@@ -696,7 +696,7 @@ ITEM {
     enabled = false,
     name = "filtration-media",
     icon = "__pycoalprocessing__/graphics/icons/filtration-media.png",
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     icon_size = 32,
     subgroup = "py-items",
     --order = "g",
@@ -711,7 +711,7 @@ ITEM {
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     --order = "g",
     stack_size = 200
@@ -722,7 +722,7 @@ ITEM {
     name = "calcium-carbide",
     icon = "__pycoalprocessing__/graphics/icons/calcium-carbide.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 100
@@ -734,7 +734,7 @@ ITEM {
     enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-iron.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 1000
@@ -746,7 +746,7 @@ ITEM {
     enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/crusher/crushed-copper.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "g",
     stack_size = 1000
@@ -760,7 +760,7 @@ ITEM {
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/log.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "a2",
     stack_size = 100
@@ -772,7 +772,7 @@ ITEM {
     enabled = false,
     icon = "__pycoalprocessing__/graphics/icons/rare-earth-dust.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "a2",
     stack_size = 400
@@ -783,7 +783,7 @@ ITEM {
     name = "treated-wood",
     icon = "__pycoalprocessing__/graphics/icons/treated-wood.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "treated-wood",
     fuel_value = "3MJ",

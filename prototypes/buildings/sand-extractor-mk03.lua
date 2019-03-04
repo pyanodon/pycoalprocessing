@@ -21,7 +21,7 @@ ITEM {
     name = "sand-extractor-mk03",
     icon = "__pycoalprocessing__/graphics/icons/sand-extractor-mk03.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "e",
     place_result = "sand-extractor-mk03",

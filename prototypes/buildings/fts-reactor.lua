@@ -21,7 +21,7 @@ ITEM {
     name = "fts-reactor",
     icon = "__pycoalprocessing__/graphics/icons/fts-reactor.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "n",
     place_result = "fts-reactor",

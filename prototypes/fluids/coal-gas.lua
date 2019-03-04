@@ -27,7 +27,7 @@ RECIPE {
     enabled = true,
     energy_required = 3,
     ingredients = {
-        {type = "item", name = "raw-wood", amount = 10}
+        {type = "item", name = "wood", amount = 10}
     },
     results = {
         {type = "fluid", name = "coal-gas", amount = 10},

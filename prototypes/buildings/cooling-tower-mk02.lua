@@ -2,8 +2,8 @@ local pipes = {
     south = {
         filename = "__base__/graphics/entity/assembling-machine-2/assembling-machine-2-pipe-S.png",
         priority = "extra-high",
-        width = 40,
-        height = 45
+        width = 44,
+        height = 31
     }
 }
 
@@ -30,7 +30,7 @@ ITEM {
     name = "cooling-tower-mk02",
     icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk02.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "i",
     place_result = "cooling-tower-mk02",

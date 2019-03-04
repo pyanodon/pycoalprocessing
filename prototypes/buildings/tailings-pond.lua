@@ -34,7 +34,7 @@ ITEM {
     name = "tailings-pond",
     icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "z",
     place_result = "tailings-pond",
