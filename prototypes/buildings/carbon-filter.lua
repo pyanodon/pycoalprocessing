@@ -29,7 +29,7 @@ ITEM {
     name = "carbon-filter",
     icon = "__pycoalprocessing__/graphics/icons/carbon-filter.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "e",
     place_result = "carbon-filter",

@@ -24,7 +24,7 @@ RECIPE {
         {"electronic-circuit", 10}, --bob basic-circuit-board
         {"copper-cable", 25},
         {"iron-plate", 40},
-        {"raw-wood", 150}
+        {"wood", 150}
     },
     results = {
         {"fawogae-plantation", 1}
@@ -36,7 +36,7 @@ ITEM {
     name = "fawogae-plantation",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-plantation-icon.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "b",
     place_result = "fawogae-plantation",
