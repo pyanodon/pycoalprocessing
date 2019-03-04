@@ -4,7 +4,7 @@ PYC.control = {} --Do not change
 
 --Messages and stuff for developers
 --These should be false in a release.
-PYC.DEBUG = true
+PYC.DEBUG = false
 PYC.control.loglevel = 0
 
 --Changes some vanilla/mod recipes to use Creosate
