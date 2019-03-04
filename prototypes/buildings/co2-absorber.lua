@@ -20,7 +20,7 @@ ITEM {
     name = "co2-absorber",
     icon = "__pycoalprocessing__/graphics/icons/co2-absorber.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "g",
     place_result = "co2-absorber",

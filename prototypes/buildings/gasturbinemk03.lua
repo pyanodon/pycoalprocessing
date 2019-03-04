@@ -16,8 +16,8 @@ local pipe_pictures =
         south = {
             filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-S.png",
             priority = "extra-high",
-            width = 40,
-            height = 45,
+            width = 44,
+            height = 31,
             shift = shift_south
         }
     else
@@ -27,8 +27,8 @@ local pipe_pictures =
         west = {
             filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-W.png",
             priority = "extra-high",
-            width = 40,
-            height = 45,
+            width = 19,
+            height = 37,
             shift = shift_west
         }
     else
@@ -38,8 +38,8 @@ local pipe_pictures =
         east = {
             filename = "__base__/graphics/entity/assembling-machine-3/assembling-machine-3-pipe-E.png",
             priority = "extra-high",
-            width = 40,
-            height = 45,
+            width = 20,
+            height = 38,
             shift = shift_east
         }
     else
@@ -70,7 +70,7 @@ ITEM {
     name = "gasturbinemk03",
     icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk03.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-power",
     order = "a-d[gasturbinemk03]",
     place_result = "gasturbinemk03",

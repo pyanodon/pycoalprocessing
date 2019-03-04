@@ -36,7 +36,7 @@ ITEM {
     name = "washer",
     icon = "__pycoalprocessing__/graphics/icons/washer.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "z2",
     place_result = "washer",

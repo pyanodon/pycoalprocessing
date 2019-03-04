@@ -20,7 +20,7 @@ ITEM {
     name = "ulric-corral",
     icon = "__pycoalprocessing__/graphics/icons/ulric-corral.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "h",
     place_result = "ulric-corral",
@@ -98,7 +98,7 @@ ENTITY {
             east_position = {-0.88, 0.62},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-andante-spritesheet.png",
-                frame_count = 145,
+                frame_count = 45,
                 line_length = 10,
                 width = 192,
                 height = 128,
@@ -112,7 +112,7 @@ ENTITY {
             east_position = {-0.25, 1.62},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-middle-pastando-spritesheet.png",
-                frame_count = 317,
+                frame_count = 100,
                 line_length = 64,
                 width = 32,
                 height = 48,
@@ -127,7 +127,7 @@ ENTITY {
             east_position = {-2.0, 2.56},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-cub-spritesheet.png",
-                frame_count = 120,
+                frame_count = 60,
                 line_length = 60,
                 width = 32,
                 height = 32,
@@ -141,7 +141,7 @@ ENTITY {
             east_position = {2.5, 2.81},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-right-cub-spritesheet.png",
-                frame_count = 120,
+                frame_count = 60,
                 line_length = 60,
                 width = 32,
                 height = 32,
@@ -155,7 +155,7 @@ ENTITY {
             east_position = {1.81, 3.12},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-pink-cub-spritesheet.png",
-                frame_count = 320,
+                frame_count = 180,
                 line_length = 50,
                 width = 40,
                 height = 25,
@@ -169,7 +169,7 @@ ENTITY {
             east_position = {-2.0, 3.0},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-mother-spritesheet.png",
-                frame_count = 200,
+                frame_count = 100,
                 line_length = 20,
                 width = 70,
                 height = 46,
@@ -183,7 +183,7 @@ ENTITY {
             east_position = {2.56, 1.0},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-mid-right-stand-spritesheet.png",
-                frame_count = 120,
+                frame_count = 60,
                 line_length = 60,
                 width = 32,
                 height = 68,
@@ -197,7 +197,7 @@ ENTITY {
             east_position = {1.87, 0.46},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-right-pastando-spritesheet.png",
-                frame_count = 200,
+                frame_count = 100,
                 line_length = 32,
                 width = 64,
                 height = 64,

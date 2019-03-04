@@ -20,7 +20,7 @@ ITEM {
     name = "gasturbinemk01",
     icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk01.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-power",
     order = "a-d[gasturbinemk01]",
     place_result = "gasturbinemk01",
