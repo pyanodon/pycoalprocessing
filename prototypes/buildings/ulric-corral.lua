@@ -72,37 +72,22 @@ ENTITY {
                 line_length = 8,
                 shift = {0.0, -4.0},
                 animation_speed = 0.6
-            }
+            },
         }
     },
     working_visualisations = {
         {
-            north_position = {1.78, -1.34},
-            west_position = {1.78, -1.34},
-            south_position = {1.78, -1.34},
-            east_position = {1.78, -1.34},
+            north_position = {-2.0, 3.0},
+            west_position = {-2.0, 3.0},
+            south_position = {-2.0, 3.0},
+            east_position = {-2.0, 3.0},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/verificador.png",
-                frame_count = 49,
-                line_length = 20,
-                width = 96,
-                height = 16,
-                run_mode = "forward-then-backward",
-                animation_speed = 0.6
-            }
-        },
-        {
-            north_position = {-0.88, 0.62},
-            west_position = {-0.88, 0.62},
-            south_position = {-0.88, 0.62},
-            east_position = {-0.88, 0.62},
-            animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-andante-spritesheet.png",
-                frame_count = 45,
+                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/mother-2.png",
+                frame_count = 50,
                 line_length = 10,
-                width = 192,
-                height = 128,
-                animation_speed = 0.5
+                width = 70,
+                height = 46,
+                animation_speed = 0.15
             }
         },
         {
@@ -111,13 +96,27 @@ ENTITY {
             south_position = {-0.25, 1.62},
             east_position = {-0.25, 1.62},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-middle-pastando-spritesheet.png",
-                frame_count = 100,
-                line_length = 64,
+                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-middle-pastando-2.png",
+                frame_count = 75,
+                line_length = 10,
                 width = 32,
                 height = 48,
                 run_mode = "forward-then-backward",
-                animation_speed = 0.55
+                animation_speed = 0.16
+            }
+        },
+		{
+            north_position = {2.5, 2.81},
+            west_position = {2.5, 2.81},
+            south_position = {2.5, 2.81},
+            east_position = {2.5, 2.81},
+            animation = {
+                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-right-cub-spritesheet.png",
+                frame_count = 1,
+                --line_length = 60,
+                width = 32,
+                height = 32,
+                animation_speed = 0.6
             }
         },
         {
@@ -127,11 +126,11 @@ ENTITY {
             east_position = {-2.0, 2.56},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-cub-spritesheet.png",
-                frame_count = 60,
-                line_length = 60,
+                frame_count = 1,
+                --line_length = 60,
                 width = 32,
                 height = 32,
-                animation_speed = 0.6
+                --animation_speed = 0.6
             }
         },
         {
@@ -141,11 +140,11 @@ ENTITY {
             east_position = {2.5, 2.81},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-right-cub-spritesheet.png",
-                frame_count = 60,
-                line_length = 60,
+                frame_count = 1,
+                --line_length = 60,
                 width = 32,
                 height = 32,
-                animation_speed = 0.6
+                --animation_speed = 0.6
             }
         },
         {
@@ -154,26 +153,12 @@ ENTITY {
             south_position = {1.81, 3.12},
             east_position = {1.81, 3.12},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-pink-cub-spritesheet.png",
-                frame_count = 180,
-                line_length = 50,
+                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-pink-cub-2.png",
+                frame_count = 80,
+                line_length = 10,
                 width = 40,
                 height = 25,
-                animation_speed = 0.6
-            }
-        },
-        {
-            north_position = {-2.0, 3.0},
-            west_position = {-2.0, 3.0},
-            south_position = {-2.0, 3.0},
-            east_position = {-2.0, 3.0},
-            animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-mother-spritesheet.png",
-                frame_count = 100,
-                line_length = 20,
-                width = 70,
-                height = 46,
-                animation_speed = 0.5
+                animation_speed = 0.18
             }
         },
         {
@@ -183,11 +168,11 @@ ENTITY {
             east_position = {2.56, 1.0},
             animation = {
                 filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-mid-right-stand-spritesheet.png",
-                frame_count = 60,
-                line_length = 60,
+                frame_count = 1,
+                --line_length = 60,
                 width = 32,
                 height = 68,
-                animation_speed = 0.5
+                --animation_speed = 0.5
             }
         },
         {
@@ -196,12 +181,12 @@ ENTITY {
             south_position = {1.87, 0.46},
             east_position = {1.87, 0.46},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-right-pastando-spritesheet.png",
-                frame_count = 100,
-                line_length = 32,
+                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-right-pastando-2.png",
+                frame_count = 50,
+                line_length = 10,
                 width = 64,
                 height = 64,
-                animation_speed = 0.5
+                animation_speed = 0.13
             }
         }
     },
