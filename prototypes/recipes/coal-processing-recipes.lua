@@ -975,29 +975,6 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "raw-wood-to-coal",
-    localised_name = {"recipe-name.wood-to-coal", {"item-name.wood"}, {"item-name.coal"}},
-    localised_description = {"recipe-description.wood-to-coal", {"item-name.wood"}, {"item-name.coal"}},
-    icons = {
-        {icon = data.raw.item["coal"].icon, icon_size = 32},
-        {icon = data.raw.item["wood"].icon, tint = {a = .5}, icon_size = 32}
-    },
-    icon_size = 32,
-    enabled = false,
-    category = "hpf",
-    subgroup = "py-items-hpf",
-    order = "b",
-    ingredients = {
-        {type = "item", name = "wood", amount = 10}
-    },
-    results = {
-        {type = "item", name = "coal", amount = 10}
-    },
-    energy_required = 3
-}:add_unlock("coal-processing-2")
-
-RECIPE {
-    type = "recipe",
     name = "wood-to-coal",
     localised_name = {"recipe-name.wood-to-coal", {"item-name.wood"}, {"item-name.coal"}},
     localised_description = {"recipe-description.wood-to-coal", {"item-name.wood"}, {"item-name.coal"}},

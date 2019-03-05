@@ -40,25 +40,6 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "raw-to-wood",
-    category = "wpu",
-    enabled = true,
-    energy_required = 5,
-    ingredients = {
-        {type = "item", name = "wood", amount = 1}
-    },
-    results = {
-	--need to fix wood planks no longer exist
-        {type = "item", name = "wood", amount = 2}
-    },
-    icon = data.raw.item["wood"].icon,
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "a8"
-}
-
-RECIPE {
-    type = "recipe",
     name = "soil-washing",
     category = "washer",
     enabled = true,
