@@ -3,13 +3,13 @@ local pipes = {
         filename = "__pycoalprocessing__/graphics/entity/rectisol/pipe-north.png",
         priority = "extra-high",
         width = 44,
-        height = 32
+        height = 25
     },
     south = {
         filename = "__pycoalprocessing__/graphics/entity/rectisol/pipe-ending-down.png",
         priority = "extra-high",
         width = 40,
-        height = 45
+        height = 32
     }
 }
 
@@ -35,7 +35,7 @@ ITEM {
     name = "rectisol-mk03",
     icon = "__pycoalprocessing__/graphics/icons/rectisol-mk03.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "v",
     place_result = "rectisol-mk03",

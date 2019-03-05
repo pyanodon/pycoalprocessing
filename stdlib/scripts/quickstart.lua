@@ -54,7 +54,7 @@ function quickstart.on_player_created(event)
         local simple_stacks = QS.get('stacks', {})
         local qb_stacks = QS.get('quickbar', {})
         local inv = player.get_main_inventory()
-        local qb = player.get_quickbar()
+        local qb = player.get_main_inventory()
 
         if inv then
             for _, item in pairs(simple_stacks) do
@@ -68,7 +68,7 @@ function quickstart.on_player_created(event)
                 end
             end
         end
-
+--[[
         local tool_inv = player.get_inventory(defines.inventory.player_tools)
         if tool_inv then
             local tool = QS.get('tool', 'steel-axe')
@@ -82,7 +82,7 @@ function quickstart.on_player_created(event)
                 tool_inv.insert(tool)
             end
         end
-
+]]
         local power_armor = QS.get('power_armor', 'fake')
         if player.character and game.item_prototypes[power_armor] then
             --Put on power armor, install equipment

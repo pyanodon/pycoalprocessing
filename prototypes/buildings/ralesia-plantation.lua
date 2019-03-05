@@ -49,7 +49,7 @@ ITEM {
     name = "ralesia-plantation",
     icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "f",
     place_result = "ralesia-plantation",

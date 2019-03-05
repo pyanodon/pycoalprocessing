@@ -20,7 +20,7 @@ ITEM {
     name = "solid-separator",
     icon = "__pycoalprocessing__/graphics/icons/solid-separator.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "x",
     place_result = "solid-separator",

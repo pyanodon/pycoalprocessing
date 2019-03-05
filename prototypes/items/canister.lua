@@ -23,7 +23,7 @@ ITEM {
     name = "empty-gas-canister",
     icon = "__pycoalprocessing__/graphics/icons/canister.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "canister-a-[empty-gas-canister]",
     stack_size = 20
@@ -73,7 +73,7 @@ ITEM {
     name = "filled-methanol-gas-canister",
     icon = "__pycoalprocessing__/graphics/icons/canister.png",
     icon_size = 32,
-    flags = {"goes-to-main-inventory"},
+    flags = {},
     subgroup = "py-items",
     order = "canister-b-[fill-methanol-gas-canister]",
     stack_size = 20

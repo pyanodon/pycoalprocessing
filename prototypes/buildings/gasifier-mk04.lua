@@ -3,7 +3,7 @@ local pipes = {
         filename = "__pycoalprocessing__/graphics/entity/gasifier/pipe-north.png",
         priority = "low",
         width = 44,
-        height = 32
+        height = 25
     }
 }
 
@@ -27,7 +27,7 @@ ITEM {
     name = "gasifier-mk04",
     icon = "__pycoalprocessing__/graphics/icons/gasifier-mk04.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "o",
     place_result = "gasifier-mk04",

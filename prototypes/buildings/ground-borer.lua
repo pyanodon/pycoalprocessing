@@ -20,7 +20,7 @@ ITEM {
     name = "ground-borer",
     icon = "__pycoalprocessing__/graphics/icons/ground-borer.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "c",
     place_result = "ground-borer",
