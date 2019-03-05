@@ -34,7 +34,7 @@ RECIPE {
         {"electric-mining-drill", 1},
         {"soil-extractormk01", 1},
         {"electronic-circuit", 5}, --bob basic-electronic-circuit-board
-        {"raw-wood", 50},
+        {"wood", 50},
         {"iron-plate", 35}
     },
     results = {
@@ -47,7 +47,7 @@ ITEM {
     name = "botanical-nursery",
     icon = "__pycoalprocessing__/graphics/icons/botanical-nursery.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "f",
     place_result = "botanical-nursery",

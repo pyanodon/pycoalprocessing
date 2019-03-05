@@ -45,9 +45,10 @@ RECIPE {
     enabled = true,
     energy_required = 5,
     ingredients = {
-        {type = "item", name = "raw-wood", amount = 1}
+        {type = "item", name = "wood", amount = 1}
     },
     results = {
+	--need to fix wood planks no longer exist
         {type = "item", name = "wood", amount = 2}
     },
     icon = data.raw.item["wood"].icon,
@@ -126,7 +127,7 @@ RECIPE {
     ingredients = {
         {type = "item", name = "iron-plate", amount = 8},
         --{type="item", name="glass", amount=8}, --updated bob add glass
-        {type = "item", name = "raw-wood", amount = 5}
+        {type = "item", name = "wood", amount = 5}
     },
     results = {
         {"flask", 1}
@@ -139,7 +140,7 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "science-pack-1",
+    name = "automation-science-pack",
     enabled = true,
     energy_required = 4,
     ingredients = {
@@ -147,7 +148,7 @@ RECIPE {
         {type = "item", name = "flask", amount = 2}
     },
     results = {
-        {type = "item", name = "science-pack-1", amount = 3}
+        {type = "item", name = "automation-science-pack", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/science-pack-1.png",
     icon_size = 32,
@@ -196,7 +197,7 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "science-pack-3",
+    name = "chemical-science-pack",
     enabled = false,
     energy_required = 4.5,
     ingredients = {
@@ -206,7 +207,7 @@ RECIPE {
         {type = "item", name = "iron-plate", amount = 10}
     },
     results = {
-        {type = "item", name = "science-pack-3", amount = 3}
+        {type = "item", name = "chemical-science-pack", amount = 3}
     },
     icon = "__pycoalprocessing__/graphics/icons/science-pack-3.png",
     icon_size = 32,

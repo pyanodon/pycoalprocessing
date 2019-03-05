@@ -21,7 +21,7 @@ ITEM {
     name = "classifier-mk03",
     icon = "__pycoalprocessing__/graphics/icons/classifier-mk03.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "f",
     place_result = "classifier-mk03",

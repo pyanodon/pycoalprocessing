@@ -48,7 +48,7 @@ ITEM {
     name = "quenching-tower-mk04",
     icon = "__pycoalprocessing__/graphics/icons/quenching-tower-mk04.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "u",
     place_result = "quenching-tower-mk04",

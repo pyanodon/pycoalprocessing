@@ -18,7 +18,7 @@ ITEM {
     name = "ball-mill-mk04",
     icon = "__pycoalprocessing__/graphics/icons/ball-mill-mk04.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "d",
     place_result = "ball-mill-mk04",

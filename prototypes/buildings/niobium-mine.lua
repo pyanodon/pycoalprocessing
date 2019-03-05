@@ -20,7 +20,7 @@ ITEM {
     name = "niobium-mine",
     icon = "__pycoalprocessing__/graphics/icons/niobium-mine.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "e",
     place_result = "niobium-mine",

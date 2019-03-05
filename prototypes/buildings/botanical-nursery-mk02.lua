@@ -46,7 +46,7 @@ ITEM {
     name = "botanical-nursery-mk02",
     icon = "__pycoalprocessing__/graphics/icons/botanical-nursery-mk02.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "f",
     place_result = "botanical-nursery-mk02",
