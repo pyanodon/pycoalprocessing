@@ -140,7 +140,7 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "science-pack-1",
+    name = "automation-science-pack",
     enabled = true,
     energy_required = 4,
     ingredients = {
@@ -197,7 +197,7 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "science-pack-3",
+    name = "chemical-science-pack",
     enabled = false,
     energy_required = 4.5,
     ingredients = {

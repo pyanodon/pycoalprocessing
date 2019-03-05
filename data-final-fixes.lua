@@ -1,3 +1,5 @@
+require("prototypes.barrel-hiding")
+
 local DEBUG = require("config").DEBUG
 if DEBUG then
     local developer = require("stdlib/data/developer/developer")

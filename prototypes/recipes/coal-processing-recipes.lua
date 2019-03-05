@@ -238,7 +238,7 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "science-pack-2",
+    name = "logistic-science-pack",
     enabled = false,
     energy_required = 4,
     ingredients = {
