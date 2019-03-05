@@ -27,7 +27,7 @@ ITEM {
     name = "carbon-filter-mk04",
     icon = "__pycoalprocessing__/graphics/icons/carbon-filter-mk04.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "e",
     place_result = "carbon-filter-mk04",

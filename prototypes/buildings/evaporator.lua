@@ -30,7 +30,7 @@ ITEM {
     name = "evaporator",
     icon = "__pycoalprocessing__/graphics/icons/evaporator.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "l",
     place_result = "evaporator",

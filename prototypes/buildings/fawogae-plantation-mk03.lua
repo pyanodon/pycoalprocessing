@@ -35,7 +35,7 @@ ITEM {
     name = "fawogae-plantation-mk03",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-plantation-icon-mk03.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "b",
     place_result = "fawogae-plantation-mk03",
