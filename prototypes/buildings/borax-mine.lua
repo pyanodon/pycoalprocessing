@@ -20,7 +20,7 @@ ITEM {
     name = "borax-mine",
     icon = "__pycoalprocessing__/graphics/icons/borax-mine.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "a",
     place_result = "borax-mine",

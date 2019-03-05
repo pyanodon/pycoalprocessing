@@ -83,7 +83,7 @@ end
 -- @tparam LuaPlayer player
 -- @treturn table
 function Inventory.get_main_inventories(player)
-    return {player.get_quickbar(), player.get_main_inventory()}
+    return {--[[player.get_quickbar(),]] player.get_main_inventory()}
 end
 
 --- Return a blueprint stack from either stack or blueprint_book

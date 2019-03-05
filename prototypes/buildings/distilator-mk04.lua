@@ -18,7 +18,7 @@ ITEM {
     name = "distilator-mk04",
     icon = "__pycoalprocessing__/graphics/icons/distilator-mk04.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "k",
     place_result = "distilator-mk04",

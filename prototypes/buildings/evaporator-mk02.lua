@@ -28,7 +28,7 @@ ITEM {
     name = "evaporator-mk02",
     icon = "__pycoalprocessing__/graphics/icons/evaporator-mk02.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "l",
     place_result = "evaporator-mk02",

@@ -28,7 +28,7 @@ ITEM {
     name = "automated-factory-mk04",
     icon = "__pycoalprocessing__/graphics/icons/automated-factory-mk04.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "c",
     place_result = "automated-factory-mk04",

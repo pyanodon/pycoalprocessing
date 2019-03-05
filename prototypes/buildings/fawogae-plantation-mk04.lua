@@ -32,7 +32,7 @@ ITEM {
     name = "fawogae-plantation-mk04",
     icon = "__pycoalprocessing__/graphics/icons/fawogae-plantation-icon-mk04.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "b",
     place_result = "fawogae-plantation-mk04",

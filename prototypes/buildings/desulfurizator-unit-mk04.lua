@@ -37,7 +37,7 @@ ITEM {
     name = "desulfurizator-unit-mk04",
     icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit-mk04.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "j",
     place_result = "desulfurizator-unit-mk04",

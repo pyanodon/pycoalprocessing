@@ -49,7 +49,7 @@ ITEM {
     name = "quenching-tower",
     icon = "__pycoalprocessing__/graphics/icons/quenching-tower.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "u",
     place_result = "quenching-tower",

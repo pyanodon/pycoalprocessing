@@ -21,7 +21,7 @@ ITEM {
     name = "fluid-separator-mk03",
     icon = "__pycoalprocessing__/graphics/icons/fluid-separator-mk03.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "m",
     place_result = "fluid-separator-mk03",

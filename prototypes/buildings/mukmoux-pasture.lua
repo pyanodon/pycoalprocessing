@@ -19,7 +19,7 @@ ITEM {
     name = "mukmoux-pasture",
     icon = "__pycoalprocessing__/graphics/icons/mukmoux-pasture.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "py-extraction",
     order = "d",
     place_result = "mukmoux-pasture",

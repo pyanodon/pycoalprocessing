@@ -19,7 +19,7 @@ ITEM {
     name = "cooling-tower-mk01",
     icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
+    flags = {},
     subgroup = "coal-processing",
     order = "h",
     place_result = "cooling-tower-mk01",
