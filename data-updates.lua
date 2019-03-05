@@ -11,9 +11,9 @@ for _, v in pairs(data.raw.module) do
     end
 end
 
-ITEM("science-pack-1", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-1.png")
-ITEM("science-pack-2", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-2.png")
-ITEM("science-pack-3", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-3.png")
+ITEM("automation-science-pack", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-1.png")
+ITEM("logistic-science-pack", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-2.png")
+ITEM("chemical-science-pack", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-3.png")
 
 RECIPE("wood"):set_fields {energy_required = 10}
 
