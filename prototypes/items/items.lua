@@ -34,7 +34,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "coke",
-    fuel_value = "10MJ",
+    fuel_value = "7MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/coke.png",
     icon_size = 32,
@@ -756,7 +756,7 @@ ITEM {
     type = "item",
     name = "log",
     enabled = false,
-    fuel_value = "10MJ",
+    fuel_value = "3MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/log.png",
     icon_size = 32,
