@@ -74,15 +74,15 @@ ENTITY {
                 height = 185
             }
         },
-        fluid_background = DATA.Pipes.empty_sprite(),
+        fluid_background = DATA.Sprites.empty_sprite(),
         window_background = {
             filename = "__pycoalprocessing__/graphics/entity/tailings-pond/window-background.png",
             priority = "low",
             width = 171,
             height = 185
         },
-        flow_sprite = DATA.Pipes.empty_sprite(),
-        gas_flow = DATA.Pipes.empty_animation()
+        flow_sprite = DATA.Sprites.empty_sprite(),
+        gas_flow = DATA.Sprites.empty_animation()
     },
     flow_length_in_ticks = 360,
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
