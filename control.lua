@@ -1,4 +1,4 @@
-local Event = require("stdlib/event/event")
+local Event = require("__stdlib__/stdlib/event/event")
 
 --Set up default MOD global variables
 MOD = {}
@@ -29,8 +29,8 @@ Event.register(Event.core_events.configuration_changed, MOD.on_configuration_cha
 --Require Quickstart for quicker mod testing when creating a character.
 --WARNING, This is for mod testing and can ruin existing worlds.
 if MOD.config.DEBUG then
-    require("stdlib/core").create_stdlib_globals()
-    require("stdlib/scripts/quickstart")
+    require("__stdlib__/stdlib/core").create_stdlib_globals()
+    require("__stdlib__/stdlib/scripts/quickstart")
 end
 
 --Activate any scripts needed.
