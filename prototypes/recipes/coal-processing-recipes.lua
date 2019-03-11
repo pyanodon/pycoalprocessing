@@ -1252,6 +1252,26 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
+    name = "saturated-nexelit-cartridge-regen",
+    category = "crafting",
+    enabled = false,
+    energy_required = 3,
+    ingredients = {
+        {type = "item", name = "saturated-nexelit-cartridge", amount = 1},
+        {type = "item", name = "lithium-peroxide", amount = 25},
+    },
+    results = {
+        {type = "item", name = "nexelit-cartridge", amount = 1}
+    },
+    main_product = "nexelit-cartridge",
+    icon = "__pycoalprocessing__/graphics/icons/nexelit-cartridge.png",
+    icon_size = 32,
+    subgroup = "py-items-hpf",
+    order = "d"
+}:add_unlock("coal-processing-3")
+
+RECIPE {
+    type = "recipe",
     name = "oleo-solidfuel",
     category = "methanol",
     enabled = false,
