@@ -68,39 +68,40 @@ local function get_main(tab)
 end
 
 if not mods["pyrawores"] then
+    local table = require('__stdlib__/stdlib/utils/table')
 
-for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
-    local ing1 = (recipe.ingredients and recipe.ingredients[1].name and recipe.ingredients[1]) or (recipe.ingredients and {type = "item", name = recipe.ingredients[1][1], amount = recipe.ingredients[1][2] * 5})
-    ing1 = ing1 or (recipe.normal and recipe.normal.ingredients and recipe.normal.ingredients[1].name and recipe.normal.ingredients[1]) or (recipe.normal and {type = "item", name = recipe.normal.ingredients[1][1], amount = recipe.normal.ingredients[1][2] * 5})
+    for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
+        local ing1 = (recipe.ingredients and recipe.ingredients[1].name and recipe.ingredients[1]) or (recipe.ingredients and {type = "item", name = recipe.ingredients[1][1], amount = recipe.ingredients[1][2] * 5})
+        ing1 = ing1 or (recipe.normal and recipe.normal.ingredients and recipe.normal.ingredients[1].name and recipe.normal.ingredients[1]) or (recipe.normal and {type = "item", name = recipe.normal.ingredients[1][1], amount = recipe.normal.ingredients[1][2] * 5})
 
-    local res
-    if recipe.result then
-        res = {{type = "item", name = recipe.result or recipe.result[1], amount = 12}}
-    elseif recipe.results then
-        res = multiply(table.deepcopy(recipe.results), 12)
-    elseif recipe.normal.result then
-        res = {{type = "item", name = recipe.normal.result or recipe.normal.result[1], amount = 12}}
-    elseif recipe.normal.results then
-        res = multiply(table.deepcopy(recipe.normal.results), 12)
+        local res
+        if recipe.result then
+            res = {{type = "item", name = recipe.result or recipe.result[1], amount = 12}}
+        elseif recipe.results then
+            res = multiply(table.deepcopy(recipe.results), 12)
+        elseif recipe.normal.result then
+            res = {{type = "item", name = recipe.normal.result or recipe.normal.result[1], amount = 12}}
+        elseif recipe.normal.results then
+            res = multiply(table.deepcopy(recipe.normal.results), 12)
+        end
+
+        RECIPE {
+            type = "recipe",
+            name = "advanced-foundry-" .. recipe.name,
+            category = "advanced-foundry",
+            enabled = true,
+            energy_required = 3,
+            ingredients = {
+                ing1,
+                {type = "item", name = "fuelrod-mk01", amount = 1},
+                {type = "item", name = "limestone", amount = 2},
+                {type = "item", name = "sand-casting", amount = 1}
+            },
+            results = res,
+            icon = recipe.icon,
+            icons = recipe.icons,
+            icon_size = 32,
+            main_product = recipe.main_product or #res > 1 and get_main(res) or nil
+        }
     end
-
-    RECIPE {
-        type = "recipe",
-        name = "advanced-foundry-" .. recipe.name,
-        category = "advanced-foundry",
-        enabled = true,
-        energy_required = 3,
-        ingredients = {
-            ing1,
-            {type = "item", name = "fuelrod-mk01", amount = 1},
-            {type = "item", name = "limestone", amount = 2},
-            {type = "item", name = "sand-casting", amount = 1}
-        },
-        results = res,
-        icon = recipe.icon,
-        icons = recipe.icons,
-        icon_size = 32,
-        main_product = recipe.main_product or #res > 1 and get_main(res) or nil
-    }
-end
 end
