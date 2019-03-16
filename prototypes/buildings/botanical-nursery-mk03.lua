@@ -76,7 +76,7 @@ ENTITY {
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions = 0.0
+        emissions = 0.001,
     },
     energy_usage = "330kW",
     ingredient_count = 20,
