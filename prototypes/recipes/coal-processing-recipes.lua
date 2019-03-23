@@ -688,7 +688,7 @@ RECIPE {
         {type = "item", name = "niobium-oxide", amount = 6}
     },
     results = {
-        {type = "item", name = "niobium-plate", amount = 2}
+        {type = "item", name = "niobium-plate", amount = 4}
     },
     main_product = "niobium-plate"
 }:add_unlock("coal-processing-2")
@@ -1065,7 +1065,7 @@ RECIPE {
     enabled = false,
     energy_required = 4,
     ingredients = {
-        {type = "item", name = "coke", amount = 10},
+        {type = "item", name = "coke", amount = 7},
         {type = "item", name = "lime", amount = 2}
     },
     results = {

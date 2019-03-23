@@ -41,6 +41,7 @@ TECHNOLOGY('advanced-oil-processing'):remove_prereq('chemical-science-pack'):add
 TECHNOLOGY('low-density-structure'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
 TECHNOLOGY('military-3'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
 TECHNOLOGY('uranium-processing'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('logistic-robotics'):remove_prereq('advanced-electronics')
 
 RECIPE("wood"):set_fields {energy_required = 10}
 
