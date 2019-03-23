@@ -523,10 +523,10 @@ RECIPE {
     energy_required = 4.0,
     ingredients = {
         {type = "item", name = "iron-plate", amount = 15},
-        {type = "item", name = "niobium-plate", amount = 3}
+        {type = "item", name = "niobium-plate", amount = 4}
     },
     results = {
-        {type = "item", name = "nbfe-alloy", amount = 1}
+        {type = "item", name = "nbfe-alloy", amount = 2}
     },
     main_product = "nbfe-alloy"
 }:add_unlock("fine-electronics")
@@ -626,7 +626,7 @@ RECIPE {
         --bob add glass
     },
     results = {
-        {type = "item", name = "filtration-media", amount = 3}
+        {type = "item", name = "filtration-media", amount = 5}
     },
     main_product = "filtration-media"
 }:add_unlock("filtration")

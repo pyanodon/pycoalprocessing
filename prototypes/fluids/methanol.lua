@@ -5,12 +5,12 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "syngas", amount = 50},
-        {type = "item", name = "copper-plate", amount = 2},
+        {type = "fluid", name = "syngas", amount = 150},
+        {type = "item", name = "copper-plate", amount = 6},
         {type = "item", name = "iron-plate", amount = 1} --bob zinc-plate
     },
     results = {
-        {type = "fluid", name = "methanol", amount = 50}
+        {type = "fluid", name = "methanol", amount = 150}
     },
     subgroup = "py-methanol",
     order = "a"
