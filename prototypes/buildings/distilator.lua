@@ -55,12 +55,32 @@ ENTITY {
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/distilator/distilator-mk01.png",
-                width = 283,
-                height = 266,
-                frame_count = 1,
-                shift = {0.45, -0.156}
-            }
+                filename = "__pycoalprocessing__/graphics/entity/distilator/distilator-mk01-a.png",
+                width = 96,
+				height = 358,
+                line_length = 20,
+                frame_count = 100,
+                animation_speed = 0.5,
+                shift = util.by_pixel(-80, -50)
+            },
+			{
+               filename = "__pycoalprocessing__/graphics/entity/distilator/distilator-mk01-b.png",
+               width = 96,
+			   height = 358,
+               line_length = 20,
+               frame_count = 100,
+               animation_speed = 0.5,
+               shift = util.by_pixel(16, -50)
+            },
+			{
+               filename = "__pycoalprocessing__/graphics/entity/distilator/distilator-mk01-c.png",
+               width = 96,
+			   height = 358,
+               line_length = 20,
+               frame_count = 100,
+               animation_speed = 0.5,
+               shift = util.by_pixel(112, -50)
+            },
         }
     },
     fluid_boxes = {
@@ -71,7 +91,7 @@ ENTITY {
             base_area = 10,
             base_level = -1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
-            pipe_connections = {{position = {-0.5, -4.5}}}
+            pipe_connections = {{position = {-1.5, -4.5}}}
         },
         --North, right
         {
@@ -79,7 +99,7 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil), --.05
-            pipe_connections = {{position = {0.5, -4.5}}}
+            pipe_connections = {{position = {1.5, -4.5}}}
         },
         --South, left
         {
@@ -88,7 +108,7 @@ ENTITY {
             base_area = 10,
             base_level = -1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
-            pipe_connections = {{position = {-0.5, 4.5}}}
+            pipe_connections = {{position = {-1.5, 4.5}}}
         },
         --South, right
         {
@@ -96,7 +116,7 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil), --.05
-            pipe_connections = {{position = {0.5, 4.5}}}
+            pipe_connections = {{position = {1.5, 4.5}}}
         },
         --West, top
         {
@@ -105,7 +125,7 @@ ENTITY {
             base_area = 10,
             base_level = -1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil), --.05
-            pipe_connections = {{position = {-4.5, -0.5}}}
+            pipe_connections = {{position = {-4.5, -1.5}}}
         },
         --West, bottom
         {
@@ -113,7 +133,7 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
-            pipe_connections = {{position = {-4.5, 0.5}}}
+            pipe_connections = {{position = {-4.5, 1.5}}}
         },
         --East, top
         {
@@ -122,7 +142,7 @@ ENTITY {
             base_area = 10,
             base_level = -1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil), --.05
-            pipe_connections = {{position = {4.5, -0.5}}}
+            pipe_connections = {{position = {4.5, -1.5}}}
         },
         --East, bottom
         {
@@ -130,14 +150,14 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
-            pipe_connections = {{position = {4.5, 0.5}}}
+            pipe_connections = {{position = {4.5, 1.5}}}
         },
         off_when_no_fluid_recipe = true
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__base__/sound/oil-refinery.ogg"},
-        idle_sound = {filename = "__base__/sound/idle1.ogg", volume = 0.6},
+        sound = {filename = "__pycoalprocessing__/sounds/distilator.ogg", volume = 1.2}, 
+        idle_sound = {filename = "__pycoalprocessing__/sounds/distilator.ogg", volume = 0.9},
         apparent_volume = 2.5
     }
 }
