@@ -49,7 +49,7 @@ RECIPE("wood"):set_fields {energy_required = 10}
 require("prototypes/recipes/advanced-foundry-recipes")
 
 --gather recipes for module changes
-local recipes_list = 
+local recipes_list =
 	{
 		"biofilm",
 		"mukmoux-fat",
