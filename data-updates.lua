@@ -1,4 +1,5 @@
 require("__stdlib__/stdlib/data/data").Util.create_data_globals()
+local FUN = require("functions/functions")
 
 --update recipes for creosote
 require("prototypes/updates/recipe-updates")
@@ -46,3 +47,106 @@ TECHNOLOGY('logistic-robotics'):remove_prereq('advanced-electronics')
 RECIPE("wood"):set_fields {energy_required = 10}
 
 require("prototypes/recipes/advanced-foundry-recipes")
+
+--gather recipes for module changes
+local recipes_list = 
+	{
+		"biofilm",
+		"mukmoux-fat",
+		"cladding",
+		"copper-coating",
+		"filtration-media",
+		"kevlar",
+		"kevlar-coating",
+		"nbfe-alloy",
+		"nbfe-coating",
+		"rich-clay",
+		"ground-sample01",
+		"bio-sample01",
+		"alien-sample01",
+		"equipment-chassi",
+		"lab-instrument",
+		"zinc-chloride",
+		"drill-head",
+		"niobium-oxide",
+		"niobium-plate",
+		"ppd",
+		"lithium-peroxide",
+		"nexelit-cartridge",
+		--"glycerol-hydrogen",
+		"explosive-glycerol",
+		"zinc-chloride",
+		"slacked-lime",
+		"fawogae-substrate",
+		"ralesia-seeds",
+		"sand-brick",
+		"treated-wood",
+		"organics-from-wood",
+		"acetylene",
+		"boric-acid",
+		"diborane",
+		"niobium-complex",
+		"organic-solvent",
+		--[[
+		--building recipes
+		"advanced-foundry-mk01",
+		"advanced-foundry-mk02",
+		"advanced-foundry-mk03",
+		"advanced-foundry-mk04",
+		"automated-factory-mk01",
+		"automated-factory-mk02",
+		"automated-factory-mk03",
+		"automated-factory-mk04",
+		"ball-mill-mk01",
+		"ball-mill-mk02",
+		"ball-mill-mk03",
+		"ball-mill-mk04",
+		]]
+	}
+
+local Cat_list = {
+		"coal-processing",
+		"distilator",
+		"rectisol",
+		"carbonfilter",
+		"gasifier",
+		"tar",
+		"methanol",
+		"hpf",
+		"quenching-tower",
+		"combustion",
+		"cooling",
+		"evaporator",
+		"desulfurization",
+		"olefin",
+		"soil-extraction",
+		"ground-borer",
+		"fts-reactor",
+		"solid-separator",
+		"washer",
+		"classifier",
+		"advanced-foundry",
+		"co2",
+		"fluid-separator",
+		"fawogae",
+		"ralesia",
+		"ulric",
+		"borax",
+		"niobium",
+		"crusher",
+		"ball-mill",
+		"sand-extractor",
+		"mukmoux",
+		"rare-earth",
+		"advanced-crafting",
+		"nursery",
+		"wpu",
+		"borax",
+		"niobium",
+		"drill"
+		}
+
+--adding to module limitation list
+FUN.recipe_add_prod(recipes_list,Cat_list)
+FUN.add_buildings(recipes_list)
+FUN.productivity(recipes_list)
