@@ -50,7 +50,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/quenching-tower.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk01",
     order = "u",
     place_result = "quenching-tower",
     stack_size = 10

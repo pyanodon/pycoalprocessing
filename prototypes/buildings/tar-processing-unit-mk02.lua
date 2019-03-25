@@ -30,7 +30,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit-mk02.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk02",
     order = "z1",
     place_result = "tar-processing-unit-mk02",
     stack_size = 10

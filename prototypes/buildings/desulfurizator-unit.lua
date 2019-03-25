@@ -39,7 +39,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk01",
     order = "j",
     place_result = "desulfurizator-unit",
     stack_size = 5

@@ -21,7 +21,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/olefin-plant.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk01",
     order = "r",
     place_result = "olefin-plant",
     stack_size = 10
@@ -38,8 +38,8 @@ ENTITY {
     max_health = 400,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
-    selection_box = {{-3, -3}, {3, 3}},
+    collision_box = {{-3.75, -3.75}, {3.75, 3.75}},
+    selection_box = {{-4, -4}, {4, 4}},
     module_specification = {
         module_slots = 2
     },
@@ -55,24 +55,24 @@ ENTITY {
     ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/olefin-plant/olefin-off.png",
-        width = 205,
-        height = 224,
+        width = 274,
+        height = 302,
         frame_count = 1,
         --animation_speed = 0.5,
-        shift = util.by_pixel(7, -16)
+        shift = util.by_pixel(9, -23)
     },
     working_visualisations = {
         {
-            north_position = util.by_pixel(7.5, -16),
-            west_position = util.by_pixel(7.5, -16),
-            south_position = util.by_pixel(7.5, -16),
-            east_position = util.by_pixel(7.5, -16),
+            north_position = util.by_pixel(0, -104.5),
+            west_position = util.by_pixel(0, -104.5),
+            south_position = util.by_pixel(0, -104.5),
+            east_position = util.by_pixel(0, -104.5),
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/olefin-plant/olefin-plant.png",
-                frame_count = 69,
-                line_length = 9,
-                width = 205,
-                height = 224,
+                filename = "__pycoalprocessing__/graphics/entity/olefin-plant/anim.png",
+                frame_count = 84,
+                line_length = 8,
+                width = 256,
+                height = 139,
                 animation_speed = 0.4
             }
         }
@@ -84,7 +84,7 @@ ENTITY {
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.0, -0.95}, nil, nil),
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
-            pipe_connections = {{type = "output", position = {0.5, -3.5}}}
+            pipe_connections = {{type = "output", position = {1.5, -4.5}}}
         },
         --North2
         {
@@ -92,7 +92,7 @@ ENTITY {
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.0, -0.95}, nil, nil),
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
-            pipe_connections = {{type = "output", position = {-1.5, -3.5}}}
+            pipe_connections = {{type = "output", position = {-1.5, -4.5}}}
         },
         --South
         {
@@ -101,7 +101,7 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{type = "input", position = {-0.5, 3.5}}}
+            pipe_connections = {{type = "input", position = {-1.5, 4.5}}}
         },
         --South2
         {
@@ -110,7 +110,7 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{type = "input", position = {1.5, 3.5}}}
+            pipe_connections = {{type = "input", position = {1.5, 4.5}}}
         },
         off_when_no_fluid_recipe = true
     },

@@ -30,7 +30,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/gasifier-mk02.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk02",
     order = "o",
     place_result = "gasifier-mk02",
     stack_size = 5

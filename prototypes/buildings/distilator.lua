@@ -20,7 +20,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/distilator.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk01",
     order = "k",
     place_result = "distilator",
     stack_size = 10
