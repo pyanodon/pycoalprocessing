@@ -29,7 +29,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/methanol-reactor-mk04.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk04",
     order = "q",
     place_result = "methanol-reactor-mk04",
     stack_size = 10
