@@ -22,7 +22,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/fts-reactor.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk01",
     order = "n",
     place_result = "fts-reactor",
     stack_size = 10

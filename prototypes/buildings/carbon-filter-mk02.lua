@@ -31,7 +31,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/carbon-filter-mk02.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk02",
     order = "e",
     place_result = "carbon-filter-mk02",
     stack_size = 10

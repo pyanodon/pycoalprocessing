@@ -28,7 +28,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/hpf-mk04.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk04",
     order = "p",
     place_result = "hpf-mk04",
     stack_size = 10
