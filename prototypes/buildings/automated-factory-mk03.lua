@@ -30,7 +30,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/automated-factory-mk03.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk03",
     order = "c",
     place_result = "automated-factory-mk03",
     stack_size = 10

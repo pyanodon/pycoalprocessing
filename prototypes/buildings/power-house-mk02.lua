@@ -48,7 +48,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/power-house-mk02.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk02",
     order = "t",
     place_result = "power-house-mk02",
     stack_size = 5

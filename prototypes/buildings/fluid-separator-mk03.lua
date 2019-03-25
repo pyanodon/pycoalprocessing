@@ -22,7 +22,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/fluid-separator-mk03.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk03",
     order = "m",
     place_result = "fluid-separator-mk03",
     stack_size = 10

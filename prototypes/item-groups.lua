@@ -7,6 +7,38 @@ data:extend {
         icon = "__pycoalprocessing__/graphics/technology/item-group.png",
         icon_size = 64
     },
+--MKS--
+    {
+        type = "item-subgroup",
+        name = "py-cp-buildings-mk01",
+        group = "coal-processing",
+        order = "a-a"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-cp-buildings-mk02",
+        group = "coal-processing",
+        order = "a-b"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-cp-buildings-mk03",
+        group = "coal-processing",
+        order = "a-c"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-cp-buildings-mk04",
+        group = "coal-processing",
+        order = "a-d"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-cp-buildings-others",
+        group = "coal-processing",
+        order = "a-e"
+    },
+----------------
     {
         type = "item-subgroup",
         name = "coal-processing",

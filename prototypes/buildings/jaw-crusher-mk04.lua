@@ -19,7 +19,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/jaw-crusher-mk04.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk04",
     order = "s",
     place_result = "jaw-crusher-mk04",
     stack_size = 10

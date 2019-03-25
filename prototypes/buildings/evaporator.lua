@@ -31,7 +31,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/evaporator.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk01",
     order = "l",
     place_result = "evaporator",
     stack_size = 10

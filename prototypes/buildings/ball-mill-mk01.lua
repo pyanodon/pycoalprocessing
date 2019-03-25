@@ -20,7 +20,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/ball-mill-mk01.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk01",
     order = "d",
     place_result = "ball-mill-mk01",
     stack_size = 10

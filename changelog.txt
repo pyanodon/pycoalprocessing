@@ -3,6 +3,7 @@ Version: 1.1.0
 Date: ??????
   Balances:
     - Added new sprite for distilator.
+    - Fixed sprite for olefin plant.
     - Recipes now accept modules.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.19

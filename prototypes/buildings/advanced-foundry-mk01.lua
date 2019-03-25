@@ -21,7 +21,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/advanced-foundry-mk01.png",
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
+    subgroup = "py-cp-buildings-mk01",
     order = "b",
     place_result = "advanced-foundry-mk01",
     stack_size = 10
