@@ -45,7 +45,7 @@ ENTITY {
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"advanced-foundry", "smelting"},
-    crafting_speed = 3,
+    crafting_speed = 4,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
@@ -62,7 +62,7 @@ ENTITY {
                 line_length = 9,
                 frame_count = 76,
                 shift = {0.3, -0.5},
-                animation_speed = 0.2
+                animation_speed = 0.15
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/advanced-foundry/advanced-foundry-top-mk03.png",
@@ -71,7 +71,7 @@ ENTITY {
                 line_length = 9,
                 frame_count = 76,
                 shift = {0.3, -4.63},
-                animation_speed = 0.2
+                animation_speed = 0.15
             }
         }
     },
