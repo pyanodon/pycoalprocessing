@@ -62,7 +62,7 @@ ENTITY {
         fuel_category = "drill",
         effectivity = 4,
         fuel_inventory_size = 1,
-        emissions = 0.001,
+        emissions_per_second_per_watt = 1e-06,
         smoke = {
             {
                 name = "smoke",
