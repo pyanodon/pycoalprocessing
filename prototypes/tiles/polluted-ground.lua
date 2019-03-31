@@ -62,6 +62,6 @@ DATA {
         }
     },
     map_color = defines.color.brown,
-    ageing = 0.0002,
+    pollution_absorption_per_second = 0.0002,
     vehicle_friction_modifier = sand_vehicle_speed_modifier
 }
