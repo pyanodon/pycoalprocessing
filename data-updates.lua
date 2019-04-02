@@ -45,6 +45,7 @@ TECHNOLOGY('uranium-processing'):remove_prereq('chemical-science-pack'):add_prer
 TECHNOLOGY('logistic-robotics'):remove_prereq('advanced-electronics')
 
 RECIPE("wood"):set_fields {energy_required = 10}
+data.raw["technology"]["stack-inserter"].prerequisites = {"fast-inserter", "logistics-2"}
 
 require("prototypes/recipes/advanced-foundry-recipes")
 
