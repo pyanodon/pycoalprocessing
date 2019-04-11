@@ -7,7 +7,7 @@ RECIPE {
         {"copper-cable", 30},
         {"iron-plate", 20},
         {"steel-furnace", 4},
-        {"steel-plate", 70},
+        {"steel-plate", 20},
         {"electronic-circuit", 30}
     },
     results = {
