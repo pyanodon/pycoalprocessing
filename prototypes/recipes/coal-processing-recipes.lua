@@ -256,27 +256,6 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "water-mineralized",
-    category = "washer",
-    enabled = false,
-    energy_required = 2.5,
-    ingredients = {
-        {type = "item", name = "coarse", amount = 50},
-        {type = "fluid", name = "water", amount = 300}
-    },
-    results = {
-        {type = "item", name = "stone", amount = 4},
-        {type = "fluid", name = "water-mineralized", amount = 250}
-    },
-    main_product = "water-mineralized",
-    icon = "__pycoalprocessing__/graphics/icons/coarse-washer.png",
-    icon_size = 32,
-    subgroup = "py-washer",
-    order = "b"
-}:add_unlock("coal-processing-1")
-
-RECIPE {
-    type = "recipe",
     name = "borax-washing",
     category = "washer",
     enabled = false,
