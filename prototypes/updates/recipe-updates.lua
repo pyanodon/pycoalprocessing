@@ -12,7 +12,7 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
     end
 
     if PYC.USE_CREOSOTE_IN.power_poles then
-        RECIPE("medium-electric-pole"):set_category("crafting-with-fluid"):add_ingredient({type = "fluid", name = "creosote", amount = 10})
+        RECIPE("medium-electric-pole"):set_category("crafting-with-fluid"):add_ingredient({type = "fluid", name = "creosote", amount = 10}):replace_ingredient("copper-plate", {"copper-cable", 5}):replace_ingredient("iron-stick", {"small-electric-pole", 2})
 
         RECIPE("big-wooden-pole"):replace_ingredient("wood", {"treated-wood", 5})
         RECIPE("bi-big-wooden-pole"):replace_ingredient("wood", {"treated-wood", 5})
