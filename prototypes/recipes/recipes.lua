@@ -572,7 +572,7 @@ RECIPE {
     ingredients = {
         {type = "item", name = "copper-plate", amount = 10},
         {type = "item", name = "cladded-core", amount = 1},
-        {type = "fluid", name = "water-mineralized", amount = 50}
+        {type = "fluid", name = "organic-solvent", amount = 20}
     },
     results = {
         {type = "item", name = "copper-coating", amount = 2}
