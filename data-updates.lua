@@ -17,9 +17,7 @@ ITEM("logistic-science-pack", "tool"):set("icon", "__pycoalprocessing__/graphics
 ITEM("chemical-science-pack", "tool"):set("icon", "__pycoalprocessing__/graphics/icons/science-pack-3.png")
 
 RECIPE("logistic-science-pack"):remove_unlock('logistic-science-pack')
-RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):add_ingredient({type = "item", name = "copper-cable", amount = 15}):add_ingredient({type = "item", name = "optical-fiber", amount = 1})
-RECIPE("green-wire"):replace_ingredient("electronic-circuit", "optical-fiber")
-RECIPE("red-wire"):replace_ingredient("electronic-circuit", "optical-fiber")
+RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):add_ingredient({type = "item", name = "copper-cable", amount = 15})
 TECHNOLOGY('military-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 TECHNOLOGY('automation-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 TECHNOLOGY('circuit-network'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
