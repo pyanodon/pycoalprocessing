@@ -16,7 +16,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "rectisol-mk03",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"rectisol-mk02", 1},

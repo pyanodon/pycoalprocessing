@@ -18,7 +18,7 @@ local pipes2 = {
 RECIPE {
     type = "recipe",
     name = "washer",
-    energy_required = 4,
+    energy_required = 2,
     enabled = true,
     ingredients = {
         {"iron-plate", 10},

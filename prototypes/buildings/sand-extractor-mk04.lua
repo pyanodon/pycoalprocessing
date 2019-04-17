@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "sand-extractor-mk04",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"sand-extractor-mk03", 1},

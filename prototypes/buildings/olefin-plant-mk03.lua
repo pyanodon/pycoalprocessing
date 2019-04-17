@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "olefin-plant-mk03",
-    energy_required = 15,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"olefin-plant-mk02", 1},

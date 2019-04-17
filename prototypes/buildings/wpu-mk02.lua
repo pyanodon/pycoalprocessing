@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "wpu-mk02",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"wpu", 1},

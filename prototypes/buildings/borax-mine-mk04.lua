@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "borax-mine-mk04",
-    energy_required = 15,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"borax-mine-mk03", 1},

@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "solid-separator-mk02",
-    energy_required = 15,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"solid-separator", 1},

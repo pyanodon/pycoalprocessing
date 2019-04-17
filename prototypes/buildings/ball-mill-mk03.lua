@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "ball-mill-mk03",
-    energy_required = 35,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"ball-mill-mk02", 1},

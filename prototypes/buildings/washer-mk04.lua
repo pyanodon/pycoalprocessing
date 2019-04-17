@@ -18,7 +18,7 @@ local pipes2 = {
 RECIPE {
     type = "recipe",
     name = "washer-mk04",
-    energy_required = 4,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"washer-mk03", 1},

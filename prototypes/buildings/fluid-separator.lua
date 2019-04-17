@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "fluid-separator",
-    energy_required = 15,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"storage-tank", 4},

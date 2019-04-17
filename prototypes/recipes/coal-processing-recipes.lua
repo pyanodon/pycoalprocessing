@@ -489,6 +489,24 @@ RECIPE {
 --)) Coal Processing 1 ((--
 
 --(( Coal Processing 2))
+
+RECIPE {
+    type = "recipe",
+    name = "gasify-coal-dust",
+    category = "gasifier",
+    enabled = false,
+    energy_required = 4,
+    ingredients = {
+        {type = "fluid", name = "water", amount = 100},
+        {type = "item", name = "coal-dust", amount = 30}
+    },
+    results = {
+        {type = "fluid", name = "syngas", amount = 70},
+        {type = "item", name = "ash", amount = 1, probability = 0.3}
+    },
+    main_product = "syngas"
+}:add_unlock("coal-processing-2")
+
 RECIPE {
     type = "recipe",
     name = "nichrome",
@@ -1285,4 +1303,6 @@ RECIPE {
     subgroup = "py-items",
     order = "g"
 }:add_unlock("coal-processing-3")
+
+
 --)) Coal Processing 3 ((--
