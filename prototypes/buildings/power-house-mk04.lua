@@ -28,7 +28,7 @@ local pipe_right = {
 RECIPE {
     type = "recipe",
     name = "power-house-mk04",
-    energy_required = 17,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"power-house-mk03", 1},

@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "niobium-mine",
-    energy_required = 25,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"electric-mining-drill", 5},

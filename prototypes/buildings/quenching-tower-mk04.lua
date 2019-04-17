@@ -30,7 +30,7 @@ local pipes2 = {
 RECIPE {
     type = "recipe",
     name = "quenching-tower-mk04",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"quenching-tower-mk03", 1},

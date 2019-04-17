@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "jaw-crusher-mk03",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"jaw-crusher-mk02", 1},

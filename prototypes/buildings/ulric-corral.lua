@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "ulric-corral",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"steel-plate", 20},

@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "gasturbinemk01",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"steel-plate", 15},

@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "co2-absorber",
-    energy_required = 15,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"gasturbinemk01", 3},
