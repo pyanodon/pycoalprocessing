@@ -10,7 +10,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "cooling-tower-mk02",
-    energy_required = 17,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"storage-tank", 1},

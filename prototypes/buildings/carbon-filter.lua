@@ -10,7 +10,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "carbon-filter",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"assembling-machine-2", 1},

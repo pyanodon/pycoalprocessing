@@ -19,7 +19,7 @@ local pipe_right = {
 RECIPE {
     type = "recipe",
     name = "desulfurizator-unit-mk02",
-    energy_required = 17,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"desulfurizator-unit", 1},

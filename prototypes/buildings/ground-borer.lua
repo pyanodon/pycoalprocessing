@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "ground-borer",
-    energy_required = 15,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"electric-mining-drill", 3},

@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "cooling-tower-mk01",
-    energy_required = 17,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"electronic-circuit", 5},

@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "wpu",
-    energy_required = 10,
+    energy_required = 2,
     enabled = true,
     ingredients = {
         {"wood", 20},
