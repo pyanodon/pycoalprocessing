@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "classifier-mk02",
-    energy_required = 35,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"classifier", 1},

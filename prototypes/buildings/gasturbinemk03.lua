@@ -51,7 +51,7 @@ end
 RECIPE {
     type = "recipe",
     name = "gasturbinemk03",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"processing-unit", 20},

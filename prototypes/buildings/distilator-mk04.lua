@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "distilator-mk04",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"distilator-mk03", 1},

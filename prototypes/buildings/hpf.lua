@@ -10,7 +10,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "hpf",
-    energy_required = 10,
+    energy_required = 2,
     enabled = false,
     ingredients = {
         {"stone-brick", 20},
