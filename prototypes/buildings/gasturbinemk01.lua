@@ -67,7 +67,7 @@ ENTITY {
     energy_source = {
         type = "electric",
         usage_priority = "secondary-output",
-        emissions_per_second_per_watt = 1e-06,
+        emissions_per_minute = 50,
     },
     horizontal_animation = {
         filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk01/gasturbinemk01_horizontal.png",
