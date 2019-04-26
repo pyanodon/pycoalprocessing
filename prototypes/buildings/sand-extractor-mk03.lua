@@ -14,7 +14,7 @@ RECIPE {
     results = {
         {"sand-extractor-mk03", 1}
     }
-}:replace_ingredient("pipe", "niobium-pipe")
+}
 
 ITEM {
     type = "item",

@@ -14,7 +14,7 @@ RECIPE {
     results = {
         {"solid-separator-mk03", 1}
     }
-}:replace_ingredient("pipe", "niobium-pipe")
+}
 
 ITEM {
     type = "item",
