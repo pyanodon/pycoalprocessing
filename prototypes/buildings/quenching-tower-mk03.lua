@@ -42,7 +42,7 @@ RECIPE {
     results = {
         {"quenching-tower-mk03", 1}
     }
-}:replace_ingredient("pipe", "niobium-pipe")
+}
 
 ITEM {
     type = "item",

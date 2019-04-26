@@ -12,4 +12,49 @@ function overrides.productivity(recipes_list)
 	end
 end
 
+function overrides.ing_adjust(recipe, ingredient, amount)
+	if data.raw.recipe[recipe] ~= nil then
+		local r = data.raw.recipe[recipe]
+		if r.normal ~= nil then
+			for _, i in pairs(r.normal.ingredients) do
+				if i.name ~= nil then
+					if i.name == ingredient then
+						i.amount = amount
+					end
+				elseif type(i[1]) == "string" then
+					if i[1] == ingredient then
+						i[2] = amount
+					end
+				end
+			end
+		end
+		if r.expensive ~= nil then
+			for _, i in pairs(r.expensive.ingredients) do
+				if i.name ~= nil then
+					if i.name == ingredient then
+						i.amount = i.amount + amount
+					end
+				elseif type(i[1]) == "string" then
+					if i[1] == ingredient then
+						i[2] = amount
+					end
+				end
+			end
+		end
+		if r.ingredients ~= nil then
+			for _, i in pairs(r.ingredients) do
+				if i.name ~= nil then
+					if i.name == ingredient then
+						i.amount = amount
+					end
+				elseif type(i[1]) == "string" then
+					if i[1] == ingredient then
+						i[2] = amount
+					end
+				end
+			end
+		end
+	end
+end
+
 return overrides

@@ -45,8 +45,18 @@ TECHNOLOGY('military-3'):remove_prereq('chemical-science-pack'):add_prereq('fine
 TECHNOLOGY('uranium-processing'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
 TECHNOLOGY('logistic-robotics'):remove_prereq('advanced-electronics')
 
-RECIPE("wood"):set_fields {energy_required = 10}
+--RECIPE("wood"):set_fields {energy_required = 10}
 data.raw["technology"]["stack-inserter"].prerequisites = {"fast-inserter", "logistics-2"}
+
+--recipe updates
+RECIPE("distilator-mk03"):replace_ingredient("pipe", "niobium-pipe")
+RECIPE("carbon-filter-mk03"):replace_ingredient("pipe", "niobium-pipe")
+RECIPE("quenching-tower-mk03"):replace_ingredient("pipe", "niobium-pipe")
+RECIPE("hpf-mk03"):replace_ingredient("pipe", "niobium-pipe")
+RECIPE("solid-separator-mk03"):replace_ingredient("pipe", "niobium-pipe")
+RECIPE("fluid-separator-mk04"):replace_ingredient("pipe", "niobium-pipe")
+RECIPE("fawogae-plantation-mk03"):replace_ingredient("pipe", "niobium-pipe")
+RECIPE("sand-extractor-mk03"):replace_ingredient("pipe", "niobium-pipe")
 
 require("prototypes/recipes/advanced-foundry-recipes")
 
