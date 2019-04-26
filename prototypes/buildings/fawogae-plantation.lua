@@ -19,12 +19,12 @@ RECIPE {
     energy_required = 2,
     enabled = true,
     ingredients = {
-        {"soil", 300},
-        {"pipe", 15},
+        {"soil", 100},
+        {"pipe", 10},
         {"electronic-circuit", 10}, --bob basic-circuit-board
         {"copper-cable", 25},
-        {"iron-plate", 40},
-        {"wood", 150}
+        {"iron-plate", 20},
+        {"wood", 100}
     },
     results = {
         {"fawogae-plantation", 1}
