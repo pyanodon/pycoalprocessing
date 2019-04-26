@@ -52,6 +52,7 @@ ENTITY {
     fast_replaceable_group = "fawogae-plantation",
     max_health = 300,
     corpse = "big-remnants",
+    fixed_recipe = "fawogae",
     dying_explosion = "medium-explosion",
     collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},

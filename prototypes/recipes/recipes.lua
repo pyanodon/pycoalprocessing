@@ -29,6 +29,7 @@ RECIPE {
     name = "fawogae",
     category = "fawogae",
     enabled = true,
+    hidden = true,
     energy_required = 5.0,
     ingredients = {
         {type = "fluid", name = "water", amount = 900}

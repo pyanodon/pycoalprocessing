@@ -51,6 +51,7 @@ ENTITY {
     minable = {mining_time = 1, result = "fawogae-plantation-mk02"},
     fast_replaceable_group = "fawogae-plantation",
     max_health = 300,
+    fixed_recipe = "fawogae",
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
