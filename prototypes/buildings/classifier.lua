@@ -4,7 +4,7 @@ RECIPE {
     energy_required = 2,
     enabled = false,
     ingredients = {
-        {"assembling-machine-2", 5},
+        {"assembling-machine-1", 5},
         {"electronic-circuit", 10}, --bob brass-bearing
         {"transport-belt", 30},
         {"iron-plate", 20}, --bob titanium-plate
