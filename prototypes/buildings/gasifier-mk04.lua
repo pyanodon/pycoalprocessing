@@ -13,7 +13,7 @@ RECIPE {
     energy_required = 2,
     enabled = false,
     ingredients = {
-        {"gasifier-mk02", 1},
+        {"gasifier-mk03", 1},
         {"storage-tank", 1},
         {"nbfe-alloy", 20},
     },
