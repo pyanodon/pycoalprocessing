@@ -24,6 +24,7 @@ local tailings_copper_iron =
 }:add_unlock("coal-processing-2")
 
 local tailings_borax_niobium = tailings_copper_iron:copy("tailings-borax-niobium"):add_unlock("coal-processing-2")
+tailings_borax_niobium.localised_name = {"recipe-name.tailings-ore-extraction", {"item-name.raw-borax"}, {"item-name.niobium-ore"}, {"fluid-name.tar"}}
 tailings_borax_niobium.icons[#tailings_borax_niobium.icons + 1] = {icon = "__pycoalprocessing__/graphics/icons/ores/borax-niobium.png", icon_size = 32}
 tailings_borax_niobium.results[#tailings_borax_niobium.results + 1] = {type = "item", name = "raw-borax", amount = 1, probability = 0.4}
 tailings_borax_niobium.results[#tailings_borax_niobium.results + 1] = {type = "item", name = "niobium-ore", amount = 1, probability = 0.4}
