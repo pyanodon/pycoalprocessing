@@ -968,7 +968,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "a"
-}:add_unlock("coal-processing-2")
+}:add_unlock("coal-processing-1")
 
 RECIPE {
     type = "recipe",
