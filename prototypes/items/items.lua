@@ -34,7 +34,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "coke",
-    fuel_value = "7MJ",
+    fuel_value = "5MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/coke.png",
     icon_size = 32,
@@ -69,7 +69,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "active-carbon",
-    fuel_value = "25MJ",
+    fuel_value = "15MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/active-carbon.png",
     icon_size = 32,
@@ -208,7 +208,7 @@ ITEM {
     icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
     icon_size = 32,
     flags = {},
-    fuel_value = "7MJ",
+    fuel_value = "3MJ",
     fuel_category = "chemical",
     subgroup = "py-items",
     order = "coal-dust",
@@ -756,7 +756,7 @@ ITEM {
     type = "item",
     name = "log",
     enabled = false,
-    fuel_value = "3MJ",
+    fuel_value = "4MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/log.png",
     icon_size = 32,
@@ -786,7 +786,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "treated-wood",
-    fuel_value = "3MJ",
+    fuel_value = "4MJ",
     fuel_category = "chemical",
     stack_size = 100
 }
