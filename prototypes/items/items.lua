@@ -295,7 +295,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "fuelrod-mk01",
-    fuel_value = "150MJ",
+    fuel_value = "75MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessing__/graphics/icons/fuelrod-mk01.png",
     icon_size = 32,
