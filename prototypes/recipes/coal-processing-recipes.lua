@@ -329,7 +329,7 @@ RECIPE {
         {type = "item", name = "fawogae", amount = 10}
     },
     results = {
-        {type = "item", name = "coal", amount = 10}
+        {type = "item", name = "coal", amount = 8}
     },
     main_product = "coal",
     icon = "__pycoalprocessing__/graphics/icons/coal-fawogae.png",
