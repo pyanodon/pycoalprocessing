@@ -372,7 +372,10 @@ local recipes_list =
   "advanced-foundry-steel-plate",
   "advanced-foundry-iron-oxide",
   "advanced-foundry-crushed-iron",
-  "advanced-foundry-crushed-copper"
+  "advanced-foundry-crushed-copper",
+	"assembling-machine-1",
+	"assembling-machine-2",
+	"assembling-machine-3"
 }
 
 --adding to module limitation list
