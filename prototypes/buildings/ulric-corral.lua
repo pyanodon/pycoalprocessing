@@ -87,7 +87,7 @@ ENTITY {
                 line_length = 10,
                 width = 70,
                 height = 46,
-                animation_speed = 0.15
+                animation_speed = 0.2
             }
         },
         {
@@ -102,7 +102,21 @@ ENTITY {
                 width = 32,
                 height = 48,
                 run_mode = "forward-then-backward",
-                animation_speed = 0.16
+                animation_speed = 0.2
+            }
+        },
+        {
+            north_position = {1.87, 0.46},
+            west_position = {1.87, 0.46},
+            south_position = {1.87, 0.46},
+            east_position = {1.87, 0.46},
+            animation = {
+                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-right-pastando-2.png",
+                frame_count = 50,
+                line_length = 10,
+                width = 64,
+                height = 64,
+                animation_speed = 0.2
             }
         },
 		{
@@ -158,7 +172,7 @@ ENTITY {
                 line_length = 10,
                 width = 40,
                 height = 25,
-                animation_speed = 0.18
+                animation_speed = 0.2
             }
         },
         {
@@ -175,20 +189,6 @@ ENTITY {
                 --animation_speed = 0.5
             }
         },
-        {
-            north_position = {1.87, 0.46},
-            west_position = {1.87, 0.46},
-            south_position = {1.87, 0.46},
-            east_position = {1.87, 0.46},
-            animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-right-pastando-2.png",
-                frame_count = 50,
-                line_length = 10,
-                width = 64,
-                height = 64,
-                animation_speed = 0.13
-            }
-        }
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
