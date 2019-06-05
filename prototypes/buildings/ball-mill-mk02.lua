@@ -44,7 +44,7 @@ ENTITY {
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"ball-mill"},
-    crafting_speed = 2,
+    crafting_speed = 2.5,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",

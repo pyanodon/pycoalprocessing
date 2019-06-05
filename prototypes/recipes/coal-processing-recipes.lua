@@ -461,7 +461,7 @@ RECIPE {
         {type = "fluid", name = "sulfuric-acid", amount = 50}
     },
     results = {
-        {type = "item", name = "concrete", amount = 6}
+        {type = "item", name = "concrete", amount = 15}
     },
     main_product = "concrete",
     category = "hpf",

@@ -62,7 +62,7 @@ ENTITY {
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "120kW",
+    energy_usage = "70kW",
     ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessing__/graphics/entity/cooling-tower-mk02/cooling_tower_mk02.png",

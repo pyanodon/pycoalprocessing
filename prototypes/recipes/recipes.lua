@@ -4,9 +4,9 @@ RECIPE {
     enabled = true,
     category = "smelting",
     energy_required = 3.5,
-    ingredients = {{"iron-oxide", 2}},
+    ingredients = {{"iron-oxide", 20}},
     results = {
-        {"iron-plate", 1}
+        {"iron-plate", 10}
     }
 }
 
@@ -29,7 +29,7 @@ RECIPE {
     name = "fawogae",
     category = "fawogae",
     enabled = true,
-    hidden = true,
+    --hidden = true,
     energy_required = 5.0,
     ingredients = {
         {type = "fluid", name = "water", amount = 900}
