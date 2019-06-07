@@ -13,7 +13,7 @@ local tailings_copper_iron =
     results = {
         {type = "fluid", name = "dirty-water", amount = 500},
         {type = "fluid", name = "flue-gas", amount = 150},
-        {type = "fluid", name = "water-saline", amount = 200}
+        {type = "fluid", name = "water-saline", amount = 250}
     },
     icons = {
         {icon = "__pycoalprocessing__/graphics/icons/dirty-water.png", icon_size = 32}
