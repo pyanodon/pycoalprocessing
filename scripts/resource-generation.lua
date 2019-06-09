@@ -23,6 +23,7 @@ function ore_gen.on_init()
 	global.ore_gen = {}
 
 --only do something if pyro or pyph are active_mods
+if not game.active_mods["rso-mod"] then
 
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
@@ -116,10 +117,11 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 	log(serpent.block(rocks))
 end
 end
+end
 Event.register(Event.core_events.init, ore_gen.on_init)
 
 function ore_gen.on_chunk_generated(event)
-
+if not game.active_mods["rso-mod"] then
 --only do something if pyro or pyph are active_mods
 
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
@@ -383,6 +385,7 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 				end
 			end
 	end
+end
 end
 end
 Event.register(defines.events.on_chunk_generated, ore_gen.on_chunk_generated)

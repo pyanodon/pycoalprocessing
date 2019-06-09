@@ -5,12 +5,9 @@ if DEBUG then
 end
 
 if mods["pyrawores"] or mods["pypetroleumhandling"] then
-
 for _, e in pairs(data.raw.resource) do
-
 	data.raw.resource[e.name]["autoplace"] = nil
 	data.raw["autoplace-control"][e.name] = nil
-	
 end
 
 data.raw["map-gen-presets"]["default"]["rail-world"].basic_settings =
@@ -20,7 +17,6 @@ data.raw["map-gen-presets"]["default"]["rail-world"].basic_settings =
 	terrain_segmentation = "very-low",
 	water = "high",
 }
-
 data.raw["map-gen-presets"]["default"]["ribbon-world"].basic_settings =
 {
 	autoplace_controls = {},
@@ -29,7 +25,6 @@ data.raw["map-gen-presets"]["default"]["ribbon-world"].basic_settings =
 	starting_area = 3,
 	height = 128
 }
-
 data.raw["map-gen-presets"]["default"]["rich-resources"] =
 {
 	order = "b",
@@ -38,5 +33,4 @@ data.raw["map-gen-presets"]["default"]["rich-resources"] =
 		autoplace_controls = {}
 	}
 }
-
 end
