@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.4
+  Balances:
+    - Added new ore distrubution system.
+    - Added tailings pond to the new rendering system.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.3
   Balances:
     - balanced saline water.
