@@ -117,7 +117,7 @@ function tailings_pond.on_tick(event)
     local ponds = global.tailings_ponds
     for i, pond in pairs(ponds) do
         if pond.entity.valid then
-            if pond.sprite then
+            if type(pond.sprite) == 'number' then
                 scorch_earth(pond, event.tick)
                 --Set the animation needed based on fill level..
                 set_fluid_level_image(pond)
