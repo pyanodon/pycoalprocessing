@@ -4,16 +4,9 @@ local Event = require("__stdlib__/stdlib/event/event")
 
 --add the pymods resources that are duplicates of the same resource
 --i.e. the oils and phosphate rocks
-
 local resources = {}
-
-local procks = {}
-
 local rocks = {}
 local rockset = {}
-
-local oilpatches = {}
-
 local isresources =
 	{
 	"iron-ore",
@@ -21,7 +14,6 @@ local isresources =
 	"coal",
 	"stone",
 	}
-
 local osresources =
 	{
 	"borax",
@@ -34,57 +26,76 @@ function ore_gen.on_init()
 
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
-	if game.active_mods["pyrawores"] then
+	table.insert(resources,"coal")
+	table.insert(resources,"stone")
 
-	table.insert(isresources,"ore-quartz")
-	table.insert(isresources,"ore-tin")
+	table.insert(resources, "borax")
+	table.insert(resources, "niobium")
 
-	table.insert(osresources,"ore-aluminium")
-	table.insert(osresources,"salt-rock")
-
-	table.insert(rocks,"salt-rock")
-
-	--getting rocks
-		for _, r in pairs(game.entity_prototypes) do
-			if r.type == "resource" then
-				if string.find(r.name, "rock") ~= nil then
-					table.insert(rocks, r.name)
-				end
-			end
-		end
+	if game.active_mods["pyfusionenergy"] then
+		table.insert(resources, "molybdenum-ore")
+		table.insert(rocks, "regolites")
+		table.insert(rocks, "volcanic-pipe")
 	end
 
-	--log(serpent.block(rocks))
+	if game.active_mods["pyhightech"] then
+		table.insert(rocks, "rare-earth-bolide")
+		table.insert(rocks, "phosphate-rock")
+	end
+
+	if game.active_mods["pyrawores"] then
+
+		table.insert(isresources,"ore-quartz")
+		table.insert(isresources,"ore-tin")
+		table.insert(isresources,"ore-lead")
+
+		table.insert(osresources,"ore-aluminium")
+		table.insert(osresources,"salt-rock")
+
+		table.insert(rocks,"salt-rock")
+		table.insert(rocks,"quartz-rock")
+		table.insert(rocks,"nickel-rock")
+		table.insert(rocks,"nexelit-rock")
+		table.insert(rocks,"lead-rock")
+		table.insert(rocks,"iron-rock")
+		table.insert(rocks,"copper-rock")
+		table.insert(rocks,"coal-rock")
+		table.insert(rocks,"chromium-rock")
+		table.insert(rocks,"aluminium-rock")
+		table.insert(rocks,"zinc-rock")
+		table.insert(rocks,"uranium-rock")
+		table.insert(rocks,"titanium-rock")
+		table.insert(rocks,"tin-rock")
+
+		table.insert(resources,"raw-coal")
+		table.insert(resources,"ore-tin")
+		table.insert(resources,"ore-quartz")
+		table.insert(resources,"ore-nickel")
+		table.insert(resources,"ore-lead")
+		table.insert(resources,"ore-chromium")
+		table.insert(resources,"ore-aluminium")
+		table.insert(resources,"ore-zinc")
+		table.insert(resources,"ore-titanium")
+
+	end
 
 	if game.active_mods["pyhightech"] and game.active_mods["pyrawores"] then
 
-	procks =
-		{
-		"phosphate-rock",
-		"phosphate-rock-02"
-		}
-
-	table.insert(resources,procks)
+		table.insert(rocks, "phosphate-rock-02")
 
 	end
 
 	if game.active_mods["pypetroleumhandling"] then
-
-	oilpatches =
-		{
-		"oil-mk01",
-		"oil-mk02",
-		"oil-mk03",
-		"oil-mk04"
-		}
-
-	table.insert(resources,oilpatches)
-
 	table.insert(isresources,"tar-patch")
 	table.insert(isresources,"oil-mk01")
 
 	table.insert(rocks, "tar-patch")
 	table.insert(rocks, "oil-mk01")
+	table.insert(rocks, "oil-mk02")
+	table.insert(rocks, "oil-mk03")
+	table.insert(rocks, "oil-mk04")
+	table.insert(rocks, "sulfur-patch")
+	table.insert(resources, "oil-sand")
 
 	end
 
@@ -101,9 +112,9 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 		for _, r in pairs(rocks) do
 			rockset[r] = true
 		end
-
+	log(serpent.block(resources))
+	log(serpent.block(rocks))
 end
-
 end
 Event.register(Event.core_events.init, ore_gen.on_init)
 
@@ -114,8 +125,6 @@ function ore_gen.on_chunk_generated(event)
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
 	--log("generating resources")
-
-	if math.random(1,6) <= 2 then
 
 	--spawn new randomized resources
 
@@ -135,6 +144,7 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 	local oreamount = math.random(1,4)*1000
 
 	if tx >= -200 and tx <= 200 and ty >= -200 and ty <= 200 then
+	if math.random(1,6) <= 2 then
 		--is "starting area"
 		if tx >= -100 and tx <= 100 and ty >= -100 and ty <= 100 then
 			--inner start area for needed ores
@@ -270,10 +280,109 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 			end
 		end
 	end
-
 	end
-
+	--spawning resources outside starting area
+	--check that pos is outside the 200 tile start zone
+	local poscheck = false
+	--check if x is to the left or right of start area
+	if tx <= -200 or tx >= 200 then
+		poscheck = true
+	--if x isnt far enough check if y is above or below start area
+	elseif ty <= -200 or ty >= 200 then
+		poscheck = true
+	end
+	if poscheck == true then 
+		--log("not in start area")
+		--need to check if ore is rock or ore patch as we want rocks to spwan a lot less than the ore
+			--if it passes check it will attempt ore spawn else it will try to spawn a rock
+			if math.random(1,48) <= 1 then
+			--get a random ore to spawn
+			local tsize = 0
+			if tsize == 0 then
+				for _,ts in pairs(resources) do
+					tsize = tsize+1
+				end
+			end
+			--log(tsize)
+			--log(serpent.block(resources))
+				local stiles = 0
+				local sindex = math.random(1,tsize)
+				local randore = resources[sindex]
+				--check if resources already exist beofre placing more on top
+				local orecheck = game.surfaces["nauvis"].find_entities_filtered{area={{Randx-20,Randy-20},{Randx+20,Randy+20}},type="resource"}
+				local hitore = false
+				for _, r in pairs(orecheck) do
+					if r ~= nil then
+						hitore=true
+					end
+				end
+				if hitore == false then
+					if string.find(game.surfaces["nauvis"].get_tile(Randx,Randy).name, "water") == nil then
+						stiles = stiles+1
+						if rockset[randore] then
+							oreamount=oreamount*500
+							game.surfaces["nauvis"].create_entity{name=randore,position={Randx,Randy},amount=oreamount}
+						else
+							game.surfaces["nauvis"].create_entity{name=randore,position={Randx,Randy},amount=oreamount}
+						end
+					end
+						if rockset[randore] == nil then
+						--create patches for ores
+						local patchx = Randx - 20
+						local patchy = Randy - 20
+						local center = {Randx,Randy}
+						--log(oreamount)
+							for i = 0,1600 do
+								--log(patchx..","..patchy)
+								local entity = game.surfaces["nauvis"].find_entities({{patchx,patchy},{patchx,patchy}})
+									--log("patchx "..patchx)
+									--log("randx "..Randx)
+									--log(math.abs(patchx-Randx))
+									--log(patchdiamiter)
+										if math.abs(patchx - Randx) + math.abs(patchy - Randy) <= patchdiamiter + math.random(0,10) or math.random(1,3) == 1 then
+											if string.find(game.surfaces["nauvis"].get_tile(patchx,patchy).name, "water") == nil then
+												stiles = stiles+1
+												game.surfaces["nauvis"].create_entity{name=randore,position={patchx,patchy},amount=oreamount}
+											end
+										end
+								patchx=patchx+1
+									if patchx == Randx+20 then
+										patchx = Randx-20
+										patchy=patchy+1
+									end
+							end
+						end
+				end
+			elseif math.random(1,300) <= 1 then
+			--get a random ore to spawn
+			local tsize = 0
+			if tsize == 0 then
+				for _,ts in pairs(rocks) do
+					tsize = tsize+1
+				end
+			end
+			--log(tsize)
+			--log(serpent.block(rocks))
+				local stiles = 0
+				local sindex = math.random(1,tsize)
+				local randore = rocks[sindex]
+				--check if resources already exist beofre placing more on top
+				local orecheck = game.surfaces["nauvis"].find_entities_filtered{area={{Randx-20,Randy-20},{Randx+20,Randy+20}},type="resource"}
+				local hitore = false
+				for _, r in pairs(orecheck) do
+					if r ~= nil then
+						hitore=true
+					end
+				end
+				if hitore == false then
+					if string.find(game.surfaces["nauvis"].get_tile(Randx,Randy).name, "water") == nil then
+						stiles = stiles+1
+							oreamount=oreamount*500
+							game.surfaces["nauvis"].create_entity{name=randore,position={Randx,Randy},amount=oreamount}
+					end
+				end
+			end
+	end
 end
-
 end
 Event.register(defines.events.on_chunk_generated, ore_gen.on_chunk_generated)
