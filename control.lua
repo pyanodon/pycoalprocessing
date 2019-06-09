@@ -23,3 +23,6 @@ require("scripts/tailings-pond")
 
 --Add in our remote interfaces
 remote.add_interface(script.mod_name, require('__stdlib__/stdlib/scripts/interface'))
+
+--Activate resource spawn control script
+require("scripts/resource-generation")
