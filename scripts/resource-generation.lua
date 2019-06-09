@@ -24,7 +24,7 @@ local hason_init = false
 function ore_gen.on_init()
 	global.ore_gen = {}
 	global.hason_init = true
-	
+
 --only do something if pyro or pyph are active_mods
 if not game.active_mods["rso-mod"] then
 
