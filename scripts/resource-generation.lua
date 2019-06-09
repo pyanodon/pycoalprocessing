@@ -100,16 +100,6 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
 	end
 
-	local sores =
-		{
-		"phosphate-rock",
-		"phosphate-rock-02",
-		"oil-mk01",
-		"oil-mk02",
-		"oil-mk03",
-		"oil-mk04"
-		}
-
 		for _, r in pairs(rocks) do
 			rockset[r] = true
 		end
@@ -153,7 +143,7 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 			--get a random ore to spawn
 			local tsize = 0
 			if tsize == 0 then
-				for _,ts in pairs(isresources) do
+				for _,_ in pairs(isresources) do
 					tsize = tsize+1
 				end
 			end
@@ -185,11 +175,9 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 						--create patches for ores
 						local patchx = Randx - 20
 						local patchy = Randy - 20
-						local center = {Randx,Randy}
 						--log(oreamount)
 							for i = 0,1600 do
 								--log(patchx..","..patchy)
-								local entity = game.surfaces["nauvis"].find_entities({{patchx,patchy},{patchx,patchy}})
 									--log("patchx "..patchx)
 									--log("randx "..Randx)
 									--log(math.abs(patchx-Randx))
@@ -220,7 +208,7 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 			--get a random ore to spawn
 			local tsize = 0
 			if tsize == 0 then
-				for _,ts in pairs(osresources) do
+				for _,_ in pairs(osresources) do
 					tsize = tsize+1
 				end
 			end
@@ -252,11 +240,9 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 						--create patches for ores
 						local patchx = Randx - 20
 						local patchy = Randy - 20
-						local center = {Randx,Randy}
 						--log(oreamount)
 							for i = 0,1600 do
 								--log(patchx..","..patchy)
-								local entity = game.surfaces["nauvis"].find_entities({{patchx,patchy},{patchx,patchy}})
 									--log("patchx "..patchx)
 									--log("randx "..Randx)
 									--log(math.abs(patchx-Randx))
@@ -301,7 +287,7 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 			--get a random ore to spawn
 			local tsize = 0
 			if tsize == 0 then
-				for _,ts in pairs(resources) do
+				for _,_ in pairs(resources) do
 					tsize = tsize+1
 				end
 			end
@@ -332,11 +318,9 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 						--create patches for ores
 						local patchx = Randx - 20
 						local patchy = Randy - 20
-						local center = {Randx,Randy}
 						--log(oreamount)
 							for i = 0,1600 do
 								--log(patchx..","..patchy)
-								local entity = game.surfaces["nauvis"].find_entities({{patchx,patchy},{patchx,patchy}})
 									--log("patchx "..patchx)
 									--log("randx "..Randx)
 									--log(math.abs(patchx-Randx))
@@ -359,13 +343,12 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 			--get a random ore to spawn
 			local tsize = 0
 			if tsize == 0 then
-				for _,ts in pairs(rocks) do
+				for _,_ in pairs(rocks) do
 					tsize = tsize+1
 				end
 			end
 			--log(tsize)
 			--log(serpent.block(rocks))
-				local stiles = 0
 				local sindex = math.random(1,tsize)
 				local randore = rocks[sindex]
 				--check if resources already exist beofre placing more on top
@@ -378,7 +361,6 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 				end
 				if hitore == false then
 					if string.find(game.surfaces["nauvis"].get_tile(Randx,Randy).name, "water") == nil then
-						stiles = stiles+1
 							oreamount=oreamount*500
 							game.surfaces["nauvis"].create_entity{name=randore,position={Randx,Randy},amount=oreamount}
 					end
