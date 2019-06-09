@@ -110,6 +110,119 @@ end
 end
 Event.register(Event.core_events.init, ore_gen.on_init)
 
+local function nonstartspawn(event)
+
+	local tx = event.area.left_top.x
+	local ty = event.area.left_top.y
+	local bx = event.area.right_bottom.x
+	local by = event.area.right_bottom.y
+
+	local Randx = math.random(tx,bx)
+	local Randy = math.random(ty,by)
+
+	local patchdiamiter = math.random(10,25)
+	local oreamount = math.random(1,4)*1000
+
+--spawning resources outside starting area
+	--check that pos is outside the 200 tile start zone
+	local poscheck = false
+	--check if x is to the left or right of start area
+	if tx <= -200 or tx >= 200 then
+		poscheck = true
+	--if x isnt far enough check if y is above or below start area
+	elseif ty <= -200 or ty >= 200 then
+		poscheck = true
+	end
+	if poscheck == true then
+		--log("not in start area")
+		--need to check if ore is rock or ore patch as we want rocks to spwan a lot less than the ore
+			--if it passes check it will attempt ore spawn else it will try to spawn a rock
+			if math.random(1,48) <= 1 then
+			--get a random ore to spawn
+			local tsize = 0
+			if tsize == 0 then
+				for _,_ in pairs(resources) do
+					tsize = tsize+1
+				end
+			end
+			--log(tsize)
+			--log(serpent.block(resources))
+				local stiles = 0
+				local sindex = math.random(1,tsize)
+				local randore = resources[sindex]
+				--check if resources already exist beofre placing more on top
+				local orecheck = game.surfaces["nauvis"].find_entities_filtered{area={{Randx-20,Randy-20},{Randx+20,Randy+20}},type="resource"}
+				local hitore = false
+				for _, r in pairs(orecheck) do
+					if r ~= nil then
+						hitore=true
+					end
+				end
+				if hitore == false then
+					if string.find(game.surfaces["nauvis"].get_tile(Randx,Randy).name, "water") == nil then
+						stiles = stiles+1
+						if rockset[randore] then
+							oreamount=oreamount*500
+							game.surfaces["nauvis"].create_entity{name=randore,position={Randx,Randy},amount=oreamount}
+						else
+							game.surfaces["nauvis"].create_entity{name=randore,position={Randx,Randy},amount=oreamount}
+						end
+					end
+						if rockset[randore] == nil then
+						--create patches for ores
+						local patchx = Randx - 20
+						local patchy = Randy - 20
+						--log(oreamount)
+							for i = 0,1600 do
+								--log(patchx..","..patchy)
+									--log("patchx "..patchx)
+									--log("randx "..Randx)
+									--log(math.abs(patchx-Randx))
+									--log(patchdiamiter)
+										if math.abs(patchx - Randx) + math.abs(patchy - Randy) <= patchdiamiter + math.random(0,10) or math.random(1,3) == 1 then
+											if string.find(game.surfaces["nauvis"].get_tile(patchx,patchy).name, "water") == nil then
+												stiles = stiles+1
+												game.surfaces["nauvis"].create_entity{name=randore,position={patchx,patchy},amount=oreamount}
+											end
+										end
+								patchx=patchx+1
+									if patchx == Randx+20 then
+										patchx = Randx-20
+										patchy=patchy+1
+									end
+							end
+						end
+				end
+			elseif math.random(1,300) <= 1 then
+			--get a random ore to spawn
+			local tsize = 0
+			if tsize == 0 then
+				for _,_ in pairs(rocks) do
+					tsize = tsize+1
+				end
+			end
+			--log(tsize)
+			--log(serpent.block(rocks))
+				local sindex = math.random(1,tsize)
+				local randore = rocks[sindex]
+				--check if resources already exist beofre placing more on top
+				local orecheck = game.surfaces["nauvis"].find_entities_filtered{area={{Randx-20,Randy-20},{Randx+20,Randy+20}},type="resource"}
+				local hitore = false
+				for _, r in pairs(orecheck) do
+					if r ~= nil then
+						hitore=true
+					end
+				end
+				if hitore == false then
+					if string.find(game.surfaces["nauvis"].get_tile(Randx,Randy).name, "water") == nil then
+							oreamount=oreamount*500
+							game.surfaces["nauvis"].create_entity{name=randore,position={Randx,Randy},amount=oreamount}
+					end
+				end
+			end
+	end
+end
+
 function ore_gen.on_chunk_generated(event)
 if not game.active_mods["rso-mod"] then
 --only do something if pyro or pyph are active_mods
@@ -267,123 +380,10 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 		end
 	end
 	end
-	
+
 	nonstartspawn(event)
-	
+
 end
 end
 end
 Event.register(defines.events.on_chunk_generated, ore_gen.on_chunk_generated)
-
-function nonstartspawn(event)
-
-	local tx = event.area.left_top.x
-	local ty = event.area.left_top.y
-	local bx = event.area.right_bottom.x
-	local by = event.area.right_bottom.y
-
-	local Randx = math.random(tx,bx)
-	local Randy = math.random(ty,by)
-
-	local patchdiamiter = math.random(10,25)
-	local oreamount = math.random(1,4)*1000
-
---spawning resources outside starting area
-	--check that pos is outside the 200 tile start zone
-	local poscheck = false
-	--check if x is to the left or right of start area
-	if tx <= -200 or tx >= 200 then
-		poscheck = true
-	--if x isnt far enough check if y is above or below start area
-	elseif ty <= -200 or ty >= 200 then
-		poscheck = true
-	end
-	if poscheck == true then
-		--log("not in start area")
-		--need to check if ore is rock or ore patch as we want rocks to spwan a lot less than the ore
-			--if it passes check it will attempt ore spawn else it will try to spawn a rock
-			if math.random(1,48) <= 1 then
-			--get a random ore to spawn
-			local tsize = 0
-			if tsize == 0 then
-				for _,_ in pairs(resources) do
-					tsize = tsize+1
-				end
-			end
-			--log(tsize)
-			--log(serpent.block(resources))
-				local stiles = 0
-				local sindex = math.random(1,tsize)
-				local randore = resources[sindex]
-				--check if resources already exist beofre placing more on top
-				local orecheck = game.surfaces["nauvis"].find_entities_filtered{area={{Randx-20,Randy-20},{Randx+20,Randy+20}},type="resource"}
-				local hitore = false
-				for _, r in pairs(orecheck) do
-					if r ~= nil then
-						hitore=true
-					end
-				end
-				if hitore == false then
-					if string.find(game.surfaces["nauvis"].get_tile(Randx,Randy).name, "water") == nil then
-						stiles = stiles+1
-						if rockset[randore] then
-							oreamount=oreamount*500
-							game.surfaces["nauvis"].create_entity{name=randore,position={Randx,Randy},amount=oreamount}
-						else
-							game.surfaces["nauvis"].create_entity{name=randore,position={Randx,Randy},amount=oreamount}
-						end
-					end
-						if rockset[randore] == nil then
-						--create patches for ores
-						local patchx = Randx - 20
-						local patchy = Randy - 20
-						--log(oreamount)
-							for i = 0,1600 do
-								--log(patchx..","..patchy)
-									--log("patchx "..patchx)
-									--log("randx "..Randx)
-									--log(math.abs(patchx-Randx))
-									--log(patchdiamiter)
-										if math.abs(patchx - Randx) + math.abs(patchy - Randy) <= patchdiamiter + math.random(0,10) or math.random(1,3) == 1 then
-											if string.find(game.surfaces["nauvis"].get_tile(patchx,patchy).name, "water") == nil then
-												stiles = stiles+1
-												game.surfaces["nauvis"].create_entity{name=randore,position={patchx,patchy},amount=oreamount}
-											end
-										end
-								patchx=patchx+1
-									if patchx == Randx+20 then
-										patchx = Randx-20
-										patchy=patchy+1
-									end
-							end
-						end
-				end
-			elseif math.random(1,300) <= 1 then
-			--get a random ore to spawn
-			local tsize = 0
-			if tsize == 0 then
-				for _,_ in pairs(rocks) do
-					tsize = tsize+1
-				end
-			end
-			--log(tsize)
-			--log(serpent.block(rocks))
-				local sindex = math.random(1,tsize)
-				local randore = rocks[sindex]
-				--check if resources already exist beofre placing more on top
-				local orecheck = game.surfaces["nauvis"].find_entities_filtered{area={{Randx-20,Randy-20},{Randx+20,Randy+20}},type="resource"}
-				local hitore = false
-				for _, r in pairs(orecheck) do
-					if r ~= nil then
-						hitore=true
-					end
-				end
-				if hitore == false then
-					if string.find(game.surfaces["nauvis"].get_tile(Randx,Randy).name, "water") == nil then
-							oreamount=oreamount*500
-							game.surfaces["nauvis"].create_entity{name=randore,position={Randx,Randy},amount=oreamount}
-					end
-				end
-			end
-	end
-end
