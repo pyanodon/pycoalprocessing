@@ -19,9 +19,12 @@ local osresources =
 	"borax",
 	}
 
+local hason_init = false
+
 function ore_gen.on_init()
 	global.ore_gen = {}
-
+	global.hason_init = true
+	
 --only do something if pyro or pyph are active_mods
 if not game.active_mods["rso-mod"] then
 
@@ -112,6 +115,7 @@ Event.register(Event.core_events.init, ore_gen.on_init)
 
 local function nonstartspawn(event)
 
+if hason_init then
 	local tx = event.area.left_top.x
 	local ty = event.area.left_top.y
 	local bx = event.area.right_bottom.x
@@ -222,8 +226,10 @@ local function nonstartspawn(event)
 			end
 	end
 end
+end
 
 function ore_gen.on_chunk_generated(event)
+if hason_init then
 if not game.active_mods["rso-mod"] then
 --only do something if pyro or pyph are active_mods
 
@@ -383,6 +389,7 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
 	nonstartspawn(event)
 
+end
 end
 end
 end
