@@ -196,7 +196,6 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 							end
 						end
 					if stiles * oreamount > 500000 then
-						tsize=tsize-1
 						table.remove(isresources,sindex)
 					end
 				end
@@ -261,7 +260,6 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 							end
 						end
 					if stiles * oreamount > 500000 then
-						tsize=tsize-1
 						table.remove(osresources,sindex)
 					end
 				end
@@ -279,7 +277,7 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 	elseif ty <= -200 or ty >= 200 then
 		poscheck = true
 	end
-	if poscheck == true then 
+	if poscheck == true then
 		--log("not in start area")
 		--need to check if ore is rock or ore patch as we want rocks to spwan a lot less than the ore
 			--if it passes check it will attempt ore spawn else it will try to spawn a rock
