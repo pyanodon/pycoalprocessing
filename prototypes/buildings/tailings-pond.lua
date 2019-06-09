@@ -1,55 +1,38 @@
-local function make_tailings_variants()
-    local pictures = {}
-    for y = 0, 555 - 185, 185 do
-        for x = 0, 1710 - 171, 171 do
-            pictures[#pictures + 1] = {
-                filename = "__pycoalprocessing__/graphics/entity/tailings-pond/fluid-sheet.png",
-                priority = "extra-high",
-                width = 171,
-                height = 185,
-                x = x,
-                y = y
-            }
-        end
-    end
-    return pictures
-end
-
 RECIPE {
-    type = "recipe",
-    name = "tailings-pond",
+    type = 'recipe',
+    name = 'tailings-pond',
     enabled = true,
     ingredients = {
-        {"pipe", 10},
-        {"iron-plate", 10},
-        {"stone-brick", 100}
+        {'pipe', 10},
+        {'iron-plate', 10},
+        {'stone-brick', 100}
     },
     results = {
-        {"tailings-pond", 1}
+        {'tailings-pond', 1}
     }
 }
 
 ITEM {
-    type = "item",
-    name = "tailings-pond",
-    icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
+    type = 'item',
+    name = 'tailings-pond',
+    icon = '__pycoalprocessing__/graphics/icons/tailings-pond.png',
     icon_size = 32,
     flags = {},
-    subgroup = "coal-processing",
-    order = "z",
-    place_result = "tailings-pond",
+    subgroup = 'coal-processing',
+    order = 'z',
+    place_result = 'tailings-pond',
     stack_size = 50
 }
 
 ENTITY {
-    type = "storage-tank",
-    name = "tailings-pond",
-    icon = "__pycoalprocessing__/graphics/icons/tailings-pond.png",
+    type = 'storage-tank',
+    name = 'tailings-pond',
+    icon = '__pycoalprocessing__/graphics/icons/tailings-pond.png',
     icon_size = 32,
-    flags = {"placeable-player", "player-creation"},
-    minable = {hardness = 0.2, mining_time = 3, result = "tailings-pond"},
+    flags = {'placeable-player', 'player-creation'},
+    minable = {hardness = 0.2, mining_time = 3, result = 'tailings-pond'},
     max_health = 500,
-    corpse = "big-remnants",
+    corpse = 'big-remnants',
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     two_direction_only = true,
@@ -67,8 +50,8 @@ ENTITY {
     pictures = {
         picture = {
             sheet = {
-                filename = "__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-frame.png",
-                priority = "high",
+                filename = '__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-frame.png',
+                priority = 'high',
                 frames = 1,
                 width = 171,
                 height = 185
@@ -76,8 +59,8 @@ ENTITY {
         },
         fluid_background = DATA.Sprites.empty_sprite(),
         window_background = {
-            filename = "__pycoalprocessing__/graphics/entity/tailings-pond/window-background.png",
-            priority = "low",
+            filename = '__pycoalprocessing__/graphics/entity/tailings-pond/window-background.png',
+            priority = 'low',
             width = 171,
             height = 185
         },
@@ -85,10 +68,10 @@ ENTITY {
         gas_flow = DATA.Sprites.empty_animation()
     },
     flow_length_in_ticks = 360,
-    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+    vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.65},
     working_sound = {
         sound = {
-            filename = "__base__/sound/storage-tank.ogg",
+            filename = '__base__/sound/storage-tank.ogg',
             volume = 0.8
         },
         apparent_volume = 1.5,
@@ -113,17 +96,26 @@ ENTITY {
         }
     },
     circuit_wire_max_distance = 9,
-    circuit_connector_sprites = _G.circuit_connector_definitions["storage-tank"].sprites
+    circuit_connector_sprites = _G.circuit_connector_definitions['storage-tank'].sprites
 }
 
-ENTITY {
-    type = "simple-entity-with-owner",
-    name = "tailings-pond-sprite",
-    selectable_in_game = false,
-    render_layer = "object",
-    flags = {"not-blueprintable", "not-deconstructable", "placeable-off-grid"},
-    max_health = 100,
-    collision_box = nil,
-    collision_mask = {},
-    pictures = make_tailings_variants()
-}
+do -- Make tailings pond sprites
+    local pictures = {}
+    local i = 1
+    for y = 0, 555 - 185, 185 do
+        for x = 0, 1710 - 171, 171 do
+            pictures[#pictures + 1] = {
+                type = 'sprite',
+                name = 'tailings-pond-sprite-' .. i,
+                filename = '__pycoalprocessing__/graphics/entity/tailings-pond/fluid-sheet.png',
+                priority = 'extra-high',
+                width = 171,
+                height = 185,
+                x = x,
+                y = y
+            }
+            i = i + 1
+        end
+    end
+    data:extend(pictures)
+end
