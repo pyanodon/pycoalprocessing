@@ -19,11 +19,99 @@ local osresources =
 	"borax",
 	}
 
-local hason_init = false
-
 function ore_gen.on_init()
 	global.ore_gen = {}
-	global.hason_init = true
+
+--only do something if pyro or pyph are active_mods
+if not game.active_mods["rso-mod"] then
+log("is passing check")
+if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
+
+	table.insert(resources,"coal")
+	table.insert(resources,"stone")
+
+	table.insert(resources, "borax")
+	table.insert(resources, "niobium")
+
+	if game.active_mods["pyfusionenergy"] then
+		table.insert(resources, "molybdenum-ore")
+		table.insert(rocks, "regolites")
+		table.insert(rocks, "volcanic-pipe")
+	end
+
+	if game.active_mods["pyhightech"] then
+		table.insert(rocks, "rare-earth-bolide")
+		table.insert(rocks, "phosphate-rock")
+	end
+
+	if game.active_mods["pyrawores"] then
+
+		table.insert(isresources,"ore-quartz")
+		table.insert(isresources,"ore-tin")
+		table.insert(isresources,"ore-lead")
+
+		table.insert(osresources,"ore-aluminium")
+		table.insert(osresources,"salt-rock")
+
+		table.insert(rocks,"salt-rock")
+		table.insert(rocks,"quartz-rock")
+		table.insert(rocks,"nickel-rock")
+		table.insert(rocks,"nexelit-rock")
+		table.insert(rocks,"lead-rock")
+		table.insert(rocks,"iron-rock")
+		table.insert(rocks,"copper-rock")
+		table.insert(rocks,"coal-rock")
+		table.insert(rocks,"chromium-rock")
+		table.insert(rocks,"aluminium-rock")
+		table.insert(rocks,"zinc-rock")
+		table.insert(rocks,"uranium-rock")
+		table.insert(rocks,"titanium-rock")
+		table.insert(rocks,"tin-rock")
+
+		table.insert(resources,"raw-coal")
+		table.insert(resources,"ore-tin")
+		table.insert(resources,"ore-quartz")
+		table.insert(resources,"ore-nickel")
+		table.insert(resources,"ore-lead")
+		table.insert(resources,"ore-chromium")
+		table.insert(resources,"ore-aluminium")
+		table.insert(resources,"ore-zinc")
+		table.insert(resources,"ore-titanium")
+
+	end
+
+	if game.active_mods["pyhightech"] and game.active_mods["pyrawores"] then
+
+		table.insert(rocks, "phosphate-rock-02")
+
+	end
+
+	if game.active_mods["pypetroleumhandling"] then
+	table.insert(isresources,"tar-patch")
+	table.insert(isresources,"oil-mk01")
+
+	table.insert(rocks, "tar-patch")
+	table.insert(rocks, "oil-mk01")
+	table.insert(rocks, "oil-mk02")
+	table.insert(rocks, "oil-mk03")
+	table.insert(rocks, "oil-mk04")
+	table.insert(rocks, "sulfur-patch")
+	table.insert(resources, "oil-sand")
+
+	end
+
+		for _, r in pairs(rocks) do
+			rockset[r] = true
+		end
+	log(serpent.block(resources))
+	log(serpent.block(rocks))
+end
+end
+end
+Event.register(Event.core_events.init, ore_gen.on_init)
+
+function ore_gen.on_configuration_changed()
+	global.ore_gen = {}
 
 --only do something if pyro or pyph are active_mods
 if not game.active_mods["rso-mod"] then
@@ -111,11 +199,10 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 end
 end
 end
-Event.register(Event.core_events.init, ore_gen.on_init)
+Event.register(Event.core_events.on_configuration_changed, ore_gen.on_configuration_changed)
 
 local function nonstartspawn(event)
 
-if hason_init then
 	local tx = event.area.left_top.x
 	local ty = event.area.left_top.y
 	local bx = event.area.right_bottom.x
@@ -226,16 +313,16 @@ if hason_init then
 			end
 	end
 end
-end
 
 function ore_gen.on_chunk_generated(event)
-if hason_init then
+log("work damn you")
+log("yay?")
 if not game.active_mods["rso-mod"] then
 --only do something if pyro or pyph are active_mods
-
+log("anything?")
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
-	--log("generating resources")
+	log("generating resources")
 
 	--spawn new randomized resources
 
@@ -389,7 +476,6 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
 	nonstartspawn(event)
 
-end
 end
 end
 end
