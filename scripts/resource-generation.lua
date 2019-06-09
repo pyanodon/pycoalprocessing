@@ -267,7 +267,28 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 		end
 	end
 	end
-	--spawning resources outside starting area
+	
+	nonstartspawn(event)
+	
+end
+end
+end
+Event.register(defines.events.on_chunk_generated, ore_gen.on_chunk_generated)
+
+function nonstartspawn(event)
+
+	local tx = event.area.left_top.x
+	local ty = event.area.left_top.y
+	local bx = event.area.right_bottom.x
+	local by = event.area.right_bottom.y
+
+	local Randx = math.random(tx,bx)
+	local Randy = math.random(ty,by)
+
+	local patchdiamiter = math.random(10,25)
+	local oreamount = math.random(1,4)*1000
+
+--spawning resources outside starting area
 	--check that pos is outside the 200 tile start zone
 	local poscheck = false
 	--check if x is to the left or right of start area
@@ -366,6 +387,3 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 			end
 	end
 end
-end
-end
-Event.register(defines.events.on_chunk_generated, ore_gen.on_chunk_generated)
