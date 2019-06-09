@@ -4,6 +4,7 @@ if DEBUG then
     developer.make_test_entities("pycoalprocessing")
 end
 
+if not mods["rso-mod"] then
 if mods["pyrawores"] or mods["pypetroleumhandling"] then
 for _, e in pairs(data.raw.resource) do
 	data.raw.resource[e.name]["autoplace"] = nil
@@ -33,4 +34,5 @@ data.raw["map-gen-presets"]["default"]["rich-resources"] =
 		autoplace_controls = {}
 	}
 }
+end
 end
