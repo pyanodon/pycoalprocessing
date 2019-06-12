@@ -371,8 +371,16 @@ ITEM {
 ITEM {
     type = "item",
     name = "borax",
-    icon = "__pycoalprocessing__/graphics/icons/borax.png",
-    icon_size = 32,
+    icon = "__pycoalprocessing__/graphics/icons/mip/borax.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
+    pictures =
+    {
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/borax.png",   scale = 0.25, mipmap_count = 4 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/borax-1.png", scale = 0.25, mipmap_count = 4 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/borax-2.png", scale = 0.25, mipmap_count = 4 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/borax-3.png", scale = 0.25, mipmap_count = 4 }
+    },
     flags = {},
     subgroup = "py-items",
     order = "g",
