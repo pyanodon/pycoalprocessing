@@ -118,7 +118,7 @@ end
 	global.rockset = rockset
 	global.isresources = isresources
 	global.osresources = osresources
-	
+
 end
 end
 Event.register(Event.core_events.init, ore_gen.on_init)
@@ -216,7 +216,7 @@ end
 	global.rockset = rockset
 	global.isresources = isresources
 	global.osresources = osresources
-	
+
 end
 end
 Event.register(Event.core_events.on_configuration_changed, ore_gen.on_configuration_changed)
