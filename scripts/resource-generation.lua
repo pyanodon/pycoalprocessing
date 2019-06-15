@@ -22,9 +22,15 @@ local osresources =
 function ore_gen.on_init()
 	global.ore_gen = {}
 
+	global.resources = {}
+	global.rocks = {}
+	global.rockset = {}
+	global.isresources = {}
+	global.osresources = {}
+
 --only do something if pyro or pyph are active_mods
-if not game.active_mods["rso-mod"] then
-log("is passing check")
+if not game.active_mods["rso-mod"] or not game.active_mods["PyCoalTBaA"] then
+--log("is passing check")
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
 	table.insert(resources,"coal")
@@ -103,9 +109,16 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 		for _, r in pairs(rocks) do
 			rockset[r] = true
 		end
-	log(serpent.block(resources))
-	log(serpent.block(rocks))
+	--log(serpent.block(resources))
+	--log(serpent.block(rocks))
 end
+
+	global.resources = resources
+	global.rocks = rocks
+	global.rockset = rockset
+	global.isresources = isresources
+	global.osresources = osresources
+	
 end
 end
 Event.register(Event.core_events.init, ore_gen.on_init)
@@ -114,7 +127,7 @@ function ore_gen.on_configuration_changed()
 	global.ore_gen = {}
 
 --only do something if pyro or pyph are active_mods
-if not game.active_mods["rso-mod"] then
+if not game.active_mods["rso-mod"] or not game.active_mods["PyCoalTBaA"] then
 
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
@@ -194,12 +207,33 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 		for _, r in pairs(rocks) do
 			rockset[r] = true
 		end
-	log(serpent.block(resources))
-	log(serpent.block(rocks))
+	--log(serpent.block(resources))
+	--log(serpent.block(rocks))
 end
+
+	global.resources = resources
+	global.rocks = rocks
+	global.rockset = rockset
+	global.isresources = isresources
+	global.osresources = osresources
+	
 end
 end
 Event.register(Event.core_events.on_configuration_changed, ore_gen.on_configuration_changed)
+
+function ore_gen.on_load()
+
+	if global.resources ~= nil then
+
+	resources = global.resources
+	rocks = global.rocks
+	rockset = global.rockset
+	isresources = global.isresources
+	osresources = global.osresources
+
+	end
+end
+Event.register(Event.core_events.on_load, ore_gen.on_load)
 
 local function nonstartspawn(event)
 
@@ -230,12 +264,7 @@ local function nonstartspawn(event)
 			--if it passes check it will attempt ore spawn else it will try to spawn a rock
 			if math.random(1,48) <= 1 then
 			--get a random ore to spawn
-			local tsize = 0
-			if tsize == 0 then
-				for _,_ in pairs(resources) do
-					tsize = tsize+1
-				end
-			end
+			local tsize = table_size(resources)
 			--log(tsize)
 			--log(serpent.block(resources))
 				local stiles = 0
@@ -286,12 +315,7 @@ local function nonstartspawn(event)
 				end
 			elseif math.random(1,300) <= 1 then
 			--get a random ore to spawn
-			local tsize = 0
-			if tsize == 0 then
-				for _,_ in pairs(rocks) do
-					tsize = tsize+1
-				end
-			end
+			local tsize = table_size(rocks)
 			--log(tsize)
 			--log(serpent.block(rocks))
 				local sindex = math.random(1,tsize)
@@ -315,14 +339,14 @@ local function nonstartspawn(event)
 end
 
 function ore_gen.on_chunk_generated(event)
-log("work damn you")
-log("yay?")
+--log("work damn you")
+--log("yay?")
 if not game.active_mods["rso-mod"] then
 --only do something if pyro or pyph are active_mods
-log("anything?")
+--log("anything?")
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
-	log("generating resources")
+	--log("generating resources")
 
 	--spawn new randomized resources
 
@@ -347,12 +371,7 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 		if tx >= -100 and tx <= 100 and ty >= -100 and ty <= 100 then
 			--inner start area for needed ores
 			--get a random ore to spawn
-			local tsize = 0
-			if tsize == 0 then
-				for _,_ in pairs(isresources) do
-					tsize = tsize+1
-				end
-			end
+			local tsize = table_size(isresources)
 			--log(tsize)
 			--log(serpent.block(isresources))
 			if tsize > 0 then
@@ -411,12 +430,7 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 		if (tx >= -200 and tx <= -100  and ty >= -200 and ty <= -100) or (tx >= 100 and tx <= 200 and ty >= 100 and ty <= 200) then
 			--inner start area for needed ores
 			--get a random ore to spawn
-			local tsize = 0
-			if tsize == 0 then
-				for _,_ in pairs(osresources) do
-					tsize = tsize+1
-				end
-			end
+			local tsize = table_size(osresources)
 			--log(tsize)
 			--log(serpent.block(osresources))
 			if tsize > 0 then
