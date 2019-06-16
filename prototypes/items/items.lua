@@ -357,10 +357,10 @@ ITEM {
     icon_mipmaps = 4,
     pictures =
     {
-      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/raw-borax.png",   scale = 0.25, mipmap_count = 4 },
-      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/raw-borax-1.png", scale = 0.25, mipmap_count = 4 },
-      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/raw-borax-2.png", scale = 0.25, mipmap_count = 4 },
-      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/raw-borax-3.png", scale = 0.25, mipmap_count = 4 }
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/raw-borax.png",   scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/raw-borax-1.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/raw-borax-2.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/raw-borax-3.png", scale = 0.25, mipmap_count = 1 }
     },
     flags = {},
     subgroup = "py-items",
@@ -507,10 +507,10 @@ ITEM {
     icon_mipmaps = 4,
     pictures =
     {
-      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/niobium-ore.png",   scale = 0.25, mipmap_count = 4 },
-      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/niobium-ore-01.png", scale = 0.25, mipmap_count = 4 },
-      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/niobium-ore-02.png", scale = 0.25, mipmap_count = 4 },
-      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/niobium-ore-03.png", scale = 0.25, mipmap_count = 4 }
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/niobium-ore.png",   scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/niobium-ore-01.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/niobium-ore-02.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/niobium-ore-03.png", scale = 0.25, mipmap_count = 1 }
     },
     flags = {},
     subgroup = "py-items-hpf",

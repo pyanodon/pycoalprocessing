@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.8
+  Bug fixes:
+    - Worked over the crash bug.
+    - Added option to choose which resource generation you wanna use.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.7
   Bug fixes:
     - Worked over the crash bug.
