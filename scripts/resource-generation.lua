@@ -27,9 +27,9 @@ function ore_gen.on_init()
 	global.rockset = {}
 	global.isresources = {}
 	global.osresources = {}
-
+if not settings.startup["ore-gen"].value then
 --only do something if pyro or pyph are active_mods
-if not game.active_mods["rso-mod"] or not game.active_mods["PyCoalTBaA"] then
+if not game.active_mods["rso-mod"] and not game.active_mods["PyCoalTBaA"] and not game.active_mods["PyBlock"] then
 --log("is passing check")
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
@@ -121,13 +121,15 @@ end
 
 end
 end
+end
 Event.register(Event.core_events.init, ore_gen.on_init)
 
 function ore_gen.on_configuration_changed()
 	global.ore_gen = {}
 
+if not settings.startup["ore-gen"].value then
 --only do something if pyro or pyph are active_mods
-if not game.active_mods["rso-mod"] or not game.active_mods["PyCoalTBaA"] then
+if not game.active_mods["rso-mod"] and not game.active_mods["PyCoalTBaA"] and not game.active_mods["PyBlock"] then
 
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
@@ -217,6 +219,7 @@ end
 	global.isresources = isresources
 	global.osresources = osresources
 
+end
 end
 end
 Event.register(Event.core_events.on_configuration_changed, ore_gen.on_configuration_changed)
@@ -341,7 +344,9 @@ end
 function ore_gen.on_chunk_generated(event)
 --log("work damn you")
 --log("yay?")
-if not game.active_mods["rso-mod"] then
+if not settings.startup["ore-gen"].value then
+
+if not game.active_mods["rso-mod"] and not game.active_mods["PyCoalTBaA"] and not game.active_mods["PyBlock"] then
 --only do something if pyro or pyph are active_mods
 --log("anything?")
 if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
@@ -490,6 +495,7 @@ if game.active_mods["pyrawores"] or game.active_mods["pypetroleumhandling"] then
 
 	nonstartspawn(event)
 
+end
 end
 end
 end
