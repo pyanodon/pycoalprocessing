@@ -115,8 +115,16 @@ ITEM {
 ITEM {
     type = "item",
     name = "nexelit-ore",
-    icon = "__pycoalprocessing__/graphics/icons/nexelit-ore.png",
-    icon_size = 32,
+    icon = "__pycoalprocessing__/graphics/icons/mip/nexelit-ore.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
+    pictures =
+    {
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/nexelit-ore.png",   scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/nexelit-ore-1.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/nexelit-ore-2.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/nexelit-ore-3.png", scale = 0.25, mipmap_count = 1 }
+    },
     flags = {},
     subgroup = "py-items",
     order = "g",
