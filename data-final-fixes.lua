@@ -4,7 +4,7 @@ if DEBUG then
     developer.make_test_entities("pycoalprocessing")
 end
 
-if not settings.startup["ore-gen"].value then
+if settings.startup["ore-gen"].value then
 if not mods["rso-mod"] and not mods["PyCoalTBaA"] and not mods["PyBlock"] then
 if mods["pyrawores"] or mods["pypetroleumhandling"] then
 for _, e in pairs(data.raw.resource) do
