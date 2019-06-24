@@ -49,7 +49,7 @@ RECIPE {
 log("Creating additional foundry recipes")
 
 local _filter_ing = function(v)
-    return v.category == "smelting" and (v.ingredients and #v.ingredients == 1) or (v.normal and v.normal.ingredients and #v.normal.ingredients == 1)
+    return v.category == "smelting" and (v.ingredients and #v.ingredients == 1 or v.normal and v.normal.ingredients and #v.normal.ingredients == 1)
 end
 
 local function multiply(tab, count)
@@ -67,7 +67,7 @@ local function get_main(tab)
     return tab[#tab].name or tab[#tab][1]
 end
 
-if not mods["pyrawores"] then
+if not mods["pyrawores"] and not mods["PyCoalTBaA"] then
     local table = require('__stdlib__/stdlib/utils/table')
 
     for _, recipe in pairs(table.filter(data.raw.recipe, _filter_ing)) do
