@@ -1023,7 +1023,7 @@ RECIPE {
         {type = "item", name = "rich-clay", amount = 35}
     },
     results = {
-        {type = "item", name = "stone-brick", amount = 3}
+        {type = "item", name = "stone-brick", amount = 10}
     },
     main_product = "stone-brick",
     icon = "__base__/graphics/icons/stone-brick.png",
