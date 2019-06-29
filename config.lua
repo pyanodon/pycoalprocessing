@@ -25,7 +25,7 @@ PYC.TAILINGS_POND.GAS_POLLUTE_MODIFIER = .15
 --Tailings ponds that contain non clean water liquids pollute the ground they are on
 --chance is a percentage from 1 to 100, set to 0 to disable.
 --ticks is the number of ticks that must pass with a full tank before another check is done.
-PYC.TAILINGS_POND.SCORCH_CHANCE = 95--3 --default 3
+PYC.TAILINGS_POND.SCORCH_CHANCE = 100--3 --default 3
 PYC.TAILINGS_POND.SCORCH_TICKS = 1800--36000 --default: 36000 (this will check every 10 minutes)
 
 --List of Gas fluids, true values cause pollution when vented, all gasses with gas in the name fall under this category

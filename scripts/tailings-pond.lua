@@ -68,8 +68,14 @@ local function scorch_earth(pond, tick)
                 --TODO Issues when polluting near water.
                 if fluid.name:contains('dirty') or not fluid.name:contains('water') then
                     local tiles = {}
-                    for x, y in Area.spiral_iterate(Position.expand_to_area(pond.entity.position, 6)) do
-                        tiles[#tiles + 1] = {name = 'polluted-ground', position = {x = x, y = y}}
+					local area_radius = 0
+					repeat
+						area_radius = area_radius + 6
+					until(pond.entity.surface.get_tile(pond.entity.position.x + (area_radius), pond.entity.position.y).name ~= "polluted-ground")
+                    for x, y in Area.spiral_iterate(Position.expand_to_area(pond.entity.position, area_radius)) do
+						if pond.entity.surface.get_tile(x,y).name ~= "polluted-ground" then
+							tiles[#tiles + 1] = {name = 'polluted-ground', position = {x = x, y = y}}
+						end
                     end
                     pond.entity.surface.set_tiles(tiles, true)
                 end -- polluting liquids
