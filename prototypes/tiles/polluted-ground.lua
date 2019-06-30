@@ -65,3 +65,36 @@ DATA {
     pollution_absorption_per_second = 0.0002,
     vehicle_friction_modifier = sand_vehicle_speed_modifier
 }
+
+DATA {
+    type = "tree",
+    name = "ninja-tree",
+    icon = "__pycoalprocessing__/graphics/empty.png",
+    icon_size = 32,
+    flags = {"placeable-neutral", "placeable-off-grid", "breaths-air"},
+    minable =
+	{
+	  minable = false,
+      mining_particle = "wooden-particle",
+      mining_time = 0.5,
+      result = "wood",
+      count = 2
+    },
+    emissions_per_second = 0,
+    max_health = 20,
+    collision_box = {{0, 0}, {0, 0}},
+    selection_box = {{0, 0}, {0, 0}},
+    subgroup = "trees",
+    order = "a[tree]-b[dead-tree]",
+    vehicle_impact_sound =  { filename = "__base__/sound/car-wood-impact.ogg", volume = 1.0 },
+    pictures =
+    {
+      --dry-hairy-tree
+      {
+        filename = "__pycoalprocessing__/graphics/empty.png",
+        width = 32,
+        height = 32,
+        shift = util.by_pixel(45.5, -28.75),
+      },
+    }
+  }
