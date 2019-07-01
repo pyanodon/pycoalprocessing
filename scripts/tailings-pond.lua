@@ -127,7 +127,7 @@ Event.register(Event.build_events, tailings_pond.create)
 local function tile_setter(event)
 local tiles = event
 local stiles = {}
-log(table_size(tiles))
+--log(table_size(tiles))
 	if table_size(tiles) > 400 then
 		for i=1,400 do
 			table.insert(stiles,tiles[i])
@@ -149,7 +149,7 @@ end
 
 --Run tick handler every 30 ticks. In the future this will need to be spread out to itereate over a queing system.
 function tailings_pond.on_tick(event)
-log(table_size(Tiles))
+--log(table_size(Tiles))
     local ponds = global.tailings_ponds
     for i, pond in pairs(ponds) do
         if pond.entity.valid then
@@ -167,14 +167,14 @@ log(table_size(Tiles))
             global.tailings_ponds[i] = nil
         end
 		--log(serpent.block(Tiles))
-		log(serpent.block(Tiles[1]))
+		--log(serpent.block(Tiles[1]))
 		if Tiles[1] ~= nil then
-			log(serpent.block(table_size(Tiles)))
+			--log(serpent.block(table_size(Tiles)))
 			local stiles = {}
 			stiles,Tiles = tile_setter(Tiles)
-			log(serpent.block(table_size(stiles)))
-			log(serpent.block(table_size(Tiles)))
-			log(serpent.block(pond))
+			--log(serpent.block(table_size(stiles)))
+			--log(serpent.block(table_size(Tiles)))
+			--log(serpent.block(pond))
 			pond.entity.surface.set_tiles(stiles, true)
 			for s, st in pairs(stiles) do
 				pond.entity.surface.create_entity{name="ninja-tree",position={st.position.x,st.position.y}}
@@ -188,5 +188,13 @@ function tailings_pond.on_init()
     global.tailings_ponds = {}
 end
 Event.register(Event.core_events.init, tailings_pond.on_init)
+
+function tailings_pond.on_entity_died(event)
+
+log(event.entity.name)
+event.entity.surface.set_tiles{{name="polluted-ground-burnt",position=event.entity.position}}
+
+end
+Event.register(defines.events.on_entity_died, tailings_pond.on_entity_died)
 
 return tailings_pond
