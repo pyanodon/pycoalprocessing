@@ -99,7 +99,7 @@ DATA {
       },
     }
   }
-  
+
   DATA {
     type = "tile",
     name = "polluted-ground-burnt",
@@ -107,7 +107,7 @@ DATA {
     walking_speed_modifier = .50,
     autoplace = nil,
     layer = 36,
-	tint = {0,0,0,0.5},
+	tint = {0.25,0.25,0.25,0.25},
     variants = {
         main = {
             {

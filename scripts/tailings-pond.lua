@@ -176,7 +176,7 @@ function tailings_pond.on_tick(event)
 			--log(serpent.block(table_size(Tiles)))
 			--log(serpent.block(pond))
 			pond.entity.surface.set_tiles(stiles, true)
-			for s, st in pairs(stiles) do
+			for _, st in pairs(stiles) do
 				pond.entity.surface.create_entity{name="ninja-tree",position={st.position.x,st.position.y}}
 			end
 		end
@@ -192,9 +192,12 @@ Event.register(Event.core_events.init, tailings_pond.on_init)
 function tailings_pond.on_entity_died(event)
 
 log(event.entity.name)
-event.entity.surface.set_tiles{{name="polluted-ground-burnt",position=event.entity.position}}
-
+    if event.entity.name == "ninja-tree" then
+        event.entity.surface.set_tiles{{name="polluted-ground-burnt",position=event.entity.position}}
+        event.entity.destroy()
+    end
 end
+
 Event.register(defines.events.on_entity_died, tailings_pond.on_entity_died)
 
 return tailings_pond
