@@ -170,7 +170,7 @@ function tailings_pond.on_tick(event)
         --log(serpent.block(Tiles[1]))
         if Tiles[1] ~= nil then
             --log(serpent.block(table_size(Tiles)))
-            local stiles = {}
+            local stiles
             stiles, Tiles = tile_setter(Tiles)
             --log(serpent.block(table_size(stiles)))
             --log(serpent.block(table_size(Tiles)))
