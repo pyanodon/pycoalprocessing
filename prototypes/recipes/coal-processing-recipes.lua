@@ -368,7 +368,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 200}
     },
     results = {
-        {type = "item", name = "tailings-dust", amount = 30},
+        {type = "item", name = "tailings-dust", amount = 20},
         {type = "item", name = "coarse", amount = 15},
         {type = "fluid", name = "tar", amount = 500},
            {type = "fluid", name = "dirty-water", amount = 100}
@@ -566,12 +566,12 @@ RECIPE {
     name = "tailings-dust",
     category = "evaporator",
     enabled = false,
-    energy_required = 6,
+    energy_required = 5,
     ingredients = {
         {type = "fluid", name = "dirty-water", amount = 100}
     },
     results = {
-        {type = "item", name = "tailings-dust", amount = 6},
+        {type = "item", name = "tailings-dust", amount = 4},
         {type = "fluid", name = "acidgas", amount = 30, probability = 0.5}
     },
     main_product = "tailings-dust",
