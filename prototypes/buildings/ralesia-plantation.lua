@@ -28,7 +28,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "ralesia-plantation",
-    energy_required = 7,
+    energy_required = 1,
     enabled = false,
     ingredients = {
         {"soil", 300},
@@ -70,7 +70,7 @@ ENTITY {
     collision_box = {{-3.2, -3.2}, {3.2, 3.2}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     module_specification = {
-        module_slots = 4
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"ralesia"},
