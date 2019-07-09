@@ -27,39 +27,36 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "ralesia-plantation",
+    name = "ralesia-plantation-mk04",
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {"soil", 300},
-        {"pipe", 15}, --bob steel pipe
-        {"electronic-circuit", 25}, --bob basic-electronic-circuit-board
-        {"stone", 100}, --bob glass
-        {"iron-plate", 30},
-        {"treated-wood", 50},
-        {"small-lamp", 20}
+        {"ralesia-plantation-mk03", 1},
+        {"low-density-structure", 10},
+        {"nbfe-alloy", 10},
+        {"kevlar", 20},
     },
     results = {
-        {"ralesia-plantation", 1}
+        {"ralesia-plantation-mk04", 1}
     }
-}:add_unlock("coal-processing-1")
+}
 
 ITEM {
     type = "item",
-    name = "ralesia-plantation",
-    icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon.png",
+    name = "ralesia-plantation-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon-mk04.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
     order = "f",
-    place_result = "ralesia-plantation",
+    place_result = "ralesia-plantation-mk04",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "ralesia-plantation",
-    icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon.png",
+    name = "ralesia-plantation-mk04",
+    icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ralesia-plantation"},
@@ -74,21 +71,21 @@ ENTITY {
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"ralesia"},
-    crafting_speed = 0.3,
+    crafting_speed = 3,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions_per_minute = -25,
     },
-    energy_usage = "200kW",
+    energy_usage = "250kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/ralesia-plantation.png",
+        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/ralesia-plantation-mk04.png",
         width = 224,
         height = 230,
         frame_count = 50,
         line_length = 8,
-        animation_speed = 2.3,
+        animation_speed = 0.12,
         run_mode = "forward-then-backward",
         shift = {0.0, -0.163}
     },
