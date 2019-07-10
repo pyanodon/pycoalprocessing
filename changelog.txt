@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.4
+  Changes:
+    - Speed up cooling towers.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.3
   Changes:
     - Added polluted water to avoid creation of land using tailings pond.
