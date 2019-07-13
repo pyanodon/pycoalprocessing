@@ -338,8 +338,17 @@ ITEM {
 ITEM {
     type = "item",
     name = "flask",
-    icon = "__pycoalprocessing__/graphics/icons/flask.png",
-    icon_size = 32,
+    icon = "__pycoalprocessing__/graphics/icons/mip/glassware-01.png",
+    icon_size = 64,
+    icon_mipmaps = 5,
+    pictures =
+    {
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/glassware-01.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/glassware-02.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/glassware-03.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/glassware-04.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/glassware-05.png", scale = 0.25, mipmap_count = 1 },
+    },
     flags = {},
     subgroup = "py-items",
     order = "g",
