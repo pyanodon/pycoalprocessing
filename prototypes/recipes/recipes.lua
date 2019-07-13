@@ -114,8 +114,8 @@ RECIPE {
     results = {
         {"flask", 1}
     },
-    icon = "__pycoalprocessing__/graphics/icons/flask.png",
-    icon_size = 32,
+    icon = "__pycoalprocessing__/graphics/icons/mip/glassware-01.png",
+    icon_size = 64,
     subgroup = "py-items",
     order = "f"
 }
