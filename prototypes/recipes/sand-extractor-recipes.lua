@@ -3,9 +3,9 @@ RECIPE {
     name = "extract-sand",
     category = "sand-extractor",
     enabled = false,
-    energy_required = 2,
+    energy_required = 5,
     ingredients = {
-        {type = "item", name = "iron-stick", amount = 1}
+        {type = "item", name = "iron-stick", amount = 2}
     },
     results = {
         {type = "item", name = "sand", amount = 10}
@@ -24,7 +24,7 @@ RECIPE {
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "item", name = "iron-stick", amount = 2}
+        {type = "item", name = "iron-stick", amount = 4}
     },
     results = {
         {type = "item", name = "gravel", amount = 10}
@@ -41,9 +41,9 @@ RECIPE {
     name = "extract-stone",
     category = "sand-extractor",
     enabled = false,
-    energy_required = 7,
+    energy_required = 5,
     ingredients = {
-        {type = "item", name = "iron-stick", amount = 2}
+        {type = "item", name = "iron-stick", amount = 4}
     },
     results = {
         {type = "item", name = "stone", amount = 10}
@@ -62,7 +62,7 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        {type = "item", name = "iron-stick", amount = 2}
+        {type = "item", name = "iron-stick", amount = 4}
     },
     results = {
         {type = "item", name = "rich-dust", amount = 15}
@@ -81,7 +81,7 @@ RECIPE {
     enabled = false,
     energy_required = 7,
     ingredients = {
-        {type = "item", name = "iron-stick", amount = 2}
+        {type = "item", name = "iron-stick", amount = 4}
     },
     results = {
         {type = "item", name = "coarse", amount = 10}
