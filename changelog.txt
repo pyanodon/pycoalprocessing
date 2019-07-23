@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.6
+  Changes:
+    - Rebalanced ore generation.
+    - Adapted ralesia plantation to pyAL.
+    - Nerfed tailings dust separation.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.5
   Changes:
     - Migration fix
