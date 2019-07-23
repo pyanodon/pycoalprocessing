@@ -197,7 +197,7 @@ local function nonstartspawn(event)
                     end
                 end
             end
-        elseif math.random(1, 300) <= 1 then
+        elseif math.random(1, 600) <= 1 then
             --get a random ore to spawn
             local tsize = table_size(rocks)
             --log(tsize)
