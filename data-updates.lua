@@ -44,6 +44,7 @@ TECHNOLOGY('low-density-structure'):remove_prereq('chemical-science-pack'):add_p
 TECHNOLOGY('military-3'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
 TECHNOLOGY('uranium-processing'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
 TECHNOLOGY('logistic-robotics'):remove_prereq('advanced-electronics')
+TECHNOLOGY('lubricant'):remove_pack('chemical-science-pack')
 
 --RECIPE("wood"):set_fields {energy_required = 10}
 data.raw["technology"]["stack-inserter"].prerequisites = {"fast-inserter", "logistics-2"}
