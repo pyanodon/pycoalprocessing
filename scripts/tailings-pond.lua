@@ -46,6 +46,8 @@ local function new_pond_data(entity)
     }
 end
 
+local tickdoubler = 1
+
 --As the tailings pond get full they leak out and start polluting the ground around them
 --Scorch up to 6 tiles from center.
 local function scorch_earth(pond, tick)
@@ -88,7 +90,6 @@ local function scorch_earth(pond, tick)
         else -- not full fluid
             pond.fluid_per = tonumber(string.format('%.3f', (fluid.amount / tanksize)))
 		end
-		local tickdoubler = 1
 		if tickdoubler == 1 then -- Full Pond
 			if fluid.amount >= 100 then
 				fluid.amount = fluid.amount-10
