@@ -5,12 +5,12 @@ RECIPE {
     enabled = false,
     energy_required = 0.75,
     ingredients = {
-        {type = "fluid", name = "lubricant", amount = 100},
-        {type = "fluid", name = "coal-gas", amount = 100},
+        {type = "fluid", name = "lubricant", amount = 200},
+        {type = "fluid", name = "coal-gas", amount = 300},
         {type = "item", name = "drill-head", amount = 1}
     },
     results = {
-        {type = "item", name = "nexelit-ore", amount = 15}
+        {type = "item", name = "nexelit-ore", amount = 10}
     },
     main_product = "nexelit-ore",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-nexelit.png",
@@ -31,7 +31,7 @@ RECIPE {
         {type = "item", name = "drill-head", amount = 1}
     },
     results = {
-        {type = "item", name = "stone", amount = 20}
+        {type = "item", name = "stone", amount = 30}
     },
     main_product = "stone",
     icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-stone.png",
@@ -47,8 +47,8 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "lubricant", amount = 100},
-        {type = "fluid", name = "coal-gas", amount = 100},
+        {type = "fluid", name = "lubricant", amount = 200},
+        {type = "fluid", name = "coal-gas", amount = 200},
         {type = "item", name = "drill-head", amount = 1}
     },
     results = {
@@ -68,9 +68,9 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "lubricant", amount = 100},
-        {type = "fluid", name = "coal-gas", amount = 100},
-        {type = "item", name = "drill-head", amount = 1}
+        {type = "fluid", name = "lubricant", amount = 300},
+        {type = "fluid", name = "coal-gas", amount = 300},
+        {type = "item", name = "drill-head", amount = 3}
     },
     results = {
         {type = "item", name = "niobium-ore", amount = 15}
