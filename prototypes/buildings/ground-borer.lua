@@ -41,7 +41,7 @@ ENTITY {
     collision_box = {{-4.3, -4.3}, {4.3, 4.3}},
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
     module_specification = {
-        module_slots = 4
+        module_slots = 0
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"ground-borer"},
