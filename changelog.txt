@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.0
+  Changes:
+    - Removed hability to add modules in buildings recipes. v 2.0
+---------------------------------------------------------------------------------------------------
 Version: 1.3.9
   Changes:
     - Removed hability to add modules in buildings recipes.
