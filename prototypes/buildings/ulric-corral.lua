@@ -40,6 +40,7 @@ ENTITY {
     dying_explosion = "big-explosion",
     collision_box = {{-3.9, -3.9}, {3.9, 3.9}},
     selection_box = {{-4.0, -4.0}, {4.0, 4.0}},
+    match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 2
     },
@@ -49,7 +50,7 @@ ENTITY {
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions_per_minute = -25,
+        emissions_per_minute = -5,
     },
     energy_usage = "150kW",
     ingredient_count = 20,

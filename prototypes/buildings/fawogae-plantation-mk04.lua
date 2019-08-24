@@ -53,6 +53,7 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
+    match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 0
     },
@@ -62,7 +63,7 @@ ENTITY {
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions_per_minute = -25,
+        emissions_per_minute = -15,
     },
     energy_usage = "600kW",
     ingredient_count = 20,
@@ -72,7 +73,7 @@ ENTITY {
         height = 193,
         frame_count = 100,
         line_length = 10,
-        animation_speed = 0.3,
+        animation_speed = 3,
         shift = {0.13, -0.03}
     },
     fluid_boxes = {

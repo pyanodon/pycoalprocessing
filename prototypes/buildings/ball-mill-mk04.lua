@@ -38,6 +38,7 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-2.9, -2.9}, {2.9, 2.9}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
+    match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 1
     },
@@ -57,7 +58,7 @@ ENTITY {
         height = 198,
         frame_count = 80,
         line_length = 8,
-        animation_speed = 0.2,
+        animation_speed = 0.8,
         shift = {0.318, -0.12}
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55},

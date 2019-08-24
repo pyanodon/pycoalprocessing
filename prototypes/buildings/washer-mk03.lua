@@ -54,8 +54,9 @@ ENTITY {
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    collision_box = {{-3.0, -3.0}, {3.0, 3.0}},
-    selection_box = {{-3.1, -3.1}, {3.1, 3.1}},
+    collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
+    selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
+    match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 1
     },
@@ -75,7 +76,7 @@ ENTITY {
         height = 204,
         frame_count = 80,
         line_length = 10,
-        animation_speed = 0.3,
+        animation_speed = 0.9,
         shift = {0.17, -0.17}
     },
     fluid_boxes = {
