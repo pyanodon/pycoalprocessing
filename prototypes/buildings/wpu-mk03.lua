@@ -40,6 +40,7 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
+    match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 1
     },
@@ -62,7 +63,7 @@ ENTITY {
                 line_length = 21,
                 frame_count = 130,
                 shift = {-1.5, -1.328},
-                animation_speed = 0.2
+                animation_speed = 0.42
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/wpu/right-mk03.png",
@@ -71,7 +72,7 @@ ENTITY {
                 line_length = 21,
                 frame_count = 130,
                 shift = {1.5, -1.328},
-                animation_speed = 0.2
+                animation_speed = 0.42
             }
         }
     },
