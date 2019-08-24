@@ -38,6 +38,7 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-2.9, -2.9}, {2.9, 2.9}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
+    match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 1
     },
@@ -60,7 +61,7 @@ ENTITY {
                 line_length = 9,
                 frame_count = 76,
                 shift = {0.3, -0.5},
-                animation_speed = 0.15
+                animation_speed = 0.3
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/advanced-foundry/advanced-foundry-top-mk04.png",
@@ -69,7 +70,7 @@ ENTITY {
                 line_length = 9,
                 frame_count = 76,
                 shift = {0.3, -4.63},
-                animation_speed = 0.15
+                animation_speed = 0.3
             }
         }
     },

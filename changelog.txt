@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.1
+  Changes:
+    - Cosmetics adjustment.
+    - Fixed Washers, now they can be put side-by-side.
+---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Changes:
     - Removed hability to add modules in buildings recipes. v 2.0

@@ -38,6 +38,7 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 1
     },
@@ -60,7 +61,7 @@ ENTITY {
                 line_length = 10,
                 frame_count = 99,
                 shift = {0.507, 0},
-                animation_speed = 0.15
+                animation_speed = 0.75
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/fts-reactor/top-anim-mk04.png",
@@ -69,7 +70,7 @@ ENTITY {
                 line_length = 11,
                 frame_count = 99,
                 shift = {-0.243, -6.0},
-                animation_speed = 0.15
+                animation_speed = 0.75
             }
         }
     },
