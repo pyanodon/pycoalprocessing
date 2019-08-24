@@ -49,6 +49,7 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
     selection_box = {{-3, -3}, {3, 3}},
+    match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 3
     },

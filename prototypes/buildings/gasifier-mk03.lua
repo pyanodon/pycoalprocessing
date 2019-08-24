@@ -50,6 +50,7 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-3.9, -3.9}, {3.9, 3.9}},
     selection_box = {{-4, -4}, {4, 4}},
+    match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 0
     },
@@ -70,7 +71,7 @@ ENTITY {
         height = 269,
         frame_count = 30,
         line_length = 6,
-        animation_speed = 0.3,
+        animation_speed = 1,
         shift = {0.15, 0.3}
     },
     fluid_boxes = {
