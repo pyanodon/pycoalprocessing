@@ -87,7 +87,7 @@ ENTITY {
         height = 230,
         frame_count = 50,
         line_length = 8,
-        animation_speed = 2.3,
+        animation_speed = 1,
         run_mode = "forward-then-backward",
         shift = {0.0, -0.163}
     },
