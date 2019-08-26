@@ -64,7 +64,7 @@ ENTITY {
                 line_length = 9,
                 frame_count = 76,
                 shift = {0.3, -0.5},
-                animation_speed = 0.3
+                animation_speed = 0.5
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/advanced-foundry/advanced-foundry-top-mk02.png",
@@ -73,7 +73,7 @@ ENTITY {
                 line_length = 9,
                 frame_count = 76,
                 shift = {0.3, -4.63},
-                animation_speed = 0.3
+                animation_speed = 0.5
             }
         }
     },
