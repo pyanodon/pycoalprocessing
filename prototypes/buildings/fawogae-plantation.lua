@@ -77,7 +77,7 @@ ENTITY {
         height = 193,
         frame_count = 100,
         line_length = 10,
-        animation_speed = 1.5,
+        animation_speed = 0.4,
         shift = {0.13, -0.03}
     },
     fluid_boxes = {
