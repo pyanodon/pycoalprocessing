@@ -61,7 +61,7 @@ ENTITY {
         height = 257,
         frame_count = 34,
         line_length = 8,
-        animation_speed = 0.9,
+        animation_speed = 0.6,
         shift = {0.495, -0.48}
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55},

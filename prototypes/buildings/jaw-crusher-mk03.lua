@@ -62,7 +62,7 @@ ENTITY {
                 line_length = 21,
                 frame_count = 161,
                 shift = {-2.0, -0.5},
-                animation_speed = 0.9
+                animation_speed = 0.3
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-mid-mk03.png",
@@ -71,7 +71,7 @@ ENTITY {
                 line_length = 21,
                 frame_count = 161,
                 shift = {1.0, -0.5},
-                animation_speed = 0.9
+                animation_speed = 0.3
             },
             {
                 filename = "__pycoalprocessing__/graphics/entity/jaw-crusher/sprite-right-mk03.png",
@@ -80,7 +80,7 @@ ENTITY {
                 line_length = 64,
                 frame_count = 161,
                 shift = {3.0, -0.5},
-                animation_speed = 0.9
+                animation_speed = 0.3
             }
         }
     },
