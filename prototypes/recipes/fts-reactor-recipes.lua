@@ -231,15 +231,15 @@ RECIPE {
     name = "coal-briquette",
     category = "fts-reactor",
     enabled = false,
-    energy_required = 1,
+    energy_required = 10,
     ingredients = {
         {type = "item", name = "coal-dust", amount = 35},
         {type = "fluid", name = "glycerol", amount = 20},
-        {type = "fluid", name = "creosote", amount = 150},
+        {type = "fluid", name = "creosote", amount = 100},
         {type = "fluid", name = "tar", amount = 50}
     },
     results = {
-        {type = "item", name = "coal-briquette", amount = 1}
+        {type = "item", name = "coal-briquette", amount = 10}
     },
     main_product = "coal-briquette",
     icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
