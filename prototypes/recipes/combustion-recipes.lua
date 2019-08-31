@@ -304,16 +304,16 @@ RECIPE {
     name = "supercritical-combustion",
     category = "combustion",
     enabled = false,
-    energy_required = 4,
+    energy_required = 6,
     ingredients = {
-        {type = "fluid", name = "light-oil", amount = 100},
+        {type = "fluid", name = "light-oil", amount = 150},
         {type = "fluid", name = "refsyngas", amount = 50},
-        {type = "fluid", name = "water", amount = 1000},
+        {type = "fluid", name = "water", amount = 1500},
         {type = "item", name = "coal-briquette", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 400, temperature = 900},
-        {type = "fluid", name = "steam", amount = 1000, temperature = 60}
+        {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 900},
+        {type = "fluid", name = "steam", amount = 1500, temperature = 60}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-super-critical.png",
     icon_size = 32,
@@ -328,16 +328,16 @@ RECIPE {
     name = "ultrasupercritical-combustion",
     category = "combustion",
     enabled = false,
-    energy_required = 4,
+    energy_required = 6,
     ingredients = {
-        {type = "fluid", name = "petroleum-gas", amount = 100},
+        {type = "fluid", name = "petroleum-gas", amount = 150},
         {type = "fluid", name = "refsyngas", amount = 50},
-        {type = "fluid", name = "water", amount = 1000},
+        {type = "fluid", name = "water", amount = 1500},
         {type = "item", name = "coal-briquette", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 400, temperature = 1000},
-        {type = "fluid", name = "steam", amount = 1000, temperature = 60}
+        {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 1000},
+        {type = "fluid", name = "steam", amount = 1500, temperature = 60}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-ultra-super-critical.png",
     icon_size = 32,
