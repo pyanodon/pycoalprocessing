@@ -157,7 +157,7 @@ RECIPE {
         {type = "fluid", name = "aromatics", amount = 300}
     },
     results = {
-        {type = "fluid", name = "olefin", amount = 280}
+        {type = "fluid", name = "olefin", amount = 250}
     },
     main_product = "olefin",
     icon = "__pycoalprocessing__/graphics/icons/olefin.png",
