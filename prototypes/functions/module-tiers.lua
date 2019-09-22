@@ -9,9 +9,11 @@ for _, mach in pairs(data.raw['assembling-machine']) do
 end
 
 for _, mach in pairs(data.raw.furnace) do
+if mach.icon ~= nil then
     if string.match(mach.icon, '__py') ~= nil then
         table.insert(machines, mach.name)
     end
+end
 end
 
 for _, mach in pairs(machines) do
