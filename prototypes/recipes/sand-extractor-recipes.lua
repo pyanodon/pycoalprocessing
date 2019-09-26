@@ -62,7 +62,7 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        {type = "item", name = "iron-stick", amount = 4}
+        {type = "item", name = "iron-stick", amount = 8}
     },
     results = {
         {type = "item", name = "rich-dust", amount = 15}
