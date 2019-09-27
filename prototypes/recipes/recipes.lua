@@ -205,7 +205,7 @@ RECIPE {
     energy_required = 5,
     ingredients = {
         {type = "fluid", name = "olefin", amount = 100},
-        {type = "item", name = "bonemeal", amount = 20}
+        {type = "item", name = "bonemeal", amount = 10}
     },
     results = {
         {type = "fluid", name = "organic-solvent", amount = 50}
