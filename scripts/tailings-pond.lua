@@ -191,7 +191,7 @@ function tailings_pond.on_tick(event)
             end
         end
     end
-	
+
 	global.Tiles = Tiles
 end
 Event.register(-30, tailings_pond.on_tick)
