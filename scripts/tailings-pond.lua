@@ -10,8 +10,6 @@ local _scorch_chance = CFG.SCORCH_CHANCE
 local _scorch_ticks = CFG.SCORCH_TICKS
 local _pollution_mod = CFG.GAS_POLLUTE_MODIFIER
 
-local Tiles = {}
-
 --Pond contains gases, lets spill them out. Only negative is this can be used as a "gas" void so...
 --If the gas is "polluting" create pollution, else just vent.
 local function empty_pond_gas(fluid, surface, position)
@@ -46,7 +44,7 @@ local function new_pond_data(entity)
     }
 end
 
-local tickdoubler = 1
+local tickdoubler = global.tickdoubler
 
 --As the tailings pond get full they leak out and start polluting the ground around them
 --Scorch up to 6 tiles from center.
@@ -159,6 +157,8 @@ end
 
 --Run tick handler every 30 ticks. In the future this will need to be spread out to itereate over a queing system.
 function tailings_pond.on_tick(event)
+
+	local Tiles = global.Tiles
     --log(table_size(Tiles))
     local ponds = global.tailings_ponds
     for i, pond in pairs(ponds) do
@@ -191,11 +191,15 @@ function tailings_pond.on_tick(event)
             end
         end
     end
+	
+	global.Tiles = Tiles
 end
 Event.register(-30, tailings_pond.on_tick)
 
 function tailings_pond.on_init()
     global.tailings_ponds = {}
+	global.Tiles = {}
+	global.tickdoubler = 1
 end
 Event.register(Event.core_events.init, tailings_pond.on_init)
 
