@@ -44,8 +44,6 @@ local function new_pond_data(entity)
     }
 end
 
-local tickdoubler = global.tickdoubler
-
 --As the tailings pond get full they leak out and start polluting the ground around them
 --Scorch up to 6 tiles from center.
 local function scorch_earth(pond, tick)
@@ -55,6 +53,7 @@ local function scorch_earth(pond, tick)
     local fluid = empty_pond_gas(fluidbox[1], pond.entity.surface, pond.entity.position)
 
     local tiles = {}
+	local tickdoubler = global.tickdoubler
 
     --No gasses left if we still have fluid
     if fluid then
@@ -101,6 +100,7 @@ local function scorch_earth(pond, tick)
     end
     --push the updated fluidbox to the entity.
     fluidbox[1] = fluid
+	global.tickdoubler = tickdoubler
     return tiles
 end
 
@@ -176,9 +176,9 @@ function tailings_pond.on_tick(event)
         else
             global.tailings_ponds[i] = nil
         end
-        --log(serpent.block(Tiles))
+        log(serpent.block(Tiles))
         --log(serpent.block(Tiles[1]))
-        if Tiles[1] ~= nil then
+        if Tiles ~= nil and Tiles[1] ~= nil then
             --log(serpent.block(table_size(Tiles)))
             local stiles
             stiles, Tiles = tile_setter(Tiles)
@@ -202,6 +202,12 @@ function tailings_pond.on_init()
 	global.tickdoubler = 1
 end
 Event.register(Event.core_events.init, tailings_pond.on_init)
+
+function tailings_pond.on_load()
+	--global.Tiles = {}
+	--global.tickdoubler = 1
+end
+Event.register(Event.core_events.on_load, tailings_pond.on_load)
 
 function tailings_pond.on_entity_died(event)
     if event.entity.name == 'ninja-tree' then
