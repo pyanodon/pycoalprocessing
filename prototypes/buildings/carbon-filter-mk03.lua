@@ -52,7 +52,7 @@ ENTITY {
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     match_animation_speed_to_activity = false,
     module_specification = {
-        module_slots = 1
+        module_slots = 3
     },
     allowed_effects = {"consumption", "speed", "pollution"},
     crafting_categories = {"carbonfilter"},
