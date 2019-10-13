@@ -58,15 +58,15 @@ ENTITY {
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     match_animation_speed_to_activity = false,
     module_specification = {
-        module_slots = 2
+        module_slots = 6
     },
-    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
+    allowed_effects = {"speed"},
     crafting_categories = {"fawogae"},
-    crafting_speed = 0.6,
+    crafting_speed = 0.01,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
-        emissions_per_minute = -15,
+        emissions_per_minute = -5,
     },
     energy_usage = "300kW",
     ingredient_count = 20,
