@@ -40,7 +40,7 @@ ENTITY {
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     match_animation_speed_to_activity = false,
     module_specification = {
-        module_slots = 1
+        module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"advanced-foundry", "smelting"},

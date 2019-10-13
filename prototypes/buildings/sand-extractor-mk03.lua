@@ -43,7 +43,7 @@ ENTITY {
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     match_animation_speed_to_activity = false,
     module_specification = {
-        module_slots = 0
+        module_slots = 3
     },
     allowed_effects = {"consumption", "productivity", "pollution", "speed"},
     crafting_categories = {"sand-extractor"},
