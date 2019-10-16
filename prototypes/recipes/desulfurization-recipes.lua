@@ -7,12 +7,12 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "dirty-water", amount = 800},
         {type = "fluid", name = "water", amount = 2000},
-        {type = "fluid", name = "aromatics", amount = 450}
+        {type = "fluid", name = "aromatics", amount = 500}
     },
     results = {
-        {type = "fluid", name = "crude-oil", amount = 500},
+        {type = "fluid", name = "crude-oil", amount = 400},
         {type = "fluid", name = "steam", amount = 2000, temperature = 60},
-        {type = "fluid", name = "olefin", amount = 300}
+        {type = "fluid", name = "olefin", amount = 200}
     },
     main_product = "crude-oil",
     icon = "__pycoalprocessing__/graphics/icons/dirty-reaction.png",
