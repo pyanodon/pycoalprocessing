@@ -1177,7 +1177,7 @@ RECIPE {
         {type = "fluid", name = "tar", amount = 500}
     },
     results = {
-        {type = "fluid", name = "crude-oil", amount = 300}
+        {type = "fluid", name = "crude-oil", amount = 250}
     },
     main_product = "crude-oil",
     icon = "__pycoalprocessing__/graphics/icons/tar-oil.png",
