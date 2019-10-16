@@ -333,7 +333,7 @@ RECIPE {
         {type = "fluid", name = "syngas", amount = 40}
     },
     results = {
-        {type = "fluid", name = "crude-oil", amount = 100} --bobs rubber
+        {type = "fluid", name = "crude-oil", amount = 70} --bobs rubber
     },
     icon = "__pycoalprocessing__/graphics/icons/aromatics-rubber.png",
     icon_size = 32,
