@@ -16,6 +16,7 @@ local function empty_pond_gas(fluid, surface, position)
     if fluid then
         if fluid.temperature >= game.fluid_prototypes[fluid.name].gas_temperature or (fluid.name:contains('-gas') or fluid.name:contains('gas-') and not _gasses[fluid.name] == false) or _gasses[fluid.name] == true then
             surface.pollute(position, fluid.amount * _pollution_mod)
+            game.pollution_statistics.on_flow("tailings-pond", fluid.amount * _pollution_mod)
             return nil
         elseif _gasses[fluid.name] == false then
             return nil
@@ -176,7 +177,7 @@ function tailings_pond.on_tick(event)
         else
             global.tailings_ponds[i] = nil
         end
-        log(serpent.block(Tiles))
+        --log(serpent.block(Tiles))
         --log(serpent.block(Tiles[1]))
         if Tiles ~= nil and Tiles[1] ~= nil then
             --log(serpent.block(table_size(Tiles)))
