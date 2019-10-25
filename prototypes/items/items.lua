@@ -473,8 +473,20 @@ ITEM {
 ITEM {
     type = "item",
     name = "lab-instrument",
-    icon = "__pycoalprocessing__/graphics/icons/lab-instrument.png",
-    icon_size = 32,
+    icon = "__pycoalprocessing__/graphics/icons/mip/lab-05.png",
+    icon_size = 64,
+    icon_mipmaps = 8,
+    pictures =
+    {
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/lab-01.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/lab-02.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/lab-03.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/lab-04.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/lab-05.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/lab-06.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/lab-07.png", scale = 0.25, mipmap_count = 1 },
+      { size = 64, filename = "__pycoalprocessing__/graphics/icons/mip/lab-08.png", scale = 0.25, mipmap_count = 1 },
+    },
     flags = {},
     subgroup = "py-items",
     order = "g",
