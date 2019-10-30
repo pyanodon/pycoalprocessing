@@ -165,7 +165,8 @@ RECIPE {
     energy_required = 7,
     ingredients = {
         {type = "item", name = "lens", amount = 3},
-        {type = "item", name = "equipment-chassi", amount = 2}
+        {type = "item", name = "equipment-chassi", amount = 2},
+        {type = "item", name = "electronic-circuit", amount = 1}
     },
     results = {
         {type = "item", name = "lab-instrument", amount = 2}
