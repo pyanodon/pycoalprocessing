@@ -31,7 +31,7 @@ RECIPE {
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {"ralesia-plantation", 300},
+        {"ralesia-plantation", 1},
         {"plastic-bar", 50},
         {"pump", 4},
         {"advanced-circuit", 15}
