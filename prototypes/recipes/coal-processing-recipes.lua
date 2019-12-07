@@ -172,7 +172,7 @@ RECIPE {
         {type = "item", name = "lab-instrument", amount = 2}
     },
     main_product = "lab-instrument",
-    icon = "__pycoalprocessing__/graphics/icons/lab-instrument.png",
+    icon = "__pycoalprocessing__/graphics/icons/mip/lab-05.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "o"
