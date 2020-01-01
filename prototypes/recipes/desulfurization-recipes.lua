@@ -33,7 +33,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "syngas", amount = 150},
-        {type = "item", name = "sulfur", amount = 5},
+        {type = "item", name = "sulfur", amount = 1},
         {type = "item", name = "ash", amount = 1}
     },
     main_product = "syngas",
@@ -55,7 +55,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "heavy-oil", amount = 300},
-        {type = "item", name = "sulfur", amount = 5},
+        {type = "item", name = "sulfur", amount = 3, probability = 0.5},
         {type = "item", name = "ash", amount = 1}
     },
     main_product = "sulfur",
@@ -76,7 +76,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "light-oil", amount = 200},
-        {type = "item", name = "sulfur", amount = 3},
+        {type = "item", name = "sulfur", amount = 2},
         {type = "item", name = "ash", amount = 1}
     },
     main_product = "sulfur",
@@ -97,7 +97,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "petroleum-gas", amount = 100},
-        {type = "item", name = "sulfur", amount = 2},
+        {type = "item", name = "sulfur", amount = 1},
         {type = "item", name = "ash", amount = 1}
     },
     main_product = "sulfur",
@@ -118,7 +118,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "syngas", amount = 90},
-        {type = "item", name = "sulfur", amount = 1},
+        {type = "item", name = "sulfur", amount = 1, probability = 0.5},
         {type = "item", name = "ash", amount = 1}
     },
     main_product = "sulfur",
