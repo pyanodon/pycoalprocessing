@@ -829,12 +829,12 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        {type = "item", name = "mukmoux-fat", amount = 20},
-        {type = "item", name = "nichrome", amount = 2},
+        {type = "item", name = "mukmoux-fat", amount = 40},
+        {type = "item", name = "nichrome", amount = 1},
         {type = "fluid", name = "water", amount = 2000}
     },
     results = {
-        {type = "fluid", name = "oleochemicals", amount = 150},
+        {type = "fluid", name = "oleochemicals", amount = 300},
         {type = "fluid", name = "glycerol", amount = 100},
         {type = "fluid", name = "steam", amount = 2000, temperature = 60}
     },
@@ -844,6 +844,28 @@ RECIPE {
     subgroup = "py-fluid-handling",
     order = "c"
 }:add_unlock("coal-processing-2")
+
+RECIPE {
+    type = "recipe",
+    name = "dedicated-oleochemicals",
+    category = "fts-reactor",
+    enabled = false,
+    energy_required = 10,
+    ingredients = {
+        {type = "item", name = "mukmoux-fat", amount = 40},
+        {type = "item", name = "chromium", amount = 2},
+        {type = "fluid", name = "water", amount = 2000}
+    },
+    results = {
+        {type = "fluid", name = "oleochemicals", amount = 250},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 60}
+    },
+    main_product = "oleochemicals",
+    icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
+    icon_size = 32,
+    subgroup = "py-fluid-handling",
+    order = "c"
+}:add_unlock("coal-processing-2"):replace_ingredient("chromium", "titanium-plate")
 
 RECIPE {
     type = "recipe",
