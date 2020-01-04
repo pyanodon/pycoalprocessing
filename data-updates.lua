@@ -31,6 +31,7 @@ TECHNOLOGY('engine'):remove_prereq('logistic-science-pack'):add_prereq('coal-pro
 TECHNOLOGY('toolbelt'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 TECHNOLOGY('advanced-material-processing'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 
+RECIPE("chemical-plant"):remove_unlock('oil-processing'):add_unlock("desulfurization")
 RECIPE("chemical-science-pack"):remove_unlock('chemical-science-pack')
 TECHNOLOGY('chemical-science-pack'):remove_prereq('advanced-electronics')
 TECHNOLOGY('electric-energy-distribution-2'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
