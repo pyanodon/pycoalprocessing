@@ -57,7 +57,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 600},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 550},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
     icon = "__pycoalprocessing__/graphics/icons/combustion-syngas.png",
