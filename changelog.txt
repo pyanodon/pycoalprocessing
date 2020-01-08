@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.3
+  Changes:
+    - Rebalanced some combustion mixture recipes
+    - Prepared mukmoux pasture for pyAL
+---------------------------------------------------------------------------------------------------
 Version: 1.5.2
   Changes:
     - Fixed chemical plant tech unlock
