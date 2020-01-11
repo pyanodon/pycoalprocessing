@@ -18,7 +18,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "sand-extractor",
-    icon = "__pycoalprocessing__/graphics/icons/sand-extractor.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/sand-extractor.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
@@ -30,7 +30,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "sand-extractor",
-    icon = "__pycoalprocessing__/graphics/icons/sand-extractor.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/sand-extractor.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "sand-extractor"},
@@ -55,7 +55,7 @@ ENTITY {
     energy_usage = "150kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/sand-extractor/sand-extractor.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/sand-extractor/sand-extractor.png",
         width = 192,
         height = 202,
         frame_count = 90,
@@ -65,8 +65,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/sand-extractor.ogg", volume = 0.9},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/sand-extractor.ogg", volume = 0.65},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/sand-extractor.ogg", volume = 0.9},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/sand-extractor.ogg", volume = 0.65},
         apparent_volume = 0.45
     }
 }

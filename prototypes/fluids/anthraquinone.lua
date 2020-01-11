@@ -17,7 +17,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "anthraquinone",
-    icon = "__pycoalprocessing__/graphics/icons/anthraquinone.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/anthraquinone.png",
     icon_size = 32,
     default_temperature = 10,
     base_color = {r = 0.737, g = 0.592, b = 0.917},

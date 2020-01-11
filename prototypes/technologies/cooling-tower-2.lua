@@ -1,7 +1,7 @@
 TECHNOLOGY {
     type = "technology",
     name = "cooling-tower-2",
-    icon = "__pycoalprocessing__/graphics/technology/cooling-towermk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/cooling-towermk02.png",
     icon_size = 128,
     order = "c-a",
     upgrade = true,

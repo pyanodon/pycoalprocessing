@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "slacked-lime",
-    icon = "__pycoalprocessing__/graphics/icons/slacked-lime.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/slacked-lime.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,

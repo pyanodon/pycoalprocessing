@@ -19,7 +19,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "distilator-mk03",
-    icon = "__pycoalprocessing__/graphics/icons/distilator-mk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/distilator-mk03.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk03",
@@ -31,7 +31,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "distilator-mk03",
-    icon = "__pycoalprocessing__/graphics/icons/distilator-mk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/distilator-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "distilator-mk03"},
@@ -58,7 +58,7 @@ ENTITY {
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/distilator/distilator-mk03-a.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-mk03-a.png",
                 width = 96,
 				height = 358,
                 line_length = 20,
@@ -67,7 +67,7 @@ ENTITY {
                 shift = util.by_pixel(-80, -50)
             },
 			{
-               filename = "__pycoalprocessing__/graphics/entity/distilator/distilator-mk03-b.png",
+               filename = "__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-mk03-b.png",
                width = 96,
 			   height = 358,
                line_length = 20,
@@ -76,7 +76,7 @@ ENTITY {
                shift = util.by_pixel(16, -50)
             },
 			{
-               filename = "__pycoalprocessing__/graphics/entity/distilator/distilator-mk03-c.png",
+               filename = "__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-mk03-c.png",
                width = 96,
 			   height = 358,
                line_length = 20,
@@ -159,8 +159,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/distilator.ogg", volume = 1.2},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/distilator.ogg", volume = 0.9},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/distilator.ogg", volume = 1.2},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/distilator.ogg", volume = 0.9},
         apparent_volume = 2.5
     }
 }

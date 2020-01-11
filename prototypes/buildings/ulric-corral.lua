@@ -18,7 +18,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "ulric-corral",
-    icon = "__pycoalprocessing__/graphics/icons/ulric-corral.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ulric-corral.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
@@ -30,7 +30,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "ulric-corral",
-    icon = "__pycoalprocessing__/graphics/icons/ulric-corral.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ulric-corral.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ulric-corral"},
@@ -57,7 +57,7 @@ ENTITY {
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-corral-base.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-corral-base.png",
                 width = 256,
                 height = 256,
                 frame_count = 60,
@@ -66,7 +66,7 @@ ENTITY {
                 animation_speed = 0.6
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-corral-base-mask.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-corral-base-mask.png",
                 width = 256,
                 height = 256,
                 frame_count = 60,
@@ -76,7 +76,7 @@ ENTITY {
                 tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0}
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-corral-top.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-corral-top.png",
                 width = 256,
                 height = 12,
                 frame_count = 60,
@@ -93,7 +93,7 @@ ENTITY {
             south_position = {-2.0, 3.0},
             east_position = {-2.0, 3.0},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/mother-2.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/mother-2.png",
                 frame_count = 50,
                 line_length = 10,
                 width = 70,
@@ -107,7 +107,7 @@ ENTITY {
             south_position = {-0.25, 1.62},
             east_position = {-0.25, 1.62},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-middle-pastando-2.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-middle-pastando-2.png",
                 frame_count = 75,
                 line_length = 10,
                 width = 32,
@@ -122,7 +122,7 @@ ENTITY {
             south_position = {1.87, 0.46},
             east_position = {1.87, 0.46},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-right-pastando-2.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-right-pastando-2.png",
                 frame_count = 50,
                 line_length = 10,
                 width = 64,
@@ -136,7 +136,7 @@ ENTITY {
             south_position = {2.5, 2.81},
             east_position = {2.5, 2.81},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-right-cub-spritesheet.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-bottom-right-cub-spritesheet.png",
                 frame_count = 1,
                 --line_length = 60,
                 width = 32,
@@ -150,7 +150,7 @@ ENTITY {
             south_position = {-2.0, 2.56},
             east_position = {-2.0, 2.56},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-cub-spritesheet.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-bottom-cub-spritesheet.png",
                 frame_count = 1,
                 --line_length = 60,
                 width = 32,
@@ -164,7 +164,7 @@ ENTITY {
             south_position = {2.5, 2.81},
             east_position = {2.5, 2.81},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-right-cub-spritesheet.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-bottom-right-cub-spritesheet.png",
                 frame_count = 1,
                 --line_length = 60,
                 width = 32,
@@ -178,7 +178,7 @@ ENTITY {
             south_position = {1.81, 3.12},
             east_position = {1.81, 3.12},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-bottom-pink-cub-2.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-bottom-pink-cub-2.png",
                 frame_count = 80,
                 line_length = 10,
                 width = 40,
@@ -192,7 +192,7 @@ ENTITY {
             south_position = {2.56, 1.0},
             east_position = {2.56, 1.0},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/ulric-corral/ulric-mid-right-stand-spritesheet.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-mid-right-stand-spritesheet.png",
                 frame_count = 1,
                 --line_length = 60,
                 width = 32,
@@ -203,8 +203,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/ulric-corral.ogg", volume = 0.55},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/ulric-corral.ogg", volume = 0.25},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/ulric-corral.ogg", volume = 0.55},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/ulric-corral.ogg", volume = 0.25},
         apparent_volume = 0.45
     }
 }

@@ -16,7 +16,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "boric-acid",
-    icon = "__pycoalprocessing__/graphics/icons/boric-acid.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/boric-acid.png",
     icon_size = 32,
     default_temperature = 10,
     base_color = {r = 0.662, g = 0.752, b = 0.764},

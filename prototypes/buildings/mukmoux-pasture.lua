@@ -17,7 +17,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "mukmoux-pasture",
-    icon = "__pycoalprocessing__/graphics/icons/mukmoux-pasture.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/mukmoux-pasture.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
@@ -29,7 +29,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "mukmoux-pasture",
-    icon = "__pycoalprocessing__/graphics/icons/mukmoux-pasture.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/mukmoux-pasture.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "mukmoux-pasture"},
@@ -56,7 +56,7 @@ ENTITY {
     animation = {
         layers = {
             {
-            filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-pasture.png",
+            filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-pasture.png",
             width = 320,
             height = 363,
             frame_count = 1,
@@ -64,7 +64,7 @@ ENTITY {
             shift = {0.0, -0.5}
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-mask.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-mask.png",
                 width = 320,
                 height = 363,
                 frame_count = 1,
@@ -81,7 +81,7 @@ ENTITY {
             south_position = {-2.96, 1.93},
             east_position = {-2.96, 1.93},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-left.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-left.png",
                 scale = 1.2,
                 frame_count = 158,
                 line_length = 26,
@@ -96,7 +96,7 @@ ENTITY {
             south_position = {1.78, 2.06},
             east_position = {1.78, 2.06},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-right.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-right.png",
                 scale = 1.2,
                 frame_count = 158,
                 line_length = 14,
@@ -111,7 +111,7 @@ ENTITY {
             south_position = {1.28, -2.28},
             east_position = {1.28, -2.28},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/mukmoux-pasture/mukmoux-top.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-top.png",
                 scale = 1.2,
                 frame_count = 158,
                 line_length = 20,
@@ -123,8 +123,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/mukmoux-pasture.ogg", volume = 0.9},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/mukmoux-pasture.ogg", volume = 0.65},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/mukmoux-pasture.ogg", volume = 0.9},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/mukmoux-pasture.ogg", volume = 0.65},
         apparent_volume = 0.45
     }
 }

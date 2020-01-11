@@ -28,7 +28,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "cooling-tower-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/cooling-tower-mk02.png",
     icon_size = 32,
     flags = {},
     subgroup = "coal-processing",
@@ -40,7 +40,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "cooling-tower-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/cooling-tower-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     fixed_recipe = "cooling-water",
@@ -66,7 +66,7 @@ ENTITY {
     energy_usage = "70kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/cooling-tower-mk02/cooling_tower_mk02.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/cooling-tower-mk02/cooling_tower_mk02.png",
         width = 192,
         height = 256,
         frame_count = 1,
@@ -80,7 +80,7 @@ ENTITY {
             south_position = {-0.0, -5.01},
             east_position = {-0.0, -5.01},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/cooling-tower-mk02/smoke-sheet.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/cooling-tower-mk02/smoke-sheet.png",
                 frame_count = 96,
                 line_length = 12,
                 width = 160,
@@ -108,8 +108,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/cooling-tower-mk01.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/cooling-tower-mk01.ogg", volume = 0.35},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg", volume = 0.35},
         apparent_volume = 2.5
     }
 }

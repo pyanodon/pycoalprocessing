@@ -19,7 +19,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "borax-mine-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/borax-mine-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/borax-mine-mk02.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
@@ -31,7 +31,7 @@ ITEM {
 ENTITY {
     type = "mining-drill",
     name = "borax-mine-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/borax-mine-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/borax-mine-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "borax-mine-mk02"},
@@ -77,7 +77,7 @@ ENTITY {
     animations = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/borax-mine/bottom-borax-mk02.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/bottom-borax-mk02.png",
                 width = 288,
                 height = 144,
                 line_length = 7,
@@ -86,7 +86,7 @@ ENTITY {
                 shift = {0.0, 2.25}
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/borax-mine/top-borax-mk02.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/top-borax-mk02.png",
                 width = 288,
                 height = 144,
                 line_length = 7,
@@ -99,7 +99,7 @@ ENTITY {
     input_fluid_patch_sprites = {
         north = {
             priority = "extra-high",
-            filename = "__pycoalprocessing__/graphics/entity/borax-mine/N.png",
+            filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/N.png",
             line_length = 1,
             width = 288,
             height = 288,
@@ -109,7 +109,7 @@ ENTITY {
         },
         east = {
             priority = "extra-high",
-            filename = "__pycoalprocessing__/graphics/entity/borax-mine/E.png",
+            filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/E.png",
             line_length = 1,
             width = 288,
             height = 288,
@@ -119,7 +119,7 @@ ENTITY {
         },
         south = {
             priority = "extra-high",
-            filename = "__pycoalprocessing__/graphics/entity/borax-mine/S.png",
+            filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/S.png",
             line_length = 1,
             width = 288,
             height = 288,
@@ -129,7 +129,7 @@ ENTITY {
         },
         west = {
             priority = "extra-high",
-            filename = "__pycoalprocessing__/graphics/entity/borax-mine/W.png",
+            filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/W.png",
             line_length = 1,
             width = 288,
             height = 288,
@@ -140,8 +140,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/borax-mine.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/borax-mine.ogg", volume = 1.25},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/borax-mine.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/borax-mine.ogg", volume = 1.25},
         apparent_volume = 2.5
     }
 }

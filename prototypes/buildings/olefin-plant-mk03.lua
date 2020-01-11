@@ -19,7 +19,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "olefin-plant-mk03",
-    icon = "__pycoalprocessing__/graphics/icons/olefin-plant-mk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/olefin-plant-mk03.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk03",
@@ -31,7 +31,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "olefin-plant-mk03",
-    icon = "__pycoalprocessing__/graphics/icons/olefin-plant-mk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/olefin-plant-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "olefin-plant-mk03"},
@@ -56,7 +56,7 @@ ENTITY {
     energy_usage = "550kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/olefin-plant/olefin-off-mk03.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/olefin-plant/olefin-off-mk03.png",
         width = 274,
         height = 302,
         frame_count = 1,
@@ -70,7 +70,7 @@ ENTITY {
             south_position = util.by_pixel(0, -104.5),
             east_position = util.by_pixel(0, -104.5),
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/olefin-plant/anim-mk03.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/olefin-plant/anim-mk03.png",
                 frame_count = 84,
                 line_length = 8,
                 width = 256,
@@ -118,8 +118,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/olefin-plant.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/olefin-plant.ogg", volume = 0.75},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/olefin-plant.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/olefin-plant.ogg", volume = 0.75},
         apparent_volume = 2.5
     }
 }

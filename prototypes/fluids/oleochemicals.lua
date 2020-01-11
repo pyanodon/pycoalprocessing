@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "oleochemicals",
-    icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,

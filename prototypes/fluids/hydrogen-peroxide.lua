@@ -17,7 +17,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "hydrogen-peroxide",
-    icon = "__pycoalprocessing__/graphics/icons/hydrogen-peroxide.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/hydrogen-peroxide.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,

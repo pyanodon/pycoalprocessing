@@ -16,7 +16,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "creosote",
-    icon = "__pycoalprocessing__/graphics/icons/creosote.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/creosote.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,

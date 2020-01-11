@@ -18,7 +18,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "niobium-mine",
-    icon = "__pycoalprocessing__/graphics/icons/niobium-mine.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/niobium-mine.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
@@ -30,7 +30,7 @@ ITEM {
 ENTITY {
     type = "mining-drill",
     name = "niobium-mine",
-    icon = "__pycoalprocessing__/graphics/icons/niobium-mine.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/niobium-mine.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "niobium-mine"},
@@ -83,7 +83,7 @@ ENTITY {
     animations = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/niobium-mine/niobium-bottom.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/niobium-bottom.png",
                 width = 221,
                 height = 113,
                 line_length = 8,
@@ -92,7 +92,7 @@ ENTITY {
                 shift = {-0.07, 1.765}
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/niobium-mine/niobium-top.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/niobium-top.png",
                 width = 221,
                 height = 113,
                 line_length = 8,
@@ -105,7 +105,7 @@ ENTITY {
     input_fluid_patch_sprites = {
         north = {
             priority = "extra-high",
-            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/N.png",
+            filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/N.png",
             line_length = 1,
             width = 231,
             height = 237,
@@ -115,7 +115,7 @@ ENTITY {
         },
         east = {
             priority = "extra-high",
-            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/E.png",
+            filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/E.png",
             line_length = 1,
             width = 231,
             height = 237,
@@ -125,7 +125,7 @@ ENTITY {
         },
         south = {
             priority = "extra-high",
-            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/S.png",
+            filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/S.png",
             line_length = 1,
             width = 231,
             height = 237,
@@ -135,7 +135,7 @@ ENTITY {
         },
         west = {
             priority = "extra-high",
-            filename = "__pycoalprocessing__/graphics/entity/niobium-mine/W.png",
+            filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/W.png",
             line_length = 1,
             width = 231,
             height = 237,
@@ -146,8 +146,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/niobium-mine.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/niobium-mine.ogg", volume = 0.85},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/niobium-mine.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/niobium-mine.ogg", volume = 0.85},
         apparent_volume = 2.5
     }
 }

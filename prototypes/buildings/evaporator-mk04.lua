@@ -1,6 +1,6 @@
 local pipes = {
     south = {
-        filename = "__pycoalprocessing__/graphics/entity/evaporator/south-mk04.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/evaporator/south-mk04.png",
         priority = "extra-high",
         width = 168,
         height = 194
@@ -25,7 +25,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "evaporator-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/evaporator-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/evaporator-mk04.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk04",
@@ -37,7 +37,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "evaporator-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/evaporator-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/evaporator-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "evaporator-mk04"},
@@ -62,7 +62,7 @@ ENTITY {
     energy_usage = "800kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/evaporator/evaporator-off-mk04.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-off-mk04.png",
         width = 168,
         height = 177,
         frame_count = 1,
@@ -76,7 +76,7 @@ ENTITY {
             south_position = {0.1, -0.0},
             east_position = {0.1, -0.0},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/evaporator/evaporator-anim-mk04.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-anim-mk04.png",
                 frame_count = 80,
                 line_length = 10,
                 width = 168,
@@ -120,8 +120,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/evaporator.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/evaporator.ogg", volume = 0.65},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg", volume = 0.65},
         apparent_volume = 2.5
     }
 }

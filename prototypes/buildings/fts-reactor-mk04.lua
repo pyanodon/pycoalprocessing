@@ -16,7 +16,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "fts-reactor-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/fts-reactor-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/fts-reactor-mk04.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk04",
@@ -28,7 +28,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "fts-reactor-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/fts-reactor-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/fts-reactor-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "fts-reactor-mk04"},
@@ -55,7 +55,7 @@ ENTITY {
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/fts-reactor/base-anim-mk04.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/base-anim-mk04.png",
                 width = 192,
                 height = 160,
                 line_length = 10,
@@ -64,7 +64,7 @@ ENTITY {
                 animation_speed = 0.75
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/fts-reactor/top-anim-mk04.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/top-anim-mk04.png",
                 width = 185,
                 height = 226,
                 line_length = 11,
@@ -123,8 +123,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/evaporator.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/evaporator.ogg", volume = 0.5},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg", volume = 0.5},
         apparent_volume = 2.5
     }
 }

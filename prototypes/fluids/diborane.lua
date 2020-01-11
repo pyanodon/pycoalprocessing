@@ -16,7 +16,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "diborane",
-    icon = "__pycoalprocessing__/graphics/icons/diborane.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/diborane.png",
     icon_size = 32,
     default_temperature = 15,
     base_color = {r = 0.858, g = 0.929, b = 0.952},

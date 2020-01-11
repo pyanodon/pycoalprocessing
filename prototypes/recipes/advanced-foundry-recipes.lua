@@ -15,7 +15,7 @@ RECIPE {
         {type = "item", name = "nexelit-plate", amount = 4}
     },
     main_product = "nexelit-plate",
-    icon = "__pycoalprocessing__/graphics/icons/nexelit-plate.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/nexelit-plate.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "a1"

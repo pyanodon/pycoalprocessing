@@ -1,7 +1,7 @@
 TECHNOLOGY {
     type = "technology",
     name = "desulfurization",
-    icon = "__pycoalprocessing__/graphics/technology/desulfurization.png",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/desulfurization.png",
     icon_size = 128,
     order = "c-a",
     prerequisites = {"sulfur-processing", "fluid-handling", "coal-processing-1"},

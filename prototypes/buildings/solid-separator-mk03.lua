@@ -19,7 +19,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "solid-separator-mk03",
-    icon = "__pycoalprocessing__/graphics/icons/solid-separator-mk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/solid-separator-mk03.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk03",
@@ -31,7 +31,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "solid-separator-mk03",
-    icon = "__pycoalprocessing__/graphics/icons/solid-separator-mk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/solid-separator-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "solid-separator-mk03"},
@@ -56,7 +56,7 @@ ENTITY {
     energy_usage = "350kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/solid-separator/solid-separator-mk03.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/solid-separator/solid-separator-mk03.png",
         width = 249,
         height = 298,
         frame_count = 20,
@@ -66,8 +66,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/solid-separator.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/solid-separator.ogg", volume = 0.75},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/solid-separator.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/solid-separator.ogg", volume = 0.75},
         apparent_volume = 2.5
     }
 }
