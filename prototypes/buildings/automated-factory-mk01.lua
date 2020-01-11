@@ -1,6 +1,6 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/automated-factory/top-conection.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/automated-factory/top-conection.png",
         priority = "extra-high",
         width = 244,
         height = 280
@@ -27,7 +27,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "automated-factory-mk01",
-    icon = "__pycoalprocessing__/graphics/icons/automated-factory-mk01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/automated-factory-mk01.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
@@ -39,7 +39,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "automated-factory-mk01",
-    icon = "__pycoalprocessing__/graphics/icons/automated-factory-mk01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/automated-factory-mk01.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "automated-factory-mk01"},
@@ -66,7 +66,7 @@ ENTITY {
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/automated-factory/mk01-left.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/automated-factory/mk01-left.png",
                 width = 128,
                 height = 280,
                 line_length = 16,
@@ -75,7 +75,7 @@ ENTITY {
                 animation_speed = 0.5
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/automated-factory/mk01-right.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/automated-factory/mk01-right.png",
                 width = 116,
                 height = 280,
                 line_length = 16,
@@ -114,8 +114,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/automated-factory.ogg", volume = 1.0},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/automated-factory.ogg", volume = 0.6},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/automated-factory.ogg", volume = 1.0},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/automated-factory.ogg", volume = 0.6},
         apparent_volume = 2.5
     }
 }

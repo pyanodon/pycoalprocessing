@@ -1,7 +1,7 @@
 TECHNOLOGY {
     type = "technology",
     name = "filtration",
-    icon = "__pycoalprocessing__/graphics/technology/filtration.png",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/filtration.png",
     icon_size = 128,
     order = "c-a",
     prerequisites = {"coal-processing-2"},

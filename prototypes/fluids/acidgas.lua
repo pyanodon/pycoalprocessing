@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "acidgas",
-    icon = "__pycoalprocessing__/graphics/icons/acidgas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/acidgas.png",
     icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",

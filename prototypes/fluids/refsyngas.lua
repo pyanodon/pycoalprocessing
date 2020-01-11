@@ -55,7 +55,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "refsyngas",
-    icon = "__pycoalprocessing__/graphics/icons/refsyngas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/refsyngas.png",
     icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",

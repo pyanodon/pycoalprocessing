@@ -1,6 +1,6 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/carbon-filter/top.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/carbon-filter/top.png",
         priority = "low",
         width = 44,
         height = 25
@@ -27,7 +27,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "carbon-filter",
-    icon = "__pycoalprocessing__/graphics/icons/carbon-filter.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/carbon-filter.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
@@ -39,7 +39,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "carbon-filter",
-    icon = "__pycoalprocessing__/graphics/icons/carbon-filter.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/carbon-filter.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "carbon-filter"},
@@ -64,7 +64,7 @@ ENTITY {
     energy_usage = "100kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/carbon-filter/carbon-filter.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/carbon-filter/carbon-filter.png",
         priority = "high",
         width = 171,
         height = 167,
@@ -108,8 +108,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/carbon-filter.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/carbon-filter.ogg", volume = 0.6},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/carbon-filter.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/carbon-filter.ogg", volume = 0.6},
         apparent_volume = 2.5
     }
 }

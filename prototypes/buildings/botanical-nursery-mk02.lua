@@ -1,24 +1,24 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/botanical-nursery/top.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/botanical-nursery/top.png",
         priority = "low",
         width = 260,
         height = 254
     },
     south = {
-        filename = "__pycoalprocessing__/graphics/entity/botanical-nursery/bottom.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/botanical-nursery/bottom.png",
         priority = "extra-high",
         width = 260,
         height = 254
     },
     west = {
-        filename = "__pycoalprocessing__/graphics/entity/botanical-nursery/left.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/botanical-nursery/left.png",
         priority = "very-low",
         width = 260,
         height = 254
     },
     east = {
-        filename = "__pycoalprocessing__/graphics/entity/botanical-nursery/right.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/botanical-nursery/right.png",
         priority = "extra-high",
         width = 260,
         height = 254
@@ -44,7 +44,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "botanical-nursery-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/botanical-nursery-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/botanical-nursery-mk02.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
@@ -56,7 +56,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "botanical-nursery-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/botanical-nursery-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/botanical-nursery-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "botanical-nursery-mk02"},
@@ -81,7 +81,7 @@ ENTITY {
     energy_usage = "230kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/botanical-nursery/botanical-nursery-mk02.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/botanical-nursery/botanical-nursery-mk02.png",
         width = 260,
         height = 254,
         line_length = 7,
@@ -119,8 +119,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/botanical-nursery.ogg", volume = 1.8},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/botanical-nursery.ogg", volume = 0.95},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 1.8},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 0.95},
         apparent_volume = 2.5
     }
 }

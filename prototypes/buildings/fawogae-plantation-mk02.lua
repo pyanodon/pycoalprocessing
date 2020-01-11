@@ -1,12 +1,12 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/fawogae-plantation/pipe-north.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/fawogae-plantation/pipe-north.png",
         priority = "low",
         width = 32,
         height = 32
     },
     south = {
-        filename = "__pycoalprocessing__/graphics/entity/fawogae-plantation/pipe-south.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/fawogae-plantation/pipe-south.png",
         priority = "extra-high",
         width = 32,
         height = 32
@@ -33,7 +33,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "fawogae-plantation-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/fawogae-plantation-icon-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-plantation-icon-mk02.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
@@ -45,7 +45,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "fawogae-plantation-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/fawogae-plantation-icon-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-plantation-icon-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "fawogae-plantation-mk02"},
@@ -71,7 +71,7 @@ ENTITY {
     energy_usage = "300kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/fawogae-plantation/fawogae-mk02.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/fawogae-plantation/fawogae-mk02.png",
         width = 200,
         height = 193,
         frame_count = 100,
@@ -92,8 +92,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/fawogae-plantation.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/fawogae-plantation.ogg", volume = 0.55},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/fawogae-plantation.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/fawogae-plantation.ogg", volume = 0.55},
         apparent_volume = 1.2
     }
 }

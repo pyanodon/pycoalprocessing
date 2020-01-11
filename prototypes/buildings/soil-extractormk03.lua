@@ -1,12 +1,12 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/long-pipe-north.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/soil-extractormk01/long-pipe-north.png",
         priority = "low",
         width = 30,
         height = 44
     },
     south = {
-        filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/pipe-south.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/soil-extractormk01/pipe-south.png",
         priority = "extra-high",
         width = 40,
         height = 45
@@ -32,7 +32,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "soil-extractormk03",
-    icon = "__pycoalprocessing__/graphics/icons/soil-extractormk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/soil-extractormk03.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
@@ -44,7 +44,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "soil-extractormk03",
-    icon = "__pycoalprocessing__/graphics/icons/soil-extractormk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/soil-extractormk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "soil-extractormk03"},
@@ -69,7 +69,7 @@ ENTITY {
     energy_usage = "600kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/soil-extractormk03.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/soil-extractormk01/soil-extractormk03.png",
         width = 235,
         height = 266,
         frame_count = 30,
@@ -89,8 +89,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/soil-extractormk01.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/soil-extractormk01.ogg", volume = 0.45},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/soil-extractormk01.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/soil-extractormk01.ogg", volume = 0.45},
         apparent_volume = 2.5
     }
 }

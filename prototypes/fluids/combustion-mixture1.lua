@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "combustion-mixture1",
-    icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-mixture1.png",
     icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",

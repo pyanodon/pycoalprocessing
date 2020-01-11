@@ -17,7 +17,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "cooling-tower-mk01",
-    icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/cooling-tower-mk01.png",
     icon_size = 32,
     flags = {},
     subgroup = "coal-processing",
@@ -29,7 +29,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "cooling-tower-mk01",
-    icon = "__pycoalprocessing__/graphics/icons/cooling-tower-mk01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/cooling-tower-mk01.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "cooling-tower-mk01"},
@@ -55,7 +55,7 @@ ENTITY {
     energy_usage = "50kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/cooling-tower-mk01/cooling-tower-mk01.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/cooling-tower-mk01/cooling-tower-mk01.png",
         width = 113,
         height = 133,
         frame_count = 30,
@@ -82,8 +82,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/cooling-tower-mk01.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/cooling-tower-mk01.ogg", volume = 0.35},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg", volume = 0.35},
         apparent_volume = 2.5
     }
 }

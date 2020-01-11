@@ -13,7 +13,7 @@ RECIPE {
         {type = "item", name = "nexelit-ore", amount = 10}
     },
     main_product = "nexelit-ore",
-    icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-nexelit.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-nexelit.png",
     icon_size = 32,
     subgroup = "py-drilling",
     order = "a"
@@ -34,7 +34,7 @@ RECIPE {
         {type = "item", name = "stone", amount = 30}
     },
     main_product = "stone",
-    icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-stone.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-stone.png",
     icon_size = 32,
     subgroup = "py-drilling",
     order = "b"
@@ -55,7 +55,7 @@ RECIPE {
         {type = "item", name = "raw-borax", amount = 15}
     },
     main_product = "raw-borax",
-    icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-borax.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-borax.png",
     icon_size = 32,
     subgroup = "py-drilling",
     order = "b"
@@ -76,7 +76,7 @@ RECIPE {
         {type = "item", name = "niobium-ore", amount = 15}
     },
     main_product = "niobium-ore",
-    icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-niobium.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-niobium.png",
     icon_size = 32,
     subgroup = "py-drilling",
     order = "b"
@@ -97,7 +97,7 @@ RECIPE {
         {type = "item", name = "limestone", amount = 20}
     },
     main_product = "limestone",
-    icon = "__pycoalprocessing__/graphics/icons/drilling/drilling-limestone.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/drilling/drilling-limestone.png",
     icon_size = 32,
     subgroup = "py-drilling",
     order = "c"

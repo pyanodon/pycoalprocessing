@@ -16,7 +16,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "wpu-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/wpu-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/wpu-mk04.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk04",
@@ -28,7 +28,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "wpu-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/wpu-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/wpu-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "wpu-mk04"},
@@ -55,7 +55,7 @@ ENTITY {
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/wpu/left-mk04.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/wpu/left-mk04.png",
                 width = 96,
                 height = 277,
                 line_length = 21,
@@ -64,7 +64,7 @@ ENTITY {
                 animation_speed = 0.42
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/wpu/right-mk04.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/wpu/right-mk04.png",
                 width = 96,
                 height = 277,
                 line_length = 21,
@@ -76,8 +76,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/wpu.ogg", volume = 1.0},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/wpu.ogg", volume = 0.6},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 1.0},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 0.6},
         apparent_volume = 2.5
     }
 }

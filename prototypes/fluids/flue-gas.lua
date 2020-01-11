@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "flue-gas",
-    icon = "__pycoalprocessing__/graphics/icons/flue-gas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/flue-gas.png",
     icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",

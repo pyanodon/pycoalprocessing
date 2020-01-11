@@ -18,7 +18,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "gasturbinemk02",
-    icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk02.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-power",
@@ -30,7 +30,7 @@ ITEM {
 ENTITY {
     type = "generator",
     name = "gasturbinemk02",
-    icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "gasturbinemk02"},
@@ -70,7 +70,7 @@ ENTITY {
         emissions_per_minute = 0.06,
     },
     horizontal_animation = {
-        filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-vertical-anim.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-vertical-anim.png",
         width = 238,
         height = 249,
         frame_count = 16,
@@ -78,7 +78,7 @@ ENTITY {
         shift = {0.195, -0.239}
     },
     vertical_animation = {
-        filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-horizontal-anim.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-horizontal-anim.png",
         width = 238,
         height = 244,
         frame_count = 16,
@@ -100,8 +100,8 @@ ENTITY {
     performance_to_sound_speedup = 0.3,
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/gasturbinemk02.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/gasturbinemk02.ogg", volume = 0.65},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk02.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk02.ogg", volume = 0.65},
         apparent_volume = 2.5
     }
 }
