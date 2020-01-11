@@ -14,7 +14,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 6}
     },
     main_product = "coal-gas",
-    icon = "__pycoalprocessing__/graphics/icons/coalgas-from-coal.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coalgas-from-coal.png",
     icon_size = 32,
     subgroup = "py-syngas",
     order = "e"
@@ -36,7 +36,7 @@ RECIPE {
         {type = "item", name = "coal", amount = 10}
     },
     main_product = "coal-gas",
-    icon = "__pycoalprocessing__/graphics/icons/coalgas-from-wood.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coalgas-from-wood.png",
     icon_size = 32,
     subgroup = "py-syngas",
     order = "f"
@@ -57,7 +57,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 1}
     },
     main_product = "coal-gas",
-    icon = "__pycoalprocessing__/graphics/icons/coalgas-from-coke.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coalgas-from-coke.png",
     icon_size = 32,
     subgroup = "py-syngas",
     order = "f"
@@ -66,7 +66,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "coal-gas",
-    icon = "__pycoalprocessing__/graphics/icons/coalgas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coalgas.png",
     icon_size = 32,
     default_temperature = 15,
     heat_capacity = "1KJ",

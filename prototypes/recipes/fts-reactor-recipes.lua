@@ -81,7 +81,7 @@ RECIPE {
         {type = "fluid", name = "steam", amount = 2000, temperature = 60},
         {type = "fluid", name = "carbon-dioxide", amount = 200}
     },
-    icon = "__pycoalprocessing__/graphics/icons/ref_to_light_oil.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ref_to_light_oil.png",
     icon_size = 32,
     main_product = "light-oil",
     subgroup = "py-fluid-handling",
@@ -105,7 +105,7 @@ RECIPE {
         {type = "fluid", name = "steam", amount = 2000, temperature = 60},
         {type = "fluid", name = "sulfuric-acid", amount = 500}
     },
-    icon = "__pycoalprocessing__/graphics/icons/sulfuric-petgas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/sulfuric-petgas.png",
     icon_size = 32,
     main_product = "sulfuric-acid",
     subgroup = "py-fluid-handling",
@@ -128,7 +128,7 @@ RECIPE {
         {type = "fluid", name = "steam", amount = 2000, temperature = 60},
         {type = "fluid", name = "combustion-mixture1", amount = 300, temperature = 700}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-mixture1.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-mixture1.png",
     icon_size = 32,
     main_product = "combustion-mixture1",
     subgroup = "py-fluid-handling",
@@ -152,7 +152,7 @@ RECIPE {
         {type = "fluid", name = "tar", amount = 200}
     },
     main_product = "coal-gas",
-    icon = "__pycoalprocessing__/graphics/icons/heavy-oil-to-coalgas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/heavy-oil-to-coalgas.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h9"
@@ -175,7 +175,7 @@ RECIPE {
         {type = "fluid", name = "tar", amount = 200}
     },
     main_product = "syngas",
-    icon = "__pycoalprocessing__/graphics/icons/light-oil-to-syngas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/light-oil-to-syngas.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h10"
@@ -198,7 +198,7 @@ RECIPE {
         {type = "fluid", name = "tar", amount = 200}
     },
     main_product = "refsyngas",
-    icon = "__pycoalprocessing__/graphics/icons/petgas-to-refsyngas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/petgas-to-refsyngas.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h11"
@@ -220,7 +220,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 5}
     },
     main_product = "syngas",
-    icon = "__pycoalprocessing__/graphics/icons/glycerol-syngas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/glycerol-syngas.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h12"
@@ -242,7 +242,7 @@ RECIPE {
         {type = "item", name = "coal-briquette", amount = 10}
     },
     main_product = "coal-briquette",
-    icon = "__pycoalprocessing__/graphics/icons/coal-briquette.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coal-briquette.png",
     icon_size = 32
 }:add_unlock("coal-processing-2")
 

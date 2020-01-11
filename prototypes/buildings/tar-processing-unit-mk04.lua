@@ -1,6 +1,6 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/tar-processing-unit/north.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/north.png",
         priority = "extra-high",
         width = 236,
         height = 235
@@ -26,7 +26,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "tar-processing-unit-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/tar-processing-unit-mk04.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk04",
@@ -38,7 +38,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "tar-processing-unit-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/tar-processing-unit-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/tar-processing-unit-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "tar-processing-unit-mk04"},
@@ -63,7 +63,7 @@ ENTITY {
     energy_usage = "400kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/tar-processing-unit/tar-processing-mk04.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/tar-processing-mk04.png",
         width = 236,
         height = 229,
         frame_count = 1,
@@ -76,7 +76,7 @@ ENTITY {
             south_position = {1.212, -0.07},
             east_position = {1.212, -0.07},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/tar-processing-unit/tar-anim-mk04.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/tar-anim-mk04.png",
                 frame_count = 40,
                 line_length = 8,
                 width = 96,

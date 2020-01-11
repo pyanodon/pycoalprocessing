@@ -12,7 +12,7 @@ RECIPE {
         {type = "item", name = "bonemeal", amount = 5}
     },
     main_product = "bonemeal",
-    icon = "__pycoalprocessing__/graphics/icons/bonemeal.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/bonemeal.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "g"
@@ -31,7 +31,7 @@ RECIPE {
         {type = "item", name = "raw-borax", amount = 5}
     },
     main_product = "raw-borax",
-    icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/raw-borax.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "h"
@@ -51,7 +51,7 @@ RECIPE {
         {type = "item", name = "ralesia", amount = 10}
     },
     main_product = "ralesia",
-    icon = "__pycoalprocessing__/graphics/icons/ralesia.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "h"
@@ -71,7 +71,7 @@ RECIPE {
         {type = "item", name = "rich-clay", amount = 10}
     },
     main_product = "rich-clay",
-    icon = "__pycoalprocessing__/graphics/icons/rich-clay.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/rich-clay.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "j"
@@ -91,7 +91,7 @@ RECIPE {
         {type = "item", name = "ground-sample01", amount = 10}
     },
     main_product = "ground-sample01",
-    icon = "__pycoalprocessing__/graphics/icons/ground-sample01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ground-sample01.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "k"
@@ -111,7 +111,7 @@ RECIPE {
         {type = "item", name = "bio-sample01", amount = 4}
     },
     main_product = "bio-sample01",
-    icon = "__pycoalprocessing__/graphics/icons/bio-sample01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/bio-sample01.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "l"
@@ -131,7 +131,7 @@ RECIPE {
         {type = "item", name = "alien-sample01", amount = 4}
     },
     main_product = "alien-sample01",
-    icon = "__pycoalprocessing__/graphics/icons/alien-sample01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/alien-sample01.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "m"
@@ -151,7 +151,7 @@ RECIPE {
         {type = "item", name = "equipment-chassi", amount = 2}
     },
     main_product = "equipment-chassi",
-    icon = "__pycoalprocessing__/graphics/icons/equipment-chassi.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/equipment-chassi.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "n"
@@ -172,7 +172,7 @@ RECIPE {
         {type = "item", name = "lab-instrument", amount = 2}
     },
     main_product = "lab-instrument",
-    icon = "__pycoalprocessing__/graphics/icons/mip/lab-05.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-05.png",
     icon_size = 64,
     subgroup = "py-items",
     order = "o"
@@ -192,7 +192,7 @@ RECIPE {
         {type = "item", name = "lens", amount = 3}
     },
     main_product = "lens",
-    icon = "__pycoalprocessing__/graphics/icons/lens.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/lens.png",
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "f"
@@ -212,7 +212,7 @@ RECIPE {
         {type = "item", name = "boron-trioxide", amount = 1}
     },
     main_product = "boron-trioxide",
-    icon = "__pycoalprocessing__/graphics/icons/boron-trioxide.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/boron-trioxide.png",
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "e"
@@ -231,7 +231,7 @@ RECIPE {
         {type = "item", name = "ralesia-seeds", amount = 8}
     },
     main_product = "ralesia-seeds",
-    icon = "__pycoalprocessing__/graphics/icons/ralesia-seeds.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-seeds.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "i"
@@ -249,7 +249,7 @@ RECIPE {
     results = {
         {type = "item", name = "logistic-science-pack", amount = 3}
     },
-    icon = "__pycoalprocessing__/graphics/icons/science-pack-2.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "a2"
@@ -270,7 +270,7 @@ RECIPE {
         {type = "fluid", name = "dirty-water", amount = 100}
     },
     main_product = "borax",
-    icon = "__pycoalprocessing__/graphics/icons/borax-washer.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/borax-washer.png",
     icon_size = 32,
     subgroup = "py-washer",
     order = "d"
@@ -292,7 +292,7 @@ RECIPE {
         {type = "item", name = "rich-clay", amount = 10}
     },
     main_product = "carbon-dioxide",
-    icon = "__pycoalprocessing__/graphics/icons/tar-distilation.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/tar-distilation.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "t"
@@ -314,7 +314,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 3}
     },
     main_product = "coal-gas",
-    icon = "__pycoalprocessing__/graphics/icons/tar-gasification.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/tar-gasification.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "j"
@@ -333,7 +333,7 @@ RECIPE {
         {type = "item", name = "coal", amount = 8}
     },
     main_product = "coal",
-    icon = "__pycoalprocessing__/graphics/icons/coal-fawogae.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coal-fawogae.png",
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "g"
@@ -352,7 +352,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 5}
     },
     main_product = "coke",
-    icon = "__pycoalprocessing__/graphics/icons/coke.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coke.png",
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "h"
@@ -375,7 +375,7 @@ RECIPE {
            {type = "fluid", name = "dirty-water", amount = 100}
     },
     main_product = "tar",
-    icon = "__pycoalprocessing__/graphics/icons/tar.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/tar.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "z"
@@ -391,7 +391,7 @@ RECIPE {
     results = {
         {type = "item", name = "log", amount = 3}
     },
-    icon = "__pycoalprocessing__/graphics/icons/log.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/log.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "c6"
@@ -409,7 +409,7 @@ RECIPE {
     results = {
         {type = "item", name = "log", amount = 3}
     },
-    icon = "__pycoalprocessing__/graphics/icons/log2.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/log2.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "c7"
@@ -428,7 +428,7 @@ RECIPE {
     results = {
         {type = "item", name = "log", amount = 3}
     },
-    icon = "__pycoalprocessing__/graphics/icons/log3.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/log3.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "c8"
@@ -557,7 +557,7 @@ RECIPE {
         --{type="fluid", name="hydrogen", amount=2}, --bob hydrogen
     },
     main_product = "zinc-chloride",
-    icon = "__pycoalprocessing__/graphics/icons/zinc-chloride.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/zinc-chloride.png",
     icon_size = 32,
     order = "d [syn-gas]"
 }:add_unlock("coal-processing-2")
@@ -576,7 +576,7 @@ RECIPE {
         {type = "fluid", name = "acidgas", amount = 30, probability = 0.5}
     },
     main_product = "tailings-dust",
-    icon = "__pycoalprocessing__/graphics/icons/tailings_dust.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/tailings_dust.png",
     icon_size = 32
 }:add_unlock("coal-processing-2")
 
@@ -704,7 +704,7 @@ RECIPE {
     results = {
         {type = "item", name = "log", amount = 3}
     },
-    icon = "__pycoalprocessing__/graphics/icons/log5.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/log5.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "c9"
@@ -724,7 +724,7 @@ RECIPE {
         {type = "fluid", name = "flue-gas", amount = 100}
     },
     main_product = "rich-dust",
-    icon = "__pycoalprocessing__/graphics/icons/rich-re.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/rich-re.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "u"
@@ -759,7 +759,7 @@ RECIPE {
         {type = "item", name = "organics", amount = 20}
     },
     main_product = "organics",
-    icon = "__pycoalprocessing__/graphics/icons/organics.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/organics.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "v"
@@ -778,7 +778,7 @@ RECIPE {
     results = {
         {type = "item", name = "log", amount = 3}
     },
-    icon = "__pycoalprocessing__/graphics/icons/log4.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/log4.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "c9"
@@ -798,7 +798,7 @@ RECIPE {
     results = {
         {type = "item", name = "log", amount = 3}
     },
-    icon = "__pycoalprocessing__/graphics/icons/log6.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/log6.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "c9"
@@ -816,7 +816,7 @@ RECIPE {
     results = {
         {type = "item", name = "organics", amount = 50}
     },
-    icon = "__pycoalprocessing__/graphics/icons/organics.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/organics.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "a8"
@@ -839,7 +839,7 @@ RECIPE {
         {type = "fluid", name = "steam", amount = 2000, temperature = 60}
     },
     main_product = "oleochemicals",
-    icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
@@ -861,7 +861,7 @@ RECIPE {
         {type = "fluid", name = "steam", amount = 2000, temperature = 60}
     },
     main_product = "oleochemicals",
-    icon = "__pycoalprocessing__/graphics/icons/oleochemicals.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
@@ -881,7 +881,7 @@ RECIPE {
         {type = "item", name = "chromite-sand", amount = 10}
     },
     main_product = "chromite-sand",
-    icon = "__pycoalprocessing__/graphics/icons/richdust-separation.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/richdust-separation.png",
     icon_size = 32,
     subgroup = "py-items-class",
     order = "f"
@@ -902,7 +902,7 @@ RECIPE {
         {type = "fluid", name = "organic-solvent", amount = 400}
     },
     main_product = "organic-solvent",
-    icon = "__pycoalprocessing__/graphics/icons/organic-solvent.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/organic-solvent.png",
     icon_size = 32,
     subgroup = "py-fluids",
     order = "c"
@@ -922,7 +922,7 @@ RECIPE {
         {type = "fluid", name = "aromatics", amount = 200}
     },
     main_product = "aromatics",
-    icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "r"
@@ -943,7 +943,7 @@ RECIPE {
         {type = "fluid", name = "methanol", amount = 100}
     },
     main_product = "methanol",
-    icon = "__pycoalprocessing__/graphics/icons/petgas-methanol.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/petgas-methanol.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
@@ -965,7 +965,7 @@ RECIPE {
         {type = "item", name = "sulfur", amount = 5}
     },
     main_product = "heavy-oil",
-    icon = "__pycoalprocessing__/graphics/icons/oleo-heavy.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/oleo-heavy.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "d"
@@ -987,7 +987,7 @@ RECIPE {
         {type = "item", name = "chromium", amount = 5}
     },
     main_product = "chromium",
-    icon = "__pycoalprocessing__/graphics/icons/chromium.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/chromium.png",
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "a"
@@ -1029,7 +1029,7 @@ RECIPE {
         {type = "item", name = "coal-dust", amount = 10}
     },
     main_product = "coal-dust",
-    icon = "__pycoalprocessing__/graphics/icons/coal_dust.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coal_dust.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "r"
@@ -1072,7 +1072,7 @@ RECIPE {
         {type = "item", name = "coal", amount = 10}
     },
     main_product = "syngas",
-    icon = "__pycoalprocessing__/graphics/icons/oleochemicals-distilation.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals-distilation.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "i"
@@ -1109,7 +1109,7 @@ RECIPE {
         {type = "fluid", name = "tar", amount = 300}
     },
     main_product = "aromatics",
-    icon = "__pycoalprocessing__/graphics/icons/oleo-gasification.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/oleo-gasification.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "k"
@@ -1163,7 +1163,7 @@ RECIPE {
         {type = "fluid", name = "syngas", amount = 100}
     },
     main_product = "methanol",
-    icon = "__pycoalprocessing__/graphics/icons/methanol.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/methanol.png",
     icon_size = 32,
     subgroup = "py-methanol",
     order = "d"
@@ -1183,7 +1183,7 @@ RECIPE {
         {type = "item", name = "sand-casting", amount = 2}
     },
     main_product = "sand-casting",
-    icon = "__pycoalprocessing__/graphics/icons/sand-casting.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/sand-casting.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "a"
@@ -1203,7 +1203,7 @@ RECIPE {
         {type = "fluid", name = "crude-oil", amount = 250}
     },
     main_product = "crude-oil",
-    icon = "__pycoalprocessing__/graphics/icons/tar-oil.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/tar-oil.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "c"
@@ -1222,7 +1222,7 @@ RECIPE {
         {type = "item", name = "saturated-nexelit-cartridge", amount = 1}
     },
     main_product = "saturated-nexelit-cartridge",
-    icon = "__pycoalprocessing__/graphics/icons/co2-absorber-icon.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/co2-absorber-icon.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "d"
@@ -1242,7 +1242,7 @@ RECIPE {
         {type = "fluid", name = "slacked-lime", amount = 50}
     },
     main_product = "slacked-lime",
-    icon = "__pycoalprocessing__/graphics/icons/slacked-lime.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/slacked-lime.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "e"
@@ -1264,7 +1264,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 10}
     },
     main_product = "carbon-dioxide",
-    icon = "__pycoalprocessing__/graphics/icons/co2.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/co2.png",
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "d"
@@ -1284,7 +1284,7 @@ RECIPE {
         {type = "item", name = "nexelit-cartridge", amount = 1}
     },
     main_product = "nexelit-cartridge",
-    icon = "__pycoalprocessing__/graphics/icons/nexelit-cartridge.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/nexelit-cartridge.png",
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "d"
@@ -1303,7 +1303,7 @@ RECIPE {
         {type = "item", name = "solid-fuel", amount = 1}
     },
     main_product = "solid-fuel",
-    icon = "__pycoalprocessing__/graphics/icons/oleo-solid-fuel.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/oleo-solid-fuel.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
@@ -1321,7 +1321,7 @@ RECIPE {
     results = {
         {type = "item", name = "ash", amount = 1}
     },
-    icon = "__pycoalprocessing__/graphics/icons/ash.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ash.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "g"

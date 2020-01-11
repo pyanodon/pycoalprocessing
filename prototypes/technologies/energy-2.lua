@@ -1,7 +1,7 @@
 TECHNOLOGY {
     type = "technology",
     name = "energy-2",
-    icon = "__pycoalprocessing__/graphics/technology/energy-2.png",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/energy-2.png",
     icon_size = 128,
     order = "c-a",
     upgrade = true,

@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "rare-earth-mud",
-    icon = "__pycoalprocessing__/graphics/icons/rare-earth-mud.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/rare-earth-mud.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,

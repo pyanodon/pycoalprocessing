@@ -17,7 +17,7 @@ RECIPE {
 ITEM {
     type = "fluid",
     name = "aromatics",
-    icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics.png",
     icon_size = 32,
     default_temperature = 10,
     base_color = {r = 0.74, g = 0.403, b = 0.388},

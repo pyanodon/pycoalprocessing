@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "water-saline",
-    icon = "__pycoalprocessing__/graphics/icons/water-saline.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/water-saline.png",
     icon_size = 32,
     default_temperature = 25,
     gas_temperature = 35,

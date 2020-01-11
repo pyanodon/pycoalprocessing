@@ -1,6 +1,6 @@
 local pipe_left = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/power-house/north-left.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/power-house/north-left.png",
         priority = "low",
         width = 64,
         height = 64
@@ -9,7 +9,7 @@ local pipe_left = {
 
 local pipe_mid = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/power-house/north-mid.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/power-house/north-mid.png",
         priority = "low",
         width = 64,
         height = 64
@@ -18,7 +18,7 @@ local pipe_mid = {
 
 local pipe_right = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/power-house/north-right.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/power-house/north-right.png",
         priority = "low",
         width = 64,
         height = 64
@@ -43,7 +43,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "power-house-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/power-house-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/power-house-mk04.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk04",
@@ -55,7 +55,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "power-house-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/power-house-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/power-house-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "power-house-mk04"},
@@ -108,7 +108,7 @@ ENTITY {
     energy_usage = "500kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/power-house/powerhouse-anim-mk04.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/power-house/powerhouse-anim-mk04.png",
         width = 233,
         height = 234,
         frame_count = 30,
@@ -159,8 +159,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/power-house.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/power-house.ogg", volume = 0.65},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/power-house.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/power-house.ogg", volume = 0.65},
         apparent_volume = 2.5
     }
 }

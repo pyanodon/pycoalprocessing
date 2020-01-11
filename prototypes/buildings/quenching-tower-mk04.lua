@@ -1,12 +1,12 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/top-right.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/quenching-tower/top-right.png",
         priority = "low",
         width = 232,
         height = 252
     },
     south = {
-        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/south-left.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/quenching-tower/south-left.png",
         priority = "extra-high",
         width = 232,
         height = 252
@@ -14,13 +14,13 @@ local pipes = {
 }
 local pipes2 = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/top-left.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/quenching-tower/top-left.png",
         priority = "low",
         width = 232,
         height = 252
     },
     south = {
-        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/south-right.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/quenching-tower/south-right.png",
         priority = "extra-high",
         width = 232,
         height = 252
@@ -46,7 +46,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "quenching-tower-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/quenching-tower-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/quenching-tower-mk04.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk04",
@@ -58,7 +58,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "quenching-tower-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/quenching-tower-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/quenching-tower-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "quenching-tower-mk04"},
@@ -83,7 +83,7 @@ ENTITY {
     energy_usage = "600kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/quenching-tower/quenching-tower-anim-mk04.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/quenching-tower/quenching-tower-anim-mk04.png",
         width = 232,
         height = 252,
         frame_count = 60,
@@ -133,8 +133,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/quenching-tower.ogg", volume = 0.42},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/quenching-tower.ogg", volume = 0.36},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/quenching-tower.ogg", volume = 0.42},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/quenching-tower.ogg", volume = 0.36},
         apparent_volume = 2.5
     }
 }

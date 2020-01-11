@@ -18,7 +18,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "acetylene",
-    icon = "__pycoalprocessing__/graphics/icons/acetylene.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/acetylene.png",
     icon_size = 32,
     default_temperature = 15,
     base_color = {r = 0.862, g = 0.388, b = 0.713},

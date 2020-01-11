@@ -15,7 +15,7 @@ RECIPE {
 ITEM {
     type = 'item',
     name = 'tailings-pond',
-    icon = '__pycoalprocessing__/graphics/icons/tailings-pond.png',
+    icon = '__pycoalprocessinggraphics__/graphics/icons/tailings-pond.png',
     icon_size = 32,
     flags = {},
     subgroup = 'coal-processing',
@@ -27,7 +27,7 @@ ITEM {
 ENTITY {
     type = 'storage-tank',
     name = 'tailings-pond',
-    icon = '__pycoalprocessing__/graphics/icons/tailings-pond.png',
+    icon = '__pycoalprocessinggraphics__/graphics/icons/tailings-pond.png',
     icon_size = 32,
     flags = {'placeable-player', 'player-creation'},
     minable = {hardness = 0.2, mining_time = 3, result = 'tailings-pond'},
@@ -50,7 +50,7 @@ ENTITY {
     pictures = {
         picture = {
             sheet = {
-                filename = '__pycoalprocessing__/graphics/entity/tailings-pond/tailings-pond-frame.png',
+                filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/tailings-pond-frame.png',
                 priority = 'high',
                 frames = 1,
                 width = 171,
@@ -59,7 +59,7 @@ ENTITY {
         },
         fluid_background = DATA.Sprites.empty_sprite(),
         window_background = {
-            filename = '__pycoalprocessing__/graphics/entity/tailings-pond/window-background.png',
+            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/window-background.png',
             priority = 'low',
             width = 171,
             height = 185
@@ -107,7 +107,7 @@ do -- Make tailings pond sprites
             pictures[#pictures + 1] = {
                 type = 'sprite',
                 name = 'tailings-pond-sprite-' .. i,
-                filename = '__pycoalprocessing__/graphics/entity/tailings-pond/fluid-sheet.png',
+                filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/fluid-sheet.png',
                 priority = 'extra-high',
                 width = 171,
                 height = 185,

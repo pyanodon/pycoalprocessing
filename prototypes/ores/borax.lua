@@ -15,7 +15,7 @@ ENTITY {
     type = "resource",
     name = "borax",
     category = "borax",
-    icon = "__pycoalprocessing__/graphics/icons/raw-borax.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/raw-borax.png",
     icon_size = 32,
     flags = {"placeable-neutral"},
     order = "a-b-a",
@@ -54,14 +54,14 @@ ENTITY {
     stage_counts = {2000, 1600, 1400, 1200, 800, 400, 200, 10},
     stages = {
         sheet = {
-            filename = "__pycoalprocessing__/graphics/ores/borax.png",
+            filename = "__pycoalprocessinggraphics__/graphics/ores/borax.png",
             priority = "extra-high",
             width = 64,
             height = 64,
             frame_count = 8,
             variation_count = 8,
             hr_version = {
-                filename = "__pycoalprocessing__/graphics/ores/hr-borax.png",
+                filename = "__pycoalprocessinggraphics__/graphics/ores/hr-borax.png",
                 priority = "extra-high",
                 width = 128,
                 height = 128,

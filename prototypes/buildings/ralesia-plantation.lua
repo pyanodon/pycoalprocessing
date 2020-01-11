@@ -1,24 +1,24 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/top.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/top.png",
         priority = "low",
         width = 224,
         height = 230
     },
     south = {
-        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/bottom.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/bottom.png",
         priority = "extra-high",
         width = 224,
         height = 230
     },
     west = {
-        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/left.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/left.png",
         priority = "extra-high",
         width = 224,
         height = 230
     },
     east = {
-        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/right.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/right.png",
         priority = "extra-high",
         width = 224,
         height = 230
@@ -47,7 +47,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "ralesia-plantation",
-    icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-plantation-icon.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
@@ -59,7 +59,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "ralesia-plantation",
-    icon = "__pycoalprocessing__/graphics/icons/ralesia-plantation-icon.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-plantation-icon.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ralesia-plantation"},
@@ -84,7 +84,7 @@ ENTITY {
     energy_usage = "200kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/ralesia-plantation/ralesia-plantation.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/ralesia-plantation.png",
         width = 224,
         height = 230,
         frame_count = 50,
@@ -114,8 +114,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/ralesia-plantation.ogg", volume = 1.2},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/ralesia-plantation.ogg", volume = 0.70},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/ralesia-plantation.ogg", volume = 1.2},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/ralesia-plantation.ogg", volume = 0.70},
         apparent_volume = 2.5
     }
 }

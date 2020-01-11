@@ -14,7 +14,7 @@ RECIPE {
         {type = "fluid", name = "olefin", amount = 100}
     },
     main_product = "diesel",
-    icon = "__pycoalprocessing__/graphics/icons/diesel.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/diesel.png",
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d1"
@@ -34,7 +34,7 @@ RECIPE {
         {type = "fluid", name = "diesel", amount = 200}
     },
     main_product = "diesel",
-    icon = "__pycoalprocessing__/graphics/icons/diesel.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/diesel.png",
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d2"
@@ -57,7 +57,7 @@ RECIPE {
         --{type="fluid", name="hydrogen", amount=10},
     },
     main_product = "aromatics",
-    icon = "__pycoalprocessing__/graphics/icons/aromatics.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics.png",
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d3"
@@ -78,7 +78,7 @@ RECIPE {
         {type = "fluid", name = "olefin", amount = 200}
     },
     main_product = "olefin",
-    icon = "__pycoalprocessing__/graphics/icons/olefin.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/olefin.png",
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d4"
@@ -121,7 +121,7 @@ RECIPE {
         {type = "fluid", name = "gasoline", amount = 150}
     },
     main_product = "gasoline",
-    icon = "__pycoalprocessing__/graphics/icons/gasoline.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gasoline.png",
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d6"
@@ -141,7 +141,7 @@ RECIPE {
         {type = "fluid", name = "olefin", amount = 250}
     },
     main_product = "olefin",
-    icon = "__pycoalprocessing__/graphics/icons/olefin.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/olefin.png",
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d7"
@@ -160,7 +160,7 @@ RECIPE {
         {type = "fluid", name = "olefin", amount = 250}
     },
     main_product = "olefin",
-    icon = "__pycoalprocessing__/graphics/icons/olefin.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/olefin.png",
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d8	"

@@ -17,7 +17,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "ball-mill-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/ball-mill-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ball-mill-mk02.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk02",
@@ -29,7 +29,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "ball-mill-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/ball-mill-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ball-mill-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ball-mill-mk02"},
@@ -54,7 +54,7 @@ ENTITY {
     energy_usage = "400kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/ball-mill/ball-mill-mk02.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/ball-mill/ball-mill-mk02.png",
         width = 215,
         height = 198,
         frame_count = 80,
@@ -64,8 +64,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/niobium-mine.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/niobium-mine.ogg", volume = 0.65},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/niobium-mine.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/niobium-mine.ogg", volume = 0.65},
         apparent_volume = 2.5
     }
 }

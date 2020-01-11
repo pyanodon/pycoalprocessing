@@ -1,6 +1,6 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/hpf/long-pipe-north.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/hpf/long-pipe-north.png",
         priority = "medium",
         width = 30,
         height = 44
@@ -27,7 +27,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "hpf-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/hpf-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/hpf-mk02.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk02",
@@ -39,7 +39,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "hpf-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/hpf-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/hpf-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "hpf-mk02"},
@@ -65,7 +65,7 @@ ENTITY {
     ingredient_count = 20,
     animation = {
         priority = "high",
-        filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-off-mk02.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/hpf/hpf-off-mk02.png",
         width = 167,
         height = 173,
         frame_count = 1,
@@ -79,7 +79,7 @@ ENTITY {
             south_position = {0.1, 0},
             east_position = {0.1, 0},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/hpf/hpf-anim-mk02.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/hpf/hpf-anim-mk02.png",
                 priority = "medium",
                 frame_count = 50,
                 line_length = 10,
@@ -94,7 +94,7 @@ ENTITY {
             south_position = {1.543, -2.68},
             east_position = {1.543, -2.68},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/hpf/smoke-anim-mk02.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/hpf/smoke-anim-mk02.png",
                 priority = "extra-high",
                 frame_count = 80,
                 line_length = 20,
@@ -124,8 +124,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/hpf.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/hpf.ogg", volume = 0.5},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/hpf.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/hpf.ogg", volume = 0.5},
         apparent_volume = 2.5
     }
 }

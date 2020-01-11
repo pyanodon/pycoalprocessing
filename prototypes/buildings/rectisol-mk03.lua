@@ -1,12 +1,12 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/rectisol/pipe-north.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/rectisol/pipe-north.png",
         priority = "extra-high",
         width = 44,
         height = 25
     },
     south = {
-        filename = "__pycoalprocessing__/graphics/entity/rectisol/pipe-ending-down.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/rectisol/pipe-ending-down.png",
         priority = "extra-high",
         width = 40,
         height = 32
@@ -33,7 +33,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "rectisol-mk03",
-    icon = "__pycoalprocessing__/graphics/icons/rectisol-mk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/rectisol-mk03.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk03",
@@ -45,7 +45,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "rectisol-mk03",
-    icon = "__pycoalprocessing__/graphics/icons/rectisol-mk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/rectisol-mk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "rectisol-mk03"},
@@ -70,7 +70,7 @@ ENTITY {
     energy_usage = "500kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/rectisol/rectisol-mk03.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/rectisol/rectisol-mk03.png",
         width = 250,
         height = 239,
         frame_count = 1,
@@ -84,7 +84,7 @@ ENTITY {
             south_position = {-1.07, 1.132},
             east_position = {-1.07, 1.132},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/rectisol/rec-tanks-anim-mk03.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/rectisol/rec-tanks-anim-mk03.png",
                 frame_count = 80,
                 line_length = 10,
                 width = 121,
@@ -98,7 +98,7 @@ ENTITY {
             south_position = {2.03, -1.28},
             east_position = {2.03, -1.28},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/rectisol/rec-lifter-anim-mk03.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/rectisol/rec-lifter-anim-mk03.png",
                 frame_count = 80,
                 line_length = 40,
                 width = 47,
@@ -165,8 +165,8 @@ ENTITY {
     pipe_covers = DATA.Pipes.covers(true, true, true, true),
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/rectisol.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/rectisol.ogg", volume = 0.6},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/rectisol.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/rectisol.ogg", volume = 0.6},
         apparent_volume = 2.5
     }
 }

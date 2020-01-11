@@ -1,6 +1,6 @@
 local pipe_left = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-north1.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/desulfurizator-unit/dessulfurizator-north1.png",
         priority = "low",
         width = 64,
         height = 64
@@ -9,7 +9,7 @@ local pipe_left = {
 
 local pipe_right = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-north2.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/desulfurizator-unit/dessulfurizator-north2.png",
         priority = "low",
         width = 64,
         height = 64
@@ -35,7 +35,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "desulfurizator-unit-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/desulfurizator-unit-mk04.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk04",
@@ -47,7 +47,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "desulfurizator-unit-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/desulfurizator-unit-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/desulfurizator-unit-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "desulfurizator-unit-mk04"},
@@ -72,7 +72,7 @@ ENTITY {
     energy_usage = "550kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/desulfurizator-unit/dessulfurizator-anim-mk04.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/desulfurizator-unit/dessulfurizator-anim-mk04.png",
         width = 196,
         height = 202,
         frame_count = 15,

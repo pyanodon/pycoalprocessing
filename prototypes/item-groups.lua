@@ -4,7 +4,7 @@ data:extend {
         name = "coal-processing",
         order = "t",
         inventory_order = "t",
-        icon = "__pycoalprocessing__/graphics/technology/item-group.png",
+        icon = "__pycoalprocessinggraphics__/graphics/technology/item-group.png",
         icon_size = 64
     },
 --MKS--

@@ -1,7 +1,7 @@
 TECHNOLOGY {
     type = "technology",
     name = "energy-3",
-    icon = "__pycoalprocessing__/graphics/technology/energy-3.png",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/energy-3.png",
     icon_size = 128,
     order = "c-a",
     prerequisites = {"fuel-production"},

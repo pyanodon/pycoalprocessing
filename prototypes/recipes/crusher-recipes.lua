@@ -12,7 +12,7 @@ RECIPE {
         {type = "item", name = "niobium-powder", amount = 5},
         {type = "item", name = "stone", amount = 2}
     },
-    icon = "__pycoalprocessing__/graphics/icons/crush-niobium.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/crush-niobium.png",
     icon_size = 32,
     main_product = "niobium-powder",
     subgroup = "py-crusher",
@@ -34,7 +34,7 @@ RECIPE {
         {type = "item", name = "stone", amount = 1}
     },
     main_product = "crushed-iron",
-    icon = "__pycoalprocessing__/graphics/icons/crush-iron.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/crush-iron.png",
     icon_size = 32,
     subgroup = "py-crusher",
     order = "b"
@@ -55,7 +55,7 @@ RECIPE {
         {type = "item", name = "stone", amount = 1}
     },
     main_product = "crushed-copper",
-    icon = "__pycoalprocessing__/graphics/icons/crush-copper.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/crush-copper.png",
     icon_size = 32,
     subgroup = "py-crusher",
     order = "c"
@@ -74,7 +74,7 @@ RECIPE {
     results = {
         {type = "item", name = "gravel", amount = 15}
     },
-    icon = "__pycoalprocessing__/graphics/icons/crush-stone.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/crush-stone.png",
     icon_size = 32,
     subgroup = "py-crusher",
     order = "d"
@@ -93,7 +93,7 @@ RECIPE {
     results = {
         {type = "item", name = "sand", amount = 15}
     },
-    icon = "__pycoalprocessing__/graphics/icons/crush-gravel.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/crush-gravel.png",
     icon_size = 32,
     subgroup = "py-crusher",
     order = "e"

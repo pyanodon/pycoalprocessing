@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "diesel",
-    icon = "__pycoalprocessing__/graphics/icons/diesel.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/diesel.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,
