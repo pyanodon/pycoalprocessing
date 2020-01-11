@@ -1,7 +1,7 @@
 TECHNOLOGY {
     type = "technology",
     name = "methanol-processing-1",
-    icon = "__pycoalprocessing__/graphics/technology/methanol-processing-1.png",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/methanol-processing-1.png",
     icon_size = 128,
     order = "c-a",
     prerequisites = {"coal-processing-2"},

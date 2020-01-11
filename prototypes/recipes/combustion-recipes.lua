@@ -14,7 +14,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 500},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-coalgas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-coalgas.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -37,7 +37,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 550},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-coal-slurry.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-coal-slurry.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -60,7 +60,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 550},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-syngas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-syngas.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -83,7 +83,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 600},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-diborane.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-diborane.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -106,7 +106,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 500},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-heavy-oil.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-heavy-oil.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -129,7 +129,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 550},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-light-oil.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-light-oil.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -152,7 +152,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 600},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-petgas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-petgas.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -175,7 +175,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 650},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-methanol.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-methanol.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -198,7 +198,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 700},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-refsyngas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-refsyngas.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -221,7 +221,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 670},
         {type = "fluid", name = "steam", amount = 500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-acetylene.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-acetylene.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -244,7 +244,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 750},
         {type = "fluid", name = "steam", amount = 1000, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-olefin.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-olefin.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -267,7 +267,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 800},
         {type = "fluid", name = "steam", amount = 1000, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-diesel.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-diesel.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -291,7 +291,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 850},
         {type = "fluid", name = "steam", amount = 1000, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-gasoline.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-gasoline.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -315,7 +315,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 900},
         {type = "fluid", name = "steam", amount = 1500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-super-critical.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-super-critical.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
@@ -339,7 +339,7 @@ RECIPE {
         {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 1000},
         {type = "fluid", name = "steam", amount = 1500, temperature = 60}
     },
-    icon = "__pycoalprocessing__/graphics/icons/combustion-ultra-super-critical.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-ultra-super-critical.png",
     icon_size = 32,
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",

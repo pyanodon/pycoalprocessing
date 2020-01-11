@@ -18,7 +18,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "gasturbinemk01",
-    icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk01.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-power",
@@ -30,7 +30,7 @@ ITEM {
 ENTITY {
     type = "generator",
     name = "gasturbinemk01",
-    icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk01.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "gasturbinemk01"},
@@ -70,7 +70,7 @@ ENTITY {
         emissions_per_minute = 0.06,
     },
     horizontal_animation = {
-        filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk01/gasturbinemk01_horizontal.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk01/gasturbinemk01_horizontal.png",
         width = 131,
         height = 288,
         frame_count = 25,
@@ -79,7 +79,7 @@ ENTITY {
         animation_speed = 0.8
     },
     vertical_animation = {
-        filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk01/gasturbinemk01_vertical.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk01/gasturbinemk01_vertical.png",
         width = 128,
         height = 288,
         frame_count = 25,
@@ -111,8 +111,8 @@ ENTITY {
     performance_to_sound_speedup = 0.3,
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/gasturbinemk01.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/gasturbinemk01.ogg", volume = 0.45},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk01.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk01.ogg", volume = 0.45},
         apparent_volume = 2.5
     }
 }

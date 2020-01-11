@@ -18,7 +18,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "co2-absorber",
-    icon = "__pycoalprocessing__/graphics/icons/co2-absorber.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/co2-absorber.png",
     icon_size = 32,
     flags = {},
     subgroup = "coal-processing",
@@ -30,7 +30,7 @@ ITEM {
 ENTITY {
     type = "furnace",
     name = "co2-absorber",
-    icon = "__pycoalprocessing__/graphics/icons/co2-absorber.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/co2-absorber.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "co2-absorber"},
@@ -58,7 +58,7 @@ ENTITY {
     ingredient_count = 20,
     module_slots = 0,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/co2-absorber/co2-absorber.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/co2-absorber/co2-absorber.png",
         width = 278,
         height = 280,
         frame_count = 31,
@@ -68,8 +68,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/co2-absorber.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/co2-absorber.ogg", volume = 0.60},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/co2-absorber.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/co2-absorber.ogg", volume = 0.60},
         apparent_volume = 1.0
     }
 }

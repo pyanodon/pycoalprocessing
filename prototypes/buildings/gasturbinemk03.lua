@@ -3,7 +3,7 @@ local pipe_pictures =
     local north, south, east, west
     if shift_north then
         north = {
-            filename = "__pycoalprocessing__/graphics/entity/soil-extractormk01/long-pipe-north.png",
+            filename = "__pycoalprocessinggraphics__/graphics/entity/soil-extractormk01/long-pipe-north.png",
             priority = "low",
             width = 30,
             height = 44,
@@ -68,7 +68,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "gasturbinemk03",
-    icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk03.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-power",
@@ -80,7 +80,7 @@ ITEM {
 ENTITY {
     type = "generator",
     name = "gasturbinemk03",
-    icon = "__pycoalprocessing__/graphics/icons/gas-turbinemk03.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk03.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "gasturbinemk03"},
@@ -121,7 +121,7 @@ ENTITY {
         emissions_per_minute = 0.06,
     },
     horizontal_animation = {
-        filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk03/gas-turbine-mk03-horizontal.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk03/gas-turbine-mk03-horizontal.png",
         width = 288,
         height = 344,
         frame_count = 31,
@@ -129,7 +129,7 @@ ENTITY {
         shift = {-0.05, -0.84}
     },
     vertical_animation = {
-        filename = "__pycoalprocessing__/graphics/entity/gas-turbinemk03/gas-turbine-mk03-vertical.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk03/gas-turbine-mk03-vertical.png",
         width = 288,
         height = 344,
         frame_count = 31,
@@ -151,8 +151,8 @@ ENTITY {
     performance_to_sound_speedup = 0.3,
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/gasturbinemk03.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/gasturbinemk03.ogg", volume = 2.3},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk03.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk03.ogg", volume = 2.3},
         apparent_volume = 2.3
     }
 }

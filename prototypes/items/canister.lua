@@ -12,7 +12,7 @@ RECIPE {
     results = {
         {type = "item", name = "empty-gas-canister", amount = 1}
     },
-    icon = "__pycoalprocessing__/graphics/icons/canister.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "c [methanol]"
@@ -21,7 +21,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "empty-gas-canister",
-    icon = "__pycoalprocessing__/graphics/icons/canister.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-items",
@@ -43,7 +43,7 @@ RECIPE {
     results = {
         {type = "item", name = "filled-methanol-gas-canister", amount = 1}
     },
-    icon = "__pycoalprocessing__/graphics/icons/canister.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
     icon_size = 32
 }:add_unlock("methanol-processing-1")
 
@@ -62,7 +62,7 @@ RECIPE {
         {type = "item", name = "empty-gas-canister", amount = 1},
         {type = "fluid", name = "methanol", amount = 100}
     },
-    icon = "__pycoalprocessing__/graphics/icons/canister.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
     icon_size = 32,
     subgroup = "py-items",
     order = "canister-b-[empty-methanol-gas-canister]"
@@ -71,7 +71,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "filled-methanol-gas-canister",
-    icon = "__pycoalprocessing__/graphics/icons/canister.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-items",

@@ -1,6 +1,6 @@
 local pipes = {
     south = {
-        filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/pipe-ending-down.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/pipe-ending-down.png",
         priority = "extra-high",
         width = 40,
         height = 32
@@ -26,7 +26,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "methanol-reactor-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/methanol-reactor-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/methanol-reactor-mk04.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk04",
@@ -38,7 +38,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "methanol-reactor-mk04",
-    icon = "__pycoalprocessing__/graphics/icons/methanol-reactor-mk04.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/methanol-reactor-mk04.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "methanol-reactor-mk04"},
@@ -63,7 +63,7 @@ ENTITY {
     energy_usage = "800kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/methanol-off-mk04.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-off-mk04.png",
         width = 202,
         height = 247,
         frame_count = 1,
@@ -77,7 +77,7 @@ ENTITY {
             south_position = {0.15, -0.79},
             east_position = {0.15, -0.79},
             animation = {
-                filename = "__pycoalprocessing__/graphics/entity/methanol-reactor/methanol-anim-mk04.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim-mk04.png",
                 frame_count = 50,
                 line_length = 10,
                 width = 202,
@@ -159,8 +159,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/methanol-reactor.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/methanol-reactor.ogg", volume = 0.65},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/methanol-reactor.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/methanol-reactor.ogg", volume = 0.65},
         apparent_volume = 2.5
     }
 }

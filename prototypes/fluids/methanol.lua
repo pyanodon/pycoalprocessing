@@ -31,7 +31,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 150}
     },
     main_product = "methanol",
-    icon = "__pycoalprocessing__/graphics/icons/methanol-oleochemicals.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/methanol-oleochemicals.png",
     icon_size = 32,
     subgroup = "py-methanol",
     order = "c"
@@ -42,7 +42,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "methanol",
-    icon = "__pycoalprocessing__/graphics/icons/methanol.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/methanol.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,

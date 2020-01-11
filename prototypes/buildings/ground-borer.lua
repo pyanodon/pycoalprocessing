@@ -18,7 +18,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "ground-borer",
-    icon = "__pycoalprocessing__/graphics/icons/ground-borer.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ground-borer.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-extraction",
@@ -30,7 +30,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "ground-borer",
-    icon = "__pycoalprocessing__/graphics/icons/ground-borer.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ground-borer.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ground-borer"},
@@ -55,7 +55,7 @@ ENTITY {
     energy_usage = "420kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/ground-borer/ground-borer.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/ground-borer/ground-borer.png",
         width = 307,
         height = 311,
         line_length = 6,
@@ -85,8 +85,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/ground-borer.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/ground-borer.ogg", volume = 0.75},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/ground-borer.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/ground-borer.ogg", volume = 0.75},
         apparent_volume = 2.5
     }
 }

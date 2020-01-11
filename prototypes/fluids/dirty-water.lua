@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "dirty-water",
-    icon = "__pycoalprocessing__/graphics/icons/dirty-water.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/dirty-water.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,

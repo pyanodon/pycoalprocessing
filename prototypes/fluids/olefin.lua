@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "olefin",
-    icon = "__pycoalprocessing__/graphics/icons/olefin.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/olefin.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,

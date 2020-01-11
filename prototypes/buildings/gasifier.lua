@@ -1,6 +1,6 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/gasifier/pipe-north.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/gasifier/pipe-north.png",
         priority = "low",
         width = 44,
         height = 25
@@ -27,7 +27,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "gasifier",
-    icon = "__pycoalprocessing__/graphics/icons/gasifier.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gasifier.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
@@ -39,7 +39,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "gasifier",
-    icon = "__pycoalprocessing__/graphics/icons/gasifier.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gasifier.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "gasifier"},
@@ -64,7 +64,7 @@ ENTITY {
     energy_usage = "300kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/gasifier/gasifier-anim.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/gasifier/gasifier-anim.png",
         priority = "high",
         width = 269,
         height = 269,
@@ -115,8 +115,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/gasifier.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/gasifier.ogg", volume = 0.65},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/gasifier.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/gasifier.ogg", volume = 0.65},
         apparent_volume = 2.5
     }
 }

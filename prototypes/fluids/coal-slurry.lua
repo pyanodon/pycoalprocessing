@@ -17,7 +17,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "coal-slurry",
-    icon = "__pycoalprocessing__/graphics/icons/coal-slurry.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/coal-slurry.png",
     icon_size = 32,
     default_temperature = 10,
     heat_capacity = "1KJ",

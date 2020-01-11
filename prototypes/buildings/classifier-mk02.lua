@@ -18,7 +18,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "classifier-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/classifier-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/classifier-mk02.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk02",
@@ -30,7 +30,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "classifier-mk02",
-    icon = "__pycoalprocessing__/graphics/icons/classifier-mk02.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/classifier-mk02.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "classifier-mk02"},
@@ -55,7 +55,7 @@ ENTITY {
     energy_usage = "270kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/classifier/classifier-mk02.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/classifier/classifier-mk02.png",
         width = 256,
         height = 257,
         frame_count = 34,
@@ -65,8 +65,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/classifier.ogg"},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/classifier.ogg", volume = 0.55},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/classifier.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/classifier.ogg", volume = 0.55},
         apparent_volume = 2.5
     }
 }

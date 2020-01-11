@@ -18,7 +18,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "advanced-foundry-mk01",
-    icon = "__pycoalprocessing__/graphics/icons/advanced-foundry-mk01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/advanced-foundry-mk01.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
@@ -30,7 +30,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "advanced-foundry-mk01",
-    icon = "__pycoalprocessing__/graphics/icons/advanced-foundry-mk01.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/advanced-foundry-mk01.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "advanced-foundry-mk01"},
@@ -57,7 +57,7 @@ ENTITY {
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessing__/graphics/entity/advanced-foundry/advanced-foundry-base-mk01.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-base-mk01.png",
                 width = 224,
                 height = 224,
                 line_length = 9,
@@ -66,7 +66,7 @@ ENTITY {
                 animation_speed = 0.5
             },
             {
-                filename = "__pycoalprocessing__/graphics/entity/advanced-foundry/advanced-foundry-top-mk01.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-top-mk01.png",
                 width = 224,
                 height = 41,
                 line_length = 9,
@@ -111,8 +111,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/advanced-foundry.ogg", volume = 0.6},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/advanced-foundry.ogg", volume = 0.45},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/advanced-foundry.ogg", volume = 0.6},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/advanced-foundry.ogg", volume = 0.45},
         apparent_volume = 2.5
     }
 }

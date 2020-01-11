@@ -1,7 +1,7 @@
 FLUID {
     type = "fluid",
     name = "organic-solvent",
-    icon = "__pycoalprocessing__/graphics/icons/organic-solvent.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/organic-solvent.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,

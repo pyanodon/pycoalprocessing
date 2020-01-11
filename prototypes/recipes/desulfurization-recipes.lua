@@ -15,7 +15,7 @@ RECIPE {
         {type = "fluid", name = "olefin", amount = 200}
     },
     main_product = "crude-oil",
-    icon = "__pycoalprocessing__/graphics/icons/dirty-reaction.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/dirty-reaction.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h8"
@@ -37,7 +37,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 1}
     },
     main_product = "syngas",
-    icon = "__pycoalprocessing__/graphics/icons/syngas.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/syngas.png",
     icon_size = 32,
     subgroup = "py-syngas",
     order = "b"
@@ -142,7 +142,7 @@ RECIPE {
         {type = "item", name = "sulfur", amount = 1}
     },
     main_product = "lubricant",
-    icon = "__pycoalprocessing__/graphics/icons/aromatics-lubricant.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics-lubricant.png",
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "n"

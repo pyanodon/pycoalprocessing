@@ -19,7 +19,7 @@ RECIPE {
 FLUID {
     type = "fluid",
     name = "niobium-complex",
-    icon = "__pycoalprocessing__/graphics/icons/niobium-complex.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/niobium-complex.png",
     icon_size = 32,
     default_temperature = 10,
     gas_temperature = 15,

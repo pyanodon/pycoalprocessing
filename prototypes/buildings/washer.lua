@@ -1,6 +1,6 @@
 local pipes = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/washer/pipe-north.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/washer/pipe-north.png",
         priority = "low",
         width = 30,
         height = 44
@@ -8,7 +8,7 @@ local pipes = {
 }
 local pipes2 = {
     north = {
-        filename = "__pycoalprocessing__/graphics/entity/washer/north.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/washer/north.png",
         priority = "low",
         width = 241,
         height = 241
@@ -34,7 +34,7 @@ RECIPE {
 ITEM {
     type = "item",
     name = "washer",
-    icon = "__pycoalprocessing__/graphics/icons/washer.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/washer.png",
     icon_size = 32,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
@@ -46,7 +46,7 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "washer",
-    icon = "__pycoalprocessing__/graphics/icons/washer.png",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/washer.png",
     icon_size = 32,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "washer"},
@@ -71,7 +71,7 @@ ENTITY {
     energy_usage = "100kW",
     ingredient_count = 20,
     animation = {
-        filename = "__pycoalprocessing__/graphics/entity/washer/washer.png",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/washer/washer.png",
         width = 204,
         height = 204,
         frame_count = 80,
@@ -99,8 +99,8 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = "__pycoalprocessing__/sounds/washer.ogg", volume = 1.8},
-        idle_sound = {filename = "__pycoalprocessing__/sounds/washer.ogg", volume = 1.5},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/washer.ogg", volume = 1.8},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/washer.ogg", volume = 1.5},
         apparent_volume = 1.8
     }
 }
