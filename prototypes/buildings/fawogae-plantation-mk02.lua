@@ -51,18 +51,18 @@ ENTITY {
     minable = {mining_time = 1, result = "fawogae-plantation-mk02"},
     fast_replaceable_group = "fawogae-plantation",
     max_health = 300,
-    fixed_recipe = "fawogae",
+    --fixed_recipe = "fawogae",
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
     collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
     selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
     match_animation_speed_to_activity = false,
     module_specification = {
-        module_slots = 6
+        module_slots = 2
     },
-    allowed_effects = {"speed"},
+    allowed_effects = {"consumption","speed"},
     crafting_categories = {"fawogae"},
-    crafting_speed = 0.01,
+    crafting_speed = 0.6,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
