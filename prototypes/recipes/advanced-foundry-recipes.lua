@@ -40,7 +40,7 @@ RECIPE {
     },
     main_product = "steel-plate",
     icon = "__base__/graphics/icons/steel-plate.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-items",
     order = "a2"
 }:add_unlock("coal-processing-3")
