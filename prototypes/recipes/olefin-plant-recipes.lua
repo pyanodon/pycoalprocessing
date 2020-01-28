@@ -100,7 +100,7 @@ RECIPE {
     },
     main_product = "petroleum-gas",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-fluids",
     order = "d5"
 }:add_unlock("fuel-production")
