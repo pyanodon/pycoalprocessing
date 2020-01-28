@@ -475,14 +475,14 @@ ITEM {
     name = "lab-instrument",
     icon = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-05.png",
     icon_size = 64,
-    icon_mipmaps = 8,
+    icon_mipmaps = 7,
     pictures =
     {
       { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-01.png", scale = 0.25, mipmap_count = 1 },
       { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-02.png", scale = 0.25, mipmap_count = 1 },
       { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-03.png", scale = 0.25, mipmap_count = 1 },
       { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-04.png", scale = 0.25, mipmap_count = 1 },
-      { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-05.png", scale = 0.25, mipmap_count = 1 },
+      --{ size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-05-2.png", scale = 0.25, mipmap_count = 1 },
       { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-06.png", scale = 0.25, mipmap_count = 1 },
       { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-07.png", scale = 0.25, mipmap_count = 1 },
       { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-08.png", scale = 0.25, mipmap_count = 1 },
