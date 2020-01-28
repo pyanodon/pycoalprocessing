@@ -16,7 +16,7 @@ RECIPE {
     },
     main_product = "heavy-oil",
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-fluid-handling",
     order = "h"
 }:add_unlock("fuel-production")
@@ -39,7 +39,7 @@ RECIPE {
     },
     main_product = "light-oil",
     icon = "__base__/graphics/icons/fluid/light-oil.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-fluid-handling",
     order = "h1"
 }:add_unlock("fuel-production")
@@ -61,7 +61,7 @@ RECIPE {
     },
     main_product = "petroleum-gas",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-fluid-handling",
     order = "h2"
 }:add_unlock("fuel-production")
@@ -264,7 +264,7 @@ RECIPE {
     },
     main_product = "heavy-oil",
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-fluid-handling",
     order = "h12"
 }:add_unlock("coal-processing-2")

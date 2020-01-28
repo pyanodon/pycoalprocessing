@@ -467,7 +467,7 @@ RECIPE {
     main_product = "concrete",
     category = "hpf",
     icon = "__base__/graphics/icons/concrete.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-items-hpf",
     order = "i"
 }:add_unlock("coal-processing-1")
@@ -1050,7 +1050,7 @@ RECIPE {
     },
     main_product = "stone-brick",
     icon = "__base__/graphics/icons/stone-brick.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-items",
     order = "s"
 }:add_unlock("coal-processing-2")
