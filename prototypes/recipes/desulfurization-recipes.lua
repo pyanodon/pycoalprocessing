@@ -60,7 +60,7 @@ RECIPE {
     },
     main_product = "sulfur",
     icon = "__base__/graphics/icons/sulfur.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-sulfur",
     order = "b"
 }:add_unlock("desulfurization")
@@ -81,7 +81,7 @@ RECIPE {
     },
     main_product = "sulfur",
     icon = "__base__/graphics/icons/sulfur.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-sulfur",
     order = "c"
 }:add_unlock("desulfurization")
@@ -102,7 +102,7 @@ RECIPE {
     },
     main_product = "sulfur",
     icon = "__base__/graphics/icons/sulfur.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-sulfur",
     order = "d"
 }:add_unlock("desulfurization")
@@ -123,7 +123,7 @@ RECIPE {
     },
     main_product = "sulfur",
     icon = "__base__/graphics/icons/sulfur.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-sulfur",
     order = "e"
 }:add_unlock("desulfurization")
@@ -163,7 +163,7 @@ RECIPE {
     },
     main_product = "explosives",
     icon = "__base__/graphics/icons/explosives.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-items",
     order = "a [coal-gas]"
 }:add_unlock("desulfurization")
