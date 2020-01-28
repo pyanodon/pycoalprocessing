@@ -447,7 +447,7 @@ RECIPE {
         {type = "item", name = "wood", amount = 5}
     },
     icon = data.raw.item["wood"].icon,
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-items",
     order = "a7"
 }:add_unlock("coal-processing-1")
@@ -999,10 +999,10 @@ RECIPE {
     localised_name = {"recipe-name.wood-to-coal", {"item-name.wood"}, {"item-name.coal"}},
     localised_description = {"recipe-description.wood-to-coal", {"item-name.wood"}, {"item-name.coal"}},
     icons = {
-        {icon = data.raw.item["coal"].icon, icon_size = 32},
-        {icon = data.raw.item["wood"].icon, tint = {a = .5}, icon_size = 32}
+        {icon = data.raw.item["coal"].icon, icon_size = 64},
+        {icon = data.raw.item["wood"].icon, tint = {a = .5}, icon_size = 64}
     },
-    icon_size = 32,
+    icon_size = 64,
     enabled = false,
     category = "hpf",
     subgroup = "py-items-hpf",
