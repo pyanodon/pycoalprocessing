@@ -182,7 +182,7 @@ RECIPE {
     },
     main_product = "sulfur",
     icon = data.raw.item.sulfur.icon,
-    icon_size = 32,
+    icon_size = data.raw.item.sulfur.icon_size,
     subgroup = "py-sulfur",
     order = "a"
 }:add_unlock("desulfurization")
