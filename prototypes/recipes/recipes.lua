@@ -589,7 +589,7 @@ RECIPE {
     enabled = false,
     energy_required = 3.0,
     ingredients = {
-        {type = "item", name = "plastic-bar", amount = 5},
+        {type = "item", name = "plastic-bar", amount = 8},
         {type = "item", name = "nbfe-coating", amount = 1}
     },
     results = {
