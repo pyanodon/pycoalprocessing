@@ -533,7 +533,7 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "water", amount = 100}, --bob nitrogen
         {type = "item", name = "zinc-chloride", amount = 2},
-        {type = "item", name = "coke", amount = 20}
+        {type = "item", name = "coal-dust", amount = 30}
         --{type="item", name="sodium-hydroxide", amount=5},
     },
     results = {
