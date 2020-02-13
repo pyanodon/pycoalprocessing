@@ -589,10 +589,10 @@ RECIPE {
     ingredients = {
         {type = "item", name = "steel-plate", amount = 8},
         {type = "item", name = "chromium", amount = 3},
-        {type = "item", name = "iron-plate", amount = 5} --bob titanium-plate
+        {type = "item", name = "iron-plate", amount = 5}
     },
     results = {
-        {type = "item", name = "drill-head", amount = 4}
+        {type = "item", name = "drill-head", amount = 3}
     }
 }:add_unlock("coal-processing-2")
 
