@@ -7,5 +7,5 @@
   "contact": "",
   "homepage": "https://mods.factorio.com/mods/pyanodon/pycoalprocessing",
   "description": "Adds coal processing lines to the game.",
-  "dependencies": ["base >= 0.16.0", "stdlib >= 1.0.0", "pycoalprocessinggraphics >= 1.0.0", "(?) Bio_Industries"]
+  "dependencies": ["base >= 0.16.0", "stdlib >= 1.4.0", "pycoalprocessinggraphics >= 1.0.0", "(?) Bio_Industries"]
 }
