@@ -9,7 +9,7 @@ CONFIG_FILE = ./$(OUTPUT_DIR)/config.lua
 BUILD_DIR := .build
 OUTPUT_DIR := $(BUILD_DIR)/$(PACKAGE_FULL_NAME)
 
-PKG_FILES := $(wildcard *.md) $(wildcard *.txt) $(wildcard locale) $(wildcard migrations) $(wildcard sounds) $(wildcard info.json) $(wildcard thumbnail.png)
+PKG_FILES := $(wildcard *.md) $(wildcard *.txt) $(wildcard locale) $(wildcard migrations) $(wildcard sounds) $(wildcard info.json) $(wildcard thumbnail.png) $(wildcard LICENSE.md)
 LUA_FILES += $(shell find . -iname '*.lua' -type f -not -path "./.*/*")
 LUA_FILES := $(LUA_FILES:%=$(OUTPUT_DIR)/%)
 PNG_FILES += $(shell find ./graphics -iname '*.png' -type f)
@@ -47,7 +47,7 @@ nodebug:
 
 #Download the luacheckrc file from the repo, remove the .build guard and check the file.
 check:
-	@curl -s -o ./$(BUILD_DIR)/luacheckrc.lua https://raw.githubusercontent.com/Nexela/Factorio-luacheckrc/0.17/.luacheckrc
+	@curl -s -o ./$(BUILD_DIR)/luacheckrc.lua https://raw.githubusercontent.com/Nexela/Factorio-luacheckrc/master/.luacheckrc
 	@sed -i 's/\('\''\*\*\/\.\*\/\*'\''\)/--\1/' ./$(BUILD_DIR)/luacheckrc.lua
 	@luacheck ./$(OUTPUT_DIR) -q --codes --config ./$(BUILD_DIR)/luacheckrc.lua
 
