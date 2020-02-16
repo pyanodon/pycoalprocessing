@@ -1,16 +1,16 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.2
   Changes:
-     - Adapted fawogae to new recipes
+    - Adapted fawogae to new recipes
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.1
   Changes:
-     - Grammar check.
-     - Active carbon now uses coal dust.
+    - Grammar check.
+    - Active carbon now uses coal dust.
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.0
   Changes:
-     - Drill heads balance
+    - Drill heads balance
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.9
   Changes:
