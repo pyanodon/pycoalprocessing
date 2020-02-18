@@ -22,6 +22,7 @@ ITEM("chemical-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/
 ITEM("chemical-science-pack", "tool"):set("icon_size", 32)
 
 RECIPE("logistic-science-pack"):remove_unlock('logistic-science-pack')
+RECIPE('rocket-silo'):replace_ingredient("pipe", "niobium-pipe")
 RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):add_ingredient({type = "item", name = "copper-cable", amount = 15})
 TECHNOLOGY('military-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 TECHNOLOGY('automation-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
