@@ -865,7 +865,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
-}:add_unlock("coal-processing-2"):replace_ingredient("chromium", "titanium-plate")
+}:add_unlock("coal-processing-2")
 
 RECIPE {
     type = "recipe",
