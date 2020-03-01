@@ -2,7 +2,6 @@
 RECIPE {
     type = "recipe",
     name = "coalgas-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.coal-gas"}, 500},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -26,7 +25,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "coalslurry-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.coal-slurry"}, 550},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -50,7 +48,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "syngas-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.syngas"}, 550},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -74,7 +71,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "diborane-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.diborane"}, 600},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -98,7 +94,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "heavy-oil-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.heavy-oil"}, 500},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -122,7 +117,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "light-oil-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.light-oil"}, 550},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -146,7 +140,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "petgas-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.petroleum-gas"}, 600},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -170,7 +163,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "methanol-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.methanol"}, 650},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -194,7 +186,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "refsyngas-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.refsyngas"}, 700},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -218,7 +209,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "acetylene-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.acetylene"}, 670},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -242,7 +232,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "olefin-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.olefin"}, 750},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -266,7 +255,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "diesel-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.diesel"}, 800},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -290,7 +278,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "gasoline-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.gasoline"}, 850},
     category = "combustion",
     enabled = false,
     energy_required = 3,
@@ -315,7 +302,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "supercritical-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"item-name.coal-briquette"}, 900},
     category = "combustion",
     enabled = false,
     energy_required = 6,
@@ -340,7 +326,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "ultrasupercritical-combustion",
-    localised_name = {"recipe-name.combustion-mixture", {"item-name.coal-briquette"}, 1000},
     category = "combustion",
     enabled = false,
     energy_required = 6,
