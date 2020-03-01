@@ -115,7 +115,6 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "combustion-olefin",
-    localised_name = {"recipe-name.combustion-mixture", {"fluid-name.olefin"}, 700},
     category = "fts-reactor",
     enabled = false,
     energy_required = 9.5,
