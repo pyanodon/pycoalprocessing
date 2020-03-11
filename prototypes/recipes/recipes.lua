@@ -229,7 +229,7 @@ RECIPE {
         {type = "fluid", name = "dirty-water", amount = 200}
     },
     results = {
-        {type = "fluid", name = "acidgas", amount = 40}
+        {type = "fluid", name = "acidgas", amount = 60}
     },
     main_product = "acidgas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/acidgas.png",
