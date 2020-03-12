@@ -7,7 +7,7 @@ local tailings_copper_iron =
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "tar", amount = 200},
+        {type = "fluid", name = "tar", amount = 500},
         {type = "fluid", name = "water", amount = 500}
     },
     results = {
