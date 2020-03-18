@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.3
+Date: 2020-03-18
+  Changes:
+    - Added background in main menu.
+    - Increased optical fiber consuption in blue science.
+    - Increased tar consuption in quenching tar.
+    - Increased pollution absorption in all organic pycp version buildings.
+    - Acid gas buff
+    - Grammar changes.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.2
   Changes:
     - Adapted fawogae to new recipes
