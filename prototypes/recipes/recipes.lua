@@ -183,7 +183,7 @@ RECIPE {
     enabled = false,
     energy_required = 4.5,
     ingredients = {
-        {type = "item", name = "optical-fiber", amount = 1},
+        {type = "item", name = "optical-fiber", amount = 10},
         {type = "item", name = "advanced-circuit", amount = 1},
         {type = "item", name = "copper-cable", amount = 8}, --bob insulated-cable
         {type = "item", name = "iron-plate", amount = 10},
