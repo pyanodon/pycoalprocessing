@@ -220,4 +220,4 @@ require("prototypes/buildings/wpu-mk03")
 require("prototypes/buildings/wpu-mk04")
 --))
 
-data.raw["utility-constants"].default.main_menu_background_image_location = "__pycoalprocessinggraphics__/graphics/pycp-wall.jpgg"
+data.raw["utility-constants"].default.main_menu_background_image_location = "__pycoalprocessinggraphics__/graphics/pycp-wall.jpg"
