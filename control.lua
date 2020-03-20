@@ -27,7 +27,7 @@ remote.add_interface(script.mod_name, require('__stdlib__/stdlib/scripts/interfa
 --Activate resource spawn control script
 require("scripts/resource-generation")
 
-function on_player_created(event)
+local function on_player_created(event)
   local player = game.players[event.player_index]
   player.insert({name="burner-mining-drill", count=9})
   player.insert({name="iron-plate", count=492})
