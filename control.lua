@@ -28,11 +28,8 @@ remote.add_interface(script.mod_name, require('__stdlib__/stdlib/scripts/interfa
 require("scripts/resource-generation")
 
 script.on_event(defines.events.on_player_created, function(event)
-	
   local player = game.players[event.player_index]
-  
   player.insert({name="burner-mining-drill", count=10})
   player.insert({name="iron-plate", count=500})
   player.insert({name="copper-plate", count=500})
-  
 end)
