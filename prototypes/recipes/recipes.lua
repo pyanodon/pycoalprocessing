@@ -124,13 +124,13 @@ RECIPE {
     type = "recipe",
     name = "automation-science-pack",
     enabled = true,
-    energy_required = 4,
+    energy_required = 8,
     ingredients = {
-        {type = "item", name = "fawogae-substrate", amount = 10},
-        {type = "item", name = "flask", amount = 2}
+        {type = "item", name = "fawogae-substrate", amount = 20},
+        {type = "item", name = "flask", amount = 4}
     },
     results = {
-        {type = "item", name = "automation-science-pack", amount = 3}
+        {type = "item", name = "automation-science-pack", amount = 6}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png",
     icon_size = 32,
@@ -181,16 +181,16 @@ RECIPE {
     type = "recipe",
     name = "chemical-science-pack",
     enabled = false,
-    energy_required = 4.5,
+    energy_required = 10,
     ingredients = {
-        {type = "item", name = "optical-fiber", amount = 10},
-        {type = "item", name = "advanced-circuit", amount = 1},
-        {type = "item", name = "copper-cable", amount = 8}, --bob insulated-cable
-        {type = "item", name = "iron-plate", amount = 10},
-        {type = "item", name = "nexelit-plate", amount = 10}
+        {type = "item", name = "optical-fiber", amount = 20},
+        {type = "item", name = "advanced-circuit", amount = 2},
+        {type = "item", name = "copper-cable", amount = 16}, --bob insulated-cable
+        {type = "item", name = "iron-plate", amount = 20},
+        {type = "item", name = "nexelit-plate", amount = 20}
     },
     results = {
-        {type = "item", name = "chemical-science-pack", amount = 3}
+        {type = "item", name = "chemical-science-pack", amount = 6}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png",
     icon_size = 32,

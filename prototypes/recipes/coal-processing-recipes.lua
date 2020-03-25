@@ -241,13 +241,13 @@ RECIPE {
     type = "recipe",
     name = "logistic-science-pack",
     enabled = false,
-    energy_required = 4,
+    energy_required = 8,
     ingredients = {
-        {type = "item", name = "lab-instrument", amount = 1},
-        {type = "item", name = "alien-sample01", amount = 2}
+        {type = "item", name = "lab-instrument", amount = 2},
+        {type = "item", name = "alien-sample01", amount = 4}
     },
     results = {
-        {type = "item", name = "logistic-science-pack", amount = 3}
+        {type = "item", name = "logistic-science-pack", amount = 6}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png",
     icon_size = 32,
