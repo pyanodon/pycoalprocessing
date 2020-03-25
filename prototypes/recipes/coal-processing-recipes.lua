@@ -369,8 +369,8 @@ RECIPE {
         {type = "fluid", name = "water", amount = 200}
     },
     results = {
-        {type = "item", name = "tailings-dust", amount = 20},
-        {type = "item", name = "coarse", amount = 15},
+        {type = "item", name = "tailings-dust", amount = 10},
+        {type = "item", name = "coarse", amount = 10},
         {type = "fluid", name = "tar", amount = 500},
            {type = "fluid", name = "dirty-water", amount = 100}
     },
