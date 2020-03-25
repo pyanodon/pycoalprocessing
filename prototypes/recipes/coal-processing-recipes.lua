@@ -311,7 +311,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "coal-gas", amount = 200},
         {type = "fluid", name = "flue-gas", amount = 400},
-        {type = "item", name = "ash", amount = 3}
+        {type = "item", name = "ash", amount = 2}
     },
     main_product = "coal-gas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/tar-gasification.png",
