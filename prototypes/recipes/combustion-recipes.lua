@@ -264,7 +264,7 @@ RECIPE {
         {type = "item", name = "fuelrod-mk01", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 800},
+        {type = "fluid", name = "combustion-mixture1", amount = 300, temperature = 800},
         {type = "fluid", name = "steam", amount = 1000, temperature = 60}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-diesel.png",
