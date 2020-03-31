@@ -10,7 +10,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "cooling-tower-mk02",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"storage-tank", 1},
@@ -29,7 +29,7 @@ ITEM {
     type = "item",
     name = "cooling-tower-mk02",
     icon = "__pycoalprocessinggraphics__/graphics/icons/cooling-tower-mk02.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "coal-processing",
     order = "i",
@@ -41,7 +41,7 @@ ENTITY {
     type = "assembling-machine",
     name = "cooling-tower-mk02",
     icon = "__pycoalprocessinggraphics__/graphics/icons/cooling-tower-mk02.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     fixed_recipe = "cooling-water",
     minable = {mining_time = 1, result = "cooling-tower-mk02"},

@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "distilator",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = true,
     ingredients = {
         {"copper-plate", 20},
@@ -18,7 +18,7 @@ ITEM {
     type = "item",
     name = "distilator",
     icon = "__pycoalprocessinggraphics__/graphics/icons/distilator.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
     order = "k",
@@ -30,7 +30,7 @@ ENTITY {
     type = "assembling-machine",
     name = "distilator",
     icon = "__pycoalprocessinggraphics__/graphics/icons/distilator.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "distilator"},
     fast_replaceable_group = "distilator",

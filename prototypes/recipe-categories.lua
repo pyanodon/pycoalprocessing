@@ -144,6 +144,10 @@ data:extend {
         name = "wpu"
     },
     {
+        type = "recipe-category",
+        name = "glassworks"
+    },
+    {
         type = "resource-category",
         name = "borax"
     },

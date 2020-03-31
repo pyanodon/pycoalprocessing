@@ -10,7 +10,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "evaporator-mk04",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"evaporator-mk03", 1},
@@ -26,7 +26,7 @@ ITEM {
     type = "item",
     name = "evaporator-mk04",
     icon = "__pycoalprocessinggraphics__/graphics/icons/evaporator-mk04.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk04",
     order = "l",
@@ -38,7 +38,7 @@ ENTITY {
     type = "assembling-machine",
     name = "evaporator-mk04",
     icon = "__pycoalprocessinggraphics__/graphics/icons/evaporator-mk04.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "evaporator-mk04"},
     fast_replaceable_group = "evaporator",

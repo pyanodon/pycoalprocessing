@@ -28,7 +28,7 @@ local pipe_right = {
 RECIPE {
     type = "recipe",
     name = "power-house-mk03",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"power-house-mk02", 1},
@@ -46,7 +46,7 @@ ITEM {
     type = "item",
     name = "power-house-mk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/power-house-mk03.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk03",
     order = "t",
@@ -58,7 +58,7 @@ ENTITY {
     type = "assembling-machine",
     name = "power-house-mk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/power-house-mk03.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "power-house-mk03"},
     fast_replaceable_group = "power-house",

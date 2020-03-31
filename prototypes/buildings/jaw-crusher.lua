@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "jaw-crusher",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"car", 1},
@@ -19,7 +19,7 @@ ITEM {
     type = "item",
     name = "jaw-crusher",
     icon = "__pycoalprocessinggraphics__/graphics/icons/jaw-crusher.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
     order = "s",
@@ -31,7 +31,7 @@ ENTITY {
     type = "assembling-machine",
     name = "jaw-crusher",
     icon = "__pycoalprocessinggraphics__/graphics/icons/jaw-crusher.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "jaw-crusher"},
     fast_replaceable_group = "jaw-crusher",

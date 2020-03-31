@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "classifier",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"assembling-machine-1", 5},
@@ -19,7 +19,7 @@ ITEM {
     type = "item",
     name = "classifier",
     icon = "__pycoalprocessinggraphics__/graphics/icons/classifier.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
     order = "f",
@@ -31,7 +31,7 @@ ENTITY {
     type = "assembling-machine",
     name = "classifier",
     icon = "__pycoalprocessinggraphics__/graphics/icons/classifier.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "classifier"},
     fast_replaceable_group = "classifier",
