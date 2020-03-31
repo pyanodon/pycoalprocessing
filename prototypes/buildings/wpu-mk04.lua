@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "wpu-mk04",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"wpu-mk03", 1},
@@ -17,7 +17,7 @@ ITEM {
     type = "item",
     name = "wpu-mk04",
     icon = "__pycoalprocessinggraphics__/graphics/icons/wpu-mk04.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk04",
     order = "c",
@@ -29,7 +29,7 @@ ENTITY {
     type = "assembling-machine",
     name = "wpu-mk04",
     icon = "__pycoalprocessinggraphics__/graphics/icons/wpu-mk04.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "wpu-mk04"},
     fast_replaceable_group = "wpu",

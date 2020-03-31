@@ -10,7 +10,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "gasifier",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"steel-plate", 20},
@@ -28,7 +28,7 @@ ITEM {
     type = "item",
     name = "gasifier",
     icon = "__pycoalprocessinggraphics__/graphics/icons/gasifier.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
     order = "o",
@@ -40,7 +40,7 @@ ENTITY {
     type = "assembling-machine",
     name = "gasifier",
     icon = "__pycoalprocessinggraphics__/graphics/icons/gasifier.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "gasifier"},
     fast_replaceable_group = "gasifier",

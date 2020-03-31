@@ -51,7 +51,7 @@ end
 RECIPE {
     type = "recipe",
     name = "gasturbinemk03",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"processing-unit", 20},
@@ -69,7 +69,7 @@ ITEM {
     type = "item",
     name = "gasturbinemk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk03.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-power",
     order = "a-d[gasturbinemk03]",
@@ -81,7 +81,7 @@ ENTITY {
     type = "generator",
     name = "gasturbinemk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk03.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "gasturbinemk03"},
     max_health = 500,

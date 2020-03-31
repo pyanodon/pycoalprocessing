@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "co2-absorber",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"gasturbinemk01", 3},
@@ -19,7 +19,7 @@ ITEM {
     type = "item",
     name = "co2-absorber",
     icon = "__pycoalprocessinggraphics__/graphics/icons/co2-absorber.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "coal-processing",
     order = "g",
@@ -31,7 +31,7 @@ ENTITY {
     type = "furnace",
     name = "co2-absorber",
     icon = "__pycoalprocessinggraphics__/graphics/icons/co2-absorber.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "co2-absorber"},
     fast_replaceable_group = "co2-absorber",

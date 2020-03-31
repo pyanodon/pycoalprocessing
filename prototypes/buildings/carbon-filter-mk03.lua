@@ -10,7 +10,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "carbon-filter-mk03",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"carbon-filter-mk02", 1},
@@ -29,7 +29,7 @@ ITEM {
     type = "item",
     name = "carbon-filter-mk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/carbon-filter-mk03.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk03",
     order = "e",
@@ -41,7 +41,7 @@ ENTITY {
     type = "assembling-machine",
     name = "carbon-filter-mk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/carbon-filter-mk03.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "carbon-filter-mk03"},
     fast_replaceable_group = "carbon-filter",

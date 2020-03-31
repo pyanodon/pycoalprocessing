@@ -16,7 +16,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "rectisol-mk02",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"rectisol", 1},
@@ -35,7 +35,7 @@ ITEM {
     type = "item",
     name = "rectisol-mk02",
     icon = "__pycoalprocessinggraphics__/graphics/icons/rectisol-mk02.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk02",
     order = "v",
@@ -47,7 +47,7 @@ ENTITY {
     type = "assembling-machine",
     name = "rectisol-mk02",
     icon = "__pycoalprocessinggraphics__/graphics/icons/rectisol-mk02.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "rectisol-mk02"},
     fast_replaceable_group = "rectisol",
