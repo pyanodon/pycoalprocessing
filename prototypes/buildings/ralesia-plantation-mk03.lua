@@ -45,8 +45,8 @@ RECIPE {
 ITEM {
     type = "item",
     name = "ralesia-plantation-mk03",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-plantation-icon-mk03.png",
-    icon_size = 32,
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-plantation-mk03.png",
+    icon_size = 64,
     flags = {},
     subgroup = "py-extraction",
     order = "f",
@@ -57,8 +57,8 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "ralesia-plantation-mk03",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-plantation-icon-mk03.png",
-    icon_size = 32,
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-plantation-mk03.png",
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ralesia-plantation"},
     fast_replaceable_group = "ralesia-plantation",

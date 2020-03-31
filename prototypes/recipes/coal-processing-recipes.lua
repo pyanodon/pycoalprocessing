@@ -181,7 +181,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "lens",
-    category = "hpf",
+    category = "glassworks",
     enabled = false,
     energy_required = 3,
     ingredients = {

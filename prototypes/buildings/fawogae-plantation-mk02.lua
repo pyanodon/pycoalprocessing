@@ -16,7 +16,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "fawogae-plantation-mk02",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"fawogae-plantation", 1},
@@ -33,8 +33,8 @@ RECIPE {
 ITEM {
     type = "item",
     name = "fawogae-plantation-mk02",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-plantation-icon-mk02.png",
-    icon_size = 32,
+    icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-plantation-mk02.png",
+    icon_size = 64,
     flags = {},
     subgroup = "py-extraction",
     order = "b",
@@ -45,8 +45,8 @@ ITEM {
 ENTITY {
     type = "assembling-machine",
     name = "fawogae-plantation-mk02",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-plantation-icon-mk02.png",
-    icon_size = 32,
+    icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-plantation-mk02.png",
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "fawogae-plantation-mk02"},
     fast_replaceable_group = "fawogae-plantation",

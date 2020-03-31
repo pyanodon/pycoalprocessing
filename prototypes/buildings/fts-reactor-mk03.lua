@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "fts-reactor-mk03",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"fts-reactor-mk02", 1},
@@ -18,7 +18,7 @@ ITEM {
     type = "item",
     name = "fts-reactor-mk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/fts-reactor-mk03.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk03",
     order = "n",
@@ -30,7 +30,7 @@ ENTITY {
     type = "assembling-machine",
     name = "fts-reactor-mk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/fts-reactor-mk03.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "fts-reactor-mk03"},
     fast_replaceable_group = "fts-reactor",

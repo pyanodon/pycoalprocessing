@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "fluid-separator-mk02",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"fluid-separator", 1},
@@ -20,7 +20,7 @@ ITEM {
     type = "item",
     name = "fluid-separator-mk02",
     icon = "__pycoalprocessinggraphics__/graphics/icons/fluid-separator-mk02.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk02",
     order = "m",
@@ -32,7 +32,7 @@ ENTITY {
     type = "assembling-machine",
     name = "fluid-separator-mk02",
     icon = "__pycoalprocessinggraphics__/graphics/icons/fluid-separator-mk02.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "fluid-separator-mk02"},
     fast_replaceable_group = "fluid-separator",

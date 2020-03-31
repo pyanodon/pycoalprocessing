@@ -16,7 +16,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "soil-extractormk03",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"soil-extractormk02", 1},
@@ -33,7 +33,7 @@ ITEM {
     type = "item",
     name = "soil-extractormk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/soil-extractormk03.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-extraction",
     order = "g",
@@ -45,7 +45,7 @@ ENTITY {
     type = "assembling-machine",
     name = "soil-extractormk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/soil-extractormk03.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "soil-extractormk03"},
     fast_replaceable_group = "soil-extractormk01",

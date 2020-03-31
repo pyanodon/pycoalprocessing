@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "sand-extractor-mk02",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"sand-extractor", 1},
@@ -20,7 +20,7 @@ ITEM {
     type = "item",
     name = "sand-extractor-mk02",
     icon = "__pycoalprocessinggraphics__/graphics/icons/sand-extractor-mk02.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-extraction",
     order = "e",
@@ -32,7 +32,7 @@ ENTITY {
     type = "assembling-machine",
     name = "sand-extractor-mk02",
     icon = "__pycoalprocessinggraphics__/graphics/icons/sand-extractor-mk02.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "sand-extractor-mk02"},
     fast_replaceable_group = "sand-extractor",

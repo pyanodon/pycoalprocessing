@@ -105,10 +105,10 @@ RECIPE {
     type = "recipe",
     name = "flask",
     enabled = true,
+    category = "glassworks",
     energy_required = 2,
     ingredients = {
         {type = "item", name = "iron-plate", amount = 8},
-        --{type="item", name="glass", amount=8}, --updated bob add glass
         {type = "item", name = "wood", amount = 5}
     },
     results = {
@@ -438,12 +438,12 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "glass-core",
-    category = "hpf",
+    category = 'glassworks',
     enabled = false,
     energy_required = 3.5,
     ingredients = {
-        {type = "item", name = "sand", amount = 10}, --bob glass
-        {type = "item", name = "steel-plate", amount = 3}, --bob silver-plate
+        {type = "item", name = "sand", amount = 10},
+        {type = "item", name = "steel-plate", amount = 3},
         {type = "item", name = "sulfur", amount = 4}
     },
     results = {
@@ -459,7 +459,7 @@ RECIPE {
     enabled = false,
     energy_required = 2.0,
     ingredients = {
-        {type = "item", name = "sand", amount = 5}, --bob glass
+        {type = "item", name = "sand", amount = 5},
         {type = "fluid", name = "niobium-complex", amount = 60}
     },
     results = {
@@ -471,7 +471,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "ppd",
-    category = "chemistry", --bob electrolysis
+    category = "chemistry",
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -625,7 +625,6 @@ RECIPE {
         {type = "item", name = "pure-sand", amount = 30},
         {type = "item", name = "active-carbon", amount = 3},
         {type = "item", name = "gravel", amount = 25}
-        --bob add glass
     },
     results = {
         {type = "item", name = "filtration-media", amount = 5}
