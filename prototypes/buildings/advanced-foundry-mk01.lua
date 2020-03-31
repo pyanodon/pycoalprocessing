@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "advanced-foundry-mk01",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"copper-cable", 30},
@@ -19,7 +19,7 @@ ITEM {
     type = "item",
     name = "advanced-foundry-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/advanced-foundry-mk01.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
     order = "b",
@@ -31,7 +31,7 @@ ENTITY {
     type = "assembling-machine",
     name = "advanced-foundry-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/advanced-foundry-mk01.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "advanced-foundry-mk01"},
     fast_replaceable_group = "advanced-foundry",

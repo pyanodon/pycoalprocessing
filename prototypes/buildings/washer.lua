@@ -18,7 +18,7 @@ local pipes2 = {
 RECIPE {
     type = "recipe",
     name = "washer",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = true,
     ingredients = {
         {"iron-plate", 10},
@@ -35,7 +35,7 @@ ITEM {
     type = "item",
     name = "washer",
     icon = "__pycoalprocessinggraphics__/graphics/icons/washer.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
     order = "z2",
@@ -47,7 +47,7 @@ ENTITY {
     type = "assembling-machine",
     name = "washer",
     icon = "__pycoalprocessinggraphics__/graphics/icons/washer.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "washer"},
     fast_replaceable_group = "washer",

@@ -1,39 +1,39 @@
 RECIPE {
     type = "recipe",
-    name = "ground-borer",
+    name = "ground-borer-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"electric-mining-drill", 3},
-        {"soil-extractormk01", 2},
-        {"electronic-circuit", 30},
-        {"iron-plate", 150}, --bob titanium-plate
-        {"iron-gear-wheel", 15} --bob titanium-bearing
+        {"ground-borer", 1},
+        {"nexelit-plate", 10},
+        {"concrete", 40},
+        {"plastic-bar", 10},
+        {"advanced-circuit", 10}
     },
     results = {
-        {"ground-borer", 1}
+        {"ground-borer-mk02", 1}
     }
-}:add_unlock("excavation-1")
+}
 
 ITEM {
     type = "item",
-    name = "ground-borer",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/ground-borer.png",
+    name = "ground-borer-mk02",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ground-borer-mk02.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-cp-buildings-mk01",
+    subgroup = "py-cp-buildings-mk02",
     order = "c",
-    place_result = "ground-borer",
+    place_result = "ground-borer-mk02",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "ground-borer",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/ground-borer.png",
+    name = "ground-borer-mk02",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/ground-borer-mk02.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.5, result = "ground-borer"},
+    minable = {mining_time = 1, result = "ground-borer-mk02"},
     fast_replaceable_group = "ground-borer",
     max_health = 700,
     corpse = "big-remnants",
@@ -42,17 +42,17 @@ ENTITY {
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
     match_animation_speed_to_activity = false,
     module_specification = {
-        module_slots = 0
+        module_slots = 1
     },
     allowed_effects = {"consumption", "speed"},
     crafting_categories = {"ground-borer"},
-    crafting_speed = 0.5,
+    crafting_speed = 1.5,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "420kW",
+    energy_usage = "720kW",
     ingredient_count = 20,
     animation = {
         layers = {
@@ -73,7 +73,7 @@ ENTITY {
             frame_count = 30,
             animation_speed = 0.8,
             shift = {0.2, -0.03},
-            tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0}
+            tint = {r = 1.0, g = 0.0, b = 0.0, a = 1.0}
             },
         },
     },

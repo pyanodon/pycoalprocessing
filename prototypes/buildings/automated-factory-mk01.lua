@@ -10,7 +10,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "automated-factory-mk01",
-    energy_required = 2,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"iron-plate", 40},
@@ -28,7 +28,7 @@ ITEM {
     type = "item",
     name = "automated-factory-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/automated-factory-mk01.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-cp-buildings-mk01",
     order = "c",
@@ -40,7 +40,7 @@ ENTITY {
     type = "assembling-machine",
     name = "automated-factory-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/automated-factory-mk01.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "automated-factory-mk01"},
     fast_replaceable_group = "automated-factory",
