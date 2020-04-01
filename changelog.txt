@@ -2,8 +2,8 @@
 Version: 1.6.7
 Date: 2020-04-01
   Changes:
-    - fixed Glassworks unlock issue
-	- Added fuel values to fluids for glassworks
+    - fixed Glassworks unlock issue.
+    - Added fuel values to fluids for glassworks.
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.6
 Date: 2020-03-31
