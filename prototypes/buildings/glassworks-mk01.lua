@@ -13,7 +13,7 @@ RECIPE {
     results = {
         {"glassworks-mk01", 1}
     }
-}:add_unlock("coal-processing-1")
+}--:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",
