@@ -4,7 +4,7 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"glassworks-mk04", 1},
+        {"glassworks-mk03", 1},
         {"concrete", 40},
         {"nbfe-alloy", 15},
         {"low-density-structure", 10},
