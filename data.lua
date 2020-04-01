@@ -228,3 +228,18 @@ require("prototypes/buildings/glassworks-mk04")
 --))
 
 data.raw["utility-constants"].default.main_menu_background_image_location = "__pycoalprocessinggraphics__/graphics/pycp-wall.jpg"
+
+--adding fuel value to liquids
+data.raw.fluid["crude-oil"].fuel_value = "82.5KJ"
+data.raw.fluid["heavy-oil"].fuel_value = "0.8MJ"
+data.raw.fluid["light-oil"].fuel_value = "0.9MJ"
+data.raw.fluid["petroleum-gas"].fuel_value = "1MJ"
+--pycp fluids
+data.raw.fluid["coal-gas"].fuel_value = "0.2MJ"
+data.raw.fluid["syngas"].fuel_value = "0.4MJ"
+data.raw.fluid["refsyngas"].fuel_value = "0.5MJ"
+data.raw.fluid["diesel"].fuel_value = "1.5MJ"
+data.raw.fluid["gasoline"].fuel_value = "1MJ"
+data.raw.fluid["methanol"].fuel_value = "1MJ"
+data.raw.fluid["tar"].fuel_value = "0.2MJ"
+data.raw.fluid['combustion-mixture1'].fuel_value = '0.1MJ'
