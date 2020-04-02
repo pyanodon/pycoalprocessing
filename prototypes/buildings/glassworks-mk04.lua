@@ -43,7 +43,7 @@ ENTITY {
     module_specification = {
         module_slots = 4
     },
-    allowed_effects = {"speed","pollution"},
+    allowed_effects = {"consumption","speed","pollution"},
     crafting_categories = {"glassworks"},
     crafting_speed = 4,
     energy_source =
@@ -93,7 +93,7 @@ ENTITY {
     },
     burns_fluid = true,
 	scale_fluid_usage = true,
-    energy_usage = "3500kW",
+    energy_usage = "48MW",
     ingredient_count = 10,
     animation = {
         layers = {
