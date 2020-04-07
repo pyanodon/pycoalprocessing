@@ -94,7 +94,7 @@ ENTITY {
             base_area = 10,
             base_level = -1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
-            pipe_connections = {{position = {-1.5, -4.5}}}
+            pipe_connections = {{type = "input", position = {-1.5, -4.5}}}
         },
         --North, right
         {
@@ -102,7 +102,7 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil), --.05
-            pipe_connections = {{position = {1.5, -4.5}}}
+            pipe_connections = {{type = "output", position = {1.5, -4.5}}}
         },
         --South, left
         {
@@ -111,7 +111,7 @@ ENTITY {
             base_area = 10,
             base_level = -1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
-            pipe_connections = {{position = {-1.5, 4.5}}}
+            pipe_connections = {{type = "input", position = {-1.5, 4.5}}}
         },
         --South, right
         {
@@ -119,7 +119,7 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil), --.05
-            pipe_connections = {{position = {1.5, 4.5}}}
+            pipe_connections = {{type = "output", position = {1.5, 4.5}}}
         },
         --West, top
         {
@@ -128,7 +128,7 @@ ENTITY {
             base_area = 10,
             base_level = -1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil), --.05
-            pipe_connections = {{position = {-4.5, -1.5}}}
+            pipe_connections = {{type = "input", position = {-4.5, -1.5}}}
         },
         --West, bottom
         {
@@ -136,7 +136,7 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
-            pipe_connections = {{position = {-4.5, 1.5}}}
+            pipe_connections = {{type = "output", position = {-4.5, 1.5}}}
         },
         --East, top
         {
@@ -145,7 +145,7 @@ ENTITY {
             base_area = 10,
             base_level = -1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil), --.05
-            pipe_connections = {{position = {4.5, -1.5}}}
+            pipe_connections = {{type = "input", position = {4.5, -1.5}}}
         },
         --East, bottom
         {
@@ -153,7 +153,7 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(true, true, true, true),
             base_level = 1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
-            pipe_connections = {{position = {4.5, 1.5}}}
+            pipe_connections = {{type = "output", position = {4.5, 1.5}}}
         },
         off_when_no_fluid_recipe = true
     },
