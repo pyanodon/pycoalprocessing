@@ -15,7 +15,7 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "fawogae-plantation",
+    name = "fawogae-plantation-mk01",
     energy_required = 0.5,
     enabled = true,
     ingredients = {
@@ -27,30 +27,30 @@ RECIPE {
         {"wood", 100}
     },
     results = {
-        {"fawogae-plantation", 1}
+        {"fawogae-plantation-mk01", 1}
     }
 }
 
 ITEM {
     type = "item",
-    name = "fawogae-plantation",
+    name = "fawogae-plantation-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-plantation-mk01.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-extraction",
     order = "b",
-    place_result = "fawogae-plantation",
+    place_result = "fawogae-plantation-mk01",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "fawogae-plantation",
+    name = "fawogae-plantation-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-plantation-mk01.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "fawogae-plantation"},
-    fast_replaceable_group = "fawogae-plantation",
+    minable = {mining_time = 1, result = "fawogae-plantation-mk01"},
+    fast_replaceable_group = "fawogae-plantation-mk01",
     max_health = 300,
     --fixed_recipe = "fawogae",
     corpse = "big-remnants",

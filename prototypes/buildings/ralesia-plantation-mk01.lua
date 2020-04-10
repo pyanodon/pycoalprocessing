@@ -27,7 +27,7 @@ local pipes = {
 
 RECIPE {
     type = "recipe",
-    name = "ralesia-plantation",
+    name = "ralesia-plantation-mk01",
     energy_required = 1,
     enabled = false,
     ingredients = {
@@ -40,30 +40,30 @@ RECIPE {
         {"small-lamp", 20}
     },
     results = {
-        {"ralesia-plantation", 1}
+        {"ralesia-plantation-mk01", 1}
     }
 }:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",
-    name = "ralesia-plantation",
+    name = "ralesia-plantation-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-plantation-mk01.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-extraction",
     order = "f",
-    place_result = "ralesia-plantation",
+    place_result = "ralesia-plantation-mk01",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "ralesia-plantation",
+    name = "ralesia-plantation-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-plantation-mk01.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "ralesia-plantation"},
-    fast_replaceable_group = "ralesia-plantation",
+    minable = {mining_time = 1, result = "ralesia-plantation-mk01"},
+    fast_replaceable_group = "ralesia-plantation-mk01",
     max_health = 300,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
