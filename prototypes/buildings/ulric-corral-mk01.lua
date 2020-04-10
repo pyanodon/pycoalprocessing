@@ -1,6 +1,6 @@
 RECIPE {
     type = "recipe",
-    name = "ulric-corral",
+    name = "ulric-corral-mk01",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
@@ -11,30 +11,30 @@ RECIPE {
         {"electronic-circuit", 10} --bob basic-circuit-board
     },
     results = {
-        {"ulric-corral", 1}
+        {"ulric-corral-mk01", 1}
     }
 }:add_unlock("coal-processing-1")
 
 ITEM {
     type = "item",
-    name = "ulric-corral",
+    name = "ulric-corral-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/ulric-corral.png",
     icon_size = 64,
     flags = {},
     subgroup = "py-extraction",
     order = "h",
-    place_result = "ulric-corral",
+    place_result = "ulric-corral-mk01",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "ulric-corral",
+    name = "ulric-corral-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/ulric-corral.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "ulric-corral"},
-    fast_replaceable_group = "ulric-corral",
+    minable = {mining_time = 1, result = "ulric-corral-mk01"},
+    fast_replaceable_group = "ulric-corral-mk01",
     max_health = 100,
     corpse = "big-remnants",
     dying_explosion = "big-explosion",
