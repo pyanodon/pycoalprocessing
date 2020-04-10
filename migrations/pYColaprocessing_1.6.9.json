@@ -1,0 +1,17 @@
+{
+    "entity": [
+        ["fawogae-plantation", "fawogae-plantation-mk01"],
+        ["ulric-corral", "ulric-corral-mk01"],
+        ["ralesia-plantation", "ralesia-plantation-mk01"]
+    ],
+    "item": [
+        ["fawogae-plantation", "fawogae-plantation-mk01"],
+        ["ulric-corral", "ulric-corral-mk01"],
+        ["ralesia-plantation", "ralesia-plantation-mk01"]
+    ],
+    "recipe": [
+        ["fawogae-plantation", "fawogae-plantation-mk01"],
+        ["ulric-corral", "ulric-corral-mk01"],
+        ["ralesia-plantation", "ralesia-plantation-mk01"]
+    ]
+}
