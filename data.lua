@@ -186,12 +186,12 @@ require("prototypes/buildings/fawogae-plantation-mk01")
 require("prototypes/buildings/fawogae-plantation-mk02")
 require("prototypes/buildings/fawogae-plantation-mk03")
 require("prototypes/buildings/fawogae-plantation-mk04")
-require("prototypes/buildings/ulric-corral")
+require("prototypes/buildings/ulric-corral-mk01")
 require("prototypes/buildings/borax-mine")
 require("prototypes/buildings/borax-mine-mk02")
 require("prototypes/buildings/borax-mine-mk03")
 require("prototypes/buildings/borax-mine-mk04")
-require("prototypes/buildings/ralesia-plantation")
+require("prototypes/buildings/ralesia-plantation-mk01")
 require("prototypes/buildings/ralesia-plantation-mk02")
 require("prototypes/buildings/ralesia-plantation-mk03")
 require("prototypes/buildings/ralesia-plantation-mk04")
@@ -226,6 +226,9 @@ require("prototypes/buildings/glassworks-mk02")
 require("prototypes/buildings/glassworks-mk03")
 require("prototypes/buildings/glassworks-mk04")
 --))
+
+--sprites
+require('prototypes/sprites/sprites')
 
 data.raw["utility-constants"].default.main_menu_background_image_location = "__pycoalprocessinggraphics__/graphics/pycp-wall.jpg"
 
