@@ -136,7 +136,7 @@ ITEM {
     name = "drill-head",
     icon = "__pycoalprocessinggraphics__/graphics/icons/drill-head.png",
     icon_size = 32,
-    fuel_value = "2MJ",
+    fuel_value = "5MJ",
     fuel_category = "drill",
     flags = {},
     subgroup = "py-items",
