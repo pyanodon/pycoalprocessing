@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.3
+Date: 2020-04-14
+  Changes:
+    - Added wiki button with currently one page listing all fluids that have fuel values and what the value is.
+---------------------------------------------------------------------------------------------------
 Version: 1.7.2
 Date: 2020-04-13
   Changes:
