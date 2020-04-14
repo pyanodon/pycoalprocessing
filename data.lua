@@ -245,4 +245,4 @@ data.raw.fluid["diesel"].fuel_value = "1.5MJ"
 data.raw.fluid["gasoline"].fuel_value = "1.2MJ"
 data.raw.fluid["methanol"].fuel_value = "1MJ"
 data.raw.fluid["tar"].fuel_value = "0.2MJ"
-data.raw.fluid['combustion-mixture1'].fuel_value = '1.0MJ'
+data.raw.fluid['combustion-mixture1'].fuel_value = '0.1MJ'
