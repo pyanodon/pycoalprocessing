@@ -34,3 +34,5 @@ local function on_player_created(event)
   player.insert({name="copper-plate", count=500})
 end
 Event.register(defines.events.on_player_created, on_player_created)
+
+require("scripts/wiki")
