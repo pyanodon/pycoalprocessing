@@ -15,7 +15,7 @@ end
 Event.register(Event.core_events.init_and_config, on_init)
 
 local function on_player_created(event)
-
+    if global.have_gui == false then
     local player = game.players[event.player_index]
     local wiki = player.gui.top.add(
         {
@@ -30,7 +30,8 @@ local function on_player_created(event)
             sprite = 'pywiki'
         }
     )
-global.have_gui = true
+    global.have_gui = true
+    end
 end
 Event.register(defines.events.on_player_created, on_player_created)
 
@@ -51,6 +52,7 @@ local function on_1th_tick()
                 sprite = 'pywiki'
             }
         )
+        global.have_gui = true
     end
 end
 end
