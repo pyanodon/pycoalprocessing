@@ -19,7 +19,7 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"fawogae-plantation", 1},
+        {"fawogae-plantation-mk01", 1},
         {"plastic-bar", 20},
         {"advanced-circuit", 15}, --bob basic-circuit-board
         {"treated-wood", 30},
