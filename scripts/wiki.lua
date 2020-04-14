@@ -10,8 +10,9 @@ local function on_init()
         global.wiki.fluids[fluid.name] = fluid.fuel_value
         end
     end
+    global.have_gui = false
 end
-Event.register(Event.core_events.init, on_init)
+Event.register(Event.core_events.init_and_config, on_init)
 
 local function on_player_created(event)
 
@@ -29,14 +30,36 @@ local function on_player_created(event)
             sprite = 'pywiki'
         }
     )
-    
+global.have_gui = true
 end
 Event.register(defines.events.on_player_created, on_player_created)
 
+local function on_1th_tick()
+    if global.have_gui == false then
+    for i, _ in pairs(game.players) do
+        local player = game.players[i]
+        local wiki = player.gui.top.add(
+            {
+                type = 'frame',
+                name = 'pywiki_frame',
+            }
+        )
+        wiki.add(
+            {
+                type = 'sprite-button',
+                name = 'pywiki',
+                sprite = 'pywiki'
+            }
+        )
+    end
+end
+end
+Event.register(-1, on_1th_tick)
+
 local function on_click(event)
 
-    local player = game.players[event.player_index]
-    
+    --local player = game.players[event.player_index]
+
     if event.element.name == 'pywiki' then
         local wiki_gui = event.element.parent
         wiki_gui.clear()
@@ -69,7 +92,7 @@ local function on_click(event)
                 type = 'sprite',
                 name = f,
                 sprite = 'fluid/' .. f,
-                caption = game.fluid_prototypes[f].localised_name 
+                caption = game.fluid_prototypes[f].localised_name
             }
             )
             local num
