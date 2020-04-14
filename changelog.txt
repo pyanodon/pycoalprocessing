@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.2
+Date: 2020-04-13
+  Changes:
+    - Fixed error with fawogae plantaion mk02 when pyal isnt active.
+---------------------------------------------------------------------------------------------------
+Version: 1.7.1
+Date: 2020-04-13
+  Changes:
+    - Fixed error with ralesia plantaion mk02 entity return result when pyal isnt active.
+---------------------------------------------------------------------------------------------------
+Version: 1.7.0
+Date: 2020-04-13
+  Changes:
+    - Fixed error with ralesia plantaion mk02 recipe when pyal isnt active.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.9
 Date: 2020-04-13
   Changes:

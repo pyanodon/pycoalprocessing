@@ -31,7 +31,7 @@ RECIPE {
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {"ralesia-plantation", 1},
+        {"ralesia-plantation-mk01", 1},
         {"plastic-bar", 50},
         {"pump", 4},
         {"advanced-circuit", 15}
@@ -59,7 +59,7 @@ ENTITY {
     icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-plantation-mk02.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "ralesia-plantation"},
+    minable = {mining_time = 1, result = "ralesia-plantation-mk02"},
     fast_replaceable_group = "ralesia-plantation",
     max_health = 300,
     corpse = "big-remnants",
