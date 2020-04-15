@@ -39,21 +39,23 @@ local function on_1th_tick()
     if global.have_gui == false then
     for i, _ in pairs(game.players) do
         local player = game.players[i]
-        local wiki = player.gui.top.add(
-            {
-                type = 'frame',
-                name = 'pywiki_frame',
-            }
-        )
-        wiki.add(
-            {
-                type = 'sprite-button',
-                name = 'pywiki',
-                sprite = 'pywiki'
-            }
-        )
-        global.have_gui = true
+        if player.gui.top.pywiki_frame == nil then
+            local wiki = player.gui.top.add(
+                {
+                    type = 'frame',
+                    name = 'pywiki_frame',
+                }
+            )
+            wiki.add(
+                {
+                    type = 'sprite-button',
+                    name = 'pywiki',
+                    sprite = 'pywiki'
+                }
+            )
+        end
     end
+    global.have_gui = true
 end
 end
 Event.register(-1, on_1th_tick)
