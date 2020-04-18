@@ -32,6 +32,7 @@ local function on_player_created(event)
   player.insert({name="burner-mining-drill", count=9})
   player.insert({name="iron-plate", count=492})
   player.insert({name="copper-plate", count=500})
+  player.insert({name="wood", count=499})
 end
 Event.register(defines.events.on_player_created, on_player_created)
 
