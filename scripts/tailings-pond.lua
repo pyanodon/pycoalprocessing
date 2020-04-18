@@ -54,7 +54,6 @@ local function scorch_earth(pond, tick)
     local fluid = empty_pond_gas(fluidbox[1], pond.entity.surface, pond.entity.position)
 
     local tiles = {}
-	local tickdoubler = global.tickdoubler
 
     --No gasses left if we still have fluid
     if fluid then
@@ -88,20 +87,11 @@ local function scorch_earth(pond, tick)
         else -- not full fluid
             pond.fluid_per = tonumber(string.format('%.3f', (fluid.amount / tanksize)))
 		end
-		if tickdoubler == 1 then -- Full Pond
-			if fluid.amount >= 100 then
-				fluid.amount = fluid.amount-10
-			end
-			--pond.fluid_per = 0.99
-			pond.full = nil
-			tickdoubler = tickdoubler * -1
-		end
 	else -- no fluid
         pond.fluid_per = 0
     end
     --push the updated fluidbox to the entity.
     fluidbox[1] = fluid
-	global.tickdoubler = tickdoubler
     return tiles
 end
 
@@ -200,13 +190,11 @@ Event.register(-30, tailings_pond.on_tick)
 function tailings_pond.on_init()
     global.tailings_ponds = {}
 	global.Tiles = {}
-	global.tickdoubler = 1
 end
 Event.register(Event.core_events.init, tailings_pond.on_init)
 
 function tailings_pond.on_load()
 	--global.Tiles = {}
-	--global.tickdoubler = 1
 end
 Event.register(Event.core_events.on_load, tailings_pond.on_load)
 
