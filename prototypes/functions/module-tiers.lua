@@ -2,7 +2,7 @@ local machines = {}
 
 for _, mach in pairs(data.raw['assembling-machine']) do
     if mach.icon ~= nil then
-        if string.match(mach.icon, '__py') and not string.match(mach.icon, '__pyalienlife') then
+        if string.match(mach.icon, '__py') and not string.match(mach.icon, '__pyalienlife') and not string.match(mach.name, 'moondrop') then
             table.insert(machines, mach.name)
         end
     end

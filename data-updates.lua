@@ -69,6 +69,10 @@ RECIPE("sand-extractor-mk03"):replace_ingredient("pipe", "niobium-pipe")
 
 require("prototypes/recipes/advanced-foundry-recipes")
 
+--move barrels below everything else in intermediate tab
+--data.raw["item-subgroup"]["fill-barrel"].order = y
+--data.raw["item-subgroup"]["empty-barrel"].order = z
+
 --gather recipes for module changes
 local recipes_list =
 	{
