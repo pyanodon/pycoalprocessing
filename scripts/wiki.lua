@@ -4,8 +4,8 @@ local function on_init()
     global.wiki = {}
     global.wiki.fluids = {}
     for _, fluid in pairs(game.fluid_prototypes) do
-        log(serpent.block(fluid.name))
-        log(serpent.block(fluid.fuel_value))
+        --log(serpent.block(fluid.name))
+        --log(serpent.block(fluid.fuel_value))
         if fluid.fuel_value ~= nil and fluid.fuel_value ~= 0 then
         global.wiki.fluids[fluid.name] = fluid.fuel_value
         end
