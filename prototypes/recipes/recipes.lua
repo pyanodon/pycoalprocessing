@@ -610,7 +610,7 @@ RECIPE {
         {type = "item", name = "organics", amount = 5}
     },
     results = {
-        {type = "item", name = "biofilm", amount = 2}
+        {type = "item", name = "biofilm", amount = 6}
     },
     main_product = "biofilm"
 }:add_unlock("filtration")
