@@ -402,7 +402,26 @@ FUN.productivity(recipes_list)
 if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].value ~= 30 then
     for _,recipe in pairs(data.raw.recipe) do
         if recipe.results ~= nil then
-            if data.raw['assembling-machine'][recipe.results[1][1]] ~= nil or data.raw['assembling-machine'][recipe.results[1].name] ~= nil then
+            if
+            data.raw['assembling-machine'][recipe.results[1][1]] ~= nil or
+            data.raw['assembling-machine'][recipe.results[1].name] ~= nil or
+            data.raw['storage-tank'][recipe.results[1][1]] ~= nil or
+            data.raw['storage-tank'][recipe.results[1].name] ~= nil or
+            data.raw['mining-drill'][recipe.results[1][1]] ~= nil or
+            data.raw['mining-drill'][recipe.results[1].name] ~= nil or
+            data.raw['mining-drill'][recipe.results[1][1]] ~= nil or
+            data.raw['mining-drill'][recipe.results[1].name] ~= nil or
+            data.raw['furnace'][recipe.results[1][1]] ~= nil or
+            data.raw['furnace'][recipe.results[1].name] ~= nil or
+            data.raw['generator'][recipe.results[1][1]] ~= nil or
+            data.raw['generator'][recipe.results[1].name] ~= nil or
+            data.raw['lab'][recipe.results[1][1]] ~= nil or
+            data.raw['lab'][recipe.results[1].name] ~= nil or
+            data.raw['boiler'][recipe.results[1][1]] ~= nil or
+            data.raw['boiler'][recipe.results[1].name] ~= nil or
+            data.raw['accumulator'][recipe.results[1][1]] ~= nil or
+            data.raw['accumulator'][recipe.results[1].name] ~= nil
+            then
                 recipe.requester_paste_multiplier = settings.startup['rpm_entity'].value
             else
                 recipe.requester_paste_multiplier = settings.startup['rpm_items'].value
