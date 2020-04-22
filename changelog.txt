@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.7
+Date: 2020-04-22
+  Changes:
+    - Added more entity types to be effected the requestor paste adjustment setting for entities.
+---------------------------------------------------------------------------------------------------
 Version: 1.7.6
 Date: 2020-04-22
   Changes:
