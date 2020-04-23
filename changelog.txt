@@ -8,7 +8,7 @@ Version: 1.7.6
 Date: 2020-04-22
   Changes:
     - Added settings to adjust the number of items pasted to requestor for a recipe.
-	- balance biofilm.
+    - Balanced biofilm.
 ---------------------------------------------------------------------------------------------------
 Version: 1.7.5
 Date: 2020-04-15
