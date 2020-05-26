@@ -3,6 +3,7 @@ local Event = require('__stdlib__/stdlib/event/event')
 local function on_init()
     global.wiki = {}
     global.wiki.fluids = {}
+    global.wiki.fluid_names = {}
     for _, fluid in pairs(game.fluid_prototypes) do
         --log(serpent.block(fluid.name))
         --log(serpent.block(fluid.fuel_value))
@@ -10,6 +11,12 @@ local function on_init()
         global.wiki.fluids[fluid.name] = fluid.fuel_value
         end
     end
+    for k,v in pairs(global.wiki.fluids) do
+        table.insert(global.wiki.fluid_names, k)
+    end
+    log(serpent.block(global.wiki.fluid_names))
+    table.sort(global.wiki.fluid_names)
+    log(serpent.block(global.wiki.fluid_names))
     global.have_gui = false
 end
 Event.register(Event.core_events.init_and_config, on_init)
@@ -21,6 +28,7 @@ local function on_player_created(event)
         {
             type = 'frame',
             name = 'pywiki_frame',
+            style = 'invisible_frame'
         }
     )
     wiki.add(
@@ -44,6 +52,7 @@ local function on_1th_tick()
                 {
                     type = 'frame',
                     name = 'pywiki_frame',
+                    style = 'invisible_frame'
                 }
             )
             wiki.add(
@@ -62,60 +71,101 @@ Event.register(-1, on_1th_tick)
 
 local function on_click(event)
 
-    --local player = game.players[event.player_index]
+    local player = game.players[event.player_index]
 
     if event.element.name == 'pywiki' then
-        local wiki_gui = event.element.parent
-        wiki_gui.clear()
-        wiki_gui.add(
+        local wiki_gui = player.gui.screen
+        --wiki_gui.clear()
+        wiki_gui.add
             {
                 type = 'frame',
-                name = 'fluid_page',
-                caption = 'Fluids with fuel value',
-                direction = "vertical"
+                name = 'wiki_frame'
+            }
+        local wiki_pane = wiki_gui.wiki_frame.add
+            {
+                type = 'tabbed-pane',
+                name = 'wiki_pane'
+            }
+        
+        local tab1 = wiki_pane.add(
+            {
+                type = 'tab',
+                name = 'faq_tab',
+                caption = 'FAQ'
             }
         )
-        wiki_gui.add(
+        local tab2 = wiki_pane.add(
+            {
+                type = 'tab',
+                name = 'fluid_tab',
+                caption = 'Fluid Fuel Values'
+            }
+        )
+        local tab_fluids = wiki_pane.add
+            {
+                type = 'scroll-pane',
+                name = 'scroll',
+                style = 'inventory_scroll_pane'
+            }
+        wiki_gui.wiki_frame.wiki_pane.scroll.style.maximal_height = 500
+        local test_label = wiki_pane.add
+            {
+                type = 'label',
+                caption = 'test'
+            }
+        wiki_pane.add_tab(tab1, test_label)
+        wiki_pane.add_tab(tab2, tab_fluids)
+        wiki_gui.wiki_frame.add(
             {
                 type = "sprite-button",
                 name = "wiki_close",
                 sprite = "utility/close_fat"
             }
         )
-        for f, fluid in pairs(global.wiki.fluids) do
-            wiki_gui.fluid_page.add(
+        wiki_gui.wiki_frame.wiki_pane.scroll.add
+            {
+                type = 'frame',
+                name = 'fluid_page',
+                caption = 'Fluids with fuel value',
+                direction = "vertical"
+            }
+        for f, fluid in pairs(global.wiki.fluid_names) do
+            wiki_gui.wiki_frame.wiki_pane.scroll.fluid_page.add(
                 {
                     type = 'frame',
-                    name = 'fluid_frame'.. f,
-                    caption = game.fluid_prototypes[f].localised_name,
+                    name = 'fluid_frame'.. fluid,
+                    caption = game.fluid_prototypes[fluid].localised_name,
                     direction = "horizontal"
                 }
             )
-            wiki_gui.fluid_page['fluid_frame'.. f].add(
+            wiki_gui.wiki_frame.wiki_pane.scroll.fluid_page['fluid_frame'.. fluid].add(
             {
                 type = 'sprite',
-                name = f,
-                sprite = 'fluid/' .. f,
-                caption = game.fluid_prototypes[f].localised_name
+                name = fluid,
+                sprite = 'fluid/' .. fluid,
+                caption = game.fluid_prototypes[fluid].localised_name
             }
             )
             local num
-            if fluid >= 1000 then
-                num = fluid/1000 .. 'KJ'
+            local fluid_num = global.wiki.fluids[fluid]
+            if fluid_num >= 1000 then
+                num = fluid_num/1000 .. 'KJ'
             elseif fluid >= 100000 then
-                num = fluid/1000000 .. 'MJ'
+                num = fluid_num/1000000 .. 'MJ'
             end
-            wiki_gui.fluid_page['fluid_frame'.. f].add(
+            wiki_gui.wiki_frame.wiki_pane.scroll.fluid_page['fluid_frame'.. fluid].add(
             {
                 type = 'frame',
-                name = f .. 'fluid_value',
+                name = fluid .. 'fluid_value',
                 caption = num
             }
             )
         end
+        wiki_gui.wiki_frame.force_auto_center()
     elseif event.element.name == 'wiki_close' then
-        local wiki_gui = event.element.parent
+        local wiki_gui = event.element.parent.parent
         wiki_gui.clear()
+        --[[
         wiki_gui.add(
             {
                 type = 'sprite-button',
@@ -123,6 +173,7 @@ local function on_click(event)
                 sprite = 'pywiki'
             }
         )
+        ]]--
     end
 end
 Event.register(defines.events.on_gui_click, on_click)
