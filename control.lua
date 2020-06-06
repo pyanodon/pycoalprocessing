@@ -8,7 +8,7 @@ MOD.IF = "PYC"
 MOD.path = "__pycoalprocessing__"
 MOD.config = require("config")
 
-Event.build_events = {defines.events.on_built_entity, defines.events.on_robot_built_entity}
+Event.build_events = {defines.events.on_built_entity, defines.events.on_robot_built_entity, defines.events.script_raised_built}
 Event.death_events = {defines.events.on_pre_player_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}
 
 --Require Quickstart for quicker mod testing when creating a character.
