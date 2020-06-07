@@ -6,7 +6,7 @@ RECIPE {
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "syngas", amount = 150},
-        {type = "item", name = "copper-plate", amount = 6},
+        {type = "item", name = "copper-plate", amount = 3},
         {type = "item", name = "iron-plate", amount = 1} --bob zinc-plate
     },
     results = {
