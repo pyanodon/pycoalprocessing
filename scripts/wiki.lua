@@ -1,7 +1,7 @@
 local Event = require('__stdlib__/stdlib/event/event')
 
 local pyal_wiki
-local pyal_data
+--local pyal_data
 
 if script.active_mods['pyalienlife'] then
     pyal_wiki = require('__pyalienlife__/wiki/biomass')
@@ -20,7 +20,7 @@ local function on_init()
         global.wiki.fluids[fluid.name] = fluid.fuel_value
         end
     end
-    for k,v in pairs(global.wiki.fluids) do
+    for k,_ in pairs(global.wiki.fluids) do
         table.insert(global.wiki.fluid_names, k)
     end
     --log(serpent.block(global.wiki.fluid_names))
@@ -95,7 +95,6 @@ local function on_click(event)
                     type = 'tabbed-pane',
                     name = 'wiki_pane'
                 }
-            
             local tab1 = wiki_pane.add(
                 {
                     type = 'tab',
@@ -120,7 +119,7 @@ local function on_click(event)
             local test_label = wiki_pane.add
                 {
                     type = 'label',
-                    caption = 'test'
+                    caption = 'How much wood could a woodchuck chuck if a woodchuck could chuck wood'
                 }
             wiki_pane.add_tab(tab1, test_label)
             wiki_pane.add_tab(tab2, tab_fluids)
@@ -138,7 +137,7 @@ local function on_click(event)
                     caption = 'Fluids with fuel value',
                     direction = "vertical"
                 }
-            for f, fluid in pairs(global.wiki.fluid_names) do
+            for _, fluid in pairs(global.wiki.fluid_names) do
                 wiki_gui.wiki_frame.wiki_pane.scroll.fluid_page.add(
                     {
                         type = 'frame',
@@ -173,7 +172,8 @@ local function on_click(event)
             end
             wiki_gui.wiki_frame.force_auto_center()
             if pyal_wiki ~= nil then
-                local og_list, name_data, input_data, output_data = remote.call('data_puller', 'order_biolist')
+                --local og_list, name_data, input_data, output_data = remote.call('data_puller', 'order_biolist')
+                local og_list, name_data = remote.call('data_puller', 'order_biolist')
                 --log(serpent.block(og_list))
                 --log(serpent.block(name_data))
                 --log(serpent.block(input_data))
