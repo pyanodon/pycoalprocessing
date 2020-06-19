@@ -162,6 +162,14 @@ ENTITY {
             base_level = -1,
             pipe_connections = {{type = "input", position = {0.0, -4.0}}}
         },
+        {
+            production_type = "output",
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+            pipe_covers = DATA.Pipes.covers(false, true, true, true),
+            base_area = 10,
+            base_level = 1,
+            pipe_connections = {{type = "output", position = {4.0, 0}}}
+        },
         off_when_no_fluid_recipe = true
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
