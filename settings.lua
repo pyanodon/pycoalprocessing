@@ -8,14 +8,6 @@ data:extend(
 	order = "e",
 	},
 	{
-	type = "string-setting",
-	name = "module-slot-change",
-	order = "a",
-	setting_type = "startup",
-	allowed_values = {"default", "plus-one-per", "plus-two-per", "double-each-tier"},
-	default_value = "default"
-	},
-	{
 	type = "int-setting",
 	name = "rpm_entity",
 	order = "aa",
