@@ -10,7 +10,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "tar-processing-unit",
-    energy_required = 5,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"steel-plate", 20},

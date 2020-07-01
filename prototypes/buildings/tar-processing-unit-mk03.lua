@@ -10,7 +10,7 @@ local pipes = {
 RECIPE {
     type = "recipe",
     name = "tar-processing-unit-mk03",
-    energy_required = 5,
+    energy_required = 0.5,
     enabled = false,
     ingredients = {
         {"tar-processing-unit-mk02", 1},
