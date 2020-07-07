@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.8.1
+Date: 2020-07-07
+  Changes:
+    - Added solid items fuel value tab to pywiki
+    - Fixed bug with wiki close button closeing gui windows of other mods.
+---------------------------------------------------------------------------------------------------
 Version: 1.8.0
 Date: 2020-07-05
   Changes:
