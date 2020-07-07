@@ -84,12 +84,14 @@ local function on_click(event)
 
     if event.element.name == 'pywiki' then
         local wiki_gui = player.gui.screen
+        log(serpent.block(player.gui.screen))
         if wiki_gui.wiki_frame == nil then
-            wiki_gui.add
+            wiki_gui.add(
                 {
                     type = 'frame',
                     name = 'wiki_frame'
                 }
+            )
             local wiki_pane = wiki_gui.wiki_frame.add
                 {
                     type = 'tabbed-pane',
