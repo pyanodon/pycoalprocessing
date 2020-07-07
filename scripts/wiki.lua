@@ -13,6 +13,8 @@ local function on_init()
     global.wiki = {}
     global.wiki.fluids = {}
     global.wiki.fluid_names = {}
+    global.wiki.items = {}
+    global.wiki.item_names = {}
     for _, fluid in pairs(game.fluid_prototypes) do
         --log(serpent.block(fluid.name))
         --log(serpent.block(fluid.fuel_value))
@@ -23,8 +25,17 @@ local function on_init()
     for k,_ in pairs(global.wiki.fluids) do
         table.insert(global.wiki.fluid_names, k)
     end
+    for _, item in pairs(game.item_prototypes) do
+        if item.fuel_value ~= nil and item.fuel_value ~= 0 then
+            global.wiki.items[item.name] = item.fuel_value
+        end
+    end
+    for k,_ in pairs(global.wiki.items) do
+        table.insert(global.wiki.item_names, k)
+    end
     --log(serpent.block(global.wiki.fluid_names))
     table.sort(global.wiki.fluid_names)
+    table.sort(global.wiki.item_names)
     --log(serpent.block(global.wiki.fluid_names))
     global.have_gui = false
 end
@@ -117,7 +128,21 @@ local function on_click(event)
                     name = 'scroll',
                     style = 'inventory_scroll_pane'
                 }
+            local tab3 = wiki_pane.add(
+                {
+                    type = 'tab',
+                    name = 'item_tab',
+                    caption = 'Item Fuel Values'
+                }
+            )
+            local tab_items = wiki_pane.add
+                {
+                    type = 'scroll-pane',
+                    name = 'scroll_items',
+                    style = 'inventory_scroll_pane'
+                }
             wiki_gui.wiki_frame.wiki_pane.scroll.style.maximal_height = 500
+            wiki_gui.wiki_frame.wiki_pane.scroll_items.style.maximal_height = 500
             local test_label = wiki_pane.add
                 {
                     type = 'label',
@@ -125,6 +150,7 @@ local function on_click(event)
                 }
             wiki_pane.add_tab(tab1, test_label)
             wiki_pane.add_tab(tab2, tab_fluids)
+            wiki_pane.add_tab(tab3, tab_items)
             wiki_gui.wiki_frame.add(
                 {
                     type = "sprite-button",
@@ -132,6 +158,8 @@ local function on_click(event)
                     sprite = "utility/close_fat"
                 }
             )
+
+            --fluid fuel values
             wiki_gui.wiki_frame.wiki_pane.scroll.add
                 {
                     type = 'frame',
@@ -158,9 +186,9 @@ local function on_click(event)
                 )
                 local num
                 local fluid_num = global.wiki.fluids[fluid]
-                if fluid_num >= 1000 then
+                if fluid_num >= 1000 and fluid_num < 100000 then
                     num = fluid_num/1000 .. 'KJ'
-                elseif fluid >= 100000 then
+                elseif fluid_num >= 100000 then
                     num = fluid_num/1000000 .. 'MJ'
                 end
                 wiki_gui.wiki_frame.wiki_pane.scroll.fluid_page['fluid_frame'.. fluid].add(
@@ -172,6 +200,50 @@ local function on_click(event)
                 }
                 )
             end
+
+            --item fuel values
+            wiki_gui.wiki_frame.wiki_pane.scroll_items.add
+                {
+                    type = 'frame',
+                    name = 'item_page',
+                    caption = 'Items with fuel value',
+                    direction = "vertical"
+                }
+            for _, item in pairs(global.wiki.item_names) do
+                wiki_gui.wiki_frame.wiki_pane.scroll_items.item_page.add(
+                    {
+                        type = 'frame',
+                        name = 'item_frame'.. item,
+                        caption = game.item_prototypes[item].localised_name,
+                        direction = "horizontal"
+                    }
+                )
+                wiki_gui.wiki_frame.wiki_pane.scroll_items.item_page['item_frame'.. item].add(
+                {
+                    type = 'sprite',
+                    name = item,
+                    sprite = 'item/' .. item,
+                    caption = game.item_prototypes[item].localised_name
+                }
+                )
+                local num
+                local item_num = global.wiki.items[item]
+                if item_num >= 1000 and item_num < 100000 then
+                    num = item_num/1000 .. 'KJ'
+                elseif item_num >= 100000 then
+                    num = item_num/1000000 .. 'MJ'
+                end
+                wiki_gui.wiki_frame.wiki_pane.scroll_items.item_page['item_frame'.. item].add(
+                {
+                    type = 'label',
+                    name = item .. 'item_value',
+                    caption = num,
+                    --style = 'invisible_frame'
+                }
+                )
+            end
+
+            --pyal
             wiki_gui.wiki_frame.force_auto_center()
             if pyal_wiki ~= nil then
                 --local og_list, name_data, input_data, output_data = remote.call('data_puller', 'order_biolist')
@@ -184,17 +256,11 @@ local function on_click(event)
             end
         end
     elseif event.element.name == 'wiki_close' then
-        local wiki_gui = event.element.parent.parent
-        wiki_gui.clear()
-        --[[
-        wiki_gui.add(
-            {
-                type = 'sprite-button',
-                name = 'pywiki',
-                sprite = 'pywiki'
-            }
-        )
-        ]]--
+        local wiki_gui = player.gui.screen.wiki_frame
+        if wiki_gui ~= nil then
+            --log(wiki_gui.parent.name)
+            wiki_gui.destroy()
+        end
     end
 end
 Event.register(defines.events.on_gui_click, on_click)
