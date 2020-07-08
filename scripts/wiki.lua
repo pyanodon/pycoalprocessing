@@ -115,6 +115,12 @@ local function on_click(event)
                     caption = 'FAQ'
                 }
             )
+            local test_label = wiki_pane.add(
+                {
+                    type = 'label',
+                    caption = 'How much wood could a woodchuck chuck if a woodchuck could chuck wood'
+                }
+            )
             local tab2 = wiki_pane.add(
                 {
                     type = 'tab',
@@ -143,11 +149,6 @@ local function on_click(event)
                 }
             wiki_gui.wiki_frame.wiki_pane.scroll.style.maximal_height = 500
             wiki_gui.wiki_frame.wiki_pane.scroll_items.style.maximal_height = 500
-            local test_label = wiki_pane.add
-                {
-                    type = 'label',
-                    caption = 'How much wood could a woodchuck chuck if a woodchuck could chuck wood'
-                }
             wiki_pane.add_tab(tab1, test_label)
             wiki_pane.add_tab(tab2, tab_fluids)
             wiki_pane.add_tab(tab3, tab_items)
