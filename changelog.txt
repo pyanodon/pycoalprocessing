@@ -8,7 +8,7 @@ Version: 1.8.1
 Date: 2020-07-07
   Changes:
     - Added solid items fuel value tab to pywiki
-    - Fixed bug with wiki close button closeing gui windows of other mods.
+    - Fixed bug with wiki close button closing GUI windows of other mods.
 ---------------------------------------------------------------------------------------------------
 Version: 1.8.0
 Date: 2020-07-05
@@ -30,23 +30,23 @@ Date: 2020-06-14
 Version: 1.7.7
 Date: 2020-04-22
   Changes:
-    - Added more entity types to be effected the requestor paste adjustment setting for entities.
+    - Added more entity types to be effected the requester paste adjustment setting for entities.
 ---------------------------------------------------------------------------------------------------
 Version: 1.7.6
 Date: 2020-04-22
   Changes:
-    - Added settings to adjust the number of items pasted to requestor for a recipe.
+    - Added settings to adjust the number of items pasted to requester for a recipe.
     - Balanced biofilm.
 ---------------------------------------------------------------------------------------------------
 Version: 1.7.5
 Date: 2020-04-15
   Changes:
-    - fixed another load error with the wiki.
+    - Fixed another load error with the wiki.
 ---------------------------------------------------------------------------------------------------
 Version: 1.7.4
 Date: 2020-04-14
   Changes:
-    - fixed load error with the wiki.
+    - Fixed load error with the wiki.
 ---------------------------------------------------------------------------------------------------
 Version: 1.7.3
 Date: 2020-04-14
@@ -56,17 +56,17 @@ Date: 2020-04-14
 Version: 1.7.2
 Date: 2020-04-13
   Changes:
-    - Fixed error with fawogae plantaion mk02 when pyal isnt active.
+    - Fixed error with fawogae plantation mk02 when pyAL isn't active.
 ---------------------------------------------------------------------------------------------------
 Version: 1.7.1
 Date: 2020-04-13
   Changes:
-    - Fixed error with ralesia plantaion mk02 entity return result when pyal isnt active.
+    - Fixed error with ralesia plantation mk02 entity return result when pyAL isn't active.
 ---------------------------------------------------------------------------------------------------
 Version: 1.7.0
 Date: 2020-04-13
   Changes:
-    - Fixed error with ralesia plantaion mk02 recipe when pyal isnt active.
+    - Fixed error with ralesia plantation mk02 recipe when pyAL isn't active.
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.9
 Date: 2020-04-13
@@ -76,12 +76,12 @@ Date: 2020-04-13
 Version: 1.6.8
 Date: 2020-04-02
   Changes:
-    - Balanced Glasworks
+    - Balanced Glassworks
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.7
 Date: 2020-04-01
   Changes:
-    - fixed Glassworks unlock issue.
+    - Fixed Glassworks unlock issue.
     - Added fuel values to fluids for glassworks.
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.6
@@ -111,7 +111,7 @@ Date: 2020-03-18
     - Added background in main menu.
     - Increased optical fiber consuption in blue science.
     - Increased tar consuption in quenching tar.
-    - Increased pollution absorption in all organic pycp version buildings.
+    - Increased pollution absorption in all organic pyCP version buildings.
     - Acid gas buff
     - Grammar changes.
 ---------------------------------------------------------------------------------------------------
@@ -244,8 +244,8 @@ Version: 1.3.2
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.1
   Balances:
-    - adaptation for pycoaltbaa.
-    - balanced stone bricks.
+    - Adaptation for pycoaltbaa.
+    - Balanced stone bricks.
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.0
   Bug fixes:
@@ -279,7 +279,7 @@ Version: 1.2.4
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.3
   Balances:
-    - balanced saline water.
+    - Balanced saline water.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.2
   Balances:
@@ -288,11 +288,11 @@ Version: 1.2.2
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.1
   Balances:
-    - balanced iron-oxide.
+    - Balanced iron-oxide.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Balances:
-    - balanced fuelrods.
+    - Balanced fuelrods.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.9
   Balances:
@@ -323,7 +323,7 @@ Version: 1.1.4
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.2
   Balances:
-    - stack inserter reworked.
+    - Stack inserter reworked.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
   Balances:
@@ -355,7 +355,7 @@ Version: 1.0.15
   Bugfixes:
 
   Balances:
-    - wood now cost 10s.
+    - Wood now cost 10s.
     - Added extra pipes to advanced foundry.
     - Added extra recipes for combustion mixture.
     - Prepare Advanced foundry to receive pYPH.
