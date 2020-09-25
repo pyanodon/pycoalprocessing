@@ -25,7 +25,7 @@ require("scripts/tailings-pond")
 remote.add_interface(script.mod_name, require('__stdlib__/stdlib/scripts/interface'))
 
 --Activate resource spawn control script
-require("scripts/resource-generation")
+--require("scripts/resource-generation")
 
 local function on_player_created(event)
   local player = game.players[event.player_index]
