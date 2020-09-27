@@ -1,3 +1,5 @@
+local resource_autoplace = require("resource-autoplace")
+
 DATA {
     type = "autoplace-control",
     name = "borax",
@@ -26,30 +28,27 @@ ENTITY {
         -- mining_particle = "borax-particle",
         mining_time = 3,
         results = {
-            {type = "item", name = "raw-borax", amount = 3, probability = 0.7},
+            {type = "item", name = "raw-borax", amount = 3, probability = 0.7}
         },
         fluid_amount = 50,
         required_fluid = "syngas"
     },
-    starting_area_size = 5500,
-    starting_area_amount = 1600,
-    starting_area = true,
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-    autoplace = {
-        control = "borax",
-        sharpness = 15/20,
-        richness_multiplier = 1000,
-        richness_multiplier_distance_bonus = 20,
-        richness_base = 10,
-        coverage = 0.0048,
-        peaks = {
-            {
-                noise_layer = "borax",
-                noise_octaves_difference = -1.5,
-                noise_persistence = 0.3
-            }
-        }
+    tree_removal_probability = 0.7,
+    tree_removal_max_distance = 32 * 32,
+    autoplace = resource_autoplace.resource_autoplace_settings
+    {
+        name = "borax",
+        order = "c",
+        base_density = 10,
+        base_spots_per_km2 = 1.25,
+        has_starting_area_placement = true,
+        random_spot_size_minimum = 2,
+        random_spot_size_maximum = 4,
+        regular_rq_factor_multiplier = 1,
+        starting_rq_factor_multiplier = 2,
+        candidate_spot_count = 20
     },
     stage_counts = {2000, 1600, 1400, 1200, 800, 400, 200, 10},
     stages = {
