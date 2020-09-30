@@ -631,3 +631,20 @@ RECIPE {
     },
     main_product = "filtration-media"
 }:add_unlock("filtration")
+
+RECIPE {
+    type = "recipe",
+    name = "nexelit-ore-1",
+    category = "evaporator",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "dirty-water", amount = 400}
+    },
+    results = {
+        {type = "item", name = "nexelit-ore", amount = 1},
+        {type = "item", name = "tailings-dust", amount = 1, probability = 0.4}
+    },
+    main_product = "nexelit-ore",
+    subgroup = "py-rawores-nexelit",
+}:add_unlock("coal-processing-3")
