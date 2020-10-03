@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/excavation-1.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-3"},
+    prerequisites = {"coal-processing-2"},
     effects = {},
     unit = {
         count = 45,
