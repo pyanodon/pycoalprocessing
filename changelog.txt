@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.8.4
+Date: 2020-10-03
+  Changes:
+    - Added new icon for soil.
+    - Fixed nexelit deadlock in games without parts of the suite.
+    - Some adjustments in ore generation.
+    - Removed ore generation script.
+---------------------------------------------------------------------------------------------------
 Version: 1.8.3
 Date: 2020-07-30
   Changes:
