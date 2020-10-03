@@ -646,5 +646,5 @@ RECIPE {
         {type = "item", name = "tailings-dust", amount = 1, probability = 0.4}
     },
     main_product = "nexelit-ore",
-    subgroup = "py-rawores-nexelit",
+    subgroup = "py-mill",
 }:add_unlock("coal-processing-3")
