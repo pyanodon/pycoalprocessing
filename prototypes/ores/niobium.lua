@@ -40,7 +40,7 @@ ENTITY {
     autoplace = resource_autoplace.resource_autoplace_settings
     {
         name = "niobium",
-        order = "c",
+        order = "b",
         base_density = 10,
         base_spots_per_km2 = 1.25,
         has_starting_area_placement = true,

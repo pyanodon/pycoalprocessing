@@ -38,7 +38,7 @@ ENTITY {
     tree_removal_max_distance = 32 * 32,
     autoplace = resource_autoplace.resource_autoplace_settings {
         name = "borax",
-        order = "c",
+        order = "b",
         base_density = 10,
         base_spots_per_km2 = 1.25,
         has_starting_area_placement = true,
