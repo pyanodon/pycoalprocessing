@@ -24,7 +24,6 @@ ENTITY {
     map_color = {r = 0.917, g = 0.917, b = 0.917},
     highlight = true,
     minable = {
-        hardness = 1.5,
         -- mining_particle = "borax-particle",
         mining_time = 3,
         results = {
@@ -37,8 +36,7 @@ ENTITY {
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     tree_removal_probability = 0.7,
     tree_removal_max_distance = 32 * 32,
-    autoplace = resource_autoplace.resource_autoplace_settings
-    {
+    autoplace = resource_autoplace.resource_autoplace_settings {
         name = "borax",
         order = "c",
         base_density = 10,

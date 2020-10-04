@@ -24,7 +24,7 @@ ENTITY {
     map_color = {r = 0.403, g = 0.6, b = 0.701},
     highlight = true,
     minable = {
-        hardness = 1.5,
+        
         -- mining_particle = "niobium-particle",
         mining_time = 3,
         results = {
