@@ -4,7 +4,7 @@ DATA {
     type = "autoplace-control",
     name = "niobium",
     richness = true,
-    order = "b-e",
+    order = "p-nio",
     category = "resource"
 }
 

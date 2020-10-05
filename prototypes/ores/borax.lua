@@ -4,7 +4,7 @@ DATA {
     type = "autoplace-control",
     name = "borax",
     richness = true,
-    order = "b-e",
+    order = "p-bor",
     category = "resource"
 }
 
