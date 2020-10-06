@@ -48,9 +48,9 @@ function start_inventory.on_init()
       created_items["iron-plate"] = 500
       created_items["copper-plate"] = 500
       created_items["wood"] = 500
-      
+
       remote.call("freeplay", "set_created_items", created_items)
-    
+
     end
 end
 Event.register(Event.core_events.init, start_inventory.on_init)
