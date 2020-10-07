@@ -52,7 +52,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 200}
     },
     results = {
-        {type = "fluid", name = "aromatics", amount = 150},
+        {type = "fluid", name = "aromatics", amount = 200},
         {type = "fluid", name = "water", amount = 100}
         --{type="fluid", name="hydrogen", amount=10},
     },
