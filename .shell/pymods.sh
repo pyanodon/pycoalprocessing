@@ -1,5 +1,3 @@
-exit 1
-
 git clone git@github.com:pyanodon/pycoalprocessing.git
 git clone git@github.com:pyanodon/pyalienlife.git
 git clone git@github.com:pyanodon/pyrawores.git
