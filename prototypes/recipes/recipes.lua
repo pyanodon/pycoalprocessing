@@ -647,4 +647,4 @@ RECIPE {
     },
     main_product = "nexelit-ore",
     subgroup = "py-mill",
-}:add_unlock("coal-processing-3")
+}:add_unlock("coal-processing-2")

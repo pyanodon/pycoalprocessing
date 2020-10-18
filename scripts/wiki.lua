@@ -1,12 +1,15 @@
 local Event = require('__stdlib__/stdlib/event/event')
 
 local pyal_wiki
---local pyal_data
 
 if script.active_mods['pyalienlife'] then
     pyal_wiki = require('__pyalienlife__/wiki/biomass')
-    --pyal_data = remote.call('data_puller', order_biolist())
-    --log(serpent.block(pyal_data))
+end
+
+local pyph_wiki
+
+if script.active_mods['pypetroleumhandling'] then
+    pyph_wiki = require('__pypetroleumhandling__/wiki/oil')
 end
 
 local function on_init()
@@ -38,6 +41,13 @@ local function on_init()
     table.sort(global.wiki.item_names)
     --log(serpent.block(global.wiki.fluid_names))
     global.have_gui = false
+    global.topics = {}
+    global.topics[pyph_wiki.title] = pyph_wiki.body
+    log(serpent.block(global.topics))
+    global.titles = {}
+    table.insert(global.titles, pyph_wiki.title)
+    table.sort(global.topics)
+    log(serpent.block(global.titles))
 end
 Event.register(Event.core_events.init_and_config, on_init)
 
@@ -89,6 +99,59 @@ end
 end
 Event.register(-1, on_1th_tick)
 
+local function faq(wiki)
+
+    local faq_main = wiki.add(
+        {
+            type = 'flow',
+            name = 'faq_flow',
+            direction = 'horizontal'
+        }
+    )
+    local topics = faq_main.add(
+        {
+            type = 'frame',
+            name = 'topic_frame',
+            direction = 'vertical'
+        }
+    )
+    --topics.style.width = 300
+    local body = faq_main.add(
+        {
+            type = 'frame',
+            name = 'body_frame',
+            direction = 'vertical'
+        }
+    )
+    body.style.width = 700
+    for t, title in pairs(global.titles) do
+        --log(t)
+        --log(title)
+        topics.add(
+            {
+                type = 'button',
+                name = title .. '_button',
+                caption = {"wiki-info." .. title}
+            }
+        )
+    end
+return faq_main
+end
+
+local function topic(tab, button)
+
+    tab.body_frame.clear()
+    --log(tab.parent.name)
+    local body = tab.body_frame.add(
+        {
+            type = 'label',
+            name = 'details',
+            caption = {'wiki-info.' .. global.topics[string.match(button.name, '[^_]+')]}
+        }
+    )
+    body.style.single_line = false
+end
+
 local function on_click(event)
 
     local player = game.players[event.player_index]
@@ -115,12 +178,7 @@ local function on_click(event)
                     caption = 'FAQ'
                 }
             )
-            local test_label = wiki_pane.add(
-                {
-                    type = 'label',
-                    caption = 'How much wood could a woodchuck chuck if a woodchuck could chuck wood'
-                }
-            )
+            local test_label = faq(wiki_pane)
             local tab2 = wiki_pane.add(
                 {
                     type = 'tab',
@@ -262,6 +320,10 @@ local function on_click(event)
             --log(wiki_gui.parent.name)
             wiki_gui.destroy()
         end
+    elseif global.topics[string.match(event.element.name, '[^_]+')] ~= nil then
+        log(string.match(event.element.name, '[^_]+'))
+        log('hit')
+        topic(event.element.parent.parent,event.element)
     end
 end
 Event.register(defines.events.on_gui_click, on_click)
