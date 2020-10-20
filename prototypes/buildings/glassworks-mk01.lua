@@ -95,7 +95,7 @@ ENTITY {
     burns_fluid = true,
 	scale_fluid_usage = true,
     energy_usage = "10MW",
-    ingredient_count = 10,
+    ingredient_count = 20,
     animation = {
         layers = {
             {
