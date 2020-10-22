@@ -51,7 +51,6 @@ ENTITY {
         emissions_per_minute = 0.06,
     },
     energy_usage = "450kW",
-    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/sand-extractor/sand-extractor-mk04.png",
         width = 192,

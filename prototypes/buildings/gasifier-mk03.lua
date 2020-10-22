@@ -63,7 +63,6 @@ ENTITY {
         emissions_per_minute = 0.06,
     },
     energy_usage = "500kW",
-    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/gasifier/gasifier-anim-mk03.png",
         priority = "high",

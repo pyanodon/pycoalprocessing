@@ -55,7 +55,6 @@ ENTITY {
 		emissions_per_minute = -60,
     },
     energy_usage = "200kW",
-    ingredient_count = 20,
     module_slots = 0,
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/co2-absorber/co2-absorber.png",

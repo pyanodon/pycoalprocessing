@@ -53,7 +53,6 @@ ENTITY {
         emissions_per_minute = 0.06,
     },
     energy_usage = "650kW",
-    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/olefin-plant/olefin-off-mk04.png",
         width = 274,

@@ -63,7 +63,6 @@ ENTITY {
         emissions_per_minute = 0.06,
     },
     energy_usage = "300kW",
-    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/carbon-filter/carbon-filter-mk03.png",
         priority = "high",

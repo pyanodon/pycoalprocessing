@@ -62,7 +62,6 @@ ENTITY {
         emissions_per_minute = 0.06,
     },
     energy_usage = "500kW",
-    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-off.png",
         width = 202,

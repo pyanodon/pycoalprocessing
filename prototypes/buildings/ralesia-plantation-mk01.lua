@@ -82,7 +82,6 @@ ENTITY {
         emissions_per_minute = -35,
     },
     energy_usage = "200kW",
-    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/ralesia-plantation.png",
         width = 224,

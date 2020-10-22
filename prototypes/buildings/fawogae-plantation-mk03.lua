@@ -69,7 +69,6 @@ ENTITY {
         emissions_per_minute = -5,
     },
     energy_usage = "400kW",
-    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/fawogae-plantation/fawogae-mk03.png",
         width = 200,

@@ -53,7 +53,6 @@ ENTITY {
         emissions_per_minute = 0.06,
     },
     energy_usage = "170kW",
-    ingredient_count = 20,
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/classifier/classifier.png",
         width = 256,
