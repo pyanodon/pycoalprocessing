@@ -106,13 +106,13 @@ RECIPE {
     name = "flask",
     enabled = true,
     category = "glassworks",
-    energy_required = 6,
+    energy_required = 2,
     ingredients = {
-        {type = "item", name = "iron-plate", amount = 24},
-        {type = "item", name = "wood", amount = 15}
+        {type = "item", name = "iron-plate", amount = 8},
+        {type = "item", name = "wood", amount = 5}
     },
     results = {
-        {"flask", 3}
+        {"flask", 1}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-01.png",
     icon_size = 64,
