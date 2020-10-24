@@ -42,12 +42,14 @@ local function on_init()
     --log(serpent.block(global.wiki.fluid_names))
     global.have_gui = false
     global.topics = {}
+    global.titles = {}
+    if script.active_mods['pypetroleumhandling'] then
     global.topics[pyph_wiki.title] = pyph_wiki.body
     log(serpent.block(global.topics))
-    global.titles = {}
     table.insert(global.titles, pyph_wiki.title)
     table.sort(global.topics)
     log(serpent.block(global.titles))
+    end
 end
 Event.register(Event.core_events.init_and_config, on_init)
 
@@ -124,16 +126,18 @@ local function faq(wiki)
         }
     )
     body.style.width = 700
-    for t, title in pairs(global.titles) do
-        --log(t)
-        --log(title)
-        topics.add(
-            {
-                type = 'button',
-                name = title .. '_button',
-                caption = {"wiki-info." .. title}
-            }
-        )
+    if next(global.titles) ~= nil then
+        for t, title in pairs(global.titles) do
+            --log(t)
+            --log(title)
+            topics.add(
+                {
+                    type = 'button',
+                    name = title .. '_button',
+                    caption = {"wiki-info." .. title}
+                }
+            )
+        end
     end
 return faq_main
 end
