@@ -15,12 +15,6 @@
   ],
   "package": {
     "ignore": [],
-    "scripts": {
-      "datestamp": "../pycoalprocessing/.github/publish/datestamp.sh",
-      "prepackage": "../pycoalprocessing/.github/publish/prepackage.sh",
-      "prepublish": "../pycoalprocessing/.github/publish/prepublish.sh",
-      "publish": "../pycoalprocessing/.github/publish/publish.sh",
-      "version": "../pycoalprocessing/.github/publish/version.sh"
-    }
+    "scripts": {}
   }
 }
