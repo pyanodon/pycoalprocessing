@@ -1,2 +1,2 @@
-#change symlink here
+#!/bin/bash
 exit 0
