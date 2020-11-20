@@ -2,6 +2,8 @@
 Version: 1.8.7
 Date: ????
   Changes:
+    - Fixed tailing pond graphics to correctly render behind other entities.
+    - Removed the power needs from cooling tower mk1 and mk2.
 ---------------------------------------------------------------------------------------------------
 Version: 1.8.6
 Date: 2020-11-08
