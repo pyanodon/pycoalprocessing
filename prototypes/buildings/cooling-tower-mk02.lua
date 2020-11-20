@@ -58,11 +58,7 @@ ENTITY {
     allowed_effects = {"speed"},
     crafting_categories = {"cooling"},
     crafting_speed = 3.5,
-    energy_source = {
-        type = "electric",
-        usage_priority = "secondary-input",
-        emissions_per_minute = 0.06,
-    },
+    energy_source = {type = "void"},
     energy_usage = "70kW",
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/cooling-tower-mk02/cooling_tower_mk02.png",
