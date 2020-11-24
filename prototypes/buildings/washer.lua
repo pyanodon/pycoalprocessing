@@ -24,7 +24,7 @@ RECIPE {
         {"iron-plate", 10},
         {"pipe", 25},
         {"stone-brick", 30},
-        {"electronic-circuit", 2} --bob basic-circuit-board
+        {"electronic-circuit", 2}
     },
     results = {
         {"washer", 1}
