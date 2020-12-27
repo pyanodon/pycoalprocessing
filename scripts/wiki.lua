@@ -4,6 +4,7 @@ local pyal_wiki
 
 if script.active_mods['pyalienlife'] then
     pyal_wiki = require('__pyalienlife__/wiki/biomass')
+    pyal_faq_wiki = require('__pyalienlife__/wiki/turd')
 end
 
 local pyph_wiki
@@ -45,11 +46,15 @@ local function on_init()
     global.titles = {}
     if script.active_mods['pypetroleumhandling'] then
     global.topics[pyph_wiki.title] = pyph_wiki.body
-    log(serpent.block(global.topics))
+    --log(serpent.block(global.topics))
     table.insert(global.titles, pyph_wiki.title)
-    table.sort(global.topics)
-    log(serpent.block(global.titles))
+    --log(serpent.block(global.titles))
     end
+    if script.active_mods['pyalienlife'] then
+        global.topics[pyal_faq_wiki.title] = pyal_faq_wiki.body
+        table.insert(global.titles, pyal_faq_wiki.title)
+    end
+    table.sort(global.topics)
 end
 Event.register(Event.core_events.init_and_config, on_init)
 
@@ -143,17 +148,18 @@ return faq_main
 end
 
 local function topic(tab, button)
-
-    tab.body_frame.clear()
-    --log(tab.parent.name)
-    local body = tab.body_frame.add(
-        {
-            type = 'label',
-            name = 'details',
-            caption = {'wiki-info.' .. global.topics[string.match(button.name, '[^_]+')]}
-        }
-    )
-    body.style.single_line = false
+    if tab.body_frame ~= nil then
+        tab.body_frame.clear()
+        --log(tab.parent.name)
+        local body = tab.body_frame.add(
+            {
+                type = 'label',
+                name = 'details',
+                caption = {'wiki-info.' .. global.topics[string.match(button.name, '[^_]+')]}
+            }
+        )
+        body.style.single_line = false
+    end
 end
 
 local function on_click(event)
