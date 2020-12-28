@@ -19,7 +19,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a1"
-}:add_unlock("coal-processing-3")
+}:add_unlock("fine-electronics")
 
 --STEEL PLATE - cant change the base one,so i did that.
 RECIPE {

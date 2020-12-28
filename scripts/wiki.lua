@@ -1,6 +1,7 @@
 local Event = require('__stdlib__/stdlib/event/event')
 
 local pyal_wiki
+local pyal_faq_wiki
 
 if script.active_mods['pyalienlife'] then
     pyal_wiki = require('__pyalienlife__/wiki/biomass')
