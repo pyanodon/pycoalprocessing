@@ -2,6 +2,7 @@
 Version: 1.9.1
 Date: ????
   Changes:
+    - fixed "tab" crash caused by invalid gui element.
 ---------------------------------------------------------------------------------------------------
 Version: 1.9.0
 Date: 2020-12-28

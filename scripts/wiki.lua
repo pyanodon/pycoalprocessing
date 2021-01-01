@@ -334,7 +334,9 @@ local function on_click(event)
     elseif global.topics[string.match(event.element.name, '[^_]+')] ~= nil then
         log(string.match(event.element.name, '[^_]+'))
         log('hit')
-        topic(event.element.parent.parent,event.element)
+        if event.element.parent ~= nil and event.element.parent.parent ~= nil then
+            topic(event.element.parent.parent,event.element)
+        end
     end
 end
 Event.register(defines.events.on_gui_click, on_click)
