@@ -16,8 +16,10 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "g"
-}:add_unlock("coal-processing-1")
+}:add_unlock("ulric")
 
+--unused borax recipe
+--[[
 RECIPE {
     type = "recipe",
     name = "raw-borax",
@@ -36,6 +38,7 @@ RECIPE {
     subgroup = "py-items",
     order = "h"
 }:add_unlock("coal-processing-1")
+]]--
 
 RECIPE {
     type = "recipe",
@@ -55,7 +58,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "h"
-}:add_unlock("coal-processing-1")
+}:add_unlock("ralesia")
 
 RECIPE {
     type = "recipe",
@@ -75,7 +78,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "j"
-}:add_unlock("coal-processing-1")
+}:add_unlock("logistic-science-pack")
 
 RECIPE {
     type = "recipe",
@@ -95,7 +98,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "k"
-}:add_unlock("coal-processing-1")
+}:add_unlock("logistic-science-pack")
 
 RECIPE {
     type = "recipe",
@@ -115,7 +118,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "l"
-}:add_unlock("coal-processing-1")
+}:add_unlock("logistic-science-pack")
 
 RECIPE {
     type = "recipe",
@@ -135,7 +138,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "m"
-}:add_unlock("coal-processing-1")
+}:add_unlock("logistic-science-pack")
 
 RECIPE {
     type = "recipe",
@@ -155,7 +158,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "n"
-}:add_unlock("coal-processing-1")
+}:add_unlock("logistic-science-pack")
 
 RECIPE {
     type = "recipe",
@@ -176,7 +179,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items",
     order = "o"
-}:add_unlock("coal-processing-1")
+}:add_unlock("logistic-science-pack")
 
 RECIPE {
     type = "recipe",
@@ -196,7 +199,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "f"
-}:add_unlock("coal-processing-1")
+}:add_unlock("logistic-science-pack")
 
 RECIPE {
     type = "recipe",
@@ -216,7 +219,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "e"
-}:add_unlock("coal-processing-1")
+}:add_unlock("logistic-science-pack")
 
 RECIPE {
     type = "recipe",
@@ -235,7 +238,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "i"
-}:add_unlock("coal-processing-1")
+}:add_unlock("ralesia")
 
 RECIPE {
     type = "recipe",
@@ -253,7 +256,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a2"
-}:add_unlock("coal-processing-1")
+}--:add_unlock("coal-processing-1")
 
 RECIPE {
     type = "recipe",
@@ -274,7 +277,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-washer",
     order = "d"
-}:add_unlock("coal-processing-1")
+}:add_unlock("energy-1")
 
 RECIPE {
     type = "recipe",
@@ -395,7 +398,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c6"
-}:add_unlock("coal-processing-1")
+}:add_unlock("wood-processing")
 
 RECIPE {
     type = "recipe",
@@ -413,7 +416,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c7"
-}:add_unlock("coal-processing-1")
+}:add_unlock("wood-processing")
 
 RECIPE {
     type = "recipe",
@@ -432,7 +435,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c8"
-}:add_unlock("coal-processing-1")
+}:add_unlock("wood-processing")
 
 RECIPE {
     type = "recipe",
@@ -450,7 +453,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items",
     order = "a7"
-}:add_unlock("coal-processing-1")
+}:add_unlock("wood-processing")
 
 RECIPE {
     type = "recipe",
@@ -470,7 +473,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items-hpf",
     order = "i"
-}:add_unlock("coal-processing-1")
+}:add_unlock("sulfur-processing")
 
 RECIPE {
     type = "recipe",
@@ -485,7 +488,7 @@ RECIPE {
     results = {
         {type = "item", name = "treated-wood", amount = 2}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("wood-processing")
 
 --)) Coal Processing 1 ((--
 
@@ -710,6 +713,7 @@ RECIPE {
     order = "c9"
 }:add_unlock("coal-processing-2")
 
+--[[
 RECIPE {
     type = "recipe",
     name = "rich-re",
@@ -729,7 +733,9 @@ RECIPE {
     subgroup = "py-items",
     order = "u"
 }:add_unlock("coal-processing-2")
+]]--
 
+--[[
 RECIPE {
     type = "recipe",
     name = "eva-ree-dust",
@@ -745,6 +751,7 @@ RECIPE {
     },
     main_product = "rare-earth-dust"
 }:add_unlock("coal-processing-2")
+]]--
 
 RECIPE {
     type = "recipe",
@@ -991,7 +998,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "a"
-}:add_unlock("coal-processing-1")
+}:add_unlock("coal-processing-2")
 
 RECIPE {
     type = "recipe",
@@ -1187,7 +1194,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a"
-}:add_unlock("coal-processing-1")
+}:add_unlock("fine-electronics")
 
 RECIPE {
     type = "recipe",

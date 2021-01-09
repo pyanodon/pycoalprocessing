@@ -169,7 +169,7 @@ local function on_click(event)
 
     if event.element.name == 'pywiki' then
         local wiki_gui = player.gui.screen
-        log(serpent.block(player.gui.screen))
+        --log(serpent.block(player.gui.screen))
         if wiki_gui.wiki_frame == nil then
             wiki_gui.add(
                 {
@@ -332,8 +332,8 @@ local function on_click(event)
             wiki_gui.destroy()
         end
     elseif global.topics[string.match(event.element.name, '[^_]+')] ~= nil then
-        log(string.match(event.element.name, '[^_]+'))
-        log('hit')
+        --log(string.match(event.element.name, '[^_]+'))
+        --log('hit')
         if event.element.parent ~= nil and event.element.parent.parent ~= nil then
             topic(event.element.parent.parent,event.element)
         end

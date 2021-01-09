@@ -15,23 +15,37 @@ end
 
 ITEM("automation-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
 ITEM("automation-science-pack", "tool"):set("icon_size", 32)
+
 ITEM("logistic-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png")
 ITEM("logistic-science-pack", "tool"):set("icon_size", 32)
+
 ITEM("chemical-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png")
 ITEM("chemical-science-pack", "tool"):set("icon_size", 32)
 
-RECIPE("logistic-science-pack"):remove_unlock('logistic-science-pack')
+--RECIPE("logistic-science-pack"):remove_unlock('logistic-science-pack')
 RECIPE('rocket-silo'):replace_ingredient("pipe", "niobium-pipe")
 RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):add_ingredient({type = "item", name = "copper-cable", amount = 15})
+
+TECHNOLOGY('logistic-science-pack'):add_prereq('ralesia'):add_prereq('ulric'):add_prereq('energy-1')
+
 TECHNOLOGY('military-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+
 TECHNOLOGY('automation-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+
 TECHNOLOGY('circuit-network'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+
 TECHNOLOGY('logistics-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+
 TECHNOLOGY('solar-energy'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+
 TECHNOLOGY('electric-energy-distribution-1'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+
 TECHNOLOGY('landfill'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+
 TECHNOLOGY('engine'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+
 TECHNOLOGY('toolbelt'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+
 TECHNOLOGY('advanced-material-processing'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 
 RECIPE("chemical-plant"):remove_unlock('oil-processing'):add_unlock("desulfurization")
@@ -69,8 +83,11 @@ RECIPE("sand-extractor-mk03"):replace_ingredient("pipe", "niobium-pipe")
 require("prototypes/recipes/advanced-foundry-recipes")
 
 --move barrels below everything else in intermediate tab
---data.raw["item-subgroup"]["fill-barrel"].order = y
---data.raw["item-subgroup"]["empty-barrel"].order = z
+data.raw["item-subgroup"]["fill-barrel"].order = "y"
+data.raw["item-subgroup"]["empty-barrel"].order = "z"
+
+data.raw['assembling-machine']['assembling-machine-1'].ingredient_count = 2
+data.raw['assembling-machine']['assembling-machine-2'].ingredient_count = 4
 
 --gather recipes for module changes
 local recipes_list =

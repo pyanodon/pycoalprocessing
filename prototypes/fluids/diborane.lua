@@ -11,7 +11,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "diborane", amount = 150}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("energy-1")
 
 FLUID {
     type = "fluid",
