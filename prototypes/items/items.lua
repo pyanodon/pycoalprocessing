@@ -544,7 +544,7 @@ ITEM {
     flags = {},
     subgroup = "py-items-hpf",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
