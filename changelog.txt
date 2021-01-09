@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.9.2
-Date: ????
+Date: 2021-01-09
   Changes:
     - Added two tabs to the pyinfo button that lists which fluids go in the sink hole and which ones go in the gas vent.
     - Changed niobium ore stack size from 100 to 500.
