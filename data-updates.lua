@@ -86,9 +86,6 @@ require("prototypes/recipes/advanced-foundry-recipes")
 data.raw["item-subgroup"]["fill-barrel"].order = "y"
 data.raw["item-subgroup"]["empty-barrel"].order = "z"
 
-data.raw['assembling-machine']['assembling-machine-1'].ingredient_count = 2
-data.raw['assembling-machine']['assembling-machine-2'].ingredient_count = 4
-
 --gather recipes for module changes
 local recipes_list =
 	{
