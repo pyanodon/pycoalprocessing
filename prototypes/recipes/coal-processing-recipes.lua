@@ -842,7 +842,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "oleochemicals", amount = 300},
         {type = "fluid", name = "glycerol", amount = 150},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 60}
+        {type = "fluid", name = "steam", amount = 2000, temperature = 100}
     },
     main_product = "oleochemicals",
     icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png",
@@ -864,7 +864,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "oleochemicals", amount = 250},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 60}
+        {type = "fluid", name = "steam", amount = 2000, temperature = 100}
     },
     main_product = "oleochemicals",
     icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png",

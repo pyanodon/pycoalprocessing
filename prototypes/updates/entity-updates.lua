@@ -5,6 +5,8 @@ data.raw.generator['steam-engine'].maximum_temperature = 500
 --modify steam turbine temp
 data.raw.generator['steam-turbine'].maximum_temperature = 2000
 
+data.raw.boiler.boiler.target_temperature = 250
+
 --modify assembly machine 1
 data.raw['assembling-machine']['assembling-machine-1'].ingredient_count = 2
 data.raw['assembling-machine']['assembling-machine-1'].energy_usage = "200KW"

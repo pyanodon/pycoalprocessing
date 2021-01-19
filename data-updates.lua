@@ -5,6 +5,8 @@ require("prototypes/updates/entity-updates")
 --update recipes for creosote
 require("prototypes/updates/recipe-updates")
 
+FLUID('steam'):set('heat_capacity', '0.05KJ')
+
 for _, v in pairs(data.raw.module) do
     if v.name:find("productivity%-module") and v.limitation then
         for _, recipe in ipairs({"syngas"}) do
