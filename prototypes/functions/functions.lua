@@ -57,4 +57,34 @@ function overrides.ing_adjust(recipe, ingredient, amount)
 	end
 end
 
+function overrides.next_upgrade(entity_type, base_name)
+	if data.raw[entity_type] then
+		local mk_str
+		
+		if data.raw[entity_type][base_name .. '-mk02'] then mk_str = '-mk' else mk_str = 'mk' end
+		
+		for i = 1, 3 do
+			local from_entity = string.format("%s%s%02d", base_name, mk_str, i)
+			local to_entity = string.format("%s%s%02d", base_name, mk_str, i+1)
+			
+			if i == 1 and not data.raw[entity_type][from_entity] then 
+				from_entity = base_name 
+			end	
+		
+			if data.raw[entity_type][from_entity] and data.raw[entity_type][to_entity] 
+			and not data.raw[entity_type][from_entity].next_upgrade
+			and data.raw[entity_type][from_entity].fast_replaceable_group
+			and data.raw[entity_type][from_entity].fast_replaceable_group == data.raw[entity_type][to_entity].fast_replaceable_group 
+			and data.raw[entity_type][from_entity].collision_box[1][1] == data.raw[entity_type][to_entity].collision_box[1][1] 
+			and data.raw[entity_type][from_entity].collision_box[1][2] == data.raw[entity_type][to_entity].collision_box[1][2]
+			and data.raw[entity_type][from_entity].collision_box[2][1] == data.raw[entity_type][to_entity].collision_box[2][1]
+			and data.raw[entity_type][from_entity].collision_box[2][2] == data.raw[entity_type][to_entity].collision_box[2][2]
+			then
+				data.raw[entity_type][from_entity].next_upgrade = to_entity
+			end
+		end
+	end
+end
+
+
 return overrides

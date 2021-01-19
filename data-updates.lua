@@ -428,3 +428,19 @@ if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].v
         end
     end
 end
+
+
+for _ ,entity_type in pairs({'assembling-machine', 'mining-drill', 'furnace'}) do
+	for _, entity in pairs(data.raw[entity_type]) do
+		local mk_loc = {string.find(entity.name, 'mk02')}
+		if mk_loc[2] == string.len(entity.name) then
+			local base_name 
+			if string.sub(entity.name, mk_loc[1]-1, mk_loc[1]-1) == '-' then
+				base_name = string.sub(entity.name, 1, mk_loc[1]-2)
+			else
+				base_name = string.sub(entity.name, 1, mk_loc[1]-1)
+			end
+			FUN.next_upgrade(entity_type, base_name)
+		end
+	end
+end
