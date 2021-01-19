@@ -429,18 +429,34 @@ if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].v
     end
 end
 
-
-for _ ,entity_type in pairs({'assembling-machine', 'mining-drill', 'furnace'}) do
-	for _, entity in pairs(data.raw[entity_type]) do
-		local mk_loc = {string.find(entity.name, 'mk02')}
-		if mk_loc[2] == string.len(entity.name) then
-			local base_name 
-			if string.sub(entity.name, mk_loc[1]-1, mk_loc[1]-1) == '-' then
-				base_name = string.sub(entity.name, 1, mk_loc[1]-2)
-			else
-				base_name = string.sub(entity.name, 1, mk_loc[1]-1)
-			end
-			FUN.next_upgrade(entity_type, base_name)
-		end
-	end
-end
+-- Set next_upgrade 
+FUN.next_upgrade('assembling-machine', 'advanced-foundry')
+FUN.next_upgrade('assembling-machine', 'automated-factory')
+FUN.next_upgrade('assembling-machine', 'ball-mill')
+FUN.next_upgrade('mining-drill', 'borax-mine')
+FUN.next_upgrade('assembling-machine', 'botanical-nursery')
+FUN.next_upgrade('assembling-machine', 'carbon-filter')
+FUN.next_upgrade('assembling-machine', 'classifier')
+FUN.next_upgrade('assembling-machine', 'desulfurizator-unit')
+FUN.next_upgrade('assembling-machine', 'distilator')
+FUN.next_upgrade('assembling-machine', 'evaporator')
+FUN.next_upgrade('assembling-machine', 'fawogae-plantation')
+FUN.next_upgrade('assembling-machine', 'fluid-separator')
+FUN.next_upgrade('assembling-machine', 'fts-reactor')
+FUN.next_upgrade('assembling-machine', 'gasifier')
+FUN.next_upgrade('assembling-machine', 'glassworks')
+FUN.next_upgrade('assembling-machine', 'ground-borer')
+FUN.next_upgrade('assembling-machine', 'hpf')
+FUN.next_upgrade('assembling-machine', 'jaw-crusher')
+FUN.next_upgrade('assembling-machine', 'methanol-reactor')
+FUN.next_upgrade('assembling-machine', 'olefin-plant')
+FUN.next_upgrade('assembling-machine', 'power-house')
+FUN.next_upgrade('assembling-machine', 'quenching-tower')
+FUN.next_upgrade('assembling-machine', 'ralesia-plantation')
+FUN.next_upgrade('assembling-machine', 'rectisol')
+FUN.next_upgrade('assembling-machine', 'sand-extractor')
+FUN.next_upgrade('assembling-machine', 'soil-extractor')
+FUN.next_upgrade('assembling-machine', 'solid-separator')
+FUN.next_upgrade('assembling-machine', 'tar-processing-unit')
+FUN.next_upgrade('assembling-machine', 'washer')
+FUN.next_upgrade('assembling-machine', 'wpu')
