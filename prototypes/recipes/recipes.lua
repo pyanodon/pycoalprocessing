@@ -58,7 +58,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-washer",
     order = "c"
-}
+}:add_unlock('fine-electronics')
 
 RECIPE {
     type = "recipe",
@@ -79,7 +79,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-washer",
     order = "a"
-}
+}:add_unlock('filtration')
 
 RECIPE {
     type = "recipe",

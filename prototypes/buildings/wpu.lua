@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "wpu",
     energy_required = 0.5,
-    enabled = true,
+    enabled = false,
     ingredients = {
         {"wood", 20},
         {"iron-plate", 20},
@@ -13,7 +13,7 @@ RECIPE {
     results = {
         {"wpu", 1}
     }
-}
+}:add_unlock("wood-processing")
 
 ITEM {
     type = "item",

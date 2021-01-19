@@ -17,20 +17,6 @@ require("scripts/tailings-pond")
 --Add in our remote interfaces
 remote.add_interface(script.mod_name, require('__stdlib__/stdlib/scripts/interface'))
 
---Activate resource spawn control script
---require("scripts/resource-generation")
-
---[[
-local function on_player_created(event)
-  local player = game.players[event.player_index]
-  player.insert({name="burner-mining-drill", count=9})
-  player.insert({name="iron-plate", count=492})
-  player.insert({name="copper-plate", count=500})
-  player.insert({name="wood", count=499})
-end
-Event.register(defines.events.on_player_created, on_player_created)
-]]--
-
 local start_inventory = {}
 
 function start_inventory.on_init()

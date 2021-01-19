@@ -62,7 +62,8 @@ ENTITY {
             filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/window-background.png',
             priority = 'low',
             width = 171,
-            height = 185
+            height = 185,
+            draw_as_shadow = true
         },
         flow_sprite = DATA.Sprites.empty_sprite(),
         gas_flow = DATA.Sprites.empty_animation()

@@ -1,0 +1,6 @@
+
+chromium plates - unlocked in coal processing 1. isnt used till coal processing 2, fuel production, excavation 1. fuel production and excavation 1 are locked behind coal processing 2.
+
+logistic science pack - all needed compontents and pack recipe are in coal processing 1. can be moved to logistic science pack.
+
+test

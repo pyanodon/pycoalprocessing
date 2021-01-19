@@ -1,7 +1,7 @@
 {
   "name": "pycoalprocessing",
-  "version": "1.8.6",
-  "factorio_version": "1.0",
+  "version": "1.9.2",
+  "factorio_version": "1.1",
   "title": "Pyanodons Coal Processing",
   "author": "Pyanodon, Nexela, Kingarthur",
   "contact": "",
@@ -15,12 +15,6 @@
   ],
   "package": {
     "ignore": [],
-    "scripts": {
-      "datestamp": "../pycoalprocessing/.github/publish/datestamp.sh",
-      "prepackage": "../pycoalprocessing/.github/publish/prepackage.sh",
-      "prepublish": "../pycoalprocessing/.github/publish/prepublish.sh",
-      "publish": "../pycoalprocessing/.github/publish/publish.sh",
-      "version": "../pycoalprocessing/.github/publish/version.sh"
-    }
+    "scripts": {}
   }
 }

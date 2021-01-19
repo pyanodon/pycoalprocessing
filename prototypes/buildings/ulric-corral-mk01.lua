@@ -8,12 +8,12 @@ RECIPE {
         {"stone-brick", 10},
         {"iron-gear-wheel", 5}, --bob steel-bearing
         {"iron-plate", 10},
-        {"electronic-circuit", 10} --bob basic-circuit-board
+        {"electronic-circuit", 10}
     },
     results = {
         {"ulric-corral-mk01", 1}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("ulric")
 
 ITEM {
     type = "item",

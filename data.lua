@@ -32,6 +32,10 @@ require('prototypes/technologies/crusher')
 require('prototypes/technologies/separation')
 require('prototypes/technologies/fuel-production')
 require('prototypes/technologies/fine-electronics')
+
+require('prototypes/technologies/ralesia')
+require('prototypes/technologies/ulric')
+require('prototypes/technologies/wood-processing')
 -- ))
 
 -- (( RESOURCEs ))--

@@ -21,7 +21,7 @@ RECIPE {
     ingredients = {
         {"fawogae-plantation-mk01", 1},
         {"plastic-bar", 20},
-        {"advanced-circuit", 15}, --bob basic-circuit-board
+        {"advanced-circuit", 15},
         {"treated-wood", 30},
         {"steel-plate", 10},
     },

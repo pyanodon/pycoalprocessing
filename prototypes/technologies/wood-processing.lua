@@ -1,11 +1,11 @@
 TECHNOLOGY {
     type = "technology",
-    name = "energy-1",
-    icon = "__pycoalprocessinggraphics__/graphics/technology/energy-1.png",
+    name = "wood-processing",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/wood-processing.png",
     icon_size = 128,
     order = "c-a",
     upgrade = true,
-    prerequisites = {"coal-processing-1", "steel-processing"},
+    prerequisites = {"coal-processing-1"},
     effects = {},
     unit = {
         count = 30,

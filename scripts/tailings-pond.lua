@@ -28,7 +28,7 @@ end
 local function create_sprite(entity)
     return rendering.draw_sprite {
         sprite = 'tailings-pond-sprite-1',
-        render_layer = 'object',
+        render_layer = 'lower-object-above-shadow',
         target = entity,
         surface = entity.surface
     }
