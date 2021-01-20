@@ -60,7 +60,7 @@ ENTITY {
     module_specification = {
         module_slots = 2
     },
-    allowed_effects = {"consumption","speed"},
+    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"fawogae"},
     crafting_speed = 0.6,
     energy_source = {
