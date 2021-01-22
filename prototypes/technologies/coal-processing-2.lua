@@ -5,7 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     upgrade = true,
-    prerequisites = {"separation", "desulfurization"},
+    prerequisites = {"logistic-science-pack", "separation"},
     effects = {},
     unit = {
         count = 50,

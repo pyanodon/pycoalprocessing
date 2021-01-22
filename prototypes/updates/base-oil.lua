@@ -3,7 +3,7 @@
 local remove_old_oil_stuff =
 {
 --['pumpjack'] = true,
-['oil-refinery'] = true,
+--['oil-refinery'] = true,
 ['basic-oil-processing'] = true,
 ['advanced-oil-processing'] = true,
 ['heavy-oil-cracking'] = true,
@@ -57,3 +57,15 @@ end
 end
 
 data.raw.technology['coal-liquefaction'].effects = recipes_to_keep
+
+TECHNOLOGY('lubricant'):remove_pack('chemical-science-pack')
+TECHNOLOGY('advanced-oil-processing'):remove_pack('chemical-science-pack')
+TECHNOLOGY('sulfur-processing'):add_prereq('desulfurization')
+
+RECIPE('solid-fuel-from-heavy-oil'):remove_unlock('advanced-oil-processing'):add_unlock('oil-processing')
+
+TECHNOLOGY('plastics'):remove_prereq('oil-processing'):add_prereq('coal-processing-2')
+
+RECIPE('oil-refinery'):remove_unlock('oil-processing'):add_unlock('plastics')
+
+RECIPE('plastic-bar'):remove_unlock('plastics'):add_unlock('oil-processing')

@@ -345,7 +345,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "aromatics-to-plastic",
-    category = "methanol",
+    category = "oil-processing",
     enabled = false,
     energy_required = 1.5,
     ingredients = {
@@ -360,7 +360,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "x"
-}:add_unlock("methanol-processing-1")
+}:add_unlock("plastics")
 
 RECIPE {
     type = "recipe",

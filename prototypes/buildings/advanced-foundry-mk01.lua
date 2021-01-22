@@ -13,7 +13,7 @@ RECIPE {
     results = {
         {"advanced-foundry-mk01", 1}
     }
-}:add_unlock("fine-electronics")
+}:add_unlock("chemical-science-pack")
 
 ITEM {
     type = "item",
