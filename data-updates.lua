@@ -51,20 +51,20 @@ TECHNOLOGY('toolbelt'):remove_prereq('logistic-science-pack'):add_prereq('coal-p
 TECHNOLOGY('advanced-material-processing'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 
 RECIPE("chemical-plant"):remove_unlock('oil-processing'):add_unlock("desulfurization")
-RECIPE("chemical-science-pack"):remove_unlock('chemical-science-pack')
-TECHNOLOGY('chemical-science-pack'):remove_prereq('advanced-electronics')
-TECHNOLOGY('electric-energy-distribution-2'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('advanced-electronics-2'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('auto-character-logistic-trash-slots'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('braking-force-1'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('advanced-material-processing-2'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('personal-roboport-equipment'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('worker-robots-speed-1'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('worker-robots-storage-1'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('advanced-oil-processing'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('low-density-structure'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('military-3'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('uranium-processing'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+--RECIPE("chemical-science-pack"):remove_unlock('chemical-science-pack')
+TECHNOLOGY('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('electric-energy-distribution-2')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('advanced-electronics-2')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('auto-character-logistic-trash-slots')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('braking-force-1')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('advanced-material-processing-2')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('personal-roboport-equipment')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('worker-robots-speed-1')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('worker-robots-storage-1')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('advanced-oil-processing')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('low-density-structure')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('military-3')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('uranium-processing')--:remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
 TECHNOLOGY('logistic-robotics'):remove_prereq('advanced-electronics')
 TECHNOLOGY('lubricant'):remove_pack('chemical-science-pack')
 TECHNOLOGY('advanced-oil-processing'):remove_pack('chemical-science-pack')
@@ -83,6 +83,9 @@ RECIPE("fawogae-plantation-mk03"):replace_ingredient("pipe", "niobium-pipe")
 RECIPE("sand-extractor-mk03"):replace_ingredient("pipe", "niobium-pipe")
 
 require("prototypes/recipes/advanced-foundry-recipes")
+
+--remove base game oil processing stuff
+require("prototypes/updates/base-oil")
 
 --move barrels below everything else in intermediate tab
 data.raw["item-subgroup"]["fill-barrel"].order = "y"
@@ -410,7 +413,6 @@ local recipes_list =
 FUN.productivity(recipes_list)
 
 --updating requestor paste setting
-
 
 --Entities
 

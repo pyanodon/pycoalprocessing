@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/desulfurization.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"sulfur-processing", "fluid-handling", "coal-processing-1"},
+    prerequisites = {"oil-processing", "coal-processing-1"},
     effects = {},
     unit = {
         count = 10,
