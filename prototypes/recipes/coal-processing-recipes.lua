@@ -477,7 +477,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "treated-wood",
-    category = "crafting-with-fluid",
+    category = "tar",
     enabled = false,
     energy_required = 2,
     ingredients = {
