@@ -340,7 +340,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "w"
-}:add_unlock("methanol-processing-1")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -648,4 +648,4 @@ RECIPE {
     },
     main_product = "nexelit-ore",
     subgroup = "py-mill",
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")

@@ -13,7 +13,7 @@ RECIPE {
     results = {
         {"fluid-separator", 1}
     }
-}:add_unlock("separation")
+}:add_unlock("placeholder")
 
 ITEM {
     type = "item",

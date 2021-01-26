@@ -5,7 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     upgrade = true,
-    prerequisites = {"logistic-science-pack", "separation"},
+    prerequisites = {"logistic-science-pack", "methanol-processing-1"},
     effects = {},
     unit = {
         count = 50,

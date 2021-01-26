@@ -16,7 +16,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-class",
     order = "b"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",

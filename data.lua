@@ -8,6 +8,9 @@ require('prototypes/item-groups')
 require('prototypes/recipe-categories')
 -- ))
 
+--placeholder for all the unorganized shit.
+require('prototypes/technologies/placeholder')
+
 -- (( Technology ))--
 require('prototypes/technologies/coal-processing-1')
 require('prototypes/technologies/coal-processing-2')
@@ -36,6 +39,9 @@ require('prototypes/technologies/fine-electronics')
 require('prototypes/technologies/ralesia')
 require('prototypes/technologies/ulric')
 require('prototypes/technologies/wood-processing')
+
+require('prototypes/technologies/niobium')
+
 -- ))
 
 -- (( RESOURCEs ))--

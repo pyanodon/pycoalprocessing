@@ -42,7 +42,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-fluid-handling",
     order = "h1"
-}:add_unlock("fuel-production")
+}:add_unlock("coal-processing-2")
 
 RECIPE {
     type = "recipe",
@@ -64,7 +64,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-fluid-handling",
     order = "h2"
-}:add_unlock("fuel-production")
+}:add_unlock("coal-processing-2")
 
 RECIPE {
     type = "recipe",
@@ -156,7 +156,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h9"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -244,7 +244,7 @@ RECIPE {
     main_product = "coal-briquette",
     icon = "__pycoalprocessinggraphics__/graphics/icons/coal-briquette.png",
     icon_size = 32
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -267,4 +267,4 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-fluid-handling",
     order = "h12"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")

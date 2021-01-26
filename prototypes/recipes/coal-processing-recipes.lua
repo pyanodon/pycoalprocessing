@@ -508,7 +508,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 1, probability = 0.3}
     },
     main_product = "syngas"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -524,7 +524,7 @@ RECIPE {
     results = {
         {"nichrome", 1}
     }
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -541,7 +541,7 @@ RECIPE {
     results = {
         {type = "item", name = "active-carbon", amount = 5}
     }
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -562,7 +562,7 @@ RECIPE {
     icon = "__pycoalprocessinggraphics__/graphics/icons/zinc-chloride.png",
     icon_size = 32,
     order = "d [syn-gas]"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -580,7 +580,7 @@ RECIPE {
     main_product = "tailings-dust",
     icon = "__pycoalprocessinggraphics__/graphics/icons/tailings_dust.png",
     icon_size = 32
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -596,8 +596,9 @@ RECIPE {
     results = {
         {type = "item", name = "drill-head", amount = 3}
     }
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
+--[[ UNUSED??
 RECIPE {
     type = "recipe",
     name = "niobium-ore",
@@ -611,7 +612,8 @@ RECIPE {
     results = {
         {type = "item", name = "niobium-ore", amount = 12}
     }
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
+]]--
 
 RECIPE {
     type = "recipe",
@@ -627,7 +629,7 @@ RECIPE {
         {type = "item", name = "gravel", amount = 2}
     },
     main_product = "niobium-dust"
-}:add_unlock("coal-processing-2")
+}:add_unlock("niobium")
 
 RECIPE {
     type = "recipe",
@@ -643,7 +645,7 @@ RECIPE {
         {type = "item", name = "sand", amount = 2}
     },
     main_product = "niobium-concentrate"
-}:add_unlock("coal-processing-2")
+}:add_unlock("niobium")
 
 RECIPE {
     type = "recipe",
@@ -659,7 +661,7 @@ RECIPE {
         {type = "item", name = "mukmoux-fat", amount = 15}
     },
     main_product = "mukmoux-fat"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -675,7 +677,7 @@ RECIPE {
         {type = "item", name = "niobium-oxide", amount = 10}
     },
     main_product = "niobium-oxide"
-}:add_unlock("coal-processing-2")
+}:add_unlock("niobium")
 
 RECIPE {
     type = "recipe",
@@ -691,7 +693,7 @@ RECIPE {
         {type = "item", name = "niobium-plate", amount = 4}
     },
     main_product = "niobium-plate"
-}:add_unlock("coal-processing-2")
+}:add_unlock("niobium")
 
 RECIPE {
     type = "recipe",
@@ -710,7 +712,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c9"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 --[[
 RECIPE {
@@ -731,7 +733,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "u"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 ]]--
 
 --[[
@@ -749,7 +751,7 @@ RECIPE {
         {type = "fluid", name = "flue-gas", amount = 200}
     },
     main_product = "rare-earth-dust"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 ]]--
 
 RECIPE {
@@ -769,7 +771,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "v"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -788,7 +790,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c9"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -808,7 +810,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c9"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -826,7 +828,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a8"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -849,7 +851,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -871,7 +873,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -891,7 +893,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-class",
     order = "f"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -912,7 +914,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "c"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -932,7 +934,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "r"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -953,7 +955,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -975,7 +977,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "d"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -997,7 +999,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "a"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -1020,7 +1022,7 @@ RECIPE {
         {type = "item", name = "coal", amount = 1}
     },
     energy_required = 0.5
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -1039,7 +1041,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "r"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -1059,7 +1061,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items",
     order = "s"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -1082,7 +1084,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "i"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -1097,7 +1099,7 @@ RECIPE {
     results = {
         {type = "item", name = "calcium-carbide", amount = 10}
     }
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -1119,7 +1121,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "k"
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 --)) Coal Processing 2 ((--
 
 --(( Coal Processing 3 ))--
