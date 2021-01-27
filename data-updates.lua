@@ -40,7 +40,7 @@ TECHNOLOGY('circuit-network'):remove_prereq('logistic-science-pack'):remove_pack
 
 --TECHNOLOGY('solar-energy'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 
---TECHNOLOGY('electric-energy-distribution-1'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+TECHNOLOGY('electric-energy-distribution-1'):remove_prereq('logistic-science-pack'):remove_prereq("steel-processing"):add_prereq('niobium')
 
 TECHNOLOGY('landfill'):remove_prereq('logistic-science-pack'):add_prereq('automation'):remove_pack('logistic-science-pack')
 
@@ -50,12 +50,15 @@ TECHNOLOGY('landfill'):remove_prereq('logistic-science-pack'):add_prereq('automa
 
 --TECHNOLOGY('advanced-material-processing'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 
-RECIPE("chemical-plant"):remove_unlock('oil-processing'):add_unlock("desulfurization")
+RECIPE("chemical-plant"):remove_unlock('oil-processing'):add_unlock("coal-processing-2"):add_ingredient({type = "item", name = "methanol-reactor", amount = 1})
 
 TECHNOLOGY("advanced-electronics"):add_prereq('electronics')
 
 TECHNOLOGY('chemical-science-pack'):add_prereq('fine-electronics'):remove_prereq('sulfur-processing')
 
+TECHNOLOGY("fluid-handling"):remove_prereq("automation-2"):remove_prereq("engine"):add_prereq("steel-processing"):remove_pack('logistic-science-pack')
+
+RECIPE("pump"):remove_unlock("fluid-handling"):add_unlock("engine")
 
 TECHNOLOGY('logistic-robotics'):remove_prereq('advanced-electronics')
 
@@ -76,6 +79,12 @@ require("prototypes/recipes/advanced-foundry-recipes")
 
 --remove base game oil processing stuff
 require("prototypes/updates/base-oil")
+
+--moving sulfuric acid
+RECIPE("sulfuric-acid"):remove_unlock("sulfur-processing"):add_unlock("placeholder")
+
+--moving solid fuels
+RECIPE("solid-fuel-from-petroleum-gas"):remove_unlock("oil-processing"):add_unlock("coal-processing-2")
 
 --move barrels below everything else in intermediate tab
 data.raw["item-subgroup"]["fill-barrel"].order = "y"

@@ -39,8 +39,10 @@ require('prototypes/technologies/fine-electronics')
 require('prototypes/technologies/ralesia')
 require('prototypes/technologies/ulric')
 require('prototypes/technologies/wood-processing')
+require('prototypes/technologies/wood-processing-2')
 
 require('prototypes/technologies/niobium')
+require('prototypes/technologies/chromium')
 
 -- ))
 

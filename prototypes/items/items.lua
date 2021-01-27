@@ -185,7 +185,9 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "organics",
-    stack_size = 300
+    stack_size = 300,
+    fuel_value = "2MJ",
+    fuel_category = "chemical",
 }
 
 ITEM {

@@ -16,7 +16,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-class",
     order = "b"
-}:add_unlock("placeholder")
+}:add_unlock("chromium")
 
 RECIPE {
     type = "recipe",
@@ -77,7 +77,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "f"
-}:add_unlock("separation")
+}:add_unlock("wood-processing-2")
 
 RECIPE {
     type = "recipe",
@@ -114,7 +114,7 @@ RECIPE {
         {type = "item", name = "coal-dust", amount = 8},
         {type = "item", name = "rich-dust", amount = 2}
     },
-    main_product = "rich-dust",
+    main_product = "coal-dust",
     icon = "__pycoalprocessinggraphics__/graphics/icons/tailings_separation.png",
     icon_size = 32,
     subgroup = "py-items-class",

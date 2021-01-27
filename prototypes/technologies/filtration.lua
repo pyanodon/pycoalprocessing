@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/filtration.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-2"},
+    prerequisites = {"methanol-processing-1", "wood-processing-2","automation-2"},
     effects = {},
     unit = {
         count = 40,

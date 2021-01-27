@@ -1,10 +1,10 @@
 TECHNOLOGY {
     type = "technology",
-    name = "niobium",
-    icon = "__pycoalprocessinggraphics__/graphics/technology/niobium.png",
+    name = "chromium",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/chromium.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"crusher", "separation", "filtration", "chromium","coal-processing-2"},
+    prerequisites = {"separation","logistic-science-pack"},
     effects = {},
     unit = {
         count = 200,

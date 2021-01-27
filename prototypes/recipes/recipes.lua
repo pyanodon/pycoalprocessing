@@ -238,6 +238,7 @@ RECIPE {
     order = "f"
 }:add_unlock("filtration")
 
+-- Kinda useless in pycoal
 RECIPE {
     type = "recipe",
     name = "filtration-dirty-water",
@@ -257,7 +258,8 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "g"
-}:add_unlock("filtration")
+}--:add_unlock("placeholder")
+
 
 RECIPE {
     type = "recipe",
@@ -297,7 +299,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h"
-}:add_unlock("filtration")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -382,7 +384,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "y"
-}:add_unlock("fine-electronics")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -417,7 +419,7 @@ RECIPE {
         {type = "fluid", name = "carbon-dioxide", amount = 100}
     },
     main_product = "lime"
-}:add_unlock("separation")
+}:add_unlock("filtration")
 
 RECIPE {
     type = "recipe",
@@ -631,7 +633,7 @@ RECIPE {
     },
     main_product = "filtration-media",
     order = 'a'
-}:add_unlock("filtration")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -648,4 +650,4 @@ RECIPE {
     },
     main_product = "nexelit-ore",
     subgroup = "py-mill",
-}:add_unlock("placeholder")
+}:add_unlock("chemical-science-pack")

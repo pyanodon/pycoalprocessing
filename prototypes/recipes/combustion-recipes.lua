@@ -42,7 +42,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "a"
-}:add_unlock("energy-2")
+}:add_unlock("placeholder")
 
 --SYNGAS to CM1
 RECIPE {
@@ -111,7 +111,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "d"
-}:add_unlock("energy-2")
+}:add_unlock("placeholder")
 
 --LIGHT OIL to CM1
 RECIPE {
@@ -226,7 +226,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "g"
-}:add_unlock("energy-2")
+}:add_unlock("placeholder")
 
 --OLEFIN to CM1
 RECIPE {

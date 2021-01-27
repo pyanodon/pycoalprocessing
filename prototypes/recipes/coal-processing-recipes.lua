@@ -348,10 +348,10 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "coal", amount = 5}
+        {type = "item", name = "coal", amount = 10}
     },
     results = {
-        {type = "item", name = "coke", amount = 5}
+        {type = "item", name = "coke", amount = 4}
     },
     main_product = "coke",
     icon = "__pycoalprocessinggraphics__/graphics/icons/coke.png",
@@ -373,7 +373,7 @@ RECIPE {
     results = {
         {type = "item", name = "tailings-dust", amount = 10},
         {type = "item", name = "coarse", amount = 10},
-        {type = "fluid", name = "tar", amount = 500},
+        {type = "fluid", name = "tar", amount = 100},
            {type = "fluid", name = "dirty-water", amount = 100}
     },
     main_product = "tar",
@@ -472,7 +472,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items-hpf",
     order = "i"
-}:add_unlock("sulfur-processing")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -524,7 +524,7 @@ RECIPE {
     results = {
         {"nichrome", 1}
     }
-}:add_unlock("placeholder")
+}:add_unlock("chromium")
 
 RECIPE {
     type = "recipe",
@@ -580,7 +580,7 @@ RECIPE {
     main_product = "tailings-dust",
     icon = "__pycoalprocessinggraphics__/graphics/icons/tailings_dust.png",
     icon_size = 32
-}:add_unlock("placeholder")
+}:add_unlock("separation")
 
 RECIPE {
     type = "recipe",
@@ -596,7 +596,7 @@ RECIPE {
     results = {
         {type = "item", name = "drill-head", amount = 3}
     }
-}:add_unlock("placeholder")
+}:add_unlock("niobium")
 
 --[[ UNUSED??
 RECIPE {
@@ -712,7 +712,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c9"
-}:add_unlock("placeholder")
+}:add_unlock("wood-processing-2")
 
 --[[
 RECIPE {
@@ -771,7 +771,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "v"
-}:add_unlock("placeholder")
+}:add_unlock("wood-processing")
 
 RECIPE {
     type = "recipe",
@@ -790,7 +790,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c9"
-}:add_unlock("placeholder")
+}:add_unlock("wood-processing-2")
 
 RECIPE {
     type = "recipe",
@@ -810,7 +810,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c9"
-}:add_unlock("placeholder")
+}:add_unlock("wood-processing-2")
 
 RECIPE {
     type = "recipe",
@@ -828,7 +828,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a8"
-}:add_unlock("placeholder")
+}:add_unlock("wood-processing-2")
 
 RECIPE {
     type = "recipe",
@@ -893,7 +893,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-class",
     order = "f"
-}:add_unlock("placeholder")
+}:add_unlock("chromium")
 
 RECIPE {
     type = "recipe",
@@ -999,7 +999,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "a"
-}:add_unlock("placeholder")
+}:add_unlock("chromium")
 
 RECIPE {
     type = "recipe",

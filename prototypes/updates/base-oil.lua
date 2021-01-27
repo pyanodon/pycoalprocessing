@@ -60,7 +60,7 @@ data.raw.technology['coal-liquefaction'].effects = recipes_to_keep
 
 TECHNOLOGY('lubricant'):remove_pack('chemical-science-pack')
 TECHNOLOGY('advanced-oil-processing'):remove_pack('chemical-science-pack')
-TECHNOLOGY('sulfur-processing'):add_prereq('desulfurization')
+TECHNOLOGY('sulfur-processing'):add_prereq('coal-processing-2'):remove_prereq("oil-processing")
 
 RECIPE('solid-fuel-from-heavy-oil'):remove_unlock('advanced-oil-processing'):add_unlock('oil-processing')
 
