@@ -229,47 +229,52 @@ local function on_click(event)
             end
 
             if script.active_mods['pyindustry'] then
+                local gases = {}
+                local liquids = {}
+                for fluid_name, fluid in pairs(game.fluid_prototypes) do
+                    if not fluid.hidden then
+                        if (fluid.default_temperature or 15) < (fluid.gas_temperature or math.huge) then
+                            liquids[fluid_name] = fluid
+                        else
+                            gases[fluid_name] = fluid
+                        end
+                    end
+                end
+            
                 -- Gas vent
                 local vent = wiki_gui.wiki_frame.wiki_pane.scroll_gasvent.add(
-                    {type = 'frame', name = 'gasvent_page', caption = 'Gasses that get vented', direction = 'vertical'})
-                for g, gas in pairs(global.wiki.fluid_names) do
-                    if game.fluid_prototypes[gas].gas_temperature and
-                        (game.fluid_prototypes[gas].default_temperature or 15) >=
-                        game.fluid_prototypes[gas].gas_temperature then
-                        local gas_frame = vent.add({
-                            type = 'frame',
-                            name = 'vent_frame' .. gas,
-                            caption = game.fluid_prototypes[gas].localised_name,
-                            direction = 'horizontal'
-                        })
-                        gas_frame.add({
-                            type = 'sprite',
-                            name = gas,
-                            sprite = 'fluid/' .. gas,
-                            caption = game.fluid_prototypes[gas].localised_name
-                        })
-                    end
+                    {type = 'frame', name = 'gasvent_page', caption = 'Gases voided in Gas Vent', direction = 'vertical'})
+                for gas_name, gas in pairs(gases) do
+                    local gas_frame = vent.add({
+                        type = 'frame',
+                        name = 'vent_frame' .. gas_name,
+                        caption = gas.localised_name,
+                        direction = 'horizontal'
+                    })
+                    gas_frame.add({
+                        type = 'sprite',
+                        name = gas_name,
+                        sprite = 'fluid/' .. gas_name,
+                        caption = gas.localised_name
+                    })
                 end
 
                 -- Sink hole
                 local hole = wiki_gui.wiki_frame.wiki_pane.scroll_sinkhole.add(
-                    {type = 'frame', name = 'sinkhole_page', caption = 'Fluids to sink', direction = 'vertical'})
-                for f, fluid in pairs(global.wiki.fluid_names) do
-                    if (game.fluid_prototypes[fluid].default_temperature or 15) <
-                        (game.fluid_prototypes[fluid].gas_temperature or 999999999999) then
-                        local hole_frame = hole.add({
-                            type = 'frame',
-                            name = 'hole_frame' .. fluid,
-                            caption = game.fluid_prototypes[fluid].localised_name,
-                            direction = 'horizontal'
+                    {type = 'frame', name = 'sinkhole_page', caption = 'Fluids voided in Sinkhole', direction = 'vertical'})
+                for liquid_name, liquid in pairs(liquids) do
+                    local hole_frame = hole.add({
+                        type = 'frame',
+                        name = 'hole_frame' .. liquid_name,
+                        caption = liquid.localised_name,
+                        direction = 'horizontal'
                         })
-                        hole_frame.add({
-                            type = 'sprite',
-                            name = fluid,
-                            sprite = 'fluid/' .. fluid,
-                            caption = game.fluid_prototypes[fluid].localised_name
-                        })
-                    end
+                    hole_frame.add({
+                        type = 'sprite',
+                        name = liquid_name,
+                        sprite = 'fluid/' .. liquid_name,
+                        caption = liquid.localised_name
+                    })
                 end
             end
 
