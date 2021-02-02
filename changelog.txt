@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.9.3
-Date: ????
+Date: 2021-02-02
   Changes:
       - Moved some fluids to new places in the menu to eliminate the fluid tab.
       - Updated russian locale
