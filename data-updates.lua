@@ -80,9 +80,6 @@ require("prototypes/recipes/advanced-foundry-recipes")
 --remove base game oil processing stuff
 require("prototypes/updates/base-oil")
 
---moving sulfuric acid
-RECIPE("sulfuric-acid"):remove_unlock("sulfur-processing"):add_unlock("placeholder")
-
 --moving solid fuels
 RECIPE("solid-fuel-from-petroleum-gas"):remove_unlock("oil-processing"):add_unlock("coal-processing-2")
 

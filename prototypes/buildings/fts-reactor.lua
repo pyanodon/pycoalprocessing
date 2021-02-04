@@ -6,15 +6,15 @@ RECIPE {
     ingredients = {
         {"concrete", 20},
         {"steel-plate", 20},
-        {"stone-brick", 10}, --bob glass
-        {"iron-gear-wheel", 5}, --bob steel-bearing
-        {"iron-plate", 10}, --bob invar-alloy
-        {"electronic-circuit", 20} --bob basic-electronic-circuit-board
+        {"stone-brick", 10},
+        {"iron-gear-wheel", 5},
+        {"iron-plate", 10},
+        {"electronic-circuit", 20}
     },
     results = {
         {"fts-reactor", 1}
     }
-}:add_unlock("desulfurization")
+}:add_unlock("coal-processing-2")
 
 ITEM {
     type = "item",

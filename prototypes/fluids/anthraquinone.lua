@@ -6,13 +6,13 @@ RECIPE {
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "aromatics", amount = 100},
-        {type = "fluid", name = "steam", amount = 600}, --update-bob liquid-air
+        {type = "fluid", name = "steam", amount = 600},
         {type = "item", name = "chromium", amount = 2}
     },
     results = {
         {type = "fluid", name = "anthraquinone", amount = 50}
     }
-}:add_unlock("fuel-production")
+}:add_unlock("sulfur-processing")
 
 FLUID {
     type = "fluid",

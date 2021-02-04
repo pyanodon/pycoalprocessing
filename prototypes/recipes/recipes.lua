@@ -651,3 +651,20 @@ RECIPE {
     main_product = "nexelit-ore",
     subgroup = "py-mill",
 }:add_unlock("chemical-science-pack")
+
+RECIPE {
+    type = "recipe",
+    name = "sulfuric-acid",
+    category = "chemistry",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "hydrogen-peroxide", amount = 50},
+        {type = "item", name = "sulfur", amount = 5},
+    },
+    results = {
+        {type = "fluid", name = "sulfuric-acid", amount = 50}
+    },
+    main_product = "sulfuric-acid",
+    --subgroup = "py-mill",
+}--:add_unlock("sulfur-processing") --already added by base
