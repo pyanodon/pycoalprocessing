@@ -126,7 +126,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "carbon-dioxide", amount = 100},
         {type = "fluid", name = "steam", amount = 2000, temperature = 100},
-        {type = "fluid", name = "combustion-mixture1", amount = 300, temperature = 700}
+        {type = "fluid", name = "combustion-mixture1", amount = 300, temperature = 2000}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-mixture1.png",
     icon_size = 32,

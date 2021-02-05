@@ -11,7 +11,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 500},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 575},
         {type = "fluid", name = "steam", amount = 100, temperature = 120}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-coalgas.png",
@@ -34,7 +34,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 550},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 500},
         {type = "fluid", name = "steam", amount = 100, temperature = 120}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-coal-slurry.png",
@@ -57,7 +57,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 250, temperature = 600},
+        {type = "fluid", name = "combustion-mixture1", amount = 250, temperature = 650},
         {type = "fluid", name = "steam", amount = 100, temperature = 120}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-syngas.png",
@@ -80,7 +80,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 600},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 725},
         {type = "fluid", name = "steam", amount = 100, temperature = 120}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-diborane.png",
@@ -103,7 +103,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 500},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 800},
         {type = "fluid", name = "steam", amount = 100, temperature = 120}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-heavy-oil.png",
@@ -126,7 +126,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 550},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 900},
         {type = "fluid", name = "steam", amount = 100, temperature = 120}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-light-oil.png",
@@ -149,7 +149,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 600},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1000},
         {type = "fluid", name = "steam", amount = 100, temperature = 120}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-petgas.png",
@@ -172,7 +172,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 650},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1200},
         {type = "fluid", name = "steam", amount = 100, temperature = 120}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-methanol.png",
@@ -195,7 +195,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 700},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1400},
         {type = "fluid", name = "steam", amount = 100, temperature = 120}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-refsyngas.png",
@@ -218,7 +218,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 670},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1600},
         {type = "fluid", name = "steam", amount = 100, temperature = 120}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-acetylene.png",
@@ -241,7 +241,7 @@ RECIPE {
         {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 750},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1800},
         {type = "fluid", name = "steam", amount = 1000, temperature = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-olefin.png",
@@ -264,7 +264,7 @@ RECIPE {
         {type = "item", name = "fuelrod-mk01", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 300, temperature = 800},
+        {type = "fluid", name = "combustion-mixture1", amount = 300, temperature = 2400},
         {type = "fluid", name = "steam", amount = 1000, temperature = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-diesel.png",
@@ -288,7 +288,7 @@ RECIPE {
         {type = "item", name = "fuelrod-mk01", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 850},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 2600},
         {type = "fluid", name = "steam", amount = 1000, temperature = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-gasoline.png",
@@ -312,7 +312,7 @@ RECIPE {
         {type = "item", name = "coal-briquette", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 2500},
+        {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 2800},
         {type = "fluid", name = "steam", amount = 1500, temperature = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-super-critical.png",
