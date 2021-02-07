@@ -1,4 +1,7 @@
 
+if data.raw.resource['crude-oil'] then
+    data.raw.resource['crude-oil'].infinite = false
+end
 
 local remove_old_oil_stuff =
 {
@@ -12,8 +15,6 @@ local remove_old_oil_stuff =
 }
 
 local recipes_to_keep = {}
-
---log(serpent.block(remove_old_oil_stuff))
 
 for _, recipe in pairs(data.raw.technology['oil-processing'].effects) do
 --log('hit')
