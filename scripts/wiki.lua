@@ -105,6 +105,53 @@ local function topic(tab, button)
     end
 end
 
+local function set_fuel_table_style_and_header(fuel_table)
+    -- table formatting
+    fuel_table.style.column_alignments[1] = "center"
+    fuel_table.style.column_alignments[3] = "center"
+    fuel_table.style.left_cell_padding = 5
+    fuel_table.style.right_cell_padding = 5
+    fuel_table.style.horizontally_stretchable = true
+
+    -- header section
+    fuel_table.add{type = 'label', caption = 'Sort by'}
+    fuel_table.add{type = 'textfield', text = 'search'}
+    fuel_table.add{type = 'sprite-button', sprite = 'fluid/combustion-mixture1'}
+end
+
+local function set_vent_table_style_and_header(vent_table)
+    -- table formatting
+    vent_table.style.column_alignments[1] = "center"
+    vent_table.style.left_cell_padding = 5
+    vent_table.style.right_cell_padding = 5
+    vent_table.style.horizontally_stretchable = true
+
+    -- header section
+    vent_table.add{type = 'label', caption = 'Sort by'}
+    vent_table.add{type = 'textfield', text = 'search'}
+end
+
+local function get_formatted_fuel_value(fuel_value)
+    local formatted_fuel_value = fuel_value .. 'J'
+    if fuel_value >= 1000 and fuel_value < 500000 then
+        formatted_fuel_value = fuel_value / 1000 .. 'kJ'
+    elseif fuel_value >= 500000 then
+        formatted_fuel_value = fuel_value / 1000000 .. 'MJ'
+    end
+    return formatted_fuel_value
+end
+
+local function add_table_line_fuel(fuel_table, item, item_type, fuel_value)
+    fuel_table.add{type = 'sprite', sprite = item_type .. '/' .. item}
+    fuel_table.add{type = "label", caption = game[item_type .. '_prototypes'][item].localised_name}
+    fuel_table.add{type = "label", caption = get_formatted_fuel_value(fuel_value)}
+end
+
+local function add_table_line_disposables(disposable_table, item)
+    disposable_table.add{type = 'sprite', sprite = 'fluid/' .. item}
+    disposable_table.add{type = "label", caption = game['fluid_prototypes'][item].localised_name}
+end
+
 local function on_click(event)
 
     local player = game.players[event.player_index]
@@ -121,30 +168,41 @@ local function on_click(event)
             local test_label = faq(wiki_pane)
 
             local tab2 = wiki_pane.add({type = 'tab', name = 'fluid_tab', caption = 'Fluid Fuel Values'})
-            local tab_fluids = wiki_pane.add{type = 'scroll-pane', name = 'scroll', style = 'inventory_scroll_pane'}
+            local tab_fluids = wiki_pane.add{
+                type = 'frame',
+                name = 'fluids_fuel_frame',
+                caption = 'Fluids with fuel value',
+                style = 'invisible_frame',
+                direction = 'vertical'
+            }
 
             local tab3 = wiki_pane.add({type = 'tab', name = 'item_tab', caption = 'Item Fuel Values'})
             local tab_items = wiki_pane.add{
-                type = 'scroll-pane',
-                name = 'scroll_items',
-                style = 'inventory_scroll_pane'
+                type = 'frame',
+                name = 'items_fuel_frame',
+                caption = 'Items with fuel value',
+                style = 'invisible_frame',
+                direction = 'vertical'
             }
 
             local tab4 = wiki_pane.add({type = 'tab', name = 'gasvent_tab', caption = 'Gasses - Gas vent'})
             local tab_gasvent = wiki_pane.add{
-                type = 'scroll-pane',
-                name = 'scroll_gasvent',
-                style = 'inventory_scroll_pane'
+                type = 'frame',
+                name = 'vent_frame',
+                caption = 'Gasses that can be vented in the gas vent',
+                style = 'invisible_frame',
+                direction = 'vertical'
             }
 
             local tab5 = wiki_pane.add({type = 'tab', name = 'sinkhole_tab', caption = 'Fluids - Sinkhole'})
             local tab_sinkhole = wiki_pane.add{
-                type = 'scroll-pane',
-                name = 'scroll_sinkhole',
-                style = 'inventory_scroll_pane'
+                type = 'frame',
+                name = 'sinkhole_frame',
+                caption = 'Fluids that can be dumped in a sinkhole',
+                style = 'invisible_frame',
+                direction = 'vertical'
             }
-            wiki_gui.wiki_frame.wiki_pane.scroll.style.maximal_height = 500
-            wiki_gui.wiki_frame.wiki_pane.scroll_items.style.maximal_height = 500
+
             wiki_pane.add_tab(tab1, test_label)
             wiki_pane.add_tab(tab2, tab_fluids)
             wiki_pane.add_tab(tab3, tab_items)
@@ -152,82 +210,41 @@ local function on_click(event)
             wiki_pane.add_tab(tab5, tab_sinkhole)
             wiki_gui.wiki_frame.add({type = 'sprite-button', name = 'wiki_close', sprite = 'utility/close_fat'})
 
-            -- fluid fuel values
-            wiki_gui.wiki_frame.wiki_pane.scroll.add{
-                type = 'frame',
-                name = 'fluid_page',
-                caption = 'Fluids with fuel value',
-                direction = 'vertical'
+            -- FUEL FLUIDS TAB --
+            local fluid_scroll = wiki_gui.wiki_frame.wiki_pane.fluids_fuel_frame.add{
+                type="scroll-pane",
+                name="fluid_scroll",
+                vertical_scroll_policy="always",
             }
+            local fluids_fuel_table = fluid_scroll.add{
+                type="table",
+                name="fluids_fuel_table",
+                column_count=3
+            }
+
+            set_fuel_table_style_and_header(fluids_fuel_table)
             for _, fluid in pairs(global.wiki.fluid_names) do
-                wiki_gui.wiki_frame.wiki_pane.scroll.fluid_page.add(
-                    {
-                        type = 'frame',
-                        name = 'fluid_frame' .. fluid,
-                        caption = game.fluid_prototypes[fluid].localised_name,
-                        direction = 'horizontal'
-                    })
-                wiki_gui.wiki_frame.wiki_pane.scroll.fluid_page['fluid_frame' .. fluid].add(
-                    {
-                        type = 'sprite',
-                        name = fluid,
-                        sprite = 'fluid/' .. fluid,
-                        caption = game.fluid_prototypes[fluid].localised_name
-                    })
-                local num
-                local fluid_num = global.wiki.fluids[fluid]
-                if fluid_num >= 1000 and fluid_num < 100000 then
-                    num = fluid_num / 1000 .. 'KJ'
-                elseif fluid_num >= 100000 then
-                    num = fluid_num / 1000000 .. 'MJ'
-                end
-                wiki_gui.wiki_frame.wiki_pane.scroll.fluid_page['fluid_frame' .. fluid].add(
-                    {
-                        type = 'label',
-                        name = fluid .. 'fluid_value',
-                        caption = num
-                        -- style = 'invisible_frame'
-                    })
+                add_table_line_fuel(fluids_fuel_table, fluid, 'fluid', global.wiki.fluids[fluid])
             end
 
-            -- item fuel values
-            wiki_gui.wiki_frame.wiki_pane.scroll_items.add{
-                type = 'frame',
-                name = 'item_page',
-                caption = 'Items with fuel value',
-                direction = 'vertical'
+            -- FUEL ITEMS TAB --
+            local item_scroll = wiki_gui.wiki_frame.wiki_pane.items_fuel_frame.add{
+                type="scroll-pane",
+                name="item_scroll",
+                vertical_scroll_policy="always",
             }
+            local items_fuel_table = item_scroll.add{
+                type="table",
+                name="items_fuel_table",
+                column_count=3
+            }
+
+            set_fuel_table_style_and_header(items_fuel_table)
             for _, item in pairs(global.wiki.item_names) do
-                wiki_gui.wiki_frame.wiki_pane.scroll_items.item_page.add(
-                    {
-                        type = 'frame',
-                        name = 'item_frame' .. item,
-                        caption = game.item_prototypes[item].localised_name,
-                        direction = 'horizontal'
-                    })
-                wiki_gui.wiki_frame.wiki_pane.scroll_items.item_page['item_frame' .. item].add(
-                    {
-                        type = 'sprite',
-                        name = item,
-                        sprite = 'item/' .. item,
-                        caption = game.item_prototypes[item].localised_name
-                    })
-                local num
-                local item_num = global.wiki.items[item]
-                if item_num >= 1000 and item_num < 100000 then
-                    num = item_num / 1000 .. 'KJ'
-                elseif item_num >= 100000 then
-                    num = item_num / 1000000 .. 'MJ'
-                end
-                wiki_gui.wiki_frame.wiki_pane.scroll_items.item_page['item_frame' .. item].add(
-                    {
-                        type = 'label',
-                        name = item .. 'item_value',
-                        caption = num
-                        -- style = 'invisible_frame'
-                    })
+                add_table_line_fuel(items_fuel_table, item, 'item', global.wiki.items[item])
             end
 
+            -- VENTING/SINKHOLE TAB --
             if script.active_mods['pyindustry'] then
                 local gases = {}
                 local liquids = {}
@@ -240,45 +257,41 @@ local function on_click(event)
                         end
                     end
                 end
-            
+
                 -- Gas vent
-                local vent = wiki_gui.wiki_frame.wiki_pane.scroll_gasvent.add(
-                    {type = 'frame', name = 'gasvent_page', caption = 'Gases voided in Gas Vent', direction = 'vertical'})
-                for gas_name, gas in pairs(gases) do
-                    local gas_frame = vent.add({
-                        type = 'frame',
-                        name = 'vent_frame' .. gas_name,
-                        caption = gas.localised_name,
-                        direction = 'horizontal'
-                    })
-                    gas_frame.add({
-                        type = 'sprite',
-                        name = gas_name,
-                        sprite = 'fluid/' .. gas_name,
-                        caption = gas.localised_name
-                    })
+                local vent_scroll = wiki_gui.wiki_frame.wiki_pane.vent_frame.add{
+                    type="scroll-pane",
+                    name="vent_scroll",
+                    vertical_scroll_policy="always",
+                }
+                local vent_table = vent_scroll.add{
+                    type="table",
+                    name="vent_table",
+                    column_count=2
+                }
+                set_vent_table_style_and_header(vent_table)
+                for gas, _ in pairs(gases) do
+                    add_table_line_disposables(vent_table, gas)
                 end
 
                 -- Sink hole
-                local hole = wiki_gui.wiki_frame.wiki_pane.scroll_sinkhole.add(
-                    {type = 'frame', name = 'sinkhole_page', caption = 'Fluids voided in Sinkhole', direction = 'vertical'})
-                for liquid_name, liquid in pairs(liquids) do
-                    local hole_frame = hole.add({
-                        type = 'frame',
-                        name = 'hole_frame' .. liquid_name,
-                        caption = liquid.localised_name,
-                        direction = 'horizontal'
-                        })
-                    hole_frame.add({
-                        type = 'sprite',
-                        name = liquid_name,
-                        sprite = 'fluid/' .. liquid_name,
-                        caption = liquid.localised_name
-                    })
+                local sinkhole_scroll = wiki_gui.wiki_frame.wiki_pane.sinkhole_frame.add{
+                    type="scroll-pane",
+                    name="sinkhole_scroll",
+                    vertical_scroll_policy="always",
+                }
+                local sinkhole_table = sinkhole_scroll.add{
+                    type="table",
+                    name="sinkhole_table",
+                    column_count=2
+                }
+                set_vent_table_style_and_header(sinkhole_table)
+                for liquid, _ in pairs(liquids) do
+                    add_table_line_disposables(sinkhole_table, liquid)
                 end
             end
 
-            -- pyal
+            -- PY ALIEN LIFE --
             wiki_gui.wiki_frame.force_auto_center()
             if pyal_wiki ~= nil then
                 -- local og_list, name_data, input_data, output_data = remote.call('data_puller', 'order_biolist')
