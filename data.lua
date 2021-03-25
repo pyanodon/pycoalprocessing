@@ -138,6 +138,7 @@ require('prototypes/buildings/sand-extractor')
 require('prototypes/buildings/botanical-nursery')
 require('prototypes/buildings/wpu')
 require('prototypes/buildings/glassworks-mk01')
+require('prototypes/buildings/TEST-lab')
 
 if mods['pyrawores'] then
     require('prototypes/buildings/distilator-mk02')
