@@ -34,4 +34,31 @@ function start_inventory.on_init()
 end
 Event.register(Event.core_events.init, start_inventory.on_init)
 
+local game_finish = {}
+
+function game_finish.on_init()
+  if remote.interfaces['freeplay'] then
+    remote.call("silo_script", "set_no_victory", true)
+  end
+end
+Event.register(Event.core_events.init, game_finish.on_init)
+
+function game_finish.on_research_finished(event)
+  local tech = event.research
+  for p, pack in pairs(tech.research_unit_ingredients) do
+		--log('hit')
+		if pack.name == 'space-science-pack' then
+			--log('hit')
+			game.set_game_state
+			{
+			  game_finished = true,
+			  player_won = true,
+			  can_continue = true,
+			  victorious_force = tech.force
+			}
+		end
+	end
+end
+Event.regisiter(Event.on_research_finished, game_finish.on_research_finished)
+
 require("scripts/wiki")
