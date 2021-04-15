@@ -59,6 +59,6 @@ function game_finish.on_research_finished(event)
 		end
 	end
 end
-Event.regisiter(Event.on_research_finished, game_finish.on_research_finished)
+Event.register(Event.on_research_finished, game_finish.on_research_finished)
 
 require("scripts/wiki")
