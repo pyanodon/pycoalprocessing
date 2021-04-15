@@ -34,6 +34,8 @@ function start_inventory.on_init()
 end
 Event.register(Event.core_events.init, start_inventory.on_init)
 
+--[[
+
 local game_finish = {}
 
 function game_finish.on_init()
@@ -60,5 +62,6 @@ function game_finish.on_research_finished(event)
 	end
 end
 Event.register(Event.on_research_finished, game_finish.on_research_finished)
+]]--
 
 require("scripts/wiki")
