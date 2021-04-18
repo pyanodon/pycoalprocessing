@@ -125,6 +125,7 @@ ENTITY {
         width = 288,
         height = 344,
         frame_count = 31,
+        animation_speed = 1/3,
         line_length = 7,
         shift = {-0.05, -0.84}
     },
@@ -133,15 +134,16 @@ ENTITY {
         width = 288,
         height = 344,
         frame_count = 31,
+        animation_speed = 1/3,
         line_length = 7,
         shift = {0.0, -0.82}
     },
     smoke = {
         {
-            name = "light-smoke",
-            north_position = {-0.312, -2.93},
-            east_position = {-1.5, -2},
-            frequency = 5 / 32,
+            name = "turbine-smoke",
+            north_position = {0.5, 1.0},
+            east_position = {0.5, 1.0},
+            frequency = 5 / 16,
             starting_vertical_speed = 0.08,
             slow_down_factor = 1,
             starting_frame_deviation = 60
