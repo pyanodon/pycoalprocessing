@@ -20,7 +20,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 500}
     },
     results = {
-        {type = "item", name = "soil", amount = 12}
+        {type = "item", name = "soil", amount = 10}
     }
 }
 
