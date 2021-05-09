@@ -131,7 +131,7 @@ RECIPE {
         {type = "fluid", name = "creosote", amount = 150}
     },
     results = {
-        {type = "fluid", name = "aromatics", amount = 100}
+        {type = "fluid", name = "aromatics", amount = 50}
     },
     main_product = "aromatics",
     icon = "__pycoalprocessinggraphics__/graphics/icons/creosote-aromatics.png",

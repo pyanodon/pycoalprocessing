@@ -541,7 +541,7 @@ RECIPE {
     results = {
         {type = "item", name = "active-carbon", amount = 5}
     }
-}:add_unlock("placeholder")
+}:add_unlock("filtration")
 
 RECIPE {
     type = "recipe",
@@ -562,7 +562,7 @@ RECIPE {
     icon = "__pycoalprocessinggraphics__/graphics/icons/zinc-chloride.png",
     icon_size = 32,
     order = "d [syn-gas]"
-}:add_unlock("placeholder")
+}:add_unlock("filtration")
 
 RECIPE {
     type = "recipe",
@@ -646,22 +646,6 @@ RECIPE {
     },
     main_product = "niobium-concentrate"
 }:add_unlock("niobium")
-
-RECIPE {
-    type = "recipe",
-    name = "mukmoux-fat",
-    category = "mukmoux",
-    enabled = false,
-    energy_required = 60,
-    ingredients = {
-        {type = "item", name = "fawogae", amount = 5},
-        {type = "item", name = "ralesia-seeds", amount = 30}
-    },
-    results = {
-        {type = "item", name = "mukmoux-fat", amount = 15}
-    },
-    main_product = "mukmoux-fat"
-}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -832,51 +816,6 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "oleochemicals",
-    category = "fts-reactor",
-    enabled = false,
-    energy_required = 10,
-    ingredients = {
-        {type = "item", name = "mukmoux-fat", amount = 20},
-        {type = "item", name = "nichrome", amount = 1},
-        {type = "fluid", name = "water", amount = 2000}
-    },
-    results = {
-        {type = "fluid", name = "oleochemicals", amount = 300},
-        {type = "fluid", name = "glycerol", amount = 150},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 100}
-    },
-    main_product = "oleochemicals",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png",
-    icon_size = 32,
-    subgroup = "py-fluid-handling",
-    order = "c"
-}:add_unlock("placeholder")
-
-RECIPE {
-    type = "recipe",
-    name = "dedicated-oleochemicals",
-    category = "fts-reactor",
-    enabled = false,
-    energy_required = 10,
-    ingredients = {
-        {type = "item", name = "mukmoux-fat", amount = 20},
-        {type = "item", name = "chromium", amount = 2},
-        {type = "fluid", name = "water", amount = 2000}
-    },
-    results = {
-        {type = "fluid", name = "oleochemicals", amount = 250},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 100}
-    },
-    main_product = "oleochemicals",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png",
-    icon_size = 32,
-    subgroup = "py-fluid-handling",
-    order = "c"
-}:add_unlock("placeholder")
-
-RECIPE {
-    type = "recipe",
     name = "richdust-separation",
     category = "solid-separator",
     enabled = false,
@@ -914,7 +853,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "c"
-}:add_unlock("placeholder")
+}:add_unlock("filtration-2")
 
 RECIPE {
     type = "recipe",
@@ -934,7 +873,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "r"
-}:add_unlock("placeholder")
+}:add_unlock("sulfur-processing")
 
 RECIPE {
     type = "recipe",
@@ -1099,7 +1038,7 @@ RECIPE {
     results = {
         {type = "item", name = "calcium-carbide", amount = 10}
     }
-}:add_unlock("placeholder")
+}:add_unlock("filtration-2")
 
 RECIPE {
     type = "recipe",
@@ -1125,36 +1064,6 @@ RECIPE {
 --)) Coal Processing 2 ((--
 
 --(( Coal Processing 3 ))--
-RECIPE {
-    type = "recipe",
-    name = "lithium-peroxide",
-    category = "chemistry",
-    enabled = false,
-    energy_required = 5,
-    ingredients = {
-        --{type="fluid", name="lithia-water", amount=30},
-        {type = "fluid", name = "water", amount = 300},
-        {type = "fluid", name = "hydrogen-peroxide", amount = 100}
-    },
-    results = {
-        {type = "item", name = "lithium-peroxide", amount = 5}
-    }
-}:add_unlock("coal-processing-3")
-
-RECIPE {
-    type = "recipe",
-    name = "nexelit-cartridge",
-    category = "crafting",
-    enabled = false,
-    energy_required = 4,
-    ingredients = {
-        {type = "item", name = "lithium-peroxide", amount = 25},
-        {type = "item", name = "nexelit-plate", amount = 10}
-    },
-    results = {
-        {type = "item", name = "nexelit-cartridge", amount = 1}
-    }
-}:add_unlock("coal-processing-3")
 
 RECIPE {
     type = "recipe",
@@ -1219,25 +1128,6 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "air-pollution",
-    category = "co2",
-    enabled = false,
-    energy_required = 40,
-    ingredients = {
-        {type = "item", name = "nexelit-cartridge", amount = 1}
-    },
-    results = {
-        {type = "item", name = "saturated-nexelit-cartridge", amount = 1}
-    },
-    main_product = "saturated-nexelit-cartridge",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/co2-absorber-icon.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "d"
-}:add_unlock("coal-processing-3")
-
-RECIPE {
-    type = "recipe",
     name = "slacked-lime",
     category = "chemistry",
     enabled = false,
@@ -1254,49 +1144,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "e"
-}:add_unlock("coal-processing-3")
-
-RECIPE {
-    type = "recipe",
-    name = "co2",
-    category = "hpf",
-    enabled = false,
-    energy_required = 3,
-    ingredients = {
-        {type = "item", name = "saturated-nexelit-cartridge", amount = 1},
-        {type = "fluid", name = "slacked-lime", amount = 100},
-        {type = "item", name = "active-carbon", amount = 2}
-    },
-    results = {
-        {type = "fluid", name = "carbon-dioxide", amount = 600},
-        {type = "item", name = "ash", amount = 10}
-    },
-    main_product = "carbon-dioxide",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/co2.png",
-    icon_size = 32,
-    subgroup = "py-items-hpf",
-    order = "d"
-}:add_unlock("coal-processing-3")
-
-RECIPE {
-    type = "recipe",
-    name = "saturated-nexelit-cartridge-regen",
-    category = "crafting",
-    enabled = false,
-    energy_required = 3,
-    ingredients = {
-        {type = "item", name = "saturated-nexelit-cartridge", amount = 1},
-        {type = "item", name = "lithium-peroxide", amount = 25},
-    },
-    results = {
-        {type = "item", name = "nexelit-cartridge", amount = 1}
-    },
-    main_product = "nexelit-cartridge",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/nexelit-cartridge.png",
-    icon_size = 32,
-    subgroup = "py-items-hpf",
-    order = "d"
-}:add_unlock("coal-processing-3")
+}:add_unlock("filtration-2")
 
 RECIPE {
     type = "recipe",

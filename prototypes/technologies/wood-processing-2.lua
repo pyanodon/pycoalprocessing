@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/wood-processing-2.png",
     icon_size = 128,
     order = "c-a",
-    upgrade = true,
+    --upgrade = true,
     prerequisites = {"wood-processing"},
     effects = {},
     unit = {

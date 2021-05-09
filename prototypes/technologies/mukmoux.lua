@@ -1,11 +1,10 @@
 TECHNOLOGY {
     type = "technology",
-    name = "placeholder",
-    icon = "__pycoalprocessinggraphics__/graphics/technology/ralesia.png",
+    name = "mukmoux",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/mukmoux.png",
     icon_size = 128,
     order = "c-a",
-    enabled = false,
-    prerequisites = {},
+    prerequisites = {"ralesia", "coal-processing-2"},
     effects = {},
     unit = {
         count = 100,

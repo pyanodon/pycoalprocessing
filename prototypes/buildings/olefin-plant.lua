@@ -5,15 +5,15 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"storage-tank", 4},
-        {"chemical-plant", 2}, --bob electrolyser
-        {"electronic-circuit", 30},
+        {"chemical-plant", 2},
+        {"advanced-circuit", 5},
         {"steel-plate", 40},
-        {"iron-gear-wheel", 15} --bob steel-bearing
+        {"iron-gear-wheel", 15}
     },
     results = {
         {"olefin-plant", 1}
     }
-}:add_unlock("fuel-production")
+}:add_unlock("lubricant")
 
 ITEM {
     type = "item",

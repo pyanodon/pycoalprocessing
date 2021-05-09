@@ -5,6 +5,10 @@ require("prototypes/updates/entity-updates")
 --update recipes for creosote
 require("prototypes/updates/recipe-updates")
 
+require('prototypes/updates/base-updates')
+
+require("prototypes/recipes/fuel-canister-recipes")
+
 FLUID('steam'):set('heat_capacity', '0.05KJ')
 
 for _, v in pairs(data.raw.module) do
@@ -24,31 +28,16 @@ ITEM("logistic-science-pack", "tool"):set("icon_size", 32)
 ITEM("chemical-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png")
 ITEM("chemical-science-pack", "tool"):set("icon_size", 32)
 
---RECIPE("logistic-science-pack"):remove_unlock('logistic-science-pack')
 RECIPE('rocket-silo'):replace_ingredient("pipe", "niobium-pipe")
 RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):add_ingredient({type = "item", name = "copper-cable", amount = 15})
 
 TECHNOLOGY('logistic-science-pack'):add_prereq('ralesia'):add_prereq('ulric'):add_prereq('energy-1')
 
---TECHNOLOGY('military-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-
---TECHNOLOGY('automation-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-
 TECHNOLOGY('circuit-network'):remove_prereq('logistic-science-pack'):remove_pack('logistic-science-pack')
-
---TECHNOLOGY('logistics-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-
---TECHNOLOGY('solar-energy'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 
 TECHNOLOGY('electric-energy-distribution-1'):remove_prereq('logistic-science-pack'):remove_prereq("steel-processing"):add_prereq('niobium')
 
 TECHNOLOGY('landfill'):remove_prereq('logistic-science-pack'):add_prereq('automation'):remove_pack('logistic-science-pack')
-
---TECHNOLOGY('engine'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-
---TECHNOLOGY('toolbelt'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-
---TECHNOLOGY('advanced-material-processing'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 
 RECIPE("chemical-plant"):remove_unlock('oil-processing'):add_unlock("coal-processing-2"):add_ingredient({type = "item", name = "methanol-reactor", amount = 1})
 

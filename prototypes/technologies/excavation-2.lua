@@ -5,7 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     prerequisites = {"excavation-1"},
-    upgrade = true,
+    --upgrade = true,
     effects = {},
     unit = {
         count = 50,

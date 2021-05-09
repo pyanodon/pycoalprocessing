@@ -165,3 +165,23 @@ RECIPE {
     subgroup = "py-fluids",
     order = "d8	"
 }:add_unlock("fuel-production")
+
+RECIPE {
+    type = "recipe",
+    name = "olefin-lube",
+    category = "olefin",
+    enabled = false,
+    energy_required = 3,
+    ingredients = {
+        {type = "fluid", name = "olefin", amount = 300},
+        {type = "fluid", name = "oleochemicals", amount = 100}
+    },
+    results = {
+        {type = "fluid", name = "lubricant", amount = 250}
+    },
+    main_product = "lubricant",
+    --icon = "__pycoalprocessinggraphics__/graphics/icons/olefin.png",
+    --icon_size = 32,
+    subgroup = "py-fluids",
+    order = "d9"
+}:add_unlock("lubricant")

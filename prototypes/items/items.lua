@@ -856,3 +856,14 @@ ITEM {
     fuel_category = "chemical",
     stack_size = 100
 }
+
+ITEM {
+    type = "item",
+    name = "empty-fuel-canister",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/jerry-can.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-items",
+    order = "fuel-canister",
+    stack_size = 25
+}

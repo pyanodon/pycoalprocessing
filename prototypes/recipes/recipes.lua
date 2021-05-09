@@ -384,7 +384,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "y"
-}:add_unlock("placeholder")
+}:add_unlock("battery")
 
 RECIPE {
     type = "recipe",

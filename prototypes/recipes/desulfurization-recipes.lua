@@ -166,7 +166,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items",
     order = "a [coal-gas]"
-}:add_unlock("placeholder")
+}:add_unlock("explosives")
 
 RECIPE {
     type = "recipe",

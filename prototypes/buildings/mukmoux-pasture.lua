@@ -12,7 +12,7 @@ RECIPE {
     results = {
         {"mukmoux-pasture", 1}
     }
-}:add_unlock("placeholder")
+}:add_unlock("mukmoux")
 
 ITEM {
     type = "item",

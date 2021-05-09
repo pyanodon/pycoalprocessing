@@ -244,7 +244,7 @@ RECIPE {
     main_product = "coal-briquette",
     icon = "__pycoalprocessinggraphics__/graphics/icons/coal-briquette.png",
     icon_size = 32
-}:add_unlock("placeholder")
+}:add_unlock("energy-3")
 
 RECIPE {
     type = "recipe",

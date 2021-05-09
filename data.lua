@@ -44,6 +44,8 @@ require('prototypes/technologies/wood-processing-2')
 require('prototypes/technologies/niobium')
 require('prototypes/technologies/chromium')
 
+require("prototypes/technologies/mukmoux")
+
 -- ))
 
 -- (( RESOURCEs ))--
@@ -63,6 +65,8 @@ require('prototypes/recipes/fts-reactor-recipes')
 require('prototypes/recipes/olefin-plant-recipes')
 require('prototypes/recipes/sand-extractor-recipes')
 require('prototypes/recipes/tailings-recipes')
+require("prototypes/recipes/filtration-recipes")
+require("prototypes/recipes/mukmoux-recipes")
 -- ))
 
 -- (( ITEMs ))--
