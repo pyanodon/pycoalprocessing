@@ -269,7 +269,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "borax", amount = 10},
-        {type = "fluid", name = "dirty-water", amount = 100}
+        {type = "fluid", name = "dirty-water-light", amount = 100}
     },
     main_product = "borax",
     icon = "__pycoalprocessinggraphics__/graphics/icons/borax-washer.png",
@@ -374,7 +374,7 @@ RECIPE {
         {type = "item", name = "tailings-dust", amount = 10},
         {type = "item", name = "coarse", amount = 10},
         {type = "fluid", name = "tar", amount = 100},
-           {type = "fluid", name = "dirty-water", amount = 100}
+           {type = "fluid", name = "dirty-water-heavy", amount = 100}
     },
     main_product = "tar",
     icon = "__pycoalprocessinggraphics__/graphics/icons/tar.png",
@@ -571,7 +571,7 @@ RECIPE {
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 100}
+        {type = "fluid", name = "dirty-water-heavy", amount = 100}
     },
     results = {
         {type = "item", name = "tailings-dust", amount = 4},
@@ -686,7 +686,7 @@ RECIPE {
     enabled = false,
     energy_required = 20,
     ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 500},
+        {type = "fluid", name = "dirty-water-light", amount = 500},
         {type = "fluid", name = "carbon-dioxide", amount = 300}
     },
     results = {
@@ -783,7 +783,7 @@ RECIPE {
     enabled = false,
     energy_required = 15,
     ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 500},
+        {type = "fluid", name = "dirty-water-light", amount = 500},
         {type = "item", name = "ash", amount = 30},
         {type = "fluid", name = "carbon-dioxide", amount = 350}
     },
@@ -1060,7 +1060,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "k"
-}:add_unlock("placeholder")
+}:add_unlock("mukmoux")
 --)) Coal Processing 2 ((--
 
 --(( Coal Processing 3 ))--

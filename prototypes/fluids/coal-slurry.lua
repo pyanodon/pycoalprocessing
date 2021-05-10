@@ -5,14 +5,14 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 250}
+        {type = "fluid", name = "dirty-water-heavy", amount = 250}
     },
     results = {
         {type = "fluid", name = "water", amount = 100},
         {type = "fluid", name = "coal-slurry", amount = 150}
     },
     main_product = "coal-slurry"
-}:add_unlock("placeholder")
+}:add_unlock("separation")
 
 FLUID {
     type = "fluid",

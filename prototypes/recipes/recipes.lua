@@ -51,7 +51,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "sand", amount = 10},
-        {type = "fluid", name = "dirty-water", amount = 100}
+        {type = "fluid", name = "dirty-water-light", amount = 100}
     },
     main_product = "sand",
     icon = "__pycoalprocessinggraphics__/graphics/icons/soil-washer.png",
@@ -72,7 +72,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "pure-sand", amount = 8},
-        {type = "fluid", name = "dirty-water", amount = 80}
+        {type = "fluid", name = "dirty-water-light", amount = 80}
     },
     main_product = "pure-sand",
     icon = "__pycoalprocessinggraphics__/graphics/icons/sand-washer.png",
@@ -226,7 +226,7 @@ RECIPE {
     energy_required = 5,
     ingredients = {
         {type = "item", name = "biofilm", amount = 1},
-        {type = "fluid", name = "dirty-water", amount = 200}
+        {type = "fluid", name = "dirty-water-heavy", amount = 200}
     },
     results = {
         {type = "fluid", name = "acidgas", amount = 60}
@@ -247,7 +247,7 @@ RECIPE {
     energy_required = 5.5,
     ingredients = {
         {type = "item", name = "filtration-media", amount = 1},
-        {type = "fluid", name = "dirty-water", amount = 500}
+        {type = "fluid", name = "dirty-water-light", amount = 500}
     },
     results = {
         {type = "fluid", name = "water", amount = 500},
@@ -642,7 +642,7 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 400}
+        {type = "fluid", name = "dirty-water-heavy", amount = 400}
     },
     results = {
         {type = "item", name = "nexelit-ore", amount = 1},

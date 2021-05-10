@@ -110,11 +110,11 @@ RECIPE {
   energy_required = 5,
   ingredients = {
       {type = "item", name = "saturated-nexelit-cartridge", amount = 2},
-      {type = "item", name = "speed-module-2", amount = 1},
-      {type = "item", name = "effectivity-module-2", amount = 1},
+      {type = "item", name = "speed-module-2", amount = 2},
+      {type = "item", name = "effectivity-module-2", amount = 2},
       {type = "item", name = "coal-briquette", amount = 5},
       {type = "item", name = "uranium-fuel-cell", amount = 1},
-      {type = "item", name = "electric-engine-unit", amount = 2}
+      {type = "item", name = "electric-engine-unit", amount = 4}
   },
   results = {
       {type = "item", name = "production-science-pack", amount = 2}

@@ -5,9 +5,9 @@ RECIPE {
     enabled = false,
     energy_required = 9.3,
     ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 800},
+        {type = "fluid", name = "dirty-water-heavy", amount = 800},
         {type = "fluid", name = "water", amount = 2000},
-        {type = "fluid", name = "aromatics", amount = 500}
+        {type = "fluid", name = "aromatics", amount = 200}
     },
     results = {
         {type = "fluid", name = "crude-oil", amount = 400},
@@ -19,7 +19,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h8"
-}:add_unlock("placeholder")
+}:add_unlock("coal-liquefaction")
 
 RECIPE {
     type = "recipe",
