@@ -51,7 +51,7 @@ ENTITY {
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     match_animation_speed_to_activity = false,
     module_specification = {
-        module_slots = 3
+        module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"crafting", "crafting-with-fluid", "advanced-crafting"},
@@ -61,7 +61,7 @@ ENTITY {
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "1MW",
+    energy_usage = "2MW",
     animation = {
         layers = {
             {

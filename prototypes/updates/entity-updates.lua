@@ -23,7 +23,7 @@ data.raw['assembling-machine']['assembling-machine-2'].module_specification = ni
 --modify assembly machine 3
 data.raw['assembling-machine']['assembling-machine-3'].ingredient_count = 6
 data.raw['assembling-machine']['assembling-machine-3'].energy_usage = "1MW"
-data.raw['assembling-machine']['assembling-machine-3'].crafting_speed = 3
+data.raw['assembling-machine']['assembling-machine-3'].crafting_speed = 4
 data.raw['assembling-machine']['assembling-machine-3'].allowed_effects = nil
 data.raw['assembling-machine']['assembling-machine-3'].module_specification = nil
 

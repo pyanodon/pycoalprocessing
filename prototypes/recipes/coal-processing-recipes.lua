@@ -1104,7 +1104,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a"
-}:add_unlock("fine-electronics")
+}:add_unlock("chemical-science-pack")
 
 RECIPE {
     type = "recipe",

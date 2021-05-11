@@ -59,7 +59,7 @@ end
 
 data.raw.technology['coal-liquefaction'].effects = recipes_to_keep
 
-TECHNOLOGY('lubricant'):remove_prereq("advanced-oil-processing"):remove_prereq('chemical-science-pack'):remove_pack('chemical-science-pack'):add_prereq("coal-processing-2"):add_prereq("advanced-electronics")
+TECHNOLOGY('lubricant'):remove_prereq("advanced-oil-processing"):remove_prereq('chemical-science-pack'):remove_pack('chemical-science-pack'):add_prereq("mukmoux")
 
 TECHNOLOGY('advanced-oil-processing'):remove_pack('chemical-science-pack')
 
