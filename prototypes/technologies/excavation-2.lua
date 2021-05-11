@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/excavation-2.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"excavation-1"},
+    prerequisites = {"excavation-1", "chemical-science-pack"},
     --upgrade = true,
     effects = {},
     unit = {
