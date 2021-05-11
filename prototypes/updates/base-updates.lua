@@ -89,9 +89,7 @@ RECIPE {
   results = {
       {type = "item", name = "electric-engine-unit", amount = 1}
   },
-  --icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
-  --icon_size = 32
-}--:add_unlock("placeholder")
+}
 
 RECIPE("lubricant"):remove_unlock("lubricant")
 
@@ -119,11 +117,6 @@ RECIPE {
   results = {
       {type = "item", name = "production-science-pack", amount = 2}
   },
-  --icon = "__pycoalprocessinggraphics__/graphics/icons/crush-niobium.png",
-  --icon_size = 32,
-  --main_product = "niobium-powder",
-  --subgroup = "py-crusher",
-  --order = "a"
 }
 
 RECIPE {
@@ -141,9 +134,4 @@ RECIPE {
     results = {
         {type = "item", name = "utility-science-pack", amount = 3}
     },
-    --icon = "__pycoalprocessinggraphics__/graphics/icons/crush-niobium.png",
-    --icon_size = 32,
-    --main_product = "niobium-powder",
-    --subgroup = "py-crusher",
-    --order = "a"
   }

@@ -1,11 +1,7 @@
 require("__stdlib__/stdlib/data/data").Util.create_data_globals()
 local FUN = require("prototypes/functions/functions")
 
-require("prototypes/updates/entity-updates")
---update recipes for creosote
 require("prototypes/updates/recipe-updates")
-
-require('prototypes/updates/base-updates')
 
 require("prototypes/recipes/fuel-canister-recipes")
 
