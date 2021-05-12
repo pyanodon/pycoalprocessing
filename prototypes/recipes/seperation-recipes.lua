@@ -111,7 +111,7 @@ RECIPE {
         {type = "item", name = "tailings-dust", amount = 15}
     },
     results = {
-        {type = "item", name = "coal-dust", amount = 8},
+        {type = "item", name = "coal-dust", amount = 5},
         {type = "item", name = "rich-dust", amount = 2}
     },
     main_product = "rich-dust",

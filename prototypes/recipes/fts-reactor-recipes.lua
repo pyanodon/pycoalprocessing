@@ -233,7 +233,7 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        {type = "item", name = "coal-dust", amount = 35},
+        {type = "item", name = "coal-dust", amount = 40},
         {type = "fluid", name = "glycerol", amount = 20},
         {type = "fluid", name = "creosote", amount = 100},
         {type = "fluid", name = "tar", amount = 50}
