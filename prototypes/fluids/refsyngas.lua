@@ -6,7 +6,7 @@ RECIPE {
     energy_required = 4,
     ingredients = {
         {type = "fluid", name = "syngas", amount = 100},
-        {type = "item", name = "active-carbon", amount = 3}
+        {type = "item", name = "active-carbon", amount = 1}
     },
     results = {
         {type = "fluid", name = "refsyngas", amount = 70}
