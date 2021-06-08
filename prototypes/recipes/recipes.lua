@@ -638,9 +638,9 @@ RECIPE {
     name = "nexelit-ore-1",
     category = "evaporator",
     enabled = false,
-    energy_required = 1,
+    energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 400}
+        {type = "fluid", name = "dirty-water", amount = 700}
     },
     results = {
         {type = "item", name = "nexelit-ore", amount = 1},
