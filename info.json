@@ -10,7 +10,7 @@
   "dependencies": [
     "base >= 0.16.0",
     "stdlib >= 1.4.0",
-    "pycoalprocessinggraphics >= 1.0.0",
+    "~ pycoalprocessinggraphics >= 1.0.0",
     "(?) Bio_Industries"
   ],
   "package": {
