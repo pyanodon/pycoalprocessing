@@ -57,7 +57,7 @@ ENTITY {
     },
     allowed_effects = {"speed"},
     crafting_categories = {"cooling"},
-    crafting_speed = 3.5,
+    crafting_speed = 4,
     energy_source = {type = "void"},
     energy_usage = "70kW",
     animation = {
