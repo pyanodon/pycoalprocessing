@@ -20,25 +20,6 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "raw-borax",
-    category = "borax",
-    enabled = false,
-    energy_required = 4.5,
-    ingredients = {
-        {type = "fluid", name = "syngas", amount = 150}
-    },
-    results = {
-        {type = "item", name = "raw-borax", amount = 5}
-    },
-    main_product = "raw-borax",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/raw-borax.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "h"
-}:add_unlock("coal-processing-1")
-
-RECIPE {
-    type = "recipe",
     name = "ralesia",
     category = "ralesia",
     enabled = false,
@@ -593,21 +574,6 @@ RECIPE {
     },
     results = {
         {type = "item", name = "drill-head", amount = 3}
-    }
-}:add_unlock("coal-processing-2")
-
-RECIPE {
-    type = "recipe",
-    name = "niobium-ore",
-    category = "niobium",
-    enabled = false,
-    energy_required = 7,
-    ingredients = {
-        {type = "item", name = "drill-head", amount = 1},
-        {type = "fluid", name = "refsyngas", amount = 70}
-    },
-    results = {
-        {type = "item", name = "niobium-ore", amount = 12}
     }
 }:add_unlock("coal-processing-2")
 
