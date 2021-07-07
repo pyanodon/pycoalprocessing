@@ -25,7 +25,7 @@ data:extend(
 	setting_type = "startup",
 	minimum_value = 1,
 	maximum_value = 255,
-	default_value = 3
+	default_value = 2
 	},
 }
 )

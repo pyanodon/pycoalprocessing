@@ -5,7 +5,7 @@ if DEBUG then
 end
 
 --vram reduction test
-
+--[[ TODO: finsh this later
 for e, entity in pairs(data.raw['assembling-machine']) do
     if entity.animation ~= nil then
         if entity.animation.layers ~= nil then
@@ -29,5 +29,4 @@ for e, entity in pairs(data.raw['assembling-machine']) do
         end
     end
 end
-
-log(serpent.block(data.raw['assembling-machine']['automated-factory-mk01'].animation))
+]]--
