@@ -15,7 +15,7 @@ RECIPE {
     name = "soil",
     category = "soil-extraction",
     enabled = true,
-    energy_required = 2,
+    energy_required = 5,
     ingredients = {
         {type = "fluid", name = "water", amount = 500}
     },

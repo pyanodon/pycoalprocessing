@@ -46,7 +46,7 @@ ENTITY {
     },
     allowed_effects = {"consumption", "speed"},
     crafting_categories = {"ground-borer"},
-    crafting_speed = 2.5,
+    crafting_speed = 3,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",

@@ -59,7 +59,7 @@ ENTITY {
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"soil-extraction"},
-    crafting_speed = 2.7,
+    crafting_speed = 4,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
