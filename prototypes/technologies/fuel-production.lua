@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/fuel-production.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"excavation-1"},
+    prerequisites = {"chemical-science-pack", "coal-processing-2"},
     effects = {},
     unit = {
         count = 100,

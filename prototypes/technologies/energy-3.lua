@@ -4,8 +4,8 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/energy-3.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"fuel-production","energy-2"},
-    upgrade = true,
+    prerequisites = {"fuel-production","energy-2", "mukmoux"},
+    --upgrade = true,
     effects = {},
     unit = {
         count = 120,

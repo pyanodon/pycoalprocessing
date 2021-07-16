@@ -17,7 +17,7 @@ RECIPE {
     main_product = "niobium-powder",
     subgroup = "py-crusher",
     order = "a"
-}:add_unlock("crusher"):add_unlock("coal-processing-2")
+}:add_unlock("niobium")
 
 --IRON
 RECIPE {
@@ -98,4 +98,3 @@ RECIPE {
     subgroup = "py-crusher",
     order = "e"
 }:add_unlock("crusher")
-

@@ -1,9 +1,11 @@
 require("__stdlib__/stdlib/data/data").Util.create_data_globals()
 local FUN = require("prototypes/functions/functions")
 
-require("prototypes/updates/entity-updates")
---update recipes for creosote
 require("prototypes/updates/recipe-updates")
+
+require("prototypes/recipes/fuel-canister-recipes")
+
+FLUID('steam'):set('heat_capacity', '0.05KJ')
 
 for _, v in pairs(data.raw.module) do
     if v.name:find("productivity%-module") and v.limitation then
@@ -15,8 +17,10 @@ end
 
 ITEM("automation-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
 ITEM("automation-science-pack", "tool"):set("icon_size", 32)
+
 ITEM("logistic-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png")
 ITEM("logistic-science-pack", "tool"):set("icon_size", 32)
+
 ITEM("chemical-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png")
 ITEM("chemical-science-pack", "tool"):set("icon_size", 32)
 ITEM('electric-engine-unit'):set_fields{icon_mipmaps = 9}
@@ -33,38 +37,28 @@ ITEM("electric-engine-unit"):set_fields {pictures =
   { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-09.png",   scale = 0.25, mipmap_count = 1 },
 }}
 
-RECIPE("logistic-science-pack"):remove_unlock('logistic-science-pack')
 RECIPE('rocket-silo'):replace_ingredient("pipe", "niobium-pipe")
 RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):add_ingredient({type = "item", name = "copper-cable", amount = 15})
-TECHNOLOGY('military-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-TECHNOLOGY('automation-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-TECHNOLOGY('circuit-network'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-TECHNOLOGY('logistics-2'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-TECHNOLOGY('solar-energy'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-TECHNOLOGY('electric-energy-distribution-1'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-TECHNOLOGY('landfill'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-TECHNOLOGY('engine'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-TECHNOLOGY('toolbelt'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
-TECHNOLOGY('advanced-material-processing'):remove_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 
-RECIPE("chemical-plant"):remove_unlock('oil-processing'):add_unlock("desulfurization")
-RECIPE("chemical-science-pack"):remove_unlock('chemical-science-pack')
-TECHNOLOGY('chemical-science-pack'):remove_prereq('advanced-electronics')
-TECHNOLOGY('electric-energy-distribution-2'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('advanced-electronics-2'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('auto-character-logistic-trash-slots'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('braking-force-1'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('advanced-material-processing-2'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('personal-roboport-equipment'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('worker-robots-speed-1'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('worker-robots-storage-1'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('advanced-oil-processing'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('low-density-structure'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('military-3'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
-TECHNOLOGY('uranium-processing'):remove_prereq('chemical-science-pack'):add_prereq('fine-electronics')
+TECHNOLOGY('logistic-science-pack'):add_prereq('ralesia'):add_prereq('ulric'):add_prereq('energy-1')
+
+TECHNOLOGY('circuit-network'):remove_prereq('logistic-science-pack'):remove_pack('logistic-science-pack')
+
+TECHNOLOGY('electric-energy-distribution-1'):remove_prereq('logistic-science-pack'):remove_prereq("steel-processing"):add_prereq('niobium')
+
+TECHNOLOGY('landfill'):remove_prereq('logistic-science-pack'):add_prereq('automation'):remove_pack('logistic-science-pack')
+
+RECIPE("chemical-plant"):remove_unlock('oil-processing'):add_unlock("coal-processing-2"):add_ingredient({type = "item", name = "methanol-reactor", amount = 1})
+
+TECHNOLOGY("advanced-electronics"):add_prereq('electronics')
+
+TECHNOLOGY('chemical-science-pack'):add_prereq('fine-electronics'):remove_prereq('sulfur-processing')
+
+TECHNOLOGY("fluid-handling"):remove_prereq("automation-2"):remove_prereq("engine"):add_prereq("steel-processing"):remove_pack('logistic-science-pack')
+
+RECIPE("pump"):remove_unlock("fluid-handling"):add_unlock("engine")
+
 TECHNOLOGY('logistic-robotics'):remove_prereq('advanced-electronics')
-TECHNOLOGY('lubricant'):remove_pack('chemical-science-pack')
-TECHNOLOGY('advanced-oil-processing'):remove_pack('chemical-science-pack')
 
 --RECIPE("wood"):set_fields {energy_required = 10}
 data.raw["technology"]["stack-inserter"].prerequisites = {"fast-inserter", "logistics-2"}
@@ -81,9 +75,15 @@ RECIPE("sand-extractor-mk03"):replace_ingredient("pipe", "niobium-pipe")
 
 require("prototypes/recipes/advanced-foundry-recipes")
 
+--remove base game oil processing stuff
+require("prototypes/updates/base-oil")
+
+--moving solid fuels
+RECIPE("solid-fuel-from-petroleum-gas"):remove_unlock("oil-processing"):add_unlock("coal-processing-2")
+
 --move barrels below everything else in intermediate tab
---data.raw["item-subgroup"]["fill-barrel"].order = y
---data.raw["item-subgroup"]["empty-barrel"].order = z
+data.raw["item-subgroup"]["fill-barrel"].order = "y"
+data.raw["item-subgroup"]["empty-barrel"].order = "z"
 
 --gather recipes for module changes
 local recipes_list =
@@ -407,7 +407,6 @@ local recipes_list =
 FUN.productivity(recipes_list)
 
 --updating requestor paste setting
-
 
 --Entities
 

@@ -13,7 +13,7 @@ RECIPE {
     results = {
         {"advanced-foundry-mk01", 1}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("chemical-science-pack")
 
 ITEM {
     type = "item",
@@ -52,7 +52,7 @@ ENTITY {
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "270kW",
+    energy_usage = "1.2MW",
     animation = {
         layers = {
             {

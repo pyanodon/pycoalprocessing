@@ -42,7 +42,7 @@ RECIPE {
     results = {
         {"ralesia-plantation-mk01", 1}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("ralesia")
 
 ITEM {
     type = "item",

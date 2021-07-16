@@ -13,16 +13,16 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"iron-plate", 40},
+        {"steel-plate", 20},
         {"assembling-machine-1", 2},
         {"iron-gear-wheel", 20},
-        {"inserter", 4},
-        {"electronic-circuit", 10}
+        {"fast-inserter", 3},
+        {"advanced-circuit", 5}
     },
     results = {
         {"automated-factory-mk01", 1}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("advanced-electronics")
 
 ITEM {
     type = "item",
@@ -51,7 +51,7 @@ ENTITY {
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     match_animation_speed_to_activity = false,
     module_specification = {
-        module_slots = 1
+        module_slots = 4
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution"},
     crafting_categories = {"crafting", "crafting-with-fluid", "advanced-crafting"},
@@ -61,7 +61,7 @@ ENTITY {
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "100kW",
+    energy_usage = "2MW",
     animation = {
         layers = {
             {

@@ -33,14 +33,14 @@ RECIPE {
     ingredients = {
         {"electric-mining-drill", 1},
         {"soil-extractormk01", 1},
-        {"electronic-circuit", 5}, --bob basic-electronic-circuit-board
+        {"electronic-circuit", 5},
         {"wood", 50},
         {"iron-plate", 35}
     },
     results = {
         {"botanical-nursery", 1}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("wood-processing")
 
 ITEM {
     type = "item",

@@ -4,8 +4,8 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/cooling-towermk02.png",
     icon_size = 128,
     order = "c-a",
-    upgrade = true,
-    prerequisites = {"coal-processing-2"},
+    --upgrade = true,
+    prerequisites = {"energy-2"},
     effects = {},
     unit = {
         count = 20,

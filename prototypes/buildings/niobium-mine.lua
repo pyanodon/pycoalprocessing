@@ -6,14 +6,14 @@ RECIPE {
     ingredients = {
         {"electric-mining-drill", 5},
         {"soil-extractormk01", 1},
-        {"electronic-circuit", 30}, --bob basic-electronic-circuit-board
-        {"steel-plate", 30}, --bob titanium-plate
-        {"iron-gear-wheel", 15} --bob titanium-bearing
+        {"electronic-circuit", 30},
+        {"steel-plate", 30},
+        {"iron-gear-wheel", 15}
     },
     results = {
         {"niobium-mine", 1}
     }
-}:add_unlock("coal-processing-2")
+}:add_unlock("niobium")
 
 ITEM {
     type = "item",

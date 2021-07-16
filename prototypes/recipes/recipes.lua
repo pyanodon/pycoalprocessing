@@ -51,14 +51,14 @@ RECIPE {
     },
     results = {
         {type = "item", name = "sand", amount = 10},
-        {type = "fluid", name = "dirty-water", amount = 100}
+        {type = "fluid", name = "dirty-water-light", amount = 100}
     },
     main_product = "sand",
     icon = "__pycoalprocessinggraphics__/graphics/icons/soil-washer.png",
     icon_size = 32,
     subgroup = "py-washer",
     order = "c"
-}
+}:add_unlock('fine-electronics')
 
 RECIPE {
     type = "recipe",
@@ -72,14 +72,14 @@ RECIPE {
     },
     results = {
         {type = "item", name = "pure-sand", amount = 8},
-        {type = "fluid", name = "dirty-water", amount = 80}
+        {type = "fluid", name = "dirty-water-light", amount = 80}
     },
     main_product = "pure-sand",
     icon = "__pycoalprocessinggraphics__/graphics/icons/sand-washer.png",
     icon_size = 32,
     subgroup = "py-washer",
     order = "a"
-}
+}:add_unlock('filtration')
 
 RECIPE {
     type = "recipe",
@@ -196,7 +196,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a3"
-}:add_unlock("fine-electronics")
+}--:add_unlock("chemical-science-pack")
 
 RECIPE {
     type = "recipe",
@@ -226,7 +226,7 @@ RECIPE {
     energy_required = 5,
     ingredients = {
         {type = "item", name = "biofilm", amount = 1},
-        {type = "fluid", name = "dirty-water", amount = 200}
+        {type = "fluid", name = "dirty-water-heavy", amount = 200}
     },
     results = {
         {type = "fluid", name = "acidgas", amount = 60}
@@ -238,6 +238,7 @@ RECIPE {
     order = "f"
 }:add_unlock("filtration")
 
+-- Kinda useless in pycoal
 RECIPE {
     type = "recipe",
     name = "filtration-dirty-water",
@@ -246,7 +247,7 @@ RECIPE {
     energy_required = 5.5,
     ingredients = {
         {type = "item", name = "filtration-media", amount = 1},
-        {type = "fluid", name = "dirty-water", amount = 500}
+        {type = "fluid", name = "dirty-water-light", amount = 500}
     },
     results = {
         {type = "fluid", name = "water", amount = 500},
@@ -257,7 +258,8 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "g"
-}:add_unlock("filtration")
+}--:add_unlock("placeholder")
+
 
 RECIPE {
     type = "recipe",
@@ -297,7 +299,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h"
-}:add_unlock("filtration")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -340,12 +342,12 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "w"
-}:add_unlock("methanol-processing-1")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
     name = "aromatics-to-plastic",
-    category = "methanol",
+    category = "oil-processing",
     enabled = false,
     energy_required = 1.5,
     ingredients = {
@@ -360,7 +362,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "x"
-}:add_unlock("methanol-processing-1")
+}:add_unlock("plastics")
 
 RECIPE {
     type = "recipe",
@@ -382,7 +384,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "y"
-}:add_unlock("fine-electronics")
+}:add_unlock("battery")
 
 RECIPE {
     type = "recipe",
@@ -417,7 +419,7 @@ RECIPE {
         {type = "fluid", name = "carbon-dioxide", amount = 100}
     },
     main_product = "lime"
-}:add_unlock("separation")
+}:add_unlock("filtration")
 
 RECIPE {
     type = "recipe",
@@ -631,7 +633,7 @@ RECIPE {
     },
     main_product = "filtration-media",
     order = 'a'
-}:add_unlock("filtration")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -640,7 +642,7 @@ RECIPE {
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 700}
+        {type = "fluid", name = "dirty-water-heavy", amount = 400}
     },
     results = {
         {type = "item", name = "nexelit-ore", amount = 1},
@@ -648,4 +650,21 @@ RECIPE {
     },
     main_product = "nexelit-ore",
     subgroup = "py-mill",
-}:add_unlock("coal-processing-2")
+}:add_unlock("chemical-science-pack")
+
+RECIPE {
+    type = "recipe",
+    name = "sulfuric-acid",
+    category = "chemistry",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "fluid", name = "hydrogen-peroxide", amount = 50},
+        {type = "item", name = "sulfur", amount = 5},
+    },
+    results = {
+        {type = "fluid", name = "sulfuric-acid", amount = 50}
+    },
+    main_product = "sulfuric-acid",
+    --subgroup = "py-mill",
+}--:add_unlock("sulfur-processing") --already added by base

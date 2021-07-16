@@ -14,10 +14,10 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"gasturbinemk01", 1},
-        {"chemical-plant", 1}, --bob electrolyser
+        {"boiler", 2},
         {"electronic-circuit", 25},
         {"steel-plate", 20},
-        {"iron-gear-wheel", 15} --bob steel-bearing
+        {"iron-gear-wheel", 15}
     },
     results = {
         {"methanol-reactor", 1}

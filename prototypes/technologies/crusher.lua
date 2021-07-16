@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/crusher.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"engine", "coal-processing-2"},
+    prerequisites = {"engine"},
     effects = {},
     unit = {
         count = 25,

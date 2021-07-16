@@ -159,4 +159,8 @@ data:extend {
         type = "fuel-category",
         name = "drill"
     },
+    {
+        type = "fuel-category",
+        name = "jerry"
+    },
 }

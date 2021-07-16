@@ -4,11 +4,10 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"car", 1},
         {"iron-plate", 25},
         {"engine-unit", 4},
-        {"steel-plate", 30}, --bob invar-alloy
-        {"electronic-circuit", 15} --bob basic-electronic-circuit-board
+        {"steel-plate", 30},
+        {"electronic-circuit", 15}
     },
     results = {
         {"jaw-crusher", 1}

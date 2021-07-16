@@ -8,6 +8,9 @@ require('prototypes/item-groups')
 require('prototypes/recipe-categories')
 -- ))
 
+--placeholder for all the unorganized shit.
+require('prototypes/technologies/placeholder')
+
 -- (( Technology ))--
 require('prototypes/technologies/coal-processing-1')
 require('prototypes/technologies/coal-processing-2')
@@ -32,6 +35,17 @@ require('prototypes/technologies/crusher')
 require('prototypes/technologies/separation')
 require('prototypes/technologies/fuel-production')
 require('prototypes/technologies/fine-electronics')
+
+require('prototypes/technologies/ralesia')
+require('prototypes/technologies/ulric')
+require('prototypes/technologies/wood-processing')
+require('prototypes/technologies/wood-processing-2')
+
+require('prototypes/technologies/niobium')
+require('prototypes/technologies/chromium')
+
+require("prototypes/technologies/mukmoux")
+
 -- ))
 
 -- (( RESOURCEs ))--
@@ -51,6 +65,13 @@ require('prototypes/recipes/fts-reactor-recipes')
 require('prototypes/recipes/olefin-plant-recipes')
 require('prototypes/recipes/sand-extractor-recipes')
 require('prototypes/recipes/tailings-recipes')
+require("prototypes/recipes/filtration-recipes")
+require("prototypes/recipes/mukmoux-recipes")
+
+
+require("prototypes/updates/entity-updates")
+require('prototypes/updates/base-updates')
+
 -- ))
 
 -- (( ITEMs ))--
@@ -70,7 +91,8 @@ require('prototypes/fluids/methanol')
 require('prototypes/fluids/refsyngas')
 require('prototypes/fluids/syngas')
 require('prototypes/fluids/tar')
-require('prototypes/fluids/dirty-water')
+require('prototypes/fluids/dirty-water-light')
+require('prototypes/fluids/dirty-water-heavy')
 require('prototypes/fluids/flue-gas')
 require('prototypes/fluids/combustion-mixture1')
 -- require("prototypes/fluids/combustion-mixture2")

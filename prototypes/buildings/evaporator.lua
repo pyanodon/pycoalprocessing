@@ -23,7 +23,7 @@ RECIPE {
     results = {
         {"evaporator", 1}
     }
-}:add_unlock("coal-processing-2")
+}:add_unlock("separation")
 
 ITEM {
     type = "item",

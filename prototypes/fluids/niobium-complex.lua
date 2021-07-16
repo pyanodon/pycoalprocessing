@@ -14,7 +14,7 @@ RECIPE {
     },
     subgroup = "py-fluids",
     order = "c"
-}:add_unlock("coal-processing-2")
+}:add_unlock("niobium")
 
 FLUID {
     type = "fluid",

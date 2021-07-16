@@ -42,7 +42,7 @@ RECIPE {
     results = {
         {"quenching-tower", 1}
     }
-}:add_unlock("coal-processing-2")
+}:add_unlock("placeholder")
 
 ITEM {
     type = "item",

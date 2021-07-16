@@ -5,13 +5,13 @@ RECIPE {
     enabled = false,
     energy_required = 9.3,
     ingredients = {
-        {type = "fluid", name = "dirty-water", amount = 800},
+        {type = "fluid", name = "dirty-water-heavy", amount = 800},
         {type = "fluid", name = "water", amount = 2000},
-        {type = "fluid", name = "aromatics", amount = 500}
+        {type = "fluid", name = "aromatics", amount = 200}
     },
     results = {
         {type = "fluid", name = "crude-oil", amount = 400},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 60},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 100},
         {type = "fluid", name = "olefin", amount = 200}
     },
     main_product = "crude-oil",
@@ -19,7 +19,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h8"
-}:add_unlock("desulfurization")
+}:add_unlock("coal-liquefaction")
 
 RECIPE {
     type = "recipe",
@@ -41,7 +41,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-syngas",
     order = "b"
-}:add_unlock("desulfurization"):add_unlock("filtration")
+}:add_unlock("desulfurization")--:add_unlock("filtration")
 
 RECIPE {
     type = "recipe",
@@ -58,12 +58,12 @@ RECIPE {
         {type = "item", name = "sulfur", amount = 3, probability = 0.5},
         {type = "item", name = "ash", amount = 1}
     },
-    main_product = "sulfur",
+    main_product = "heavy-oil",
     icon = "__base__/graphics/icons/sulfur.png",
     icon_size = 64,
     subgroup = "py-sulfur",
     order = "b"
-}:add_unlock("desulfurization")
+}:add_unlock("oil-processing")
 
 RECIPE {
     type = "recipe",
@@ -79,7 +79,7 @@ RECIPE {
         {type = "item", name = "sulfur", amount = 2},
         {type = "item", name = "ash", amount = 1}
     },
-    main_product = "sulfur",
+    main_product = "light-oil",
     icon = "__base__/graphics/icons/sulfur.png",
     icon_size = 64,
     subgroup = "py-sulfur",
@@ -100,7 +100,7 @@ RECIPE {
         {type = "item", name = "sulfur", amount = 1},
         {type = "item", name = "ash", amount = 1}
     },
-    main_product = "sulfur",
+    main_product = "petroleum-gas",
     icon = "__base__/graphics/icons/sulfur.png",
     icon_size = 64,
     subgroup = "py-sulfur",
@@ -166,7 +166,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items",
     order = "a [coal-gas]"
-}:add_unlock("desulfurization")
+}:add_unlock("explosives")
 
 RECIPE {
     type = "recipe",
@@ -185,4 +185,4 @@ RECIPE {
     icon_size = data.raw.item.sulfur.icon_size,
     subgroup = "py-sulfur",
     order = "a"
-}:add_unlock("desulfurization")
+}:add_unlock("sulfur-processing")

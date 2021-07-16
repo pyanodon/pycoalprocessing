@@ -19,7 +19,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a1"
-}:add_unlock("fine-electronics")
+}:add_unlock("chemical-science-pack")
 
 --STEEL PLATE - cant change the base one,so i did that.
 RECIPE {
@@ -43,7 +43,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items",
     order = "a2"
-}:add_unlock("coal-processing-3")
+}:add_unlock("advanced-material-processing-2")
 
 --Make foundry recipes from smelting recipes with 1 ingredient.
 log("Creating additional foundry recipes")
@@ -102,6 +102,6 @@ if not mods["pyrawores"] and not mods["PyCoalTBaA"] then
             icons = recipe.icons,
             icon_size = 32,
             main_product = recipe.main_product or #res > 1 and get_main(res) or nil
-        }
+        }:add_unlock("advanced-material-processing-2")
     end
 end
