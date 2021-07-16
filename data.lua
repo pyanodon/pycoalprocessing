@@ -277,6 +277,7 @@ data.raw.fluid['petroleum-gas'].fuel_value = '1MJ'
 -- pycp fluids
 data.raw.fluid['coal-gas'].fuel_value = '0.2MJ'
 data.raw.fluid['syngas'].fuel_value = '0.4MJ'
+data.raw.fluid['aromatics'].fuel_value = '0.35MJ'
 data.raw.fluid['refsyngas'].fuel_value = '0.5MJ'
 data.raw.fluid['diesel'].fuel_value = '1.5MJ'
 data.raw.fluid['gasoline'].fuel_value = '1.2MJ'
