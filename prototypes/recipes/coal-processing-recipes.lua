@@ -472,7 +472,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items-hpf",
     order = "i"
-}:add_unlock("placeholder")
+}:add_unlock("concrete")
 
 RECIPE {
     type = "recipe",
