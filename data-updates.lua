@@ -40,7 +40,7 @@ ITEM("electric-engine-unit"):set_fields {pictures =
 RECIPE('rocket-silo'):replace_ingredient("pipe", "niobium-pipe")
 RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):add_ingredient({type = "item", name = "copper-cable", amount = 15})
 
-TECHNOLOGY('logistic-science-pack'):add_prereq('ralesia'):add_prereq('ulric'):add_prereq('energy-1')
+TECHNOLOGY('logistic-science-pack'):add_prereq('ulric'):add_prereq('energy-1')
 
 TECHNOLOGY('circuit-network'):remove_prereq('logistic-science-pack'):remove_pack('logistic-science-pack')
 
