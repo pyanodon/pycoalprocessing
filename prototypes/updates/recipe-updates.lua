@@ -32,6 +32,5 @@ end
 do
     --ADDING FUELROD INTO ROCKET-FUEL INTO ROCKET-FUEL
     local normal = {type = "item", name = "fuelrod-mk01", amount = 2}
-    local expensive = {type = "item", name = "fuelrod-mk01", amount = 4}
-    RECIPE("rocket-fuel"):make_difficult():add_ingredient(normal, expensive)
+    RECIPE("rocket-fuel"):add_ingredient(normal)
 end

@@ -33,6 +33,7 @@ require('prototypes/technologies/filtration')
 require('prototypes/technologies/desulfurization')
 require('prototypes/technologies/crusher')
 require('prototypes/technologies/separation')
+require("prototypes/technologies/fluid-separation")
 require('prototypes/technologies/fuel-production')
 require('prototypes/technologies/fine-electronics')
 

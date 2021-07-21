@@ -12,7 +12,7 @@ RECIPE {
         {type = "fluid", name = "coal-slurry", amount = 150}
     },
     main_product = "coal-slurry"
-}:add_unlock("separation")
+}:add_unlock("fluid-separation")
 
 FLUID {
     type = "fluid",

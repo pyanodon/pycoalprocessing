@@ -580,7 +580,7 @@ RECIPE {
     main_product = "tailings-dust",
     icon = "__pycoalprocessinggraphics__/graphics/icons/tailings_dust.png",
     icon_size = 32
-}:add_unlock("separation")
+}:add_unlock("fluid-separation")
 
 RECIPE {
     type = "recipe",
@@ -894,7 +894,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "c"
-}:add_unlock("placeholder")
+}:add_unlock("fluid-separation")
 
 RECIPE {
     type = "recipe",
@@ -916,7 +916,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "d"
-}:add_unlock("placeholder")
+}:add_unlock("fluid-separation")
 
 RECIPE {
     type = "recipe",

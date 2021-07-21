@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "borax-mine",
     energy_required = 0.5,
-    enabled = true,
+    enabled = false,
     ingredients = {
         {"electric-mining-drill", 1},
         {"soil-extractormk01", 1},
@@ -13,7 +13,7 @@ RECIPE {
     results = {
         {"borax-mine", 1}
     }
-}
+}:add_unlock('energy-1')
 
 ITEM {
     type = "item",

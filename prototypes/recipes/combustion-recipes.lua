@@ -42,7 +42,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "a"
-}:add_unlock("separation")
+}:add_unlock("fluid-separation")
 
 --SYNGAS to CM1
 RECIPE {

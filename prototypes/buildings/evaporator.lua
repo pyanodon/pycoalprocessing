@@ -23,7 +23,7 @@ RECIPE {
     results = {
         {"evaporator", 1}
     }
-}:add_unlock("separation")
+}:add_unlock("fluid-separation")
 
 ITEM {
     type = "item",
