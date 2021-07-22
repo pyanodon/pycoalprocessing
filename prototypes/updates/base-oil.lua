@@ -67,7 +67,7 @@ TECHNOLOGY('sulfur-processing'):add_prereq('coal-processing-2'):add_prereq('filt
 
 RECIPE('solid-fuel-from-heavy-oil'):remove_unlock('advanced-oil-processing'):add_unlock('oil-processing')
 
-TECHNOLOGY('plastics'):remove_prereq('oil-processing'):add_prereq('logistic-science-pack')
+TECHNOLOGY('plastics'):remove_prereq('oil-processing'):add_prereq('logistic-science-pack'):add_prereq('separation')
 
 RECIPE('oil-refinery'):remove_unlock('oil-processing'):add_unlock('plastics')
 

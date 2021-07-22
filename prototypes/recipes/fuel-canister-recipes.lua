@@ -10,7 +10,7 @@ RECIPE {
         {type = "item", name = "plastic-bar", amount = 2}
     },
     results = {
-        {type = "item", name = "empty-gas-canister", amount = 1}
+        {type = "item", name = "empty-fuel-canister", amount = 1}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/jerry-can.png",
     icon_size = 64,
@@ -40,6 +40,7 @@ for f, fluid in pairs(data.raw.fluid) do
             order = "canister-b-[full-gas-canister]",
             fuel_value = "10MJ",
             fuel_category = "jerry",
+            burnt_result = "empty-fuel-canister",
             stack_size = 25
         }
 
@@ -69,7 +70,7 @@ for f, fluid in pairs(data.raw.fluid) do
             --icon_size = 32
         }:add_unlock("plastics")
 
-        --[[
+
         RECIPE {
             type = "recipe",
             name = "empty-canister-" .. fluid.name,
@@ -81,15 +82,23 @@ for f, fluid in pairs(data.raw.fluid) do
                 {type = "item", name = "filled-canister-" .. fluid.name, amount = 1}
             },
             results = {
-                {type = "fluid", name = fluid.name, amount = math.ceil(10/ fluid.fuel_value)},
-                {type = "item", name = "empty-gas-canister", amount = 1}
+                {type = "fluid", name = fluid.name, amount = fuel_amount},
+                {type = "item", name = "empty-fuel-canister", amount = 1}
             },
             --icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
             --icon_size = 32,
             main_product = fluid.name,
             subgroup = "py-items",
             order = "canister-b-[empty-methanol-gas-canister]"
-        }:add_unlock()
-        ]]--
+        }:add_unlock("plastics")
+
+        if data.raw.item[fluid.name .. '-barrel'] ~= nil then
+            if data.raw.recipe['empty-' .. fluid.name .. '-barrel'] ~= nil then
+                RECIPE('empty-' .. fluid.name .. '-barrel'):remove_unlock('fluid-handling')
+            end
+            if data.raw.recipe['fill-' .. fluid.name .. '-barrel'] ~= nil then
+                RECIPE('fill-' .. fluid.name .. '-barrel'):remove_unlock('fluid-handling')
+            end
+        end
     end
 end
