@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/methanol-processing-1.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"logistic-science-pack","automation-2"},
+    prerequisites = {"automation-2", "engine"},
     --upgrade = true,
     effects = {},
     unit = {
