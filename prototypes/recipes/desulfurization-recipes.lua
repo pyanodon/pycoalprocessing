@@ -19,7 +19,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h8"
-}:add_unlock("coal-liquefaction")
+}:add_unlock("placeholder")
 
 RECIPE {
     type = "recipe",
@@ -63,7 +63,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-sulfur",
     order = "b"
-}:add_unlock("oil-processing")
+}:add_unlock("desulfurization")
 
 RECIPE {
     type = "recipe",

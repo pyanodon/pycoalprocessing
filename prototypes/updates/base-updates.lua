@@ -26,6 +26,12 @@ TECHNOLOGY("solar-energy"):remove_prereq('electronics')
 TECHNOLOGY("electric-energy-distribution-1"):remove_prereq('electronics')
 TECHNOLOGY("circuit-network"):remove_prereq('electronics')
 
+TECHNOLOGY("coal-liquefaction"):set_field{ enabled = false}
+
+TECHNOLOGY("oil-processing"):add_pack('chemical-science-pack'):add_prereq('chemical-science-pack'):remove_prereq('fluid-handling')
+
+TECHNOLOGY("flammables"):add_pack('military-science-pack')
+
 --(( RECIPES ))--
 RECIPE{
     type = "recipe",
