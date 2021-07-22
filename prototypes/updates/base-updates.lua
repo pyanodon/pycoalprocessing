@@ -32,6 +32,8 @@ TECHNOLOGY("oil-processing"):add_pack('chemical-science-pack'):add_prereq('chemi
 
 TECHNOLOGY("flammables"):add_pack('military-science-pack')
 
+TECHNOLOGY("military-2"):remove_prereq("steel-processing")
+
 --(( RECIPES ))--
 RECIPE{
     type = "recipe",
