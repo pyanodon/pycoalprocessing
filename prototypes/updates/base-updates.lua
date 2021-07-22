@@ -18,6 +18,14 @@ TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_p
 
 TECHNOLOGY("explosives"):remove_prereq("sulfur-processing"):add_prereq("mukmoux")
 
+TECHNOLOGY("electronics"):set_field{enabled = false}
+
+TECHNOLOGY("automation-2"):remove_prereq('electronics')
+TECHNOLOGY("fast-inserter"):remove_prereq('electronics'):add_prereq('automation')
+TECHNOLOGY("solar-energy"):remove_prereq('electronics')
+TECHNOLOGY("electric-energy-distribution-1"):remove_prereq('electronics')
+TECHNOLOGY("circuit-network"):remove_prereq('electronics')
+
 --(( RECIPES ))--
 RECIPE{
     type = "recipe",

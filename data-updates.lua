@@ -50,8 +50,6 @@ TECHNOLOGY('landfill'):remove_prereq('logistic-science-pack'):add_prereq('automa
 
 RECIPE("chemical-plant"):remove_unlock('oil-processing'):add_unlock("coal-processing-2"):add_ingredient({type = "item", name = "methanol-reactor", amount = 1})
 
-TECHNOLOGY("advanced-electronics"):add_prereq('electronics')
-
 TECHNOLOGY('chemical-science-pack'):add_prereq('fine-electronics'):remove_prereq('sulfur-processing')
 
 TECHNOLOGY("fluid-handling"):remove_prereq("automation-2"):remove_prereq("engine"):add_prereq("steel-processing"):remove_pack('logistic-science-pack')
