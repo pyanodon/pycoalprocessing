@@ -113,6 +113,23 @@ RECIPE("explosives"):remove_unlock("explosives")
 
 RECIPE("battery"):remove_unlock("battery")
 
+RECIPE {
+    type = "recipe",
+    name = "processing-unit",
+    category = "crafting-with-fluid",
+    enabled = false,
+    energy_required = 10,
+    ingredients = {
+        {type = "item", name = "electronic-circuit", amount =  5},
+        {type = "item", name = "advanced-circuit", amount = 2},
+        {type = "fluid", name = "sulfuric-acid", amount = 5},
+        {type = "item", name = "optical-fiber", amount = 1}
+    },
+    results = {
+        {type = "item", name = "processing-unit", amount = 1}
+    },
+  }
+
 --Science pack changes
 RECIPE {
   type = "recipe",

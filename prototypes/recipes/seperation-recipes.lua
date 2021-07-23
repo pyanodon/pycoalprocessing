@@ -138,7 +138,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "m"
-}:add_unlock("separation")
+}:add_unlock("coal-processing-1")
 
 RECIPE {
     type = "recipe",
