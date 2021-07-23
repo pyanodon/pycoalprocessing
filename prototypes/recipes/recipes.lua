@@ -533,7 +533,7 @@ RECIPE {
         {type = "item", name = "nbfe-alloy", amount = 2}
     },
     main_product = "nbfe-alloy"
-}:add_unlock("fine-electronics")
+}:add_unlock("niobium")
 
 RECIPE {
     type = "recipe",

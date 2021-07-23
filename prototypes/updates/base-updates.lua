@@ -1,6 +1,6 @@
 
 --(( TECHNOLOGY ))--
-TECHNOLOGY("logistics-2"):remove_prereq("logistic-science-pack"):add_prereq("fine-electronics"):add_prereq("chromium"):add_prereq("advanced-electronics"):add_prereq("lubricant")
+TECHNOLOGY("logistics-2"):remove_prereq("logistic-science-pack"):add_prereq("niobium"):add_prereq("chromium"):add_prereq("advanced-electronics"):add_prereq("lubricant")
 
 TECHNOLOGY("railway"):remove_prereq("logistics-2"):add_prereq("plastics")
 
@@ -130,6 +130,22 @@ RECIPE {
     },
   }
 
+  RECIPE {
+    type = "recipe",
+    name = "low-density-structure",
+    category = "crafting-with-fluid",
+    enabled = false,
+    energy_required = 20,
+    ingredients = {
+        {type = "item", name = "steel-plate", amount =  2},
+        {type = "item", name = "plastic-bar", amount = 5},
+        {type = "item", name = "niobium-plate", amount = 10}
+    },
+    results = {
+        {type = "item", name = "low-density-structure", amount = 1}
+    },
+  }
+
 --Science pack changes
 RECIPE {
   type = "recipe",
@@ -146,7 +162,7 @@ RECIPE {
       {type = "item", name = "electric-engine-unit", amount = 4}
   },
   results = {
-      {type = "item", name = "production-science-pack", amount = 2}
+      {type = "item", name = "production-science-pack", amount = 3}
   },
 }
 

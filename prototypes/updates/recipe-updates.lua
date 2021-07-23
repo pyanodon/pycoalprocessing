@@ -23,13 +23,6 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
 end
 
 do
-    --ADDING NIOBIUM INTO LOW DENSITY STRUCTURE
-    local normal = {type = "item", name = "niobium-plate", amount = 5}
-    local expensive = {type = "item", name = "niobium-plate", amount = 10}
-    RECIPE("low-density-structure"):make_difficult():add_ingredient(normal, expensive)
-end
-
-do
     --ADDING FUELROD INTO ROCKET-FUEL INTO ROCKET-FUEL
     local normal = {type = "item", name = "fuelrod-mk01", amount = 2}
     RECIPE("rocket-fuel"):add_ingredient(normal)
