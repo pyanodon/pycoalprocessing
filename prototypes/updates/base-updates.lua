@@ -163,7 +163,7 @@ RECIPE {
         {type = "item", name = "destroyer-capsule", amount = 4}
     },
     results = {
-        {type = "item", name = "utility-science-pack", amount = 3}
+        {type = "item", name = "utility-science-pack", amount = 4}
     },
   }
 
