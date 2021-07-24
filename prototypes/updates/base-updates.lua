@@ -36,6 +36,8 @@ TECHNOLOGY("military-2"):remove_prereq("steel-processing")
 
 TECHNOLOGY("engine"):remove_prereq("steel-processing")
 
+TECHNOLOGY("advanced-electronics"):add_prereq("fast-inserter")
+
 --(( RECIPES ))--
 RECIPE{
     type = "recipe",
