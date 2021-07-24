@@ -16,7 +16,7 @@ TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production
 
 TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("utility-science-pack"):add_prereq("production-science-pack")
 
-TECHNOLOGY("explosives"):remove_prereq("sulfur-processing"):add_prereq("mukmoux")
+TECHNOLOGY("explosives"):add_prereq("mukmoux")
 
 TECHNOLOGY("electronics"):set_field{enabled = false}
 
@@ -33,6 +33,8 @@ TECHNOLOGY("oil-processing"):add_pack('chemical-science-pack'):add_prereq('chemi
 TECHNOLOGY("flammables"):add_pack('military-science-pack')
 
 TECHNOLOGY("military-2"):remove_prereq("steel-processing")
+
+
 
 --(( RECIPES ))--
 RECIPE{
