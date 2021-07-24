@@ -1,6 +1,6 @@
 
 --(( TECHNOLOGY ))--
-TECHNOLOGY("logistics-2"):remove_prereq("logistic-science-pack"):add_prereq("niobium"):add_prereq("chromium"):add_prereq("advanced-electronics"):add_prereq("lubricant")
+TECHNOLOGY("logistics-2"):remove_prereq("logistic-science-pack"):add_prereq("niobium"):add_prereq("lubricant")
 
 TECHNOLOGY("railway"):remove_prereq("logistics-2"):add_prereq("plastics")
 
