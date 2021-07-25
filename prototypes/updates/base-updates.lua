@@ -1,6 +1,6 @@
 
 --(( TECHNOLOGY ))--
-TECHNOLOGY("logistics-2"):remove_prereq("logistic-science-pack"):add_prereq("niobium"):add_prereq("chromium"):add_prereq("advanced-electronics"):add_prereq("lubricant")
+TECHNOLOGY("logistics-2"):remove_prereq("logistic-science-pack"):add_prereq("niobium"):add_prereq("lubricant")
 
 TECHNOLOGY("railway"):remove_prereq("logistics-2"):add_prereq("plastics")
 
@@ -16,13 +16,13 @@ TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production
 
 TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("utility-science-pack"):add_prereq("production-science-pack")
 
-TECHNOLOGY("explosives"):remove_prereq("sulfur-processing"):add_prereq("mukmoux")
+TECHNOLOGY("explosives"):add_prereq("mukmoux")
 
 TECHNOLOGY("electronics"):set_field{enabled = false}
 
 TECHNOLOGY("automation-2"):remove_prereq('electronics')
 TECHNOLOGY("fast-inserter"):remove_prereq('electronics'):add_prereq('automation')
-TECHNOLOGY("solar-energy"):remove_prereq('electronics')
+TECHNOLOGY("solar-energy"):remove_prereq('electronics'):remove_prereq("steel-processing"):remove_prereq("optics")
 TECHNOLOGY("electric-energy-distribution-1"):remove_prereq('electronics')
 TECHNOLOGY("circuit-network"):remove_prereq('electronics')
 
@@ -31,6 +31,12 @@ TECHNOLOGY("coal-liquefaction"):set_field{ enabled = false}
 TECHNOLOGY("oil-processing"):add_pack('chemical-science-pack'):add_prereq('chemical-science-pack'):remove_prereq('fluid-handling')
 
 TECHNOLOGY("flammables"):add_pack('military-science-pack')
+
+TECHNOLOGY("military-2"):remove_prereq("steel-processing")
+
+TECHNOLOGY("engine"):remove_prereq("steel-processing")
+
+TECHNOLOGY("advanced-electronics"):add_prereq("fast-inserter")
 
 --(( RECIPES ))--
 RECIPE{

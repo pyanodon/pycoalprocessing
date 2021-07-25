@@ -63,7 +63,7 @@ TECHNOLOGY('lubricant'):remove_prereq("advanced-oil-processing"):remove_prereq('
 
 TECHNOLOGY('advanced-oil-processing'):remove_pack('chemical-science-pack')
 
-TECHNOLOGY('sulfur-processing'):add_prereq('coal-processing-2'):add_prereq('filtration'):remove_prereq("oil-processing")
+TECHNOLOGY('sulfur-processing'):add_prereq('filtration'):remove_prereq("oil-processing")
 
 RECIPE('solid-fuel-from-heavy-oil'):remove_unlock('advanced-oil-processing'):add_unlock('oil-processing')
 

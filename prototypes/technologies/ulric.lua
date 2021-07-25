@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/ulric.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-1","ralesia"},
+    prerequisites = {"ralesia"},
     effects = {},
     unit = {
         count = 100,
