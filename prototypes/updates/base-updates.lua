@@ -38,6 +38,10 @@ TECHNOLOGY("engine"):remove_prereq("steel-processing")
 
 TECHNOLOGY("advanced-electronics"):add_prereq("fast-inserter")
 
+TECHNOLOGY("concrete"):remove_prereq("advanced-material-processing"):remove_prereq("automation-2"):add_prereq("separation")
+
+RECIPE("concrete"):remove_unlock("concrete")
+
 --(( RECIPES ))--
 RECIPE{
     type = "recipe",

@@ -419,7 +419,7 @@ RECIPE {
         {type = "fluid", name = "carbon-dioxide", amount = 100}
     },
     main_product = "lime"
-}:add_unlock("filtration")
+}:add_unlock("concrete")
 
 RECIPE {
     type = "recipe",

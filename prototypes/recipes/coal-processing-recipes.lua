@@ -461,7 +461,8 @@ RECIPE {
     energy_required = 2,
     ingredients = {
         {type = "item", name = "rich-clay", amount = 15},
-        {type = "fluid", name = "sulfuric-acid", amount = 50}
+        {type = "item", name = "lime", amount = 10},
+        {type = "fluid", name = "water", amount = 100}
     },
     results = {
         {type = "item", name = "concrete", amount = 15}
