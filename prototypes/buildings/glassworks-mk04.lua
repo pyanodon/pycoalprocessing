@@ -65,6 +65,13 @@ ENTITY {
 		},
 	effectivity = 1,
 	burns_fluid = true,
+    light_flicker =
+    {
+      minimum_intensity = 0,
+      maximum_intensity = 0,
+      light_intensity_to_size_coefficient = 0,
+      color = {0,0,0},
+    },
 	scale_fluid_usage = true,
 	fluid_usage_per_tick = 10,
       smoke =
