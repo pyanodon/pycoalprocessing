@@ -193,6 +193,19 @@ RECIPE {
     },
   }
 
+  RECIPE{
+    type = "recipe",
+    name = "fusion-reactor-equipment",
+    enabled = false,
+    energy_required = 10,
+    ingredients =
+    {
+      {"processing-unit", 50},
+      {"low-density-structure", 10}
+    },
+    result = "fusion-reactor-equipment"
+  }
+
   --ENTITY
 
   data.raw.car.car.burner.fuel_category = "jerry"
