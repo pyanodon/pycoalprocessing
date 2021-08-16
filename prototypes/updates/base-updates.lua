@@ -189,7 +189,7 @@ RECIPE {
         {type = "item", name = "destroyer-capsule", amount = 4}
     },
     results = {
-        {type = "item", name = "utility-science-pack", amount = 4}
+        {type = "item", name = "utility-science-pack", amount = 8}
     },
   }
 
@@ -204,6 +204,34 @@ RECIPE {
       {"low-density-structure", 10}
     },
     result = "fusion-reactor-equipment"
+  }
+
+  RECIPE{
+    type = "recipe",
+    name = "distractor-capsule",
+    enabled = false,
+    energy_required = 15,
+    ingredients =
+    {
+      {"defender-capsule", 2},
+      {"advanced-circuit", 2}
+    },
+    result = "distractor-capsule",
+    result_count = 2
+  }
+
+  RECIPE{
+    type = "recipe",
+    name = "destroyer-capsule",
+    enabled = false,
+    energy_required = 15,
+    ingredients =
+    {
+      {"distractor-capsule", 2},
+      {"speed-module", 1}
+    },
+    result = "destroyer-capsule",
+    result_count = 2
   }
 
   --ENTITY

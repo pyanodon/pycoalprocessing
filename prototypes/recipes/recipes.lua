@@ -183,7 +183,7 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        {type = "item", name = "optical-fiber", amount = 20},
+        {type = "item", name = "optical-fiber", amount = 10},
         {type = "item", name = "advanced-circuit", amount = 2},
         {type = "item", name = "copper-cable", amount = 16}, --bob insulated-cable
         {type = "item", name = "iron-plate", amount = 20},
@@ -650,7 +650,7 @@ RECIPE {
     },
     main_product = "nexelit-ore",
     subgroup = "py-mill",
-}:add_unlock("chemical-science-pack")
+}:add_unlock("nexelit")
 
 RECIPE {
     type = "recipe",

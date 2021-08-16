@@ -43,6 +43,7 @@ require('prototypes/technologies/wood-processing')
 require('prototypes/technologies/wood-processing-2')
 
 require('prototypes/technologies/niobium')
+require('prototypes/technologies/nexelit')
 require('prototypes/technologies/chromium')
 
 require("prototypes/technologies/mukmoux")
