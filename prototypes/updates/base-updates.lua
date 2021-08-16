@@ -130,13 +130,13 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        {type = "item", name = "electronic-circuit", amount =  5},
+        --{type = "item", name = "electronic-circuit", amount =  5},
         {type = "item", name = "advanced-circuit", amount = 2},
         {type = "fluid", name = "sulfuric-acid", amount = 5},
-        {type = "item", name = "optical-fiber", amount = 1}
+        {type = "item", name = "optical-fiber", amount = 2}
     },
     results = {
-        {type = "item", name = "processing-unit", amount = 1}
+        {type = "item", name = "processing-unit", amount = 2}
     },
   }
 
@@ -200,7 +200,7 @@ RECIPE {
     energy_required = 10,
     ingredients =
     {
-      {"processing-unit", 50},
+      {"processing-unit", 25},
       {"low-density-structure", 10}
     },
     result = "fusion-reactor-equipment"
@@ -232,6 +232,19 @@ RECIPE {
     },
     result = "destroyer-capsule",
     result_count = 2
+  }
+
+  RECIPE{
+    type = "recipe",
+    name = "assembling-machine-3",
+    enabled = false,
+    ingredients =
+    {
+      --{"speed-module", 2},
+      {"stack-inserter", 2},
+      {"assembling-machine-2", 2}
+    },
+    result = "assembling-machine-3"
   }
 
   --ENTITY
