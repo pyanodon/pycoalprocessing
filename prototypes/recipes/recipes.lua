@@ -149,7 +149,7 @@ RECIPE {
         {type = "fluid", name = "steam", amount = 400}
     },
     results = {
-        {type = "fluid", name = "water", amount = 400}
+        {type = "fluid", name = "water", amount = 400, catalyst_amount = 400}
     },
     main_product = "water",
     subgroup = "py-fluids",
