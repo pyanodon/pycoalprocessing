@@ -12,7 +12,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 575},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120}
+        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-coalgas.png",
     icon_size = 32,
@@ -35,7 +35,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 500},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120}
+        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-coal-slurry.png",
     icon_size = 32,
@@ -58,7 +58,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 250, temperature = 650},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120}
+        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-syngas.png",
     icon_size = 32,
@@ -81,7 +81,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 725},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120}
+        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-diborane.png",
     icon_size = 32,
@@ -104,7 +104,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 800},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120}
+        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-heavy-oil.png",
     icon_size = 32,
@@ -127,7 +127,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 900},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120}
+        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-light-oil.png",
     icon_size = 32,
@@ -150,7 +150,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1000},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120}
+        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-petgas.png",
     icon_size = 32,
@@ -173,7 +173,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1200},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120}
+        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-methanol.png",
     icon_size = 32,
@@ -196,7 +196,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1400},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120}
+        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-refsyngas.png",
     icon_size = 32,
@@ -219,7 +219,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1600},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120}
+        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-acetylene.png",
     icon_size = 32,
@@ -242,7 +242,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1800},
-        {type = "fluid", name = "steam", amount = 1000, temperature = 100}
+        {type = "fluid", name = "steam", amount = 1000, temperature = 100, catalyst_amount = 1000}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-olefin.png",
     icon_size = 32,
@@ -265,7 +265,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 300, temperature = 2400},
-        {type = "fluid", name = "steam", amount = 1000, temperature = 100}
+        {type = "fluid", name = "steam", amount = 1000, temperature = 100, catalyst_amount = 1000}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-diesel.png",
     icon_size = 32,
@@ -289,7 +289,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 2600},
-        {type = "fluid", name = "steam", amount = 1000, temperature = 100}
+        {type = "fluid", name = "steam", amount = 1000, temperature = 100, catalyst_amount = 1000}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-gasoline.png",
     icon_size = 32,
@@ -313,7 +313,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 2800},
-        {type = "fluid", name = "steam", amount = 1500, temperature = 100}
+        {type = "fluid", name = "steam", amount = 1500, temperature = 100, catalyst_amount = 1500}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-super-critical.png",
     icon_size = 32,
@@ -337,7 +337,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 3000},
-        {type = "fluid", name = "steam", amount = 1500, temperature = 100}
+        {type = "fluid", name = "steam", amount = 1500, temperature = 100, catalyst_amount = 1500}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-ultra-super-critical.png",
     icon_size = 32,
