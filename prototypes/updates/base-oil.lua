@@ -83,3 +83,5 @@ RECIPE("solid-fuel-from-petroleum-gas"):remove_unlock("oil-processing")
 RECIPE('solid-fuel-from-heavy-oil'):remove_unlock('advanced-oil-processing')
 
 RECIPE('solid-fuel-from-light-oil'):remove_unlock('advanced-oil-processing')
+
+RECIPE("sulfur"):remove_unlock('sulfur-processing')
