@@ -59,16 +59,27 @@ end
 
 data.raw.technology['coal-liquefaction'].effects = recipes_to_keep
 
+TECHNOLOGY("oil-processing"):add_pack('chemical-science-pack'):add_prereq('chemical-science-pack'):remove_prereq('fluid-handling')
+
+TECHNOLOGY("flammables"):add_pack('military-science-pack')
+
+TECHNOLOGY("coal-liquefaction"):set_fields{enabled = false}
+
 TECHNOLOGY('lubricant'):remove_prereq("advanced-oil-processing"):remove_prereq('chemical-science-pack'):remove_pack('chemical-science-pack'):add_prereq("mukmoux")
 
-TECHNOLOGY('advanced-oil-processing'):remove_pack('chemical-science-pack')
+TECHNOLOGY('advanced-oil-processing'):set_fields{enabled = false}
 
 TECHNOLOGY('sulfur-processing'):add_prereq('filtration'):remove_prereq("oil-processing")
-
-RECIPE('solid-fuel-from-heavy-oil'):remove_unlock('advanced-oil-processing'):add_unlock('oil-processing')
 
 TECHNOLOGY('plastics'):remove_prereq('oil-processing'):add_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
 
 RECIPE('oil-refinery'):remove_unlock('oil-processing'):add_unlock('plastics')
 
 RECIPE('plastic-bar'):remove_unlock('plastics')
+
+--moving solid fuels
+RECIPE("solid-fuel-from-petroleum-gas"):remove_unlock("oil-processing")
+
+RECIPE('solid-fuel-from-heavy-oil'):remove_unlock('advanced-oil-processing')
+
+RECIPE('solid-fuel-from-light-oil'):remove_unlock('advanced-oil-processing')

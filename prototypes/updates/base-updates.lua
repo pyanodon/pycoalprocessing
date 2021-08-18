@@ -26,12 +26,6 @@ TECHNOLOGY("solar-energy"):remove_prereq('electronics'):remove_prereq("steel-pro
 TECHNOLOGY("electric-energy-distribution-1"):remove_prereq('electronics')
 TECHNOLOGY("circuit-network"):remove_prereq('electronics')
 
-TECHNOLOGY("coal-liquefaction"):set_field{ enabled = false}
-
-TECHNOLOGY("oil-processing"):add_pack('chemical-science-pack'):add_prereq('chemical-science-pack'):remove_prereq('fluid-handling')
-
-TECHNOLOGY("flammables"):add_pack('military-science-pack')
-
 TECHNOLOGY("military-2"):remove_prereq("steel-processing")
 
 TECHNOLOGY("engine"):remove_prereq("steel-processing")
@@ -41,6 +35,8 @@ TECHNOLOGY("advanced-electronics"):add_prereq("fast-inserter")
 TECHNOLOGY("concrete"):remove_prereq("advanced-material-processing"):remove_prereq("automation-2"):add_prereq("separation")
 
 RECIPE("concrete"):remove_unlock("concrete")
+
+TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing")
 
 --(( RECIPES ))--
 RECIPE{
@@ -245,6 +241,20 @@ RECIPE {
       {"assembling-machine-2", 2}
     },
     result = "assembling-machine-3"
+  }
+
+  -------
+
+  RECIPE{
+    type = "recipe",
+    name = "rocket-fuel",
+    enabled = false,
+    ingredients =
+      {
+        {type = "fluid", name = "hydrogen-peroxide", amount = 80},
+        {type = "fluid", name = "methanol", amount = 20}
+      },
+    result = "rocket-fuel"
   }
 
   --ENTITY

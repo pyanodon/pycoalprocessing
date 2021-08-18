@@ -1147,6 +1147,7 @@ RECIPE {
     order = "e"
 }:add_unlock("filtration-2")
 
+--[[
 RECIPE {
     type = "recipe",
     name = "oleo-solidfuel",
@@ -1165,6 +1166,7 @@ RECIPE {
     subgroup = "py-fluid-handling",
     order = "c"
 }:add_unlock("coal-processing-3")
+]]--
 
 RECIPE {
     type = "recipe",

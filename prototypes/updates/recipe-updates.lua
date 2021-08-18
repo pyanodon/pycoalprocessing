@@ -21,9 +21,3 @@ if PYC.USE_CREOSOTE_RECIPES then -- flag from config.lua
     RECIPE("wood-floor"):replace_ingredient("wood", "treated-wood")
     RECIPE("bi-wooden-fence"):replace_ingredient("wood", "treated-wood")
 end
-
-do
-    --ADDING FUELROD INTO ROCKET-FUEL INTO ROCKET-FUEL
-    local normal = {type = "item", name = "fuelrod-mk01", amount = 2}
-    RECIPE("rocket-fuel"):add_ingredient(normal)
-end

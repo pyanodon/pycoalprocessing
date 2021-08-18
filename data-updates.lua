@@ -76,9 +76,6 @@ require("prototypes/recipes/advanced-foundry-recipes")
 --remove base game oil processing stuff
 require("prototypes/updates/base-oil")
 
---moving solid fuels
-RECIPE("solid-fuel-from-petroleum-gas"):remove_unlock("oil-processing"):add_unlock("coal-processing-2")
-
 --move barrels below everything else in intermediate tab
 data.raw["item-subgroup"]["fill-barrel"].order = "y"
 data.raw["item-subgroup"]["empty-barrel"].order = "z"
