@@ -36,6 +36,10 @@ TECHNOLOGY("concrete"):remove_prereq("advanced-material-processing"):remove_prer
 
 TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing")
 
+TECHNOLOGY("rocket-control-unit"):remove_prereq('speed-module')
+
+TECHNOLOGY("automation-3"):remove_prereq('speed-module')
+
 --(( RECIPES ))--
 
 RECIPE{
