@@ -32,13 +32,29 @@ TECHNOLOGY("engine"):remove_prereq("steel-processing")
 
 TECHNOLOGY("advanced-electronics"):add_prereq("fast-inserter")
 
-TECHNOLOGY("concrete"):remove_prereq("advanced-material-processing"):remove_prereq("automation-2"):add_prereq("separation")
-
-RECIPE("concrete"):remove_unlock("concrete")
+TECHNOLOGY("concrete"):remove_prereq("advanced-material-processing"):remove_prereq("automation-2"):add_prereq("separation"):add_prereq("logistic-science-pack")
 
 TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing")
 
 --(( RECIPES ))--
+
+RECIPE{
+  type = "recipe",
+  name = "concrete",
+  enabled = false,
+  ingredients =
+    {
+      {name = "lime", amount = 5},
+      {name = "sand", amount = 10},
+      {name = "gravel", amount = 10},
+      {type = "fluid", name = "water", amount = 100}
+    },
+    results =
+    {
+        {name =  "concrete", amount = 5}
+    }
+  }
+
 RECIPE{
     type = "recipe",
     name = "fast-transport-belt",

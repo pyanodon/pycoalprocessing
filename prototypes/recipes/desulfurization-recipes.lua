@@ -171,7 +171,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "extract-sulfur",
-    category = "desulfurization",
+    category = "evaporator",
     enabled = false,
     energy_required = 1,
     ingredients = {

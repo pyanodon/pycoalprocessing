@@ -16,14 +16,14 @@ RECIPE {
         {"gasturbinemk01", 1},
         {"chemical-plant", 1},
         {"electronic-circuit", 10},
-        {"steel-plate", 40}, --bob lead-plate
-        {"iron-plate", 40}, --bob steel-gear-wheel
-        {"iron-gear-wheel", 15} --bob steel-bearing
+        {"steel-plate", 40},
+        {"iron-plate", 40},
+        {"iron-gear-wheel", 15}
     },
     results = {
         {"evaporator", 1}
     }
-}:add_unlock("fluid-separation")
+}:add_unlock("sulfur-processing")
 
 ITEM {
     type = "item",
