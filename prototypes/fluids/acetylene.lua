@@ -13,7 +13,7 @@ RECIPE {
         {type = "fluid", name = "slacked-lime", amount = 25}
     },
     main_product = "acetylene"
-}:add_unlock("filtration-2")
+}
 
 FLUID {
     type = "fluid",

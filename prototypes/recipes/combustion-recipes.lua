@@ -226,7 +226,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "g"
-}:add_unlock("placeholder")
+}
 
 --OLEFIN to CM1
 RECIPE {
