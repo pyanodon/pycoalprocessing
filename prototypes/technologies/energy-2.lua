@@ -5,7 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     --upgrade = true,
-    prerequisites = {"methanol-processing-2","energy-1"},
+    prerequisites = {"methanol-processing-1","energy-1"},
     effects = {},
     unit = {
         count = 100,

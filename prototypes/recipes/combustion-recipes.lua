@@ -180,7 +180,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "e"
-}:add_unlock("methanol-processing-2")
+}:add_unlock("energy-2")
 
 --REFSYNGAS to CM1
 RECIPE {
