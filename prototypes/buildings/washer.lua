@@ -19,7 +19,7 @@ RECIPE {
     type = "recipe",
     name = "washer",
     energy_required = 0.5,
-    enabled = true,
+    enabled = false,
     ingredients = {
         {"iron-plate", 10},
         {"pipe", 25},
@@ -29,7 +29,7 @@ RECIPE {
     results = {
         {"washer", 1}
     }
-}
+}:add_unlock("energy-1")
 
 ITEM {
     type = "item",
