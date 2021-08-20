@@ -20,7 +20,7 @@ TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_p
 
 TECHNOLOGY("explosives"):add_prereq("mukmoux")
 
-TECHNOLOGY("electronics"):set_field{enabled = false}
+TECHNOLOGY("electronics"):set_fields{enabled = false}
 
 TECHNOLOGY("automation-2"):remove_prereq('electronics'):remove_prereq("steel-processing")
 TECHNOLOGY("fast-inserter"):remove_prereq('electronics'):add_prereq('automation')
