@@ -8,11 +8,13 @@ TECHNOLOGY("automobilism"):remove_prereq("logistics-2"):add_prereq("plastics")
 
 TECHNOLOGY("electric-engine"):add_prereq("chemical-science-pack")
 
+TECHNOLOGY("chemical-science-pack"):remove_prereq("advanced-electronics")
+
 TECHNOLOGY("production-science-pack"):remove_prereq("productivity-module"):remove_prereq("advanced-material-processing-2"):remove_prereq("railway"):add_prereq("uranium-processing"):add_prereq("speed-module-2"):add_prereq("effectivity-module-2"):add_prereq("electric-engine"):add_prereq("energy-3")
 
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("robotics"):remove_prereq("advanced-electronics-2"):remove_prereq("low-density-structure"):add_prereq("automation-3"):add_prereq("kovarex-enrichment-process"):add_prereq("fusion-reactor-equipment"):add_prereq("destroyer")
 
-TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("military-4"):add_prereq("production-science-pack")
+TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("military-4"):add_prereq("production-science-pack"):remove_prereq("speed-module")
 
 TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("utility-science-pack"):add_prereq("production-science-pack"):add_prereq('low-density-structure')
 
@@ -20,7 +22,7 @@ TECHNOLOGY("explosives"):add_prereq("mukmoux")
 
 TECHNOLOGY("electronics"):set_field{enabled = false}
 
-TECHNOLOGY("automation-2"):remove_prereq('electronics')
+TECHNOLOGY("automation-2"):remove_prereq('electronics'):remove_prereq("steel-processing")
 TECHNOLOGY("fast-inserter"):remove_prereq('electronics'):add_prereq('automation')
 TECHNOLOGY("solar-energy"):remove_prereq('electronics'):remove_prereq("steel-processing"):remove_prereq("optics")
 TECHNOLOGY("electric-energy-distribution-1"):remove_prereq('electronics')
@@ -43,6 +45,20 @@ TECHNOLOGY("automation-3"):remove_prereq('speed-module')
 TECHNOLOGY("kovarex-enrichment-process"):remove_prereq('uranium-processing')
 
 TECHNOLOGY("electric-engine"):remove_prereq('concrete')
+
+TECHNOLOGY("logistics-3"):remove_prereq('lubricant')
+
+TECHNOLOGY("advanced-material-processing"):remove_prereq("steel-processing")
+
+TECHNOLOGY("stack-inserter"):remove_prereq("logistics-2"):remove_prereq("fast-inserter")
+
+TECHNOLOGY("advanced-material-processing-2"):remove_prereq("advanced-material-processing")
+
+TECHNOLOGY("low-density-structure"):remove_prereq("advanced-material-processing")
+
+TECHNOLOGY("fluid-wagon"):remove_prereq("fluid-handling")
+
+TECHNOLOGY("laser"):remove_prereq("optics")
 
 --(( RECIPES ))--
 

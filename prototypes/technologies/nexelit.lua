@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/nexelit.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"fluid-separation"},
+    prerequisites = {"fluid-separation", "advanced-material-processing"},
     effects = {},
     unit = {
         count = 200,
