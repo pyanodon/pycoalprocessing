@@ -22,7 +22,7 @@ TECHNOLOGY("explosives"):add_prereq("mukmoux")
 
 TECHNOLOGY("electronics"):set_field{enabled = false}
 
-TECHNOLOGY("automation-2"):remove_prereq('electronics')
+TECHNOLOGY("automation-2"):remove_prereq('electronics'):remove_prereq("steel-processing")
 TECHNOLOGY("fast-inserter"):remove_prereq('electronics'):add_prereq('automation')
 TECHNOLOGY("solar-energy"):remove_prereq('electronics'):remove_prereq("steel-processing"):remove_prereq("optics")
 TECHNOLOGY("electric-energy-distribution-1"):remove_prereq('electronics')
