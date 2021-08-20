@@ -14,7 +14,7 @@ TECHNOLOGY("production-science-pack"):remove_prereq("productivity-module"):remov
 
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("robotics"):remove_prereq("advanced-electronics-2"):remove_prereq("low-density-structure"):add_prereq("automation-3"):add_prereq("kovarex-enrichment-process"):add_prereq("fusion-reactor-equipment"):add_prereq("destroyer")
 
-TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("military-4"):add_prereq("production-science-pack")
+TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("military-4"):add_prereq("production-science-pack"):remove_prereq("speed-module")
 
 TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("utility-science-pack"):add_prereq("production-science-pack"):add_prereq('low-density-structure')
 
