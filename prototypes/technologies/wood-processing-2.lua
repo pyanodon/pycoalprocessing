@@ -5,7 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     --upgrade = true,
-    prerequisites = {"wood-processing", "logistic-science-pack"},
+    prerequisites = {"logistic-science-pack"},
     effects = {},
     unit = {
         count = 30,
