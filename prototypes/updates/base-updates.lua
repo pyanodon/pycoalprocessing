@@ -56,6 +56,8 @@ TECHNOLOGY("advanced-material-processing-2"):remove_prereq("advanced-material-pr
 
 TECHNOLOGY("low-density-structure"):remove_prereq("advanced-material-processing")
 
+TECHNOLOGY("fluid-wagon"):remove_prereq("fluid-handling")
+
 --(( RECIPES ))--
 
 RECIPE{
