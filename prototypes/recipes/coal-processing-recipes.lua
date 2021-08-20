@@ -1024,7 +1024,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "i"
-}:add_unlock("placeholder")
+}:add_unlock("advanced-oil-processing")
 
 RECIPE {
     type = "recipe",
@@ -1125,7 +1125,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "c"
-}:add_unlock("coal-processing-3"):add_unlock("fuel-production")
+}:add_unlock("coal-processing-3")--:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",

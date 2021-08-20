@@ -19,7 +19,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h8"
-}:add_unlock("placeholder")
+}:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",

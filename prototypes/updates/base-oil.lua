@@ -67,7 +67,7 @@ TECHNOLOGY("coal-liquefaction"):set_fields{enabled = false}
 
 TECHNOLOGY('lubricant'):remove_prereq("advanced-oil-processing"):remove_prereq('chemical-science-pack'):remove_pack('chemical-science-pack'):add_prereq("mukmoux")
 
-TECHNOLOGY('advanced-oil-processing'):set_fields{enabled = false}
+TECHNOLOGY('advanced-oil-processing'):add_pack('production-science-pack'):remove_prereq('chemical-science-pack'):add_prereq('production-science-pack')
 
 TECHNOLOGY('sulfur-processing'):add_prereq('filtration'):remove_prereq("oil-processing")
 

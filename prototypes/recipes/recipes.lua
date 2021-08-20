@@ -299,7 +299,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h"
-}:add_unlock("placeholder")
+}:add_unlock("advanced-oil-processing")
 
 RECIPE {
     type = "recipe",
@@ -342,7 +342,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "w"
-}:add_unlock("placeholder")
+}:add_unlock("advanced-oil-processing")
 
 RECIPE {
     type = "recipe",
@@ -435,7 +435,7 @@ RECIPE {
     results = {
         {type = "item", name = "fuelrod-mk01", amount = 3}
     }
-}:add_unlock("fuel-production")
+}:add_unlock("advanced-material-processing-2")
 
 RECIPE {
     type = "recipe",
@@ -633,7 +633,7 @@ RECIPE {
     },
     main_product = "filtration-media",
     order = 'a'
-}:add_unlock("placeholder")
+}:add_unlock("advanced-oil-processing")
 
 RECIPE {
     type = "recipe",

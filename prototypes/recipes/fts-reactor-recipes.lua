@@ -19,7 +19,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-fluid-handling",
     order = "h"
-}:add_unlock("fuel-production")
+}:add_unlock("advanced-oil-processing")
 
 RECIPE {
     type = "recipe",
@@ -86,7 +86,7 @@ RECIPE {
     main_product = "light-oil",
     subgroup = "py-fluid-handling",
     order = "h4"
-}:add_unlock("fuel-production")
+}:add_unlock("advanced-oil-processing")
 
 RECIPE {
     type = "recipe",
@@ -110,7 +110,7 @@ RECIPE {
     main_product = "sulfuric-acid",
     subgroup = "py-fluid-handling",
     order = "h5"
-}:add_unlock("fuel-production")
+}:add_unlock("advanced-oil-processing")
 
 RECIPE {
     type = "recipe",
@@ -156,7 +156,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h9"
-}:add_unlock("placeholder")
+}:add_unlock("advanced-oil-processing")
 
 RECIPE {
     type = "recipe",
@@ -202,7 +202,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "h11"
-}:add_unlock("fuel-production")
+}:add_unlock("advanced-oil-processing")
 
 RECIPE {
     type = "recipe",
@@ -267,4 +267,4 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-fluid-handling",
     order = "h12"
-}:add_unlock("placeholder")
+}:add_unlock("advanced-oil-processing")

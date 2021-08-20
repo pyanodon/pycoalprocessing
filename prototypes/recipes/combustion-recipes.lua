@@ -111,7 +111,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "d"
-}:add_unlock("placeholder")
+}:add_unlock("energy-3")
 
 --LIGHT OIL to CM1
 RECIPE {

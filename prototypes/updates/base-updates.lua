@@ -301,6 +301,31 @@ RECIPE {
     result = "rocket-fuel"
   }
 
+  RECIPE{
+    type = "recipe",
+    name = "lubricant",
+    category = "chemistry",
+    enabled = false,
+    energy_required = 5,
+    ingredients =
+    {
+      {type="fluid", name="heavy-oil", amount=150},
+      {type = "item", name = "nexelit-plate", amount = 2}
+    },
+    results=
+    {
+      {type="fluid", name="lubricant", amount=100}
+    },
+    subgroup = "fluid-recipes",
+    crafting_machine_tint =
+    {
+      primary = {r = 0.268, g = 0.723, b = 0.223, a = 1.000}, -- #44b838ff
+      secondary = {r = 0.432, g = 0.793, b = 0.386, a = 1.000}, -- #6eca62ff
+      tertiary = {r = 0.647, g = 0.471, b = 0.396, a = 1.000}, -- #a57865ff
+      quaternary = {r = 1.000, g = 0.395, b = 0.127, a = 1.000}, -- #ff6420ff
+    }
+  }:add_unlock('advanced-oil-processing')
+
   --ENTITY
 
   data.raw.car.car.burner.fuel_category = "jerry"

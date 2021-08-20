@@ -42,7 +42,7 @@ RECIPE {
     results = {
         {"quenching-tower", 1}
     }
-}:add_unlock("placeholder")
+}:add_unlock("fluid-separation")
 
 ITEM {
     type = "item",

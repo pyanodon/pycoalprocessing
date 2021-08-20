@@ -12,7 +12,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "aromatics", amount = 300}
     }
-}:add_unlock("placeholder")
+}:add_unlock("advanced-oil-processing")
 
 ITEM {
     type = "fluid",
