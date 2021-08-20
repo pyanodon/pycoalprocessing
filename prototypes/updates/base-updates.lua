@@ -45,6 +45,7 @@ TECHNOLOGY("automation-3"):remove_prereq('speed-module')
 RECIPE{
   type = "recipe",
   name = "concrete",
+  category = "crafting-with-fluid",
   enabled = false,
   ingredients =
     {
