@@ -40,6 +40,8 @@ TECHNOLOGY("rocket-control-unit"):remove_prereq('speed-module')
 
 TECHNOLOGY("automation-3"):remove_prereq('speed-module')
 
+TECHNOLOGY("kovarex-enrichment-process"):remove_prereq('uranium-processing')
+
 --(( RECIPES ))--
 
 RECIPE{
