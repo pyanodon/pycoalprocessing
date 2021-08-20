@@ -14,7 +14,7 @@ TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):remove_pr
 
 TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("military-4"):add_prereq("production-science-pack")
 
-TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("utility-science-pack"):add_prereq("production-science-pack")
+TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("utility-science-pack"):add_prereq("production-science-pack"):add_prereq('low-density-structure')
 
 TECHNOLOGY("explosives"):add_prereq("mukmoux")
 
