@@ -59,7 +59,6 @@ RECIPE("pump"):remove_unlock("fluid-handling"):add_unlock("engine")
 TECHNOLOGY('logistic-robotics'):remove_prereq('advanced-electronics')
 
 --RECIPE("wood"):set_fields {energy_required = 10}
-data.raw["technology"]["stack-inserter"].prerequisites = {"fast-inserter", "logistics-2"}
 
 --recipe updates
 RECIPE("distilator-mk03"):replace_ingredient("pipe", "niobium-pipe")

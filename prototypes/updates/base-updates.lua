@@ -50,6 +50,8 @@ TECHNOLOGY("logistics-3"):remove_prereq('lubricant')
 
 TECHNOLOGY("advanced-material-processing"):remove_prereq("steel-processing")
 
+TECHNOLOGY("stack-inserter"):remove_prereq("logistics-2"):remove_prereq("fast-inserter")
+
 --(( RECIPES ))--
 
 RECIPE{
