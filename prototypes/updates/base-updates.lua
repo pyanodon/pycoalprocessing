@@ -8,6 +8,8 @@ TECHNOLOGY("automobilism"):remove_prereq("logistics-2"):add_prereq("plastics")
 
 TECHNOLOGY("electric-engine"):add_prereq("chemical-science-pack")
 
+TECHNOLOGY("chemical-science-pack"):remove_prereq("advanced-electronics")
+
 TECHNOLOGY("production-science-pack"):remove_prereq("productivity-module"):remove_prereq("advanced-material-processing-2"):remove_prereq("railway"):add_prereq("uranium-processing"):add_prereq("speed-module-2"):add_prereq("effectivity-module-2"):add_prereq("electric-engine"):add_prereq("energy-3")
 
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("robotics"):remove_prereq("advanced-electronics-2"):remove_prereq("low-density-structure"):add_prereq("automation-3"):add_prereq("kovarex-enrichment-process"):add_prereq("fusion-reactor-equipment"):add_prereq("destroyer")
