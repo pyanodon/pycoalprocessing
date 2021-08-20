@@ -311,7 +311,7 @@ RECIPE {
     results = {
         {"iron-plate", 2}
     },
-}:add_unlock("crusher")
+}:add_unlock("advanced-material-processing")
 
 RECIPE {
     type = "recipe",
@@ -323,7 +323,7 @@ RECIPE {
     results = {
         {"copper-plate", 2}
     },
-}:add_unlock("crusher")
+}:add_unlock("advanced-material-processing")
 
 RECIPE {
     type = "recipe",

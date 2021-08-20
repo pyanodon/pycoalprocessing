@@ -29,7 +29,7 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "crushed-iron", amount = 2},
+        {type = "item", name = "crushed-iron", amount = 15},
         {type = "item", name = "coke", amount = 2},
         {type = "item", name = "fuelrod-mk01", amount = 1},
         {type = "item", name = "limestone", amount = 2},
@@ -45,6 +45,7 @@ RECIPE {
     order = "a2"
 }:add_unlock("advanced-material-processing-2")
 
+--[[
 --Make foundry recipes from smelting recipes with 1 ingredient.
 log("Creating additional foundry recipes")
 
@@ -105,3 +106,4 @@ if not mods["pyrawores"] and not mods["PyCoalTBaA"] then
         }:add_unlock("advanced-material-processing-2")
     end
 end
+]]--

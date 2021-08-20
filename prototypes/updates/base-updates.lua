@@ -48,7 +48,7 @@ TECHNOLOGY("electric-engine"):remove_prereq('concrete')
 
 TECHNOLOGY("logistics-3"):remove_prereq('lubricant')
 
-TECHNOLOGY("advanced-material-processing"):remove_prereq("steel-processing")
+TECHNOLOGY("advanced-material-processing"):remove_prereq("steel-processing"):add_prereq('crusher')
 
 TECHNOLOGY("stack-inserter"):remove_prereq("logistics-2"):remove_prereq("fast-inserter")
 

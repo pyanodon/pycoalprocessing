@@ -33,3 +33,10 @@ data.raw['mining-drill']['burner-mining-drill'].energy_usage = '500KW'
 
 data.raw['mining-drill']['electric-mining-drill'].mining_speed = 2
 data.raw['mining-drill']['electric-mining-drill'].energy_usage = '1MW'
+
+data.raw.furnace["steel-furnace"].energy_usage = "500kW"
+
+data.raw.furnace["electric-furnace"].energy_usage = "1MW"
+data.raw.furnace["electric-furnace"].crafting_speed = 4
+data.raw.furnace["electric-furnace"].allowed_effects = nil
+data.raw.furnace["electric-furnace"].module_specification = nil

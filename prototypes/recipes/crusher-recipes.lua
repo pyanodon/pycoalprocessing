@@ -38,7 +38,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-crusher",
     order = "b"
-}:add_unlock("crusher")
+}:add_unlock("advanced-material-processing")
 
 --COPPER
 RECIPE {
@@ -59,7 +59,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-crusher",
     order = "c"
-}:add_unlock("crusher")
+}:add_unlock("advanced-material-processing")
 
 --STONE to GRAVEL
 RECIPE {
