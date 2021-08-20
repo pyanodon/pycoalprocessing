@@ -71,7 +71,7 @@ TECHNOLOGY('advanced-oil-processing'):set_fields{enabled = false}
 
 TECHNOLOGY('sulfur-processing'):add_prereq('filtration'):remove_prereq("oil-processing")
 
-TECHNOLOGY('plastics'):remove_prereq('oil-processing'):add_prereq('logistic-science-pack'):add_prereq('coal-processing-1')
+TECHNOLOGY('plastics'):remove_prereq('oil-processing'):add_prereq('logistic-science-pack')
 
 RECIPE('oil-refinery'):remove_unlock('oil-processing'):add_unlock('plastics')
 
