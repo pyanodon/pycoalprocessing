@@ -60,6 +60,8 @@ TECHNOLOGY("fluid-wagon"):remove_prereq("fluid-handling")
 
 TECHNOLOGY("laser"):remove_prereq("optics")
 
+TECHNOLOGY("rocketry"):remove_prereq('military-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
