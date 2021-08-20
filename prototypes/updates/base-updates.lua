@@ -274,6 +274,7 @@ RECIPE {
     type = "recipe",
     name = "rocket-fuel",
     enabled = false,
+    category = "crafting-with-fluid",
     ingredients =
       {
         {type = "fluid", name = "hydrogen-peroxide", amount = 80},
