@@ -42,6 +42,8 @@ TECHNOLOGY("automation-3"):remove_prereq('speed-module')
 
 TECHNOLOGY("kovarex-enrichment-process"):remove_prereq('uranium-processing')
 
+TECHNOLOGY("electric-engine"):remove_prereq('concrete')
+
 --(( RECIPES ))--
 
 RECIPE{
