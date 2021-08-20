@@ -1039,7 +1039,7 @@ RECIPE {
     results = {
         {type = "item", name = "calcium-carbide", amount = 10}
     }
-}:add_unlock("filtration-2")
+}--:add_unlock("filtration-2")
 
 RECIPE {
     type = "recipe",
