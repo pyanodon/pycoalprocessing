@@ -52,6 +52,10 @@ TECHNOLOGY("advanced-material-processing"):remove_prereq("steel-processing")
 
 TECHNOLOGY("stack-inserter"):remove_prereq("logistics-2"):remove_prereq("fast-inserter")
 
+TECHNOLOGY("advanced-material-processing-2"):remove_prereq("advanced-material-processing")
+
+TECHNOLOGY("low-density-structure"):remove_prereq("advanced-material-processing")
+
 --(( RECIPES ))--
 
 RECIPE{
