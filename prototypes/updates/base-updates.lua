@@ -48,6 +48,8 @@ TECHNOLOGY("electric-engine"):remove_prereq('concrete')
 
 TECHNOLOGY("logistics-3"):remove_prereq('lubricant')
 
+TECHNOLOGY("advanced-material-processing"):remove_prereq("steel-processing")
+
 --(( RECIPES ))--
 
 RECIPE{
