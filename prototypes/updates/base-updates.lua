@@ -58,6 +58,8 @@ TECHNOLOGY("low-density-structure"):remove_prereq("advanced-material-processing"
 
 TECHNOLOGY("fluid-wagon"):remove_prereq("fluid-handling")
 
+TECHNOLOGY("laser"):remove_prereq("optics")
+
 --(( RECIPES ))--
 
 RECIPE{
