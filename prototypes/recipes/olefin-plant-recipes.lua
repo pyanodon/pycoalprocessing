@@ -18,7 +18,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d1"
-}:add_unlock("fuel-production")
+}--:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
@@ -38,7 +38,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d2"
-}:add_unlock("fuel-production")
+}--:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
@@ -125,7 +125,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "d6"
-}:add_unlock("fuel-production")
+}--:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",

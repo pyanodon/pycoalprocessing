@@ -272,7 +272,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "i"
-}:add_unlock("energy-3")
+}--:add_unlock("energy-3")
 
 --GASOLINE to CM1
 RECIPE {
@@ -296,7 +296,7 @@ RECIPE {
     --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "j"
-}:add_unlock("energy-3")
+}--:add_unlock("energy-3")
 
 --SUPERCRITICAL COAL
 RECIPE {
