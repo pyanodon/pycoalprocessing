@@ -66,6 +66,12 @@ TECHNOLOGY("braking-force-3"):add_prereq('production-science-pack')
 
 TECHNOLOGY("braking-force-6"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("worker-robots-speed-3"):remove_pack('utility-science-pack'):add_pack('production-science-pack'):add_prereq('production-science-pack')
+
+TECHNOLOGY("worker-robots-speed-4"):remove_pack('utility-science-pack'):add_pack('production-science-pack')
+
+TECHNOLOGY("worker-robots-speed-5"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
