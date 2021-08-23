@@ -1105,7 +1105,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "a"
-}:add_unlock("chemical-science-pack")
+}:add_unlock("nexelit")
 
 RECIPE {
     type = "recipe",
