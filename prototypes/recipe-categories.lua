@@ -163,4 +163,8 @@ data:extend {
         type = "fuel-category",
         name = "jerry"
     },
+    {
+        type = "recipe-category",
+        name = "handcrafting"
+    },
 }

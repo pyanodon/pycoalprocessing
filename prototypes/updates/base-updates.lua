@@ -66,6 +66,23 @@ TECHNOLOGY("rocketry"):remove_prereq('military-science-pack')
 
 RECIPE{
   type = "recipe",
+  name = "small-electric-pole-2",
+  category = "crafting-with-fluid",
+  enabled = false,
+  energy_required = 2,
+  ingredients =
+    {
+      {type = "item", name = "treated-wood", amount = 3},
+      {type = "item", name = "copper-cable", amount = 3},
+    },
+  results =
+    {
+        {type = "item", name = "small-electric-pole", amount = 3}
+    }
+}:add_unlock("wood-processing")
+
+RECIPE{
+  type = "recipe",
   name = "concrete",
   category = "crafting-with-fluid",
   enabled = false,

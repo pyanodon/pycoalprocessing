@@ -38,7 +38,12 @@ ITEM("electric-engine-unit"):set_fields {pictures =
 }}
 
 RECIPE('rocket-silo'):replace_ingredient("pipe", "niobium-pipe")
-RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):add_ingredient({type = "item", name = "copper-cable", amount = 15})
+
+RECIPE("small-electric-pole"):set_category("handcrafting")
+
+RECIPE("medium-electric-pole"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):replace_ingredient("copper-plate", {"copper-cable", 5}):replace_ingredient("iron-stick", {"nbfe-alloy", 2}):remove_ingredient('steel-plate')
+
+RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient({type = "item", name = "niobium-plate", amount = 2}):add_ingredient({type = "item", name = "copper-cable", amount = 15}):replace_ingredient('iron-stick', {"steel-plate", 6})
 
 TECHNOLOGY('logistic-science-pack'):add_prereq('ulric'):add_prereq('energy-1')
 
@@ -78,6 +83,14 @@ require("prototypes/updates/base-oil")
 --move barrels below everything else in intermediate tab
 data.raw["item-subgroup"]["fill-barrel"].order = "y"
 data.raw["item-subgroup"]["empty-barrel"].order = "z"
+
+--add handcrafting to player character
+for _, player in DATA:pairs('character') do
+    player.crafting_categories = player.String_Array(player.crafting_categories or {}) + 'handcrafting'
+end
+for _, controller in DATA:pairs('god-controller') do
+    controller.crafting_categories = controller.String_Array(controller.crafting_categories or {}) + 'handcrafting'
+end
 
 --gather recipes for module changes
 local recipes_list =
