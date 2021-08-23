@@ -72,6 +72,10 @@ TECHNOLOGY("worker-robots-speed-4"):remove_pack('utility-science-pack'):add_pack
 
 TECHNOLOGY("worker-robots-speed-5"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("mining-productivity-2"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("mining-productivity-3"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
