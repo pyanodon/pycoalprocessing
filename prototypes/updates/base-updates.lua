@@ -62,6 +62,10 @@ TECHNOLOGY("laser"):remove_prereq("optics")
 
 TECHNOLOGY("rocketry"):remove_prereq('military-science-pack')
 
+TECHNOLOGY("braking-force-3"):add_prereq('production-science-pack')
+
+TECHNOLOGY("braking-force-6"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
