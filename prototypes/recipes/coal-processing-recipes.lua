@@ -509,7 +509,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 1, probability = 0.3}
     },
     main_product = "syngas"
-}:add_unlock("placeholder")
+}:add_unlock("coal-processing-3")
 
 RECIPE {
     type = "recipe",
@@ -962,7 +962,7 @@ RECIPE {
         {type = "item", name = "coal", amount = 1}
     },
     energy_required = 0.5
-}:add_unlock("placeholder")
+}:add_unlock("coal-processing-3")
 
 RECIPE {
     type = "recipe",
@@ -981,7 +981,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "r"
-}:add_unlock("placeholder")
+}:add_unlock("coal-processing-3")
 
 RECIPE {
     type = "recipe",
@@ -1001,7 +1001,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items",
     order = "s"
-}:add_unlock("placeholder")
+}:add_unlock("concrete")
 
 RECIPE {
     type = "recipe",
