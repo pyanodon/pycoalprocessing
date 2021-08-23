@@ -40,7 +40,7 @@ TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing")
 
 TECHNOLOGY("rocket-control-unit"):remove_prereq('speed-module')
 
-TECHNOLOGY("automation-3"):remove_prereq('speed-module')
+TECHNOLOGY("automation-3"):remove_prereq('speed-module'):add_prereq('stack-inserter')
 
 TECHNOLOGY("kovarex-enrichment-process"):remove_prereq('uranium-processing')
 
