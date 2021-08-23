@@ -63,7 +63,7 @@ TECHNOLOGY("oil-processing"):add_pack('chemical-science-pack'):add_prereq('chemi
 
 TECHNOLOGY("flammables"):add_pack('military-science-pack'):remove_prereq('oil-processing'):add_prereq('coal-processing-2')
 
-TECHNOLOGY("coal-liquefaction"):set_fields{enabled = false}
+TECHNOLOGY("coal-liquefaction"):set_fields{enabled = false}:set_fields{hidden = true}
 
 TECHNOLOGY('lubricant'):remove_prereq("advanced-oil-processing"):remove_prereq('chemical-science-pack'):remove_pack('chemical-science-pack'):add_prereq("mukmoux")
 
