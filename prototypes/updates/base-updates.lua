@@ -357,6 +357,8 @@ RECIPE {
     }
   }:add_unlock('advanced-oil-processing')
 
+  RECIPE("flamethrower-ammo"):replace_ingredient('crude-oil', 'light-oil')
+
   --ENTITY
 
   data.raw.car.car.burner.fuel_category = "jerry"
