@@ -46,7 +46,7 @@ TECHNOLOGY("kovarex-enrichment-process"):remove_prereq('uranium-processing')
 
 TECHNOLOGY("electric-engine"):remove_prereq('concrete')
 
-TECHNOLOGY("logistics-3"):remove_prereq('lubricant')
+TECHNOLOGY("logistics-3"):remove_prereq('lubricant'):add_prereq('logistics-2')
 
 TECHNOLOGY("advanced-material-processing"):remove_prereq("steel-processing"):add_prereq('crusher'):remove_prereq('logistic-science-pack')
 
