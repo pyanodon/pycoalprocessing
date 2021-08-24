@@ -774,17 +774,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    name = "calcium-carbide",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/calcium-carbide.png",
-    icon_size = 32,
-    flags = {},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 100
-}
-
-ITEM {
-    type = "item",
     name = "crushed-iron",
     enabled = false,
     icon = "__pycoalprocessinggraphics__/graphics/icons/crusher/crushed-iron.png",
@@ -830,18 +819,6 @@ ITEM {
     subgroup = "py-items",
     order = "a2",
     stack_size = 100
-}
-
-ITEM {
-    type = "item",
-    name = "rare-earth-dust",
-    enabled = false,
-    icon = "__pycoalprocessinggraphics__/graphics/icons/rare-earth-dust.png",
-    icon_size = 32,
-    flags = {},
-    subgroup = "py-items",
-    order = "a2",
-    stack_size = 400
 }
 
 ITEM {

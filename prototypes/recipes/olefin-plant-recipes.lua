@@ -1,44 +1,3 @@
-RECIPE {
-    type = "recipe",
-    name = "diesel",
-    category = "olefin",
-    enabled = false,
-    energy_required = 1.5,
-    ingredients = {
-        {type = "item", name = "nexelit-plate", amount = 2},
-        {type = "fluid", name = "methanol", amount = 100},
-        {type = "fluid", name = "carbon-dioxide", amount = 200}
-    },
-    results = {
-        {type = "fluid", name = "diesel", amount = 150},
-        {type = "fluid", name = "olefin", amount = 100}
-    },
-    main_product = "diesel",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/diesel.png",
-    icon_size = 32,
-    subgroup = "py-fluids",
-    order = "d1"
-}--:add_unlock("fuel-production")
-
-RECIPE {
-    type = "recipe",
-    name = "diesel2",
-    category = "olefin",
-    enabled = false,
-    energy_required = 1.5,
-    ingredients = {
-        {type = "item", name = "nexelit-plate", amount = 2},
-        {type = "fluid", name = "olefin", amount = 200}
-    },
-    results = {
-        {type = "fluid", name = "diesel", amount = 200}
-    },
-    main_product = "diesel",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/diesel.png",
-    icon_size = 32,
-    subgroup = "py-fluids",
-    order = "d2"
-}--:add_unlock("fuel-production")
 
 RECIPE {
     type = "recipe",
@@ -105,6 +64,7 @@ RECIPE {
     order = "d5"
 }:add_unlock("fuel-production")
 
+--[[
 RECIPE {
     type = "recipe",
     name = "gasoline",
@@ -126,6 +86,7 @@ RECIPE {
     subgroup = "py-fluids",
     order = "d6"
 }--:add_unlock("fuel-production")
+]]--
 
 RECIPE {
     type = "recipe",

@@ -100,8 +100,6 @@ require('prototypes/fluids/combustion-mixture1')
 -- require("prototypes/fluids/combustion-mixture2")
 require('prototypes/fluids/water-saline')
 require('prototypes/fluids/aromatics')
-require('prototypes/fluids/diesel')
-require('prototypes/fluids/gasoline')
 require('prototypes/fluids/olefin')
 require('prototypes/fluids/hydrogen-peroxide')
 require('prototypes/fluids/anthraquinone')
@@ -113,9 +111,7 @@ require('prototypes/fluids/oleochemicals')
 require('prototypes/fluids/glycerol')
 require('prototypes/fluids/organic-solvent')
 require('prototypes/fluids/niobium-complex')
-require('prototypes/fluids/rare-earth-mud')
 require('prototypes/fluids/tpa')
-require('prototypes/fluids/acetylene')
 -- ))
 
 -- (( BUILDINGS ))--
@@ -132,9 +128,6 @@ require('prototypes/buildings/tailings-pond')
 require('prototypes/buildings/quenching-tower')
 require('prototypes/buildings/hpf')
 require('prototypes/buildings/power-house')
-require('prototypes/buildings/power-house-mk02')
-require('prototypes/buildings/power-house-mk03')
-require('prototypes/buildings/power-house-mk04')
 require('prototypes/buildings/cooling-tower-mk01')
 require('prototypes/buildings/cooling-tower-mk02')
 require('prototypes/buildings/evaporator')
@@ -196,6 +189,10 @@ if mods['pyrawores'] then
     require('prototypes/buildings/hpf-mk02')
     require('prototypes/buildings/hpf-mk03')
     require('prototypes/buildings/hpf-mk04')
+
+    require('prototypes/buildings/power-house-mk02')
+    require('prototypes/buildings/power-house-mk03')
+    require('prototypes/buildings/power-house-mk04')
 
     require('prototypes/buildings/evaporator-mk02')
     require('prototypes/buildings/evaporator-mk03')
@@ -303,8 +300,6 @@ data.raw.fluid['coal-gas'].fuel_value = '0.2MJ'
 data.raw.fluid['syngas'].fuel_value = '0.4MJ'
 data.raw.fluid['aromatics'].fuel_value = '0.35MJ'
 data.raw.fluid['refsyngas'].fuel_value = '0.5MJ'
-data.raw.fluid['diesel'].fuel_value = '1.5MJ'
-data.raw.fluid['gasoline'].fuel_value = '1.2MJ'
 data.raw.fluid['methanol'].fuel_value = '1MJ'
 data.raw.fluid['tar'].fuel_value = '0.2MJ'
 data.raw.fluid['combustion-mixture1'].fuel_value = '0.1MJ'

@@ -205,29 +205,6 @@ RECIPE {
     order = "f"
 }:add_unlock("energy-2")
 
---ACETYLENE to CM1
-RECIPE {
-    type = "recipe",
-    name = "acetylene-combustion",
-    category = "combustion",
-    enabled = false,
-    energy_required = 3,
-    ingredients = {
-        {type = "fluid", name = "acetylene", amount = 100},
-        {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "coke", amount = 3}
-    },
-    results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1600},
-        {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
-    },
-    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-acetylene.png",
-    icon_size = 32,
-    --main_product = "combustion-mixture1",
-    subgroup = "py-combustion",
-    order = "g"
-}
-
 --OLEFIN to CM1
 RECIPE {
     type = "recipe",

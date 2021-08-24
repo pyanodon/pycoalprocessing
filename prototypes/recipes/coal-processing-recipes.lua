@@ -699,46 +699,6 @@ RECIPE {
     order = "c9"
 }:add_unlock("wood-processing-2")
 
---[[
-RECIPE {
-    type = "recipe",
-    name = "rich-re",
-    category = "evaporator",
-    enabled = false,
-    energy_required = 3.0,
-    ingredients = {
-        {type = "fluid", name = "rare-earth-mud", amount = 150}
-    },
-    results = {
-        {type = "item", name = "rich-dust", amount = 5},
-        {type = "fluid", name = "flue-gas", amount = 100}
-    },
-    main_product = "rich-dust",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/rich-re.png",
-    icon_size = 32,
-    subgroup = "py-items",
-    order = "u"
-}:add_unlock("placeholder")
-]]--
-
---[[
-RECIPE {
-    type = "recipe",
-    name = "eva-ree-dust",
-    category = "evaporator",
-    enabled = false,
-    energy_required = 3.0,
-    ingredients = {
-        {type = "fluid", name = "rare-earth-mud", amount = 250}
-    },
-    results = {
-        {type = "item", name = "rare-earth-dust", amount = 10},
-        {type = "fluid", name = "flue-gas", amount = 200}
-    },
-    main_product = "rare-earth-dust"
-}:add_unlock("placeholder")
-]]--
-
 RECIPE {
     type = "recipe",
     name = "organics-from-wood",
@@ -1025,21 +985,6 @@ RECIPE {
     subgroup = "py-fluid-handling",
     order = "i"
 }:add_unlock("advanced-oil-processing")
-
-RECIPE {
-    type = "recipe",
-    name = "calcium-carbide",
-    category = "hpf",
-    enabled = false,
-    energy_required = 4,
-    ingredients = {
-        {type = "item", name = "coke", amount = 7},
-        {type = "item", name = "lime", amount = 2}
-    },
-    results = {
-        {type = "item", name = "calcium-carbide", amount = 10}
-    }
-}--:add_unlock("filtration-2")
 
 RECIPE {
     type = "recipe",
