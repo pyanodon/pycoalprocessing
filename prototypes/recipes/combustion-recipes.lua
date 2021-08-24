@@ -228,53 +228,6 @@ RECIPE {
     order = "h"
 }:add_unlock("energy-3")
 
---DIESEL to CM1
-RECIPE {
-    type = "recipe",
-    name = "diesel-combustion",
-    category = "combustion",
-    enabled = false,
-    energy_required = 3,
-    ingredients = {
-        {type = "fluid", name = "diesel", amount = 100},
-        {type = "fluid", name = "water", amount = 1000},
-        {type = "item", name = "fuelrod-mk01", amount = 1}
-    },
-    results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 300, temperature = 2400},
-        {type = "fluid", name = "steam", amount = 1000, temperature = 100, catalyst_amount = 1000}
-    },
-    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-diesel.png",
-    icon_size = 32,
-    --main_product = "combustion-mixture1",
-    subgroup = "py-combustion",
-    order = "i"
-}--:add_unlock("energy-3")
-
---GASOLINE to CM1
-RECIPE {
-    type = "recipe",
-    name = "gasoline-combustion",
-    category = "combustion",
-    enabled = false,
-    energy_required = 3,
-    ingredients = {
-        {type = "fluid", name = "gasoline", amount = 100},
-        {type = "fluid", name = "water", amount = 1000},
-        {type = "item", name = "coke", amount = 5},
-        {type = "item", name = "fuelrod-mk01", amount = 1}
-    },
-    results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 2600},
-        {type = "fluid", name = "steam", amount = 1000, temperature = 100, catalyst_amount = 1000}
-    },
-    icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-gasoline.png",
-    icon_size = 32,
-    --main_product = "combustion-mixture1",
-    subgroup = "py-combustion",
-    order = "j"
-}--:add_unlock("energy-3")
-
 --SUPERCRITICAL COAL
 RECIPE {
     type = "recipe",
