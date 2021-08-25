@@ -379,9 +379,6 @@ RECIPE {
     results = {
         {type = "item", name = "battery", amount = 6}
     },
-    main_product = "battery",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/nas-battery.png",
-    icon_size = 32,
     subgroup = "py-items",
     order = "y"
 }:add_unlock("battery")
