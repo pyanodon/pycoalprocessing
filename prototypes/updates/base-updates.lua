@@ -96,6 +96,14 @@ TECHNOLOGY("inserter-capacity-bonus-7"):add_prereq('utility-science-pack')
 
 TECHNOLOGY("flammables"):add_prereq('military-science-pack')
 
+TECHNOLOGY("physical-projectile-damage-2"):add_prereq('logistic-science-pack')
+
+TECHNOLOGY("physical-projectile-damage-3"):add_prereq('military-science-pack')
+
+TECHNOLOGY("physical-projectile-damage-5"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("physical-projectile-damage-6"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
