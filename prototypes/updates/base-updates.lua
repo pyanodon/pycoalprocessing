@@ -126,6 +126,10 @@ TECHNOLOGY("energy-weapons-damage-5"):add_prereq('utility-science-pack')
 
 TECHNOLOGY("laser-shooting-speed-5"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("follower-robot-count-3"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("follower-robot-count-5"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
