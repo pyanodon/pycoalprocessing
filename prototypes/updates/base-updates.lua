@@ -136,6 +136,8 @@ TECHNOLOGY("personal-laser-defense-equipment"):remove_prereq('modular-armor')
 
 TECHNOLOGY("effect-transmission"):remove_prereq("advanced-electronics-2")
 
+TECHNOLOGY("military-4"):remove_prereq("military-3")
+
 --(( RECIPES ))--
 
 RECIPE{
