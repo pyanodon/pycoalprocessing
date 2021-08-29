@@ -142,6 +142,8 @@ TECHNOLOGY("power-armor-mk2"):remove_prereq("power-armor"):remove_prereq("speed-
 
 TECHNOLOGY("uranium-ammo"):remove_prereq("uranium-processing")
 
+TECHNOLOGY("rocket-silo"):remove_prereq("rocket-fuel"):remove_prereq("concrete")
+
 --(( RECIPES ))--
 
 RECIPE{
