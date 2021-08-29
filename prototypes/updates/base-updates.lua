@@ -132,6 +132,8 @@ TECHNOLOGY("follower-robot-count-5"):add_prereq('utility-science-pack')
 
 TECHNOLOGY("flamethrower"):remove_prereq('military-science-pack')
 
+TECHNOLOGY("personal-laser-defense-equipment"):remove_prereq('modular-armor')
+
 --(( RECIPES ))--
 
 RECIPE{
