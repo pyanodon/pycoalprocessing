@@ -118,6 +118,10 @@ TECHNOLOGY("weapon-shooting-speed-5"):add_prereq('chemical-science-pack')
 
 TECHNOLOGY("weapon-shooting-speed-6"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("refined-flammables-3"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("refined-flammables-4"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
