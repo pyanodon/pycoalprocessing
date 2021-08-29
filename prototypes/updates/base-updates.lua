@@ -36,7 +36,7 @@ TECHNOLOGY("advanced-electronics"):add_prereq("fast-inserter")
 
 TECHNOLOGY("concrete"):remove_prereq("advanced-material-processing"):remove_prereq("automation-2"):add_prereq("separation"):add_prereq("logistic-science-pack")
 
-TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing")
+TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing"):add_prereq('chemical-science-pack')
 
 TECHNOLOGY("rocket-control-unit"):remove_prereq('speed-module')
 
