@@ -134,6 +134,8 @@ TECHNOLOGY("flamethrower"):remove_prereq('military-science-pack')
 
 TECHNOLOGY("personal-laser-defense-equipment"):remove_prereq('modular-armor')
 
+TECHNOLOGY("effect-transmission"):remove_prereq("advanced-electronics-2")
+
 --(( RECIPES ))--
 
 RECIPE{
