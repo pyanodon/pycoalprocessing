@@ -130,6 +130,8 @@ TECHNOLOGY("follower-robot-count-3"):add_prereq('chemical-science-pack')
 
 TECHNOLOGY("follower-robot-count-5"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("flamethrower"):remove_prereq('military-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
