@@ -44,7 +44,7 @@ TECHNOLOGY("automation-3"):remove_prereq('speed-module'):add_prereq('stack-inser
 
 TECHNOLOGY("kovarex-enrichment-process"):remove_prereq('uranium-processing')
 
-TECHNOLOGY("electric-engine"):remove_prereq('concrete')
+TECHNOLOGY("uranium-processing"):remove_prereq('concrete')
 
 TECHNOLOGY("logistics-3"):remove_prereq('lubricant'):add_prereq('logistics-2')
 
