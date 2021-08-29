@@ -110,6 +110,14 @@ TECHNOLOGY("stronger-explosives-3"):add_prereq('chemical-science-pack')
 
 TECHNOLOGY("stronger-explosives-4"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("weapon-shooting-speed-2"):add_prereq('logistic-science-pack')
+
+TECHNOLOGY("weapon-shooting-speed-3"):add_prereq('military-science-pack')
+
+TECHNOLOGY("weapon-shooting-speed-5"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("weapon-shooting-speed-6"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
