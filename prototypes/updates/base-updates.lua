@@ -76,6 +76,8 @@ TECHNOLOGY("mining-productivity-2"):add_prereq('chemical-science-pack')
 
 TECHNOLOGY("mining-productivity-3"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("mining-productivity-4"):add_prereq('space-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
