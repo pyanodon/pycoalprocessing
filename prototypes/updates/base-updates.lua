@@ -140,6 +140,8 @@ TECHNOLOGY("military-4"):remove_prereq("military-3")
 
 TECHNOLOGY("power-armor-mk2"):remove_prereq("power-armor"):remove_prereq("speed-module-2"):remove_prereq("effectivity-module-2")
 
+TECHNOLOGY("uranium-ammo"):remove_prereq("uranium-processing")
+
 --(( RECIPES ))--
 
 RECIPE{
