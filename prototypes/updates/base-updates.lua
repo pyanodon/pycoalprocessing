@@ -146,6 +146,8 @@ TECHNOLOGY("rocket-silo"):remove_prereq("rocket-fuel"):remove_prereq("concrete")
 
 TECHNOLOGY("spidertron"):remove_prereq("fusion-reactor-equipment")
 
+TECHNOLOGY("atomic-bomb"):remove_prereq("kovarex-enrichment-process")
+
 --(( RECIPES ))--
 
 RECIPE{
