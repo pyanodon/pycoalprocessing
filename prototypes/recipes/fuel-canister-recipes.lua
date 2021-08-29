@@ -99,7 +99,7 @@ for f, fluid in pairs(data.raw.fluid) do
             if data.raw.recipe['fill-' .. fluid.name .. '-barrel'] ~= nil then
                 RECIPE('fill-' .. fluid.name .. '-barrel'):remove_unlock('fluid-handling'):set_fields{hidden = true}
             end
-            ITEM(fluid.name .. '-barrel'):set_fields{hidden = true}
+            ITEM(fluid.name .. '-barrel'):add_flag('hidden')
         end
     end
 end

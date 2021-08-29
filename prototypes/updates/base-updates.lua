@@ -36,7 +36,7 @@ TECHNOLOGY("advanced-electronics"):add_prereq("fast-inserter")
 
 TECHNOLOGY("concrete"):remove_prereq("advanced-material-processing"):remove_prereq("automation-2"):add_prereq("separation"):add_prereq("logistic-science-pack")
 
-TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing")
+TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing"):add_prereq('chemical-science-pack')
 
 TECHNOLOGY("rocket-control-unit"):remove_prereq('speed-module')
 
@@ -44,7 +44,7 @@ TECHNOLOGY("automation-3"):remove_prereq('speed-module'):add_prereq('stack-inser
 
 TECHNOLOGY("kovarex-enrichment-process"):remove_prereq('uranium-processing')
 
-TECHNOLOGY("electric-engine"):remove_prereq('concrete')
+TECHNOLOGY("uranium-processing"):remove_prereq('concrete')
 
 TECHNOLOGY("logistics-3"):remove_prereq('lubricant'):add_prereq('logistics-2')
 
@@ -75,6 +75,78 @@ TECHNOLOGY("worker-robots-speed-5"):add_prereq('utility-science-pack')
 TECHNOLOGY("mining-productivity-2"):add_prereq('chemical-science-pack')
 
 TECHNOLOGY("mining-productivity-3"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("mining-productivity-4"):add_prereq('space-science-pack')
+
+TECHNOLOGY("worker-robots-storage-2"):add_prereq('production-science-pack')
+
+TECHNOLOGY("worker-robots-storage-3"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("research-speed-3"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("research-speed-5"):add_prereq('production-science-pack')
+
+TECHNOLOGY("research-speed-6"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("inserter-capacity-bonus-3"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("inserter-capacity-bonus-4"):add_prereq('production-science-pack')
+
+TECHNOLOGY("inserter-capacity-bonus-7"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("flammables"):add_prereq('military-science-pack')
+
+TECHNOLOGY("physical-projectile-damage-2"):add_prereq('logistic-science-pack')
+
+TECHNOLOGY("physical-projectile-damage-3"):add_prereq('military-science-pack')
+
+TECHNOLOGY("physical-projectile-damage-5"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("physical-projectile-damage-6"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("stronger-explosives-2"):add_prereq('military-science-pack')
+
+TECHNOLOGY("stronger-explosives-3"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("stronger-explosives-4"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("weapon-shooting-speed-2"):add_prereq('logistic-science-pack')
+
+TECHNOLOGY("weapon-shooting-speed-3"):add_prereq('military-science-pack')
+
+TECHNOLOGY("weapon-shooting-speed-5"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("weapon-shooting-speed-6"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("refined-flammables-3"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("refined-flammables-4"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("energy-weapons-damage-5"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("laser-shooting-speed-5"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("follower-robot-count-3"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("follower-robot-count-5"):add_prereq('utility-science-pack')
+
+TECHNOLOGY("flamethrower"):remove_prereq('military-science-pack')
+
+TECHNOLOGY("personal-laser-defense-equipment"):remove_prereq('modular-armor')
+
+TECHNOLOGY("effect-transmission"):remove_prereq("advanced-electronics-2")
+
+TECHNOLOGY("military-4"):remove_prereq("military-3")
+
+TECHNOLOGY("power-armor-mk2"):remove_prereq("power-armor"):remove_prereq("speed-module-2"):remove_prereq("effectivity-module-2")
+
+TECHNOLOGY("uranium-ammo"):remove_prereq("uranium-processing")
+
+TECHNOLOGY("rocket-silo"):remove_prereq("rocket-fuel"):remove_prereq("concrete")
+
+TECHNOLOGY("spidertron"):remove_prereq("fusion-reactor-equipment")
+
+TECHNOLOGY("atomic-bomb"):remove_prereq("kovarex-enrichment-process")
 
 --(( RECIPES ))--
 
