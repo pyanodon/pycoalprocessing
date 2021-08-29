@@ -94,6 +94,8 @@ TECHNOLOGY("inserter-capacity-bonus-4"):add_prereq('production-science-pack')
 
 TECHNOLOGY("inserter-capacity-bonus-7"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("flammables"):add_prereq('military-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
