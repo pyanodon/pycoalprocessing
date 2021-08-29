@@ -124,6 +124,8 @@ TECHNOLOGY("refined-flammables-4"):add_prereq('utility-science-pack')
 
 TECHNOLOGY("energy-weapons-damage-5"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("laser-shooting-speed-5"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
