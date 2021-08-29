@@ -104,6 +104,12 @@ TECHNOLOGY("physical-projectile-damage-5"):add_prereq('chemical-science-pack')
 
 TECHNOLOGY("physical-projectile-damage-6"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("stronger-explosives-2"):add_prereq('military-science-pack')
+
+TECHNOLOGY("stronger-explosives-3"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("stronger-explosives-4"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
