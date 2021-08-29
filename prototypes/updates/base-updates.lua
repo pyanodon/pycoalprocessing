@@ -82,6 +82,12 @@ TECHNOLOGY("worker-robots-storage-2"):add_prereq('production-science-pack')
 
 TECHNOLOGY("worker-robots-storage-3"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("research-speed-3"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("research-speed-5"):add_prereq('production-science-pack')
+
+TECHNOLOGY("research-speed-6"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
