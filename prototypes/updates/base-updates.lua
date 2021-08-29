@@ -144,6 +144,8 @@ TECHNOLOGY("uranium-ammo"):remove_prereq("uranium-processing")
 
 TECHNOLOGY("rocket-silo"):remove_prereq("rocket-fuel"):remove_prereq("concrete")
 
+TECHNOLOGY("spidertron"):remove_prereq("fusion-reactor-equipment")
+
 --(( RECIPES ))--
 
 RECIPE{
