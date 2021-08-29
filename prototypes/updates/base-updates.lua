@@ -88,6 +88,12 @@ TECHNOLOGY("research-speed-5"):add_prereq('production-science-pack')
 
 TECHNOLOGY("research-speed-6"):add_prereq('utility-science-pack')
 
+TECHNOLOGY("inserter-capacity-bonus-3"):add_prereq('chemical-science-pack')
+
+TECHNOLOGY("inserter-capacity-bonus-4"):add_prereq('production-science-pack')
+
+TECHNOLOGY("inserter-capacity-bonus-7"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
