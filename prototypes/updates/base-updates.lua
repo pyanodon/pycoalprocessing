@@ -78,6 +78,10 @@ TECHNOLOGY("mining-productivity-3"):add_prereq('utility-science-pack')
 
 TECHNOLOGY("mining-productivity-4"):add_prereq('space-science-pack')
 
+TECHNOLOGY("worker-robots-storage-2"):add_prereq('production-science-pack')
+
+TECHNOLOGY("worker-robots-storage-3"):add_prereq('utility-science-pack')
+
 --(( RECIPES ))--
 
 RECIPE{
