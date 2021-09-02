@@ -5,18 +5,19 @@ RECIPE {
     enabled = false,
     energy_required = 4,
     ingredients = {
-        {type = "item", name = "sand", amount = 12}
+        {type = "item", name = "sand", amount = 15}
     },
     results = {
         {type = "item", name = "rich-dust", amount = 10},
-        {type = "item", name = "gravel", amount = 2}
+        {type = "item", name = "gravel", amount = 2},
+        {type = "item", name = "crushed-quartz", amount = 10}
     },
     main_product = "rich-dust",
     icon = "__pycoalprocessinggraphics__/graphics/icons/class-pure-sand.png",
     icon_size = 32,
     subgroup = "py-items-class",
     order = "b"
-}:add_unlock("chromium")
+}:add_unlock("separation")
 
 RECIPE {
     type = "recipe",

@@ -58,13 +58,13 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-washer",
     order = "c"
-}:add_unlock('filtration')
+}--:add_unlock('filtration')
 
 RECIPE {
     type = "recipe",
     name = "sand-washing",
     category = "washer",
-    enabled = true,
+    enabled = false,
     energy_required = 4,
     ingredients = {
         {type = "item", name = "sand", amount = 10},
@@ -108,7 +108,7 @@ RECIPE {
     category = "glassworks",
     energy_required = 3,
     ingredients = {
-        {type = "item", name = "iron-plate", amount = 16},
+        {type = "fluid", name = "molten-glass", amount = 25},
         {type = "item", name = "wood", amount = 10}
     },
     results = {
@@ -441,7 +441,7 @@ RECIPE {
     enabled = false,
     energy_required = 3.5,
     ingredients = {
-        {type = "item", name = "sand", amount = 10},
+        {type = "fluid", name = "molten-glass", amount = 10},
         {type = "item", name = "steel-plate", amount = 3},
         {type = "item", name = "sulfur", amount = 4}
     },
@@ -454,11 +454,11 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "cladding",
-    category = "crafting-with-fluid",
+    category = "chemistry",
     enabled = false,
     energy_required = 2.0,
     ingredients = {
-        {type = "item", name = "sand", amount = 5},
+        {type = "fluid", name = "molten-glass", amount = 20},
         {type = "fluid", name = "niobium-complex", amount = 60}
     },
     results = {
@@ -665,3 +665,22 @@ RECIPE {
     main_product = "sulfuric-acid",
     --subgroup = "py-mill",
 }--:add_unlock("sulfur-processing") --already added by base
+
+RECIPE {
+    type = "recipe",
+    name = "powdered-quartz",
+    category = "ball-mill",
+    enabled = false,
+    energy_required = 1,
+    ingredients = {
+        {type = "item", name = "crushed-quartz", amount = 5}
+    },
+    results = {
+        {type = "item", name = "powdered-quartz", amount = 5},
+        {type = "item", name = "gravel", amount = 1, probability = 0.5}
+    },
+    main_product = "powdered-quartz",
+    icon = "__pyraworesgraphics__/graphics/icons/powdered-quartz.png",
+    icon_size = 32,
+    subgroup = "py-rawores-quartz",
+}:add_unlock("crusher")

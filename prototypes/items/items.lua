@@ -844,3 +844,25 @@ ITEM {
     order = "fuel-canister",
     stack_size = 25
 }
+
+ITEM {
+    type = "item",
+    name = "crushed-quartz",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/crushed-quartz.png",
+	icon_size = 32,
+    flags = {},
+    subgroup = "py-items",
+    order = "caa",
+    stack_size = 500
+}
+
+ITEM {
+    type = 'item',
+    name = 'powdered-quartz',
+    icon = '__pycoalprocessinggraphics__/graphics/icons/powdered-quartz.png',
+    icon_size = 32,
+    flags = {},
+    subgroup = 'py-items',
+    order = 'cab',
+    stack_size = 500
+}

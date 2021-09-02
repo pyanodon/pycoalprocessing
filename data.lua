@@ -112,6 +112,7 @@ require('prototypes/fluids/glycerol')
 require('prototypes/fluids/organic-solvent')
 require('prototypes/fluids/niobium-complex')
 require('prototypes/fluids/tpa')
+require('prototypes/fluids/molten-glass')
 -- ))
 
 -- (( BUILDINGS ))--
