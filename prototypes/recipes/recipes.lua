@@ -682,5 +682,5 @@ RECIPE {
     main_product = "powdered-quartz",
     icon = "__pyraworesgraphics__/graphics/icons/powdered-quartz.png",
     icon_size = 32,
-    subgroup = "py-rawores-quartz",
+    subgroup = "py-items",
 }:add_unlock("crusher")

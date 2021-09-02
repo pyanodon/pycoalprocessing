@@ -4,29 +4,20 @@ if DEBUG then
     developer.make_test_entities('pycoalprocessing')
 end
 
---vram reduction test
---[[ TODO: finsh this later
-for e, entity in pairs(data.raw['assembling-machine']) do
-    if entity.animation ~= nil then
-        if entity.animation.layers ~= nil then
-            log(entity.name)
-            for l, layer in pairs(entity.animation.layers) do
-                if string.match(layer.filename, "%_%_pycoalprocessinggraphics%_%_") then
-                    local hr = table.deepcopy(layer)
-                    local frame_skip = settings.startup['frame_skip'].value
-                    --log(frame_skip)
-                    layer.hr_version = hr
-                    layer.frame_sequence = {}
-                    --log(layer.frame_count)
-                    local hr_fs = {}
-                    for i = 1, layer.frame_count or 1, frame_skip do
-                        table.insert(layer.frame_sequence, i)
-                        table.insert(hr_fs, i)
-                    end
-                    layer.hr_version.frame_sequence = hr_fs
-                end
+--[[
+--find all techs with utility science packs and log a list of names
+local techs = {}
+for t, tech in pairs(data.raw.technology) do
+    log(tech.name)
+    if tech.unit ~= nil and tech.unit.ingredients ~= nil then
+        for i, ing in pairs(tech.unit.ingredients) do
+            log(serpent.block(ing))
+            if string.match(ing[1], "utility") then
+                table.insert(techs, tech.name)
             end
         end
     end
 end
+
+log(serpent.block(techs))
 ]]--
