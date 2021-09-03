@@ -680,7 +680,5 @@ RECIPE {
         {type = "item", name = "gravel", amount = 1, probability = 0.5}
     },
     main_product = "powdered-quartz",
-    icon = "__pyraworesgraphics__/graphics/icons/powdered-quartz.png",
-    icon_size = 32,
     subgroup = "py-items",
 }:add_unlock("crusher")
