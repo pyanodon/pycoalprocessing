@@ -52,7 +52,7 @@ ENTITY {
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "170kW",
+    energy_usage = "750kW",
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/classifier/classifier.png",
         width = 256,

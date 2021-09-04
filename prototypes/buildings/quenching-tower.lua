@@ -81,7 +81,7 @@ ENTITY {
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "300kW",
+    energy_usage = "500kW",
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/quenching-tower/quenching-tower-anim.png",
         width = 232,

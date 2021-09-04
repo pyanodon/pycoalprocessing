@@ -52,7 +52,7 @@ ENTITY {
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "350kW",
+    energy_usage = "2MW",
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/olefin-plant/olefin-off.png",
         width = 274,

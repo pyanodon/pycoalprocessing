@@ -68,7 +68,7 @@ ENTITY {
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "100kW",
+    energy_usage = "400kW",
     animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/washer/washer.png",
         width = 204,

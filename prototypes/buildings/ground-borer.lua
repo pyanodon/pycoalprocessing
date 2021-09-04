@@ -52,7 +52,7 @@ ENTITY {
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "420kW",
+    energy_usage = "1.25MW",
     animation = {
         layers = {
             {
