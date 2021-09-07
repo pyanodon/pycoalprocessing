@@ -38,7 +38,7 @@ TECHNOLOGY("concrete"):remove_prereq("advanced-material-processing"):remove_prer
 
 TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing"):add_prereq('chemical-science-pack')
 
-TECHNOLOGY("rocket-control-unit"):remove_prereq('speed-module')
+TECHNOLOGY("rocket-control-unit"):remove_prereq('speed-module'):add_pack("military-science-pack")
 
 TECHNOLOGY("automation-3"):remove_prereq('speed-module'):add_prereq('stack-inserter')
 
@@ -148,6 +148,8 @@ TECHNOLOGY("spidertron"):remove_prereq("fusion-reactor-equipment")
 
 TECHNOLOGY("atomic-bomb"):remove_prereq("kovarex-enrichment-process")
 
+TECHNOLOGY("military-science-pack"):add_prereq("gun-turret")
+
 --adding prod and mil sci to base game utility techs
 TECHNOLOGY("physical-projectile-damage-6"):add_pack("production-science-pack")
 
@@ -217,7 +219,7 @@ TECHNOLOGY("worker-robots-speed-6"):add_pack("military-science-pack")
 
 TECHNOLOGY("worker-robots-storage-3"):add_pack("military-science-pack")
 
-TECHNOLOGY("personal-roboport-mk2-equipment"):add_pack("military-science-pack"):add_pack("production-science-pack")
+TECHNOLOGY("personal-roboport-mk2-equipment"):add_pack("military-science-pack"):add_pack("production-science-pack"):remove_prereq('military-science-pack')
 
 TECHNOLOGY("mining-productivity-3"):add_pack("military-science-pack")
 
