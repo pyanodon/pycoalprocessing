@@ -48,7 +48,7 @@ TECHNOLOGY("uranium-processing"):remove_prereq('concrete')
 
 TECHNOLOGY("logistics-3"):remove_prereq('lubricant'):add_prereq('logistics-2')
 
-TECHNOLOGY("advanced-material-processing"):remove_prereq("steel-processing"):add_prereq('crusher'):remove_prereq('logistic-science-pack')
+TECHNOLOGY("advanced-material-processing"):remove_prereq("steel-processing"):add_prereq('crusher'):remove_prereq('logistic-science-pack'):add_prereq('filtration')
 
 TECHNOLOGY("stack-inserter"):remove_prereq("logistics-2"):remove_prereq("fast-inserter")
 

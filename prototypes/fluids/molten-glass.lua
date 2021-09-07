@@ -32,7 +32,7 @@ RECIPE {
     main_product= "molten-glass",
     subgroup = "py-items",
     order = "aac"
-}:add_unlock("separation")
+}:add_unlock("advanced-material-processing")
 
 
 FLUID {

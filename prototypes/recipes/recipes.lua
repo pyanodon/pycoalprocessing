@@ -681,4 +681,4 @@ RECIPE {
     },
     main_product = "powdered-quartz",
     subgroup = "py-items",
-}:add_unlock("crusher")
+}:add_unlock("advanced-material-processing")
