@@ -219,7 +219,7 @@ TECHNOLOGY("worker-robots-speed-6"):add_pack("military-science-pack")
 
 TECHNOLOGY("worker-robots-storage-3"):add_pack("military-science-pack")
 
-TECHNOLOGY("personal-roboport-mk2-equipment"):add_pack("military-science-pack"):add_pack("production-science-pack")
+TECHNOLOGY("personal-roboport-mk2-equipment"):add_pack("military-science-pack"):add_pack("production-science-pack"):remove_prereq('military-science-pack')
 
 TECHNOLOGY("mining-productivity-3"):add_pack("military-science-pack")
 
