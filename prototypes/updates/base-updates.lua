@@ -148,6 +148,8 @@ TECHNOLOGY("spidertron"):remove_prereq("fusion-reactor-equipment")
 
 TECHNOLOGY("atomic-bomb"):remove_prereq("kovarex-enrichment-process")
 
+TECHNOLOGY("military-science-pack"):add_prereq("gun-turret")
+
 --adding prod and mil sci to base game utility techs
 TECHNOLOGY("physical-projectile-damage-6"):add_pack("production-science-pack")
 
