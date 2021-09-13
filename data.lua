@@ -155,6 +155,7 @@ require('prototypes/buildings/automated-factory-mk01')
 require('prototypes/buildings/sand-extractor')
 require('prototypes/buildings/botanical-nursery')
 require('prototypes/buildings/wpu')
+require('prototypes/buildings/chemical-plant-mk01')
 require('prototypes/buildings/glassworks-mk01')
 require('prototypes/buildings/TEST-lab')
 
