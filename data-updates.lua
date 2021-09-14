@@ -53,7 +53,7 @@ TECHNOLOGY('electric-energy-distribution-1'):remove_prereq('logistic-science-pac
 
 TECHNOLOGY('landfill'):remove_prereq('logistic-science-pack'):add_prereq('automation'):remove_pack('logistic-science-pack')
 
-RECIPE("chemical-plant"):remove_unlock('oil-processing'):add_unlock("coal-processing-2"):add_ingredient({type = "item", name = "methanol-reactor", amount = 1})
+RECIPE("chemical-plant"):remove_unlock('oil-processing')
 
 TECHNOLOGY('chemical-science-pack'):add_prereq('fine-electronics'):add_prereq('nexelit'):remove_prereq('sulfur-processing')
 

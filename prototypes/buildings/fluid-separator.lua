@@ -5,7 +5,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"storage-tank", 4},
-        {"chemical-plant", 2},
+        {"chemical-plant-mk01", 2},
         {"electronic-circuit", 15},
         {"pipe", 40},
         {"iron-gear-wheel", 15}

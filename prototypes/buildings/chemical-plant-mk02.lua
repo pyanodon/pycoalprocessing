@@ -1,41 +1,41 @@
 RECIPE {
     type = "recipe",
-    name = "chemical-plant-mk01",
+    name = "chemical-plant-mk02",
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {"distilator", 1},
-        {"copper-plate", 20},
-        {"iron-gear-wheel", 15},
-        {"glass", 50},
-        {"pipe", 20},
-        {"iron-plate", 20},
-        {"electronic-circuit", 5}
+        {"chemical-plant-mk01", 1},
+        {"concrete", 30},
+        {"titanium-plate", 20},
+        {"nickel-plate", 50},
+        {"latex", 20},
+        {"neuroprocessor", 20},
+        {"engine-unit", 5},
     },
     results = {
-        {"chemical-plant-mk01", 1}
+        {"chemical-plant-mk02", 1}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("oil-machines-mk02")
 
 ITEM {
     type = "item",
-    name = "chemical-plant-mk01",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/chemical-plant-mk01.png",
+    name = "chemical-plant-mk02",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/chemical-plant-mk02.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-cp-buildings-mk01",
+    subgroup = "py-cp-buildings-mk02",
     order = "d",
-    place_result = "chemical-plant-mk01",
+    place_result = "chemical-plant-mk02",
     stack_size = 10
 }
 
 ENTITY {
     type = "assembling-machine",
-    name = "chemical-plant-mk01",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/chemical-plant-mk01.png",
+    name = "chemical-plant-mk02",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/chemical-plant-mk02.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "chemical-plant-mk01"},
+    minable = {mining_time = 1, result = "chemical-plant-mk02"},
     fast_replaceable_group = "chemical-plant",
     max_health = 400,
     corpse = "big-remnants",
@@ -44,17 +44,17 @@ ENTITY {
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
     match_animation_speed_to_activity = false,
     module_specification = {
-        module_slots = 1
+        module_slots = 2
     },
     allowed_effects = {"consumption", "speed", "pollution"},
     crafting_categories = {"chemistry"},
-    crafting_speed = 1,
+    crafting_speed = 2,
     energy_source = {
         type = "electric",
         usage_priority = "secondary-input",
         emissions_per_minute = 0.1,
     },
-    energy_usage = "1MW",
+    energy_usage = "2MW",
     animation = {
         layers = {
             {
@@ -112,7 +112,7 @@ ENTITY {
             line_length = 20,
             animation_speed = 0.35,
             shift = util.by_pixel(-96, -64),
-            tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0},
+            tint = {r = 1.0, g = 0.0, b = 0.0, a = 1.0},
             },
             {
             filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/mid-mask.png",
@@ -122,7 +122,7 @@ ENTITY {
             line_length = 20,
             animation_speed = 0.35,
             shift = util.by_pixel(0, -64),
-            tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0},
+            tint = {r = 1.0, g = 0.0, b = 0.0, a = 1.0},
             },
             {
             filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/right-mask.png",
@@ -132,7 +132,7 @@ ENTITY {
             line_length = 20,
             animation_speed = 0.35,
             shift = util.by_pixel(96, -64),
-            tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0},
+            tint = {r = 1.0, g = 0.0, b = 0.0, a = 1.0},
             },
         },
     },

@@ -23,7 +23,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"storage-tank", 3},
-        {"chemical-plant", 1},
+        {"chemical-plant-mk01", 1},
         {"electronic-circuit", 40},
         {"steel-plate", 20},
         {"iron-plate", 50} --bob invar-alloy

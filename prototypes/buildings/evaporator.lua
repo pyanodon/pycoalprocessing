@@ -14,7 +14,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"gasturbinemk01", 1},
-        {"chemical-plant", 1},
+        {"chemical-plant-mk01", 1},
         {"electronic-circuit", 10},
         {"steel-plate", 40},
         {"iron-plate", 40},

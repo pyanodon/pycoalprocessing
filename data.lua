@@ -280,6 +280,10 @@ if mods['pyrawores'] then
     require('prototypes/buildings/glassworks-mk03')
     require('prototypes/buildings/glassworks-mk04')
 
+    require('prototypes/buildings/chemical-plant-mk02')
+    require('prototypes/buildings/chemical-plant-mk03')
+    require('prototypes/buildings/chemical-plant-mk04')
+
 end
 -- ))
 
