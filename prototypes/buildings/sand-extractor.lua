@@ -21,7 +21,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/sand-extractor.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "py-cp-buildings-mk01",
     order = "e",
     place_result = "sand-extractor",
     stack_size = 10
