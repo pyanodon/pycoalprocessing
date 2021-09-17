@@ -5,14 +5,12 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"chemical-plant-mk03", 1},
-        {"metallic-glass", 20},
-        {"control-unit", 10},
         {"low-density-structure", 30},
     },
     results = {
         {"chemical-plant-mk04", 1}
     }
-}:add_unlock("oil-machines-mk04")
+}:add_unlock("machines-mk04")
 
 ITEM {
     type = "item",

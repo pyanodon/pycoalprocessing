@@ -6,16 +6,12 @@ RECIPE {
     ingredients = {
         {"chemical-plant-mk02", 1},
         {"nichrome", 20},
-        {"sc-unit", 10},
-        {"ticocr-alloy", 40},
-        {"neuromorphic-chip", 40},
-        {"molybdenum-plate", 20},
         {"glass", 50},
     },
     results = {
         {"chemical-plant-mk03", 1}
     }
-}:add_unlock("oil-machines-mk03")
+}:add_unlock("machines-mk03")
 
 ITEM {
     type = "item",

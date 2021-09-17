@@ -7,7 +7,6 @@ RECIPE {
         {"distilator", 1},
         {"copper-plate", 20},
         {"iron-gear-wheel", 15},
-        {"glass", 50},
         {"pipe", 20},
         {"iron-plate", 20},
         {"electronic-circuit", 5}
@@ -15,7 +14,7 @@ RECIPE {
     results = {
         {"chemical-plant-mk01", 1}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("coal-processing-2")
 
 ITEM {
     type = "item",

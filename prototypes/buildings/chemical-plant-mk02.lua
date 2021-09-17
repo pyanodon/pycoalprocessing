@@ -8,14 +8,12 @@ RECIPE {
         {"concrete", 30},
         {"titanium-plate", 20},
         {"nickel-plate", 50},
-        {"latex", 20},
-        {"neuroprocessor", 20},
         {"engine-unit", 5},
     },
     results = {
         {"chemical-plant-mk02", 1}
     }
-}:add_unlock("oil-machines-mk02")
+}:add_unlock("machines-mk02")
 
 ITEM {
     type = "item",
