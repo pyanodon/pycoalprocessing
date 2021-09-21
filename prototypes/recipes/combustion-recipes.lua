@@ -8,7 +8,6 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "coal-gas", amount = 100},
         {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "coke", amount = 3}
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 575},
@@ -16,7 +15,6 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-coalgas.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "a"
 }:add_unlock("energy-1")
@@ -31,7 +29,6 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "coal-slurry", amount = 100},
         {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "coke", amount = 3}
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 500},
@@ -39,7 +36,6 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-coal-slurry.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "a"
 }:add_unlock("fluid-separation")
@@ -54,7 +50,6 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "syngas", amount = 100},
         {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "coke", amount = 3}
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 250, temperature = 650},
@@ -62,7 +57,6 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-syngas.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "c"
 }:add_unlock("energy-1")
@@ -77,7 +71,6 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "diborane", amount = 100},
         {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "coke", amount = 3}
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 725},
@@ -85,7 +78,6 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-diborane.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "d"
 }:add_unlock("energy-1")
@@ -100,7 +92,6 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "heavy-oil", amount = 100},
         {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "coke", amount = 3}
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 800},
@@ -108,7 +99,6 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-heavy-oil.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "d"
 }:add_unlock("energy-3")
@@ -123,7 +113,6 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "light-oil", amount = 100},
         {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "coke", amount = 3}
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 900},
@@ -131,7 +120,6 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-light-oil.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "d"
 }:add_unlock("energy-2")
@@ -146,7 +134,6 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "petroleum-gas", amount = 100},
         {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "coke", amount = 3}
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1000},
@@ -154,7 +141,6 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-petgas.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "d"
 }:add_unlock("energy-2")
@@ -169,15 +155,13 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "methanol", amount = 100},
         {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1200},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1250},
         {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-methanol.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "e"
 }:add_unlock("energy-2")
@@ -192,15 +176,13 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "refsyngas", amount = 100},
         {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1400},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1500},
         {type = "fluid", name = "steam", amount = 100, temperature = 120, catalyst_amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-refsyngas.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "f"
 }:add_unlock("energy-2")
@@ -215,15 +197,13 @@ RECIPE {
     ingredients = {
         {type = "fluid", name = "olefin", amount = 100},
         {type = "fluid", name = "water", amount = 1000},
-        {type = "item", name = "coke", amount = 3}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 1800},
+        {type = "fluid", name = "combustion-mixture1", amount = 150, temperature = 2000},
         {type = "fluid", name = "steam", amount = 1000, temperature = 100, catalyst_amount = 1000}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-olefin.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "h"
 }:add_unlock("energy-3")
@@ -242,12 +222,11 @@ RECIPE {
         {type = "item", name = "coal-briquette", amount = 1}
     },
     results = {
-        {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 2800},
-        {type = "fluid", name = "steam", amount = 1500, temperature = 100, catalyst_amount = 1500}
+        {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 2750},
+        {type = "fluid", name = "steam", amount = 1500, temperature = 200, catalyst_amount = 1500}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-super-critical.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "k"
 }:add_unlock("energy-3")
@@ -267,11 +246,10 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "combustion-mixture1", amount = 600, temperature = 3000},
-        {type = "fluid", name = "steam", amount = 1500, temperature = 100, catalyst_amount = 1500}
+        {type = "fluid", name = "steam", amount = 1500, temperature = 200, catalyst_amount = 1500}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-ultra-super-critical.png",
     icon_size = 32,
-    --main_product = "combustion-mixture1",
     subgroup = "py-combustion",
     order = "l"
 }:add_unlock("energy-3")

@@ -5,7 +5,7 @@ require("prototypes/updates/recipe-updates")
 
 require("prototypes/recipes/fuel-canister-recipes")
 
-FLUID('steam'):set('heat_capacity', '0.05KJ')
+--FLUID('steam'):set('heat_capacity', '0.05KJ')
 
 for _, v in pairs(data.raw.module) do
     if v.name:find("productivity%-module") and v.limitation then

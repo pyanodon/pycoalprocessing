@@ -112,6 +112,7 @@ RECIPE {
     order = "h5"
 }:add_unlock("advanced-oil-processing")
 
+--[[
 RECIPE {
     type = "recipe",
     name = "combustion-olefin",
@@ -134,6 +135,7 @@ RECIPE {
     subgroup = "py-fluid-handling",
     order = "h6"
 }:add_unlock("fuel-production")
+]]--
 
 RECIPE {
     type = "recipe",
