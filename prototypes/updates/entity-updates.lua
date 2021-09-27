@@ -24,7 +24,10 @@ data.raw["assembling-machine"]["centrifuge"].energy_usage = "250MW"
 data.raw['assembling-machine']['assembling-machine-1'].ingredient_count = 2
 data.raw['assembling-machine']['assembling-machine-1'].energy_usage = "200KW"
 data.raw['assembling-machine']['assembling-machine-1'].crafting_speed = 1
-
+--local fluid_boxes = {}
+--table.insert(data.raw['assembling-machine']['assembling-machine-1'], fluid_boxes)
+data.raw['assembling-machine']['assembling-machine-1'].fluid_boxes = data.raw['assembling-machine']['assembling-machine-2'].fluid_boxes
+table.insert(data.raw['assembling-machine']['assembling-machine-1'].crafting_categories, "crafting-with-fluid")
 
 --modify assembly machine 2
 data.raw['assembling-machine']['assembling-machine-2'].ingredient_count = 4

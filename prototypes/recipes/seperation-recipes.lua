@@ -159,3 +159,19 @@ RECIPE {
     subgroup = "py-items-class",
     order = "f"
 }:add_unlock("separation")
+
+RECIPE {
+    type = "recipe",
+    name = "ash-separation",
+    category = "evaporator",
+    enabled = false,
+    energy_required = 4,
+    ingredients = {
+        {type = "fluid", name = "dirty-water-light", amount = 250}
+    },
+    results = {
+        {type = "item", name = "organics", amount = 1}
+    },
+    subgroup = "py-items-class",
+    order = "f"
+}:add_unlock("fluid-separation")

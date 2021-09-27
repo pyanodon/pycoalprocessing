@@ -6,10 +6,12 @@ RECIPE {
     enabled = false,
     energy_required = 45,
     ingredients = {
-        {type = "item", name = "ralesia", amount = 10}
+        {type = "item", name = "ralesia", amount = 10},
+        {type = "item", name = "dirty-water-light-barrel", amount = 5}
     },
     results = {
-        {type = "item", name = "bonemeal", amount = 5}
+        {type = "item", name = "bonemeal", amount = 5},
+        {type = "item", name = "empty-barrel", amount = 5}
     },
     main_product = "bonemeal",
     icon = "__pycoalprocessinggraphics__/graphics/icons/bonemeal.png",
