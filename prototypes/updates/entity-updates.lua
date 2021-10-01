@@ -58,7 +58,7 @@ data.raw.furnace["electric-furnace"].allowed_effects = nil
 data.raw.furnace["electric-furnace"].module_specification = nil
 
 data.raw.boiler['heat-exchanger'].target_temperature = 2000
-data.raw.boiler['heat-exchanger'].energy_consumption = "1GW"
+data.raw.boiler['heat-exchanger'].energy_consumption = "4.25GW"
 data.raw.boiler['heat-exchanger'].energy_source =
     {
       type = "heat",
