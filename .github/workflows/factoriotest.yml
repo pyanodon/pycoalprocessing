@@ -1,0 +1,15 @@
+name: Factorio tests
+
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+jobs:
+  test:
+    uses: pyanodon/pyanodontests/.github/workflows/pytest.yml@main
+    secrets:
+      token: ${{ secrets.TESTUSER_TOKEN }}
