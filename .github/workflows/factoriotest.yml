@@ -14,7 +14,7 @@ permissions:
 jobs:
   test-push:
     if: ${{ github.event_name == 'push' }} 
-    uses: pyanodon/pyanodontests/.github/workflows/pytest.yml@main
+    uses: pyanodon/pyanodontests/.github/workflows/pytest.yml@v1
     with:
       repository: ${{ github.repository }}
       ref: ${{ github.ref }}
@@ -22,7 +22,7 @@ jobs:
       token: ${{ secrets.TESTUSER_TOKEN }}
   test-pull-request:
     if: ${{ github.event_name == 'pull_request_target' }} 
-    uses: pyanodon/pyanodontests/.github/workflows/pytest.yml@main
+    uses: pyanodon/pyanodontests/.github/workflows/pytest.yml@v1
     with:
       repository: ${{ github.repository }}
       ref: refs/pull/${{ github.event.pull_request.number }}/merge
