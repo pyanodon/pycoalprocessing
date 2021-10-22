@@ -290,8 +290,8 @@ end
 -- sprites
 require('prototypes/sprites/sprites')
 
--- Tips & Tricks
-require('prototypes/tips')
+--(( TIPS AND TRICKS ))--
+require('prototypes/tips-and-tricks')
 
 data.raw['utility-constants'].default.main_menu_background_image_location =
     '__pycoalprocessinggraphics__/graphics/pycp-wall.jpg'
