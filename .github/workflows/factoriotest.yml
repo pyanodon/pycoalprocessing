@@ -30,8 +30,9 @@ jobs:
       ref: ${{ github.event.pull_request.head.sha }}
     secrets:
       token: ${{ secrets.TESTUSER_TOKEN }}
-  test-schedule: # FOR PYCOAL ONLY
+  test-schedule: # FOR PYCOAL ONLY 
     if: ${{ github.event_name == 'schedule' }} 
     uses: pyanodon/pyanodontests/.github/workflows/pytest.yml@v1
     secrets:
       token: ${{ secrets.TESTUSER_TOKEN }}
+
