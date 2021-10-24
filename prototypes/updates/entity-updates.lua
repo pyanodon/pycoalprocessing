@@ -2,25 +2,31 @@
 --modify steam engine temp
 data.raw.generator['steam-engine'].maximum_temperature = 500
 
+--modify boiler to produce more water
+data.raw.boiler.boiler.target_temperature = 250
+data.raw.boiler.boiler.energy_consumption = "14.85MW"
+
 --modify steam turbine temp
 data.raw.generator['steam-turbine'].maximum_temperature = 2000
-data.raw.generator['steam-turbine'].fluid_usage_per_tick = 60
+data.raw.generator['steam-turbine'].fluid_usage_per_tick = 1
+data.raw.generator['steam-turbine'].effectivity = 10
 
 --increase steam max temp
 data.raw.fluid["steam"].max_temperature = 2000
 
-data.raw.fluid["steam"].heat_capacity = "0.4KJ"
+data.raw.fluid["steam"].heat_capacity = "1KJ"
 
-data.raw.boiler.boiler.target_temperature = 250
+data.raw.fluid["water"].heat_capacity = "2.1KJ"
 
 --modify reactor to produce more energy
 data.raw.reactor["nuclear-reactor"].consumption = "2GW"
 data.raw.reactor["nuclear-reactor"].heat_buffer.max_temperature = "2000"
 data.raw.reactor["nuclear-reactor"].heat_buffer.specific_heat = "40MJ"
+data.raw.reactor["nuclear-reactor"].energy_source.effectivity = 2
 
 --modify heat exchanger
 data.raw.boiler['heat-exchanger'].target_temperature = 2000
-data.raw.boiler['heat-exchanger'].energy_consumption = "4.25GW"
+data.raw.boiler['heat-exchanger'].energy_consumption = "1GW"
 data.raw.boiler['heat-exchanger'].energy_source.max_temperature = 2000
 data.raw.boiler['heat-exchanger'].energy_source.specific_heat = "10MJ"
 data.raw.boiler['heat-exchanger'].energy_source.max_transfer = "4GW"
