@@ -7,8 +7,6 @@ on:
   pull_request_target:
     branches:
     - master
-  schedule: # FOR PYCOAL ONLY
-    - cron: 0 3 * * *
 
 permissions:
   contents: read
@@ -28,10 +26,5 @@ jobs:
     with:
       repository: ${{ github.repository }}
       ref: ${{ github.event.pull_request.head.sha }}
-    secrets:
-      token: ${{ secrets.TESTUSER_TOKEN }}
-  test-schedule: # FOR PYCOAL ONLY 
-    if: ${{ github.event_name == 'schedule' }} 
-    uses: pyanodon/pyanodontests/.github/workflows/pytest.yml@v1
     secrets:
       token: ${{ secrets.TESTUSER_TOKEN }}
