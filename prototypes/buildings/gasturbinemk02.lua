@@ -5,9 +5,9 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"advanced-circuit", 20},
-        {"pipe", 20}, --bob bronze-pipe
+        {"pipe", 20},
         {"steel-plate", 50},
-        {"iron-plate", 30}, --bob invar-alloy
+        {"iron-plate", 30},
         {"iron-gear-wheel", 40}
     },
     results = {

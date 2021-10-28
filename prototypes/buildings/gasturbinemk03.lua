@@ -55,9 +55,9 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"processing-unit", 20},
-        {"pipe", 20}, --bob bronze-pipe
+        {"pipe", 20},
         {"nexelit-plate", 50},
-        {"iron-plate", 70}, --bob invar-alloy
+        {"iron-plate", 70},
         {"gasturbinemk02", 2}
     },
     results = {
