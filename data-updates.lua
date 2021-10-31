@@ -23,18 +23,18 @@ ITEM("logistic-science-pack", "tool"):set("icon_size", 32)
 
 ITEM("chemical-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png")
 ITEM("chemical-science-pack", "tool"):set("icon_size", 32)
-ITEM('electric-engine-unit'):set_fields{icon_mipmaps = 9}
+ITEM('electric-engine-unit'):set_fields{icon_mipmaps = nil}
 ITEM("electric-engine-unit"):set_fields {pictures =
 {
-  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-01.png",   scale = 0.25, mipmap_count = 1 },
-  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-02.png",   scale = 0.25, mipmap_count = 1 },
-  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-03.png",   scale = 0.25, mipmap_count = 1 },
-  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-04.png",   scale = 0.25, mipmap_count = 1 },
-  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-05.png",   scale = 0.25, mipmap_count = 1 },
-  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-06.png",   scale = 0.25, mipmap_count = 1 },
-  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-07.png",   scale = 0.25, mipmap_count = 1 },
-  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-08.png",   scale = 0.25, mipmap_count = 1 },
-  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-09.png",   scale = 0.25, mipmap_count = 1 },
+  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-01.png",   scale = 0.25},
+  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-02.png",   scale = 0.25},
+  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-03.png",   scale = 0.25},
+  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-04.png",   scale = 0.25},
+  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-05.png",   scale = 0.25},
+  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-06.png",   scale = 0.25},
+  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-07.png",   scale = 0.25},
+  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-08.png",   scale = 0.25},
+  { size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit/engine-09.png",   scale = 0.25},
 }}
 
 RECIPE('rocket-silo'):replace_ingredient("pipe", "niobium-pipe")

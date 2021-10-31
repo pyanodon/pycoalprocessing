@@ -2,7 +2,7 @@ ENTITY{
     type = "lab",
     name = "lab",
     icon = "__pycoalprocessinggraphics__/graphics/icons/lab-mk01.png",
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.2, result = "lab"},
     max_health = 150,

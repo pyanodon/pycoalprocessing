@@ -8,7 +8,6 @@ data:extend(
     width = 128,
     height = 128,
     --flags = {"gui-icon"},
-    --mipmap_count = 1,
     --scale = 0.5
   }
 }
