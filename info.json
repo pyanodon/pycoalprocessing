@@ -10,7 +10,8 @@
   "dependencies": [
     "base >= 0.16.0",
     "stdlib >= 1.4.0",
-    "~ pycoalprocessinggraphics"
+    "~ pycoalprocessinggraphics",
+    "! DiscoScience"
   ],
   "package": {
     "ignore": [],
