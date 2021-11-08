@@ -4,7 +4,7 @@ RECIPE {
     name = "empty-gas-canister",
     category = "crafting",
     enabled = false,
-    energy_required = 3,
+    energy_required = 1,
     ingredients = {
         {type = "item", name = "steel-plate", amount = 2}, --bob aluminium-plate
         {type = "item", name = "copper-plate", amount = 1} --bob brass-plate
