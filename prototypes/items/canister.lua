@@ -35,7 +35,7 @@ RECIPE {
     localised_name = {"recipe-name.fill-methanol-gas-canister"},
     category = "crafting-with-fluid", --bob bob-pump
     enabled = false,
-    energy_required = 3,
+    energy_required = 0.2,
     ingredients = {
         {type = "fluid", name = "methanol", amount = 100},
         {type = "item", name = "empty-gas-canister", amount = 1}
@@ -54,7 +54,7 @@ RECIPE {
     name = "empty-methanol-gas-canister",
     category = "crafting-with-fluid",
     enabled = false,
-    energy_required = 3,
+    energy_required = 0.2,
     ingredients = {
         {type = "item", name = "filled-methanol-gas-canister", amount = 1}
     },
