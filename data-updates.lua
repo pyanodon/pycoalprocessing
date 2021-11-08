@@ -448,7 +448,7 @@ if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].v
                 if result_name and valid_entities[result_name] then
                     --log("Set multiplier for " .. recipe.name .. " (" .. result_name .. ")")
                     recipe.requester_paste_multiplier = settings.startup['rpm_entity'].value
-                    goto continue                
+                    goto continue
                 end
             end
         end

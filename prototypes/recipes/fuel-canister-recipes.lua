@@ -4,7 +4,7 @@ RECIPE {
     name = "empty-jerry-can",
     category = "crafting",
     enabled = false,
-    energy_required = 2,
+    energy_required = 1,
     ingredients = {
         {type = "item", name = "steel-plate", amount = 1},
         {type = "item", name = "plastic-bar", amount = 2}
@@ -58,7 +58,7 @@ for f, fluid in pairs(data.raw.fluid) do
             localised_name = {"recipe-name.fill-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
             category = "crafting-with-fluid",
             enabled = false,
-            energy_required = 1,
+            energy_required = 0.2,
             ingredients = {
                 {type = "fluid", name = fluid.name, amount =  fuel_amount},
                 {type = "item", name = "empty-fuel-canister", amount = 1}
@@ -77,7 +77,7 @@ for f, fluid in pairs(data.raw.fluid) do
             localised_name = {"recipe-name.empty-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
             category = "crafting-with-fluid",
             enabled = false,
-            energy_required = 1,
+            energy_required = 0.2,
             ingredients = {
                 {type = "item", name = "filled-canister-" .. fluid.name, amount = 1}
             },
