@@ -58,6 +58,8 @@ TECHNOLOGY("low-density-structure"):remove_prereq("advanced-material-processing"
 
 TECHNOLOGY("fluid-wagon"):remove_prereq("fluid-handling")
 
+TECHNOLOGY("fluid-handling"):add_prereq("automation")
+
 TECHNOLOGY("laser"):remove_prereq("optics")
 
 TECHNOLOGY("rocketry"):remove_prereq('military-science-pack')
@@ -232,7 +234,7 @@ TECHNOLOGY("artillery"):add_pack("production-science-pack")
 RECIPE{
   type = "recipe",
   name = "small-electric-pole-2",
-  category = "crafting-with-fluid",
+  category = "crafting",
   enabled = false,
   energy_required = 2,
   ingredients =
