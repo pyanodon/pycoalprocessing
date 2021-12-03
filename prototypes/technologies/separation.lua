@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/separation.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"automation", "coal-processing-1"},
+    prerequisites = {"coal-processing-1"},
     effects = {},
     unit = {
         count = 35,
