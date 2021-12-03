@@ -162,7 +162,7 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "ash-separation",
+    name = "organics-from-dirty-water",
     category = "evaporator",
     enabled = false,
     energy_required = 4,
