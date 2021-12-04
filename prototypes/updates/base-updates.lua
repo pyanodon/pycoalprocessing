@@ -22,7 +22,7 @@ TECHNOLOGY("explosives"):add_prereq("mukmoux")
 
 TECHNOLOGY("electronics"):set_fields{enabled = false}:set_fields{hidden = true}
 
-TECHNOLOGY("automation-2"):remove_prereq('electronics'):remove_prereq("steel-processing"):add_prereq('automation')
+TECHNOLOGY("automation-2"):remove_prereq('electronics'):remove_prereq("steel-processing")
 TECHNOLOGY("fast-inserter"):remove_prereq('electronics'):add_prereq('automation')
 TECHNOLOGY("solar-energy"):remove_prereq('electronics'):remove_prereq("steel-processing"):remove_prereq("optics")
 TECHNOLOGY("electric-energy-distribution-1"):remove_prereq('electronics')
@@ -57,6 +57,8 @@ TECHNOLOGY("advanced-material-processing-2"):remove_prereq("advanced-material-pr
 TECHNOLOGY("low-density-structure"):remove_prereq("advanced-material-processing")
 
 TECHNOLOGY("fluid-wagon"):remove_prereq("fluid-handling")
+
+TECHNOLOGY("fluid-handling"):add_prereq("automation")
 
 TECHNOLOGY("laser"):remove_prereq("optics")
 
@@ -128,7 +130,7 @@ TECHNOLOGY("laser-shooting-speed-5"):add_prereq('utility-science-pack')
 
 TECHNOLOGY("follower-robot-count-3"):add_prereq('chemical-science-pack')
 
-TECHNOLOGY("follower-robot-count-5"):add_prereq('utility-science-pack')
+TECHNOLOGY("follower-robot-count-5"):add_prereq('utility-science-pack'):remove_prereq("destroyer")
 
 TECHNOLOGY("flamethrower"):remove_prereq('military-science-pack')
 
@@ -149,6 +151,10 @@ TECHNOLOGY("spidertron"):remove_prereq("fusion-reactor-equipment")
 TECHNOLOGY("atomic-bomb"):remove_prereq("kovarex-enrichment-process")
 
 TECHNOLOGY("military-science-pack"):add_prereq("gun-turret")
+
+TECHNOLOGY("speed-module-3"):remove_prereq("speed-module-2")
+
+TECHNOLOGY("effectivity-module-3"):remove_prereq("effectivity-module-2")
 
 --adding prod and mil sci to base game utility techs
 TECHNOLOGY("physical-projectile-damage-6"):add_pack("production-science-pack")
@@ -232,7 +238,7 @@ TECHNOLOGY("artillery"):add_pack("production-science-pack")
 RECIPE{
   type = "recipe",
   name = "small-electric-pole-2",
-  category = "crafting-with-fluid",
+  category = "crafting",
   enabled = false,
   energy_required = 2,
   ingredients =
