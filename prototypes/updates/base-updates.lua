@@ -512,9 +512,15 @@ RECIPE {
 
   --ENTITY
 
-  data.raw.car.car.burner.fuel_category = "jerry"
+  data.raw.car.car.burner.fuel_categories = {"jerry", "chemical"}
   data.raw.car.car.burner.burnt_inventory_size = data.raw.car.car.burner.fuel_inventory_size
-  data.raw.car.tank.burner.fuel_category = "jerry"
+  data.raw.car.tank.burner.fuel_categories = {"jerry", "chemical"}
   data.raw.car.tank.burner.burnt_inventory_size = data.raw.car.tank.burner.fuel_inventory_size
-  data.raw.locomotive.locomotive.burner.fuel_category = "jerry"
+  data.raw.locomotive.locomotive.burner.fuel_categories = {"jerry", "chemical"}
   data.raw.locomotive.locomotive.burner.burnt_inventory_size = data.raw.locomotive.locomotive.burner.fuel_inventory_size
+
+  --add ash to burnt results for chemical fuel items
+  --data.raw.item["coal"].burnt_result = "ash"
+
+
+  --clean up chemical fuel category to only have coal and coal accessories
