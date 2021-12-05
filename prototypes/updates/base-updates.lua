@@ -36,13 +36,13 @@ TECHNOLOGY("advanced-electronics"):add_prereq("fast-inserter")
 
 TECHNOLOGY("concrete"):remove_prereq("advanced-material-processing"):remove_prereq("automation-2"):add_prereq("separation"):add_prereq("logistic-science-pack")
 
-TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing"):add_prereq('chemical-science-pack')
+TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing"):add_prereq('chemical-science-pack'):add_pack("military-science-pack")
 
-TECHNOLOGY("rocket-control-unit"):remove_prereq('speed-module'):add_pack("military-science-pack")
+TECHNOLOGY("rocket-control-unit"):remove_prereq('speed-module'):add_pack("military-science-pack"):add_pack("production-science-pack")
 
 TECHNOLOGY("automation-3"):remove_prereq('speed-module'):add_prereq('stack-inserter')
 
-TECHNOLOGY("kovarex-enrichment-process"):remove_prereq('uranium-processing')
+TECHNOLOGY("kovarex-enrichment-process"):remove_prereq('uranium-processing'):add_pack("military-science-pack")
 
 TECHNOLOGY("uranium-processing"):remove_prereq('concrete')
 
