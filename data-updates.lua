@@ -7,6 +7,7 @@ require("prototypes/recipes/fuel-canister-recipes")
 
 --FLUID('steam'):set('heat_capacity', '0.05KJ')
 
+--[[
 for _, v in pairs(data.raw.module) do
     if v.name:find("productivity%-module") and v.limitation then
         for _, recipe in ipairs({"syngas"}) do
@@ -14,6 +15,7 @@ for _, v in pairs(data.raw.module) do
         end
     end
 end
+]]--
 
 ITEM("automation-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
 ITEM("automation-science-pack", "tool"):set("icon_size", 32)
