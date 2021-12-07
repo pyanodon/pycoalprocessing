@@ -330,7 +330,7 @@ RECIPE {
   name = "electric-engine-unit",
   category = "crafting-with-fluid",
   enabled = false,
-  energy_required = 1,
+  energy_required = 10,
   ingredients = {
       {type = "item", name = "iron-stick", amount =  1},
       {type = "item", name = "copper-cable", amount = 100},
@@ -338,7 +338,7 @@ RECIPE {
       {type = "fluid", name = "lubricant", amount = 50},
   },
   results = {
-      {type = "item", name = "electric-engine-unit", amount = 1}
+      {type = "item", name = "electric-engine-unit", amount = 5}
   },
 }
 
