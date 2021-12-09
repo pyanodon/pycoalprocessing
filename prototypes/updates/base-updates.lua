@@ -518,10 +518,13 @@ RECIPE {
 
   --ENTITY
 
+  data.raw.car.car.burner.fuel_category = nil
   data.raw.car.car.burner.fuel_categories = {"jerry", "chemical"}
   data.raw.car.car.burner.burnt_inventory_size = data.raw.car.car.burner.fuel_inventory_size
+  data.raw.car.tank.burner.fuel_category = nil
   data.raw.car.tank.burner.fuel_categories = {"jerry", "chemical"}
   data.raw.car.tank.burner.burnt_inventory_size = data.raw.car.tank.burner.fuel_inventory_size
+  data.raw.locomotive.locomotive.burner.fuel_category = nil
   data.raw.locomotive.locomotive.burner.fuel_categories = {"jerry", "chemical"}
   data.raw.locomotive.locomotive.burner.burnt_inventory_size = data.raw.locomotive.locomotive.burner.fuel_inventory_size
 

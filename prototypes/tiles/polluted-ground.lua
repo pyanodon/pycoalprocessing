@@ -73,7 +73,6 @@ DATA {
     icon_size = 32,
     flags = {'placeable-neutral', 'placeable-off-grid', 'breaths-air'},
     minable = {
-        minable = false,
         mining_particle = 'wooden-particle',
         mining_time = 0.5,
         result = 'wood',

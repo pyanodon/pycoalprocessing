@@ -8,8 +8,6 @@ FLUID {
     base_color = {r = 0.772, g = 0.772, b = 0.772},
     flow_color = {r = 0.772, g = 0.772, b = 0.772},
     max_temperature = 100,
-    pressure_to_speed_ratio = 0.4,
-    flow_to_energy_ratio = 0.59,
     subgroup = "py-fluids",
     order = "z-[slacked-lime]"
 }
