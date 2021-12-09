@@ -47,11 +47,6 @@ ENTITY {
     },
     collision_box = {{-1.49, -1.49}, {1.49, 1.49}},
     selection_box = {{-1.53, -1.53}, {1.53, 1.53}},
-    fluid_input = {
-        name = "combustion-mixture1",
-        amount = 0.0,
-        minimum_temperature = 500.0
-    },
     fluid_box = {
         base_area = 1,
         base_level = -1,

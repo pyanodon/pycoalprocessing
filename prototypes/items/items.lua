@@ -509,7 +509,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "boron-trioxide",
-    enabled = false,
     icon = "__pycoalprocessinggraphics__/graphics/icons/boron-trioxide.png",
     icon_size = 32,
     flags = {},
@@ -521,7 +520,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "ralesia-seeds",
-    enabled = false,
     icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-seeds.png",
     icon_size = 32,
     flags = {},
@@ -616,7 +614,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "glass-core",
     icon = "__pycoalprocessinggraphics__/graphics/icons/glass-core.png",
     icon_size = 32,
@@ -628,7 +625,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "cladding",
     icon = "__pycoalprocessinggraphics__/graphics/icons/cladding.png",
     icon_size = 32,
@@ -640,7 +636,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "ppd",
     icon = "__pycoalprocessinggraphics__/graphics/icons/ppd.png",
     icon_size = 32,
@@ -652,7 +647,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "kevlar",
     icon = "__pycoalprocessinggraphics__/graphics/icons/kevlar.png",
     icon_size = 32,
@@ -664,7 +658,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "kevlar-coating",
     icon = "__pycoalprocessinggraphics__/graphics/icons/kevlar-coating.png",
     icon_size = 32,
@@ -676,7 +669,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "nbfe-alloy",
     icon = "__pycoalprocessinggraphics__/graphics/icons/nbfe-alloy.png",
     icon_size = 32,
@@ -688,7 +680,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "nbfe-coating",
     icon = "__pycoalprocessinggraphics__/graphics/icons/nbfe-coating.png",
     icon_size = 32,
@@ -700,7 +691,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "cladded-core",
     icon = "__pycoalprocessinggraphics__/graphics/icons/cladded-core.png",
     icon_size = 32,
@@ -712,7 +702,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "copper-coating",
     icon = "__pycoalprocessinggraphics__/graphics/icons/copper-coating.png",
     icon_size = 32,
@@ -724,7 +713,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "optical-fiber",
     icon = "__pycoalprocessinggraphics__/graphics/icons/optical-fiber.png",
     icon_size = 32,
@@ -736,7 +724,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "biofilm",
     icon = "__pycoalprocessinggraphics__/graphics/icons/biofilm.png",
     icon_size = 32,
@@ -748,7 +735,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "filtration-media",
     icon = "__pycoalprocessinggraphics__/graphics/icons/filtration-media.png",
     flags = {},
@@ -760,7 +746,6 @@ ITEM {
 
 ITEM {
     type = "item",
-    enabled = false,
     name = "coal-briquette",
     fuel_value = "180MJ",
     fuel_category = "chemical",
@@ -775,7 +760,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-iron",
-    enabled = false,
     icon = "__pycoalprocessinggraphics__/graphics/icons/crusher/crushed-iron.png",
     icon_size = 32,
     flags = {},
@@ -787,7 +771,6 @@ ITEM {
 ITEM {
     type = "item",
     name = "crushed-copper",
-    enabled = false,
     icon = "__pycoalprocessinggraphics__/graphics/icons/crusher/crushed-copper.png",
     icon_size = 32,
     flags = {},
@@ -799,10 +782,8 @@ ITEM {
 ITEM {
     type = "item",
     name = "log",
-    enabled = false,
     fuel_value = "4MJ",
     fuel_category = "chemical",
-
     icon = "__pycoalprocessinggraphics__/graphics/icons/mip/log-01.png",
     pictures =
     {

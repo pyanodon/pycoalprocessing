@@ -48,58 +48,56 @@ ENTITY {
     crafting_speed = 2,
     energy_source =
     {
-      type = "fluid",
-      emissions_per_minute = 10,
-	  fluid_box =
-		{
-		base_area = 1,
-		height = 2,
-		base_level = -1,
-		pipe_connections =
-		{
-			{type = "input", position = {0, 4.0}}
-		},
-		pipe_covers = DATA.Pipes.covers(false, true, true, true),
-		pipe_picture = DATA.Pipes.pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
-		production_type = "input",
-		},
-	effectivity = 1,
-	burns_fluid = true,
-    light_flicker =
-    {
-      minimum_intensity = 0,
-      maximum_intensity = 0,
-      light_intensity_to_size_coefficient = 0,
-      color = {0,0,0},
-    },
-	scale_fluid_usage = true,
-	fluid_usage_per_tick = 10,
-      smoke =
-      {
+        type = "fluid",
+        emissions_per_minute = 10,
+        fluid_box =
         {
-          name = "smoke",
-          north_position = util.by_pixel(68, -64),
-          south_position = util.by_pixel(68, -64),
-          east_position = util.by_pixel(68, -64),
-          west_position = util.by_pixel(68, -64),
-          frequency = 8,
-          starting_vertical_speed = 0.04,
-          starting_frame_deviation = 50
+            base_area = 1,
+            height = 2,
+            base_level = -1,
+            pipe_connections =
+            {
+                {type = "input", position = {0, 4.0}}
+            },
+            pipe_covers = DATA.Pipes.covers(false, true, true, true),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+            production_type = "input",
         },
+        effectivity = 1,
+        burns_fluid = true,
+        light_flicker =
         {
-            name = "smoke",
-            north_position = util.by_pixel(-12, -96),
-            south_position = util.by_pixel(-12, -96),
-            east_position = util.by_pixel(-12, -96),
-            west_position = util.by_pixel(-12, -96),
-            frequency = 8,
-            starting_vertical_speed = 0.04,
-            starting_frame_deviation = 50
-          },
-      }
+            minimum_intensity = 0,
+            maximum_intensity = 0,
+            light_intensity_to_size_coefficient = 0,
+            color = {0,0,0},
+        },
+        scale_fluid_usage = true,
+        fluid_usage_per_tick = 10,
+        smoke =
+        {
+            {
+                name = "smoke",
+                north_position = util.by_pixel(68, -64),
+                south_position = util.by_pixel(68, -64),
+                east_position = util.by_pixel(68, -64),
+                west_position = util.by_pixel(68, -64),
+                frequency = 8,
+                starting_vertical_speed = 0.04,
+                starting_frame_deviation = 50
+            },
+            {
+                name = "smoke",
+                north_position = util.by_pixel(-12, -96),
+                south_position = util.by_pixel(-12, -96),
+                east_position = util.by_pixel(-12, -96),
+                west_position = util.by_pixel(-12, -96),
+                frequency = 8,
+                starting_vertical_speed = 0.04,
+                starting_frame_deviation = 50
+            },
+        }
     },
-    burns_fluid = true,
-	scale_fluid_usage = true,
     energy_usage = "30MW",
     animation = {
         layers = {
