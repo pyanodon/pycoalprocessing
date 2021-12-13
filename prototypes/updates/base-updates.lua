@@ -338,7 +338,7 @@ RECIPE {
       {type = "fluid", name = "lubricant", amount = 50},
   },
   results = {
-      {type = "item", name = "electric-engine-unit", amount = 5}
+      {type = "item", name = "electric-engine-unit", amount = 3}
   },
 }
 
