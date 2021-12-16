@@ -5,10 +5,10 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"assembling-machine-1", 5},
-        {"electronic-circuit", 30}, --updated bob basic-electronic-circuit-board
+        {"electronic-circuit", 30},
         {"steel-plate", 50},
         {"iron-plate", 20},
-        {"iron-gear-wheel", 50} --bob brass-gear-wheel
+        {"iron-gear-wheel", 50}
     },
     results = {
         {"solid-separator", 1}

@@ -6,8 +6,8 @@ RECIPE {
     ingredients = {
         {"electric-mining-drill", 1},
         {"soil-extractormk01", 1},
-        {"electronic-circuit", 20}, --bob basic-electronic-circuit-board
-        {"iron-gear-wheel", 15}, --bob steel-bearing
+        {"electronic-circuit", 20},
+        {"iron-gear-wheel", 15},
         {"transport-belt", 20}
     },
     results = {

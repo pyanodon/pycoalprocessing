@@ -7,8 +7,8 @@ RECIPE {
         {"iron-plate", 40},
         {"niobium-plate", 20},
         {"chromium", 10},
-        {"iron-gear-wheel", 20}, --bob brass-gear-wheel
-        {"electronic-circuit", 12} --bob basic-electronic-circuit-board
+        {"iron-gear-wheel", 20},
+        {"electronic-circuit", 12}
     },
     results = {
         {"sand-extractor", 1}

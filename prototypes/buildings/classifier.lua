@@ -5,10 +5,10 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"assembling-machine-1", 5},
-        {"electronic-circuit", 10}, --bob brass-bearing
+        {"electronic-circuit", 10},
         {"transport-belt", 30},
-        {"iron-plate", 20}, --bob titanium-plate
-        {"iron-gear-wheel", 50} --bob brass-bearing
+        {"iron-plate", 20},
+        {"iron-gear-wheel", 50}
     },
     results = {
         {"classifier", 1}
