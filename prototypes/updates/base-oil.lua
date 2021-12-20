@@ -69,7 +69,7 @@ TECHNOLOGY('lubricant'):remove_prereq("advanced-oil-processing"):remove_prereq('
 
 TECHNOLOGY('advanced-oil-processing'):add_pack('production-science-pack'):remove_prereq('chemical-science-pack'):add_prereq('production-science-pack')
 
-TECHNOLOGY('sulfur-processing'):add_prereq('filtration'):remove_prereq("oil-processing")
+TECHNOLOGY('sulfur-processing'):add_prereq('filtration'):remove_prereq("oil-processing"):add_prereq("fluid-processing-machines-1")
 
 TECHNOLOGY('plastics'):remove_prereq('oil-processing'):add_prereq('logistic-science-pack')
 

@@ -44,7 +44,9 @@ TECHNOLOGY('electric-energy-distribution-1'):remove_prereq('logistic-science-pac
 
 TECHNOLOGY('landfill'):remove_prereq('logistic-science-pack'):add_prereq('automation'):remove_pack('logistic-science-pack')
 
-RECIPE("chemical-plant"):remove_unlock('oil-processing')
+RECIPE("chemical-plant"):remove_unlock('oil-processing'):set_fields{hidden = true}
+table.insert(data.raw["assembling-machine"]["chemical-plant"].flags, "hidden")
+ITEM("chemical-plant"):add_flag("hidden")
 
 TECHNOLOGY('chemical-science-pack'):add_prereq('fine-electronics'):add_prereq('nexelit'):remove_prereq('sulfur-processing')
 

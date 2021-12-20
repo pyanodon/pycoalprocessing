@@ -236,7 +236,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "f"
-}:add_unlock("filtration")
+}:add_unlock("biofilm")
 
 -- Kinda useless in pycoal
 RECIPE {
@@ -612,7 +612,7 @@ RECIPE {
         {type = "item", name = "biofilm", amount = 6}
     },
     main_product = "biofilm"
-}:add_unlock("filtration")
+}:add_unlock("biofilm")
 
 RECIPE {
     type = "recipe",

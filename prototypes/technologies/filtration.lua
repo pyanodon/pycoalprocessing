@@ -22,7 +22,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/filtration-2.png",
     icon_size = 128,
     order = "c-b",
-    prerequisites = {"chemical-science-pack"},
+    prerequisites = {"biofilm"},
     effects = {},
     unit = {
         count = 40,
