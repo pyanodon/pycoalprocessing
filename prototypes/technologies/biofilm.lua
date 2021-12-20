@@ -2,7 +2,7 @@ TECHNOLOGY {
     type = "technology",
     name = "biofilm",
     icon = "__pycoalprocessinggraphics__/graphics/technology/biofilm.png",
-    icon_size = 32,
+    icon_size = 128,
     order = "c-a",
     prerequisites = {"chemical-science-pack"},
     effects = {},
