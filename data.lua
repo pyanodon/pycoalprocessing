@@ -29,6 +29,7 @@ require('prototypes/technologies/cooling-tower-2')
 require('prototypes/technologies/excavation-1')
 require('prototypes/technologies/excavation-2')
 
+require('prototypes/technologies/biofilm')
 require('prototypes/technologies/filtration')
 require('prototypes/technologies/desulfurization')
 require('prototypes/technologies/crusher')
