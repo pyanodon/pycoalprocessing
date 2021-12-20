@@ -37,6 +37,7 @@ require('prototypes/technologies/separation')
 require("prototypes/technologies/fluid-separation")
 require('prototypes/technologies/fuel-production')
 require('prototypes/technologies/fine-electronics')
+require("prototypes/technologies/fluid-processing-machines")
 
 require('prototypes/technologies/ralesia')
 require('prototypes/technologies/ulric')

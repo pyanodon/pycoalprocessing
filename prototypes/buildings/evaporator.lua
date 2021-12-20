@@ -23,7 +23,7 @@ RECIPE {
     results = {
         {"evaporator", 1}
     }
-}:add_unlock("sulfur-processing")
+}:add_unlock("fluid-processing-machines-1")
 
 ITEM {
     type = "item",
