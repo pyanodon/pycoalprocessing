@@ -27,6 +27,47 @@ ITEM {
     stack_size = 10
 }
 
+-- Base graphics
+local dry_graphics = {
+    layers = {
+        {
+            filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/bottom-borax.png",
+            width = 288,
+            height = 144,
+            line_length = 7,
+            frame_count = 90,
+            animation_speed = 0.1,
+            shift = {0.0, 2.25}
+        },
+        {
+            filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/top-borax.png",
+            width = 288,
+            height = 144,
+            line_length = 7,
+            frame_count = 90,
+            animation_speed = 0.1,
+            shift = {0.0, -2.25}
+        }
+    }
+}
+-- Start w/ empty table
+local wet_graphics = {}
+-- Insert, and follow by adding in the appropriate pipe graphics
+for abbreviation, direction in pairs({N='north',E='east',S='south',W='west'}) do
+    wet_graphics[direction] = util.copy(dry_graphics)
+    wet_graphics[direction].layers[3] = {
+        priority = "extra-high",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/" .. abbreviation .. ".png",
+        line_length = 1,
+        width = 288,
+        height = 288,
+        frame_count = 1,
+        repeat_count = 90,
+        direction_count = 1,
+        shift = util.by_pixel(0, 0.0)
+    }
+end
+
 ENTITY {
     type = "mining-drill",
     name = "borax-mine",
@@ -72,69 +113,11 @@ ENTITY {
         width = 12,
         height = 12
     },
-    animations = {
-        layers = {
-            {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/bottom-borax.png",
-                width = 288,
-                height = 144,
-                line_length = 7,
-                frame_count = 90,
-                animation_speed = 0.1,
-                shift = {0.0, 2.25}
-            },
-            {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/top-borax.png",
-                width = 288,
-                height = 144,
-                line_length = 7,
-                frame_count = 90,
-                animation_speed = 0.1,
-                shift = {0.0, -2.25}
-            }
-        }
+    graphics_set = {
+        animation = dry_graphics
     },
-    input_fluid_patch_sprites = {
-        north = {
-            priority = "extra-high",
-            filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/N.png",
-            line_length = 1,
-            width = 288,
-            height = 288,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(0, 0.0)
-        },
-        east = {
-            priority = "extra-high",
-            filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/E.png",
-            line_length = 1,
-            width = 288,
-            height = 288,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(0, 0)
-        },
-        south = {
-            priority = "extra-high",
-            filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/S.png",
-            line_length = 1,
-            width = 288,
-            height = 288,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(0, 0)
-        },
-        west = {
-            priority = "extra-high",
-            filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/W.png",
-            line_length = 1,
-            width = 288,
-            height = 288,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(0, 0)
-        }
+    wet_mining_graphics_set = {
+        animation = wet_graphics
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {

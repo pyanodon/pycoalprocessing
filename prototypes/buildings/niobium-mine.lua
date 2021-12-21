@@ -27,6 +27,54 @@ ITEM {
     stack_size = 10
 }
 
+-- Base graphics
+local dry_graphics = {
+    layers = {
+        {
+            filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/niobium-bottom.png",
+            width = 221,
+            height = 113,
+            line_length = 8,
+            frame_count = 136,
+            animation_speed = 0.2,
+            shift = {-0.07, 1.765}
+        },
+        {
+            filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/niobium-top.png",
+            width = 221,
+            height = 113,
+            line_length = 8,
+            frame_count = 136,
+            animation_speed = 0.2,
+            shift = {-0.07, -1.765}
+        }
+    }
+}
+-- Start w/ empty table
+local wet_graphics = {}
+-- Offsets here vary by direction so we use a LUT
+local pixel_offsets = {
+    N = util.by_pixel(3,0),
+    E = util.by_pixel(3,3),
+    S = util.by_pixel(3,0),
+    W = util.by_pixel(4,3)
+}
+-- Insert, and follow by adding in the appropriate pipe graphics
+for abbreviation, direction in pairs({N='north',E='east',S='south',W='west'}) do
+    wet_graphics[direction] = util.copy(dry_graphics)
+    wet_graphics[direction].layers[3] = {
+        priority = "extra-high",
+        filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/" .. abbreviation .. ".png",
+        line_length = 1,
+        width = 231,
+        height = 237,
+        frame_count = 1,
+        repeat_count = 136,
+        direction_count = 1,
+        shift = pixel_offsets[abbreviation]
+    }
+end
+
 ENTITY {
     type = "mining-drill",
     name = "niobium-mine",
@@ -79,69 +127,11 @@ ENTITY {
         width = 12,
         height = 12
     },
-    animations = {
-        layers = {
-            {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/niobium-bottom.png",
-                width = 221,
-                height = 113,
-                line_length = 8,
-                frame_count = 136,
-                animation_speed = 0.2,
-                shift = {-0.07, 1.765}
-            },
-            {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/niobium-top.png",
-                width = 221,
-                height = 113,
-                line_length = 8,
-                frame_count = 136,
-                animation_speed = 0.2,
-                shift = {-0.07, -1.765}
-            }
-        }
+    graphics_set = {
+        animation = dry_graphics
     },
-    input_fluid_patch_sprites = {
-        north = {
-            priority = "extra-high",
-            filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/N.png",
-            line_length = 1,
-            width = 231,
-            height = 237,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(3, 0)
-        },
-        east = {
-            priority = "extra-high",
-            filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/E.png",
-            line_length = 1,
-            width = 231,
-            height = 237,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(3, 3)
-        },
-        south = {
-            priority = "extra-high",
-            filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/S.png",
-            line_length = 1,
-            width = 231,
-            height = 237,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(3, 0)
-        },
-        west = {
-            priority = "extra-high",
-            filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/W.png",
-            line_length = 1,
-            width = 231,
-            height = 237,
-            frame_count = 1,
-            direction_count = 1,
-            shift = util.by_pixel(4, 3)
-        }
+    wet_mining_graphics_set = {
+        animation = wet_graphics
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
     working_sound = {
