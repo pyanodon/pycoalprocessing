@@ -49,7 +49,7 @@ require('prototypes/technologies/nexelit')
 require('prototypes/technologies/chromium')
 
 require("prototypes/technologies/mukmoux")
-
+require("prototypes/technologies/kevlar")
 -- ))
 
 -- (( RESOURCEs ))--

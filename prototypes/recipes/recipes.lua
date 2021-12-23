@@ -481,7 +481,7 @@ RECIPE {
         {type = "item", name = "ppd", amount = 10}
     },
     main_product = "ppd"
-}:add_unlock("fine-electronics")
+}:add_unlock("kevlar")
 
 RECIPE {
     type = "recipe",
@@ -498,7 +498,7 @@ RECIPE {
         {type = "item", name = "kevlar", amount = 5}
     },
     main_product = "kevlar"
-}:add_unlock("fine-electronics")
+}:add_unlock("kevlar")
 
 RECIPE {
     type = "recipe",

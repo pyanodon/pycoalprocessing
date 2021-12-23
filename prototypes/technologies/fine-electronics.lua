@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/fine-electronics.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"niobium","sulfur-processing"},
+    prerequisites = {"sulfur-processing", "niobium", "kevlar"},
     effects = {},
     unit = {
         count = 30,
