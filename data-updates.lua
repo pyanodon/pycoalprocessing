@@ -28,8 +28,6 @@ ITEM("chemical-science-pack", "tool"):set("icon_size", 32)
 ITEM('electric-engine-unit'):set("icon", "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit.png")
 ITEM('electric-engine-unit'):set("icon_size", 64)
 
-RECIPE('rocket-silo'):replace_ingredient("pipe", "niobium-pipe")
-
 RECIPE("small-electric-pole"):set_category("handcrafting")
 
 RECIPE("medium-electric-pole"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):replace_ingredient("copper-plate", {"copper-cable", 5}):replace_ingredient("iron-stick", {"nbfe-alloy", 2}):remove_ingredient('steel-plate')

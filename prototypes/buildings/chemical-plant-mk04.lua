@@ -10,7 +10,7 @@ RECIPE {
     results = {
         {"chemical-plant-mk04", 1}
     }
-}:add_unlock("machines-mk04")
+}
 
 ITEM {
     type = "item",

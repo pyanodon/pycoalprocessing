@@ -6,13 +6,13 @@ RECIPE {
     energy_required = 4,
     ingredients = {
         {type = "fluid", name = "aromatics", amount = 100},
-        {type = "fluid", name = "steam", amount = 600}, -- updated-bob liquid-air
-        {type = "item", name = "copper-ore", amount = 2} --bob cobalt-ore
+        {type = "fluid", name = "steam", amount = 600},
+        {type = "item", name = "nichrome", amount = 2}
     },
     results = {
         {type = "fluid", name = "tpa", amount = 50}
     }
-}:add_unlock("fine-electronics")
+}:add_unlock("kevlar")
 
 FLUID {
     type = "fluid",
