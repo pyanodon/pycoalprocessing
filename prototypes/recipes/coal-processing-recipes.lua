@@ -833,7 +833,7 @@ RECIPE {
     },
     main_product = "aromatics",
     icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-items",
     order = "r"
 }:add_unlock("sulfur-processing")
@@ -1004,10 +1004,6 @@ RECIPE {
         {type = "fluid", name = "tar", amount = 300}
     },
     main_product = "aromatics",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/oleo-gasification.png",
-    icon_size = 32,
-    subgroup = "py-fluid-handling",
-    order = "k"
 }:add_unlock("mukmoux")
 --)) Coal Processing 2 ((--
 

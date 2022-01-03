@@ -17,7 +17,7 @@ RECIPE {
     },
     main_product = "aromatics",
     icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-fluids",
     order = "d3"
 }:add_unlock("fuel-production")

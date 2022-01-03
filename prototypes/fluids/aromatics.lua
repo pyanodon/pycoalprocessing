@@ -18,7 +18,7 @@ ITEM {
     type = "fluid",
     name = "aromatics",
     icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics.png",
-    icon_size = 32,
+    icon_size = 64,
     default_temperature = 10,
     base_color = {r = 0.74, g = 0.403, b = 0.388},
     flow_color = {r = 0.74, g = 0.403, b = 0.388},
