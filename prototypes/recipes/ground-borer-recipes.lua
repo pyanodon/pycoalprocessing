@@ -3,7 +3,7 @@ RECIPE {
     name = "mining-nexelit",
     category = "ground-borer",
     enabled = false,
-    energy_required = 0.75,
+    energy_required = 3,
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 200},
         {type = "fluid", name = "coal-gas", amount = 300},
@@ -24,7 +24,7 @@ RECIPE {
     name = "mining-stone",
     category = "ground-borer",
     enabled = false,
-    energy_required = 1.2,
+    energy_required = 3,
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
         {type = "fluid", name = "coal-gas", amount = 100},
@@ -47,8 +47,8 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "lubricant", amount = 200},
-        {type = "fluid", name = "coal-gas", amount = 200},
+        {type = "fluid", name = "lubricant", amount = 100},
+        {type = "fluid", name = "coal-gas", amount = 100},
         {type = "item", name = "drill-head", amount = 1}
     },
     results = {
@@ -68,9 +68,9 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "lubricant", amount = 300},
-        {type = "fluid", name = "coal-gas", amount = 300},
-        {type = "item", name = "drill-head", amount = 3}
+        {type = "fluid", name = "lubricant", amount = 100},
+        {type = "fluid", name = "coal-gas", amount = 100},
+        {type = "item", name = "drill-head", amount = 2}
     },
     results = {
         {type = "item", name = "niobium-ore", amount = 15}
@@ -87,7 +87,7 @@ RECIPE {
     name = "mining-limestone",
     category = "ground-borer",
     enabled = false,
-    energy_required = 1.2,
+    energy_required = 3,
     ingredients = {
         {type = "fluid", name = "lubricant", amount = 100},
         {type = "fluid", name = "coal-gas", amount = 100},
