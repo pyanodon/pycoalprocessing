@@ -269,7 +269,7 @@ ENTITY {
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55},
     working_sound = {
-        sound = {filename = "__pycoalprocessinggraphics__/sounds/chemical-plant.ogg", volume = 0.7},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/chemical-plant.ogg", volume = 1.0},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/chemical-plant.ogg", volume = 0.3},
         apparent_volume = 2.5
     }
