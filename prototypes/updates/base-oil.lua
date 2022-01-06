@@ -75,7 +75,7 @@ TECHNOLOGY('plastics'):remove_prereq('oil-processing'):add_prereq('logistic-scie
 
 RECIPE('oil-refinery'):remove_unlock('oil-processing'):add_unlock('plastics')
 
-RECIPE('plastic-bar'):remove_unlock('plastics')
+RECIPE('plastic-bar'):remove_unlock('plastics'):set_fields{hidden = true}
 
 --moving solid fuels
 RECIPE("solid-fuel-from-petroleum-gas"):remove_unlock("oil-processing")
