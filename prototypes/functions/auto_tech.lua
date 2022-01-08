@@ -1659,7 +1659,6 @@ function pytech.cleanup()
     for _, recipe in pairs(data.raw.recipe) do
         recipe.ignore_for_dependencies = nil
     end
-
     for _, tech in pairs(data.raw.technology) do
         tech.closure = nil
         tech.dependencies = nil
