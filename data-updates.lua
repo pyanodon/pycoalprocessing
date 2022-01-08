@@ -44,25 +44,11 @@ RECIPE("medium-electric-pole"):add_ingredient({type = "item", name = "niobium-pl
 
 RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient({type = "item", name = "niobium-plate", amount = 2}):add_ingredient({type = "item", name = "copper-cable", amount = 15}):replace_ingredient('iron-stick', {"steel-plate", 6})
 
-TECHNOLOGY('logistic-science-pack'):add_prereq('ulric'):add_prereq('energy-1')
-
-TECHNOLOGY('circuit-network'):remove_prereq('logistic-science-pack'):remove_pack('logistic-science-pack')
-
-TECHNOLOGY('electric-energy-distribution-1'):remove_prereq('logistic-science-pack'):remove_prereq("steel-processing"):add_prereq('niobium')
-
-TECHNOLOGY('landfill'):remove_prereq('logistic-science-pack'):add_prereq('automation'):remove_pack('logistic-science-pack')
-
 RECIPE("chemical-plant"):remove_unlock('oil-processing'):set_fields{hidden = true}
 table.insert(data.raw["assembling-machine"]["chemical-plant"].flags, "hidden")
 ITEM("chemical-plant"):add_flag("hidden")
 
-TECHNOLOGY('chemical-science-pack'):add_prereq('fine-electronics'):add_prereq('nexelit'):remove_prereq('sulfur-processing')
-
-TECHNOLOGY("fluid-handling"):remove_prereq("automation-2"):remove_prereq("engine"):add_prereq("steel-processing"):remove_pack('logistic-science-pack')
-
 RECIPE("pump"):remove_unlock("fluid-handling"):add_unlock("engine")
-
-TECHNOLOGY('logistic-robotics'):remove_prereq('advanced-electronics')
 
 --RECIPE("wood"):set_fields {energy_required = 10}
 

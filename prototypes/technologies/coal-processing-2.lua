@@ -5,7 +5,8 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     --upgrade = true,
-    prerequisites = {"methanol-processing-1", "chromium", "concrete"},
+    prerequisites = {},
+    dependencies = {"coal-processing-1"},
     effects = {},
     unit = {
         count = 50,

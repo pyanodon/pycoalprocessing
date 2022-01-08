@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/desulfurization.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"oil-processing", "filtration-mk02"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 10,
