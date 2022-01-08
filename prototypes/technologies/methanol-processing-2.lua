@@ -4,7 +4,8 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/methanol-processing-2.png",
     icon_size = 128,
     order = "c-b",
-    prerequisites = {"chemical-science-pack"},
+    prerequisites = {},
+    dependencies = {"methanol-processing-1"},
     --upgrade = true,
     effects = {},
     unit = {

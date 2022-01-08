@@ -1,74 +1,19 @@
-
 --(( TECHNOLOGY ))--
-TECHNOLOGY("logistics-2"):remove_prereq("logistic-science-pack"):add_prereq("niobium"):add_prereq("lubricant")
+TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):add_pack("military-science-pack")
 
-TECHNOLOGY("railway"):remove_prereq("logistics-2"):add_prereq("plastics")
+TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
 
-TECHNOLOGY("automobilism"):remove_prereq("logistics-2"):add_prereq("plastics")
-
-TECHNOLOGY("electric-engine"):add_prereq("chemical-science-pack")
-
-TECHNOLOGY("chemical-science-pack"):remove_prereq("advanced-electronics")
-
-TECHNOLOGY("production-science-pack"):remove_prereq("productivity-module"):remove_prereq("advanced-material-processing-2"):remove_prereq("railway"):add_prereq("uranium-processing"):add_prereq("speed-module-2"):add_prereq("effectivity-module-2"):add_prereq("electric-engine"):add_prereq("energy-3")
-
-TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):add_pack("military-science-pack"):remove_prereq("robotics"):remove_prereq("advanced-electronics-2"):remove_prereq("low-density-structure"):add_prereq("automation-3"):add_prereq("kovarex-enrichment-process"):add_prereq("fusion-reactor-equipment"):add_prereq("destroyer")
-
-TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("military-4"):add_prereq("production-science-pack"):remove_prereq("speed-module")
-
-TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("utility-science-pack"):add_prereq("production-science-pack"):add_prereq('low-density-structure')
-
-TECHNOLOGY("explosives"):add_prereq("mukmoux")
+TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
 
 TECHNOLOGY("electronics"):set_fields{enabled = false}:set_fields{hidden = true}
 
-TECHNOLOGY("automation-2"):remove_prereq('electronics'):remove_prereq("steel-processing")
-TECHNOLOGY("fast-inserter"):remove_prereq('electronics'):add_prereq('automation')
-TECHNOLOGY("solar-energy"):remove_prereq('electronics'):remove_prereq("steel-processing"):remove_prereq("optics")
-TECHNOLOGY("electric-energy-distribution-1"):remove_prereq('electronics')
-TECHNOLOGY("circuit-network"):remove_prereq('electronics')
+TECHNOLOGY("rocket-fuel"):add_pack("military-science-pack")
 
-TECHNOLOGY("military-2"):remove_prereq("steel-processing")
+TECHNOLOGY("rocket-control-unit"):add_pack("military-science-pack"):add_pack("production-science-pack")
 
-TECHNOLOGY("engine"):remove_prereq("steel-processing")
+TECHNOLOGY("kovarex-enrichment-process"):add_pack("military-science-pack")
 
-TECHNOLOGY("advanced-electronics"):add_prereq("fast-inserter")
-
-TECHNOLOGY("concrete"):remove_prereq("advanced-material-processing"):remove_prereq("automation-2"):add_prereq("separation"):add_prereq("logistic-science-pack")
-
-TECHNOLOGY("rocket-fuel"):remove_prereq("advanced-oil-processing"):add_prereq('chemical-science-pack'):add_pack("military-science-pack")
-
-TECHNOLOGY("rocket-control-unit"):remove_prereq('speed-module'):add_pack("military-science-pack"):add_pack("production-science-pack")
-
-TECHNOLOGY("automation-3"):remove_prereq('speed-module'):add_prereq('stack-inserter')
-
-TECHNOLOGY("kovarex-enrichment-process"):remove_prereq('uranium-processing'):add_pack("military-science-pack")
-
-TECHNOLOGY("uranium-processing"):remove_prereq('concrete')
-
-TECHNOLOGY("logistics-3"):remove_prereq('lubricant'):add_prereq('logistics-2')
-
-TECHNOLOGY("advanced-material-processing"):remove_prereq("steel-processing"):add_prereq('crusher'):remove_prereq('logistic-science-pack'):add_prereq('filtration')
-
-TECHNOLOGY("stack-inserter"):remove_prereq("logistics-2"):remove_prereq("fast-inserter")
-
-TECHNOLOGY("advanced-material-processing-2"):remove_prereq("advanced-material-processing")
-
-TECHNOLOGY("low-density-structure"):remove_prereq("advanced-material-processing")
-
-TECHNOLOGY("fluid-wagon"):remove_prereq("fluid-handling")
-
-TECHNOLOGY("fluid-handling"):add_prereq("automation")
-
-TECHNOLOGY("laser"):remove_prereq("optics")
-
-TECHNOLOGY("rocketry"):remove_prereq('military-science-pack')
-
-TECHNOLOGY("braking-force-3"):add_prereq('production-science-pack')
-
-TECHNOLOGY("braking-force-6"):add_prereq('utility-science-pack')
-
-TECHNOLOGY("worker-robots-speed-3"):remove_pack('utility-science-pack'):add_pack('production-science-pack'):add_prereq('production-science-pack')
+TECHNOLOGY("worker-robots-speed-3"):remove_pack('utility-science-pack'):add_pack('production-science-pack')
 
 TECHNOLOGY("worker-robots-speed-4"):remove_pack('utility-science-pack'):add_pack('production-science-pack')
 
@@ -134,65 +79,9 @@ TECHNOLOGY("inserter-capacity-bonus-4"):add_prereq('production-science-pack')
 
 TECHNOLOGY("inserter-capacity-bonus-7"):add_prereq('utility-science-pack')
 
-TECHNOLOGY("flammables"):add_prereq('military-science-pack')
+TECHNOLOGY('landfill'):remove_pack('logistic-science-pack')
 
-TECHNOLOGY("physical-projectile-damage-2"):add_prereq('logistic-science-pack')
-
-TECHNOLOGY("physical-projectile-damage-3"):add_prereq('military-science-pack')
-
-TECHNOLOGY("physical-projectile-damage-5"):add_prereq('chemical-science-pack')
-
-TECHNOLOGY("physical-projectile-damage-6"):add_prereq('utility-science-pack')
-
-TECHNOLOGY("stronger-explosives-2"):add_prereq('military-science-pack')
-
-TECHNOLOGY("stronger-explosives-3"):add_prereq('chemical-science-pack')
-
-TECHNOLOGY("stronger-explosives-4"):add_prereq('utility-science-pack')
-
-TECHNOLOGY("weapon-shooting-speed-2"):add_prereq('logistic-science-pack')
-
-TECHNOLOGY("weapon-shooting-speed-3"):add_prereq('military-science-pack')
-
-TECHNOLOGY("weapon-shooting-speed-5"):add_prereq('chemical-science-pack')
-
-TECHNOLOGY("weapon-shooting-speed-6"):add_prereq('utility-science-pack')
-
-TECHNOLOGY("refined-flammables-3"):add_prereq('chemical-science-pack')
-
-TECHNOLOGY("refined-flammables-4"):add_prereq('utility-science-pack')
-
-TECHNOLOGY("energy-weapons-damage-5"):add_prereq('utility-science-pack')
-
-TECHNOLOGY("laser-shooting-speed-5"):add_prereq('utility-science-pack')
-
-TECHNOLOGY("follower-robot-count-3"):add_prereq('chemical-science-pack')
-
-TECHNOLOGY("follower-robot-count-5"):add_prereq('utility-science-pack'):remove_prereq("destroyer")
-
-TECHNOLOGY("flamethrower"):remove_prereq('military-science-pack')
-
-TECHNOLOGY("personal-laser-defense-equipment"):remove_prereq('modular-armor')
-
-TECHNOLOGY("effect-transmission"):remove_prereq("advanced-electronics-2")
-
-TECHNOLOGY("military-4"):remove_prereq("military-3")
-
-TECHNOLOGY("power-armor-mk2"):remove_prereq("power-armor"):remove_prereq("speed-module-2"):remove_prereq("effectivity-module-2")
-
-TECHNOLOGY("uranium-ammo"):remove_prereq("uranium-processing")
-
-TECHNOLOGY("rocket-silo"):remove_prereq("rocket-fuel"):remove_prereq("concrete")
-
-TECHNOLOGY("spidertron"):remove_prereq("fusion-reactor-equipment")
-
-TECHNOLOGY("atomic-bomb"):remove_prereq("kovarex-enrichment-process")
-
-TECHNOLOGY("military-science-pack"):add_prereq("gun-turret")
-
-TECHNOLOGY("speed-module-3"):remove_prereq("speed-module-2")
-
-TECHNOLOGY("effectivity-module-3"):remove_prereq("effectivity-module-2")
+TECHNOLOGY("fluid-handling"):remove_pack('logistic-science-pack')
 
 --adding prod and mil sci to base game utility techs
 TECHNOLOGY("physical-projectile-damage-6"):add_pack("production-science-pack")
@@ -263,7 +152,7 @@ TECHNOLOGY("worker-robots-speed-6"):add_pack("military-science-pack")
 
 TECHNOLOGY("worker-robots-storage-3"):add_pack("military-science-pack")
 
-TECHNOLOGY("personal-roboport-mk2-equipment"):add_pack("military-science-pack"):add_pack("production-science-pack"):remove_prereq('military-science-pack')
+TECHNOLOGY("personal-roboport-mk2-equipment"):add_pack("military-science-pack"):add_pack("production-science-pack")
 
 TECHNOLOGY("mining-productivity-3"):add_pack("military-science-pack")
 
@@ -271,7 +160,25 @@ TECHNOLOGY("mining-productivity-4"):add_pack("military-science-pack")
 
 TECHNOLOGY("artillery"):add_pack("production-science-pack")
 
---(( RECIPES ))--
+--(( TECHNOLOGY DEPENDENCIES ))--
+
+TECHNOLOGY('fast-inserter'):set_fields{ dependencies = { 'automation' }}
+
+TECHNOLOGY('military-2'):set_fields{ dependencies = { 'military' }}
+
+TECHNOLOGY('gate'):set_fields{ dependencies = { 'military-2' }}
+
+TECHNOLOGY('car'):set_fields{ dependencies = { 'logistics-2' }}
+
+TECHNOLOGY('heavy-armor'):set_fields{ dependencies = { 'military' }}
+
+TECHNOLOGY('modular-armor'):set_fields{ dependencies = { 'heavy-armor' }}
+
+TECHNOLOGY('power-armor'):set_fields{ dependencies = { 'modular-armor' }}
+
+TECHNOLOGY('power-armor-mk2'):set_fields{ dependencies = { 'power-armor' }}
+
+TECHNOLOGY('electric-energy-accumulators'):set_fields{ dependencies = { 'electric-energy-distribution-1' }}
 
 RECIPE{
   type = "recipe",

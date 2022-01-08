@@ -33,3 +33,5 @@ for r,recipe in pairs(data.raw.recipe) do
         recipe.localised_name = {"recipe-name." .. recipe.name, temp}
     end
 end
+
+require('prototypes/functions/auto_tech')

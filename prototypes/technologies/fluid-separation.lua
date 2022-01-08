@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/fluid-separation.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"mukmoux", "sulfur-processing"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 35,
