@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/biofilm.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"chemical-science-pack"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 50,

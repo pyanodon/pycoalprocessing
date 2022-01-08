@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/mukmoux.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-2", "advanced-electronics"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 100,

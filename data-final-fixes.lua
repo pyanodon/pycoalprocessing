@@ -21,3 +21,5 @@ end
 
 log(serpent.block(techs))
 ]]--
+
+require('prototypes/functions/auto_tech')

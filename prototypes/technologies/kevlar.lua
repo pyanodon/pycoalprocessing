@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/icons/kevlar.png",
     icon_size = 32,
     order = "c-a",
-    prerequisites = {"filtration"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 50,

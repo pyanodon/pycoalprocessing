@@ -311,3 +311,4 @@ data.raw.fluid['refsyngas'].fuel_value = '0.5MJ'
 data.raw.fluid['methanol'].fuel_value = '1MJ'
 data.raw.fluid['tar'].fuel_value = '0.2MJ'
 data.raw.fluid['combustion-mixture1'].fuel_value = '0.1MJ'
+
