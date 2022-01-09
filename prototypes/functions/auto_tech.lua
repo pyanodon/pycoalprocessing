@@ -40,7 +40,7 @@ local nt_recipe = 'recipe'
 local nt_tech_head = 'tech-h'
 local nt_tech_tail = 'tech-t'
 
-function pytech.fg_get_node(name, type, label)
+function pytech.fg_get_node(name, type, label, factorio_name)
     local key = type .. '|' .. name
     local node = pytech.fg[key]
 
@@ -50,12 +50,25 @@ function pytech.fg_get_node(name, type, label)
         node.name = name
         node.key = key
         node.label = label
+        node.factorio_name = factorio_name
         node.parents = {}
         node.children = {}
         node.fz_parents = {}
         node.fz_children = {}
         pytech.fg[key] = node
+    else
+        if not node.label then
+            node.label = label
+        end
+
+        if not node.factorio_name then
+            node.factorio_name = factorio_name
+        end
     end
+
+    -- if name == 'py-heat-exchanger-mk02' and type == nt_item then
+    --     log(debug.traceback())
+    -- end
 
     return node
 end
@@ -183,7 +196,7 @@ end
 
 function pytech.parse_tech(tech)
     -- log('Parsing tech: ' .. tech.name)
-    local node = pytech.fg_get_node(tech.name, nt_tech_head, tech)
+    local node = pytech.fg_get_node(tech.name, nt_tech_head, tech, tech.name)
 
     -- Hard coded dependencies
     for _, dep in pairs(tech.dependencies or {}) do
@@ -242,8 +255,7 @@ end
 function pytech.parse_recipe(tech_name, recipe)
     local name = (tech_name and (tech_name .. '::') or '') .. recipe.name
     -- log('Parsing recipe: ' .. name)
-    local node = pytech.fg_get_node(name, nt_recipe, tech_name)
-    node.factorio_name = recipe.name
+    local node = pytech.fg_get_node(name, nt_recipe, tech_name, recipe.name)
 
     if pytech.processed_recipes[name] then
         return node
@@ -362,7 +374,7 @@ end
 
 function pytech.parse_item(item)
     -- log('Parsing item: ' .. item.name)
-    local node = pytech.fg_get_node(item.name, nt_item, item)
+    local node = pytech.fg_get_node(item.name, nt_item, item, item.name)
 
     -- if not pytech.processed_items[item.name] then
     --     pytech.processed_items[item.name] = true
@@ -373,9 +385,10 @@ end
 
 
 function pytech.parse_fluid(fluid, temperature, fluid_name)
-    local name = (fluid and fluid.name or fluid_name) .. '(' .. (temperature or fluid.default_temperature) .. ')'
+    local fname = (fluid and fluid.name or fluid_name)
+    local name = fname .. '(' .. (temperature or fluid.default_temperature) .. ')'
     -- log('Parsing fluid: ' .. name)
-    local node = pytech.fg_get_node(name, nt_fluid, fluid)
+    local node = pytech.fg_get_node(name, nt_fluid, fluid, fname)
 
     return node
 end
@@ -882,7 +895,7 @@ function pytech.topological_sort()
 
         run_loop = false
 
-        if table_size(sorted_set) < table_size(pytech.fg) then
+        if table_size(sorted_set) < table_size(table.filter(pytech.fg, function(n) return n.factorio_name ~= nil end)) then
             found_error = true
         end
 
@@ -929,7 +942,7 @@ function pytech.topological_sort()
     end
 
     for _, node in pairs(pytech.fg) do
-        if not sorted_set[node.key] then
+        if not sorted_set[node.key] and node.factorio_name then
             log('ERROR: Unprocessed node: ' .. node.key)
         end
     end
