@@ -19,6 +19,7 @@ end
 
 ITEM("automation-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
 ITEM("automation-science-pack", "tool"):set("icon_size", 32)
+ITEM("sulfuric-acid"):subgroup_order("py-fluid-handling", "d")
 
 ITEM("logistic-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png")
 ITEM("logistic-science-pack", "tool"):set("icon_size", 32)
