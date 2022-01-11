@@ -12,10 +12,6 @@ local recipe_mining = 'mining::'
 local recipe_offshore = 'offshore::'
 local recipe_burnt = 'burnt-result::'
 local recipe_rocket = 'rocket-launch::'
-local crafting_generator = '__generator__'
-local crafting_reactor = '__reactor__'
-local crafting_launch = '__launch__'
-local item_rocket_launch = '__launch__'
 
 local l_recipe_result = '__recipe_result__'
 local l_crafting_machine = '__crafting_machine__'
@@ -29,10 +25,12 @@ pytech.placed_by = {}
 pytech.mining_categories = {}
 pytech.crafting_categories = {}
 pytech.fuel_categories = {}
-pytech.processed_items = {}
 pytech.processed_recipes = {}
 pytech.processed_internals = {}
 pytech.fuel_burners = {}
+pytech.tech_used_recipes = {}
+pytech.exclude_from_path = {}
+pytech.safe_path = {}
 
 local nt_item = 'item'
 local nt_fluid = 'fluid'
@@ -149,7 +147,7 @@ function pytech.get_prototype(parent_type, prototype_name)
     end
 
     if not prototype then
-        log('ERROR: Prototype not found: ' .. parent_type .. ' / ' .. prototype_name)
+        error('ERROR: Prototype not found: ' .. parent_type .. ' / ' .. prototype_name, 0)
     end
 
     return prototype
@@ -253,7 +251,7 @@ end
 
 
 function pytech.parse_recipe(tech_name, recipe)
-    local name = (tech_name and (tech_name .. '::') or '') .. recipe.name
+    local name = (tech_name and (tech_name .. ' / ') or '') .. recipe.name
     -- log('Parsing recipe: ' .. name)
     local node = pytech.fg_get_node(name, nt_recipe, tech_name, recipe.name)
 
@@ -318,7 +316,7 @@ function pytech.parse_recipe(tech_name, recipe)
     local category = recipe.category or 'crafting'
 
     if not pytech.crafting_categories[category] then
-        log('ERROR: Missing crafting category: ' .. category .. ', for ' .. recipe.name)
+        error('ERROR: Missing crafting category: ' .. category .. ', for ' .. recipe.name, 0)
     end
 
     if pytech.crafting_categories[category] and not pytech.crafting_categories[category][start_tech_name] then
@@ -374,11 +372,7 @@ end
 
 function pytech.parse_item(item)
     -- log('Parsing item: ' .. item.name)
-    local node = pytech.fg_get_node(item.name, nt_item, item, item.name)
-
-    -- if not pytech.processed_items[item.name] then
-    --     pytech.processed_items[item.name] = true
-    -- end
+    local node = pytech.fg_get_node(item.name, nt_item, nil, item.name)
 
     return node
 end
@@ -388,7 +382,7 @@ function pytech.parse_fluid(fluid, temperature, fluid_name)
     local fname = (fluid and fluid.name or fluid_name)
     local name = fname .. '(' .. (temperature or fluid.default_temperature) .. ')'
     -- log('Parsing fluid: ' .. name)
-    local node = pytech.fg_get_node(name, nt_fluid, fluid, fname)
+    local node = pytech.fg_get_node(name, nt_fluid, nil, fname)
 
     return node
 end
@@ -511,7 +505,7 @@ function pytech.add_mining_recipe(entity)
         local category = entity.category or 'basic-solid'
 
         if not pytech.mining_categories[category] then
-            log('ERROR: Missing mining category: ' .. category .. ', for ' .. entity.name)
+            error('ERROR: Missing mining category: ' .. category .. ', for ' .. entity.name, 0)
         end
 
         if pytech.mining_categories[category] and not pytech.mining_categories[category]['character'] then
@@ -637,7 +631,12 @@ function pytech.pre_process_techs()
             end
 
             if not found then
-                tech.dependencies = table.merge(tech.dependencies or {}, tech.prerequisites)
+                tech.dependencies = {}
+                for _, t in pairs(tech.prerequisites) do
+                    if data.raw.technology[t] and data.raw.technology[t].enabled and not data.raw.technology[t].hidden then
+                        table.insert(tech.dependencies, t)
+                    end
+                end
                 tech.no_recipe = true
             end
         end
@@ -707,78 +706,33 @@ end
 
 
 function pytech.update_internal_product(recipe, product, tech_name, add_to_tail)
+    local tail_node = pytech.fg_get_node(recipe.label, nt_tech_tail)
+
     if add_to_tail then
-        local tail_node = pytech.fg_get_node(recipe.label, nt_tech_tail)
         pytech.fg_add_fuzzy_link(tail_node, product, l_recipe_result)
     end
 
-    -- local found = false
-
-    -- for _, cc_child in pairs(product.fz_children) do
-    --     if cc_child.node.label == tech_name then
-    --         found = true
-    --         break
-    --     end
-    -- end
-
-    -- if not found then
-    --     return
-    -- end
-
-    local internal_node = pytech.fg_get_node(recipe.label .. '::' .. product.name, product.type, product.label)
+    local internal_node = pytech.fg_get_node(recipe.label .. '::' .. product.name, product.type, recipe.label, product.factorio_name)
+    internal_node.main_node = product
 
     pytech.fg_remove_fuzzy_link(recipe, product, l_recipe_result)
     pytech.fg_add_fuzzy_link(recipe, internal_node, l_recipe_result)
 
-    if pytech.processed_internals[internal_node.key] then
-        return
-    else
-        pytech.processed_internals[internal_node.key] = true
-    end
-
     -- log('Internal node: ' .. recipe.label .. '::' .. product.name .. (add_to_tail and ' +tail' or ' -tail'))
-    for label, children in pairs(product.fz_children) do
-        for _, child in pairs(children) do
-            if child.label == tech_name or not child.label then
-                local child_node
 
-                if not child.label then
-                    for c_label, c_children in pairs(child.fz_children) do
-                        for _, c_child in pairs(c_children) do
-                            local found = false
-                            for _, cc_children in pairs(c_child.fz_children) do
-                                for _, cc_child in pairs(cc_children) do
-                                    if cc_child.label == tech_name then
-                                        found = true
-                                        break
-                                    end
-                                end
-                            end
+    if not pytech.processed_internals[internal_node.key] then
+        pytech.processed_internals[internal_node.key] = true
 
-                            if found then
-                                child_node = pytech.fg_get_node(tech_name .. '::' .. child.name, child.type, tech_name)
-
-                                for p_label, parents in pairs(child.fz_parents) do
-                                    for _, parent in pairs(parents) do
-                                        pytech.fg_add_fuzzy_link(parent, child_node, p_label)
-                                    end
-                                end
-
-                                pytech.fg_add_fuzzy_link(child_node, c_child, c_label)
-                                pytech.update_internal_product(child_node, c_child, tech_name, false)
-                            end
-                        end
-                    end
-                else
-                    child_node = child
-                end
-
-                if child_node then
-                    pytech.fg_add_fuzzy_link(internal_node, child_node, label)
+        for label, children in pairs(product.fz_children) do
+            for _, child in pairs(children) do
+                if (child.label == tech_name) then
+                    pytech.fg_add_fuzzy_link(internal_node, child, label)
                 end
             end
         end
     end
+
+    return internal_node
 end
 
 
@@ -787,13 +741,14 @@ function pytech.pre_process_fuzzy_graph()
     for _, node in pairs(pytech.fg) do
         if node.type == nt_tech_head and node.name ~= start_tech_name then
             -- Add tail nodes for technology nodes
-            local tail_node = pytech.fg_get_node(node.name, nt_tech_tail)
+            local tail_node = pytech.fg_get_node(node.name, nt_tech_tail, node.label, node.factorio_name)
 
             for _, recipe_node in pairs(node.children) do
                 pytech.fg_add_link(recipe_node, tail_node)
             end
 
             pytech.fg_add_link(node, tail_node)
+            pytech.tech_used_recipes[node.name] = {}
         end
     end
 
@@ -820,20 +775,105 @@ function pytech.pre_process_fuzzy_graph()
 end
 
 
+function pytech.update_internal_item(node, sorted_set)
+    -- log('pytech.update_internal_item: ' .. node.key)
+
+    local main_item = node.main_node
+
+    for c_label, cc in pairs(main_item.fz_children) do
+        local children = table.merge({}, cc)
+
+        for _, child in pairs(children) do
+            if not child.label and (not sorted_set[child.key] or child.level == node.level) then
+                local child_node = pytech.fg_get_node(node.label .. '::' .. child.name, child.type, node.label, child.factorio_name)
+
+                if not child_node.processed then
+                    child_node.processed = true
+                    -- log('pytech.update_internal_item: Adding internal recipe ' .. child_node.key)
+
+                    for p_label, parents in pairs(child.fz_parents) do
+                        for _, parent in pairs(parents) do
+                            if parent.key ~= main_item.key then
+                                pytech.fg_add_fuzzy_link(parent, child_node, p_label)
+                            else
+                                pytech.fg_add_fuzzy_link(node, child_node, p_label)
+                            end
+                        end
+                    end
+
+                    for _, parent in pairs(child.parents) do
+                        if parent.key ~= main_item.key then
+                            pytech.fg_add_link(parent, child_node)
+                        else
+                            pytech.fg_add_link(node, child_node)
+                        end
+                    end
+
+                    pytech.init_incoming(child_node, sorted_set)
+
+                    for cc_label, c_children in pairs(child.fz_children) do
+                        for _, c_child in pairs(c_children) do
+                            local pr = pytech.fg[c_child.type .. '|' .. node.label .. '::' .. c_child.name]
+
+                            if not pr or (not pr.label and (not sorted_set[pr.key] or pr.level == node.level)) then
+                                pytech.fg_add_fuzzy_link(child_node, c_child, cc_label)
+                                local internal_product = pytech.update_internal_product(child_node, c_child, node.label, false)
+
+                                if not pr then
+                                    pytech.init_incoming(internal_product, sorted_set)
+                                else
+                                    if internal_product.incoming and internal_product.incoming[cc_label] then
+                                        internal_product.incoming[cc_label][child_node.key] = child_node
+                                    end
+                                end
+                            end
+                        end
+                    end
+                else
+                    -- log('pytech.update_internal_item: Updating internal recipe ' .. child_node.key)
+                    pytech.fg_remove_fuzzy_link(main_item, child_node, c_label)
+                    pytech.fg_add_fuzzy_link(node, child_node, c_label)
+
+                    if child_node.incoming and child_node.incoming[c_label] and child_node.incoming[c_label][main_item.key] then
+                        child_node.incoming[c_label][main_item.key] = nil
+                        child_node.incoming[c_label][node.key] = node
+                    end
+                end
+            end
+        end
+    end
+
+    node.internal_update = true
+end
+
+
+function pytech.init_incoming(node, sorted_set)
+    node.incoming = {}
+
+    for _, parent in pairs(node.parents) do
+        if not sorted_set or not sorted_set[parent.key] then
+            node.incoming[parent.key] = { parent }
+        end
+    end
+
+    for label, parents in pairs(node.fz_parents) do
+        node.incoming[label] = {}
+
+        for _, parent in pairs(parents) do
+            if not sorted_set or not sorted_set[parent.key] then
+                node.incoming[label][parent.key] = parent
+            end
+        end
+    end
+end
+
+
 function pytech.topological_sort()
     -- log('============== TOPOLOGICAL SORT ==============')
 
     -- log('Add incoming set')
     for _, node in pairs(pytech.fg) do
-        node.incoming = {}
-
-        for key, parent in pairs(node.parents) do
-            node.incoming[key] = { parent }
-        end
-
-        for label, parents in pairs(node.fz_parents) do
-            node.incoming[label] = table.merge({}, parents)
-        end
+        pytech.init_incoming(node)
     end
 
     local sorted_set = {}
@@ -857,6 +897,10 @@ function pytech.topological_sort()
                 node.level = level
                 sorted_set[node.key] = node
 
+                if (node.type == nt_item or node.type == nt_fluid) and node.label then
+                    pytech.update_internal_item(node, sorted_set)
+                end
+
                 local fz_children = {}
                 for c_label, children in pairs(node.fz_children) do
                     fz_children[c_label] = {}
@@ -878,14 +922,16 @@ function pytech.topological_sort()
                 for _, child in pairs(node.children) do
                     child.incoming[node.key] = nil
 
-                    if not sorted_set[child.key] and table.is_empty(child.incoming) then
-                        -- log(child.key .. ': EMPTY')
-                        starting_set[child.key] = child
-                    else
-                        -- log(child.key .. ': NOT EMPTY')
-                        -- for ikey, inode in pairs(child.incoming) do
-                        --     log(' - ' .. ikey)
-                        -- end
+                    if not sorted_set[child.key] then
+                        if table.is_empty(child.incoming) then
+                            -- log(child.key .. ': EMPTY')
+                            starting_set[child.key] = child
+                        else
+                            -- log(child.key .. ': NOT EMPTY')
+                            -- for ikey, inode in pairs(child.incoming) do
+                            --     log(' - ' .. ikey)
+                            -- end
+                        end
                     end
                 end
             end
@@ -898,65 +944,94 @@ function pytech.topological_sort()
         if table_size(sorted_set) < table_size(table.filter(pytech.fg, function(n) return n.factorio_name ~= nil end)) then
             found_error = true
         end
-
-        --     -- local q = queue()
-        --     -- local marked = {}
-        --     -- q(start_tech_name)
-        --     -- marked[start_tech_name] = true
-
-        --     -- while not queue.is_empty(q) do
-        --     --     local n = q()
-
-        --     --     for _, node in pairs(n.children or {}) do
-        --     --         if not marked[node.key] then
-        --     --             marked[node.key] = true
-        --     --             q(node)
-        --     --         end
-        --     --     end
-        --     -- end
-
-        --     for _, node in pairs(pytech.fg) do
-        --         if not sorted_set[node.key] and node.type == nt_recipe and node.label --[[ and table_size(node.incoming) == 1 ]] then
-        --             for key, _ in pairs(node.incoming) do
-        --                 log('Stashing ' .. node.key .. ' with incoming ' .. key)
-        --             end
-        --             node.incoming = {}
-        --             starting_set[node.key] = node
-        --             run_loop = true
-        --             break
-        --         end
-        --     end
-
-        -- -- elseif not table.is_empty(stashed_links) then
-        -- --     for key, inc in pairs(stashed_links) do
-        -- --         local node = pytech.fg[key]
-        -- --         node.incoming = inc
-        -- --         sorted_set[key] = nil
-        -- --         for key, value in pairs(t) do
-
-        -- --         end
-        -- --         starting_set[key] = node
-        -- --         log('Unstashing ' .. node.key)
-        -- --     end
-        -- end
     end
 
-    for _, node in pairs(pytech.fg) do
-        if not sorted_set[node.key] and node.factorio_name then
-            log('ERROR: Unprocessed node: ' .. node.key)
-        end
-    end
+    -- for _, node in pairs(pytech.fg) do
+    --     if not sorted_set[node.key] and node.factorio_name then
+    --         log('ERROR: Unprocessed node: ' .. node.key)
+    --     end
+    -- end
 
     log('Sorted nodes: ' .. table_size(sorted_set))
+    -- log(serpent.block(pytech.fg_get_node('coal-processing-1::carbon-dioxide(15)', nt_fluid), {maxlevel =3, keyignore = {data = true} }))
+    -- log(serpent.block(pytech.fg_get_node('coal-processing-1::empty-carbon-dioxide-barrel', nt_recipe), {maxlevel =3, keyignore = {data = true} }))
+    -- log(serpent.block(pytech.fg_get_node('helium-processing::pressured-air', nt_recipe), {maxlevel =3, keyignore = {data = true} }))
 
     if found_error then
-        pytech.find_dependency_loop()
+        pytech.find_dependency_loop(sorted_set)
     end
 end
 
 
-function pytech.find_dependency_loop()
+function pytech.find_dependency_loop(sorted_set)
     log('START find_dependency_loop')
+
+    local change = true
+
+    while change do
+        change = false
+
+        for _, node in pairs(pytech.fg) do
+            if (node.type == nt_item or node.type == nt_fluid) and node.label and not node.internal_update then
+                pytech.update_internal_item(node, sorted_set)
+                change = true
+            end
+        end
+    end
+
+    local length = table_size(pytech.fg) + 1
+    local distances = {}
+
+    for _, node in pairs(pytech.fg) do
+        change = true
+        while change do
+            change = false
+
+            for p_label, parents in pairs(node.fz_parents) do
+                if table_size(parents) > 1 then
+                    for p_key, parent in pairs(parents) do
+                        for p_key2, parent2 in pairs(parents) do
+                            if p_key ~= p_key2 and
+                            ((parent.type ~= nt_item and parent.type ~= nt_fluid) or not parent.label) and
+                            ((parent2.type ~= nt_item and parent2.type ~= nt_fluid) or not parent2.label) then
+                                local p1
+                                if distances[p_key .. '>>' .. p_key2] then
+                                    p1 = distances[p_key .. '>>' .. p_key2]
+                                else
+                                    local path = pytech.find_shortest_path(parent, parent2, false, length)
+                                    p1 = path and queue.size(path) or 0
+                                    distances[p_key .. '>>' .. p_key2] = p1
+                                end
+
+                                local p2
+                                if distances[p_key2 .. '>>' .. p_key] then
+                                    p2 = distances[p_key2 .. '>>' .. p_key]
+                                else
+                                    local path = pytech.find_shortest_path(parent2, parent, false, length)
+                                    p2 = path and queue.size(path) or 0
+                                    distances[p_key2 .. '>>' .. p_key] = p2
+                                end
+
+                                if (p1 > 0 and p2 == 0) then
+                                    pytech.fg_remove_fuzzy_link(parent, node, p_label)
+                                    change = true
+                                    -- log('Remove ' .. parent.key .. ' from ' .. node.key .. ':' .. p_label)
+                                    break
+                                elseif (p2 > 0 and p1 == 0) then
+                                    pytech.fg_remove_fuzzy_link(parent2, node, p_label)
+                                    change = true
+                                    -- log('Remove ' .. parent2.key .. ' from ' .. node.key .. ':' .. p_label)
+                                    break
+                                end
+                            end
+                        end
+                        if change then break end
+                    end
+                end
+                if change then break end
+            end
+        end
+    end
 
     local graph = {}
 
@@ -965,40 +1040,38 @@ function pytech.find_dependency_loop()
     end
 
     log('size: ' .. table_size(graph))
-
-    local change = true
+    change = true
 
     while change do
         change = false
 
-        local graph2 = table.merge({}, graph)
-        for key, node in pairs(graph2) do
+        for key, node in pairs(graph) do
             if table.is_empty(node.children) and table.is_empty(node.fz_children) then
-                local parents = table.merge({}, node.parents)
-                for _, p in pairs(parents) do
+                for _, p in pairs(node.parents) do
                     pytech.fg_remove_link(p, node)
+                    -- log('No children - removing link: ' .. p.key .. ' > ' .. node.key)
                 end
 
-                parents = table.merge({}, node.fz_parents)
-                for label, pp in pairs(parents) do
+                for label, pp in pairs(node.fz_parents) do
                     for _, p in pairs(pp) do
-                        pytech.fg_remove_fuzzy_link(p, node, label, true)
-                        break
+                        pytech.fg_remove_fuzzy_link(p, node, label, false)
+                        -- log('No children - removing fuzzy link: ' .. p.key .. ' > ' .. node.key)
+--                        break
                     end
                 end
 
                 graph[key] = nil
                 change = true
             elseif table.is_empty(node.parents) and table.is_empty(node.fz_parents) then
-                local children = table.merge({}, node.children)
-                for _, c in pairs(children) do
+                for _, c in pairs(node.children) do
                     pytech.fg_remove_link(node, c)
+                    -- log('No parents - removing link: ' .. node.key .. ' > ' .. c.key)
                 end
 
-                children = table.merge({}, node.fz_children)
-                for label, cc in pairs(children) do
+                for label, cc in pairs(node.fz_children) do
                     for _, c in pairs(cc) do
                         pytech.fg_remove_fuzzy_link(node, c, label)
+                        -- log('No parents - removing fuzzy link: ' .. node.key .. ' > ' .. c.key)
                     end
                 end
 
@@ -1010,23 +1083,24 @@ function pytech.find_dependency_loop()
 
     log('size: ' .. table_size(graph))
 
-    local length = table_size(graph) + 1
+    length = table_size(graph) + 1
     local path
 
     for _, node in pairs(graph) do
+        -- log('  - ' .. serpent.block(node, {maxlevel=3 , keyignore = {main_node = true, incoming = true}}))
         if node.type == nt_recipe then
             for _, child in pairs(node.children) do
-                local l = pytech.find_shortest_path(node, child)
-                if l and queue.size(l) < length then
+                local l = pytech.find_shortest_path_fuzzy(node, child, length - 1)
+                if l and not queue.is_empty(l) and queue.size(l) < length then
                     length = queue.size(l)
                     path = l
-                    log('Shortest parh: ' .. node.key .. ' to ' .. child.key .. ' / ' .. length)
+                    -- log('Shortest parh: ' .. node.key .. ' to ' .. child.key .. ' / ' .. length)
                 end
             end
         end
     end
 
-    if path then
+    if path and not queue.is_empty(path) then
         log('Found loop : ' )
         local msg = '\n\nDependency loop detected: '
         for _, key in queue.rpairs(path) do
@@ -1034,6 +1108,8 @@ function pytech.find_dependency_loop()
         end
         msg = msg .. pytech.log_node(queue.peek_last(path)) .. '\n'
         error(msg)
+    else
+        error('\n\nERROR: Unable to identify dependency loop\n')
     end
 
     log('END find_dependency_loop')
@@ -1045,7 +1121,7 @@ function pytech.log_node(key)
     if node.type == nt_tech_tail then
         return '\n  - Technology: ' .. node.name
     elseif node.type == nt_recipe then
-        return '\n  - Recipe: ' .. node.factorio_name
+        return '\n  - Recipe: ' .. node.name
     elseif node.type == nt_item then
         return '\n  - Item: ' .. node.name
     elseif node.type == nt_fluid then
@@ -1055,7 +1131,7 @@ function pytech.log_node(key)
 end
 
 
-function pytech.find_shortest_path(start_node, target_node)
+function pytech.find_shortest_path(start_node, target_node, fuzzy, max_dist)
     local q = queue()
     local marked = {}
     local dist = {}
@@ -1067,11 +1143,31 @@ function pytech.find_shortest_path(start_node, target_node)
 
     while(not queue.is_empty(q)) do
         local n = q()
+        local parents = {}
 
-        for key, p in pairs(n.parents) do
+        for p_key, pp in pairs(n.parents) do
+            parents[p_key] = { label = 'non-fuzzy', node = pp }
+        end
+
+        for p_label, p in pairs(n.fz_parents) do
+            if fuzzy or table_size(p) == 1 then
+                for p_key, pp in pairs(p) do
+                    if not pytech.exclude_from_path[n.key .. '>>' .. p_label .. '>>' .. p_key] then
+                        -- log('search ' .. n.key .. '>>' .. p_label .. '>>' .. p_key)
+                        parents[p_key] = { label = p_label, node = pp }
+                    end
+                end
+            end
+        end
+
+        for key, p in pairs(parents) do
             if not marked[key] then
                 edgeTo[key] = n.key
                 dist[key] = dist[n.key] + 1
+                if dist[key] >= max_dist then
+                    return nil
+                end
+                -- log('enqueue: ' .. key .. ', edgeTo: ' .. edgeTo[key] .. ', label: ' .. p.label .. ', dist: ' .. dist[key])
 
                 if key == target_node.key then
                     local path = queue()
@@ -1082,11 +1178,12 @@ function pytech.find_shortest_path(start_node, target_node)
                         x = edgeTo[x]
                     end
                     path(x)
+                    -- log('find_shortest_path: ' .. start_node.key .. ' > ' .. target_node.key .. ' = ' .. queue.size(path))
 
                     return path
                 else
                     marked[key] = true
-                    q(p)
+                    q(p.node)
                 end
             end
         end
@@ -1094,28 +1191,70 @@ function pytech.find_shortest_path(start_node, target_node)
 end
 
 
-function pytech.is_node_reachable(start_node, target_node, marked)
-    local m = marked and table.merge({}, marked) or {}
-    m[start_node.key] = true
+function pytech.find_shortest_path_fuzzy(start_node, target_node, max_dist)
+    -- log('find_shortest_path_fuzzy: ' .. start_node.key .. ' > ' .. target_node.key)
+    pytech.exclude_from_path = {}
+    pytech.safe_path = {}
+    local q
+    local restart = true
 
-    local parents = table.merge({}, start_node.parents)
+    while restart do
+        local path = pytech.find_shortest_path(start_node, target_node, true, max_dist)
+        q = queue()
+        restart = false
+        local last_n
 
-    for _, p in pairs(start_node.fz_parents) do
-        parents = table.merge(parents, p)
-    end
+        while not restart and path and not queue.is_empty(path) do
+            local n = path()
+            local node = pytech.fg[n]
 
-    for key, p in pairs(parents) do
-        if not m[key] then
-            if key == target_node.key then
-                return true
-            else
-                m[key] = true
-                if  pytech.is_node_reachable(p, target_node, m) then
-                    return true
+            if last_n then
+                local label
+                local key
+
+                for p_label, parents in pairs(node.fz_parents) do
+                    for p_key, _ in pairs(parents) do
+                        if p_key == last_n then
+                            label = p_label
+                            key = p_key
+                            break
+                        end
+                    end
+                end
+
+                if label and not pytech.safe_path[n .. '>>' .. label] then
+                    local ts = 0
+
+                    for p_key, _ in pairs(node.fz_parents[label]) do
+                        if not pytech.exclude_from_path[n .. '>>' .. label .. '>>' .. p_key] then
+                            ts = ts + 1
+                        end
+                    end
+
+                    if ts > 1 then
+                        pytech.exclude_from_path[n .. '>>' .. label .. '>>' .. key] = true
+                        restart = true
+                    elseif ts == 1 then
+                        pytech.safe_path[n .. '>>' .. label] = true
+
+                        for p_key, _ in pairs(node.fz_parents) do
+                            pytech.exclude_from_path[n .. '>>' .. label .. '>>' .. p_key] = nil
+                        end
+
+                        restart = true
+                    end
                 end
             end
+
+            last_n = n
+
+            q(n)
         end
     end
+    -- log('find_shortest_path_fuzzy retruning ' .. queue.size(q))
+    -- log('find_shortest_path_fuzzy: ' .. start_node.key .. ' > ' .. target_node.key .. ' = ' .. queue.size(q))
+
+    return q
 end
 
 
@@ -1130,9 +1269,6 @@ function pytech.find_tech_prerequisites(node)
             for _, p_node in pairs(c_node.parents) do
                 if p_node.type == nt_tech_tail then
                     prerequisites[p_node.name] = true
-                -- elseif p_node.type == nt_recipe and p_node.label and p_node.label ~= node.name then
-                --     prerequisites[p_node.label] = true
-                --     log('Adding prereq from recipe ' .. p_node.label .. ' (' .. p_node.name .. ') ' .. ' > ' .. node.name .. ' (' .. c_node.name .. ')')
                 else
                     next_set[p_node.key] = p_node
                 end
@@ -1185,22 +1321,20 @@ end
 
 
 function pytech.calculate_prerequisites()
-    -- log(serpent.block(pytech.fg_get_node('advanced-circuit', nt_item), {maxlevel =3, keyignore = {data = true} }))
-    -- log(serpent.block(pytech.fg_get_node('energy-2::gasturbinemk02', nt_recipe), {maxlevel =3, keyignore = {data = true} }))
+    -- log(serpent.block(pytech.fg_get_node('coal-processing-1::calcium-carbide', nt_item), { maxlevel = 3 }))
+    -- log(serpent.block(pytech.fg_get_node('coal-processing-1::calcium-carbide', nt_recipe), { maxlevel = 3 }))
     log('Nodes: ' .. table_size(pytech.fg))
 
     pytech.pre_process_fuzzy_graph()
 
-    -- log(serpent.block(pytech.fg_get_node('advanced-circuit', nt_item), {maxlevel =3, keyignore = {data = true} }))
-    -- log(serpent.block(pytech.fg_get_node('energy-2::gasturbinemk02', nt_recipe), {maxlevel =3, keyignore = {data = true} }))
+    -- log(serpent.block(pytech.fg_get_node('coal-processing-1::calcium-carbide', nt_item), { maxlevel = 3 }))
+    -- log(serpent.block(pytech.fg_get_node('coal-processing-1::calcium-carbide', nt_recipe), { maxlevel = 3 }))
     log('Nodes: ' .. table_size(pytech.fg))
 
     pytech.topological_sort()
 
-    -- log(serpent.block(pytech.fg_get_node('speed-module-3', nt_tech_head), {maxlevel =3, keyignore = {data = true} }))
-    -- log(serpent.block(pytech.fg_get_node('speed-module-3', nt_tech_tail), {maxlevel =3, keyignore = {data = true} }))
-    -- log(serpent.block(pytech.fg_get_node('advanced-circuit', nt_item), {maxlevel =3, keyignore = {data = true} }))
-    -- log(serpent.block(pytech.fg_get_node('energy-2::gasturbinemk02', nt_recipe), {maxlevel =3, keyignore = {data = true} }))
+    -- log(serpent.block(pytech.fg_get_node('coal-processing-1::calcium-carbide', nt_item), { maxlevel = 3 }))
+    -- log(serpent.block(pytech.fg_get_node('coal-processing-1::calcium-carbide', nt_recipe), { maxlevel = 3 }))
 
     pytech.extract_prerequisites()
 
@@ -1218,6 +1352,7 @@ function pytech.cleanup()
     for _, recipe in pairs(data.raw.recipe) do
         recipe.ignore_for_dependencies = nil
     end
+
     for _, tech in pairs(data.raw.technology) do
         tech.closure = nil
         tech.dependencies = nil
