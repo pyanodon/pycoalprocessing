@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/filtration.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-2", "wood-processing-2"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 40,
@@ -22,7 +22,8 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/filtration-2.png",
     icon_size = 128,
     order = "c-b",
-    prerequisites = {"biofilm"},
+    prerequisites = {},
+    dependencies = {"filtration"},
     effects = {},
     unit = {
         count = 40,

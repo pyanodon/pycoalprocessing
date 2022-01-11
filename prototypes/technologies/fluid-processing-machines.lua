@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/fluid-processing-machines.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"coal-processing-2", "plastics"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 50,

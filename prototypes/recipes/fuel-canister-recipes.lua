@@ -66,6 +66,7 @@ for f, fluid in pairs(data.raw.fluid) do
             results = {
                 {type = "item", name = "filled-canister-" .. fluid.name, amount = 1}
             },
+            ignore_for_dependencies = true
             --icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
             --icon_size = 32
         }:add_unlock("plastics")
@@ -85,6 +86,7 @@ for f, fluid in pairs(data.raw.fluid) do
                 {type = "fluid", name = fluid.name, amount = fuel_amount},
                 {type = "item", name = "empty-fuel-canister", amount = 1}
             },
+            ignore_for_dependencies = true,
             --icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
             --icon_size = 32,
             main_product = fluid.name,
@@ -101,5 +103,12 @@ for f, fluid in pairs(data.raw.fluid) do
             end
             ITEM(fluid.name .. '-barrel'):add_flag('hidden')
         end
+    end
+
+    if data.raw.recipe['empty-' .. fluid.name .. '-barrel'] ~= nil then
+        RECIPE('empty-' .. fluid.name .. '-barrel'):set_fields{ ignore_for_dependencies = true }
+    end
+    if data.raw.recipe['fill-' .. fluid.name .. '-barrel'] ~= nil then
+        RECIPE('fill-' .. fluid.name .. '-barrel'):set_fields{ ignore_for_dependencies = true }
     end
 end

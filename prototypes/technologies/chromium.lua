@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/chromium.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"separation","logistic-science-pack"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 200,

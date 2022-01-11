@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/ralesia.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"wood-processing","optics"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 100,
