@@ -7,6 +7,7 @@ RECIPE {
         {"concrete", 20},
         {"steel-plate", 20},
         {"stone-brick", 10},
+        {"steam-engine", 2},
         {"iron-gear-wheel", 5},
         {"iron-plate", 10},
         {"electronic-circuit", 20}

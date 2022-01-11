@@ -7,6 +7,7 @@ RECIPE {
         {"advanced-foundry-mk01", 1},
         {"nexelit-plate", 20},
         {"concrete", 60},
+        {"engine-unit", 4},
         {"steel-plate", 40},
         {"plastic-bar", 10},
         {"advanced-circuit", 10}

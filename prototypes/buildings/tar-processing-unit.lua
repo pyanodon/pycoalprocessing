@@ -14,6 +14,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"steel-plate", 20},
+        {"steam-engine", 3},
         {"iron-plate", 10},
         {"pipe", 15}, --bob stone-pipe
         {"stone-furnace", 1},

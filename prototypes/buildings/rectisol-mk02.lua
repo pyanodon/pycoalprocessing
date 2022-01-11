@@ -25,6 +25,7 @@ RECIPE {
         {"plastic-bar", 50},
         {"nexelit-plate", 15},
         {"pump", 2},
+        {"engine-unit", 1},
     },
     results = {
         {"rectisol-mk02", 1}

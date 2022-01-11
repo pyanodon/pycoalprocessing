@@ -22,6 +22,7 @@ RECIPE {
         {"soil", 100},
         {"pipe", 10},
         {"electronic-circuit", 10},
+        {"steam-engine", 1},
         {"copper-cable", 25},
         {"iron-plate", 20},
         {"wood", 100}

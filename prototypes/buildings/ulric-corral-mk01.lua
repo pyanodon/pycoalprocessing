@@ -5,6 +5,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"steel-plate", 20},
+        {"steam-engine", 1},
         {"stone-brick", 10},
         {"iron-gear-wheel", 5}, --bob steel-bearing
         {"iron-plate", 10},

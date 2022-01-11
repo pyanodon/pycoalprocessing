@@ -5,6 +5,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"chemical-plant-mk02", 1},
+        {"electric-engine-unit", 4},
         {"nichrome", 20},
         {"glass", 50},
     },

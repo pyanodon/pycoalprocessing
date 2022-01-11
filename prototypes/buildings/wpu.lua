@@ -6,6 +6,7 @@ RECIPE {
     ingredients = {
         {"wood", 20},
         {"iron-plate", 20},
+        {"steam-engine", 1},
         {"iron-gear-wheel", 15},
         {"burner-mining-drill", 2},
         {"copper-cable", 50}

@@ -14,9 +14,8 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"carbon-filter", 1},
-        {"steam-engine", 1},
+        {"engine-unit", 2},
         {"plastic-bar", 10},
-        {"engine-unit", 1},
         {"nexelit-plate", 15},
         {"advanced-circuit", 5},
     },

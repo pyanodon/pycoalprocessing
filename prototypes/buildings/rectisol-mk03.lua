@@ -23,6 +23,7 @@ RECIPE {
         {"storage-tank", 2},
         {"processing-unit", 20},
         {"niobium-plate", 30},
+        {"electric-engine-unit", 4},
         {"pump", 2},
     },
     results = {

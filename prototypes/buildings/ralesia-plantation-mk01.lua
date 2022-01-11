@@ -37,6 +37,7 @@ RECIPE {
         {"stone", 100},
         {"iron-plate", 30},
         {"treated-wood", 50},
+        {"steam-engine", 1},
         {"small-lamp", 20}
     },
     results = {

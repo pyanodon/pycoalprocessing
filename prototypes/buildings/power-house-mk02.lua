@@ -36,6 +36,7 @@ RECIPE {
         {"advanced-circuit", 10},
         {"fast-transport-belt", 30},
         {"steel-plate", 15},
+        {"engine-unit", 1},
     },
     results = {
         {"power-house-mk02", 1}

@@ -5,6 +5,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"wpu", 1},
+        {"engine-unit", 2},
         {"advanced-circuit", 25},
         {"plastic-bar", 50},
         {"nexelit-plate", 15},

@@ -14,7 +14,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"evaporator", 1},
-        {"engine-unit", 1},
+        {"engine-unit", 2},
         {"nexelit-plate", 10},
         {"advanced-circuit", 10},
     },

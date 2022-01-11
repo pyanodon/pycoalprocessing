@@ -36,7 +36,8 @@ RECIPE {
         {"quenching-tower", 1},
         {"plastic-bar", 20},
         {"pump", 4},
-        {"advanced-circuit", 15}
+        {"advanced-circuit", 15},
+        {"engine-unit", 1},
     },
     results = {
         {"quenching-tower-mk02", 1}

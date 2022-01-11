@@ -9,6 +9,7 @@ RECIPE {
         {"advanced-circuit", 10},
         {"pump", 4},
         {"concrete", 40},
+        {"engine-unit", 2},
         {"nexelit-plate", 10}
     },
     results = {
