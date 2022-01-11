@@ -61,7 +61,7 @@ data.raw.technology['coal-liquefaction'].effects = recipes_to_keep
 
 TECHNOLOGY("oil-processing"):add_pack('chemical-science-pack')
 
-TECHNOLOGY("flammables"):add_pack('military-science-pack')
+TECHNOLOGY("flammables"):set_fields{enabled = false}:set_fields{hidden = true}
 
 TECHNOLOGY("coal-liquefaction"):set_fields{enabled = false}:set_fields{hidden = true}
 
