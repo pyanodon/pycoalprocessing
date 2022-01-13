@@ -520,8 +520,8 @@ RECIPE {
     enabled = false,
     energy_required = 2.5,
     ingredients = {
-        {type = "fluid", name = "water", amount = 100}, --bob nitrogen
-        {type = "item", name = "iron-plate", amount = 10}, --bob nickel-plate
+        {type = "fluid", name = "water", amount = 100},
+        {type = "item", name = "iron-plate", amount = 10},
         {type = "item", name = "chromium", amount = 8}
     },
     results = {
@@ -536,7 +536,7 @@ RECIPE {
     enabled = false,
     energy_required = 4,
     ingredients = {
-        {type = "fluid", name = "water", amount = 100}, --bob nitrogen
+        {type = "fluid", name = "water", amount = 100},
         {type = "item", name = "zinc-chloride", amount = 2},
         {type = "item", name = "coal-dust", amount = 30}
         --{type="item", name="sodium-hydroxide", amount=5},
