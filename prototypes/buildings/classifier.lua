@@ -4,7 +4,7 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"assembling-machine-1", 5},
+        {"steam-engine", 2},
         {"electronic-circuit", 10},
         {"transport-belt", 30},
         {"iron-plate", 20},

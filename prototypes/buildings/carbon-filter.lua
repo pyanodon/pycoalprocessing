@@ -15,7 +15,7 @@ RECIPE {
     ingredients = {
         {"assembling-machine-2", 1},
         {"pipe", 2},
-        {"engine-unit", 3},
+        {"steam-engine", 3},
         {"iron-plate", 20},
         {"iron-gear-wheel", 30}
     },

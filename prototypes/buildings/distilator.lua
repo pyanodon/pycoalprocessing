@@ -7,6 +7,7 @@ RECIPE {
         {"copper-plate", 20},
         {"pipe", 10}, --copper-pipe in bobmods
         {"iron-plate", 10},
+        {"steam-engine", 2},
         {"electronic-circuit", 3}
     },
     results = {

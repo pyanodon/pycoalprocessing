@@ -35,6 +35,7 @@ RECIPE {
     ingredients = {
         {"concrete", 50},
         {"iron-stick", 50},
+        {"steam-engine", 1},
         {"pipe", 10}, --bob stone-pipe
         {"pump", 2},
         {"electronic-circuit", 15}

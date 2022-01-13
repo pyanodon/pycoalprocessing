@@ -21,6 +21,7 @@ RECIPE {
     ingredients = {
         {"fawogae-plantation-mk02", 1},
         {"niobium-plate", 15},
+        {"electric-engine-unit", 1},
         {"processing-unit", 10},
         {"treated-wood", 20}, --pyht fiberboard
         {"pipe", 20},

@@ -16,6 +16,7 @@ RECIPE {
         {"tar-processing-unit-mk02", 1},
         {"processing-unit", 20},
         {"niobium-plate", 30},
+        {"electric-engine-unit", 2},
         {"pump", 2},
     },
     results = {

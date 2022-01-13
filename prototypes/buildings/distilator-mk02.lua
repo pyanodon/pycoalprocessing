@@ -9,6 +9,7 @@ RECIPE {
         {"nexelit-plate", 10},
         {"advanced-circuit", 5},
         {"plastic-bar", 10},
+        {"engine-unit", 3},
     },
     results = {
         {"distilator-mk02", 1}

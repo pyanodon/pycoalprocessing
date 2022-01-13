@@ -9,6 +9,7 @@ RECIPE {
         {"processing-unit", 15},
         {"niobium-plate", 20},
         {"pump", 4},
+        {"electric-engine-unit", 4},
         {"kevlar", 20}
     },
     results = {

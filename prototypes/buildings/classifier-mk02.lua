@@ -7,6 +7,7 @@ RECIPE {
         {"classifier", 1},
         {"nexelit-plate", 15},
         {"advanced-circuit", 10},
+        {"engine-unit", 2},
         {"fast-transport-belt", 30},
         {"steel-plate", 15},
     },

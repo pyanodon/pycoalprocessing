@@ -14,6 +14,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"tar-processing-unit", 1},
+        {"engine-unit", 1},
         {"nexelit-plate", 20},
         {"concrete", 60},
         {"plastic-bar", 10},

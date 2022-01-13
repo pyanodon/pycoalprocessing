@@ -14,7 +14,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"steel-plate", 20},
-        {"assembling-machine-1", 2},
+        {"steam-engine", 1},
         {"iron-gear-wheel", 20},
         {"fast-inserter", 3},
         {"advanced-circuit", 5}

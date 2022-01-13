@@ -6,6 +6,7 @@ RECIPE {
     ingredients = {
         {"jaw-crusher", 1},
         {"nexelit-plate", 30},
+        {"engine-unit", 4},
         {"advanced-circuit", 10}
     },
     results = {

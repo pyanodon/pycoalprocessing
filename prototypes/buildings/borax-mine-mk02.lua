@@ -8,7 +8,7 @@ RECIPE {
         {"advanced-circuit", 25},
         {"plastic-bar", 50},
         {"nexelit-plate", 15},
-        {"engine-unit", 2},
+        {"engine-unit", 3},
         {"fast-transport-belt", 30}
     },
     results = {

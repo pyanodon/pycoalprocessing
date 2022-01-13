@@ -22,6 +22,7 @@ RECIPE {
     enabled = true,
     ingredients = {
         {"iron-plate", 10},
+        {"steam-engine", 1},
         {"pipe", 25},
         {"stone-brick", 30},
         {"electronic-circuit", 2}

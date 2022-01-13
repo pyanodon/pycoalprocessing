@@ -17,7 +17,8 @@ RECIPE {
         {"copper-plate", 20},
         {"iron-gear-wheel", 5}, --bob steel-bearing
         {"iron-plate", 10}, --bob invar-alloy
-        {"electronic-circuit", 3}
+        {"electronic-circuit", 3},
+        {"steam-engine", 1},
     },
     results = {
         {"hpf", 1}

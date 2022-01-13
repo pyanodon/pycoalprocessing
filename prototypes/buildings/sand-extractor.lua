@@ -6,6 +6,7 @@ RECIPE {
     ingredients = {
         {"iron-plate", 40},
         {"niobium-plate", 20},
+        {"steam-engine", 1},
         {"chromium", 10},
         {"iron-gear-wheel", 20},
         {"electronic-circuit", 12}

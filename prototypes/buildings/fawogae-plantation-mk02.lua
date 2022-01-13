@@ -22,6 +22,7 @@ RECIPE {
         {"fawogae-plantation-mk01", 1},
         {"plastic-bar", 20},
         {"advanced-circuit", 15},
+        {"engine-unit", 1},
         {"treated-wood", 30},
         {"steel-plate", 10},
     },

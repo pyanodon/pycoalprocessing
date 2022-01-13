@@ -21,6 +21,7 @@ RECIPE {
     ingredients = {
         {"soil-extractormk01", 1},
         {"plastic-bar", 20},
+        {"engine-unit", 2},
         {"pump", 4},
         {"advanced-circuit", 15},
         {"copper-cable", 50},

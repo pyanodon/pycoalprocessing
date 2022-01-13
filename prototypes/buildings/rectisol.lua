@@ -19,7 +19,7 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"assembling-machine-2", 2},
+        {"steam-engine", 2},
         {"storage-tank", 2},
         {"pipe", 20},
         {"pump", 2},

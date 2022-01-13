@@ -8,6 +8,7 @@ RECIPE {
         {"nexelit-plate", 10},
         {"concrete", 40},
         {"plastic-bar", 10},
+        {"engine-unit", 4},
         {"advanced-circuit", 10}
     },
     results = {
