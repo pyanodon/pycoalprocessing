@@ -139,6 +139,31 @@ function pytech.fg_remove_fuzzy_link(parent, child, label, remove_label)
 end
 
 
+function pytech.fg_remove_node(node)
+    for _, p in pairs(node.parents) do
+        pytech.fg_remove_link(p, node)
+    end
+
+    for _, c in pairs(node.children) do
+        pytech.fg_remove_link(node, c)
+    end
+
+    for l, parents in pairs(node.fz_parents) do
+        for _, p in pairs(parents) do
+            pytech.fg_remove_fuzzy_link(p, node, l)
+        end
+    end
+
+    for l, children in pairs(node.fz_children) do
+        for _, c in pairs(children) do
+            pytech.fg_remove_fuzzy_link(node, c, l)
+        end
+    end
+
+    pytech.fg[node.key] = nil
+end
+
+
 function pytech.get_prototype(parent_type, prototype_name)
     local prototype
 
@@ -797,6 +822,12 @@ function pytech.pre_process_fuzzy_graph()
             end
         end
     end
+
+    for _, node in pairs(pytech.fg) do
+        if not node.factorio_name and node.name ~= start_tech_name then
+            pytech.fg_remove_node(node)
+        end
+    end
 end
 
 
@@ -942,7 +973,7 @@ function pytech.topological_sort()
                                 for tech_name, _ in pairs(pytech.sp_excl[pack.name][node.name] or {}) do
                                     -- log('    - tech: ' .. tech_name)
                                     local others_sorted = true
-                                    
+
                                     for sp, t in pairs(pytech.science_packs) do
                                         if sp ~= node.name and t[tech_name] and not sp_sorted[sp] then
                                             -- log('      - other sp not sorted: ' .. sp)
@@ -1029,7 +1060,7 @@ function pytech.topological_sort()
 
                 for sp_name, t in pairs(sp_virt_links) do
                     local node = pytech.fg_get_node(sp_name, nt_item)
-                    
+
                     for _, tech_node in pairs(t) do
                         -- log('Removing link ' .. tech_node.key .. ' > ' .. node.key)
                         pytech.fg_remove_link(tech_node, node)
@@ -1048,6 +1079,8 @@ function pytech.topological_sort()
                         end
                     end
                 end
+
+                sp_virt_links = {}
             else
                 run_loop = false
                 found_error = true
@@ -1079,6 +1112,9 @@ end
 function pytech.find_dependency_loop(sorted_set)
     log('START find_dependency_loop')
 
+    -- log('\n=====================================================================================')
+    -- log('  - ' .. serpent.block(pytech.fg_get_node('chemical-science-pack', nt_item), {maxlevel=3 , keyignore = {main_node = true, children = true}}))
+
     local change = true
 
     while change do
@@ -1096,6 +1132,7 @@ function pytech.find_dependency_loop(sorted_set)
     local distances = {}
 
     -- log('\n=====================================================================================')
+    -- log('  - ' .. serpent.block(pytech.fg_get_node('chemical-science-pack', nt_item), {maxlevel=3 , keyignore = {main_node = true, children = true}}))
 
     for _, node in pairs(pytech.fg) do
         change = true
@@ -1148,6 +1185,9 @@ function pytech.find_dependency_loop(sorted_set)
         end
     end
 
+    -- log('\n=====================================================================================')
+    -- log('  - ' .. serpent.block(pytech.fg_get_node('chemical-science-pack', nt_item), {maxlevel=3 , keyignore = {main_node = true, children = true}}))
+
     local graph = {}
 
     for key, node in pairs(pytech.fg) do
@@ -1198,6 +1238,8 @@ function pytech.find_dependency_loop(sorted_set)
     end
 
     -- log('size: ' .. table_size(graph))
+    -- log('\n=====================================================================================')
+    -- log('  - ' .. serpent.block(pytech.fg_get_node('chemical-science-pack', nt_item), {maxlevel=3 , keyignore = {main_node = true, children = true}}))
 
     -- do return end
     local path
@@ -1239,7 +1281,7 @@ function pytech.find_dependency_loop(sorted_set)
                                         end
                                     end
                                 end
-                                
+
                                 if label and q_node.type ~= nt_tech_tail then
                                     pytech.fg_remove_fuzzy_link(q_node, l_node, label)
                                     -- log('Removing link ' .. q_node.key .. ' > ' .. label .. ' > ' .. l_node.key)
@@ -1261,6 +1303,9 @@ function pytech.find_dependency_loop(sorted_set)
             length = length + 1
         end
     end
+
+    -- log('\n=====================================================================================')
+    -- log('  - ' .. serpent.block(pytech.fg_get_node('chemical-science-pack', nt_item), {maxlevel=3 , keyignore = {main_node = true, children = true}}))
 
     length = table_size(graph) + 1
 
