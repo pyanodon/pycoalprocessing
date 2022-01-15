@@ -816,7 +816,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluids",
     order = "c"
-}:add_unlock("filtration-2")
+}:add_unlock("filtration-mk02")
 
 RECIPE {
     type = "recipe",
@@ -1088,7 +1088,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "e"
-}:add_unlock("filtration-2")
+}:add_unlock("filtration-mk02")
 
 --[[
 RECIPE {

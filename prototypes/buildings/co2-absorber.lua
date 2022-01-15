@@ -13,7 +13,7 @@ RECIPE {
     results = {
         {"co2-absorber", 1}
     }
-}:add_unlock("filtration-2")
+}:add_unlock("filtration-mk02")
 
 ITEM {
     type = "item",

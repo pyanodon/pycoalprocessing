@@ -14,7 +14,7 @@ RECIPE {
     results = {
         {type = "item", name = "lithium-peroxide", amount = 5}
     }
-}:add_unlock("filtration-2")
+}:add_unlock("filtration-mk02")
 
 RECIPE {
     type = "recipe",
@@ -29,7 +29,7 @@ RECIPE {
     results = {
         {type = "item", name = "nexelit-cartridge", amount = 1}
     }
-}:add_unlock("filtration-2")
+}:add_unlock("filtration-mk02")
 
 RECIPE {
     type = "recipe",
@@ -48,7 +48,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "d"
-}:add_unlock("filtration-2")
+}:add_unlock("filtration-mk02")
 
 RECIPE {
     type = "recipe",
@@ -70,7 +70,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "d"
-}:add_unlock("filtration-2")
+}:add_unlock("filtration-mk02")
 
 RECIPE {
     type = "recipe",
@@ -90,4 +90,4 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "d"
-}:add_unlock("filtration-2")
+}:add_unlock("filtration-mk02")
