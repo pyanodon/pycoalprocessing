@@ -1,7 +1,7 @@
 TECHNOLOGY {
     type = "technology",
     name = "filtration",
-    icon = "__pycoalprocessinggraphics__/graphics/technology/filtration.png",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/filtration-mk01.png",
     icon_size = 128,
     order = "c-a",
     prerequisites = {"coal-processing-2", "wood-processing-2"},
@@ -18,8 +18,8 @@ TECHNOLOGY {
 
 TECHNOLOGY {
     type = "technology",
-    name = "filtration-2",
-    icon = "__pycoalprocessinggraphics__/graphics/technology/filtration-2.png",
+    name = "filtration-mk02",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/filtration-mk02.png",
     icon_size = 128,
     order = "c-b",
     prerequisites = {"biofilm"},

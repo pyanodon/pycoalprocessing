@@ -1,7 +1,7 @@
 TECHNOLOGY {
     type = "technology",
     name = "fuel-production",
-    icon = "__pycoalprocessinggraphics__/graphics/technology/fuel-production.png",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/fuel-production-mk01.png",
     icon_size = 128,
     order = "c-a",
     prerequisites = {"lubricant", "desulfurization"},

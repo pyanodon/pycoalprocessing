@@ -1,8 +1,8 @@
 TECHNOLOGY {
     type = "technology",
     name = "kevlar",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/kevlar.png",
-    icon_size = 32,
+    icon = "__pycoalprocessinggraphics__/graphics/technology/kevlar.png",
+    icon_size = 128,
     order = "c-a",
     prerequisites = {"filtration"},
     effects = {},
