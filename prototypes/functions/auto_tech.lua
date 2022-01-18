@@ -164,7 +164,7 @@ function pytech.fg_remove_node(node)
 end
 
 
-function pytech.get_prototype(parent_type, prototype_name)
+function pytech.get_prototype(parent_type, prototype_name, no_error)
     local prototype
 
     for t, _ in pairs(defines.prototypes[parent_type]) do
@@ -173,7 +173,7 @@ function pytech.get_prototype(parent_type, prototype_name)
         if prototype then break end
     end
 
-    if not prototype then
+    if not prototype and not no_error then
         error('ERROR: Prototype not found: ' .. parent_type .. ' / ' .. prototype_name, 0)
     end
 
@@ -280,10 +280,13 @@ function pytech.parse_tech(tech)
 end
 
 
-function pytech.parse_recipe(tech_name, recipe)
+function pytech.parse_recipe(tech_name, recipe, no_crafting)
     local name = (tech_name and (tech_name .. ' / ') or '') .. recipe.name
     -- log('Parsing recipe: ' .. name)
     local node = pytech.fg_get_node(name, nt_recipe, tech_name, recipe.name)
+    local ing_count = 0
+    local fluid_in = 0
+    local fluid_out = 0
 
     if pytech.processed_recipes[name] then
         return node
@@ -317,6 +320,8 @@ function pytech.parse_recipe(tech_name, recipe)
                     local n_fluid = pytech.parse_fluid(fluid, res.temperature)
                     pytech.fg_add_fuzzy_link(node, n_fluid, l_recipe_result)
                 end
+
+                fluid_out = fluid_out + 1
             end
         end
     end
@@ -326,6 +331,7 @@ function pytech.parse_recipe(tech_name, recipe)
             local item = pytech.get_prototype(nt_item, ing.name)
             local n_item = pytech.parse_item(item)
             pytech.fg_add_fuzzy_link(n_item, node, ing.name)
+            ing_count = ing_count + 1
         else
             local fluid = data.raw.fluid[ing.name]
 
@@ -340,18 +346,26 @@ function pytech.parse_recipe(tech_name, recipe)
                     end
                 end
             end
+
+            fluid_in = fluid_in + 1
         end
     end
 
-    local category = recipe.category or 'crafting'
+    if not no_crafting then
+        local category = recipe.category or 'crafting'
+        local found = false
 
-    if not pytech.crafting_categories[category] then
-        error('ERROR: Missing crafting category: ' .. category .. ', for ' .. recipe.name, 0)
-    end
+        if pytech.crafting_categories[category] then
+            for _, craft in pairs(pytech.crafting_categories[category]) do
+                if craft.ingredient_count >= ing_count and craft.fluidboxes_in >= fluid_in and craft.fluidboxes_out >= fluid_out then
+                    pytech.add_crafting_machine_link(node, craft.entity_name)
+                    found = true
+                end
+            end
+        end
 
-    if pytech.crafting_categories[category] and not pytech.crafting_categories[category][start_tech_name] then
-        for crafter, _ in pairs(pytech.crafting_categories[category]) do
-            pytech.add_crafting_machine_link(node, crafter)
+        if not found then
+            error('ERROR: Missing crafting category: ' .. category .. ' (ingredients: ' .. ing_count .. ', fluids in: ' .. fluid_in .. ', fluids out:' .. fluid_out .. '), for ' .. recipe.name, 0)
         end
     end
 
@@ -455,6 +469,10 @@ function pytech.init_placeables()
             end
         end
     end
+
+    for e, _ in pairs(starting_entities) do
+        pytech.insert_double_lookup(pytech.placed_by, e, e)
+    end
 end
 
 
@@ -475,11 +493,32 @@ function pytech.init_crafting_categories()
     for et, _ in pairs(defines.prototypes['entity']) do
         for _, entity in pairs(data.raw[et]) do
             if not table.any(entity.flags or {}, function(v) return v == 'hidden' end) then
-                local entity_name = starting_entities[entity.name] and start_tech_name or entity.name
+                local fb_in = 0
+                local fb_out = 0
 
-                for _, category in pairs(entity.crafting_categories or {}) do
-                    pytech.insert_double_lookup(pytech.crafting_categories, category, entity_name)
-                    -- TODO: Ingredient & fluidbox count
+                for _, fb in pairs(entity.fluid_boxes or {}) do
+                    if type(fb) == 'table' then
+                        if fb.production_type == 'input' or fb.production_type == 'input-output' then
+                            fb_in = fb_in + 1
+                        elseif fb.production_type == 'output' then
+                            fb_out = fb_out + 1
+                        end
+                    end
+                end
+
+                for _, c in pairs(entity.crafting_categories or {}) do
+                    if not pytech.crafting_categories[c] then
+                        pytech.crafting_categories[c] = {}
+                    end
+
+                    local craft = {}
+                    craft.crafting_category = c
+                    craft.ingredient_count = entity.ingredient_count or 255
+                    craft.fluidboxes_in = fb_in
+                    craft.fluidboxes_out = fb_out
+                    craft.entity_name = entity.name
+
+                    table.insert(pytech.crafting_categories[c], craft)
                 end
             end
         end
@@ -530,7 +569,7 @@ function pytech.add_mining_recipe(entity)
         result_count = entity.minable.count
     }
 
-    local node = pytech.parse_recipe(nil, recipe)
+    local node = pytech.parse_recipe(nil, recipe, true)
 
     if entity.type == 'resource' then
         local category = entity.category or 'basic-solid'
@@ -539,7 +578,7 @@ function pytech.add_mining_recipe(entity)
             error('ERROR: Missing mining category: ' .. category .. ', for ' .. entity.name, 0)
         end
 
-        if pytech.mining_categories[category] and not pytech.mining_categories[category]['character'] then
+        if pytech.mining_categories[category] then
             for miner, _ in pairs(pytech.mining_categories[category]) do
                 pytech.add_crafting_machine_link(node, miner)
             end
@@ -562,7 +601,7 @@ function pytech.add_boiler_recipe(boiler)
                 results = {{ type = 'fluid', name = out_fluid, amount = 1, temperature = boiler.target_temperature }}
             }
 
-            local node = pytech.parse_recipe(nil, recipe)
+            local node = pytech.parse_recipe(nil, recipe, true)
             pytech.add_crafting_machine_link(node, boiler.name)
 
             return node
@@ -582,7 +621,7 @@ function pytech.add_offhsore_pump_recipe(pump)
         results = {{ type = 'fluid', name = pump.fluid, amount = pump.pumping_speed }}
     }
 
-    local node = pytech.parse_recipe(nil, recipe)
+    local node = pytech.parse_recipe(nil, recipe, true)
     pytech.add_crafting_machine_link(node, pump.name)
 
     return node
@@ -606,7 +645,7 @@ function pytech.add_burnt_result_recipe(item)
         results = {{ type = nt_item, name = item.burnt_result, amount = 1 }}
     }
 
-    local node = pytech.parse_recipe(nil, recipe)
+    local node = pytech.parse_recipe(nil, recipe, true)
     node.fz_parents[l_crafting_machine] = {}
 
     for entity, _ in pairs(pytech.fuel_burners[item.fuel_category]) do
@@ -630,7 +669,7 @@ function pytech.add_rocket_product_recipe(item, tech_name)
         results = item.rocket_launch_products or { item.rocket_launch_product }
     }
 
-    local node = pytech.parse_recipe(tech_name, recipe)
+    local node = pytech.parse_recipe(tech_name, recipe, true)
     local tech_node = pytech.fg_get_node(tech_name, nt_tech_head)
     pytech.fg_add_link(tech_node, node)
     node.fz_parents[l_crafting_machine] = {}
@@ -688,6 +727,17 @@ end
 
 function pytech.parse_data_raw()
     local start_node = pytech.fg_get_node(start_tech_name, nt_tech_head)
+
+    -- Starter entities
+    for e, _ in pairs(starting_entities) do
+        local entity =  pytech.get_prototype('entity', e, true)
+
+        if entity then
+            -- log('Add starting entity: ' .. e)
+            local node = pytech.fg_get_node(e, nt_item, nil, e)
+            pytech.fg_add_link(start_node, node)
+        end
+    end
 
     -- Starter recipes
     for _, recipe in pairs(data.raw.recipe) do
@@ -1335,7 +1385,7 @@ function pytech.find_dependency_loop(sorted_set)
         local msg = '\n\nUnable to identify dependency loop\n'
         for _, node in pairs(pytech.fg) do
             if not sorted_set[node.key] --[[ and node.factorio_name and not node.ignore_for_dependencies and not ((node.type == nt_item or node.type == nt_fluid) and node.label) ]] then
-                msg = msg .. 'Uncreachable ' .. node.type .. ': ' .. node.name
+                msg = msg .. 'Unreachable ' .. node.type .. ': ' .. node.name
                 break
             end
         end
