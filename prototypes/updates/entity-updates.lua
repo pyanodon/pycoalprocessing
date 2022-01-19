@@ -4,7 +4,7 @@ data.raw.generator['steam-engine'].maximum_temperature = 500
 
 --modify boiler to produce more water
 data.raw.boiler.boiler.target_temperature = 250
-data.raw.boiler.boiler.energy_consumption = "14.85MW"
+data.raw.boiler.boiler.energy_consumption = "14.805MW"
 
 --modify steam turbine temp
 data.raw.generator['steam-turbine'].maximum_temperature = 2000
