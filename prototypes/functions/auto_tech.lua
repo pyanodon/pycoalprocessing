@@ -492,7 +492,7 @@ end
 function pytech.init_crafting_categories()
     for et, _ in pairs(defines.prototypes['entity']) do
         for _, entity in pairs(data.raw[et]) do
-            if not table.any(entity.flags or {}, function(v) return v == 'hidden' end) then
+            if not table.any(entity.flags or {}, function(v) return v == 'hidden' end) or starting_entities[entity.name] then
                 local fb_in = 0
                 local fb_out = 0
 
@@ -648,7 +648,7 @@ function pytech.add_burnt_result_recipe(item)
     local node = pytech.parse_recipe(nil, recipe, true)
     node.fz_parents[l_crafting_machine] = {}
 
-    for entity, _ in pairs(pytech.fuel_burners[item.fuel_category]) do
+    for entity, _ in pairs(pytech.fuel_burners[item.fuel_category] or {}) do
         local burner = pytech.get_prototype('entity', entity)
         local es = burner.burner or burner.energy_source
 
