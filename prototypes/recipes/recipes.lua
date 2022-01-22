@@ -216,7 +216,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "e"
-}:add_unlock("filtration")
+}:add_unlock("organic-solvent")
 
 RECIPE {
     type = "recipe",
