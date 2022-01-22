@@ -649,7 +649,7 @@ ITEM {
     type = "item",
     name = "kevlar",
     icon = "__pycoalprocessinggraphics__/graphics/icons/kevlar.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-items",
     --order = "g",
