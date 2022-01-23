@@ -20,7 +20,7 @@ if mods['pypetroleumhandling'] then
     TECHNOLOGY {
         type = "technology",
         name = "kevlar-2",
-        icon = "__pycoalprocessinggraphics__/graphics/technology/kevlar.png",
+        icon = "__pycoalprocessinggraphics__/graphics/technology/kevlar-2.png",
         icon_size = 128,
         order = "c-a",
         prerequisites = {},
