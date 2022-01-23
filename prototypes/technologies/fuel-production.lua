@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/fuel-production-mk01.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"lubricant", "desulfurization"},
+    prerequisites = {"lubricant"},
     effects = {},
     unit = {
         count = 100,
