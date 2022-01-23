@@ -1,8 +1,8 @@
 TECHNOLOGY {
     type = "technology",
     name = "organic-solvent",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/organic-solvent.png",
-    icon_size = 32,
+    icon = "__pycoalprocessinggraphics__/graphics/technology/organic-solvent.png",
+    icon_size = 128,
     order = "c-a",
     prerequisites = {},
     effects = {},
