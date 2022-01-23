@@ -13,7 +13,7 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"gasturbinemk01", 1},
+        {"steam-engine", 1},
         {"chemical-plant-mk01", 1},
         {"electronic-circuit", 10},
         {"steel-plate", 40},

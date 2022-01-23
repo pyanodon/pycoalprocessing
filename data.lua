@@ -48,6 +48,7 @@ require('prototypes/technologies/niobium')
 require('prototypes/technologies/nexelit')
 require('prototypes/technologies/chromium')
 
+require("prototypes/technologies/organic-solvent")
 require("prototypes/technologies/mukmoux")
 require("prototypes/technologies/kevlar")
 -- ))
