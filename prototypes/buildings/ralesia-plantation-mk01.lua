@@ -64,7 +64,7 @@ ENTITY {
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ralesia-plantation-mk01"},
-    fast_replaceable_group = "ralesia-plantation-mk01",
+    fast_replaceable_group = "ralesia-plantation",
     max_health = 300,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",

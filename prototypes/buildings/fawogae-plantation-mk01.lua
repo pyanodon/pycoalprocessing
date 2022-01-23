@@ -51,7 +51,7 @@ ENTITY {
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "fawogae-plantation-mk01"},
-    fast_replaceable_group = "fawogae-plantation-mk01",
+    fast_replaceable_group = "fawogae-plantation",
     max_health = 300,
     --fixed_recipe = "fawogae",
     corpse = "big-remnants",

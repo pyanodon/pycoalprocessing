@@ -45,7 +45,7 @@ ENTITY {
     flags = {"placeable-neutral", "player-creation"},
     fixed_recipe = "cooling-water",
     minable = {mining_time = 1, result = "cooling-tower-mk02"},
-    fast_replaceable_group = "cooling-tower-mk02",
+    fast_replaceable_group = "cooling-tower",
     max_health = 300,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",

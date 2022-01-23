@@ -33,7 +33,7 @@ ENTITY {
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "cooling-tower-mk01"},
-    fast_replaceable_group = "cooling-tower-mk01",
+    fast_replaceable_group = "cooling-tower",
     max_health = 300,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
