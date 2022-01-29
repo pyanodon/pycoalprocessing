@@ -19,15 +19,24 @@ end
 
 ITEM("automation-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
 ITEM("automation-science-pack", "tool"):set("icon_size", 32)
+ITEM("automation-science-pack", "tool"):set("icon_mipmaps", nil)
 ITEM("sulfuric-acid"):subgroup_order("py-fluid-handling", "d")
 
 ITEM("logistic-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png")
 ITEM("logistic-science-pack", "tool"):set("icon_size", 32)
+ITEM("logistic-science-pack", "tool"):set("icon_mipmaps", nil)
 
 ITEM("chemical-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png")
 ITEM("chemical-science-pack", "tool"):set("icon_size", 32)
+ITEM("chemical-science-pack", "tool"):set("icon_mipmaps", nil)
+
+ITEM("lab"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/lab-mk01.png")
+ITEM("lab"):set("icon_size", 64)
+ITEM("lab"):set("icon_mipmaps", nil)
+
 ITEM('electric-engine-unit'):set("icon", "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit.png")
 ITEM('electric-engine-unit'):set("icon_size", 64)
+ITEM('electric-engine-unit'):set("icon_mipmaps", nil)
 
 RECIPE("small-electric-pole"):set_category("handcrafting")
 

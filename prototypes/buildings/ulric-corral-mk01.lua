@@ -35,7 +35,7 @@ ENTITY {
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
     minable = {mining_time = 1, result = "ulric-corral-mk01"},
-    fast_replaceable_group = "ulric-corral-mk01",
+    fast_replaceable_group = "ulric-corral",
     max_health = 100,
     corpse = "big-remnants",
     dying_explosion = "big-explosion",
