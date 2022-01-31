@@ -1,6 +1,6 @@
 RECIPE {
     type = "recipe",
-    name = "iron-oxide",
+    name = "iron-oxide-smelting",
     enabled = true,
     category = "smelting",
     energy_required = 3.5,
