@@ -18,5 +18,12 @@ data:extend(
 	maximum_value = 100,
 	default_value = 30
 	},
+	{
+	type = "bool-setting",
+	name = "remove_barrels_for_jerry_cans",
+	order = "ac",
+	setting_type = "startup",
+	default_value = "false"
+	}
 }
 )

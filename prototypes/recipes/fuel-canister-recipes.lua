@@ -1,3 +1,4 @@
+local remove_barrels = settings.startup["remove_barrels_for_jerry_cans"].value
 
 RECIPE {
     type = "recipe",
@@ -91,8 +92,8 @@ for f, fluid in pairs(data.raw.fluid) do
             subgroup = "py-items",
             order = "canister-b-[empty-methanol-gas-canister]"
         }:add_unlock("plastics")
-
-        if data.raw.item[fluid.name .. '-barrel'] ~= nil then
+        
+        if remove_barrels and data.raw.item[fluid.name .. '-barrel'] ~= nil then
             if data.raw.recipe['empty-' .. fluid.name .. '-barrel'] ~= nil then
                 RECIPE('empty-' .. fluid.name .. '-barrel'):remove_unlock('fluid-handling'):set_fields{hidden = true}
             end
