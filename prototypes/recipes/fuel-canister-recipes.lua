@@ -1,4 +1,3 @@
-
 RECIPE {
     type = "recipe",
     name = "empty-jerry-can",
@@ -91,15 +90,5 @@ for f, fluid in pairs(data.raw.fluid) do
             subgroup = "py-items",
             order = "canister-b-[empty-methanol-gas-canister]"
         }:add_unlock("plastics")
-
-        if data.raw.item[fluid.name .. '-barrel'] ~= nil then
-            if data.raw.recipe['empty-' .. fluid.name .. '-barrel'] ~= nil then
-                RECIPE('empty-' .. fluid.name .. '-barrel'):remove_unlock('fluid-handling'):set_fields{hidden = true}
-            end
-            if data.raw.recipe['fill-' .. fluid.name .. '-barrel'] ~= nil then
-                RECIPE('fill-' .. fluid.name .. '-barrel'):remove_unlock('fluid-handling'):set_fields{hidden = true}
-            end
-            ITEM(fluid.name .. '-barrel'):add_flag('hidden')
-        end
     end
 end
