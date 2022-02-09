@@ -164,6 +164,14 @@ data:extend {
         name = "jerry"
     },
     {
+        type = "fuel-category",
+        name = "fuelrod"
+    },
+    {
+        type = "fuel-category",
+        name = "biomass"
+    },
+    {
         type = "recipe-category",
         name = "handcrafting"
     },

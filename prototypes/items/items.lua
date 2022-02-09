@@ -187,7 +187,7 @@ ITEM {
     order = "organics",
     stack_size = 300,
     fuel_value = "2MJ",
-    fuel_category = "chemical",
+    fuel_category = "biomass",
 }
 
 ITEM {
@@ -306,7 +306,7 @@ ITEM {
     type = "item",
     name = "fuelrod-mk01",
     fuel_value = "75MJ",
-    fuel_category = "chemical",
+    fuel_category = "fuelrod",
     icon = "__pycoalprocessinggraphics__/graphics/icons/fuelrod-mk01.png",
     icon_size = 32,
     flags = {},
@@ -783,7 +783,7 @@ ITEM {
     type = "item",
     name = "log",
     fuel_value = "4MJ",
-    fuel_category = "chemical",
+    fuel_category = "biomass",
     icon = "__pycoalprocessinggraphics__/graphics/icons/mip/log-01.png",
     pictures =
     {
@@ -811,7 +811,7 @@ ITEM {
     subgroup = "py-items",
     order = "treated-wood",
     fuel_value = "4MJ",
-    fuel_category = "chemical",
+    fuel_category = "biomass",
     stack_size = 100
 }
 

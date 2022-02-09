@@ -560,12 +560,13 @@ RECIPE {
   data.raw.car.tank.burner.fuel_category = nil
   data.raw.car.tank.burner.fuel_categories = {"jerry", "chemical"}
   data.raw.car.tank.burner.burnt_inventory_size = data.raw.car.tank.burner.fuel_inventory_size
-  data.raw.locomotive.locomotive.burner.fuel_category = nil
-  data.raw.locomotive.locomotive.burner.fuel_categories = {"jerry", "chemical"}
+  --data.raw.locomotive.locomotive.burner.fuel_category = nil
+  --data.raw.locomotive.locomotive.burner.fuel_categories = {"jerry", "chemical"}
   data.raw.locomotive.locomotive.burner.burnt_inventory_size = data.raw.locomotive.locomotive.burner.fuel_inventory_size
 
   --add ash to burnt results for chemical fuel items
-  --data.raw.item["coal"].burnt_result = "ash"
-
-
-  --clean up chemical fuel category to only have coal and coal accessories
+  for i, item in pairs(data.raw.item) do
+    if item.fuel_category ~= nil and item.fuel_category == "chemical" then
+      data.raw.item[item.name].burnt_result = "ash"
+    end
+  end
