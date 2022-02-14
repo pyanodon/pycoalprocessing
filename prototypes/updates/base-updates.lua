@@ -158,6 +158,12 @@ TECHNOLOGY("mining-productivity-4"):add_pack("military-science-pack")
 
 TECHNOLOGY("artillery"):add_pack("production-science-pack")
 
+TECHNOLOGY("laser"):set_fields{enabled = false}:set_fields{hidden = true}
+
+TECHNOLOGY("modules"):set_fields{enabled = false}:set_fields{hidden = true}
+
+TECHNOLOGY("flammables"):set_fields{enabled = false}:set_fields{hidden = true}
+
 --(( TECHNOLOGY DEPENDENCIES ))--
 
 TECHNOLOGY('fast-inserter'):set_fields{ dependencies = { 'automation' }}
