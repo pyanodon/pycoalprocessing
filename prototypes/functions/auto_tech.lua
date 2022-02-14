@@ -1,5 +1,6 @@
 local table = require('__stdlib__/stdlib/utils/table')
 local queue = require('__stdlib__/stdlib/misc/queue')
+local string = require('__stdlib__/stdlib/utils/string')
 
 local pytech = {}
 
@@ -12,22 +13,25 @@ local recipe_mining = 'mining::'
 local recipe_offshore = 'offshore::'
 local recipe_burnt = 'burnt-result::'
 local recipe_rocket = 'rocket-launch::'
+local recipe_generator = 'generator::'
+local recipe_reactor = 'reactor::'
 
 local l_recipe_result = '__recipe_result__'
 local l_crafting_machine = '__crafting_machine__'
 local l_fuel = '__fuel__'
+local l_rail = '__rail__'
+local l_loco = '__loco__'
+local l_trainstop = '__trainstop__'
+local l_grid = '__grid__'
+local l_bonus = '__bonus__'
 
 local starting_entities = table.array_to_dictionary({'character', 'crash-site-assembling-machine-1-repaired', 'crash-site-lab-repaired'}, true)
+local electricity_producers = table.array_to_dictionary({'generator', 'burner-generator', 'electric-energy-interface', 'solar-panel'}, true)
 
 pytech.fg = {} -- fuzzy graph
-pytech.fluids = {}
-pytech.placed_by = {}
-pytech.mining_categories = {}
-pytech.crafting_categories = {}
-pytech.fuel_categories = {}
 pytech.processed_recipes = {}
 pytech.processed_internals = {}
-pytech.fuel_burners = {}
+pytech.processed_items = {}
 pytech.tech_used_recipes = {}
 pytech.exclude_from_path = {}
 pytech.safe_path = {}
@@ -275,6 +279,184 @@ function pytech.parse_tech(tech)
                     n_recipe.ignore_for_dependencies = true
                 end
             end
+        -- Bonuses require at least on entity where they can be applied
+        elseif effect.type == 'inserter-stack-size-bonus' then
+            pytech.add_bonus_dependencies(node, effect, 'inserter', function(e) return not e.stack end)
+        elseif effect.type == 'stack-inserter-capacity-bonus' then
+            pytech.add_bonus_dependencies(node, effect, 'inserter', function(e) return e.stack end)
+        elseif effect.type == 'laboratory-speed' or effect.type == 'laboratory-productivity' then
+            pytech.add_bonus_dependencies(node, effect, 'lab')
+        elseif effect.type == 'mining-drill-productivity-bonus' then
+            pytech.add_bonus_dependencies(node, effect, 'mining-drill')
+        elseif effect.type == 'train-braking-force-bonus' then
+            pytech.add_bonus_dependencies(node, effect, 'locomotive')
+        elseif effect.type == 'maximum-following-robots-count' or effect.type == 'follower-robot-lifetime' then
+            pytech.add_bonus_dependencies(node, effect, 'combat-robot', function(e) return e.follows_player end)
+        elseif effect.type == 'worker-robot-speed' or effect.type == 'worker-robot-storage' or effect.type == 'worker-robot-battery' then
+            pytech.add_bonus_dependencies(node, effect, 'construction-robot')
+            pytech.add_bonus_dependencies(node, effect, 'logistic-robot')
+        elseif effect.type == 'character-logistic-requests' or effect.type == 'character-logistic-trash-slots' then
+            pytech.add_bonus_dependencies(node, effect, 'logistic-robot')
+        elseif effect.type == 'artillery-range' then
+            pytech.add_bonus_dependencies(node, effect, 'artillery-turret')
+            pytech.add_bonus_dependencies(node, effect, 'artillery-wagon')
+        elseif effect.type == 'turret-attack' then
+            pytech.add_bonus_dependencies(node, effect, 'ammo-turret', function(e) return e.name == effect.turret_id end, false, effect.turret_id)
+            pytech.add_bonus_dependencies(node, effect, 'electric-turret', function(e) return e.name == effect.turret_id end, false, effect.turret_id)
+            pytech.add_bonus_dependencies(node, effect, 'fluid-turret', function(e) return e.name == effect.turret_id end, false, effect.turret_id)
+        elseif effect.type == 'ammo-damage' or effect.type == 'gun-speed' then
+            pytech.add_bonus_dependencies(node, effect, 'ammo', function (i) return
+                (i.ammo_type.category and i.ammo_type.category == effect.ammo_category)
+                or not i.ammo_type.category and table.any(i.ammo_type, function (at) return at.category == effect.ammo_category end)
+            end, true, effect.ammo_category)
+            pytech.add_bonus_dependencies(node, effect, 'capsule', function (i) return
+                i.capsule_action.attack_parameters and
+                ((i.capsule_action.attack_parameters.ammo_type.category and i.capsule_action.attack_parameters.ammo_type.category == effect.ammo_category)
+                or not i.capsule_action.attack_parameters.ammo_type.category and table.any(i.capsule_action.attack_parameters.ammo_type, function (at) return at.category == effect.ammo_category end))
+            end, true, effect.ammo_category)
+            pytech.add_bonus_dependencies(node, effect, 'electric-turret', function (e) return
+                (e.attack_parameters.ammo_type.category and e.attack_parameters.ammo_type.category == effect.ammo_category)
+                or not e.attack_parameters.ammo_type.category and table.any(e.attack_parameters.ammo_type, function (at) return at.category == effect.ammo_category end)
+            end, false, effect.ammo_category)
+            pytech.add_bonus_dependencies(node, effect, 'land-mine', function (e) return ((e.ammo_category or '') == effect.ammo_category) end, false, effect.ammo_category)
+        end
+    end
+end
+
+
+function pytech.add_bonus_dependencies(n_tech, effect, entity_type, condition, is_item, suffix)
+    local recipe = { name = effect.type .. (suffix or ''), ingredients = {}, results = {} }
+    local n_recipe = pytech.parse_recipe(n_tech.name, recipe, true)
+    n_recipe.virtual = true
+    pytech.fg_add_link(n_tech, n_recipe)
+
+    if entity_type then
+        for _, entity in pairs(data.raw[entity_type] or {}) do
+            if condition == nil or condition(entity) then
+                if not is_item and pytech.entities[entity.name] then
+                    for i, _ in pairs(pytech.placed_by[entity.name]) do
+                        local item = pytech.fg_get_node(i, nt_item)
+                        pytech.fg_add_fuzzy_link(item, n_recipe, l_bonus)
+                    end
+                elseif pytech.items[entity.name] then
+                    local item = pytech.fg_get_node(entity.name, nt_item)
+                    pytech.fg_add_fuzzy_link(item, n_recipe, l_bonus)
+                end
+            end
+        end
+    end
+end
+
+
+function pytech.add_entity_dependencies(n_recipe, item)
+    local entity = pytech.get_prototype('entity', item.place_result)
+
+    -- Rail stuff need rails
+    if entity.type == 'locomotive'
+        or entity.type == 'cargo-wagon'
+        or entity.type == 'fluid-wagon'
+        or entity.type == 'artillery-wagon'
+        or entity.type == 'train-stop'
+        or entity.type == 'rail-signal'
+        or entity.type == 'rail-chain-signal'
+    then
+        n_recipe.fz_parents[l_rail] = {}
+
+        for i, _ in pairs(data.raw['rail-planner'] or {}) do
+            if pytech.items[i] then
+                local r = pytech.fg_get_node(i, nt_item)
+                pytech.fg_add_fuzzy_link(r, n_recipe, l_rail)
+            end
+        end
+    end
+
+    -- Wagons need loco
+    if entity.type == 'cargo-wagon' or entity.type == 'fluid-wagon' or entity.type == 'artillery-wagon' then
+        n_recipe.fz_parents[l_loco] = {}
+
+        for loco, _ in pairs(data.raw.locomotive or {}) do
+            if pytech.entities[loco] then
+                for i, _ in pairs(pytech.placed_by[loco] or {}) do
+                    local l = pytech.fg_get_node(i, nt_item)
+                    pytech.fg_add_fuzzy_link(l, n_recipe, l_loco)
+                end
+            end
+        end
+    end
+
+    -- Signals need stations
+    if entity.type == 'rail-signal' or entity.type == 'rail-chain-signal' then
+        n_recipe.fz_parents[l_trainstop] = {}
+
+        for ts, _ in pairs(data.raw['train-stop'] or {}) do
+            if pytech.entities[ts] then
+                for i, _ in pairs(pytech.placed_by[ts] or {}) do
+                    local l = pytech.fg_get_node(i, nt_item)
+                    pytech.fg_add_fuzzy_link(l, n_recipe, l_trainstop)
+                end
+            end
+        end
+    end
+end
+
+
+function pytech.add_equipment_dependencies(n_recipe, item)
+    -- log('equipment: ' .. item.name .. ', result: ' .. item.placed_as_equipment_result)
+    local equipment = pytech.get_prototype('equipment', item.placed_as_equipment_result)
+    local eq_cat = table.array_to_dictionary(equipment.categories, true)
+    n_recipe.fz_parents[l_grid] = {}
+
+    for i, grid in pairs(pytech.items_with_grid or {}) do
+        if table.any(grid.equipment_categories, function (c) return eq_cat[c] ~= nil end) then
+            local g = pytech.fg_get_node(i, nt_item)
+            pytech.fg_add_fuzzy_link(g, n_recipe, l_grid)
+        end
+    end
+
+    for e, grid in pairs(pytech.entities_with_grid or {}) do
+        if table.any(grid.equipment_categories, function (c) return eq_cat[c] ~= nil end) then
+            for i, _ in pairs(pytech.placed_by[e] or {}) do
+                local g = pytech.fg_get_node(i, nt_item)
+                pytech.fg_add_fuzzy_link(g, n_recipe, l_grid)
+            end
+        end
+    end
+
+    if equipment.burner then
+        local es = equipment.burner
+
+        for _, category in pairs(es.fuel_categories or { (es.fuel_category or 'chemical') }) do
+            for fuel, _ in pairs(pytech.fuel_categories[category]) do
+                local fuel_node = pytech.fg_get_node(fuel, nt_item)
+                pytech.fg_add_fuzzy_link(fuel_node, n_recipe, l_fuel)
+            end
+        end
+    end
+
+    if (equipment.type == 'active-defense-equipment' and equipment.attack_parameters.ammo_type and equipment.attack_parameters.ammo_type.energy_consumption and util.parse_energy(equipment.attack_parameters.ammo_type.energy_consumption) > 0)
+        or equipment.type == 'battery-equipment'
+        or (equipment.type == 'belt-immunity-equipment' and util.parse_energy(equipment.energy_consumption) > 0)
+        or (equipment.type == 'energy-shield-equipment' and util.parse_energy(equipment.energy_per_shield) > 0)
+        or (equipment.type == 'movement-bonus-equipment' and util.parse_energy(equipment.energy_consumption) > 0)
+        or (equipment.type == 'night-vision-equipment' and util.parse_energy(equipment.energy_input) > 0)
+        or (equipment.type == 'roboport-equipment' and not equipment.burner)
+    then
+        for _, gen in pairs(data.raw['generator-equipment']) do
+            if table.any(gen.categories, function (c) return eq_cat[c] ~= nil end) then
+                for i, _ in pairs(pytech.placed_by[gen.name] or {}) do
+                    local g = pytech.fg_get_node(i, nt_item)
+                    pytech.fg_add_fuzzy_link(g, n_recipe, l_fuel)
+                end
+            end
+        end
+
+        for _, gen in pairs(data.raw['solar-panel-equipment']) do
+            if table.any(gen.categories, function (c) return eq_cat[c] ~= nil end) then
+                for i, _ in pairs(pytech.placed_by[gen.name] or {}) do
+                    local g = pytech.fg_get_node(i, nt_item)
+                    pytech.fg_add_fuzzy_link(g, n_recipe, l_fuel)
+                end
+            end
         end
     end
 end
@@ -284,15 +466,16 @@ function pytech.parse_recipe(tech_name, recipe, no_crafting)
     local name = (tech_name and (tech_name .. ' / ') or '') .. recipe.name
     -- log('Parsing recipe: ' .. name)
     local node = pytech.fg_get_node(name, nt_recipe, tech_name, recipe.name)
-    local ing_count = 0
-    local fluid_in = 0
-    local fluid_out = 0
 
     if pytech.processed_recipes[name] then
         return node
     else
        pytech.processed_recipes[name] = true
     end
+
+    local ing_count = 0
+    local fluid_in = 0
+    local fluid_out = 0
 
     if recipe.normal then
         recipe = recipe.normal
@@ -301,27 +484,46 @@ function pytech.parse_recipe(tech_name, recipe, no_crafting)
     for _, res in pairs(pytech.standardize_products(recipe.results, nil, recipe.result, recipe.result_count)) do
         if ((res.amount or 0) > 0 or (res.amount_max or 0) > 0) and (not res.probability or res.probability > 0) then
             if res.type == nt_item then
-                local item = pytech.get_prototype(nt_item, res.name)
-                local n_item = pytech.parse_item(item)
-                pytech.fg_add_fuzzy_link(node, n_item, l_recipe_result)
+                local n_item = pytech.fg_get_node(res.name, nt_item)
+                local item
 
-                if item.place_result then
-                    pytech.add_fuel_dependencies(node, item)
-                    pytech.add_fixed_recipe(node, item)
+                if not n_item.virtual then
+                    item = pytech.get_prototype(nt_item, res.name)
+                    n_item = pytech.parse_item(item)
                 end
 
-                if item.rocket_launch_products or item.rocket_launch_product then
+                pytech.fg_add_fuzzy_link(node, n_item, l_recipe_result)
+
+                if item and item.place_result then
+                    pytech.add_fuel_dependencies(node, item)
+                    pytech.add_fixed_recipe(node, item)
+                    pytech.add_entity_dependencies(node, item)
+                end
+
+                if item and item.placed_as_equipment_result then
+                    pytech.add_equipment_dependencies(node, item)
+                end
+
+                if item and (item.rocket_launch_products or item.rocket_launch_product) then
                     pytech.add_rocket_product_recipe(item, tech_name)
                 end
             else
                 local fluid = data.raw.fluid[res.name]
+                local n_fluid
 
                 if fluid then
-                    local n_fluid = pytech.parse_fluid(fluid, res.temperature)
-                    pytech.fg_add_fuzzy_link(node, n_fluid, l_recipe_result)
+                    n_fluid = pytech.parse_fluid(fluid, res.temperature)
+                elseif pytech.fg_node_exists(res.name .. '(' .. res.temperature .. ')', nt_fluid) then
+                    n_fluid = pytech.parse_fluid(nil, res.temperature, res.name)
                 end
 
-                fluid_out = fluid_out + 1
+                if n_fluid then
+                    pytech.fg_add_fuzzy_link(node, n_fluid, l_recipe_result)
+
+                    if not n_fluid.virtual then
+                        fluid_out = fluid_out + 1
+                    end
+                end
             end
         end
     end
@@ -374,27 +576,33 @@ end
 
 
 function pytech.add_fuel_dependencies(child_node, item)
-    -- log('add_fuel_dependencies (recipe_node: ' .. recipe_node.key .. ', item_node ' .. item_node.key)
+    -- log('add_fuel_dependencies (recipe_node: ' .. child_node.key .. ', item: ' .. item.name)
     local entity = pytech.get_prototype('entity', item.place_result)
     local es = entity.burner or entity.energy_source
 
     if es then
         if es.type == 'burner' then
+            child_node.fz_parents[l_fuel] = {}
+            
             for _, category in pairs(es.fuel_categories or { (es.fuel_category or 'chemical') }) do
-                for fuel, _ in pairs(pytech.fuel_categories[category]) do
+                for fuel, _ in pairs(pytech.fuel_categories[category] or {}) do
                     local fuel_node = pytech.fg_get_node(fuel, nt_item)
                     pytech.fg_add_fuzzy_link(fuel_node, child_node, l_fuel)
                     -- log('Adding fuel for recipe ' .. child_node.key .. ': ' .. fuel_node.key)
                 end
             end
         elseif es.type == 'fluid' then
-            for fluid, _ in pairs(pytech.fuel_categories[fuel_fluid]) do
-                if not es.fluid_box.filter or fluid == es.fluid_box.filter then
-                    for temp, _ in pairs(pytech.fluids[fluid]) do
-                        local fuel_node = pytech.parse_fluid(nil, temp, fluid)
-                        pytech.fg_add_fuzzy_link(fuel_node, child_node, l_fuel)
-                        -- log('Adding fuel for recipe ' .. child_node.key .. ': ' .. fuel_node.key)
-                    end
+            pytech.add_fluid_fuels(child_node, es.fluid_box.filter)
+        elseif es.type == 'electric' and not electricity_producers[entity.type] then
+            local fuel_node = pytech.fg_get_node(fuel_electricity, nt_item)
+            pytech.fg_add_fuzzy_link(fuel_node, child_node, l_fuel)
+        elseif es.type == 'heat' then
+            -- log('Adding heat fuel to ' .. entity.name .. ', min_temp: ' .. es.min_working_temperature)
+            for _, temp in pairs(pytech.heat_temps) do
+                -- log('  - Temp: ' .. temp .. ' / ' .. type(temp))
+                if temp >= (es.min_working_temperature or 15) then
+                    local fuel_node = pytech.parse_fluid(nil, temp, fuel_heat)
+                    pytech.fg_add_fuzzy_link(fuel_node, child_node, l_fuel)
                 end
             end
         end
@@ -417,7 +625,36 @@ end
 function pytech.parse_item(item)
     -- log('Parsing item: ' .. item.name)
     local node = pytech.fg_get_node(item.name, nt_item, nil, item.name)
+
+    if pytech.processed_items[item.name] then
+        return node
+    else
+        pytech.processed_items[item.name] = true
+    end
+
     node.ignore_for_dependencies = item.ignore_for_dependencies
+
+    if item.fuel_category and item.burnt_result then
+        pytech.add_burnt_result_recipe(item)
+    end
+
+    if item.place_result then
+        local entity = pytech.get_prototype('entity', item.place_result)
+
+        if entity.type == 'boiler' then
+            pytech.add_boiler_recipe(entity)
+        elseif entity.type == 'generator' then
+            pytech.add_generator_recipe(entity)
+        elseif entity.type == 'burner-generator' then
+            pytech.add_simple_generator_recipe(entity)
+        elseif entity.type == 'electric-energy-interface' and entity.energy_production and util.parse_energy(entity.energy_production) > 0 then
+            pytech.add_simple_generator_recipe(entity)
+        elseif entity.type == 'offshore-pump' then
+            pytech.add_offhsore_pump_recipe(entity)
+        elseif entity.type == 'reactor' then
+            pytech.add_reactor_recipe(entity)
+        end
+    end
 
     return node
 end
@@ -430,133 +667,6 @@ function pytech.parse_fluid(fluid, temperature, fluid_name)
     local node = pytech.fg_get_node(name, nt_fluid, nil, fname)
 
     return node
-end
-
-
-function pytech.init_fluid_temperatures()
-    for _, recipe in pairs(data.raw.recipe) do
-        -- log ('Recipe: ' .. recipe.name .. ', normal: ' .. (recipe.normal and 'yes' or 'no'))
-        local r = recipe.normal or recipe
-
-        for _, res in pairs(pytech.standardize_products(r.results, nil, r.result, r.result_count)) do
-            if res.type == 'fluid' and data.raw.fluid[res.name] then
-                pytech.insert_double_lookup(pytech.fluids, res.name, res.temperature or data.raw.fluid[res.name].default_temperature)
-            end
-        end
-    end
-
-    for _, boiler in pairs(data.raw.boiler) do
-        if (boiler.mode or 'heat-water-inside') == 'output-to-separate-pipe' then
-            local filter = boiler.output_fluid_box.filter or boiler.fluid_box.filter
-
-            if filter then
-                pytech.insert_double_lookup(pytech.fluids, filter, boiler.target_temperature)
-            else
-                log('ERROR: Unsupported feature: Unfiltered boiler')
-            end
-        else
-            log('ERROR: Unsupported feature: Old style boiler (heat-water-inside)')
-        end
-    end
-end
-
-
-function pytech.init_placeables()
-    for it, _ in pairs(defines.prototypes['item']) do
-        for _, item in pairs(data.raw[it]) do
-            if item.place_result then
-                pytech.insert_double_lookup(pytech.placed_by, item.place_result, item.name)
-            end
-        end
-    end
-
-    for e, _ in pairs(starting_entities) do
-        pytech.insert_double_lookup(pytech.placed_by, e, e)
-    end
-end
-
-
-function pytech.init_mining_categories()
-    for _, entity in pairs(data.raw['mining-drill']) do
-        for _, category in pairs(entity.resource_categories) do
-            pytech.insert_double_lookup(pytech.mining_categories, category, entity.name)
-        end
-    end
-
-    for _, category in pairs(data.raw.character.character.mining_categories or {}) do
-        pytech.insert_double_lookup(pytech.mining_categories, category, 'character')
-    end
-end
-
-
-function pytech.init_crafting_categories()
-    for et, _ in pairs(defines.prototypes['entity']) do
-        for _, entity in pairs(data.raw[et]) do
-            if not table.any(entity.flags or {}, function(v) return v == 'hidden' end) or starting_entities[entity.name] then
-                local fb_in = 0
-                local fb_out = 0
-
-                for _, fb in pairs(entity.fluid_boxes or {}) do
-                    if type(fb) == 'table' then
-                        if fb.production_type == 'input' or fb.production_type == 'input-output' then
-                            fb_in = fb_in + 1
-                        elseif fb.production_type == 'output' then
-                            fb_out = fb_out + 1
-                        end
-                    end
-                end
-
-                for _, c in pairs(entity.crafting_categories or {}) do
-                    if not pytech.crafting_categories[c] then
-                        pytech.crafting_categories[c] = {}
-                    end
-
-                    local craft = {}
-                    craft.crafting_category = c
-                    craft.ingredient_count = entity.ingredient_count or 255
-                    craft.fluidboxes_in = fb_in
-                    craft.fluidboxes_out = fb_out
-                    craft.entity_name = entity.name
-
-                    table.insert(pytech.crafting_categories[c], craft)
-                end
-            end
-        end
-    end
-end
-
-
-function pytech.init_fuel_categories()
-    for it, _ in pairs(defines.prototypes['item']) do
-        for _, item in pairs(data.raw[it]) do
-            if item.fuel_category and item.fuel_value and util.parse_energy(item.fuel_value) > 0 and not table.any(item.flags or {}, function(v) return v == 'hidden' end) then
-                -- log('Adding item ' .. item.name .. ' to fuel category ' .. item.fuel_category)
-                pytech.insert_double_lookup(pytech.fuel_categories, item.fuel_category, item.name)
-            end
-        end
-    end
-
-    for _, fluid in pairs(data.raw.fluid) do
-        if fluid.fuel_value and util.parse_energy(fluid.fuel_value) > 0 then
-            pytech.insert_double_lookup(pytech.fuel_categories, fuel_fluid, fluid.name)
-        end
-    end
-end
-
-
-function pytech.init_fuel_burners()
-    for et, _ in pairs(defines.prototypes['entity']) do
-        for _, entity in pairs(data.raw[et]) do
-            local es = entity.burner or entity.energy_source
-
-            if es and (entity.burner or es.type == 'burner') and not table.any(entity.flags or {}, function(v) return v == 'hidden' end) then
-                for _, category in pairs(es.fuel_categories or { (es.fuel_category or 'chemical') }) do
-                    pytech.insert_double_lookup(pytech.fuel_burners, category, entity.name)
-                    -- log('Adding burner ' .. entity.name .. ' for fuel category ' .. category)
-                end
-            end
-        end
-    end
 end
 
 
@@ -611,6 +721,70 @@ function pytech.add_boiler_recipe(boiler)
     else
         log('ERROR: Unsupported feature: Old style boiler (heat-water-inside)')
     end
+end
+
+
+function pytech.add_fluid_fuels(node, fluid_name)
+    for fluid, _ in pairs(pytech.fuel_categories[fuel_fluid]) do
+        if not fluid_name or fluid == fluid_name then
+            for temp, _ in pairs(pytech.fluids[fluid]) do
+                local fuel_node = pytech.parse_fluid(nil, temp, fluid)
+                pytech.fg_add_fuzzy_link(fuel_node, node, l_fuel)
+                -- log('Adding fuel for recipe ' .. child_node.key .. ': ' .. fuel_node.key)
+            end
+        end
+    end
+end
+
+
+function pytech.add_generator_recipe(generator)
+    local in_fluid = generator.fluid_box.filter
+    local node
+
+    if generator.burns_fluid then
+        local recipe = {
+            name = recipe_generator .. generator.name,
+            ingredients = {},
+            results = {{ type = nt_item, name = fuel_electricity, amount = 1 }}
+        }
+
+        node = pytech.parse_recipe(nil, recipe, true)
+        pytech.add_fluid_fuels(node, in_fluid)
+    else
+        local recipe = {
+            name = recipe_generator .. generator.name,
+            ingredients = {{ type = 'fluid', name = in_fluid, amount = 1, minimum_temperature = generator.fluid_box.minimum_temperature, maximum_temperature = generator.fluid_box.maximum_temperature }},
+            results = {{ type = nt_item, name = fuel_electricity, amount = 1 }}
+        }
+
+        node = pytech.parse_recipe(nil, recipe, true)
+    end
+
+    pytech.add_crafting_machine_link(node, generator.name)
+end
+
+
+function pytech.add_simple_generator_recipe(generator)
+    local recipe = {
+        name = recipe_generator .. generator.name,
+        ingredients = {},
+        results = {{ type = nt_item, name = fuel_electricity, amount = 1 }}
+    }
+
+    local node = pytech.parse_recipe(nil, recipe, true)
+    pytech.add_crafting_machine_link(node, generator.name)
+end
+
+
+function pytech.add_reactor_recipe(reactor)
+    local recipe = {
+        name = recipe_reactor .. reactor.name,
+        ingredients = {},
+        results = {{ type = nt_fluid, name = fuel_heat, amount = 1, temperature = reactor.heat_buffer.max_temperature }}
+    }
+
+    local node = pytech.parse_recipe(nil, recipe, true)
+    pytech.add_crafting_machine_link(node, reactor.name)
 end
 
 
@@ -691,33 +865,33 @@ end
 function pytech.pre_process_techs()
     for _, tech in pairs(data.raw.technology) do
         if tech.enabled ~= false and not tech.hidden then
-            local found = false
+            -- local found = false
 
             for _, effect in pairs(tech.effects or {}) do
                 if effect.type == 'unlock-recipe' then
-                    found = true
-                    break
-                end
-            end
+                    -- found = true
+                    local recipe = data.raw.recipe[effect.recipe]
 
-            if not found then
-                tech.dependencies = {}
-                for _, t in pairs(tech.prerequisites) do
-                    if data.raw.technology[t] and data.raw.technology[t].enabled and not data.raw.technology[t].hidden then
-                        table.insert(tech.dependencies, t)
+                    if recipe then
+                        pytech.pre_process_recipe(recipe)
                     end
                 end
-                tech.no_recipe = true
             end
-        end
-    end
 
-    for _, tech in pairs(data.raw.technology) do
-        if tech.enabled ~= false and not tech.hidden then
-            for _, prereq in pairs(tech.prerequisites or {}) do
-                if data.raw.technology[prereq] and data.raw.technology[prereq].no_recipe then
-                    tech.dependencies = table.merge(tech.dependencies or {}, { prereq })
-                    -- log('Adding dependency: ' .. prereq .. ' to ' .. tech.name)
+            -- Add dependencies for tech names enging in numbers to the prev tier
+            local split = string.split(tech.name, '-')
+            local last = table.last(split)
+
+            if string.is_digit(last) and tonumber(last) > 1 then
+                split[#split] = tostring(tonumber(last) - 1)
+                local prev_tech = string.join('-', split)
+
+                if data.raw.technology[prev_tech] then
+                    if not tech.dependencies then
+                        tech.dependencies = {}
+                    end
+
+                    table.insert(tech.dependencies, prev_tech)
                 end
             end
         end
@@ -727,6 +901,19 @@ end
 
 function pytech.parse_data_raw()
     local start_node = pytech.fg_get_node(start_tech_name, nt_tech_head)
+    start_node.virtual = true
+
+    do
+        local node = pytech.fg_get_node(fuel_electricity, nt_item)
+        node.virtual = true
+        pytech.insert_double_lookup(pytech.fuel_categories, fuel_electricity, fuel_electricity)
+
+        for _, temp in pairs(pytech.heat_temps) do
+            node = pytech.parse_fluid(nil, temp, fuel_heat)
+            node.virtual = true
+            pytech.insert_double_lookup(pytech.fuel_categories, fuel_heat, node.name)
+        end
+    end
 
     -- Starter entities
     for e, _ in pairs(starting_entities) do
@@ -756,27 +943,6 @@ function pytech.parse_data_raw()
             end
         end
     end
-
-    -- Boilers
-    for _, entity in pairs(data.raw.boiler) do
-        pytech.add_boiler_recipe(entity)
-    end
-
-    -- Offshore pumps
-    for _, entity in pairs(data.raw['offshore-pump']) do
-        pytech.add_offhsore_pump_recipe(entity)
-    end
-
-    -- Burnt result
-    for it, _ in pairs(defines.prototypes[nt_item]) do
-        for _, item in pairs(data.raw[it]) do
-            if item.fuel_category and item.burnt_result then
-                pytech.add_burnt_result_recipe(item)
-            end
-        end
-    end
-
-    pytech.pre_process_techs()
 
     for _, tech in pairs(data.raw.technology) do
         if tech.enabled ~= false and not tech.hidden then
@@ -874,7 +1040,7 @@ function pytech.pre_process_fuzzy_graph()
     end
 
     for _, node in pairs(pytech.fg) do
-        if not node.factorio_name and node.name ~= start_tech_name then
+        if not node.factorio_name and not node.virtual then
             pytech.fg_remove_node(node)
         end
     end
@@ -1102,7 +1268,7 @@ function pytech.topological_sort()
             level = level + 1
         end
 
-        if table_size(sorted_set) < table_size(pytech.fg)
+        if table_size(table.filter(sorted_set, function(n) return not n.virtual end)) < table_size(table.filter(pytech.fg, function(n) return not n.virtual end))
         then
             if not ignore_science_packs then
                 ignore_science_packs = true
@@ -1147,8 +1313,8 @@ function pytech.topological_sort()
     --     end
     -- end
 
-    log('Nodes: ' .. table_size(pytech.fg))
-    log('Sorted nodes: ' .. table_size(sorted_set))
+    log('Nodes: ' .. table_size(table.filter(pytech.fg, function(n) return not n.virtual end)))
+    log('Sorted nodes: ' .. table_size(table.filter(sorted_set, function(n) return not n.virtual end)))
     -- log(serpent.block(pytech.fg_get_node('coal-processing-1::carbon-dioxide(15)', nt_fluid), {maxlevel =3, keyignore = {data = true} }))
     -- log(serpent.block(pytech.fg_get_node('coal-processing-1::empty-carbon-dioxide-barrel', nt_recipe), {maxlevel =3, keyignore = {data = true} }))
     -- log(serpent.block(pytech.fg_get_node('helium-processing::pressured-air', nt_recipe), {maxlevel =3, keyignore = {data = true} }))
@@ -1384,7 +1550,7 @@ function pytech.find_dependency_loop(sorted_set)
     else
         local msg = '\n\nUnable to identify dependency loop\n'
         for _, node in pairs(pytech.fg) do
-            if not sorted_set[node.key] --[[ and node.factorio_name and not node.ignore_for_dependencies and not ((node.type == nt_item or node.type == nt_fluid) and node.label) ]] then
+            if not sorted_set[node.key] and not node.virtual --[[ and node.factorio_name and not node.ignore_for_dependencies and not ((node.type == nt_item or node.type == nt_fluid) and node.label) ]] then
                 msg = msg .. 'Unreachable ' .. node.type .. ': ' .. node.name
                 break
             end
@@ -1659,7 +1825,6 @@ function pytech.cleanup()
     for _, recipe in pairs(data.raw.recipe) do
         recipe.ignore_for_dependencies = nil
     end
-
     for _, tech in pairs(data.raw.technology) do
         tech.closure = nil
         tech.dependencies = nil
@@ -1668,26 +1833,222 @@ function pytech.cleanup()
 end
 
 
-function pytech.init()
-    pytech.init_fluid_temperatures()
-    pytech.init_placeables()
-    pytech.init_mining_categories()
-    pytech.init_crafting_categories()
-    pytech.init_fuel_categories()
-    pytech.init_fuel_burners()
+function pytech.pre_process_entity(entity)
+    if pytech.entities[entity.name] then
+        return
+    end
+
+    pytech.entities[entity.name] = entity
+
+    if not table.any(entity.flags or {}, function(v) return v == 'hidden' end) or starting_entities[entity.name] then
+        local fb_in = 0
+        local fb_out = 0
+
+        for _, fb in pairs(entity.fluid_boxes or {}) do
+            if type(fb) == 'table' then
+                if fb.production_type == 'input' or fb.production_type == 'input-output' then
+                    fb_in = fb_in + 1
+                elseif fb.production_type == 'output' then
+                    fb_out = fb_out + 1
+                end
+            end
+        end
+
+        -- Crafting categories
+        for _, c in pairs(entity.crafting_categories or {}) do
+            if not pytech.crafting_categories[c] then
+                pytech.crafting_categories[c] = {}
+            end
+
+            local craft = {}
+            craft.crafting_category = c
+            craft.ingredient_count = entity.ingredient_count or 255
+            craft.fluidboxes_in = fb_in
+            craft.fluidboxes_out = fb_out
+            craft.entity_name = entity.name
+
+            table.insert(pytech.crafting_categories[c], craft)
+        end
+
+        if entity.equipment_grid then
+            pytech.entities_with_grid[entity.name] = data.raw['equipment-grid'][entity.equipment_grid]
+        end
+
+        local es = entity.burner or entity.energy_source
+
+        -- Burner
+        if es and (entity.burner or es.type == 'burner') then
+            for _, category in pairs(es.fuel_categories or { (es.fuel_category or 'chemical') }) do
+                pytech.insert_double_lookup(pytech.fuel_burners, category, entity.name)
+                -- log('Adding burner ' .. entity.name .. ' for fuel category ' .. category)
+            end
+        end
+
+        if entity.type == 'boiler' then
+            if (entity.mode or 'heat-water-inside') == 'output-to-separate-pipe' then
+                local filter = entity.output_fluid_box.filter or entity.fluid_box.filter
+
+                if filter then
+                    pytech.insert_double_lookup(pytech.fluids, filter, entity.target_temperature)
+                else
+                    log('ERROR: Unsupported feature: Unfiltered boiler')
+                end
+            else
+                log('ERROR: Unsupported feature: Old style boiler (heat-water-inside)')
+            end
+        elseif entity.type == 'mining-drill' then
+            for _, category in pairs(entity.resource_categories or {}) do
+                pytech.insert_double_lookup(pytech.mining_categories, category, entity.name)
+            end
+        elseif entity.type == 'character' then
+            for _, category in pairs(entity.mining_categories or {}) do
+                pytech.insert_double_lookup(pytech.mining_categories, category, entity.name)
+            end
+        elseif entity.type == 'reactor' or entity.type == 'heat-interface' then
+            table.insert(pytech.heat_temps, entity.heat_buffer.max_temperature)
+        end
+    end
 end
 
+
+function pytech.pre_process_recipe(recipe)
+    if pytech.recipes[recipe.name] then
+        return
+    end
+
+    pytech.recipes[recipe.name] = recipe
+
+    local r = recipe.normal or recipe
+
+    for _, res in pairs(pytech.standardize_products(r.results, nil, r.result, r.result_count)) do
+        if res.type == 'fluid' then
+            local fluid = data.raw.fluid[res.name]
+
+            if fluid then
+                pytech.pre_process_fluid(fluid, res.temperature)
+            end
+        else
+            local item = pytech.get_prototype(nt_item, res.name)
+            pytech.pre_process_item(item)
+        end
+    end
+end
+
+
+function pytech.pre_process_item(item)
+    if pytech.items[item.name] then
+        return
+    end
+
+    pytech.items[item.name] = item
+
+    if item.fuel_category and item.fuel_value and util.parse_energy(item.fuel_value) > 0 and not table.any(item.flags or {}, function(v) return v == 'hidden' end) then
+        -- log('Adding item ' .. item.name .. ' to fuel category ' .. item.fuel_category)
+        pytech.insert_double_lookup(pytech.fuel_categories, item.fuel_category, item.name)
+    end
+
+    if item.place_result then
+        pytech.insert_double_lookup(pytech.placed_by, item.place_result, item.name)
+        pytech.pre_process_entity(pytech.get_prototype('entity', item.place_result))
+    end
+
+    if item.placed_as_equipment_result then
+        pytech.insert_double_lookup(pytech.placed_by, item.placed_as_equipment_result, item.name)
+    end
+
+    -- Fucking capsules
+    if item.type == 'capsule' and item.capsule_action.type == 'throw' then
+        -- log('Pre-process capsule: ' .. item.name)
+        local ap = item.capsule_action.attack_parameters
+
+        if ap.ammo_type and ap.ammo_type.action then
+            for _, a in pairs(ap.ammo_type.action) do
+                local ad = a.action_delivery
+                if ad.type then ad = { ad } end
+
+                for _, d in pairs(ad) do
+                    if d.type == 'projectile' then
+                        local pr_action = data.raw.projectile[d.projectile].action
+                        if pr_action and pr_action.type then pr_action = { pr_action } end
+
+                        for _, pr_a in pairs(pr_action or {}) do
+                            local pr_ad = pr_a.action_delivery
+                            if pr_ad.type then pr_ad = { pr_ad } end
+
+                            for _, pr_d in pairs(pr_ad or {}) do
+                                local te = pr_d.target_effects
+
+                                if te then
+                                    if te.type then te = { te } end
+
+                                    for _, tee in pairs(te) do
+                                        if tee.type == 'create-entity' then
+                                            -- log('Pre-process capsule: ' .. tee.entity_name .. ', item: ' .. item.name)
+                                            pytech.insert_double_lookup(pytech.placed_by, tee.entity_name, item.name)
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    if item.equipment_grid then
+        pytech.items_with_grid[item.name] = data.raw['equipment-grid'][item.equipment_grid]
+    end
+end
+
+
+function pytech.pre_process_fluid(fluid, temperature)
+    pytech.insert_double_lookup(pytech.fluids, fluid.name, temperature or fluid.default_temperature)
+
+    if fluid.fuel_value and util.parse_energy(fluid.fuel_value) > 0 then
+        pytech.insert_double_lookup(pytech.fuel_categories, fuel_fluid, fluid.name)
+    end
+end
+
+
+function pytech.pre_process_data_raw()
+    pytech.recipes = {}
+    pytech.fluids = {}
+    pytech.items = {}
+    pytech.entities = {}
+    pytech.mining_categories = {}
+    pytech.crafting_categories = {}
+    pytech.fuel_categories = {}
+    pytech.fuel_burners = {}
+    pytech.heat_temps = {}
+    pytech.placed_by = {}
+    pytech.items_with_grid = {}
+    pytech.entities_with_grid = {}
+
+    -- Starter entities
+    for e, _ in pairs(starting_entities) do
+        local entity =  pytech.get_prototype('entity', e, true)
+
+        if entity then
+            pytech.insert_double_lookup(pytech.placed_by, e, e)
+            pytech.pre_process_entity(entity)
+        end
+    end
+
+    -- Starter recipes
+    for _, recipe in pairs(data.raw.recipe) do
+        if (recipe.normal and recipe.normal.enabled ~= false) or (not recipe.normal and recipe.enabled ~= false) then
+            pytech.pre_process_recipe(recipe)
+        end
+    end
+
+    pytech.pre_process_techs()
+end
+
+
 -------------------------------------------------------------------------------
-pytech.init()
+pytech.pre_process_data_raw()
 pytech.parse_data_raw()
 pytech.calculate_prerequisites()
 pytech.cleanup()
-
---TODO: electricity
---TODO: heat
---TODO: rails - locos, wagons, stops need rails, signals need stops
---TODO: equipment need armor/vehicle with grid, equipment power, roboport-equipment needs robots
---TODO: bonuses need entities to apply to
---TODO: logistic system needs logi bots
---TODO: robots needs roboports
 
