@@ -1,3 +1,8 @@
+local Skipped_fluids =
+    {
+        hydrogen = true
+    }
+
 RECIPE {
     type = "recipe",
     name = "empty-jerry-can",
@@ -18,7 +23,7 @@ RECIPE {
 }:add_unlock("plastics")
 
 for f, fluid in pairs(data.raw.fluid) do
-    if fluid.fuel_value ~= nil then
+    if fluid.fuel_value ~= nil and Skipped_fluids[fluid.name] ~= true then
         local scale
         if fluid.icon_size == 32 then
             scale = .5
