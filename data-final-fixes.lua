@@ -21,3 +21,15 @@ end
 
 log(serpent.block(techs))
 ]]--
+
+for r,recipe in pairs(data.raw.recipe) do
+    if recipe.category == "combustion" then
+        local temp
+        for _,result in pairs(recipe.results) do
+            if result.name == "combustion-mixture1" then
+                temp = result.temperature
+            end
+        end
+        recipe.localised_name = {"recipe-name." .. recipe.name, temp}
+    end
+end
