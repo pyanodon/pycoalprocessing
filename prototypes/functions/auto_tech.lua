@@ -27,6 +27,9 @@ local l_bonus = '__bonus__'
 
 local starting_entities = table.array_to_dictionary({'character', 'crash-site-assembling-machine-1-repaired', 'crash-site-lab-repaired'}, true)
 local electricity_producers = table.array_to_dictionary({'generator', 'burner-generator', 'electric-energy-interface', 'solar-panel'}, true)
+local py_graphics_mods = table.array_to_dictionary({'__pyalienlifegraphics__', '__pyalienlifegraphics2__', '__pyalienlifegraphics3__',
+    '__pyalternativeenergygraphics__', '__pycoalprocessinggraphics__', '__pyfusionenergygraphics__', '__pyhightechgraphics__', '__pyindustry__',
+    '__pypetroleumhandlinggraphics__', '__pyraworesgraphics__'})
 
 pytech.fg = {} -- fuzzy graph
 pytech.processed_recipes = {}
@@ -220,6 +223,22 @@ function pytech.insert_double_lookup(tab, category, item)
         tab[category] = {}
     end
     tab[category][item] = true
+end
+
+
+function pytech.is_py_or_base_tech(tech)
+    local icons = tech.icons
+    if not icons then icons = {{ icon = tech.icon }} end
+
+    for _, icon in pairs(icons or {}) do
+        local mod = icon and table.first(string.split(icon.icon, '/'))
+
+        if not py_graphics_mods[mod] and mod ~= '__base__' and mod ~= '__core__' then
+            return false
+        end
+    end
+
+    return true
 end
 
 
@@ -892,6 +911,20 @@ function pytech.pre_process_techs()
                     end
 
                     table.insert(tech.dependencies, prev_tech)
+                end
+            end
+
+            if not pytech.is_py_or_base_tech(tech) then
+                for _, pre in pairs(tech.prerequisites or {}) do
+                    local pre_tech = data.raw.technology[pre]
+
+                    if not pytech.is_py_or_base_tech(pre_tech) then
+                        if not tech.dependencies then
+                            tech.dependencies = {}
+                        end
+    
+                        table.insert(tech.dependencies, pre)
+                    end
                 end
             end
         end
