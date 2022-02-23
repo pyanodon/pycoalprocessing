@@ -160,7 +160,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "n"
-}:add_unlock("logistic-science-pack")
+}:add_unlock("lab-instrument")
 
 RECIPE {
     type = "recipe",
@@ -180,7 +180,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items",
     order = "o"
-}:add_unlock("logistic-science-pack")
+}:add_unlock("lab-instrument")
 
 RECIPE {
     type = "recipe",
@@ -200,7 +200,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "f"
-}:add_unlock("logistic-science-pack")
+}:add_unlock("lab-instrument")
 
 RECIPE {
     type = "recipe",
@@ -220,7 +220,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-hpf",
     order = "e"
-}:add_unlock("logistic-science-pack")
+}:add_unlock("lab-instrument")
 
 RECIPE {
     type = "recipe",
