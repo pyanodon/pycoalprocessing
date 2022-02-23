@@ -11,7 +11,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "boric-acid", amount = 500}
     }
-}:add_unlock("logistic-science-pack")
+}:add_unlock("lab-instrument")
 
 FLUID {
     type = "fluid",

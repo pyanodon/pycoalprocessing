@@ -43,6 +43,7 @@ require('prototypes/technologies/ralesia')
 require('prototypes/technologies/ulric')
 require('prototypes/technologies/wood-processing')
 require('prototypes/technologies/wood-processing-2')
+require('prototypes/technologies/lab-instrument')
 
 require('prototypes/technologies/niobium')
 require('prototypes/technologies/nexelit')
