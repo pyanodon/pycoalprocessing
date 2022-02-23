@@ -22,6 +22,10 @@ local l_crafting_machine = '__crafting_machine__'
 local l_fuel = '__fuel__'
 
 local starting_entities = table.array_to_dictionary({'character', 'crash-site-assembling-machine-1-repaired', 'crash-site-lab-repaired'}, true)
+local electricity_producers = table.array_to_dictionary({'generator', 'burner-generator', 'electric-energy-interface', 'solar-panel'}, true)
+local py_graphics_mods = table.array_to_dictionary({'__pyalienlifegraphics__', '__pyalienlifegraphics2__', '__pyalienlifegraphics3__',
+    '__pyalternativeenergygraphics__', '__pycoalprocessinggraphics__', '__pyfusionenergygraphics__', '__pyhightechgraphics__', '__pyindustry__',
+    '__pypetroleumhandlinggraphics__', '__pyraworesgraphics__'})
 
 pytech.fg = {} -- fuzzy graph
 pytech.fluids = {}
