@@ -254,7 +254,7 @@ RECIPE {
         {type = "item", name = "logistic-science-pack", amount = 6}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-items",
     order = "a2"
 }--:add_unlock("coal-processing-1")
