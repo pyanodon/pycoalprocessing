@@ -78,3 +78,7 @@ data.raw.furnace["electric-furnace"].energy_usage = "1MW"
 data.raw.furnace["electric-furnace"].crafting_speed = 4
 data.raw.furnace["electric-furnace"].allowed_effects = nil
 data.raw.furnace["electric-furnace"].module_specification = nil
+
+-- Ash space updates
+data.raw.inserter["burner-inserter"].energy_source.burnt_inventory_size = 1
+data.raw["mining-drill"]["burner-mining-drill"].energy_source.burnt_inventory_size = 1
