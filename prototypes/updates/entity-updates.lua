@@ -82,3 +82,5 @@ data.raw.furnace["electric-furnace"].module_specification = nil
 -- Ash space updates
 data.raw.inserter["burner-inserter"].energy_source.burnt_inventory_size = 1
 data.raw["mining-drill"]["burner-mining-drill"].energy_source.burnt_inventory_size = 1
+data.raw.furnace["stone-furnace"].energy_source.burnt_inventory_size = 1
+data.raw.furnace["steel-furnace"].energy_source.burnt_inventory_size = 1
