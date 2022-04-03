@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/fuel-production-mk01.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"lubricant"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 100,

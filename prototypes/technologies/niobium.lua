@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/niobium.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {"crusher", "filtration"},
+    prerequisites = {},
     effects = {},
     unit = {
         count = 200,

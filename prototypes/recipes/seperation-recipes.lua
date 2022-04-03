@@ -135,7 +135,7 @@ RECIPE {
         {type = "fluid", name = "aromatics", amount = 50}
     },
     main_product = "aromatics",
-}:add_unlock("coal-processing-1")
+}:add_unlock("creosote")
 
 RECIPE {
     type = "recipe",

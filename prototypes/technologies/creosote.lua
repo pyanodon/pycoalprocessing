@@ -1,16 +1,15 @@
 TECHNOLOGY {
     type = "technology",
-    name = "lab-instrument",
+    name = "creosote",
     icon = "__pycoalprocessinggraphics__/graphics/missing_icon.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {},
     effects = {},
     unit = {
-        count = 100,
+        count = 20,
         ingredients = {
-            {"automation-science-pack", 1}
+            {"automation-science-pack", 1},
         },
-        time = 55
+        time = 50
     }
 }

@@ -52,6 +52,8 @@ require('prototypes/technologies/chromium')
 require("prototypes/technologies/organic-solvent")
 require("prototypes/technologies/mukmoux")
 require("prototypes/technologies/kevlar")
+require("prototypes/technologies/creosote")
+require("prototypes/technologies/coated-container")
 -- ))
 
 -- (( RESOURCEs ))--
@@ -244,17 +246,9 @@ if mods['pyrawores'] then
     require('prototypes/buildings/fluid-separator-mk03')
     require('prototypes/buildings/fluid-separator-mk04')
 
-    require('prototypes/buildings/fawogae-plantation-mk02')
-    require('prototypes/buildings/fawogae-plantation-mk03')
-    require('prototypes/buildings/fawogae-plantation-mk04')
-
     require('prototypes/buildings/borax-mine-mk02')
     require('prototypes/buildings/borax-mine-mk03')
     require('prototypes/buildings/borax-mine-mk04')
-
-    require('prototypes/buildings/ralesia-plantation-mk02')
-    require('prototypes/buildings/ralesia-plantation-mk03')
-    require('prototypes/buildings/ralesia-plantation-mk04')
 
     require('prototypes/buildings/jaw-crusher-mk02')
     require('prototypes/buildings/jaw-crusher-mk03')
@@ -287,8 +281,18 @@ if mods['pyrawores'] then
     require('prototypes/buildings/chemical-plant-mk02')
     require('prototypes/buildings/chemical-plant-mk03')
     require('prototypes/buildings/chemical-plant-mk04')
-
 end
+
+if mods['pyalienlife'] then
+    require('prototypes/buildings/fawogae-plantation-mk02')
+    require('prototypes/buildings/fawogae-plantation-mk03')
+    require('prototypes/buildings/fawogae-plantation-mk04')
+
+    require('prototypes/buildings/ralesia-plantation-mk02')
+    require('prototypes/buildings/ralesia-plantation-mk03')
+    require('prototypes/buildings/ralesia-plantation-mk04')
+end
+
 -- ))
 
 -- sprites
