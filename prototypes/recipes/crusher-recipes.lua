@@ -69,10 +69,10 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "stone", amount = 20}
+        {type = "item", name = "stone", amount = 4}
     },
     results = {
-        {type = "item", name = "gravel", amount = 15}
+        {type = "item", name = "gravel", amount = 3}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/crush-stone.png",
     icon_size = 32,
@@ -88,10 +88,10 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "gravel", amount = 20}
+        {type = "item", name = "gravel", amount = 4}
     },
     results = {
-        {type = "item", name = "sand", amount = 15}
+        {type = "item", name = "sand", amount = 3}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/crush-gravel.png",
     icon_size = 32,

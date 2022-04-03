@@ -23,7 +23,7 @@ RECIPE {
     results = {
         {"tar-processing-unit", 1}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("creosote")
 
 ITEM {
     type = "item",
