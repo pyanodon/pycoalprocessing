@@ -52,6 +52,8 @@ require('prototypes/technologies/chromium')
 require("prototypes/technologies/organic-solvent")
 require("prototypes/technologies/mukmoux")
 require("prototypes/technologies/kevlar")
+require("prototypes/technologies/creosote")
+require("prototypes/technologies/coated-container")
 -- ))
 
 -- (( RESOURCEs ))--

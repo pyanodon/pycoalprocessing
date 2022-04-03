@@ -14,7 +14,7 @@ RECIPE {
     results = {
         {"chemical-plant-mk01", 1}
     }
-}:add_unlock("coal-processing-2")
+}:add_unlock("filtration")
 
 ITEM {
     type = "item",

@@ -65,7 +65,7 @@ TECHNOLOGY("flammables"):set_fields{enabled = false}:set_fields{hidden = true}
 
 TECHNOLOGY("coal-liquefaction"):set_fields{enabled = false}:set_fields{hidden = true}
 
-TECHNOLOGY('lubricant'):remove_pack('chemical-science-pack')
+TECHNOLOGY('lubricant'):remove_pack('chemical-science-pack'):remove_prereq('advanced-oil-processing')
 
 TECHNOLOGY('advanced-oil-processing'):add_pack('production-science-pack')
 
