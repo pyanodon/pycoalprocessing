@@ -34,4 +34,47 @@ for r,recipe in pairs(data.raw.recipe) do
     end
 end
 
-require('prototypes/functions/auto_tech')
+local function create_tmp_tech(recipe, original_tech)
+    local new_tech = TECHNOLOGY {
+        type = "technology",
+        name = "tmp-" .. recipe .. "-tech",
+        icon = "__pycoalprocessinggraphics__/graphics/placeholder.png",
+        icon_size = 128,
+        order = "c-a",
+        prerequisites = {},
+        effects = {
+            { type = "unlock-recipe", recipe = recipe }
+        },
+        unit = {
+            count = 30,
+            ingredients = {
+                {"automation-science-pack", 1}
+            },
+            time = 30
+        }
+    }
+
+    if original_tech then
+        RECIPE(recipe):remove_unlock(original_tech)
+    end
+
+    return new_tech
+end
+
+
+-- TMP TECHS HERE --
+if mods["pyalienlife"] and mods["pyhightech"] then
+
+end
+
+
+----------------------------------------------------
+-- AUTO TECH script. Make sure it's the very last
+----------------------------------------------------
+-- require('prototypes/functions/auto_tech')
+----------------------------------------------------
+----------------------------------------------------
+
+-- tech-t\|(?!tmp).*: NOT EMPTY
+-- Restarting without science pack checks
+

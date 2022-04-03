@@ -20,6 +20,12 @@ local item_rocket_launch = '__launch__'
 local l_recipe_result = '__recipe_result__'
 local l_crafting_machine = '__crafting_machine__'
 local l_fuel = '__fuel__'
+local l_rail = '__rail__'
+local l_loco = '__loco__'
+local l_trainstop = '__trainstop__'
+local l_grid = '__grid__'
+local l_bonus = '__bonus__'
+local l_module = '__module__'
 
 local starting_entities = table.array_to_dictionary({'character', 'crash-site-assembling-machine-1-repaired', 'crash-site-lab-repaired'}, true)
 local electricity_producers = table.array_to_dictionary({'generator', 'burner-generator', 'electric-energy-interface', 'solar-panel'}, true)
@@ -224,6 +230,7 @@ end
 
 
 function pytech.is_py_or_base_tech(tech)
+    -- log('is_py_or_base_tech: ' .. tech.name)
     local icons = tech.icons
     if not icons then icons = {{ icon = tech.icon }} end
 
@@ -270,7 +277,7 @@ function pytech.parse_tech(tech)
         local inputs = table.array_to_dictionary(lab.inputs)
 
         if table.all(packs, function(p) return inputs[p] end) then
-            for item, _ in pairs(pytech.placed_by[lab.name]) do
+            for item, _ in pairs(pytech.placed_by[lab.name] or {}) do
                 local item_node = pytech.fg_get_node(item, nt_item)
                 pytech.fg_add_fuzzy_link(item_node, node, l_crafting_machine)
             end
@@ -582,10 +589,12 @@ function pytech.parse_recipe(tech_name, recipe, no_crafting)
             end
         end
 
-        if not found then
+        if not found and not recipe.ignore_for_dependencies then
             error('ERROR: Missing crafting category: ' .. category .. ' (ingredients: ' .. ing_count .. ', fluids in: ' .. fluid_in .. ', fluids out:' .. fluid_out .. '), for ' .. recipe.name, 0)
         end
     end
+
+    pytech.add_module_dependencies(node, recipe)
 
     return node
 end
@@ -620,6 +629,23 @@ function pytech.add_fuel_dependencies(child_node, item)
                     local fuel_node = pytech.parse_fluid(nil, temp, fuel_heat)
                     pytech.fg_add_fuzzy_link(fuel_node, child_node, l_fuel)
                 end
+            end
+        end
+    end
+end
+
+
+function pytech.add_module_dependencies(node, recipe)
+    -- log('add_module_dependencies (recipe_node: ' .. node.key)
+    local category = data.raw['recipe-category'][recipe.category or 'crafting']
+
+    if category.modules_required and category.allowed_module_categories then
+        node.fz_parents[l_module] = {}
+
+        for _, mod_cat in pairs(category.allowed_module_categories) do
+            for module, _ in pairs(pytech.module_categories[mod_cat]) do
+                local n_module = pytech.fg_get_node(module, nt_item)
+                pytech.fg_add_fuzzy_link(n_module, node, l_module)
             end
         end
     end
@@ -919,7 +945,7 @@ function pytech.pre_process_techs()
                         if not tech.dependencies then
                             tech.dependencies = {}
                         end
-    
+
                         table.insert(tech.dependencies, pre)
                     end
                 end
@@ -1074,6 +1100,48 @@ function pytech.pre_process_fuzzy_graph()
             pytech.fg_remove_node(node)
         end
     end
+
+    for _, node in pairs(pytech.fg) do
+        if node.factorio_name and (node.type == nt_item or node.type == nt_fluid)  then
+            local parent_found = false
+
+            if not table.is_empty(node.parents) then
+                parent_found = true
+            else
+                for _, fz in pairs(node.fz_parents or {}) do
+                    if not table.is_empty(fz) then
+                        parent_found = true
+                        break
+                    end
+                end
+            end
+
+            local child_found = false
+
+            for _, child in pairs(node.children or {}) do
+                if not child.ignore_for_dependencies then
+                    child_found = true
+                    break
+                end
+            end
+
+            for _, fz in pairs(node.fz_children or {}) do
+                for _, child in pairs(fz or {}) do
+                    if not child.ignore_for_dependencies then
+                        child_found = true
+                        break
+                    end
+                end
+
+                if child_found then break end
+            end
+
+            if child_found and not parent_found then
+                log('ERROR: Item/fluid has no parent: ' .. node.key)
+                log(serpent.block(node, { maxlevel = 3 }))
+            end
+        end
+    end
 end
 
 
@@ -1198,12 +1266,12 @@ function pytech.topological_sort()
             end
 
             for key, node in pairs(current_set) do
-                -- log(level .. ' - ' .. node.key)
+                log(level .. ' - ' .. node.key)
                 starting_set[key] = nil
                 local found = false
 
                 if node.type == nt_item and pytech.science_packs[node.name] then
-                    -- log('Science pack: ' .. node.name)
+                    log('Science pack: ' .. node.name)
                     -- log('  - ' .. serpent.block(node, {maxlevel=3 , keyignore = {main_node = true, children = true}}))
 
                     if not ignore_science_packs and not sp_processed[node.name] then
@@ -1230,7 +1298,7 @@ function pytech.topological_sort()
                                     local tech_node = pytech.fg_get_node(tech_name, nt_tech_tail)
 
                                     if others_sorted and not sorted_set[tech_node.key] and not node.parents[tech_node.key] then
-                                        -- log('      - adding virt tech prereq: ' .. tech_node.key)
+                                        log('      - adding virt tech prereq: ' .. tech_node.key)
                                         pytech.fg_add_link(tech_node, node)
                                         node.incoming[tech_node.key] = { tech_node }
                                         sp_virt_links[node.name][tech_name] = tech_node
@@ -1282,13 +1350,13 @@ function pytech.topological_sort()
 
                         if not sorted_set[child.key] then
                             if table.is_empty(child.incoming) then
-                                -- log(child.key .. ': EMPTY')
+                                log(child.key .. ': EMPTY')
                                 starting_set[child.key] = child
                             else
-                                -- log(child.key .. ': NOT EMPTY')
-                                -- for ikey, _ in pairs(child.incoming) do
-                                --     log(' - ' .. ikey)
-                                -- end
+                                log(child.key .. ': NOT EMPTY')
+                                for ikey, _ in pairs(child.incoming) do
+                                    log(' - ' .. ikey)
+                                end
                             end
                         end
                     end
@@ -1298,11 +1366,11 @@ function pytech.topological_sort()
             level = level + 1
         end
 
-        if table_size(table.filter(sorted_set, function(n) return not n.virtual end)) < table_size(table.filter(pytech.fg, function(n) return not n.virtual end))
+        if table_size(table.filter(sorted_set, function(n) return not n.virtual and not n.ignore_for_dependencies end)) < table_size(table.filter(pytech.fg, function(n) return not n.virtual and not n.ignore_for_dependencies end))
         then
             if not ignore_science_packs then
                 ignore_science_packs = true
-                -- log('Restarting without science pack checks')
+                log('Restarting without science pack checks')
 
                 for sp_name, t in pairs(sp_virt_links) do
                     local node = pytech.fg_get_node(sp_name, nt_item)
@@ -1358,6 +1426,13 @@ end
 function pytech.find_dependency_loop(sorted_set)
     log('START find_dependency_loop')
 
+    for _, node in pairs(pytech.fg) do
+        if not sorted_set[node.key] and not node.virtual and not node.ignore_for_dependencies then
+            log(' - ' .. node.key)
+        end
+    end
+
+    if true then return end
     -- log('\n=====================================================================================')
     -- log('  - ' .. serpent.block(pytech.fg_get_node('chemical-science-pack', nt_item), {maxlevel=3 , keyignore = {main_node = true, children = true}}))
 
@@ -1709,6 +1784,123 @@ function pytech.init()
     pytech.init_fuel_categories()
     pytech.init_fuel_burners()
 end
+
+
+function pytech.pre_process_item(item)
+    if pytech.items[item.name] then
+        return
+    end
+
+    pytech.items[item.name] = item
+
+    if item.fuel_category and item.fuel_value and util.parse_energy(item.fuel_value) > 0 and not table.any(item.flags or {}, function(v) return v == 'hidden' end) then
+        -- log('Adding item ' .. item.name .. ' to fuel category ' .. item.fuel_category)
+        pytech.insert_double_lookup(pytech.fuel_categories, item.fuel_category, item.name)
+    end
+
+    if item.place_result then
+        pytech.insert_double_lookup(pytech.placed_by, item.place_result, item.name)
+        pytech.pre_process_entity(pytech.get_prototype('entity', item.place_result))
+    end
+
+    if item.placed_as_equipment_result then
+        pytech.insert_double_lookup(pytech.placed_by, item.placed_as_equipment_result, item.name)
+    end
+
+    if item.type == 'module' then
+        pytech.insert_double_lookup(pytech.module_categories, item.category, item.name)
+    end
+
+    -- Fucking capsules
+    if item.type == 'capsule' and item.capsule_action.type == 'throw' then
+        -- log('Pre-process capsule: ' .. item.name)
+        local ap = item.capsule_action.attack_parameters
+
+        if ap.ammo_type and ap.ammo_type.action then
+            for _, a in pairs(ap.ammo_type.action) do
+                local ad = a.action_delivery
+                if ad.type then ad = { ad } end
+
+                for _, d in pairs(ad) do
+                    if d.type == 'projectile' then
+                        local pr_action = data.raw.projectile[d.projectile].action
+                        if pr_action and pr_action.type then pr_action = { pr_action } end
+
+                        for _, pr_a in pairs(pr_action or {}) do
+                            local pr_ad = pr_a.action_delivery
+                            if pr_ad.type then pr_ad = { pr_ad } end
+
+                            for _, pr_d in pairs(pr_ad or {}) do
+                                local te = pr_d.target_effects
+
+                                if te then
+                                    if te.type then te = { te } end
+
+                                    for _, tee in pairs(te) do
+                                        if tee.type == 'create-entity' then
+                                            -- log('Pre-process capsule: ' .. tee.entity_name .. ', item: ' .. item.name)
+                                            pytech.insert_double_lookup(pytech.placed_by, tee.entity_name, item.name)
+                                        end
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    if item.equipment_grid then
+        pytech.items_with_grid[item.name] = data.raw['equipment-grid'][item.equipment_grid]
+    end
+end
+
+
+function pytech.pre_process_fluid(fluid, temperature)
+    pytech.insert_double_lookup(pytech.fluids, fluid.name, temperature or fluid.default_temperature)
+
+    if fluid.fuel_value and util.parse_energy(fluid.fuel_value) > 0 then
+        pytech.insert_double_lookup(pytech.fuel_categories, fuel_fluid, fluid.name)
+    end
+end
+
+
+function pytech.pre_process_data_raw()
+    pytech.recipes = {}
+    pytech.fluids = {}
+    pytech.items = {}
+    pytech.entities = {}
+    pytech.mining_categories = {}
+    pytech.crafting_categories = {}
+    pytech.module_categories = {}
+    pytech.fuel_categories = {}
+    pytech.fuel_burners = {}
+    pytech.heat_temps = {}
+    pytech.placed_by = {}
+    pytech.items_with_grid = {}
+    pytech.entities_with_grid = {}
+
+    -- Starter entities
+    for e, _ in pairs(starting_entities) do
+        local entity =  pytech.get_prototype('entity', e, true)
+
+        if entity then
+            pytech.insert_double_lookup(pytech.placed_by, e, e)
+            pytech.pre_process_entity(entity)
+        end
+    end
+
+    -- Starter recipes
+    for _, recipe in pairs(data.raw.recipe) do
+        if (recipe.normal and recipe.normal.enabled ~= false) or (not recipe.normal and recipe.enabled ~= false) then
+            pytech.pre_process_recipe(recipe)
+        end
+    end
+
+    pytech.pre_process_techs()
+end
+
 
 -------------------------------------------------------------------------------
 pytech.init()
