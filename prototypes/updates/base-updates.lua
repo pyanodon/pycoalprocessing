@@ -199,7 +199,7 @@ RECIPE{
     {
         {type = "item", name = "small-electric-pole", amount = 3}
     }
-}:add_unlock("wood-processing")
+}:add_unlock("creosote")
 
 RECIPE{
   type = "recipe",

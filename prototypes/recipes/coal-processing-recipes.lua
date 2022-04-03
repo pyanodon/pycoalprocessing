@@ -490,7 +490,7 @@ RECIPE {
     results = {
         {type = "item", name = "treated-wood", amount = 2}
     }
-}:add_unlock("wood-processing")
+}:add_unlock("creosote")
 
 --)) Coal Processing 1 ((--
 
