@@ -1,7 +1,7 @@
 TECHNOLOGY {
     type = "technology",
     name = "coated-container",
-    icon = "__pycoalprocessinggraphics__/graphics/missing_icon.png",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/coated-container.png",
     icon_size = 128,
     order = "c-a",
     effects = {
