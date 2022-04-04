@@ -74,11 +74,11 @@ RECIPE('oil-refinery'):remove_unlock('oil-processing'):add_unlock('plastics')
 RECIPE('plastic-bar'):remove_unlock('plastics'):set_fields{hidden = true}
 
 --moving solid fuels
-RECIPE("solid-fuel-from-petroleum-gas"):remove_unlock("oil-processing")
+RECIPE("solid-fuel-from-petroleum-gas"):remove_unlock("oil-processing"):set_fields{ hidden = true }
 
-RECIPE('solid-fuel-from-heavy-oil'):remove_unlock('advanced-oil-processing')
+RECIPE('solid-fuel-from-heavy-oil'):remove_unlock('advanced-oil-processing'):set_fields{ hidden = true }
 
-RECIPE('solid-fuel-from-light-oil'):remove_unlock('advanced-oil-processing')
+RECIPE('solid-fuel-from-light-oil'):remove_unlock('advanced-oil-processing'):set_fields{ hidden = true }
 
 RECIPE("sulfur"):remove_unlock('sulfur-processing'):set_fields{ hidden = true }
 
