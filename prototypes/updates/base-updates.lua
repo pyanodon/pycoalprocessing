@@ -481,7 +481,7 @@ RECIPE {
 
   --add ash to burnt results for chemical fuel items
   for i, item in pairs(data.raw.item) do
-    if item.fuel_category ~= nil and item.fuel_category == "chemical" then
+    if item.fuel_category ~= nil and item.fuel_category == "chemical" and item.name ~= "active-carbon" then
       data.raw.item[item.name].burnt_result = "ash"
     end
   end

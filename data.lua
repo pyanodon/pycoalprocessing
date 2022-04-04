@@ -76,9 +76,7 @@ require('prototypes/recipes/tailings-recipes')
 require("prototypes/recipes/filtration-recipes")
 require("prototypes/recipes/mukmoux-recipes")
 
-
 require("prototypes/updates/entity-updates")
-require('prototypes/updates/base-updates')
 
 -- ))
 
