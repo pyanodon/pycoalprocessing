@@ -1,6 +1,7 @@
 
 --modify steam engine temp
 data.raw.generator['steam-engine'].maximum_temperature = 500
+data.raw.generator['steam-engine'].destroy_non_fuel_fluid = false
 
 --modify boiler to produce more water
 data.raw.boiler.boiler.target_temperature = 250
@@ -12,6 +13,7 @@ data.raw.boiler.boiler.energy_source.burnt_inventory_size = 1
 data.raw.generator['steam-turbine'].maximum_temperature = 2000
 data.raw.generator['steam-turbine'].fluid_usage_per_tick = 1
 data.raw.generator['steam-turbine'].effectivity = 10
+data.raw.generator['steam-turbine'].destroy_non_fuel_fluid = false
 
 --increase steam max temp
 data.raw.fluid["steam"].max_temperature = 2000

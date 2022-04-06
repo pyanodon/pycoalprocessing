@@ -89,6 +89,7 @@ ENTITY {
     effectivity = 1,
     fluid_usage_per_tick = 1.5,
     maximum_temperature = 3000,
+    destroy_non_fuel_fluid = false,
     resistances = {
         {
             type = "fire",
