@@ -24,7 +24,7 @@ RECIPE {
         {"electric-engine-unit", 1},
         {"processing-unit", 10},
         {"treated-wood", 20}, --pyht fiberboard
-        {"pipe", 20},
+        {"niobium-pipe", 20},
     },
     results = {
         {"fawogae-plantation-mk03", 1}

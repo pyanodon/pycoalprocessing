@@ -7,7 +7,7 @@ RECIPE {
         {"sand-extractor-mk02", 1},
         {"processing-unit", 5},
         {"niobium-plate", 20},
-        {"pipe", 10},
+        {"niobium-pipe", 10},
         {"electric-engine-unit", 1},
         {"kevlar", 10}
     },

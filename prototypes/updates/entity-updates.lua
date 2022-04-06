@@ -86,3 +86,15 @@ data.raw.inserter["burner-inserter"].energy_source.burnt_inventory_size = 1
 data.raw["mining-drill"]["burner-mining-drill"].energy_source.burnt_inventory_size = 1
 data.raw.furnace["stone-furnace"].energy_source.burnt_inventory_size = 1
 data.raw.furnace["steel-furnace"].energy_source.burnt_inventory_size = 1
+
+
+data.raw.car.car.burner.fuel_category = nil
+data.raw.car.car.burner.fuel_categories = {"jerry", "chemical"}
+data.raw.car.car.burner.burnt_inventory_size = data.raw.car.car.burner.fuel_inventory_size
+data.raw.car.tank.burner.fuel_category = nil
+data.raw.car.tank.burner.fuel_categories = {"jerry", "chemical"}
+data.raw.car.tank.burner.burnt_inventory_size = data.raw.car.tank.burner.fuel_inventory_size
+--data.raw.locomotive.locomotive.burner.fuel_category = nil
+--data.raw.locomotive.locomotive.burner.fuel_categories = {"jerry", "chemical"}
+data.raw.locomotive.locomotive.burner.burnt_inventory_size = data.raw.locomotive.locomotive.burner.fuel_inventory_size
+

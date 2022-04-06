@@ -8,9 +8,6 @@ require('prototypes/item-groups')
 require('prototypes/recipe-categories')
 -- ))
 
---placeholder for all the unorganized shit.
-require('prototypes/technologies/placeholder')
-
 -- (( Technology ))--
 require('prototypes/technologies/coal-processing-1')
 require('prototypes/technologies/coal-processing-2')
@@ -75,8 +72,9 @@ require('prototypes/recipes/sand-extractor-recipes')
 require('prototypes/recipes/tailings-recipes')
 require("prototypes/recipes/filtration-recipes")
 require("prototypes/recipes/mukmoux-recipes")
-
-require("prototypes/updates/entity-updates")
+require("prototypes/recipes/base-overrides")
+require("prototypes/recipes/fuel-canister-recipes")
+require("prototypes/recipes/advanced-foundry-recipes")
 
 -- ))
 

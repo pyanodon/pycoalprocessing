@@ -17,7 +17,7 @@ RECIPE {
         {"electric-engine-unit", 1},
         {"kevlar", 10},
         {"processing-unit", 5},
-        {"pipe", 10},
+        {"niobium-pipe", 10},
     },
     results = {
         {"hpf-mk03", 1}

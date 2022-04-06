@@ -2,10 +2,7 @@ require("__stdlib__/stdlib/data/data").Util.create_data_globals()
 local FUN = require("prototypes/functions/functions")
 
 require('prototypes/updates/base-updates')
-
-require("prototypes/updates/recipe-updates")
-
-require("prototypes/recipes/fuel-canister-recipes")
+require("prototypes/updates/entity-updates")
 
 --FLUID('steam'):set('heat_capacity', '0.05KJ')
 
@@ -51,20 +48,6 @@ table.insert(data.raw["assembling-machine"]["chemical-plant"].flags, "hidden")
 ITEM("chemical-plant"):add_flag("hidden")
 
 RECIPE("pump"):remove_unlock("fluid-handling"):add_unlock("engine")
-
---RECIPE("wood"):set_fields {energy_required = 10}
-
---recipe updates
-RECIPE("distilator-mk03"):replace_ingredient("pipe", "niobium-pipe")
-RECIPE("carbon-filter-mk03"):replace_ingredient("pipe", "niobium-pipe")
-RECIPE("quenching-tower-mk03"):replace_ingredient("pipe", "niobium-pipe")
-RECIPE("hpf-mk03"):replace_ingredient("pipe", "niobium-pipe")
-RECIPE("solid-separator-mk03"):replace_ingredient("pipe", "niobium-pipe")
-RECIPE("fluid-separator-mk04"):replace_ingredient("pipe", "niobium-pipe")
-RECIPE("fawogae-plantation-mk03"):replace_ingredient("pipe", "niobium-pipe")
-RECIPE("sand-extractor-mk03"):replace_ingredient("pipe", "niobium-pipe")
-
-require("prototypes/recipes/advanced-foundry-recipes")
 
 --remove base game oil processing stuff
 require("prototypes/updates/base-oil")
