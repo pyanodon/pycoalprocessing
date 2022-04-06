@@ -49,6 +49,8 @@ ITEM("chemical-plant"):add_flag("hidden")
 
 RECIPE("pump"):remove_unlock("fluid-handling"):add_unlock("engine")
 
+require("prototypes/recipes/fuel-canister-recipes")
+
 --remove base game oil processing stuff
 require("prototypes/updates/base-oil")
 

@@ -50,7 +50,6 @@ require("prototypes/technologies/organic-solvent")
 require("prototypes/technologies/mukmoux")
 require("prototypes/technologies/kevlar")
 require("prototypes/technologies/creosote")
-require("prototypes/technologies/coated-container")
 -- ))
 
 -- (( RESOURCEs ))--
@@ -73,7 +72,6 @@ require('prototypes/recipes/tailings-recipes')
 require("prototypes/recipes/filtration-recipes")
 require("prototypes/recipes/mukmoux-recipes")
 require("prototypes/recipes/base-overrides")
-require("prototypes/recipes/fuel-canister-recipes")
 require("prototypes/recipes/advanced-foundry-recipes")
 
 -- ))
