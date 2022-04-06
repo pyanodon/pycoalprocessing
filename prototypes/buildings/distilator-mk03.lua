@@ -9,7 +9,7 @@ RECIPE {
         {"steel-plate", 15},
         {"niobium-plate", 20},
         {"processing-unit", 5},
-        {"pipe", 15},
+        {"niobium-pipe", 15},
     },
     results = {
         {"distilator-mk03", 1}

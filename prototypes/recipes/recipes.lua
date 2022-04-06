@@ -58,7 +58,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-washer",
     order = "c"
-}--:add_unlock('filtration')
+}
 
 RECIPE {
     type = "recipe",
@@ -185,7 +185,7 @@ RECIPE {
     ingredients = {
         {type = "item", name = "optical-fiber", amount = 10},
         {type = "item", name = "advanced-circuit", amount = 2},
-        {type = "item", name = "copper-cable", amount = 16}, --bob insulated-cable
+        {type = "item", name = "copper-cable", amount = 16},
         {type = "item", name = "iron-plate", amount = 20},
         {type = "item", name = "nexelit-plate", amount = 20}
     },
@@ -196,7 +196,7 @@ RECIPE {
     icon_size = 64,
     subgroup = "py-items",
     order = "a3"
-}--:add_unlock("chemical-science-pack")
+}
 
 RECIPE {
     type = "recipe",
@@ -238,7 +238,7 @@ RECIPE {
     order = "f"
 }:add_unlock("biofilm")
 
--- Kinda useless in pycoal
+-- Kinda useless in pycoal TODO
 RECIPE {
     type = "recipe",
     name = "filtration-dirty-water",
@@ -258,8 +258,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "g"
-}--:add_unlock("placeholder")
-
+}
 
 RECIPE {
     type = "recipe",
@@ -336,7 +335,7 @@ RECIPE {
         {type = "fluid", name = "syngas", amount = 40}
     },
     results = {
-        {type = "fluid", name = "crude-oil", amount = 70} --bobs rubber
+        {type = "fluid", name = "crude-oil", amount = 70}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics-rubber.png",
     icon_size = 32,
@@ -372,7 +371,7 @@ RECIPE {
     energy_required = 5,
     ingredients = {
         {type = "item", name = "sulfur", amount = 20},
-        {type = "item", name = "copper-ore", amount = 60}, --bobs sodium-hydroxide
+        {type = "item", name = "copper-ore", amount = 60},
         {type = "item", name = "steel-plate", amount = 1},
         {type = "item", name = "chromium", amount = 1}
     },
@@ -474,7 +473,7 @@ RECIPE {
     enabled = false,
     energy_required = 4,
     ingredients = {
-        {type = "fluid", name = "water", amount = 500}, --Added Bob hydrogen
+        {type = "fluid", name = "water", amount = 500},
         {type = "fluid", name = "aromatics", amount = 50}
     },
     results = {
@@ -567,7 +566,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "copper-coating",
-    category = "chemistry", --bob electrolysis
+    category = "chemistry",
     enabled = false,
     energy_required = 3.0,
     ingredients = {
@@ -663,8 +662,7 @@ RECIPE {
         {type = "fluid", name = "sulfuric-acid", amount = 50}
     },
     main_product = "sulfuric-acid",
-    --subgroup = "py-mill",
-}--:add_unlock("sulfur-processing") --already added by base
+}
 
 RECIPE {
     type = "recipe",
@@ -682,3 +680,18 @@ RECIPE {
     main_product = "powdered-quartz",
     subgroup = "py-items",
 }:add_unlock("advanced-material-processing")
+
+RECIPE {
+    type = "recipe",
+    name = "small-electric-pole-2",
+    category = "crafting",
+    enabled = false,
+    energy_required = 2,
+    ingredients = {
+        {type = "item", name = "treated-wood", amount = 3},
+        {type = "item", name = "copper-cable", amount = 3},
+    },
+    results = {
+        {type = "item", name = "small-electric-pole", amount = 3}
+    }
+}:add_unlock("creosote")
