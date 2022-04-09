@@ -62,6 +62,24 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
+    name = "muddy-sludge",
+    category = "washer",
+    enabled = true,
+    energy_required = 4,
+    ingredients = {
+        {type = "item", name = "soil", amount = 10},
+        {type = "fluid", name = "water", amount = 100}
+    },
+    results = {
+        {type = "fluid", name = "dirty-water-light", amount = 100}
+    },
+    -- main_product = "sand",
+    subgroup = "py-washer",
+    order = "c"
+}
+
+RECIPE {
+    type = "recipe",
     name = "sand-washing",
     category = "washer",
     enabled = false,
