@@ -182,7 +182,7 @@ function pytech.get_prototype(parent_type, prototype_name, no_error)
     end
 
     if not prototype and not no_error then
-        error('ERROR: Prototype not found: ' .. parent_type .. ' / ' .. prototype_name, 0)
+        error('\n\nERROR: Prototype not found: ' .. parent_type .. ' / ' .. prototype_name .. '\n', 0)
     end
 
     return prototype
@@ -588,7 +588,7 @@ function pytech.parse_recipe(tech_name, recipe, no_crafting)
         end
 
         if not found and not recipe.ignore_for_dependencies then
-            error('ERROR: Missing crafting category: ' .. category .. ' (ingredients: ' .. ing_count .. ', fluids in: ' .. fluid_in .. ', fluids out:' .. fluid_out .. '), for ' .. recipe.name, 0)
+            error('\n\nERROR: Missing crafting category: ' .. category .. ' (ingredients: ' .. ing_count .. ', fluids in: ' .. fluid_in .. ', fluids out:' .. fluid_out .. '), for ' .. recipe.name .. '\n', 0)
         end
     end
 
@@ -725,7 +725,7 @@ function pytech.add_mining_recipe(entity)
         local category = entity.category or 'basic-solid'
 
         if not pytech.mining_categories[category] then
-            error('ERROR: Missing mining category: ' .. category .. ', for ' .. entity.name, 0)
+            error('\n\nERROR: Missing mining category: ' .. category .. ', for ' .. entity.name .. '\n', 0)
         end
 
         if pytech.mining_categories[category] then
@@ -1115,18 +1115,21 @@ function pytech.pre_process_fuzzy_graph()
             end
 
             local child_found = false
+            local child_key
 
-            for _, child in pairs(node.children or {}) do
-                if not child.ignore_for_dependencies then
+            for key, child in pairs(node.children or {}) do
+                if child and not child.ignore_for_dependencies then
                     child_found = true
+                    child_key = key
                     break
                 end
             end
 
             for _, fz in pairs(node.fz_children or {}) do
-                for _, child in pairs(fz or {}) do
+                for key, child in pairs(fz or {}) do
                     if not child.ignore_for_dependencies then
                         child_found = true
+                        child_key = key
                         break
                     end
                 end
@@ -1135,7 +1138,7 @@ function pytech.pre_process_fuzzy_graph()
             end
 
             if child_found and not parent_found then
-                log('ERROR: Item/fluid has no parent: ' .. node.key)
+                error('\n\nERROR: Item/fluid has no source: ' .. node.key .. ' used in: ' .. child_key .. '\n')
                 log(serpent.block(node, { maxlevel = 3 }))
             end
         end
