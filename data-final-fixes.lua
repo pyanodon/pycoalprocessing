@@ -71,7 +71,7 @@ end
 ----------------------------------------------------
 -- AUTO TECH script. Make sure it's the very last
 ----------------------------------------------------
- require('prototypes/functions/auto_tech')
+-- require('prototypes/functions/auto_tech')
 ----------------------------------------------------
 ----------------------------------------------------
 
