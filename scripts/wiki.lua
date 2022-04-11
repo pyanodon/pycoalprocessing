@@ -1,16 +1,16 @@
 local Event = require('__stdlib__/stdlib/event/event')
 
 local pyal_wiki
-local pyal_faq_wiki
+--local pyal_faq_wiki
 
 if script.active_mods['pyalienlife'] then
     pyal_wiki = require('__pyalienlife__/wiki/biomass')
-    pyal_faq_wiki = require('__pyalienlife__/wiki/turd')
+    --pyal_faq_wiki = require('__pyalienlife__/wiki/turd')
 end
 
-local pyph_wiki
+--local pyph_wiki
 
-if script.active_mods['pypetroleumhandling'] then pyph_wiki = require('__pypetroleumhandling__/wiki/oil') end
+--if script.active_mods['pypetroleumhandling'] then pyph_wiki = require('__pypetroleumhandling__/wiki/oil') end
 
 local function on_init()
     global.wiki = {}
@@ -37,6 +37,7 @@ local function on_init()
     global.have_gui = false
     global.topics = {}
     global.titles = {}
+    --[[
     if script.active_mods['pypetroleumhandling'] then
         global.topics[pyph_wiki.title] = pyph_wiki.body
         -- log(serpent.block(global.topics))
@@ -47,6 +48,7 @@ local function on_init()
         global.topics[pyal_faq_wiki.title] = pyal_faq_wiki.body
         table.insert(global.titles, pyal_faq_wiki.title)
     end
+    ]]--
     table.sort(global.topics)
 end
 Event.register(Event.core_events.init_and_config, on_init)
@@ -75,6 +77,7 @@ local function on_1th_tick()
 end
 Event.register(-1, on_1th_tick)
 
+--[[
 local function faq(wiki)
 
     local faq_main = wiki.add({type = 'flow', name = 'faq_flow', direction = 'horizontal'})
@@ -91,6 +94,7 @@ local function faq(wiki)
     end
     return faq_main
 end
+]]--
 
 local function topic(tab, button)
     if tab.body_frame ~= nil then
@@ -165,7 +169,7 @@ local function on_click(event)
 
             local tab1 = wiki_pane.add({type = 'tab', name = 'faq_tab', caption = 'FAQ'})
 
-            local test_label = faq(wiki_pane)
+            --local test_label = faq(wiki_pane)
 
             local tab2 = wiki_pane.add({type = 'tab', name = 'fluid_tab', caption = 'Fluid Fuel Values'})
             local tab_fluids = wiki_pane.add{
@@ -203,7 +207,7 @@ local function on_click(event)
                 direction = 'vertical'
             }
 
-            wiki_pane.add_tab(tab1, test_label)
+            --wiki_pane.add_tab(tab1, test_label)
             wiki_pane.add_tab(tab2, tab_fluids)
             wiki_pane.add_tab(tab3, tab_items)
             wiki_pane.add_tab(tab4, tab_gasvent)

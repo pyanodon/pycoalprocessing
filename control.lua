@@ -62,4 +62,4 @@ end
 Event.register(defines.events.on_research_finished, game_finish.on_research_finished)
 
 
---require("scripts/wiki")
+require("scripts/wiki")
