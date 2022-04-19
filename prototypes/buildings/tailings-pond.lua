@@ -21,7 +21,7 @@ ITEM {
     subgroup = 'coal-processing',
     order = 'z',
     place_result = 'tailings-pond',
-    stack_size = 50
+    stack_size = 500
 }
 
 ENTITY {

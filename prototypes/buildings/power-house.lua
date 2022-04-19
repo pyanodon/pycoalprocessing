@@ -51,7 +51,7 @@ ITEM {
     subgroup = "py-cp-buildings-mk01",
     order = "t",
     place_result = "power-house",
-    stack_size = 5
+    stack_size = 10
 }
 
 ENTITY {

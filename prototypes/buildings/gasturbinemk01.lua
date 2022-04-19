@@ -24,7 +24,7 @@ ITEM {
     subgroup = "py-power",
     order = "a-d[gasturbinemk01]",
     place_result = "gasturbinemk01",
-    stack_size = 15
+    stack_size = 10
 }
 
 ENTITY {

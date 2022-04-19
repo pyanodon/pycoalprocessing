@@ -49,7 +49,7 @@ ITEM {
     subgroup = "py-cp-buildings-mk04",
     order = "t",
     place_result = "power-house-mk04",
-    stack_size = 5
+    stack_size = 10
 }
 
 ENTITY {

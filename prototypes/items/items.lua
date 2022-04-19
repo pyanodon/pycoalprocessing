@@ -17,7 +17,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "chromium",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -28,7 +28,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "gravel",
-    stack_size = 300
+    stack_size = 500
 }
 
 ITEM {
@@ -52,7 +52,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "nichrome",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -63,7 +63,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "iron-oxide",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -76,7 +76,7 @@ ITEM {
     flags = {},
     subgroup = "py-items-hpf",
     order = "hpf-[active-carbon]",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -87,7 +87,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "zinc-chloride",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -128,7 +128,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 300
+    stack_size = 500
 }
 
 ITEM {
@@ -141,7 +141,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -174,7 +174,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "limestone",
-    stack_size = 300
+    stack_size = 500
 }
 
 ITEM {
@@ -185,7 +185,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "organics",
-    stack_size = 300,
+    stack_size = 500,
     fuel_value = "2MJ",
     fuel_category = "biomass",
 }
@@ -244,7 +244,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "nexelit-plate",
-    stack_size = 300
+    stack_size = 500
 }
 
 ITEM {
@@ -255,7 +255,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "sand-casting",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -266,7 +266,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -277,7 +277,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -288,7 +288,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -299,7 +299,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -312,7 +312,7 @@ ITEM {
     flags = {},
     subgroup = "py-items-hpf",
     order = "hpf-[active-carbon]",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -323,7 +323,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "z",
-    stack_size = 300
+    stack_size = 500
 }
 
 ITEM {
@@ -334,7 +334,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -354,7 +354,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 50
+    stack_size = 500
 }
 
 ITEM {
@@ -384,7 +384,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -403,7 +403,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -425,7 +425,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -436,7 +436,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -447,7 +447,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -458,7 +458,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -469,7 +469,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -496,7 +496,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -507,7 +507,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -518,7 +518,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -529,7 +529,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -558,7 +558,7 @@ ITEM {
     icon_size = 32,
     flags = {},
     subgroup = "py-crusher",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -569,7 +569,7 @@ ITEM {
     flags = {},
     subgroup = "py-mill",
     --order = "g",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -580,7 +580,7 @@ ITEM {
     flags = {},
     subgroup = "py-items-class",
     order = "d",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -591,7 +591,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 50
+    stack_size = 500
 }
 
 ITEM {
@@ -602,7 +602,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 50
+    stack_size = 500
 }
 
 ITEM {
@@ -613,7 +613,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 50
+    stack_size = 500
 }
 
 ITEM {
@@ -624,7 +624,7 @@ ITEM {
     flags = {},
     subgroup = "py-items-hpf",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -635,7 +635,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -657,7 +657,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -668,7 +668,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -679,7 +679,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -690,7 +690,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -701,7 +701,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -712,7 +712,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -723,7 +723,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -734,7 +734,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -745,7 +745,7 @@ ITEM {
     icon_size = 32,
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -758,7 +758,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     --order = "g",
-    stack_size = 200
+    stack_size = 500
 }
 
 ITEM {
@@ -803,7 +803,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "a2",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -816,7 +816,7 @@ ITEM {
     order = "treated-wood",
     fuel_value = "4MJ",
     fuel_category = "biomass",
-    stack_size = 100
+    stack_size = 500
 }
 
 ITEM {
@@ -827,7 +827,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "fuel-canister",
-    stack_size = 25
+    stack_size = 20
 }
 
 ITEM {

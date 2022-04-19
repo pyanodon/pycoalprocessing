@@ -34,7 +34,7 @@ ITEM {
     subgroup = "py-cp-buildings-mk01",
     order = "o",
     place_result = "gasifier",
-    stack_size = 5
+    stack_size = 10
 }
 
 ENTITY {

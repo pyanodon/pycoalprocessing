@@ -23,7 +23,7 @@ ITEM {
     subgroup = "coal-processing",
     order = "h",
     place_result = "cooling-tower-mk01",
-    stack_size = 5
+    stack_size = 10
 }
 
 ENTITY {

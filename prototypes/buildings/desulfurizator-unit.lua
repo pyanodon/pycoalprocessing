@@ -42,7 +42,7 @@ ITEM {
     subgroup = "py-cp-buildings-mk01",
     order = "j",
     place_result = "desulfurizator-unit",
-    stack_size = 5
+    stack_size = 10
 }
 
 ENTITY {
