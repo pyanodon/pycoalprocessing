@@ -75,7 +75,7 @@ RECIPE {
     },
     -- main_product = "sand",
     subgroup = "py-washer",
-    order = "c"
+    order = "z"
 }
 
 RECIPE {

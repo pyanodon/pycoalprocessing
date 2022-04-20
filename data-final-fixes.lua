@@ -1,4 +1,6 @@
 local DEBUG = require('config').DEBUG
+local table = require('__stdlib__/stdlib/utils/table')
+
 if DEBUG then
     local developer = require('__stdlib__/stdlib/data/developer/developer')
     developer.make_test_entities('pycoalprocessing')
@@ -34,6 +36,46 @@ for r,recipe in pairs(data.raw.recipe) do
     end
 end
 
+
+for _, module in pairs(data.raw.module) do
+    local remove_recipe = {}
+
+    for _, r in pairs(module.limitation or {}) do
+        if not data.raw.recipe[r] then
+            remove_recipe[r] = true
+        end
+    end
+
+    if not table.is_empty(remove_recipe) then
+        local limit = table.array_to_dictionary(module.limitation, true)
+
+        for r, _ in pairs(remove_recipe) do
+            limit[r] = nil
+        end
+
+        module.limitation = table.keys(limit)
+    end
+
+    remove_recipe = {}
+
+    for _, r in pairs(module.limitation_blacklist or {}) do
+        if not data.raw.recipe[r] then
+            remove_recipe[r] = true
+        end
+    end
+
+    if not table.is_empty(remove_recipe) then
+        local limit = table.array_to_dictionary(module.limitation_blacklist, true)
+
+        for r, _ in pairs(remove_recipe) do
+            limit[r] = nil
+        end
+
+        module.limitation_blacklist = table.keys(limit)
+    end
+end
+
+
 local function create_tmp_tech(recipe, original_tech)
     local new_tech = TECHNOLOGY {
         type = "technology",
@@ -54,6 +96,8 @@ local function create_tmp_tech(recipe, original_tech)
         }
     }
 
+    RECIPE(recipe):set_enabled(false)
+
     if original_tech then
         RECIPE(recipe):remove_unlock(original_tech)
     end
@@ -63,10 +107,15 @@ end
 
 
 -- TMP TECHS HERE --
-if mods["pyalienlife"] and mods["pyhightech"] then
+-- create_tmp_tech(<recipe-name>): Create tmp tech with only that recipe
+-- create_tmp_tech(<recipe-name>, <tech-name>): Create tmp tech with only that recipe, and remove it from tech
+if mods["pyalienlife"] then
 
 end
 
+if mods["pyalienlife"] and mods["pyhightech"] then
+    -- create_tmp_tech("salt-mine", "electrolysis")
+end
 
 ----------------------------------------------------
 -- AUTO TECH script. Make sure it's the very last
@@ -74,6 +123,3 @@ end
 -- require('prototypes/functions/auto_tech')
 ----------------------------------------------------
 ----------------------------------------------------
-
--- tech-t\|(?!tmp).*: NOT EMPTY
--- Restarting without science pack checks

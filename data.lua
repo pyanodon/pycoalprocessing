@@ -12,6 +12,8 @@ require('prototypes/recipe-categories')
 require('prototypes/technologies/coal-processing-1')
 require('prototypes/technologies/coal-processing-2')
 require('prototypes/technologies/coal-processing-3')
+require('prototypes/technologies/syngas')
+require('prototypes/technologies/tar-processing')
 
 require('prototypes/technologies/energy-1')
 require('prototypes/technologies/energy-2')

@@ -23,14 +23,14 @@ function start_inventory.on_init()
   if remote.interfaces['freeplay'] then
 
     local created_items = remote.call("freeplay", "get_created_items")
-      created_items["burner-mining-drill"] = 10
-      created_items["iron-plate"] = 500
-      created_items["copper-plate"] = 500
-      created_items["wood"] = 500
+    created_items["burner-mining-drill"] = 10
+    remote.call("freeplay", "set_created_items", created_items)
 
-      remote.call("freeplay", "set_created_items", created_items)
-
-    end
+    local debris_items = remote.call("freeplay", "get_debris_items")
+    debris_items["iron-plate"] = 100
+    debris_items["copper-plate"] = 50
+    remote.call("freeplay", "set_debris_items", debris_items)
+  end
 end
 Event.register(Event.core_events.init, start_inventory.on_init)
 
