@@ -23,7 +23,7 @@ RECIPE {
     results = {
         {"gasifier", 1}
     }
-}:add_unlock("coal-processing-1")
+}:add_unlock("tar-processing")
 
 ITEM {
     type = "item",

@@ -300,7 +300,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items",
     order = "t"
-}:add_unlock("coal-processing-1")
+}:add_unlock("tar-processing")
 
 RECIPE {
     type = "recipe",
@@ -322,7 +322,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-fluid-handling",
     order = "j"
-}:add_unlock("coal-processing-1")
+}:add_unlock("tar-processing")
 
 RECIPE {
     type = "recipe",

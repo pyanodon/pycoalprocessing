@@ -14,7 +14,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 1}
     },
     main_product = "syngas"
-}:add_unlock("coal-processing-1")
+}:add_unlock("syngas")
 
 FLUID {
     type = "fluid",

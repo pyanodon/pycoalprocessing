@@ -44,26 +44,30 @@ data.raw.item["uranium-fuel-cell"].fuel_value = "4GJ"
 
 data.raw["assembling-machine"]["centrifuge"].energy_usage = "250MW"
 
+local burner = {
+    type = "burner",
+    fuel_categories = {"chemical", "biomass"},
+    effectivity = 1,
+    fuel_inventory_size = 1,
+    burnt_inventory_size = 1,
+    emissions_per_minute = 12,
+}
+
 --modify assembly machine 1
-data.raw['assembling-machine']['assembling-machine-1'].ingredient_count = 2
-data.raw['assembling-machine']['assembling-machine-1'].energy_usage = "200KW"
-data.raw['assembling-machine']['assembling-machine-1'].crafting_speed = 1
---local fluid_boxes = {}
---table.insert(data.raw['assembling-machine']['assembling-machine-1'], fluid_boxes)
+data.raw['assembling-machine']['assembling-machine-1'].ingredient_count = 3
+data.raw['assembling-machine']['assembling-machine-1'].energy_source = burner
 data.raw['assembling-machine']['assembling-machine-1'].fluid_boxes = data.raw['assembling-machine']['assembling-machine-2'].fluid_boxes
 table.insert(data.raw['assembling-machine']['assembling-machine-1'].crafting_categories, "crafting-with-fluid")
 
 --modify assembly machine 2
 data.raw['assembling-machine']['assembling-machine-2'].ingredient_count = 4
-data.raw['assembling-machine']['assembling-machine-2'].energy_usage = "500KW"
-data.raw['assembling-machine']['assembling-machine-2'].crafting_speed = 2
+data.raw['assembling-machine']['assembling-machine-2'].energy_source = burner
 data.raw['assembling-machine']['assembling-machine-2'].allowed_effects = {}
 data.raw['assembling-machine']['assembling-machine-2'].module_specification.module_slots = 0
 
 --modify assembly machine 3
-data.raw['assembling-machine']['assembling-machine-3'].ingredient_count = 6
-data.raw['assembling-machine']['assembling-machine-3'].energy_usage = "1MW"
-data.raw['assembling-machine']['assembling-machine-3'].crafting_speed = 4
+data.raw['assembling-machine']['assembling-machine-3'].ingredient_count = 5
+data.raw['assembling-machine']['assembling-machine-3'].energy_source = burner
 data.raw['assembling-machine']['assembling-machine-3'].allowed_effects = {}
 data.raw['assembling-machine']['assembling-machine-3'].module_specification.module_slots = 0
 

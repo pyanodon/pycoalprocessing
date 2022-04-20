@@ -1,6 +1,7 @@
 local table = require('__stdlib__/stdlib/utils/table')
 local queue = require('__stdlib__/stdlib/misc/queue')
 local string = require('__stdlib__/stdlib/utils/string')
+-- require('defines')
 
 local pytech = {}
 
@@ -722,7 +723,7 @@ function pytech.add_mining_recipe(entity)
     local node = pytech.parse_recipe(nil, recipe, true)
 
     if entity.type == 'resource' then
-        local category = entity.category or 'basic-solid'
+        local category = (entity.category or 'basic-solid') .. (entity.minable.required_fluid and "+fluid" or "")
 
         if not pytech.mining_categories[category] then
             error('\n\nERROR: Missing mining category: ' .. category .. ', for ' .. entity.name .. '\n', 0)
@@ -733,6 +734,8 @@ function pytech.add_mining_recipe(entity)
                 pytech.add_crafting_machine_link(node, miner)
             end
         end
+    else
+        pytech.add_crafting_machine_link(node, 'character')
     end
 
     return node
@@ -983,8 +986,7 @@ function pytech.parse_data_raw()
     -- Starter recipes
     for _, recipe in pairs(data.raw.recipe) do
         if (recipe.normal and recipe.normal.enabled ~= false) or (not recipe.normal and recipe.enabled ~= false) then
-            local node = pytech.parse_recipe(nil, recipe)
-            pytech.fg_add_link(start_node, node)
+            pytech.parse_recipe(nil, recipe)
         end
     end
 
@@ -992,8 +994,7 @@ function pytech.parse_data_raw()
     for et, _ in pairs(defines.prototypes['entity']) do
         for _, entity in pairs(data.raw[et]) do
             if entity.autoplace and entity.minable and (entity.minable.result or entity.minable.results) then
-                local node = pytech.add_mining_recipe(entity)
-                pytech.fg_add_link(start_node, node)
+                pytech.add_mining_recipe(entity)
             end
         end
     end
@@ -1138,7 +1139,7 @@ function pytech.pre_process_fuzzy_graph()
             end
 
             if child_found and not parent_found then
-                error('\n\nERROR: Item/fluid has no source: ' .. node.key .. ' used in: ' .. child_key .. '\n')
+                log('\n\nERROR: Item/fluid has no source: ' .. node.key .. ' used in: ' .. child_key .. '\n')
                 log(serpent.block(node, { maxlevel = 3 }))
             end
         end
@@ -2005,8 +2006,12 @@ function pytech.pre_process_entity(entity)
         elseif entity.type == 'mining-drill' then
             for _, category in pairs(entity.resource_categories or {}) do
                 pytech.insert_double_lookup(pytech.mining_categories, category, entity.name)
+                if entity.input_fluid_box then
+                    pytech.insert_double_lookup(pytech.mining_categories, category .. "+fluid", entity.name)
+                end
             end
         elseif entity.type == 'character' then
+            pytech.insert_double_lookup(pytech.placed_by, entity.name, entity.name)
             for _, category in pairs(entity.mining_categories or {}) do
                 pytech.insert_double_lookup(pytech.mining_categories, category, entity.name)
             end

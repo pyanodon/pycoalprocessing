@@ -104,6 +104,8 @@ TECHNOLOGY("modules"):set_fields{enabled = false, hidden = true}
 
 -- (( TECHNOLOGY DEPENDENCIES ))--
 
+TECHNOLOGY("steel-axe"):set_fields{dependencies = {"steel-processing"}}
+
 TECHNOLOGY("fast-inserter"):set_fields{dependencies = {"automation"}}
 
 TECHNOLOGY("military-2"):set_fields{dependencies = {"military"}}
