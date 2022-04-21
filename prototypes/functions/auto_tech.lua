@@ -1139,7 +1139,7 @@ function pytech.pre_process_fuzzy_graph()
             end
 
             if child_found and not parent_found then
-                log('\n\nERROR: Item/fluid has no source: ' .. node.key .. ' used in: ' .. child_key .. '\n')
+                error('\n\nERROR: Item/fluid has no source: ' .. node.key .. ' used in: ' .. child_key .. '\n')
                 log(serpent.block(node, { maxlevel = 3 }))
             end
         end
@@ -1418,6 +1418,21 @@ function pytech.topological_sort()
     -- log(serpent.block(pytech.fg_get_node('coal-processing-1::carbon-dioxide(15)', nt_fluid), {maxlevel =3, keyignore = {data = true} }))
     -- log(serpent.block(pytech.fg_get_node('coal-processing-1::empty-carbon-dioxide-barrel', nt_recipe), {maxlevel =3, keyignore = {data = true} }))
     -- log(serpent.block(pytech.fg_get_node('helium-processing::pressured-air', nt_recipe), {maxlevel =3, keyignore = {data = true} }))
+    -- local recipes = {}
+    -- local techs = 0
+
+    -- for _, node in pairs(sorted_set) do
+    --     if node.type == nt_recipe and not node.virtual and not node.ignore_for_dependencies then
+    --         recipes[node.factorio_name] = true
+    --     end
+
+    --     if node.type == nt_tech_tail and not node.virtual and not node.ignore_for_dependencies then
+    --         techs = techs + 1
+    --     end
+    -- end
+
+    -- log('Techs: ' .. techs)
+    -- log('Recipes: ' .. table.size(recipes))
 
     if found_error then
         pytech.find_dependency_loop(sorted_set)
@@ -2167,4 +2182,3 @@ pytech.pre_process_data_raw()
 pytech.parse_data_raw()
 pytech.calculate_prerequisites()
 pytech.cleanup()
-
