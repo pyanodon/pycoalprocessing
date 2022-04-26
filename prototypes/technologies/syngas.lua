@@ -1,7 +1,7 @@
 TECHNOLOGY {
     type = "technology",
     name = "syngas",
-    icon = "__pycoalprocessinggraphics__/graphics/technology/missing_icon.png",
+    icon = "__pycoalprocessinggraphics__/graphics/technology/syngas.png",
     icon_size = 128,
     order = "c-a",
     prerequisites = {},
