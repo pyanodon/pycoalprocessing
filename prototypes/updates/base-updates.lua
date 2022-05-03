@@ -153,11 +153,11 @@ for i = 1, 6 do
 end
 
 -- Recipe unlocks
-RECIPE("lubricant"):remove_unlock("lubricant")
+RECIPE("lubricant"):remove_unlock("lubricant"):set_fields{hidden = true}
 
-RECIPE("explosives"):remove_unlock("explosives")
+RECIPE("explosives"):remove_unlock("explosives"):set_fields{hidden = true}
 
-RECIPE("battery"):remove_unlock("battery")
+RECIPE("battery"):remove_unlock("battery"):set_fields{hidden = true}
 
 -- Recipe updates
 RECIPE("flying-robot-frame"):remove_ingredient("electronic-circuit"):add_ingredient(
