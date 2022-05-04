@@ -122,23 +122,6 @@ if mods["pyalienlife"] and mods["pyhightech"] then
 end
 
 if mods["pyalternativeenergy"] then
-    create_tmp_tech("antimony-phosphate-2", "nuclear-power")
-    create_tmp_tech("plutonium-oxidation-2", "nuclear-power")
-    create_tmp_tech("thermal-neutron", "nuclear-power")
-    create_tmp_tech("u234-po210", "nuclear-power")
-    create_tmp_tech("rtg", "nuclear-power")
-    create_tmp_tech("fuelrod-mk05", "nuclear-power")
-    create_tmp_tech("propene-to-butanol", "nuclear-power")
-    create_tmp_tech("uranium-seperation", "nuclear-power")
-    create_tmp_tech("ac-oxygenated", "nuclear-power")
-    create_tmp_tech("americium-reduction", "nuclear-power")
-    create_tmp_tech("curium-reduction", "nuclear-power")
-    create_tmp_tech("sb-chloride-to-ore", "nuclear-power")
-    create_tmp_tech("u236-u237", "nuclear-power")
-    create_tmp_tech("fuelrod-mk04", "nuclear-power")
-
-    create_tmp_tech("americium-seperation", "nuclear-power-mk02")
-
     create_tmp_tech("denatured-seismite-2", "pharmagenomics")
 
     create_tmp_tech("acrylic", "thermal-mk03")
@@ -177,12 +160,6 @@ if mods["pyalternativeenergy"] then
 
     create_tmp_tech("neutron-moderator-mk01")
     create_tmp_tech("control-rod")
-
-    create_tmp_tech("sinter-unit", "machines-mk03")
-    create_tmp_tech("drp", "machines-mk03")
-
-    create_tmp_tech("casting-lead-container", "machines-mk04")
-    create_tmp_tech("hotair-casting-lead-container", "machines-mk04")
 end
 
 
