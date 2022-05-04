@@ -122,47 +122,6 @@ if mods["pyalienlife"] and mods["pyhightech"] then
 end
 
 if mods["pyalternativeenergy"] then
-    create_tmp_tech("pbsb-alloy", "lead-mk01")
-
-    create_tmp_tech("pbsb-alloy-2", "lead-mk02")
-
-    create_tmp_tech("upgrader-mk01", "oil-machines-mk01", true)
-    create_tmp_tech("lor-mk01", "oil-machines-mk01", true)
-    create_tmp_tech("gas-refinery-mk01", "oil-machines-mk01", true)
-    create_tmp_tech("oil-boiler-mk01", "oil-machines-mk01", true)
-
-    create_tmp_tech("carbon-black-2", "rubber", true)
-    create_tmp_tech("engine-unit-2", "rubber", true)
-
-    create_tmp_tech("lithium-peroxide", "filtration")
-
-    create_tmp_tech("p2s5", "additives")
-
-    create_tmp_tech("ethylene", "ethylene")
-
-    create_tmp_tech("ree-mining-drill-mk02", "machines-mk02")
-    create_tmp_tech("antimonium-drill-mk02", "machines-mk02")
-    create_tmp_tech("centrifuge-mk02", "machines-mk02")
-    create_tmp_tech("grease-table-mk01", "machines-mk02")
-
-    create_tmp_tech("silicon-wafer-2", "basic-electronics")
-    create_tmp_tech("silicon-wafer-3", "basic-electronics")
-    create_tmp_tech("pumpjack-hightech", "basic-electronics")
-
-    create_tmp_tech("nuclear-sample", "nucleo")
-    create_tmp_tech("plutonium-seperation", "nucleo")
-    create_tmp_tech("particle-accelerator-mk01", "nucleo")
-
-    create_tmp_tech("lead-container", "coated-container")
-
-    create_tmp_tech("propeptides", "immunosupressants")
-
-    create_tmp_tech("lithium-chloride", "lithium-processing")
-    create_tmp_tech("lithium-niobate", "lithium-processing")
-    create_tmp_tech("acetaldehyde-2", "lithium-processing")
-    create_tmp_tech("p-dope2", "lithium-processing")
-
-    create_tmp_tech("fuelrod-mk01-1", "nuclear-power")
     create_tmp_tech("antimony-phosphate-2", "nuclear-power")
     create_tmp_tech("plutonium-oxidation-2", "nuclear-power")
     create_tmp_tech("thermal-neutron", "nuclear-power")
@@ -186,7 +145,6 @@ if mods["pyalternativeenergy"] then
 
     create_tmp_tech("nexelit-battery-recharge", "battery-mk02")
 
-    create_tmp_tech("cyanoacetate", "renewable-mk03")
     create_tmp_tech("aerial-blimp-mk03", "renewable-mk03")
     create_tmp_tech("multiblade-turbine-mk03", "renewable-mk03")
 
@@ -219,6 +177,12 @@ if mods["pyalternativeenergy"] then
 
     create_tmp_tech("neutron-moderator-mk01")
     create_tmp_tech("control-rod")
+
+    create_tmp_tech("sinter-unit", "machines-mk03")
+    create_tmp_tech("drp", "machines-mk03")
+
+    create_tmp_tech("casting-lead-container", "machines-mk04")
+    create_tmp_tech("hotair-casting-lead-container", "machines-mk04")
 end
 
 
