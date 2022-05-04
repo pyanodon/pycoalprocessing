@@ -661,7 +661,7 @@ function pytech.parse_recipe(tech_name, recipe, no_crafting)
         end
 
         if not found and not recipe.ignore_for_dependencies then
-            error('\n\nERROR: Missing crafting category: ' .. category .. ' (ingredients: ' .. ing_count .. ', fluids in: ' .. fluid_in .. ', fluids out:' .. fluid_out .. '), for ' .. recipe.name .. '\n', 0)
+            error('\n\nERROR: Missing crafting category: ' .. category .. ' (ingredients: ' .. ing_count .. ', fluids in: ' .. fluid_in .. ', fluids out:' .. fluid_out .. '), for ' .. name .. '\n', 0)
         end
     end
 
