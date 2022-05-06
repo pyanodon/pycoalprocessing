@@ -559,11 +559,9 @@ function pytech.parse_recipe(tech_name, recipe, no_crafting)
 
     node.ignore_for_dependencies = recipe.ignore_for_dependencies
 
-    if recipe.normal then
-        recipe = recipe.normal
-    end
+    local recipe_data = (type(recipe.normal) == "table" and recipe.normal or recipe)
 
-    for _, res in pairs(pytech.standardize_products(recipe.results, nil, recipe.result, recipe.result_count)) do
+    for _, res in pairs(pytech.standardize_products(recipe_data.results, nil, recipe_data.result, recipe_data.result_count)) do
         if ((res.amount or 0) > 0 or (res.amount_max or 0) > 0) and (not res.probability or res.probability > 0) then
             if res.type == nt_item then
                 local n_item = pytech.fg_get_node(res.name, nt_item)
@@ -622,7 +620,7 @@ function pytech.parse_recipe(tech_name, recipe, no_crafting)
         end
     end
 
-    for _, ing in pairs(pytech.standardize_products(recipe.ingredients)) do
+    for _, ing in pairs(pytech.standardize_products(recipe_data.ingredients)) do
         if ing.type == nt_item then
             local item = pytech.get_prototype(nt_item, ing.name)
             local n_item = pytech.parse_item(item)
