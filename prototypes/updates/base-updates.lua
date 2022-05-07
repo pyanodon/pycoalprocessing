@@ -168,6 +168,13 @@ RECIPE("flamethrower-ammo"):replace_ingredient("crude-oil", "light-oil")
 RECIPE("rail"):clear_ingredients():add_ingredient({"stone", 1}):add_ingredient({"iron-stick", 2}):add_ingredient(
     {"treated-wood", 2})
 
+--RECIPE("nuclear-fuel"):remove_unlock("kovarex-enrichment-process")
+
+ITEM("rocket-fuel"):set_fields{fuel_category = "jerry"}
+
+--data.raw.item["nuclear-fuel"].fuel_category = nil
+--data.raw.item["nuclear-fuel"].fuel_value = nil
+
 -- add ash to burnt results for chemical fuel items
 for i, item in pairs(data.raw.item) do
     if item.fuel_category ~= nil and item.fuel_category == "chemical" and item.name ~= "active-carbon" then
