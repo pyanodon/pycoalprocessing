@@ -78,7 +78,11 @@ data.raw['mining-drill']['burner-mining-drill'].energy_usage = '500KW'
 data.raw['mining-drill']['electric-mining-drill'].mining_speed = 2
 data.raw['mining-drill']['electric-mining-drill'].energy_usage = '1MW'
 
+data.raw.furnace["stone-furnace"].energy_usage = "200kW"
+data.raw.furnace["stone-furnace"].energy_source.fuel_categories = {"chemical", "biomass"}
+
 data.raw.furnace["steel-furnace"].energy_usage = "500kW"
+data.raw.furnace["steel-furnace"].energy_source.fuel_categories = {"chemical", "biomass"}
 
 data.raw.furnace["electric-furnace"].energy_usage = "1MW"
 data.raw.furnace["electric-furnace"].crafting_speed = 4
@@ -101,4 +105,3 @@ data.raw.car.tank.burner.burnt_inventory_size = data.raw.car.tank.burner.fuel_in
 --data.raw.locomotive.locomotive.burner.fuel_category = nil
 --data.raw.locomotive.locomotive.burner.fuel_categories = {"jerry", "chemical"}
 data.raw.locomotive.locomotive.burner.burnt_inventory_size = data.raw.locomotive.locomotive.burner.fuel_inventory_size
-
