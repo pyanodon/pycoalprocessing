@@ -751,7 +751,7 @@ ITEM {
 ITEM {
     type = "item",
     name = "coal-briquette",
-    fuel_value = "180MJ",
+    fuel_value = "60MJ",
     fuel_category = "chemical",
     icon = "__pycoalprocessinggraphics__/graphics/icons/coal-briquette.png",
     icon_size = 32,
