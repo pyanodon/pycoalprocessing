@@ -11,6 +11,7 @@
     "base >= 0.16.0",
     "stdlib >= 1.4.0",
     "~ pycoalprocessinggraphics",
+    "~ pypostprocessing",
     "! DiscoScience",
     "! angelsrefining"
   ],
