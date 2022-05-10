@@ -41,7 +41,7 @@ RECIPE {
         {type = "item", name = "empty-gas-canister", amount = 1}
     },
     results = {
-        {type = "item", name = "filled-methanol-gas-canister", amount = 1}
+        {type = "item", name = "methanol-gas-canister", amount = 1}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
     icon_size = 32
@@ -56,7 +56,7 @@ RECIPE {
     enabled = false,
     energy_required = 0.2,
     ingredients = {
-        {type = "item", name = "filled-methanol-gas-canister", amount = 1}
+        {type = "item", name = "methanol-gas-canister", amount = 1}
     },
     results = {
         {type = "item", name = "empty-gas-canister", amount = 1},
@@ -70,7 +70,7 @@ RECIPE {
 
 ITEM {
     type = "item",
-    name = "filled-methanol-gas-canister",
+    name = "methanol-gas-canister",
     icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
     icon_size = 32,
     flags = {},

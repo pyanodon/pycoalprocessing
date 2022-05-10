@@ -40,7 +40,7 @@ RECIPE {
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "syngas", amount = 100},
-        {type = "item", name = "filled-methanol-gas-canister", amount = 1}
+        {type = "item", name = "methanol-gas-canister", amount = 1}
     },
     results = {
         {type = "fluid", name = "refsyngas", amount = 100},
