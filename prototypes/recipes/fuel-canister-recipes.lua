@@ -33,7 +33,7 @@ for f, fluid in pairs(data.raw.fluid) do
 
         ITEM {
             type = "item",
-            name = "filled-canister-" .. fluid.name,
+            name = fluid.name .. "-canister",
             localised_name = {"item-name.fill-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
             icons = {
                 {icon = "__pycoalprocessinggraphics__/graphics/icons/jerry-can.png", icon_size = 64},
@@ -58,7 +58,7 @@ for f, fluid in pairs(data.raw.fluid) do
 
         RECIPE {
             type = "recipe",
-            name = "fill-canister-" .. fluid.name,
+            name = "fill-" .. fluid.name .. "-canister",
             localised_name = {"recipe-name.fill-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
             category = "crafting-with-fluid",
             enabled = false,
@@ -68,7 +68,7 @@ for f, fluid in pairs(data.raw.fluid) do
                 {type = "item", name = "empty-fuel-canister", amount = 1}
             },
             results = {
-                {type = "item", name = "filled-canister-" .. fluid.name, amount = 1}
+                {type = "item", name = fluid.name .. "-canister", amount = 1}
             },
             ignore_for_dependencies = true
             --icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
@@ -78,13 +78,13 @@ for f, fluid in pairs(data.raw.fluid) do
 
         RECIPE {
             type = "recipe",
-            name = "empty-canister-" .. fluid.name,
+            name = "empty-" .. fluid.name .. "-canister",
             localised_name = {"recipe-name.empty-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
             category = "crafting-with-fluid",
             enabled = false,
             energy_required = 0.2,
             ingredients = {
-                {type = "item", name = "filled-canister-" .. fluid.name, amount = 1}
+                {type = "item", name = fluid.name .. "-canister", amount = 1}
             },
             results = {
                 {type = "fluid", name = fluid.name, amount = fuel_amount},
