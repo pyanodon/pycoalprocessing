@@ -150,8 +150,6 @@ RECIPE {
     results = {
         {type = "item", name = "automation-science-pack", amount = 6}
     },
-    icon = "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png",
-    icon_size = 64,
     subgroup = "py-items",
     order = "a1"
 }
