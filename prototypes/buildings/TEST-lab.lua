@@ -124,3 +124,48 @@ ENTITY{
       module_info_icon_shift = {0, 0.9}
     }
   }
+
+-- DiscoScience compat, we rewrite the animation to fit our lab
+if mods["DiscoScience"] then
+  -- Remove the 3 glow layers
+  -- We can remove only the first layer and not use the second layer in the overlay below for a less obvious effect
+  for I=1, 3 do
+    table.remove(data.raw.lab.lab.on_animation.layers, 2)
+  end
+  -- Overwrite on/off to the variant without blue lights embedded
+  data.raw.lab.lab.on_animation.layers[1].filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
+  data.raw.lab.lab.off_animation.layers[1].filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
+  -- Overwrite the animation with ours
+  data.raw.animation["discoscience/lab-storm"] = {
+    type = "animation",
+    name = "discoscience/lab-storm",
+    layers =
+    {
+      {
+        filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/l-bw.png",
+        draw_as_glow = true,
+        blend_mode = "additive",
+        width = 160,
+        height = 384,
+        frame_count = 1,
+        line_length = 1,
+        repeat_count = 60,
+        animation_speed = 1 / 5,
+        shift = util.by_pixel(-0, -112),
+      },
+      {
+        filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/beam-bw.png",
+        --draw_as_light = true,
+        blend_mode = "additive",
+        draw_as_glow = true,
+        width = 96,
+        height = 128,
+        frame_count = 60,
+        line_length = 20,
+        --repeat_count = 30,
+        animation_speed = 1 / 4,
+        shift = util.by_pixel(32, -112),
+      }
+    }
+  }
+end

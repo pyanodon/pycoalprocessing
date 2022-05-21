@@ -12,7 +12,7 @@
     "stdlib >= 1.4.0",
     "~ pycoalprocessinggraphics",
     "~ pypostprocessing",
-    "! DiscoScience",
+    "(?) DiscoScience",
     "! angelsrefining"
   ],
   "package": {
