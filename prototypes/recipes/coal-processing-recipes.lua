@@ -150,6 +150,7 @@ RECIPE {
     energy_required = 7,
     ingredients = {
         {type = "item", name = "iron-plate", amount = 4},
+        {type = "item", name = "copper-plate", amount = 10},
         {type = "item", name = "electronic-circuit", amount = 1},
     },
     results = {
