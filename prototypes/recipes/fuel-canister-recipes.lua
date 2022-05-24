@@ -45,7 +45,8 @@ for f, fluid in pairs(data.raw.fluid) do
             fuel_value = "10MJ",
             fuel_category = "jerry",
             burnt_result = "empty-fuel-canister",
-            stack_size = 20
+            stack_size = 20,
+            ignore_for_dependencies = true
         }
 
         local fuel_amount
