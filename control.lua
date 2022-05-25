@@ -63,3 +63,16 @@ Event.register(defines.events.on_research_finished, game_finish.on_research_fini
 
 
 require("scripts/wiki")
+
+local on_built = {}
+
+function on_built.inserter(event)
+  local entity = event.created_entity
+  local inserter
+
+  if entity.name == "inserter" or entity.name == "burner-inserter" or entity.name == "long-handed-inserter" then
+    inserter = entity
+    inserter.inserter_filter_mode = "blacklist"
+  end
+end
+Event.register(defines.events.on_built_entity, on_built.inserter)

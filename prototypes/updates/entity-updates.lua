@@ -105,3 +105,7 @@ data.raw.car.tank.burner.burnt_inventory_size = data.raw.car.tank.burner.fuel_in
 --data.raw.locomotive.locomotive.burner.fuel_category = nil
 --data.raw.locomotive.locomotive.burner.fuel_categories = {"jerry", "chemical"}
 data.raw.locomotive.locomotive.burner.burnt_inventory_size = data.raw.locomotive.locomotive.burner.fuel_inventory_size
+
+data.raw.inserter["burner-inserter"].filter_count = 1
+data.raw.inserter["inserter"].filter_count = 1
+data.raw.inserter["long-handed-inserter"].filter_count = 1
