@@ -75,4 +75,4 @@ function on_built.inserter(event)
     inserter.inserter_filter_mode = "blacklist"
   end
 end
-Event.register(defines.events.on_built_entity, on_built.inserter)
+Event.register(Event.build_events, on_built.inserter)
