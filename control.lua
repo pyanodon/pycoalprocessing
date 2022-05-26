@@ -70,7 +70,7 @@ function on_built.inserter(event)
   local entity = event.created_entity
   local inserter
 
-  if entity.name == "inserter" or entity.name == "burner-inserter" or entity.name == "long-handed-inserter" then
+  if entity.name == "inserter" or entity.name == "burner-inserter" then
     inserter = entity
     inserter.inserter_filter_mode = "blacklist"
   end
