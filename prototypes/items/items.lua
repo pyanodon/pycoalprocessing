@@ -6,7 +6,7 @@ ITEM {
     flags = {},
     subgroup = "py-items",
     order = "ash",
-    stack_size = 200
+    stack_size = 1000
 }
 
 ITEM {
