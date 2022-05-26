@@ -1,3 +1,4 @@
+local table = require "__stdlib__.stdlib.utils.table"
 
 --modify steam engine temp
 data.raw.generator['steam-engine'].maximum_temperature = 500
@@ -44,6 +45,8 @@ data.raw.item["uranium-fuel-cell"].fuel_value = "4GJ"
 
 data.raw["assembling-machine"]["centrifuge"].energy_usage = "250MW"
 
+data.raw.item["wood"].fuel_category = "biomass"
+
 local burner = {
     type = "burner",
     fuel_categories = {"chemical", "biomass"},
@@ -55,19 +58,19 @@ local burner = {
 
 --modify assembly machine 1
 data.raw['assembling-machine']['assembling-machine-1'].ingredient_count = 3
-data.raw['assembling-machine']['assembling-machine-1'].energy_source = burner
+data.raw['assembling-machine']['assembling-machine-1'].energy_source = table.deep_copy(burner)
 data.raw['assembling-machine']['assembling-machine-1'].fluid_boxes = data.raw['assembling-machine']['assembling-machine-2'].fluid_boxes
 table.insert(data.raw['assembling-machine']['assembling-machine-1'].crafting_categories, "crafting-with-fluid")
 
 --modify assembly machine 2
 data.raw['assembling-machine']['assembling-machine-2'].ingredient_count = 4
-data.raw['assembling-machine']['assembling-machine-2'].energy_source = burner
+data.raw['assembling-machine']['assembling-machine-2'].energy_source = table.deep_copy(burner)
 data.raw['assembling-machine']['assembling-machine-2'].allowed_effects = {}
 data.raw['assembling-machine']['assembling-machine-2'].module_specification.module_slots = 0
 
 --modify assembly machine 3
 data.raw['assembling-machine']['assembling-machine-3'].ingredient_count = 5
-data.raw['assembling-machine']['assembling-machine-3'].energy_source = burner
+data.raw['assembling-machine']['assembling-machine-3'].energy_source = table.deep_copy(burner)
 data.raw['assembling-machine']['assembling-machine-3'].allowed_effects = {}
 data.raw['assembling-machine']['assembling-machine-3'].module_specification.module_slots = 0
 
@@ -79,10 +82,18 @@ data.raw['mining-drill']['electric-mining-drill'].mining_speed = 2
 data.raw['mining-drill']['electric-mining-drill'].energy_usage = '1MW'
 
 data.raw.furnace["stone-furnace"].energy_usage = "200kW"
+data.raw.furnace["stone-furnace"].energy_source.fuel_category = nil
 data.raw.furnace["stone-furnace"].energy_source.fuel_categories = {"chemical", "biomass"}
 
 data.raw.furnace["steel-furnace"].energy_usage = "500kW"
+data.raw.furnace["steel-furnace"].energy_source.fuel_category = nil
 data.raw.furnace["steel-furnace"].energy_source.fuel_categories = {"chemical", "biomass"}
+
+data.raw.inserter["burner-inserter"].energy_source.fuel_category = nil
+data.raw.inserter["burner-inserter"].energy_source.fuel_categories = {"chemical", "biomass"}
+
+data.raw["mining-drill"]["burner-mining-drill"].energy_source.fuel_category = nil
+data.raw["mining-drill"]["burner-mining-drill"].energy_source.fuel_categories = {"chemical", "biomass"}
 
 data.raw.furnace["electric-furnace"].energy_usage = "1MW"
 data.raw.furnace["electric-furnace"].crafting_speed = 4
