@@ -118,5 +118,5 @@ data.raw.car.tank.burner.burnt_inventory_size = data.raw.car.tank.burner.fuel_in
 data.raw.locomotive.locomotive.burner.burnt_inventory_size = data.raw.locomotive.locomotive.burner.fuel_inventory_size
 
 data.raw.inserter["burner-inserter"].filter_count = 1
+data.raw.inserter["burner-inserter"].allow_burner_leech = true
 data.raw.inserter["inserter"].filter_count = 1
-data.raw.inserter["long-handed-inserter"].filter_count = 1
