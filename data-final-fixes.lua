@@ -24,7 +24,7 @@ log(serpent.block(techs))
 ]]--
 
 for r,recipe in pairs(data.raw.recipe) do
-    if recipe.category == "combustion" then
+    if recipe.category == "combustion" and not recipe.name:find("%-biomass$") then
         local temp
         for _,result in pairs(recipe.results) do
             if result.name == "combustion-mixture1" then
