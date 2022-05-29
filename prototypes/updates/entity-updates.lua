@@ -6,7 +6,7 @@ data.raw.generator['steam-engine'].destroy_non_fuel_fluid = false
 
 --modify boiler to produce more water
 data.raw.boiler.boiler.target_temperature = 250
-data.raw.boiler.boiler.energy_consumption = "14.805MW"
+data.raw.boiler.boiler.energy_consumption = "7.4025MW"
 --modify boiler to have burnt result inventory
 data.raw.boiler.boiler.energy_source.burnt_inventory_size = 1
 
