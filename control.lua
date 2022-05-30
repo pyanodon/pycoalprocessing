@@ -8,7 +8,7 @@ MOD.IF = "PYC"
 MOD.path = "__pycoalprocessing__"
 MOD.config = require("config")
 
-Event.build_events = {defines.events.on_built_entity, defines.events.on_robot_built_entity, defines.events.script_raised_built}
+Event.build_events = {defines.events.on_built_entity, defines.events.on_robot_built_entity, defines.events.script_raised_built, defines.events.script_raised_revive}
 Event.death_events = {defines.events.on_pre_player_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}
 
 --Activate any scripts needed.
@@ -72,7 +72,21 @@ function on_built.inserter(event)
 
   if entity.name == "inserter" or entity.name == "burner-inserter" then
     inserter = entity
-    inserter.inserter_filter_mode = "blacklist"
+    if not inserter.get_filter(1) then
+      inserter.inserter_filter_mode = "blacklist"
+    end
   end
 end
+
 Event.register(Event.build_events, on_built.inserter)
+
+-- TODO: Move this to migration script, so it only runs once
+Event.on_configuration_changed(function ()
+    for _, surface in pairs(game.surfaces) do
+       for _, entity in pairs(surface.find_entities_filtered{ type = "inserter", name = { "inserter", "burner-inserter" } }) do
+          if not entity.get_filter(1) and entity.inserter_filter_mode ~= "blacklist" then
+              entity.inserter_filter_mode = "blacklist"
+          end
+       end
+    end
+end)
