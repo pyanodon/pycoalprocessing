@@ -55,7 +55,7 @@ ENTITY {
     module_specification = {
         module_slots = 0
     },
-    allowed_effects = {"speed"},
+    allowed_effects = {"speed", "consumption"},
     crafting_categories = {"cooling"},
     crafting_speed = 4,
     energy_source = {type = "void"},
