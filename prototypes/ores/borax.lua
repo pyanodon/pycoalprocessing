@@ -41,7 +41,7 @@ ENTITY {
         order = "b",
         base_density = 10,
         base_spots_per_km2 = 1.25,
-        has_starting_area_placement = true,
+        has_starting_area_placement = false,
         random_spot_size_minimum = 2,
         random_spot_size_maximum = 4,
         regular_rq_factor_multiplier = 1,

@@ -3,10 +3,11 @@ local table = require "__stdlib__.stdlib.utils.table"
 --modify steam engine temp
 data.raw.generator['steam-engine'].maximum_temperature = 500
 data.raw.generator['steam-engine'].destroy_non_fuel_fluid = false
+data.raw.generator['steam-engine'].fluid_usage_per_tick = 0.25
 
 --modify boiler to produce more water
 data.raw.boiler.boiler.target_temperature = 250
-data.raw.boiler.boiler.energy_consumption = "7.4025MW"
+data.raw.boiler.boiler.energy_consumption = "3.70125MW"
 --modify boiler to have burnt result inventory
 data.raw.boiler.boiler.energy_source.burnt_inventory_size = 1
 
@@ -108,10 +109,10 @@ data.raw.furnace["steel-furnace"].energy_source.burnt_inventory_size = 1
 
 
 data.raw.car.car.burner.fuel_category = nil
-data.raw.car.car.burner.fuel_categories = {"jerry", "chemical"}
+data.raw.car.car.burner.fuel_categories = {"jerry", "chemical", "biomass"}
 data.raw.car.car.burner.burnt_inventory_size = data.raw.car.car.burner.fuel_inventory_size
 data.raw.car.tank.burner.fuel_category = nil
-data.raw.car.tank.burner.fuel_categories = {"jerry", "chemical"}
+data.raw.car.tank.burner.fuel_categories = {"jerry", "chemical", "biomass"}
 data.raw.car.tank.burner.burnt_inventory_size = data.raw.car.tank.burner.fuel_inventory_size
 --data.raw.locomotive.locomotive.burner.fuel_category = nil
 --data.raw.locomotive.locomotive.burner.fuel_categories = {"jerry", "chemical"}
