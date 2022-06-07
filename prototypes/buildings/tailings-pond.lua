@@ -143,10 +143,10 @@ ENTITY{
       pipe_covers = DATA.Pipes.covers(true, true, true, true),
       pipe_connections =
       {
-        { position = {-9, -2} },
-        { position = {9, 1} },
-        { position = {9, 2} },
-        { position = {-9, -1} }
+        { position = {-9, -2.5} },
+        { position = {9, 1.5} },
+        { position = {9, 2.5} },
+        { position = {-9, -1.5} }
       }
     },
     two_direction_only = false,
@@ -154,36 +154,41 @@ ENTITY{
     pictures = {
         picture = {
             sheet = {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/r2d2.png',
+                filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/r.png',
                 priority = 'high',
                 frames = 1,
                 width = 640,
-                height = 704
+                height = 704,
+                shift = util.by_pixel(0, -32)
             }
         },
         fluid_background = {
-            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/single-fluid.png',
-            priority = 'high',
+            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/f10.png',
+            --priority = 'high',
             --frames = 1,
             width = 448,
             height = 352,
             --x = 448,
             --y = 352,
+            shift = util.by_pixel(0, -0)
         },
         window_background = {
-            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/new-window-background.png',
+            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/bowl.png',
             priority = 'low',
+            --frames = 1,
             width = 640,
             height = 704,
-            draw_as_shadow = false
+            --x = 448,
+            --y = 352,
+            shift = util.by_pixel(0, -32)
         },
         flow_sprite = DATA.Sprites.empty_sprite(),
         gas_flow = DATA.Sprites.empty_animation()
     },
     flow_length_in_ticks = 360,
     vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.65},
-    open_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.65},
-    close_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.65},
+    open_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.15},
+    close_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.15},
     working_sound =
     {
       sound =
