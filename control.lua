@@ -12,7 +12,7 @@ Event.build_events = {defines.events.on_built_entity, defines.events.on_robot_bu
 Event.death_events = {defines.events.on_pre_player_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}
 
 --Activate any scripts needed.
-require("scripts/tailings-pond")
+--require("scripts/tailings-pond")
 
 --Add in our remote interfaces
 remote.add_interface(script.mod_name, require('__stdlib__/stdlib/scripts/interface'))
