@@ -28,8 +28,9 @@ end
 local function create_sprite(entity)
     return rendering.draw_sprite {
         sprite = 'tailings-pond-sprite-1',
-        render_layer = 'lower-object-above-shadow',
+        render_layer = 'higher-object-under',
         target = entity,
+        target_offset = {0,-0.5},
         surface = entity.surface
     }
 end
@@ -99,14 +100,50 @@ end
 local function set_fluid_level_image(pond)
     if rendering.is_valid(pond.sprite) then
         local fluid_per = pond.fluid_per
+        rendering.destroy(pond.sprite)
         --adjust percentage to match frames 30 frames, 1 is empty, 30 is full.
-        if fluid_per == 0 then
-            rendering.set_sprite(pond.sprite, 'tailings-pond-sprite-1')
-        elseif fluid_per > .974 then
-            rendering.set_sprite(pond.sprite, 'tailings-pond-sprite-30')
-        else
-            rendering.set_sprite(pond.sprite, 'tailings-pond-sprite-' .. math.ceil(fluid_per * 30))
+        local sprite
+        local fluid
+        local color
+        log("hit")
+        if  pond.entity.fluidbox[1] then
+            log("hit")
+            fluid = pond.entity.fluidbox[1].name
+            color = game.fluid_prototypes[fluid].base_color
         end
+        log(serpent.block(color))
+        if fluid_per == 0 then
+            log("hit")
+            sprite = rendering.draw_sprite {
+                sprite = 'tailings-pond-sprite-1',
+                render_layer = 'higher-object-under',
+                target = pond.entity,
+                target_offset = {0,-0.5},
+                surface = pond.entity.surface,
+                tint = color or nil
+            }
+        elseif fluid_per > .974 then
+            log("hit")
+            sprite = rendering.draw_sprite {
+                sprite = 'tailings-pond-sprite-30',
+                render_layer = 'higher-object-under',
+                target = pond.entity,
+                target_offset = {0,-0.5},
+                surface = pond.entity.surface,
+                tint = color or nil
+            }
+        else
+            log("hit")
+            sprite = rendering.draw_sprite {
+                sprite = 'tailings-pond-sprite-' .. math.ceil(fluid_per * 30),
+                render_layer = 'higher-object-under',
+                target = pond.entity,
+                target_offset = {0,-0.5},
+                surface = pond.entity.surface,
+                tint = color or nil
+            }
+        end
+        pond.sprite = sprite
     else
         pond.sprite = create_sprite(pond.entity)
     end

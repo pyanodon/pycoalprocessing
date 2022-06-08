@@ -100,19 +100,20 @@ ENTITY {
     circuit_wire_max_distance = 9,
     circuit_connector_sprites = _G.circuit_connector_definitions['storage-tank'].sprites
 }
+]]--
 
 do -- Make tailings pond sprites
     local pictures = {}
     local i = 1
-    for y = 0, 555 - 185, 185 do
-        for x = 0, 1710 - 171, 171 do
+    for y = 0, 2112 - 352, 352 do
+        for x = 0, 2240 - 448, 448 do
             pictures[#pictures + 1] = {
                 type = 'sprite',
                 name = 'tailings-pond-sprite-' .. i,
-                filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/fluid-sheet.png',
+                filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/fluid.png',
                 priority = 'extra-high',
-                width = 171,
-                height = 185,
+                width = 448,
+                height = 352,
                 x = x,
                 y = y
             }
@@ -121,8 +122,6 @@ do -- Make tailings pond sprites
     end
     data:extend(pictures)
 end
-
-]]--
 
 ENTITY{
     type = "storage-tank",
@@ -162,16 +161,7 @@ ENTITY{
                 shift = util.by_pixel(0, -32)
             }
         },
-        fluid_background = {
-            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/f10.png',
-            --priority = 'high',
-            --frames = 1,
-            width = 448,
-            height = 352,
-            --x = 448,
-            --y = 352,
-            shift = util.by_pixel(0, -0)
-        },
+        fluid_background = DATA.Sprites.empty_sprite(),
         window_background = {
             filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/bowl.png',
             priority = 'low',
@@ -180,7 +170,8 @@ ENTITY{
             height = 704,
             --x = 448,
             --y = 352,
-            shift = util.by_pixel(0, -32)
+            shift = util.by_pixel(0, -32),
+            draw_as_shadow = false
         },
         flow_sprite = DATA.Sprites.empty_sprite(),
         gas_flow = DATA.Sprites.empty_animation()
