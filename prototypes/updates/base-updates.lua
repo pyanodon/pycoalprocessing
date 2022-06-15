@@ -168,6 +168,8 @@ RECIPE("flamethrower-ammo"):replace_ingredient("crude-oil", "light-oil")
 RECIPE("rail"):clear_ingredients():add_ingredient({"stone", 1}):add_ingredient({"iron-stick", 2}):add_ingredient(
     {"treated-wood", 2})
 
+RECIPE("landfill"):replace_ingredient("stone", {"stone", 50}):add_ingredient{"gravel", 50}:add_ingredient{"soil", 50}
+
 --RECIPE("nuclear-fuel"):remove_unlock("kovarex-enrichment-process")
 
 ITEM("rocket-fuel"):set_fields{fuel_category = "jerry"}
