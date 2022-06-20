@@ -37,7 +37,7 @@ for f, fluid in pairs(data.raw.fluid) do
             localised_name = {"item-name.fill-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
             icons = {
                 {icon = "__pycoalprocessinggraphics__/graphics/icons/jerry-can.png", icon_size = 64},
-                {icon = fluid.icon, icon_size = fluid.icon_size, scale = scale, shift = {7.5,7.5}}
+                {icon = fluid.icon, icon_size = fluid.icon_size, scale = scale, shift = {0, 2}}
             },
             flags = {},
             subgroup = "py-items",
@@ -81,6 +81,11 @@ for f, fluid in pairs(data.raw.fluid) do
             type = "recipe",
             name = "empty-" .. fluid.name .. "-canister",
             localised_name = {"recipe-name.empty-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
+            icons = {
+                {icon = "__pycoalprocessinggraphics__/graphics/empty.png", icon_size = 32},
+                {icon = "__pycoalprocessinggraphics__/graphics/icons/empty-jerrycan.png", icon_size = 64, scale= 0.4, shift = {-6.4, -6.4}},
+                {icon = fluid.icon, icon_size = fluid.icon_size, scale = scale, shift = {7.5,7.5}}
+            },
             category = "crafting-with-fluid",
             enabled = false,
             energy_required = 0.2,
