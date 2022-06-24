@@ -10,5 +10,6 @@ FLUID {
     max_temperature = 3000,
     gas_temperature = 15,
     subgroup = "py-combustion",
-    order = "z-[combustion-mixture1]"
+    order = "z-[combustion-mixture1]",
+    auto_barrel = false
 }
