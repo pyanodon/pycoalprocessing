@@ -13,7 +13,8 @@
     "~ pycoalprocessinggraphics",
     "~ pypostprocessing",
     "(?) DiscoScience",
-    "! angelsrefining"
+    "! angelsrefining",
+    "! 248k"
   ],
   "package": {
     "ignore": [],
