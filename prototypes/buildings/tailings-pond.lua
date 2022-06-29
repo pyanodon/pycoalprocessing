@@ -123,6 +123,13 @@ do -- Make tailings pond sprites
     data:extend(pictures)
 end
 
+local blank_png = {
+    filename = "__core__/graphics/empty.png",
+    height = 1,
+    priority = "extra-high",
+    width = 1
+}
+
 ENTITY{
     type = "storage-tank",
     name = "tailings-pond",
@@ -137,18 +144,89 @@ ENTITY{
     selection_box = {{-9, -9}, {9, 9}},
     fluid_box =
     {
-      base_area = 1000,
-      base_level = -1,
-      pipe_covers = DATA.Pipes.covers(true, true, true, true),
-      pipe_connections =
-      {
-        { position = {-9, -2.5} },
-        { position = {9, 1.5} },
-        { position = {9, 2.5} },
-        { position = {-9, -1.5} }
-      }
+        base_area = 1000,
+        base_level = -1,
+        pipe_picture = {
+            north = blank_png,
+            east = {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/tailings-pond/east-pipe.png",
+                width = 64,
+                height = 64,
+                shift = {-0.5, 0},
+                hr_version = {
+                    filename = "__pyindustry__/graphics/entity/niobium-pipe/hr-east-pipe.png",
+                    width = 128,
+                    height = 128,
+                    scale = 0.5,
+                    shift = {-0.5, 0}
+                }
+            },
+            south = {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/tailings-pond/south-pipe.png",
+                width = 64,
+                height = 64,
+                shift = {0, 0.5},
+                hr_version = {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/tailings-pond/hr-south-pipe.png",
+                    width = 128,
+                    height = 128,
+                    scale = 0.5,
+                    shift = {0, 0.5}
+                }
+            },
+            west = blank_png
+        },
+        pipe_covers = {
+            east = blank_png,
+            north = blank_png,
+            south = {
+                layers = {
+                    {
+                        filename = "__base__/graphics/entity/pipe-covers/pipe-cover-south.png",
+                        height = 64,
+                        width = 64,
+                        shift = {0, 0.5},
+                        priority = "extra-high",
+                        hr_version = {
+                            filename = "__base__/graphics/entity/pipe-covers/hr-pipe-cover-south.png",
+                            height = 128,
+                            width = 128,
+                            scale = 0.5,
+                            shift = {0, 0.5},
+                            priority = "extra-high",
+                        },
+                    },
+                    {
+                        filename = "__base__/graphics/entity/pipe-covers/pipe-cover-south-shadow.png",
+                        height = 64,
+                        width = 64,
+                        shift = {0, 0.5},
+                        priority = "extra-high",
+                        draw_as_shadow = true,
+                        hr_version = {
+                            filename = "__base__/graphics/entity/pipe-covers/hr-pipe-cover-south-shadow.png",
+                            height = 128,
+                            width = 128,
+                            scale = 0.5,
+                            shift = {0, 0.5},
+                            priority = "extra-high",
+                            draw_as_shadow = true
+                        },
+                    }
+                }
+            },
+            west = blank_png
+        },
+        pipe_connections =
+        {
+            { position = {-9, -1.5} },
+            { position = {-9, -3} },
+            { position = {9.25, 1.5} },
+            { position = {9.25, 2.5} },
+        },
+        secondary_draw_orders = {east = 0, south = 0},
     },
-    two_direction_only = false,
+    two_direction_only = true,
     window_bounding_box = {{-9, -9}, {9, 9}},
     pictures = {
         picture = {
@@ -182,14 +260,14 @@ ENTITY{
     close_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.15},
     working_sound =
     {
-      sound =
-      {
-          filename = "__base__/sound/storage-tank.ogg",
-          volume = 0.6
-      },
-      match_volume_to_activity = true,
-      audible_distance_modifier = 0.5,
-      max_sounds_per_type = 3
+        sound =
+        {
+            filename = "__base__/sound/storage-tank.ogg",
+            volume = 0.6
+        },
+        match_volume_to_activity = true,
+        audible_distance_modifier = 0.5,
+        max_sounds_per_type = 3
     },
     circuit_wire_connection_points = {
         {
@@ -211,4 +289,4 @@ ENTITY{
     },
     circuit_wire_max_distance = 9,
     circuit_connector_sprites = _G.circuit_connector_definitions['storage-tank'].sprites
-  }
+}
