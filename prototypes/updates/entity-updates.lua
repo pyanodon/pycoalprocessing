@@ -108,7 +108,9 @@ data.raw.inserter["burner-inserter"].energy_source.burnt_inventory_size = 1
 data.raw["mining-drill"]["burner-mining-drill"].energy_source.burnt_inventory_size = 1
 data.raw.furnace["stone-furnace"].energy_source.burnt_inventory_size = 1
 data.raw.furnace["steel-furnace"].energy_source.burnt_inventory_size = 1
-
+if mods["Companion_Drones"] then
+    data.raw["spider-vehicle"]["companion"].energy_source.burnt_inventory_size = 1
+end
 
 data.raw.car.car.burner.fuel_category = nil
 data.raw.car.car.burner.fuel_categories = {"jerry", "chemical", "biomass"}
