@@ -154,7 +154,7 @@ ENTITY{
                 height = 64,
                 shift = {-0.5, 0},
                 hr_version = {
-                    filename = "__pyindustry__/graphics/entity/niobium-pipe/hr-east-pipe.png",
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/tailings-pond/hr-east-pipe.png",
                     width = 128,
                     height = 128,
                     scale = 0.5,
