@@ -1,3 +1,5 @@
+local table = require('__stdlib__/stdlib/utils/table')
+
 -- (( TECHNOLOGY ))--
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):add_pack("military-science-pack")
 
@@ -181,5 +183,20 @@ ITEM("rocket-fuel"):set_fields{fuel_category = "jerry"}
 for i, item in pairs(data.raw.item) do
     if item.fuel_category ~= nil and item.fuel_category == "chemical" and item.name ~= "active-carbon" then
         data.raw.item[item.name].burnt_result = "ash"
+    end
+end
+
+for et, _ in pairs(defines.prototypes["entity"]) do
+    for _, entity in pairs(data.raw[et]) do
+        if entity.burner or (entity.energy_source and entity.energy_source.type == "burner") then
+            local es = entity.burner or entity.energy_source
+
+            if ((not es.fuel_categories and (es.fuel_category or "chemical") == "chemical")
+                or (es.fuel_categories and table.any(es.fuel_categories, function (f) return f == "chemical" end)))
+                and (es.burnt_inventory_size or 0) < 1
+            then
+                es.burnt_inventory_size = 1
+            end
+        end
     end
 end
