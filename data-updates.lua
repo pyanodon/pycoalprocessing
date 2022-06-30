@@ -381,7 +381,7 @@ FUN.productivity(recipes_list)
 
 -- Updating requester paste setting
 if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].value ~= 30 then
-    log("Updating recipe requester paste values")
+  --log("Updating recipe requester paste values")
     --These types (data.raw[entity_type]) are placeable entities
     local entity_types = {'accumulator','artillery-turret','beacon','boiler','burner-generator','character','arithmetic-combinator','decider-combinator','constant-combinator','container','logistic-container','infinity-container','assembling-machine','rocket-silo','furnace','electric-energy-interface','electric-pole','unit-spawner','fish','combat-robot','construction-robot','logistic-robot','gate','generator','heat-interface','heat-pipe','inserter','lab','lamp','land-mine','linked-container','market','mining-drill','offshore-pump','pipe','infinity-pipe','pipe-to-ground','player-port','power-switch','programmable-speaker','pump','radar','curved-rail','straight-rail','rail-chain-signal','rail-signal','reactor','roboport','simple-entity','simple-entity-with-owner','simple-entity-with-force','solar-panel','spider-leg','storage-tank','train-stop','linked-belt','loader-1x1','loader','splitter','transport-belt','underground-belt','tree','turret','ammo-turret','electric-turret','fluid-turret','unit','car','artillery-wagon','cargo-wagon','fluid-wagon','locomotive','spider-vehicle','wall'}
     -- We store the result of each lookup so we don't have to do it again

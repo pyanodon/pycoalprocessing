@@ -105,15 +105,15 @@ local function set_fluid_level_image(pond)
         local sprite
         local fluid
         local color
-        log("hit")
+      --log("hit")
         if  pond.entity.fluidbox[1] then
-            log("hit")
+          --log("hit")
             fluid = pond.entity.fluidbox[1].name
             color = game.fluid_prototypes[fluid].base_color
         end
-        log(serpent.block(color))
+      --log(serpent.block(color))
         if fluid_per == 0 then
-            log("hit")
+          --log("hit")
             sprite = rendering.draw_sprite {
                 sprite = 'tailings-pond-sprite-1',
                 render_layer = 'higher-object-under',
@@ -123,7 +123,7 @@ local function set_fluid_level_image(pond)
                 tint = color or nil
             }
         elseif fluid_per > .974 then
-            log("hit")
+          --log("hit")
             sprite = rendering.draw_sprite {
                 sprite = 'tailings-pond-sprite-30',
                 render_layer = 'higher-object-under',
@@ -133,7 +133,7 @@ local function set_fluid_level_image(pond)
                 tint = color or nil
             }
         else
-            log("hit")
+          --log("hit")
             sprite = rendering.draw_sprite {
                 sprite = 'tailings-pond-sprite-' .. math.ceil(fluid_per * 30),
                 render_layer = 'higher-object-under',

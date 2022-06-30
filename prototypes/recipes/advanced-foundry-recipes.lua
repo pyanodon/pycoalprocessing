@@ -47,7 +47,7 @@ RECIPE {
 
 --[[
 --Make foundry recipes from smelting recipes with 1 ingredient.
-log("Creating additional foundry recipes")
+--log("Creating additional foundry recipes")
 
 local _filter_ing = function(v)
     return v.category == "smelting" and (v.ingredients and #v.ingredients == 1 or v.normal and v.normal.ingredients and #v.normal.ingredients == 1)
