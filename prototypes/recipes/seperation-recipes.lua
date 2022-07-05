@@ -142,13 +142,13 @@ RECIPE {
     name = "ash-separation",
     category = "solid-separator",
     enabled = false,
-    energy_required = 3,
+    energy_required = 1,
     ingredients = {
-        {type = "item", name = "ash", amount = 100}
+        {type = "item", name = "ash", amount = 10}
     },
     results = {
-        {type = "item", name = "coal-dust", amount = 2},
-        {type = "item", name = "iron-oxide", amount = 1, probability = 0.5}
+        {type = "item", name = "coal-dust", amount = 1, probability = 0.5},
+        {type = "item", name = "iron-oxide", amount = 1, probability = 0.05}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/ash-separation.png",
     icon_size = 32,
