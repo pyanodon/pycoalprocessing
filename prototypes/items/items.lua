@@ -2,7 +2,7 @@ ITEM {
     type = "item",
     name = "ash",
     icon = "__pycoalprocessinggraphics__/graphics/icons/ash.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-items",
     order = "ash",
