@@ -121,6 +121,7 @@ local function set_fuel_table_style_and_header(fuel_table)
     fuel_table.add{type = 'label', caption = 'Sort by'}
     fuel_table.add{type = 'textfield', text = 'search'}
     fuel_table.add{type = 'sprite-button', sprite = 'fluid/combustion-mixture1'}
+    fuel_table.add{type = "label", caption = "Burnt Result"}
 end
 
 local function set_vent_table_style_and_header(vent_table)
@@ -149,6 +150,13 @@ local function add_table_line_fuel(fuel_table, item, item_type, fuel_value)
     fuel_table.add{type = 'sprite', sprite = item_type .. '/' .. item}
     fuel_table.add{type = "label", caption = game[item_type .. '_prototypes'][item].localised_name}
     fuel_table.add{type = "label", caption = get_formatted_fuel_value(fuel_value)}
+    if item_type == "item" then
+        if game["item_prototypes"][item].burnt_result then
+            fuel_table.add{type = "label", caption = game["item_prototypes"][game["item_prototypes"][item].burnt_result.name].localised_name}
+            return
+        end
+    end
+    fuel_table.add{type = "label", caption = ""}
 end
 
 local function add_table_line_disposables(disposable_table, item)
@@ -223,7 +231,7 @@ local function on_click(event)
             local fluids_fuel_table = fluid_scroll.add{
                 type="table",
                 name="fluids_fuel_table",
-                column_count=3
+                column_count=4
             }
 
             set_fuel_table_style_and_header(fluids_fuel_table)
@@ -240,7 +248,7 @@ local function on_click(event)
             local items_fuel_table = item_scroll.add{
                 type="table",
                 name="items_fuel_table",
-                column_count=3
+                column_count=4
             }
 
             set_fuel_table_style_and_header(items_fuel_table)
