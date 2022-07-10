@@ -330,7 +330,7 @@ ITEM {
     type = "item",
     name = "fawogae-substrate",
     icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-substrate.png",
-    icon_size = 32,
+    icon_size = 64,
     flags = {},
     subgroup = "py-items",
     order = "g",

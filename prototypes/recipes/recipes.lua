@@ -114,7 +114,7 @@ RECIPE {
     },
     main_product = "fawogae-substrate",
     icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-substrate.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-items",
     order = "f"
 }
