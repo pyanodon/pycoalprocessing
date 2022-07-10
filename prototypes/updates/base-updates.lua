@@ -7,7 +7,7 @@ TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production
 
 TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
 
-TECHNOLOGY("rocket-fuel"):add_pack("military-science-pack")
+TECHNOLOGY("rocket-fuel"):add_pack("military-science-pack"):remove_prereq("advanced-oil-processing"):remove_prereq("flammables")
 
 TECHNOLOGY("rocket-control-unit"):add_pack("military-science-pack"):add_pack("production-science-pack")
 
@@ -17,7 +17,7 @@ TECHNOLOGY("worker-robots-speed-3"):remove_pack("utility-science-pack"):add_pack
 
 TECHNOLOGY("worker-robots-speed-4"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
 
-TECHNOLOGY("landfill"):remove_pack("logistic-science-pack")
+TECHNOLOGY("landfill"):remove_pack("logistic-science-pack"):remove_prereq("logistic-science-pack")
 
 TECHNOLOGY("fluid-handling"):remove_pack("logistic-science-pack")
 
@@ -96,6 +96,8 @@ TECHNOLOGY("mining-productivity-3"):add_pack("military-science-pack")
 TECHNOLOGY("mining-productivity-4"):add_pack("military-science-pack")
 
 TECHNOLOGY("artillery"):add_pack("production-science-pack")
+
+TECHNOLOGY("concrete"):remove_prereq("automation-2")
 
 -- Remove empty vanilla techs
 TECHNOLOGY("electronics"):set_fields{enabled = false, hidden = true}
@@ -185,6 +187,8 @@ for i, item in pairs(data.raw.item) do
         data.raw.item[item.name].burnt_result = "ash"
     end
 end
+
+-- local defines = require('__pypostprocessing__/prototypes/functions/defines')
 
 for et, _ in pairs(defines.prototypes["entity"]) do
     for _, entity in pairs(data.raw[et]) do
