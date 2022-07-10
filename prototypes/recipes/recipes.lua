@@ -411,7 +411,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 2}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/ash.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-items",
     order = "g"
 }:add_unlock("filtration")

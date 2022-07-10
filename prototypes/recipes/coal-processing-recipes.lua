@@ -1125,7 +1125,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 1}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/ash.png",
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-items",
     order = "g"
 }:add_unlock("coal-processing-3")
