@@ -45,10 +45,8 @@ Event.register(Event.core_events.init, game_finish.on_init)
 
 function game_finish.on_research_finished(event)
   local tech = event.research
-  for p, pack in pairs(tech.research_unit_ingredients) do
+  if tech.name == "pyrrhic" then
 		--log('hit')
-		if pack.name == 'space-science-pack' then
-			--log('hit')
 			game.set_game_state
 			{
 			  game_finished = true,
@@ -56,7 +54,6 @@ function game_finish.on_research_finished(event)
 			  can_continue = true,
 			  victorious_force = tech.force
 			}
-		end
 	end
 end
 Event.register(defines.events.on_research_finished, game_finish.on_research_finished)
