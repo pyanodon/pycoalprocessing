@@ -59,7 +59,7 @@ ENTITY {
         usage_priority = "secondary-input",
         emissions_per_minute = 0.06,
     },
-    energy_usage = "500kW",
+    energy_usage = "8MW",
     animation = {
         priority = "high",
         filename = "__pycoalprocessinggraphics__/graphics/entity/hpf/hpf-off-mk04.png",
