@@ -80,6 +80,7 @@ data.raw['assembling-machine']['assembling-machine-3'].module_specification.modu
 --modify mining drill power and speed
 data.raw['mining-drill']['burner-mining-drill'].mining_speed = 1
 data.raw['mining-drill']['burner-mining-drill'].energy_usage = '500KW'
+data.raw['mining-drill']['burner-mining-drill'].resource_searching_radius = 1.99
 
 data.raw['mining-drill']['electric-mining-drill'].mining_speed = 2
 data.raw['mining-drill']['electric-mining-drill'].energy_usage = '1MW'
