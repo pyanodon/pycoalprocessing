@@ -176,6 +176,9 @@ RECIPE("landfill"):replace_ingredient("stone", {"stone", 50}):add_ingredient{"gr
 
 --RECIPE("nuclear-fuel"):remove_unlock("kovarex-enrichment-process")
 
+RECIPE("burner-inserter"):replace_ingredient("iron-plate", {type = "item", name = "iron-plate", amount = 10})
+RECIPE("burner-inserter"):replace_ingredient("iron-gear-wheel", {type = "item", name = "iron-gear-wheel", amount = 4})
+
 ITEM("rocket-fuel"):set_fields{fuel_category = "jerry"}
 
 --data.raw.item["nuclear-fuel"].fuel_category = nil
@@ -188,7 +191,7 @@ for i, item in pairs(data.raw.item) do
     end
 end
 
--- local defines = require('__pypostprocessing__/prototypes/functions/defines')
+local defines = require('__pypostprocessing__/prototypes/functions/defines')
 
 for et, _ in pairs(defines.prototypes["entity"]) do
     for _, entity in pairs(data.raw[et]) do
