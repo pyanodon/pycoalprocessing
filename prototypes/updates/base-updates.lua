@@ -191,7 +191,7 @@ for i, item in pairs(data.raw.item) do
     end
 end
 
-local defines = require('__pypostprocessing__/prototypes/functions/defines')
+-- local defines = require('__pypostprocessing__/prototypes/functions/defines')
 
 for et, _ in pairs(defines.prototypes["entity"]) do
     for _, entity in pairs(data.raw[et]) do
