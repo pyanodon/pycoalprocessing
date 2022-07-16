@@ -98,6 +98,9 @@ data.raw.inserter["burner-inserter"].energy_source.type = "void"
 --data.raw.inserter["burner-inserter"].energy_source.fuel_category = nil
 --data.raw.inserter["burner-inserter"].energy_source.fuel_categories = {"chemical", "biomass"}
 
+data.raw.inserter["inserter"].extension_speed = 0.035
+data.raw.inserter["inserter"].rotation_speed = 0.02
+
 data.raw["mining-drill"]["burner-mining-drill"].energy_source.fuel_category = nil
 data.raw["mining-drill"]["burner-mining-drill"].energy_source.fuel_categories = {"chemical", "biomass"}
 
