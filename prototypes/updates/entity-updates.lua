@@ -93,6 +93,8 @@ data.raw.furnace["steel-furnace"].energy_usage = "500kW"
 data.raw.furnace["steel-furnace"].energy_source.fuel_category = nil
 data.raw.furnace["steel-furnace"].energy_source.fuel_categories = {"chemical", "biomass"}
 
+RECIPE("steel-furnace"):replace_ingredient("stone-brick", "refined-concrete")
+
 
 data.raw.inserter["burner-inserter"].energy_source.type = "void"
 --data.raw.inserter["burner-inserter"].energy_source.fuel_category = nil
