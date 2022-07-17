@@ -1,4 +1,5 @@
 local table = require('__stdlib__/stdlib/utils/table')
+local py_utils = require "__pypostprocessing__.prototypes.functions.utils"
 
 -- (( TECHNOLOGY ))--
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):add_pack("military-science-pack")
@@ -134,7 +135,7 @@ TECHNOLOGY("chemical-science-pack"):set_fields{ prerequisites = {} }
 TECHNOLOGY("military-science-pack"):set_fields{ prerequisites = {} }
 TECHNOLOGY("production-science-pack"):set_fields{ prerequisites = {} }
 TECHNOLOGY("utility-science-pack"):set_fields{ prerequisites = {} }
-TECHNOLOGY("space-science-pack"):set_fields{ prerequisites = {} }
+TECHNOLOGY("space-science-pack"):set_fields{ prerequisites = { "rocket-silo" } }
 
 
 -- Technology icons
@@ -200,19 +201,15 @@ for i, item in pairs(data.raw.item) do
     end
 end
 
--- local defines = require('__pypostprocessing__/prototypes/functions/defines')
+for _, entity in py_utils.iter_prototypes("entity") do
+    if entity.burner or (entity.energy_source and entity.energy_source.type == "burner") then
+        local es = entity.burner or entity.energy_source
 
-for et, _ in pairs(defines.prototypes["entity"]) do
-    for _, entity in pairs(data.raw[et]) do
-        if entity.burner or (entity.energy_source and entity.energy_source.type == "burner") then
-            local es = entity.burner or entity.energy_source
-
-            if ((not es.fuel_categories and (es.fuel_category or "chemical") == "chemical")
-                or (es.fuel_categories and table.any(es.fuel_categories, function (f) return f == "chemical" end)))
-                and (es.burnt_inventory_size or 0) < 1
-            then
-                es.burnt_inventory_size = 1
-            end
+        if ((not es.fuel_categories and (es.fuel_category or "chemical") == "chemical")
+            or (es.fuel_categories and table.any(es.fuel_categories, function (f) return f == "chemical" end)))
+            and (es.burnt_inventory_size or 0) < 1
+        then
+            es.burnt_inventory_size = 1
         end
     end
 end
