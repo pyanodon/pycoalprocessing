@@ -128,6 +128,15 @@ TECHNOLOGY("power-armor-mk2"):set_fields{dependencies = {"power-armor"}}
 
 TECHNOLOGY("electric-energy-accumulators"):set_fields{dependencies = {"electric-energy-distribution-1"}}
 
+
+TECHNOLOGY("logistic-science-pack"):set_fields{ prerequisites = {} }
+TECHNOLOGY("chemical-science-pack"):set_fields{ prerequisites = {} }
+TECHNOLOGY("military-science-pack"):set_fields{ prerequisites = {} }
+TECHNOLOGY("production-science-pack"):set_fields{ prerequisites = {} }
+TECHNOLOGY("utility-science-pack"):set_fields{ prerequisites = {} }
+TECHNOLOGY("space-science-pack"):set_fields{ prerequisites = {} }
+
+
 -- Technology icons
 for i = 1, 6 do
     local tech = TECHNOLOGY("research-speed-" .. i)
