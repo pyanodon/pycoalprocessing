@@ -194,6 +194,8 @@ ITEM("rocket-fuel"):set_fields{fuel_category = "jerry"}
 --data.raw.item["nuclear-fuel"].fuel_category = nil
 --data.raw.item["nuclear-fuel"].fuel_value = nil
 
+data.raw.item["wood"].fuel_category = "biomass"
+
 -- add ash to burnt results for chemical fuel items
 for i, item in pairs(data.raw.item) do
     if item.fuel_category ~= nil and item.fuel_category == "chemical" and item.name ~= "active-carbon" then
@@ -213,3 +215,5 @@ for _, entity in py_utils.iter_prototypes("entity") do
         end
     end
 end
+
+data.raw.item["nuclear-fuel"].burnt_result = nil

@@ -46,8 +46,6 @@ data.raw.item["uranium-fuel-cell"].fuel_value = "4GJ"
 
 data.raw["assembling-machine"]["centrifuge"].energy_usage = "250MW"
 
-data.raw.item["wood"].fuel_category = "biomass"
-
 local burner = {
     type = "burner",
     fuel_categories = {"chemical", "biomass"},
