@@ -11,7 +11,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "crude-oil", amount = 400},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 100, catalyst_amount = 2000},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000},
         {type = "fluid", name = "olefin", amount = 200}
     },
     main_product = "crude-oil",
