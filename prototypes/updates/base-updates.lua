@@ -186,8 +186,8 @@ RECIPE("landfill"):replace_ingredient("stone", {"stone", 50}):add_ingredient{"gr
 
 --RECIPE("nuclear-fuel"):remove_unlock("kovarex-enrichment-process")
 
-RECIPE("burner-inserter"):replace_ingredient("iron-plate", {type = "item", name = "iron-plate", amount = 10})
-RECIPE("burner-inserter"):replace_ingredient("iron-gear-wheel", {type = "item", name = "iron-gear-wheel", amount = 4})
+RECIPE("burner-inserter"):replace_ingredient("iron-plate", {type = "item", name = "iron-plate", amount = 5})
+RECIPE("burner-inserter"):replace_ingredient("iron-gear-wheel", {type = "item", name = "iron-gear-wheel", amount = 2})
 
 ITEM("rocket-fuel"):set_fields{fuel_category = "jerry"}
 
