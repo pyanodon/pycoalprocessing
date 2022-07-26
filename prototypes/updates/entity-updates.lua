@@ -1,5 +1,11 @@
 local table = require "__stdlib__.stdlib.utils.table"
 
+
+data.raw['underground-belt']['underground-belt'].max_distance = 9
+data.raw['underground-belt']['fast-underground-belt'].max_distance = 17
+data.raw['underground-belt']['express-underground-belt'].max_distance = 33
+
+
 --modify steam engine temp
 data.raw.generator['steam-engine'].maximum_temperature = 500
 data.raw.generator['steam-engine'].destroy_non_fuel_fluid = false
