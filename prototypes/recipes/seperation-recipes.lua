@@ -51,8 +51,8 @@ RECIPE {
     },
     results = {
         {type = "item", name = "coal-dust", amount = 5},
-        {type = "item", name = "copper-ore", amount = 1}, --bob lead-ore
-        {type = "item", name = "iron-ore", amount = 1} --bob tin-ore
+        {type = "item", name = "copper-ore", amount = 1},
+        {type = "item", name = "iron-ore", amount = 1}
     },
     main_product = "coal-dust",
     icon = "__pycoalprocessinggraphics__/graphics/icons/class-tailings.png",
