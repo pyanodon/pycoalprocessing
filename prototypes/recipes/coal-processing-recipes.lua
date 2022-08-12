@@ -190,7 +190,7 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "molten-glass", amount = 50}, --bob glass
+        {type = "fluid", name = "molten-glass", amount = 50, fluidbox_index = 2},
         {type = "item", name = "boron-trioxide", amount = 1}
     },
     results = {

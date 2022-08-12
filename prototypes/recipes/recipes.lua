@@ -126,7 +126,7 @@ RECIPE {
     category = "glassworks",
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "molten-glass", amount = 25},
+        {type = "fluid", name = "molten-glass", amount = 25, fluidbox_index = 2},
         {type = "item", name = "wood", amount = 10}
     },
     results = {
@@ -456,7 +456,7 @@ RECIPE {
     enabled = false,
     energy_required = 3.5,
     ingredients = {
-        {type = "fluid", name = "molten-glass", amount = 10},
+        {type = "fluid", name = "molten-glass", amount = 10, fluidbox_index = 2},
         {type = "item", name = "steel-plate", amount = 3},
         {type = "item", name = "sulfur", amount = 4}
     },
