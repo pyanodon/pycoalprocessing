@@ -720,6 +720,13 @@ local altrec = 0
 		afrcount=afrcount+1
 		--add ingredient
 		local result
+        local index 
+        if recipe.category == "glassworks" then
+            index = 3
+        else
+            index = nil
+        end
+
 		if recipe.normal == nil and recipe.expensive == nil then
 			if recipe.ingredients[1] ~= nil then
 				if recipe.ingredients[1].name == nil then
@@ -729,13 +736,13 @@ local altrec = 0
 					if data.raw.item["solid-hot-air"] ~= nil then
 						table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
 					else
-						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50})
+						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
 					end
 				elseif recipe.ingredients[1].name then
 					if data.raw.item["solid-hot-air"] ~= nil then
 						table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
 					else
-						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50})
+						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
 					end
 				end
 			elseif recipe.ingredients[2] ~= nil then
@@ -746,13 +753,13 @@ local altrec = 0
 					if data.raw.item["solid-hot-air"] ~= nil then
 						table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
 					else
-						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50})
+						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
 					end
 				elseif recipe.ingredients[2].name then
 					if data.raw.item["solid-hot-air"] ~= nil then
 						table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
 					else
-						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50})
+						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
 					end
 				end
 			end
@@ -791,13 +798,13 @@ local altrec = 0
 						if data.raw.item["solid-hot-air"] ~= nil then
 							table.insert(recipe.normal.ingredients,{type="item",name="solid-hot-air",amount=50})
 						else
-							table.insert(recipe.normal.ingredients,{type = "fluid", name = "hot-air", amount = 50})
+							table.insert(recipe.normal.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
 						end
 					else
 						if data.raw.item["solid-hot-air"] ~= nil then
 							table.insert(recipe.normal.ingredients,{type="item",name="solid-hot-air",amount=50})
 						else
-							table.insert(recipe.normal.ingredients,{type = "fluid", name = "hot-air", amount = 50})
+							table.insert(recipe.normal.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
 						end
 					end
 				end
@@ -824,13 +831,13 @@ local altrec = 0
 						if data.raw.item["solid-hot-air"] ~= nil then
 							table.insert(recipe.expensive.ingredients,{type="item",name="solid-hot-air",amount=50})
 						else
-							table.insert(recipe.expensive.ingredients,{type = "fluid", name = "hot-air", amount = 50})
+							table.insert(recipe.expensive.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
 						end
 					else
 						if data.raw.item["solid-hot-air"] ~= nil then
 							table.insert(recipe.expensive.ingredients,{type="item",name="solid-hot-air",amount=50})
 						else
-							table.insert(recipe.expensive.ingredients,{type = "fluid", name = "hot-air", amount = 50})
+							table.insert(recipe.expensive.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
 						end
 					end
 				end
@@ -933,7 +940,7 @@ local altrec = 0
 			main_product = recipe.main_product or nil,
 			subgroup = recipe.subgroup,
 			order = recipe.order and (recipe.order .. "-a") or nil
-			}--:add_unlock(unlock)
+			}--:serpent()
 			altrec=altrec+1
 			if recipe.enabled == false then
 				if unlock ~= nil then

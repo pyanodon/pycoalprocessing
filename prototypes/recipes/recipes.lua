@@ -452,7 +452,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "glass-core",
-    category = 'glassworks',
+    category = "glassworks",
     enabled = false,
     energy_required = 3.5,
     ingredients = {
