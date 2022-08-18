@@ -117,7 +117,7 @@ TECHNOLOGY("military-2"):set_fields{dependencies = {"military"}}
 
 TECHNOLOGY("gate"):set_fields{dependencies = {"military-2"}}
 
-TECHNOLOGY("car"):set_fields{dependencies = {"logistics-2"}}
+TECHNOLOGY("automobilism"):remove_pack("logistic-science-pack"):set_fields{ prerequisites = {} }
 
 TECHNOLOGY("heavy-armor"):set_fields{dependencies = {"military"}}
 
