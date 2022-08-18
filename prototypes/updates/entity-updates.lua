@@ -16,6 +16,7 @@ data.raw.boiler.boiler.target_temperature = 250
 data.raw.boiler.boiler.energy_consumption = "3.70125MW"
 --modify boiler to have burnt result inventory
 data.raw.boiler.boiler.energy_source.burnt_inventory_size = 1
+data.raw.boiler.boiler.energy_source.fuel_categories = {"chemical", "biomass"}
 
 --modify steam turbine temp
 data.raw.generator['steam-turbine'].maximum_temperature = 2000
