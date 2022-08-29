@@ -65,18 +65,36 @@ require("scripts/wiki")
 local on_built = {}
 
 function on_built.inserter(event)
-  local entity = event.created_entity
-  local inserter
-
-  if entity.name == "inserter" or entity.name == "burner-inserter" then
-    inserter = entity
-    if not inserter.get_filter(1) then
-      inserter.inserter_filter_mode = "blacklist"
-    end
+  local inserter = event.created_entity
+  if
+    inserter.get_control_behavior()
+    or next(inserter.circuit_connected_entities.red)
+    or next(inserter.circuit_connected_entities.green)
+    or inserter.get_filter(1)
+  then
+    return
   end
+  inserter.inserter_filter_mode = "blacklist"
 end
 
 Event.register(Event.build_events, on_built.inserter)
+for _, event in pairs(Event.build_events) do
+  script.set_event_filter(event, {
+    {
+      filter = "name",
+      name = "inserter"
+    },
+    {
+      filter = "name",
+      name = "burner-inserter"
+    },
+    {
+      filter = "type",
+      type = "inserter",
+      mode = "and"
+    }
+  })
+end
 
 Event.on_configuration_changed(function (event)
   local pycp_change = (event.mod_changes or {})["pycoalprocessing"]
