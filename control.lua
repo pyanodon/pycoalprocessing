@@ -1,4 +1,5 @@
 local Event = require("__stdlib__/stdlib/event/event")
+local Version = require("__stdlib__/stdlib/vendor/semver")
 
 --Set up default MOD global variables
 MOD = {}
@@ -77,13 +78,20 @@ end
 
 Event.register(Event.build_events, on_built.inserter)
 
--- TODO: Move this to migration script, so it only runs once
-Event.on_configuration_changed(function ()
-    for _, surface in pairs(game.surfaces) do
-       for _, entity in pairs(surface.find_entities_filtered{ type = "inserter", name = { "inserter", "burner-inserter" } }) do
-          if not entity.get_filter(1) and entity.inserter_filter_mode ~= "blacklist" then
-              entity.inserter_filter_mode = "blacklist"
-          end
-       end
-    end
+Event.on_configuration_changed(function (event)
+  local pycp_change = (event.mod_changes or {})["pycoalprocessing"]
+  local old_version = (pycp_change or {}).old_version
+  if not pycp_change or old_version and Version(old_version) > Version(1,9,4) then
+    return
+  end
+  log(
+    string.format("Pycp updated from %s to %s; updating inserter filters", pycp_change.old_version or "nil", pycp_change.new_version)
+  )
+  for _, surface in pairs(game.surfaces) do
+      for _, entity in pairs(surface.find_entities_filtered{ type = "inserter", name = { "inserter", "burner-inserter" } }) do
+        if not entity.get_filter(1) and entity.inserter_filter_mode ~= "blacklist" then
+            entity.inserter_filter_mode = "blacklist"
+        end
+      end
+  end
 end)
