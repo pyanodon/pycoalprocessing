@@ -963,7 +963,8 @@ RECIPE {
     icon = "__base__/graphics/icons/stone-brick.png",
     icon_size = 64,
     subgroup = "py-items",
-    order = "s"
+    order = "s",
+    allow_decomposition = false
 }:add_unlock("concrete")
 
 RECIPE {
