@@ -1353,6 +1353,9 @@ function overrides.autorecipes(recipe)
                 data.raw.recipe[recipe_name].icon_size = 32
             end
         end
+        if rec.icons ~= nil then
+            RECIPE(recipe_name):set_fields { icons = rec.icons }
+        end
         if rec.main_product ~= nil then
             data.raw.recipe[recipe_name].main_product = rec.main_product
         elseif recipe.main_product ~= nil then
