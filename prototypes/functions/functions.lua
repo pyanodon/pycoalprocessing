@@ -1332,7 +1332,7 @@ function overrides.autorecipes(recipe)
             name = recipe_name,
             category = category,
             enabled = enabled,
-            energy_required = rec.crafting_speed,
+            energy_required = rec.crafting_speed or recipe.crafting_speed,
             ingredients = fixed_ingredients,
             results = fixed_results,
             subgroup = subgroup,
