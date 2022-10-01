@@ -940,7 +940,7 @@ local altrec = 0
 			main_product = recipe.main_product or nil,
 			subgroup = recipe.subgroup,
 			order = recipe.order and (recipe.order .. "-a") or nil
-			}--:serpent()
+			}--
 			altrec=altrec+1
 			if recipe.enabled == false then
 				if unlock ~= nil then
