@@ -24,21 +24,24 @@ RECIPE {
 
 for f, fluid in pairs(data.raw.fluid) do
     if fluid.fuel_value ~= nil and Skipped_fluids[fluid.name] ~= true and fluid.auto_barrel ~= false then
-        local scale
-        if fluid.icon_size == 32 then
-            scale = .5
-        elseif fluid.icon_size == 64 then
-            scale = .25
+
+        local fluid_icon = table.deepcopy(fluid.icons) or {{icon = fluid.icon}}
+        local icon_size = fluid.icon_size or fluid_icon.icon_size or fluid_icon[1].icon_size
+        -- Apply to each layer
+        for _, icon in pairs(fluid_icon) do
+            icon.scale = 16 / icon_size -- 32 = 0.5, 64 = 0.25
         end
 
         ITEM {
             type = "item",
             name = fluid.name .. "-canister",
             localised_name = {"item-name.fill-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
-            icons = {
-                {icon = "__pycoalprocessinggraphics__/graphics/icons/jerry-can.png", icon_size = 64},
-                {icon = fluid.icon, icon_size = fluid.icon_size, scale = scale, shift = {0, 2}}
-            },
+            icons = util.combine_icons(
+                {{icon = "__pycoalprocessinggraphics__/graphics/icons/jerry-can.png", icon_size = 64}},
+                fluid_icon,
+                {shift = {0, 2}},
+                32
+            ),
             flags = {},
             subgroup = "py-items",
             order = "canister-b-[full-gas-canister]",
@@ -81,11 +84,15 @@ for f, fluid in pairs(data.raw.fluid) do
             type = "recipe",
             name = "empty-" .. fluid.name .. "-canister",
             localised_name = {"recipe-name.empty-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
-            icons = {
-                {icon = "__pycoalprocessinggraphics__/graphics/empty.png", icon_size = 32},
-                {icon = "__pycoalprocessinggraphics__/graphics/icons/empty-jerrycan.png", icon_size = 64, scale= 0.4, shift = {-6.4, -6.4}},
-                {icon = fluid.icon, icon_size = fluid.icon_size, scale = scale, shift = {7.5,7.5}}
-            },
+            icons = util.combine_icons(
+                {
+                    {icon = "__pycoalprocessinggraphics__/graphics/empty.png", icon_size = 32},
+                    {icon = "__pycoalprocessinggraphics__/graphics/icons/empty-jerrycan.png", icon_size = 64, scale= 0.4, shift = {-6.4, -6.4}},
+                },
+                fluid_icon,
+                {shift = {7.5, 7.5}},
+                32
+            ),
             category = "crafting-with-fluid",
             enabled = false,
             energy_required = 0.2,
