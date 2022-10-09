@@ -157,7 +157,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "cooling-water",
-    hidden = true,
+    hide_from_player_crafting = true,
     category = "cooling",
     enabled = false,
     energy_required = 4,
