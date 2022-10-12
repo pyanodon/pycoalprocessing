@@ -5,6 +5,7 @@ local py_utils = require "__pypostprocessing__.prototypes.functions.utils"
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):add_pack("military-science-pack")
 
 TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
+TECHNOLOGY("military-4"):remove_pack("utility-science-pack")
 
 TECHNOLOGY("fusion-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
 
@@ -20,7 +21,7 @@ TECHNOLOGY("worker-robots-speed-4"):remove_pack("utility-science-pack"):add_pack
 
 TECHNOLOGY("landfill"):remove_pack("logistic-science-pack"):remove_prereq("logistic-science-pack")
 
-TECHNOLOGY("fluid-handling"):remove_pack("logistic-science-pack")
+TECHNOLOGY("fluid-handling"):remove_pack("logistic-science-pack"):set_fields{prerequisites = {}}
 
 TECHNOLOGY("physical-projectile-damage-6"):add_pack("production-science-pack")
 
@@ -103,15 +104,22 @@ TECHNOLOGY("concrete"):remove_prereq("automation-2")
 -- Remove empty vanilla techs
 TECHNOLOGY("electronics"):set_fields{enabled = false, hidden = true}
 
+TECHNOLOGY("automation-2"):set_fields{prerequisites = {}}
+TECHNOLOGY("rocket-control-unit"):set_fields{prerequisites = {}}
+
 TECHNOLOGY("laser"):set_fields{enabled = false, hidden = true}
+TECHNOLOGY("distractor"):set_fields{prerequisites = {}}
 
 TECHNOLOGY("modules"):set_fields{enabled = false, hidden = true}
+TECHNOLOGY("speed-module"):set_fields{prerequisites = {}}
+TECHNOLOGY("productivity-module"):set_fields{prerequisites = {}}
+TECHNOLOGY("effectivity-module"):set_fields{prerequisites = {}}
 
 -- (( TECHNOLOGY DEPENDENCIES ))--
 
 TECHNOLOGY("steel-axe"):set_fields{dependencies = {"steel-processing"}}
 
-TECHNOLOGY("fast-inserter"):set_fields{dependencies = {"automation"}}
+TECHNOLOGY("fast-inserter"):set_fields{dependencies = {"automation"}}:set_fields{prerequisites = {}}
 
 TECHNOLOGY("military-2"):set_fields{dependencies = {"military"}}
 
