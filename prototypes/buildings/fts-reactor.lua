@@ -40,8 +40,8 @@ ENTITY {
     max_health = 300,
     corpse = "medium-remnants",
     dying_explosion = "medium-explosion",
-    collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
-    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    collision_box = {{-4.35, -4.35}, {4.35, 4.35}},
+    selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
     match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 1
@@ -58,24 +58,140 @@ ENTITY {
     animation = {
         layers = {
             {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/base-anim.png",
-                width = 192,
-                height = 160,
-                line_length = 10,
-                frame_count = 99,
-                shift = {0.507, 0},
-                animation_speed = 0.75
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/bottom.png",
+                width = 288,
+                height = 32,
+                line_length = 1,
+                repeat_count = 100,
+                shift = util.by_pixel(-0, 128),
+                animation_speed = 0.5
             },
             {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/top-anim.png",
-                width = 185,
-                height = 226,
-                line_length = 11,
-                frame_count = 99,
-                shift = {-0.243, -6.0},
-                animation_speed = 0.75
-            }
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/bot-still.png",
+                width = 288,
+                height = 160,
+                line_length = 1,
+                repeat_count = 100,
+                shift = util.by_pixel(-0, 32),
+                animation_speed = 0.5
+            },
+            {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/bot-still-mask.png",
+                width = 288,
+                height = 160,
+                line_length = 1,
+                repeat_count = 100,
+                shift = util.by_pixel(-0, 32),
+                tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0},
+                animation_speed = 0.5
+            },
+            {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao-bottom.png",
+                width = 352,
+                height = 608,
+                line_length = 1,
+                repeat_count = 100,
+                shift = util.by_pixel(-0, -128),
+                animation_speed = 0.5
+            },
+            {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/sh.png",
+                width = 320,
+                height = 256,
+                line_length = 1,
+                repeat_count = 100,
+                draw_as_shadow = true,
+                shift = util.by_pixel(16, 16),
+                animation_speed = 0.5
+            },
+            {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/t1.png",
+                width = 96,
+                height = 288,
+                line_length = 20,
+                frame_count = 100,
+                shift = util.by_pixel(-96, -192),
+                animation_speed = 0.5
+            },
+            {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/t2.png",
+                width = 96,
+                height = 288,
+                line_length = 20,
+                frame_count = 100,
+                shift = util.by_pixel(0, -192),
+                animation_speed = 0.5
+            },
+            {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/t3.png",
+                width = 96,
+                height = 288,
+                line_length = 20,
+                frame_count = 100,
+                shift = util.by_pixel(96, -192),
+                animation_speed = 0.5
+            },
+            {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao1.png",
+                width = 96,
+                height = 288,
+                line_length = 20,
+                frame_count = 100,
+                shift = util.by_pixel(-96, -192),
+                animation_speed = 0.5
+            },
+            {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao2.png",
+                width = 96,
+                height = 288,
+                line_length = 20,
+                frame_count = 100,
+                shift = util.by_pixel(0, -192),
+                animation_speed = 0.5
+            },
+            {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao3.png",
+                width = 96,
+                height = 288,
+                line_length = 20,
+                frame_count = 100,
+                shift = util.by_pixel(96, -192),
+                animation_speed = 0.5
+            },
         }
+    },
+
+    working_visualisations = {
+        {
+            north_position = util.by_pixel(-0, -160),
+            west_position = util.by_pixel(-0, -160),
+            south_position = util.by_pixel(-0, -160),
+            east_position = util.by_pixel(-0, -160),
+            animation = {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/glow.png",
+                frame_count = 100,
+                line_length = 10,
+                width = 160,
+                height = 160,
+                draw_as_glow = true,
+                animation_speed = 0.5,
+            }
+        },
+        {
+            north_position = util.by_pixel(-0, -348),
+            west_position = util.by_pixel(-0, -348),
+            south_position = util.by_pixel(-0, -348),
+            east_position = util.by_pixel(-0, -348),
+            animation = {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/fts-reactor/fire.png",
+                frame_count = 100,
+                line_length = 10,
+                width = 96,
+                height = 192,
+                draw_as_glow = true,
+                animation_speed = 0.5,
+            }
+        },
     },
     fluid_boxes = {
         {
@@ -84,7 +200,7 @@ ENTITY {
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{type = "input", position = {3.0, -0.0}}}
+            pipe_connections = {{type = "input", position = {5.0, -0.0}}}
         },
         {
             production_type = "input",
@@ -92,7 +208,7 @@ ENTITY {
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{type = "input", position = {3.0, 2.0}}}
+            pipe_connections = {{type = "input", position = {5.0, 2.0}}}
         },
         {
             production_type = "input",
@@ -100,28 +216,28 @@ ENTITY {
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{type = "input", position = {3.0, -2.0}}}
+            pipe_connections = {{type = "input", position = {5.0, -2.0}}}
         },
         {
             production_type = "output",
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_level = 1,
-            pipe_connections = {{position = {-3.0, -0.0}}}
+            pipe_connections = {{type = "output", position = {-5.0, -0.0}}}
         },
         {
             production_type = "output",
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_level = 1,
-            pipe_connections = {{position = {-3.0, 2.0}}}
+            pipe_connections = {{type = "output", position = {-5.0, 2.0}}}
         },
         {
             production_type = "output",
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
             base_level = 1,
-            pipe_connections = {{position = {-3.0, -2.0}}}
+            pipe_connections = {{type = "output", position = {-5.0, -2.0}}}
         }
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
