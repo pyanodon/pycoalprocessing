@@ -130,7 +130,6 @@ local recipes_list =
   "niobium-concentrate",
   "mukmoux-fat",
   "niobium-oxide",
-  "niobium-plate",
   "log5",
   "rich-re",
   "eva-ree-dust",
@@ -216,6 +215,10 @@ local recipes_list =
   "niobium-complex",
   "tpa",
 }
+
+if not mods["pypetroleumhandling"] then
+    table.insert(recipes_list, "niobium-plate")
+end
 
 --adding to module limitation list
 FUN.productivity(recipes_list)
