@@ -43,7 +43,7 @@ ENTITY {
     icon = "__pycoalprocessinggraphics__/graphics/icons/cooling-tower-mk02.png",
     icon_size = 64,
     flags = {"placeable-neutral", "player-creation"},
-    fixed_recipe = "cooling-water",
+    fixed_recipe = "cooling-water-2",
     minable = {mining_time = 1, result = "cooling-tower-mk02"},
     fast_replaceable_group = "cooling-tower",
     max_health = 300,
@@ -53,7 +53,7 @@ ENTITY {
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     match_animation_speed_to_activity = false,
     module_specification = {
-        module_slots = 0
+        module_slots = 4
     },
     allowed_effects = {"speed", "consumption"},
     crafting_categories = {"cooling"},

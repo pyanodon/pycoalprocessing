@@ -164,7 +164,7 @@ RECIPE {
         {type = "fluid", name = "steam", amount = 400}
     },
     results = {
-        {type = "fluid", name = "water", amount = 400, catalyst_amount = 400}
+        {type = "fluid", name = "water", amount = 400, temperature = 100}
     },
     main_product = "water",
     subgroup = "py-fluids",
@@ -172,6 +172,25 @@ RECIPE {
     icon = "__pycoalprocessinggraphics__/graphics/icons/cooling-water.png",
     icon_size = 32
 }:add_unlock("cooling-tower-1")
+
+RECIPE {
+    type = "recipe",
+    name = "cooling-water-2",
+    category = "cooling",
+    enabled = false,
+    energy_required = 2,
+    ingredients = {
+        {type = "fluid", name = "steam", amount = 400}
+    },
+    results = {
+        {type = "fluid", name = "water", amount = 400, temperature = 200}
+    },
+    main_product = "water",
+    subgroup = "py-fluids",
+    order = "a",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/cooling-water.png",
+    icon_size = 32
+}:add_unlock("cooling-tower-2")
 
 RECIPE {
     type = "recipe",

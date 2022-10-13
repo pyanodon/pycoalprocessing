@@ -31,6 +31,8 @@ data.raw.fluid["steam"].heat_capacity = "1KJ"
 
 data.raw.fluid["water"].heat_capacity = "2.1KJ"
 
+data.raw.fluid["water"].max_temperature = 500
+
 --modify reactor to produce more energy
 data.raw.reactor["nuclear-reactor"].consumption = "2GW"
 data.raw.reactor["nuclear-reactor"].heat_buffer.max_temperature = 2000
