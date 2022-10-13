@@ -157,10 +157,9 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "cooling-water",
-    hidden = true,
     category = "cooling",
     enabled = false,
-    energy_required = 4,
+    energy_required = 2,
     ingredients = {
         {type = "fluid", name = "steam", amount = 400}
     },
