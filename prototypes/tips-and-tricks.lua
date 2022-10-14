@@ -13,7 +13,7 @@ data:extend(
 		starting_status = "suggested",
 		is_title = true,
 	},
-    
+    --[[
 	{
 		type = "tips-and-tricks-item",
 		name = "before-first-game",
@@ -47,7 +47,8 @@ data:extend(
 		order = "bb",
 		starting_status = "suggested",
 	},
-    
+    ]]--
+	--[[
 	{
 		type = "tips-and-tricks-item",
 		name = "general-py-tips",
@@ -57,6 +58,7 @@ data:extend(
 		starting_status = "suggested",
 		is_title = true,
 	},
+	]]--
     {
 		type = "tips-and-tricks-item",
 		name = "victory",
@@ -65,6 +67,7 @@ data:extend(
 		order = "ca",
 		starting_status = "suggested",
 	},
+	--[[
 	{
 		type = "tips-and-tricks-item",
 		name = "themes",
@@ -73,6 +76,8 @@ data:extend(
 		order = "cb",
 		starting_status = "suggested",
 	},
+	]]--
+	--[[
 	{
 		type = "tips-and-tricks-item",
 		name = "general-tips",
@@ -81,6 +86,8 @@ data:extend(
 		order = "cc",
 		starting_status = "suggested",
 	},
+	]]--
+	--[[
 	{
 		type = "tips-and-tricks-item",
 		name = "py-technologies",
@@ -89,7 +96,7 @@ data:extend(
 		order = "cd",
 		starting_status = "suggested",
 	},
-    
+    ]]--
 	{
 		type = "tips-and-tricks-item",
 		name = "coalprocessing",
@@ -123,6 +130,7 @@ data:extend(
 		order = "dc",
 		dependencies = {"coalprocessing"}
 	},
+	--[[
 	{
 		type = "tips-and-tricks-item",
 		name = "early-game-tips",
@@ -131,6 +139,10 @@ data:extend(
 		order = "dd",
 		dependencies = {"coalprocessing"}
 	},
+	]]--
+
+	--[[
+		TODO: combustion mixture section needs rewritten as indivisual pieces
 	{
 		type = "tips-and-tricks-item",
 		name = "combustion-mixture",
@@ -144,7 +156,10 @@ data:extend(
 			technology = "energy-1"
 		},
 	}
+	]]--
 })
+
+--[[
 if not mods["pyalienlife"] then
     data:extend(
     {
@@ -158,3 +173,4 @@ if not mods["pyalienlife"] then
         }
     })
 end
+]]--
