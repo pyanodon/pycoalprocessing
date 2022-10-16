@@ -26,10 +26,10 @@ for f, fluid in pairs(data.raw.fluid) do
     if fluid.fuel_value ~= nil and Skipped_fluids[fluid.name] ~= true and fluid.auto_barrel ~= false then
 
         local fluid_icon = table.deepcopy(fluid.icons) or {{icon = fluid.icon}}
-        local icon_size = fluid.icon_size or fluid_icon.icon_size or fluid_icon[1].icon_size
         -- Apply to each layer
         for _, icon in pairs(fluid_icon) do
-            icon.scale = 16 / icon_size -- 32 = 0.5, 64 = 0.25
+            icon.icon_size = icon.icon_size or fluid_icon.icon_size or fluid.icon_size
+            icon.scale = 16 / icon.icon_size -- 32 = 0.5, 64 = 0.25
         end
 
         ITEM {
@@ -39,8 +39,7 @@ for f, fluid in pairs(data.raw.fluid) do
             icons = util.combine_icons(
                 {{icon = "__pycoalprocessinggraphics__/graphics/icons/jerry-can.png", icon_size = 64}},
                 fluid_icon,
-                {shift = {0, 2}},
-                32
+                {shift = {0, 2}}
             ),
             flags = {},
             subgroup = "py-items",
@@ -90,8 +89,7 @@ for f, fluid in pairs(data.raw.fluid) do
                     {icon = "__pycoalprocessinggraphics__/graphics/icons/empty-jerrycan.png", icon_size = 64, scale= 0.4, shift = {-6.4, -6.4}},
                 },
                 fluid_icon,
-                {shift = {7.5, 7.5}},
-                32
+                {shift = {7.5, 7.5}}
             ),
             category = "crafting-with-fluid",
             enabled = false,
