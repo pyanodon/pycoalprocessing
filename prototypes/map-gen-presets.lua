@@ -71,7 +71,7 @@ mapgens["py-recommended"] = {
         },
         terrain_segmentation = 0.75,
         water = 0.75,
-        starting_area = 64
+        starting_area = mods["rso-mod"] and "normal" or 64
     },
     advanced_settings = {
         pollution = {
