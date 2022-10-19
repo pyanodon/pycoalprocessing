@@ -1378,6 +1378,23 @@ function overrides.autorecipes(recipe)
 
 end
 
+-- The purpose of the farm_speed functions is to remove the farm building itself
+-- from the building speed. For example, for xyhiphoe mk1 which has only one animal
+-- per farm, we want the speed to be equal to 1 xyhiphoe not 2 (farm + module)
+-- Returns the correct farm speed for a mk1 farm based on number of modules and desired speed using mk1 modules
+function overrides.farm_speed(num_slots, desired_speed)
+    -- mk1 modules are 100% bonus speed. The farm itself then counts as much as one module
+    return desired_speed / (num_slots + 1)
+end
+
+-- Returns the correct farm speed for a mk2+ farm based on the number of modules and the mk1 speed
+function overrides.farm_speed_derived(num_slots, base_entity_name)
+    local e = data.raw["assembling-machine"][base_entity_name]
+    local mk1_slots = e.module_specification.module_slots
+    local desired_mk1_speed = e.crafting_speed * (mk1_slots + 1)
+    return (desired_mk1_speed * (num_slots / mk1_slots)) / (num_slots+1)
+end
+
 function overrides.tech_upgrade(tech_upgrade)
     --log(serpent.block(tech_upgrade))
     for _, tab in pairs(tech_upgrade) do
