@@ -6,7 +6,7 @@ end
 local remove_old_oil_stuff =
 {
 --['pumpjack'] = true,
---['oil-refinery'] = true,
+--["oil-refinery"] = true,
 ['basic-oil-processing'] = true,
 ['advanced-oil-processing'] = true,
 ['heavy-oil-cracking'] = true,
@@ -69,7 +69,7 @@ TECHNOLOGY('lubricant'):remove_pack('chemical-science-pack'):remove_prereq('adva
 
 TECHNOLOGY('advanced-oil-processing'):add_pack('production-science-pack')
 
-RECIPE('oil-refinery'):remove_unlock('oil-processing'):add_unlock('plastics')
+RECIPE("oil-refinery"):remove_unlock('oil-processing'):add_unlock('plastics')
 
 RECIPE('plastic-bar'):remove_unlock('plastics'):set_fields{hidden = true}
 
