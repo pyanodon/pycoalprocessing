@@ -139,6 +139,7 @@ ENTITY{
     minable = {mining_time = 0.5, result = "tailings-pond"},
     max_health = 500,
     corpse = "big-remnants",
+    scale_info_icons = false,
     dying_explosion = "storage-tank-explosion",
     collision_box = {{-8.9, -8.9}, {8.9, 8.9}},
     selection_box = {{-9, -9}, {9, 9}},
