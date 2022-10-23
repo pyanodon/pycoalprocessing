@@ -17,7 +17,7 @@ Date: 2022-10-14
     - vanilla assemblers are now burner based and have increased crafting speeds.
     - burner miners have increased mining area.
     - burner inserter no longer requires fuel.
-    - burner inaserter renamed to mechanical inserter.
+    - burner inserter renamed to mechanical inserter.
     - mechanical and yellow inserters have a single filter slot now.
     - some burnt items return ash now.
 ---------------------------------------------------------------------------------------------------
