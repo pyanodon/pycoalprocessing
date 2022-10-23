@@ -66,6 +66,9 @@ local on_built = {}
 
 function on_built.inserter(event)
   local inserter = event.created_entity
+  if inserter.type ~= "inserter" then
+    return
+  end
   if
     inserter.get_control_behavior()
     or next(inserter.circuit_connected_entities.red)
@@ -78,6 +81,7 @@ function on_built.inserter(event)
 end
 
 Event.register(Event.build_events, on_built.inserter)
+-- grumble grumble filters apply for the whole mod
 for _, event in pairs(Event.build_events) do
   script.set_event_filter(event, {
     {
@@ -91,6 +95,16 @@ for _, event in pairs(Event.build_events) do
     {
       filter = "type",
       type = "inserter",
+      mode = "and"
+    },
+    {
+      filter = "type",
+      type = "storage-tank",
+      mode = "or"
+    },
+    {
+      filter = "name",
+      name = "tailings-pond",
       mode = "and"
     }
   })
