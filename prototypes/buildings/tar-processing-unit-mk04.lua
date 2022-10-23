@@ -46,8 +46,8 @@ ENTITY {
     max_health = 250,
     corpse = "big-remnants",
     dying_explosion = "medium-explosion",
-    collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
-    selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
+    collision_box = {{-5.3, -5.3}, {5.3, 5.3}},
+    selection_box = {{-5.5, -5.5}, {5.5, 5.5}},
     match_animation_speed_to_activity = false,
     module_specification = {
         module_slots = 4
@@ -62,72 +62,107 @@ ENTITY {
     },
     energy_usage = "400kW",
     animation = {
-        filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/tar-processing-mk04.png",
-        width = 236,
-        height = 229,
+        layers = {
+        {
+        filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/r.png",
+        width = 352,
+        height = 384,
         frame_count = 1,
-        shift = {0.15, -0.1}
+        shift = util.by_pixel(0, -16),
+        },
+        {
+        filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/mask.png",
+        width = 352,
+        height = 384,
+        frame_count = 1,
+        shift = util.by_pixel(0, -16),
+        tint = {r = 1.0, g = 0.0, b = 1.0, a = 1.0},
+        },
+        {
+        filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/l.png",
+        width = 352,
+        height = 384,
+        frame_count = 1,
+        shift = util.by_pixel(0, -16),
+        draw_as_glow = true,
+        },
+        {
+        filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/sh.png",
+        width = 416,
+        height = 416,
+        frame_count = 1,
+        shift = util.by_pixel(0, -16),
+        draw_as_shadow = true,
+        },
+        {
+        filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/ao.png",
+        width = 416,
+        height = 416,
+        frame_count = 1,
+        shift = util.by_pixel(0, -0),
+        },
     },
+},
     working_visualisations = {
         {
-            north_position = {1.212, -0.07},
-            west_position = {1.212, -0.07},
-            south_position = {1.212, -0.07},
-            east_position = {1.212, -0.07},
+            north_position = util.by_pixel(-0, -128),
+            west_position = util.by_pixel(-0, -128),
+            south_position = util.by_pixel(-0, -128),
+            east_position = util.by_pixel(-0, -128),
             animation = {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/tar-anim-mk04.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/anim.png",
                 frame_count = 40,
-                line_length = 8,
-                width = 96,
-                height = 67,
-                animation_speed = 0.2
+                line_length = 5,
+                width = 352,
+                height = 96,
+                animation_speed = 0.25
             }
         }
     },
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0.15, 3.8}, {-0.0, -0.95}, nil, nil, pipes),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{type = "input", position = {0, 4}}}
+            pipe_connections = {{type = "input", position = {0, 6}}}
         },
         {
             production_type = "input",
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0.15, 3.8}, {-0.0, -0.95}, nil, nil, pipes),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{type = "input", position = {2, 4}}}
+            pipe_connections = {{type = "input", position = {2, 6}}}
         },
         {
             production_type = "output",
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0.15, 3.8}, {-0.0, -0.95}, nil, nil, pipes),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
             base_level = 1,
-            pipe_connections = {{type = "output", position = {-3, -4}}}
+            pipe_connections = {{type = "output", position = {-3, -6}}}
         },
         {
             production_type = "output",
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0.15, 3.8}, {-0.0, -0.95}, nil, nil, pipes),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
             base_level = 1,
-            pipe_connections = {{type = "output", position = {1, -4}}}
+            pipe_connections = {{type = "output", position = {1, -6}}}
         },
         {
             production_type = "output",
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0.15, 3.8}, {-0.0, -0.95}, nil, nil, pipes),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
             base_level = 1,
-            pipe_connections = {{type = "output", position = {-1, -4}}}
+            pipe_connections = {{type = "output", position = {-1, -6}}}
         },
         {
             production_type = "output",
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0.15, 3.8}, {-0.0, -0.95}, nil, nil, pipes),
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
             base_level = 1,
-            pipe_connections = {{type = "output", position = {3, -4}}}
+            pipe_connections = {{type = "output", position = {3, -6}}}
         },
         off_when_no_fluid_recipe = true
     },
