@@ -69,7 +69,7 @@ TECHNOLOGY('lubricant'):remove_pack('chemical-science-pack'):remove_prereq('adva
 
 TECHNOLOGY('advanced-oil-processing'):add_pack('production-science-pack')
 
---RECIPE("oil-refinery"):remove_unlock('oil-processing'):add_unlock('plastics')
+RECIPE("oil-refinery"):remove_unlock('oil-processing'):add_unlock('plastics')
 
 RECIPE('plastic-bar'):remove_unlock('plastics'):set_fields{hidden = true}
 
