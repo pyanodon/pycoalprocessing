@@ -63,6 +63,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "carbon-dioxide", amount = 600},
+        {type = "item", name = "saturated-nexelit-cartridge", amount = 1},
         {type = "item", name = "ash", amount = 10}
     },
     main_product = "carbon-dioxide",
