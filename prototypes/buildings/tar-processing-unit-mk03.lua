@@ -107,6 +107,7 @@ ENTITY {
 working_visualisations = {
     --flat liquid
     {
+        apply_recipe_tint = "primary",
         north_position = util.by_pixel(-0, -16),
         west_position = util.by_pixel(-0, -16),
         south_position = util.by_pixel(-0, -16),
@@ -122,6 +123,7 @@ working_visualisations = {
     },
     --bubbles
     {
+        apply_recipe_tint = "secondary",
         north_position = util.by_pixel(-0, -128),
         west_position = util.by_pixel(-0, -128),
         south_position = util.by_pixel(-0, -128),
