@@ -490,7 +490,14 @@ RECIPE {
     },
     results = {
         {type = "item", name = "treated-wood", amount = 2}
-    }
+    },
+    crafting_machine_tint =
+    {
+        primary = {r = 0.360, g = 0.250, b = 0.070},
+        secondary = {r = 1, g = 1, b = 1},
+        tertiary = {r = 0.360, g = 0.250, b = 0.070},
+        quaternary = {r = 0.360, g = 0.250, b = 0.070},
+    },
 }:add_unlock("creosote")
 
 --)) Coal Processing 1 ((--
@@ -1044,6 +1051,13 @@ RECIPE {
     },
     results = {
         {type = "item", name = "sand-casting", amount = 2}
+    },
+    crafting_machine_tint =
+    {
+        primary = {r = 0.360, g = 0.250, b = 0.070},
+        secondary = {r = 1, g = 1, b = 1},
+        tertiary = {r = 0.360, g = 0.250, b = 0.070},
+        quaternary = {r = 0.360, g = 0.250, b = 0.070},
     },
     main_product = "sand-casting",
     icon = "__pycoalprocessinggraphics__/graphics/icons/sand-casting.png",

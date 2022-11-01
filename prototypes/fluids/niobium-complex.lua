@@ -25,7 +25,7 @@ FLUID {
     gas_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.482, g = 0.607, b = 0.650},
-    flow_color = {r = 0.482, g = 0.607, b = 0.650},
+    flow_color = {r = 1, g = 1, b = 1},
     max_temperature = 100,
     subgroup = "py-fluids",
     order = "z-[niobium-complex]"

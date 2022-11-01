@@ -24,7 +24,7 @@ FLUID {
     default_temperature = 15,
     heat_capacity = "1KJ",
     base_color = {r = 0.8, g = 0.564, b = 0.129},
-    flow_color = {r = 0.8, g = 0.564, b = 0.129},
+    flow_color = {r = 1, g = 1, b = 1},
     max_temperature = 100,
     gas_temperature = 15,
     subgroup = "py-syngas",

@@ -22,7 +22,7 @@ FLUID {
     default_temperature = 10,
     gas_temperature = 15,
     base_color = {r = 0.937, g = 0.803, b = 0.007},
-    flow_color = {r = 0.937, g = 0.803, b = 0.007},
+    flow_color = {r = 1, g = 1, b = 1},
     max_temperature = 100,
     subgroup = "py-syngas",
     order = "z-[tpa]"
