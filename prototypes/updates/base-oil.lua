@@ -3,61 +3,15 @@ if data.raw.resource['crude-oil'] then
     data.raw.resource['crude-oil'].infinite = false
 end
 
-local remove_old_oil_stuff =
-{
---['pumpjack'] = true,
---["oil-refinery"] = true,
-['basic-oil-processing'] = true,
-['advanced-oil-processing'] = true,
-['heavy-oil-cracking'] = true,
-['light-oil-cracking'] = true,
-['coal-liquefaction'] = true
-}
+RECIPE("basic-oil-processing"):remove_unlock("oil-processing"):set_fields{hidden = true}
 
-local recipes_to_keep = {}
+RECIPE("advanced-oil-processing"):remove_unlock("advanced-oil-processing"):set_fields{hidden = true}
 
-for _, recipe in pairs(data.raw.technology['oil-processing'].effects) do
---log('hit')
-if recipe.type == 'unlock-recipe' then
-    --log('hit')
-    --log(recipe.recipe)
-    if remove_old_oil_stuff[recipe.recipe] == nil then
-        --log('hit')
-        table.insert(recipes_to_keep, recipe)
-    end
-end
-end
+RECIPE("heavy-oil-cracking"):remove_unlock("advanced-oil-processing"):set_fields{hidden = true}
 
-data.raw.technology['oil-processing'].effects = recipes_to_keep
-recipes_to_keep = {}
+RECIPE("light-oil-cracking"):remove_unlock("advanced-oil-processing"):set_fields{hidden = true}
 
-for _, recipe in pairs(data.raw.technology['advanced-oil-processing'].effects) do
---log('hit')
-if recipe.type == 'unlock-recipe' then
-    --log('hit')
-    --log(recipe.recipe)
-    if remove_old_oil_stuff[recipe.recipe] == nil then
-        --log('hit')
-        table.insert(recipes_to_keep, recipe)
-    end
-end
-end
-
-data.raw.technology['advanced-oil-processing'].effects = recipes_to_keep
-recipes_to_keep = {}
-
-for _, recipe in pairs(data.raw.technology['coal-liquefaction'].effects) do
---log('hit')
-if recipe.type == 'unlock-recipe' then
-    --log('hit')
-    if remove_old_oil_stuff[recipe.recipe] == nil then
-        --log('hit')
-        table.insert(recipes_to_keep, recipe)
-    end
-end
-end
-
-data.raw.technology['coal-liquefaction'].effects = recipes_to_keep
+RECIPE("coal-liquefaction"):remove_unlock("coal-liquefaction"):set_fields{hidden = true}
 
 TECHNOLOGY("oil-processing"):add_pack('chemical-science-pack')
 
