@@ -376,11 +376,11 @@ function overrides.ingredient_replace(recipe, old, new, new_amount)
                     end
                 elseif recipe.normal or recipe.expensive then
                     --log(serpent.block(recipe))
-                    if recipe.normal ~= nil then
+                    if recipe.normal then
                         --log("is check good")
                         ningredients = recipe.normal.ingredients
                     end
-                    if recipe.expensive ~= nil then eingredients = recipe.expensive.ingredients end
+                    if recipe.expensive then eingredients = recipe.expensive.ingredients end
                     if recipe.normal then
                         --log(serpent.block(recipe.normal))
                         --log(serpent.block(ningredients))
