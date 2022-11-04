@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.2
+Date: 2022-11-03
+  Changes:
+    - Changed tailings pond icons to not scale with building size.
+    - Fixed typo in changelog.
+    - remodeled tar processing unit with new sprite and larger collision box.
+    - tailings pond fell into a sink hole and now holds more fluid.
+    - fixed script error that disabled tailings pond overflow and venting mechanics. might only work on newly placed entities.
+    - added russian translation.
+    - added missing saturated nexelit cartridge to co2 filtraion recipe.
+    - fixed internal code error related to ingredient replace with normal and expensive mode. thanks to @matjojo.
+    - nerfed landfill from 50 to 30 stone, gravel and soil.
+---------------------------------------------------------------------------------------------------
 Version: 2.0.1
 Date: 2022-10-20
   Changes:
