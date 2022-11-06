@@ -36,14 +36,14 @@ RECIPE {
         {"concrete", 50},
         {"iron-stick", 50},
         {"steam-engine", 1},
-        {"pipe", 10}, --bob stone-pipe
+        {"pipe", 10},
         {"pump", 2},
         {"electronic-circuit", 15}
     },
     results = {
         {"quenching-tower", 1}
     }
-}:add_unlock("fluid-separation")
+}:add_unlock("separation")
 
 ITEM {
     type = "item",

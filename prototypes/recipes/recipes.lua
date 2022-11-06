@@ -449,7 +449,7 @@ RECIPE {
         {type = "fluid", name = "carbon-dioxide", amount = 100}
     },
     main_product = "lime"
-}:add_unlock("concrete")
+}:add_unlock("separation")
 
 RECIPE {
     type = "recipe",
@@ -729,3 +729,35 @@ RECIPE {
         {type = "item", name = "small-electric-pole", amount = 3}
     }
 }:add_unlock("creosote")
+
+RECIPE {
+    type = "recipe",
+    name = "gun-powder",
+    category = "crafting-with-fluid",
+    enabled = false,
+    energy_required = 2,
+    ingredients = {
+        {type = "item", name = "sulfur", amount = 1},
+        {type = "item", name = "coke", amount = 3},
+        {type = "fluid", name = "water-saline", amount = 100},
+    },
+    results = {
+        {type = "item", name = "gunpowder", amount = 5}
+    }
+}:add_unlock("military")
+
+RECIPE {
+    type = "recipe",
+    name = "firearm-magazine",
+    category = "crafting-with-fluid",
+    enabled = false,
+    energy_required = 5,
+    ingredients = {
+        {type = "item", name = "steel-plate", amount = 1},
+        {type = "item", name = "gunpowder", amount = 10},
+        {type = "item", name = "copper-plate", amount = 1},
+    },
+    results = {
+        {type = "item", name = "firearm-magazine", amount = 5}
+    }
+}:add_unlock("military")

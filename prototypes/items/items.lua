@@ -851,3 +851,14 @@ ITEM {
     order = 'cab',
     stack_size = 100
 }
+
+ITEM {
+    type = "item",
+    name = "gunpowder",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gunpowder.png",
+    icon_size = 64,
+    flags = {},
+    subgroup = "py-items",
+    order = "caa",
+    stack_size = 100
+}

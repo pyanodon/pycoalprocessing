@@ -16,12 +16,12 @@ local tailings_copper_iron =
         {type = "fluid", name = "water-saline", amount = 250}
     },
     icons = {
-        {icon = "__pycoalprocessinggraphics__/graphics/icons/dirty-water.png", icon_size = 32}
+        {icon = "__pycoalprocessinggraphics__/graphics/icons/dirty-water.png", icon_size = 64}
     },
-    icon_size = 32,
+    icon_size = 64,
     subgroup = "py-quenching-ores",
     order = "tailings-a"
-}:add_unlock("fluid-separation")
+}:add_unlock("separation")
 
 local tailings_borax_niobium = tailings_copper_iron:copy("tailings-borax-niobium"):add_unlock("fluid-separation")
 tailings_borax_niobium.localised_name = {"recipe-name.tailings-ore-extraction", {"item-name.raw-borax"}, {"item-name.niobium-ore"}, {"fluid-name.tar"}}

@@ -10,7 +10,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 100}
     },
     results = {{name = "concrete", amount = 5}}
-}
+}:remove_unlock("concrete"):add_unlock("separation")
 
 RECIPE {
     type = "recipe",
@@ -199,3 +199,19 @@ RECIPE {
         quaternary = {r = 1.000, g = 0.395, b = 0.127, a = 1.000} -- #ff6420ff
     }
 }:add_unlock("advanced-oil-processing")
+
+RECIPE("hazard-concrete"):remove_unlock("concrete"):add_unlock("separation")
+
+RECIPE {
+    type = "recipe",
+    name = "shotgun-shell",
+    category = "crafting",
+    enabled = false,
+    energy_required = 5,
+    ingredients = {
+        {type = "item", name = "iron-plate", amount = 1},
+        {type = "item", name = "copper-plate", amount = 1},
+        {type = "item", name = "gunpowder", amount = 2},
+    },
+    results = {{type = "item", name = "shotgun-shell", amount = 3}}
+}

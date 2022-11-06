@@ -14,7 +14,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"steam-engine", 1},
-        {"chemical-plant-mk01", 1},
+        {"quenching-tower", 1},
         {"electronic-circuit", 10},
         {"steel-plate", 40},
         {"iron-plate", 40},

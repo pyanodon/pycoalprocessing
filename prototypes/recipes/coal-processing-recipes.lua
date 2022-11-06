@@ -591,7 +591,7 @@ RECIPE {
     main_product = "tailings-dust",
     icon = "__pycoalprocessinggraphics__/graphics/icons/tailings_dust.png",
     icon_size = 32
-}:add_unlock("fluid-separation")
+}:add_unlock("fluid-processing-machines-1")
 
 RECIPE {
     type = "recipe",

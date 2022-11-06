@@ -185,4 +185,4 @@ RECIPE {
     icon_size = data.raw.item.sulfur.icon_size,
     subgroup = "py-sulfur",
     order = "a"
-}:add_unlock("sulfur-processing")
+}:add_unlock("fluid-processing-machines-1")
