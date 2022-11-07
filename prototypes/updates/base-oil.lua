@@ -37,3 +37,5 @@ RECIPE('solid-fuel-from-light-oil'):remove_unlock('advanced-oil-processing'):set
 RECIPE("sulfur"):remove_unlock('sulfur-processing'):set_fields{ hidden = true }
 
 ITEM("solid-fuel"):add_flag("hidden")
+
+TECHNOLOGY("sulfur-processing"):add_pack("chemical-science-pack")
