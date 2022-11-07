@@ -38,4 +38,6 @@ RECIPE("sulfur"):remove_unlock('sulfur-processing'):set_fields{ hidden = true }
 
 ITEM("solid-fuel"):add_flag("hidden")
 
-TECHNOLOGY("sulfur-processing"):add_pack("chemical-science-pack")
+if not (mods["pyhightech"] or mods["pypetroleumhandling"] or mods["pyrawores"]) then
+    TECHNOLOGY("sulfur-processing"):add_pack("chemical-science-pack")
+end
