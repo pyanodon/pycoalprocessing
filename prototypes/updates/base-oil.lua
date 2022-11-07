@@ -40,4 +40,12 @@ ITEM("solid-fuel"):add_flag("hidden")
 
 if not (mods["pyhightech"] or mods["pypetroleumhandling"] or mods["pyrawores"]) then
     TECHNOLOGY("sulfur-processing"):add_pack("chemical-science-pack")
+    TECHNOLOGY("battery"):add_pack("chemical-science-pack")
+    TECHNOLOGY("battery-equipment"):add_pack("chemical-science-pack")
+    TECHNOLOGY("electric-energy-accumulators"):add_pack("chemical-science-pack")
+    TECHNOLOGY("explosives"):add_pack("chemical-science-pack")
+    TECHNOLOGY("fluid-separation"):add_pack("chemical-science-pack")
+    TECHNOLOGY("cliff-explosives"):add_pack("chemical-science-pack")
+    TECHNOLOGY("land-mine"):add_pack("chemical-science-pack")
+    TECHNOLOGY("rocketry"):add_pack("chemical-science-pack")
 end
