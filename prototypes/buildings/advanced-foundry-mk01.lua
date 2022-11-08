@@ -5,15 +5,14 @@ RECIPE {
     enabled = false,
     ingredients = {
         {"copper-cable", 30},
-        {"iron-plate", 20},
-        {"steel-furnace", 4},
-        {"steel-plate", 20},
-        {"electronic-circuit", 30}
+        {"iron-plate", 30},
+        {"stone-furnace", 10},
+        {"stone-brick", 20},
     },
     results = {
         {"advanced-foundry-mk01", 1}
     }
-}:add_unlock("nexelit")
+}:add_unlock("steel-processing")
 
 ITEM {
     type = "item",
