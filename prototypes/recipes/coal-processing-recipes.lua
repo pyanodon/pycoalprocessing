@@ -444,12 +444,12 @@ RECIPE {
     name = "log-wood",
     category = "wpu",
     enabled = false,
-    energy_required = 8,
+    energy_required = 4,
     ingredients = {
-        {type = "item", name = "log", amount = 1}
+        {type = "item", name = "log", amount = 4}
     },
     results = {
-        {type = "item", name = "wood", amount = 5}
+        {type = "item", name = "wood", amount = 20}
     },
     icon = data.raw.item["wood"].icon,
     icon_size = 64,
