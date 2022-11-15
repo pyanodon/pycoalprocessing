@@ -120,9 +120,10 @@ ENTITY{
         },
     module_specification =
     {
-      module_slots = 0,
+      module_slots = 5,
       module_info_icon_shift = {0, 0.9}
-    }
+    },
+    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
   }
 
 -- DiscoScience compat, we rewrite the animation to fit our lab
