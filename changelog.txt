@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.3
+Date: 2022-11-28
+  Changes:
+    - added gun powder and adjusted firearm magazine.
+    - moved several recipes around to unlock gunpowder in military tech.
+    - redid the sprites for the high pressure furnace.
+    - adjusted high pressure furnace 1 to be cheaper and unlocked earlier.
+    - boosted the speed of logs to wood recipe in wood processing unit.
+---------------------------------------------------------------------------------------------------
 Version: 2.0.2
 Date: 2022-11-03
   Changes:
