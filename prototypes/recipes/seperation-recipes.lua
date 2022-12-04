@@ -134,6 +134,13 @@ RECIPE {
     results = {
         {type = "fluid", name = "aromatics", amount = 50}
     },
+    crafting_machine_tint =
+    {
+        primary = {r = 0.74, g = 0.403, b = 0.388},
+        secondary = {r = 1, g = 1, b = 1},
+        tertiary = {r = 0.360, g = 0.250, b = 0.070},
+        quaternary = {r = 0.360, g = 0.250, b = 0.070},
+    },
     main_product = "aromatics",
 }:add_unlock("creosote")
 
