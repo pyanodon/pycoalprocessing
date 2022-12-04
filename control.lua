@@ -47,14 +47,17 @@ Event.register(Event.core_events.init, game_finish.on_init)
 function game_finish.on_research_finished(event)
   local tech = event.research
   if tech.name == "pyrrhic" then
-		--log('hit')
-			game.set_game_state
-			{
-			  game_finished = true,
-			  player_won = true,
-			  can_continue = true,
-			  victorious_force = tech.force
-			}
+    local force = tech.force
+    for _, player in pairs(game.connected_players) do
+      if player.force == force then player.opened = nil end
+    end
+    game.set_game_state
+    {
+      game_finished = true,
+      player_won = true,
+      can_continue = true,
+      victorious_force = force
+    }
 	end
 end
 Event.register(defines.events.on_research_finished, game_finish.on_research_finished)
