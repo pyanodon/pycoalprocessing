@@ -831,7 +831,7 @@ RECIPE {
     name = "aromatic-organic",
     category = "gasifier",
     enabled = false,
-    energy_required = 2.8,
+    energy_required = 10,
     ingredients = {
         {type = "item", name = "fawogae", amount = 20},
         {type = "item", name = "ralesia", amount = 5}
