@@ -49,7 +49,7 @@ ENTITY {
         starting_rq_factor_multiplier = 2,
         candidate_spot_count = 20
     },
-    stage_counts = {2000, 1600, 1400, 1200, 800, 400, 200, 10},
+    stage_counts = {20000, 13000, 10000, 5000, 3000, 1000, 500, 100},
     stages = {
         sheet = {
             filename = "__pycoalprocessinggraphics__/graphics/ores/niobium.png",
