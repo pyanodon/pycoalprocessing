@@ -47,7 +47,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 30}, --bob hydrogen
         {type = "fluid", name = "carbon-dioxide", amount = 20},
         {type = "fluid", name = "acidgas", amount = 60},
-        {type = "item", name = "empty-gas-canister", amount = 1}
+        {type = "item", name = "empty-gas-canister", amount = 1, catalyst_amount = 1}
     },
     main_product = "refsyngas"
 }:add_unlock("methanol-processing-1")
