@@ -1,5 +1,13 @@
 require('__stdlib__/stdlib/data/data').Util.create_data_globals()
 
+-- (( GUI Style ))--
+require('prototypes/gui-style')
+-- ))
+
+-- (( Custom Input ))--
+require('prototypes/custom-input')
+-- ))
+
 -- (( Groups ))--
 require('prototypes/item-groups')
 -- ))
@@ -33,10 +41,10 @@ require('prototypes/technologies/filtration')
 require('prototypes/technologies/desulfurization')
 require('prototypes/technologies/crusher')
 require('prototypes/technologies/separation')
-require("prototypes/technologies/fluid-separation")
+require('prototypes/technologies/fluid-separation')
 require('prototypes/technologies/fuel-production')
 require('prototypes/technologies/fine-electronics')
-require("prototypes/technologies/fluid-processing-machines")
+require('prototypes/technologies/fluid-processing-machines')
 
 require('prototypes/technologies/ralesia')
 require('prototypes/technologies/ulric')
@@ -48,12 +56,12 @@ require('prototypes/technologies/niobium')
 require('prototypes/technologies/nexelit')
 require('prototypes/technologies/chromium')
 
-require("prototypes/technologies/organic-solvent")
-require("prototypes/technologies/mukmoux")
-require("prototypes/technologies/kevlar")
-require("prototypes/technologies/creosote")
+require('prototypes/technologies/organic-solvent')
+require('prototypes/technologies/mukmoux')
+require('prototypes/technologies/kevlar')
+require('prototypes/technologies/creosote')
 
-require("prototypes/technologies/pyrrhic")
+require('prototypes/technologies/pyrrhic')
 -- ))
 
 -- (( RESOURCEs ))--
@@ -73,10 +81,10 @@ require('prototypes/recipes/fts-reactor-recipes')
 require('prototypes/recipes/olefin-plant-recipes')
 require('prototypes/recipes/sand-extractor-recipes')
 require('prototypes/recipes/tailings-recipes')
-require("prototypes/recipes/filtration-recipes")
-require("prototypes/recipes/mukmoux-recipes")
-require("prototypes/recipes/base-overrides")
-require("prototypes/recipes/advanced-foundry-recipes")
+require('prototypes/recipes/filtration-recipes')
+require('prototypes/recipes/mukmoux-recipes')
+require('prototypes/recipes/base-overrides')
+require('prototypes/recipes/advanced-foundry-recipes')
 
 -- ))
 
@@ -101,7 +109,7 @@ require('prototypes/fluids/dirty-water-light')
 require('prototypes/fluids/dirty-water-heavy')
 require('prototypes/fluids/flue-gas')
 require('prototypes/fluids/combustion-mixture1')
--- require("prototypes/fluids/combustion-mixture2")
+-- require('prototypes/fluids/combustion-mixture2')
 require('prototypes/fluids/water-saline')
 require('prototypes/fluids/aromatics')
 require('prototypes/fluids/olefin')
@@ -304,7 +312,7 @@ data.raw['utility-constants'].default.main_menu_background_image_location =
 
 -- adding fuel value to liquids
 data.raw.fluid['crude-oil'].fuel_value = '82.5KJ'
-data.raw.fluid["heavy-oil"].fuel_value = '0.8MJ'
+data.raw.fluid['heavy-oil'].fuel_value = '0.8MJ'
 data.raw.fluid['light-oil'].fuel_value = '0.9MJ'
 data.raw.fluid['petroleum-gas'].fuel_value = '1MJ'
 -- pycp fluids
