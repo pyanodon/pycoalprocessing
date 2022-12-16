@@ -123,7 +123,7 @@ TECHNOLOGY("fast-inserter"):set_fields{dependencies = {"automation"}}:set_fields
 
 TECHNOLOGY("military-2"):set_fields{dependencies = {"military"}}
 
-TECHNOLOGY("gate"):set_fields{dependencies = {"military-2"}}
+TECHNOLOGY("gate"):set_fields{prerequisites = {"stone-wall"}}:remove_pack("logistic-science-pack")
 
 TECHNOLOGY("automobilism"):remove_pack("logistic-science-pack"):set_fields{ prerequisites = {} }
 
