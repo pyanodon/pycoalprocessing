@@ -1,21 +1,5 @@
 require('__stdlib__/stdlib/data/data').Util.create_data_globals()
 
-local conversion_multipliers = {W = 1, kW = 1000, MW = 1000000, GW = 1000000000, TW = 1000000000000, PW = 1000000000000000}
-local unit_suffixes = {'W', 'kW', 'MW', 'GW', 'TW', 'PW'}
-function _G.multiply_energy_usage(prototype, multiplier)
-    local energy_usage, unit_suffix = prototype.energy_usage:match('([%d%.]+)%s*(%a+)')
-    energy_usage = tonumber(energy_usage)
-    local conversion_multiplier = conversion_multipliers[unit_suffix]
-    energy_usage = (energy_usage * conversion_multiplier * multiplier)
-    local unit = 1
-    while energy_usage >= 1000 do
-        energy_usage = energy_usage / 1000
-        unit = unit + 1
-    end
-    energy_usage = string.format('%.2f', energy_usage) .. unit_suffixes[unit]
-    prototype.energy_usage = energy_usage
-end
-
 -- (( GUI Style ))--
 require('prototypes/gui-style')
 -- ))
