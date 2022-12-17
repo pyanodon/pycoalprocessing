@@ -858,6 +858,8 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/gunpowder.png",
     icon_size = 64,
     flags = {},
+    fuel_value = "4MJ",
+    fuel_category = "chemical",
     subgroup = "py-items",
     order = "caa",
     stack_size = 100
