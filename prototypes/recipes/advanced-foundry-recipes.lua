@@ -6,7 +6,7 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "nexelit-ore", amount = 2},
+        {type = "item", name = "nexelit-ore", amount = 4},
         {type = "fluid", name = "petroleum-gas", amount = 100},
         {type = "item", name = "limestone", amount = 2},
         {type = "item", name = "sand-casting", amount = 1}
