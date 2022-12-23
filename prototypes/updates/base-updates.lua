@@ -57,10 +57,6 @@ TECHNOLOGY("laser-shooting-speed-6"):add_pack("production-science-pack")
 
 TECHNOLOGY("laser-shooting-speed-7"):add_pack("production-science-pack")
 
-TECHNOLOGY("artillery-shell-range-1"):add_pack("production-science-pack")
-
-TECHNOLOGY("artillery-shell-speed-1"):add_pack("production-science-pack")
-
 TECHNOLOGY("follower-robot-count-5"):add_pack("production-science-pack")
 
 TECHNOLOGY("follower-robot-count-6"):add_pack("production-science-pack")
@@ -97,7 +93,43 @@ TECHNOLOGY("mining-productivity-3"):add_pack("military-science-pack")
 
 TECHNOLOGY("mining-productivity-4"):add_pack("military-science-pack")
 
-TECHNOLOGY("artillery"):add_pack("production-science-pack")
+data.raw.technology.artillery.unit.ingredients = {
+    {"automation-science-pack", 1},
+    {"logistic-science-pack", 1},
+    {"military-science-pack", 1}
+  }
+data.raw.technology.artillery.prerequisites = {"military"}
+
+data.raw.technology["artillery-shell-range-1"].unit.ingredients = {
+    {"automation-science-pack", 1},
+    {"logistic-science-pack", 1},
+    {"military-science-pack", 1}
+  }
+data.raw.technology["artillery-shell-range-1"].prerequisites = {"artillery"}
+
+data.raw.technology["artillery-shell-speed-1"].unit.ingredients = {
+    {"automation-science-pack", 1},
+    {"logistic-science-pack", 1},
+    {"military-science-pack", 1}
+  }
+data.raw.technology["artillery-shell-speed-1"].prerequisites = {"artillery"}
+
+data.raw.technology.tank.unit.ingredients = {
+    {"automation-science-pack", 1},
+    {"logistic-science-pack", 1},
+    {"military-science-pack", 1}
+  }
+data.raw.technology.tank.prerequisites = {}
+
+data.raw.technology["uranium-ammo"].unit.ingredients = {
+    {"automation-science-pack", 1},
+    {"logistic-science-pack", 1},
+    {"military-science-pack", 1},
+    {"chemical-science-pack", 1}
+  }
+data.raw.technology["uranium-ammo"].prerequisites = {"military-2", "uranium-processing"}
+
+
 
 TECHNOLOGY("concrete"):remove_prereq("automation-2")
 
@@ -226,4 +258,10 @@ for _, entity in py_utils.iter_prototypes("entity") do
     end
 end
 
+RECIPE("artillery-wagon"):remove_unlock("artillery"):add_unlock("artillery-2")
+
+RECIPE("artillery-targeting-remote"):remove_unlock("artillery"):add_unlock("artillery-2")
+
 data.raw.item["nuclear-fuel"].burnt_result = nil
+
+data.raw["gun"]["artillery-wagon-cannon"].attack_parameters.range = 2 * 32

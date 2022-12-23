@@ -62,6 +62,8 @@ require('prototypes/technologies/kevlar')
 require('prototypes/technologies/creosote')
 
 require('prototypes/technologies/pyrrhic')
+
+require("prototypes/technologies/artillery-2")
 -- ))
 
 -- (( RESOURCEs ))--
