@@ -102,14 +102,21 @@ ENTITY {
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
             base_level = 1,
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
-            pipe_connections = {{type = "output", position = {-4.5, -1.5}}}
+            pipe_connections = {{type = "output", position = {-4.5, -0.5}}}
+        },
+        {
+            production_type = "output",
+            pipe_covers = DATA.Pipes.covers(false, true, true, true),
+            base_level = 1,
+            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
+            pipe_connections = {{type = "output", position = {-4.5, -2.5}}}
         },
         {
             production_type = "output",
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0.05, 0.575}, {0.00, -0.95}, nil, nil, pipes),
             pipe_covers = DATA.Pipes.covers(false, true, true, true),
             base_level = 1,
-            pipe_connections = {{type = "output", position = {-4.5, 1.5}}}
+            pipe_connections = {{type = "output", position = {-4.5, 2.5}}}
         }
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
