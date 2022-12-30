@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon_size = 256, icon_mipmaps = 4,
     icon = "__base__/graphics/technology/artillery.png",
     effects = {},
-    prerequisites = {},
+    prerequisites = {'artillery'},
     unit =
     {
       ingredients =
