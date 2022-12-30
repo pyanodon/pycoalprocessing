@@ -209,7 +209,7 @@ for i = 1, 6 do
 end
 
 -- Recipe unlocks
-RECIPE("lubricant"):remove_unlock("lubricant"):set_fields{hidden = true}
+RECIPE("lubricant"):remove_unlock("lubricant")
 
 RECIPE("explosives"):remove_unlock("explosives"):set_fields{hidden = true}
 

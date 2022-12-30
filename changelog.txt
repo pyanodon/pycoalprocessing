@@ -3,6 +3,7 @@ Version: 2.0.6
 Date: ?
   Changes:
     - fixed co2 absorber accepting plant/animal modules from pYAL
+    - Lubricant recipe from nexelit plates is no longer hidden
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.5
 Date: 2022-12-19
