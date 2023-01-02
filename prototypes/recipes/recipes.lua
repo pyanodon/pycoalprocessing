@@ -149,9 +149,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "automation-science-pack", amount = 6}
-    },
-    subgroup = "py-items",
-    order = "a1"
+    }
 }
 
 RECIPE {
@@ -228,8 +226,6 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png",
     icon_size = 64,
-    subgroup = "py-items",
-    order = "a3"
 }
 
 RECIPE {
@@ -393,8 +389,6 @@ RECIPE {
     main_product = "plastic-bar",
     icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics-rubber.png",
     icon_size = 32,
-    subgroup = "py-items",
-    order = "x"
 }:add_unlock("plastics")
 
 RECIPE {

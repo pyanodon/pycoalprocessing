@@ -19,7 +19,6 @@ end
 ITEM("automation-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
 ITEM("automation-science-pack", "tool"):set("icon_size", 64)
 ITEM("automation-science-pack", "tool"):set("icon_mipmaps", nil)
-ITEM("sulfuric-acid"):subgroup_order("py-fluid-handling", "d")
 
 ITEM("logistic-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png")
 ITEM("logistic-science-pack", "tool"):set("icon_size", 64)
@@ -65,6 +64,9 @@ end
 for _, controller in DATA:pairs('god-controller') do
     controller.crafting_categories = controller.String_Array(controller.crafting_categories or {}) + 'handcrafting'
 end
+
+data.raw['item-subgroup']['science-pack'].group = 'production'
+data.raw['item-subgroup']['science-pack'].order = 'y'
 
 --gather recipes for module changes
 local recipes_list =

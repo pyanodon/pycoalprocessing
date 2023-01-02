@@ -143,6 +143,4 @@ RECIPE {
     main_product = "lubricant",
     --icon = "__pycoalprocessinggraphics__/graphics/icons/olefin.png",
     --icon_size = 32,
-    subgroup = "py-fluids",
-    order = "d9"
 }:add_unlock("lubricant")

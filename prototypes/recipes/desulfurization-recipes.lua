@@ -144,8 +144,6 @@ RECIPE {
     main_product = "lubricant",
     icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics-lubricant.png",
     icon_size = 32,
-    subgroup = "py-fluid-handling",
-    order = "n"
 }:add_unlock("desulfurization")
 
 RECIPE {

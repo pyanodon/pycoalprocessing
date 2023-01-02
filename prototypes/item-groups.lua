@@ -53,21 +53,21 @@ data:extend {
     },
     {
         type = "item-subgroup",
-        name = "py-fluid-handling",
+        name = "py-extraction",
         group = "coal-processing",
         order = "a3"
     },
     {
         type = "item-subgroup",
-        name = "py-extraction",
+        name = "py-fluid-handling",
         group = "coal-processing",
-        order = "a4"
+        order = "c"
     },
     {
         type = "item-subgroup",
         name = "py-items",
         group = "coal-processing",
-        order = "c"
+        order = "c-0"
     },
     {
         type = "item-subgroup",
@@ -160,3 +160,14 @@ data:extend {
         order = "zzzz"
     }
 }
+
+data.raw['item-subgroup']['fluid'].group = 'coal-processing'
+data.raw['item-subgroup']['fluid'].order = 'c'
+data.raw.item['sulfur'].subgroup = 'py-sulfur'
+data.raw.item['rocket-control-unit'].subgroup = 'space-related'
+data.raw.item['low-density-structure'].subgroup = 'space-related'
+data.raw.item['rocket-fuel'].subgroup = 'space-related'
+data.raw.item['nuclear-fuel'].subgroup = 'space-related'
+data.raw.item['stone'].subgroup = 'intermediate-product'
+data.raw.item['explosives'].subgroup = 'py-items'
+data.raw.fluid['sulfuric-acid'].subgroup = 'py-fluids'
