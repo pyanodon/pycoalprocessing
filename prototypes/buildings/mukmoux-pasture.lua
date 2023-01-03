@@ -20,7 +20,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/mukmoux-pasture.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "coal-processing",
     order = "d",
     place_result = "mukmoux-pasture",
     stack_size = 10

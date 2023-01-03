@@ -22,7 +22,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/ulric-corral.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "coal-processing",
     order = "h",
     place_result = "ulric-corral-mk01",
     stack_size = 10

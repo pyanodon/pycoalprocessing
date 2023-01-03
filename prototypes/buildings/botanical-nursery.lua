@@ -48,7 +48,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/botanical-nursery.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "py-cp-buildings-mk01",
     order = "f",
     place_result = "botanical-nursery",
     stack_size = 10

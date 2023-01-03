@@ -53,12 +53,6 @@ data:extend {
     },
     {
         type = "item-subgroup",
-        name = "py-extraction",
-        group = "coal-processing",
-        order = "a3"
-    },
-    {
-        type = "item-subgroup",
         name = "py-fluid-handling",
         group = "coal-processing",
         order = "c"

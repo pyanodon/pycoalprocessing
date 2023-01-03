@@ -21,7 +21,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/borax-mine.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "py-cp-buildings-mk01",
     order = "a",
     place_result = "borax-mine",
     stack_size = 10

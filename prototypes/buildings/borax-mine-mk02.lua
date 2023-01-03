@@ -22,7 +22,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/borax-mine-mk02.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "py-cp-buildings-mk02",
     order = "a",
     place_result = "borax-mine-mk02",
     stack_size = 10

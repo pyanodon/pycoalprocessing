@@ -38,7 +38,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/fawogae-plantation-mk01.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "py-cp-buildings-mk01",
     order = "b",
     place_result = "fawogae-plantation-mk01",
     stack_size = 10

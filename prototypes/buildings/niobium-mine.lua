@@ -21,7 +21,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/niobium-mine.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "coal-processing",
     order = "e",
     place_result = "niobium-mine",
     stack_size = 10

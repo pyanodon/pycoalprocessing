@@ -34,7 +34,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/soil-extractormk04.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "py-cp-buildings-mk04",
     order = "g",
     place_result = "soil-extractormk04",
     stack_size = 10

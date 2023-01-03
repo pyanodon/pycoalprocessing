@@ -48,7 +48,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia-plantation-mk02.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-extraction",
+    subgroup = "py-cp-buildings-mk02",
     order = "f",
     place_result = "ralesia-plantation-mk02",
     stack_size = 10
