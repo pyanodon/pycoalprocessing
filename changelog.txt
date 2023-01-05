@@ -10,6 +10,8 @@ Date: 2023-1-5
     - Moved artillery tech down to military science
     - Lower artillery range down signifigantly to match lower tech status
     - Added earlier and extra artillery range techs before infinite tech
+    - fixed gasifiers having different pipe connection points between tiers 1 and 2. added pipe connection to tiers 2,3, and 4
+    - moved tailings sorting to seperation tech
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.5
 Date: 2022-12-19
