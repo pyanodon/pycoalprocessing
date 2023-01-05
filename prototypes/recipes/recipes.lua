@@ -406,8 +406,6 @@ RECIPE {
     results = {
         {type = "item", name = "battery", amount = 6}
     },
-    subgroup = "py-items",
-    order = "y"
 }:add_unlock("battery")
 
 RECIPE {
