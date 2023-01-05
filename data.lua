@@ -64,6 +64,7 @@ require('prototypes/technologies/creosote')
 require('prototypes/technologies/pyrrhic')
 
 require("prototypes/technologies/artillery-2")
+require("prototypes/technologies/artillery-range")
 -- ))
 
 -- (( RESOURCEs ))--
