@@ -59,7 +59,7 @@ RECIPE {
     icon_size = 32,
     subgroup = "py-items-class",
     order = "c"
-}:add_unlock("fluid-separation")
+}:add_unlock("separation")
 
 RECIPE {
     type = "recipe",
