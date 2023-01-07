@@ -1337,6 +1337,7 @@ function overrides.autorecipes(recipe)
             results = fixed_results,
             subgroup = subgroup,
             order = order,
+            allowed_module_categories = recipe.allowed_module_categories
             -- main_product = results[1].name,
             -- icon = mat.icon
             --localised_name = rec.name
