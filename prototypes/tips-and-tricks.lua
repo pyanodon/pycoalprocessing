@@ -20,14 +20,6 @@ data:extend(
 		order = "b",
 		is_title = true,
 	},
-    {
-		type = "tips-and-tricks-item",
-		name = "victory",
-		category = "wiki-py",
-		indent = 1,
-		order = "c",
-        tag = '[technology=pyrrhic]',
-	},
 	{
 		type = "tips-and-tricks-item",
 		name = "coalprocessing",
