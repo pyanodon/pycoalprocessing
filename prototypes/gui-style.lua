@@ -70,33 +70,11 @@ style.py_schedule_move_button = {
 	}
 }
 
-data:extend{
-	{
-		type = 'sprite',
-		name = 'up-black',
-		filename = '__pycoalprocessinggraphics__/graphics/icons/gui/up-black.png',
-		size = 32,
-		flags = {'gui-icon'}
-	},
-	{
-		type = 'sprite',
-		name = 'up-white',
-		filename = '__pycoalprocessinggraphics__/graphics/icons/gui/up-white.png',
-		size = 32,
-		flags = {'gui-icon'}
-	},
-	{
-		type = 'sprite',
-		name = 'down-black',
-		filename = '__pycoalprocessinggraphics__/graphics/icons/gui/down-black.png',
-		size = 32,
-		flags = {'gui-icon'}
-	},
-	{
-		type = 'sprite',
-		name = 'down-white',
-		filename = '__pycoalprocessinggraphics__/graphics/icons/gui/down-white.png',
-		size = 32,
-		flags = {'gui-icon'}
+style.py_schedule_move_button_alt = {
+	type = 'button_style',
+	parent = 'py_schedule_move_button',
+	default_graphical_set = {
+		base = {position = {68, 0}, corner_size = 8},
+		shadow = {position = {399, 90}, corner_size = 2, draw_type = 'inner'}
 	}
 }
