@@ -1552,4 +1552,79 @@ function overrides.add_to_description(type, prototype, localised_string)
 	end
 end
 
+-- formats a number into the amount of energy. Requires 'W' or 'J' as the second parameter
+local si_prefixes = {
+    [0] = '',
+    'si-prefix-symbol-kilo',
+    'si-prefix-symbol-mega',
+    'si-prefix-symbol-giga',
+    'si-prefix-symbol-tera',
+    'si-prefix-symbol-peta',
+    'si-prefix-symbol-exa',
+    'si-prefix-symbol-zetta',
+    'si-prefix-symbol-yotta'
+}
+function overrides.format_energy(energy, watts_or_joules)
+	if watts_or_joules == 'W' then
+        watts_or_joules = 'si-unit-symbol-watt'
+        energy = energy * 60
+    elseif watts_or_joules == 'J' then
+        watts_or_joules = 'si-unit-symbol-joule'
+    else
+        error()
+    end
+
+    local prefix = 0
+	while energy >= 1000 do
+        energy = energy / 1000
+        prefix = prefix + 1
+    end
+	return {'' , string.format('%.1f', energy), ' ', si_prefixes[prefix] and {si_prefixes[prefix]} or '* 10^'..(prefix*3)..' ', {watts_or_joules}}
+end
+
+-- Like normal pairs(), but randomized
+local function shuffle(t)
+	local keys = {}
+	local n = 0
+	for k in pairs(t) do
+		n = n + 1
+		keys[n] = k
+	end
+
+	while n > 1 do
+		local k = math.random(n)
+		keys[n], keys[k] = keys[k], keys[n]
+		n = n - 1
+	end
+
+	return keys
+end
+function overrides.shuffled_pairs(t)
+	local shuffled_keys = shuffle(t)
+	local i = 0
+	return function()
+		i = i + 1
+		local key = shuffled_keys[i]
+		if key then
+			return key, t[key]
+		end
+	end
+end
+
+-- Checks if an item has metadata, such as item-with-tags or equipement grids. (control.lua stage ONLY)
+local basic_item_types = {['item'] = true, ['capsule'] = true, ['gun'] = true, ['rail-planner'] = true, ['module'] = true}
+function overrides.check_for_basic_item(item)
+	local items_with_metadata = global.items_with_metadata
+	if not items_with_metadata then
+		items_with_metadata = {}
+		for item_name, prototype in pairs(game.item_prototypes) do
+			if not basic_item_types[prototype.type] then
+				items_with_metadata[item_name] = true
+			end
+		end
+		global.items_with_metadata = items_with_metadata
+	end
+	return not items_with_metadata[item]
+end
+
 return overrides

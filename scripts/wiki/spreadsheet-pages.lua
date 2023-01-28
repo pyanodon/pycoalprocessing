@@ -1,6 +1,7 @@
 local Event = require('__stdlib__/stdlib/event/event')
 local Gui = require('__stdlib__/stdlib/event/gui')
 local floor = math.floor
+local FUN = require '__pycoalprocessing__/prototypes/functions/functions'
 
 local function update_spreadsheet(gui, data, sort_by, asc)
 	gui.clear()
@@ -219,7 +220,7 @@ Event.register(Event.core_events.init_and_config, function()
 	for name, fluid in pairs(game.fluid_prototypes) do
 		if not fluid.hidden and not (script.active_mods['pyalternativeenergy'] and fluid.name == 'combustion-mixture1') then
 			local fuel_value
-			if fluid.fuel_value ~= 0 then fuel_value = format_energy(fluid.fuel_value, 'J') end
+			if fluid.fuel_value ~= 0 then fuel_value = FUN.format_energy(fluid.fuel_value, 'J') end
 
 			local voidable = '[entity=tailings-pond]'
 			if script.active_mods['pyindustry'] then
@@ -276,7 +277,7 @@ Event.register(Event.core_events.init_and_config, function()
 					order = item.fuel_category or ''
 				},
 				['fuel-value'] = {
-					value = format_energy(item.fuel_value, 'J'),
+					value = FUN.format_energy(item.fuel_value, 'J'),
 					order = item.fuel_value
 				},
 				['burnt-result'] = {
