@@ -1522,4 +1522,34 @@ function overrides.composite_molten_icon(base_prototype, child_prototype, shadow
     }
 end
 
+-- adds some text to a prototype's localised description
+function overrides.add_to_description(type, prototype, localised_string)
+	if prototype.localised_description and prototype.localised_description ~= '' then
+		prototype.localised_description = {'', prototype.localised_description, '\n', localised_string}
+	else
+		if type == 'item' and prototype.place_result then
+			for _, machine in pairs(data.raw) do
+				machine = machine[prototype.place_result]
+				if machine and machine.localised_description then
+					prototype.localised_description = {
+						'?',
+						{'', machine.localised_description, '\n', localised_string},
+						localised_string
+					}
+					return
+				end
+			end
+
+			prototype.localised_description = {
+				'?',
+				{'', {'entity-description.' .. prototype.place_result}, '\n', localised_string},
+				{'', {type .. '-description.' .. prototype.name}, '\n', localised_string},
+				localised_string
+			}
+		else
+			prototype.localised_description = {'?', {'', {type .. '-description.' .. prototype.name}, '\n', localised_string}, localised_string}
+		end
+	end
+end
+
 return overrides
