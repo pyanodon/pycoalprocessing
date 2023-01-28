@@ -3,7 +3,7 @@ local Gui = require('__stdlib__/stdlib/event/gui')
 local floor = math.floor
 local FUN = require '__pycoalprocessing__/prototypes/functions/functions'
 
-local function update_spreadsheet(gui, data, sort_by, asc)
+local function update_spreadsheet(gui, player, data, sort_by, asc)
 	gui.clear()
 
 	local rows = data.rows
@@ -38,13 +38,16 @@ local function update_spreadsheet(gui, data, sort_by, asc)
 		last_line = gui.add{type = 'line', direction = 'horizontal'}
 	end
 	if last_line then last_line.destroy() end
+
+	data.prefered_sorts[player.index] = {sort_by, asc}
 end
 
 local function create_spreadsheet(gui, player, data)
 	local title = remote.call('pywiki', 'get_page_title', player)
 	title.clear()
 	title.add{type = 'empty-widget'}.style.width = 5
-	local asc = data.default_sort[2] == 'asc'
+	local sort_settings = data.prefered_sorts[player.index] or data.default_sort
+	local sort_by, asc = sort_settings[1], sort_settings[2]
 
 	for _, column in pairs(data.columns) do
 		local flow = title.add{type = 'flow', direction = 'horizontal'}
@@ -59,7 +62,7 @@ local function create_spreadsheet(gui, player, data)
 		local button = flow.add{type = 'sprite-button', name = 'py_spreadsheet_sort_'..column.name, style = 'py_schedule_move_button_alt', sprite = 'white-circle'}
 		button.tags = {data_source = data.name, column_name = column.name}
 
-		if data.default_sort[1] == column.name then
+		if sort_by == column.name then
 			button.sprite = asc and 'up-white' or 'down-white'
 			button.hovered_sprite = asc and 'up-black' or 'down-black'
 			button.clicked_sprite = asc and 'up-black' or 'down-black'
@@ -68,7 +71,7 @@ local function create_spreadsheet(gui, player, data)
 		title.add{type = 'line', direction = 'vertical'}
 	end
 
-	update_spreadsheet(gui, data, data.default_sort[1], asc)
+	update_spreadsheet(gui, player, data, sort_by, asc)
 end
 
 local function create_fluid_page(gui, player) create_spreadsheet(gui, player, global.fluid_spreadsheet_data) end
@@ -214,7 +217,8 @@ Event.register(Event.core_events.init_and_config, function()
 		},
 		rows = {},
 		name = 'fluid_spreadsheet_data',
-		default_sort = {'voidable', 'desc'}
+		default_sort = {'localised-name', false},
+		prefered_sorts = {}
 	}
 
 	for name, fluid in pairs(game.fluid_prototypes) do
@@ -259,7 +263,8 @@ Event.register(Event.core_events.init_and_config, function()
 		},
 		rows = {},
 		name = 'solid_fuel_spreadsheet_data',
-		default_sort = {'burnt-result', 'asc'}
+		default_sort = {'localised-name', false},
+		prefered_sorts = {}
 	}
 
 	for name, item in pairs(game.item_prototypes) do
@@ -316,5 +321,5 @@ Gui.on_click('py_spreadsheet_sort', function(event)
 		element.clicked_sprite = 'down-black'
 	end
 
-	update_spreadsheet(gui, global[tags.data_source], tags.column_name, element.sprite == 'up-white')
+	update_spreadsheet(gui, player, global[tags.data_source], tags.column_name, element.sprite == 'up-white')
 end)
