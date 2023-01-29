@@ -4,6 +4,12 @@ local floor = math.floor
 local FUN = require '__pycoalprocessing__/prototypes/functions/functions'
 
 local function on_search(search_key, gui)
+	if search_key == '' then
+		for _, row in pairs(gui.children) do
+			row.visible = true
+		end
+		return
+	end
 	for _, row in pairs(gui.children) do
 		row.visible = row.name:find(search_key, 1, true) or row.name:find(search_key:gsub(' ', '-'), 1, true) or row.name:find(search_key:gsub(' ', ''), 1, true)
 	end
