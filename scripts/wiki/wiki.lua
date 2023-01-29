@@ -16,6 +16,7 @@ Event.register(Event.core_events.init_and_config, function()
     end
     global.wiki_pages = {}
     global.currently_opened_wiki_page = global.currently_opened_wiki_page or {}
+    global.wiki_page_search_query = global.wiki_page_search_query or {}
 end)
 
 Event.register(defines.events.on_player_created, function(event)
@@ -50,6 +51,7 @@ function Wiki.open_wiki(player)
     py_wiki_search.style.right_margin = -5
     py_wiki_search.style.width = 200
     py_wiki_search.visible = false
+    py_wiki_search.text = global.wiki_page_search_query[player.index] or ''
     caption_flow.add{name = 'py_wiki_search_button', type = 'sprite-button', style = 'frame_action_button_always_on', sprite = 'utility/search_black'}.visible = false
     caption_flow.add{name = 'py_close_wiki', type = 'sprite-button', style = 'frame_action_button', sprite = 'utility/close_white', hovered_sprite = 'utility/close_black', clicked_sprite = 'utility/close_black'}
 
@@ -174,7 +176,9 @@ Gui.on_text_changed('py_wiki_search', function(event)
     if not page_data or not page_data.searchable then return end
     local searchable = page_data.searchable
 
-    remote.call(searchable[1], searchable[2], event.element.text, contents, player)
+    local search_query = event.element.text
+    remote.call(searchable[1], searchable[2], search_query, contents, player)
+    global.wiki_page_search_query[player.index] = search_query
 end)
 
 remote.add_interface('pywiki', {
