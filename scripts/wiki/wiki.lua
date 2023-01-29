@@ -26,6 +26,7 @@ function Wiki.get_wiki_gui(player) return player.gui.screen.pywiki end
 function Wiki.get_pages(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.content_flow.py_pages_list end end
 function Wiki.get_page_contents(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.content_flow.page_frame.scroll_pane end end
 function Wiki.get_page_title(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.content_flow.page_frame.subheader_frame end end
+function Wiki.get_page_searchbar(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.caption_flow.py_wiki_search end end
 
 function Wiki.open_wiki(player)
     player.opened = nil
@@ -35,15 +36,21 @@ function Wiki.open_wiki(player)
 	main_frame.style.width = 1050
 	main_frame.style.minimal_height = 700
 
-    local caption_flow = main_frame.add{type = 'flow', direction = 'horizontal'}
+    local caption_flow = main_frame.add{type = 'flow', direction = 'horizontal', name = 'caption_flow'}
     caption_flow.drag_target = main_frame
     caption_flow.style.vertical_align = 'center'
+    caption_flow.style.horizontal_spacing = 10
     caption_flow.add{type = 'sprite', sprite = 'pywiki-alt', resize_to_sprite = false}.style.size = {32, 32}
     caption_flow.add{type = 'label', caption = {'pywiki-sections.title'}, style = 'frame_title', ignored_by_interaction = true}
     local caption_spacing = caption_flow.add{type = 'empty-widget', style = 'draggable_space_header', ignored_by_interaction = true}
     caption_spacing.style.height = 24
     caption_spacing.style.right_margin = 4
     caption_spacing.style.horizontally_stretchable = true
+    local py_wiki_search = caption_flow.add{name = 'py_wiki_search', type = 'textfield', style = 'titlebar_search_textfield', clear_and_focus_on_right_click = true}
+    py_wiki_search.style.right_margin = -5
+    py_wiki_search.style.width = 200
+    py_wiki_search.visible = false
+    caption_flow.add{name = 'py_wiki_search_button', type = 'sprite-button', style = 'frame_action_button_always_on', sprite = 'utility/search_black'}.visible = false
     caption_flow.add{name = 'py_close_wiki', type = 'sprite-button', style = 'frame_action_button', sprite = 'utility/close_white', hovered_sprite = 'utility/close_black', clicked_sprite = 'utility/close_black'}
 
 	local content_flow = main_frame.add{type = 'flow', name = 'content_flow', direction = 'horizontal'}
@@ -64,9 +71,10 @@ function Wiki.open_wiki(player)
             contents[#contents + 1] = page
         end
     end
-    local pages = content_flow.add{type = 'list-box', items = items, tags = {contents = contents}, name = 'py_pages_list'}
+    local pages = content_flow.add{type = 'list-box', items = items, name = 'py_pages_list'}
     pages.style.vertically_stretchable = true
     pages.style.width = 240
+    pages.tags = {contents = contents}
 
     local page_frame = content_flow.add{type = 'frame', name = 'page_frame', direction = 'vertical', style = 'inside_deep_frame'}
     local subheader_frame = page_frame.add{type = 'frame', name = 'subheader_frame', style = 'subheader_frame_with_text_on_the_right'}
@@ -122,26 +130,30 @@ function Wiki.open_page(player, index)
     if #pages.items < index then return end
     local contents = Wiki.get_page_contents(player)
     local title = Wiki.get_page_title(player)
-    local page = pages.tags.contents[index]
+    local page_data = pages.tags.contents[index]
 
-    if page.is_section then
+    if page_data.is_section then
         Wiki.open_page(player, global.currently_opened_wiki_page[player.index] or 1)
         return
     end
 
     title.clear()
-    title.add{type = 'label', style = 'subheader_label', name = 'page_title', caption = {'', '[font=default-semibold][color=255,230,192]', {'pywiki-sections.' .. page.name}, '[/color][/font]'}}
+    title.add{type = 'label', style = 'subheader_label', name = 'page_title', caption = {'', '[font=default-semibold][color=255,230,192]', {'pywiki-sections.' .. page_data.name}, '[/color][/font]'}}
 
     contents.clear()
     pages.selected_index = index
     global.currently_opened_wiki_page[player.index] = index
 
-    if page.text_only then
-        local label = contents.add{type = 'label', caption = {'pywiki-descriptions.' .. page.name}, style = 'label_with_left_padding', ignored_by_interaction = false}
+    local visible = not not page_data.searchable
+    main_frame.caption_flow.py_wiki_search.visible = visible
+    main_frame.caption_flow.py_wiki_search_button.visible = visible
+
+    if page_data.text_only then
+        local label = contents.add{type = 'label', caption = {'pywiki-descriptions.' .. page_data.name}, style = 'label_with_left_padding', ignored_by_interaction = false}
         label.style.single_line = false
         label.style.rich_text_setting = defines.rich_text_setting.highlight
-    elseif page.remote then
-        remote.call(page.remote[1], page.remote[2], contents, player)
+    elseif page_data.remote then
+        remote.call(page_data.remote[1], page_data.remote[2], contents, player)
     end
 end
 
@@ -153,6 +165,18 @@ Gui.on_selection_state_changed('py_pages_list', function(event)
     Wiki.open_page(player, index)
 end)
 
+Gui.on_text_changed('py_wiki_search', function(event)
+    local player = game.get_player(event.player_index)
+    local contents = Wiki.get_page_contents(player)
+    if not contents then return end
+    local pages = Wiki.get_pages(player)
+    local page_data = pages.tags.contents[pages.selected_index]
+    if not page_data or not page_data.searchable then return end
+    local searchable = page_data.searchable
+
+    remote.call(searchable[1], searchable[2], event.element.text, contents, player)
+end)
+
 remote.add_interface('pywiki', {
     add_page = Wiki.add_page,
     add_section = Wiki.add_section,
@@ -160,5 +184,6 @@ remote.add_interface('pywiki', {
     get_wiki_gui = Wiki.get_wiki_gui,
     get_pages = Wiki.get_pages,
     get_page_contents = Wiki.get_page_contents,
-    get_page_title = Wiki.get_page_title
+    get_page_title = Wiki.get_page_title,
+    get_page_searchbar = Wiki.get_page_searchbar
 })

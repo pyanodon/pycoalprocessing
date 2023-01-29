@@ -8,12 +8,14 @@ Event.register(Event.core_events.init_and_config, function()
 
 	remote.call('pywiki', 'add_page', {
         name = 'fluid-index',
-		remote = {'create_fluid_page', 'create_fluid_page'}
+		remote = {'pywiki_spreadsheets', 'create_fluid_page'},
+        searchable = {'pywiki_spreadsheets', 'on_search'}
     })
 
 	remote.call('pywiki', 'add_page', {
         name = 'item-index',
-		remote = {'create_solid_fuel_page', 'create_solid_fuel_page'}
+		remote = {'pywiki_spreadsheets', 'create_solid_fuel_page'},
+        searchable = {'pywiki_spreadsheets', 'on_search'}
     })
 
     remote.call('pywiki', 'add_section', 'coalprocessing')

@@ -78,3 +78,11 @@ style.py_schedule_move_button_alt = {
 		shadow = {position = {399, 90}, corner_size = 2, draw_type = 'inner'}
 	}
 }
+
+style.frame_action_button_always_on = {
+	type = 'button_style',
+	parent = 'frame_action_button',
+	graphical_set = style.frame_button.clicked_graphical_set,
+	default_graphical_set = style.frame_button.clicked_graphical_set,
+	hovered_graphical_set = style.frame_button.clicked_graphical_set
+}

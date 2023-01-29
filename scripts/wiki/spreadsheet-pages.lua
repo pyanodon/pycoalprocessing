@@ -3,6 +3,12 @@ local Gui = require('__stdlib__/stdlib/event/gui')
 local floor = math.floor
 local FUN = require '__pycoalprocessing__/prototypes/functions/functions'
 
+local function on_search(search_key, gui)
+	for _, row in pairs(gui.children) do
+		row.visible = row.name:find(search_key, 1, true) or row.name:find(search_key:gsub(' ', '-'), 1, true) or row.name:find(search_key:gsub(' ', ''), 1, true)
+	end
+end
+
 local function update_spreadsheet(gui, player, data, sort_by, asc)
 	gui.clear()
 
@@ -21,9 +27,9 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 		end
 	end)
 
-	local last_line
 	for _, row in pairs(rows) do
-		local flow = gui.add{type = 'flow', direction = 'horizontal', tags = row}
+		local container = gui.add{type = 'flow', direction = 'vertical', name = row.search_key}
+		local flow = container.add{type = 'flow', direction = 'horizontal', tags = row}
 		for i, column in pairs(columns) do
 			local caption = row[column.name].value
 			if i == 1 then
@@ -35,11 +41,13 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 				flow.add{type = 'label', caption = caption}
 			end
 		end
-		last_line = gui.add{type = 'line', direction = 'horizontal'}
+		container.add{type = 'line', direction = 'horizontal'}
 	end
-	if last_line then last_line.destroy() end
 
 	data.prefered_sorts[player.index] = {sort_by, asc}
+
+	local search_key = remote.call('pywiki', 'get_page_searchbar', player).text
+	on_search(search_key, gui)
 end
 
 local function create_spreadsheet(gui, player, data)
@@ -74,10 +82,11 @@ local function create_spreadsheet(gui, player, data)
 	update_spreadsheet(gui, player, data, sort_by, asc)
 end
 
-local function create_fluid_page(gui, player) create_spreadsheet(gui, player, global.fluid_spreadsheet_data) end
-remote.add_interface('create_fluid_page', {create_fluid_page = create_fluid_page})
-local function create_solid_fuel_page(gui, player) create_spreadsheet(gui, player, global.solid_fuel_spreadsheet_data) end
-remote.add_interface('create_solid_fuel_page', {create_solid_fuel_page = create_solid_fuel_page})
+remote.add_interface('pywiki_spreadsheets', {
+	create_fluid_page = function(gui, player) create_spreadsheet(gui, player, global.fluid_spreadsheet_data) end,
+	create_solid_fuel_page = function(gui, player) create_spreadsheet(gui, player, global.solid_fuel_spreadsheet_data) end,
+	on_search = on_search
+})
 
 local function funny_square(color)
 	local r = color.r * 255
@@ -201,7 +210,8 @@ local function calculate_unlocked_at(required_science, name)
 
 	return {
 		value = required_science_pack,
-		order = required_science or #science_pack_names + 1
+		order = required_science or #science_pack_names + 1,
+		pack = science_pack_names[required_science or 0] or ''
 	}
 end
 
@@ -231,6 +241,8 @@ Event.register(Event.core_events.init_and_config, function()
 				voidable = voidable..'  [entity='..((fluid.default_temperature or 15) < (fluid.gas_temperature or math.huge) and 'py-sinkhole' or 'py-gas-vent')..']'
 			end
 
+			local unlocked_at = calculate_unlocked_at(required_science, name)
+
 			table.insert(global.fluid_spreadsheet_data.rows, {
 				['localised-name'] = {
 					value = {'', '[fluid='..name..'] ', fluid.localised_name},
@@ -248,7 +260,8 @@ Event.register(Event.core_events.init_and_config, function()
 					value = funny_square(fluid.base_color),
 					order = floor(hue(fluid.base_color)) + brightness(fluid.base_color) / 10
 				},
-				['unlocked-at'] = calculate_unlocked_at(required_science, name),
+				['unlocked-at'] = unlocked_at,
+				search_key = name..'|'..unlocked_at.pack
 			})
 		end
 	end
@@ -269,8 +282,13 @@ Event.register(Event.core_events.init_and_config, function()
 
 	for name, item in pairs(game.item_prototypes) do
 		if item.fuel_category and not item.has_flag('hidden') then
-			local burnt_result
-			if item.burnt_result then burnt_result = '[item='..item.burnt_result.name..']' end
+			local burnt_result, burnt_result_order
+			if item.burnt_result then
+				burnt_result = '[item='..item.burnt_result.name..']'
+				burnt_result_order = item.burnt_result.name
+			end
+
+			local unlocked_at = calculate_unlocked_at(required_science, name)
 
 			table.insert(global.solid_fuel_spreadsheet_data.rows, {
 				['localised-name'] = {
@@ -287,9 +305,10 @@ Event.register(Event.core_events.init_and_config, function()
 				},
 				['burnt-result'] = {
 					value = burnt_result,
-					order = item.burnt_result and item.burnt_result.name or ''
+					order = burnt_result_order
 				},
-				['unlocked-at'] = calculate_unlocked_at(required_science, name),
+				['unlocked-at'] = unlocked_at,
+				search_key = name..'|'..item.fuel_category..'|'..(burnt_result_order or '')..'|'..unlocked_at.pack
 			})
 		end
 	end
