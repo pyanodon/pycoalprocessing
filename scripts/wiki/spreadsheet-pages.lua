@@ -22,7 +22,7 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 	local columns = data.columns
 
 	table.sort(rows, function(a, b)
-		local order_1, order_2 = a[sort_by].order, b[sort_by].order
+		local order_1, order_2 = (a[sort_by].order or ''), (b[sort_by].order or '')
 		if order_1 == order_2 then
 			order_1, order_2 = a['localised-name'].order, b['localised-name'].order
 		end
