@@ -1,6 +1,6 @@
 {
   "name": "pycoalprocessing",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "factorio_version": "1.1",
   "title": "Pyanodons Coal Processing",
   "author": "Pyanodon, Nexela, Kingarthur",
@@ -8,7 +8,7 @@
   "homepage": "https://mods.factorio.com/mods/pyanodon/pycoalprocessing",
   "description": "Adds coal processing lines to the game.",
   "dependencies": [
-    "base >= 0.16.0",
+    "base >= 1.1.74",
     "stdlib >= 1.4.0",
     "~ pycoalprocessinggraphics",
     "~ pypostprocessing",
