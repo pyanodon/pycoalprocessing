@@ -1035,7 +1035,18 @@ function overrides.tech_add_prerequisites(tech, prereq)
     end
 end
 
-function modify_recipe_tables(item,items_table,previous_item_names, result_table)
+local function ensure_contiguous(tbl)
+    if not tbl or type(tbl) ~= "table" then return tbl end
+    local contiguous_table = {}
+    for _, v in pairs(tbl) do
+        if v ~= nil then
+            contiguous_table[#contiguous_table+1] = v
+        end
+    end
+    return contiguous_table
+end
+
+function modify_recipe_tables(item, items_table, previous_item_names, result_table)
     --process both result and ingredient tables
     --log(serpent.block(item))
     --log(serpent.block(items_table))
@@ -1260,7 +1271,7 @@ function recipe_item_builder(ingredients,results,previous_ingredients,previous_r
     end
     --log(serpent.block(ing_table))
 
-    return ing_table, result_table
+    return ensure_contiguous(ing_table), ensure_contiguous(result_table)
 end
 
 function overrides.autorecipes(recipe)
