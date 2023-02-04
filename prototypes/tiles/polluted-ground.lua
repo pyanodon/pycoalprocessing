@@ -71,13 +71,8 @@ DATA {
     name = 'ninja-tree',
     icon = '__pycoalprocessinggraphics__/graphics/empty.png',
     icon_size = 32,
-    flags = {'placeable-neutral', 'placeable-off-grid', 'breaths-air'},
-    minable = {
-        mining_particle = 'wooden-particle',
-        mining_time = 0.5,
-        result = 'wood',
-        count = 2
-    },
+    flags = {'placeable-neutral', 'placeable-off-grid', 'breaths-air',"not-blueprintable", "not-deconstructable"},
+    selectable_in_game = false,
     emissions_per_second = 0,
     max_health = 20,
     collision_box = {{0, 0}, {0, 0}},
