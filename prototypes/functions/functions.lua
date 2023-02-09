@@ -1408,96 +1408,47 @@ function overrides.farm_speed_derived(num_slots, base_entity_name)
 end
 
 function overrides.tech_upgrade(tech_upgrade)
-    --log(serpent.block(tech_upgrade))
-    for _, tab in pairs(tech_upgrade) do
-        --log(serpent.block(tab))
-        if tab.is_ht == nil or tab.is_ht == false or mods['pyhightech'] then
-            TECHNOLOGY{
-                type = 'technology',
-                name = tab.master_tech.name,
-                icon = tab.master_tech.icon,
-                icon_size = tab.master_tech.icon_size,
-                order = tab.master_tech.order,
-                prerequisites = tab.master_tech.prerequisites,
-                effects = {},
-                unit = tab.master_tech.unit
-            }
-            for _, tech in pairs(tab.sub_techs) do
-                --log(serpent.block(tech))
-                --log(tech.technology.name)
+    local master_tech = tech_upgrade.master_tech
+    TECHNOLOGY {
+        type = 'technology',
+        name = master_tech.name,
+        icon = master_tech.icon,
+        icon_size = master_tech.icon_size,
+        order = master_tech.order,
+        prerequisites = master_tech.prerequisites,
+        effects = {},
+        unit = master_tech.unit
+    }
+    for _, tech in pairs(tech_upgrade.sub_techs) do
+        data:extend{{
+            type = 'sprite',
+            name = tech.name,
+            filename = tech.icon,
+            size = tech.icon_size
+        }}
 
-                data:extend({
-                    {
-                        type = 'sprite',
-                        name = tech.technology.name,
-                        filename = tech.technology.icon,
-                        -- priority = "extra-high-no-scale",
-                        size = tech.technology.icon_size
-                        -- width = 64,
-                        -- height = 64,
-                        -- flags = {"gui-icon"},
-                        -- scale = 0.5
-                    }
-                })
-                --log(serpent.block(tab.master_tech.name))
-                local module_effects = {}
-                if tech.upgrades ~= nil then
-                    local speed
-                    if type(tech.upgrades.speed) == 'table' then
-                        speed = {bonus = tech.upgrades.speed.module_amount}
-                    elseif type(tech.upgrades.speed) == 'number' then
-                        speed = {bonus = tech.upgrades.speed}
-                    end
-                    module_effects = {
-                        consumption = {bonus = tech.upgrades.consumption},
-                        speed = speed,
-                        productivity = {bonus = tech.upgrades.productivity},
-                        pollution = {bonus = tech.upgrades.pollution * -1}
-                    }
-                end
-
-                local categories
-                local recipes = {}
-                if tech.entities[1] ~= nil then
-                    --log('hit')
-                    if data.raw['assembling-machine'][tech.entities[1]] ~= nil then
-                        categories = data.raw['assembling-machine'][tech.entities[1]].crafting_categories
-                    elseif data.raw['furnace'][tech.entities[1]] ~= nil then
-                        categories = data.raw['furnace'][tech.entities[1]].crafting_categories
-                    end
-                    for c, cat in pairs(categories) do
-                        for r, recipe in pairs(data.raw.recipe) do
-                            if recipe.category == cat then table.insert(recipes, recipe.name) end
-                        end
-                    end
-                end
-
-                --log(serpent.block(recipes))
-
-                ITEM{
+        for _, effect in pairs(tech.effects) do
+            if effect.type == 'module-effects' then
+                ITEM {
                     type = 'module',
-                    name = tech.technology.name .. '-module',
-                    icons =
-                        {
-                            {
-                                icon = tech.technology.icon,
-                                icon_size = 128,
-                                scale = 0.5
-                            }
-                        },
-                    category = tech.technology.name,
+                    name = tech.name .. '-module',
+                    icon = tech.icon,
+                    icon_size = tech.icon_size,
+                    scale = 0.5,
+                    category = tech_upgrade.module_category or 'speed',
                     tier = 1,
-                    flags = {},
+                    flags = {'not-stackable'},
                     subgroup = 'py-alienlife-modules',
                     order = 't-a',
-                    stack_size = 50,
-                    effect = module_effects,
-                    limitation = recipes,
-                    -- limitation_message_key = "dicks"
-                    localised_name = {"",{tostring('technology-name.' .. tech.technology.name)}}
+                    stack_size = 1,
+                    effect = {
+                        consumption = {bonus = effect.consumption or 0},
+                        speed = {bonus = effect.speed or 0},
+                        productivity = {bonus = effect.productivity or 0},
+                        pollution = {bonus = -1 * (effect.pollution or 0.1)}
+                    },
+                    localised_name = {'technology-name.' .. tech.name}
                 }
-
-                data:extend({{type = 'module-category', name = tech.technology.name}})
             end
         end
     end

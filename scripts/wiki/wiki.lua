@@ -140,7 +140,8 @@ function Wiki.open_page(player, index)
     end
 
     title.clear()
-    title.add{type = 'label', style = 'subheader_label', name = 'page_title', caption = {'', '[font=default-semibold][color=255,230,192]', {'pywiki-sections.' .. page_data.name}, '[/color][/font]'}}
+    local localised_title = {'pywiki-sections.' .. (page_data.title or page_data.name)}
+    title.add{type = 'label', style = 'subheader_label', name = 'page_title', caption = {'', '[font=default-semibold][color=255,230,192]', localised_title, '[/color][/font]'}}
 
     contents.clear()
     pages.selected_index = index

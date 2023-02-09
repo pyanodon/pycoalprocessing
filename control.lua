@@ -40,7 +40,7 @@ end)
 
 Event.register(defines.events.on_research_finished, function(event)
 	local tech = event.research
-	if tech.name == 'pyrrhic' then
+	if tech.name == 'pyrrhic' and game.tick ~= 0 then
 		local force = tech.force
 		for _, player in pairs(game.connected_players) do
 			if player.force == force then player.opened = nil end
