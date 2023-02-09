@@ -36,7 +36,7 @@ ITEM('electric-engine-unit'):set("icon", "__pycoalprocessinggraphics__/graphics/
 ITEM('electric-engine-unit'):set("icon_size", 64)
 ITEM('electric-engine-unit'):set("icon_mipmaps", nil)
 
-RECIPE("small-electric-pole"):set_category("handcrafting")
+RECIPE("small-electric-pole"):replace_result("small-electric-pole", {"small-electric-pole", amount = 1})
 
 RECIPE("medium-electric-pole"):add_ingredient({type = "item", name = "niobium-plate", amount = 1}):replace_ingredient("copper-plate", {"copper-cable", 5}):replace_ingredient("iron-stick", {"nbfe-alloy", 2}):remove_ingredient('steel-plate')
 
