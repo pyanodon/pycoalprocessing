@@ -1,29 +1,29 @@
 data:extend{{
-  type = 'sprite',
-  name = 'pywiki',
-  filename = '__pycoalprocessinggraphics__/graphics/py-wiki-alt.png',
-  priority = 'extra-high-no-scale',
-  size = 64,
-  flags = {'gui-icon'}
+	type = 'sprite',
+	name = 'pywiki',
+	filename = '__pycoalprocessinggraphics__/graphics/py-wiki-alt.png',
+	priority = 'extra-high-no-scale',
+	size = 64,
+	flags = {'gui-icon'}
 }}
 
 data:extend{{
-  type = 'sprite',
-  name = 'pywiki-alt',
-  filename = '__pycoalprocessinggraphics__/graphics/py-wiki.png',
-  priority = 'extra-high-no-scale',
-  size = 128,
-  flags = {'gui-icon'}
+	type = 'sprite',
+	name = 'pywiki-alt',
+	filename = '__pycoalprocessinggraphics__/graphics/py-wiki.png',
+	priority = 'extra-high-no-scale',
+	size = 128,
+	flags = {'gui-icon'}
 }}
 
 data:extend{{
-  type = 'sprite',
-  name = 'pywiki-logos',
-  filename = '__pycoalprocessinggraphics__/graphics/logos.png',
-  priority = 'high',
-  width = 720,
-  height = 288,
-  flags = {'gui-icon'}
+	type = 'sprite',
+	name = 'pywiki-logos',
+	filename = '__pycoalprocessinggraphics__/graphics/logos.png',
+	priority = 'high',
+	width = 720,
+	height = 288,
+	flags = {'gui-icon'}
 }}
 
 data:extend{
@@ -55,12 +55,23 @@ data:extend{
 		size = 32,
 		flags = {'gui-icon'}
 	},
-  {
+  	{
 		type = 'sprite',
 		name = 'white-circle',
 		filename = '__pycoalprocessinggraphics__/graphics/icons/gui/white-circle.png',
 		size = 32,
-    mipmaps = 2,
+    	mipmaps = 2,
 		flags = {'gui-icon'}
 	}
 }
+
+
+data:extend{{
+    type = 'sprite',
+	name = 'turd',
+	filename = '__pycoalprocessinggraphics__/graphics/icons/gui/turd.png',
+	priority = 'high',
+	width = 40,
+	height = 40,
+	flags = {'gui-icon'}
+}}

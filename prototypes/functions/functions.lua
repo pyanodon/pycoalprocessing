@@ -1429,6 +1429,12 @@ function overrides.tech_upgrade(tech_upgrade)
 
         for _, effect in pairs(tech.effects) do
             if effect.type == 'module-effects' then
+                if master_tech.name == 'compost-upgrade' then
+                    effect.pollution = 0
+                elseif effect.pollution == 0 then
+                    effect.pollution = 0.1 -- prevent use in mines, composter, ect
+                end
+
                 ITEM {
                     type = 'module',
                     name = tech.name .. '-module',
@@ -1447,8 +1453,11 @@ function overrides.tech_upgrade(tech_upgrade)
                         productivity = {bonus = effect.productivity or 0},
                         pollution = {bonus = -1 * (effect.pollution or 0.1)}
                     },
-                    localised_name = {'technology-name.' .. tech.name}
+                    localised_name = {'technology-name.' .. tech.name},
+                    localised_description = {'turd.font', {'turd.module'}}
                 }
+            elseif effect.type == 'unlock-recipe' and data.raw.recipe[effect.recipe] then
+                overrides.add_to_description('recipe', data.raw.recipe[effect.recipe], {'turd.font', {'turd.recipe'}})
             end
         end
     end
