@@ -1409,16 +1409,8 @@ end
 
 function overrides.tech_upgrade(tech_upgrade)
     local master_tech = tech_upgrade.master_tech
-    TECHNOLOGY {
-        type = 'technology',
-        name = master_tech.name,
-        icon = master_tech.icon,
-        icon_size = master_tech.icon_size,
-        order = master_tech.order,
-        prerequisites = master_tech.prerequisites,
-        effects = {},
-        unit = master_tech.unit
-    }
+    local effects = {}
+
     for _, tech in pairs(tech_upgrade.sub_techs) do
         data:extend{{
             type = 'sprite',
@@ -1426,6 +1418,13 @@ function overrides.tech_upgrade(tech_upgrade)
             filename = tech.icon,
             size = tech.icon_size
         }}
+
+        effects[#effects + 1] = {
+            type = 'nothing',
+            icon = tech.icon,
+            icon_size = tech.icon_size,
+            effect_description = {'', '[font=default-semibold][color=255,230,192]', {'technology-name.' .. tech.name}, '[/color][/font]\n', {'technology-description.' .. tech.name}}
+        }
 
         for _, effect in pairs(tech.effects) do
             if effect.type == 'module-effects' then
@@ -1461,6 +1460,17 @@ function overrides.tech_upgrade(tech_upgrade)
             end
         end
     end
+
+    TECHNOLOGY {
+        type = 'technology',
+        name = master_tech.name,
+        icon = master_tech.icon,
+        icon_size = master_tech.icon_size,
+        order = master_tech.order,
+        prerequisites = master_tech.prerequisites,
+        effects = effects,
+        unit = master_tech.unit
+    }
 end
 
 -- Takes two prototype names (both must use the style of IconSpecification with icon = string_path), returns an IconSpecification with the icons as composites
