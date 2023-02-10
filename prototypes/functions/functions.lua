@@ -1469,7 +1469,8 @@ function overrides.tech_upgrade(tech_upgrade)
         order = master_tech.order,
         prerequisites = master_tech.prerequisites,
         effects = effects,
-        unit = master_tech.unit
+        unit = master_tech.unit,
+        localised_description = {'turd.font', {'turd.tech'}}
     }
 end
 
