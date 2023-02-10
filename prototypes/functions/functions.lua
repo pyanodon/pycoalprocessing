@@ -16,21 +16,11 @@ end
 -- add item/fluid to recipe ingredients
 -- ingredient contains name, amount, and type if its a fluid
 function overrides.add_ingredient(recipe, ingredient)
-    -- check that recipe exists before doing anything else
-    if data.raw.recipe[recipe] ~= nil then
-        -- check if ingredient is item or fluid and that it exists
-        if data.raw.item[ingredient.name] ~= nil or data.raw.fluid[ingredient.name] ~= nil or
-            data.raw.module[ingredient.name] ~= nil then
-            -- check if type is set to fluid
-            if ingredient.type == 'fluid' then
-                table.insert(data.raw.recipe[recipe].ingredients,
-                    {type = 'fluid', name = ingredient.name, amount = ingredient.amount})
-            else
-                table.insert(data.raw.recipe[recipe].ingredients,
-                    {type = 'item', name = ingredient.name, amount = ingredient.amount})
-            end
-        end
+    if type(recipe) == 'string' then recipe = data.raw.recipe[recipe] end
+    if not recipe.ingredients then
+        recipe.ingredients = (recipe.normal or recipe.expensive).ingredients
     end
+    table.insert(recipe.ingredients, ingredient)
 end
 
 -- add item/fluid to recipe results
@@ -680,184 +670,73 @@ end
 
 --add 50 hot-air ingredient, output +25%
 function overrides.hotairrecipes(extra_recipes)
---gather recipes for the casting unit
-local recipes = table.deepcopy(data.raw.recipe)
-local afrecipes = {}
-local afrecipesnames = {}
-local afrcount = 0
-local altrec = 0
-	for _, recipe in pairs(recipes) do
-		--[[
-		if recipe.category == "advanced-foundry" then
-			table.insert(afrecipes,recipe)
-			table.insert(afrecipesnames,recipe.name)
-		end
-		if recipe.category == "smelting" then
-			table.insert(afrecipes,recipe)
-			table.insert(afrecipesnames,recipe.name)
-		end
-		]]--
-		if recipe.category == "casting" then
-			table.insert(afrecipes,recipe)
-			table.insert(afrecipesnames,recipe.name)
-		end
-	end
-	--log('hit')
-	if next(extra_recipes) ~= nil then
-		--log('hit')
-		for _, recipe in pairs(extra_recipes) do
-			--log('hit')
-			if data.raw.recipe[recipe] ~= nil then
-				--log('hit')
-				table.insert(afrecipes, table.deepcopy(data.raw.recipe[recipe]))
-				table.insert(afrecipesnames,recipe.name)
-			end
-		end
-	end
---cycle thru afrecipes to make changes
-	for _,recipe in pairs(afrecipes) do
-		if not hab[recipe.name] then
-		afrcount=afrcount+1
-		--add ingredient
-		local result
-        local index 
-        if recipe.category == "glassworks" then
-            index = 3
-        else
-            index = nil
-        end
+    --gather recipes for the casting unit
+    local recipes = table.deepcopy(data.raw.recipe)
+    local afrecipes = {}
+    local afrecipesnames = {}
+    local afrcount = 0
+    local altrec = 0
 
-		if recipe.normal == nil and recipe.expensive == nil then
-			if recipe.ingredients[1] ~= nil then
-				if recipe.ingredients[1].name == nil then
-					local ing = recipe.ingredients
-					recipe.ingredients = {}
-					table.insert(recipe.ingredients, {type = "item", name = ing[1][1], amount = ing[1][2]})
-					if data.raw.item["solid-hot-air"] ~= nil then
-						table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
-					else
-						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
-					end
-				elseif recipe.ingredients[1].name then
-					if data.raw.item["solid-hot-air"] ~= nil then
-						table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
-					else
-						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
-					end
-				end
-			elseif recipe.ingredients[2] ~= nil then
-				if recipe.ingredients[2].name == nil then
-					local ing = recipe.ingredients
-					recipe.ingredients = {}
-					table.insert(recipe.ingredients, {type = "item", name = ing[2][1], amount = ing[2][2]})
-					if data.raw.item["solid-hot-air"] ~= nil then
-						table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
-					else
-						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
-					end
-				elseif recipe.ingredients[2].name then
-					if data.raw.item["solid-hot-air"] ~= nil then
-						table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
-					else
-						table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
-					end
-				end
-			end
-			if type(recipe.result) == "string" and (recipe.count == nil or recipe.count == 1) then
-				local res = recipe.result
-				result = res
-				recipe.result=nil
-				recipe.results={{type="item",name=res,amount=3}}
-			elseif recipe.results then
-				if recipe.results[1].name == nil then
-					local res = recipe.results
-					result = res[1][1]
-					recipe.results = {}
-					table.insert(recipe.results,{type = "item", name = res[1][1], amount = res[1][2] + math.ceil(res[1][2] * 0.25)})
-				elseif recipe.results[1].name then
-					--log(serpent.block(recipe.results))
-					result = recipe.results[1].name
-					if recipe.results[1].amount ~= nil then
-						local resnum = recipe.results[1].amount + math.ceil(recipe.results[1].amount * 0.25)
-						recipe.results[1].amount = resnum
-					elseif recipe.results[1].amount_max ~= nil then
-						local resnum = recipe.results[1].amount_max + math.ceil(recipe.results[1].amount_max * 0.25)
-						recipe.results[1].amount_max = resnum
-					end
-				end
-			end
+	for _, recipe in pairs(recipes) do
+		if recipe.category == 'casting' and not hab[recipe.name] then
+			table.insert(afrecipes, recipe)
+			table.insert(afrecipesnames, recipe.name)
 		end
-		if recipe.normal or recipe.expensive then
-			if recipe.normal then
-			--log(serpent.block(recipe.normal))
-				if recipe.normal.ingredients[1] ~= nil then
-					if recipe.normal.ingredients[1].name == nil then
-						local ing = recipe.normal.ingredients
-						recipe.normal.ingredients = {}
-						table.insert(recipe.normal.ingredients, {type = "item", name = ing[1][1], amount = ing[1][2]})
-						if data.raw.item["solid-hot-air"] ~= nil then
-							table.insert(recipe.normal.ingredients,{type="item",name="solid-hot-air",amount=50})
-						else
-							table.insert(recipe.normal.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
-						end
-					else
-						if data.raw.item["solid-hot-air"] ~= nil then
-							table.insert(recipe.normal.ingredients,{type="item",name="solid-hot-air",amount=50})
-						else
-							table.insert(recipe.normal.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
-						end
-					end
-				end
-				if type(recipe.normal.result) == "string" then
-					local res = recipe.normal.result
-					result = res
-					recipe.normal.result = nil
-					local rtab = {type = "item", name = res, amount = 3}
-					recipe.normal.results={}
-					table.insert(recipe.normal.results,rtab)
-				end
-				if recipe.normal.results ~= nil then
-					result = recipe.normal.results[1].name
-					local resamount = recipe.normal.results[1].amount
-					recipe.normal.results[1].amount = resamount + math.ceil(resamount * 0.25)
-				end
-			end
-			if recipe.expensive then
-				if recipe.expensive.ingredients[1] ~= nil then
-					if recipe.expensive.ingredients[1].name == nil then
-						local ing = recipe.expensive.ingredients
-						recipe.expensive.ingredients = {}
-						table.insert(recipe.expensive.ingredients, {type = "item", name = ing[1][1], amount = ing[1][2]})
-						if data.raw.item["solid-hot-air"] ~= nil then
-							table.insert(recipe.expensive.ingredients,{type="item",name="solid-hot-air",amount=50})
-						else
-							table.insert(recipe.expensive.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
-						end
-					else
-						if data.raw.item["solid-hot-air"] ~= nil then
-							table.insert(recipe.expensive.ingredients,{type="item",name="solid-hot-air",amount=50})
-						else
-							table.insert(recipe.expensive.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
-						end
-					end
-				end
-				if type(recipe.expensive.result) == "string" then
-					local res = recipe.expensive.result
-					result = res
-					recipe.expensive.result = nil
-					local rtab = {type = "item", name = res, amount = 3}
-					recipe.expensive.results={}
-					table.insert(recipe.expensive.results,rtab)
-					--log(serpent.block(rtab))
-					--log(serpent.block(recipe.expensive.results))
-				end
-				if recipe.expensive.results ~= nil then
-					local resamount = recipe.expensive.results[1].amount
-					result = recipe.expensive.results[1].name
-					recipe.expensive.results[1].amount = resamount + math.ceil(resamount * 0.25)
-				end
-			end
-		end
+	end
+
+    for _, recipe in pairs(extra_recipes) do
+        if data.raw.recipe[recipe] then
+            table.insert(afrecipes, table.deepcopy(data.raw.recipe[recipe]))
+            table.insert(afrecipesnames,recipe.name)
+        end
+    end
+
+    --cycle thru afrecipes to make changes
+	for _, recipe in pairs(afrecipes) do
+        if recipe.normal or recipe.expensive then error('Don\'t use this') end
+
+		afrcount = afrcount + 1
+		--add ingredient
+		local result = recipe.main_product or recipe.result or recipe.results[1][1] or recipe.results[1].name
+        local index = recipe.category == "glassworks" and 3
+
+        if recipe.ingredients[1] ~= nil then
+            if recipe.ingredients[1].name == nil then
+                local ing = recipe.ingredients
+                recipe.ingredients = {}
+                table.insert(recipe.ingredients, {type = "item", name = ing[1][1], amount = ing[1][2]})
+                if data.raw.item["solid-hot-air"] ~= nil then
+                    table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
+                else
+                    table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
+                end
+            elseif recipe.ingredients[1].name then
+                if data.raw.item["solid-hot-air"] ~= nil then
+                    table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
+                else
+                    table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
+                end
+            end
+        elseif recipe.ingredients[2] ~= nil then
+            if recipe.ingredients[2].name == nil then
+                local ing = recipe.ingredients
+                recipe.ingredients = {}
+                table.insert(recipe.ingredients, {type = "item", name = ing[2][1], amount = ing[2][2]})
+                if data.raw.item["solid-hot-air"] ~= nil then
+                    table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
+                else
+                    table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
+                end
+            elseif recipe.ingredients[2].name then
+                if data.raw.item["solid-hot-air"] ~= nil then
+                    table.insert(recipe.ingredients,{type="item",name="solid-hot-air",amount=50})
+                else
+                    table.insert(recipe.ingredients,{type = "fluid", name = "hot-air", amount = 50, fluidbox_index = index})
+                end
+            end
+        end
+        overrides.multiply_result_amount(recipe, result, 1.25)
+
 		--find tech unlock of og recipe
 		local unlock
 		for _,t in pairs(data.raw.technology) do
@@ -946,71 +825,11 @@ local altrec = 0
 				if unlock ~= nil then
 					table.insert(data.raw.technology[unlock].effects,{type="unlock-recipe",recipe=hname})
 				end
-			elseif recipe.enabled == true then
+			else
 				data.raw.recipe[hname].enabled = true
-			elseif recipe.enabled == nil then
-				--log(recipe.name)
-				--log(serpent.block(recipe))
-				data.raw.recipe[hname].enabled = true
-				--log(serpent.block(data.raw.recipe[hname]))
 			end
 		end
-		if recipe.normal or recipe.expensive then
-			RECIPE {
-				type = "recipe",
-				name = hname,
-				category = "hot-air-advanced-foundry",
-				normal = {
-					--category = "hot-air-advanced-foundry",
-					category = category,
-					enabled = false,
-					energy_required = recipe.expensive.energy_required,
-					ingredients = recipe.normal.ingredients,
-					results = recipe.normal.results,
-					},
-				expensive = {
-					--category = "hot-air-advanced-foundry",
-					category = category,
-					enabled = false,
-					energy_required = recipe.expensive.energy_required,
-					ingredients = recipe.expensive.ingredients,
-					results = recipe.expensive.results,
-					},
-				icons = icons,
-				--icon_size = 32,
-				main_product = recipe.main_product or nil,
-				subgroup = recipe.subgroup
-				}--:add_unlock(unlock)
-			altrec=altrec+1
-			if recipe.normal.enabled == false or recipe.expensive.enabled == false then
-				if unlock ~= nil then
-					table.insert(data.raw.technology[unlock].effects,{type="unlock-recipe",recipe=hname})
-				end
-			elseif recipe.normal.enabled == true or recipe.expensive.enabled == true then
-				if recipe.normal.enabled == true then
-					data.raw.recipe[hname].normal.enabled = true
-				end
-				if recipe.expensive.enabled == true then
-					data.raw.recipe[hname].expensive.enabled = true
-				end
-			end
-		end
-		--log(serpent.block(data.raw.recipe[hname]))
 	end
-end
---log(serpent.block(afrecipesnames))
---log(afrcount)
---log(altrec)
---[[
-for _, r in pairs(data.raw.recipe) do
-	if r.name == "iron-plate" then
-	--log(serpent.block(r))
-	end
-	if r.category == "hot-air-advanced-foundry" then
-	--log(serpent.block(r))
-	end
-end
-]]--
 end
 
 function overrides.Tech_create()
@@ -1457,6 +1276,8 @@ function overrides.tech_upgrade(tech_upgrade)
                 }
             elseif effect.type == 'unlock-recipe' and data.raw.recipe[effect.recipe] then
                 overrides.add_to_description('recipe', data.raw.recipe[effect.recipe], {'turd.font', {'turd.recipe'}})
+            elseif effect.type == 'recipe-replacement' then
+                overrides.add_to_description('recipe', data.raw.recipe[effect.new], {'turd.font', {'turd.recipe-replacement'}})
             end
         end
     end
@@ -1470,7 +1291,7 @@ function overrides.tech_upgrade(tech_upgrade)
         prerequisites = master_tech.prerequisites,
         effects = effects,
         unit = master_tech.unit,
-        localised_description = {'turd.font', {'turd.tech'}}
+        localised_description = {'', {'turd.font', {'turd.tech'}}, '\n', {'turd.tech-2'}}
     }
 end
 
@@ -1607,6 +1428,27 @@ function overrides.check_for_basic_item(item)
 		global.items_with_metadata = items_with_metadata
 	end
 	return not items_with_metadata[item]
+end
+
+function overrides.multiply_result_amount(recipe, result_name, percent)
+    if recipe.normal or recipe.expensive then error('Don\'t use these') end
+
+    if type(recipe.result) == 'string' and not recipe.results then
+        recipe.results = {{type = 'item', name = recipe.result, amount = recipe.result_count or 1}}
+        recipe.result = nil
+        recipe.result_count = nil
+    end
+
+    for i, result in pairs(recipe.results) do
+        local name = result.name or result[1]
+        local amount = result.amount or result[2]
+        local type = result.type or 'item'
+
+        if name == result_name then
+            recipe.results[1] = {type = type, name = name, amount = math.ceil(amount * percent)}
+            return
+        end
+    end
 end
 
 return overrides
