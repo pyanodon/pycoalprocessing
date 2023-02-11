@@ -51,6 +51,26 @@ function overrides.add_result(recipe, result)
     end
     table.insert(recipe.results, result)
 end
+
+-- remove item/fluid to recipe results. returns amt of removed
+function overrides.remove_result(recipe, result_name)
+    if type(recipe) == 'string' then recipe = data.raw.recipe[recipe] end
+    overrides.standardize_results(recipe)
+
+    local amount = 0
+    local new_results = {}
+    for _, result in pairs(recipe.results) do
+        local name = result[1] or result.name
+        if name ~= result_name then
+            table.insert(new_results, result)
+        else
+            amount = result[2] or result.amount
+        end
+    end
+    recipe.results = new_results
+    return amount
+end
+
 --
 
 -- recipe builder: can take a list of ingredients and a list results and attempt to build a recipe using the first avalible item/fluid
