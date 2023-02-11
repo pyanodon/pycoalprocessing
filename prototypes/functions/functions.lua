@@ -23,6 +23,20 @@ function overrides.add_ingredient(recipe, ingredient)
     table.insert(recipe.ingredients, ingredient)
 end
 
+-- remove item/fluid to recipe ingredients
+function overrides.remove_ingredient(recipe, ingredient_name)
+    if type(recipe) == 'string' then recipe = data.raw.recipe[recipe] end
+    if not recipe.ingredients then
+        recipe.ingredients = (recipe.normal or recipe.expensive).ingredients
+    end
+    local new_ingredients = {}
+    for _, ingredient in pairs(recipe.ingredients) do
+        local name = ingredient[1] or ingredient.name
+        if name ~= ingredient_name then table.insert(new_ingredients, ingredient) end
+    end
+    recipe.ingredients = new_ingredients
+end
+
 -- add item/fluid to recipe results
 function overrides.add_result(recipe, result)
     if type(recipe) == 'string' then recipe = data.raw.recipe[recipe] end
@@ -1425,14 +1439,17 @@ function overrides.check_for_basic_item(item)
 	return not items_with_metadata[item]
 end
 
-function overrides.multiply_result_amount(recipe, result_name, percent)
-    if recipe.normal or recipe.expensive then error('Don\'t use these') end
-
+function overrides.standardize_results(recipe)
     if recipe.result and not recipe.results then
         recipe.results = {{type = 'item', name = recipe.result, amount = recipe.result_count or 1}}
         recipe.result = nil
         recipe.result_count = nil
     end
+end
+
+function overrides.multiply_result_amount(recipe, result_name, percent)
+    if recipe.normal or recipe.expensive then error('Don\'t use these') end
+    overrides.standardize_results(recipe)
 
     for i, result in pairs(recipe.results) do
         local name = result.name or result[1]
@@ -1440,7 +1457,23 @@ function overrides.multiply_result_amount(recipe, result_name, percent)
         local type = result.type or 'item'
 
         if name == result_name then
-            recipe.results[1] = {type = type, name = name, amount = math.ceil(amount * percent)}
+            recipe.results[i] = {type = type, name = name, amount = math.ceil(amount * percent)}
+            return
+        end
+    end
+end
+
+function overrides.add_result_amount(recipe, result_name, increase)
+    if recipe.normal or recipe.expensive then error('Don\'t use these') end
+    overrides.standardize_results(recipe)
+
+    for i, result in pairs(recipe.results) do
+        local name = result.name or result[1]
+        local amount = result.amount or result[2]
+        local type = result.type or 'item'
+
+        if name == result_name then
+            recipe.results[i] = {type = type, name = name, amount = amount + increase}
             return
         end
     end
