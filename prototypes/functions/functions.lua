@@ -25,22 +25,17 @@ end
 
 -- add item/fluid to recipe results
 function overrides.add_result(recipe, result)
-    --log(serpent.block(recipe))
-    --log(serpent.block(result))
-    -- check that recipe exists before doing anything else
-    if data.raw.recipe[recipe] ~= nil then
-        -- check if result is item or fluid and that it exists
-        if data.raw.item[result.name] ~= nil or data.raw.fluid[result.name] ~= nil then
-            -- check if type is set to fluid
-            if result.type == 'fluid' then
-                table.insert(data.raw.recipe[recipe].results,
-                    {type = 'fluid', name = result.name, amount = result.amount})
-            else
-                table.insert(data.raw.recipe[recipe].results,
-                    {type = 'item', name = result.name, amount = result.amount})
-            end
+    if type(recipe) == 'string' then recipe = data.raw.recipe[recipe] end
+    if not recipe.results then
+        if recipe.result then
+            recipe.results = {{type = 'item', name = recipe.result, amount = recipe.result_count or 1}}
+            recipe.result = nil
+            recipe.result_count = nil
+        else
+            recipe.results = (recipe.normal or recipe.expensive).results
         end
     end
+    table.insert(recipe.results, result)
 end
 --
 
@@ -1433,7 +1428,7 @@ end
 function overrides.multiply_result_amount(recipe, result_name, percent)
     if recipe.normal or recipe.expensive then error('Don\'t use these') end
 
-    if type(recipe.result) == 'string' and not recipe.results then
+    if recipe.result and not recipe.results then
         recipe.results = {{type = 'item', name = recipe.result, amount = recipe.result_count or 1}}
         recipe.result = nil
         recipe.result_count = nil
