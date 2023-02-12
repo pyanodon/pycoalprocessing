@@ -86,3 +86,17 @@ style.frame_action_button_always_on = {
 	default_graphical_set = style.frame_button.clicked_graphical_set,
 	hovered_graphical_set = style.frame_button.clicked_graphical_set
 }
+
+style.confirm_button_without_tooltip_unhoverable = {
+	type = 'button_style',
+	parent = 'confirm_button_without_tooltip',
+	hovered_graphical_set = style.confirm_button.default_graphical_set,
+	clicked_graphical_set = style.confirm_button.default_graphical_set
+}
+
+style.red_back_button_unhoverable = {
+	type = 'button_style',
+	parent = 'red_back_button',
+	hovered_graphical_set = style.red_back_button.default_graphical_set,
+	clicked_graphical_set = style.red_back_button.default_graphical_set
+}
