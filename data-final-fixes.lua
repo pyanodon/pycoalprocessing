@@ -36,3 +36,4 @@ for r,recipe in pairs(data.raw.recipe) do
 end
 
 require('prototypes/map-gen-presets')
+require('prototypes/menu-simulations')
