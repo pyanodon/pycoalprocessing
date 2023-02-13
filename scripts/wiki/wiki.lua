@@ -109,7 +109,8 @@ Gui.on_click('py_close_wiki', close_wiki)
 
 function Wiki.add_page(args)
     local name = args.name or error('Required parameter missing: name')
-
+    global.wiki_pages = global.wiki_pages or {}
+    
     if not args.section then
         global.wiki_pages[name] = args
     else
