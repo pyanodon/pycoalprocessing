@@ -1477,8 +1477,21 @@ function overrides.multiply_result_amount(recipe, result_name, percent)
         local type = result.type or 'item'
 
         if name == result_name then
-            recipe.results[i] = {type = type, name = name, amount = math.ceil(amount * percent)}
-            return
+            recipe.results[i] = {type = type, name = name, amount = math.ceil(amount * percent), fluidbox_index = result.fluidbox_index}
+        end
+    end
+end
+
+function overrides.multiply_ingredient_amount(recipe, ingredient_name, percent)
+    if recipe.normal or recipe.expensive then error('Don\'t use these') end
+
+    for i, ingredient in pairs(recipe.ingredients) do
+        local name = ingredient.name or ingredient[1]
+        local amount = ingredient.amount or ingredient[2]
+        local type = ingredient.type or 'item'
+
+        if name == ingredient_name then
+            recipe.ingredients[i] = {type = type, name = name, amount = math.ceil(amount * percent), fluidbox_index = ingredient.fluidbox_index}
         end
     end
 end
