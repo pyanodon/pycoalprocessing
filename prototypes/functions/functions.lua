@@ -1306,6 +1306,7 @@ function overrides.tech_upgrade(tech_upgrade)
             elseif effect.type == 'unlock-recipe' and data.raw.recipe[effect.recipe] then
                 overrides.add_to_description('recipe', data.raw.recipe[effect.recipe], {'turd.font', {'turd.recipe'}})
             elseif effect.type == 'recipe-replacement' then
+                if not data.raw.recipe[effect.new] then error('Invalid recipe replacement: ' .. effect.new) end
                 overrides.add_to_description('recipe', data.raw.recipe[effect.new], {'turd.font', {'turd.recipe-replacement'}})
             end
         end
