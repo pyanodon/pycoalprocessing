@@ -1506,8 +1506,11 @@ function overrides.add_result_amount(recipe, result_name, increase)
         local type = result.type or 'item'
 
         if name == result_name then
-            recipe.results[i] = {type = type, name = name, amount = amount + increase}
-            return
+            if amount then
+                recipe.results[i] = {type = type, name = name, amount = amount + increase, probability = result.probability}
+            else
+                recipe.results[i] = {type = type, name = name, amount_min = result.amount_min + increase, amount_max = result.amount_max + increase, probability = result.probability}
+            end
         end
     end
 end
