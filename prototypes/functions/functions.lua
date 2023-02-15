@@ -1257,7 +1257,7 @@ end
 
 function overrides.tech_upgrade(tech_upgrade)
     local master_tech = tech_upgrade.master_tech
-    local effects = {}
+    local effects = master_tech.effects or {}
 
     for _, tech in pairs(tech_upgrade.sub_techs) do
         data:extend{{
@@ -1282,7 +1282,16 @@ function overrides.tech_upgrade(tech_upgrade)
                     effect.pollution = 0.1 -- prevent use in mines, composter, ect
                 end
 
-                ITEM {
+                local effective_speed
+                if tech_upgrade.module_category and tech_upgrade.affected_entities and effect.speed then
+                    local mk1 = tech_upgrade.affected_entities[1]
+                    mk1 = data.raw.furnace[mk1] or data.raw['assembling-machine'][mk1]
+                    local mk1_slots = mk1.module_specification.module_slots
+                    local desired_mk1_speed = mk1.crafting_speed * (mk1_slots + 1)
+                    effective_speed = (desired_mk1_speed / mk1.crafting_speed) * effect.speed
+                end
+
+                local module = ITEM {
                     type = 'module',
                     name = tech.name .. '-module',
                     icon = tech.icon,
@@ -1296,13 +1305,19 @@ function overrides.tech_upgrade(tech_upgrade)
                     stack_size = 1,
                     effect = {
                         consumption = {bonus = effect.consumption or 0},
-                        speed = {bonus = effect.speed or 0},
+                        speed = {bonus = effective_speed or effect.speed or 0},
                         productivity = {bonus = effect.productivity or 0},
                         pollution = {bonus = -1 * (effect.pollution or 0.1)}
                     },
                     localised_name = {'technology-name.' .. tech.name},
                     localised_description = {'turd.font', {'turd.module'}}
                 }
+
+                if effective_speed then
+                    local adjusted_speed = effect.speed * 100
+                    if adjusted_speed >= 0 then adjusted_speed = '+' .. adjusted_speed end
+                    overrides.add_to_description('module', module, {'turd.adjusted-speed', adjusted_speed})
+                end
             elseif effect.type == 'unlock-recipe' and data.raw.recipe[effect.recipe] then
                 overrides.add_to_description('recipe', data.raw.recipe[effect.recipe], {'turd.font', {'turd.recipe'}})
             elseif effect.type == 'recipe-replacement' then
@@ -1321,6 +1336,7 @@ function overrides.tech_upgrade(tech_upgrade)
         prerequisites = master_tech.prerequisites,
         effects = effects,
         unit = master_tech.unit,
+        is_turd = true,
         localised_description = {'', {'turd.font', {'turd.tech'}}, '\n', {'turd.tech-2'}}
     }
 end
