@@ -23,18 +23,24 @@ function overrides.add_ingredient(recipe, ingredient)
     table.insert(recipe.ingredients, ingredient)
 end
 
--- remove item/fluid to recipe ingredients
+-- remove item/fluid to recipe ingredients. returns amount removed
 function overrides.remove_ingredient(recipe, ingredient_name)
     if type(recipe) == 'string' then recipe = data.raw.recipe[recipe] end
     if not recipe.ingredients then
         recipe.ingredients = (recipe.normal or recipe.expensive).ingredients
     end
+    local amount = 0
     local new_ingredients = {}
     for _, ingredient in pairs(recipe.ingredients) do
         local name = ingredient[1] or ingredient.name
-        if name ~= ingredient_name then table.insert(new_ingredients, ingredient) end
+        if name ~= ingredient_name then
+            table.insert(new_ingredients, ingredient)
+        else
+            amount = amount + (ingredient[2] or ingredient.amount or ((ingredient.amount_min + ingredient.amount_max) / 2))
+        end
     end
     recipe.ingredients = new_ingredients
+    return amount
 end
 
 -- add item/fluid to recipe results
