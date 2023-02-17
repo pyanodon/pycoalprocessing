@@ -1285,11 +1285,11 @@ function overrides.tech_upgrade(tech_upgrade)
                 if master_tech.name == 'compost-upgrade' then
                     effect.pollution = 0
                 elseif effect.pollution == 0 then
-                    effect.pollution = 0.1 -- prevent use in mines, composter, ect
+                    effect.pollution = 0.01 -- prevent use in mines, composter, ect
                 end
 
                 local effective_speed
-                if tech_upgrade.module_category and tech_upgrade.affected_entities and effect.speed then
+                if tech_upgrade.module_category and tech_upgrade.affected_entities and effect.speed and effect.speed ~= 0 then
                     local mk1 = tech_upgrade.affected_entities[1]
                     mk1 = data.raw.furnace[mk1] or data.raw['assembling-machine'][mk1]
                     local mk1_slots = mk1.module_specification.module_slots
@@ -1306,14 +1306,14 @@ function overrides.tech_upgrade(tech_upgrade)
                     category = tech_upgrade.module_category or 'speed',
                     tier = 1,
                     flags = {'not-stackable'},
-                    subgroup = 'py-alienlife-modules',
-                    order = 't-a',
+                    subgroup = 'py-alienlife-turd-modules',
+                    order = 'z',
                     stack_size = 1,
                     effect = {
                         consumption = {bonus = effect.consumption or 0},
                         speed = {bonus = effective_speed or effect.speed or 0},
                         productivity = {bonus = effect.productivity or 0},
-                        pollution = {bonus = -1 * (effect.pollution or 0.1)}
+                        pollution = {bonus = -1 * (effect.pollution or 0.01)}
                     },
                     localised_name = {'technology-name.' .. tech.name},
                     localised_description = {'turd.font', {'turd.module'}}
