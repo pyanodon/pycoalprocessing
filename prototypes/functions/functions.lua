@@ -1538,4 +1538,18 @@ function overrides.add_result_amount(recipe, result_name, increase)
     end
 end
 
+function overrides.add_ingredient_amount(recipe, ingredient_name, increase)
+    if recipe.normal or recipe.expensive then error('Don\'t use these') end
+
+    for i, ingredient in pairs(recipe.ingredients) do
+        local name = ingredient.name or ingredient[1]
+        local amount = ingredient.amount or ingredient[2]
+        local type = ingredient.type or 'item'
+
+        if name == ingredient_name then
+            recipe.ingredients[i] = {type = type, name = name, amount = amount + increase}
+        end
+    end
+end
+
 return overrides
