@@ -1547,7 +1547,7 @@ function overrides.add_ingredient_amount(recipe, ingredient_name, increase)
         local type = ingredient.type or 'item'
 
         if name == ingredient_name then
-            recipe.ingredients[i] = {type = type, name = name, amount = amount + increase}
+            recipe.ingredients[i] = {type = type, name = name, amount = amount + increase, fluidbox_index = ingredient.fluidbox_index}
         end
     end
 end
