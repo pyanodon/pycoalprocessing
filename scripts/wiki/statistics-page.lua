@@ -158,6 +158,18 @@ local function calculate_statistics(player, include_laggy_calculations)
 	statistics.evolution_factor_by_killing_spawners = floor(enemy.evolution_factor_by_killing_spawners * 1000) / 10
 	statistics.evolution_factor_by_time = floor(enemy.evolution_factor_by_time * 1000) / 10
 
+	local kill_counts = force.kill_count_statistics
+	-- get input_counts for kills and losses
+	local kills, losses = 0, 0
+	for _, count in pairs(kill_counts.input_counts) do
+		kills = kills + count
+	end
+	for _, count in pairs(kill_counts.output_counts) do
+		losses = losses + count
+	end
+	statistics.losses = floor(losses)
+	statistics.kills = floor(kills)
+
 	statistics.pollution = 0
 	for _, count in pairs(game.pollution_statistics.input_counts) do
 		statistics.pollution = statistics.pollution + count
@@ -189,6 +201,7 @@ end
 
 local function update_statistics_page(gui, player, include_laggy_calculations)
 	local statistics = calculate_statistics(player, include_laggy_calculations)
+	if include_laggy_calculations then add_statistic(gui, {'pywiki-statistics.tech-tree-completion', statistics.tech_tree_completion}) end
 	add_statistic(gui, {'pywiki-statistics.playtime', statistics.hour, statistics.minute, statistics.second})
 	add_statistic(gui, {'pywiki-statistics.time-of-day', statistics.daytime_hour, statistics.daytime_minute, statistics.am_pm})
 	add_statistic(gui, {'pywiki-statistics.mods-installed', statistics.active_mods})
@@ -201,11 +214,12 @@ local function update_statistics_page(gui, player, include_laggy_calculations)
 	add_statistic(gui, {'pywiki-statistics.fluids-produced', statistics.fluids_produced})
 	add_statistic(gui, {'pywiki-statistics.fluids-consumed', statistics.fluids_consumed})
 	add_statistic(gui, {'pywiki-statistics.evolution', statistics.evolution, statistics.evolution_factor_by_pollution, statistics.evolution_factor_by_killing_spawners, statistics.evolution_factor_by_time})
+	add_statistic(gui, {'pywiki-statistics.kills', statistics.kills})
+	add_statistic(gui, {'pywiki-statistics.losses', statistics.losses})
 	add_statistic(gui, {'pywiki-statistics.pollution', statistics.pollution})
 	add_statistic(gui, {'pywiki-statistics.rockets-launched', statistics.rockets_launched})
 	add_statistic(gui, {'pywiki-statistics.trains', statistics.trains})
 	add_statistic(gui, {'pywiki-statistics.caravans', statistics.caravans})
-	if include_laggy_calculations then add_statistic(gui, {'pywiki-statistics.tech-tree-completion', statistics.tech_tree_completion}) end
 end
 
 Event.on_nth_tick(60, function()
