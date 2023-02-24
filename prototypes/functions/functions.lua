@@ -1283,16 +1283,21 @@ function overrides.tech_upgrade(tech_upgrade)
 
         for _, effect in pairs(tech.effects) do
             if effect.type == 'module-effects' then
-                if master_tech.name == 'compost-upgrade' then
-                    effect.pollution = 0
+                local mk1
+                if tech_upgrade.affected_entities then
+                    mk1 = tech_upgrade.affected_entities[1]
+                    mk1 = data.raw.furnace[mk1] or data.raw['assembling-machine'][mk1]
+                end
+
+
+                if mk1 and mk1.type ~= 'assembling-machine' then
+                    effect.pollution = nil
                 elseif effect.pollution == 0 then
                     effect.pollution = 0.01 -- prevent use in mines, composter, ect
                 end
 
                 local effective_speed
                 if tech_upgrade.module_category and tech_upgrade.affected_entities and effect.speed and effect.speed ~= 0 then
-                    local mk1 = tech_upgrade.affected_entities[1]
-                    mk1 = data.raw.furnace[mk1] or data.raw['assembling-machine'][mk1]
                     local mk1_slots = mk1.module_specification.module_slots
                     local desired_mk1_speed = mk1.crafting_speed * (mk1_slots + 1)
                     effective_speed = (desired_mk1_speed / mk1.crafting_speed) * effect.speed
@@ -1319,6 +1324,20 @@ function overrides.tech_upgrade(tech_upgrade)
                     localised_name = {'technology-name.' .. tech.name},
                     localised_description = {'turd.font', {'turd.module'}}
                 }
+
+                if not tech_upgrade.module_category and tech_upgrade.affected_entities then
+                    local categories = {}
+                    for _, category in pairs(mk1.crafting_categories) do
+                        categories[category] = true
+                    end
+
+                    module.limitation = {}
+                    for _, recipe in pairs(data.raw.recipe) do
+                        if categories[recipe.category or 'crafting'] then
+                            table.insert(module.limitation, recipe.name)
+                        end
+                    end
+                end
 
                 if effective_speed then
                     local adjusted_speed = effect.speed * 100
