@@ -42,6 +42,14 @@ local animals = {
     'korlex',
     'simik',
 }
+
+local voiding_buildings = {
+	"py-sinkhole",
+	"py-burner",
+	"py-gas-vent",
+	"tailings-pond", -- why is this not called "py-tailings-pond" ?
+}
+
 if script.active_mods['pyalternativeenergy'] then
     table.insert(animals, 'zungror')
     table.insert(animals, 'numal')
@@ -69,6 +77,10 @@ local function calculate_statistics(player, include_laggy_calculations)
 
 	local statistics = {}
 
+	local player_index = player.index
+	local count_voiding_buildings = settings.get_player_settings(player_index)["count-voiding-buildings"].value
+	local count_all_buildings_on_all_surfaces = settings.get_player_settings(player_index)["count-all-buildings-on-all-surfaces"].value
+
 	statistics.hour = floor(game.tick / 60 / 60 / 60)
 	statistics.minute = floor(game.tick / 60 / 60) % 60
 	if statistics.minute < 10 then statistics.minute = '0'..statistics.minute end
@@ -92,7 +104,23 @@ local function calculate_statistics(player, include_laggy_calculations)
 	end
 
 	if include_laggy_calculations then
-		statistics.buildings_placed = surface.count_entities_filtered{force = force, collision_mask = 'object-layer'}
+		if count_all_buildings_on_all_surfaces then
+			statistics.buildings_placed = 0
+			for surface_index, surface_data in pairs(game.surfaces) do
+				statistics.buildings_placed = statistics.buildings_placed + surface_data.count_entities_filtered{force = force, collision_mask = 'object-layer'}
+			end
+		else
+			statistics.buildings_placed = surface.count_entities_filtered{force = force, collision_mask = 'object-layer'}
+		end
+
+		if count_voiding_buildings then
+			statistics.voiding_buildings_placed = 0
+			for voiding_building_index, voiding_building_data in pairs(voiding_buildings) do
+				for surface_index, surface_data in pairs(game.surfaces) do
+					statistics.voiding_buildings_placed = statistics.voiding_buildings_placed + surface_data.count_entities_filtered{name = voiding_building_data, force = force, collision_mask = 'object-layer'}
+				end
+			end
+		end
 	end
 
 	statistics.active_mods = -1
@@ -127,6 +155,15 @@ local function calculate_statistics(player, include_laggy_calculations)
 		statistics.items_produced = statistics.items_produced + count
 		if science_pack_names[item] then
 			statistics.science_produced = statistics.science_produced + count
+		end
+
+		if count_voiding_buildings then
+			statistics.voiding_buildings_produced = 0
+			for voiding_building_index, voiding_building_data in pairs(voiding_buildings) do
+				if item == voiding_building_data then
+					statistics.voiding_buildings_produced = statistics.voiding_buildings_produced + count
+				end
+			end
 		end
 	end
 	for item, count in pairs(item_production_statistics.output_counts) do
@@ -170,6 +207,19 @@ local function calculate_statistics(player, include_laggy_calculations)
 	statistics.losses = floor(losses)
 	statistics.kills = floor(kills)
 
+	if game.active_mods["JPlanet"] ~= nil then
+		statistics.planets_visited = "compability not available yet."
+	end
+
+	-- compability prep for when the JPlanet mod updates...
+	-- if game.active_mods["JPlanet"] ~= nil then
+	-- 	local planets_visited = remote.call("JPlanet", "statistics.planets_visited")
+
+	-- 	log("planets_visited")
+	-- 	log(serpent.block(planets_visited))
+	-- 	statistics.planets_visited = #planets_visited
+	-- end
+
 	statistics.pollution = 0
 	for _, count in pairs(game.pollution_statistics.input_counts) do
 		statistics.pollution = statistics.pollution + count
@@ -200,16 +250,22 @@ local function add_statistic(gui, localised_string)
 end
 
 local function update_statistics_page(gui, player, include_laggy_calculations)
+
+	local player_index = player.index
+	local count_voiding_buildings = settings.get_player_settings(player_index)["count-voiding-buildings"].value
+
 	local statistics = calculate_statistics(player, include_laggy_calculations)
 	if include_laggy_calculations then add_statistic(gui, {'pywiki-statistics.tech-tree-completion', statistics.tech_tree_completion}) end
 	add_statistic(gui, {'pywiki-statistics.playtime', statistics.hour, statistics.minute, statistics.second})
 	add_statistic(gui, {'pywiki-statistics.time-of-day', statistics.daytime_hour, statistics.daytime_minute, statistics.am_pm})
 	add_statistic(gui, {'pywiki-statistics.mods-installed', statistics.active_mods})
 	if include_laggy_calculations then add_statistic(gui, {'pywiki-statistics.buildings-placed', statistics.buildings_placed}) end
+	if include_laggy_calculations and count_voiding_buildings then add_statistic(gui, {'pywiki-statistics.voiding-buildings-placed', statistics.voiding_buildings_placed}) end
 	if include_laggy_calculations then add_statistic(gui, {'pywiki-statistics.recipes-unlocked', statistics.recipes_unlocked}) end
 	add_statistic(gui, {'pywiki-statistics.science-produced', statistics.science_produced})
 	add_statistic(gui, {'pywiki-statistics.creatures-slaughtered', statistics.creatures_slaughtered})
 	add_statistic(gui, {'pywiki-statistics.items-produced', statistics.items_produced})
+	if count_voiding_buildings then add_statistic(gui, {'pywiki-statistics.voiding-buildings-produced', statistics.voiding_buildings_produced}) end
 	add_statistic(gui, {'pywiki-statistics.items-consumed', statistics.items_consumed})
 	add_statistic(gui, {'pywiki-statistics.fluids-produced', statistics.fluids_produced})
 	add_statistic(gui, {'pywiki-statistics.fluids-consumed', statistics.fluids_consumed})
@@ -220,6 +276,7 @@ local function update_statistics_page(gui, player, include_laggy_calculations)
 	add_statistic(gui, {'pywiki-statistics.rockets-launched', statistics.rockets_launched})
 	add_statistic(gui, {'pywiki-statistics.trains', statistics.trains})
 	add_statistic(gui, {'pywiki-statistics.caravans', statistics.caravans})
+	if game.active_mods["JPlanet"] then add_statistic(gui, {'pywiki-statistics.planets_visited', statistics.planets_visited}) end
 end
 
 Event.on_nth_tick(60, function()
@@ -264,7 +321,10 @@ local function create_statistics_page(gui, player)
 
 	gui.add{type = 'label', caption = ''}
 
-	update_statistics_page(gui, player, true)
+	local player_index = player.index
+	local include_laggy_calculations = settings.get_player_settings(player_index)["include-laggy-calculations"].value
+
+	update_statistics_page(gui, player, include_laggy_calculations)
 end
 
 remote.add_interface('create_statistics_page', {create_statistics_page = create_statistics_page})

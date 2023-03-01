@@ -20,3 +20,27 @@ data:extend(
 	},
 }
 )
+
+local count_all_buildings_on_all_surfaces = {
+    type = "bool-setting",
+    name = "count-all-buildings-on-all-surfaces",
+    setting_type = "runtime-per-user",
+    default_value = true
+}
+data:extend{count_all_buildings_on_all_surfaces}
+
+local count_voiding_buildings = {
+    type = "bool-setting",
+    name = "count-voiding-buildings",
+    setting_type = "runtime-per-user",
+    default_value = true
+}
+data:extend{count_voiding_buildings}
+
+local include_laggy_calculations = {
+    type = "bool-setting",
+    name = "include-laggy-calculations",
+    setting_type = "runtime-per-user",
+    default_value = true
+}
+data:extend{include_laggy_calculations}
