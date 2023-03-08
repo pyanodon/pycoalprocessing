@@ -1344,7 +1344,7 @@ function overrides.tech_upgrade(tech_upgrade)
                     if adjusted_speed >= 0 then adjusted_speed = '+' .. adjusted_speed end
                     overrides.add_to_description('module', module, {'turd.adjusted-speed', adjusted_speed})
                 end
-            elseif effect.type == 'unlock-recipe' and data.raw.recipe[effect.recipe] and not recipes_with_turd_description[effect.recipe] then
+            elseif effect.type == 'unlock-recipe' and not effect.also_unlocked_by_techs and data.raw.recipe[effect.recipe] and not recipes_with_turd_description[effect.recipe] then
                 overrides.add_to_description('recipe', data.raw.recipe[effect.recipe], {'turd.font', {'turd.recipe'}})
                 recipes_with_turd_description[effect.recipe] = true
             elseif effect.type == 'recipe-replacement' then
