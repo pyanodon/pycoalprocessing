@@ -1258,7 +1258,8 @@ function overrides.farm_speed_derived(num_slots, base_entity_name)
     local e = data.raw["assembling-machine"][base_entity_name]
     local mk1_slots = e.module_specification.module_slots
     local desired_mk1_speed = e.crafting_speed * (mk1_slots + 1)
-    return (desired_mk1_speed * (num_slots / mk1_slots)) / (num_slots+1)
+    local speed_improvement_ratio = num_slots / mk1_slots
+    return (desired_mk1_speed * speed_improvement_ratio) / (num_slots + 1/speed_improvement_ratio)
 end
 
 -- Takes two prototype names (both must use the style of IconSpecification with icon = string_path), returns an IconSpecification with the icons as composites
