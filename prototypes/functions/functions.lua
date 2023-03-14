@@ -597,24 +597,17 @@ end
 -- replace an item/fluid in every recipes ingredients/results
 -- best used to merge items that are duplicated in mods that should be the same
 function overrides.global_item_replacer(old, new, blackrecipe)
-    if data.raw.item[old] ~= nil or data.raw.fluid[old] ~= nil then
-        if data.raw.item[new] ~= nil or data.raw.fluid[old] ~= nil then
-            local recipes = table.deepcopy(data.raw.recipe)
-            if type(blackrecipe) ~= 'table' and blackrecipe ~= nil then blackrecipe = {blackrecipe} end
-            local brecipeset = {}
-            if blackrecipe ~= nil then for _, brecipe in pairs(blackrecipe) do brecipeset[brecipe] = true end end
-            --log(serpent.block(brecipeset))
-            for recipe in pairs(recipes) do
-                -- for b, brecipe in pairs(blackrecipe) do
-                if not brecipeset[recipe] then
-                    --log(serpent.block(recipe))
-                    --log(serpent.block(recipe.name))
-                    --log(serpent.block(brecipeset))
-                    overrides.ingredient_replace(recipe, old, new)
-                    overrides.results_replacer(recipe, old, new)
-                end
-                -- end
-            end
+    if not data.raw.item[old] and not data.raw.fluid[old] then return end
+    if not data.raw.item[new] and not data.raw.fluid[new] then return end
+
+    local recipes = table.deepcopy(data.raw.recipe)
+    if type(blackrecipe) ~= 'table' and blackrecipe ~= nil then blackrecipe = {blackrecipe} end
+    local brecipeset = {}
+    if blackrecipe ~= nil then for _, brecipe in pairs(blackrecipe) do brecipeset[brecipe] = true end end
+    for recipe in pairs(recipes) do
+        if not recipe.ignored_by_recipe_replacement and not brecipeset[recipe] then
+            overrides.ingredient_replace(recipe, old, new)
+            overrides.results_replacer(recipe, old, new)
         end
     end
 end
