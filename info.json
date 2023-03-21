@@ -14,7 +14,9 @@
     "~ pypostprocessing",
     "(?) DiscoScience",
     "! angelsrefining",
-    "! 248k"
+    "! 248k",
+    "! wret-beacon-rebalance-mod",
+    "! beacon-overhaul"
   ],
   "package": {
     "ignore": [],

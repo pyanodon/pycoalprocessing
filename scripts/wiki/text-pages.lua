@@ -44,6 +44,12 @@ Event.register(Event.core_events.init_and_config, function()
         text_only = true
     })
 
+    remote.call('pywiki', 'add_page', {
+        name = 'beacon',
+        section = 'coalprocessing',
+        text_only = true
+    })
+
 	if not script.active_mods['pyalternativeenergy'] then
 		remote.call('pywiki', 'add_page', {
 			name = 'combustion-mixture',
