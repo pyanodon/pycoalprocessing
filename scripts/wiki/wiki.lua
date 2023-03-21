@@ -33,6 +33,7 @@ function Wiki.open_wiki(player)
     player.opened = nil
     local main_frame = player.gui.screen.add{type = 'frame', name = 'pywiki', direction = 'vertical'}
     player.opened = main_frame
+    if not main_frame.valid then game.print('ERROR: The pY codex failed to open.'); return end
     main_frame.auto_center = true
 	main_frame.style.width = 1050
 	main_frame.style.minimal_height = 700
