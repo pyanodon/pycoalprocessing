@@ -92,6 +92,210 @@ for _, event in pairs(Event.build_events) do
 			filter = 'name',
 			name = 'tailings-pond',
 			mode = 'and'
+		},
+		{
+			filter = 'type',
+			type = 'beacon',
+			mode = 'or'
 		}
 	})
 end
+
+Event.register(defines.events.on_gui_opened, function(event)
+	if event.gui_type ~= defines.gui_type.entity then
+		return
+	end
+	if event.entity.type ~= "beacon" then
+		return
+	end
+	if string.match(event.entity.name, "beacon%-AM") == nil then 
+		return 
+	end
+	if game.players[event.player_index].gui.relative.Dials ~= nil then
+		game.players[event.player_index].gui.relative.Dials.destroy()
+	end
+	local dial = game.players[event.player_index].gui.relative.add(
+		{
+			type = "frame",
+			name = "Dials",
+			anchor =
+			{
+				gui = defines.relative_gui_type.beacon_gui,
+				position = defines.relative_gui_position.right
+			},
+			direction = "vertical"
+		}
+	)
+	dial.add(
+		{
+			type = "label",
+			name = "radio",
+			caption = "Beacon Dials"
+		}
+	)
+	local AM = dial.add(
+		{
+			type = "flow",
+			name = "AM_flow"
+		}
+	)
+	AM.add(
+		{
+			type = "label",
+			name = "AM_label",
+			caption = "AM"
+		}
+	)
+	AM.add(
+		{
+			type = "slider",
+			name = "AM",
+			minimum_value = 1,
+			maximum_value = 10,
+			discrete_slider = true,
+			caption = "AM"
+		}
+	)
+	AM.add(
+		{
+			type = "textfield",
+			name = "AM_slider_num",
+			text = "1",
+			numeric = true,
+			lose_focus_on_confirm = true,
+		}
+	)
+	local FM = dial.add(
+		{
+			type = "flow",
+			name = "FM_flow"
+		}
+	)
+	FM.add(
+		{
+			type = "label",
+			name = "FM_label",
+			caption = "FM"
+		}
+	)
+	FM.add(
+		{
+			type = "slider",
+			name = "FM",
+			minimum_value = 1,
+			maximum_value = 10,
+			discrete_slider = true,
+			caption = "FM"
+		}
+	)
+	FM.add(
+		{
+			type = "textfield",
+			name = "FM_slider_num",
+			text = "1",
+			numeric = true,
+			lose_focus_on_confirm = true,
+		}
+	)
+	dial.add(
+		{
+			type = "button",
+			name = "radio_confirm",
+			caption = "CONFIRM"
+		}
+	)
+end)
+
+Event.register(defines.events.on_gui_value_changed, function(event)
+	if event.element.name == "AM" or event.element.name == "FM" then
+		if event.element.name == "AM" then
+			local AM = event.element
+			AM.parent.AM_slider_num.text = tostring(AM.slider_value)
+		end
+		if event.element.name == "FM" then
+			local FM = event.element
+			FM.parent.FM_slider_num.text = tostring(FM.slider_value)
+		end
+	end
+end)
+
+Event.register(defines.events.on_gui_confirmed, function(event)
+	if event.element.name == "AM_slider_num" or event.element.name == "FM_slider_num" then
+		if event.element.name == "AM_slider_num" then
+			local AM = event.element
+			AM.parent.AM.slider_value = tonumber(AM.text)
+		end
+		if event.element.name == "FM_slider_num" then
+			local FM = event.element
+			FM.parent.FM.slider_value = tonumber(FM.text)
+		end
+	end
+end)
+
+Event.register(defines.events.on_gui_click, function(event)
+	if event.element.name == "radio_confirm" then
+		log("hit")
+		local GO = event.element
+		local beacon = game.players[event.player_index].opened
+		if beacon.name ~= "beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value then
+			local player = game.players[event.player_index]
+			local surface = game.surfaces[player.surface.name]
+			local new_beacon = surface.create_entity{
+				name = "beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value,
+				position = beacon.position,
+				force = beacon.force
+			}
+			local module_slot = beacon.get_inventory(defines.inventory.beacon_modules)
+			if module_slot.is_empty ~= true then
+				local new_beacon_slots = new_beacon.get_inventory(defines.inventory.beacon_modules)
+				local modules = module_slot.get_contents()
+				log(serpent.block(modules))
+				for item, amount in pairs(modules) do
+					log(item)
+					log(amount)
+					new_beacon_slots.insert{name = item, count = amount}
+				end
+			end
+			beacon.destroy()
+		end
+	end
+end)
+
+local function beacon_check(beacon)
+	log("hit")
+	local beacon_area = beacon.prototype.supply_area_distance
+	local beacons = game.surfaces[beacon.surface.name].find_entities_filtered{type = "beacon", area = beacon_area} -- should be x,y cords not a num
+	if next(beacons) ~= nil then
+		local beacon_count = {}
+		for b, bea in pairs(beacons) do
+			if string.match(bea.name, beacon.name) ~= nil then
+				if beacon_count[bea.name] == nil then
+					beacon_count[bea.name] = 1
+				else
+					beacon_count[bea.name] = beacon_count[bea.name] + 1
+				end
+			end
+		end
+		if beacon_count[beacon.name] ~= nil and beacon_count[beacon.name] > 1 then
+			for b, bea in pairs(beacons) do
+				if string.match(bea.name, beacon.name) ~= nil then
+					bea.active = false
+				end
+			end
+		end
+	end
+end
+
+Event.register(Event.build_events, function(event)
+	local beacon = event.created_entity
+	if beacon.type ~= "beacon" then return end
+	if string.match(beacon.name, "beacon%-AM") == nil then return end
+	beacon_check(beacon)
+end)
+
+Event.register(Event.death_events, function(event)
+	local beacon = event.entity
+	if beacon.type ~= "beacon" then return end
+	if string.match(beacon.name, "beacon%-AM") == nil then return end
+	beacon_check(beacon)
+end)

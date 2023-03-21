@@ -265,3 +265,81 @@ RECIPE("artillery-targeting-remote"):remove_unlock("artillery"):add_unlock("arti
 data.raw.item["nuclear-fuel"].burnt_result = nil
 
 data.raw["gun"]["artillery-wagon-cannon"].attack_parameters.range = 2 * 32
+
+ENTITY("beacon", "beacon"):set_fields{distribution_effectivity = 1}:set_fields{energy_usage = "1MW"}
+
+ITEM("productivity-module"):set_fields{
+    effect =
+    {
+      productivity = {bonus = 0.1},
+      productivity = {bonus = 0.1},
+      consumption = {bonus = 1},
+      speed = {bonus = -0.25}
+    }
+}
+
+ITEM("productivity-module-2"):set_fields{
+    effect =
+    {
+      productivity = {bonus = 0.2},
+      consumption = {bonus = 2},
+      speed = {bonus = -0.5}
+    }
+}
+
+ITEM("productivity-module-3"):set_fields{
+    effect =
+    {
+      productivity = {bonus = 0.3},
+      consumption = {bonus = 3},
+      speed = {bonus = -0.75}
+    }
+}
+
+ITEM("speed-module"):set_fields{
+    effect = 
+    {
+        speed = {bonus = 0.4},
+        consumption = {bonus = 1}
+    }
+}
+
+ITEM("speed-module-2"):set_fields{
+    effect = 
+    {
+        speed = {bonus = 0.6},
+        consumption = {bonus = 1.5}
+    }
+}
+
+ITEM("speed-module-3"):set_fields{
+    effect = 
+    {
+        speed = {bonus = 1},
+        consumption = {bonus = 2}
+    }
+}
+
+--create A.M and F.M beacons
+
+for am = 1, 10 do
+    for fm = 1, 10 do
+    local new_beacon = table.deepcopy(data.raw.beacon.beacon)
+    new_beacon.name = "beacon-AM" .. am .."-FM" .. fm
+    new_beacon.distribution_effectivity = 0.1 * am * fm
+    new_beacon.energy_usage = 100 * am * (fm ^ 2) .. "kW"
+    new_beacon.supply_area_distance = 11-am
+    data:extend{new_beacon}
+    end
+end
+
+--ITEM(beacon):set_fields{place_result = "beacon-AM1-FM1"}
+data.raw.item.beacon.place_result = "beacon-AM1-FM1"
+
+for b, beacon in pairs(data.raw.beacon) do
+    log(beacon.name)
+    log(beacon.distribution_effectivity)
+    log(beacon.energy_usage)
+    log(beacon.supply_area_distance)
+    log("_____________")
+end
