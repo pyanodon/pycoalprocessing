@@ -266,8 +266,6 @@ data.raw.item["nuclear-fuel"].burnt_result = nil
 
 data.raw["gun"]["artillery-wagon-cannon"].attack_parameters.range = 2 * 32
 
-ENTITY("beacon", "beacon"):set_fields{distribution_effectivity = 1}:set_fields{energy_usage = "1MW"}
-
 ITEM("productivity-module"):set_fields{
     effect =
     {
