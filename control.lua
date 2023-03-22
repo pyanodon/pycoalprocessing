@@ -230,6 +230,29 @@ Event.register(defines.events.on_gui_confirmed, function(event)
 	end
 end)
 
+Event.register(Event.core_events.init_and_config, function()
+	global.beacon_interference_icons = global.beacon_interference_icons or {}
+end)
+
+local function enable_beacon(beacon)
+	beacon.active = true
+	if not global.beacon_interference_icons[beacon.unit_number] then return end
+	rendering.destroy(global.beacon_interference_icons[beacon.unit_number])
+	global.beacon_interference_icons[beacon.unit_number] = nil
+end
+
+local function disable_beacon(beacon)
+	beacon.active = false
+	if global.beacon_interference_icons[beacon.unit_number] then return end
+	global.beacon_interference_icons[beacon.unit_number] = rendering.draw_sprite{
+		sprite = 'beacon-interference',
+		x_scale = 0.5,
+		y_scale = 0.5,
+		target = beacon,
+		surface = beacon.surface
+	}
+end
+
 local function beacon_check(beacon, killed)
 	local killed = killed or false
 	local recivers = beacon.get_beacon_effect_receivers()
@@ -253,15 +276,15 @@ local function beacon_check(beacon, killed)
 			for b, bea in pairs(beacons) do
 				if beacon_count[bea.name] ~= nil then
 					if beacon_count[bea.name] > 1 then
-						bea.active = false
+						disable_beacon(bea)
 					elseif beacon_count[bea.name] <= 1 then
-						bea.active = true
+						enable_beacon(bea)
 					end
 				end
 			end
 		elseif next(beacon_count) == nil then
 			for b, bea in pairs(beacons) do
-					bea.active = true
+				enable_beacon(bea)
 			end
 		end
 	end
@@ -310,6 +333,7 @@ Event.register(Event.death_events, function(event)
 	local beacon = event.entity
 	if beacon.type ~= "beacon" then return end
 	if string.match(beacon.name, "beacon%-AM") == nil then return end
+	global.beacon_interference_icons[beacon.unit_number] = nil
 	local killed = true
 	beacon_check(beacon, killed)
 end)

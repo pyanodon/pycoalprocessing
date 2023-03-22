@@ -75,3 +75,13 @@ data:extend{{
 	height = 40,
 	flags = {'gui-icon'}
 }}
+
+data:extend{{
+	type = 'sprite',
+	name = 'beacon-interference',
+	filename = '__pycoalprocessinggraphics__/graphics/icons/gui/beacon-interference.png',
+	priority = 'extra-high-no-scale',
+	width = 64,
+	height = 64,
+	flags = {'icon'}
+}}
