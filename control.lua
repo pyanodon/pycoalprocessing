@@ -133,6 +133,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 			name = "AM_flow"
 		}
 	)
+	AM.style.vertical_align = 'center'
 	AM.add(
 		{
 			type = "label",
@@ -159,13 +160,14 @@ Event.register(defines.events.on_gui_opened, function(event)
 			numeric = true,
 			lose_focus_on_confirm = true,
 		}
-	)
+	).style.maximal_width = 50
 	local FM = dial.add(
 		{
 			type = "flow",
 			name = "FM_flow"
 		}
 	)
+	FM.style.vertical_align = 'center'
 	FM.add(
 		{
 			type = "label",
@@ -192,7 +194,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 			numeric = true,
 			lose_focus_on_confirm = true,
 		}
-	)
+	).style.maximal_width = 50
 	dial.add(
 		{
 			type = "button",
