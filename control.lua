@@ -123,13 +123,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 				gui = defines.relative_gui_type.beacon_gui,
 				position = defines.relative_gui_position.right
 			},
-			direction = "vertical"
-		}
-	)
-	dial.add(
-		{
-			type = "label",
-			name = "radio",
+			direction = "vertical",
 			caption = "Beacon Dials"
 		}
 	)
@@ -152,7 +146,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 			name = "AM",
 			minimum_value = 1,
 			maximum_value = 10,
-			value = event.entity.name:match('%d'),
+			value = event.entity.name:match('%d+'),
 			discrete_slider = true,
 			caption = "AM"
 		}
@@ -161,7 +155,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 		{
 			type = "textfield",
 			name = "AM_slider_num",
-			text = event.entity.name:match('%d'),
+			text = event.entity.name:match('%d+'),
 			numeric = true,
 			lose_focus_on_confirm = true,
 		}
@@ -185,7 +179,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 			name = "FM",
 			minimum_value = 1,
 			maximum_value = 10,
-			value = event.entity.name:match('%d$'),
+			value = event.entity.name:match('%d+$'),
 			discrete_slider = true,
 			caption = "FM"
 		}
@@ -194,7 +188,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 		{
 			type = "textfield",
 			name = "FM_slider_num",
-			text = event.entity.name:match('%d$'),
+			text = event.entity.name:match('%d+$'),
 			numeric = true,
 			lose_focus_on_confirm = true,
 		}
@@ -296,6 +290,7 @@ Event.register(defines.events.on_gui_click, function(event)
 				end
 			end
 			beacon.destroy()
+			player.opened = new_beacon
 			beacon_check(new_beacon)
 		end
 	end
