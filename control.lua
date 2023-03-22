@@ -152,6 +152,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 			name = "AM",
 			minimum_value = 1,
 			maximum_value = 10,
+			value = event.entity.name:match('%d'),
 			discrete_slider = true,
 			caption = "AM"
 		}
@@ -160,7 +161,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 		{
 			type = "textfield",
 			name = "AM_slider_num",
-			text = "1",
+			text = event.entity.name:match('%d'),
 			numeric = true,
 			lose_focus_on_confirm = true,
 		}
@@ -184,6 +185,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 			name = "FM",
 			minimum_value = 1,
 			maximum_value = 10,
+			value = event.entity.name:match('%d$'),
 			discrete_slider = true,
 			caption = "FM"
 		}
@@ -192,7 +194,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 		{
 			type = "textfield",
 			name = "FM_slider_num",
-			text = "1",
+			text = event.entity.name:match('%d$'),
 			numeric = true,
 			lose_focus_on_confirm = true,
 		}
@@ -232,6 +234,43 @@ Event.register(defines.events.on_gui_confirmed, function(event)
 	end
 end)
 
+local function beacon_check(beacon, killed)
+	local killed = killed or false
+	local recivers = beacon.get_beacon_effect_receivers()
+	for r, reciver in pairs(recivers) do
+		local beacons = reciver.get_beacons()
+		local beacon_count = {}
+		for b, bea in pairs(beacons) do
+			log("hit")
+			if killed == true and bea.unit_number == beacon.unit_number then
+				log("hit")
+			elseif bea.valid then
+				if beacon_count[bea.name] == nil then
+					beacon_count[bea.name] = 1
+				elseif beacon_count[bea.name] ~= nil then
+					beacon_count[bea.name] = beacon_count[bea.name] + 1
+				end
+			end
+		end
+		log(serpent.block(beacon_count))
+		if next(beacon_count) ~= nil then
+			for b, bea in pairs(beacons) do
+				if beacon_count[bea.name] ~= nil then
+					if beacon_count[bea.name] > 1 then
+						bea.active = false
+					elseif beacon_count[bea.name] <= 1 then
+						bea.active = true
+					end
+				end
+			end
+		elseif next(beacon_count) == nil then
+			for b, bea in pairs(beacons) do
+					bea.active = true
+			end
+		end
+	end
+end
+
 Event.register(defines.events.on_gui_click, function(event)
 	if event.element.name == "radio_confirm" then
 		log("hit")
@@ -257,45 +296,23 @@ Event.register(defines.events.on_gui_click, function(event)
 				end
 			end
 			beacon.destroy()
+			beacon_check(new_beacon)
 		end
 	end
 end)
-
-local function beacon_check(beacon)
-	log("hit")
-	local beacon_area = beacon.prototype.supply_area_distance
-	local beacons = game.surfaces[beacon.surface.name].find_entities_filtered{type = "beacon", area = beacon_area} -- should be x,y cords not a num
-	if next(beacons) ~= nil then
-		local beacon_count = {}
-		for b, bea in pairs(beacons) do
-			if string.match(bea.name, beacon.name) ~= nil then
-				if beacon_count[bea.name] == nil then
-					beacon_count[bea.name] = 1
-				else
-					beacon_count[bea.name] = beacon_count[bea.name] + 1
-				end
-			end
-		end
-		if beacon_count[beacon.name] ~= nil and beacon_count[beacon.name] > 1 then
-			for b, bea in pairs(beacons) do
-				if string.match(bea.name, beacon.name) ~= nil then
-					bea.active = false
-				end
-			end
-		end
-	end
-end
 
 Event.register(Event.build_events, function(event)
 	local beacon = event.created_entity
 	if beacon.type ~= "beacon" then return end
 	if string.match(beacon.name, "beacon%-AM") == nil then return end
-	beacon_check(beacon)
+	--local killed = false
+	beacon_check(beacon, killed)
 end)
 
 Event.register(Event.death_events, function(event)
 	local beacon = event.entity
 	if beacon.type ~= "beacon" then return end
 	if string.match(beacon.name, "beacon%-AM") == nil then return end
-	beacon_check(beacon)
+	local killed = true
+	beacon_check(beacon, killed)
 end)

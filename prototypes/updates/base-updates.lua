@@ -329,7 +329,12 @@ for am = 1, 10 do
     new_beacon.distribution_effectivity = 0.1 * am * fm
     new_beacon.energy_usage = 100 * am * (fm ^ 2) .. "kW"
     new_beacon.supply_area_distance = 11-am
+    new_beacon.placeable_by = {item = "beacon-AM" .. am .."-FM" .. fm, count = 1}
     data:extend{new_beacon}
+    local new_beacon_item = table.deepcopy(data.raw.item.beacon)
+    new_beacon_item.name = "beacon-AM" .. am .."-FM" .. fm
+    new_beacon_item.place_result = "beacon-AM" .. am .."-FM" .. fm
+    data:extend{new_beacon_item}
     end
 end
 
