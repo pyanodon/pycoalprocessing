@@ -335,11 +335,3 @@ for am = 1, 10 do
 end
 
 data.raw.item.beacon.place_result = "beacon-AM1-FM1"
-
-for b, beacon in pairs(data.raw.beacon) do
-    log(beacon.name)
-    log(beacon.distribution_effectivity)
-    log(beacon.energy_usage)
-    log(beacon.supply_area_distance)
-    log("_____________")
-end

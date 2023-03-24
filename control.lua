@@ -292,7 +292,6 @@ end
 
 Event.register(defines.events.on_gui_click, function(event)
 	if event.element.name == "radio_confirm" then
-		log("hit")
 		local GO = event.element
 		local beacon = game.players[event.player_index].opened
 		if beacon.name ~= "beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value then
@@ -307,15 +306,11 @@ Event.register(defines.events.on_gui_click, function(event)
 			if module_slot.is_empty ~= true then
 				local new_beacon_slots = new_beacon.get_inventory(defines.inventory.beacon_modules)
 				local modules = module_slot.get_contents()
-				log(serpent.block(modules))
 				for item, amount in pairs(modules) do
-					log(item)
-					log(amount)
 					new_beacon_slots.insert{name = item, count = amount}
 				end
 			end
 			beacon.destroy()
-			player.opened = new_beacon
 			beacon_check(new_beacon)
 		end
 	end
