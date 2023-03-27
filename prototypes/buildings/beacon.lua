@@ -15,6 +15,7 @@ local graphics_set = {
                 frame_count = 1,
                 line_length = 1,
                 shift = util.by_pixel(-0, -0),
+                scale = 1.25
             }
         },
         {
@@ -113,8 +114,8 @@ for am = 1, 10 do
         beacon.localised_name = {'entity-name.new-beacon',am,fm}
         beacon.allowed_effects = {'speed', 'consumption'}
         beacon.graphics_set = graphics_set
-        beacon.collision_box = {{-1.55, -1.55}, {1.55, 1.55}}
-        beacon.selection_box = {{-2, -2}, {2, 2}}
+        beacon.collision_box = {{-2.05, -2.05}, {2.05, 2.05}}
+        beacon.selection_box = {{-2.5, -2.5}, {2.5, 2.5}}
 		beacon.collision_mask = {'item-layer', 'object-layer', 'water-tile'}
         data:extend{beacon}
     end
@@ -124,6 +125,7 @@ data.raw.item.beacon.place_result = 'beacon-AM1-FM1'
 data.raw.item.beacon.icon = '__pycoalprocessinggraphics__/graphics/icons/beacon.png'
 data.raw.item.beacon.icon_size = 64
 data.raw.item.beacon.icon_mipmaps = nil
+data.raw.item.beacon.stack_size = 100
 
 data.raw.module['speed-module'].beacon_tint.primary = {0, 0.65, 1}
 data.raw.module['speed-module-2'].beacon_tint.primary = {0, 0.65, 1}
