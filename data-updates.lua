@@ -263,5 +263,15 @@ if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].v
     end
 end
 
-RECIPE('beacon'):add_ingredient{'sc-stator', 10}:add_ingredient{'magnetic-ring', 10}:add_ingredient{'kondo-processor', 2}:add_ingredient{'biofet', 2}:add_ingredient{'super-alloy', 10}:add_ingredient{'tower-mk04', 1}:remove_ingredient{'steel-plate'}:remove_ingredient{'electronic-circuit'}:add_ingredient{'processing-unit', 5}:add_ingredient{'metastable-quasicrystal', 5}:add_ingredient{type = 'fluid', name = 'r4', amount = 100}
+RECIPE('beacon')
+    :add_ingredient{'sc-engine', 2}
+    :add_ingredient{'magnetic-ring', 10}
+    :add_ingredient{'intelligent-unit', 5}
+    :add_ingredient{'parametric-oscilator', 1}
+    :add_ingredient{'biopolymer', 10}
+    :add_ingredient{'super-alloy', 10}:remove_ingredient{'steel-plate'}
+    :add_ingredient{'tower-mk04', 1}
+    :add_ingredient{'processing-unit', 5}:remove_ingredient{'electronic-circuit'}:remove_ingredient{'advanced-circuit'}
+    :add_ingredient{'metastable-quasicrystal', 5}
+    :add_ingredient{type = 'fluid', name = 'r4', amount = 100}
 if mods.pyalternativeenergy then data.raw.recipe.beacon.category = 'crafting-with-fluid' end
