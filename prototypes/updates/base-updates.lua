@@ -317,21 +317,3 @@ ITEM("speed-module-3"):set_fields{
         consumption = {bonus = 2}
     }
 }
-
---create A.M and F.M beacons
-
-for am = 1, 10 do
-    for fm = 1, 10 do
-    local new_beacon = table.deepcopy(data.raw.beacon.beacon)
-    new_beacon.name = "beacon-AM" .. am .."-FM" .. fm
-    new_beacon.distribution_effectivity = 0.1 * am * fm
-    new_beacon.energy_usage = 100 * am * (fm ^ 2) .. "kW"
-    new_beacon.supply_area_distance = 11-am
-    new_beacon.placeable_by = {item = "beacon", count = 1}
-    new_beacon.localised_name = {"entity-name.new-beacon",am,fm}
-    new_beacon.allowed_effects = {'speed', 'consumption'}
-    data:extend{new_beacon}
-    end
-end
-
-data.raw.item.beacon.place_result = "beacon-AM1-FM1"
