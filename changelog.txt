@@ -1,8 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.8
-Date: ?
+Date: 2023-3-28
   Changes:
     - reworked beacons to use an AM/FM frequency system
+    - boosted productivity on productivity modules to 10/20/30 respectively
+    - added ne Py Beacon entity to replace vanilla beacon. old beacon entity will remain so as to not break saves
     - fixed that the microwave receiver wiki page had no text
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.7
