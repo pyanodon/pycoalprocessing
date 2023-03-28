@@ -10,12 +10,12 @@ local graphics_set = {
             animation = {
                 filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/terrain.png',
                 priority = 'high',
-                width = 128,
-                height = 128,
+                width = 160,
+                height = 160,
                 frame_count = 1,
                 line_length = 1,
                 shift = util.by_pixel(-0, -0),
-                scale = 1.25
+                --scale = 1.25
             }
         },
         {
@@ -26,6 +26,7 @@ local graphics_set = {
                 height = 192,
                 frame_count = 90,
                 line_length = 10,
+                animation_speed = 0.25,
                 shift = util.by_pixel(-0, -32),
             }
         },
@@ -37,6 +38,7 @@ local graphics_set = {
                 height = 192,
                 frame_count = 90,
                 line_length = 10,
+                animation_speed = 0.25,
                 shift = util.by_pixel(-0, -32),
             }
         },
@@ -48,6 +50,7 @@ local graphics_set = {
                 height = 192,
                 frame_count = 90,
                 line_length = 10,
+                animation_speed = 0.25,
                 draw_as_glow = true,
                 shift = util.by_pixel(-0, -32)
             },
@@ -61,6 +64,7 @@ local graphics_set = {
                 height = 192,
                 frame_count = 90,
                 line_length = 10,
+                animation_speed = 0.25,
                 shift = util.by_pixel(-0, -224),
             }
         },
@@ -72,6 +76,7 @@ local graphics_set = {
                 height = 192,
                 frame_count = 90,
                 line_length = 10,
+                animation_speed = 0.25,
                 shift = util.by_pixel(-0, -224),
             }
         },
@@ -84,6 +89,7 @@ local graphics_set = {
                 frame_count = 90,
                 line_length = 10,
                 draw_as_glow = true,
+                animation_speed = 0.25,
                 shift = util.by_pixel(-0, -224)
             },
 			apply_tint = true
@@ -96,7 +102,8 @@ local graphics_set = {
                 height = 192,
                 frame_count = 90,
                 line_length = 10,
-                shift = util.by_pixel(-0, -32),
+                animation_speed = 0.25,
+                shift = util.by_pixel(48, -32),
                 draw_as_shadow = true
             }
         },
