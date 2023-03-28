@@ -108,8 +108,8 @@ Event.register(defines.events.on_gui_opened, function(event)
 	if event.entity.type ~= "beacon" then
 		return
 	end
-	if string.match(event.entity.name, "beacon%-AM") == nil then 
-		return 
+	if string.match(event.entity.name, "beacon%-AM") == nil then
+		return
 	end
 	if game.players[event.player_index].gui.relative.Dials ~= nil then
 		game.players[event.player_index].gui.relative.Dials.destroy()
@@ -146,7 +146,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 			type = "slider",
 			name = "AM",
 			minimum_value = 1,
-			maximum_value = 10,
+			maximum_value = 5,
 			value = event.entity.name:match('%d+'),
 			discrete_slider = true,
 			caption = "AM"
@@ -180,7 +180,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 			type = "slider",
 			name = "FM",
 			minimum_value = 1,
-			maximum_value = 10,
+			maximum_value = 5,
 			value = event.entity.name:match('%d+$'),
 			discrete_slider = true,
 			caption = "FM"
@@ -260,9 +260,7 @@ local function beacon_check(beacon, killed)
 		local beacons = reciver.get_beacons()
 		local beacon_count = {}
 		for b, bea in pairs(beacons) do
-			log("hit")
 			if killed == true and bea.unit_number == beacon.unit_number then
-				log("hit")
 			elseif bea.valid then
 				if beacon_count[bea.name] == nil then
 					beacon_count[bea.name] = 1
@@ -271,7 +269,6 @@ local function beacon_check(beacon, killed)
 				end
 			end
 		end
-		log(serpent.block(beacon_count))
 		if next(beacon_count) ~= nil then
 			for b, bea in pairs(beacons) do
 				if beacon_count[bea.name] ~= nil then

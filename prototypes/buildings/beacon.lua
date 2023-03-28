@@ -110,13 +110,14 @@ local graphics_set = {
     }
 }
 
-for am = 1, 10 do
-    for fm = 1, 10 do
+for am = 5, 1, -1 do
+    for fm = 5, 1, -1 do
         local beacon = table.deepcopy(data.raw.beacon.beacon)
         beacon.name = 'beacon-AM' .. am ..'-FM' .. fm
-        beacon.distribution_effectivity = 0.1 * am * fm
-        beacon.energy_usage = 100 * am * (fm ^ 2) .. 'kW'
-        beacon.supply_area_distance = 11-am
+        beacon.distribution_effectivity = 0.5 * am * fm
+        beacon.energy_usage = 1000 * am * (fm ^ 3) .. 'kW'
+        beacon.supply_area_distance = 64 - 16 * (am - 1)
+        if beacon.supply_area_distance < 2 then beacon.supply_area_distance = 2 end
         beacon.placeable_by = {item = 'beacon', count = 1}
         beacon.localised_name = {'entity-name.new-beacon',am,fm}
         beacon.allowed_effects = {'speed', 'consumption'}
