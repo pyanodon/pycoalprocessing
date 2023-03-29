@@ -97,6 +97,11 @@ for _, event in pairs(Event.build_events) do
 			filter = 'type',
 			type = 'beacon',
 			mode = 'or'
+		},
+		{
+			filter = 'crafting-machine',
+			--type = 'beacon',
+			mode = 'or'
 		}
 	})
 end
@@ -253,9 +258,15 @@ local function disable_beacon(beacon)
 	}
 end
 
-local function beacon_check(beacon, killed)
+local function beacon_check(beacon, reciver, killed)
 	local killed = killed or false
-	local recivers = beacon.get_beacon_effect_receivers()
+	local recivers = {}
+	if reciver ~= nil then
+		table.insert(recivers, reciver)
+	end
+	if beacon ~= nil and next(beacon.get_beacon_effect_receivers()) ~= nil then
+		recivers = beacon.get_beacon_effect_receivers()
+	end
 	for r, reciver in pairs(recivers) do
 		local beacons = reciver.get_beacons()
 		local beacon_count = {}
@@ -315,10 +326,11 @@ end)
 
 Event.register(Event.build_events, function(event)
 	local beacon = event.created_entity
-	if beacon.type ~= "beacon" then return end
+	if beacon.type ~= "beacon" then
+		beacon_check(_, beacon)
+	end
 	if string.match(beacon.name, "beacon%-AM") == nil then return end
-	--local killed = false
-	beacon_check(beacon, killed)
+	beacon_check(beacon)
 end)
 
 Event.register(Event.death_events, function(event)
@@ -327,5 +339,5 @@ Event.register(Event.death_events, function(event)
 	if string.match(beacon.name, "beacon%-AM") == nil then return end
 	global.beacon_interference_icons[beacon.unit_number] = nil
 	local killed = true
-	beacon_check(beacon, killed)
+	beacon_check(beacon, _, killed)
 end)
