@@ -270,29 +270,31 @@ local function beacon_check(beacon, reciver, killed)
 	for r, reciver in pairs(recivers) do
 		local beacons = reciver.get_beacons()
 		local beacon_count = {}
-		for b, bea in pairs(beacons) do
-			if killed == true and bea.unit_number == beacon.unit_number then
-			elseif bea.valid then
-				if beacon_count[bea.name] == nil then
-					beacon_count[bea.name] = 1
-				elseif beacon_count[bea.name] ~= nil then
-					beacon_count[bea.name] = beacon_count[bea.name] + 1
-				end
-			end
-		end
-		if next(beacon_count) ~= nil then
+		if beacons ~= nil then
 			for b, bea in pairs(beacons) do
-				if beacon_count[bea.name] ~= nil then
-					if beacon_count[bea.name] > 1 then
-						disable_beacon(bea)
-					elseif beacon_count[bea.name] <= 1 then
-						enable_beacon(bea)
+				if killed == true and bea.unit_number == beacon.unit_number then
+				elseif bea.valid then
+					if beacon_count[bea.name] == nil then
+						beacon_count[bea.name] = 1
+					elseif beacon_count[bea.name] ~= nil then
+						beacon_count[bea.name] = beacon_count[bea.name] + 1
 					end
 				end
 			end
-		elseif next(beacon_count) == nil then
-			for b, bea in pairs(beacons) do
-				enable_beacon(bea)
+			if next(beacon_count) ~= nil then
+				for b, bea in pairs(beacons) do
+					if beacon_count[bea.name] ~= nil then
+						if beacon_count[bea.name] > 1 then
+							disable_beacon(bea)
+						elseif beacon_count[bea.name] <= 1 then
+							enable_beacon(bea)
+						end
+					end
+				end
+			elseif next(beacon_count) == nil then
+				for b, bea in pairs(beacons) do
+					enable_beacon(bea)
+				end
 			end
 		end
 	end
