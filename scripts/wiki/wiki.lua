@@ -15,8 +15,8 @@ Event.register(Event.core_events.init_and_config, function()
         Wiki.create_pywiki_button(player)
     end
     global.wiki_pages = {}
-    global.currently_opened_wiki_page = global.currently_opened_wiki_page or {}
-    global.wiki_page_search_query = global.wiki_page_search_query or {}
+    global.currently_opened_wiki_page = {}
+    global.wiki_page_search_query = {}
 end)
 
 Event.register(defines.events.on_player_created, function(event)
