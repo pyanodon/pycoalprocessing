@@ -307,11 +307,20 @@ Event.register(defines.events.on_gui_click, function(event)
 		if beacon.name ~= "beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value then
 			local player = game.players[event.player_index]
 			local surface = game.surfaces[player.surface.name]
-			local new_beacon = surface.create_entity{
-				name = "beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value,
-				position = beacon.position,
-				force = beacon.force
-			}
+			local new_beacon
+			if string.match(beacon.name, "mk01") ~= nil then	
+					new_beacon = surface.create_entity{
+					name = "mk01-beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value,
+					position = beacon.position,
+					force = beacon.force
+				}
+			else
+					new_beacon = surface.create_entity{
+					name = "beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value,
+					position = beacon.position,
+					force = beacon.force
+				}
+			end
 			local module_slot = beacon.get_inventory(defines.inventory.beacon_modules)
 			if module_slot.is_empty ~= true then
 				local new_beacon_slots = new_beacon.get_inventory(defines.inventory.beacon_modules)
