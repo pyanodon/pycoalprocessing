@@ -114,6 +114,9 @@ Event.register(defines.events.on_gui_opened, function(event)
 		return
 	end
 	if string.match(event.entity.name, "beacon%-AM") == nil then
+		if game.players[event.player_index].gui.relative.Dials ~= nil then
+			game.players[event.player_index].gui.relative.Dials.destroy()
+		end
 		return
 	end
 	if game.players[event.player_index].gui.relative.Dials ~= nil then
@@ -272,8 +275,10 @@ local function beacon_check(beacon, reciver, killed)
 		local beacon_count = {}
 		if beacons ~= nil then
 			for b, bea in pairs(beacons) do
+				log(b)
+				log(bea.name)
 				if killed == true and bea.unit_number == beacon.unit_number then
-				elseif bea.valid then
+				elseif string.match(bea.name, "beacon%-AM") ~= nil and bea.valid then
 					if beacon_count[bea.name] == nil then
 						beacon_count[bea.name] = 1
 					elseif beacon_count[bea.name] ~= nil then
