@@ -263,3 +263,10 @@ RECIPE('beacon')
     :add_ingredient{'metastable-quasicrystal', 1}
     :add_ingredient{type = 'fluid', name = 'r4', amount = 100}
 if mods.pyalternativeenergy then data.raw.recipe.beacon.category = 'crafting-with-fluid' end
+
+RECIPE('beacon-mk01')
+    :add_ingredient{'self-assembly-monolayer', 1}
+    :add_ingredient{'mechanical-parts-02', 1}
+    :add_ingredient{'eva', 10}
+    :add_ingredient{'stainless-steel', 10}:remove_ingredient{'steel-plate'}
+    :add_ingredient{'tower-mk02', 1}

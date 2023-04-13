@@ -6,7 +6,10 @@ RECIPE{
     energy_required = 15,
     ingredients =
     {
-      {"steel-plate", 10}
+      {"steel-plate", 10},
+      {"electric-engine-unit", 1},
+      {"iron-gear-wheel", 50},
+      {"advanced-circuit", 5}
     },
     result = "beacon-mk01"
   }:add_unlock("speed-module")
@@ -14,7 +17,7 @@ RECIPE{
 ITEM{
     type = "item",
     name = "beacon-mk01",
-    icon = '__pycoalprocessinggraphics__/graphics/icons/beacon.png',
+    icon = '__pycoalprocessinggraphics__/graphics/icons/beacon-01.png',
     icon_size = 64,
     subgroup = "module",
     order = "a[beacon]",
@@ -37,96 +40,58 @@ local graphics_set = {
                 frame_count = 1,
                 line_length = 1,
                 shift = util.by_pixel(-0, -0),
-                --scale = 1.25
+                scale = 0.6
             }
         },
         {
             animation = {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/b-raw.png',
+                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/01/raw.png',
                 priority = 'high',
-                width = 192,
-                height = 192,
-                frame_count = 90,
+                width = 96,
+                height = 224,
+                frame_count = 50,
                 line_length = 10,
                 animation_speed = 0.25,
-                shift = util.by_pixel(-0, -32),
+                shift = util.by_pixel(-0, -96),
             }
         },
         {
             animation = {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/b-ao.png',
+                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/01/ao.png',
                 priority = 'high',
-                width = 192,
-                height = 192,
-                frame_count = 90,
+                width = 96,
+                height = 224,
+                frame_count = 50,
                 line_length = 10,
                 animation_speed = 0.25,
-                shift = util.by_pixel(-0, -32),
+                shift = util.by_pixel(-0, -96),
             }
         },
         {
             animation = {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/b-l.png',
+                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/01/l.png',
                 priority = 'high',
-                width = 192,
-                height = 192,
-                frame_count = 90,
+                width = 160,
+                height = 128,
+                frame_count = 50,
                 line_length = 10,
                 animation_speed = 0.25,
                 draw_as_glow = true,
-                shift = util.by_pixel(-0, -32)
+                shift = util.by_pixel(-0, -112)
             },
 			apply_tint = true
         },
         {
             animation = {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/t-raw.png',
+                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/01/sh.png',
                 priority = 'high',
-                width = 192,
-                height = 192,
-                frame_count = 90,
+                width = 128,
+                height = 96,
+                draw_as_shadow = true,
+                frame_count = 50,
                 line_length = 10,
                 animation_speed = 0.25,
-                shift = util.by_pixel(-0, -224),
-            }
-        },
-        {
-            animation = {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/t-ao.png',
-                priority = 'high',
-                width = 192,
-                height = 192,
-                frame_count = 90,
-                line_length = 10,
-                animation_speed = 0.25,
-                shift = util.by_pixel(-0, -224),
-            }
-        },
-        {
-            animation = {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/t-l.png',
-                priority = 'high',
-                width = 192,
-                height = 192,
-                frame_count = 90,
-                line_length = 10,
-                draw_as_glow = true,
-                animation_speed = 0.25,
-                shift = util.by_pixel(-0, -224)
-            },
-			apply_tint = true
-        },
-        {
-            animation = {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/beacon/b-sh.png',
-                priority = 'high',
-                width = 192,
-                height = 192,
-                frame_count = 90,
-                line_length = 10,
-                animation_speed = 0.25,
-                shift = util.by_pixel(48, -32),
-                draw_as_shadow = true
+                shift = util.by_pixel(48, 0),
             }
         },
     }
@@ -144,8 +109,8 @@ for am = 5, 1, -1 do
         beacon.localised_name = {'entity-name.new-beacon-mk01',am,fm}
         beacon.allowed_effects = {'speed', 'consumption'}
         beacon.graphics_set = graphics_set
-        beacon.collision_box = {{-2.05, -2.05}, {2.05, 2.05}}
-        beacon.selection_box = {{-2.5, -2.5}, {2.5, 2.5}}
+        beacon.collision_box = {{-1.05, -1.05}, {1.05, 1.05}}
+        beacon.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}
 		beacon.collision_mask = {'item-layer', 'object-layer', 'water-tile'}
         beacon.next_upgrade = nil
         beacon.minable = {mining_time = 0.2, result = "beacon-mk01"},
