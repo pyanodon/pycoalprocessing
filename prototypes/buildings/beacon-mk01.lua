@@ -113,7 +113,10 @@ for am = 5, 1, -1 do
         beacon.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}
 		beacon.collision_mask = {'item-layer', 'object-layer', 'water-tile'}
         beacon.next_upgrade = nil
-        beacon.minable = {mining_time = 0.2, result = "beacon-mk01"},
+        beacon.minable = {mining_time = 0.2, result = "beacon-mk01"}
+        beacon.icon = '__pycoalprocessinggraphics__/graphics/icons/beacon-01.png'
+        beacon.icon_size = 64
+        beacon.icon_mipmaps = nil
         data:extend{beacon}
     end
 end
