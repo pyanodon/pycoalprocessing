@@ -1,8 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.0
-Date: 2023-3-29
+Date: ?
   Changes:
     - fix crash with ghost entities and beacon script
+    - added diet beacons. smaller, low strength beacons that are avalible at py science pack 2.
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.9
 Date: 2023-3-29

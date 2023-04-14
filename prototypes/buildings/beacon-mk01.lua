@@ -1,4 +1,26 @@
 -- create A.M and F.M beacons
+
+TECHNOLOGY {
+    type = 'technology',
+    name = 'diet-beacon',
+    icon = '__base__/graphics/technology/module.png',
+    icon_size = 256,
+    icon_mipmaps = 4,
+    prerequisites = {'speed-module', 'productivity-module', 'effectivity-module'},
+    effects = {},
+    unit = {
+        count = 2100,
+        ingredients = {
+            {'automation-science-pack', 6},
+            {'py-science-pack-1', 3},
+            {'logistic-science-pack', 2},
+            {'py-science-pack-2', 1},
+        },
+        time = 90,
+    },
+    localised_description = {'technology-description.effect-transmission'}
+}
+
 RECIPE{
     type = "recipe",
     name = "beacon-mk01",
@@ -12,7 +34,7 @@ RECIPE{
       {"advanced-circuit", 5}
     },
     result = "beacon-mk01"
-  }:add_unlock("speed-module")
+}:add_unlock('diet-beacon')
 
 ITEM{
     type = "item",
