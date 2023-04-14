@@ -21,7 +21,7 @@ ITEM{
     icon_size = 64,
     subgroup = "module",
     order = "a[beacon]",
-    place_result = 'mk01-beacon-AM1-FM1',
+    place_result = 'diet-beacon-AM1-FM1',
     stack_size = 100
   }
 
@@ -100,7 +100,7 @@ local graphics_set = {
 for am = 5, 1, -1 do
     for fm = 5, 1, -1 do
         local beacon = table.deepcopy(data.raw.beacon.beacon)
-        beacon.name = 'mk01-beacon-AM' .. am ..'-FM' .. fm
+        beacon.name = 'diet-beacon-AM' .. am ..'-FM' .. fm
         beacon.distribution_effectivity = 0.1 * am * fm
         beacon.energy_usage = 500 * am * (fm ^ 3) .. 'kW'
         beacon.supply_area_distance = 32 - 8 * (am - 1)
