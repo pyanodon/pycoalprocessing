@@ -311,9 +311,9 @@ Event.register(defines.events.on_gui_click, function(event)
 			local player = game.players[event.player_index]
 			local surface = game.surfaces[player.surface.name]
 			local new_beacon
-			if string.match(beacon.name, "mk01") ~= nil then	
+			if string.match(beacon.name, "diet") ~= nil then	
 					new_beacon = surface.create_entity{
-					name = "mk01-beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value,
+					name = "diet-beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value,
 					position = beacon.position,
 					force = beacon.force
 				}
