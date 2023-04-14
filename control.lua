@@ -275,8 +275,6 @@ local function beacon_check(beacon, reciver, killed)
 		local beacon_count = {}
 		if beacons ~= nil then
 			for b, bea in pairs(beacons) do
-				log(b)
-				log(bea.name)
 				if killed == true and bea.unit_number == beacon.unit_number then
 				elseif string.match(bea.name, "beacon%-AM") ~= nil and bea.valid then
 					if beacon_count[bea.name] == nil then
