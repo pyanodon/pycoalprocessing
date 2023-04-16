@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.2
+Date: 2023-4-16
+  Changes:
+    - fix crash with py science packs being added to diet beacon when they are not added without pyalienlife
+---------------------------------------------------------------------------------------------------
 Version: 2.1.1
 Date: 2023-4-16
   Changes:
