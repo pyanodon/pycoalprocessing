@@ -12,9 +12,7 @@ TECHNOLOGY {
         count = 2100,
         ingredients = {
             {'automation-science-pack', 6},
-            {'py-science-pack-1', 3},
             {'logistic-science-pack', 2},
-            {'py-science-pack-2', 1},
         },
         time = 90,
     },
