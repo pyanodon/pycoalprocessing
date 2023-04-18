@@ -96,20 +96,15 @@ TECHNOLOGY("mining-productivity-4"):add_pack("military-science-pack")
 data.raw.technology.artillery.unit.ingredients = {
     {"automation-science-pack", 1},
     {"logistic-science-pack", 1},
+    {"chemical-science-pack", 1},
     {"military-science-pack", 1}
   }
 data.raw.technology.artillery.prerequisites = {"military"}
 
-data.raw.technology["artillery-shell-range-1"].unit.ingredients = {
-    {"automation-science-pack", 1},
-    {"logistic-science-pack", 1},
-    {"military-science-pack", 1}
-  }
-data.raw.technology["artillery-shell-range-1"].prerequisites = {"artillery"}
-
 data.raw.technology["artillery-shell-speed-1"].unit.ingredients = {
     {"automation-science-pack", 1},
     {"logistic-science-pack", 1},
+    {"chemical-science-pack", 1},
     {"military-science-pack", 1}
   }
 data.raw.technology["artillery-shell-speed-1"].prerequisites = {"artillery"}
@@ -117,6 +112,7 @@ data.raw.technology["artillery-shell-speed-1"].prerequisites = {"artillery"}
 data.raw.technology.tank.unit.ingredients = {
     {"automation-science-pack", 1},
     {"logistic-science-pack", 1},
+    {"chemical-science-pack", 1},
     {"military-science-pack", 1}
   }
 data.raw.technology.tank.prerequisites = {}

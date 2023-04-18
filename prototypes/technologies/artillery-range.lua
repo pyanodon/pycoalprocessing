@@ -17,6 +17,7 @@ TECHNOLOGY {
       {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
         {"military-science-pack", 1}
       },
       time = 30,
@@ -44,6 +45,7 @@ TECHNOLOGY {
       {
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
         {"military-science-pack", 1}
       },
       time = 30,
