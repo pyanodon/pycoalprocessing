@@ -113,6 +113,13 @@ ENTITY {
         width = 12,
         height = 12
     },
+
+    require ("__pycoalprocessing__/prototypes/circuit-connector-definitions-pycp"),
+
+    circuit_wire_connection_points = borax_mine_connector_definitions.points,
+    circuit_connector_sprites = borax_mine_connector_definitions.sprites,
+    circuit_wire_max_distance = default_circuit_wire_max_distance,
+    
     graphics_set = {
         animation = dry_graphics
     },
