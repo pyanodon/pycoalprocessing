@@ -16,6 +16,10 @@ require('prototypes/item-groups')
 require('prototypes/recipe-categories')
 -- ))
 
+-- (( Circuit Connector Definitions )) --
+require("prototypes/circuit-connector-definitions")
+-- ))
+
 -- (( Technology ))--
 require('prototypes/technologies/coal-processing-1')
 require('prototypes/technologies/coal-processing-2')
