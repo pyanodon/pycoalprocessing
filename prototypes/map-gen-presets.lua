@@ -29,10 +29,6 @@ local rocks = {
 }
 --[[ if it comes up
 local non_rocks = {
-    ["iron-ore"] = true,
-    ["copper-ore"] = true,
-    ["stone"] = true,
-    ["uranium-ore"] = true,
     ["borax"] = true,
     ["niobium"] = true,
     ["molybdenum-ore"] = true,
@@ -53,6 +49,13 @@ local non_rocks = {
     ["antimonium"] = true,
 }
 ]]--
+
+local vanilla_resources = {
+    ["iron-ore"] = true,
+    ["copper-ore"] = true,
+    ["stone"] = true,
+    ["uranium-ore"] = true,
+}
 
 
 
@@ -130,15 +133,41 @@ local rock_values = {
         richness = 1.0
     }
 }
+local vanilla_values = {
+    ["rich-resources"] = {
+        richness = 2.0
+    },
+    ["rail-world"] = {
+        frequency = 0.33,
+        size = 3.0
+    },
+    ["py-recommended"] = {
+        frequency = 0.33,
+        richness = 6,
+        size = 1.5
+    },
+    ["ribbon-world"] = {
+        frequency = 3.0,
+        size = 0.5,
+        richness = 2.0
+    }
+}
 
 for name in pairs(data.raw["autoplace-control"]) do
     if blacklist[name] then goto continue end
     local is_rock = rocks[name]
+    local is_vanilla = vanilla_resources[name]
     for preset_name, preset_data in pairs(mapgens) do
         local control = preset_data["basic_settings"] and preset_data["basic_settings"]["autoplace_controls"]
         -- If someone has already modified it, I see no reason to change it
         if control and not control[name] then
-            control[name] = is_rock and rock_values[preset_name] or non_rock_values[preset_name]
+            if is_rock then
+                control[name] = rock_values[preset_name]
+            elseif is_vanilla then
+                control[name] = vanilla_values[preset_name]
+            else
+                control[name] = non_rock_values[preset_name]
+            end
         end
     end
     ::continue::
