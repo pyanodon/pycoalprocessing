@@ -1,5 +1,7 @@
 local table = require('__stdlib__/stdlib/utils/table')
 local py_utils = require "__pypostprocessing__.prototypes.functions.utils"
+local resource_autoplace = require("resource-autoplace")
+local noise = require("noise")
 
 -- (( TECHNOLOGY ))--
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):add_pack("military-science-pack")
@@ -313,3 +315,20 @@ ITEM("speed-module-3"):set_fields{
         consumption = {bonus = 2}
     }
 }
+
+-- Bump vanilla ore richness to more closely resembly py ore amounts
+for _, ore in pairs({"iron-ore", "copper-ore", "coal", "stone", "uranium-ore"}) do
+    local resource = data.raw.resource[ore]
+    if resource and resource.autoplace then
+        -- Store the current probability expression
+        local base_expression = noise.delimit_procedure(resource.autoplace.richness_expression)
+        -- 2x within starting area
+        resource.autoplace.richness_expression = noise.define_noise_function( function(x, y, tile, map)
+            -- This is the hard-coded starting ore area value wube uses
+            local starting_resource_placement_radius = 120
+            local tier = noise.max(0.0, tile.distance - starting_resource_placement_radius) / starting_resource_placement_radius;
+            -- 2x at start, 1.5x elsewhere
+            return (2 - (noise.clamp(tier, 0, 1) / 2)) * base_expression
+        end)
+    end
+end
