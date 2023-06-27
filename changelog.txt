@@ -7,6 +7,8 @@ Date: ???
     - Added circuit connector for crystal mines (Thanks, JStMorgan)
     - Increase vanilla ore richness, especially in starting area
     - update chinese translation. credit sdqwo
+    - improved wiki pages for ash, assemblers, and big mines. credit JStMorgan
+    - changed the technology description for the syngas tech
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.2
 Date: 2023-4-16
