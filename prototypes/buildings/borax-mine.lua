@@ -127,5 +127,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/borax-mine.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/borax-mine.ogg", volume = 0.3},
         apparent_volume = 2.5
-    }
+    },
+    next_upgrade = 'borax-mine-mk02'
 }

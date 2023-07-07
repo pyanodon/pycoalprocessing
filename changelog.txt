@@ -4,11 +4,12 @@ Date: ???
   Changes:
     - Fix some techs missing the chemical science pack
     - Update RU locale
-    - Added circuit connector for crystal mines (Thanks, JStMorgan)
+    - Added circuit connector for crystal mines (JStMorgan)
     - Increase vanilla ore richness, especially in starting area
     - update chinese translation. credit sdqwo
-    - improved wiki pages for ash, assemblers, and big mines. credit JStMorgan
+    - improved wiki pages for ash, assemblers, and big mines. (JStMorgan)
     - changed the technology description for the syngas tech
+    - allow many entities to work with the upgrade planner
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.2
 Date: 2023-4-16

@@ -7,8 +7,8 @@ RECIPE {
         {"electric-mining-drill", 3},
         {"soil-extractormk01", 2},
         {"electronic-circuit", 30},
-        {"iron-plate", 150}, --bob titanium-plate
-        {"iron-gear-wheel", 15} --bob titanium-bearing
+        {"iron-plate", 150},
+        {"iron-gear-wheel", 15}
     },
     results = {
         {"ground-borer", 1}
@@ -101,5 +101,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/ground-borer.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/ground-borer.ogg", volume = 0.3},
         apparent_volume = 2.5
-    }
+    },
+    next_upgrade = 'ground-borer-mk02'
 }

@@ -243,5 +243,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg", volume = 0.3},
         apparent_volume = 2.5
-    }
+    },
+    next_upgrade = 'fts-reactor-mk03'
 }

@@ -101,5 +101,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/ground-borer.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/ground-borer.ogg", volume = 0.3},
         apparent_volume = 2.5
-    }
+    },
+    next_upgrade = 'ground-borer-mk04'
 }

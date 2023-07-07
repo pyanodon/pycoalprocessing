@@ -101,5 +101,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/washer.ogg", volume = 1.8},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/washer.ogg", volume = 0.3},
         apparent_volume = 1.8
-    }
+    },
+    next_upgrade = 'washer-mk04'
 }

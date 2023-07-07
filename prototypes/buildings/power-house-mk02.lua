@@ -166,5 +166,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/power-house.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/power-house.ogg", volume = 0.3},
         apparent_volume = 2.5
-    }
+    },
+    next_upgrade = 'power-house-mk03'
 }

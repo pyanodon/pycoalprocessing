@@ -81,5 +81,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 1.0},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 0.3},
         apparent_volume = 2.5
-    }
+    },
+    next_upgrade = 'wpu-mk03'
 }

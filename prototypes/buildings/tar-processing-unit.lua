@@ -182,5 +182,6 @@ ENTITY {
         sound = {filename = "__base__/sound/oil-refinery.ogg"},
         idle_sound = {filename = "__base__/sound/idle1.ogg", volume = 0.3},
         apparent_volume = 2.5
-    }
+    },
+    next_upgrade = 'tar-processing-unit-mk02'
 }

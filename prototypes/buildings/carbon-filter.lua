@@ -110,5 +110,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/carbon-filter.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/carbon-filter.ogg", volume = 0.3},
         apparent_volume = 2.5
-    }
+    },
+    next_upgrade = 'carbon-filter-mk02'
 }

@@ -119,5 +119,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/fluid-separator.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/fluid-separator.ogg", volume = 0.3},
         apparent_volume = 1.2
-    }
+    },
+    next_upgrade = 'fluid-separator-mk04'
 }

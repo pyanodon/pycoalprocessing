@@ -67,5 +67,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/classifier.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/classifier.ogg", volume = 0.3},
         apparent_volume = 2.5
-    }
+    },
+    next_upgrade = 'classifier-mk02'
 }

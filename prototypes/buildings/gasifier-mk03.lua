@@ -125,5 +125,6 @@ ENTITY {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/gasifier.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/gasifier.ogg", volume = 0.3},
         apparent_volume = 2.5
-    }
+    },
+    next_upgrade = 'gasifier-mk04'
 }

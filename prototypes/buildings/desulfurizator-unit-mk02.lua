@@ -101,6 +101,6 @@ ENTITY {
         sound = {filename = "__base__/sound/chemical-plant.ogg"},
         --idle_sound = {filename = "__base__/sound/chemical-plant.ogg", volume = 0.3},
         apparent_volume = 0.5
-    }
-    }
-
+    },
+    next_upgrade = 'desulfurizator-unit-mk03'
+}
