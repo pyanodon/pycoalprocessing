@@ -166,5 +166,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/power-house.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'power-house-mk02'
+    next_upgrade = mods['pyrawores'] and 'power-house-mk02'
 }

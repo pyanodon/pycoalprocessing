@@ -89,5 +89,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/classifier.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'jaw-crusher-mk02'
+    next_upgrade = mods['pyrawores'] and 'jaw-crusher-mk02'
 }

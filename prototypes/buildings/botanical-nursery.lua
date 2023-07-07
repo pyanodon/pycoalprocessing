@@ -123,5 +123,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'botanical-nursery-mk02'
+    next_upgrade = mods['pyrawores'] and 'botanical-nursery-mk02'
 }

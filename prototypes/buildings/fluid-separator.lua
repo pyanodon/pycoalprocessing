@@ -120,5 +120,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/fluid-separator.ogg", volume = 0.3},
         apparent_volume = 1.2
     },
-    next_upgrade = 'fluid-separator-mk02'
+    next_upgrade = mods['pyrawores'] and 'fluid-separator-mk02'
 }

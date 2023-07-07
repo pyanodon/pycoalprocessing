@@ -138,5 +138,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/quenching-tower.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'quenching-tower-mk02'
+    next_upgrade = mods['pyrawores'] and 'quenching-tower-mk02'
 }

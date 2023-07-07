@@ -68,5 +68,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/classifier.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'classifier-mk02'
+    next_upgrade = mods['pyrawores'] and 'classifier-mk02'
 }

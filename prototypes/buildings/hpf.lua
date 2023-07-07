@@ -152,5 +152,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/hpf.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'hpf-mk02'
+    next_upgrade = mods['pyrawores'] and 'hpf-mk02'
 }

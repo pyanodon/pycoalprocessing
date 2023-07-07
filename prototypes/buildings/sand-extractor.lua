@@ -69,5 +69,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/sand-extractor.ogg", volume = 0.3},
         apparent_volume = 0.45
     },
-    next_upgrade = 'sand-extractor-mk02'
+    next_upgrade = mods['pyrawores'] and 'sand-extractor-mk02'
 }

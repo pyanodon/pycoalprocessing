@@ -168,5 +168,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/rectisol.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'rectisol-mk02'
+    next_upgrade = mods['pyrawores'] and 'rectisol-mk02'
 }

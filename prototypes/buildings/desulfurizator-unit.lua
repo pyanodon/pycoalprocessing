@@ -103,5 +103,5 @@ ENTITY {
         --idle_sound = {filename = "__base__/sound/chemical-plant.ogg", volume = 0.3},
         apparent_volume = 0.5
     },
-    next_upgrade = 'desulfurizator-unit-mk02'
+    next_upgrade = mods['pyrawores'] and 'desulfurizator-unit-mk02'
 }

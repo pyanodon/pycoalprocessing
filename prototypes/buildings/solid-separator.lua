@@ -68,5 +68,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/solid-separator.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'solid-separator-mk02'
+    next_upgrade = mods['pyrawores'] and 'solid-separator-mk02'
 }

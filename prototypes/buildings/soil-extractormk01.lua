@@ -93,5 +93,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/soil-extractormk01.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'soil-extractormk02'
+    next_upgrade = mods['pyrawores'] and 'soil-extractormk02'
 }

@@ -168,5 +168,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/distilator.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'distilator-mk02'
+    next_upgrade = mods['pyrawores'] and 'distilator-mk02'
 }

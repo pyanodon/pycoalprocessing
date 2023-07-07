@@ -163,5 +163,5 @@ ENTITY {
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/methanol-reactor.ogg", volume = 0.3},
         apparent_volume = 2.5
     },
-    next_upgrade = 'methanol-reactor-mk02'
+    next_upgrade = mods['pyrawores'] and 'methanol-reactor-mk02'
 }
