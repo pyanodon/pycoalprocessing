@@ -10,6 +10,7 @@ Date: ???
     - improved wiki pages for ash, assemblers, and big mines. (JStMorgan)
     - changed the technology description for the syngas tech
     - allow many entities to work with the upgrade planner
+    - improve wiki page for aerial turbines. (dominis)
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.2
 Date: 2023-4-16
