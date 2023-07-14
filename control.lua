@@ -114,12 +114,12 @@ Event.register(defines.events.on_gui_opened, function(event)
 		return
 	end
 	if string.match(event.entity.name, "beacon%-AM") == nil then
-		if game.players[event.player_index].gui.relative.Dials ~= nil then
+		if game.players[event.player_index].gui.relative.Dials then
 			game.players[event.player_index].gui.relative.Dials.destroy()
 		end
 		return
 	end
-	if game.players[event.player_index].gui.relative.Dials ~= nil then
+	if game.players[event.player_index].gui.relative.Dials then
 		game.players[event.player_index].gui.relative.Dials.destroy()
 	end
 	local dial = game.players[event.player_index].gui.relative.add(
@@ -213,28 +213,22 @@ Event.register(defines.events.on_gui_opened, function(event)
 end)
 
 Event.register(defines.events.on_gui_value_changed, function(event)
-	if event.element.name == "AM" or event.element.name == "FM" then
-		if event.element.name == "AM" then
-			local AM = event.element
-			AM.parent.AM_slider_num.text = tostring(AM.slider_value)
-		end
-		if event.element.name == "FM" then
-			local FM = event.element
-			FM.parent.FM_slider_num.text = tostring(FM.slider_value)
-		end
+	if event.element.name == "AM" then
+		local AM = event.element
+		AM.parent.AM_slider_num.text = tostring(AM.slider_value)
+	elseif event.element.name == "FM" then
+		local FM = event.element
+		FM.parent.FM_slider_num.text = tostring(FM.slider_value)
 	end
 end)
 
-Event.register(defines.events.on_gui_confirmed, function(event)
-	if event.element.name == "AM_slider_num" or event.element.name == "FM_slider_num" then
-		if event.element.name == "AM_slider_num" then
-			local AM = event.element
-			AM.parent.AM.slider_value = tonumber(AM.text)
-		end
-		if event.element.name == "FM_slider_num" then
-			local FM = event.element
-			FM.parent.FM.slider_value = tonumber(FM.text)
-		end
+Event.register(defines.events.on_gui_text_changed, function(event)
+	if event.element.name == "AM_slider_num" then
+		local AM = event.element
+		AM.parent.AM.slider_value = tonumber(AM.text)
+	elseif event.element.name == "FM_slider_num" then
+		local FM = event.element
+		FM.parent.FM.slider_value = tonumber(FM.text)
 	end
 end)
 
@@ -264,29 +258,29 @@ end
 local function beacon_check(beacon, reciver, killed)
 	local killed = killed or false
 	local recivers = {}
-	if reciver ~= nil then
+	if reciver then
 		table.insert(recivers, reciver)
 	end
-	if beacon ~= nil and next(beacon.get_beacon_effect_receivers()) ~= nil then
+	if beacon and next(beacon.get_beacon_effect_receivers()) then
 		recivers = beacon.get_beacon_effect_receivers()
 	end
 	for r, reciver in pairs(recivers) do
 		local beacons = reciver.get_beacons()
 		local beacon_count = {}
-		if beacons ~= nil then
+		if beacons then
 			for b, bea in pairs(beacons) do
 				if killed == true and bea.unit_number == beacon.unit_number then
-				elseif string.match(bea.name, "beacon%-AM") ~= nil and bea.valid then
+				elseif string.match(bea.name, "beacon%-AM") and bea.valid then
 					if beacon_count[bea.name] == nil then
 						beacon_count[bea.name] = 1
-					elseif beacon_count[bea.name] ~= nil then
+					elseif beacon_count[bea.name] then
 						beacon_count[bea.name] = beacon_count[bea.name] + 1
 					end
 				end
 			end
-			if next(beacon_count) ~= nil then
+			if next(beacon_count) then
 				for b, bea in pairs(beacons) do
-					if beacon_count[bea.name] ~= nil then
+					if beacon_count[bea.name] then
 						if beacon_count[bea.name] > 1 then
 							disable_beacon(bea)
 						elseif beacon_count[bea.name] <= 1 then
@@ -294,7 +288,7 @@ local function beacon_check(beacon, reciver, killed)
 						end
 					end
 				end
-			elseif next(beacon_count) == nil then
+			else
 				for b, bea in pairs(beacons) do
 					enable_beacon(bea)
 				end
@@ -304,38 +298,27 @@ local function beacon_check(beacon, reciver, killed)
 end
 
 Event.register(defines.events.on_gui_click, function(event)
-	if event.element.name == "radio_confirm" then
-		local GO = event.element
-		local beacon = game.players[event.player_index].opened
-		if beacon.name ~= "beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value then
-			local player = game.players[event.player_index]
-			local surface = game.surfaces[player.surface.name]
-			local new_beacon
-			if string.match(beacon.name, "diet") ~= nil then	
-					new_beacon = surface.create_entity{
-					name = "diet-beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value,
-					position = beacon.position,
-					force = beacon.force
-				}
-			else
-					new_beacon = surface.create_entity{
-					name = "beacon-AM" .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value,
-					position = beacon.position,
-					force = beacon.force
-				}
-			end
-			local module_slot = beacon.get_inventory(defines.inventory.beacon_modules)
-			if module_slot.is_empty ~= true then
-				local new_beacon_slots = new_beacon.get_inventory(defines.inventory.beacon_modules)
-				local modules = module_slot.get_contents()
-				for item, amount in pairs(modules) do
-					new_beacon_slots.insert{name = item, count = amount}
-				end
-			end
-			beacon.destroy()
-			beacon_check(new_beacon)
-		end
+	if event.element.name ~= "radio_confirm" then return end
+
+	local GO = event.element
+	local beacon = game.players[event.player_index].opened
+	local beacon_name_prefix = string.match(beacon.name, "diet") and "diet-beacon-AM" or "beacon-AM"
+	local beacon_name = beacon_name_prefix .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value
+	if beacon.name == beacon_name then return end
+
+	local new_beacon = beacon.surface.create_entity{
+		name = beacon_name,
+		position = beacon.position,
+		force = beacon.force_index,
+		create_build_effect_smoke = false
+	}
+	local module_slot = beacon.get_inventory(defines.inventory.beacon_modules)
+	local new_beacon_slots = new_beacon.get_inventory(defines.inventory.beacon_modules)
+	for item, amount in pairs(module_slot.get_contents()) do
+		new_beacon_slots.insert{name = item, count = amount}
 	end
+	beacon.destroy()
+	beacon_check(new_beacon)
 end)
 
 Event.register(Event.build_events, function(event)

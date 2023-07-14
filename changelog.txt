@@ -11,6 +11,7 @@ Date: ???
     - changed the technology description for the syngas tech
     - allow many entities to work with the upgrade planner
     - improve wiki page for aerial turbines. (dominis)
+    - fixed that the textfields for beacons and diet beacons would sometimes not take your inputs
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.2
 Date: 2023-4-16
