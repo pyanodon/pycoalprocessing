@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.3
-Date: ???
+Date: 2023-7-25
   Changes:
     - Fix some techs missing the chemical science pack
     - Update RU locale
