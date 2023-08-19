@@ -1,7 +1,7 @@
-local Skipped_fluids =
-    {
-        hydrogen = true
-    }
+local skipped_fluids = {
+    hydrogen = true,
+    ['pressured-hydrogen'] = true
+}
 
 RECIPE {
     type = "recipe",
@@ -23,7 +23,7 @@ RECIPE {
 }:add_unlock("plastics")
 
 for f, fluid in pairs(data.raw.fluid) do
-    if fluid.fuel_value ~= nil and Skipped_fluids[fluid.name] ~= true and fluid.auto_barrel ~= false then
+    if fluid.fuel_value and not skipped_fluids[fluid.name] and fluid.auto_barrel ~= false then
 
         local fluid_icon = table.deepcopy(fluid.icons) or {{icon = fluid.icon}}
         -- Apply to each layer
