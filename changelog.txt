@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.4
+Date: ?
+  Changes:
+    - Fix crash with fluid fluid fuel value formatting. (https://github.com/pyanodon/pybugreports/issues/307)
+---------------------------------------------------------------------------------------------------
 Version: 2.1.3
 Date: 2023-7-25
   Changes:

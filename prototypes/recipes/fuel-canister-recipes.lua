@@ -51,11 +51,10 @@ for f, fluid in pairs(data.raw.fluid) do
             ignore_for_dependencies = true
         }
 
-        local fuel_amount
-
-        if string.match(fluid.fuel_value, "KJ") ~= nil then
+        local fuel_amount = 50
+        if string.match(fluid.fuel_value, "[kK]J") then
             fuel_amount = math.ceil(10/ (string.match(fluid.fuel_value, "[%d%.]+") / 1000))
-        elseif string.match(fluid.fuel_value, "MJ") ~= nil then
+        elseif string.match(fluid.fuel_value, "[mM]J") then
             fuel_amount = math.ceil(10/ (string.match(fluid.fuel_value, "[%d%.]+")))
         end
 
@@ -67,7 +66,7 @@ for f, fluid in pairs(data.raw.fluid) do
             enabled = false,
             energy_required = 0.2,
             ingredients = {
-                {type = "fluid", name = fluid.name, amount =  fuel_amount},
+                {type = "fluid", name = fluid.name, amount = fuel_amount},
                 {type = "item", name = "empty-fuel-canister", amount = 1}
             },
             results = {
