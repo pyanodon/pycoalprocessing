@@ -16,15 +16,28 @@ data:extend{{
 	flags = {'gui-icon'}
 }}
 
-data:extend{{
-	type = 'sprite',
-	name = 'pywiki-logos',
-	filename = '__pycoalprocessinggraphics__/graphics/logos.png',
-	priority = 'high',
-	width = 720,
-	height = 288,
-	flags = {'gui-icon'}
-}}
+if mods.pystellarexpedition then
+	data:extend{{
+		type = 'sprite',
+		name = 'pywiki-logos',
+		filename = '__pycoalprocessinggraphics__/graphics/logos2.png',
+		priority = 'high',
+		width = 576,
+		height = 432,
+		flags = {'gui-icon'}
+	}}
+else
+	data:extend{{
+		type = 'sprite',
+		name = 'pywiki-logos',
+		filename = '__pycoalprocessinggraphics__/graphics/logos.png',
+		priority = 'high',
+		width = 720,
+		height = 288,
+		flags = {'gui-icon'}
+	}}
+
+end
 
 data:extend{
 	{
