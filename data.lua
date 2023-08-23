@@ -310,6 +310,9 @@ end
 
 -- ))
 
+require('prototypes/logo')
+require('prototypes/menu-simulations')
+
 -- sprites
 require('prototypes/sprites/sprites')
 
