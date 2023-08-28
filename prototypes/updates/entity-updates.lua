@@ -72,7 +72,7 @@ data.raw['assembling-machine']['assembling-machine-1'].fluid_boxes = data.raw['a
 table.insert(data.raw['assembling-machine']['assembling-machine-1'].crafting_categories, "crafting-with-fluid")
 
 --modify assembly machine 2
-data.raw['assembling-machine']['assembling-machine-2'].ingredient_count = 6
+data.raw['assembling-machine']['assembling-machine-2'].ingredient_count = 4
 data.raw['assembling-machine']['assembling-machine-2'].crafting_speed = 2
 data.raw['assembling-machine']['assembling-machine-2'].energy_source = table.deep_copy(burner)
 table.insert(data.raw['assembling-machine']['assembling-machine-2'].energy_source.fuel_categories, "jerry")
@@ -80,7 +80,7 @@ data.raw['assembling-machine']['assembling-machine-2'].allowed_effects = {}
 data.raw['assembling-machine']['assembling-machine-2'].module_specification.module_slots = 0
 
 --modify assembly machine 3
---data.raw['assembling-machine']['assembling-machine-3'].ingredient_count = 5
+data.raw['assembling-machine']['assembling-machine-3'].ingredient_count = 5
 data.raw['assembling-machine']['assembling-machine-3'].crafting_speed = 4
 data.raw['assembling-machine']['assembling-machine-3'].energy_source = table.deep_copy(burner)
 table.insert(data.raw['assembling-machine']['assembling-machine-3'].energy_source.fuel_categories, "jerry")
