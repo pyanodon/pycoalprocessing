@@ -1,6 +1,10 @@
 require("__stdlib__/stdlib/data/data").Util.create_data_globals()
 local FUN = require("prototypes/functions/functions")
 
+if mods.pyindustry then
+    require('prototypes/updates/pyindustry-updates')
+end
+
 require('prototypes/updates/base-updates')
 require("prototypes/updates/entity-updates")
 
