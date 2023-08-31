@@ -17,42 +17,5 @@ data:extend{{
 		height = 298,
 		shift = util.by_pixel(0, 0),
 		scale = 0.5
-	},
-	resistances = {
-		{
-			type = 'fire',
-			decrease = 0,
-			percent = 100
-		},
-		{
-			type = 'physical',
-			decrease = 0,
-			percent = 100
-		},
-		{
-			type = 'impact',
-			decrease = 0,
-			percent = 0
-		},
-		{
-			type = 'explosion',
-			decrease = 0,
-			percent = 100
-		},
-		{
-			type = 'acid',
-			decrease = 0,
-			percent = 100
-		},
-		{
-			type = 'laser',
-			decrease = 0,
-			percent = 100
-		},
-		{
-			type = 'electric',
-			decrease = 0,
-			percent = 100
-		},
-	},
+	}
 }}
