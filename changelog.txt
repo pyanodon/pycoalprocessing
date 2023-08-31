@@ -4,6 +4,7 @@ Date: ?
   Changes:
     - Fix crash with fluid fluid fuel value formatting. (https://github.com/pyanodon/pybugreports/issues/307)
     - Added circuit connector for niobium mine (JStMorgan)
+    - new graphics for logistic science pack
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.3
 Date: 2023-7-25
