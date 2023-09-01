@@ -6,6 +6,8 @@ Date: ?
     - Added circuit connector for niobium mine (JStMorgan)
     - new graphics for logistic science pack
     - Added menu simulations (requires PyIndustry)
+    - allowed crafting of menu simulation logo item
+    - improved tile transitions for tailings pond spillage tiles
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.3
 Date: 2023-7-25

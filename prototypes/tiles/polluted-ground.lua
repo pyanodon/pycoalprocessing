@@ -73,7 +73,9 @@ DATA {
     },
     map_color = defines.color.brown,
     pollution_absorption_per_second = 0.0002,
-    vehicle_friction_modifier = sand_vehicle_speed_modifier
+    vehicle_friction_modifier = sand_vehicle_speed_modifier,
+    transitions = data.raw.tile['dirt-4'].transitions,
+    transitions_between_transitions = data.raw.tile['dirt-4'].transitions_between_transitions,
 }
 
 DATA {
@@ -105,7 +107,9 @@ DATA {
     },
     map_color = defines.color.brown,
     pollution_absorption_per_second = 0.0002,
-    vehicle_friction_modifier = sand_vehicle_speed_modifier
+    vehicle_friction_modifier = sand_vehicle_speed_modifier,
+    transitions = data.raw.tile['dirt-4'].transitions,
+    transitions_between_transitions = data.raw.tile['dirt-4'].transitions_between_transitions,
 }
 
 DATA {
