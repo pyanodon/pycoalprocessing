@@ -337,7 +337,7 @@ menu_simulations.ro_mines =
   ]]
 }
 
-local mold_exists = data.raw.item["mold"]
+local mold_exists = mods["pyalienlife"]
 menu_simulations.ro_cast =
 {
   checkboard = false,
