@@ -1,8 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.5
-Date: ?
+Date: 2023-9-23
   Changes:
-    - removed incompatiblity with angelsrefining
+    - removed incompatiblity with angelsrefining. A PyCoalTBaA compatibility patch is now available: https://github.com/kingarthur91/PyCoalTBaA
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.4
 Date: 2023-9-3
