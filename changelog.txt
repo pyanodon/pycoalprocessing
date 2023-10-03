@@ -2,7 +2,7 @@
 Version: 2.1.6
 Date: ???
   Changes:
-    - Decentralised tech cache from PyPP to individual Py mods
+    - added decentralised PyPP cache file
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.5
 Date: 2023-9-23

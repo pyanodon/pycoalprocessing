@@ -275,6 +275,7 @@ RECIPE('beacon-mk01')
     :add_ingredient{'stainless-steel', 10}:remove_ingredient{'steel-plate'}
     :add_ingredient{'tower-mk02', 1}
 
-pypp_cache_file_to_use = function()
-    require "__pycoalprocessing__/cached-configs/pycoalprocessing.lua"
+
+if register_cache_file ~= nil then
+    register_cache_file({"pycoalprocessing"}, "__pycoalprocessing__/cached-configs/pycoalprocessing.lua")
 end
