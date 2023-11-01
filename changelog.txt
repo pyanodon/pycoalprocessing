@@ -1,6 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 2.1.6
+Version: 2.1.7
 Date: ???
+  Changes:
+---------------------------------------------------------------------------------------------------
+Version: 2.1.6
+Date: 2023-10-31
   Changes:
     - added decentralised PyPP cache file
     - burner assembling machine 1 and 2 no longer have an ingredient limit
