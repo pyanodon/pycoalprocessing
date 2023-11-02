@@ -264,6 +264,22 @@ data.raw.item["nuclear-fuel"].burnt_result = nil
 
 data.raw["gun"]["artillery-wagon-cannon"].attack_parameters.range = 2 * 32
 
+--update cannon and artillery shells to have gunpowder
+RECIPE("cannon-shell"):remove_ingredient("explosives"):add_ingredient({type = "item", name = "gunpowder", amount = 10})
+
+RECIPE {
+    type = "recipe",
+    name = "explosive-cannon-shell",
+    category = "crafting",
+    enabled = false,
+    energy_required = 8,
+    ingredients = {
+        {type = "item", name = "cannon-shell", amount = 1},
+        {type = "item", name = "explosives", amount = 5},
+    },
+    results = {{type = "item", name = "explosive-cannon-shell", amount = 1}}
+}
+
 ITEM("productivity-module"):set_fields{
     effect =
     {

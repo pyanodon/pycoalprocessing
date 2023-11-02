@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.7
-Date: ???
+Date: 2023-11-2
   Changes:
+    - Replaced explosives with gunpowder in cannon shell recipe
+    - Changed explosive cannon shell recipe to be 1 cannon shell plus 5 explosives
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.6
 Date: 2023-10-31
