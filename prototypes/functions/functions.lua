@@ -511,6 +511,9 @@ function overrides.results_replacer(recipe, old, new, new_amount)
                 end
                 if recipe.results then
                     for r, result in pairs(recipe.results) do
+                        if type(result) ~= 'table' then
+                            error('ERROR: Recipe ' .. recipe.name .. ' has a results table that is not a table')
+                        end
                         if result.name == old then
                             data.raw.recipe[recipe.name].results[r].name = new
                             if new_amount ~= nil then
