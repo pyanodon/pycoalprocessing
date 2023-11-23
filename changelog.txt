@@ -100,7 +100,7 @@ Date: 2022-12-19
     - adjusted creosote and aromatics recipe fluid colors in tpu.
     - increased crafting time from 2.8 to 10 on aromatic from fawogae and ralesia recipe.
     - tweaked ore density graphics swap weights.
-    - updated methonal canister refined syngas to not add prod to empty cans.
+    - updated methanol canister refined syngas to not add prod to empty cans.
     - moved gate technology to red science.
     - increased energy usage on borax mine mk04.
     - added fuel value to gunpowder.
