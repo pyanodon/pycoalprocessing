@@ -206,7 +206,7 @@ Event.register(defines.events.on_gui_opened, function(event)
 	dial.add(
 		{
 			type = "button",
-			name = "radio_confirm",
+			name = "py_beacon_confirm",
 			caption = "CONFIRM"
 		}
 	)
@@ -298,10 +298,11 @@ local function beacon_check(beacon, reciver, killed)
 end
 
 Event.register(defines.events.on_gui_click, function(event)
-	if event.element.name ~= "radio_confirm" then return end
+	if event.element.name ~= "py_beacon_confirm" then return end
 
 	local GO = event.element
 	local beacon = game.players[event.player_index].opened
+	if not beacon then return end
 	local beacon_name_prefix = string.match(beacon.name, "diet") and "diet-beacon-AM" or "beacon-AM"
 	local beacon_name = beacon_name_prefix .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value
 	if beacon.name == beacon_name then return end
