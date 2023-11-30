@@ -3,6 +3,7 @@ Version: 2.1.9
 Date: ?
   Changes:
     - Fixed a crash when configuring AMFM beacons (https://github.com/pyanodon/pybugreports/issues/349)
+    - Removed burner assembling machine wiki page. It's info was outdated after previous patch which removed the ingredient limit.
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.8
 Date: 2023-11-21

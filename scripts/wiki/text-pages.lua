@@ -33,12 +33,6 @@ Event.register(Event.core_events.init_and_config, function()
     })
 
     remote.call('pywiki', 'add_page', {
-        name = 'assembling-machine',
-        section = 'coalprocessing',
-        text_only = true
-    })
-
-    remote.call('pywiki', 'add_page', {
         name = 'tailings-pond',
         section = 'coalprocessing',
         text_only = true
