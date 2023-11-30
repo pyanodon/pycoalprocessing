@@ -91,7 +91,15 @@ end
 
 function Wiki.close_wiki(player)
     local main_frame = Wiki.get_wiki_gui(player)
-    if main_frame then main_frame.destroy() end
+    if not main_frame then return end
+
+    local pages = Wiki.get_pages(player)
+    local page_data = pages.tags.contents[pages.selected_index]
+    if page_data and page_data.on_closed then
+        local on_closed = page_data.on_closed
+        remote.call(on_closed[1], on_closed[2], contents, player)
+    end
+    main_frame.destroy()
 end
 
 Gui.on_click('py_open_wiki', function(event)
@@ -137,8 +145,17 @@ function Wiki.open_page(player, index)
     local page_data = pages.tags.contents[index]
 
     if page_data.is_section then
-        Wiki.open_page(player, global.currently_opened_wiki_page[player.index] or 1)
+        local previous_index = global.currently_opened_wiki_page[player.index] or 1
+        if previous_index ~= index then Wiki.open_page(player, previous_index) end
         return
+    end
+
+    if global.currently_opened_wiki_page[player.index] then
+        local previous_page_data = pages.tags.contents[global.currently_opened_wiki_page[player.index]]
+        if previous_page_data and previous_page_data.on_closed then
+            local on_closed = previous_page_data.on_closed
+            remote.call(on_closed[1], on_closed[2], contents, player)
+        end
     end
 
     title.clear()
