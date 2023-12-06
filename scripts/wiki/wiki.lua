@@ -143,27 +143,30 @@ function Wiki.open_page(player, index)
     local contents = Wiki.get_page_contents(player)
     local title = Wiki.get_page_title(player)
     local page_data = pages.tags.contents[index]
+    local previous_index = global.currently_opened_wiki_page[player.index]
 
     if page_data.is_section then
-        local previous_index = global.currently_opened_wiki_page[player.index] or 1
+        local previous_index = previous_index or 1
         if previous_index ~= index then Wiki.open_page(player, previous_index) end
         return
     end
 
-    if global.currently_opened_wiki_page[player.index] then
-        local previous_page_data = pages.tags.contents[global.currently_opened_wiki_page[player.index]]
+    pages.selected_index = index
+    if previous_index and previous_index ~= index then
+        local previous_page_data = pages.tags.contents[previous_index]
         if previous_page_data and previous_page_data.on_closed then
             local on_closed = previous_page_data.on_closed
             remote.call(on_closed[1], on_closed[2], contents, player)
         end
     end
 
+    if previous_index == index and #contents.children ~= 0 then return end
+
     title.clear()
     local localised_title = {'pywiki-sections.' .. (page_data.title or page_data.name)}
     title.add{type = 'label', style = 'subheader_label', name = 'page_title', caption = {'', '[font=default-semibold][color=255,230,192]', localised_title, '[/color][/font]'}}
 
     contents.clear()
-    pages.selected_index = index
     global.currently_opened_wiki_page[player.index] = index
 
     local visible = not not page_data.searchable
