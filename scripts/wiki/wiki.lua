@@ -30,16 +30,24 @@ function Wiki.get_page_title(player) local gui = Wiki.get_wiki_gui(player); if g
 function Wiki.get_page_searchbar(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.caption_flow.py_wiki_search end end
 
 function Wiki.open_wiki(player)
+    local fullscreen = script.active_mods['pystellarexpedition']
     player.opened = nil
     local main_frame = player.gui.screen.add{type = 'frame', name = 'pywiki', direction = 'vertical'}
     player.opened = main_frame
     if not main_frame.valid then game.print('ERROR: The pY codex failed to open.'); return end
     main_frame.auto_center = true
-	main_frame.style.width = 1050
-	main_frame.style.minimal_height = 700
+    if fullscreen then
+        main_frame.style.horizontally_squashable = true
+        main_frame.style.vertically_squashable = true
+        main_frame.style.natural_width = 5000
+        main_frame.style.natural_height = 5000
+    else
+        main_frame.style.width = 1050
+        main_frame.style.minimal_height = 700    
+    end
 
     local caption_flow = main_frame.add{type = 'flow', direction = 'horizontal', name = 'caption_flow'}
-    caption_flow.drag_target = main_frame
+    if not fullscreen then caption_flow.drag_target = main_frame end
     caption_flow.style.vertical_align = 'center'
     caption_flow.style.horizontal_spacing = 10
     caption_flow.add{type = 'sprite', sprite = 'pywiki-alt', resize_to_sprite = false}.style.size = {32, 32}
@@ -83,7 +91,7 @@ function Wiki.open_wiki(player)
     local subheader_frame = page_frame.add{type = 'frame', name = 'subheader_frame', style = 'subheader_frame_with_text_on_the_right'}
     subheader_frame.style.horizontally_stretchable = true
     local scroll_pane = page_frame.add{type = 'scroll-pane', name = 'scroll_pane', horizontal_scroll_policy = 'never', vertical_scroll_policy = 'auto-and-reserve-space', style = 'text_holding_scroll_pane'}
-    scroll_pane.style.width = 780
+    scroll_pane.style.minimal_width = 780
     scroll_pane.style.vertically_stretchable = true
 
     Wiki.open_page(player, global.currently_opened_wiki_page[player.index] or 1)
