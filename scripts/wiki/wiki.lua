@@ -91,7 +91,7 @@ function Wiki.open_wiki(player)
     local subheader_frame = page_frame.add{type = 'frame', name = 'subheader_frame', style = 'subheader_frame_with_text_on_the_right'}
     subheader_frame.style.horizontally_stretchable = true
     local scroll_pane = page_frame.add{type = 'scroll-pane', name = 'scroll_pane', horizontal_scroll_policy = 'never', vertical_scroll_policy = 'auto-and-reserve-space', style = 'text_holding_scroll_pane'}
-    scroll_pane.style.minimal_width = 780
+    scroll_pane.style.horizontally_stretchable = true
     scroll_pane.style.vertically_stretchable = true
 
     Wiki.open_page(player, global.currently_opened_wiki_page[player.index] or 1)
