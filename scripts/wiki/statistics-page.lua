@@ -17,6 +17,10 @@ local science_pack_names = {
 	['space-science-pack'] = true,
 }
 
+if script.active_mods.pystellarexpedition then
+	science_pack_names['space-science-pack-2'] = true
+end
+
 local animals = {
     'auog',
     'ulric',
@@ -42,9 +46,14 @@ local animals = {
     'korlex',
     'simik',
 }
-if script.active_mods['pyalternativeenergy'] then
+if script.active_mods.pyalternativeenergy then
     table.insert(animals, 'zungror')
     table.insert(animals, 'numal')
+end
+if script.active_mods.pystellarexpedition then
+    --table.insert(animals, 'tuls')
+    --table.insert(animals, 'riga')
+    table.insert(animals, 'kakkalakki')
 end
 
 local creature_names = {}

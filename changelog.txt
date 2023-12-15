@@ -5,6 +5,7 @@ Date: ?
     - Fixed a crash when configuring AMFM beacons (https://github.com/pyanodon/pybugreports/issues/349)
     - Removed burner assembling machine wiki page. It's info was outdated after previous patch which removed the ingredient limit.
     - Fixed a crash when viewing a wiki page that doesn't exist
+    - updated chinese translation (翻译：aotix，基于咸鱼拓展而来。)
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.8
 Date: 2023-11-21
