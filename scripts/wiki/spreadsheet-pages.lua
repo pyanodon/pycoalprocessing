@@ -16,7 +16,10 @@ local function on_search(search_key, gui)
 end
 
 local function update_spreadsheet(gui, player, data, sort_by, asc)
-	gui.clear()
+	if gui.content then
+		gui.content.destroy()
+	end
+	gui = gui.add{type = 'flow', direction = 'vertical', name = 'content'}
 
 	local rows = data.rows
 	local columns = data.columns
@@ -57,12 +60,14 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 end
 
 local function create_spreadsheet(gui, player, data)
-	local title = remote.call('pywiki', 'get_page_title', player)
-	title.clear()
+	local title = gui.add{direction = 'horizontal', type = 'frame', style = 'subheader_frame_with_text_on_the_right'}
+	title.style.right_margin = -2000
+	title.style.left_margin = -15
+    title.style.horizontally_stretchable = true
 	title.add{type = 'empty-widget'}.style.width = 5
+
 	local sort_settings = data.prefered_sorts[player.index] or data.default_sort
 	local sort_by, asc = sort_settings[1], sort_settings[2]
-
 	for _, column in pairs(data.columns) do
 		local flow = title.add{type = 'flow', direction = 'horizontal'}
 		flow.style.width = column.width
@@ -84,6 +89,7 @@ local function create_spreadsheet(gui, player, data)
 
 		title.add{type = 'line', direction = 'vertical'}
 	end
+	title.add{type = 'empty-widget'}.style.horizontally_stretchable = true
 
 	update_spreadsheet(gui, player, data, sort_by, asc)
 end

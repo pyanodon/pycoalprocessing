@@ -26,7 +26,7 @@ end)
 function Wiki.get_wiki_gui(player) return player.gui.screen.pywiki end
 function Wiki.get_pages(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.content_flow.py_pages_list end end
 function Wiki.get_page_contents(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.content_flow.page_frame.scroll_pane end end
-function Wiki.get_page_title(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.content_flow.page_frame.subheader_frame end end
+function Wiki.get_page_title(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.caption_flow.title end end
 function Wiki.get_page_searchbar(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.caption_flow.py_wiki_search end end
 
 function Wiki.open_wiki(player)
@@ -51,7 +51,7 @@ function Wiki.open_wiki(player)
     caption_flow.style.vertical_align = 'center'
     caption_flow.style.horizontal_spacing = 10
     caption_flow.add{type = 'sprite', sprite = 'pywiki-alt', resize_to_sprite = false}.style.size = {32, 32}
-    caption_flow.add{type = 'label', caption = {'pywiki-sections.title'}, style = 'frame_title', ignored_by_interaction = true}
+    caption_flow.add{name = 'title', type = 'label', caption = {'pywiki-sections.title'}, style = 'frame_title', ignored_by_interaction = true}
     local caption_spacing = caption_flow.add{type = 'empty-widget', style = 'draggable_space_header', ignored_by_interaction = true}
     caption_spacing.style.height = 24
     caption_spacing.style.right_margin = 4
@@ -88,8 +88,6 @@ function Wiki.open_wiki(player)
     pages.tags = {contents = contents}
 
     local page_frame = content_flow.add{type = 'frame', name = 'page_frame', direction = 'vertical', style = 'inside_deep_frame'}
-    local subheader_frame = page_frame.add{type = 'frame', name = 'subheader_frame', style = 'subheader_frame_with_text_on_the_right'}
-    subheader_frame.style.horizontally_stretchable = true
     local scroll_pane = page_frame.add{type = 'scroll-pane', name = 'scroll_pane', horizontal_scroll_policy = 'never', vertical_scroll_policy = 'auto-and-reserve-space', style = 'text_holding_scroll_pane'}
     scroll_pane.style.horizontally_stretchable = true
     scroll_pane.style.vertically_stretchable = true
@@ -170,9 +168,8 @@ function Wiki.open_page(player, index)
 
     if previous_index == index and #contents.children ~= 0 then return end
 
-    title.clear()
     local localised_title = {'pywiki-sections.' .. (page_data.title or page_data.name)}
-    title.add{type = 'label', style = 'subheader_label', name = 'page_title', caption = {'', '[font=default-semibold][color=255,230,192]', localised_title, '[/color][/font]'}}
+    title.caption = {'pywiki-sections.title-2', localised_title}
 
     contents.clear()
     global.currently_opened_wiki_page[player.index] = index
