@@ -654,7 +654,6 @@ RECIPE {
         {type = "item", name = "filtration-media", amount = 5}
     },
     main_product = "filtration-media",
-    order = 'a'
 }:add_unlock("advanced-oil-processing")
 
 RECIPE {
