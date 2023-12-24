@@ -38,9 +38,12 @@ function Wiki.open_wiki(player)
     main_frame.auto_center = true
     if fullscreen then
         main_frame.style.horizontally_squashable = true
+        main_frame.style.horizontally_stretchable = false
         main_frame.style.vertically_squashable = true
-        main_frame.style.natural_width = 5000
-        main_frame.style.natural_height = 5000
+        main_frame.style.vertically_stretchable = false
+        main_frame.style.natural_width = 16000
+        main_frame.style.natural_height = 16000
+        main_frame.bring_to_front()
     else
         main_frame.style.width = 1050
         main_frame.style.minimal_height = 700    
