@@ -7,6 +7,7 @@ Date: ?
     - Fixed a crash when viewing a wiki page that doesn't exist
     - updated chinese translation (翻译：aotix，基于咸鱼拓展而来。)
     - made py codex look better
+    - Fixed that bitumen seep tips had outdated info
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.8
 Date: 2023-11-21
