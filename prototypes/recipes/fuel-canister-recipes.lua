@@ -42,7 +42,7 @@ for f, fluid in pairs(data.raw.fluid) do
                 {shift = {0, 2}}
             ),
             flags = {},
-            subgroup = "py-items",
+            subgroup = "py-cans",
             order = "canister-b-[full-gas-canister]",
             fuel_value = "10MJ",
             fuel_category = "jerry",
