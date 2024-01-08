@@ -1,4 +1,5 @@
-local overrides = {}
+if _G.overrides then return _G.overrides end
+_G.overrides = {}
 
 --add productivity to all recipes
 function overrides.productivity(recipes_list)

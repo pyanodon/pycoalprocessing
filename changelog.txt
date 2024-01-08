@@ -8,6 +8,7 @@ Date: ?
     - updated chinese translation (翻译：aotix，基于咸鱼拓展而来。)
     - made py codex look better
     - Fixed that bitumen seep tips had outdated info
+    - optimized the mod startup time by caching some common functions and libraries
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.8
 Date: 2023-11-21
