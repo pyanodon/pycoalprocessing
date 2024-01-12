@@ -1,18 +1,19 @@
 {
   "name": "pycoalprocessing",
-  "version": "2.1.8",
+  "version": "2.1.10",
   "factorio_version": "1.1",
   "title": "Pyanodons Coal Processing",
-  "author": "Pyanodon, Nexela, Kingarthur",
-  "contact": "",
+  "author": "Pyanodon, Nexela, Kingarthur, notnotmelon, Mootykins, ShadowGlass, Archezekiel, Quintuple",
+  "contact": "https://discord.gg/SBHM3h5Utj",
   "homepage": "https://mods.factorio.com/mods/pyanodon/pycoalprocessing",
-  "description": "Adds coal processing lines to the game.",
+  "description": "Extends and overhauls Factorio's burner phase. Use realistic oil and coal processes to create advanced products. Functions as the core and library for the rest of the pY mods.",
   "dependencies": [
     "base >= 1.1.78",
     "stdlib >= 1.4.0",
     "~ pycoalprocessinggraphics",
     "~ pypostprocessing",
     "(?) DiscoScience",
+    "(?) better-victory-screen",
     "! 248k",
     "! wret-beacon-rebalance-mod",
     "! beacon-overhaul"

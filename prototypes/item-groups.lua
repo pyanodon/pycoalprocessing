@@ -65,6 +65,12 @@ data:extend {
     },
     {
         type = "item-subgroup",
+        name = "py-cans",
+        group = "coal-processing",
+        order = "c-0a"
+    },
+    {
+        type = "item-subgroup",
         name = "py-items-hpf",
         group = "coal-processing",
         order = "c-1"
