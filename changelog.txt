@@ -2,7 +2,7 @@
 Version: 2.1.10
 Date: 2024-1-??
   Changes:
-    - Add compatibility for Better Victory Screen.
+    - Add compatibility for Better Victory Screen (stringweasel).
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.9
 Date: 2024-1-8
