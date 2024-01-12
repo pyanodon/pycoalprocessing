@@ -1,6 +1,6 @@
 {
   "name": "pycoalprocessing",
-  "version": "2.1.9",
+  "version": "2.1.10",
   "factorio_version": "1.1",
   "title": "Pyanodons Coal Processing",
   "author": "Pyanodon, Nexela, Kingarthur, notnotmelon, Mootykins, ShadowGlass, Archezekiel, Quintuple",
@@ -13,6 +13,7 @@
     "~ pycoalprocessinggraphics",
     "~ pypostprocessing",
     "(?) DiscoScience",
+    "(?) better-victory-screen",
     "! 248k",
     "! wret-beacon-rebalance-mod",
     "! beacon-overhaul"

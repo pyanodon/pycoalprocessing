@@ -32,25 +32,28 @@ Event.register(Event.core_events.init, function()
 		debris_items['copper-plate'] = 50
 		remote.call('freeplay', 'set_debris_items', debris_items)
 	end
-
-	if remote.interfaces['silo_script'] then
-		remote.call('silo_script', 'set_no_victory', true)
-	end
 end)
 
 Event.register(defines.events.on_research_finished, function(event)
+	if global.finished then return end
 	local tech = event.research
 	if tech.name == 'pyrrhic' and game.tick ~= 0 then
 		local force = tech.force
 		for _, player in pairs(game.connected_players) do
 			if player.force == force then player.opened = nil end
 		end
-		game.set_game_state{
-			game_finished = true,
-			player_won = true,
-			can_continue = true,
-			victorious_force = force
-		}
+
+		global.finished = true
+		if remote.interfaces["better-victory-screen"] and remote.interfaces["better-victory-screen"]["trigger_victory"] then
+			remote.call("better-victory-screen", "trigger_victory", force)
+		else
+			game.set_game_state{
+				game_finished = true,
+				player_won = true,
+				can_continue = true,
+				victorious_force = force
+			}
+		end
 	end
 end)
 
@@ -234,6 +237,12 @@ end)
 
 Event.register(Event.core_events.init_and_config, function()
 	global.beacon_interference_icons = global.beacon_interference_icons or {}
+
+	for _, interface in pairs{"silo_script", "better-victory-screen"} do
+		if remote.interfaces[interface] and remote.interfaces[interface]["set_no_victory"] then
+			remote.call(interface, "set_no_victory", true)
+		end
+	end
 end)
 
 local function enable_beacon(beacon)
