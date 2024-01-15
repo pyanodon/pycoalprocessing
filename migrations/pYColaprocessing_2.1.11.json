@@ -1,0 +1,10 @@
+{
+    "entity": [
+        ["filter-inserter", "fast-inserter"],
+        ["stack-filter-inserter", "stack-fast-inserter"]
+    ],
+    "item": [
+        ["filter-inserter", "fast-inserter"],
+        ["stack-filter-inserter", "stack-fast-inserter"]
+    ]
+}
