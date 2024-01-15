@@ -144,4 +144,10 @@ data.raw.locomotive.locomotive.burner.burnt_inventory_size = data.raw.locomotive
 
 data.raw.inserter["burner-inserter"].filter_count = 1
 data.raw.inserter["burner-inserter"].allow_burner_leech = true
-data.raw.inserter["inserter"].filter_count = 1
+data.raw.inserter["inserter"].filter_count = 2
+data.raw.inserter["long-handed-inserter"].filter_count = 3
+data.raw.inserter["fast-inserter"].filter_count = 4
+data.raw.inserter["stack-inserter"].filter_count = 5
+
+RECIPE("filter-inserter"):remove_unlock("fast-inserter")
+ENTITY("stack-filter-inserter"):remove_unlock("stack-inserter")
