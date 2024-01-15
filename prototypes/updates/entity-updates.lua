@@ -150,4 +150,4 @@ data.raw.inserter["fast-inserter"].filter_count = 4
 data.raw.inserter["stack-inserter"].filter_count = 5
 
 RECIPE("filter-inserter"):remove_unlock("fast-inserter")
-ENTITY("stack-filter-inserter"):remove_unlock("stack-inserter")
+RECIPE("stack-filter-inserter"):remove_unlock("stack-inserter")

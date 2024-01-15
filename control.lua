@@ -82,6 +82,18 @@ for _, event in pairs(Event.build_events) do
 			name = 'burner-inserter'
 		},
 		{
+			filter = 'name',
+			name = 'fast-inserter'
+		},
+		{
+			filter = 'name',
+			name = 'long-handed-inserter'
+		},
+		{
+			filter = 'name',
+			name = 'stack-inserter'
+		},
+		{
 			filter = 'type',
 			type = 'inserter',
 			mode = 'and'
