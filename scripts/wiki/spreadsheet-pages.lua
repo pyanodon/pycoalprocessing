@@ -4,6 +4,8 @@ local floor = math.floor
 local FUN = require '__pycoalprocessing__/prototypes/functions/functions'
 
 local function on_search(search_key, gui)
+	gui = gui.content
+	if not gui then return end
 	if search_key == '' then
 		for _, row in pairs(gui.children) do
 			row.visible = true
@@ -19,7 +21,7 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 	if gui.content then
 		gui.content.destroy()
 	end
-	gui = gui.add{type = 'flow', direction = 'vertical', name = 'content'}
+	local content = gui.add{type = 'flow', direction = 'vertical', name = 'content'}
 
 	local rows = data.rows
 	local columns = data.columns
@@ -37,7 +39,7 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 	end)
 
 	for _, row in pairs(rows) do
-		local container = gui.add{type = 'flow', direction = 'vertical', name = row.search_key}
+		local container = content.add{type = 'flow', direction = 'vertical', name = row.search_key}
 		local flow = container.add{type = 'flow', direction = 'horizontal', tags = row}
 		for i, column in pairs(columns) do
 			local caption = row[column.name].value
