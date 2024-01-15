@@ -4,6 +4,7 @@ Date: 2024-1-??
   Changes:
     - Add compatibility for Better Victory Screen (stringweasel).
     - Fixed pycodex search (https://github.com/pyanodon/pybugreports/issues/370)
+    - Fixed a rare crash when trying to close the pycodex
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.9
 Date: 2024-1-8

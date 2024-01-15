@@ -24,10 +24,10 @@ Event.register(defines.events.on_player_created, function(event)
 end)
 
 function Wiki.get_wiki_gui(player) return player.gui.screen.pywiki end
-function Wiki.get_pages(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.content_flow.py_pages_list end end
-function Wiki.get_page_contents(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.content_flow.page_frame.scroll_pane end end
-function Wiki.get_page_title(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.caption_flow.title end end
-function Wiki.get_page_searchbar(player) local gui = Wiki.get_wiki_gui(player); if gui then return gui.caption_flow.py_wiki_search end end
+function Wiki.get_pages(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.py_pages_list end end
+function Wiki.get_page_contents(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.page_frame.scroll_pane end end
+function Wiki.get_page_title(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.caption_flow then return gui.caption_flow.title end end
+function Wiki.get_page_searchbar(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.caption_flow then return gui.caption_flow.py_wiki_search end end
 
 function Wiki.open_wiki(player)
     local fullscreen = script.active_mods['pystellarexpedition']
@@ -103,10 +103,12 @@ function Wiki.close_wiki(player)
     if not main_frame then return end
 
     local pages = Wiki.get_pages(player)
-    local page_data = pages.tags.contents[pages.selected_index]
-    if page_data and page_data.on_closed then
-        local on_closed = page_data.on_closed
-        remote.call(on_closed[1], on_closed[2], contents, player)
+    if pages then
+        local page_data = pages.tags.contents[pages.selected_index]
+        if page_data and page_data.on_closed then
+            local on_closed = page_data.on_closed
+            remote.call(on_closed[1], on_closed[2], contents, player)
+        end
     end
     main_frame.destroy()
 end
@@ -148,7 +150,7 @@ function Wiki.open_page(player, index)
     local main_frame = Wiki.get_wiki_gui(player)
     if not main_frame then return end
     local pages = Wiki.get_pages(player)
-    if #pages.items < index then return end
+    if not pages or #pages.items < index then return end
     local contents = Wiki.get_page_contents(player)
     local title = Wiki.get_page_title(player)
     local page_data = pages.tags.contents[index]
@@ -203,6 +205,7 @@ Gui.on_text_changed('py_wiki_search', function(event)
     local contents = Wiki.get_page_contents(player)
     if not contents then return end
     local pages = Wiki.get_pages(player)
+    if not pages then return end
     local page_data = pages.tags.contents[pages.selected_index]
     if not page_data or not page_data.searchable then return end
     local searchable = page_data.searchable

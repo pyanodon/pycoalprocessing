@@ -44,8 +44,8 @@ Event.register(defines.events.on_research_finished, function(event)
 		end
 
 		global.finished = true
-		if remote.interfaces["better-victory-screen"] and remote.interfaces["better-victory-screen"]["trigger_victory"] then
-			remote.call("better-victory-screen", "trigger_victory", force)
+		if remote.interfaces['better-victory-screen'] and remote.interfaces['better-victory-screen']['trigger_victory'] then
+			remote.call('better-victory-screen', 'trigger_victory', force)
 		else
 			game.set_game_state{
 				game_finished = true,
@@ -125,10 +125,10 @@ Event.register(defines.events.on_gui_opened, function(event)
 	if event.gui_type ~= defines.gui_type.entity then
 		return
 	end
-	if event.entity.type ~= "beacon" then
+	if event.entity.type ~= 'beacon' then
 		return
 	end
-	if string.match(event.entity.name, "beacon%-AM") == nil then
+	if string.match(event.entity.name, 'beacon%-AM') == nil then
 		if game.players[event.player_index].gui.relative.Dials then
 			game.players[event.player_index].gui.relative.Dials.destroy()
 		end
@@ -139,46 +139,46 @@ Event.register(defines.events.on_gui_opened, function(event)
 	end
 	local dial = game.players[event.player_index].gui.relative.add(
 		{
-			type = "frame",
-			name = "Dials",
+			type = 'frame',
+			name = 'Dials',
 			anchor =
 			{
 				gui = defines.relative_gui_type.beacon_gui,
 				position = defines.relative_gui_position.right
 			},
-			direction = "vertical",
-			caption = "Beacon Dials"
+			direction = 'vertical',
+			caption = 'Beacon Dials'
 		}
 	)
 	local AM = dial.add(
 		{
-			type = "flow",
-			name = "AM_flow"
+			type = 'flow',
+			name = 'AM_flow'
 		}
 	)
 	AM.style.vertical_align = 'center'
 	AM.add(
 		{
-			type = "label",
-			name = "AM_label",
-			caption = "AM"
+			type = 'label',
+			name = 'AM_label',
+			caption = 'AM'
 		}
 	)
 	AM.add(
 		{
-			type = "slider",
-			name = "AM",
+			type = 'slider',
+			name = 'AM',
 			minimum_value = 1,
 			maximum_value = 5,
 			value = event.entity.name:match('%d+'),
 			discrete_slider = true,
-			caption = "AM"
+			caption = 'AM'
 		}
 	)
 	AM.add(
 		{
-			type = "textfield",
-			name = "AM_slider_num",
+			type = 'textfield',
+			name = 'AM_slider_num',
 			text = event.entity.name:match('%d+'),
 			numeric = true,
 			lose_focus_on_confirm = true,
@@ -186,33 +186,33 @@ Event.register(defines.events.on_gui_opened, function(event)
 	).style.maximal_width = 50
 	local FM = dial.add(
 		{
-			type = "flow",
-			name = "FM_flow"
+			type = 'flow',
+			name = 'FM_flow'
 		}
 	)
 	FM.style.vertical_align = 'center'
 	FM.add(
 		{
-			type = "label",
-			name = "FM_label",
-			caption = "FM"
+			type = 'label',
+			name = 'FM_label',
+			caption = 'FM'
 		}
 	)
 	FM.add(
 		{
-			type = "slider",
-			name = "FM",
+			type = 'slider',
+			name = 'FM',
 			minimum_value = 1,
 			maximum_value = 5,
 			value = event.entity.name:match('%d+$'),
 			discrete_slider = true,
-			caption = "FM"
+			caption = 'FM'
 		}
 	)
 	FM.add(
 		{
-			type = "textfield",
-			name = "FM_slider_num",
+			type = 'textfield',
+			name = 'FM_slider_num',
 			text = event.entity.name:match('%d+$'),
 			numeric = true,
 			lose_focus_on_confirm = true,
@@ -220,28 +220,28 @@ Event.register(defines.events.on_gui_opened, function(event)
 	).style.maximal_width = 50
 	dial.add(
 		{
-			type = "button",
-			name = "py_beacon_confirm",
-			caption = "CONFIRM"
+			type = 'button',
+			name = 'py_beacon_confirm',
+			caption = 'CONFIRM'
 		}
 	)
 end)
 
 Event.register(defines.events.on_gui_value_changed, function(event)
-	if event.element.name == "AM" then
+	if event.element.name == 'AM' then
 		local AM = event.element
 		AM.parent.AM_slider_num.text = tostring(AM.slider_value)
-	elseif event.element.name == "FM" then
+	elseif event.element.name == 'FM' then
 		local FM = event.element
 		FM.parent.FM_slider_num.text = tostring(FM.slider_value)
 	end
 end)
 
 Event.register(defines.events.on_gui_text_changed, function(event)
-	if event.element.name == "AM_slider_num" then
+	if event.element.name == 'AM_slider_num' then
 		local AM = event.element
 		AM.parent.AM.slider_value = tonumber(AM.text)
-	elseif event.element.name == "FM_slider_num" then
+	elseif event.element.name == 'FM_slider_num' then
 		local FM = event.element
 		FM.parent.FM.slider_value = tonumber(FM.text)
 	end
@@ -250,9 +250,9 @@ end)
 Event.register(Event.core_events.init_and_config, function()
 	global.beacon_interference_icons = global.beacon_interference_icons or {}
 
-	for _, interface in pairs{"silo_script", "better-victory-screen"} do
-		if remote.interfaces[interface] and remote.interfaces[interface]["set_no_victory"] then
-			remote.call(interface, "set_no_victory", true)
+	for _, interface in pairs{'silo_script', 'better-victory-screen'} do
+		if remote.interfaces[interface] and remote.interfaces[interface]['set_no_victory'] then
+			remote.call(interface, 'set_no_victory', true)
 		end
 	end
 end)
@@ -291,7 +291,7 @@ local function beacon_check(beacon, reciver, killed)
 		if beacons then
 			for b, bea in pairs(beacons) do
 				if killed == true and bea.unit_number == beacon.unit_number then
-				elseif string.match(bea.name, "beacon%-AM") and bea.valid then
+				elseif string.match(bea.name, 'beacon%-AM') and bea.valid then
 					if beacon_count[bea.name] == nil then
 						beacon_count[bea.name] = 1
 					elseif beacon_count[bea.name] then
@@ -319,13 +319,13 @@ local function beacon_check(beacon, reciver, killed)
 end
 
 Event.register(defines.events.on_gui_click, function(event)
-	if event.element.name ~= "py_beacon_confirm" then return end
+	if event.element.name ~= 'py_beacon_confirm' then return end
 
 	local GO = event.element
 	local beacon = game.players[event.player_index].opened
 	if not beacon then return end
-	local beacon_name_prefix = string.match(beacon.name, "diet") and "diet-beacon-AM" or "beacon-AM"
-	local beacon_name = beacon_name_prefix .. GO.parent.AM_flow.AM.slider_value .. "-FM" .. GO.parent.FM_flow.FM.slider_value
+	local beacon_name_prefix = string.match(beacon.name, 'diet') and 'diet-beacon-AM' or 'beacon-AM'
+	local beacon_name = beacon_name_prefix .. GO.parent.AM_flow.AM.slider_value .. '-FM' .. GO.parent.FM_flow.FM.slider_value
 	if beacon.name == beacon_name then return end
 
 	local new_beacon = beacon.surface.create_entity{
@@ -345,17 +345,17 @@ end)
 
 Event.register(Event.build_events, function(event)
 	local beacon = event.created_entity
-	if beacon.type ~= "beacon" then
+	if beacon.type ~= 'beacon' then
 		beacon_check(_, beacon)
 	end
-	if string.match(beacon.name, "beacon%-AM") == nil then return end
+	if string.match(beacon.name, 'beacon%-AM') == nil then return end
 	beacon_check(beacon)
 end)
 
 Event.register(Event.death_events, function(event)
 	local beacon = event.entity
-	if beacon.type ~= "beacon" then return end
-	if string.match(beacon.name, "beacon%-AM") == nil then return end
+	if beacon.type ~= 'beacon' then return end
+	if string.match(beacon.name, 'beacon%-AM') == nil then return end
 	global.beacon_interference_icons[beacon.unit_number] = nil
 	local killed = true
 	beacon_check(beacon, _, killed)
