@@ -23,6 +23,7 @@ local gasses = {
     ['purest-nitrogen-gas'] = false,
     ['pressured-air'] = false,
     ['hot-air'] = false,
+    ['vacuum'] = false,
     ['neon'] = false,
 }
 

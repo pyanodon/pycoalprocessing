@@ -15,7 +15,7 @@ Date: 2024-1-??
     - Fixed constant redraws of the tailings pond fluid sprite
     - To give that nice authentic oil spill experience: Tailings pond pollution tiles will now burn for way longer (hours)
     - Added way more info to the pycodex about tailings ponds
-    - Added purest-nitrogen-gas, hot air, pressurized air, and neon to the non polluting gasses list.
+    - Added purest-nitrogen-gas, hot air, pressurized air, vacuum, and neon to the non polluting gasses list.
     - Fixed graphical error when polluted tiles were placed next to burnt polluted tiles
     - Tailings pond ALT-mode icons are now scaled to the building size instead of being microscopic
     - Improved UPS of tailings ponds
