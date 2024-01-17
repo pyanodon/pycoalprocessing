@@ -26,16 +26,23 @@ function Wiki.get_page_title(player) local gui = Wiki.get_wiki_gui(player); if g
 function Wiki.get_page_searchbar(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.caption_flow then return gui.caption_flow.py_wiki_search end end
 
 function Wiki.open_wiki(player)
+    local empty_widgets = {}
+
     player.opened = nil
     local wiki_flow_1 = player.gui.screen.add{type = 'flow', name = 'wiki_flow_1', direction = 'vertical'}
     if not wiki_flow_1.valid then game.print('ERROR: The pY codex failed to open.'); return end
-    wiki_flow_1.add{type = 'empty-widget'}.style.height = 24
+    empty_widgets[#empty_widgets + 1] = wiki_flow_1.add{type = 'empty-widget'}
     local wiki_flow_2 = wiki_flow_1.add{type = 'flow', name = 'wiki_flow_2', direction = 'horizontal'}
-    wiki_flow_1.add{type = 'empty-widget'}.style.height = 24
-    wiki_flow_2.add{type = 'empty-widget'}.style.width = 24
+    empty_widgets[#empty_widgets + 1] = wiki_flow_1.add{type = 'empty-widget'}
+    empty_widgets[#empty_widgets + 1] = wiki_flow_2.add{type = 'empty-widget'}
     local main_frame = wiki_flow_2.add{type = 'frame', name = 'pywiki', direction = 'vertical'}
-    wiki_flow_2.add{type = 'empty-widget'}.style.width = 24
+    empty_widgets[#empty_widgets + 1] = wiki_flow_2.add{type = 'empty-widget'}
     player.opened = wiki_flow_1
+
+    for _, widget in pairs(empty_widgets) do
+        widget.style.size = 24
+        widget.ignored_by_interaction = true
+    end
 
     main_frame.style.horizontally_squashable = true
     main_frame.style.horizontally_stretchable = false
@@ -104,7 +111,7 @@ function Wiki.close_wiki(player)
             remote.call(on_closed[1], on_closed[2], contents, player)
         end
     end
-    main_frame.destroy()
+    main_frame.parent.parent.destroy()
 end
 
 gui_events[defines.events.on_gui_click]['py_open_wiki'] = function(event)
