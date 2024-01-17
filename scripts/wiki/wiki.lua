@@ -13,34 +13,38 @@ Wiki.events.on_player_created = function(event)
     Wiki.create_pywiki_button(game.get_player(event.player_index))
 end
 
-function Wiki.get_wiki_gui(player) return player.gui.screen.pywiki end
+function Wiki.get_wiki_gui(player)
+    local wiki_flow_1 = player.gui.screen.wiki_flow_1
+    if not wiki_flow_1 then return end
+    local wiki_flow_2 = wiki_flow_1.wiki_flow_2
+    if not wiki_flow_2 then return end
+    return wiki_flow_2.pywiki
+end
 function Wiki.get_pages(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.py_pages_list end end
 function Wiki.get_page_contents(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.page_frame.scroll_pane end end
 function Wiki.get_page_title(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.caption_flow then return gui.caption_flow.title end end
 function Wiki.get_page_searchbar(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.caption_flow then return gui.caption_flow.py_wiki_search end end
 
 function Wiki.open_wiki(player)
-    local fullscreen = script.active_mods['pystellarexpedition']
     player.opened = nil
-    local main_frame = player.gui.screen.add{type = 'frame', name = 'pywiki', direction = 'vertical'}
-    player.opened = main_frame
-    if not main_frame.valid then game.print('ERROR: The pY codex failed to open.'); return end
-    main_frame.auto_center = true
-    if fullscreen then
-        main_frame.style.horizontally_squashable = true
-        main_frame.style.horizontally_stretchable = false
-        main_frame.style.vertically_squashable = true
-        main_frame.style.vertically_stretchable = false
-        main_frame.style.natural_width = 16000
-        main_frame.style.natural_height = 16000
-        main_frame.bring_to_front()
-    else
-        main_frame.style.width = 1050
-        main_frame.style.minimal_height = 700    
-    end
+    local wiki_flow_1 = player.gui.screen.add{type = 'flow', name = 'wiki_flow_1', direction = 'vertical'}
+    if not wiki_flow_1.valid then game.print('ERROR: The pY codex failed to open.'); return end
+    wiki_flow_1.add{type = 'empty-widget'}.style.height = 24
+    local wiki_flow_2 = wiki_flow_1.add{type = 'flow', name = 'wiki_flow_2', direction = 'horizontal'}
+    wiki_flow_1.add{type = 'empty-widget'}.style.height = 24
+    wiki_flow_2.add{type = 'empty-widget'}.style.width = 24
+    local main_frame = wiki_flow_2.add{type = 'frame', name = 'pywiki', direction = 'vertical'}
+    wiki_flow_2.add{type = 'empty-widget'}.style.width = 24
+    player.opened = wiki_flow_1
+
+    main_frame.style.horizontally_squashable = true
+    main_frame.style.horizontally_stretchable = false
+    main_frame.style.vertically_squashable = true
+    main_frame.style.vertically_stretchable = false
+    main_frame.style.natural_width = 16000
+    main_frame.style.natural_height = 16000
 
     local caption_flow = main_frame.add{type = 'flow', direction = 'horizontal', name = 'caption_flow'}
-    if not fullscreen then caption_flow.drag_target = main_frame end
     caption_flow.style.vertical_align = 'center'
     caption_flow.style.horizontal_spacing = 10
     caption_flow.add{type = 'sprite', sprite = 'pywiki-alt', resize_to_sprite = false}.style.size = {32, 32}
