@@ -22,14 +22,6 @@ for event, _ in pairs(gui_events) do
 	script.on_event(event, process_gui_event)
 end
 
---Set up default MOD global variables
-MOD = {}
-MOD.name = 'pycoalprocessing'
-MOD.fullname = 'PyCoalProcessing'
-MOD.IF = 'PYC'
-MOD.path = '__pycoalprocessing__'
-MOD.config = require('config')
-
 require 'scripts.wiki.wiki'
 require 'scripts.wiki.text-pages'
 require 'scripts.wiki.spreadsheet-pages'
