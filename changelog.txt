@@ -3,6 +3,7 @@ Version: 2.1.10
 Date: 2024-1-??
   Changes:
     - In order to prep for Factorio 2.0: Removed all filter inserters and filter stack inserters. Gave filter slots to all other inserters. A migration will automatically transform existing filter inserters in your base.
+    - Rewrote the wiki page for inserters.
     - Add compatibility for Better Victory Screen (stringweasel).
     - Fixed pycodex search (https://github.com/pyanodon/pybugreports/issues/370)
     - Fixed a rare crash when trying to close the pycodex
@@ -15,6 +16,7 @@ Date: 2024-1-??
     - Added way more info to the pycodex about tailings ponds
     - Added purest-nitrogen-gas, hot air, pressurized air, and neon to the non polluting gasses list.
     - Fixed graphical error when polluted tiles were placed next to burnt polluted tiles
+    - Tailings pond ALT-mode icons are now scaled to the building size instead of being microscopic
     - Improved UPS of tailings ponds
   Beacons:
     - INFO: The following 2 changes are toggleable in the mod settings.

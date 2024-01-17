@@ -202,7 +202,6 @@ local function add_statistic(gui, localised_string)
 		gui[name].caption = localised_string
 	else
 		gui.add{type = 'label', caption = localised_string, name = name}.style.single_line = false
-		gui.add{type = 'label', caption = ''}
 	end
 end
 

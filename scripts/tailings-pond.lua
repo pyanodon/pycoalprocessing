@@ -74,7 +74,7 @@ local function set_fluid_level_image(pond)
 	end
 	pond.sprite = rendering.draw_sprite{
 		sprite = 'tailings-pond-sprite-' .. fill_level,
-		render_layer = 'higher-object-under',
+		render_layer = 'object',
 		target = pond.entity,
 		target_offset = {0, -0.5},
 		surface = pond.entity.surface,
