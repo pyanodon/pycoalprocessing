@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.10
-Date: 2024-1-??
+Date: 2024-1-17
   Changes:
     - In order to prep for Factorio 2.0: Removed all filter inserters and filter stack inserters. Gave filter slots to all other inserters. A migration will automatically transform existing filter inserters in your base.
     - Rewrote the wiki page for inserters.
