@@ -4,7 +4,7 @@ Pond.events = {}
 -- 500 fluids units are required to fill a tile
 local fluids_per_tile = 300
 
--- beyond 95% full, the pond will start to create pollution tiles
+-- beyond 99% full, the pond will start to create pollution tiles
 local overflow_threshold = 0.99
 
 --Does gas entering the tailings pond cause pollution when vented
