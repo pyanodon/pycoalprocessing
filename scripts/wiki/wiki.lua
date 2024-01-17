@@ -14,11 +14,8 @@ Wiki.events.on_player_created = function(event)
 end
 
 function Wiki.get_wiki_gui(player)
-    local wiki_flow_1 = player.gui.screen.wiki_flow_1
-    if not wiki_flow_1 then return end
-    local wiki_flow_2 = wiki_flow_1.wiki_flow_2
-    if not wiki_flow_2 then return end
-    return wiki_flow_2.pywiki
+    local pywiki = player.gui.screen.pywiki
+    if pywiki then return pywiki.pywiki end
 end
 function Wiki.get_pages(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.py_pages_list end end
 function Wiki.get_page_contents(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.page_frame.scroll_pane end end
@@ -29,27 +26,23 @@ function Wiki.open_wiki(player)
     local empty_widgets = {}
 
     player.opened = nil
-    local wiki_flow_1 = player.gui.screen.add{type = 'flow', name = 'wiki_flow_1', direction = 'vertical'}
-    if not wiki_flow_1.valid then game.print('ERROR: The pY codex failed to open.'); return end
-    empty_widgets[#empty_widgets + 1] = wiki_flow_1.add{type = 'empty-widget'}
-    local wiki_flow_2 = wiki_flow_1.add{type = 'flow', name = 'wiki_flow_2', direction = 'horizontal'}
-    empty_widgets[#empty_widgets + 1] = wiki_flow_1.add{type = 'empty-widget'}
-    empty_widgets[#empty_widgets + 1] = wiki_flow_2.add{type = 'empty-widget'}
-    local main_frame = wiki_flow_2.add{type = 'frame', name = 'pywiki', direction = 'vertical'}
-    empty_widgets[#empty_widgets + 1] = wiki_flow_2.add{type = 'empty-widget'}
-    player.opened = wiki_flow_1
+    local pywiki = player.gui.screen.add{type = 'frame', name = 'pywiki', direction = 'vertical', style = 'invisible_frame'}
+    if not pywiki.valid then game.print('ERROR: The pY codex failed to open.'); return end
+    pywiki.style.padding = 24
+    pywiki.style.horizontally_squashable = true
+    pywiki.style.horizontally_stretchable = false
+    pywiki.style.vertically_squashable = true
+    pywiki.style.vertically_stretchable = false
+    pywiki.style.natural_width = 65535
+    pywiki.style.natural_height = 65535
+    
+    local main_frame = pywiki.add{type = 'frame', name = 'pywiki', direction = 'vertical'}
+    player.opened = pywiki
 
     for _, widget in pairs(empty_widgets) do
         widget.style.size = 24
         widget.ignored_by_interaction = true
     end
-
-    main_frame.style.horizontally_squashable = true
-    main_frame.style.horizontally_stretchable = false
-    main_frame.style.vertically_squashable = true
-    main_frame.style.vertically_stretchable = false
-    main_frame.style.natural_width = 16000
-    main_frame.style.natural_height = 16000
 
     local caption_flow = main_frame.add{type = 'flow', direction = 'horizontal', name = 'caption_flow'}
     caption_flow.style.vertical_align = 'center'
@@ -111,7 +104,7 @@ function Wiki.close_wiki(player)
             remote.call(on_closed[1], on_closed[2], contents, player)
         end
     end
-    main_frame.parent.parent.destroy()
+    main_frame.parent.destroy()
 end
 
 gui_events[defines.events.on_gui_click]['py_open_wiki'] = function(event)
