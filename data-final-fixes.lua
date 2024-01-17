@@ -1,4 +1,4 @@
-if mods.pyalternativenergy then
+if not mods.pyalternativenergy then
     for _, recipe in pairs(data.raw.recipe) do
         if not recipe.localised_name and recipe.category == 'combustion' and not recipe.name:find('%-biomass$') then
             local temp
