@@ -1,7 +1,6 @@
 Wiki = {}
+Wiki.events = {}
 
-local Event = require('__stdlib__/stdlib/event/event')
-local Gui = require('__stdlib__/stdlib/event/gui')
 local mod_gui = require('mod-gui')
 
 function Wiki.create_pywiki_button(player)
@@ -10,18 +9,9 @@ function Wiki.create_pywiki_button(player)
     flow.add{type = 'sprite-button', name = 'py_open_wiki', sprite = 'pywiki'}
 end
 
-Event.register(Event.core_events.init_and_config, function()
-    for _, player in pairs(game.players) do
-        Wiki.create_pywiki_button(player)
-    end
-    global.wiki_pages = {}
-    global.currently_opened_wiki_page = {}
-    global.wiki_page_search_query = {}
-end)
-
-Event.register(defines.events.on_player_created, function(event)
+Wiki.events.on_player_created = function(event)
     Wiki.create_pywiki_button(game.get_player(event.player_index))
-end)
+end
 
 function Wiki.get_wiki_gui(player) return player.gui.screen.pywiki end
 function Wiki.get_pages(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.py_pages_list end end
@@ -113,19 +103,18 @@ function Wiki.close_wiki(player)
     main_frame.destroy()
 end
 
-Gui.on_click('py_open_wiki', function(event)
+gui_events[defines.events.on_gui_click]['py_open_wiki'] = function(event)
     local player = game.get_player(event.player_index)
     if Wiki.get_wiki_gui(player) then
         Wiki.close_wiki(player)
     else
         Wiki.open_wiki(player)
     end
-end)
+end
 
 local close_wiki = function(event) Wiki.close_wiki(game.get_player(event.player_index)) end
-Event.register(defines.events.on_gui_closed, close_wiki)
-Event.register(defines.events.on_player_changed_surface, close_wiki)
-Gui.on_click('py_close_wiki', close_wiki)
+Wiki.events.on_gui_closed = close_wiki
+gui_events[defines.events.on_gui_click]['py_close_wiki'] = close_wiki
 
 function Wiki.add_page(args)
     local name = args.name or error('Required parameter missing: name')
@@ -192,15 +181,15 @@ function Wiki.open_page(player, index)
     end
 end
 
-Gui.on_selection_state_changed('py_pages_list', function(event)
+gui_events[defines.events.on_gui_selection_state_changed]['py_pages_list'] = function(event)
     local player = game.get_player(event.player_index)
     local previously_opened = global.currently_opened_wiki_page[event.player_index]
     local index = event.element.selected_index
     if previously_opened == index then return end
     Wiki.open_page(player, index)
-end)
+end
 
-Gui.on_text_changed('py_wiki_search', function(event)
+gui_events[defines.events.on_gui_text_changed]['py_wiki_search'] = function(event)
     local player = game.get_player(event.player_index)
     local contents = Wiki.get_page_contents(player)
     if not contents then return end
@@ -213,7 +202,7 @@ Gui.on_text_changed('py_wiki_search', function(event)
     local search_query = event.element.text
     remote.call(searchable[1], searchable[2], search_query, contents, player)
     global.wiki_page_search_query[player.index] = search_query
-end)
+end
 
 remote.add_interface('pywiki', {
     add_page = Wiki.add_page,

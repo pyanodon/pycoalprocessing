@@ -1,5 +1,3 @@
-local Event = require('__stdlib__/stdlib/event/event')
-
 local discord = 'https://discord.gg/SBHM3h5Utj'
 local patreon = 'https://www.patreon.com/pyanodon'
 
@@ -231,7 +229,7 @@ local function update_statistics_page(gui, player, include_laggy_calculations)
 	add_statistic(gui, {'pywiki-statistics.caravans', statistics.caravans})
 end
 
-Event.on_nth_tick(60, function()
+script.on_nth_tick(60, function()
 	for _, player in pairs(game.connected_players) do
 		local gui = remote.call('pywiki', 'get_page_contents', player)
 		if gui and gui.statistics_flow then update_statistics_page(gui.statistics_flow, player, false) end

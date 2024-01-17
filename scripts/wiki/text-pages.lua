@@ -1,6 +1,11 @@
-local Event = require('__stdlib__/stdlib/event/event')
+Wiki.events.init = function()
+    for _, player in pairs(game.players) do
+        Wiki.create_pywiki_button(player)
+    end
+    global.wiki_pages = {}
+    global.currently_opened_wiki_page = {}
+    global.wiki_page_search_query = {}
 
-Event.register(Event.core_events.init_and_config, function()
     remote.call('pywiki', 'add_page', {
         name = 'statistics',
 		remote = {'create_statistics_page', 'create_statistics_page'}
@@ -51,4 +56,4 @@ Event.register(Event.core_events.init_and_config, function()
 			text_only = true
 		})
 	end
-end)
+end

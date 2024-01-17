@@ -1,5 +1,6 @@
-local Event = require('__stdlib__/stdlib/event/event')
-local Gui = require('__stdlib__/stdlib/event/gui')
+Spreadsheet = {}
+Spreadsheet.events = {}
+
 local floor = math.floor
 local FUN = require '__pycoalprocessing__/prototypes/functions/functions'
 
@@ -229,7 +230,7 @@ local function calculate_unlocked_at(required_science, name)
 	}
 end
 
-Event.register(Event.core_events.init_and_config, function()
+Spreadsheet.events.init = function()
 	local required_science = calculate_required_science()
 	global.fluid_spreadsheet_data = {
 		columns = {
@@ -326,9 +327,9 @@ Event.register(Event.core_events.init_and_config, function()
 			})
 		end
 	end
-end)
+end
 
-Gui.on_click('py_spreadsheet_sort', function(event)
+gui_events[defines.events.on_gui_click]['py_spreadsheet_sort'] = function(event)
 	local player = game.get_player(event.player_index)
 	local gui = remote.call('pywiki', 'get_page_contents', player)
 	if not gui then return end
@@ -355,4 +356,4 @@ Gui.on_click('py_spreadsheet_sort', function(event)
 	end
 
 	update_spreadsheet(gui, player, global[tags.data_source], tags.column_name, element.sprite == 'up-white')
-end)
+end

@@ -1,247 +1,184 @@
-local tailings_pond = {}
+Pond = {}
+Pond.events = {}
 
-local Event = require('__stdlib__/stdlib/event/event')
-local Position = require('__stdlib__/stdlib/area/position')
-local Area = require('__stdlib__/stdlib/area/area')
+-- 500 fluids units are required to fill a tile
+local fluids_per_tile = 300
 
-local CFG = MOD.config.TAILINGS_POND
-local _gasses = CFG.GAS
-local _scorch_chance = CFG.SCORCH_CHANCE
-local _scorch_ticks = CFG.SCORCH_TICKS
-local _pollution_mod = CFG.GAS_POLLUTE_MODIFIER
+-- beyond 95% full, the pond will start to create pollution tiles
+local overflow_threshold = 0.99
 
---Pond contains gases, lets spill them out. Only negative is this can be used as a "gas" void so...
---If the gas is "polluting" create pollution, else just vent.
+--Does gas entering the tailings pond cause pollution when vented
+--default=.15 off=0
+local pollution_modifier = .15
+
+--List of Gas fluids, true values cause pollution when vented, all gasses with gas in the name fall under this category
+local gasses = {
+    ['chlorine'] = true,
+    ['hydrogen-chloride'] = true,
+    ['sulfur-dioxide'] = true,
+    ['carbon-dioxide'] = true,
+    ['oxygen'] = false,
+    ['hydrogen'] = false,
+    ['nitrogen'] = false,
+    ['purest-nitrogen-gas'] = false,
+    ['pressured-air'] = false,
+    ['hot-air'] = false,
+    ['neon'] = false,
+}
+
+Pond.events.init = function()
+	global.tailings_ponds = global.tailings_ponds or {}
+	global.tiles = global.tiles or {}
+	global.Tiles = nil
+end
+
+--Pond contains gases, lets spill them out. Only negative is this can be used as a 'gas' void so...
+--If the gas is 'polluting' create pollution, else just vent.
 local function empty_pond_gas(fluid, surface, position)
-    if fluid then
-        if fluid.temperature >= game.fluid_prototypes[fluid.name].gas_temperature or (fluid.name:contains('-gas') or fluid.name:contains('gas-') and not _gasses[fluid.name] == false) or _gasses[fluid.name] == true then
-            surface.pollute(position, fluid.amount * _pollution_mod)
-            game.pollution_statistics.on_flow("tailings-pond", fluid.amount * _pollution_mod)
-            return nil
-        elseif _gasses[fluid.name] == false then
-            return nil
-        end
-        return fluid
-    end
-end
-
-local function create_sprite(entity)
-    return rendering.draw_sprite {
-        sprite = 'tailings-pond-sprite-1',
-        render_layer = 'higher-object-under',
-        target = entity,
-        target_offset = {0,-0.5},
-        surface = entity.surface
-    }
-end
-
-local function new_pond_data(entity)
-    return {
-        tick = game.tick,
-        index = entity.unit_number,
-        entity = entity,
-        sprite = create_sprite(entity),
-        full = nil,
-        fluid_per = 0
-    }
-end
-
---As the tailings pond get full they leak out and start polluting the ground around them
---Scorch up to 6 tiles from center.
-local function scorch_earth(pond, tick)
-    local fluidbox = pond.entity.fluidbox
-    local tanksize = fluidbox.get_capacity(1)
-    --Vent Gasses
-    local fluid = empty_pond_gas(fluidbox[1], pond.entity.surface, pond.entity.position)
-
-    local tiles = {}
-
-    --No gasses left if we still have fluid
-    if fluid then
-        --if full set the full tick or check and spill
-        if fluid.amount == tanksize then
-            if not pond.full then
-                pond.full = tick
-                pond.fluid_per = 1
-            elseif ((tick >= (pond.full + _scorch_ticks)) and (_scorch_chance > 0 and math.random(1, 100) <= _scorch_chance)) then
-                --spill fluid out here, if not water pollute.
-                --removing emptying code for spillage per pyanodon request
-                fluid.amount = fluid.amount / 2
-                pond.fluid_per = .5
-                pond.full = nil
-                --polluted ground is very difficult to walk on, it also ruins any path tiles near it.
-                --TODO Issues when polluting near water.
-                if fluid.name:contains('dirty') or not fluid.name:contains('water') then
-                    local area_radius = 0
-                    repeat
-                        area_radius = area_radius + 6
-                    until (pond.entity.surface.get_tile(pond.entity.position.x + (area_radius), pond.entity.position.y).name ~= 'polluted-ground')
-                    for x, y in Area.spiral_iterate(Position.expand_to_area(pond.entity.position, area_radius)) do
-                        if pond.entity.surface.get_tile(x, y).name ~= 'polluted-ground' then
-                            tiles[#tiles + 1] = {name = 'polluted-ground', position = {x = x, y = y}}
-                        end
-                    end
-                --moving set tiles to a seperate function to spread tile change load over ticks.
-                --needs stdlib adjusts to use std tick spreader. proof of concept at the moment
-                end -- polluting liquids
-			end
-        else -- not full fluid
-            pond.fluid_per = tonumber(string.format('%.3f', (fluid.amount / tanksize)))
+	if fluid then
+		if
+			gasses[fluid.name] == true
+			or fluid.temperature >= game.fluid_prototypes[fluid.name].gas_temperature
+			or (fluid.name:find('%-gas')
+			or fluid.name:find('gas%-')
+			and not gasses[fluid.name] == false)
+		then
+			surface.pollute(position, fluid.amount * pollution_modifier)
+			game.pollution_statistics.on_flow('tailings-pond', fluid.amount * pollution_modifier)
+			return nil
+		elseif gasses[fluid.name] == false then
+			return nil
 		end
-	else -- no fluid
-        pond.fluid_per = 0
-    end
-    --push the updated fluidbox to the entity.
-    fluidbox[1] = fluid
-    return tiles
+		return fluid
+	end
 end
 
 --Sets animation frame based on tank filled percentage
 local function set_fluid_level_image(pond)
-    if rendering.is_valid(pond.sprite) then
-        local fluid_per = pond.fluid_per
-        rendering.destroy(pond.sprite)
-        --adjust percentage to match frames 30 frames, 1 is empty, 30 is full.
-        local sprite
-        local fluid
-        local color
-      --log("hit")
-        if  pond.entity.fluidbox[1] then
-          --log("hit")
-            fluid = pond.entity.fluidbox[1].name
-            color = game.fluid_prototypes[fluid].base_color
-        end
-      --log(serpent.block(color))
-        if fluid_per == 0 then
-          --log("hit")
-            sprite = rendering.draw_sprite {
-                sprite = 'tailings-pond-sprite-1',
-                render_layer = 'higher-object-under',
-                target = pond.entity,
-                target_offset = {0,-0.5},
-                surface = pond.entity.surface,
-                tint = color or nil
-            }
-        elseif fluid_per > .974 then
-          --log("hit")
-            sprite = rendering.draw_sprite {
-                sprite = 'tailings-pond-sprite-30',
-                render_layer = 'higher-object-under',
-                target = pond.entity,
-                target_offset = {0,-0.5},
-                surface = pond.entity.surface,
-                tint = color or nil
-            }
-        else
-          --log("hit")
-            sprite = rendering.draw_sprite {
-                sprite = 'tailings-pond-sprite-' .. math.ceil(fluid_per * 30),
-                render_layer = 'higher-object-under',
-                target = pond.entity,
-                target_offset = {0,-0.5},
-                surface = pond.entity.surface,
-                tint = color or nil
-            }
-        end
-        pond.sprite = sprite
-    else
-        pond.sprite = create_sprite(pond.entity)
+	local fluid_per = pond.fluid_per
+	--adjust percentage to match frames 30 frames, 1 is empty, 30 is full.
+	local fill_level
+	if fluid_per == 0 then
+		fill_level = 1
+	elseif fluid_per > .974 then
+		fill_level = 30
+	else
+		fill_level = math.ceil(fluid_per * 30)
+	end
+	if fill_level == pond.fill_level then return end
+
+	if pond.sprite then rendering.destroy(pond.sprite) end
+	local color
+	if pond.entity.fluidbox[1] then
+		color = game.fluid_prototypes[pond.entity.fluidbox[1].name].base_color
+	end
+	pond.sprite = rendering.draw_sprite{
+		sprite = 'tailings-pond-sprite-' .. fill_level,
+		render_layer = 'higher-object-under',
+		target = pond.entity,
+		target_offset = {0, -0.5},
+		surface = pond.entity.surface,
+		tint = color or nil
+	}
+	pond.fill_level = fill_level
+end
+
+local function spiral(n)
+	local k = math.ceil((math.sqrt(n)-1)/2)
+	local t = 2*k+1
+	local m = t^2 
+	local t = t-1
+	if n >= m-t then return k-(m-n),-k        else m = m-t end
+	if n >= m-t then return -k,-k+(m-n)       else m = m-t end
+	if n >= m-t then return -k+(m-n),k else return k,k-(m-n-t) end
+end
+
+--As the tailings pond get full they leak out and start polluting the ground around them
+local function scorch_earth(pond)
+	local entity = pond.entity
+	local fluidbox = entity.fluidbox
+	local surface = entity.surface
+	--Vent Gasses
+	local fluid = empty_pond_gas(fluidbox[1], surface, entity.position)
+	if not fluid then -- totally drained
+		pond.fluid_per = 0
+		fluidbox[1] = fluid
+		return
+	end
+
+	local tanksize = fluidbox.get_capacity(1)
+	local overflow_threshold = tanksize * overflow_threshold
+
+	if fluid.amount > overflow_threshold then -- pond is full
+		local surface_index = surface.index
+		if not global.tiles[surface_index] then global.tiles[surface_index] = {} end
+		local tiles = global.tiles[surface_index]
+
+		local amount = fluid.amount
+		repeat
+			amount = amount - fluids_per_tile
+			pond.lifetime_pollution_tiles_created = (pond.lifetime_pollution_tiles_created or 0) + 1
+			local x, y = spiral(pond.lifetime_pollution_tiles_created)
+			x = math.floor(x + entity.position.x) - 1
+			y = math.floor(y + entity.position.y) - 1
+			if surface.get_tile(x, y).name ~= 'polluted-ground' then
+				tiles[#tiles + 1] = {name = 'polluted-ground', position = {x = x, y = y}}
+			end
+		until amount < overflow_threshold
+		fluid.amount = amount
+	end
+	
+	pond.fluid_per = fluid.amount / tanksize
+	--push the updated fluidbox to the entity.
+	fluidbox[1] = fluid
+end
+
+Pond.events.on_built = function(event)
+	local entity = event.entity or event.created_entity
+	if not entity.valid or entity.name ~= 'tailings-pond' then return end
+	local entity = event.created_entity
+	entity.direction = defines.direction.north
+	local pond = {
+		entity = entity,
+		fluid_per = 0
+	}
+	set_fluid_level_image(pond)
+	global.tailings_ponds[entity.unit_number] = pond
+end
+
+Pond.events[153] = function()
+	for i, pond in pairs(global.tailings_ponds) do
+		if pond.entity.valid then
+			scorch_earth(pond)
+			set_fluid_level_image(pond)
+		else
+			global.tailings_ponds[i] = nil
+			return
+		end
+	end
+end
+
+-- offset tile setting to prevent lag spikes
+Pond.events[154] = function()
+	for surface_index, tiles in pairs(global.tiles) do
+		local surface = game.surfaces[surface_index]
+		for _, tile in pairs(tiles) do
+			surface.create_entity{
+				name = 'ninja-tree',
+				position = tile.position,
+				force = 'neutral',
+				create_build_effect_smoke = false
+			}
+		end
+		surface.set_tiles(tiles, true)
+	end
+	global.tiles = {}
+end
+
+Pond.events.on_entity_died = function(event)
+	local entity = event.entity
+    if entity.name == 'ninja-tree' then
+        entity.surface.set_tiles({{name = 'polluted-ground-burnt', position = entity.position}}, true)
+        entity.destroy()
     end
 end
-
-function tailings_pond.create(event)
-    if event.created_entity.name == 'tailings-pond' then
-        local ponds = global.tailings_ponds
-        local entity = event.created_entity
-        entity.direction = defines.direction.north
-        local pond = new_pond_data(entity)
-        ponds[pond.index] = pond
-    end
-end
-Event.register(Event.build_events, tailings_pond.create)
-
-local function tile_setter(event)
-    local tiles = event
-    local stiles = {}
-    --log(table_size(tiles))
-    if table_size(tiles) > 400 then
-        for i = 1, 400 do
-            table.insert(stiles, tiles[i])
-            tiles[i] = nil
-        end
-    else
-        stiles = tiles
-        tiles = {}
-    end
-    local temptable = {}
-    for i = 1, table_size(tiles) do
-        if tiles[i] ~= nil then
-            table.insert(temptable, tiles[i])
-        end
-    end
-    tiles = temptable
-    return stiles, tiles
-end
-
---Run tick handler every 30 ticks. In the future this will need to be spread out to itereate over a queing system.
-function tailings_pond.on_tick(event)
-
-	local Tiles = global.Tiles
-    --log(table_size(Tiles))
-    local ponds = global.tailings_ponds
-    for i, pond in pairs(ponds) do
-        if pond.entity.valid then
-            if type(pond.sprite) == 'number' then
-                local t = scorch_earth(pond, event.tick)
-                --Set the animation needed based on fill level..
-                set_fluid_level_image(pond)
-                if t[1] ~= nil then
-                    Tiles = t
-                end
-            else
-                pond.sprite = create_sprite(pond.entity)
-            end
-        else
-            global.tailings_ponds[i] = nil
-        end
-        --log(serpent.block(Tiles))
-        --log(serpent.block(Tiles[1]))
-        if Tiles ~= nil and Tiles[1] ~= nil then
-            --log(serpent.block(table_size(Tiles)))
-            local stiles
-            stiles, Tiles = tile_setter(Tiles)
-            --log(serpent.block(table_size(stiles)))
-            --log(serpent.block(table_size(Tiles)))
-            --log(serpent.block(pond))
-            pond.entity.surface.set_tiles(stiles, true)
-            for _, st in pairs(stiles) do
-                pond.entity.surface.create_entity {name = 'ninja-tree', position = {st.position.x, st.position.y}}
-            end
-        end
-    end
-
-	global.Tiles = Tiles
-end
-Event.register(-30, tailings_pond.on_tick)
-
-function tailings_pond.on_init()
-    global.tailings_ponds = {}
-	global.Tiles = {}
-end
-Event.register(Event.core_events.init, tailings_pond.on_init)
-
-function tailings_pond.on_load()
-	--global.Tiles = {}
-end
-Event.register(Event.core_events.on_load, tailings_pond.on_load)
-
-function tailings_pond.on_entity_died(event)
-    if event.entity.name == 'ninja-tree' then
-        event.entity.surface.set_tiles {{name = 'polluted-ground-burnt', position = event.entity.position}}
-        event.entity.destroy()
-    end
-end
-
-Event.register(defines.events.on_entity_died, tailings_pond.on_entity_died)
-
-return tailings_pond

@@ -51,7 +51,7 @@ DATA {
     collision_mask = {'ground-tile'},
     walking_speed_modifier = .50,
     autoplace = nil,
-    layer = 36,
+    layer = 35,
     variants = variants,
     walking_sound = {
         {
@@ -116,11 +116,11 @@ DATA {
     type = 'tree',
     name = 'ninja-tree',
     icon = '__pycoalprocessinggraphics__/graphics/empty.png',
-    icon_size = 32,
-    flags = {'placeable-neutral', 'placeable-off-grid', 'breaths-air',"not-blueprintable", "not-deconstructable"},
+    icon_size = 1,
+    flags = {'placeable-neutral', 'placeable-off-grid', 'breaths-air', 'not-blueprintable', 'not-deconstructable'},
     selectable_in_game = false,
-    emissions_per_second = 0,
-    max_health = 20,
+    emissions_per_second = 0.01,
+    max_health = 5000000,
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{0, 0}, {0, 0}},
     collision_mask = {},
@@ -131,9 +131,8 @@ DATA {
         --dry-hairy-tree
         {
             filename = '__pycoalprocessinggraphics__/graphics/empty.png',
-            width = 32,
-            height = 32,
-            shift = util.by_pixel(45.5, -28.75)
+            width = 1,
+            height = 1,
         }
     }
 }
