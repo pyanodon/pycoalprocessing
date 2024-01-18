@@ -98,9 +98,12 @@ end
 local function scorch_earth(pond)
 	local entity = pond.entity
 	local fluidbox = entity.fluidbox
+	local fluid = fluidbox[1]
+	if fluid and fluid.name == 'neutron' then return end
+	
 	local surface = entity.surface
 	--Vent Gasses
-	local fluid = empty_pond_gas(fluidbox[1], surface, entity.position)
+	local fluid = empty_pond_gas(fluid, surface, entity.position)
 	if not fluid then -- totally drained
 		pond.fluid_per = 0
 		fluidbox[1] = fluid

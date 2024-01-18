@@ -43,14 +43,18 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 		local container = content.add{type = 'flow', direction = 'vertical', name = row.search_key}
 		local flow = container.add{type = 'flow', direction = 'horizontal', tags = row}
 		for i, column in pairs(columns) do
-			local caption = row[column.name].value
+			local line_item = row[column.name]
+			local caption = line_item.value
+			local elem_tooltip = line_item.elem_tooltip
+			local tooltip = line_item.tooltip
+
 			if i == 1 then
-				flow.add{type = 'label', caption = caption}.style.width = column.width + 10
+				flow.add{type = 'label', caption = caption, elem_tooltip = elem_tooltip, tooltip = tooltip}.style.width = column.width + 10
 			else
 				local flow = flow.add{type = 'flow'}
 				flow.style.horizontal_align = 'center'
 				flow.style.width = column.width + 10
-				flow.add{type = 'label', caption = caption}
+				flow.add{type = 'label', caption = caption, elem_tooltip = elem_tooltip, tooltip = tooltip}
 			end
 		end
 		container.add{type = 'line', direction = 'horizontal'}
@@ -108,7 +112,7 @@ local function funny_square(color)
 	local g = color.g * 255
 	local b = color.b * 255
 
-	return '[color=' .. tostring(floor(r)) .. ',' .. tostring(floor(g)) .. ',' .. tostring(floor(b)) .. ']■[/color]'
+	return '[color=' .. tostring(floor(r)) .. ', ' .. tostring(floor(g)) .. ', ' .. tostring(floor(b)) .. ']■[/color]'
 end
 
 local function hue(color)
@@ -137,6 +141,10 @@ end
 
 local function brightness(color)
 	return (color.r + color.g + color.b) / 3
+end
+
+local function tooltipify_color(color)
+	return floor(color.r * 255) .. ', ' .. floor(color.g * 255) .. ', ' .. floor(color.b * 255)
 end
 
 local science_pack_names = {
@@ -216,17 +224,19 @@ local function calculate_unlocked_at(required_science, name)
 	if jerry_check then name = fluid_name end
 
 	local required_science = required_science[name]
-	local required_science_pack
+	local required_science_pack, elem_tooltip
 	if not required_science then
 		required_science_pack = '[fluid=fluid-unknown]'
 	elseif required_science ~= 0 then
 		required_science_pack = '[item='..science_pack_names[required_science]..']'
+		elem_tooltip = {type = 'item', name = science_pack_names[required_science]}
 	end
 
 	return {
 		value = required_science_pack,
 		order = required_science or #science_pack_names + 1,
-		pack = science_pack_names[required_science or 0] or ''
+		pack = science_pack_names[required_science or 0] or '',
+		elem_tooltip = elem_tooltip
 	}
 end
 
@@ -252,8 +262,14 @@ Spreadsheet.events.init = function()
 			if fluid.fuel_value ~= 0 then fuel_value = FUN.format_energy(fluid.fuel_value, 'J') end
 
 			local voidable = '[entity=tailings-pond]'
-			if script.active_mods['pyindustry'] then
-				voidable = voidable..'  [entity='..((fluid.default_temperature or 15) < (fluid.gas_temperature or math.huge) and 'py-sinkhole' or 'py-gas-vent')..']'
+			local voidable_elem_tooltip
+			if fluid.name == 'neutron' then
+				voidable = '[entity=neutron-absorber-mk01] [entity=neutron-absorber-mk02] [entity=neutron-absorber-mk03] [entity=neutron-absorber-mk04]'
+				voidable_elem_tooltip = {type = 'entity', name = 'neutron-absorber-mk01'}
+			elseif script.active_mods['pyindustry'] then
+				local void_entity_name = (fluid.default_temperature or 15) < (fluid.gas_temperature or math.huge) and 'py-sinkhole' or 'py-gas-vent'
+				voidable = voidable .. '  [entity=' .. void_entity_name .. ']'
+				voidable_elem_tooltip = {type = 'entity', name = void_entity_name}
 			end
 
 			local unlocked_at = calculate_unlocked_at(required_science, name)
@@ -261,11 +277,13 @@ Spreadsheet.events.init = function()
 			table.insert(global.fluid_spreadsheet_data.rows, {
 				['localised-name'] = {
 					value = {'', '[fluid='..name..'] ', fluid.localised_name},
-					order = name
+					order = name,
+					elem_tooltip = {type = 'fluid', name = name}
 				},
 				voidable = {
 					value = voidable,
-					order = voidable
+					order = voidable,
+					elem_tooltip = voidable_elem_tooltip
 				},
 				['fuel-value'] = {
 					value = fuel_value,
@@ -273,7 +291,8 @@ Spreadsheet.events.init = function()
 				},
 				color = {
 					value = funny_square(fluid.base_color),
-					order = floor(hue(fluid.base_color)) + brightness(fluid.base_color) / 10
+					order = floor(hue(fluid.base_color)) + brightness(fluid.base_color) / 10,
+					tooltip = tooltipify_color(fluid.base_color)
 				},
 				['unlocked-at'] = unlocked_at,
 				search_key = name..'|'..unlocked_at.pack
@@ -297,10 +316,11 @@ Spreadsheet.events.init = function()
 
 	for name, item in pairs(game.item_prototypes) do
 		if item.fuel_category and not item.has_flag('hidden') then
-			local burnt_result, burnt_result_order
+			local burnt_result, burnt_result_order, burnt_result_tooltip
 			if item.burnt_result then
 				burnt_result = '[item='..item.burnt_result.name..']'
 				burnt_result_order = item.burnt_result.name
+				burnt_result_tooltip = {type = 'item', name = item.burnt_result.name}
 			end
 
 			local unlocked_at = calculate_unlocked_at(required_science, name)
@@ -308,7 +328,8 @@ Spreadsheet.events.init = function()
 			table.insert(global.solid_fuel_spreadsheet_data.rows, {
 				['localised-name'] = {
 					value = {'', '[item='..name..'] ', item.localised_name},
-					order = name
+					order = name,
+					elem_tooltip = {type = 'item', name = name}
 				},
 				['fuel-category'] = {
 					value = game.fuel_category_prototypes[item.fuel_category].localised_name,
@@ -320,7 +341,8 @@ Spreadsheet.events.init = function()
 				},
 				['burnt-result'] = {
 					value = burnt_result,
-					order = burnt_result_order
+					order = burnt_result_order,
+					elem_tooltip = burnt_result_tooltip
 				},
 				['unlocked-at'] = unlocked_at,
 				search_key = name..'|'..item.fuel_category..'|'..(burnt_result_order or '')..'|'..unlocked_at.pack

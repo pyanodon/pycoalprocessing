@@ -1,30 +1,28 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.11
-Date: 2024-1-??
-  Changes:
-    - Delete filter inserters but for real this time.
-    - Updated the Russian translation
----------------------------------------------------------------------------------------------------
-Version: 2.1.10
 Date: 2024-1-17
   Changes:
     - In order to prep for Factorio 2.0: Removed all filter inserters and filter stack inserters. Gave filter slots to all other inserters. A migration will automatically transform existing filter inserters in your base.
-    - Rewrote the wiki page for inserters.
     - Add compatibility for Better Victory Screen (stringweasel).
+    - Updated the Russian translation
+  Pycodex:
     - Fixed pycodex search (https://github.com/pyanodon/pybugreports/issues/370)
     - Fixed a rare crash when trying to close the pycodex
     - Pycodex gui is now bigger
     - The pycodex homepage statistics are now compressiscrunchified
+    - Rewrote the pycodex page for inserters.
+    - Rewrote the pycodex page for tailings ponds.
+    - Added tooltips for most GUI elements in the pycodex spreadsheet pages
   Tailings pond:
     - Tailings pond spillage event is slightly more dramatic.
     - Added a linear relationship between # of fluid spilled and # of pollution tiles created (300 fluid = 1 tile). note that this also means that the rate of change in the radius is now negative instead of 0
     - Fixed constant redraws of the tailings pond fluid sprite
     - To give that nice authentic oil spill experience: Tailings pond pollution tiles will now burn for way longer (hours)
-    - Added way more info to the pycodex about tailings ponds
     - Added purest-nitrogen-gas, hot air, pressurized air, vacuum, and neon to the non polluting gasses list.
     - Fixed graphical error when polluted tiles were placed next to burnt polluted tiles
     - Tailings pond ALT-mode icons are now scaled to the building size instead of being microscopic
     - Improved UPS of tailings ponds
+    - Fixed the exploit where you could void neutrons in a tailings pond.
   Beacons:
     - INFO: The following 2 changes are toggleable in the mod settings.
     - Changed the beacon interference criteria from requiring the exact same AM and FM frequencies to instead requiring either overlapping AM or FM. This effectively reduces the max number of beacons per entity from 25 to 5.
