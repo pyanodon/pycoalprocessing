@@ -39,24 +39,25 @@ local function beacon_check(reciver)
 	local beacons = reciver.get_beacons()
 	if not beacons or not next(beacons) then return end
 
-	local effected_frequencies = {}
+	local effected_am = {}
+	local effected_fm = {}
 	for _, beacon in pairs(beacons) do
 		if our_beacons[beacon.name] then
 			local am = beacon.name:match('%d+')
 			local fm = beacon.name:match('%d+$')
 			if settings.startup['future-beacons'].value then
-				if effected_frequencies[am] or effected_frequencies[fm] then
+				if effected_am[am] or effected_fm[fm] then
 					disable_entity(reciver)
 					return
 				end
 			else
-				if effected_frequencies[am] and effected_frequencies[fm] then
+				if effected_am[am] and effected_fm[fm] then
 					disable_entity(reciver)
 					return
 				end
 			end
-			effected_frequencies[am] = true
-			effected_frequencies[fm] = true
+			effected_am[am] = true
+			effected_fm[fm] = true
 		end
 	end
 	enable_entity(reciver)
