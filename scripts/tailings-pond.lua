@@ -1,7 +1,7 @@
 Pond = {}
 Pond.events = {}
 
--- 500 fluids units are required to fill a tile
+-- 300 fluids units are required to fill a tile
 local fluids_per_tile = 300
 
 -- beyond 99% full, the pond will start to create pollution tiles
@@ -129,6 +129,8 @@ local function scorch_earth(pond)
 				tiles[#tiles + 1] = {name = 'polluted-ground', position = {x = x, y = y}}
 			end
 		until amount < overflow_threshold
+		-- add fluid consumed to production stats graph
+		entity.force.fluid_production_statistics.on_flow(fluid.name, amount - fluid.amount)
 		fluid.amount = amount
 	end
 	

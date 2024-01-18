@@ -23,6 +23,7 @@ Date: 2024-1-17
     - Tailings pond ALT-mode icons are now scaled to the building size instead of being microscopic
     - Improved UPS of tailings ponds
     - Fixed the exploit where you could void neutrons in a tailings pond.
+    - Tailings pond now works with your production statistics graph
   Beacons:
     - INFO: The following 2 changes are toggleable in the mod settings.
     - Changed the beacon interference criteria from requiring the exact same AM and FM frequencies to instead requiring either overlapping AM or FM. This effectively reduces the max number of beacons per entity from 25 to 5.
