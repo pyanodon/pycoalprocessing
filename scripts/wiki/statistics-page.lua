@@ -1,5 +1,6 @@
 local discord = 'https://discord.gg/SBHM3h5Utj'
 local patreon = 'https://www.patreon.com/pyanodon'
+local bugs = 'https://github.com/pyanodon/pybugreports/issues'
 
 local science_pack_names = {
 	['automation-science-pack'] = true,
@@ -269,6 +270,15 @@ local function create_statistics_page(gui, player)
 	patreon_link.word_wrap = false
 	patreon_link.read_only = true
 	patreon_link.style.width = 230
+
+	local bugs_flow = gui.add{type = 'flow', direction = 'horizontal'}
+	bugs_flow.style.vertical_align = 'center'
+	bugs_flow.add{type = 'label', caption = {'pywiki-statistics.info-5'}}
+	local bugs_link = bugs_flow.add{type = 'text-box', text = bugs}
+	bugs_link.selectable = true
+	bugs_link.word_wrap = false
+	bugs_link.read_only = true
+	bugs_link.style.width = 315
 
 	gui.add{type = 'label', caption = ''}
 

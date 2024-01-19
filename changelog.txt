@@ -13,6 +13,7 @@ Date: 2024-1-17
     - Rewrote the pycodex page for inserters.
     - Rewrote the pycodex page for tailings ponds.
     - Added tooltips for most GUI elements in the pycodex spreadsheet pages
+    - Added the py bug reports website URL to the pycodex front page
   Tailings pond:
     - Tailings pond spillage event is slightly more dramatic.
     - Added a linear relationship between # of fluid spilled and # of pollution tiles created (300 fluid = 1 tile). note that this also means that the rate of change in the radius is now negative instead of 0
