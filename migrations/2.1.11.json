@@ -1,0 +1,10 @@
+{
+    "item": [
+        ["filter-inserter", "fast-inserter"],
+        ["stack-filter-inserter", "stack-inserter"]
+    ],
+    "recipe": [
+        ["filter-inserter", "fast-inserter"],
+        ["stack-filter-inserter", "stack-inserter"]
+    ]
+}
