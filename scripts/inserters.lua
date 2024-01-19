@@ -8,6 +8,7 @@ Inserters.events.on_built = function(event)
 		or next(inserter.circuit_connected_entities.red)
 		or next(inserter.circuit_connected_entities.green)
 		or inserter.get_filter(1)
+		or inserter.logistic_network
 	then return end
 	inserter.inserter_filter_mode = 'blacklist'
 end
