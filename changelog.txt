@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.15
+Date: 2024-1-??
+  Changes:
+    - Added an incompatiblity with the "Big bags" mod due to crashes on startup and not being maintained
+---------------------------------------------------------------------------------------------------
 Version: 2.1.14
 Date: 2024-1-19
   Changes:

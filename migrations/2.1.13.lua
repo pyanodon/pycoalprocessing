@@ -25,4 +25,4 @@ for _, surface in pairs(game.surfaces) do
         end
     end
 end
-game.print('Migrated '..i..' filter inserters.')
+if i > 0 then game.print('Migrated '..i..' filter inserters.') end
