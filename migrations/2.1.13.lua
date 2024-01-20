@@ -1,5 +1,9 @@
 local i = 0
 for _, surface in pairs(game.surfaces) do
+    for _, inserter in pairs(surface.find_entities_filtered{name={'long-handed-inserter', 'fast-inserter', 'stack-inserter'}}) do
+        inserter.inserter_filter_mode = 'blacklist'
+    end
+    
     for _, inserter in pairs(surface.find_entities_filtered{type='inserter',name={'filter-inserter', 'stack-filter-inserter'}}) do
         local replacement = surface.create_entity{
             name = inserter.name == 'filter-inserter' and 'fast-inserter' or 'stack-inserter',
@@ -21,4 +25,4 @@ for _, surface in pairs(game.surfaces) do
         end
     end
 end
-game.print('Migrated '..i..' filter inserters.')
+if i > 0 then game.print('Migrated '..i..' filter inserters.') end
