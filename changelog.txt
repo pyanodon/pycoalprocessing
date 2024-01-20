@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.11
-Date: 2024-1-17
+Date: 2024-1-19
   Changes:
     - In order to prep for Factorio 2.0: Removed all filter inserters and filter stack inserters. Gave filter slots to all other inserters. A migration will automatically transform existing filter inserters in your base.
     - Add compatibility for Better Victory Screen (stringweasel).
