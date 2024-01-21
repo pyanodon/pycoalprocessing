@@ -112,6 +112,7 @@ local function scorch_earth(pond)
 
 	local tanksize = fluidbox.get_capacity(1)
 	local overflow_threshold = tanksize * overflow_threshold
+	local is_water = fluid.name:find('water')
 
 	if fluid.amount > overflow_threshold then -- pond is full
 		local surface_index = surface.index
@@ -121,12 +122,14 @@ local function scorch_earth(pond)
 		local amount = fluid.amount
 		repeat
 			amount = amount - fluids_per_tile
-			pond.lifetime_pollution_tiles_created = (pond.lifetime_pollution_tiles_created or 0) + 1
-			local x, y = spiral(pond.lifetime_pollution_tiles_created)
-			x = math.floor(x + entity.position.x) - 1
-			y = math.floor(y + entity.position.y) - 1
-			if surface.get_tile(x, y).name ~= 'polluted-ground' then
-				tiles[#tiles + 1] = {name = 'polluted-ground', position = {x = x, y = y}}
+			if not is_water then
+				pond.lifetime_pollution_tiles_created = (pond.lifetime_pollution_tiles_created or 0) + 1
+				local x, y = spiral(pond.lifetime_pollution_tiles_created)
+				x = math.floor(x + entity.position.x) - 1
+				y = math.floor(y + entity.position.y) - 1
+				if surface.get_tile(x, y).name ~= 'polluted-ground' then
+					tiles[#tiles + 1] = {name = 'polluted-ground', position = {x = x, y = y}}
+				end
 			end
 		until amount < overflow_threshold
 		-- add fluid consumed to production stats graph
