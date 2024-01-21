@@ -1,8 +1,8 @@
 Pond = {}
 Pond.events = {}
 
--- 300 fluids units are required to fill a tile
-local fluids_per_tile = 300
+-- 500 fluids units are required to fill a tile
+local fluids_per_tile = 500
 
 -- beyond 99% full, the pond will start to create pollution tiles
 local overflow_threshold = 0.99
@@ -111,11 +111,11 @@ local function scorch_earth(pond)
 	end
 
 	local tanksize = fluidbox.get_capacity(1)
-	local overflow_threshold = tanksize * overflow_threshold
-	local is_water = fluid.name:find('water')
-
-	if fluid.amount > overflow_threshold then -- pond is full
+	if fluid.amount == tanksize then -- pond is full
+		local is_water = fluid.name:find('water')
+		local overflow_threshold = tanksize * overflow_threshold
 		local surface_index = surface.index
+
 		if not global.tiles[surface_index] then global.tiles[surface_index] = {} end
 		local tiles = global.tiles[surface_index]
 

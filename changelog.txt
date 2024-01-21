@@ -4,6 +4,8 @@ Date: 2024-1-??
   Changes:
     - Added an incompatiblity with the "Big bags" mod due to crashes on startup and not being maintained
     - Fixed that water would create pollution tiles in the tailings pond
+    - Increased the tile/pollution tile ratio from 300/1 -> 500/1
+    - Forced tailings ponds to overfill only when they have exactly 100% fill level instead of >99%
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.14
 Date: 2024-1-19
