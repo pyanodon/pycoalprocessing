@@ -7,6 +7,7 @@ Date: 2024-1-??
     - Increased the tile/pollution tile ratio from 300/1 -> 500/1
     - Forced tailings ponds to overfill only when they have exactly 100% fill level instead of >99%
     - Fixed that tailings did not create tailings tiles in the tailings pond
+    - Replaced filter and stack filter inserters in all recipes with fast and stack inserters
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.14
 Date: 2024-1-19
