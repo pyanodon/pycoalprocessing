@@ -119,7 +119,7 @@ DATA {
     icon_size = 1,
     flags = {'placeable-neutral', 'placeable-off-grid', 'breaths-air', 'not-blueprintable', 'not-deconstructable'},
     selectable_in_game = false,
-    emissions_per_second = 0.01,
+    emissions_per_second = 0.0001,
     max_health = 5000000,
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{0, 0}, {0, 0}},
