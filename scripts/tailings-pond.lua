@@ -146,7 +146,6 @@ end
 Pond.events.on_built = function(event)
 	local entity = event.entity or event.created_entity
 	if not entity.valid or entity.name ~= 'tailings-pond' then return end
-	local entity = event.created_entity
 	entity.direction = defines.direction.north
 	local pond = {
 		entity = entity,
