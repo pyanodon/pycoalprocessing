@@ -1,4 +1,5 @@
 local table = require '__stdlib__.stdlib.utils.table'
+local FUN = require("__pycoalprocessing__/prototypes/functions/functions")
 
 
 data.raw['underground-belt']['underground-belt'].max_distance = 9
@@ -149,3 +150,6 @@ data.raw.inserter['stack-inserter'].filter_count = 5
 
 RECIPE('filter-inserter'):remove_unlock('fast-inserter')
 RECIPE('stack-filter-inserter'):remove_unlock('stack-inserter')
+
+FUN.global_item_replacer("filter-inserter", "fast-inserter")
+FUN.global_item_replacer("stack-filter-inserter", "stack-inserter")
