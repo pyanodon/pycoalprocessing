@@ -20,6 +20,23 @@ Available on the mod portal at <https://mods.factorio.com/mods/pyanodon/pycoalpr
 
 ![pYcoalTechs](http://i.imgur.com/ls3FQ8G.jpg "Technologies")
 
+## Bug Reports and Feedback
+
+Please use a dedicated repository [pybugreports](https://github.com/pyanodon/pybugreports) for bug reports and feedback.
+
+## Contributing
+
+When making a Pull Request, please also update `changelog.txt` with the summary of your changes.  
+If there is no upcoming version in the file, then the format is as follows:
+```
+---------------------------------------------------------------------------------------------------
+Version: a.b.c
+Date: ???
+  Changes:
+    - The summary of your changes
+---------------------------------------------------------------------------------------------------
+```
+
 ### Todo
 
 * Blue/Purple tier items
@@ -30,15 +47,3 @@ Available on the mod portal at <https://mods.factorio.com/mods/pyanodon/pycoalpr
 * CC BY-NC-ND 4.0
 
 This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. To view a copy of this license, visit <http://creativecommons.org/licenses/by-nc-nd/4.0/>
-
-### Issues
-
-Report all bugs on GitHub or on the forum post
-
-<https://github.com/pyanodon/pYCoalprocesing/issues>
-
-<https://forums.factorio.com/viewtopic.php?f=94&t=32272>
-
-#### Changes
-
-* Initial Version 0.1.2 for Factorio 0.14
