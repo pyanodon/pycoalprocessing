@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.18
+Date: 2024-1-31
+  Changes:
+    - Fixed that beacon and diet beacon would override farms being disabled without modules
+---------------------------------------------------------------------------------------------------
 Version: 2.1.17
 Date: 2024-1-22
   Changes:
