@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.19
+Date: 2024-1-31
+  Changes:
+    - Fixed that the fix that beacon and diet beacon would override farms being disabled without modules would break the ability to start new save files
+---------------------------------------------------------------------------------------------------
 Version: 2.1.18
 Date: 2024-1-31
   Changes:
