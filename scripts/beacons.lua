@@ -11,9 +11,14 @@ end
 
 Beacons.events.init = function()
 	global.beacon_interference_icons = global.beacon_interference_icons or {}
+	global.farms = global.farms or farms
 end
 
 local function enable_entity(entity)
+	local name = entity.name:gsub('%-mk..+', '')
+	if global.farms[name] ~= nil then
+		return
+	end
 	entity.active = true
 	local unit_number = entity.unit_number
 	local rendering_id = global.beacon_interference_icons[unit_number]
@@ -23,6 +28,10 @@ local function enable_entity(entity)
 end
 
 local function disable_entity(entity)
+	local name = entity.name:gsub('%-mk..+', '')
+	if global.farms[name] ~= nil then
+		return
+	end
 	entity.active = false
 	local unit_number = entity.unit_number
 	if global.beacon_interference_icons[unit_number] then return end
@@ -88,6 +97,9 @@ Beacons.events.on_destroyed = function(event)
 		for _, reciver in pairs(recivers) do
 			beacon_check(reciver)
 		end
+		if table_size(recivers) ~= 0 and remote.interfaces['cryogenic-distillation'] then
+			remote.call('cryogenic-distillation', 'am_fm_beacon_destroyed', recivers, recivers[1].surface)
+		end
 	end
 end
 
@@ -104,8 +116,7 @@ Beacons.events.on_gui_opened = function(event)
 	local dial = player.gui.relative.add{
         type = 'frame',
         name = 'Dials',
-        anchor =
-        {
+        anchor = {
             gui = defines.relative_gui_type.beacon_gui,
             position = defines.relative_gui_position.right
         },
@@ -206,5 +217,8 @@ gui_events[defines.events.on_gui_click]['py_beacon_confirm'] = function(event)
 	beacon.destroy()
 	for _, reciver in pairs(recivers) do
 		beacon_check(reciver)
+	end
+	if remote.interfaces['cryogenic-distillation'] then
+		remote.call('cryogenic-distillation', 'am_fm_beacon_settings_changed', new_beacon)
 	end
 end

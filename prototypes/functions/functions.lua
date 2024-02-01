@@ -700,6 +700,70 @@ function overrides.HAB(blist)
 	end
 end
 
+function overrides.add_corner_icon_to_recipe(recipe, corner)
+    local icon, icon_size, icons
+    local result = recipe.main_product or recipe.result or recipe.results[1][1] or recipe.results[1].name
+
+    -- Icon size finder
+    if recipe.icon_size ~= nil then
+        icon_size = recipe.icon_size
+    else
+        icon_size = 32 -- Set default to 32
+    end
+
+    -- Icon finder
+    if recipe.icon ~= nil then -- Found an icon
+        icon = recipe.icon
+    end
+
+    if icon == nil then -- (i.e. not found above)
+        -- Find it from result icon
+        icon = table.deepcopy(data.raw.item[result].icon)
+
+        -- Confirm icon_size
+        if data.raw.item[result] and data.raw.item[result].icon_size ~= nil then
+            icon_size = data.raw.item[result].icon_size
+        end
+    end
+
+    if recipe.icons then -- If it's already an icons
+        icons = recipe.icons
+        icons[#icons + 1] = corner
+    elseif data.raw.item[result] and data.raw.item[result].icons then
+        icons = table.deepcopy(data.raw.item[result].icons)
+        icons[#icons + 1] = corner
+    else -- No icons table, use icon found above
+        if icon == nil then
+            icon = '__base__/graphics/icons/blueprint.png'
+        end -- Fallback
+
+        icons = {
+            {icon = icon, icon_size = icon_size},
+            corner
+        }
+    end
+
+    -- Ensure icon sizes are installed in each icon level
+    for i, icon in pairs(icons) do
+        if not icon.icon_size then
+            if i == 1 then -- Allow first one to inherit, set all others to 32
+                icon.icon_size = icon_size or 32
+            else
+                icon.icon_size = 32
+            end
+        end
+    end
+
+    return icons
+end
+
+local hotair = {
+    icon = '__pypetroleumhandlinggraphics__/graphics/icons/hot-air.png',
+    icon_size = 64,
+    shift = {-7.5, -7.5},
+    scale = 0.25
+}
+
 --add 50 hot-air ingredient, output +25%
 function overrides.hotairrecipes(extra_recipes)
     --gather recipes for the casting unit
@@ -784,58 +848,10 @@ function overrides.hotairrecipes(extra_recipes)
 		end
 		--log(serpent.block(recipe))
 		local hname = "hotair-" .. recipe.name
-		local icon
-		local icons
-		local icon_size
-			--icon size finder
-			if recipe.icon_size ~=nil then
-				icon_size = recipe.icon_size
-			else --set default to 32
-				icon_size = 32
-			end --may change later if found internal to icons
-			--icon finder
-			if recipe.icon ~= nil then --found an icon
-				icon = recipe.icon
-			end
-			if icon == nil then --(i.e. not found above)
-				--find it from result icon
-				icon = table.deepcopy(data.raw.item[result].icon)
-				--confirm icon_size
-				if data.raw.item[result] and data.raw.item[result].icon_size ~= nil then
-					icon_size = data.raw.item[result].icon_size
-				end
-			end
-			local hotair = {icon = "__pypetroleumhandlinggraphics__/graphics/icons/hot-air.png", icon_size = 64, shift = {-7.5,-7.5}, scale = 0.25}
-      if recipe.icons then --if its already an icons
-        icons = recipe.icons
-        icons[#icons+1] = hotair
-      elseif data.raw.item[result] and data.raw.item[result].icons then
-        icons = table.deepcopy(data.raw.item[result].icons)
-        icons[#icons+1] = hotair
-      else --no icons table, use icon found above
-        if icon == nil then
-          icon = '__base__/graphics/icons/blueprint.png'
-        end --fallback
-          icons =
-          {
-            {icon = icon, icon_size = icon_size},
-            hotair
-          }
-      end
-      --ensure icon sizes are installed in each icon level (would be easier to add it to the whole thing, but meh)
-      for _,i in pairs(icons) do
-        if not i.icon_size then
-          if i==1 then --allow first one to inherit, set all others to 32
-            i.icon_size = icon_size or 32
-          else
-            i.icon_size = 32
-          end
-        end
-      end
 		local category
-			if recipe.category ~= nil then
-				category = recipe.category
-			end
+        if recipe.category ~= nil then
+            category = recipe.category
+        end
 		if recipe.results then
 			RECIPE {
 			type = "recipe",
@@ -846,7 +862,7 @@ function overrides.hotairrecipes(extra_recipes)
 			energy_required = recipe.energy_required,
 			ingredients = recipe.ingredients,
 			results = recipe.results,
-			icons = icons,
+			icons = overrides.add_corner_icon_to_recipe(recipe, hotair),
 			--icon_size = 32,
 			main_product = recipe.main_product or nil,
 			subgroup = recipe.subgroup,
@@ -864,9 +880,6 @@ function overrides.hotairrecipes(extra_recipes)
 	end
 end
 
-function overrides.Tech_create()
-end
-
 -- adds recipe to tech for unlock if tech and recipe exists
 function overrides.tech_add_recipe(tech, recipe)
     if data.raw.technology[tech] ~= nil then
@@ -874,10 +887,6 @@ function overrides.tech_add_recipe(tech, recipe)
             table.insert(data.raw.technology[tech].effects, {type = 'unlock-recipe', recipe = recipe})
         end
     end
-end
-
--- removes recipe from tech if tech exists and includes recipe in effects
-function overrides.tech_remove_recipe()
 end
 
 function overrides.tech_add_prerequisites(tech, prereq)
