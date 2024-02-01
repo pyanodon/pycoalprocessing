@@ -11,9 +11,14 @@ end
 
 Beacons.events.init = function()
 	global.beacon_interference_icons = global.beacon_interference_icons or {}
+	global.farms = global.farms or farms
 end
 
 local function enable_entity(entity)
+	local name = entity.name:gsub('%-mk..+', '')
+	if global.farms[name] ~= nil then
+		return
+	end
 	entity.active = true
 	local unit_number = entity.unit_number
 	local rendering_id = global.beacon_interference_icons[unit_number]
@@ -23,6 +28,10 @@ local function enable_entity(entity)
 end
 
 local function disable_entity(entity)
+	local name = entity.name:gsub('%-mk..+', '')
+	if global.farms[name] ~= nil then
+		return
+	end
 	entity.active = false
 	local unit_number = entity.unit_number
 	if global.beacon_interference_icons[unit_number] then return end

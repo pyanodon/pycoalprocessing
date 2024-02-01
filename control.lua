@@ -1,3 +1,5 @@
+farms = {}
+
 _G.gui_events = {
 	[defines.events.on_gui_click] = {},
 	[defines.events.on_gui_confirmed] = {},
@@ -41,6 +43,9 @@ end
 script.on_configuration_changed(init)
 script.on_init(function()
 	init()
+	if game.active_mods["pyalienlife"] then
+		farms = require("__pyalienlife__/scripts/farming/farm-building-list")
+	end
 	for _, interface in pairs{'silo_script', 'better-victory-screen'} do
 		if remote.interfaces[interface] and remote.interfaces[interface]['set_no_victory'] then
 			remote.call(interface, 'set_no_victory', true)
