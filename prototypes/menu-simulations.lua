@@ -184,10 +184,11 @@ menu_simulations.fe_diamonds =
   [[
   ]]
 }
+local has_alternative_energy = mods["pyalternativeenergy"]
 menu_simulations.fe_reactors =
 {
   checkboard = false,
-  save = "__pyfusionenergygraphics__/menu-simulations/menu-simulation-fe-reactors.zip",
+  save = has_alternative_energy and "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-fe-reactors2.zip" or "__pyfusionenergygraphics__/menu-simulations/menu-simulation-fe-reactors.zip",
   length = 60 * 20,
   init =
   [[
