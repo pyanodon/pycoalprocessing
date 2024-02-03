@@ -310,6 +310,7 @@ end
 
 -- ))
 
+require('prototypes/achievements')
 require('prototypes/logo')
 require('prototypes/menu-simulations')
 
