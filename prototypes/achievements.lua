@@ -22,54 +22,65 @@ data.raw["dont-build-entity-achievement"]["logistic-network-embargo"] = nil
 data.raw["finish-the-game-achievement"]["no-time-for-chitchat"] = nil
 data.raw["finish-the-game-achievement"]["there-is-no-spoon"] = nil
 
+data.raw["finish-the-game-achievement"]["smoke-me-a-kipper-i-will-be-back-for-breakfast"].icon="__pycoalprocessinggraphics__/graphics/achievement/smoke-me-a-kipper-i-will-be-back-for-breakfast.png"
+
 data:extend(
 {
-    {
-      type = "produce-achievement",
-      name = "empire-of-dirt",
-      order = "0a",
-      item_product = "soil",
-      amount = 1000000,
-      icon = "__base__/graphics/achievement/mass-production-1.png",
-      icon_size = 128,
-      limited_to_one_game = true
-    },
-    {
-      type = "produce-achievement",
-      name = "dust-to-dust",
-      order = "0b",
-      item_product = "ash",
-      amount = 1000000,
-      icon = "__base__/graphics/achievement/mass-production-1.png",
-      icon_size = 128,
-      limited_to_one_game = true
-    },
+  {
+    type = "produce-achievement",
+    name = "empire-of-dirt",
+    order = "0a",
+    item_product = "soil",
+    amount = 1000000,
+    icon = "__base__/graphics/achievement/mass-production-1.png",
+    icon_size = 128,
+    limited_to_one_game = true
+  },
+  {
+    type = "produce-achievement",
+    name = "dust-to-dust",
+    order = "0b",
+    item_product = "ash",
+    amount = 1000000,
+    icon = "__base__/graphics/achievement/mass-production-1.png",
+    icon_size = 128,
+    limited_to_one_game = true
+  },
+})
+if mods.pypetroleumhandling then
+  data:extend({
     {
       type = "produce-achievement",
       name = "what-do-you-mean-i-didnt-win-the-game",
       order = "0c",
       item_product = "filled-proto-tholins-vessel",
       amount = 1,
-      icon = "__base__/graphics/achievement/smoke-me-a-kipper-i-will-be-back-for-breakfast.png",
+      icon = "__pycoalprocessinggraphics__/graphics/achievement/what-do-you-mean-i-didnt-win-the-game.png",
       icon_size = 128,
       limited_to_one_game = true
     },
-    -- {
-    --   type = "dont-use-entity-in-energy-production-achievement",
-    --   name = "training-regimen",
-    --   order = "0e",
-    --   last_hour_only = true,
-    --   included = "generator-1",
-    --   minimum_energy_produced = "1TJ",
-    --   icon = "__base__/graphics/achievement/solaris.png",
-    --   icon_size = 128
-    -- },
-    {
-      type = "build-entity-achievement",
-      name = "animal-labor",
-      order = "0f",
-      to_build = "caravan",
-      icon = "__base__/graphics/achievement/getting-on-track.png",
-      icon_size = 128
-    },
-})
+  })
+end
+if mods.pyalienlife then
+  data:extend({
+      {
+        type = "dont-use-entity-in-energy-production-achievement",
+        name = "training-regimen",
+        order = "0e",
+        last_hour_only = true,
+        excluded = "electric-energy-interface", -- this is NOT optional, so fill in something you can't build anyway
+        included = "generator-1",
+        minimum_energy_produced = "1TJ",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/training-regimen.png",
+        icon_size = 128
+      },
+      {
+        type = "build-entity-achievement",
+        name = "animal-labor",
+        order = "0f",
+        to_build = "caravan",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
+        icon_size = 128
+      },
+    })
+end
