@@ -24,12 +24,14 @@ data.raw["finish-the-game-achievement"]["there-is-no-spoon"] = nil
 
 data.raw["finish-the-game-achievement"]["smoke-me-a-kipper-i-will-be-back-for-breakfast"].icon="__pycoalprocessinggraphics__/graphics/achievement/smoke-me-a-kipper-i-will-be-back-for-breakfast.png"
 
+-- ordering: 0, then a letter per mod, then a letter within the mod
+-- PyCP: a, PyIN: b, PyFE: c, PyPH: d, PyRO: e, PyHT: f, PyAL: g, PyAE: h
 data:extend(
 {
   {
     type = "produce-achievement",
     name = "empire-of-dirt",
-    order = "0a",
+    order = "0aa",
     item_product = "soil",
     amount = 1000000,
     icon = "__base__/graphics/achievement/mass-production-1.png",
@@ -39,7 +41,7 @@ data:extend(
   {
     type = "produce-achievement",
     name = "dust-to-dust",
-    order = "0b",
+    order = "0ab",
     item_product = "ash",
     amount = 1000000,
     icon = "__base__/graphics/achievement/mass-production-1.png",
@@ -52,7 +54,7 @@ if mods.pypetroleumhandling then
     {
       type = "produce-achievement",
       name = "what-do-you-mean-i-didnt-win-the-game",
-      order = "0c",
+      order = "0da",
       item_product = "filled-proto-tholins-vessel",
       amount = 1,
       icon = "__pycoalprocessinggraphics__/graphics/achievement/what-do-you-mean-i-didnt-win-the-game.png",
@@ -66,7 +68,7 @@ if mods.pyalienlife then
       {
         type = "dont-use-entity-in-energy-production-achievement",
         name = "training-regimen",
-        order = "0e",
+        order = "0ga",
         last_hour_only = true,
         excluded = "electric-energy-interface", -- this is NOT optional, so fill in something you can't build anyway
         included = "generator-1",
@@ -77,10 +79,65 @@ if mods.pyalienlife then
       {
         type = "build-entity-achievement",
         name = "animal-labor",
-        order = "0f",
+        order = "0gb",
         to_build = "caravan",
         icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
         icon_size = 128
       },
+      {
+        type = "build-entity-achievement",
+        name = "is-it-a-bird",
+        order = "0gc",
+        to_build = "nukavan",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
+        icon_size = 128
+      },
+      {
+        type = "build-entity-achievement",
+        name = "health-and-safety",
+        order = "0gd",
+        to_build = "nukavan",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
+        icon_size = 128
+      },
+      {
+        type = "build-entity-achievement",
+        name = "cthulhu-fhtagn",
+        order = "0ge",
+        to_build = "ocula",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
+        icon_size = 128
+      },
+      {
+        type = "achievement",
+        name = "polished-turd",
+        order = "0gf",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
+        icon_size = 128
+      },
     })
+end
+if mods.pyalternativeenergy then
+  data:extend({
+    {
+      type = "produce-achievement",
+      name = "taste-the-rainbow",
+      order = "0ha",
+      item_product = "pu-238",
+      amount = 1,
+      icon = "__pycoalprocessinggraphics__/graphics/achievement/what-do-you-mean-i-didnt-win-the-game.png",
+      icon_size = 128,
+      limited_to_one_game = true
+    },
+    {
+      type = "produce-achievement",
+      name = "now-i-am-become-death",
+      order = "0hb",
+      fluid_product = "reactor-waste-1",
+      amount = 1,
+      icon = "__pycoalprocessinggraphics__/graphics/achievement/what-do-you-mean-i-didnt-win-the-game.png",
+      icon_size = 128,
+      limited_to_one_game = true
+    },
+  })
 end
