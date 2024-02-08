@@ -1,8 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.20
-Date: ?
+Date: 2024-2-7
   Changes:
     - Fixed Fusion menu simulations not running under Alternative Energy
+    - Fixed that the requester paste modifier setting wasnt correctly catching all entities due to mod load order issues
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.19
 Date: 2024-1-31
