@@ -90,28 +90,31 @@ local function disable_entity(entity)
 end
 
 local function beacon_check(reciver)
-	local beacons = reciver.get_beacons()
+	local beacons = reciver.get_beacons() --[[@as table<int, LuaEntity>]]
 	if not beacons or not next(beacons) then return end
 
 	local effected_am = {}
 	local effected_fm = {}
+	local effected_total = {}
 	for _, beacon in pairs(beacons) do
 		if our_beacons[beacon.name] then
-			local am = beacon.name:match('%d+')
-			local fm = beacon.name:match('%d+$')
+			local am = beacon.name:match('%d+') --[[@as string]]
+			local fm = beacon.name:match('%d+$') --[[@as string]]
+			local total = am .. fm
 			if settings.startup['future-beacons'].value then
 				if effected_am[am] or effected_fm[fm] then
 					disable_entity(reciver)
 					return
 				end
+				effected_am[am] = true
+				effected_fm[fm] = true
 			else
-				if effected_am[am] and effected_fm[fm] then
+				if effected_total[total] then
 					disable_entity(reciver)
 					return
 				end
+				effected_total[total] = true
 			end
-			effected_am[am] = true
-			effected_fm[fm] = true
 		end
 	end
 	enable_entity(reciver)
