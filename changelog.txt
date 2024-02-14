@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.22
+Date: 2024-2-14
+  Changes:
+    - Uh, we had a slight weapons malfunction, but uh... everything's perfectly all right now. We're fine. We're all fine here now, thank you.
+---------------------------------------------------------------------------------------------------
 Version: 2.1.21
 Date: 2024-2-14
   Changes:
