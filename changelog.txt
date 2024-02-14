@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.21
+Date: 2024-2-14
+  Changes:
+    - Fixed that if an inserter had a filter set on any slot other than 1 it would get reset to blacklist
+---------------------------------------------------------------------------------------------------
 Version: 2.1.20
 Date: 2024-2-7
   Changes:
