@@ -89,15 +89,15 @@ if mods.pyalienlife then
         name = "is-it-a-bird",
         order = "0gc",
         to_build = "nukavan",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/is-it-a-bird.png",
         icon_size = 128
       },
       {
         type = "build-entity-achievement",
-        name = "health-and-safety",
+        name = "as-per-my-last-email",
         order = "0gd",
         to_build = "nukavan",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/as-per-my-last-email.png",
         icon_size = 128
       },
       {
@@ -105,14 +105,21 @@ if mods.pyalienlife then
         name = "cthulhu-fhtagn",
         order = "0ge",
         to_build = "ocula",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/cthulhu-fhtagn.png",
+        icon_size = 128
+      },
+      {
+        type = "achievement",
+        name = "no-ulterior-motives-behind-this-acronym",
+        order = "0gf",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/no-ulterior-motives-behind-this-acronym.png",
         icon_size = 128
       },
       {
         type = "achievement",
         name = "polished-turd",
-        order = "0gf",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
+        order = "0gg",
+        icon = "__pycoalprocessinggraphics__/graphics/achievement/polished-turd.png",
         icon_size = 128
       },
     })
