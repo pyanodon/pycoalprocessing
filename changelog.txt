@@ -4,6 +4,7 @@ Date: ???
   Changes:
     - Added pY achivements
     - Fix crash with pycodex (https://github.com/pyanodon/pybugreports/issues/398)
+    - Added custom pY milestones preset for full pYAE suite
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.23
 Date: 2024-2-17
