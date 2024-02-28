@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.24
+Date: ???
+  Changes:
+    - Added custom pY milestones preset for full pYAE suite
+---------------------------------------------------------------------------------------------------
+Version: 2.1.23
+Date: 2024-2-17
+  Changes:
+    - Fixed some issues with the future beacons setting (https://github.com/pyanodon/pycoalprocessing/pull/353)
+---------------------------------------------------------------------------------------------------
 Version: 2.1.22
 Date: 2024-2-14
   Changes:
