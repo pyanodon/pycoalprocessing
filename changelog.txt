@@ -5,6 +5,7 @@ Date: ???
     - Added pY achivements
     - Fix crash with pycodex (https://github.com/pyanodon/pybugreports/issues/398)
     - Added custom pY milestones preset for full pYAE suite
+    - Fixed mispelling of trasmission as transmission in the AM:FM beacon page (https://github.com/pyanodon/pybugreports/issues/422)
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.23
 Date: 2024-2-17
