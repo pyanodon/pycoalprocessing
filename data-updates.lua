@@ -196,9 +196,7 @@ local recipes_list =
   "zinc-chloride",
 }
 
-if not mods["pypetroleumhandling"] then
-    table.insert(recipes_list, "niobium-plate")
-end
+table.insert(recipes_list, "niobium-plate")
 
 --adding to module limitation list
 FUN.productivity(recipes_list)
