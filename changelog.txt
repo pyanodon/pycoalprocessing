@@ -1,8 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.24
-Date: ???
+Date: 2024-3-13
   Changes:
     - Added custom pY milestones preset for full pYAE suite
+    - Fixed that niobium plate prod was disabled with pyph active
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.23
 Date: 2024-2-17
