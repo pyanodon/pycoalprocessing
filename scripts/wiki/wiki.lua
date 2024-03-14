@@ -30,6 +30,7 @@ function Wiki.open_wiki(player)
 
     player.opened = nil
     local pywiki = player.gui.screen.add{type = 'frame', name = 'pywiki', direction = 'vertical', style = 'invisible_frame'}
+    player.opened = pywiki
     if not pywiki.valid then game.print('ERROR: The pY codex failed to open.'); return end
     pywiki.style.padding = 24
     pywiki.style.horizontally_squashable = true
@@ -40,7 +41,6 @@ function Wiki.open_wiki(player)
     pywiki.style.natural_height = 65535
     
     local main_frame = pywiki.add{type = 'frame', name = 'pywiki', direction = 'vertical'}
-    player.opened = pywiki
 
     for _, widget in pairs(empty_widgets) do
         widget.style.size = 24
