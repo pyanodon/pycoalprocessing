@@ -83,7 +83,7 @@ ENTITY {
             pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0, 1}, {0, -1}, nil, nil, pipes),
             base_area = 10,
             base_level = -1,
-            pipe_connections = {{type = "input", position = {4.0, 0.0}}}
+            pipe_connections = {{type = "input-output", position = {4.0, 0.0}},{type = "input-output", position = {-4.0, 0.0}}}
         }
     },
     vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
