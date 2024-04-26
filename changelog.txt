@@ -1,9 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.26
-Date: ???
+Date: 2024-4-25
   Changes:
-    - Fixed that soil extractor passthrough fluidbox couldn't pass fluid to
-    pipes
+    - Fixed that soil extractor passthrough fluidbox couldn't pass fluid to pipes
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.25
 Date: 2024-4-1
