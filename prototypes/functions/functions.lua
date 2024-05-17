@@ -297,59 +297,6 @@ function overrides.Recipe(recipe)
     --log(serpent.block(data.raw.recipe[name]))
 end
 
--- add or subtract from a recipe ingredients or results
--- is used to edit already existing recipe
-function overrides.Patch(recipe)
-    --log(serpent.block(recipe))
-    --log(serpent.block(data.raw.recipe[name]))
-    local name = recipe.name
-    local newingredients = recipe.ingredients
-    local newresults = recipe.results
-
-    local currentingredients = data.raw.recipe[name].ingredients
-    local currentresults = data.raw.recipe[name].results
-
-    if data.raw.recipe[name] ~= nil then
-        if newingredients ~= nil then
-            for i1, ing1 in pairs(currentingredients) do
-                for _, ing2 in pairs(newingredients) do
-                    if ing1.name == ing2.name then
-                        if string.find(ing2.amount, '[%+]') ~= nil then
-                            ing1.amount = ing1.amount + string.sub(string.find(ing2.amount, '%d'))
-
-                            data.raw.recipe[name].ingredients[i1].amount = ing1.amount
-                        elseif string.find(ing2.amount, '[%-]') then
-                            ing1.amount = ing1.amount - string.sub(string.find(ing2.amount, '%d'))
-
-                            data.raw.recipe[name].ingredients[i1].amount = ing1.amount
-                        end
-                    end
-                end
-            end
-        end
-
-        if newresults ~= nil then
-            for r1, res1 in pairs(currentresults) do
-                for _, res2 in pairs(newresults) do
-                    if res1.name == res2.name then
-                        if string.find(res2.amount, '[%+]') ~= nil then
-                            res1.amount = res1.amount + string.sub(string.find(res2.amount, '%d'))
-
-                            data.raw.recipe[name].results[r1].amount = res1.amount
-                        elseif string.find(res2.amount, '[%-]') then
-                            res1.amount = res1.amount - string.sub(string.find(res2.amount, '%d'))
-
-                            data.raw.recipe[name].results[r1].amount = res1.amount
-                        end
-                    end
-                end
-            end
-        end
-    end
-
-    --log(serpent.block(data.raw.recipe[name]))
-end
-
 -- replace item/fluid in recipes ingredients
 -- doesnt yet include a way to change ingredient amount will update when needed
 function overrides.ingredient_replace(recipe, old, new, new_amount)
@@ -906,7 +853,7 @@ local function ensure_contiguous(tbl)
     return contiguous_table
 end
 
-function modify_recipe_tables(item, items_table, previous_item_names, result_table)
+local function modify_recipe_tables(item, items_table, previous_item_names, result_table)
     --process both result and ingredient tables
     --log(serpent.block(item))
     --log(serpent.block(items_table))
@@ -1096,7 +1043,7 @@ function modify_recipe_tables(item, items_table, previous_item_names, result_tab
 end
 
 --handles all adjustments for each ingredient and result changes in autorecipe
-function recipe_item_builder(ingredients,results,previous_ingredients,previous_results)
+local function recipe_item_builder(ingredients,results,previous_ingredients,previous_results)
     --log(serpent.block(ingredients))
     --log(serpent.block(previous_ingredients))
     --log(serpent.block(results))
