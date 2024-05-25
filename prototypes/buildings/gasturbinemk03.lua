@@ -10,7 +10,7 @@ local pipe_pictures =
             shift = shift_north
         }
     else
-        north = DATA.Sprites.empty_sprite()
+        north = py.empty_image()
     end
     if shift_south then
         south = {
@@ -21,7 +21,7 @@ local pipe_pictures =
             shift = shift_south
         }
     else
-        south = DATA.Sprites.empty_sprite()
+        south = py.empty_image()
     end
     if shift_west then
         west = {
@@ -32,7 +32,7 @@ local pipe_pictures =
             shift = shift_west
         }
     else
-        west = DATA.Sprites.empty_sprite()
+        west = py.empty_image()
     end
     if shift_east then
         east = {
@@ -43,7 +43,7 @@ local pipe_pictures =
             shift = shift_east
         }
     else
-        east = DATA.Sprites.empty_sprite()
+        east = py.empty_image()
     end
     return {north = north, south = south, west = west, east = east}
 end
