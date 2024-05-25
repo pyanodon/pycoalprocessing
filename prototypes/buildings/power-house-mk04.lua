@@ -120,39 +120,39 @@ ENTITY {
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", {-0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_left),
-            pipe_covers = DATA.Pipes.covers(true, true, true, true),
+            pipe_picture = py.pipe_pictures("assembling-machine-2", {-0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_left),
+            pipe_covers = py.pipe_covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {-1.0, -3.9}}}
         },
         {
             production_type = "input",
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", {0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_mid),
-            pipe_covers = DATA.Pipes.covers(true, true, true, true),
+            pipe_picture = py.pipe_pictures("assembling-machine-2", {0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_mid),
+            pipe_covers = py.pipe_covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {0.0, -3.9}}}
         },
         {
             production_type = "input",
-            pipe_covers = DATA.Pipes.covers(true, true, true, true),
+            pipe_covers = py.pipe_covers(true, true, true, true),
             base_area = 10,
             base_level = -1,
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", {-0, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_right),
+            pipe_picture = py.pipe_pictures("assembling-machine-2", {-0, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_right),
             pipe_connections = {{type = "input", position = {1.0, -3.9}}}
         },
         {
             production_type = "output",
-            pipe_covers = DATA.Pipes.covers(true, true, true, true),
+            pipe_covers = py.pipe_covers(true, true, true, true),
             base_level = 1,
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", {-0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_left),
+            pipe_picture = py.pipe_pictures("assembling-machine-2", {-0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_left),
             pipe_connections = {{type = "output", position = {-1.0, 3.9}}}
         },
         {
             production_type = "output",
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", {0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_mid),
-            pipe_covers = DATA.Pipes.covers(true, true, true, true),
+            pipe_picture = py.pipe_pictures("assembling-machine-2", {0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_mid),
+            pipe_covers = py.pipe_covers(true, true, true, true),
             base_level = 1,
             pipe_connections = {{type = "output", position = {1.0, 3.9}}}
         },

@@ -81,8 +81,8 @@ ENTITY {
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_covers = DATA.Pipes.covers(true, true, true, true),
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-3", {0, 1}, {0, -1}, nil, nil, pipes),
+            pipe_covers = py.pipe_covers(true, true, true, true),
+            pipe_picture = py.pipe_pictures("assembling-machine-3", {0, 1}, {0, -1}, nil, nil, pipes),
             base_area = 10,
             base_level = -1,
 	    height = 2,

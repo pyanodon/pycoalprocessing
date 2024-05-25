@@ -51,7 +51,7 @@ ENTITY {
     fluid_box = {
         base_area = 1,
         base_level = -1,
-        pipe_covers = DATA.Pipes.covers(false, true, true, true),
+        pipe_covers = py.pipe_covers(false, true, true, true),
         production_type = "input-output",
         filter = "combustion-mixture1",
         minimum_temperature = 500.0,

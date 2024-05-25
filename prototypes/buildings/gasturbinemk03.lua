@@ -103,7 +103,7 @@ ENTITY {
         minimum_temperature = 500.0,
         base_area = 1,
         base_level = -1,
-        pipe_covers = DATA.Pipes.covers(false, true, false, false),
+        pipe_covers = py.pipe_covers(false, true, false, false),
         pipe_picture = pipe_pictures({0, 0}, {0, 0}, {0, 0}, {0, 0}),
         production_type = "input-output",
         pipe_connections = {

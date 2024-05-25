@@ -45,7 +45,7 @@ local variants = {
     }
 }
 
-DATA {
+data:extend{{
     type = 'tile',
     name = 'polluted-ground',
     collision_mask = {'ground-tile'},
@@ -76,9 +76,9 @@ DATA {
     vehicle_friction_modifier = sand_vehicle_speed_modifier,
     transitions = data.raw.tile['dirt-4'].transitions,
     transitions_between_transitions = data.raw.tile['dirt-4'].transitions_between_transitions,
-}
+}}
 
-DATA {
+data:extend{{
     type = 'tile',
     name = 'polluted-ground-burnt',
     collision_mask = {'ground-tile'},
@@ -110,9 +110,9 @@ DATA {
     vehicle_friction_modifier = sand_vehicle_speed_modifier,
     transitions = data.raw.tile['dirt-4'].transitions,
     transitions_between_transitions = data.raw.tile['dirt-4'].transitions_between_transitions,
-}
+}}
 
-DATA {
+data:extend{{
     type = 'tree',
     name = 'ninja-tree',
     icon = '__pycoalprocessinggraphics__/graphics/empty.png',
@@ -135,4 +135,4 @@ DATA {
             height = 1,
         }
     }
-}
+}}

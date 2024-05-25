@@ -1,19 +1,6 @@
 if _G.overrides then return _G.overrides end
 _G.overrides = {}
 
---add productivity to all recipes
-function overrides.productivity(recipes_list)
-	for _, r in pairs(data.raw.module) do
-		if r.name:find("productivity%-module") and r.limitation then
-			for _, recipe in pairs(recipes_list) do
-				if data.raw.recipe[recipe] ~= nil then
-					table.insert(r.limitation, recipe)
-				end
-			end
-		end
-	end
-end
-
 -- add item/fluid to recipe ingredients
 -- ingredient contains name, amount, and type if its a fluid
 function overrides.add_ingredient(recipe, ingredient)
@@ -1197,7 +1184,6 @@ function overrides.autorecipes(recipe)
 
         local recipe_name = rec.name or numbered_name
 
-        --build recipe with stdlib recipe builder
         RECIPE{
             type = 'recipe',
             name = recipe_name,
@@ -1247,85 +1233,6 @@ function overrides.autorecipes(recipe)
         ]]
         --log(serpent.block(data.raw.recipe[recipe_name]))
     end
-
-end
-
--- The purpose of the farm_speed functions is to remove the farm building itself
--- from the building speed. For example, for xyhiphoe mk1 which has only one animal
--- per farm, we want the speed to be equal to 1 xyhiphoe not 2 (farm + module)
--- Returns the correct farm speed for a mk1 farm based on number of modules and desired speed using mk1 modules
-function overrides.farm_speed(num_slots, desired_speed)
-    -- mk1 modules are 100% bonus speed. The farm itself then counts as much as one module
-    return desired_speed / (num_slots + 1)
-end
-
--- Returns the correct farm speed for a mk2+ farm based on the number of modules and the mk1 speed
-function overrides.farm_speed_derived(num_slots, base_entity_name)
-    local e = data.raw["assembling-machine"][base_entity_name]
-    local mk1_slots = e.module_specification.module_slots
-    local desired_mk1_speed = e.crafting_speed * (mk1_slots + 1)
-    local speed_improvement_ratio = num_slots / mk1_slots
-    return (desired_mk1_speed * speed_improvement_ratio) / (num_slots + 1/speed_improvement_ratio)
-end
-
--- Takes two prototype names (both must use the style of IconSpecification with icon = string_path), returns an IconSpecification with the icons as composites
-function overrides.composite_molten_icon(base_prototype, child_prototype, shadow_alpha)
-    shadow_alpha = shadow_alpha or 0.6
-    base_prototype = data.raw.fluid[base_prototype] or data.raw.item[base_prototype]
-    child_prototype = data.raw.fluid[child_prototype] or data.raw.item[child_prototype]
-    return {
-        {
-            icon = base_prototype.icon,
-            icon_size = base_prototype.icon_size,
-            icon_mipmaps = base_prototype.icon_mipmaps
-        },
-        {
-            icon = child_prototype.icon,
-            icon_size = child_prototype.icon_size,
-            icon_mipmaps = base_prototype.icon_mipmaps,
-            shift = {10, 10},
-            scale = 0.65,
-            tint = {r = 0, g = 0, b = 0, a = shadow_alpha}
-        },
-        {
-            icon = child_prototype.icon,
-            icon_size = child_prototype.icon_size,
-            icon_mipmaps = base_prototype.icon_mipmaps,
-            shift = {10, 10},
-            scale = 0.5,
-            tint = {r = 1, g = 1, b = 1, a = 1}
-        },
-    }
-end
-
--- adds some text to a prototype's localised description
-function overrides.add_to_description(type, prototype, localised_string)
-	if prototype.localised_description and prototype.localised_description ~= '' then
-		prototype.localised_description = {'', prototype.localised_description, '\n', localised_string}
-	else
-		if type == 'item' and prototype.place_result then
-			for _, machine in pairs(data.raw) do
-				machine = machine[prototype.place_result]
-				if machine and machine.localised_description then
-					prototype.localised_description = {
-						'?',
-						{'', machine.localised_description, '\n', localised_string},
-						localised_string
-					}
-					return
-				end
-			end
-
-			prototype.localised_description = {
-				'?',
-				{'', {'entity-description.' .. prototype.place_result}, '\n', localised_string},
-				{'', {type .. '-description.' .. prototype.name}, '\n', localised_string},
-				localised_string
-			}
-		else
-			prototype.localised_description = {'?', {'', {type .. '-description.' .. prototype.name}, '\n', localised_string}, localised_string}
-		end
-	end
 end
 
 -- formats a number into the amount of energy. Requires 'W' or 'J' as the second parameter
@@ -1356,35 +1263,6 @@ function overrides.format_energy(energy, watts_or_joules)
         prefix = prefix + 1
     end
 	return {'' , string.format('%.1f', energy), ' ', si_prefixes[prefix] and {si_prefixes[prefix]} or '* 10^'..(prefix*3)..' ', {watts_or_joules}}
-end
-
--- Like normal pairs(), but randomized
-local function shuffle(t)
-	local keys = {}
-	local n = 0
-	for k in pairs(t) do
-		n = n + 1
-		keys[n] = k
-	end
-
-	while n > 1 do
-		local k = math.random(n)
-		keys[n], keys[k] = keys[k], keys[n]
-		n = n - 1
-	end
-
-	return keys
-end
-function overrides.shuffled_pairs(t)
-	local shuffled_keys = shuffle(t)
-	local i = 0
-	return function()
-		i = i + 1
-		local key = shuffled_keys[i]
-		if key then
-			return key, t[key]
-		end
-	end
 end
 
 -- Checks if an item has metadata, such as item-with-tags or equipement grids. (control.lua stage ONLY)
