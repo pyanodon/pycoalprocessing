@@ -1,8 +1,6 @@
 if _G.overrides then return _G.overrides end
 _G.overrides = {}
 
---
-
 -- recipe builder: can take a list of ingredients and a list results and attempt to build a recipe using the first avalible item/fluid
 -- Example
 --[[
@@ -549,60 +547,6 @@ end
 function overrides.tech_add_prerequisites(tech, prereq)
     if data.raw.technology[tech] ~= nil then
         if data.raw.technology[prereq] ~= nil then table.insert(data.raw.technology[tech].prerequisites, prereq) end
-    end
-end
-
--- formats a number into the amount of energy. Requires 'W' or 'J' as the second parameter
-local si_prefixes = {
-    [0] = '',
-    'si-prefix-symbol-kilo',
-    'si-prefix-symbol-mega',
-    'si-prefix-symbol-giga',
-    'si-prefix-symbol-tera',
-    'si-prefix-symbol-peta',
-    'si-prefix-symbol-exa',
-    'si-prefix-symbol-zetta',
-    'si-prefix-symbol-yotta'
-}
-function overrides.format_energy(energy, watts_or_joules)
-	if watts_or_joules == 'W' then
-        watts_or_joules = 'si-unit-symbol-watt'
-        energy = energy * 60
-    elseif watts_or_joules == 'J' then
-        watts_or_joules = 'si-unit-symbol-joule'
-    else
-        error()
-    end
-
-    local prefix = 0
-	while energy >= 1000 do
-        energy = energy / 1000
-        prefix = prefix + 1
-    end
-	return {'' , string.format('%.1f', energy), ' ', si_prefixes[prefix] and {si_prefixes[prefix]} or '* 10^'..(prefix*3)..' ', {watts_or_joules}}
-end
-
--- Checks if an item has metadata, such as item-with-tags or equipement grids. (control.lua stage ONLY)
-local basic_item_types = {['item'] = true, ['capsule'] = true, ['gun'] = true, ['rail-planner'] = true, ['module'] = true}
-function overrides.check_for_basic_item(item)
-	local items_with_metadata = global.items_with_metadata
-	if not items_with_metadata then
-		items_with_metadata = {}
-		for item_name, prototype in pairs(game.item_prototypes) do
-			if not basic_item_types[prototype.type] then
-				items_with_metadata[item_name] = true
-			end
-		end
-		global.items_with_metadata = items_with_metadata
-	end
-	return not items_with_metadata[item]
-end
-
-function overrides.standardize_results(recipe)
-    if recipe.result and not recipe.results then
-        recipe.results = {{type = 'item', name = recipe.result, amount = recipe.result_count or 1}}
-        recipe.result = nil
-        recipe.result_count = nil
     end
 end
 
