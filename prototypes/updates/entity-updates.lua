@@ -147,5 +147,5 @@ data.raw.inserter['stack-inserter'].filter_count = 5
 RECIPE('filter-inserter'):remove_unlock('fast-inserter')
 RECIPE('stack-filter-inserter'):remove_unlock('stack-inserter')
 
-FUN.global_item_replacer("filter-inserter", "fast-inserter")
-FUN.global_item_replacer("stack-filter-inserter", "stack-inserter")
+py.global_item_replacer("filter-inserter", "fast-inserter")
+py.global_item_replacer("stack-filter-inserter", "stack-inserter")

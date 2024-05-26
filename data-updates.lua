@@ -32,7 +32,7 @@ RECIPE('medium-electric-pole'):add_ingredient({type = 'item', name = 'niobium-pl
 RECIPE('big-electric-pole'):remove_ingredient('steel-plate'):remove_ingredient('copper-plate'):add_ingredient({type = 'item', name = 'niobium-plate', amount = 2}):add_ingredient({type = 'item', name = 'copper-cable', amount = 15}):replace_ingredient('iron-stick', {'steel-plate', 6})
 
 RECIPE('chemical-plant'):remove_unlock('oil-processing'):set_fields{hidden = true}
-table.insert(data.raw['assembling-machine']['chemical-plant'].flags, 'hidden')
+ENTITY('chemical-plant'):add_flag('hidden')
 ITEM('chemical-plant'):add_flag('hidden')
 
 RECIPE('pump'):remove_unlock('fluid-handling'):add_unlock('engine')
@@ -47,11 +47,12 @@ data.raw['item-subgroup']['fill-barrel'].order = 'y'
 data.raw['item-subgroup']['empty-barrel'].order = 'z'
 
 --add handcrafting to player character
-for _, player in DATA:pairs('character') do
-    player.crafting_categories = player.String_Array(player.crafting_categories or {}) + 'handcrafting'
-end
-for _, controller in DATA:pairs('god-controller') do
-    controller.crafting_categories = controller.String_Array(controller.crafting_categories or {}) + 'handcrafting'
+for _, player_type in pairs{'character', 'god-controller'} do
+    for _, player in pairs(data.raw[player_type]) do
+        player.crafting_categories = player.crafting_categories or {}
+        table.insert(player.crafting_categories, 'handcrafting')
+        player.crafting_categories = table.dedupe(player.crafting_categories)
+    end
 end
 
 data.raw['item-subgroup']['science-pack'].group = 'production'

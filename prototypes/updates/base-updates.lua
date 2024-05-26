@@ -1,4 +1,3 @@
-local py_utils = require '__pypostprocessing__.prototypes.functions.utils'
 local resource_autoplace = require 'resource-autoplace'
 local noise = require 'noise'
 
