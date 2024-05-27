@@ -284,7 +284,6 @@ ITEM("productivity-module"):set_fields{
     effect =
     {
       productivity = {bonus = 0.1},
-      productivity = {bonus = 0.1},
       consumption = {bonus = 1},
       speed = {bonus = -0.25}
     }
