@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.27
-Date: ??
+Date: 2024-??-??
   Changes:
+    - Fixed that the washer pipe connections displayed as two way even though they were one way.
     - Russian translation of achievements (by Shadow_Man)
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.26

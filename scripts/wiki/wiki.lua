@@ -1,7 +1,7 @@
 Wiki = {}
 Wiki.events = {}
 
-local mod_gui = require('mod-gui')
+local mod_gui = require 'mod-gui'
 
 function Wiki.create_pywiki_button(player)
     local flow = mod_gui.get_button_flow(player)

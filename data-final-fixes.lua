@@ -12,7 +12,7 @@ if not mods.pyalternativeenergy then
     end
 end
 
-require('prototypes/map-gen-presets')
+require 'prototypes/map-gen-presets'
 
 -- Updating requester paste setting
 if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].value ~= 30 then

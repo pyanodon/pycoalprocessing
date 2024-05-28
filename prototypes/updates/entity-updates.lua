@@ -1,7 +1,3 @@
-local table = require '__stdlib__.stdlib.utils.table'
-local FUN = require("__pycoalprocessing__/prototypes/functions/functions")
-
-
 data.raw['underground-belt']['underground-belt'].max_distance = 9
 data.raw['underground-belt']['fast-underground-belt'].max_distance = 17
 data.raw['underground-belt']['express-underground-belt'].max_distance = 33
@@ -67,20 +63,20 @@ local burner = {
 
 --modify assembly machine 1
 data.raw['assembling-machine']['assembling-machine-1'].crafting_speed = 1
-data.raw['assembling-machine']['assembling-machine-1'].energy_source = table.deep_copy(burner)
+data.raw['assembling-machine']['assembling-machine-1'].energy_source = table.deepcopy(burner)
 data.raw['assembling-machine']['assembling-machine-1'].fluid_boxes = data.raw['assembling-machine']['assembling-machine-2'].fluid_boxes
 table.insert(data.raw['assembling-machine']['assembling-machine-1'].crafting_categories, 'crafting-with-fluid')
 
 --modify assembly machine 2
 data.raw['assembling-machine']['assembling-machine-2'].crafting_speed = 2
-data.raw['assembling-machine']['assembling-machine-2'].energy_source = table.deep_copy(burner)
+data.raw['assembling-machine']['assembling-machine-2'].energy_source = table.deepcopy(burner)
 table.insert(data.raw['assembling-machine']['assembling-machine-2'].energy_source.fuel_categories, 'jerry')
 data.raw['assembling-machine']['assembling-machine-2'].allowed_effects = {}
 data.raw['assembling-machine']['assembling-machine-2'].module_specification.module_slots = 0
 
 --modify assembly machine 3
 data.raw['assembling-machine']['assembling-machine-3'].crafting_speed = 4
-data.raw['assembling-machine']['assembling-machine-3'].energy_source = table.deep_copy(burner)
+data.raw['assembling-machine']['assembling-machine-3'].energy_source = table.deepcopy(burner)
 table.insert(data.raw['assembling-machine']['assembling-machine-3'].energy_source.fuel_categories, 'jerry')
 data.raw['assembling-machine']['assembling-machine-3'].allowed_effects = {}
 data.raw['assembling-machine']['assembling-machine-3'].module_specification.module_slots = 0
@@ -151,5 +147,5 @@ data.raw.inserter['stack-inserter'].filter_count = 5
 RECIPE('filter-inserter'):remove_unlock('fast-inserter')
 RECIPE('stack-filter-inserter'):remove_unlock('stack-inserter')
 
-FUN.global_item_replacer("filter-inserter", "fast-inserter")
-FUN.global_item_replacer("stack-filter-inserter", "stack-inserter")
+py.global_item_replacer("filter-inserter", "fast-inserter")
+py.global_item_replacer("stack-filter-inserter", "stack-inserter")

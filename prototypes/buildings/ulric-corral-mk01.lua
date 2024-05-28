@@ -138,7 +138,6 @@ ENTITY {
             animation = {
                 filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-bottom-right-cub-spritesheet.png",
                 frame_count = 1,
-                --line_length = 60,
                 width = 32,
                 height = 32,
                 animation_speed = 0.6
@@ -152,7 +151,6 @@ ENTITY {
             animation = {
                 filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-bottom-cub-spritesheet.png",
                 frame_count = 1,
-                --line_length = 60,
                 width = 32,
                 height = 32,
                 --animation_speed = 0.6
@@ -166,7 +164,6 @@ ENTITY {
             animation = {
                 filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-bottom-right-cub-spritesheet.png",
                 frame_count = 1,
-                --line_length = 60,
                 width = 32,
                 height = 32,
                 --animation_speed = 0.6
@@ -194,7 +191,6 @@ ENTITY {
             animation = {
                 filename = "__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-mid-right-stand-spritesheet.png",
                 frame_count = 1,
-                --line_length = 60,
                 width = 32,
                 height = 68,
                 --animation_speed = 0.5
