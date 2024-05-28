@@ -2,6 +2,7 @@
 Version: 2.1.27
 Date: 2024-??-??
   Changes:
+    - Added 'mod-name' localization to pymods. Step 1 of compatibility with recipe book 4.0
     - Fixed that the washer pipe connections displayed as two way even though they were one way.
     - Russian translation of achievements (by Shadow_Man)
 ---------------------------------------------------------------------------------------------------

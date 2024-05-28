@@ -89,8 +89,10 @@ local function disable_entity(entity)
 	}
 end
 
+---@param reciver LuaEntity
 local function beacon_check(reciver)
-	local beacons = reciver.get_beacons() --[[@as table<int, LuaEntity>]]
+	---@class LuaEntity[]
+	local beacons = reciver.get_beacons()
 	if not beacons or not next(beacons) then return end
 
 	local effected_am = {}

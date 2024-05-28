@@ -93,29 +93,8 @@ py.on_nth_tick(154, Pond.events[154])
 for _, event in pairs({defines.events.on_built_entity, defines.events.on_robot_built_entity, defines.events.script_raised_built, defines.events.script_raised_revive}) do
 	script.set_event_filter(event, {
 		{
-			filter = 'name',
-			name = 'inserter'
-		},
-		{
-			filter = 'name',
-			name = 'burner-inserter'
-		},
-		{
-			filter = 'name',
-			name = 'fast-inserter'
-		},
-		{
-			filter = 'name',
-			name = 'long-handed-inserter'
-		},
-		{
-			filter = 'name',
-			name = 'stack-inserter'
-		},
-		{
 			filter = 'type',
 			type = 'inserter',
-			mode = 'and'
 		},
 		{
 			filter = 'type',
@@ -125,18 +104,13 @@ for _, event in pairs({defines.events.on_built_entity, defines.events.on_robot_b
 		{
 			filter = 'name',
 			name = 'tailings-pond',
-			mode = 'and'
+			mode = 'or'
 		},
 		{
 			filter = 'type',
 			type = 'beacon',
 			mode = 'or'
 		},
-		{
-			filter = 'crafting-machine',
-			--type = 'beacon',
-			mode = 'or'
-		}
 	})
 end
 
