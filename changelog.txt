@@ -3,6 +3,7 @@ Version: 2.1.27
 Date: 2024-??-??
   Changes:
     - Fixed that the washer pipe connections displayed as two way even though they were one way.
+    - Russian translation of achievements (by Shadow_Man)
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.26
 Date: 2024-4-25
@@ -12,7 +13,7 @@ Date: 2024-4-25
 Version: 2.1.25
 Date: 2024-4-1
   Changes:
-    - Added pY achivements
+    - Added pY achievements
     - Fix crash with pycodex (https://github.com/pyanodon/pybugreports/issues/398)
     - Added custom pY milestones preset for full pYAE suite
     - Fixed mispelling of trasmission as transmission in the AM:FM beacon page (https://github.com/pyanodon/pybugreports/issues/422)
