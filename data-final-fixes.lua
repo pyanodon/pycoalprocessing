@@ -62,6 +62,7 @@ if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].v
               end
           end
           recipe.requester_paste_multiplier = settings.startup['rpm_items'].value
+          recipe.overload_multiplier = settings.startup['overload'].value
           ::continue::
       end
   end
