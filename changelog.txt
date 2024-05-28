@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.27
+Date: 2024-??-??
+  Changes:
+    - Fixed that the washer pipe connections displayed as two way even though they were one way.
+---------------------------------------------------------------------------------------------------
 Version: 2.1.26
 Date: 2024-4-25
   Changes:

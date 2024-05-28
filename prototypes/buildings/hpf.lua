@@ -61,7 +61,6 @@ ENTITY {
             width = 224,
             height = 32,
             frame_count = 1,
-            --animation_speed = 0.5,
             shift = util.by_pixel(0, 96),
             },
             {
@@ -69,7 +68,6 @@ ENTITY {
                 width = 224,
                 height = 320,
                 frame_count = 1,
-                --animation_speed = 0.5,
                 shift = util.by_pixel(0, -80),
             },
             {
@@ -131,16 +129,16 @@ ENTITY {
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
-            pipe_covers = DATA.Pipes.covers(false, true, true, true),
+            pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+            pipe_covers = py.pipe_covers(false, true, true, true),
             base_area = 10,
             base_level = -1,
             pipe_connections = {{type = "input", position = {4.0, -0.0}}}
         },
         {
             production_type = "output",
-            pipe_picture = DATA.Pipes.pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
-            pipe_covers = DATA.Pipes.covers(false, true, true, true),
+            pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+            pipe_covers = py.pipe_covers(false, true, true, true),
             base_level = 1,
             pipe_connections = {{type = "output", position = {-4.0, -0.0}}}
         },
