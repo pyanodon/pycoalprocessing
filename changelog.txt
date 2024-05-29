@@ -3,6 +3,8 @@ Version: 2.1.27
 Date: 2024-??-??
   Changes:
     - Added 'mod-name' localization to pymods. Step 1 of compatibility with recipe book 4.0
+    - Fix that tailings pond sometimes failed to overflow
+    - Fixed performance issues from an excess amount of very stealthy trees around previously-overflowed tailings ponds
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.26
 Date: 2024-4-25
