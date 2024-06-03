@@ -8,6 +8,7 @@ Date: 2024-??-??
     - Fixed a crash when closing the pycodex while recipe book 4.0 was open. (https://github.com/pyanodon/pybugreports/issues/491)
     - Fixed that the washer pipe connections displayed as two way even though they were one way.
     - Russian translation of achievements (by Shadow_Man)
+    - Properly defined drawing_box for beacons and diet beacons. Fixes clipping issues in their GUI. (https://github.com/pyanodon/pybugreports/issues/494)
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.26
 Date: 2024-4-25
