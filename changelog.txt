@@ -5,6 +5,9 @@ Date: 2024-??-??
     - Added 'mod-name' localization to pymods. Step 1 of compatibility with recipe book 4.0
     - Fixed that the washer pipe connections displayed as two way even though they were one way.
     - Russian translation of achievements (by Shadow_Man)
+    - Fix that tailings pond sometimes failed to overflow
+    - Fixed performance issues from an excess amount of very stealthy trees around previously-overflowed tailings ponds
+    - Fixed a crash when closing the pycodex while recipe book 4.0 was open. (https://github.com/pyanodon/pybugreports/issues/491)
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.26
 Date: 2024-4-25

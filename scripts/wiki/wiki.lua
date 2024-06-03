@@ -16,9 +16,7 @@ end
 function Wiki.get_wiki_gui(player)
     local pywiki = player.gui.screen.pywiki
     if not pywiki then return end
-    pywiki = pywiki.pywiki
-    if not pywiki then return pywiki.parent end
-    return pywiki
+    return pywiki.pywiki or pywiki
 end
 function Wiki.get_pages(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.py_pages_list end end
 function Wiki.get_page_contents(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.page_frame.scroll_pane end end
