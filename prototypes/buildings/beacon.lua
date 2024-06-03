@@ -124,6 +124,7 @@ for am = 5, 1, -1 do
         beacon.graphics_set = graphics_set
         beacon.collision_box = {{-2.05, -2.05}, {2.05, 2.05}}
         beacon.selection_box = {{-2.5, -2.5}, {2.5, 2.5}}
+        beacon.drawing_box = {{-2.5, -6}, {2.5, 2.5}}
 		beacon.collision_mask = {'item-layer', 'object-layer', 'water-tile'}
         beacon.next_upgrade = nil
         beacon.icon = '__pycoalprocessinggraphics__/graphics/icons/beacon.png'
