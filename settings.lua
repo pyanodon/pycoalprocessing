@@ -24,7 +24,7 @@ data:extend{
 		setting_type = 'startup',
 		minimum_value = 0,
 		maximum_value = 100,
-		default_value = 0
+		default_value = 2
 	},
 	{
 		type = 'bool-setting',
