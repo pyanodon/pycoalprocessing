@@ -5,7 +5,7 @@ for _, surface in pairs(game.surfaces) do
         local tile_position = ninja.position
         tile_position.x = math.floor(tile_position.x)
         tile_position.y = math.floor(tile_position.y)
-        if tile.position.x % 4 ~= 0 or tile.position.y % 4 =~= 0 then
+        if tile.position.x % 4 ~= 0 or tile.position.y % 4 ~= 0 then
             ninja.destroy()
             killed_ninjas = killed_ninjas + 1
         else
