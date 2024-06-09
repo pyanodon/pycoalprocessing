@@ -100,7 +100,7 @@ local function scorch_earth(pond)
 	local fluidbox = entity.fluidbox
 	local fluid = fluidbox[1]
 	if fluid and fluid.name == 'neutron' then return end
-	
+
 	local surface = entity.surface
 	--Vent Gasses
 	local fluid = empty_pond_gas(fluid, surface, entity.position)
@@ -128,7 +128,8 @@ local function scorch_earth(pond)
 				local x, y = spiral(pond.lifetime_pollution_tiles_created)
 				x = math.floor(x + entity.position.x) - 1
 				y = math.floor(y + entity.position.y) - 1
-				if surface.get_tile(x, y).name ~= 'polluted-ground' then
+				local tile = surface.get_tile(x, y)
+				if not tile.collides_with('water-tile') and tile.name ~= 'polluted-ground' then
 					tiles[#tiles + 1] = {name = 'polluted-ground', position = {x = x, y = y}}
 				end
 			end
