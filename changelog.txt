@@ -2,7 +2,8 @@
 Version: 2.1.29
 Date: ?
   Changes:
-    - Fixed that tailings ponds spills created 16x too much pollution in certian cases.
+    - Fixed that tailings ponds spills created 16x too much pollution in certian cases
+    - Fixed that tailings ponds spills would overwrite water
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.28
 Date: 2024-6-6
