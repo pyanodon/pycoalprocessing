@@ -62,7 +62,7 @@ ENTITY{
     max_health = 500,
     corpse = 'big-remnants',
     squeak_behaviour = false,
-    squeak_behaviour = false,
+    squeak_behavior = false,
     scale_info_icons = true,
     dying_explosion = 'storage-tank-explosion',
     collision_box = {{-8.9, -8.9}, {8.9, 8.9}},
