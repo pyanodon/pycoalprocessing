@@ -143,7 +143,7 @@ Beacons.events.on_destroyed = function(event)
 	if entity.type == 'beacon' then
 		if not our_beacons[entity.name] then return end
 		local recivers = entity.get_beacon_effect_receivers()
-		--entity.destroy()
+		entity.destroy() -- is needed for beacon check to remove interference if there was any
 		for _, reciver in pairs(recivers) do
 			beacon_check(reciver)
 		end
