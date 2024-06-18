@@ -92,7 +92,7 @@ ENTITY {
             pipe_covers = py.pipe_covers(true, true, true, true),
             pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {-0.05, -0.8}, nil, nil, pipes),
             base_level = 1,
-            pipe_connections = {{type = "output", position = {0.5, -3.5}}}
+            pipe_connections = {{type = 'output', position = {0.5, -3.5}}}
         },
         off_when_no_fluid_recipe = true
     },

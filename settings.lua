@@ -18,9 +18,18 @@ data:extend{
 		default_value = 30
 	},
 	{
+		type = 'int-setting',
+		name = 'overload', -- overload multiplyer for crafting machine ingredient limits
+		order = 'ac',
+		setting_type = 'startup',
+		minimum_value = 0,
+		maximum_value = 100,
+		default_value = 2
+	},
+	{
 		type = 'bool-setting',
 		name = 'future-beacons',
-		order = 'ac',
+		order = 'ad',
 		setting_type = 'startup',
 		default_value = true,
 	}

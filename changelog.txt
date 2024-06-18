@@ -1,6 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.29
+Date: ?
+  Changes:
+    - Fixed that tailings ponds spills created 16x too much pollution in certian cases
+    - Fixed that tailings ponds spills would overwrite water
+    - Added tailings pond to the squeak through blacklist. (https://github.com/pyanodon/pybugreports/issues/525)
+    - Fixed beacon interference not updating properly (https://github.com/pyanodon/pybugreports/issues/528)
+    - Added german translation.
+---------------------------------------------------------------------------------------------------
+Version: 2.1.28
+Date: 2024-6-6
+  Changes:
+    - Fixed bug that kept crafting machine overload multiplyer from working
+---------------------------------------------------------------------------------------------------
 Version: 2.1.27
-Date: 2024-??-??
+Date: 2024-6-3
   Changes:
     - Added 'mod-name' localization to pymods. Step 1 of compatibility with recipe book 4.0
     - Fix that tailings pond sometimes failed to overflow
