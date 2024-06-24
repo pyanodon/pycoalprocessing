@@ -78,13 +78,27 @@ for i = 1, 4 do
         },
         energy_usage = (200 * i) .. 'kW',
         animation = {
-            filename = '__pycoalprocessinggraphics__/graphics/entity/fawogae-plantation/fawogae-mk0' .. i .. '.png',
-            width = 200,
-            height = 193,
-            frame_count = 100,
-            line_length = 10,
-            animation_speed = 0.4,
-            shift = {0.13, -0.03}
+            layers = {
+                {
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/fawogae-plantation/fawogae.png',
+                    width = 200,
+                    height = 193,
+                    frame_count = 100,
+                    line_length = 10,
+                    animation_speed = 0.4,
+                    shift = {0.13, -0.03}
+                },
+                {
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/fawogae-plantation/fawogae-mask.png',
+                    width = 200,
+                    height = 193,
+                    frame_count = 100,
+                    line_length = 10,
+                    animation_speed = 0.4,
+                    shift = {0.13, -0.03},
+                    tint = py.tints[i]
+                },
+            }
         },
         fluid_boxes = {
             {

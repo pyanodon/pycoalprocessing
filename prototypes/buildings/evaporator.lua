@@ -1,3 +1,21 @@
+local pipes = {
+    south = {
+        filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/pipe-ending-down.png',
+        priority = 'extra-high',
+        width = 40,
+        height = 32
+    },
+    north = {
+        filename = '__pycoalprocessinggraphics__/graphics/entity/carbon-filter/top.png',
+        priority = 'low',
+        width = 44,
+        height = 25
+    }
+}
+
+local pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes)
+local pipe_covers = py.pipe_covers(true, true, true, true)
+
 RECIPE {
     type = 'recipe',
     name = 'evaporator',
@@ -131,31 +149,31 @@ for i = 1, 4 do
         fluid_boxes = {
             {
                 production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-2', {0.06, 0.48}, {0.12, -3.0}, nil, nil),
-                pipe_covers = py.pipe_covers(false, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_area = 10,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {3.0, 0.0}}}
             },
             {
                 production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-2', {0.06, 0.48}, {0.12, -3.0}, nil, nil),
-                pipe_covers = py.pipe_covers(false, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_area = 10,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {0.0, 3.0}}}
             },
             {
                 production_type = 'output',
-                pipe_picture = py.pipe_pictures('assembling-machine-2', {0.06, 0.48}, {0.12, -3.0}, nil, nil),
-                pipe_covers = py.pipe_covers(false, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_level = 1,
                 pipe_connections = {{type = 'output', position = {-3.0, 0.0}}}
             },
             {
                 production_type = 'output',
-                pipe_picture = py.pipe_pictures('assembling-machine-2', {0.06, 0.48}, {0.12, -3.0}, nil, nil),
-                pipe_covers = py.pipe_covers(false, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_level = 1,
                 pipe_connections = {{type = 'output', position = {0.0, -3.0}}}
             },

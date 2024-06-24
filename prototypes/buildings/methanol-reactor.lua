@@ -7,6 +7,9 @@ local pipes = {
     }
 }
 
+local pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes)
+local pipe_covers = py.pipe_covers(true, true, true, true)
+
 RECIPE {
     type = 'recipe',
     name = 'methanol-reactor',
@@ -54,8 +57,8 @@ for i = 1, 4 do
         max_health = i * 300,
         corpse = 'big-remnants',
         dying_explosion = 'medium-explosion',
-        collision_box = {{-2.75, -1.75}, {2.75, 2.75}},
-        selection_box = {{-3, -2}, {3, 3}},
+        collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
+        selection_box = {{-3, -3}, {3, 3}},
         match_animation_speed_to_activity = false,
         module_specification = {
             module_slots = i
@@ -88,7 +91,8 @@ for i = 1, 4 do
                     height = 247,
                     animation_speed = 0.4,
                     tint = py.tints[i],
-                    shift = {0.15, -0.79}
+                    shift = {0.15, -0.79},
+                    draw_as_glow = true
                 }
             }
         },
@@ -96,40 +100,40 @@ for i = 1, 4 do
             --North, left
             {
                 production_type = 'output',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes),
-                pipe_covers = py.pipe_covers(true, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {-0.5, -2.5}}}
+                pipe_connections = {{type = 'output', position = {-0.5, -3.5}}}
             },
             --North, right
             {
                 production_type = 'output',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes),
-                pipe_covers = py.pipe_covers(true, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {0.5, -2.5}}}
+                pipe_connections = {{type = 'output', position = {0.5, -3.5}}}
             },
             --South, left
             {
                 production_type = 'output',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes),
-                pipe_covers = py.pipe_covers(true, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_level = 1,
                 pipe_connections = {{type = 'output', position = {-0.5, 3.5}}}
             },
             --South, right
             {
                 production_type = 'output',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes),
-                pipe_covers = py.pipe_covers(true, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_level = 1,
                 pipe_connections = {{type = 'output', position = {0.5, 3.5}}}
             },
             --West, top
             {
                 production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes),
-                pipe_covers = py.pipe_covers(true, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_area = 10,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {-3.5, -0.5}}}
@@ -137,8 +141,8 @@ for i = 1, 4 do
             --West, bottom
             {
                 production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes),
-                pipe_covers = py.pipe_covers(true, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_area = 10,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {-3.5, 0.5}}}
@@ -146,8 +150,8 @@ for i = 1, 4 do
             --East, top
             {
                 production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes),
-                pipe_covers = py.pipe_covers(true, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_area = 10,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {3.5, -0.5}}}
@@ -155,8 +159,8 @@ for i = 1, 4 do
             --East, bottom
             {
                 production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes),
-                pipe_covers = py.pipe_covers(true, true, true, true),
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
                 base_area = 10,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {3.5, 0.5}}}

@@ -255,7 +255,6 @@ for i = 1, 4 do
             idle_sound = {filename = '__pycoalprocessinggraphics__/sounds/evaporator.ogg', volume = 0.3},
             apparent_volume = 2.5
         },
-        next_upgrade = mods['pyrawores'] and 'fts-reactor-mk02'
     }
 end
 
