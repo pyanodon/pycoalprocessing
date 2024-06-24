@@ -54,8 +54,8 @@ for i = 1, 4 do
         max_health = i * 300,
         corpse = 'big-remnants',
         dying_explosion = 'medium-explosion',
-        collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
-        selection_box = {{-3, -3}, {3, 3}},
+        collision_box = {{-2.75, -1.75}, {2.75, 2.75}},
+        selection_box = {{-3, -2}, {3, 3}},
         match_animation_speed_to_activity = false,
         module_specification = {
             module_slots = i
@@ -77,7 +77,8 @@ for i = 1, 4 do
                     line_length = 10,
                     width = 202,
                     height = 247,
-                    animation_speed = 0.4
+                    animation_speed = 0.4,
+                    shift = {0.15, -0.79}
                 },
                 {
                     filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim-mask.png',
@@ -86,7 +87,8 @@ for i = 1, 4 do
                     width = 202,
                     height = 247,
                     animation_speed = 0.4,
-                    tint = py.tints[i]
+                    tint = py.tints[i],
+                    shift = {0.15, -0.79}
                 }
             }
         },
@@ -97,7 +99,7 @@ for i = 1, 4 do
                 pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {-0.5, -3.5}}}
+                pipe_connections = {{type = 'output', position = {-0.5, -2.5}}}
             },
             --North, right
             {
@@ -105,7 +107,7 @@ for i = 1, 4 do
                 pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.05, -0.75}, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {0.5, -3.5}}}
+                pipe_connections = {{type = 'output', position = {0.5, -2.5}}}
             },
             --South, left
             {
