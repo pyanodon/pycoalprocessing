@@ -125,12 +125,11 @@ require 'prototypes/fluids/niobium-complex'
 require 'prototypes/fluids/tpa'
 require 'prototypes/fluids/molten-glass'
 
-
 -- (( BUILDINGS )) --
 require 'prototypes/buildings/distilator'
-require 'prototypes/buildings/gasturbinemk01'
-require 'prototypes/buildings/gasturbinemk02'
-require 'prototypes/buildings/gasturbinemk03'
+require 'prototypes/buildings/gas-turbine-mk01'
+require 'prototypes/buildings/gas-turbine-mk02'
+require 'prototypes/buildings/gas-turbine-mk03'
 require 'prototypes/buildings/gasifier'
 require 'prototypes/buildings/carbon-filter'
 require 'prototypes/buildings/tar-processing-unit'
@@ -145,160 +144,32 @@ require 'prototypes/buildings/cooling-tower-mk02'
 require 'prototypes/buildings/evaporator'
 require 'prototypes/buildings/desulfurizator-unit'
 require 'prototypes/buildings/olefin-plant'
-require 'prototypes/buildings/soil-extractormk01'
+require 'prototypes/buildings/soil-extractor'
 require 'prototypes/buildings/ground-borer'
 require 'prototypes/buildings/fts-reactor'
 require 'prototypes/buildings/solid-separator'
 require 'prototypes/buildings/washer'
 require 'prototypes/buildings/classifier'
-require 'prototypes/buildings/advanced-foundry-mk01'
+require 'prototypes/buildings/advanced-foundry'
 require 'prototypes/buildings/co2-absorber'
 require 'prototypes/buildings/fluid-separator'
-require 'prototypes/buildings/fawogae-plantation-mk01'
-require 'prototypes/buildings/ulric-corral-mk01'
+require 'prototypes/buildings/fawogae-plantation'
+if not mods.pyalienlife then require 'prototypes/buildings/ulric-corral' end
 require 'prototypes/buildings/borax-mine'
-require 'prototypes/buildings/ralesia-plantation-mk01'
+require 'prototypes/buildings/ralesia-plantation'
 require 'prototypes/buildings/niobium-mine'
 require 'prototypes/buildings/jaw-crusher'
-require 'prototypes/buildings/ball-mill-mk01'
-require 'prototypes/buildings/mukmoux-pasture'
-require 'prototypes/buildings/automated-factory-mk01'
+require 'prototypes/buildings/ball-mill'
+if not mods.pyalienlife then require 'prototypes/buildings/mukmoux-pasture' end
+require 'prototypes/buildings/automated-factory'
 require 'prototypes/buildings/sand-extractor'
 require 'prototypes/buildings/botanical-nursery'
 require 'prototypes/buildings/wpu'
-require 'prototypes/buildings/chemical-plant-mk01'
-require 'prototypes/buildings/glassworks-mk01'
+require 'prototypes/buildings/chemical-plant'
+require 'prototypes/buildings/glassworks'
 require 'prototypes/buildings/beacon'
-require 'prototypes/buildings/beacon-mk01'
-require 'prototypes/buildings/TEST-lab'
-
-if mods['pyrawores'] then
-    require 'prototypes/buildings/distilator-mk02'
-    require 'prototypes/buildings/distilator-mk03'
-    require 'prototypes/buildings/distilator-mk04'
-
-    require 'prototypes/buildings/gasifier-mk02'
-    require 'prototypes/buildings/gasifier-mk03'
-    require 'prototypes/buildings/gasifier-mk04'
-
-    require 'prototypes/buildings/carbon-filter-mk02'
-    require 'prototypes/buildings/carbon-filter-mk03'
-    require 'prototypes/buildings/carbon-filter-mk04'
-
-    require 'prototypes/buildings/tar-processing-unit-mk02'
-    require 'prototypes/buildings/tar-processing-unit-mk03'
-    require 'prototypes/buildings/tar-processing-unit-mk04'
-
-    require 'prototypes/buildings/rectisol-mk02'
-    require 'prototypes/buildings/rectisol-mk03'
-    require 'prototypes/buildings/rectisol-mk04'
-
-    require 'prototypes/buildings/methanol-reactor-mk02'
-    require 'prototypes/buildings/methanol-reactor-mk03'
-    require 'prototypes/buildings/methanol-reactor-mk04'
-
-    require 'prototypes/buildings/quenching-tower-mk02'
-    require 'prototypes/buildings/quenching-tower-mk03'
-    require 'prototypes/buildings/quenching-tower-mk04'
-
-    require 'prototypes/buildings/hpf-mk02'
-    require 'prototypes/buildings/hpf-mk03'
-    require 'prototypes/buildings/hpf-mk04'
-
-    require 'prototypes/buildings/power-house-mk02'
-    require 'prototypes/buildings/power-house-mk03'
-    require 'prototypes/buildings/power-house-mk04'
-
-    require 'prototypes/buildings/evaporator-mk02'
-    require 'prototypes/buildings/evaporator-mk03'
-    require 'prototypes/buildings/evaporator-mk04'
-
-    require 'prototypes/buildings/desulfurizator-unit-mk02'
-    require 'prototypes/buildings/desulfurizator-unit-mk03'
-    require 'prototypes/buildings/desulfurizator-unit-mk04'
-
-    require 'prototypes/buildings/olefin-plant-mk02'
-    require 'prototypes/buildings/olefin-plant-mk03'
-    require 'prototypes/buildings/olefin-plant-mk04'
-
-    require 'prototypes/buildings/soil-extractormk02'
-    require 'prototypes/buildings/soil-extractormk03'
-    require 'prototypes/buildings/soil-extractormk04'
-
-    require 'prototypes/buildings/ground-borer-mk02'
-    require 'prototypes/buildings/ground-borer-mk03'
-    require 'prototypes/buildings/ground-borer-mk04'
-
-    require 'prototypes/buildings/fts-reactor-mk02'
-    require 'prototypes/buildings/fts-reactor-mk03'
-    require 'prototypes/buildings/fts-reactor-mk04'
-
-    require 'prototypes/buildings/solid-separator-mk02'
-    require 'prototypes/buildings/solid-separator-mk03'
-    require 'prototypes/buildings/solid-separator-mk04'
-
-    require 'prototypes/buildings/washer-mk02'
-    require 'prototypes/buildings/washer-mk03'
-    require 'prototypes/buildings/washer-mk04'
-
-    require 'prototypes/buildings/classifier-mk02'
-    require 'prototypes/buildings/classifier-mk03'
-    require 'prototypes/buildings/classifier-mk04'
-
-    require 'prototypes/buildings/advanced-foundry-mk02'
-    require 'prototypes/buildings/advanced-foundry-mk03'
-    require 'prototypes/buildings/advanced-foundry-mk04'
-
-    require 'prototypes/buildings/fluid-separator-mk02'
-    require 'prototypes/buildings/fluid-separator-mk03'
-    require 'prototypes/buildings/fluid-separator-mk04'
-
-    require 'prototypes/buildings/borax-mine-mk02'
-    require 'prototypes/buildings/borax-mine-mk03'
-    require 'prototypes/buildings/borax-mine-mk04'
-
-    require 'prototypes/buildings/jaw-crusher-mk02'
-    require 'prototypes/buildings/jaw-crusher-mk03'
-    require 'prototypes/buildings/jaw-crusher-mk04'
-
-    require 'prototypes/buildings/ball-mill-mk02'
-    require 'prototypes/buildings/ball-mill-mk03'
-    require 'prototypes/buildings/ball-mill-mk04'
-
-    require 'prototypes/buildings/automated-factory-mk02'
-    require 'prototypes/buildings/automated-factory-mk03'
-    require 'prototypes/buildings/automated-factory-mk04'
-
-    require 'prototypes/buildings/sand-extractor-mk02'
-    require 'prototypes/buildings/sand-extractor-mk03'
-    require 'prototypes/buildings/sand-extractor-mk04'
-
-    require 'prototypes/buildings/botanical-nursery-mk02'
-    require 'prototypes/buildings/botanical-nursery-mk03'
-    require 'prototypes/buildings/botanical-nursery-mk04'
-
-    require 'prototypes/buildings/wpu-mk02'
-    require 'prototypes/buildings/wpu-mk03'
-    require 'prototypes/buildings/wpu-mk04'
-
-    require 'prototypes/buildings/glassworks-mk02'
-    require 'prototypes/buildings/glassworks-mk03'
-    require 'prototypes/buildings/glassworks-mk04'
-
-    require 'prototypes/buildings/chemical-plant-mk02'
-    require 'prototypes/buildings/chemical-plant-mk03'
-    require 'prototypes/buildings/chemical-plant-mk04'
-end
-
-if mods['pyalienlife'] then
-    require 'prototypes/buildings/fawogae-plantation-mk02'
-    require 'prototypes/buildings/fawogae-plantation-mk03'
-    require 'prototypes/buildings/fawogae-plantation-mk04'
-
-    require 'prototypes/buildings/ralesia-plantation-mk02'
-    require 'prototypes/buildings/ralesia-plantation-mk03'
-    require 'prototypes/buildings/ralesia-plantation-mk04'
-end
+require 'prototypes/buildings/diet-beacon'
+require 'prototypes/buildings/lab'
 
 --require 'prototypes/achievements'
 require 'prototypes/logo'
@@ -307,8 +178,7 @@ require 'prototypes/menu-simulations'
 -- sprites
 require 'prototypes/sprites/sprites'
 
-data.raw['utility-constants'].default.main_menu_background_image_location =
-    '__pycoalprocessinggraphics__/graphics/pycp-wall.jpg'
+data.raw['utility-constants'].default.main_menu_background_image_location = '__pycoalprocessinggraphics__/graphics/pycp-wall.jpg'
 
 -- adding fuel value to liquids
 data.raw.fluid['crude-oil'].fuel_value = '82.5KJ'

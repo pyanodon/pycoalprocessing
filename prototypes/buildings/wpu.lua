@@ -1,86 +1,143 @@
 RECIPE {
-    type = "recipe",
-    name = "wpu",
+    type = 'recipe',
+    name = 'wpu',
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"wood", 20},
-        {"iron-plate", 20},
-        {"steam-engine", 1},
-        {"iron-gear-wheel", 15},
-        {"burner-mining-drill", 2},
-        {"copper-cable", 50}
+        {'wood',                20},
+        {'iron-plate',          20},
+        {'steam-engine',        1},
+        {'iron-gear-wheel',     15},
+        {'burner-mining-drill', 2},
+        {'copper-cable',        50}
     },
     results = {
-        {"wpu", 1}
+        {'wpu', 1}
     }
-}:add_unlock("wood-processing")
+}:add_unlock('wood-processing')
 
-ITEM {
-    type = "item",
-    name = "wpu",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/wpu.png",
-    icon_size = 64,
-    flags = {},
-    subgroup = "py-cp-buildings-mk01",
-    order = "c",
-    place_result = "wpu",
-    stack_size = 10
+for i = 1, 4 do
+    if not mods.pyrawores and i == 2 then return end
+
+    local name = i == 1 and 'wpu' or 'wpu-mk0' .. i
+    local icon = '__pycoalprocessinggraphics__/graphics/icons/' .. name .. '.png'
+    local icon_size = 64
+
+    ITEM {
+        type = 'item',
+        name = name,
+        icon = icon,
+        icon_size = icon_size,
+        flags = {},
+        subgroup = 'py-cp-buildings-mk0' .. i,
+        order = 'c',
+        place_result = name,
+        stack_size = 10
+    }
+
+    ENTITY {
+        type = 'assembling-machine',
+        name = name,
+        icon = icon,
+        icon_size = icon_size,
+        flags = {'placeable-neutral', 'player-creation'},
+        minable = {mining_time = 1, result = name},
+        fast_replaceable_group = 'wpu',
+        max_health = 800 * i,
+        corpse = 'medium-remnants',
+        dying_explosion = 'medium-explosion',
+        collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
+        selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
+        match_animation_speed_to_activity = false,
+        module_specification = {
+            module_slots = i
+        },
+        allowed_effects = {'consumption', 'speed', 'productivity', 'pollution'},
+        crafting_categories = {'wpu'},
+        crafting_speed = i,
+        energy_source = {
+            type = 'electric',
+            usage_priority = 'secondary-input',
+            emissions_per_minute = 0.06 * i,
+        },
+        energy_usage = (500 * i) .. 'kW',
+        animation = {
+            layers = {
+                {
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/wpu/left-mk0' .. i .. '.png',
+                    width = 96,
+                    height = 277,
+                    line_length = 21,
+                    frame_count = 130,
+                    shift = {-1.5, -1.328},
+                    animation_speed = 0.42
+                },
+                {
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/wpu/right-mk0' .. i .. '.png',
+                    width = 96,
+                    height = 277,
+                    line_length = 21,
+                    frame_count = 130,
+                    shift = {1.5, -1.328},
+                    animation_speed = 0.42
+                }
+            }
+        },
+        vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.65},
+        working_sound = {
+            sound = {filename = '__pycoalprocessinggraphics__/sounds/wpu.ogg', volume = 1.0},
+            idle_sound = {filename = '__pycoalprocessinggraphics__/sounds/wpu.ogg', volume = 0.3},
+            apparent_volume = 2.5
+        },
+    }
+end
+
+RECIPE {
+    type = 'recipe',
+    name = 'wpu-mk02',
+    energy_required = 0.5,
+    enabled = false,
+    ingredients = {
+        {'wpu',              1},
+        {'engine-unit',      2},
+        {'advanced-circuit', 25},
+        {'plastic-bar',      50},
+        {'nexelit-plate',    15},
+        {'fast-inserter',    4},
+    },
+    results = {
+        {'wpu-mk02', 1}
+    }
 }
 
-ENTITY {
-    type = "assembling-machine",
-    name = "wpu",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/wpu.png",
-    icon_size = 64,
-    flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "wpu"},
-    fast_replaceable_group = "wpu",
-    max_health = 800,
-    corpse = "medium-remnants",
-    dying_explosion = "medium-explosion",
-    collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
-    selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
-    match_animation_speed_to_activity = false,
-    module_specification = {
-        module_slots = 1
+RECIPE {
+    type = 'recipe',
+    name = 'wpu-mk03',
+    energy_required = 0.5,
+    enabled = false,
+    ingredients = {
+        {'wpu-mk02',             1},
+        {'stack-inserter',       4},
+        {'electric-engine-unit', 4},
+        {'niobium-plate',        25},
+        {'processing-unit',      10}
     },
-    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {"wpu"},
-    crafting_speed = 1,
-    energy_source = {
-        type = "electric",
-        usage_priority = "secondary-input",
-        emissions_per_minute = 0.06,
+    results = {
+        {'wpu-mk03', 1}
+    }
+}
+
+RECIPE {
+    type = 'recipe',
+    name = 'wpu-mk04',
+    energy_required = 0.5,
+    enabled = false,
+    ingredients = {
+        {'wpu-mk03',              1},
+        {'low-density-structure', 10},
+        {'nbfe-alloy',            10},
     },
-    energy_usage = "500kW",
-    animation = {
-        layers = {
-            {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/wpu/left.png",
-                width = 96,
-                height = 277,
-                line_length = 21,
-                frame_count = 130,
-                shift = {-1.5, -1.328},
-                animation_speed = 0.42
-            },
-            {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/wpu/right.png",
-                width = 96,
-                height = 277,
-                line_length = 21,
-                frame_count = 130,
-                shift = {1.5, -1.328},
-                animation_speed = 0.42
-            }
-        }
-    },
-    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
-    working_sound = {
-        sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 1.0},
-        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 0.3},
-        apparent_volume = 2.5
-    },
-    next_upgrade = mods['pyrawores'] and 'wpu-mk02'
+    results = {
+        {'wpu-mk04', 1}
+    }
 }

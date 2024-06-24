@@ -1,72 +1,143 @@
 RECIPE {
-    type = "recipe",
-    name = "solid-separator",
+    type = 'recipe',
+    name = 'solid-separator',
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"steam-engine", 3},
-        {"electronic-circuit", 30},
-        {"steel-plate", 50},
-        {"iron-plate", 20},
-        {"iron-gear-wheel", 50}
+        {'steam-engine',       3},
+        {'electronic-circuit', 30},
+        {'steel-plate',        50},
+        {'iron-plate',         20},
+        {'iron-gear-wheel',    50}
     },
     results = {
-        {"solid-separator", 1}
+        {'solid-separator', 1}
     }
-}:add_unlock("separation")
+}:add_unlock('separation')
 
-ITEM {
-    type = "item",
-    name = "solid-separator",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/solid-separator.png",
-    icon_size = 64,
-    flags = {},
-    subgroup = "py-cp-buildings-mk01",
-    order = "x",
-    place_result = "solid-separator",
-    stack_size = 10
+for i = 1, 4 do
+    if not mods.pyrawores and i == 2 then return end
+
+    local name = i == 1 and 'solid-separator' or 'solid-separator-mk0' .. i
+    local icon = '__pycoalprocessinggraphics__/graphics/icons/' .. name .. '.png'
+    local icon_size = 64
+
+    ITEM {
+        type = 'item',
+        name = name,
+        icon = icon,
+        icon_size = icon_size,
+        flags = {},
+        subgroup = 'py-cp-buildings-mk0' .. i,
+        order = 'x',
+        place_result = name,
+        stack_size = 10
+    }
+
+    ENTITY {
+        type = 'assembling-machine',
+        name = name,
+        icon = icon,
+        icon_size = icon_size,
+        flags = {'placeable-neutral', 'player-creation'},
+        minable = {mining_time = 1, result = name},
+        fast_replaceable_group = 'solid-separator',
+        max_health = i * 400,
+        corpse = 'big-remnants',
+        dying_explosion = 'medium-explosion',
+        collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
+        selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
+        match_animation_speed_to_activity = false,
+        module_specification = {
+            module_slots = i
+        },
+        allowed_effects = {'consumption', 'speed', 'productivity', 'pollution'},
+        crafting_categories = {'solid-separator'},
+        crafting_speed = i,
+        energy_source = {
+            type = 'electric',
+            usage_priority = 'secondary-input',
+            emissions_per_minute = i * 0.06,
+        },
+        energy_usage = (1.5 * i) .. 'MW',
+        animation = {
+            layers = {
+                {
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/solid-separator/solid-separator.png',
+                    width = 249,
+                    height = 298,
+                    frame_count = 20,
+                    line_length = 5,
+                    animation_speed = 1,
+                    shift = {0.37, -1.169},
+                },
+                {
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/solid-separator/solid-separator-mask.png',
+                    width = 249,
+                    height = 298,
+                    frame_count = 20,
+                    line_length = 5,
+                    animation_speed = 1,
+                    shift = {0.37, -1.169},
+                    tint = py.tints[i],
+                },
+            }
+        },
+        vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.55},
+        working_sound = {
+            sound = {filename = '__pycoalprocessinggraphics__/sounds/solid-separator.ogg'},
+            idle_sound = {filename = '__pycoalprocessinggraphics__/sounds/solid-separator.ogg', volume = 0.3},
+            apparent_volume = 2.5
+        },
+    }
+end
+
+RECIPE {
+    type = 'recipe',
+    name = 'solid-separator-mk02',
+    energy_required = 0.5,
+    enabled = false,
+    ingredients = {
+        {'solid-separator',  1},
+        {'engine-unit',      6},
+        {'nexelit-plate',    10},
+        {'plastic-bar',      10},
+        {'advanced-circuit', 20}
+    },
+    results = {
+        {'solid-separator-mk02', 1}
+    }
 }
 
-ENTITY {
-    type = "assembling-machine",
-    name = "solid-separator",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/solid-separator.png",
-    icon_size = 64,
-    flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "solid-separator"},
-    fast_replaceable_group = "solid-separator",
-    max_health = 400,
-    corpse = "big-remnants",
-    dying_explosion = "medium-explosion",
-    collision_box = {{-3.45, -3.45}, {3.45, 3.45}},
-    selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
-    match_animation_speed_to_activity = false,
-    module_specification = {
-        module_slots = 1
+RECIPE {
+    type = 'recipe',
+    name = 'solid-separator-mk03',
+    energy_required = 0.5,
+    enabled = false,
+    ingredients = {
+        {'solid-separator-mk02', 1},
+        {'electric-engine-unit', 4},
+        {'steel-plate',          15},
+        {'niobium-plate',        20},
+        {'processing-unit',      5},
+        {'niobium-pipe',         15},
     },
-    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
-    crafting_categories = {"solid-separator"},
-    crafting_speed = 1,
-    energy_source = {
-        type = "electric",
-        usage_priority = "secondary-input",
-        emissions_per_minute = 0.06,
+    results = {
+        {'solid-separator-mk03', 1}
+    }
+}
+
+RECIPE {
+    type = 'recipe',
+    name = 'solid-separator-mk04',
+    energy_required = 0.5,
+    enabled = false,
+    ingredients = {
+        {'solid-separator-mk03',  1},
+        {'nbfe-alloy',            20},
+        {'low-density-structure', 10},
     },
-    energy_usage = "1.5MW",
-    animation = {
-        filename = "__pycoalprocessinggraphics__/graphics/entity/solid-separator/solid-separator.png",
-        width = 249,
-        height = 298,
-        frame_count = 20,
-        line_length = 5,
-        animation_speed = 1,
-        shift = {0.37, -1.169}
-    },
-    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.55},
-    working_sound = {
-        sound = {filename = "__pycoalprocessinggraphics__/sounds/solid-separator.ogg"},
-        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/solid-separator.ogg", volume = 0.3},
-        apparent_volume = 2.5
-    },
-    next_upgrade = mods['pyrawores'] and 'solid-separator-mk02'
+    results = {
+        {'solid-separator-mk04', 1}
+    }
 }
