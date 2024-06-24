@@ -72,50 +72,21 @@ for i = 1, 4 do
         animation = {
             layers = {
                 {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-off.png',
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim.png',
+                    frame_count = 50,
+                    line_length = 10,
                     width = 202,
                     height = 247,
-                    frame_count = 1,
-                    shift = {0.15, -0.79}
+                    animation_speed = 0.4
                 },
                 {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-off-mask.png',
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim-mask.png',
+                    frame_count = 50,
+                    line_length = 10,
                     width = 202,
                     height = 247,
-                    frame_count = 1,
-                    shift = {0.15, -0.79},
+                    animation_speed = 0.4,
                     tint = py.tints[i]
-                }
-            }
-        },
-        working_visualisations = {
-            {
-                fadeout = true,
-                constant_speed = true,
-                north_position = {0.15, -0.79},
-                west_position = {0.15, -0.79},
-                south_position = {0.15, -0.79},
-                east_position = {0.15, -0.79},
-                animation = {
-                    layers = {
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim.png',
-                            frame_count = 50,
-                            line_length = 10,
-                            width = 202,
-                            height = 247,
-                            animation_speed = 0.4
-                        },
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim-mask.png',
-                            frame_count = 50,
-                            line_length = 10,
-                            width = 202,
-                            height = 247,
-                            animation_speed = 0.4,
-                            tint = py.tints[i]
-                        }
-                    }
                 }
             }
         },
