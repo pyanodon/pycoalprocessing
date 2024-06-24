@@ -77,7 +77,15 @@ for i = 1, 4 do
                     frame_count = 1,
                     shift = {0.1, 0.0},
                     tint = py.tints[i],
-                }
+                },
+                {
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-off-glow.png',
+                    width = 168,
+                    height = 177,
+                    frame_count = 1,
+                    shift = {0.1, 0.0},
+                    draw_as_glow = true,
+                },
             }
         },
         working_visualisations = {
@@ -106,7 +114,16 @@ for i = 1, 4 do
                             height = 177,
                             animation_speed = 0.25,
                             tint = py.tints[i],
-                        }
+                        },
+                        {
+                            filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-anim-glow.png',
+                            frame_count = 80,
+                            line_length = 10,
+                            width = 168,
+                            height = 177,
+                            animation_speed = 0.25,
+                            draw_as_glow = true,
+                        },
                     }
                 }
             }
