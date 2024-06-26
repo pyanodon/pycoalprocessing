@@ -2,7 +2,7 @@
 Version: 2.1.29
 Date: ?
   Changes:
-    - Fixed that tailings ponds spills created 16x too much pollution in certian cases
+    - Fixed that tailings ponds spills created 16x too much pollution in certain cases
     - Fixed that tailings ponds spills would overwrite water
     - Added tailings pond to the squeak through blacklist. (https://github.com/pyanodon/pybugreports/issues/525)
     - Fixed beacon interference not updating properly (https://github.com/pyanodon/pybugreports/issues/528)
@@ -145,7 +145,7 @@ Date: 2024-1-19
     - Nerfed beacon (not diet beacon) transmission efficiency from 0.5*am*fm to 0.2*am*fm. This helps prevent the insane cases of +65536% speed that were possible previously and also fixes the bug that full beacons were 2.5X more energy efficent than diet beacons.
     - If two beacons interfere on a single entity, it will now only disable that entity instead of disabling the entire beacon.
     - Fixed that you could stack 25 diet beacons with 25 regular beacons for 50 total.
-    - Fixed certian exploits where you could get around the interference mechanic
+    - Fixed certain exploits where you could get around the interference mechanic
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.9
 Date: 2024-1-8
@@ -222,7 +222,7 @@ Version: 2.0.9
 Date: 2023-3-29
   Changes:
     - updated AM:FM beacon wiki page
-    - fixed that the pY codex could become unopenable in certian scenarios
+    - fixed that the pY codex could become unopenable in certain scenarios
     - fixed issue with beacons not disabling if placed before crafting machines
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.8
@@ -237,7 +237,7 @@ Version: 2.0.7
 Date: 2023-1-31
   Changes:
     - reworked the pywiki
-    - fixed that certian machines were blocking prod modules, even though they had prod recipes
+    - fixed that certain machines were blocking prod modules, even though they had prod recipes
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.6
 Date: 2023-1-5
