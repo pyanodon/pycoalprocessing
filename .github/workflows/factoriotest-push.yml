@@ -15,4 +15,5 @@ jobs:
     with:
       repository: ${{ github.repository }}
       ref: ${{ github.sha }}
+      test_branch: ${{ github.head_ref || github.ref_name }}
     secrets: inherit
