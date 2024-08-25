@@ -6,6 +6,7 @@ Date: ???
     - Adjusted crafting machine overfill multiplier startup setting to not include mass produced items like lamps
     - Fixed crash when adjusting beacon dials
     - Un-fixed that tailings pond spills would overwrite water
+    - A warning is now printed on starting a new map if you are not using the Py default map gen preset
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.29
 Date: 2024-6-18
