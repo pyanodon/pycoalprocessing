@@ -109,10 +109,11 @@ end)
 script.on_event(defines.events.on_player_created, function(event)
 	local player = game.players[event.player_index]
 	player.print({"messages.welcome"})
-	if game.surfaces['nauvis'].map_gen_settings.autoplace_controls['stone'].richness <= 1 then 
+	local autoplace_controls = game.surfaces['nauvis'].map_gen_settings.autoplace_controls
+	if autoplace_controls['stone'] and autoplace_controls['stone'].richness <= 1 then 
 		player.print({"messages.warning-no-preset", {"map-gen-preset-name.py-recommended"}})
 	end
-	if game.surfaces['nauvis'].map_gen_settings.autoplace_controls['enemy-base'].size > 0 then
+	if autoplace_controls['enemy-base'] and autoplace_controls['enemy-base'].size > 0 then
 		player.print({"messages.warning-biters"})
 	end
 
