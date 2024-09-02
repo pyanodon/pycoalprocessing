@@ -1,26 +1,4 @@
-_G.gui_events = {
-	[defines.events.on_gui_click] = {},
-	[defines.events.on_gui_confirmed] = {},
-	[defines.events.on_gui_text_changed] = {},
-	[defines.events.on_gui_checked_state_changed] = {},
-	[defines.events.on_gui_selection_state_changed] = {},
-	[defines.events.on_gui_checked_state_changed] = {},
-	[defines.events.on_gui_elem_changed] = {},
-	[defines.events.on_gui_value_changed] = {},
-	[defines.events.on_gui_location_changed] = {},
-	[defines.events.on_gui_selected_tab_changed] = {},
-	[defines.events.on_gui_switch_state_changed] = {}
-}
-local function process_gui_event(event)
-	if event.element and event.element.valid then
-		for pattern, f in pairs(gui_events[event.name]) do
-			if event.element.name:match(pattern) then f(event); return end
-		end
-	end
-end
-for event, _ in pairs(gui_events) do
-	script.on_event(event, process_gui_event)
-end
+require '__pypostprocessing__.lib'
 
 require 'scripts.wiki.wiki'
 require 'scripts.wiki.text-pages'
@@ -60,7 +38,7 @@ script.on_init(function()
 	end
 end)
 
-script.on_event(defines.events.on_research_finished, function(event)
+py.on_event(defines.events.on_research_finished, function(event)
 	if global.finished then return end
 	local tech = event.research
 	if tech.name == 'pyrrhic' and game.tick ~= 0 then
@@ -83,45 +61,33 @@ script.on_event(defines.events.on_research_finished, function(event)
 	end
 end)
 
-script.on_event({defines.events.on_built_entity, defines.events.on_robot_built_entity, defines.events.script_raised_built, defines.events.script_raised_revive}, function(event)
+py.on_event({defines.events.on_built_entity, defines.events.on_robot_built_entity, defines.events.script_raised_built, defines.events.script_raised_revive}, function(event)
 	Inserters.events.on_built(event)
 	Beacons.events.on_built(event)
 	Pond.events.on_built(event)
 end)
 
-script.on_event({defines.events.on_player_mined_entity, defines.events.on_robot_mined_entity, defines.events.script_raised_destroy},
+py.on_event({defines.events.on_player_mined_entity, defines.events.on_robot_mined_entity, defines.events.script_raised_destroy},
 	Beacons.events.on_destroyed
 )
 
-script.on_event(defines.events.on_entity_died, function(event)
+py.on_event(defines.events.on_entity_died, function(event)
 	Pond.events.on_entity_died(event)
 	Beacons.events.on_destroyed(event)
 end)
 
-script.on_event(defines.events.on_gui_opened, function(event)
+py.on_event(defines.events.on_gui_opened, function(event)
 	Beacons.events.on_gui_opened(event)
 end)
 
-script.on_event({defines.events.on_gui_closed, defines.events.on_player_changed_surface}, function(event)
+py.on_event({defines.events.on_gui_closed, defines.events.on_player_changed_surface}, function(event)
 	Wiki.events.on_gui_closed(event)
 end)
 
-script.on_event(defines.events.on_player_created, function(event)
-	local player = game.players[event.player_index]
-	player.print({"messages.welcome"})
-	local autoplace_controls = game.surfaces['nauvis'].map_gen_settings.autoplace_controls
-	if autoplace_controls['stone'] and autoplace_controls['stone'].richness <= 1 then 
-		player.print({"messages.warning-no-preset", {"map-gen-preset-name.py-recommended"}})
-	end
-	if autoplace_controls['enemy-base'] and autoplace_controls['enemy-base'].size > 0 then
-		player.print({"messages.warning-biters"})
-	end
+py.on_event(defines.events.on_player_created, Wiki.events.on_player_created)
 
-	Wiki.events.on_player_created(event)
-end)
-
-script.on_nth_tick(153, Pond.events[153])
-script.on_nth_tick(154, Pond.events[154])
+py.on_nth_tick(153, Pond.events[153])
+py.on_nth_tick(154, Pond.events[154])
 
 -- grumble grumble filters apply for the whole mod
 for _, event in pairs({defines.events.on_built_entity, defines.events.on_robot_built_entity, defines.events.script_raised_built, defines.events.script_raised_revive}) do
@@ -147,3 +113,5 @@ for _, event in pairs({defines.events.on_built_entity, defines.events.on_robot_b
 		},
 	})
 end
+
+py.finalize_events()

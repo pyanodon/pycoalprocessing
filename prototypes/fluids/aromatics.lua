@@ -14,7 +14,7 @@ RECIPE {
     }
 }:add_unlock("advanced-oil-processing")
 
-ITEM {
+FLUID {
     type = "fluid",
     name = "aromatics",
     icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics.png",

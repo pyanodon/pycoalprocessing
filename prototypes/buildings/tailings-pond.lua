@@ -266,7 +266,7 @@ ENTITY{
                 shift = util.by_pixel(0, -32)
             }
         },
-        fluid_background = DATA.Sprites.empty_sprite(),
+        fluid_background = py.empty_image(),
         window_background = {
             filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/bowl.png',
             priority = 'low',
@@ -278,8 +278,8 @@ ENTITY{
             shift = util.by_pixel(0, -32),
             draw_as_shadow = false
         },
-        flow_sprite = DATA.Sprites.empty_sprite(),
-        gas_flow = DATA.Sprites.empty_animation()
+        flow_sprite = py.empty_image(),
+        gas_flow = py.empty_image()
     },
     flow_length_in_ticks = 360,
     vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.65},

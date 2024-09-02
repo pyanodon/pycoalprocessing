@@ -12,7 +12,7 @@ if not mods.pyalternativeenergy then
     end
 end
 
-require('prototypes/map-gen-presets')
+require 'prototypes/map-gen-presets'
 
 -- Updating requester paste setting
 if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].value ~= 30 or settings.startup['overload'].value ~= 0 then
@@ -46,20 +46,14 @@ if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].v
     })
 
     for _, recipe in pairs(data.raw.recipe) do
-        for _, result_table in pairs({
-            recipe.result and {recipe.result},
-            recipe.results,
-            recipe.normal and (recipe.normal.results or {recipe.normal.result}),
-            recipe.expensive and (recipe.expensive.results or {recipe.expensive.result})
-        }) do
-            for _, result in pairs(result_table) do -- This looks long, however we skip a lot of the logic with caching
-                local result_name = result[1] or result.name
-                if result_name and valid_entities[result_name] then
-                    --log("Set multiplier for " .. recipe.name .. " (" .. result_name .. ")")
-                    recipe.requester_paste_multiplier = settings.startup['rpm_entity'].value
-                    recipe.overload_multiplier = settings.startup['overload'].value
-                    goto continue
-                end
+        recipe:standardize()
+        for _, result in pairs(recipe.results) do -- This looks long, however we skip a lot of the logic with caching
+            local result_name = result.name
+            if result_name and valid_entities[result_name] then
+                --log("Set multiplier for " .. recipe.name .. " (" .. result_name .. ")")
+                recipe.requester_paste_multiplier = settings.startup['rpm_entity'].value
+                recipe.overload_multiplier = settings.startup['overload'].value
+                goto continue
             end
         end
         recipe.requester_paste_multiplier = settings.startup['rpm_items'].value
@@ -68,4 +62,11 @@ if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].v
     end
 end
 
-data.raw["utility-constants"].default.minimum_recipe_overload_multiplier = 1
+data.raw['utility-constants'].default.minimum_recipe_overload_multiplier = 1
+
+for _, recipe in pairs(data.raw.recipe) do
+    if recipe.category == 'tar' and not recipe.crafting_machine_tint then
+        error('Recipe ' .. recipe.name .. ' is missing crafting_machine_tint. Please fill out this field.')
+    end
+end
+

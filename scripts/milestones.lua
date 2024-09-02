@@ -199,7 +199,7 @@ remote.add_interface("pycoalprocessing", {
                 {type="item",       name="mechanical-parts-04",           quantity=1},
                 {type="item",       name="pu-238",                        quantity=1},
                 {type="item",       name="strangelets",                   quantity=1},
-                {type="item",       name="destablilized-toxirus",         quantity=1},
+                {type="item",       name="destabilized-toxirus",         quantity=1},
                 {type="item",       name="nv-center",                     quantity=1},
                 {type="item",       name="pi-josephson-junction",         quantity=1},
                 {type="item",       name="quantum-dots",                  quantity=1},
