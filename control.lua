@@ -84,7 +84,19 @@ py.on_event({defines.events.on_gui_closed, defines.events.on_player_changed_surf
 	Wiki.events.on_gui_closed(event)
 end)
 
-py.on_event(defines.events.on_player_created, Wiki.events.on_player_created)
+py.on_event(defines.events.on_player_created, function(event)
+	local player = game.players[event.player_index]
+	player.print({"messages.welcome"})
+	local autoplace_controls = game.surfaces['nauvis'].map_gen_settings.autoplace_controls
+	if autoplace_controls['stone'] and autoplace_controls['stone'].richness <= 1 then 
+		player.print({"messages.warning-no-preset", {"map-gen-preset-name.py-recommended"}})
+	end
+	if autoplace_controls['enemy-base'] and autoplace_controls['enemy-base'].size > 0 then
+		player.print({"messages.warning-biters"})
+	end
+
+	Wiki.events.on_player_created(event)
+end)
 
 py.on_nth_tick(153, Pond.events[153])
 py.on_nth_tick(154, Pond.events[154])

@@ -227,12 +227,12 @@ end
 
 gui_events[defines.events.on_gui_text_changed]['AM_slider_num'] = function(event)
 	local AM = event.element
-	AM.parent.AM.slider_value = tonumber(AM.text)
+	if tonumber(AM.text) then AM.parent.AM.slider_value = tonumber(AM.text) end
 end
 
 gui_events[defines.events.on_gui_text_changed]['FM_slider_num'] = function(event)
 	local FM = event.element
-	FM.parent.FM.slider_value = tonumber(FM.text)
+	if tonumber(FM.text) then FM.parent.FM.slider_value = tonumber(FM.text) end
 end
 
 gui_events[defines.events.on_gui_click]['py_beacon_confirm'] = function(event)

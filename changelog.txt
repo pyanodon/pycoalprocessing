@@ -1,8 +1,22 @@
 ---------------------------------------------------------------------------------------------------
-Version: 2.1.29
-Date: ?
+Version: 2.1.31
+Date: ???
   Changes:
-    - Fixed that tailings ponds spills created 16x too much pollution in certain cases
+    - Hardened startup warnings to work with mods like Omni
+---------------------------------------------------------------------------------------------------
+Version: 2.1.30
+Date: 2024-8-26
+  Changes:
+    - Added French translation.
+    - Adjusted crafting machine overfill multiplier startup setting to not include mass produced items like lamps
+    - Fixed crash when adjusting beacon dials
+    - Un-fixed that tailings pond spills would overwrite water
+    - A warning is now printed on starting a new map if you are not using the Py default map gen preset
+---------------------------------------------------------------------------------------------------
+Version: 2.1.29
+Date: 2024-6-18
+  Changes:
+    - Fixed that tailings ponds spills created 16x too much pollution in certain cases.
     - Fixed that tailings ponds spills would overwrite water
     - Added tailings pond to the squeak through blacklist. (https://github.com/pyanodon/pybugreports/issues/525)
     - Fixed beacon interference not updating properly (https://github.com/pyanodon/pybugreports/issues/528)
