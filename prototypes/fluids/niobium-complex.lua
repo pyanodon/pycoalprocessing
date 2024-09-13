@@ -22,6 +22,7 @@ FLUID {
     icon = "__pycoalprocessinggraphics__/graphics/icons/niobium-complex.png",
     icon_size = 32,
     default_temperature = 10,
+    base_flow_rate = 100,
     gas_temperature = 15,
     heat_capacity = "1kJ",
     base_color = {r = 0.482, g = 0.607, b = 0.650},

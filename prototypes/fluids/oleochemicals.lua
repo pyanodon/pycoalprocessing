@@ -4,6 +4,7 @@ FLUID {
     icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png",
     icon_size = 32,
     default_temperature = 10,
+    base_flow_rate = 100,
     gas_temperature = 15,
     heat_capacity = "1kJ",
     base_color = {r = 0.870, g = 0.717, b = 0.0},
