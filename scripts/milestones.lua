@@ -151,7 +151,6 @@ remote.add_interface("pycoalprocessing", {
                 {type="item",       name="super-steel",             quantity=1},
                 {type="item",       name="mechanical-parts-03",     quantity=1},
                 {type="item",       name="gd-metal",                quantity=1},
-                {type="item",       name="rocket-control-unit",     quantity=1},
                 {type="item",       name="low-density-structure",   quantity=1},
                 {type="item",       name="rocket-fuel",             quantity=1}, -- easy but for completeness' sake
                 {type="fluid",      name="tholins",                 quantity=1},
