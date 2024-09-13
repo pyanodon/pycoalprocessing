@@ -32,7 +32,9 @@ RECIPE{
       {"iron-gear-wheel", 50},
       {"advanced-circuit", 5}
     },
-    result = "beacon-mk01"
+    results = {
+        {type = "item", name = "beacon-mk01", amount = 1}
+    }
 }:add_unlock('diet-beacon')
 
 ITEM{
