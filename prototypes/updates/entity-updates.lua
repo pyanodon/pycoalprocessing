@@ -24,9 +24,9 @@ data.raw.generator['steam-turbine'].destroy_non_fuel_fluid = false
 --increase steam max temp
 data.raw.fluid['steam'].max_temperature = 2000
 
-data.raw.fluid['steam'].heat_capacity = '1KJ'
+data.raw.fluid['steam'].heat_capacity = '1kJ'
 
-data.raw.fluid['water'].heat_capacity = '2.1KJ'
+data.raw.fluid['water'].heat_capacity = '2.1kJ'
 
 data.raw.fluid['water'].max_temperature = 500
 

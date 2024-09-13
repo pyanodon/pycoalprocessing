@@ -182,7 +182,7 @@ require 'prototypes/sprites/sprites'
 data.raw['utility-constants'].default.main_menu_background_image_location = '__pycoalprocessinggraphics__/graphics/pycp-wall.jpg'
 
 -- adding fuel value to liquids
-data.raw.fluid['crude-oil'].fuel_value = '82.5KJ'
+data.raw.fluid['crude-oil'].fuel_value = '82.5kJ'
 data.raw.fluid['heavy-oil'].fuel_value = '0.8MJ'
 data.raw.fluid['light-oil'].fuel_value = '0.9MJ'
 data.raw.fluid['petroleum-gas'].fuel_value = '1MJ'
