@@ -137,7 +137,9 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {{"processing-unit", 25}, {"low-density-structure", 10}},
-    result = "fusion-reactor-equipment"
+    results = {
+        {type = "item", name = "fusion-reactor-equipment", amount = 1}
+    }
 }
 
 RECIPE {
@@ -146,8 +148,9 @@ RECIPE {
     enabled = false,
     energy_required = 15,
     ingredients = {{"defender-capsule", 2}, {"advanced-circuit", 2}},
-    result = "distractor-capsule",
-    result_count = 2
+    results = {
+        {type = "item", name = "distractor-capsule", amount = 2}
+    }
 }
 
 RECIPE {
@@ -156,8 +159,9 @@ RECIPE {
     enabled = false,
     energy_required = 15,
     ingredients = {{"distractor-capsule", 2}, {"speed-module", 1}},
-    result = "destroyer-capsule",
-    result_count = 2
+    results = {
+        {type = "item", name = "destroyer-capsule", amount = 2}
+    }
 }
 
 RECIPE {
@@ -165,7 +169,9 @@ RECIPE {
     name = "assembling-machine-3",
     enabled = false,
     ingredients = {{"stack-inserter", 2}, {"assembling-machine-2", 2}},
-    result = "assembling-machine-3"
+    results = {
+        {type = "item", name = "assembling-machine-3", amount = 1}
+    }
 }
 
 RECIPE {
@@ -177,7 +183,9 @@ RECIPE {
         {type = "fluid", name = "hydrogen-peroxide", amount = 80},
         {type = "fluid", name = "methanol", amount = 20}
     },
-    result = "rocket-fuel"
+    results = {
+        {type = "item", name = "rocket-fuel", amount = 1}
+    }
 }
 
 RECIPE {
