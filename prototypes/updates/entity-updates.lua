@@ -128,15 +128,15 @@ if mods['Companion_Drones'] then
     data.raw['spider-vehicle']['companion'].energy_source.burnt_inventory_size = 1
 end
 
-data.raw.car.car.burner.fuel_category = nil
-data.raw.car.car.burner.fuel_categories = {'jerry', 'chemical', 'biomass'}
-data.raw.car.car.burner.burnt_inventory_size = data.raw.car.car.burner.fuel_inventory_size
-data.raw.car.tank.burner.fuel_category = nil
-data.raw.car.tank.burner.fuel_categories = {'jerry', 'chemical', 'biomass'}
-data.raw.car.tank.burner.burnt_inventory_size = data.raw.car.tank.burner.fuel_inventory_size
-data.raw.locomotive.locomotive.burner.fuel_category = nil
-data.raw.locomotive.locomotive.burner.fuel_categories = {'chemical', 'biomass'}
-data.raw.locomotive.locomotive.burner.burnt_inventory_size = data.raw.locomotive.locomotive.burner.fuel_inventory_size
+data.raw.car.car.energy_source.fuel_category = nil
+data.raw.car.car.energy_source.fuel_categories = {'jerry', 'chemical', 'biomass'}
+data.raw.car.car.energy_source.burnt_inventory_size = data.raw.car.car.energy_source.fuel_inventory_size
+data.raw.car.tank.energy_source.fuel_category = nil
+data.raw.car.tank.energy_source.fuel_categories = {'jerry', 'chemical', 'biomass'}
+data.raw.car.tank.energy_source.burnt_inventory_size = data.raw.car.tank.energy_source.fuel_inventory_size
+data.raw.locomotive.locomotive.energy_source.fuel_category = nil
+data.raw.locomotive.locomotive.energy_source.fuel_categories = {'chemical', 'biomass'}
+data.raw.locomotive.locomotive.energy_source.burnt_inventory_size = data.raw.locomotive.locomotive.energy_source.fuel_inventory_size
 
 data.raw.inserter['burner-inserter'].filter_count = 1
 data.raw.inserter['inserter'].filter_count = 2
