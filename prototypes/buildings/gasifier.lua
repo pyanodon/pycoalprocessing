@@ -99,14 +99,14 @@ for i = 1, 4 do
                 production_type = 'input',
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {4.5, -0.5}}}
             },
             {
                 production_type = 'input',
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
                 pipe_connections = {{type = 'input', position = {4.5, -2.5}}}
@@ -114,7 +114,7 @@ for i = 1, 4 do
             {
                 production_type = 'input',
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
                 pipe_connections = {{type = 'input', position = {4.5, 2.5}}}

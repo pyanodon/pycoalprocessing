@@ -103,7 +103,7 @@ for i = 1, 4 do
                 production_type = 'input',
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {0, 1}, {0, -1}, nil, nil, pipes),
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 height = 2,
                 pipe_connections = {{type = 'input-output', position = {4.0, 0.0}}, {type = 'input-output', position = {-4.0, 0.0}}}

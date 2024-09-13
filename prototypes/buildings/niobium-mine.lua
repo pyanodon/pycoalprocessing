@@ -93,8 +93,7 @@ ENTITY {
         production_type = 'input-output',
         pipe_picture = _G.assembler2pipepictures(),
         pipe_covers = _G.pipecoverspictures(),
-        base_area = 1,
-        height = 2,
+        volume = 200,
         base_level = -1,
         pipe_connections = {
             {position = {-3, 4}}
