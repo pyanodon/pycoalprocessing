@@ -6,7 +6,7 @@ TECHNOLOGY {
     icon = '__base__/graphics/technology/module.png',
     icon_size = 256,
     icon_mipmaps = 4,
-    prerequisites = {'speed-module', 'productivity-module', 'effectivity-module'},
+    prerequisites = {'speed-module', 'productivity-module', 'efficiency-module'},
     effects = {},
     unit = {
         count = 2100,

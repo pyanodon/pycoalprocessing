@@ -1,11 +1,13 @@
 local resource_autoplace = require 'resource-autoplace'
-local noise = require 'noise'
+--TODO:look into ore gen for 2.0
+--local noise = require 'noise'
 
 -- (( TECHNOLOGY ))--
 TECHNOLOGY('utility-science-pack'):add_pack('production-science-pack'):add_pack('military-science-pack')
 TECHNOLOGY('destroyer'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
 TECHNOLOGY('military-4'):remove_pack('utility-science-pack')
-TECHNOLOGY('fusion-reactor-equipment'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
+--TODO:update fusion equipment/ fission equipment
+--TECHNOLOGY('fusion-reactor-equipment'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
 TECHNOLOGY('rocket-fuel'):add_pack('military-science-pack'):remove_prereq('advanced-oil-processing'):remove_prereq('flammables')
 TECHNOLOGY('kovarex-enrichment-process'):add_pack('military-science-pack')
 TECHNOLOGY('worker-robots-speed-3'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
@@ -22,15 +24,21 @@ TECHNOLOGY('refined-flammables-4'):add_pack('production-science-pack')
 TECHNOLOGY('refined-flammables-5'):add_pack('production-science-pack')
 TECHNOLOGY('refined-flammables-6'):add_pack('production-science-pack')
 TECHNOLOGY('refined-flammables-7'):add_pack('production-science-pack')
-TECHNOLOGY('energy-weapons-damage-5'):add_pack('production-science-pack')
-TECHNOLOGY('energy-weapons-damage-6'):add_pack('production-science-pack')
-TECHNOLOGY('energy-weapons-damage-7'):add_pack('production-science-pack')
+--TODO: ALL WEAPON DAMAGES NEED ADJUSTING
+--[[
+TECHNOLOGY('laser-weapons-damage-5'):add_pack('production-science-pack')
+TECHNOLOGY('laser-weapons-damage-6'):add_pack('production-science-pack')
+TECHNOLOGY('laser-weapons-damage-7'):add_pack('production-science-pack')
 TECHNOLOGY('weapon-shooting-speed-6'):add_pack('production-science-pack')
 TECHNOLOGY('laser-shooting-speed-5'):add_pack('production-science-pack')
 TECHNOLOGY('laser-shooting-speed-6'):add_pack('production-science-pack')
 TECHNOLOGY('laser-shooting-speed-7'):add_pack('production-science-pack')
+]]--
+--TODO: REVIEW FOLLER ROBOT TECHS
+--[[
 TECHNOLOGY('follower-robot-count-5'):add_pack('production-science-pack')
 TECHNOLOGY('follower-robot-count-6'):add_pack('production-science-pack')
+]]--
 TECHNOLOGY('inserter-capacity-bonus-7'):add_pack('military-science-pack')
 TECHNOLOGY('space-science-pack'):add_pack('military-science-pack')
 TECHNOLOGY('military-4'):add_pack('production-science-pack')
@@ -89,7 +97,7 @@ TECHNOLOGY('distractor'):set_fields{prerequisites = {}}
 TECHNOLOGY('modules'):set_fields{enabled = false, hidden = true}
 TECHNOLOGY('speed-module'):set_fields{prerequisites = {}}
 TECHNOLOGY('productivity-module'):set_fields{prerequisites = {}}
-TECHNOLOGY('effectivity-module'):set_fields{prerequisites = {}}
+TECHNOLOGY('efficiency-module'):set_fields{prerequisites = {}}
 
 -- (( TECHNOLOGY DEPENDENCIES ))--
 TECHNOLOGY('steel-axe'):set_fields{dependencies = {'steel-processing'}}
@@ -228,6 +236,7 @@ ITEM('speed-module-3').effect = {
     consumption = {bonus = 2}
 }
 
+--[[
 -- Bump vanilla ore richness to more closely resembly py ore amounts
 for _, ore in pairs({'iron-ore', 'copper-ore', 'coal', 'stone', 'uranium-ore'}) do
     local resource = data.raw.resource[ore]
@@ -244,3 +253,4 @@ for _, ore in pairs({'iron-ore', 'copper-ore', 'coal', 'stone', 'uranium-ore'}) 
         end)
     end
 end
+]]--

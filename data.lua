@@ -12,8 +12,9 @@ require 'prototypes/item-groups'
 -- (( Categories )) --
 require 'prototypes/recipe-categories'
 
+--TODO:.create doesnt work anymore
 -- (( Circuit Connector Definitions )) --
-require 'prototypes/circuit-connector-definitions'
+--require 'prototypes/circuit-connector-definitions'
 
 -- (( Technology )) --
 require 'prototypes/technologies/coal-processing-1'
