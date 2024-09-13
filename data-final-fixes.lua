@@ -7,7 +7,7 @@ if not mods.pyalternativeenergy then
                     temp = result.temperature
                 end
             end
-            recipe.localised_name = {'recipe-name.' .. recipe.name, temp}
+            recipe.localised_name = {'recipe-name.' .. recipe.name, tostring(temp)}
         end
     end
 end
