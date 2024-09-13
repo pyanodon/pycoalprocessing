@@ -56,7 +56,9 @@ for i = 1, 4 do
         energy_source =
         {
             type = 'fluid',
-            emissions_per_minute = 10 * i,
+            emissions_per_minute = {
+                pollution = 10
+            },
             destroy_non_fuel_fluid = false,
             fluid_box =
             {

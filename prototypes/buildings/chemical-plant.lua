@@ -56,7 +56,9 @@ for i = 1, 4 do
         energy_source = {
             type = 'electric',
             usage_priority = 'secondary-input',
-            emissions_per_minute = 0.1 * i,
+            emissions_per_minute = {
+                pollution = -1
+            },
         },
         energy_usage = i .. 'MW',
         animation = {

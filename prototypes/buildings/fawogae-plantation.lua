@@ -107,7 +107,9 @@ for i = 1, 4 do
         energy_source = {
             type = 'electric',
             usage_priority = 'secondary-input',
-            emissions_per_minute = -5 * i,
+            emissions_per_minute = {
+                pollution = -10
+            },
         },
         energy_usage = (200 * i) .. 'kW',
         animation = {
