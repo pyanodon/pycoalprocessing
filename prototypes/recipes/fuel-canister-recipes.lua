@@ -28,7 +28,7 @@ for f, fluid in pairs(data.raw.fluid) do
         local fluid_icon = table.deepcopy(fluid.icons) or {{icon = fluid.icon}}
         -- Apply to each layer
         for _, icon in pairs(fluid_icon) do
-            icon.icon_size = icon.icon_size or fluid_icon.icon_size or fluid.icon_size
+            icon.icon_size = icon.icon_size or fluid_icon.icon_size or fluid.icon_size or 64
             icon.scale = 16 / icon.icon_size -- 32 = 0.5, 64 = 0.25
         end
 
