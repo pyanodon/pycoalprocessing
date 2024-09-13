@@ -121,9 +121,9 @@ for i = 1, 4 do
             width = 12,
             height = 12
         },
-        circuit_wire_connection_points = circuit_connector_definitions['borax-mine-mkxx'].points,
-        circuit_connector_sprites = circuit_connector_definitions['borax-mine-mkxx'].sprites,
-        circuit_wire_max_distance = default_circuit_wire_max_distance,
+        --circuit_wire_connection_points = circuit_connector_definitions['borax-mine-mkxx'].points,
+        --circuit_connector_sprites = circuit_connector_definitions['borax-mine-mkxx'].sprites,
+        --circuit_wire_max_distance = default_circuit_wire_max_distance,
         graphics_set = {
             animation = dry_graphics
         },
