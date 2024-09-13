@@ -151,7 +151,7 @@ for i = 1, 4 do
                 production_type = 'input',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {3.0, 0.0}}}
             },
@@ -159,7 +159,7 @@ for i = 1, 4 do
                 production_type = 'input',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {0.0, 3.0}}}
             },

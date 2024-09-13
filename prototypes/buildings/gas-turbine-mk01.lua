@@ -49,7 +49,7 @@ ENTITY {
     collision_box = {{-1.49, -1.49}, {1.49, 1.49}},
     selection_box = {{-1.53, -1.53}, {1.53, 1.53}},
     fluid_box = {
-        base_area = 1,
+        volume = 100,
         base_level = -1,
         pipe_covers = py.pipe_covers(false, true, true, true),
         production_type = 'input-output',

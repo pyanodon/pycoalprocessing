@@ -39,7 +39,7 @@ if mods.pyalienlife then
             production_type = 'input',
             pipe_covers = py.pipe_covers(false, true, true, true),
             pipe_picture = py.pipe_pictures('assembling-machine-3', {0, 0.22}, {0.02, -1}, nil, nil, pipes),
-            base_area = 10,
+            volume = 1000,
             base_level = -1,
             pipe_connections = {{type = 'input', position = {-3.5, 0.5}}}
         },
@@ -47,7 +47,7 @@ if mods.pyalienlife then
             production_type = 'input',
             pipe_covers = py.pipe_covers(false, true, true, true),
             pipe_picture = py.pipe_pictures('assembling-machine-3', {0, 0.22}, {0.02, -1}, nil, nil, pipes),
-            base_area = 10,
+            volume = 1000,
             base_level = -1,
             pipe_connections = {{type = 'input', position = {3.5, -0.5}}}
         },
@@ -59,7 +59,7 @@ else
             production_type = 'input',
             pipe_covers = py.pipe_covers(false, true, true, true),
             pipe_picture = py.pipe_pictures('assembling-machine-3', {0, 0.22}, {0.02, -1}, nil, nil, pipes),
-            base_area = 10,
+            volume = 1000,
             base_level = -1,
             pipe_connections = {{type = 'input', position = {-3.5, 0.5}}}
         },

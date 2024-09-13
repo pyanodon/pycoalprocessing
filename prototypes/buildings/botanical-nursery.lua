@@ -118,7 +118,7 @@ for i = 1, 4 do
                 production_type = 'input',
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {0.2, 4.13}, {0.12, -4.03}, {4.115, 0.1}, {-3.88, 0.16}, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {0.0, 4.0}}}
             },
@@ -126,7 +126,7 @@ for i = 1, 4 do
                 production_type = 'input',
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {0.2, 4.13}, {0.12, -4.03}, {4.115, 0.1}, {-3.88, 0.16}, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {0.0, -4.0}}}
             },

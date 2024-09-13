@@ -62,8 +62,7 @@ for i = 1, 4 do
             destroy_non_fuel_fluid = false,
             fluid_box =
             {
-                base_area = 1,
-                height = 2,
+                volume = 200,
                 base_level = -1,
                 pipe_connections =
                 {
@@ -176,7 +175,7 @@ for i = 1, 4 do
                 production_type = 'input',
                 pipe_picture = py.pipe_pictures('assembling-machine-2', nil, {0.0, -0.96}, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {1.0, -4.0}}}
             },
@@ -184,7 +183,7 @@ for i = 1, 4 do
                 production_type = 'input',
                 pipe_picture = py.pipe_pictures('assembling-machine-2', nil, {0.0, -0.96}, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {-1.0, -4.0}}}
             },
@@ -192,7 +191,7 @@ for i = 1, 4 do
                 production_type = 'input',
                 pipe_picture = py.pipe_pictures('assembling-machine-2', nil, {0.0, -0.96}, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                base_area = 10,
+                volume = 1000,
                 base_level = -1,
                 pipe_connections = {{type = 'input', position = {2.0, 4.0}}}
             },
@@ -200,7 +199,7 @@ for i = 1, 4 do
                 production_type = 'output',
                 pipe_picture = py.pipe_pictures('assembling-machine-2', nil, {0.0, -0.96}, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                base_area = 10,
+                volume = 1000,
                 base_level = 1,
                 pipe_connections = {{type = 'output', position = {-2.0, 4.0}}}
             },

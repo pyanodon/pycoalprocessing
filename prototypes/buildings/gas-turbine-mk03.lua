@@ -101,7 +101,7 @@ ENTITY {
     fluid_box = {
         filter = 'combustion-mixture1',
         minimum_temperature = 500.0,
-        base_area = 1,
+        volume = 100,
         base_level = -1,
         pipe_covers = py.pipe_covers(false, true, false, false),
         pipe_picture = pipe_pictures({0, 0}, {0, 0}, {0, 0}, {0, 0}),

@@ -34,7 +34,7 @@ if mods.pyalienlife then
             production_type = 'input',
             pipe_picture = py.pipe_pictures('assembling-machine-3', {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
             pipe_covers = py.pipe_covers(true, true, true, true),
-            base_area = 10,
+            volume = 1000,
             base_level = -1,
             pipe_connections = {{type = 'input', position = {0.0, 4.0}}}
         },
@@ -42,7 +42,7 @@ if mods.pyalienlife then
             production_type = 'input',
             pipe_picture = py.pipe_pictures('assembling-machine-3', {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
             pipe_covers = py.pipe_covers(true, true, true, true),
-            base_area = 10,
+            volume = 1000,
             base_level = -1,
             pipe_connections = {{type = 'input', position = {0.0, -4.0}}}
         },
@@ -50,7 +50,7 @@ if mods.pyalienlife then
             production_type = 'input',
             pipe_covers = py.pipe_covers(true, true, true, true),
             pipe_picture = py.pipe_pictures('assembling-machine-3', {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
-            base_area = 10,
+            volume = 1000,
             base_level = -1,
             pipe_connections = {{type = 'input', position = {-4.0, 0.0}}}
         },
@@ -70,7 +70,7 @@ else
             production_type = 'input',
             pipe_picture = py.pipe_pictures('assembling-machine-3', {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
             pipe_covers = py.pipe_covers(true, true, true, true),
-            base_area = 10,
+            volume = 1000,
             base_level = -1,
             pipe_connections = {{type = 'input', position = {0.0, 4.0}}}
         },
@@ -78,7 +78,7 @@ else
             production_type = 'input',
             pipe_picture = py.pipe_pictures('assembling-machine-3', {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
             pipe_covers = py.pipe_covers(true, true, true, true),
-            base_area = 10,
+            volume = 1000,
             base_level = -1,
             pipe_connections = {{type = 'input', position = {0.0, -4.0}}}
         },
