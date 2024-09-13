@@ -41,9 +41,7 @@ ENTITY {
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
     match_animation_speed_to_activity = false,
     fixed_recipe = "cooling-water",
-    module_specification = {
-        module_slots = 2
-    },
+    module_slots = 2,
     allowed_effects = {"speed", "consumption"},
     crafting_categories = {"cooling"},
     crafting_speed = 2,

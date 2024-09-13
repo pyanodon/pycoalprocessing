@@ -72,14 +72,14 @@ data.raw['assembling-machine']['assembling-machine-2'].crafting_speed = 2
 data.raw['assembling-machine']['assembling-machine-2'].energy_source = table.deepcopy(burner)
 table.insert(data.raw['assembling-machine']['assembling-machine-2'].energy_source.fuel_categories, 'jerry')
 data.raw['assembling-machine']['assembling-machine-2'].allowed_effects = {}
-data.raw['assembling-machine']['assembling-machine-2'].module_specification.module_slots = 0
+data.raw['assembling-machine']['assembling-machine-2'].module_slots = 0
 
 --modify assembly machine 3
 data.raw['assembling-machine']['assembling-machine-3'].crafting_speed = 4
 data.raw['assembling-machine']['assembling-machine-3'].energy_source = table.deepcopy(burner)
 table.insert(data.raw['assembling-machine']['assembling-machine-3'].energy_source.fuel_categories, 'jerry')
 data.raw['assembling-machine']['assembling-machine-3'].allowed_effects = {}
-data.raw['assembling-machine']['assembling-machine-3'].module_specification.module_slots = 0
+data.raw['assembling-machine']['assembling-machine-3'].module_slots = 0
 
 --modify mining drill power and speed
 data.raw['mining-drill']['burner-mining-drill'].mining_speed = 1
@@ -118,7 +118,7 @@ data.raw['mining-drill']['burner-mining-drill'].energy_source.fuel_categories = 
 data.raw.furnace['electric-furnace'].energy_usage = '1MW'
 data.raw.furnace['electric-furnace'].crafting_speed = 4
 data.raw.furnace['electric-furnace'].allowed_effects = nil
-data.raw.furnace['electric-furnace'].module_specification = nil
+data.raw.furnace['electric-furnace'].module_slots = 0
 
 -- Ash space updates
 data.raw['mining-drill']['burner-mining-drill'].energy_source.burnt_inventory_size = 1

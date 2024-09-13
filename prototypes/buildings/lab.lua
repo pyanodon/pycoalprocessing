@@ -118,11 +118,9 @@ ENTITY {
         'automation-science-pack', 'logistic-science-pack', 'chemical-science-pack', 'military-science-pack', 'production-science-pack', 'utility-science-pack',
         'space-science-pack'
     },
-    module_specification =
-    {
-        module_slots = 5,
-        module_info_icon_shift = {0, 0.9}
-    },
+    module_slots = 5,
+    --TODO:find out what replaced module info icon shift
+    --module_info_icon_shift = {0, 0.9},
     allowed_effects = {'consumption', 'speed', 'productivity', 'pollution'},
 }
 
