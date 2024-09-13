@@ -36,7 +36,7 @@ RECIPE('solid-fuel-from-light-oil'):remove_unlock('advanced-oil-processing'):set
 
 RECIPE("sulfur"):remove_unlock('sulfur-processing'):set_fields{ hidden = true }
 
-ITEM("solid-fuel"):add_flag("hidden")
+ITEM("solid-fuel"):set_fields{hidden = true}
 
 if not (mods["pyhightech"] or mods["pypetroleumhandling"] or mods["pyrawores"]) then
     TECHNOLOGY("sulfur-processing"):add_pack("chemical-science-pack")
