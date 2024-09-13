@@ -63,9 +63,7 @@ for i = 1, 4 do
         collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
         match_animation_speed_to_activity = false,
-        module_specification = {
-            module_slots = i
-        },
+        module_slots = i,
         allowed_effects = {'consumption', 'speed', 'productivity', 'pollution'},
         crafting_categories = {'soil-extraction'},
         crafting_speed = i,

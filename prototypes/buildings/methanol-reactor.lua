@@ -60,9 +60,7 @@ for i = 1, 4 do
         collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
         selection_box = {{-3, -3}, {3, 3}},
         match_animation_speed_to_activity = false,
-        module_specification = {
-            module_slots = i
-        },
+        module_slots = i,
         allowed_effects = {'consumption', 'speed', 'productivity', 'pollution'},
         crafting_categories = {'methanol'},
         crafting_speed = i,

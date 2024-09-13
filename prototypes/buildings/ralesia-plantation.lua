@@ -138,9 +138,7 @@ for i = 1, 4 do
         collision_box = {{-3.2, -3.2}, {3.2, 3.2}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
         match_animation_speed_to_activity = false,
-        module_specification = {
-            module_slots = i
-        },
+        module_slots = i,
         allowed_effects = {'consumption', 'speed', 'productivity', 'pollution'},
         crafting_categories = {'ralesia'},
         crafting_speed = 0.3 * i,

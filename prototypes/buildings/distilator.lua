@@ -48,9 +48,7 @@ for i = 1, 4 do
         collision_box = {{-3.9, -3.9}, {3.9, 3.9}},
         selection_box = {{-4, -4}, {4, 4}},
         match_animation_speed_to_activity = false,
-        module_specification = {
-            module_slots = i
-        },
+        module_slots = i,
         allowed_effects = {'consumption', 'speed', 'pollution', 'productivity'},
         crafting_categories = {'distilator'},
         crafting_speed = i,

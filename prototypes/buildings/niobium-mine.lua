@@ -100,9 +100,7 @@ ENTITY {
             {position = {-3, 4}}
         }
     },
-    module_specification = {
-        module_slots = 4
-    },
+    module_slots = 4,
     allowed_effects = {'consumption', 'speed', 'productivity'},
     mining_speed = 1,
     energy_source = {

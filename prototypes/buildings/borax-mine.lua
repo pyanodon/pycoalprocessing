@@ -103,9 +103,7 @@ for i = 1, 4 do
                 {position = {0, 5}}
             }
         },
-        module_specification = {
-            module_slots = i
-        },
+        module_slots = i,
         allowed_effects = {'consumption', 'speed', 'productivity'},
         mining_speed = 2 * i,
         energy_source = {
