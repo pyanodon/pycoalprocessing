@@ -94,7 +94,8 @@ require 'prototypes/items/items'
 require 'prototypes/items/canister'
 
 -- (( TILES )) --
-require 'prototypes/tiles/polluted-ground'
+--TODO: sort out tile transistions
+--require 'prototypes/tiles/polluted-ground'
 
 -- (( FLUIDS )) --
 require 'prototypes/fluids/acidgas'
