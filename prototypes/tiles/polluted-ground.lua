@@ -48,7 +48,9 @@ local variants = {
 data:extend{{
     type = 'tile',
     name = 'polluted-ground',
-    collision_mask = {'ground-tile'},
+    collision_mask = {layers={
+        ground_tile=true
+      }},
     walking_speed_modifier = .50,
     autoplace = nil,
     layer = 35,
@@ -81,7 +83,9 @@ data:extend{{
 data:extend{{
     type = 'tile',
     name = 'polluted-ground-burnt',
-    collision_mask = {'ground-tile'},
+    collision_mask = {layers={
+        ground_tile=true
+      }},
     walking_speed_modifier = .50,
     autoplace = nil,
     layer = 36,
