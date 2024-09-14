@@ -54,7 +54,6 @@ TECHNOLOGY('worker-robots-speed-6'):add_pack('military-science-pack')
 TECHNOLOGY('worker-robots-storage-3'):add_pack('military-science-pack')
 TECHNOLOGY('personal-roboport-mk2-equipment'):add_pack('military-science-pack'):add_pack('production-science-pack')
 TECHNOLOGY('mining-productivity-3'):add_pack('military-science-pack')
-TECHNOLOGY('mining-productivity-4'):add_pack('military-science-pack')
 
 data.raw.technology.artillery.unit.ingredients = {
     {'automation-science-pack', 1},
