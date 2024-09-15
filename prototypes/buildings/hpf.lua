@@ -4,15 +4,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'stone-brick',        20},
-        {'copper-plate',       20},
-        {'iron-gear-wheel',    5}, --bob steel-bearing
-        {'iron-plate',         10}, --bob invar-alloy
-        {'electronic-circuit', 3},
-        {'steam-engine',       1},
+        {type = "item", name = 'stone-brick', amount = 20},
+        {type = "item", name = 'copper-plate', amount = 20},
+        {type = "item", name = 'iron-gear-wheel', amount = 5}, --bob steel-bearing
+        {type = "item", name = 'iron-plate', amount = 10}, --bob invar-alloy
+        {type = "item", name = 'electronic-circuit', amount = 3},
+        {type = "item", name = 'steam-engine', amount = 1},
     },
     results = {
-        {'hpf', 1}
+        {type = "item", name = 'hpf', amount = 1}
     }
 }:add_unlock('coal-processing-1')
 

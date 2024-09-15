@@ -4,14 +4,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'steel-plate',     15},
-        {'pipe',            10},
-        {'iron-plate',      25},
-        {'iron-stick',      30},
-        {'iron-gear-wheel', 40}
+        {type = "item", name = 'steel-plate', amount = 15},
+        {type = "item", name = 'pipe', amount = 10},
+        {type = "item", name = 'iron-plate', amount = 25},
+        {type = "item", name = 'iron-stick', amount = 30},
+        {type = "item", name = 'iron-gear-wheel', amount = 40}
     },
     results = {
-        {'gasturbinemk01', 1}
+        {type = "item", name = 'gasturbinemk01', amount = 1}
     }
 }:add_unlock('energy-1')
 

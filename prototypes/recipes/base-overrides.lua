@@ -136,7 +136,7 @@ RECIPE {
     name = "fission-reactor-equipment",
     enabled = false,
     energy_required = 10,
-    ingredients = {{"processing-unit", 25}, {"low-density-structure", 10}},
+    ingredients = {{"processing-unit", 25}, {type = "item", name = "low-density-structure", amount = 10}},
     results = {
         {type = "item", name = "fission-reactor-equipment", amount = 1}
     }

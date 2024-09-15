@@ -22,14 +22,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'storage-tank',        3},
-        {'chemical-plant-mk01', 1},
-        {'electronic-circuit',  40},
-        {'steel-plate',         20},
-        {'iron-plate',          50}
+        {type = "item", name = 'storage-tank', amount = 3},
+        {type = "item", name = 'chemical-plant-mk01', amount = 1},
+        {type = "item", name = 'electronic-circuit', amount = 40},
+        {type = "item", name = 'steel-plate', amount = 20},
+        {type = "item", name = 'iron-plate', amount = 50}
     },
     results = {
-        {'desulfurizator-unit', 1}
+        {type = "item", name = 'desulfurizator-unit', amount = 1}
     }
 }:add_unlock('desulfurization')
 

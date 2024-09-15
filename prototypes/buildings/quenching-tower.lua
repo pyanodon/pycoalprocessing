@@ -33,15 +33,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'concrete',           50},
-        {'iron-stick',         50},
-        {'steam-engine',       1},
-        {'pipe',               10},
-        {'pump',               2},
-        {'electronic-circuit', 15}
+        {type = "item", name = 'concrete', amount = 50},
+        {type = "item", name = 'iron-stick', amount = 50},
+        {type = "item", name = 'steam-engine', amount = 1},
+        {type = "item", name = 'pipe', amount = 10},
+        {type = "item", name = 'pump', amount = 2},
+        {type = "item", name = 'electronic-circuit', amount = 15}
     },
     results = {
-        {'quenching-tower', 1}
+        {type = "item", name = 'quenching-tower', amount = 1}
     }
 }:add_unlock('separation')
 

@@ -4,15 +4,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'steel-plate',        20},
-        {'steam-engine',       1},
-        {'stone-brick',        10},
-        {'iron-gear-wheel',    5}, --bob steel-bearing
-        {'iron-plate',         10},
-        {'electronic-circuit', 10}
+        {type = "item", name = 'steel-plate', amount = 20},
+        {type = "item", name = 'steam-engine', amount = 1},
+        {type = "item", name = 'stone-brick', amount = 10},
+        {type = "item", name = 'iron-gear-wheel', amount = 5}, --bob steel-bearing
+        {type = "item", name = 'iron-plate', amount = 10},
+        {type = "item", name = 'electronic-circuit', amount = 10}
     },
     results = {
-        {'ulric-corral-mk01', 1}
+        {type = "item", name = 'ulric-corral-mk01', amount = 1}
     }
 }:add_unlock('ulric')
 

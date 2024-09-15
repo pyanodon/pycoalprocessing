@@ -31,14 +31,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'electric-mining-drill', 1},
-        {'soil-extractor-mk01',   1},
-        {'electronic-circuit',    5},
-        {'wood',                  50},
-        {'iron-plate',            35}
+        {type = "item", name = 'electric-mining-drill', amount = 1},
+        {type = "item", name = 'soil-extractor-mk01', amount = 1},
+        {type = "item", name = 'electronic-circuit', amount = 5},
+        {type = "item", name = 'wood', amount = 50},
+        {type = "item", name = 'iron-plate', amount = 35}
     },
     results = {
-        {'botanical-nursery', 1}
+        {type = "item", name = 'botanical-nursery', amount = 1}
     }
 }:add_unlock('wood-processing')
 

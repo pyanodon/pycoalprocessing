@@ -19,16 +19,16 @@ RECIPE {
     energy_required = 0.5,
     enabled = true,
     ingredients = {
-        {'soil',               100},
-        {'pipe',               10},
-        {'electronic-circuit', 10},
-        {'steam-engine',       1},
-        {'copper-cable',       25},
-        {'iron-plate',         20},
-        {'wood',               100}
+        {type = "item", name = 'soil', amount = 100},
+        {type = "item", name = 'pipe', amount = 10},
+        {type = "item", name = 'electronic-circuit', amount = 10},
+        {type = "item", name = 'steam-engine', amount = 1},
+        {type = "item", name = 'copper-cable', amount = 25},
+        {type = "item", name = 'iron-plate', amount = 20},
+        {type = "item", name = 'wood', amount = 100}
     },
     results = {
-        {'fawogae-plantation-mk01', 1}
+        {type = "item", name = 'fawogae-plantation-mk01', amount = 1}
     }
 }
 

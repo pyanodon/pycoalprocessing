@@ -4,13 +4,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"soil", 500},
-        {"steel-plate", 100},
-        {"storage-tank", 5},
-        {"advanced-circuit", 10} --bob electronic-logic-board
+        {type = "item", name = "soil", amount = 500},
+        {type = "item", name = "steel-plate", amount = 100},
+        {type = "item", name = "storage-tank", amount = 5},
+        {type = "item", name = "advanced-circuit", amount = 10} --bob electronic-logic-board
     },
     results = {
-        {"mukmoux-pasture", 1}
+        {type = "item", name = "mukmoux-pasture", amount = 1}
     }
 }:add_unlock("mukmoux")
 

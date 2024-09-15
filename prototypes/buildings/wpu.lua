@@ -4,15 +4,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'wood',                20},
-        {'iron-plate',          20},
-        {'steam-engine',        1},
-        {'iron-gear-wheel',     15},
-        {'burner-mining-drill', 2},
-        {'copper-cable',        50}
+        {type = "item", name = 'wood', amount = 20},
+        {type = "item", name = 'iron-plate', amount = 20},
+        {type = "item", name = 'steam-engine', amount = 1},
+        {type = "item", name = 'iron-gear-wheel', amount = 15},
+        {type = "item", name = 'burner-mining-drill', amount = 2},
+        {type = "item", name = 'copper-cable', amount = 50}
     },
     results = {
-        {'wpu', 1}
+        {type = "item", name = 'wpu', amount = 1}
     }
 }:add_unlock('wood-processing')
 

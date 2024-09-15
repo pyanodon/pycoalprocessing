@@ -19,14 +19,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = true,
     ingredients = {
-        {'burner-mining-drill', 2},
-        {'electronic-circuit',  10},
-        {'iron-plate',          30},
-        {'copper-cable',        5},
-        {'iron-gear-wheel',     15}
+        {type = "item", name = 'burner-mining-drill', amount = 2},
+        {type = "item", name = 'electronic-circuit', amount = 10},
+        {type = "item", name = 'iron-plate', amount = 30},
+        {type = "item", name = 'copper-cable', amount = 5},
+        {type = "item", name = 'iron-gear-wheel', amount = 15}
     },
     results = {
-        {'soil-extractor-mk01', 1}
+        {type = "item", name = 'soil-extractor-mk01', amount = 1}
     }
 }
 

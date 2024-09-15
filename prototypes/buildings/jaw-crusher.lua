@@ -4,13 +4,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'iron-plate',         25},
-        {'steam-engine',       4},
-        {'steel-plate',        30},
-        {'electronic-circuit', 15}
+        {type = "item", name = 'iron-plate', amount = 25},
+        {type = "item", name = 'steam-engine', amount = 4},
+        {type = "item", name = 'steel-plate', amount = 30},
+        {type = "item", name = 'electronic-circuit', amount = 15}
     },
     results = {
-        {'jaw-crusher', 1}
+        {type = "item", name = 'jaw-crusher', amount = 1}
     }
 }:add_unlock('crusher')
 
