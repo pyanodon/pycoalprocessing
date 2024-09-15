@@ -73,7 +73,7 @@ ENTITY {
             pipe_connections = {{flow_direction = "output", position = {-1.4, 0.0}, direction = defines.direction.west}}
         }
     },
-    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.65},
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg", volume = 0.3},
