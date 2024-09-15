@@ -44,7 +44,7 @@ require 'prototypes/updates/base-oil'
 
 --move barrels below everything else in intermediate tab
 data.raw['item-subgroup']['fill-barrel'].order = 'y'
-data.raw['item-subgroup']['empty-barrel'].order = 'z'
+data.raw['item-subgroup']['barrel'].order = 'z'
 
 --add handcrafting to player character
 for _, player_type in pairs{'character', 'god-controller'} do

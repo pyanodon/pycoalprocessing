@@ -11,7 +11,7 @@ RECIPE {
     },
     results = {
         {type = 'item', name = 'bonemeal',     amount = 5},
-        {type = 'item', name = 'empty-barrel', amount = 5}
+        {type = 'item', name = 'barrel', amount = 5}
     },
     main_product = 'bonemeal',
     icon = '__pycoalprocessinggraphics__/graphics/icons/bonemeal.png',
