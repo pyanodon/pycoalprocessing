@@ -60,66 +60,68 @@ for i = 1, 4 do
             },
         },
         energy_usage = (500 * i) .. 'kW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-a.png',
-                    width = 96,
-                    height = 358,
-                    line_length = 20,
-                    frame_count = 100,
-                    animation_speed = 0.5,
-                    shift = util.by_pixel(-80, -50)
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-a.png',
+                        width = 96,
+                        height = 358,
+                        line_length = 20,
+                        frame_count = 100,
+                        animation_speed = 0.5,
+                        shift = util.by_pixel(-80, -50)
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-b.png',
+                        width = 96,
+                        height = 358,
+                        line_length = 20,
+                        frame_count = 100,
+                        animation_speed = 0.5,
+                        shift = util.by_pixel(16, -50)
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-c.png',
+                        width = 96,
+                        height = 358,
+                        line_length = 20,
+                        frame_count = 100,
+                        animation_speed = 0.5,
+                        shift = util.by_pixel(112, -50)
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-a-mask.png',
+                        width = 96,
+                        height = 358,
+                        line_length = 20,
+                        frame_count = 100,
+                        animation_speed = 0.5,
+                        shift = util.by_pixel(-80, -50),
+                        tint = py.tints[i]
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-b-mask.png',
+                        width = 96,
+                        height = 358,
+                        line_length = 20,
+                        frame_count = 100,
+                        animation_speed = 0.5,
+                        shift = util.by_pixel(16, -50),
+                        tint = py.tints[i]
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-c-mask.png',
+                        width = 96,
+                        height = 358,
+                        line_length = 20,
+                        frame_count = 100,
+                        animation_speed = 0.5,
+                        shift = util.by_pixel(112, -50),
+                        tint = py.tints[i]
+                    },
                 },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-b.png',
-                    width = 96,
-                    height = 358,
-                    line_length = 20,
-                    frame_count = 100,
-                    animation_speed = 0.5,
-                    shift = util.by_pixel(16, -50)
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-c.png',
-                    width = 96,
-                    height = 358,
-                    line_length = 20,
-                    frame_count = 100,
-                    animation_speed = 0.5,
-                    shift = util.by_pixel(112, -50)
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-a-mask.png',
-                    width = 96,
-                    height = 358,
-                    line_length = 20,
-                    frame_count = 100,
-                    animation_speed = 0.5,
-                    shift = util.by_pixel(-80, -50),
-                    tint = py.tints[i]
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-b-mask.png',
-                    width = 96,
-                    height = 358,
-                    line_length = 20,
-                    frame_count = 100,
-                    animation_speed = 0.5,
-                    shift = util.by_pixel(16, -50),
-                    tint = py.tints[i]
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-c-mask.png',
-                    width = 96,
-                    height = 358,
-                    line_length = 20,
-                    frame_count = 100,
-                    animation_speed = 0.5,
-                    shift = util.by_pixel(112, -50),
-                    tint = py.tints[i]
-                },
-            }
+            },
         },
         fluid_boxes = {
             --North, left
