@@ -95,11 +95,10 @@ for i = 1, 4 do
             pipe_picture = _G.assembler2pipepictures(),
             pipe_covers = _G.pipecoverspictures(),
             volume = 200,
-            base_level = -1,
             pipe_connections = {
-                {position = {-5, 0}},
-                {position = {5, 0}},
-                {position = {0, 5}}
+                {direction = defines.direction.west, position = {-4.1, 0}},
+                {direction = defines.direction.east, position = {4.1, 0}},
+                {direction = defines.direction.south, position = {0, 4.1}}
             }
         },
         module_slots = i,
