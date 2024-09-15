@@ -4,14 +4,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'assembling-machine-1', 1},
-        {'steam-engine',         1},
-        {'copper-plate',         30},
-        {'steel-plate',          40},
-        {'iron-plate',           50},
+        {type = "item", name = 'assembling-machine-1', amount = 1},
+        {type = "item", name = 'steam-engine', amount = 1},
+        {type = "item", name = 'copper-plate', amount = 30},
+        {type = "item", name = 'steel-plate', amount = 40},
+        {type = "item", name = 'iron-plate', amount = 50},
     },
     results = {
-        {'ball-mill-mk01', 1}
+        {type = "item", name = 'ball-mill-mk01', amount = 1}
     }
 }:add_unlock('crusher')
 

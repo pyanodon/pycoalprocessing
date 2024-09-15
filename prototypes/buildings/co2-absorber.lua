@@ -4,14 +4,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'gasturbinemk01',   3},
-        {'advanced-circuit', 30},
-        {'steel-plate',      50},
-        {'carbon-filter',    2},
-        {'nexelit-plate',    50}
+        {type = "item", name = 'gasturbinemk01', amount = 3},
+        {type = "item", name = 'advanced-circuit', amount = 30},
+        {type = "item", name = 'steel-plate', amount = 50},
+        {type = "item", name = 'carbon-filter', amount = 2},
+        {type = "item", name = 'nexelit-plate', amount = 50}
     },
     results = {
-        {'co2-absorber', 1}
+        {type = "item", name = 'co2-absorber', amount = 1}
     }
 }:add_unlock('filtration-mk02')
 

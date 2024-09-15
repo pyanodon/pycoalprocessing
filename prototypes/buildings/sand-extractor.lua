@@ -4,15 +4,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'iron-plate',         40},
-        {'niobium-plate',      20},
-        {'steam-engine',       1},
-        {'chromium',           10},
-        {'iron-gear-wheel',    20},
-        {'electronic-circuit', 12}
+        {type = "item", name = 'iron-plate', amount = 40},
+        {type = "item", name = 'niobium-plate', amount = 20},
+        {type = "item", name = 'steam-engine', amount = 1},
+        {type = "item", name = 'chromium', amount = 10},
+        {type = "item", name = 'iron-gear-wheel', amount = 20},
+        {type = "item", name = 'electronic-circuit', amount = 12}
     },
     results = {
-        {'sand-extractor', 1}
+        {type = "item", name = 'sand-extractor', amount = 1}
     }
 }:add_unlock('excavation-1')
 

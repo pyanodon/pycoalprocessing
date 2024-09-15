@@ -4,16 +4,16 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'concrete',           20},
-        {'steel-plate',        20},
-        {'stone-brick',        10},
-        {'steam-engine',       2},
-        {'iron-gear-wheel',    5},
-        {'iron-plate',         10},
-        {'electronic-circuit', 20}
+        {type = "item", name = 'concrete', amount = 20},
+        {type = "item", name = 'steel-plate', amount = 20},
+        {type = "item", name = 'stone-brick', amount = 10},
+        {type = "item", name = 'steam-engine', amount = 2},
+        {type = "item", name = 'iron-gear-wheel', amount = 5},
+        {type = "item", name = 'iron-plate', amount = 10},
+        {type = "item", name = 'electronic-circuit', amount = 20}
     },
     results = {
-        {'fts-reactor', 1}
+        {type = "item", name = 'fts-reactor', amount = 1}
     }
 }:add_unlock('coal-processing-2')
 

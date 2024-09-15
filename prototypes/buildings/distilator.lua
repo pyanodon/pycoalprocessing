@@ -4,14 +4,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = true,
     ingredients = {
-        {'copper-plate',       20},
-        {'pipe',               10},
-        {'iron-plate',         10},
-        {'steam-engine',       2},
-        {'electronic-circuit', 3}
+        {type = "item", name = 'copper-plate', amount = 20},
+        {type = "item", name = 'pipe', amount = 10},
+        {type = "item", name = 'iron-plate', amount = 10},
+        {type = "item", name = 'steam-engine', amount = 2},
+        {type = "item", name = 'electronic-circuit', amount = 3}
     },
     results = {
-        {'distilator', 1}
+        {type = "item", name = 'distilator', amount = 1}
     }
 }
 

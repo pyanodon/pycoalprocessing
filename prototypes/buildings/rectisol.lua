@@ -19,15 +19,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'steam-engine', 2},
-        {'storage-tank', 2},
-        {'pipe',         20},
-        {'pump',         2},
-        {'iron-plate',   25},
-        {'steel-plate',  20}
+        {type = "item", name = 'steam-engine', amount = 2},
+        {type = "item", name = 'storage-tank', amount = 2},
+        {type = "item", name = 'pipe', amount = 20},
+        {type = "item", name = 'pump', amount = 2},
+        {type = "item", name = 'iron-plate', amount = 25},
+        {type = "item", name = 'steel-plate', amount = 20}
     },
     results = {
-        {'rectisol', 1}
+        {type = "item", name = 'rectisol', amount = 1}
     }
 }:add_unlock('methanol-processing-1')
 

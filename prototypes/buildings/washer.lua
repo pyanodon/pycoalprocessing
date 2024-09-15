@@ -21,14 +21,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = true,
     ingredients = {
-        {'iron-plate',         10},
-        {'steam-engine',       1},
-        {'pipe',               25},
-        {'stone-brick',        30},
-        {'electronic-circuit', 2}
+        {type = "item", name = 'iron-plate', amount = 10},
+        {type = "item", name = 'steam-engine', amount = 1},
+        {type = "item", name = 'pipe', amount = 25},
+        {type = "item", name = 'stone-brick', amount = 30},
+        {type = "item", name = 'electronic-circuit', amount = 2}
     },
     results = {
-        {'washer', 1}
+        {type = "item", name = 'washer', amount = 1}
     }
 } --:add_unlock("energy-1")
 

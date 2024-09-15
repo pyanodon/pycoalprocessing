@@ -4,9 +4,9 @@ RECIPE {
     enabled = true,
     category = "smelting",
     energy_required = 3.5,
-    ingredients = {{"iron-oxide", 20}},
+    ingredients = {{type = "item", name = "iron-oxide", amount = 20}},
     results = {
-        {"iron-plate", 10}
+        {type = "item", name = "iron-plate", amount = 10}
     }
 }
 

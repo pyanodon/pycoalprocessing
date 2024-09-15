@@ -54,14 +54,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'processing-unit', 20},
-        {'pipe',            20},
-        {'nexelit-plate',   50},
-        {'iron-plate',      70},
-        {'gasturbinemk02',  2}
+        {type = "item", name = 'processing-unit', amount = 20},
+        {type = "item", name = 'pipe', amount = 20},
+        {type = "item", name = 'nexelit-plate', amount = 50},
+        {type = "item", name = 'iron-plate', amount = 70},
+        {type = "item", name = 'gasturbinemk02', amount = 2}
     },
     results = {
-        {'gasturbinemk03', 1}
+        {type = "item", name = 'gasturbinemk03', amount = 1}
     }
 }:add_unlock('energy-3')
 

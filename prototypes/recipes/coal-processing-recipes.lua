@@ -531,7 +531,7 @@ RECIPE {
         {type = 'item',  name = 'chromium',   amount = 8}
     },
     results = {
-        {'nichrome', 1}
+        {type = "item", name = 'nichrome', amount = 1}
     }
 }:add_unlock('chromium')
 

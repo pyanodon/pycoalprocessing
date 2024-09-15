@@ -4,14 +4,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'storage-tank',        4},
-        {'chemical-plant-mk01', 2},
-        {'advanced-circuit',    5},
-        {'steel-plate',         40},
-        {'iron-gear-wheel',     15}
+        {type = "item", name = 'storage-tank', amount = 4},
+        {type = "item", name = 'chemical-plant-mk01', amount = 2},
+        {type = "item", name = 'advanced-circuit', amount = 5},
+        {type = "item", name = 'steel-plate', amount = 40},
+        {type = "item", name = 'iron-gear-wheel', amount = 15}
     },
     results = {
-        {'olefin-plant', 1}
+        {type = "item", name = 'olefin-plant', amount = 1}
     }
 }:add_unlock('lubricant')
 

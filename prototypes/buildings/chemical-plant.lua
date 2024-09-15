@@ -4,15 +4,15 @@ RECIPE {
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {'distilator',         1},
-        {'copper-plate',       20},
-        {'iron-gear-wheel',    15},
-        {'pipe',               20},
-        {'iron-plate',         20},
-        {'electronic-circuit', 5}
+        {type = "item", name = 'distilator', amount = 1},
+        {type = "item", name = 'copper-plate', amount = 20},
+        {type = "item", name = 'iron-gear-wheel', amount = 15},
+        {type = "item", name = 'pipe', amount = 20},
+        {type = "item", name = 'iron-plate', amount = 20},
+        {type = "item", name = 'electronic-circuit', amount = 5}
     },
     results = {
-        {'chemical-plant-mk01', 1}
+        {type = "item", name = 'chemical-plant-mk01', amount = 1}
     }
 }:add_unlock('filtration')
 

@@ -16,14 +16,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'gasturbinemk01',     1},
-        {'boiler',             2},
-        {'electronic-circuit', 25},
-        {'steel-plate',        20},
-        {'iron-gear-wheel',    15}
+        {type = "item", name = 'gasturbinemk01', amount = 1},
+        {type = "item", name = 'boiler', amount = 2},
+        {type = "item", name = 'electronic-circuit', amount = 25},
+        {type = "item", name = 'steel-plate', amount = 20},
+        {type = "item", name = 'iron-gear-wheel', amount = 15}
     },
     results = {
-        {'methanol-reactor', 1}
+        {type = "item", name = 'methanol-reactor', amount = 1}
     }
 }:add_unlock('methanol-processing-1')
 

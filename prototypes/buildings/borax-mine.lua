@@ -4,14 +4,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'electric-mining-drill', 1},
-        {'soil-extractor-mk01',    1},
-        {'electronic-circuit',    20},
-        {'iron-gear-wheel',       15},
-        {'transport-belt',        20}
+        {type = "item", name = 'electric-mining-drill', amount = 1},
+        {type = "item", name = 'soil-extractor-mk01', amount = 1},
+        {type = "item", name = 'electronic-circuit', amount = 20},
+        {type = "item", name = 'iron-gear-wheel', amount = 15},
+        {type = "item", name = 'transport-belt', amount = 20}
     },
     results = {
-        {'borax-mine', 1}
+        {type = "item", name = 'borax-mine', amount = 1}
     }
 }:add_unlock('energy-1')
 

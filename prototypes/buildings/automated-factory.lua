@@ -13,14 +13,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'steel-plate',      20},
-        {'steam-engine',     1},
-        {'iron-gear-wheel',  20},
-        {'fast-inserter',    3},
-        {'advanced-circuit', 5}
+        {type = "item", name = 'steel-plate', amount = 20},
+        {type = "item", name = 'steam-engine', amount = 1},
+        {type = "item", name = 'iron-gear-wheel', amount = 20},
+        {type = "item", name = 'fast-inserter', amount = 3},
+        {type = "item", name = 'advanced-circuit', amount = 5}
     },
     results = {
-        {'automated-factory-mk01', 1}
+        {type = "item", name = 'automated-factory-mk01', amount = 1}
     }
 }:add_unlock('advanced-electronics')
 

@@ -21,7 +21,7 @@ RECIPE {
     },
     category = 'crafting-with-fluid',
     results = {
-        {'py-logo-15tiles', 1}
+        {type = "item", name = 'py-logo-15tiles', amount = 1}
     }
 }:add_unlock('py-asphalt-mk03'):add_ingredient{type = 'fluid', name = 'flue-gas', amount = 200}:add_ingredient{type = 'item', name = 'small-parts-01', amount = 10}
 

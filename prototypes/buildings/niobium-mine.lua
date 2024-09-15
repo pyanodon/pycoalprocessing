@@ -4,14 +4,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'electric-mining-drill', 5},
-        {'soil-extractor-mk01',   1},
-        {'electronic-circuit',    30},
-        {'steel-plate',           30},
-        {'iron-gear-wheel',       15}
+        {type = "item", name = 'electric-mining-drill', amount = 5},
+        {type = "item", name = 'soil-extractor-mk01', amount = 1},
+        {type = "item", name = 'electronic-circuit', amount = 30},
+        {type = "item", name = 'steel-plate', amount = 30},
+        {type = "item", name = 'iron-gear-wheel', amount = 15}
     },
     results = {
-        {'niobium-mine', 1}
+        {type = "item", name = 'niobium-mine', amount = 1}
     }
 }:add_unlock('niobium')
 

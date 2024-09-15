@@ -4,14 +4,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'storage-tank',        4},
-        {'chemical-plant-mk01', 2},
-        {'electronic-circuit',  15},
-        {'pipe',                40},
-        {'iron-gear-wheel',     15}
+        {type = "item", name = 'storage-tank', amount = 4},
+        {type = "item", name = 'chemical-plant-mk01', amount = 2},
+        {type = "item", name = 'electronic-circuit', amount = 15},
+        {type = "item", name = 'pipe', amount = 40},
+        {type = "item", name = 'iron-gear-wheel', amount = 15}
     },
     results = {
-        {'fluid-separator', 1}
+        {type = "item", name = 'fluid-separator', amount = 1}
     }
 }:add_unlock('fluid-separation')
 

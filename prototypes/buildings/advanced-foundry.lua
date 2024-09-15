@@ -4,13 +4,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'copper-cable',  30},
-        {'iron-plate',    30},
-        {'stone-furnace', 10},
-        {'stone-brick',   20},
+        {type = "item", name = 'copper-cable', amount = 30},
+        {type = "item", name = 'iron-plate', amount = 30},
+        {type = "item", name = 'stone-furnace', amount = 10},
+        {type = "item", name = 'stone-brick', amount = 20},
     },
     results = {
-        {'advanced-foundry-mk01', 1}
+        {type = "item", name = 'advanced-foundry-mk01', amount = 1}
     }
 }:add_unlock('steel-processing')
 

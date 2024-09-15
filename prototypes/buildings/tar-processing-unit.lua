@@ -4,15 +4,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'steel-plate',        20},
-        {'steam-engine',       3},
-        {'iron-plate',         20},
-        {'pipe',               20},
-        {'stone-furnace',      3},
-        {'electronic-circuit', 7}
+        {type = "item", name = 'steel-plate', amount = 20},
+        {type = "item", name = 'steam-engine', amount = 3},
+        {type = "item", name = 'iron-plate', amount = 20},
+        {type = "item", name = 'pipe', amount = 20},
+        {type = "item", name = 'stone-furnace', amount = 3},
+        {type = "item", name = 'electronic-circuit', amount = 7}
     },
     results = {
-        {'tar-processing-unit', 1}
+        {type = "item", name = 'tar-processing-unit', amount = 1}
     }
 }:add_unlock('tar-processing')
 

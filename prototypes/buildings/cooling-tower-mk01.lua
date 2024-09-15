@@ -4,13 +4,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"electronic-circuit", 5},
-        {"pipe", 20}, --bob copper-pipe
-        {"iron-gear-wheel", 15}, --bob brass-gear-wheel
-        {"iron-plate", 30} --bob brass-plate
+        {type = "item", name = "electronic-circuit", amount = 5},
+        {type = "item", name = "pipe", amount = 20}, --bob copper-pipe
+        {type = "item", name = "iron-gear-wheel", amount = 15}, --bob brass-gear-wheel
+        {type = "item", name = "iron-plate", amount = 30} --bob brass-plate
     },
     results = {
-        {"cooling-tower-mk01", 1}
+        {type = "item", name = "cooling-tower-mk01", amount = 1}
     }
 }:add_unlock("cooling-tower-1")
 

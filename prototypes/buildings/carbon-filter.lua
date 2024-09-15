@@ -13,14 +13,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'assembling-machine-2', 1},
-        {'pipe',                 2},
-        {'steam-engine',         3},
-        {'iron-plate',           20},
-        {'iron-gear-wheel',      30}
+        {type = "item", name = 'assembling-machine-2', amount = 1},
+        {type = "item", name = 'pipe', amount = 2},
+        {type = "item", name = 'steam-engine', amount = 3},
+        {type = "item", name = 'iron-plate', amount = 20},
+        {type = "item", name = 'iron-gear-wheel', amount = 30}
     },
     results = {
-        {'carbon-filter', 1}
+        {type = "item", name = 'carbon-filter', amount = 1}
     }
 }:add_unlock('filtration')
 

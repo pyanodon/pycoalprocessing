@@ -22,15 +22,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'steam-engine',       1},
-        {'quenching-tower',    1},
-        {'electronic-circuit', 10},
-        {'steel-plate',        40},
-        {'iron-plate',         40},
-        {'iron-gear-wheel',    15}
+        {type = "item", name = 'steam-engine', amount = 1},
+        {type = "item", name = 'quenching-tower', amount = 1},
+        {type = "item", name = 'electronic-circuit', amount = 10},
+        {type = "item", name = 'steel-plate', amount = 40},
+        {type = "item", name = 'iron-plate', amount = 40},
+        {type = "item", name = 'iron-gear-wheel', amount = 15}
     },
     results = {
-        {'evaporator', 1}
+        {type = "item", name = 'evaporator', amount = 1}
     }
 }:add_unlock('fluid-processing-machines-1')
 

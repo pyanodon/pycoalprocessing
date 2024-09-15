@@ -13,14 +13,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'steel-plate',        20},
-        {'pipe',               20},
-        {'iron-plate',         10},
-        {'steam-engine',       2},
-        {'electronic-circuit', 4}
+        {type = "item", name = 'steel-plate', amount = 20},
+        {type = "item", name = 'pipe', amount = 20},
+        {type = "item", name = 'iron-plate', amount = 10},
+        {type = "item", name = 'steam-engine', amount = 2},
+        {type = "item", name = 'electronic-circuit', amount = 4}
     },
     results = {
-        {'gasifier', 1}
+        {type = "item", name = 'gasifier', amount = 1}
     }
 }:add_unlock('tar-processing')
 

@@ -4,14 +4,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'electric-mining-drill', 3},
-        {'soil-extractor-mk01',   2},
-        {'electronic-circuit',    30},
-        {'iron-plate',            150},
-        {'iron-gear-wheel',       15}
+        {type = "item", name = 'electric-mining-drill', amount = 3},
+        {type = "item", name = 'soil-extractor-mk01', amount = 2},
+        {type = "item", name = 'electronic-circuit', amount = 30},
+        {type = "item", name = 'iron-plate', amount = 150},
+        {type = "item", name = 'iron-gear-wheel', amount = 15}
     },
     results = {
-        {'ground-borer', 1}
+        {type = "item", name = 'ground-borer', amount = 1}
     }
 }:add_unlock('excavation-1')
 

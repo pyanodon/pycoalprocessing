@@ -3,12 +3,12 @@ RECIPE {
     name = 'tailings-pond',
     enabled = true,
     ingredients = {
-        {'pipe', 10},
-        {'iron-plate', 10},
-        {'stone-brick', 100}
+        {type = "item", name = 'pipe', amount = 10},
+        {type = "item", name = 'iron-plate', amount = 10},
+        {type = "item", name = 'stone-brick', amount = 100}
     },
     results = {
-        {'tailings-pond', 1}
+        {type = "item", name = 'tailings-pond', amount = 1}
     }
 }
 

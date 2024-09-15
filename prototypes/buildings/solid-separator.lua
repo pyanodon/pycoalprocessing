@@ -4,14 +4,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'steam-engine',       3},
-        {'electronic-circuit', 30},
-        {'steel-plate',        50},
-        {'iron-plate',         20},
-        {'iron-gear-wheel',    50}
+        {type = "item", name = 'steam-engine', amount = 3},
+        {type = "item", name = 'electronic-circuit', amount = 30},
+        {type = "item", name = 'steel-plate', amount = 50},
+        {type = "item", name = 'iron-plate', amount = 20},
+        {type = "item", name = 'iron-gear-wheel', amount = 50}
     },
     results = {
-        {'solid-separator', 1}
+        {type = "item", name = 'solid-separator', amount = 1}
     }
 }:add_unlock('separation')
 
