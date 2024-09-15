@@ -40,7 +40,7 @@ TECHNOLOGY('follower-robot-count-5'):add_pack('production-science-pack')
 TECHNOLOGY('follower-robot-count-6'):add_pack('production-science-pack')
 ]]--
 TECHNOLOGY('inserter-capacity-bonus-7'):add_pack('military-science-pack')
-TECHNOLOGY('space-science-pack'):add_pack('military-science-pack')
+--TECHNOLOGY('space-science-pack'):add_pack('military-science-pack')
 TECHNOLOGY('military-4'):add_pack('production-science-pack')
 TECHNOLOGY('uranium-ammo'):add_pack('production-science-pack')
 TECHNOLOGY('braking-force-6'):add_pack('military-science-pack')
@@ -89,7 +89,7 @@ data.raw.technology['uranium-ammo'].prerequisites = {'military-2', 'uranium-proc
 
 TECHNOLOGY('concrete'):remove_prereq('automation-2')
 -- Remove empty vanilla techs
-TECHNOLOGY('electronics'):set_fields{enabled = false, hidden = true}
+--TECHNOLOGY('electronics'):set_fields{enabled = false, hidden = true}
 TECHNOLOGY('automation-2'):set_fields{prerequisites = {}}
 TECHNOLOGY('laser'):set_fields{enabled = false, hidden = true}
 TECHNOLOGY('distractor'):set_fields{prerequisites = {}}
@@ -99,7 +99,7 @@ TECHNOLOGY('productivity-module'):set_fields{prerequisites = {}}
 TECHNOLOGY('efficiency-module'):set_fields{prerequisites = {}}
 
 -- (( TECHNOLOGY DEPENDENCIES ))--
-TECHNOLOGY('steel-axe'):set_fields{dependencies = {'steel-processing'}}
+--TECHNOLOGY('steel-axe'):set_fields{dependencies = {'steel-processing'}}
 TECHNOLOGY('fast-inserter'):set_fields{dependencies = {'automation'}}:set_fields{prerequisites = {}}
 TECHNOLOGY('military-2'):set_fields{dependencies = {'military'}}
 TECHNOLOGY('gate'):set_fields{prerequisites = {'stone-wall'}}:remove_pack('logistic-science-pack')
@@ -116,7 +116,7 @@ TECHNOLOGY('chemical-science-pack'):set_fields{ prerequisites = {} }
 TECHNOLOGY('military-science-pack'):set_fields{ prerequisites = {} }
 TECHNOLOGY('production-science-pack'):set_fields{ prerequisites = {} }
 TECHNOLOGY('utility-science-pack'):set_fields{ prerequisites = {} }
-TECHNOLOGY('space-science-pack'):set_fields{ prerequisites = { 'rocket-silo' } }
+--TECHNOLOGY('space-science-pack'):set_fields{ prerequisites = { 'rocket-silo' } }
 
 -- Technology icons
 for i = 1, 6 do
