@@ -8,10 +8,12 @@ data:extend{{
     category = "resource"
 }}
 
+--[[TODO: GET THIS A REAL FIX
 data:extend{{
     type = "noise-layer",
     name = "niobium"
 }}
+    ]]--
 
 ENTITY {
     type = "resource",
