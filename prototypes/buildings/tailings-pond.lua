@@ -69,7 +69,7 @@ ENTITY{
     selection_box = {{-9, -9}, {9, 9}},
     fluid_box =
     {
-        base_area = 10000,
+        volume = 1000000,
         base_level = -1,
         pipe_picture = {
             north = {
