@@ -106,7 +106,7 @@ for i = 1, 4 do
                 volume = 1000,
                 base_level = -1,
                 height = 2,
-                pipe_connections = {{flow_direction = 'input-output', position = {3.4, 0.0}, direction = defines.direction.east}, {flow_direction = 'input-output', position = {-4.0, 0.0}}}
+                pipe_connections = {{flow_direction = 'input-output', position = {3.4, 0.0}, direction = defines.direction.east}, {flow_direction = 'input-output', position = {-3.4, 0.0}, direction = defines.direction.west}}
             }
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.65},

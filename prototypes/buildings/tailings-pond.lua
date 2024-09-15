@@ -239,19 +239,18 @@ ENTITY{
         {
             -- We offset a little on the east side because of the asymmetric model
             -- NNE
-            { position = {1.5, -9.25} },
-            { position = {2.5, -9.25} },
+            {direction = defines.direction.north, position = {1.5, -8.9} },
+            {direction = defines.direction.north, position = {2.5, -8.9} },
             -- ESE
-            { position = {9.25, 1.5} },
-            { position = {9.25, 2.5} },
+            {direction = defines.direction.east, position = {8.9, 1.5} },
+            {direction = defines.direction.east, position = {8.9, 2.5} },
             -- SSW
-            { position = {-1.5, 9.25} },
-            { position = {-2.5, 9.25} },
+            {direction = defines.direction.south, position = {-1.5, 8.9} },
+            {direction = defines.direction.south, position = {-2.5, 8.9} },
             -- WNW
-            { position = {-9.25, -1.5} },
-            { position = {-9.25, -2.5} },
+            {direction = defines.direction.west, position = {-8.9, -1.5} },
+            {direction = defines.direction.west, position = {-8.9, -2.5} },
         },
-        production_type = 'input-output',
         hide_connection_info = false
     },
     window_bounding_box = {{-9, -9}, {9, 9}},
