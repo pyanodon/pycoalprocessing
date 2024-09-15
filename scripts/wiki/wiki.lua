@@ -58,7 +58,7 @@ function Wiki.open_wiki(player)
     py_wiki_search.style.right_margin = -5
     py_wiki_search.style.width = 200
     py_wiki_search.visible = false
-    py_wiki_search.text = global.wiki_page_search_query[player.index] or ''
+    py_wiki_search.text = storage.wiki_page_search_query[player.index] or ''
     caption_flow.add{name = 'py_wiki_search_button', type = 'sprite-button', style = 'frame_action_button_always_on', sprite = 'utility/search_black'}.visible = false
     caption_flow.add{name = 'py_close_wiki', type = 'sprite-button', style = 'frame_action_button', sprite = 'utility/close_white', hovered_sprite = 'utility/close_black', clicked_sprite = 'utility/close_black'}
 
@@ -67,7 +67,7 @@ function Wiki.open_wiki(player)
 
     local items = {}
     local contents = {}
-    for _, page in pairs(global.wiki_pages) do
+    for _, page in pairs(storage.wiki_pages) do
         if page.is_section then
             items[#items + 1] = {'', '[font=default-semibold][color=255,230,192]', {'pywiki-sections.' .. page.name}, '[/color][/font]'}
             contents[#contents + 1] = page
@@ -90,7 +90,7 @@ function Wiki.open_wiki(player)
     scroll_pane.style.horizontally_stretchable = true
     scroll_pane.style.vertically_stretchable = true
 
-    Wiki.open_page(player, global.currently_opened_wiki_page[player.index] or 1)
+    Wiki.open_page(player, storage.currently_opened_wiki_page[player.index] or 1)
 end
 
 function Wiki.close_wiki(player)
@@ -123,12 +123,12 @@ gui_events[defines.events.on_gui_click]['py_close_wiki'] = close_wiki
 
 function Wiki.add_page(args)
     local name = args.name or error('Required parameter missing: name')
-    global.wiki_pages = global.wiki_pages or {}
+    storage.wiki_pages = storage.wiki_pages or {}
     
     if not args.section then
-        global.wiki_pages[name] = args
+        storage.wiki_pages[name] = args
     else
-        global.wiki_pages[args.section].pages[name] = args
+        storage.wiki_pages[args.section].pages[name] = args
     end
 end
 
@@ -148,7 +148,7 @@ function Wiki.open_page(player, index)
     local contents = Wiki.get_page_contents(player)
     local title = Wiki.get_page_title(player)
     local page_data = pages.tags.contents[index]
-    local previous_index = global.currently_opened_wiki_page[player.index]
+    local previous_index = storage.currently_opened_wiki_page[player.index]
 
     if page_data.is_section then
         local previous_index = previous_index or 1
@@ -171,7 +171,7 @@ function Wiki.open_page(player, index)
     title.caption = {'pywiki-sections.title-2', localised_title}
 
     contents.clear()
-    global.currently_opened_wiki_page[player.index] = index
+    storage.currently_opened_wiki_page[player.index] = index
 
     local visible = not not page_data.searchable
     main_frame.caption_flow.py_wiki_search.visible = visible
@@ -188,7 +188,7 @@ end
 
 gui_events[defines.events.on_gui_selection_state_changed]['py_pages_list'] = function(event)
     local player = game.get_player(event.player_index)
-    local previously_opened = global.currently_opened_wiki_page[event.player_index]
+    local previously_opened = storage.currently_opened_wiki_page[event.player_index]
     local index = event.element.selected_index
     if previously_opened == index then return end
     Wiki.open_page(player, index)
@@ -206,7 +206,7 @@ gui_events[defines.events.on_gui_text_changed]['py_wiki_search'] = function(even
 
     local search_query = event.element.text
     remote.call(searchable[1], searchable[2], search_query, contents, player)
-    global.wiki_page_search_query[player.index] = search_query
+    storage.wiki_page_search_query[player.index] = search_query
 end
 
 remote.add_interface('pywiki', {

@@ -39,7 +39,7 @@ script.on_init(function()
 end)
 
 py.on_event(defines.events.on_research_finished, function(event)
-	if global.finished then return end
+	if storage.finished then return end
 	local tech = event.research
 	if tech.name == 'pyrrhic' and game.tick ~= 0 then
 		local force = tech.force
@@ -47,7 +47,7 @@ py.on_event(defines.events.on_research_finished, function(event)
 			if player.force == force then player.opened = nil end
 		end
 
-		global.finished = true
+		storage.finished = true
 		if remote.interfaces['better-victory-screen'] and remote.interfaces['better-victory-screen']['trigger_victory'] then
 			remote.call('better-victory-screen', 'trigger_victory', force)
 		else

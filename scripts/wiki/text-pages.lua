@@ -2,9 +2,9 @@ Wiki.events.init = function()
     for _, player in pairs(game.players) do
         Wiki.create_pywiki_button(player)
     end
-    global.wiki_pages = {}
-    global.currently_opened_wiki_page = {}
-    global.wiki_page_search_query = {}
+    storage.wiki_pages = {}
+    storage.currently_opened_wiki_page = {}
+    storage.wiki_page_search_query = {}
 
     remote.call('pywiki', 'add_page', {
         name = 'statistics',
