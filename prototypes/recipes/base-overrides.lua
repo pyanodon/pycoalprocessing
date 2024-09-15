@@ -168,7 +168,7 @@ RECIPE {
     type = "recipe",
     name = "assembling-machine-3",
     enabled = false,
-    ingredients = {{"stack-inserter", 2}, {"assembling-machine-2", 2}},
+    ingredients = {{"bulk-inserter", 2}, {"assembling-machine-2", 2}},
     results = {
         {type = "item", name = "assembling-machine-3", amount = 1}
     }
