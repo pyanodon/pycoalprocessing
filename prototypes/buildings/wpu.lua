@@ -137,7 +137,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {'wpu-mk02',             1},
-        {'stack-inserter',       4},
+        {'bulk-inserter',       4},
         {'electric-engine-unit', 4},
         {'niobium-plate',        25},
         {'processing-unit',      10}
