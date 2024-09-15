@@ -94,9 +94,8 @@ ENTITY {
         pipe_picture = _G.assembler2pipepictures(),
         pipe_covers = _G.pipecoverspictures(),
         volume = 200,
-        base_level = -1,
         pipe_connections = {
-            {position = {-3, 4}}
+            {direction = defines.direction.west, position = {-3, 3.3}}
         }
     },
     module_slots = 4,
