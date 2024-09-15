@@ -203,36 +203,36 @@ RECIPE {
 }
 
 ITEM('productivity-module').effect = {
-    productivity = {bonus = 0.1},
-    consumption = {bonus = 1},
-    speed = {bonus = -0.25}
+    productivity = 0.1,
+    consumption = 1,
+    speed = -0.25
 }
 
 ITEM('productivity-module-2').effect = {
-    productivity = {bonus = 0.2},
-    consumption = {bonus = 2},
-    speed = {bonus = -0.5}
+    productivity = 0.2,
+    consumption = 2,
+    speed = -0.5
 }
 
 ITEM('productivity-module-3').effect = {
-    productivity = {bonus = 0.3},
-    consumption = {bonus = 3},
-    speed = {bonus = -0.75}
+    productivity = 0.3,
+    consumption = 3,
+    speed = -0.75
 }
 
 ITEM('speed-module').effect = {
-    speed = {bonus = 0.4},
-    consumption = {bonus = 1}
+    speed = 0.4,
+    consumption = 1
 }
 
 ITEM('speed-module-2').effect = {
-    speed = {bonus = 0.6},
-    consumption = {bonus = 1.5}
+    speed = 0.6,
+    consumption = 1.5
 }
 
 ITEM('speed-module-3').effect = {
-    speed = {bonus = 1},
-    consumption = {bonus = 2}
+    speed = 1,
+    consumption = 2
 }
 
 --[[
