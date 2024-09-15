@@ -85,7 +85,7 @@ data.raw['assembling-machine']['assembling-machine-3'].module_slots = 0
 
 --modify mining drill power and speed
 data.raw['mining-drill']['burner-mining-drill'].mining_speed = 1
-data.raw['mining-drill']['burner-mining-drill'].energy_usage = '500KW'
+data.raw['mining-drill']['burner-mining-drill'].energy_usage = '500kW'
 data.raw['mining-drill']['burner-mining-drill'].resource_searching_radius = 1.99
 data.raw['mining-drill']['burner-mining-drill'].radius_visualisation_picture = {
     filename = '__base__/graphics/entity/electric-mining-drill/electric-mining-drill-radius-visualization.png',
