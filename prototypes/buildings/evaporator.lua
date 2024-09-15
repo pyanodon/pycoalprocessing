@@ -153,7 +153,7 @@ for i = 1, 4 do
                 pipe_picture = pipe_picture,
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {3.0, 0.0}}}
+                pipe_connections = {{flow_direction = 'input', position = {2.4, 0.0}, direction = defines.direction.east}}
             },
             {
                 production_type = 'input',
@@ -161,21 +161,21 @@ for i = 1, 4 do
                 pipe_picture = pipe_picture,
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {0.0, 3.0}}}
+                pipe_connections = {{flow_direction = 'input', position = {0.0, 2.4}, direction = defines.direction.south}}
             },
             {
                 production_type = 'output',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {-3.0, 0.0}}}
+                pipe_connections = {{flow_direction = 'output', position = {-2.4, 0.0}, direction = defines.direction.west}}
             },
             {
                 production_type = 'output',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {0.0, -3.0}}}
+                pipe_connections = {{flow_direction = 'output', position = {0.0, -2.4}, direction = defines.direction.north}}
             },
             off_when_no_fluid_recipe = true
         },

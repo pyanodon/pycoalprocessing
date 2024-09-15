@@ -120,7 +120,7 @@ for i = 1, 4 do
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {4.0, -1.0}}}
+                pipe_connections = {{flow_direction = 'input', position = {3.4, -1.0}, direction = defines.direction.east}}
             },
             {
                 production_type = 'input',
@@ -128,28 +128,28 @@ for i = 1, 4 do
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {4.0, 1.0}}}
+                pipe_connections = {{flow_direction = 'input', position = {3.4, 1.0}, direction = defines.direction.east}}
             },
             {
                 production_type = 'output',
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {-0.82, 4.0}, {1.12, -4.0}, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {-4.0, -1.0}}}
+                pipe_connections = {{flow_direction = 'output', position = {-3.4, -1.0}, direction = defines.direction.west}}
             },
             {
                 production_type = 'output',
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {1.08, 4.0}, {-0.82, -4.0}, nil, nil, pipes2),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {-4.0, 1.0}}}
+                pipe_connections = {{flow_direction = 'output', position = {-3.4, 1.0}, direction = defines.direction.west}}
             },
             {
                 production_type = 'output',
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {-0.82, 4.0}, {1.12, -4.0}, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {-1.0, 4.0}}}
+                pipe_connections = {{flow_direction = 'output', position = {-1.0, 3.4}, direction = defines.direction.south}}
             },
             off_when_no_fluid_recipe = true
         },

@@ -107,7 +107,7 @@ for i = 1, 4 do
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {-0.05, 1.25}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_right),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {3.5, -1.5}}}
+                pipe_connections = {{flow_direction = 'output', position = {2.9, -1.5}, direction = defines.direction.east}}
             },
             {
                 production_type = 'input',
@@ -115,7 +115,7 @@ for i = 1, 4 do
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {3.5, 1.5}}}
+                pipe_connections = {{flow_direction = 'input', position = {2.9, 1.5}, direction = defines.direction.east}}
             }
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.65},

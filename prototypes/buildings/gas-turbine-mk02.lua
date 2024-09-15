@@ -56,8 +56,8 @@ ENTITY {
         filter = 'combustion-mixture1',
         minimum_temperature = 500.0,
         pipe_connections = {
-            {type = 'input-output', position = {4.0, 0.0}},
-            {type = 'input-output', position = {-4.0, 0.0}}
+            {flow_direction = 'input-output', position = {3.4, 0.0}, direction = defines.direction.east},
+            {flow_direction = 'input-output', position = {-3.4, 0.0}, direction = defines.direction.west}
         }
     },
     energy_source = {

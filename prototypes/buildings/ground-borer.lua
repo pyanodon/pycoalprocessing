@@ -91,7 +91,7 @@ for i = 1, 4 do
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {0.0, 5.0}}}
+                pipe_connections = {{flow_direction = 'input', position = {0.0, 4.3}, direction = defines.direction.south}}
             },
             --2
             {
@@ -100,7 +100,7 @@ for i = 1, 4 do
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {0.0, -5.0}}}
+                pipe_connections = {{flow_direction = 'input', position = {0.0, -4.3}, direction = defines.direction.north}}
             }
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact.ogg', volume = 0.65},
