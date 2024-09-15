@@ -167,14 +167,14 @@ for i = 1, 4 do
                 production_type = 'output',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                base_level = 1,
+                volume = 100,
                 pipe_connections = {{flow_direction = 'output', position = {-2.4, 0.0}, direction = defines.direction.west}}
             },
             {
                 production_type = 'output',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                base_level = 1,
+                volume = 100,
                 pipe_connections = {{flow_direction = 'output', position = {0.0, -2.4}, direction = defines.direction.north}}
             },
             off_when_no_fluid_recipe = true

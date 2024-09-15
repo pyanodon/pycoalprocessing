@@ -133,7 +133,7 @@ for i = 1, 4 do
                 production_type = 'output',
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {0.3, 3.06}, {-0.00, -0.93}, {0.55, 0.15}, {-0.5, 0.15}, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                base_level = 1,
+                volume = 100,
                 pipe_connections = {{flow_direction = 'output', position = {2.0, 3.3}, direction = defines.direction.south}}
             },
             off_when_no_fluid_recipe = true

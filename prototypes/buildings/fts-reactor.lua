@@ -231,21 +231,21 @@ for i = 1, 4 do
                 production_type = 'output',
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {0, -0.9}, nil, nil),
-                base_level = 1,
+                volume = 100,
                 pipe_connections = {{flow_direction = 'output', position = {-4.35, -0.0}, direction = defines.direction.west}}
             },
             {
                 production_type = 'output',
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {0, -0.9}, nil, nil),
-                base_level = 1,
+                volume = 100,
                 pipe_connections = {{flow_direction = 'output', position = {-4.35, 2.0}, direction = defines.direction.west}}
             },
             {
                 production_type = 'output',
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {0, -0.9}, nil, nil),
-                base_level = 1,
+                volume = 100,
                 pipe_connections = {{flow_direction = 'output', position = {-4.35, -2.0}, direction = defines.direction.west}}
             }
         },
