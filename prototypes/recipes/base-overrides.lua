@@ -125,7 +125,7 @@ RECIPE {
     ingredients = {
         {type = "item", name = "assembling-machine-3", amount = 2},
         {type = "item", name = "nuclear-fuel", amount = 3},
-        {type = "item", name = "fusion-reactor-equipment", amount = 1},
+        {type = "item", name = "fission-reactor-equipment", amount = 1},
         {type = "item", name = "destroyer-capsule", amount = 4}
     },
     results = {{type = "item", name = "utility-science-pack", amount = 8}}
@@ -133,12 +133,12 @@ RECIPE {
 
 RECIPE {
     type = "recipe",
-    name = "fusion-reactor-equipment",
+    name = "fission-reactor-equipment",
     enabled = false,
     energy_required = 10,
     ingredients = {{"processing-unit", 25}, {"low-density-structure", 10}},
     results = {
-        {type = "item", name = "fusion-reactor-equipment", amount = 1}
+        {type = "item", name = "fission-reactor-equipment", amount = 1}
     }
 }
 

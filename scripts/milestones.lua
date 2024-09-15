@@ -183,7 +183,7 @@ remote.add_interface("pycoalprocessing", {
                 -- Note: Aside from higher-tier processing recipes and AL modules, there really isn't much unlocked in the last two tiers
                 -- I've kept the direct science ingredients originally present here, but there's not much else to add
                 {type="group",      name="Utility"},
-                {type="item",       name="fusion-reactor-equipment",      quantity=1},
+                {type="item",       name="fission-reactor-equipment",      quantity=1},
                 {type="item",       name="volumetric-capacitor",          quantity=1},
                 {type="item",       name="hyperelastic-material",         quantity=1},
                 {type="item",       name="nano-wires",                    quantity=1},
