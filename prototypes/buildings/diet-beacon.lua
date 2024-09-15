@@ -129,7 +129,7 @@ for am = 5, 1, -1 do
         beacon.supply_area_distance = 32 - 8 * (am - 1)
         if beacon.supply_area_distance < 2 then beacon.supply_area_distance = 2 end
         beacon.placeable_by = {item = 'beacon-mk01', count = 1}
-        beacon.localised_name = {'entity-name.new-beacon-mk01',am,fm}
+        beacon.localised_name = {'entity-name.new-beacon-mk01',tostring(am),tostring(fm)}
         beacon.allowed_effects = {'speed', 'consumption'}
         beacon.graphics_set = graphics_set
         beacon.collision_box = {{-1.05, -1.05}, {1.05, 1.05}}
