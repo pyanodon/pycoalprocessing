@@ -103,7 +103,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {-0.5, -3.5}}}
+                pipe_connections = {{flow_direction = 'output', position = {-0.5, -2.75}, direction = defines.direction.north}}
             },
             --North, right
             {
@@ -111,7 +111,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {0.5, -3.5}}}
+                pipe_connections = {{flow_direction = 'output', position = {0.5, -2.75}, direction = defines.direction.north}}
             },
             --South, left
             {
@@ -119,7 +119,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {-0.5, 3.5}}}
+                pipe_connections = {{flow_direction = 'output', position = {-0.5, 2.75}, direction = defines.direction.south}}
             },
             --South, right
             {
@@ -127,7 +127,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {0.5, 3.5}}}
+                pipe_connections = {{flow_direction = 'output', position = {0.5, 2.75}, direction = defines.direction.south}}
             },
             --West, top
             {
@@ -136,7 +136,7 @@ for i = 1, 4 do
                 pipe_picture = pipe_picture,
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {-3.5, -0.5}}}
+                pipe_connections = {{flow_direction = 'input', position = {-2.75, -0.5}, direction = defines.direction.west}}
             },
             --West, bottom
             {
@@ -145,7 +145,7 @@ for i = 1, 4 do
                 pipe_picture = pipe_picture,
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {-3.5, 0.5}}}
+                pipe_connections = {{flow_direction = 'input', position = {-2.75, 0.5}, direction = defines.direction.west}}
             },
             --East, top
             {
@@ -154,7 +154,7 @@ for i = 1, 4 do
                 pipe_picture = pipe_picture,
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {3.5, -0.5}}}
+                pipe_connections = {{flow_direction = 'input', position = {2.75, -0.5}, direction = defines.direction.east}}
             },
             --East, bottom
             {
@@ -163,7 +163,7 @@ for i = 1, 4 do
                 pipe_picture = pipe_picture,
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {3.5, 0.5}}}
+                pipe_connections = {{flow_direction = 'input', position = {2.75, 0.5}, direction = defines.direction.east}}
             },
             off_when_no_fluid_recipe = true
         },

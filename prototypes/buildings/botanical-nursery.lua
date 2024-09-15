@@ -120,7 +120,7 @@ for i = 1, 4 do
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {0.0, 4.0}}}
+                pipe_connections = {{flow_direction = 'input', position = {0.0, 3.3}, direction = defines.direction.south}}
             },
             {
                 production_type = 'input',
@@ -128,14 +128,14 @@ for i = 1, 4 do
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{type = 'input', position = {0.0, -4.0}}}
+                pipe_connections = {{flow_direction = 'input', position = {0.0, -3.3}, direction = defines.direction.north}}
             },
             {
                 production_type = 'output',
                 pipe_picture = py.pipe_pictures('assembling-machine-3', {0.2, 4.13}, {0.12, -4.03}, {4.115, 0.1}, {-3.88, 0.16}, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 base_level = 1,
-                pipe_connections = {{type = 'output', position = {4.0, 0.0}}}
+                pipe_connections = {{flow_direction = 'output', position = {3.3, 0.0}, direction = defines.direction.east}}
             },
             off_when_no_fluid_recipe = true
         },
