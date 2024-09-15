@@ -102,7 +102,7 @@ for i = 1, 4 do
                 production_type = 'output',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                base_level = 1,
+                volume = 100,
                 pipe_connections = {{flow_direction = 'output', position = {-0.5, -2.75}, direction = defines.direction.north}}
             },
             --North, right
@@ -110,7 +110,7 @@ for i = 1, 4 do
                 production_type = 'output',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                base_level = 1,
+                volume = 100,
                 pipe_connections = {{flow_direction = 'output', position = {0.5, -2.75}, direction = defines.direction.north}}
             },
             --South, left
@@ -118,7 +118,7 @@ for i = 1, 4 do
                 production_type = 'output',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                base_level = 1,
+                volume = 100,
                 pipe_connections = {{flow_direction = 'output', position = {-0.5, 2.75}, direction = defines.direction.south}}
             },
             --South, right
@@ -126,7 +126,7 @@ for i = 1, 4 do
                 production_type = 'output',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                base_level = 1,
+                volume = 100,
                 pipe_connections = {{flow_direction = 'output', position = {0.5, 2.75}, direction = defines.direction.south}}
             },
             --West, top
