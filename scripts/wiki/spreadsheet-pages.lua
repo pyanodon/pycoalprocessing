@@ -100,8 +100,8 @@ local function create_spreadsheet(gui, player, data)
 end
 
 remote.add_interface('pywiki_spreadsheets', {
-	create_fluid_page = function(gui, player) create_spreadsheet(gui, player, global.fluid_spreadsheet_data) end,
-	create_solid_fuel_page = function(gui, player) create_spreadsheet(gui, player, global.solid_fuel_spreadsheet_data) end,
+	create_fluid_page = function(gui, player) create_spreadsheet(gui, player, storage.fluid_spreadsheet_data) end,
+	create_solid_fuel_page = function(gui, player) create_spreadsheet(gui, player, storage.solid_fuel_spreadsheet_data) end,
 	on_search = on_search
 })
 
@@ -240,7 +240,7 @@ end
 
 Spreadsheet.events.init = function()
 	local required_science = calculate_required_science()
-	global.fluid_spreadsheet_data = {
+	storage.fluid_spreadsheet_data = {
 		columns = {
 			{name = 'localised-name', width = 200},
 			{name = 'voidable', width = 120},
@@ -272,7 +272,7 @@ Spreadsheet.events.init = function()
 
 			local unlocked_at = calculate_unlocked_at(required_science, name)
 
-			table.insert(global.fluid_spreadsheet_data.rows, {
+			table.insert(storage.fluid_spreadsheet_data.rows, {
 				['localised-name'] = {
 					value = {'', '[fluid='..name..'] ', fluid.localised_name},
 					order = name,
@@ -298,7 +298,7 @@ Spreadsheet.events.init = function()
 		end
 	end
 
-	global.solid_fuel_spreadsheet_data = {
+	storage.solid_fuel_spreadsheet_data = {
 		columns = {
 			{name = 'localised-name', width = 200},
 			{name = 'fuel-category', width = 120},
@@ -313,7 +313,7 @@ Spreadsheet.events.init = function()
 	}
 
 	for name, item in pairs(game.item_prototypes) do
-		if item.fuel_category and not item.has_flag('hidden') then
+		if item.fuel_category and not item.hidden then
 			local burnt_result, burnt_result_order, burnt_result_tooltip
 			if item.burnt_result then
 				burnt_result = '[item='..item.burnt_result.name..']'
@@ -323,7 +323,7 @@ Spreadsheet.events.init = function()
 
 			local unlocked_at = calculate_unlocked_at(required_science, name)
 
-			table.insert(global.solid_fuel_spreadsheet_data.rows, {
+			table.insert(storage.solid_fuel_spreadsheet_data.rows, {
 				['localised-name'] = {
 					value = {'', '[item='..name..'] ', item.localised_name},
 					order = name,
@@ -375,5 +375,5 @@ gui_events[defines.events.on_gui_click]['py_spreadsheet_sort'] = function(event)
 		element.clicked_sprite = 'down-black'
 	end
 
-	update_spreadsheet(gui, player, global[tags.data_source], tags.column_name, element.sprite == 'up-white')
+	update_spreadsheet(gui, player, storage[tags.data_source], tags.column_name, element.sprite == 'up-white')
 end

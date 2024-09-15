@@ -28,9 +28,9 @@ local gasses = {
 }
 
 Pond.events.init = function()
-	global.tailings_ponds = global.tailings_ponds or {}
-	global.tiles = global.tiles or {}
-	global.Tiles = nil
+	storage.tailings_ponds = storage.tailings_ponds or {}
+	storage.tiles = storage.tiles or {}
+	storage.Tiles = nil
 end
 
 --Pond contains gases, lets spill them out. Only negative is this can be used as a 'gas' void so...
@@ -117,8 +117,8 @@ local function scorch_earth(pond)
 		local threshold_in_units = tanksize * overflow_threshold
 		local surface_index = surface.index
 
-		if not global.tiles[surface_index] then global.tiles[surface_index] = {} end
-		local tiles = global.tiles[surface_index]
+		if not storage.tiles[surface_index] then storage.tiles[surface_index] = {} end
+		local tiles = storage.tiles[surface_index]
 
 		local amount = fluid.amount
 		repeat
@@ -152,16 +152,16 @@ Pond.events.on_built = function(event)
 		fluid_per = 0
 	}
 	set_fluid_level_image(pond)
-	global.tailings_ponds[entity.unit_number] = pond
+	storage.tailings_ponds[entity.unit_number] = pond
 end
 
 Pond.events[153] = function()
-	for i, pond in pairs(global.tailings_ponds) do
+	for i, pond in pairs(storage.tailings_ponds) do
 		if pond.entity.valid then
 			scorch_earth(pond)
 			set_fluid_level_image(pond)
 		else
-			global.tailings_ponds[i] = nil
+			storage.tailings_ponds[i] = nil
 			return
 		end
 	end
@@ -169,7 +169,7 @@ end
 
 -- offset tile setting to prevent lag spikes
 Pond.events[154] = function()
-	for surface_index, tiles in pairs(global.tiles) do
+	for surface_index, tiles in pairs(storage.tiles) do
 		local surface = game.surfaces[surface_index]
 		for _, tile in pairs(tiles) do
 			if tile.position.x % 4 == 0 and tile.position.y % 4 == 0 then
@@ -183,7 +183,7 @@ Pond.events[154] = function()
 		end
 		surface.set_tiles(tiles, true)
 	end
-	global.tiles = {}
+	storage.tiles = {}
 end
 
 Pond.events.on_entity_died = function(event)

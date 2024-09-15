@@ -55,32 +55,32 @@ for i = 1, 5 do
 end
 
 Beacons.events.init = function()
-	global.beacon_interference_icons = global.beacon_interference_icons or {}
-	global.farms = global.farms or farm_buildings
+	storage.beacon_interference_icons = storage.beacon_interference_icons or {}
+	storage.farms = storage.farms or farm_buildings
 end
 
 local function enable_entity(entity)
 	local name = entity.name:gsub('%-mk..+', '')
-	if global.farms[name] ~= nil then
+	if storage.farms[name] ~= nil then
 		return
 	end
 	entity.active = true
 	local unit_number = entity.unit_number
-	local rendering_id = global.beacon_interference_icons[unit_number]
+	local rendering_id = storage.beacon_interference_icons[unit_number]
 	if not rendering_id then return end
 	rendering.destroy(rendering_id)
-	global.beacon_interference_icons[unit_number] = nil
+	storage.beacon_interference_icons[unit_number] = nil
 end
 
 local function disable_entity(entity)
 	local name = entity.name:gsub('%-mk..+', '')
-	if global.farms[name] ~= nil then
+	if storage.farms[name] ~= nil then
 		return
 	end
 	entity.active = false
 	local unit_number = entity.unit_number
-	if global.beacon_interference_icons[unit_number] then return end
-	global.beacon_interference_icons[unit_number] = rendering.draw_sprite{
+	if storage.beacon_interference_icons[unit_number] then return end
+	storage.beacon_interference_icons[unit_number] = rendering.draw_sprite{
 		sprite = 'beacon-interference',
 		x_scale = 0.5,
 		y_scale = 0.5,
@@ -138,7 +138,7 @@ end
 Beacons.events.on_destroyed = function(event)
 	local entity = event.entity
 	if not entity.valid or not entity.unit_number then return end
-	global.beacon_interference_icons[entity.unit_number] = nil
+	storage.beacon_interference_icons[entity.unit_number] = nil
 
 	if entity.type == 'beacon' then
 		if not our_beacons[entity.name] then return end
