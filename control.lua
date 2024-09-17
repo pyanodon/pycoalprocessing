@@ -7,7 +7,6 @@ require 'scripts.wiki.statistics-page'
 
 require 'scripts.tailings-pond'
 require 'scripts.beacons'
-require 'scripts.inserters'
 require 'scripts.milestones'
 
 local function init()
