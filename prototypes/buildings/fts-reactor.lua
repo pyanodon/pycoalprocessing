@@ -63,6 +63,40 @@ for i = 1, 4 do
         },
         energy_usage = (1.5 * i) .. 'MW',
         graphics_set = {
+            working_visualisations = {
+                {
+                    north_position = util.by_pixel(-0, -160),
+                    west_position = util.by_pixel(-0, -160),
+                    south_position = util.by_pixel(-0, -160),
+                    east_position = util.by_pixel(-0, -160),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/glow.png',
+                        frame_count = 100,
+                        line_length = 10,
+                        width = 160,
+                        height = 160,
+                        draw_as_glow = true,
+                        animation_speed = 0.5,
+                    }
+                },
+                {
+                    fadeout = true,
+                    constant_speed = true,
+                    north_position = util.by_pixel(-0, -348),
+                    west_position = util.by_pixel(-0, -348),
+                    south_position = util.by_pixel(-0, -348),
+                    east_position = util.by_pixel(-0, -348),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/fire.png',
+                        frame_count = 100,
+                        line_length = 10,
+                        width = 96,
+                        height = 192,
+                        draw_as_glow = true,
+                        animation_speed = 0.5,
+                    }
+                },
+            },
             animation = {
                 layers = {
                     {
@@ -170,40 +204,6 @@ for i = 1, 4 do
             },
         },
 
-        working_visualisations = {
-            {
-                north_position = util.by_pixel(-0, -160),
-                west_position = util.by_pixel(-0, -160),
-                south_position = util.by_pixel(-0, -160),
-                east_position = util.by_pixel(-0, -160),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/glow.png',
-                    frame_count = 100,
-                    line_length = 10,
-                    width = 160,
-                    height = 160,
-                    draw_as_glow = true,
-                    animation_speed = 0.5,
-                }
-            },
-            {
-                fadeout = true,
-                constant_speed = true,
-                north_position = util.by_pixel(-0, -348),
-                west_position = util.by_pixel(-0, -348),
-                south_position = util.by_pixel(-0, -348),
-                east_position = util.by_pixel(-0, -348),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/fire.png',
-                    frame_count = 100,
-                    line_length = 10,
-                    width = 96,
-                    height = 192,
-                    draw_as_glow = true,
-                    animation_speed = 0.5,
-                }
-            },
-        },
         fluid_boxes = {
             {
                 production_type = 'input',

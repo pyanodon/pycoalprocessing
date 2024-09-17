@@ -61,6 +61,37 @@ for i = 1, 4 do
         },
         energy_usage = (2 * i) .. 'MW',
         graphics_set = {
+            working_visualisations = {
+                {
+                    fadeout = true,
+                    constant_speed = true,
+                    north_position = util.by_pixel(0, -104.5),
+                    west_position = util.by_pixel(0, -104.5),
+                    south_position = util.by_pixel(0, -104.5),
+                    east_position = util.by_pixel(0, -104.5),
+                    animation = {
+                        layers = {
+                            {
+                                filename = '__pycoalprocessinggraphics__/graphics/entity/olefin-plant/anim.png',
+                                frame_count = 84,
+                                line_length = 8,
+                                width = 256,
+                                height = 139,
+                                animation_speed = 0.4,
+                            },
+                            {
+                                filename = '__pycoalprocessinggraphics__/graphics/entity/olefin-plant/anim-mask.png',
+                                frame_count = 84,
+                                line_length = 8,
+                                width = 256,
+                                height = 139,
+                                animation_speed = 0.4,
+                                tint = py.tints[i],
+                            }
+                        }
+                    }
+                }
+            },
             animation = {
                 layers = {
                     {
@@ -80,37 +111,6 @@ for i = 1, 4 do
                     },
                 }
             },
-        },
-        working_visualisations = {
-            {
-                fadeout = true,
-                constant_speed = true,
-                north_position = util.by_pixel(0, -104.5),
-                west_position = util.by_pixel(0, -104.5),
-                south_position = util.by_pixel(0, -104.5),
-                east_position = util.by_pixel(0, -104.5),
-                animation = {
-                    layers = {
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/olefin-plant/anim.png',
-                            frame_count = 84,
-                            line_length = 8,
-                            width = 256,
-                            height = 139,
-                            animation_speed = 0.4,
-                        },
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/olefin-plant/anim-mask.png',
-                            frame_count = 84,
-                            line_length = 8,
-                            width = 256,
-                            height = 139,
-                            animation_speed = 0.4,
-                            tint = py.tints[i],
-                        }
-                    }
-                }
-            }
         },
         fluid_boxes = {
             --North

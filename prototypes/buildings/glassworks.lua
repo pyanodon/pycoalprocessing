@@ -110,6 +110,40 @@ for i = 1, 4 do
         },
         energy_usage = (10 * i) .. 'MW',
         graphics_set = {
+            working_visualisations = {
+                {
+                    fadeout = true,
+                    constant_speed = true,
+                    north_position = util.by_pixel(-16, -32),
+                    west_position = util.by_pixel(-16, -32),
+                    south_position = util.by_pixel(-16, -32),
+                    east_position = util.by_pixel(-16, -32),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/glassworks/a1.png',
+                        frame_count = 100,
+                        line_length = 13,
+                        width = 128,
+                        height = 224,
+                        animation_speed = 0.3
+                    }
+                },
+                {
+                    fadeout = true,
+                    constant_speed = true,
+                    north_position = util.by_pixel(96, -32),
+                    west_position = util.by_pixel(96, -32),
+                    south_position = util.by_pixel(96, -32),
+                    east_position = util.by_pixel(96, -32),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/glassworks/a2.png',
+                        frame_count = 100,
+                        line_length = 13,
+                        width = 96,
+                        height = 224,
+                        animation_speed = 0.3
+                    }
+                },
+            },
             animation = {
                 layers = {
                     {
@@ -134,40 +168,6 @@ for i = 1, 4 do
                         shift = util.by_pixel(16, -32),
                         tint = py.tints[i]
                     },
-                }
-            },
-        },
-        working_visualisations = {
-            {
-                fadeout = true,
-                constant_speed = true,
-                north_position = util.by_pixel(-16, -32),
-                west_position = util.by_pixel(-16, -32),
-                south_position = util.by_pixel(-16, -32),
-                east_position = util.by_pixel(-16, -32),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/glassworks/a1.png',
-                    frame_count = 100,
-                    line_length = 13,
-                    width = 128,
-                    height = 224,
-                    animation_speed = 0.3
-                }
-            },
-            {
-                fadeout = true,
-                constant_speed = true,
-                north_position = util.by_pixel(96, -32),
-                west_position = util.by_pixel(96, -32),
-                south_position = util.by_pixel(96, -32),
-                east_position = util.by_pixel(96, -32),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/glassworks/a2.png',
-                    frame_count = 100,
-                    line_length = 13,
-                    width = 96,
-                    height = 224,
-                    animation_speed = 0.3
                 }
             },
         },

@@ -59,6 +59,22 @@ ENTITY {
     energy_source = {type = "void"},
     energy_usage = "70kW",
     graphics_set = {
+        working_visualisations = {
+            {
+                north_position = {-0.0, -5.01},
+                west_position = {-0.0, -5.01},
+                south_position = {-0.0, -5.01},
+                east_position = {-0.0, -5.01},
+                animation = {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/cooling-tower-mk02/smoke-sheet.png",
+                    frame_count = 96,
+                    line_length = 12,
+                    width = 160,
+                    height = 160,
+                    animation_speed = 0.2
+                }
+            }
+        },
         animation = {
             filename = "__pycoalprocessinggraphics__/graphics/entity/cooling-tower-mk02/cooling_tower_mk02.png",
             width = 192,
@@ -67,22 +83,6 @@ ENTITY {
             animation_speed = 1,
             shift = {0.5, -1.504}
         },
-    },
-    working_visualisations = {
-        {
-            north_position = {-0.0, -5.01},
-            west_position = {-0.0, -5.01},
-            south_position = {-0.0, -5.01},
-            east_position = {-0.0, -5.01},
-            animation = {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/cooling-tower-mk02/smoke-sheet.png",
-                frame_count = 96,
-                line_length = 12,
-                width = 160,
-                height = 160,
-                animation_speed = 0.2
-            }
-        }
     },
     fluid_boxes = {
         {

@@ -77,6 +77,62 @@ for i = 1, 4 do
         },
         energy_usage = i .. 'MW',
         graphics_set = {
+            working_visualisations = {
+                {
+                    north_position = {-1.07, 1.132},
+                    west_position = {-1.07, 1.132},
+                    south_position = {-1.07, 1.132},
+                    east_position = {-1.07, 1.132},
+                    animation = {
+                        layers = {
+                            {
+                                filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rec-tanks-anim.png',
+                                frame_count = 80,
+                                line_length = 10,
+                                width = 121,
+                                height = 55,
+                                animation_speed = 0.35
+                            },
+                            {
+                                filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rec-tanks-anim-mask.png',
+                                frame_count = 80,
+                                line_length = 10,
+                                width = 121,
+                                height = 55,
+                                animation_speed = 0.35,
+                                tint = py.tints[i]
+                            }
+                        }
+                    }
+                },
+                {
+                    north_position = {2.03, -1.28},
+                    west_position = {2.03, -1.28},
+                    south_position = {2.03, -1.28},
+                    east_position = {2.03, -1.28},
+                    animation = {
+                        layers = {
+                            {
+                                filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rec-lifter-anim.png',
+                                frame_count = 80,
+                                line_length = 40,
+                                width = 47,
+                                height = 77,
+                                animation_speed = 0.45
+                            },
+                            {
+                                filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rec-lifter-anim-mask.png',
+                                frame_count = 80,
+                                line_length = 40,
+                                width = 47,
+                                height = 77,
+                                animation_speed = 0.45,
+                                tint = py.tints[i]
+                            }
+                        }
+                    }
+                }
+            },
             animation = {
                 layers = {
                     {
@@ -96,62 +152,6 @@ for i = 1, 4 do
                     },
                 }
             },
-        },
-        working_visualisations = {
-            {
-                north_position = {-1.07, 1.132},
-                west_position = {-1.07, 1.132},
-                south_position = {-1.07, 1.132},
-                east_position = {-1.07, 1.132},
-                animation = {
-                    layers = {
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rec-tanks-anim.png',
-                            frame_count = 80,
-                            line_length = 10,
-                            width = 121,
-                            height = 55,
-                            animation_speed = 0.35
-                        },
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rec-tanks-anim-mask.png',
-                            frame_count = 80,
-                            line_length = 10,
-                            width = 121,
-                            height = 55,
-                            animation_speed = 0.35,
-                            tint = py.tints[i]
-                        }
-                    }
-                }
-            },
-            {
-                north_position = {2.03, -1.28},
-                west_position = {2.03, -1.28},
-                south_position = {2.03, -1.28},
-                east_position = {2.03, -1.28},
-                animation = {
-                    layers = {
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rec-lifter-anim.png',
-                            frame_count = 80,
-                            line_length = 40,
-                            width = 47,
-                            height = 77,
-                            animation_speed = 0.45
-                        },
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rec-lifter-anim-mask.png',
-                            frame_count = 80,
-                            line_length = 40,
-                            width = 47,
-                            height = 77,
-                            animation_speed = 0.45,
-                            tint = py.tints[i]
-                        }
-                    }
-                }
-            }
         },
         fluid_boxes = {
             {
