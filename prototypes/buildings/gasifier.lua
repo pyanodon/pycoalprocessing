@@ -69,30 +69,32 @@ for i = 1, 4 do
             },
         },
         energy_usage = (500 * i) .. 'kW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/gasifier/gasifier-anim.png',
-                    priority = 'high',
-                    width = 269,
-                    height = 269,
-                    frame_count = 30,
-                    line_length = 6,
-                    animation_speed = 1,
-                    shift = {0.15, 0.3},
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/gasifier/gasifier-anim-mask.png',
-                    priority = 'high',
-                    width = 269,
-                    height = 269,
-                    frame_count = 30,
-                    line_length = 6,
-                    animation_speed = 1,
-                    shift = {0.15, 0.3},
-                    tint = py.tints[i]
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/gasifier/gasifier-anim.png',
+                        priority = 'high',
+                        width = 269,
+                        height = 269,
+                        frame_count = 30,
+                        line_length = 6,
+                        animation_speed = 1,
+                        shift = {0.15, 0.3},
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/gasifier/gasifier-anim-mask.png',
+                        priority = 'high',
+                        width = 269,
+                        height = 269,
+                        frame_count = 30,
+                        line_length = 6,
+                        animation_speed = 1,
+                        shift = {0.15, 0.3},
+                        tint = py.tints[i]
+                    },
+                }
+            },
         },
         fluid_boxes = {
             {

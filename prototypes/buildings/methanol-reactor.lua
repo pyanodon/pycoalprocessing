@@ -72,29 +72,31 @@ for i = 1, 4 do
             },
         },
         energy_usage = i .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim.png',
-                    frame_count = 50,
-                    line_length = 10,
-                    width = 202,
-                    height = 247,
-                    animation_speed = 0.4,
-                    shift = {0.15, -0.79}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim-mask.png',
-                    frame_count = 50,
-                    line_length = 10,
-                    width = 202,
-                    height = 247,
-                    animation_speed = 0.4,
-                    tint = py.tints[i],
-                    shift = {0.15, -0.79},
-                    draw_as_glow = true
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim.png',
+                        frame_count = 50,
+                        line_length = 10,
+                        width = 202,
+                        height = 247,
+                        animation_speed = 0.4,
+                        shift = {0.15, -0.79}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim-mask.png',
+                        frame_count = 50,
+                        line_length = 10,
+                        width = 202,
+                        height = 247,
+                        animation_speed = 0.4,
+                        tint = py.tints[i],
+                        shift = {0.15, -0.79},
+                        draw_as_glow = true
+                    }
                 }
-            }
+            },
         },
         fluid_boxes = {
             --North, left

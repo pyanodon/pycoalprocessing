@@ -59,37 +59,39 @@ for i = 1, 4 do
             },
         },
         energy_usage = (1.2 * i) .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-base.png',
-                    width = 224,
-                    height = 224,
-                    line_length = 9,
-                    frame_count = 76,
-                    shift = {0.3, -0.5},
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-base-mask.png',
-                    width = 224,
-                    height = 224,
-                    line_length = 9,
-                    frame_count = 76,
-                    shift = {0.3, -0.5},
-                    animation_speed = 0.5,
-                    tint = py.tints[i],
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-top.png',
-                    width = 224,
-                    height = 41,
-                    line_length = 9,
-                    frame_count = 76,
-                    shift = {0.3, -4.63},
-                    animation_speed = 0.5
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-base.png',
+                        width = 224,
+                        height = 224,
+                        line_length = 9,
+                        frame_count = 76,
+                        shift = {0.3, -0.5},
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-base-mask.png',
+                        width = 224,
+                        height = 224,
+                        line_length = 9,
+                        frame_count = 76,
+                        shift = {0.3, -0.5},
+                        animation_speed = 0.5,
+                        tint = py.tints[i],
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-top.png',
+                        width = 224,
+                        height = 41,
+                        line_length = 9,
+                        frame_count = 76,
+                        shift = {0.3, -4.63},
+                        animation_speed = 0.5
+                    }
                 }
-            }
+            },
         },
         fluid_boxes = {
             {

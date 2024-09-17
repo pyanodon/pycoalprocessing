@@ -61,28 +61,30 @@ for i = 1, 4 do
             },
         },
         energy_usage = i .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/sand-extractor/sand-extractor.png',
-                    width = 192,
-                    height = 202,
-                    frame_count = 90,
-                    line_length = 10,
-                    animation_speed = 0.35,
-                    shift = {0.0, -0.312}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/sand-extractor/sand-extractor-mask.png',
-                    width = 192,
-                    height = 202,
-                    frame_count = 90,
-                    line_length = 10,
-                    animation_speed = 0.35,
-                    shift = {0.0, -0.312},
-                    tint = py.tints[i]
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/sand-extractor/sand-extractor.png',
+                        width = 192,
+                        height = 202,
+                        frame_count = 90,
+                        line_length = 10,
+                        animation_speed = 0.35,
+                        shift = {0.0, -0.312}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/sand-extractor/sand-extractor-mask.png',
+                        width = 192,
+                        height = 202,
+                        frame_count = 90,
+                        line_length = 10,
+                        animation_speed = 0.35,
+                        shift = {0.0, -0.312},
+                        tint = py.tints[i]
+                    }
                 }
-            }
+            },
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.65},
         working_sound = {

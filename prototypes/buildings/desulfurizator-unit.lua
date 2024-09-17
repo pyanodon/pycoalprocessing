@@ -78,28 +78,30 @@ for i = 1, 4 do
             },
         },
         energy_usage = (i * 2) .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/desulfurizator-unit/dessulfurizator-anim.png',
-                    width = 196,
-                    height = 202,
-                    frame_count = 15,
-                    line_length = 5,
-                    animation_speed = 0.75,
-                    shift = {0.06, -0.1}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/desulfurizator-unit/dessulfurizator-anim-mask.png',
-                    width = 196,
-                    height = 202,
-                    frame_count = 15,
-                    line_length = 5,
-                    animation_speed = 0.75,
-                    shift = {0.06, -0.1},
-                    tint = py.tints[i]
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/desulfurizator-unit/dessulfurizator-anim.png',
+                        width = 196,
+                        height = 202,
+                        frame_count = 15,
+                        line_length = 5,
+                        animation_speed = 0.75,
+                        shift = {0.06, -0.1}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/desulfurizator-unit/dessulfurizator-anim-mask.png',
+                        width = 196,
+                        height = 202,
+                        frame_count = 15,
+                        line_length = 5,
+                        animation_speed = 0.75,
+                        shift = {0.06, -0.1},
+                        tint = py.tints[i]
+                    },
+                }
+            },
         },
         fluid_boxes = {
             {

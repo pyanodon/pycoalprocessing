@@ -150,30 +150,32 @@ for i = 1, 4 do
             },
         },
         energy_usage = (400 * i) .. 'kW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/ralesia-plantation.png',
-                    width = 224,
-                    height = 230,
-                    frame_count = 50,
-                    line_length = 8,
-                    animation_speed = 0.5,
-                    run_mode = 'forward-then-backward',
-                    shift = {0.0, -0.163}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/ralesia-plantation-mask.png',
-                    width = 224,
-                    height = 230,
-                    frame_count = 50,
-                    line_length = 8,
-                    animation_speed = 0.5,
-                    run_mode = 'forward-then-backward',
-                    shift = {0.0, -0.163},
-                    tint = py.tints[i]
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/ralesia-plantation.png',
+                        width = 224,
+                        height = 230,
+                        frame_count = 50,
+                        line_length = 8,
+                        animation_speed = 0.5,
+                        run_mode = 'forward-then-backward',
+                        shift = {0.0, -0.163}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/ralesia-plantation-mask.png',
+                        width = 224,
+                        height = 230,
+                        frame_count = 50,
+                        line_length = 8,
+                        animation_speed = 0.5,
+                        run_mode = 'forward-then-backward',
+                        shift = {0.0, -0.163},
+                        tint = py.tints[i]
+                    },
+                }
+            },
         },
         fluid_boxes = fluid_boxes,
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.65},

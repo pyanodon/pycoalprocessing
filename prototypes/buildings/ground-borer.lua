@@ -60,26 +60,28 @@ for i = 1, 4 do
             },
         },
         energy_usage = (1.25 * i) .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/ground-borer/ground-borer.png',
-                    width = 307,
-                    height = 311,
-                    line_length = 6,
-                    frame_count = 30,
-                    animation_speed = 0.8,
-                    shift = {0.2, -0.03}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/ground-borer/ground-borer-mask.png',
-                    width = 307,
-                    height = 311,
-                    line_length = 6,
-                    frame_count = 30,
-                    animation_speed = 0.8,
-                    shift = {0.2, -0.03},
-                    tint = py.tints[i]
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/ground-borer/ground-borer.png',
+                        width = 307,
+                        height = 311,
+                        line_length = 6,
+                        frame_count = 30,
+                        animation_speed = 0.8,
+                        shift = {0.2, -0.03}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/ground-borer/ground-borer-mask.png',
+                        width = 307,
+                        height = 311,
+                        line_length = 6,
+                        frame_count = 30,
+                        animation_speed = 0.8,
+                        shift = {0.2, -0.03},
+                        tint = py.tints[i]
+                    },
                 },
             },
         },

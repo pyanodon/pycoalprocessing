@@ -54,37 +54,39 @@ ENTITY {
         },
     },
     energy_usage = '100kW',
-    animation = {
-        layers = {
-            {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-corral-base.png',
-                width = 256,
-                height = 256,
-                frame_count = 60,
-                line_length = 8,
-                shift = {0.0, 0.0},
-                animation_speed = 0.6
-            },
-            {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-corral-base-mask.png',
-                width = 256,
-                height = 256,
-                frame_count = 60,
-                line_length = 8,
-                shift = {0.0, 0.0},
-                animation_speed = 0.6,
-                tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0}
-            },
-            {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-corral-top.png',
-                width = 256,
-                height = 12,
-                frame_count = 60,
-                line_length = 8,
-                shift = {0.0, -4.0},
-                animation_speed = 0.6
-            },
-        }
+    graphics_set = {
+        animation = {
+            layers = {
+                {
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-corral-base.png',
+                    width = 256,
+                    height = 256,
+                    frame_count = 60,
+                    line_length = 8,
+                    shift = {0.0, 0.0},
+                    animation_speed = 0.6
+                },
+                {
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-corral-base-mask.png',
+                    width = 256,
+                    height = 256,
+                    frame_count = 60,
+                    line_length = 8,
+                    shift = {0.0, 0.0},
+                    animation_speed = 0.6,
+                    tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0}
+                },
+                {
+                    filename = '__pycoalprocessinggraphics__/graphics/entity/ulric-corral/ulric-corral-top.png',
+                    width = 256,
+                    height = 12,
+                    frame_count = 60,
+                    line_length = 8,
+                    shift = {0.0, -4.0},
+                    animation_speed = 0.6
+                },
+            }
+        },
     },
     working_visualisations = {
         {

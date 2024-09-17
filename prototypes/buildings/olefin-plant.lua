@@ -60,24 +60,26 @@ for i = 1, 4 do
             },
         },
         energy_usage = (2 * i) .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/olefin-plant/olefin-off.png',
-                    width = 274,
-                    height = 302,
-                    frame_count = 1,
-                    shift = util.by_pixel(9, -23),
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/olefin-plant/olefin-off-mask.png',
-                    width = 274,
-                    height = 302,
-                    frame_count = 1,
-                    shift = util.by_pixel(9, -23),
-                    tint = py.tints[i],
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/olefin-plant/olefin-off.png',
+                        width = 274,
+                        height = 302,
+                        frame_count = 1,
+                        shift = util.by_pixel(9, -23),
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/olefin-plant/olefin-off-mask.png',
+                        width = 274,
+                        height = 302,
+                        frame_count = 1,
+                        shift = util.by_pixel(9, -23),
+                        tint = py.tints[i],
+                    },
+                }
+            },
         },
         working_visualisations = {
             {

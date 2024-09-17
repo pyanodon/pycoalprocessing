@@ -75,28 +75,30 @@ for i = 1, 4 do
             },
         },
         energy_usage = (400 * i) .. 'kW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/soil-extractor/soil-extractor.png',
-                    width = 235,
-                    height = 266,
-                    frame_count = 30,
-                    line_length = 6,
-                    animation_speed = 0.8,
-                    shift = {0.16, -0.609}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/soil-extractor/soil-extractor-mask.png',
-                    width = 235,
-                    height = 266,
-                    frame_count = 30,
-                    line_length = 6,
-                    animation_speed = 0.8,
-                    shift = {0.16, -0.609},
-                    tint = py.tints[i],
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/soil-extractor/soil-extractor.png',
+                        width = 235,
+                        height = 266,
+                        frame_count = 30,
+                        line_length = 6,
+                        animation_speed = 0.8,
+                        shift = {0.16, -0.609}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/soil-extractor/soil-extractor-mask.png',
+                        width = 235,
+                        height = 266,
+                        frame_count = 30,
+                        line_length = 6,
+                        animation_speed = 0.8,
+                        shift = {0.16, -0.609},
+                        tint = py.tints[i],
+                    }
                 }
-            }
+            },
         },
         fluid_boxes = {
             {

@@ -87,30 +87,32 @@ for i = 1, 4 do
             },
         },
         energy_usage = (125 * i) .. 'kW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/botanical-nursery/botanical-nursery.png',
-                    width = 260,
-                    height = 254,
-                    line_length = 7,
-                    frame_count = 35,
-                    animation_speed = 0.4,
-                    run_mode = 'forward-then-backward',
-                    shift = {0.1, 0.1}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/botanical-nursery/botanical-nursery-mask.png',
-                    width = 260,
-                    height = 254,
-                    line_length = 7,
-                    frame_count = 35,
-                    animation_speed = 0.4,
-                    run_mode = 'forward-then-backward',
-                    shift = {0.1, 0.1},
-                    tint = py.tints[i]
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/botanical-nursery/botanical-nursery.png',
+                        width = 260,
+                        height = 254,
+                        line_length = 7,
+                        frame_count = 35,
+                        animation_speed = 0.4,
+                        run_mode = 'forward-then-backward',
+                        shift = {0.1, 0.1}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/botanical-nursery/botanical-nursery-mask.png',
+                        width = 260,
+                        height = 254,
+                        line_length = 7,
+                        frame_count = 35,
+                        animation_speed = 0.4,
+                        run_mode = 'forward-then-backward',
+                        shift = {0.1, 0.1},
+                        tint = py.tints[i]
+                    },
+                }
+            },
         },
         fluid_boxes = {
             --1
