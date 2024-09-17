@@ -80,6 +80,46 @@ for i = 1, 4 do
         },
         energy_usage = i .. 'MW',
         graphics_set = {
+            working_visualisations = {
+                {
+                    fadeout = true,
+                    constant_speed = true,
+                    north_position = {0.1, -0.0},
+                    west_position = {0.1, -0.0},
+                    south_position = {0.1, -0.0},
+                    east_position = {0.1, -0.0},
+                    animation = {
+                        layers = {
+                            {
+                                filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-anim.png',
+                                frame_count = 80,
+                                line_length = 10,
+                                width = 168,
+                                height = 177,
+                                animation_speed = 0.25,
+                            },
+                            {
+                                filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-anim-mask.png',
+                                frame_count = 80,
+                                line_length = 10,
+                                width = 168,
+                                height = 177,
+                                animation_speed = 0.25,
+                                tint = py.tints[i],
+                            },
+                            {
+                                filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-anim-glow.png',
+                                frame_count = 80,
+                                line_length = 10,
+                                width = 168,
+                                height = 177,
+                                animation_speed = 0.25,
+                                draw_as_glow = true,
+                            },
+                        }
+                    }
+                }
+            },
             animation = {
                 layers = {
                     {
@@ -107,46 +147,6 @@ for i = 1, 4 do
                     },
                 }
             },
-        },
-        working_visualisations = {
-            {
-                fadeout = true,
-                constant_speed = true,
-                north_position = {0.1, -0.0},
-                west_position = {0.1, -0.0},
-                south_position = {0.1, -0.0},
-                east_position = {0.1, -0.0},
-                animation = {
-                    layers = {
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-anim.png',
-                            frame_count = 80,
-                            line_length = 10,
-                            width = 168,
-                            height = 177,
-                            animation_speed = 0.25,
-                        },
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-anim-mask.png',
-                            frame_count = 80,
-                            line_length = 10,
-                            width = 168,
-                            height = 177,
-                            animation_speed = 0.25,
-                            tint = py.tints[i],
-                        },
-                        {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-anim-glow.png',
-                            frame_count = 80,
-                            line_length = 10,
-                            width = 168,
-                            height = 177,
-                            animation_speed = 0.25,
-                            draw_as_glow = true,
-                        },
-                    }
-                }
-            }
         },
         fluid_boxes = {
             {

@@ -62,6 +62,46 @@ for i = 1, 4 do
         },
         energy_usage = (500 * i) .. 'kW',
         graphics_set = {
+            working_visualisations = {
+                --flat liquid
+                {
+                    fadeout = true,
+                    constant_speed = true,
+                    apply_recipe_tint = 'primary',
+                    north_position = util.by_pixel(-0, -16),
+                    west_position = util.by_pixel(-0, -16),
+                    south_position = util.by_pixel(-0, -16),
+                    east_position = util.by_pixel(-0, -16),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/liquid.png',
+                        frame_count = 1,
+                        repeat_count = 40,
+                        width = 352,
+                        height = 384,
+                        animation_speed = 0.25,
+                        draw_as_glow = true,
+                    }
+                },
+                --bubbles
+                {
+                    fadeout = true,
+                    constant_speed = true,
+                    apply_recipe_tint = 'secondary',
+                    north_position = util.by_pixel(-0, -128),
+                    west_position = util.by_pixel(-0, -128),
+                    south_position = util.by_pixel(-0, -128),
+                    east_position = util.by_pixel(-0, -128),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/anim.png',
+                        frame_count = 40,
+                        line_length = 5,
+                        width = 352,
+                        height = 96,
+                        animation_speed = 0.25,
+                        draw_as_glow = true,
+                    }
+                },
+            },
             animation = {
                 layers = {
                     {
@@ -103,46 +143,6 @@ for i = 1, 4 do
                         shift = util.by_pixel(0, -0),
                     },
                 },
-            },
-        },
-        working_visualisations = {
-            --flat liquid
-            {
-                fadeout = true,
-                constant_speed = true,
-                apply_recipe_tint = 'primary',
-                north_position = util.by_pixel(-0, -16),
-                west_position = util.by_pixel(-0, -16),
-                south_position = util.by_pixel(-0, -16),
-                east_position = util.by_pixel(-0, -16),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/liquid.png',
-                    frame_count = 1,
-                    repeat_count = 40,
-                    width = 352,
-                    height = 384,
-                    animation_speed = 0.25,
-                    draw_as_glow = true,
-                }
-            },
-            --bubbles
-            {
-                fadeout = true,
-                constant_speed = true,
-                apply_recipe_tint = 'secondary',
-                north_position = util.by_pixel(-0, -128),
-                west_position = util.by_pixel(-0, -128),
-                south_position = util.by_pixel(-0, -128),
-                east_position = util.by_pixel(-0, -128),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/anim.png',
-                    frame_count = 40,
-                    line_length = 5,
-                    width = 352,
-                    height = 96,
-                    animation_speed = 0.25,
-                    draw_as_glow = true,
-                }
             },
         },
         fluid_boxes = {

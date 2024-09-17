@@ -62,6 +62,41 @@ for i = 1, 4 do
         },
         energy_usage = (2 * i) .. 'MW',
         graphics_set = {
+            working_visualisations = {
+                {
+                    fadeout = true,
+                    constant_speed = true,
+                    north_position = util.by_pixel(0, -80),
+                    west_position = util.by_pixel(0, -80),
+                    south_position = util.by_pixel(0, -80),
+                    east_position = util.by_pixel(0, -80),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/hpf/on.png',
+                        frame_count = 40,
+                        line_length = 10,
+                        width = 224,
+                        height = 320,
+                        animation_speed = 0.5
+                    }
+                },
+                {
+                    fadeout = true,
+                    constant_speed = true,
+                    north_position = util.by_pixel(0, -80),
+                    west_position = util.by_pixel(0, -80),
+                    south_position = util.by_pixel(0, -80),
+                    east_position = util.by_pixel(0, -80),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/hpf/g.png',
+                        frame_count = 40,
+                        line_length = 10,
+                        width = 224,
+                        height = 320,
+                        animation_speed = 0.5,
+                        draw_as_glow = true,
+                    }
+                },
+            },
             animation = {
                 layers = {
                     {
@@ -102,41 +137,6 @@ for i = 1, 4 do
                         shift = util.by_pixel(16, -48),
                     },
                 },
-            },
-        },
-        working_visualisations = {
-            {
-                fadeout = true,
-                constant_speed = true,
-                north_position = util.by_pixel(0, -80),
-                west_position = util.by_pixel(0, -80),
-                south_position = util.by_pixel(0, -80),
-                east_position = util.by_pixel(0, -80),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/hpf/on.png',
-                    frame_count = 40,
-                    line_length = 10,
-                    width = 224,
-                    height = 320,
-                    animation_speed = 0.5
-                }
-            },
-            {
-                fadeout = true,
-                constant_speed = true,
-                north_position = util.by_pixel(0, -80),
-                west_position = util.by_pixel(0, -80),
-                south_position = util.by_pixel(0, -80),
-                east_position = util.by_pixel(0, -80),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/hpf/g.png',
-                    frame_count = 40,
-                    line_length = 10,
-                    width = 224,
-                    height = 320,
-                    animation_speed = 0.5,
-                    draw_as_glow = true,
-                }
             },
         },
         fluid_boxes = {

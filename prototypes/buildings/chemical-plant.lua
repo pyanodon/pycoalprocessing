@@ -62,6 +62,84 @@ for i = 1, 4 do
         },
         energy_usage = i .. 'MW',
         graphics_set = {
+            working_visualisations = {
+                {
+                    north_position = util.by_pixel(96, -64),
+                    west_position = util.by_pixel(96, -64),
+                    south_position = util.by_pixel(96, -64),
+                    east_position = util.by_pixel(96, -64),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/reator.png',
+                        frame_count = 80,
+                        line_length = 20,
+                        draw_as_glow = true,
+                        width = 96,
+                        height = 96,
+                        animation_speed = 0.35,
+                    }
+                },
+                {
+                    north_position = util.by_pixel(0, -48),
+                    west_position = util.by_pixel(0, -48),
+                    south_position = util.by_pixel(0, -48),
+                    east_position = util.by_pixel(0, -48),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/light-y.png',
+                        frame_count = 1,
+                        repeat_count = 80,
+                        draw_as_light = true,
+                        draw_as_glow = true,
+                        width = 288,
+                        height = 384,
+                        animation_speed = 0.35,
+                    }
+                },
+                {
+                    north_position = util.by_pixel(0, -48),
+                    west_position = util.by_pixel(0, -48),
+                    south_position = util.by_pixel(0, -48),
+                    east_position = util.by_pixel(0, -48),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/light-b.png',
+                        frame_count = 1,
+                        repeat_count = 80,
+                        draw_as_light = true,
+                        draw_as_glow = true,
+                        width = 288,
+                        height = 384,
+                        animation_speed = 0.35,
+                    }
+                },
+                {
+                    north_position = util.by_pixel(32, -80),
+                    west_position = util.by_pixel(32, -80),
+                    south_position = util.by_pixel(32, -80),
+                    east_position = util.by_pixel(32, -80),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/smoke.png',
+                        frame_count = 80,
+                        line_length = 20,
+                        width = 96,
+                        height = 128,
+                        animation_speed = 0.35,
+                    }
+                },
+                {
+                    north_position = util.by_pixel(-48, 80),
+                    west_position = util.by_pixel(-48, 80),
+                    south_position = util.by_pixel(-48, 80),
+                    east_position = util.by_pixel(-48, 80),
+                    animation = {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/tira-light.png',
+                        frame_count = 80,
+                        line_length = 16,
+                        draw_as_glow = true,
+                        width = 128,
+                        height = 64,
+                        animation_speed = 0.35,
+                    }
+                },
+            },
             animation = {
                 layers = {
                     {
@@ -142,84 +220,6 @@ for i = 1, 4 do
                         tint = py.tints[i],
                     },
                 },
-            },
-        },
-        working_visualisations = {
-            {
-                north_position = util.by_pixel(96, -64),
-                west_position = util.by_pixel(96, -64),
-                south_position = util.by_pixel(96, -64),
-                east_position = util.by_pixel(96, -64),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/reator.png',
-                    frame_count = 80,
-                    line_length = 20,
-                    draw_as_glow = true,
-                    width = 96,
-                    height = 96,
-                    animation_speed = 0.35,
-                }
-            },
-            {
-                north_position = util.by_pixel(0, -48),
-                west_position = util.by_pixel(0, -48),
-                south_position = util.by_pixel(0, -48),
-                east_position = util.by_pixel(0, -48),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/light-y.png',
-                    frame_count = 1,
-                    repeat_count = 80,
-                    draw_as_light = true,
-                    draw_as_glow = true,
-                    width = 288,
-                    height = 384,
-                    animation_speed = 0.35,
-                }
-            },
-            {
-                north_position = util.by_pixel(0, -48),
-                west_position = util.by_pixel(0, -48),
-                south_position = util.by_pixel(0, -48),
-                east_position = util.by_pixel(0, -48),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/light-b.png',
-                    frame_count = 1,
-                    repeat_count = 80,
-                    draw_as_light = true,
-                    draw_as_glow = true,
-                    width = 288,
-                    height = 384,
-                    animation_speed = 0.35,
-                }
-            },
-            {
-                north_position = util.by_pixel(32, -80),
-                west_position = util.by_pixel(32, -80),
-                south_position = util.by_pixel(32, -80),
-                east_position = util.by_pixel(32, -80),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/smoke.png',
-                    frame_count = 80,
-                    line_length = 20,
-                    width = 96,
-                    height = 128,
-                    animation_speed = 0.35,
-                }
-            },
-            {
-                north_position = util.by_pixel(-48, 80),
-                west_position = util.by_pixel(-48, 80),
-                south_position = util.by_pixel(-48, 80),
-                east_position = util.by_pixel(-48, 80),
-                animation = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/tira-light.png',
-                    frame_count = 80,
-                    line_length = 16,
-                    draw_as_glow = true,
-                    width = 128,
-                    height = 64,
-                    animation_speed = 0.35,
-                }
             },
         },
         fluid_boxes = {
