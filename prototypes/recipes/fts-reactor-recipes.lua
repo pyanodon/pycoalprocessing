@@ -12,7 +12,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "heavy-oil", amount = 250},
         {type = "fluid", name = "tar", amount = 200},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000}
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000}
     },
     main_product = "heavy-oil",
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",
@@ -35,7 +35,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "light-oil", amount = 300},
         {type = "fluid", name = "olefin", amount = 150},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000}
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000}
     },
     main_product = "light-oil",
     icon = "__base__/graphics/icons/fluid/light-oil.png",
@@ -78,7 +78,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "light-oil", amount = 400},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
         {type = "fluid", name = "carbon-dioxide", amount = 200}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/ref_to_light_oil.png",
@@ -102,7 +102,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "aromatics", amount = 100},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
         {type = "fluid", name = "sulfuric-acid", amount = 500}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/sulfuric-petgas.png",
@@ -126,7 +126,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "carbon-dioxide", amount = 100},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
         {type = "fluid", name = "combustion-mixture1", amount = 300, temperature = 2000}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-mixture1.png",
@@ -150,7 +150,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "coal-gas", amount = 350},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
         {type = "fluid", name = "tar", amount = 200}
     },
     main_product = "coal-gas",
@@ -173,7 +173,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "syngas", amount = 350},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
         {type = "fluid", name = "tar", amount = 200}
     },
     main_product = "syngas",
@@ -196,7 +196,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "refsyngas", amount = 350},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
         {type = "fluid", name = "tar", amount = 200}
     },
     main_product = "refsyngas",
@@ -218,7 +218,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "syngas", amount = 200},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000},
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
         {type = "item", name = "ash", amount = 5}
     },
     main_product = "syngas",
@@ -262,7 +262,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "heavy-oil", amount = 200},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, catalyst_amount = 2000}
+        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000}
     },
     main_product = "heavy-oil",
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",
