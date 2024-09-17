@@ -76,24 +76,26 @@ for i = 1, 4 do
             },
         },
         energy_usage = i .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rectisol.png',
-                    width = 250,
-                    height = 239,
-                    frame_count = 1,
-                    shift = {0.38, -0.0}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rectisol-mask.png',
-                    width = 250,
-                    height = 239,
-                    frame_count = 1,
-                    shift = {0.38, -0.0},
-                    tint = py.tints[i]
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rectisol.png',
+                        width = 250,
+                        height = 239,
+                        frame_count = 1,
+                        shift = {0.38, -0.0}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/rectisol/rectisol-mask.png',
+                        width = 250,
+                        height = 239,
+                        frame_count = 1,
+                        shift = {0.38, -0.0},
+                        tint = py.tints[i]
+                    },
+                }
+            },
         },
         working_visualisations = {
             {

@@ -60,28 +60,30 @@ for i = 1, 4 do
             },
         },
         energy_usage = i .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/ball-mill/ball-mill.png',
-                    width = 215,
-                    height = 198,
-                    frame_count = 80,
-                    line_length = 8,
-                    animation_speed = 0.8,
-                    shift = {0.318, -0.12}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/ball-mill/ball-mill-mask.png',
-                    width = 215,
-                    height = 198,
-                    frame_count = 80,
-                    line_length = 8,
-                    animation_speed = 0.8,
-                    shift = {0.318, -0.12},
-                    tint = py.tints[i],
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/ball-mill/ball-mill.png',
+                        width = 215,
+                        height = 198,
+                        frame_count = 80,
+                        line_length = 8,
+                        animation_speed = 0.8,
+                        shift = {0.318, -0.12}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/ball-mill/ball-mill-mask.png',
+                        width = 215,
+                        height = 198,
+                        frame_count = 80,
+                        line_length = 8,
+                        animation_speed = 0.8,
+                        shift = {0.318, -0.12},
+                        tint = py.tints[i],
+                    },
+                }
+            },
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.55},
         working_sound = {

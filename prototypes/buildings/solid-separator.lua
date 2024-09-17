@@ -60,28 +60,30 @@ for i = 1, 4 do
             },
         },
         energy_usage = (1.5 * i) .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/solid-separator/solid-separator.png',
-                    width = 249,
-                    height = 298,
-                    frame_count = 20,
-                    line_length = 5,
-                    animation_speed = 1,
-                    shift = {0.37, -1.169},
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/solid-separator/solid-separator-mask.png',
-                    width = 249,
-                    height = 298,
-                    frame_count = 20,
-                    line_length = 5,
-                    animation_speed = 1,
-                    shift = {0.37, -1.169},
-                    tint = py.tints[i],
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/solid-separator/solid-separator.png',
+                        width = 249,
+                        height = 298,
+                        frame_count = 20,
+                        line_length = 5,
+                        animation_speed = 1,
+                        shift = {0.37, -1.169},
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/solid-separator/solid-separator-mask.png',
+                        width = 249,
+                        height = 298,
+                        frame_count = 20,
+                        line_length = 5,
+                        animation_speed = 1,
+                        shift = {0.37, -1.169},
+                        tint = py.tints[i],
+                    },
+                }
+            },
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.55},
         working_sound = {

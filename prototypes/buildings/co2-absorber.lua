@@ -55,14 +55,16 @@ ENTITY {
         },
     },
     energy_usage = '200kW',
-    animation = {
-        filename = '__pycoalprocessinggraphics__/graphics/entity/co2-absorber/co2-absorber.png',
-        width = 278,
-        height = 280,
-        frame_count = 31,
-        line_length = 7,
-        animation_speed = 0.5,
-        shift = {0.83, -0.869}
+    graphics_set = {
+        animation = {
+            filename = '__pycoalprocessinggraphics__/graphics/entity/co2-absorber/co2-absorber.png',
+            width = 278,
+            height = 280,
+            frame_count = 31,
+            line_length = 7,
+            animation_speed = 0.5,
+            shift = {0.83, -0.869}
+        },
     },
     vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.55},
     working_sound = {

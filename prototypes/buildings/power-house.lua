@@ -115,28 +115,30 @@ for i = 1, 4 do
             },
         },
         energy_usage = (10 * i) .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/power-house/powerhouse-anim.png',
-                    width = 233,
-                    height = 234,
-                    frame_count = 30,
-                    line_length = 6,
-                    animation_speed = 0.7,
-                    shift = {0.156, -0.165}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/power-house/powerhouse-anim-mask.png',
-                    width = 233,
-                    height = 234,
-                    frame_count = 30,
-                    line_length = 6,
-                    animation_speed = 0.7,
-                    shift = {0.156, -0.165},
-                    tint = py.tints[i]
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/power-house/powerhouse-anim.png',
+                        width = 233,
+                        height = 234,
+                        frame_count = 30,
+                        line_length = 6,
+                        animation_speed = 0.7,
+                        shift = {0.156, -0.165}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/power-house/powerhouse-anim-mask.png',
+                        width = 233,
+                        height = 234,
+                        frame_count = 30,
+                        line_length = 6,
+                        animation_speed = 0.7,
+                        shift = {0.156, -0.165},
+                        tint = py.tints[i]
+                    },
+                }
+            },
         },
         fluid_boxes = {
             {

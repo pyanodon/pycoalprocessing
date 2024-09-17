@@ -77,28 +77,30 @@ for i = 1, 4 do
             },
         },
         energy_usage = (400 * i) .. 'kW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/washer/washer.png',
-                    width = 204,
-                    height = 204,
-                    frame_count = 80,
-                    line_length = 10,
-                    animation_speed = 0.9,
-                    shift = {0.17, -0.17}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/washer/washer-mask.png',
-                    width = 204,
-                    height = 204,
-                    frame_count = 80,
-                    line_length = 10,
-                    animation_speed = 0.9,
-                    shift = {0.17, -0.17},
-                    tint = py.tints[i]
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/washer/washer.png',
+                        width = 204,
+                        height = 204,
+                        frame_count = 80,
+                        line_length = 10,
+                        animation_speed = 0.9,
+                        shift = {0.17, -0.17}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/washer/washer-mask.png',
+                        width = 204,
+                        height = 204,
+                        frame_count = 80,
+                        line_length = 10,
+                        animation_speed = 0.9,
+                        shift = {0.17, -0.17},
+                        tint = py.tints[i]
+                    },
+                }
+            },
         },
         fluid_boxes = {
             {

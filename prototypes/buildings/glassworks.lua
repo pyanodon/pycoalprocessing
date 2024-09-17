@@ -109,31 +109,33 @@ for i = 1, 4 do
             }
         },
         energy_usage = (10 * i) .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/glassworks/bot.png',
-                    width = 256,
-                    height = 32,
-                    frame_count = 1,
-                    shift = util.by_pixel(16, 96)
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/glassworks/top.png',
-                    width = 256,
-                    height = 224,
-                    frame_count = 1,
-                    shift = util.by_pixel(16, -32)
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/glassworks/top-mask.png',
-                    width = 256,
-                    height = 224,
-                    frame_count = 1,
-                    shift = util.by_pixel(16, -32),
-                    tint = py.tints[i]
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/glassworks/bot.png',
+                        width = 256,
+                        height = 32,
+                        frame_count = 1,
+                        shift = util.by_pixel(16, 96)
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/glassworks/top.png',
+                        width = 256,
+                        height = 224,
+                        frame_count = 1,
+                        shift = util.by_pixel(16, -32)
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/glassworks/top-mask.png',
+                        width = 256,
+                        height = 224,
+                        frame_count = 1,
+                        shift = util.by_pixel(16, -32),
+                        tint = py.tints[i]
+                    },
+                }
+            },
         },
         working_visualisations = {
             {

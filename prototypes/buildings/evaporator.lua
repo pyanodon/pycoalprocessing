@@ -79,32 +79,34 @@ for i = 1, 4 do
             },
         },
         energy_usage = i .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-off.png',
-                    width = 168,
-                    height = 177,
-                    frame_count = 1,
-                    shift = {0.1, 0.0},
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-off-mask.png',
-                    width = 168,
-                    height = 177,
-                    frame_count = 1,
-                    shift = {0.1, 0.0},
-                    tint = py.tints[i],
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-off-glow.png',
-                    width = 168,
-                    height = 177,
-                    frame_count = 1,
-                    shift = {0.1, 0.0},
-                    draw_as_glow = true,
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-off.png',
+                        width = 168,
+                        height = 177,
+                        frame_count = 1,
+                        shift = {0.1, 0.0},
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-off-mask.png',
+                        width = 168,
+                        height = 177,
+                        frame_count = 1,
+                        shift = {0.1, 0.0},
+                        tint = py.tints[i],
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-off-glow.png',
+                        width = 168,
+                        height = 177,
+                        frame_count = 1,
+                        shift = {0.1, 0.0},
+                        draw_as_glow = true,
+                    },
+                }
+            },
         },
         working_visualisations = {
             {

@@ -69,30 +69,32 @@ for i = 1, 4 do
             },
         },
         energy_usage = (500 * i) .. 'kW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/carbon-filter/carbon-filter.png',
-                    priority = 'high',
-                    width = 171,
-                    height = 167,
-                    frame_count = 25,
-                    line_length = 5,
-                    shift = {0.1, -0.125},
-                    animation_speed = 1.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/carbon-filter/carbon-filter-mask.png',
-                    priority = 'high',
-                    width = 171,
-                    height = 167,
-                    frame_count = 25,
-                    line_length = 5,
-                    shift = {0.1, -0.125},
-                    animation_speed = 1.5,
-                    tint = py.tints[i]
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/carbon-filter/carbon-filter.png',
+                        priority = 'high',
+                        width = 171,
+                        height = 167,
+                        frame_count = 25,
+                        line_length = 5,
+                        shift = {0.1, -0.125},
+                        animation_speed = 1.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/carbon-filter/carbon-filter-mask.png',
+                        priority = 'high',
+                        width = 171,
+                        height = 167,
+                        frame_count = 25,
+                        line_length = 5,
+                        shift = {0.1, -0.125},
+                        animation_speed = 1.5,
+                        tint = py.tints[i]
+                    },
+                }
+            },
         },
         fluid_boxes = {
             {

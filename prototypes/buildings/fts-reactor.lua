@@ -62,110 +62,112 @@ for i = 1, 4 do
             },
         },
         energy_usage = (1.5 * i) .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/bottom.png',
-                    width = 288,
-                    height = 32,
-                    line_length = 1,
-                    repeat_count = 100,
-                    shift = util.by_pixel(-0, 128),
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/bot-still.png',
-                    width = 288,
-                    height = 160,
-                    line_length = 1,
-                    repeat_count = 100,
-                    shift = util.by_pixel(-0, 32),
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/bot-still-mask.png',
-                    width = 288,
-                    height = 160,
-                    line_length = 1,
-                    repeat_count = 100,
-                    shift = util.by_pixel(-0, 32),
-                    tint = py.tints[i],
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao-bottom.png',
-                    width = 352,
-                    height = 608,
-                    line_length = 1,
-                    repeat_count = 100,
-                    shift = util.by_pixel(-0, -128),
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/sh.png',
-                    width = 320,
-                    height = 256,
-                    line_length = 1,
-                    repeat_count = 100,
-                    draw_as_shadow = true,
-                    shift = util.by_pixel(16, 16),
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/t1.png',
-                    width = 96,
-                    height = 288,
-                    line_length = 20,
-                    frame_count = 100,
-                    shift = util.by_pixel(-96, -192),
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/t2.png',
-                    width = 96,
-                    height = 288,
-                    line_length = 20,
-                    frame_count = 100,
-                    shift = util.by_pixel(0, -192),
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/t3.png',
-                    width = 96,
-                    height = 288,
-                    line_length = 20,
-                    frame_count = 100,
-                    shift = util.by_pixel(96, -192),
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao1.png',
-                    width = 96,
-                    height = 288,
-                    line_length = 20,
-                    frame_count = 100,
-                    shift = util.by_pixel(-96, -192),
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao2.png',
-                    width = 96,
-                    height = 288,
-                    line_length = 20,
-                    frame_count = 100,
-                    shift = util.by_pixel(0, -192),
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao3.png',
-                    width = 96,
-                    height = 288,
-                    line_length = 20,
-                    frame_count = 100,
-                    shift = util.by_pixel(96, -192),
-                    animation_speed = 0.5
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/bottom.png',
+                        width = 288,
+                        height = 32,
+                        line_length = 1,
+                        repeat_count = 100,
+                        shift = util.by_pixel(-0, 128),
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/bot-still.png',
+                        width = 288,
+                        height = 160,
+                        line_length = 1,
+                        repeat_count = 100,
+                        shift = util.by_pixel(-0, 32),
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/bot-still-mask.png',
+                        width = 288,
+                        height = 160,
+                        line_length = 1,
+                        repeat_count = 100,
+                        shift = util.by_pixel(-0, 32),
+                        tint = py.tints[i],
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao-bottom.png',
+                        width = 352,
+                        height = 608,
+                        line_length = 1,
+                        repeat_count = 100,
+                        shift = util.by_pixel(-0, -128),
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/sh.png',
+                        width = 320,
+                        height = 256,
+                        line_length = 1,
+                        repeat_count = 100,
+                        draw_as_shadow = true,
+                        shift = util.by_pixel(16, 16),
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/t1.png',
+                        width = 96,
+                        height = 288,
+                        line_length = 20,
+                        frame_count = 100,
+                        shift = util.by_pixel(-96, -192),
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/t2.png',
+                        width = 96,
+                        height = 288,
+                        line_length = 20,
+                        frame_count = 100,
+                        shift = util.by_pixel(0, -192),
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/t3.png',
+                        width = 96,
+                        height = 288,
+                        line_length = 20,
+                        frame_count = 100,
+                        shift = util.by_pixel(96, -192),
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao1.png',
+                        width = 96,
+                        height = 288,
+                        line_length = 20,
+                        frame_count = 100,
+                        shift = util.by_pixel(-96, -192),
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao2.png',
+                        width = 96,
+                        height = 288,
+                        line_length = 20,
+                        frame_count = 100,
+                        shift = util.by_pixel(0, -192),
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fts-reactor/ao3.png',
+                        width = 96,
+                        height = 288,
+                        line_length = 20,
+                        frame_count = 100,
+                        shift = util.by_pixel(96, -192),
+                        animation_speed = 0.5
+                    },
+                }
+            },
         },
 
         working_visualisations = {

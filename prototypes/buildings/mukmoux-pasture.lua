@@ -52,24 +52,26 @@ ENTITY {
         },
     },
     energy_usage = "50kW",
-    animation = {
-        layers = {
-            {
-            filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-pasture.png",
-            width = 320,
-            height = 363,
-            frame_count = 1,
-            line_length = 1,
-            shift = {0.0, -0.5}
-            },
-            {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-mask.png",
+    graphics_set = {
+        animation = {
+            layers = {
+                {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-pasture.png",
                 width = 320,
                 height = 363,
                 frame_count = 1,
                 line_length = 1,
-                shift = {0.0, -0.5},
-                tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0}
+                shift = {0.0, -0.5}
+                },
+                {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-mask.png",
+                    width = 320,
+                    height = 363,
+                    frame_count = 1,
+                    line_length = 1,
+                    shift = {0.0, -0.5},
+                    tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0}
+                },
             },
         },
     },

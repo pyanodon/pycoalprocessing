@@ -61,47 +61,49 @@ for i = 1, 4 do
             },
         },
         energy_usage = (500 * i) .. 'kW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/wpu/left.png',
-                    width = 96,
-                    height = 277,
-                    line_length = 21,
-                    frame_count = 130,
-                    shift = {-1.5, -1.328},
-                    animation_speed = 0.42
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/wpu/right.png',
-                    width = 96,
-                    height = 277,
-                    line_length = 21,
-                    frame_count = 130,
-                    shift = {1.5, -1.328},
-                    animation_speed = 0.42
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/wpu/left-mask.png',
-                    width = 96,
-                    height = 277,
-                    line_length = 21,
-                    frame_count = 130,
-                    shift = {-1.5, -1.328},
-                    animation_speed = 0.42,
-                    tint = py.tints[i]
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/wpu/right-mask.png',
-                    width = 96,
-                    height = 277,
-                    line_length = 21,
-                    frame_count = 130,
-                    shift = {1.5, -1.328},
-                    animation_speed = 0.42,
-                    tint = py.tints[i]
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/wpu/left.png',
+                        width = 96,
+                        height = 277,
+                        line_length = 21,
+                        frame_count = 130,
+                        shift = {-1.5, -1.328},
+                        animation_speed = 0.42
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/wpu/right.png',
+                        width = 96,
+                        height = 277,
+                        line_length = 21,
+                        frame_count = 130,
+                        shift = {1.5, -1.328},
+                        animation_speed = 0.42
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/wpu/left-mask.png',
+                        width = 96,
+                        height = 277,
+                        line_length = 21,
+                        frame_count = 130,
+                        shift = {-1.5, -1.328},
+                        animation_speed = 0.42,
+                        tint = py.tints[i]
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/wpu/right-mask.png',
+                        width = 96,
+                        height = 277,
+                        line_length = 21,
+                        frame_count = 130,
+                        shift = {1.5, -1.328},
+                        animation_speed = 0.42,
+                        tint = py.tints[i]
+                    },
+                }
+            },
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.65},
         working_sound = {

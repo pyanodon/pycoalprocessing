@@ -60,16 +60,18 @@ for i = 1, 4 do
             },
         },
         energy_usage = (900 * i) .. 'kW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/fluid-separator/' .. name .. '.png',
-                    width = 248,
-                    height = 260,
-                    frame_count = 1,
-                    shift = {0.34, -0.57}
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/fluid-separator/' .. name .. '.png',
+                        width = 248,
+                        height = 260,
+                        frame_count = 1,
+                        shift = {0.34, -0.57}
+                    },
+                }
+            },
         },
         fluid_boxes = {
             --North

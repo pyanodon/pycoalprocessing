@@ -60,28 +60,30 @@ for i = 1, 4 do
             },
         },
         energy_usage = (i * 750) .. 'kW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/classifier/classifier.png',
-                    width = 256,
-                    height = 257,
-                    frame_count = 34,
-                    line_length = 8,
-                    animation_speed = 0.6,
-                    shift = {0.495, -0.48}
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/classifier/classifier-mask.png',
-                    width = 256,
-                    height = 257,
-                    frame_count = 34,
-                    line_length = 8,
-                    animation_speed = 0.6,
-                    shift = {0.495, -0.48},
-                    tint = py.tints[i],
-                },
-            }
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/classifier/classifier.png',
+                        width = 256,
+                        height = 257,
+                        frame_count = 34,
+                        line_length = 8,
+                        animation_speed = 0.6,
+                        shift = {0.495, -0.48}
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/classifier/classifier-mask.png',
+                        width = 256,
+                        height = 257,
+                        frame_count = 34,
+                        line_length = 8,
+                        animation_speed = 0.6,
+                        shift = {0.495, -0.48},
+                        tint = py.tints[i],
+                    },
+                }
+            },
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.55},
         working_sound = {

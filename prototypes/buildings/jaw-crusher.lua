@@ -59,66 +59,68 @@ for i = 1, 4 do
             },
         },
         energy_usage = i .. 'MW',
-        animation = {
-            layers = {
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-left.png',
-                    width = 96,
-                    height = 256,
-                    line_length = 21,
-                    frame_count = 161,
-                    shift = {-2.0, -0.5},
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-mid.png',
-                    width = 96,
-                    height = 256,
-                    line_length = 21,
-                    frame_count = 161,
-                    shift = {1.0, -0.5},
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-right.png',
-                    width = 32,
-                    height = 256,
-                    line_length = 64,
-                    frame_count = 161,
-                    shift = {3.0, -0.5},
-                    animation_speed = 0.5
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-left-mask.png',
-                    width = 96,
-                    height = 256,
-                    line_length = 21,
-                    frame_count = 161,
-                    shift = {-2.0, -0.5},
-                    animation_speed = 0.5,
-                    tint = py.tints[i]
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-mid-mask.png',
-                    width = 96,
-                    height = 256,
-                    line_length = 21,
-                    frame_count = 161,
-                    shift = {1.0, -0.5},
-                    animation_speed = 0.5,
-                    tint = py.tints[i]
-                },
-                {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-right-mask.png',
-                    width = 32,
-                    height = 256,
-                    line_length = 64,
-                    frame_count = 161,
-                    shift = {3.0, -0.5},
-                    animation_speed = 0.5,
-                    tint = py.tints[i]
+        graphics_set = {
+            animation = {
+                layers = {
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-left.png',
+                        width = 96,
+                        height = 256,
+                        line_length = 21,
+                        frame_count = 161,
+                        shift = {-2.0, -0.5},
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-mid.png',
+                        width = 96,
+                        height = 256,
+                        line_length = 21,
+                        frame_count = 161,
+                        shift = {1.0, -0.5},
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-right.png',
+                        width = 32,
+                        height = 256,
+                        line_length = 64,
+                        frame_count = 161,
+                        shift = {3.0, -0.5},
+                        animation_speed = 0.5
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-left-mask.png',
+                        width = 96,
+                        height = 256,
+                        line_length = 21,
+                        frame_count = 161,
+                        shift = {-2.0, -0.5},
+                        animation_speed = 0.5,
+                        tint = py.tints[i]
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-mid-mask.png',
+                        width = 96,
+                        height = 256,
+                        line_length = 21,
+                        frame_count = 161,
+                        shift = {1.0, -0.5},
+                        animation_speed = 0.5,
+                        tint = py.tints[i]
+                    },
+                    {
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-right-mask.png',
+                        width = 32,
+                        height = 256,
+                        line_length = 64,
+                        frame_count = 161,
+                        shift = {3.0, -0.5},
+                        animation_speed = 0.5,
+                        tint = py.tints[i]
+                    }
                 }
-            }
+            },
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.65},
         working_sound = {

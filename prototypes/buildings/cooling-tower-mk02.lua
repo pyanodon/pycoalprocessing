@@ -58,13 +58,15 @@ ENTITY {
     crafting_speed = 4,
     energy_source = {type = "void"},
     energy_usage = "70kW",
-    animation = {
-        filename = "__pycoalprocessinggraphics__/graphics/entity/cooling-tower-mk02/cooling_tower_mk02.png",
-        width = 192,
-        height = 256,
-        frame_count = 1,
-        animation_speed = 1,
-        shift = {0.5, -1.504}
+    graphics_set = {
+        animation = {
+            filename = "__pycoalprocessinggraphics__/graphics/entity/cooling-tower-mk02/cooling_tower_mk02.png",
+            width = 192,
+            height = 256,
+            frame_count = 1,
+            animation_speed = 1,
+            shift = {0.5, -1.504}
+        },
     },
     working_visualisations = {
         {
