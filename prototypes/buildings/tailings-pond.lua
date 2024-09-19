@@ -75,85 +75,49 @@ ENTITY{
             north = {
                 layers = {
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/pipe-cover-north.png',
-                        height = 64,
-                        width = 64,
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-north.png',
+                        height = 128,
+                        width = 128,
+                        scale = 0.5,
                         shift = {0, -0.25},
                         priority = 'extra-high',
-                        hr_version = {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-north.png',
-                            height = 128,
-                            width = 128,
-                            scale = 0.5,
-                            shift = {0, -0.25},
-                            priority = 'extra-high',
-                        },
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/pipe-cover-north-shadow.png',
-                        height = 64,
-                        width = 64,
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-north-shadow.png',
+                        height = 128,
+                        width = 128,
+                        scale = 0.5,
                         shift = {0, -0.25},
                         priority = 'extra-high',
-                        draw_as_shadow = true,
-                        hr_version = {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-north-shadow.png',
-                            height = 128,
-                            width = 128,
-                            scale = 0.5,
-                            shift = {0, -0.25},
-                            priority = 'extra-high',
-                            draw_as_shadow = true
-                        },
+                        draw_as_shadow = true
                     }
                 }
             },
             east = {
-                filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/east-pipe.png',
-                width = 64,
-                height = 64,
-                shift = {-0.5, 0},
-                hr_version = {
-                    filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/hr-east-pipe.png',
-                    width = 128,
-                    height = 128,
-                    scale = 0.5,
-                    shift = {-0.5, 0}
-                }
+                filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/hr-east-pipe.png',
+                width = 128,
+                height = 128,
+                scale = 0.5,
+                shift = {-0.5, 0}
             },
             south = {
                 layers = {
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/pipe-cover-north.png',
-                        height = 64,
-                        width = 64,
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-north.png',
+                        height = 128,
+                        width = 128,
+                        scale = 0.5,
                         shift = {0, -0.7},
                         priority = 'extra-high',
-                        hr_version = {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-north.png',
-                            height = 128,
-                            width = 128,
-                            scale = 0.5,
-                            shift = {0, -0.7},
-                            priority = 'extra-high',
-                        },
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/pipe-cover-north-shadow.png',
-                        height = 64,
-                        width = 64,
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-north-shadow.png',
+                        height = 128,
+                        width = 128,
+                        scale = 0.5,
                         shift = {0, -0.7},
                         priority = 'extra-high',
-                        draw_as_shadow = true,
-                        hr_version = {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-north-shadow.png',
-                            height = 128,
-                            width = 128,
-                            scale = 0.5,
-                            shift = {0, -0.7},
-                            priority = 'extra-high',
-                            draw_as_shadow = true
-                        },
+                        draw_as_shadow = true
                     }
                 }
             },
@@ -165,72 +129,42 @@ ENTITY{
             south = {
                 layers = {
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/pipe-cover-south.png',
-                        height = 64,
-                        width = 64,
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-south.png',
+                        height = 128,
+                        width = 128,
+                        scale = 0.5,
                         shift = {0, 0.5},
                         priority = 'extra-high',
-                        hr_version = {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-south.png',
-                            height = 128,
-                            width = 128,
-                            scale = 0.5,
-                            shift = {0, 0.5},
-                            priority = 'extra-high',
-                        },
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/pipe-cover-south-shadow.png',
-                        height = 64,
-                        width = 64,
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-south-shadow.png',
+                        height = 128,
+                        width = 128,
+                        scale = 0.5,
                         shift = {0, 0.5},
                         priority = 'extra-high',
-                        draw_as_shadow = true,
-                        hr_version = {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-south-shadow.png',
-                            height = 128,
-                            width = 128,
-                            scale = 0.5,
-                            shift = {0, 0.5},
-                            priority = 'extra-high',
-                            draw_as_shadow = true
-                        },
+                        draw_as_shadow = true
                     }
                 }
             },
             west = {
                 layers = {
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/pipe-cover-west.png',
-                        height = 64,
-                        width = 64,
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-west.png',
+                        height = 128,
+                        width = 128,
+                        scale = 0.5,
                         shift = {-0.3, 0},
                         priority = 'extra-high',
-                        hr_version = {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-west.png',
-                            height = 128,
-                            width = 128,
-                            scale = 0.5,
-                            shift = {-0.3, 0},
-                            priority = 'extra-high',
-                        },
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/pipe-cover-west-shadow.png',
-                        height = 64,
-                        width = 64,
+                        filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-west-shadow.png',
+                        height = 128,
+                        width = 128,
+                        scale = 0.5,
                         shift = {-0.3, 0},
                         priority = 'extra-high',
-                        draw_as_shadow = true,
-                        hr_version = {
-                            filename = '__pycoalprocessinggraphics__/graphics/entity/tailings-pond/covers/hr-pipe-cover-west-shadow.png',
-                            height = 128,
-                            width = 128,
-                            scale = 0.5,
-                            shift = {-0.3, 0},
-                            priority = 'extra-high',
-                            draw_as_shadow = true
-                        },
+                        draw_as_shadow = true
                     }
                 }
             }

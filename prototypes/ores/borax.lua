@@ -53,21 +53,13 @@ ENTITY {
     stage_counts = {20000, 13000, 10000, 5000, 3000, 1000, 500, 100},
     stages = {
         sheet = {
-            filename = "__pycoalprocessinggraphics__/graphics/ores/borax.png",
+            filename = "__pycoalprocessinggraphics__/graphics/ores/hr-borax.png",
             priority = "extra-high",
-            width = 64,
-            height = 64,
+            width = 128,
+            height = 128,
             frame_count = 8,
             variation_count = 8,
-            hr_version = {
-                filename = "__pycoalprocessinggraphics__/graphics/ores/hr-borax.png",
-                priority = "extra-high",
-                width = 128,
-                height = 128,
-                frame_count = 8,
-                variation_count = 8,
-                scale = 0.5
-            }
+            scale = 0.5
         }
     }
 }
