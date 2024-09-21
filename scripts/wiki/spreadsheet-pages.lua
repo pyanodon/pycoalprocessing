@@ -185,7 +185,7 @@ local function calculate_required_science()
 	}
 
 	local recipe_required_science = {}
-	for _, recipe in pairs(game.recipe_prototypes) do
+	for _, recipe in pairs(prototypes.recipe) do
 		if recipe.enabled then
 			for _, product in pairs(recipe.products) do
 				recipe_required_science[product.name] = 0
@@ -193,9 +193,9 @@ local function calculate_required_science()
 		end
 	end
 
-	local recipes = game.recipe_prototypes
+	local recipes = prototypes.recipe
 	local recipes_to_check = {}
-	for _, tech in pairs(game.technology_prototypes) do
+	for _, tech in pairs(prototypes.technology) do
 		if not tech.hidden and not tech.research_unit_count_formula and tech.name ~= 'fluid-handling' and tech.name ~= 'plastics' then
 			for _, effect in pairs(tech.effects) do
 				if effect.type == 'unlock-recipe' then
@@ -254,7 +254,7 @@ Spreadsheet.events.init = function()
 		prefered_sorts = {}
 	}
 
-	for name, fluid in pairs(game.fluid_prototypes) do
+	for name, fluid in pairs(prototypes.fluid) do
 		if not fluid.hidden and not (script.active_mods['pyalternativeenergy'] and fluid.name == 'combustion-mixture1') then
 			local fuel_value
 			if fluid.fuel_value ~= 0 then fuel_value = py.format_energy(fluid.fuel_value, 'J') end
@@ -312,7 +312,7 @@ Spreadsheet.events.init = function()
 		prefered_sorts = {}
 	}
 
-	for name, item in pairs(game.item_prototypes) do
+	for name, item in pairs(prototypes.item) do
 		if item.fuel_category and not item.hidden then
 			local burnt_result, burnt_result_order, burnt_result_tooltip
 			if item.burnt_result then
@@ -330,7 +330,7 @@ Spreadsheet.events.init = function()
 					elem_tooltip = {type = 'item', name = name}
 				},
 				['fuel-category'] = {
-					value = game.fuel_category_prototypes[item.fuel_category].localised_name,
+					value = prototypes.fuel_category[item.fuel_category].localised_name,
 					order = item.fuel_category or ''
 				},
 				['fuel-value'] = {
