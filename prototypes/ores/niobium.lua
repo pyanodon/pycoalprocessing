@@ -29,7 +29,7 @@ ENTITY {
         -- mining_particle = "niobium-particle",
         mining_time = 3,
         results = {
-            {"niobium-ore", 1}
+            {type = "item", name = "niobium-ore", amount = 1}
         },
         fluid_amount = 60,
         required_fluid = "refsyngas"
