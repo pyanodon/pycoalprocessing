@@ -45,7 +45,7 @@ local function empty_pond_gas(fluid, surface, position)
 			and not gasses[fluid.name] == false)
 		then
 			surface.pollute(position, fluid.amount * pollution_modifier)
-			game.pollution_statistics.on_flow('tailings-pond', fluid.amount * pollution_modifier)
+			game.get_pollution_statistics(surface).on_flow('tailings-pond', fluid.amount * pollution_modifier)
 			return nil
 		elseif gasses[fluid.name] == false then
 			return nil

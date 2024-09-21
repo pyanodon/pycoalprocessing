@@ -179,7 +179,7 @@ local function calculate_statistics(player, include_laggy_calculations)
 	statistics.kills = floor(kills)
 
 	statistics.pollution = 0
-	for _, count in pairs(game.pollution_statistics.input_counts) do
+	for _, count in pairs(game.get_pollution_statistics(surface).input_counts) do
 		statistics.pollution = statistics.pollution + count
 	end
 	statistics.pollution = comma_value(floor(statistics.pollution * 10) / 10)
