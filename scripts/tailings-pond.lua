@@ -39,7 +39,7 @@ local function empty_pond_gas(fluid, surface, position)
 	if fluid then
 		if
 			gasses[fluid.name] == true
-			or fluid.temperature >= game.fluid_prototypes[fluid.name].gas_temperature
+			or fluid.temperature >= prototypes.fluid[fluid.name].gas_temperature
 			or (fluid.name:find('%-gas')
 			or fluid.name:find('gas%-')
 			and not gasses[fluid.name] == false)
@@ -71,7 +71,7 @@ local function set_fluid_level_image(pond)
 	if pond.sprite then rendering.destroy(pond.sprite) end
 	local color
 	if pond.entity.fluidbox[1] then
-		color = game.fluid_prototypes[pond.entity.fluidbox[1].name].base_color
+		color = prototypes.fluid[pond.entity.fluidbox[1].name].base_color
 	end
 	pond.sprite = rendering.draw_sprite{
 		sprite = 'tailings-pond-sprite-' .. fill_level,
