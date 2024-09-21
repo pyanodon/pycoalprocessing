@@ -22,7 +22,7 @@ RECIPE {
     results = {
         {type = "item", name = 'automated-factory-mk01', amount = 1}
     }
-}:add_unlock('advanced-electronics')
+}:add_unlock('advanced-circuit')
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
