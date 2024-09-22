@@ -7,7 +7,7 @@ TECHNOLOGY('utility-science-pack'):add_pack('production-science-pack'):add_pack(
 TECHNOLOGY('destroyer'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
 TECHNOLOGY('military-4'):remove_pack('utility-science-pack')
 --TODO:update fusion equipment/ fission equipment
---TECHNOLOGY('fusion-reactor-equipment'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
+--TECHNOLOGY('fission-reactor-equipment'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
 TECHNOLOGY('rocket-fuel'):add_pack('military-science-pack'):remove_prereq('advanced-oil-processing'):remove_prereq('flammables')
 TECHNOLOGY('kovarex-enrichment-process'):add_pack('military-science-pack')
 TECHNOLOGY('worker-robots-speed-3'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
