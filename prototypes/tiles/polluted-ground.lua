@@ -123,7 +123,7 @@ data:extend{{
     icon_size = 1,
     flags = {'placeable-neutral', 'placeable-off-grid', 'breaths-air', 'not-blueprintable', 'not-deconstructable'},
     selectable_in_game = false,
-    emissions_per_second = 0.0001 * 16,-- *16 since they're now in a 4x4 grid
+    emissions_per_second = {pollution = 0.0001 * 16},-- *16 since they're now in a 4x4 grid
     max_health = 5000,
     collision_box = {{0, 0}, {0, 0}},
     selection_box = {{0, 0}, {0, 0}},
