@@ -106,3 +106,31 @@ style.titlebar_search_textfield = {
 	type = 'textbox_style',
 	top_margin = -2
 }
+
+style.window_content_frame_packed = {
+	type = 'frame_style',
+	parent = 'window_content_frame',
+	padding = 0,
+	horizontal_flow_style = {
+		type = 'horizontal_flow_style',
+		horizontal_spacing = 0
+	},
+	vertical_flow_style = {
+		type = 'vertical_flow_style',
+		vertical_spacing = 0
+	}
+}
+
+style.window_content_frame ={
+	type = 'frame_style',
+	padding = 4,
+	graphical_set =	{
+		base = {
+			position = {17, 0},
+			corner_size = 8,
+			center = {position = {76, 8}, size = {1, 1}},
+			draw_type = 'outer'
+		},
+		shadow = default_inner_shadow
+	}
+}

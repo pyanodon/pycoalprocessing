@@ -12,7 +12,8 @@ local function on_search(search_key, gui)
 		return
 	end
 	for _, row in pairs(gui.children) do
-		row.visible = row.name:find(search_key, 1, true) or row.name:find(search_key:gsub(' ', '-'), 1, true) or row.name:find(search_key:gsub(' ', ''), 1, true)
+		local visible = row.name:find(search_key, 1, true) or row.name:find(search_key:gsub(' ', '-'), 1, true) or row.name:find(search_key:gsub(' ', ''), 1, true)
+		row.visible = not not visible
 	end
 end
 

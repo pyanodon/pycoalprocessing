@@ -134,7 +134,7 @@ local function scorch_earth(pond)
 			end
 		until amount < threshold_in_units
 		-- add fluid consumed to production stats graph
-		entity.force.fluid_production_statistics.on_flow(fluid.name, amount - fluid.amount)
+		entity.force.get_fluid_production_statistics(surface).on_flow(fluid.name, amount - fluid.amount)
 		fluid.amount = amount
 	end
 
