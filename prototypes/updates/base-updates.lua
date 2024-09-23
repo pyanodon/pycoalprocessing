@@ -85,7 +85,7 @@ data.raw.technology['uranium-ammo'].unit.ingredients = {
     {'military-science-pack', 1},
     {'chemical-science-pack', 1}
   }
-data.raw.technology['uranium-ammo'].prerequisites = {'military-2', 'uranium-processing'}
+data.raw.technology['uranium-ammo'].prerequisites = {'military-2', 'uranium-mining'}
 
 TECHNOLOGY('concrete'):remove_prereq('automation-2')
 -- Remove empty vanilla techs
