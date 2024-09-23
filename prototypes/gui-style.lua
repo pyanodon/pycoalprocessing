@@ -7,7 +7,8 @@ style.py_entity_preview = {
 	padding = 0,
 	graphical_set = {
 		base = {
-			position = {17, 0}, corner_size = 8,
+			position = {17, 0},
+			corner_size = 8,
 			center = {position = {76, 8}, size = {1, 1}},
 			draw_type = 'outer'
 		},
@@ -16,9 +17,9 @@ style.py_entity_preview = {
 }
 
 style.py_nice_frame = {
-  type = 'frame_style',
-  vertically_stretchable = 'off',
-  parent = 'deep_frame_in_shallow_frame'
+	type = 'frame_style',
+	vertically_stretchable = 'off',
+	parent = 'deep_frame_in_shallow_frame'
 }
 
 style.py_caravan_camera = {
@@ -37,22 +38,22 @@ style.py_empty_widget = {
 
 local button_style = style.button
 style.py_clicked_train_schedule_action_button = {
-  type = 'button_style',
-  parent = 'train_schedule_action_button',
-  default_font_color = button_style.selected_font_color,
-  default_graphical_set = button_style.selected_graphical_set,
-  hovered_font_color = button_style.selected_hovered_font_color,
-  hovered_graphical_set = button_style.selected_hovered_graphical_set,
-  clicked_font_color = button_style.selected_clicked_font_color,
-  clicked_graphical_set = button_style.selected_clicked_graphical_set
+	type = 'button_style',
+	parent = 'train_schedule_action_button',
+	default_font_color = button_style.selected_font_color,
+	default_graphical_set = button_style.selected_graphical_set,
+	hovered_font_color = button_style.selected_hovered_font_color,
+	hovered_graphical_set = button_style.selected_hovered_graphical_set,
+	clicked_font_color = button_style.selected_clicked_font_color,
+	clicked_graphical_set = button_style.selected_clicked_graphical_set
 }
 
 style.py_compact_notched_slider = {
-  type = 'slider_style',
-  parent = 'notched_slider',
-  horizontally_squashable = 'on',
-  natural_width = 400,
-  minimal_width = 20
+	type = 'slider_style',
+	parent = 'notched_slider',
+	horizontally_squashable = 'on',
+	natural_width = 400,
+	minimal_width = 20
 }
 
 style.py_compact_slider_value_textfield = {
@@ -99,4 +100,9 @@ style.red_back_button_unhoverable = {
 	parent = 'red_back_button',
 	hovered_graphical_set = style.red_back_button.default_graphical_set,
 	clicked_graphical_set = style.red_back_button.default_graphical_set
+}
+
+style.titlebar_search_textfield = {
+	type = 'textbox_style',
+	top_margin = -2
 }
