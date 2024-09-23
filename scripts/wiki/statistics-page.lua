@@ -100,7 +100,7 @@ local function calculate_statistics(player, include_laggy_calculations)
 	end
 
 	if include_laggy_calculations then
-		statistics.buildings_placed = surface.count_entities_filtered{force = force, collision_mask = 'object-layer'}
+		statistics.buildings_placed = surface.count_entities_filtered{force = force, collision_mask = 'object'}
 	end
 
 	statistics.active_mods = -1
