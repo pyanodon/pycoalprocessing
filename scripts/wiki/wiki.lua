@@ -59,8 +59,8 @@ function Wiki.open_wiki(player)
     py_wiki_search.style.width = 200
     py_wiki_search.visible = false
     py_wiki_search.text = storage.wiki_page_search_query[player.index] or ''
-    caption_flow.add{name = 'py_wiki_search_button', type = 'sprite-button', style = 'frame_action_button_always_on', sprite = 'utility/search_black'}.visible = false
-    caption_flow.add{name = 'py_close_wiki', type = 'sprite-button', style = 'frame_action_button', sprite = 'utility/close_white', hovered_sprite = 'utility/close_black', clicked_sprite = 'utility/close_black'}
+    caption_flow.add{name = 'py_wiki_search_button', type = 'sprite-button', style = 'frame_action_button_always_on', sprite = 'utility/search_icon'}.visible = false
+    caption_flow.add{name = 'py_close_wiki', type = 'sprite-button', style = 'frame_action_button', sprite = 'utility/close', hovered_sprite = 'utility/close_black', clicked_sprite = 'utility/close_black'}
 
 	local content_flow = main_frame.add{type = 'flow', name = 'content_flow', direction = 'horizontal'}
 	content_flow.style.horizontal_spacing = 8

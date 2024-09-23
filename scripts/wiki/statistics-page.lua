@@ -116,7 +116,7 @@ local function calculate_statistics(player, include_laggy_calculations)
 			local prototype = tech.prototype
 			if tech.enabled and not prototype.hidden and not prototype.research_unit_count_formula then
 				if tech.researched or tech.name == 'artillery-shell-range-13' then
-					statistics.recipes_unlocked = statistics.recipes_unlocked + #tech.effects
+					statistics.recipes_unlocked = statistics.recipes_unlocked + #tech.prototype.effects
 					unlocked_techs = unlocked_techs + 1
 				end
 				total_techs = total_techs + 1
@@ -126,7 +126,7 @@ local function calculate_statistics(player, include_laggy_calculations)
 		statistics.recipes_unlocked = comma_value(statistics.recipes_unlocked)
 	end
 
-	local item_production_statistics = force.item_production_statistics
+	local item_production_statistics = force.get_item_production_statistics(surface)
 	statistics.science_produced = 0
 	statistics.items_produced = 0
 	statistics.creatures_slaughtered = 0
@@ -150,7 +150,7 @@ local function calculate_statistics(player, include_laggy_calculations)
 
 	statistics.fluids_produced = 0
 	statistics.fluids_consumed = 0
-	local fluid_production_statistics = force.fluid_production_statistics
+	local fluid_production_statistics = force.get_fluid_production_statistics(surface)
 	for _, count in pairs(fluid_production_statistics.input_counts) do
 		statistics.fluids_produced = statistics.fluids_produced + count
 	end
@@ -160,20 +160,16 @@ local function calculate_statistics(player, include_laggy_calculations)
 	statistics.fluids_produced = comma_value(floor(statistics.fluids_produced))
 	statistics.fluids_consumed = comma_value(floor(statistics.fluids_consumed))
 
-	local enemy = game.forces['enemy']
-	statistics.evolution = floor(enemy.evolution_factor * 1000) / 10
-	statistics.evolution_factor_by_pollution = floor(enemy.evolution_factor_by_pollution * 1000) / 10
-	statistics.evolution_factor_by_killing_spawners = floor(enemy.evolution_factor_by_killing_spawners * 1000) / 10
-	statistics.evolution_factor_by_time = floor(enemy.evolution_factor_by_time * 1000) / 10
-
-	local kill_counts = force.kill_count_statistics
-	-- get input_counts for kills and losses
 	local kills, losses = 0, 0
-	for _, count in pairs(kill_counts.input_counts) do
-		kills = kills + count
-	end
-	for _, count in pairs(kill_counts.output_counts) do
-		losses = losses + count
+	for surface_index, _ in pairs(game.surfaces) do
+		local kill_counts = force.get_kill_count_statistics(surface_index)
+		-- get input_counts for kills and losses
+		for _, count in pairs(kill_counts.input_counts) do
+			kills = kills + count
+		end
+		for _, count in pairs(kill_counts.output_counts) do
+			losses = losses + count
+		end
 	end
 	statistics.losses = floor(losses)
 	statistics.kills = floor(kills)
@@ -186,7 +182,10 @@ local function calculate_statistics(player, include_laggy_calculations)
 
 	statistics.rockets_launched = comma_value(force.rockets_launched)
 
-	statistics.trains = #force.get_trains(surface)
+	statistics.trains = #game.train_manager.get_trains {
+		surface = surface,
+		force = force
+	}
 
 	if remote.interfaces['caravans'] then
 		statistics.caravans = remote.call('caravans', 'get_caravan_count')
@@ -222,7 +221,6 @@ local function update_statistics_page(gui, player, include_laggy_calculations)
 	add_statistic(gui, {'pywiki-statistics.items-consumed', statistics.items_consumed})
 	add_statistic(gui, {'pywiki-statistics.fluids-produced', statistics.fluids_produced})
 	add_statistic(gui, {'pywiki-statistics.fluids-consumed', statistics.fluids_consumed})
-	add_statistic(gui, {'pywiki-statistics.evolution', statistics.evolution, statistics.evolution_factor_by_pollution, statistics.evolution_factor_by_killing_spawners, statistics.evolution_factor_by_time})
 	add_statistic(gui, {'pywiki-statistics.kills', statistics.kills})
 	add_statistic(gui, {'pywiki-statistics.losses', statistics.losses})
 	add_statistic(gui, {'pywiki-statistics.pollution', statistics.pollution})
