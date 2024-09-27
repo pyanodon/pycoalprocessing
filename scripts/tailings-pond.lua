@@ -68,7 +68,7 @@ local function set_fluid_level_image(pond)
 	end
 	if fill_level == pond.fill_level then return end
 
-	if pond.sprite then rendering.destroy(pond.sprite) end
+	if pond.sprite then rendering.get_object_by_id(pond.sprite).destroy() end
 	local color
 	if pond.entity.fluidbox[1] then
 		color = prototypes.fluid[pond.entity.fluidbox[1].name].base_color
@@ -80,7 +80,7 @@ local function set_fluid_level_image(pond)
 		target_offset = {0, -0.5},
 		surface = pond.entity.surface,
 		tint = color or nil
-	}
+	}.id
 	pond.fill_level = fill_level
 end
 
