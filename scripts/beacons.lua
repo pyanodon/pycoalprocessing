@@ -68,7 +68,7 @@ local function enable_entity(entity)
 	local unit_number = entity.unit_number
 	local rendering_id = storage.beacon_interference_icons[unit_number]
 	if not rendering_id then return end
-	rendering.destroy(rendering_id)
+	rendering.get_object_by_id(rendering_id).destroy()
 	storage.beacon_interference_icons[unit_number] = nil
 end
 
@@ -86,7 +86,7 @@ local function disable_entity(entity)
 		y_scale = 0.5,
 		target = entity,
 		surface = entity.surface_index
-	}
+	}.id
 end
 
 ---@param reciver LuaEntity
