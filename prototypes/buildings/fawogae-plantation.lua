@@ -51,7 +51,6 @@ if mods.pyalienlife then
             base_level = -1,
             pipe_connections = {{flow_direction= 'input', position = {2.8, -0.5}, direction = defines.direction.south}}
         },
-        off_when_no_fluid_recipe = true
     }
 else
     fluid_boxes = {
@@ -63,7 +62,6 @@ else
             base_level = -1,
             pipe_connections = {{flow_direction= 'input', position = {-2.8, 0.5}, direction = defines.direction.north}}
         },
-        off_when_no_fluid_recipe = true
     }
 end
 
@@ -137,6 +135,7 @@ for i = 1, 4 do
                 }
             },
         },
+        fluid_boxes_off_when_no_fluid_recipe = true,
         fluid_boxes = fluid_boxes,
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.65},
         working_sound = {

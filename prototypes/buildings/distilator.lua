@@ -123,6 +123,7 @@ for i = 1, 4 do
                 },
             },
         },
+        fluid_boxes_off_when_no_fluid_recipe = true,
         fluid_boxes = {
             --North, left
             {
@@ -199,7 +200,6 @@ for i = 1, 4 do
                 pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.00, -0.95}, nil, nil),
                 pipe_connections = {{flow_direction = 'output', position = {3.9, 3.5}, direction = defines.direction.east}}
             },
-            off_when_no_fluid_recipe = true
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.65},
         working_sound = {
