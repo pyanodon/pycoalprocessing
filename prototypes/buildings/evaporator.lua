@@ -156,7 +156,7 @@ for i = 1, 4 do
                 pipe_picture = pipe_picture,
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {2.4, 0.0}, direction = defines.direction.east}}
+                pipe_connections = {{flow_direction = 'input', position = {2.0, 0.0}, direction = defines.direction.east}}
             },
             {
                 production_type = 'input',
@@ -164,21 +164,21 @@ for i = 1, 4 do
                 pipe_picture = pipe_picture,
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {0.0, 2.4}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = 'input', position = {0.0, 2.0}, direction = defines.direction.south}}
             },
             {
                 production_type = 'output',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {-2.4, 0.0}, direction = defines.direction.west}}
+                pipe_connections = {{flow_direction = 'output', position = {-2.0, 0.0}, direction = defines.direction.west}}
             },
             {
                 production_type = 'output',
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {0.0, -2.4}, direction = defines.direction.north}}
+                pipe_connections = {{flow_direction = 'output', position = {0.0, -2.0}, direction = defines.direction.north}}
             },
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.65},
