@@ -36,7 +36,7 @@ if mods.pyalienlife then
             pipe_covers = py.pipe_covers(true, true, true, true),
             volume = 1000,
             base_level = -1,
-            pipe_connections = {{flow_direction= 'input', position = {0.0, 3.2}, direction = defines.direction.east}}
+            pipe_connections = {{flow_direction= 'input', position = {0.0, 3.0}, direction = defines.direction.south}}
         },
         {
             production_type = 'input',
@@ -44,7 +44,7 @@ if mods.pyalienlife then
             pipe_covers = py.pipe_covers(true, true, true, true),
             volume = 1000,
             base_level = -1,
-            pipe_connections = {{flow_direction= 'input', position = {0.0, -3.2}, direction = defines.direction.west}}
+            pipe_connections = {{flow_direction= 'input', position = {0.0, -3.0}, direction = defines.direction.north}}
         },
         {
             production_type = 'input',
@@ -52,14 +52,14 @@ if mods.pyalienlife then
             pipe_picture = py.pipe_pictures('assembling-machine-3', {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
             volume = 1000,
             base_level = -1,
-            pipe_connections = {{flow_direction= 'input', position = {-3.2, 0.0}, direction = defines.direction.north}}
+            pipe_connections = {{flow_direction= 'input', position = {-3.0, 0.0}, direction = defines.direction.west}}
         },
         {
             production_type = 'output',
             pipe_covers = py.pipe_covers(false, true, true, true),
             pipe_picture = py.pipe_pictures('assembling-machine-3', {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
             volume = 100,
-            pipe_connections = {{flow_direction= 'output', position = {3.2, 0.0}, direction = defines.direction.south}}
+            pipe_connections = {{flow_direction= 'output', position = {3.0, 0.0}, direction = defines.direction.east}}
         },
     }
 else
@@ -71,7 +71,7 @@ else
             pipe_covers = py.pipe_covers(true, true, true, true),
             volume = 1000,
             base_level = -1,
-            pipe_connections = {{flow_direction= 'input', position = {0.0, 3.2}, direction = defines.direction.east}}
+            pipe_connections = {{flow_direction= 'input', position = {0.0, 3.0}, direction = defines.direction.south}}
         },
         {
             production_type = 'input',
@@ -79,7 +79,7 @@ else
             pipe_covers = py.pipe_covers(true, true, true, true),
             volume = 1000,
             base_level = -1,
-            pipe_connections = {{flow_direction= 'input', position = {0.0, -3.2}, direction = defines.direction.east}}
+            pipe_connections = {{flow_direction= 'input', position = {0.0, -3.0}, direction = defines.direction.north}}
         },
     }
 end

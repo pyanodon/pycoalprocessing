@@ -79,7 +79,7 @@ ENTITY{
                         height = 128,
                         width = 128,
                         scale = 0.5,
-                        shift = {0, -0.25},
+                        shift = {0, -0.09},
                         priority = 'extra-high',
                     },
                     {
@@ -87,7 +87,7 @@ ENTITY{
                         height = 128,
                         width = 128,
                         scale = 0.5,
-                        shift = {0, -0.25},
+                        shift = {0, -0.09},
                         priority = 'extra-high',
                         draw_as_shadow = true
                     }
@@ -98,7 +98,7 @@ ENTITY{
                 width = 128,
                 height = 128,
                 scale = 0.5,
-                shift = {-0.5, 0}
+                shift = {-0.61, 0},
             },
             south = {
                 layers = {
@@ -107,7 +107,7 @@ ENTITY{
                         height = 128,
                         width = 128,
                         scale = 0.5,
-                        shift = {0, -0.7},
+                        shift = {0, -0.9},
                         priority = 'extra-high',
                     },
                     {
@@ -115,7 +115,7 @@ ENTITY{
                         height = 128,
                         width = 128,
                         scale = 0.5,
-                        shift = {0, -0.7},
+                        shift = {0, -0.9},
                         priority = 'extra-high',
                         draw_as_shadow = true
                     }
@@ -133,7 +133,6 @@ ENTITY{
                         height = 128,
                         width = 128,
                         scale = 0.5,
-                        shift = {0, 0.5},
                         priority = 'extra-high',
                     },
                     {
@@ -141,7 +140,6 @@ ENTITY{
                         height = 128,
                         width = 128,
                         scale = 0.5,
-                        shift = {0, 0.5},
                         priority = 'extra-high',
                         draw_as_shadow = true
                     }
@@ -154,7 +152,6 @@ ENTITY{
                         height = 128,
                         width = 128,
                         scale = 0.5,
-                        shift = {-0.3, 0},
                         priority = 'extra-high',
                     },
                     {
@@ -162,7 +159,6 @@ ENTITY{
                         height = 128,
                         width = 128,
                         scale = 0.5,
-                        shift = {-0.3, 0},
                         priority = 'extra-high',
                         draw_as_shadow = true
                     }
@@ -173,17 +169,17 @@ ENTITY{
         {
             -- We offset a little on the east side because of the asymmetric model
             -- NNE
-            {direction = defines.direction.north, position = {1.5, -8.9} },
-            {direction = defines.direction.north, position = {2.5, -8.9} },
+            {direction = defines.direction.north, position = {1.5, -8.5} },
+            {direction = defines.direction.north, position = {2.5, -8.5} },
             -- ESE
-            {direction = defines.direction.east, position = {8.9, 1.5} },
-            {direction = defines.direction.east, position = {8.9, 2.5} },
+            {direction = defines.direction.east, position = {8.5, 1.5} },
+            {direction = defines.direction.east, position = {8.5, 2.5} },
             -- SSW
-            {direction = defines.direction.south, position = {-1.5, 8.9} },
-            {direction = defines.direction.south, position = {-2.5, 8.9} },
+            {direction = defines.direction.south, position = {-1.5, 8.5} },
+            {direction = defines.direction.south, position = {-2.5, 8.5} },
             -- WNW
-            {direction = defines.direction.west, position = {-8.9, -1.5} },
-            {direction = defines.direction.west, position = {-8.9, -2.5} },
+            {direction = defines.direction.west, position = {-8.5, -1.5} },
+            {direction = defines.direction.west, position = {-8.5, -2.5} },
         },
         hide_connection_info = false
     },
