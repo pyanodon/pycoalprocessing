@@ -15,10 +15,13 @@ end
 require 'prototypes/map-gen-presets'
 
 -- Updating requester paste setting
-if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].value ~= 30 or settings.startup['overload'].value ~= 0 then
+local rpm_entity = tonumber(settings.startup['rpm_entity'].value)
+local rpm_items = tonumber(settings.startup['rpm_items'].value)
+local overload = tonumber(settings.startup['overload'].value)
+if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
     --log("Updating recipe requester paste values")
     --These types (data.raw[entity_type]) are placeable entities
-    local entity_types = {'accumulator', 'artillery-turret', 'beacon', 'boiler', 'burner-generator', 'character', 'arithmetic-combinator', 'decider-combinator', 'constant-combinator', 'container', 'logistic-container', 'infinity-container', 'assembling-machine', 'rocket-silo', 'furnace', 'electric-energy-interface', 'electric-pole', 'unit-spawner', 'fish', 'combat-robot', 'construction-robot', 'logistic-robot', 'gate', 'generator', 'heat-interface', 'heat-pipe', 'inserter', 'lab', 'lamp', 'land-mine', 'linked-container', 'market', 'mining-drill', 'offshore-pump', 'pipe', 'infinity-pipe', 'pipe-to-ground', 'player-port', 'power-switch', 'programmable-speaker', 'pump', 'radar', 'curved-rail', 'straight-rail', 'rail-chain-signal', 'rail-signal', 'reactor', 'roboport', 'simple-entity', 'simple-entity-with-owner', 'simple-entity-with-force', 'solar-panel', 'spider-leg', 'storage-tank', 'train-stop', 'linked-belt', 'loader-1x1', 'loader', 'splitter', 'transport-belt', 'underground-belt', 'tree', 'turret', 'ammo-turret', 'electric-turret', 'fluid-turret', 'unit', 'car', 'artillery-wagon', 'cargo-wagon', 'fluid-wagon', 'locomotive', 'spider-vehicle', 'wall'}
+    local entity_types = defines.prototypes.entity
     -- We store the result of each lookup so we don't have to do it again
     -- When iterating *the entire recipe table X every individual result* this is worthwhile!
     local valid_entities = {}
@@ -34,7 +37,7 @@ if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].v
             end
             -- Valid entity?
             for _, type_name in pairs(entity_types) do
-                if data.raw[type_name][index] then
+                if data.raw[type_name] and data.raw[type_name][index] then
                     rawset(self, index, true)
                     return true
                 end
@@ -46,24 +49,17 @@ if settings.startup['rpm_entity'].value ~= 30 or settings.startup['rpm_items'].v
     })
 
     for _, recipe in pairs(data.raw.recipe) do
-        for _, result_table in pairs({
-            recipe.result and {recipe.result},
-            recipe.results,
-            recipe.normal and (recipe.normal.results or {recipe.normal.result}),
-            recipe.expensive and (recipe.expensive.results or {recipe.expensive.result})
-        }) do
-            for _, result in pairs(result_table) do -- This looks long, however we skip a lot of the logic with caching
-                local result_name = result[1] or result.name
-                if result_name and valid_entities[result_name] then
-                    --log("Set multiplier for " .. recipe.name .. " (" .. result_name .. ")")
-                    recipe.requester_paste_multiplier = settings.startup['rpm_entity'].value
-                    recipe.overload_multiplier = settings.startup['overload'].value
-                    goto continue
-                end
+        for _, result in pairs(recipe.results) do -- This looks long, however we skip a lot of the logic with caching
+            local result_name = result[1] or result.name
+            if result_name and valid_entities[result_name] then
+                --log("Set multiplier for " .. recipe.name .. " (" .. result_name .. ")")
+                recipe.requester_paste_multiplier = tonumber(rpm_entity)
+                recipe.overload_multiplier = tonumber(overload)
+                goto continue
             end
         end
-        recipe.requester_paste_multiplier = settings.startup['rpm_items'].value
-        recipe.overload_multiplier = settings.startup['overload'].value
+        recipe.requester_paste_multiplier = tonumber(rpm_items)
+        recipe.overload_multiplier = tonumber(overload)
         ::continue::
     end
 end
