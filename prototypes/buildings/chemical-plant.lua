@@ -230,7 +230,7 @@ for i = 1, 4 do
                 pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {4.0, -4.3}, direction = defines.direction.north}}
+                pipe_connections = {{flow_direction = 'output', position = {4.0, -4.0}, direction = defines.direction.north}}
             },
             --North2
             {
@@ -238,7 +238,7 @@ for i = 1, 4 do
                 pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {0.0, -4.3}, direction = defines.direction.north}}
+                pipe_connections = {{flow_direction = 'output', position = {0.0, -4.0}, direction = defines.direction.north}}
             },
             --North3
             {
@@ -246,7 +246,7 @@ for i = 1, 4 do
                 pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {2.0, -4.3}, direction = defines.direction.north}}
+                pipe_connections = {{flow_direction = 'output', position = {2.0, -4.0}, direction = defines.direction.north}}
             },
             --South3
             {
@@ -255,7 +255,7 @@ for i = 1, 4 do
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {0.0, 4.3}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = 'input', position = {0.0, 4.0}, direction = defines.direction.south}}
             },
             --South
             {
@@ -264,7 +264,7 @@ for i = 1, 4 do
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {2.0, 4.3}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = 'input', position = {2.0, 4.0}, direction = defines.direction.south}}
             },
             --South2
             {
@@ -273,7 +273,7 @@ for i = 1, 4 do
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {4.0, 4.3}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = 'input', position = {4.0, 4.0}, direction = defines.direction.south}}
             },
         },
         vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.55},
