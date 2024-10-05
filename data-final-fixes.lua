@@ -36,7 +36,7 @@ if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
                 return true
             end
             -- Valid entity?
-            for _, type_name in pairs(entity_types) do
+            for type_name, _ in pairs(entity_types) do
                 if data.raw[type_name] and data.raw[type_name][index] then
                     rawset(self, index, true)
                     return true
