@@ -96,8 +96,8 @@ py.on_event(defines.events.on_player_created, function(event)
 	Wiki.events.on_player_created(event)
 end)
 
-py.on_nth_tick(153, Pond.events[153])
-py.on_nth_tick(154, Pond.events[154])
+py.register_on_nth_tick(153, "pond153", "pycp", Pond.events[153])
+py.register_on_nth_tick(154, "pond154", "pycp", Pond.events[154])
 
 -- grumble grumble filters apply for the whole mod
 for _, event in pairs({defines.events.on_built_entity, defines.events.on_robot_built_entity, defines.events.script_raised_built, defines.events.script_raised_revive}) do
@@ -123,5 +123,12 @@ for _, event in pairs({defines.events.on_built_entity, defines.events.on_robot_b
 		},
 	})
 end
+
+remote.add_interface("pycp", {
+    ---@param func string
+    execute_on_nth_tick = function(func)
+        py.mod_nth_tick_funcs[func]()
+    end
+})
 
 py.finalize_events()
