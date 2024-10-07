@@ -253,3 +253,27 @@ for _, ore in pairs({'iron-ore', 'copper-ore', 'coal', 'stone', 'uranium-ore'}) 
     end
 end
 ]]--
+
+local rail_ramp = RECIPE('rail-ramp')
+if rail_ramp then
+    rail_ramp:add_ingredient {'solder', 10}
+    rail_ramp:add_ingredient {'bolts', 10}
+    rail_ramp:add_ingredient {'intermetallics', 10}
+end
+local rail_support = RECIPE('rail-support')
+if rail_support then
+    rail_support:add_ingredient {'solder', 10}
+    rail_support:add_ingredient {'bolts', 10}
+    rail_support:add_ingredient {'intermetallics', 10}
+end
+
+local elevated_rails_tech = TECHNOLOGY('elevated-rail')
+if elevated_rails_tech then
+    elevated_rails_tech:remove_pack('production-science-pack')
+    elevated_rails_tech:remove_pack('chemical-science-pack')
+    elevated_rails_tech:remove_prereq('production-science-pack')
+    elevated_rails_tech:add_prereq('automated-rail-transportation')
+end
+
+TECHNOLOGY('fluid-wagon'):remove_pack('logistic-science-pack')
+TECHNOLOGY('automated-rail-transportation'):remove_pack('logistic-science-pack')
