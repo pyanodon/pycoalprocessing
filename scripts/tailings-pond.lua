@@ -68,7 +68,10 @@ local function set_fluid_level_image(pond)
 	end
 	if fill_level == pond.fill_level then return end
 
-	if pond.sprite then rendering.get_object_by_id(pond.sprite).destroy() end
+	if pond.sprite then
+		local pond_sprite = rendering.get_object_by_id(pond.sprite)
+		if pond_sprite then pond_sprite.destroy() end
+	end
 	local color
 	if pond.entity.fluidbox[1] then
 		color = prototypes.fluid[pond.entity.fluidbox[1].name].base_color
