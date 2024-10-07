@@ -121,10 +121,10 @@ style.window_content_frame_packed = {
 	}
 }
 
-style.window_content_frame ={
+style.window_content_frame = {
 	type = 'frame_style',
 	padding = 4,
-	graphical_set =	{
+	graphical_set = {
 		base = {
 			position = {17, 0},
 			corner_size = 8,
@@ -133,4 +133,27 @@ style.window_content_frame ={
 		},
 		shadow = default_inner_shadow
 	}
+}
+
+style.filter_group_table = {
+	type = 'table_style',
+	horizontal_spacing = 0,
+	vertical_spacing = 0,
+	padding = 0,
+	background_graphical_set = {
+		position = {282, 17},
+		corner_size = 8,
+		overall_tiling_vertical_size = 48,
+		overall_tiling_vertical_spacing = 24,
+		overall_tiling_vertical_padding = 12,
+		overall_tiling_horizontal_size = 48,
+		overall_tiling_horizontal_spacing = 23,
+		overall_tiling_horizontal_padding = 12
+	}
+}
+
+style.centering_horizontal_flow = {
+	type = 'horizontal_flow_style',
+	vertical_align = 'center',
+	horizontal_align = 'center'
 }
