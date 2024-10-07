@@ -123,3 +123,23 @@ data:extend {{
 	scale = 0.5,
 	flags = {'gui-icon'}
 }}
+
+data:extend{{
+	type = 'sprite',
+	name = 'rename_icon_small_black',
+	filename = '__pycoalprocessinggraphics__/graphics/gui/rename-small-black.png',
+	priority = 'high',
+	width = 16,
+	height = 16,
+	flags = {'icon'}
+}}
+
+data:extend{{
+	type = 'sprite',
+	name = 'rename_icon_small_white',
+	filename = '__pycoalprocessinggraphics__/graphics/gui/rename-small-white.png',
+	priority = 'high',
+	width = 16,
+	height = 16,
+	flags = {'icon'}
+}}
