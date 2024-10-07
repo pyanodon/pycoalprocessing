@@ -68,7 +68,8 @@ local function enable_entity(entity)
 	local unit_number = entity.unit_number
 	local rendering_id = storage.beacon_interference_icons[unit_number]
 	if not rendering_id then return end
-	rendering.get_object_by_id(rendering_id).destroy()
+	local rendering_object = rendering.get_object_by_id(rendering_id)
+	if rendering_object then rendering_object.destroy() end
 	storage.beacon_interference_icons[unit_number] = nil
 end
 
