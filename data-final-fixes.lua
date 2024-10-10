@@ -1,23 +1,23 @@
 if not mods.pyalternativeenergy then
     for _, recipe in pairs(data.raw.recipe) do
-        if not recipe.localised_name and recipe.category == 'combustion' and not recipe.name:find('%-biomass$') then
+        if not recipe.localised_name and recipe.category == "combustion" and not recipe.name:find("%-biomass$") then
             local temp
             for _, result in pairs(recipe.results) do
-                if result.name == 'combustion-mixture1' then
+                if result.name == "combustion-mixture1" then
                     temp = result.temperature
                 end
             end
-            recipe.localised_name = {'recipe-name.' .. recipe.name, tostring(temp)}
+            recipe.localised_name = {"recipe-name." .. recipe.name, tostring(temp)}
         end
     end
 end
 
-require 'prototypes/map-gen-presets'
+require "prototypes/map-gen-presets"
 
 -- Updating requester paste setting
-local rpm_entity = tonumber(settings.startup['rpm_entity'].value)
-local rpm_items = tonumber(settings.startup['rpm_items'].value)
-local overload = tonumber(settings.startup['overload'].value)
+local rpm_entity = tonumber(settings.startup["rpm_entity"].value)
+local rpm_items = tonumber(settings.startup["rpm_items"].value)
+local overload = tonumber(settings.startup["overload"].value)
 if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
     --log("Updating recipe requester paste values")
     --These types (data.raw[entity_type]) are placeable entities
@@ -67,7 +67,7 @@ end
 data.raw["utility-constants"].default.minimum_recipe_overload_multiplier = 1
 
 for _, recipe in pairs(data.raw.recipe) do
-    if recipe.category == 'tar' and not recipe.crafting_machine_tint then
-        error('Recipe ' .. recipe.name .. ' is missing crafting_machine_tint. Please fill out this field.')
+    if recipe.category == "tar" and not recipe.crafting_machine_tint then
+        error("Recipe " .. recipe.name .. " is missing crafting_machine_tint. Please fill out this field.")
     end
 end

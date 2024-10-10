@@ -10,7 +10,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "niobium-powder", amount = 5},
-        {type = "item", name = "stone", amount = 2}
+        {type = "item", name = "stone",          amount = 2}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/crush-niobium.png",
     icon_size = 32,
@@ -31,7 +31,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "crushed-iron", amount = 5},
-        {type = "item", name = "stone", amount = 1}
+        {type = "item", name = "stone",        amount = 1}
     },
     main_product = "crushed-iron",
     icon = "__pycoalprocessinggraphics__/graphics/icons/crush-iron.png",
@@ -52,7 +52,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "crushed-copper", amount = 5},
-        {type = "item", name = "stone", amount = 1}
+        {type = "item", name = "stone",          amount = 1}
     },
     main_product = "crushed-copper",
     icon = "__pycoalprocessinggraphics__/graphics/icons/crush-copper.png",

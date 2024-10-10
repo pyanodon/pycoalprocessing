@@ -5,9 +5,9 @@ RECIPE {
     enabled = false,
     energy_required = 3.5,
     ingredients = {
-        {type = "fluid", name = "organic-solvent", amount = 50},
-        {type = "fluid", name = "water", amount = 100},
-        {type = "item", name = "niobium-concentrate", amount = 10}
+        {type = "fluid", name = "organic-solvent",     amount = 50},
+        {type = "fluid", name = "water",               amount = 100},
+        {type = "item",  name = "niobium-concentrate", amount = 10}
     },
     results = {
         {type = "fluid", name = "niobium-complex", amount = 100}

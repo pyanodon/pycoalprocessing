@@ -8,8 +8,8 @@ RECIPE {
         {type = "item", name = "sand", amount = 15}
     },
     results = {
-        {type = "item", name = "rich-dust", amount = 10},
-        {type = "item", name = "gravel", amount = 2},
+        {type = "item", name = "rich-dust",      amount = 10},
+        {type = "item", name = "gravel",         amount = 2},
         {type = "item", name = "crushed-quartz", amount = 10}
     },
     main_product = "rich-dust",
@@ -29,9 +29,9 @@ RECIPE {
         {type = "item", name = "coarse", amount = 20}
     },
     results = {
-        {type = "item", name = "stone", amount = 5},
+        {type = "item", name = "stone",      amount = 5},
         {type = "item", name = "iron-oxide", amount = 2},
-        {type = "item", name = "gravel", amount = 4}
+        {type = "item", name = "gravel",     amount = 4}
     },
     main_product = "gravel",
     icon = "__pycoalprocessinggraphics__/graphics/icons/class-coarse.png",
@@ -50,9 +50,9 @@ RECIPE {
         {type = "item", name = "tailings-dust", amount = 15}
     },
     results = {
-        {type = "item", name = "coal-dust", amount = 5},
+        {type = "item", name = "coal-dust",  amount = 5},
         {type = "item", name = "copper-ore", amount = 1},
-        {type = "item", name = "iron-ore", amount = 1}
+        {type = "item", name = "iron-ore",   amount = 1}
     },
     main_product = "coal-dust",
     icon = "__pycoalprocessinggraphics__/graphics/icons/class-tailings.png",
@@ -90,10 +90,10 @@ RECIPE {
         {type = "item", name = "soil", amount = 20}
     },
     results = {
-        {type = "item", name = "sand", amount = 13},
-        {type = "item", name = "coarse", amount = 3},
+        {type = "item", name = "sand",      amount = 13},
+        {type = "item", name = "coarse",    amount = 3},
         {type = "item", name = "limestone", amount = 2},
-        {type = "item", name = "organics", amount = 3}
+        {type = "item", name = "organics",  amount = 3}
     },
     main_product = "sand",
     icon = "__pycoalprocessinggraphics__/graphics/icons/soil-separation.png",
@@ -154,7 +154,7 @@ RECIPE {
         {type = "item", name = "ash", amount = 10}
     },
     results = {
-        {type = "item", name = "coal-dust", amount = 1, probability = 0.5},
+        {type = "item", name = "coal-dust",  amount = 1, probability = 0.5},
         {type = "item", name = "iron-oxide", amount = 1, probability = 0.05}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/ash-separation.png",

@@ -13,12 +13,12 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "storage-tank", amount = 1},
-        {type = "item", name = "pump", amount = 2},
+        {type = "item", name = "storage-tank",     amount = 1},
+        {type = "item", name = "pump",             amount = 2},
         {type = "item", name = "advanced-circuit", amount = 5},
-        {type = "item", name = "pipe", amount = 30}, --bob copper-pipe
-        {type = "item", name = "iron-plate", amount = 30}, --bob brass-allloy
-        {type = "item", name = "concrete", amount = 50}
+        {type = "item", name = "pipe",             amount = 30}, --bob copper-pipe
+        {type = "item", name = "iron-plate",       amount = 30}, --bob brass-allloy
+        {type = "item", name = "concrete",         amount = 50}
     },
     results = {
         {type = "item", name = "cooling-tower-mk02", amount = 1}

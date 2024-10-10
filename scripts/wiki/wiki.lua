@@ -1,12 +1,12 @@
 Wiki = {}
 Wiki.events = {}
 
-local mod_gui = require 'mod-gui'
+local mod_gui = require "mod-gui"
 
 function Wiki.create_pywiki_button(player)
     local flow = mod_gui.get_button_flow(player)
     if flow.py_open_wiki then return end
-    flow.add{type = 'sprite-button', name = 'py_open_wiki', sprite = 'pywiki'}
+    flow.add {type = "sprite-button", name = "py_open_wiki", sprite = "pywiki"}
 end
 
 Wiki.events.on_player_created = function(event)
@@ -18,18 +18,32 @@ function Wiki.get_wiki_gui(player)
     if not pywiki then return end
     return pywiki.pywiki or pywiki
 end
-function Wiki.get_pages(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.py_pages_list end end
-function Wiki.get_page_contents(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.page_frame.scroll_pane end end
-function Wiki.get_page_title(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.caption_flow then return gui.caption_flow.title end end
-function Wiki.get_page_searchbar(player) local gui = Wiki.get_wiki_gui(player); if gui and gui.caption_flow then return gui.caption_flow.py_wiki_search end end
+
+function Wiki.get_pages(player)
+    local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.py_pages_list end
+end
+
+function Wiki.get_page_contents(player)
+    local gui = Wiki.get_wiki_gui(player); if gui and gui.content_flow then return gui.content_flow.page_frame.scroll_pane end
+end
+
+function Wiki.get_page_title(player)
+    local gui = Wiki.get_wiki_gui(player); if gui and gui.caption_flow then return gui.caption_flow.title end
+end
+
+function Wiki.get_page_searchbar(player)
+    local gui = Wiki.get_wiki_gui(player); if gui and gui.caption_flow then return gui.caption_flow.py_wiki_search end
+end
 
 function Wiki.open_wiki(player)
     local empty_widgets = {}
 
     player.opened = nil
-    local pywiki = player.gui.screen.add{type = 'frame', name = 'pywiki', direction = 'vertical', style = 'invisible_frame'}
+    local pywiki = player.gui.screen.add {type = "frame", name = "pywiki", direction = "vertical", style = "invisible_frame"}
     player.opened = pywiki
-    if not pywiki.valid then game.print('ERROR: The pY codex failed to open.'); return end
+    if not pywiki.valid then
+        game.print("ERROR: The pY codex failed to open."); return
+    end
     pywiki.style.padding = 24
     pywiki.style.horizontally_squashable = true
     pywiki.style.horizontally_stretchable = false
@@ -37,56 +51,56 @@ function Wiki.open_wiki(player)
     pywiki.style.vertically_stretchable = false
     pywiki.style.natural_width = 65535
     pywiki.style.natural_height = 65535
-    
-    local main_frame = pywiki.add{type = 'frame', name = 'pywiki', direction = 'vertical'}
+
+    local main_frame = pywiki.add {type = "frame", name = "pywiki", direction = "vertical"}
 
     for _, widget in pairs(empty_widgets) do
         widget.style.size = 24
         widget.ignored_by_interaction = true
     end
 
-    local caption_flow = main_frame.add{type = 'flow', direction = 'horizontal', name = 'caption_flow'}
-    caption_flow.style.vertical_align = 'center'
+    local caption_flow = main_frame.add {type = "flow", direction = "horizontal", name = "caption_flow"}
+    caption_flow.style.vertical_align = "center"
     caption_flow.style.horizontal_spacing = 10
-    caption_flow.add{type = 'sprite', sprite = 'pywiki-alt', resize_to_sprite = false}.style.size = {32, 32}
-    caption_flow.add{name = 'title', type = 'label', caption = {'pywiki-sections.title'}, style = 'frame_title', ignored_by_interaction = true}
-    local caption_spacing = caption_flow.add{type = 'empty-widget', style = 'draggable_space_header', ignored_by_interaction = true}
+    caption_flow.add {type = "sprite", sprite = "pywiki-alt", resize_to_sprite = false}.style.size = {32, 32}
+    caption_flow.add {name = "title", type = "label", caption = {"pywiki-sections.title"}, style = "frame_title", ignored_by_interaction = true}
+    local caption_spacing = caption_flow.add {type = "empty-widget", style = "draggable_space_header", ignored_by_interaction = true}
     caption_spacing.style.height = 24
     caption_spacing.style.right_margin = 4
     caption_spacing.style.horizontally_stretchable = true
-    local py_wiki_search = caption_flow.add{name = 'py_wiki_search', type = 'textfield', style = 'titlebar_search_textfield', clear_and_focus_on_right_click = true}
+    local py_wiki_search = caption_flow.add {name = "py_wiki_search", type = "textfield", style = "titlebar_search_textfield", clear_and_focus_on_right_click = true}
     py_wiki_search.style.right_margin = -5
     py_wiki_search.style.width = 200
     py_wiki_search.visible = false
-    py_wiki_search.text = storage.wiki_page_search_query[player.index] or ''
-    caption_flow.add{name = 'py_wiki_search_button', type = 'sprite-button', style = 'frame_action_button_always_on', sprite = 'utility/search_icon'}.visible = false
-    caption_flow.add{name = 'py_close_wiki', type = 'sprite-button', style = 'frame_action_button', sprite = 'utility/close', hovered_sprite = 'utility/close_black', clicked_sprite = 'utility/close_black'}
+    py_wiki_search.text = storage.wiki_page_search_query[player.index] or ""
+    caption_flow.add {name = "py_wiki_search_button", type = "sprite-button", style = "frame_action_button_always_on", sprite = "utility/search_icon"}.visible = false
+    caption_flow.add {name = "py_close_wiki", type = "sprite-button", style = "frame_action_button", sprite = "utility/close", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black"}
 
-	local content_flow = main_frame.add{type = 'flow', name = 'content_flow', direction = 'horizontal'}
-	content_flow.style.horizontal_spacing = 8
+    local content_flow = main_frame.add {type = "flow", name = "content_flow", direction = "horizontal"}
+    content_flow.style.horizontal_spacing = 8
 
     local items = {}
     local contents = {}
     for _, page in pairs(storage.wiki_pages) do
         if page.is_section then
-            items[#items + 1] = {'', '[font=default-semibold][color=255,230,192]', {'pywiki-sections.' .. page.name}, '[/color][/font]'}
+            items[#items + 1] = {"", "[font=default-semibold][color=255,230,192]", {"pywiki-sections." .. page.name}, "[/color][/font]"}
             contents[#contents + 1] = page
             for _, page in pairs(page.pages) do
-                items[#items + 1] = {'', '\t\t', {'pywiki-sections.' .. page.name}}
+                items[#items + 1] = {"", "\t\t", {"pywiki-sections." .. page.name}}
                 contents[#contents + 1] = page
             end
         else
-            items[#items + 1] = {'pywiki-sections.' .. page.name}
+            items[#items + 1] = {"pywiki-sections." .. page.name}
             contents[#contents + 1] = page
         end
     end
-    local pages = content_flow.add{type = 'list-box', items = items, name = 'py_pages_list'}
+    local pages = content_flow.add {type = "list-box", items = items, name = "py_pages_list"}
     pages.style.vertically_stretchable = true
     pages.style.width = 240
     pages.tags = {contents = contents}
 
-    local page_frame = content_flow.add{type = 'frame', name = 'page_frame', direction = 'vertical', style = 'inside_deep_frame'}
-    local scroll_pane = page_frame.add{type = 'scroll-pane', name = 'scroll_pane', horizontal_scroll_policy = 'never', vertical_scroll_policy = 'auto-and-reserve-space', style = 'text_holding_scroll_pane'}
+    local page_frame = content_flow.add {type = "frame", name = "page_frame", direction = "vertical", style = "inside_deep_frame"}
+    local scroll_pane = page_frame.add {type = "scroll-pane", name = "scroll_pane", horizontal_scroll_policy = "never", vertical_scroll_policy = "auto-and-reserve-space", style = "text_holding_scroll_pane"}
     scroll_pane.style.horizontally_stretchable = true
     scroll_pane.style.vertically_stretchable = true
 
@@ -108,7 +122,7 @@ function Wiki.close_wiki(player)
     main_frame.parent.destroy()
 end
 
-gui_events[defines.events.on_gui_click]['py_open_wiki'] = function(event)
+gui_events[defines.events.on_gui_click]["py_open_wiki"] = function(event)
     local player = game.get_player(event.player_index)
     if Wiki.get_wiki_gui(player) then
         Wiki.close_wiki(player)
@@ -119,12 +133,12 @@ end
 
 local close_wiki = function(event) Wiki.close_wiki(game.get_player(event.player_index)) end
 Wiki.events.on_gui_closed = close_wiki
-gui_events[defines.events.on_gui_click]['py_close_wiki'] = close_wiki
+gui_events[defines.events.on_gui_click]["py_close_wiki"] = close_wiki
 
 function Wiki.add_page(args)
-    local name = args.name or error('Required parameter missing: name')
+    local name = args.name or error("Required parameter missing: name")
     storage.wiki_pages = storage.wiki_pages or {}
-    
+
     if not args.section then
         storage.wiki_pages[name] = args
     else
@@ -133,7 +147,7 @@ function Wiki.add_page(args)
 end
 
 function Wiki.add_section(name)
-    Wiki.add_page{
+    Wiki.add_page {
         pages = {},
         name = name,
         is_section = true
@@ -167,8 +181,8 @@ function Wiki.open_page(player, index)
 
     if previous_index == index and #contents.children ~= 0 then return end
 
-    local localised_title = {'pywiki-sections.' .. (page_data.title or page_data.name)}
-    title.caption = {'pywiki-sections.title-2', localised_title}
+    local localised_title = {"pywiki-sections." .. (page_data.title or page_data.name)}
+    title.caption = {"pywiki-sections.title-2", localised_title}
 
     contents.clear()
     storage.currently_opened_wiki_page[player.index] = index
@@ -178,7 +192,7 @@ function Wiki.open_page(player, index)
     main_frame.caption_flow.py_wiki_search_button.visible = visible
 
     if page_data.text_only then
-        local label = contents.add{type = 'label', caption = {'pywiki-descriptions.' .. page_data.name}, style = 'label_with_left_padding', ignored_by_interaction = false}
+        local label = contents.add {type = "label", caption = {"pywiki-descriptions." .. page_data.name}, style = "label_with_left_padding", ignored_by_interaction = false}
         label.style.single_line = false
         label.style.rich_text_setting = defines.rich_text_setting.highlight
     elseif page_data.remote then
@@ -186,7 +200,7 @@ function Wiki.open_page(player, index)
     end
 end
 
-gui_events[defines.events.on_gui_selection_state_changed]['py_pages_list'] = function(event)
+gui_events[defines.events.on_gui_selection_state_changed]["py_pages_list"] = function(event)
     local player = game.get_player(event.player_index)
     local previously_opened = storage.currently_opened_wiki_page[event.player_index]
     local index = event.element.selected_index
@@ -194,7 +208,7 @@ gui_events[defines.events.on_gui_selection_state_changed]['py_pages_list'] = fun
     Wiki.open_page(player, index)
 end
 
-gui_events[defines.events.on_gui_text_changed]['py_wiki_search'] = function(event)
+gui_events[defines.events.on_gui_text_changed]["py_wiki_search"] = function(event)
     local player = game.get_player(event.player_index)
     local contents = Wiki.get_page_contents(player)
     if not contents then return end
@@ -209,7 +223,7 @@ gui_events[defines.events.on_gui_text_changed]['py_wiki_search'] = function(even
     storage.wiki_page_search_query[player.index] = search_query
 end
 
-remote.add_interface('pywiki', {
+remote.add_interface("pywiki", {
     add_page = Wiki.add_page,
     add_section = Wiki.add_section,
     open_page = Wiki.open_page,

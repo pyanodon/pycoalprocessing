@@ -1,69 +1,69 @@
 RECIPE {
-    type = 'recipe',
-    name = 'advanced-foundry-mk01',
+    type = "recipe",
+    name = "advanced-foundry-mk01",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = 'copper-cable', amount = 30},
-        {type = "item", name = 'iron-plate', amount = 30},
-        {type = "item", name = 'stone-furnace', amount = 10},
-        {type = "item", name = 'stone-brick', amount = 20},
+        {type = "item", name = "copper-cable",  amount = 30},
+        {type = "item", name = "iron-plate",    amount = 30},
+        {type = "item", name = "stone-furnace", amount = 10},
+        {type = "item", name = "stone-brick",   amount = 20},
     },
     results = {
-        {type = "item", name = 'advanced-foundry-mk01', amount = 1}
+        {type = "item", name = "advanced-foundry-mk01", amount = 1}
     }
-}:add_unlock('steel-processing')
+}:add_unlock("steel-processing")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
-    local name = 'advanced-foundry-mk0' .. i
-    local icon = '__pycoalprocessinggraphics__/graphics/icons/' .. name .. '.png'
+    local name = "advanced-foundry-mk0" .. i
+    local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
     ITEM {
-        type = 'item',
+        type = "item",
         name = name,
         icon = icon,
         icon_size = icon_size,
         flags = {},
-        subgroup = 'py-cp-buildings-mk0' .. i,
-        order = 'b',
+        subgroup = "py-cp-buildings-mk0" .. i,
+        order = "b",
         place_result = name,
         stack_size = 10
     }
 
     ENTITY {
-        type = 'assembling-machine',
+        type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {'placeable-neutral', 'player-creation'},
+        flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 1, result = name},
-        fast_replaceable_group = 'advanced-foundry',
+        fast_replaceable_group = "advanced-foundry",
         max_health = 600 * i,
-        corpse = 'medium-remnants',
-        dying_explosion = 'medium-explosion',
+        corpse = "medium-remnants",
+        dying_explosion = "medium-explosion",
         collision_box = {{-2.9, -2.9}, {2.9, 2.9}},
         selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
         match_animation_speed_to_activity = false,
         module_slots = i,
-        allowed_effects = {'consumption', 'speed', 'productivity', 'pollution'},
-        crafting_categories = {'advanced-foundry', 'smelting'},
+        allowed_effects = {"consumption", "speed", "productivity", "pollution"},
+        crafting_categories = {"advanced-foundry", "smelting"},
         crafting_speed = i,
         energy_source = {
-            type = 'electric',
-            usage_priority = 'secondary-input',
+            type = "electric",
+            usage_priority = "secondary-input",
             emissions_per_minute = {
                 pollution = 1
             },
         },
-        energy_usage = (1.2 * i) .. 'MW',
+        energy_usage = (1.2 * i) .. "MW",
         graphics_set = {
             animation = {
                 layers = {
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-base.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-base.png",
                         width = 224,
                         height = 224,
                         line_length = 9,
@@ -72,7 +72,7 @@ for i = 1, 4 do
                         animation_speed = 0.5
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-base-mask.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-base-mask.png",
                         width = 224,
                         height = 224,
                         line_length = 9,
@@ -82,7 +82,7 @@ for i = 1, 4 do
                         tint = py.tints[i],
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-top.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-top.png",
                         width = 224,
                         height = 41,
                         line_length = 9,
@@ -96,90 +96,90 @@ for i = 1, 4 do
         fluid_boxes_off_when_no_fluid_recipe = true,
         fluid_boxes = {
             {
-                production_type = 'input',
+                production_type = "input",
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {0, -0.88}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {2.5, -0.5}, direction = defines.direction.east}}
+                pipe_connections = {{flow_direction = "input", position = {2.5, -0.5}, direction = defines.direction.east}}
             },
             {
-                production_type = 'input',
+                production_type = "input",
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {0, -0.88}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {0.5, 2.5}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = "input", position = {0.5, 2.5}, direction = defines.direction.south}}
             },
             {
-                production_type = 'output',
+                production_type = "output",
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {0, -0.88}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {-2.5, -0.5}, direction = defines.direction.west}}
+                pipe_connections = {{flow_direction = "output", position = {-2.5, -0.5}, direction = defines.direction.west}}
             },
             {
-                production_type = 'output',
+                production_type = "output",
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {0, -0.88}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {-0.5, 2.5}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = "output", position = {-0.5, 2.5}, direction = defines.direction.south}}
             },
         },
-        vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.65},
+        vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.65},
         working_sound = {
-            sound = {filename = '__pycoalprocessinggraphics__/sounds/advanced-foundry.ogg', volume = 0.45},
+            sound = {filename = "__pycoalprocessinggraphics__/sounds/advanced-foundry.ogg", volume = 0.45},
         }
     }
 end
 
 RECIPE {
-    type = 'recipe',
-    name = 'advanced-foundry-mk02',
+    type = "recipe",
+    name = "advanced-foundry-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'advanced-foundry-mk01', 1},
-        {'nexelit-plate',         20},
-        {'concrete',              60},
-        {'engine-unit',           4},
-        {'steel-plate',           40},
-        {'plastic-bar',           10},
-        {'advanced-circuit',      10}
+        {"advanced-foundry-mk01", 1},
+        {"nexelit-plate",         20},
+        {"concrete",              60},
+        {"engine-unit",           4},
+        {"steel-plate",           40},
+        {"plastic-bar",           10},
+        {"advanced-circuit",      10}
     },
     results = {
-        {'advanced-foundry-mk02', 1}
+        {"advanced-foundry-mk02", 1}
     }
 }
 
 RECIPE {
-    type = 'recipe',
-    name = 'advanced-foundry-mk03',
+    type = "recipe",
+    name = "advanced-foundry-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'advanced-foundry-mk02', 1},
-        {'concrete',              100},
-        {'processing-unit',       15},
-        {'niobium-plate',         10},
-        {'electric-engine-unit',  4},
+        {"advanced-foundry-mk02", 1},
+        {"concrete",              100},
+        {"processing-unit",       15},
+        {"niobium-plate",         10},
+        {"electric-engine-unit",  4},
     },
     results = {
-        {'advanced-foundry-mk03', 1}
+        {"advanced-foundry-mk03", 1}
     }
 }
 
 RECIPE {
-    type = 'recipe',
-    name = 'advanced-foundry-mk04',
+    type = "recipe",
+    name = "advanced-foundry-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'advanced-foundry-mk03', 1},
-        {'low-density-structure', 20},
-        {'nbfe-alloy',            10},
+        {"advanced-foundry-mk03", 1},
+        {"low-density-structure", 20},
+        {"nbfe-alloy",            10},
     },
     results = {
-        {'advanced-foundry-mk04', 1}
+        {"advanced-foundry-mk04", 1}
     }
 }

@@ -6,7 +6,7 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "steel-plate", amount = 2}, --bob aluminium-plate
+        {type = "item", name = "steel-plate",  amount = 2}, --bob aluminium-plate
         {type = "item", name = "copper-plate", amount = 1} --bob brass-plate
     },
     results = {
@@ -37,8 +37,8 @@ RECIPE {
     enabled = false,
     energy_required = 0.2,
     ingredients = {
-        {type = "fluid", name = "methanol", amount = 100},
-        {type = "item", name = "empty-gas-canister", amount = 1}
+        {type = "fluid", name = "methanol",           amount = 100},
+        {type = "item",  name = "empty-gas-canister", amount = 1}
     },
     results = {
         {type = "item", name = "methanol-gas-canister", amount = 1}
@@ -59,8 +59,8 @@ RECIPE {
         {type = "item", name = "methanol-gas-canister", amount = 1}
     },
     results = {
-        {type = "item", name = "empty-gas-canister", amount = 1},
-        {type = "fluid", name = "methanol", amount = 100}
+        {type = "item",  name = "empty-gas-canister", amount = 1},
+        {type = "fluid", name = "methanol",           amount = 100}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
     icon_size = 32,

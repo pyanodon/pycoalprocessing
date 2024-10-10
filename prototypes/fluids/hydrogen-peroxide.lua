@@ -6,7 +6,7 @@ RECIPE {
     energy_required = 2.7,
     ingredients = {
         {type = "fluid", name = "anthraquinone", amount = 100},
-        {type = "item", name = "iron-plate", amount = 5}
+        {type = "item",  name = "iron-plate",    amount = 5}
     },
     results = {
         {type = "fluid", name = "hydrogen-peroxide", amount = 50}

@@ -6,10 +6,10 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "nexelit-ore", amount = 4},
+        {type = "item",  name = "nexelit-ore",   amount = 4},
         {type = "fluid", name = "petroleum-gas", amount = 100},
-        {type = "item", name = "limestone", amount = 2},
-        {type = "item", name = "sand-casting", amount = 1}
+        {type = "item",  name = "limestone",     amount = 2},
+        {type = "item",  name = "sand-casting",  amount = 1}
     },
     results = {
         {type = "item", name = "nexelit-plate", amount = 4}
@@ -30,9 +30,9 @@ RECIPE {
     energy_required = 2,
     ingredients = {
         {type = "item", name = "crushed-iron", amount = 15},
-        {type = "item", name = "coke", amount = 2},
+        {type = "item", name = "coke",         amount = 2},
         {type = "item", name = "fuelrod-mk01", amount = 1},
-        {type = "item", name = "limestone", amount = 2},
+        {type = "item", name = "limestone",    amount = 2},
         {type = "item", name = "sand-casting", amount = 1}
     },
     results = {

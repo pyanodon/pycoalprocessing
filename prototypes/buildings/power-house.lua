@@ -1,7 +1,7 @@
 local pipe_left = {
     north = {
-        filename = '__pycoalprocessinggraphics__/graphics/entity/power-house/north-left.png',
-        priority = 'low',
+        filename = "__pycoalprocessinggraphics__/graphics/entity/power-house/north-left.png",
+        priority = "low",
         width = 64,
         height = 64
     }
@@ -9,8 +9,8 @@ local pipe_left = {
 
 local pipe_mid = {
     north = {
-        filename = '__pycoalprocessinggraphics__/graphics/entity/power-house/north-mid.png',
-        priority = 'low',
+        filename = "__pycoalprocessinggraphics__/graphics/entity/power-house/north-mid.png",
+        priority = "low",
         width = 64,
         height = 64
     }
@@ -18,70 +18,70 @@ local pipe_mid = {
 
 local pipe_right = {
     north = {
-        filename = '__pycoalprocessinggraphics__/graphics/entity/power-house/north-right.png',
-        priority = 'low',
+        filename = "__pycoalprocessinggraphics__/graphics/entity/power-house/north-right.png",
+        priority = "low",
         width = 64,
         height = 64
     }
 }
 
 RECIPE {
-    type = 'recipe',
-    name = 'power-house',
+    type = "recipe",
+    name = "power-house",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = 'gasturbinemk01', amount = 1},
-        {type = "item", name = 'electronic-circuit', amount = 25},
-        {type = "item", name = 'steel-plate', amount = 20},
-        {type = "item", name = 'iron-gear-wheel', amount = 15},
-        {type = "item", name = 'iron-plate', amount = 30}
+        {type = "item", name = "gasturbinemk01",     amount = 1},
+        {type = "item", name = "electronic-circuit", amount = 25},
+        {type = "item", name = "steel-plate",        amount = 20},
+        {type = "item", name = "iron-gear-wheel",    amount = 15},
+        {type = "item", name = "iron-plate",         amount = 30}
     },
     results = {
-        {type = "item", name = 'power-house', amount = 1}
+        {type = "item", name = "power-house", amount = 1}
     }
-}:add_unlock('energy-1')
+}:add_unlock("energy-1")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
-    local name = i == 1 and 'power-house' or 'power-house-mk0' .. i
-    local icon = '__pycoalprocessinggraphics__/graphics/icons/' .. name .. '.png'
+    local name = i == 1 and "power-house" or "power-house-mk0" .. i
+    local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
     ITEM {
-        type = 'item',
+        type = "item",
         name = name,
         icon = icon,
         icon_size = icon_size,
         flags = {},
-        subgroup = 'py-cp-buildings-mk0' .. i,
-        order = 't',
+        subgroup = "py-cp-buildings-mk0" .. i,
+        order = "t",
         place_result = name,
         stack_size = 10
     }
 
     ENTITY {
-        type = 'assembling-machine',
+        type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {'placeable-neutral', 'player-creation'},
+        flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 1, result = name},
-        fast_replaceable_group = 'power-house',
+        fast_replaceable_group = "power-house",
         max_health = 300 * i,
-        corpse = 'big-remnants',
-        dying_explosion = 'medium-explosion',
+        corpse = "big-remnants",
+        dying_explosion = "medium-explosion",
         collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
         match_animation_speed_to_activity = false,
         module_slots = 2 * i,
-        allowed_effects = {'consumption', 'speed', 'productivity', 'pollution'},
-        crafting_categories = {'combustion'},
+        allowed_effects = {"consumption", "speed", "productivity", "pollution"},
+        crafting_categories = {"combustion"},
         crafting_speed = i,
         energy_source = {
-            type = 'burner',
-            fuel_categories = {'chemical', 'biomass'},
+            type = "burner",
+            fuel_categories = {"chemical", "biomass"},
             effectivity = 1,
             fuel_inventory_size = 1,
             burnt_inventory_size = 1,
@@ -91,7 +91,7 @@ for i = 1, 4 do
             smoke =
             {
                 {
-                    name = 'smoke',
+                    name = "smoke",
                     north_position = {2.1, -1.9},
                     east_position = {2.1, -1.9},
                     west_position = {2.1, -1.9},
@@ -102,7 +102,7 @@ for i = 1, 4 do
                     starting_frame_deviation = 60
                 },
                 {
-                    name = 'turbine-smoke',
+                    name = "turbine-smoke",
                     north_position = {1.9, -3.0},
                     east_position = {1.9, -3.0},
                     west_position = {1.9, -3.0},
@@ -114,12 +114,12 @@ for i = 1, 4 do
                 },
             },
         },
-        energy_usage = (10 * i) .. 'MW',
+        energy_usage = (10 * i) .. "MW",
         graphics_set = {
             animation = {
                 layers = {
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/power-house/powerhouse-anim.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/power-house/powerhouse-anim.png",
                         width = 233,
                         height = 234,
                         frame_count = 30,
@@ -128,7 +128,7 @@ for i = 1, 4 do
                         shift = {0.156, -0.165}
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/power-house/powerhouse-anim-mask.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/power-house/powerhouse-anim-mask.png",
                         width = 233,
                         height = 234,
                         frame_count = 30,
@@ -143,99 +143,99 @@ for i = 1, 4 do
         fluid_boxes_off_when_no_fluid_recipe = true,
         fluid_boxes = {
             {
-                production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-2', {-0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_left),
+                production_type = "input",
+                pipe_picture = py.pipe_pictures("assembling-machine-2", {-0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_left),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {-1.0, -3.0}, direction = defines.direction.north}}
+                pipe_connections = {{flow_direction = "input", position = {-1.0, -3.0}, direction = defines.direction.north}}
             },
             {
-                production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-2', {0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_mid),
+                production_type = "input",
+                pipe_picture = py.pipe_pictures("assembling-machine-2", {0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_mid),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {0.0, -3.0}, direction = defines.direction.north}}
+                pipe_connections = {{flow_direction = "input", position = {0.0, -3.0}, direction = defines.direction.north}}
             },
             {
-                production_type = 'input',
+                production_type = "input",
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_picture = py.pipe_pictures('assembling-machine-2', {-0, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_right),
-                pipe_connections = {{flow_direction = 'input', position = {1.0, -3.0}, direction = defines.direction.north}}
+                pipe_picture = py.pipe_pictures("assembling-machine-2", {-0, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_right),
+                pipe_connections = {{flow_direction = "input", position = {1.0, -3.0}, direction = defines.direction.north}}
             },
             {
-                production_type = 'output',
+                production_type = "output",
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 100,
-                pipe_picture = py.pipe_pictures('assembling-machine-2', {-0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_left),
-                pipe_connections = {{flow_direction = 'output', position = {-1.0, 3.0}, direction = defines.direction.south}}
+                pipe_picture = py.pipe_pictures("assembling-machine-2", {-0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_left),
+                pipe_connections = {{flow_direction = "output", position = {-1.0, 3.0}, direction = defines.direction.south}}
             },
             {
-                production_type = 'output',
-                pipe_picture = py.pipe_pictures('assembling-machine-2', {0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_mid),
+                production_type = "output",
+                pipe_picture = py.pipe_pictures("assembling-machine-2", {0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_mid),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {1.0, 3.0}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = "output", position = {1.0, 3.0}, direction = defines.direction.south}}
             },
         },
-        vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.65},
+        vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.65},
         working_sound = {
-            sound = {filename = '__pycoalprocessinggraphics__/sounds/power-house.ogg'},
-            idle_sound = {filename = '__pycoalprocessinggraphics__/sounds/power-house.ogg', volume = 0.3},
+            sound = {filename = "__pycoalprocessinggraphics__/sounds/power-house.ogg"},
+            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/power-house.ogg", volume = 0.3},
             apparent_volume = 2.5
         },
     }
 end
 
 RECIPE {
-    type = 'recipe',
-    name = 'power-house-mk02',
+    type = "recipe",
+    name = "power-house-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'power-house',         1},
-        {'nexelit-plate',       15},
-        {'advanced-circuit',    10},
-        {'fast-transport-belt', 30},
-        {'steel-plate',         15},
-        {'engine-unit',         1},
+        {"power-house",         1},
+        {"nexelit-plate",       15},
+        {"advanced-circuit",    10},
+        {"fast-transport-belt", 30},
+        {"steel-plate",         15},
+        {"engine-unit",         1},
     },
     results = {
-        {'power-house-mk02', 1}
+        {"power-house-mk02", 1}
     }
 }
 
 RECIPE {
-    type = 'recipe',
-    name = 'power-house-mk03',
+    type = "recipe",
+    name = "power-house-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'power-house-mk02',     1},
-        {'electric-engine-unit', 4},
-        {'kevlar',               15},
-        {'processing-unit',      5},
-        {'niobium-plate',        10},
+        {"power-house-mk02",     1},
+        {"electric-engine-unit", 4},
+        {"kevlar",               15},
+        {"processing-unit",      5},
+        {"niobium-plate",        10},
     },
     results = {
-        {'power-house-mk03', 1}
+        {"power-house-mk03", 1}
     }
 }
 
 RECIPE {
-    type = 'recipe',
-    name = 'power-house-mk04',
+    type = "recipe",
+    name = "power-house-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {'power-house-mk03',      1},
-        {'low-density-structure', 5},
-        {'nbfe-alloy',            10},
+        {"power-house-mk03",      1},
+        {"low-density-structure", 5},
+        {"nbfe-alloy",            10},
     },
     results = {
-        {'power-house-mk04', 1}
+        {"power-house-mk04", 1}
     }
 }

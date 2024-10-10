@@ -6,7 +6,7 @@ RECIPE {
     energy_required = 7,
     ingredients = {
         {type = "fluid", name = "water", amount = 250},
-        {type = "item", name = "borax", amount = 10}
+        {type = "item",  name = "borax", amount = 10}
     },
     results = {
         {type = "fluid", name = "diborane", amount = 150}

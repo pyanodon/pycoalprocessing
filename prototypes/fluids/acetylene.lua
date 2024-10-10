@@ -5,11 +5,11 @@ RECIPE {
     enabled = false,
     energy_required = 8,
     ingredients = {
-        {type = "fluid", name = "water", amount = 300},
-        {type = "item", name = "calcium-carbide", amount = 10}
+        {type = "fluid", name = "water",           amount = 300},
+        {type = "item",  name = "calcium-carbide", amount = 10}
     },
     results = {
-        {type = "fluid", name = "acetylene", amount = 100},
+        {type = "fluid", name = "acetylene",    amount = 100},
         {type = "fluid", name = "slacked-lime", amount = 25}
     },
     main_product = "acetylene"

@@ -6,7 +6,7 @@ RECIPE {
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "diborane", amount = 100},
-        {type = "fluid", name = "water", amount = 500}
+        {type = "fluid", name = "water",    amount = 500}
     },
     results = {
         {type = "fluid", name = "boric-acid", amount = 500}

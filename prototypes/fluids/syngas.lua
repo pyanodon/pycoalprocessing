@@ -6,12 +6,12 @@ RECIPE {
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "coal-gas", amount = 50},
-        {type = "fluid", name = "water", amount = 100}
+        {type = "fluid", name = "water",    amount = 100}
     },
     results = {
         {type = "fluid", name = "syngas", amount = 70},
-        {type = "fluid", name = "tar", amount = 30},
-        {type = "item", name = "ash", amount = 1}
+        {type = "fluid", name = "tar",    amount = 30},
+        {type = "item",  name = "ash",    amount = 1}
     },
     main_product = "syngas"
 }:add_unlock("syngas")

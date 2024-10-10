@@ -4,9 +4,9 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "soil", amount = 500},
-        {type = "item", name = "steel-plate", amount = 100},
-        {type = "item", name = "storage-tank", amount = 5},
+        {type = "item", name = "soil",             amount = 500},
+        {type = "item", name = "steel-plate",      amount = 100},
+        {type = "item", name = "storage-tank",     amount = 5},
         {type = "item", name = "advanced-circuit", amount = 10} --bob electronic-logic-board
     },
     results = {
@@ -103,12 +103,12 @@ ENTITY {
         animation = {
             layers = {
                 {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-pasture.png",
-                width = 320,
-                height = 363,
-                frame_count = 1,
-                line_length = 1,
-                shift = {0.0, -0.5}
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-pasture.png",
+                    width = 320,
+                    height = 363,
+                    frame_count = 1,
+                    line_length = 1,
+                    shift = {0.0, -0.5}
                 },
                 {
                     filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-mask.png",

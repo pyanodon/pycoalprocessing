@@ -6,13 +6,13 @@ RECIPE {
     energy_required = 9.3,
     ingredients = {
         {type = "fluid", name = "dirty-water-heavy", amount = 800},
-        {type = "fluid", name = "water", amount = 2000},
-        {type = "fluid", name = "aromatics", amount = 200}
+        {type = "fluid", name = "water",             amount = 2000},
+        {type = "fluid", name = "aromatics",         amount = 200}
     },
     results = {
         {type = "fluid", name = "crude-oil", amount = 400},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
-        {type = "fluid", name = "olefin", amount = 200}
+        {type = "fluid", name = "steam",     amount = 2000, temperature = 150, ignored_by_productivity = 2000},
+        {type = "fluid", name = "olefin",    amount = 200}
     },
     main_product = "crude-oil",
     icon = "__pycoalprocessinggraphics__/graphics/icons/dirty-reaction.png",
@@ -28,20 +28,20 @@ RECIPE {
     enabled = false,
     energy_required = 5.5,
     ingredients = {
-        {type = "item", name = "active-carbon", amount = 3},
-        {type = "fluid", name = "coal-gas", amount = 300}
+        {type = "item",  name = "active-carbon", amount = 3},
+        {type = "fluid", name = "coal-gas",      amount = 300}
     },
     results = {
         {type = "fluid", name = "syngas", amount = 150},
-        {type = "item", name = "sulfur", amount = 1},
-        {type = "item", name = "ash", amount = 1}
+        {type = "item",  name = "sulfur", amount = 1},
+        {type = "item",  name = "ash",    amount = 1}
     },
     main_product = "syngas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/syngas.png",
     icon_size = 32,
     subgroup = "py-syngas",
     order = "b"
-}:add_unlock("desulfurization")--:add_unlock("filtration")
+}:add_unlock("desulfurization") --:add_unlock("filtration")
 
 RECIPE {
     type = "recipe",
@@ -51,12 +51,12 @@ RECIPE {
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "crude-oil", amount = 400},
-        {type = "item", name = "iron-ore", amount = 20} --bob salt
+        {type = "item",  name = "iron-ore",  amount = 20} --bob salt
     },
     results = {
         {type = "fluid", name = "heavy-oil", amount = 300},
-        {type = "item", name = "sulfur", amount = 3, probability = 0.5},
-        {type = "item", name = "ash", amount = 1}
+        {type = "item",  name = "sulfur",    amount = 3,  probability = 0.5},
+        {type = "item",  name = "ash",       amount = 1}
     },
     main_product = "heavy-oil",
     icon = "__base__/graphics/icons/sulfur.png",
@@ -76,8 +76,8 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "light-oil", amount = 200},
-        {type = "item", name = "sulfur", amount = 2},
-        {type = "item", name = "ash", amount = 1}
+        {type = "item",  name = "sulfur",    amount = 2},
+        {type = "item",  name = "ash",       amount = 1}
     },
     main_product = "light-oil",
     icon = "__base__/graphics/icons/sulfur.png",
@@ -97,8 +97,8 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "petroleum-gas", amount = 100},
-        {type = "item", name = "sulfur", amount = 1},
-        {type = "item", name = "ash", amount = 1}
+        {type = "item",  name = "sulfur",        amount = 1},
+        {type = "item",  name = "ash",           amount = 1}
     },
     main_product = "petroleum-gas",
     icon = "__base__/graphics/icons/sulfur.png",
@@ -118,8 +118,8 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "syngas", amount = 90},
-        {type = "item", name = "sulfur", amount = 1, probability = 0.5},
-        {type = "item", name = "ash", amount = 1}
+        {type = "item",  name = "sulfur", amount = 1, probability = 0.5},
+        {type = "item",  name = "ash",    amount = 1}
     },
     main_product = "sulfur",
     icon = "__base__/graphics/icons/sulfur.png",
@@ -139,7 +139,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "lubricant", amount = 100},
-        {type = "item", name = "sulfur", amount = 1}
+        {type = "item",  name = "sulfur",    amount = 1}
     },
     main_product = "lubricant",
     icon = "__pycoalprocessinggraphics__/graphics/icons/aromatics-lubricant.png",
@@ -153,7 +153,7 @@ RECIPE {
     enabled = false,
     energy_required = 2.0,
     ingredients = {
-        {type = "fluid", name = "glycerol", amount = 100},
+        {type = "fluid", name = "glycerol",      amount = 100},
         {type = "fluid", name = "sulfuric-acid", amount = 150}
     },
     results = {

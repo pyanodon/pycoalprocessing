@@ -1,27 +1,27 @@
 local tailings_copper_iron =
     RECIPE {
-    type = "recipe",
-    name = "tailings-copper-iron",
-    localised_name = {"recipe-name.tailings-ore-extraction", {"item-name.copper-ore"}, {"item-name.iron-ore"}, {"fluid-name.tar"}},
-    category = "quenching-tower",
-    enabled = false,
-    energy_required = 2,
-    ingredients = {
-        {type = "fluid", name = "tar", amount = 500},
-        {type = "fluid", name = "water", amount = 500}
-    },
-    results = {
-        {type = "fluid", name = "dirty-water-heavy", amount = 500},
-        {type = "fluid", name = "flue-gas", amount = 150},
-        {type = "fluid", name = "water-saline", amount = 250}
-    },
-    icons = {
-        {icon = "__pycoalprocessinggraphics__/graphics/icons/dirty-water.png", icon_size = 64}
-    },
-    icon_size = 64,
-    subgroup = "py-quenching-ores",
-    order = "tailings-a"
-}:add_unlock("separation")
+        type = "recipe",
+        name = "tailings-copper-iron",
+        localised_name = {"recipe-name.tailings-ore-extraction", {"item-name.copper-ore"}, {"item-name.iron-ore"}, {"fluid-name.tar"}},
+        category = "quenching-tower",
+        enabled = false,
+        energy_required = 2,
+        ingredients = {
+            {type = "fluid", name = "tar",   amount = 500},
+            {type = "fluid", name = "water", amount = 500}
+        },
+        results = {
+            {type = "fluid", name = "dirty-water-heavy", amount = 500},
+            {type = "fluid", name = "flue-gas",          amount = 150},
+            {type = "fluid", name = "water-saline",      amount = 250}
+        },
+        icons = {
+            {icon = "__pycoalprocessinggraphics__/graphics/icons/dirty-water.png", icon_size = 64}
+        },
+        icon_size = 64,
+        subgroup = "py-quenching-ores",
+        order = "tailings-a"
+    }:add_unlock("separation")
 
 local tailings_borax_niobium = tailings_copper_iron:copy("tailings-borax-niobium"):add_unlock("fluid-separation")
 tailings_borax_niobium.localised_name = {"recipe-name.tailings-ore-extraction", {"item-name.raw-borax"}, {"item-name.niobium-ore"}, {"fluid-name.tar"}}
