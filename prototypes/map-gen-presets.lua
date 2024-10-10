@@ -63,14 +63,13 @@ mapgens["py-recommended"] = {
         autoplace_controls = {
             ["enemy-base"] = {
                 frequency = 0
-            }
+            },
+            water = {frequency = 0.75, size = 0.75},
         },
         cliff_settings = {
             cliff_elevation_interval = 40 / 0.25,
             richness = 3
         },
-        terrain_segmentation = 0.75,
-        water = 0.75,
         starting_area = mods["rso-mod"] and "normal" or 64
     },
     advanced_settings = {
