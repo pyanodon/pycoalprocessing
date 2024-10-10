@@ -6,13 +6,13 @@ RECIPE {
     energy_required = 9,
     ingredients = {
         {type = "fluid", name = "coal-gas", amount = 350},
-        {type = "item", name = "nichrome", amount = 2},
-        {type = "fluid", name = "water", amount = 2000}
+        {type = "item",  name = "nichrome", amount = 2},
+        {type = "fluid", name = "water",    amount = 2000}
     },
     results = {
         {type = "fluid", name = "heavy-oil", amount = 250},
-        {type = "fluid", name = "tar", amount = 200},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000}
+        {type = "fluid", name = "tar",       amount = 200},
+        {type = "fluid", name = "steam",     amount = 2000, temperature = 150, ignored_by_productivity = 2000}
     },
     main_product = "heavy-oil",
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",
@@ -28,14 +28,14 @@ RECIPE {
     enabled = false,
     energy_required = 9,
     ingredients = {
-        {type = "fluid", name = "syngas", amount = 300},
-        {type = "item", name = "nichrome", amount = 2},
-        {type = "fluid", name = "water", amount = 2000}
+        {type = "fluid", name = "syngas",   amount = 300},
+        {type = "item",  name = "nichrome", amount = 2},
+        {type = "fluid", name = "water",    amount = 2000}
     },
     results = {
         {type = "fluid", name = "light-oil", amount = 300},
-        {type = "fluid", name = "olefin", amount = 150},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000}
+        {type = "fluid", name = "olefin",    amount = 150},
+        {type = "fluid", name = "steam",     amount = 2000, temperature = 150, ignored_by_productivity = 2000}
     },
     main_product = "light-oil",
     icon = "__base__/graphics/icons/fluid/light-oil.png",
@@ -52,12 +52,12 @@ RECIPE {
     energy_required = 9.5,
     ingredients = {
         {type = "fluid", name = "refsyngas", amount = 250},
-        {type = "item", name = "nichrome", amount = 2},
+        {type = "item",  name = "nichrome",  amount = 2},
         {type = "fluid", name = "light-oil", amount = 150}
     },
     results = {
         {type = "fluid", name = "petroleum-gas", amount = 400},
-        {type = "fluid", name = "olefin", amount = 150}
+        {type = "fluid", name = "olefin",        amount = 150}
     },
     main_product = "petroleum-gas",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
@@ -73,12 +73,12 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        {type = "fluid", name = "water", amount = 2000},
+        {type = "fluid", name = "water",     amount = 2000},
         {type = "fluid", name = "refsyngas", amount = 150}
     },
     results = {
-        {type = "fluid", name = "light-oil", amount = 400},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
+        {type = "fluid", name = "light-oil",      amount = 400},
+        {type = "fluid", name = "steam",          amount = 2000, temperature = 150, ignored_by_productivity = 2000},
         {type = "fluid", name = "carbon-dioxide", amount = 200}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/ref_to_light_oil.png",
@@ -96,13 +96,13 @@ RECIPE {
     energy_required = 9.5,
     ingredients = {
         {type = "fluid", name = "petroleum-gas", amount = 250},
-        {type = "fluid", name = "water", amount = 2000},
-        {type = "fluid", name = "acidgas", amount = 150},
-        {type = "item", name = "chromium", amount = 5}
+        {type = "fluid", name = "water",         amount = 2000},
+        {type = "fluid", name = "acidgas",       amount = 150},
+        {type = "item",  name = "chromium",      amount = 5}
     },
     results = {
-        {type = "fluid", name = "aromatics", amount = 100},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
+        {type = "fluid", name = "aromatics",     amount = 100},
+        {type = "fluid", name = "steam",         amount = 2000, temperature = 150, ignored_by_productivity = 2000},
         {type = "fluid", name = "sulfuric-acid", amount = 500}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/sulfuric-petgas.png",
@@ -135,7 +135,7 @@ RECIPE {
     subgroup = "py-fluid-handling",
     order = "h6"
 }:add_unlock("fuel-production")
-]]--
+]] --
 
 RECIPE {
     type = "recipe",
@@ -144,14 +144,14 @@ RECIPE {
     enabled = false,
     energy_required = 9.3,
     ingredients = {
-        {type = "fluid", name = "heavy-oil", amount = 500},
-        {type = "fluid", name = "water", amount = 2000},
-        {type = "item", name = "zinc-chloride", amount = 5}
+        {type = "fluid", name = "heavy-oil",     amount = 500},
+        {type = "fluid", name = "water",         amount = 2000},
+        {type = "item",  name = "zinc-chloride", amount = 5}
     },
     results = {
         {type = "fluid", name = "coal-gas", amount = 350},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
-        {type = "fluid", name = "tar", amount = 200}
+        {type = "fluid", name = "steam",    amount = 2000, temperature = 150, ignored_by_productivity = 2000},
+        {type = "fluid", name = "tar",      amount = 200}
     },
     main_product = "coal-gas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/heavy-oil-to-coalgas.png",
@@ -167,14 +167,14 @@ RECIPE {
     enabled = false,
     energy_required = 9.3,
     ingredients = {
-        {type = "fluid", name = "light-oil", amount = 500},
-        {type = "fluid", name = "water", amount = 2000},
-        {type = "item", name = "active-carbon", amount = 5}
+        {type = "fluid", name = "light-oil",     amount = 500},
+        {type = "fluid", name = "water",         amount = 2000},
+        {type = "item",  name = "active-carbon", amount = 5}
     },
     results = {
         {type = "fluid", name = "syngas", amount = 350},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
-        {type = "fluid", name = "tar", amount = 200}
+        {type = "fluid", name = "steam",  amount = 2000, temperature = 150, ignored_by_productivity = 2000},
+        {type = "fluid", name = "tar",    amount = 200}
     },
     main_product = "syngas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/light-oil-to-syngas.png",
@@ -191,13 +191,13 @@ RECIPE {
     energy_required = 9.3,
     ingredients = {
         {type = "fluid", name = "petroleum-gas", amount = 500},
-        {type = "fluid", name = "water", amount = 2000},
-        {type = "item", name = "chromium", amount = 5}
+        {type = "fluid", name = "water",         amount = 2000},
+        {type = "item",  name = "chromium",      amount = 5}
     },
     results = {
         {type = "fluid", name = "refsyngas", amount = 350},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
-        {type = "fluid", name = "tar", amount = 200}
+        {type = "fluid", name = "steam",     amount = 2000, temperature = 150, ignored_by_productivity = 2000},
+        {type = "fluid", name = "tar",       amount = 200}
     },
     main_product = "refsyngas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/petgas-to-refsyngas.png",
@@ -214,12 +214,12 @@ RECIPE {
     energy_required = 5,
     ingredients = {
         {type = "fluid", name = "glycerol", amount = 200},
-        {type = "fluid", name = "water", amount = 2000}
+        {type = "fluid", name = "water",    amount = 2000}
     },
     results = {
         {type = "fluid", name = "syngas", amount = 200},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000},
-        {type = "item", name = "ash", amount = 5}
+        {type = "fluid", name = "steam",  amount = 2000, temperature = 150, ignored_by_productivity = 2000},
+        {type = "item",  name = "ash",    amount = 5}
     },
     main_product = "syngas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/glycerol-syngas.png",
@@ -235,10 +235,10 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        {type = "item", name = "coal-dust", amount = 40},
-        {type = "fluid", name = "glycerol", amount = 20},
-        {type = "fluid", name = "creosote", amount = 100},
-        {type = "fluid", name = "tar", amount = 50}
+        {type = "item",  name = "coal-dust", amount = 40},
+        {type = "fluid", name = "glycerol",  amount = 20},
+        {type = "fluid", name = "creosote",  amount = 100},
+        {type = "fluid", name = "tar",       amount = 50}
     },
     results = {
         {type = "item", name = "coal-briquette", amount = 10}
@@ -255,14 +255,14 @@ RECIPE {
     enabled = false,
     energy_required = 1,
     ingredients = {
-        {type = "item", name = "chromium", amount = 1},
-        {type = "fluid", name = "water", amount = 2000},
+        {type = "item",  name = "chromium",      amount = 1},
+        {type = "fluid", name = "water",         amount = 2000},
         {type = "fluid", name = "oleochemicals", amount = 100},
         {type = "fluid", name = "sulfuric-acid", amount = 200}
     },
     results = {
         {type = "fluid", name = "heavy-oil", amount = 200},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000}
+        {type = "fluid", name = "steam",     amount = 2000, temperature = 150, ignored_by_productivity = 2000}
     },
     main_product = "heavy-oil",
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",

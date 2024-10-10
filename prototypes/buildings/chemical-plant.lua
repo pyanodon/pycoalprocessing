@@ -1,66 +1,66 @@
 RECIPE {
-    type = 'recipe',
-    name = 'chemical-plant-mk01',
+    type = "recipe",
+    name = "chemical-plant-mk01",
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {type = "item", name = 'distilator', amount = 1},
-        {type = "item", name = 'copper-plate', amount = 20},
-        {type = "item", name = 'iron-gear-wheel', amount = 15},
-        {type = "item", name = 'pipe', amount = 20},
-        {type = "item", name = 'iron-plate', amount = 20},
-        {type = "item", name = 'electronic-circuit', amount = 5}
+        {type = "item", name = "distilator",         amount = 1},
+        {type = "item", name = "copper-plate",       amount = 20},
+        {type = "item", name = "iron-gear-wheel",    amount = 15},
+        {type = "item", name = "pipe",               amount = 20},
+        {type = "item", name = "iron-plate",         amount = 20},
+        {type = "item", name = "electronic-circuit", amount = 5}
     },
     results = {
-        {type = "item", name = 'chemical-plant-mk01', amount = 1}
+        {type = "item", name = "chemical-plant-mk01", amount = 1}
     }
-}:add_unlock('filtration')
+}:add_unlock("filtration")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
-    local name = 'chemical-plant-mk0' .. i
-    local icon = '__pycoalprocessinggraphics__/graphics/icons/' .. name .. '.png'
+    local name = "chemical-plant-mk0" .. i
+    local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
     ITEM {
-        type = 'item',
+        type = "item",
         name = name,
         icon = icon,
         icon_size = icon_size,
         flags = {},
-        subgroup = 'py-cp-buildings-mk0' .. i,
-        order = 'd',
+        subgroup = "py-cp-buildings-mk0" .. i,
+        order = "d",
         place_result = name,
         stack_size = 10
     }
 
     ENTITY {
-        type = 'assembling-machine',
+        type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {'placeable-neutral', 'player-creation'},
+        flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 1, result = name},
-        fast_replaceable_group = 'chemical-plant',
+        fast_replaceable_group = "chemical-plant",
         max_health = 400 * i,
-        corpse = 'big-remnants',
-        dying_explosion = 'medium-explosion',
+        corpse = "big-remnants",
+        dying_explosion = "medium-explosion",
         collision_box = {{-4.3, -4.3}, {4.3, 4.3}},
         selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
         match_animation_speed_to_activity = false,
         module_slots = i,
-        allowed_effects = {'consumption', 'speed', 'pollution', 'productivity'},
-        crafting_categories = {'chemistry'},
+        allowed_effects = {"consumption", "speed", "pollution", "productivity"},
+        crafting_categories = {"chemistry"},
         crafting_speed = i,
         energy_source = {
-            type = 'electric',
-            usage_priority = 'secondary-input',
+            type = "electric",
+            usage_priority = "secondary-input",
             emissions_per_minute = {
                 pollution = -1
             },
         },
-        energy_usage = i .. 'MW',
+        energy_usage = i .. "MW",
         graphics_set = {
             working_visualisations = {
                 {
@@ -69,7 +69,7 @@ for i = 1, 4 do
                     south_position = util.by_pixel(96, -64),
                     east_position = util.by_pixel(96, -64),
                     animation = {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/reator.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/reator.png",
                         frame_count = 80,
                         line_length = 20,
                         draw_as_glow = true,
@@ -84,7 +84,7 @@ for i = 1, 4 do
                     south_position = util.by_pixel(0, -48),
                     east_position = util.by_pixel(0, -48),
                     animation = {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/light-y.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/light-y.png",
                         frame_count = 1,
                         repeat_count = 80,
                         draw_as_light = true,
@@ -100,7 +100,7 @@ for i = 1, 4 do
                     south_position = util.by_pixel(0, -48),
                     east_position = util.by_pixel(0, -48),
                     animation = {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/light-b.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/light-b.png",
                         frame_count = 1,
                         repeat_count = 80,
                         draw_as_light = true,
@@ -116,7 +116,7 @@ for i = 1, 4 do
                     south_position = util.by_pixel(32, -80),
                     east_position = util.by_pixel(32, -80),
                     animation = {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/smoke.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/smoke.png",
                         frame_count = 80,
                         line_length = 20,
                         width = 96,
@@ -130,7 +130,7 @@ for i = 1, 4 do
                     south_position = util.by_pixel(-48, 80),
                     east_position = util.by_pixel(-48, 80),
                     animation = {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/tira-light.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/tira-light.png",
                         frame_count = 80,
                         line_length = 16,
                         draw_as_glow = true,
@@ -143,7 +143,7 @@ for i = 1, 4 do
             animation = {
                 layers = {
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/bottom.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/bottom.png",
                         width = 288,
                         height = 32,
                         frame_count = 1,
@@ -152,7 +152,7 @@ for i = 1, 4 do
                         shift = util.by_pixel(-0, 128),
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/sh.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/sh.png",
                         width = 320,
                         height = 256,
                         frame_count = 1,
@@ -162,7 +162,7 @@ for i = 1, 4 do
                         shift = util.by_pixel(16, 16),
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/left.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/left.png",
                         width = 96,
                         height = 352,
                         frame_count = 80,
@@ -171,7 +171,7 @@ for i = 1, 4 do
                         shift = util.by_pixel(-96, -64),
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/mid.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/mid.png",
                         width = 96,
                         height = 352,
                         frame_count = 80,
@@ -180,7 +180,7 @@ for i = 1, 4 do
                         shift = util.by_pixel(0, -64),
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/right.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/right.png",
                         width = 96,
                         height = 352,
                         frame_count = 80,
@@ -190,7 +190,7 @@ for i = 1, 4 do
                     },
                     --MASKS
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/left-mask.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/left-mask.png",
                         width = 96,
                         height = 352,
                         frame_count = 80,
@@ -200,7 +200,7 @@ for i = 1, 4 do
                         tint = py.tints[i],
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/mid-mask.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/mid-mask.png",
                         width = 96,
                         height = 352,
                         frame_count = 80,
@@ -210,7 +210,7 @@ for i = 1, 4 do
                         tint = py.tints[i],
                     },
                     {
-                        filename = '__pycoalprocessinggraphics__/graphics/entity/chemical-plant/right-mask.png',
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/right-mask.png",
                         width = 96,
                         height = 352,
                         frame_count = 80,
@@ -226,108 +226,108 @@ for i = 1, 4 do
         fluid_boxes = {
             --North
             {
-                production_type = 'output',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.00, -0.95}, nil, nil),
+                production_type = "output",
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {4.0, -4.0}, direction = defines.direction.north}}
+                pipe_connections = {{flow_direction = "output", position = {4.0, -4.0}, direction = defines.direction.north}}
             },
             --North2
             {
-                production_type = 'output',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.00, -0.95}, nil, nil),
+                production_type = "output",
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {0.0, -4.0}, direction = defines.direction.north}}
+                pipe_connections = {{flow_direction = "output", position = {0.0, -4.0}, direction = defines.direction.north}}
             },
             --North3
             {
-                production_type = 'output',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.00, -0.95}, nil, nil),
+                production_type = "output",
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = 'output', position = {2.0, -4.0}, direction = defines.direction.north}}
+                pipe_connections = {{flow_direction = "output", position = {2.0, -4.0}, direction = defines.direction.north}}
             },
             --South3
             {
-                production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.00, -0.95}, nil, nil),
+                production_type = "input",
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {0.0, 4.0}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = "input", position = {0.0, 4.0}, direction = defines.direction.south}}
             },
             --South
             {
-                production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.00, -0.95}, nil, nil),
+                production_type = "input",
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {2.0, 4.0}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = "input", position = {2.0, 4.0}, direction = defines.direction.south}}
             },
             --South2
             {
-                production_type = 'input',
-                pipe_picture = py.pipe_pictures('assembling-machine-3', nil, {-0.00, -0.95}, nil, nil),
+                production_type = "input",
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
                 base_level = -1,
-                pipe_connections = {{flow_direction = 'input', position = {4.0, 4.0}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = "input", position = {4.0, 4.0}, direction = defines.direction.south}}
             },
         },
-        vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.55},
+        vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.55},
         working_sound = {
-            sound = {filename = '__pycoalprocessinggraphics__/sounds/chemical-plant.ogg', volume = 1.0},
-            idle_sound = {filename = '__pycoalprocessinggraphics__/sounds/chemical-plant.ogg', volume = 0.3},
+            sound = {filename = "__pycoalprocessinggraphics__/sounds/chemical-plant.ogg", volume = 1.0},
+            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/chemical-plant.ogg", volume = 0.3},
             apparent_volume = 2.5
         }
     }
 end
 
 RECIPE {
-    type = 'recipe',
-    name = 'chemical-plant-mk02',
+    type = "recipe",
+    name = "chemical-plant-mk02",
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {'chemical-plant-mk01', 1},
-        {'concrete',            30},
-        {'titanium-plate',      20},
-        {'nickel-plate',        50},
-        {'engine-unit',         5},
+        {"chemical-plant-mk01", 1},
+        {"concrete",            30},
+        {"titanium-plate",      20},
+        {"nickel-plate",        50},
+        {"engine-unit",         5},
     },
     results = {
-        {'chemical-plant-mk02', 1}
+        {"chemical-plant-mk02", 1}
     }
 }
 
 RECIPE {
-    type = 'recipe',
-    name = 'chemical-plant-mk03',
+    type = "recipe",
+    name = "chemical-plant-mk03",
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {'chemical-plant-mk02',  1},
-        {'electric-engine-unit', 4},
-        {'nichrome',             20},
-        {'glass',                50},
+        {"chemical-plant-mk02",  1},
+        {"electric-engine-unit", 4},
+        {"nichrome",             20},
+        {"glass",                50},
     },
     results = {
-        {'chemical-plant-mk03', 1}
+        {"chemical-plant-mk03", 1}
     }
 }
 
 RECIPE {
-    type = 'recipe',
-    name = 'chemical-plant-mk04',
+    type = "recipe",
+    name = "chemical-plant-mk04",
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {'chemical-plant-mk03',   1},
-        {'low-density-structure', 30},
+        {"chemical-plant-mk03",   1},
+        {"low-density-structure", 30},
     },
     results = {
-        {'chemical-plant-mk04', 1}
+        {"chemical-plant-mk04", 1}
     }
 }

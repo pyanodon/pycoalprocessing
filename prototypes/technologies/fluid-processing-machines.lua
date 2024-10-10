@@ -15,7 +15,7 @@ TECHNOLOGY {
     }
 }
 
-if mods['pypetroleumhandling'] then
+if mods["pypetroleumhandling"] then
     TECHNOLOGY {
         type = "technology",
         name = "fluid-processing-machines-2",
@@ -29,7 +29,7 @@ if mods['pypetroleumhandling'] then
             count = 50,
             ingredients = {
                 {"automation-science-pack", 1},
-                {"logistic-science-pack", 1}
+                {"logistic-science-pack",   1}
             },
             time = 30
         }

@@ -4,28 +4,28 @@ local blacklist = {
 }
 
 local rocks = {
-    ['iron-rock'] = true,
-    ['copper-rock'] = true,
-    ['uranium-rock'] = true,
-    ['zinc-rock'] = true,
-    ['aluminium-rock'] = true,
-    ['chromium-rock'] = true,
-    ['coal-rock'] = true,
-    ['lead-rock'] = true,
-    ['nexelit-rock'] = true,
-    ['nickel-rock'] = true,
-    ['phosphate-rock-02'] = true,
-    ['quartz-rock'] = true,
-    ['salt-rock'] = true,
-    ['tin-rock'] = true,
-    ['titanium-rock'] = true,
-    ['volcanic-pipe'] = true,
-    ['regolites'] = true,
-    ['rare-earth-bolide'] = true,
-    ['phosphate-rock'] = true,
-    ['sulfur-patch'] = true,
--- Commented because only scales on size :shrug:
--- ['bitumen-seep'] = true
+    ["iron-rock"] = true,
+    ["copper-rock"] = true,
+    ["uranium-rock"] = true,
+    ["zinc-rock"] = true,
+    ["aluminium-rock"] = true,
+    ["chromium-rock"] = true,
+    ["coal-rock"] = true,
+    ["lead-rock"] = true,
+    ["nexelit-rock"] = true,
+    ["nickel-rock"] = true,
+    ["phosphate-rock-02"] = true,
+    ["quartz-rock"] = true,
+    ["salt-rock"] = true,
+    ["tin-rock"] = true,
+    ["titanium-rock"] = true,
+    ["volcanic-pipe"] = true,
+    ["regolites"] = true,
+    ["rare-earth-bolide"] = true,
+    ["phosphate-rock"] = true,
+    ["sulfur-patch"] = true,
+    -- Commented because only scales on size :shrug:
+    -- ['bitumen-seep'] = true
 }
 --[[ if it comes up
 local non_rocks = {
@@ -52,7 +52,7 @@ local non_rocks = {
     ["ree"] = true,
     ["antimonium"] = true,
 }
-]]--
+]] --
 
 
 
@@ -83,7 +83,7 @@ mapgens["py-recommended"] = {
         },
         enemy_expansion = {
             enabled = true,
-            max_expansion_distance = 2, -- Creep only
+            max_expansion_distance = 2,            -- Creep only
             min_expansion_cooldown = 60 * 60 * 60, -- 60 min
             max_expansion_cooldown = 60 * 60 * 180 -- 180 min
         },

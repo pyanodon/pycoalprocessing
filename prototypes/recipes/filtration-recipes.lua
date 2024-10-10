@@ -1,5 +1,3 @@
-
-
 RECIPE {
     type = "recipe",
     name = "lithium-peroxide",
@@ -8,7 +6,7 @@ RECIPE {
     energy_required = 5,
     ingredients = {
         --{type="fluid", name="lithia-water", amount=30},
-        {type = "fluid", name = "water", amount = 300},
+        {type = "fluid", name = "water",             amount = 300},
         {type = "fluid", name = "hydrogen-peroxide", amount = 100}
     },
     results = {
@@ -24,7 +22,7 @@ RECIPE {
     energy_required = 4,
     ingredients = {
         {type = "item", name = "lithium-peroxide", amount = 25},
-        {type = "item", name = "nexelit-plate", amount = 10}
+        {type = "item", name = "nexelit-plate",    amount = 10}
     },
     results = {
         {type = "item", name = "nexelit-cartridge", amount = 1}
@@ -57,14 +55,14 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "item", name = "saturated-nexelit-cartridge", amount = 1},
-        {type = "fluid", name = "slacked-lime", amount = 100},
-        {type = "item", name = "active-carbon", amount = 2}
+        {type = "item",  name = "saturated-nexelit-cartridge", amount = 1},
+        {type = "fluid", name = "slacked-lime",                amount = 100},
+        {type = "item",  name = "active-carbon",               amount = 2}
     },
     results = {
-        {type = "fluid", name = "carbon-dioxide", amount = 600},
-        {type = "item", name = "saturated-nexelit-cartridge", amount = 1},
-        {type = "item", name = "ash", amount = 10}
+        {type = "fluid", name = "carbon-dioxide",              amount = 600},
+        {type = "item",  name = "saturated-nexelit-cartridge", amount = 1},
+        {type = "item",  name = "ash",                         amount = 10}
     },
     main_product = "carbon-dioxide",
     icon = "__pycoalprocessinggraphics__/graphics/icons/co2.png",
@@ -81,7 +79,7 @@ RECIPE {
     energy_required = 3,
     ingredients = {
         {type = "item", name = "saturated-nexelit-cartridge", amount = 1},
-        {type = "item", name = "lithium-peroxide", amount = 25},
+        {type = "item", name = "lithium-peroxide",            amount = 25},
     },
     results = {
         {type = "item", name = "nexelit-cartridge", amount = 1}

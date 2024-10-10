@@ -1,4 +1,3 @@
-
 RECIPE {
     type = "recipe",
     name = "aromatics",
@@ -6,13 +5,13 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "nexelit-plate", amount = 2},
-        {type = "fluid", name = "olefin", amount = 200},
-        {type = "fluid", name = "water", amount = 200}
+        {type = "item",  name = "nexelit-plate", amount = 2},
+        {type = "fluid", name = "olefin",        amount = 200},
+        {type = "fluid", name = "water",         amount = 200}
     },
     results = {
         {type = "fluid", name = "aromatics", amount = 200},
-        {type = "fluid", name = "water", amount = 100}
+        {type = "fluid", name = "water",     amount = 100}
         --{type="fluid", name="hydrogen", amount=10},
     },
     main_product = "aromatics",
@@ -29,8 +28,8 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "item", name = "nexelit-plate", amount = 2},
-        {type = "fluid", name = "water", amount = 400}, --bob hydrogen
+        {type = "item",  name = "nexelit-plate",  amount = 2},
+        {type = "fluid", name = "water",          amount = 400}, --bob hydrogen
         {type = "fluid", name = "carbon-dioxide", amount = 200}
     },
     results = {
@@ -50,12 +49,12 @@ RECIPE {
     enabled = false,
     energy_required = 2.8,
     ingredients = {
-        {type = "fluid", name = "olefin", amount = 300},
+        {type = "fluid", name = "olefin",         amount = 300},
         {type = "fluid", name = "carbon-dioxide", amount = 200}
     },
     results = {
         {type = "fluid", name = "petroleum-gas", amount = 150},
-        {type = "fluid", name = "light-oil", amount = 150}
+        {type = "fluid", name = "light-oil",     amount = 150}
     },
     main_product = "petroleum-gas",
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
@@ -86,7 +85,7 @@ RECIPE {
     subgroup = "py-fluids",
     order = "d6"
 }--:add_unlock("fuel-production")
-]]--
+]] --
 
 RECIPE {
     type = "recipe",
@@ -95,8 +94,8 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "refsyngas", amount = 250},
-        {type = "item", name = "nexelit-plate", amount = 3}
+        {type = "fluid", name = "refsyngas",     amount = 250},
+        {type = "item",  name = "nexelit-plate", amount = 3}
     },
     results = {
         {type = "fluid", name = "olefin", amount = 250}
@@ -134,7 +133,7 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "olefin", amount = 300},
+        {type = "fluid", name = "olefin",        amount = 300},
         {type = "fluid", name = "oleochemicals", amount = 100}
     },
     results = {

@@ -1,48 +1,48 @@
 RECIPE {
-    type = 'recipe',
-    name = 'gasturbinemk02',
+    type = "recipe",
+    name = "gasturbinemk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = 'advanced-circuit', amount = 20},
-        {type = "item", name = 'pipe', amount = 20},
-        {type = "item", name = 'steel-plate', amount = 50},
-        {type = "item", name = 'iron-plate', amount = 30},
-        {type = "item", name = 'iron-gear-wheel', amount = 40}
+        {type = "item", name = "advanced-circuit", amount = 20},
+        {type = "item", name = "pipe",             amount = 20},
+        {type = "item", name = "steel-plate",      amount = 50},
+        {type = "item", name = "iron-plate",       amount = 30},
+        {type = "item", name = "iron-gear-wheel",  amount = 40}
     },
     results = {
-        {type = "item", name = 'gasturbinemk02', amount = 1}
+        {type = "item", name = "gasturbinemk02", amount = 1}
     }
-}:add_unlock('energy-2')
+}:add_unlock("energy-2")
 
 ITEM {
-    type = 'item',
-    name = 'gasturbinemk02',
-    icon = '__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk02.png',
+    type = "item",
+    name = "gasturbinemk02",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk02.png",
     icon_size = 64,
     flags = {},
-    subgroup = 'py-power',
-    order = 'a-d[gasturbinemk02]',
-    place_result = 'gasturbinemk02',
+    subgroup = "py-power",
+    order = "a-d[gasturbinemk02]",
+    place_result = "gasturbinemk02",
     stack_size = 10
 }
 
 ENTITY {
-    type = 'generator',
-    name = 'gasturbinemk02',
-    icon = '__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk02.png',
+    type = "generator",
+    name = "gasturbinemk02",
+    icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk02.png",
     icon_size = 64,
-    flags = {'placeable-neutral', 'player-creation'},
-    minable = {mining_time = 1, result = 'gasturbinemk02'},
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {mining_time = 1, result = "gasturbinemk02"},
     max_health = 500,
-    corpse = 'big-remnants',
+    corpse = "big-remnants",
     effectivity = 1,
     fluid_usage_per_tick = 1.25,
     maximum_temperature = 2000,
     destroy_non_fuel_fluid = false,
     resistances = {
         {
-            type = 'fire',
+            type = "fire",
             percent = 70
         }
     },
@@ -52,23 +52,23 @@ ENTITY {
         volume = 100,
         base_level = -1,
         pipe_covers = py.pipe_covers(false, true, true, true),
-        production_type = 'input-output',
-        filter = 'combustion-mixture1',
+        production_type = "input-output",
+        filter = "combustion-mixture1",
         minimum_temperature = 500.0,
         pipe_connections = {
-            {flow_direction = 'input-output', position = {3.0, 0.0}, direction = defines.direction.east},
-            {flow_direction = 'input-output', position = {-3.0, 0.0}, direction = defines.direction.west}
+            {flow_direction = "input-output", position = {3.0, 0.0},  direction = defines.direction.east},
+            {flow_direction = "input-output", position = {-3.0, 0.0}, direction = defines.direction.west}
         }
     },
     energy_source = {
-        type = 'electric',
-        usage_priority = 'secondary-output',
+        type = "electric",
+        usage_priority = "secondary-output",
         emissions_per_minute = {
-                pollution = 1
-            },
+            pollution = 1
+        },
     },
     horizontal_animation = {
-        filename = '__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-vertical-anim.png',
+        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-vertical-anim.png",
         width = 238,
         height = 249,
         frame_count = 16,
@@ -76,7 +76,7 @@ ENTITY {
         shift = {0.195, -0.239}
     },
     vertical_animation = {
-        filename = '__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-horizontal-anim.png',
+        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-horizontal-anim.png",
         width = 238,
         height = 244,
         frame_count = 16,
@@ -85,7 +85,7 @@ ENTITY {
     },
     smoke = {
         {
-            name = 'light-smoke',
+            name = "light-smoke",
             north_position = {0.52, -3.1},
             east_position = {0.52, -3.1},
             frequency = 5 / 8,
@@ -96,10 +96,10 @@ ENTITY {
     },
     min_perceived_performance = 0.1,
     performance_to_sound_speedup = 0.3,
-    vehicle_impact_sound = {filename = '__base__/sound/car-metal-impact-1.ogg', volume = 0.65},
+    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.65},
     working_sound = {
-        sound = {filename = '__pycoalprocessinggraphics__/sounds/gasturbinemk02.ogg'},
-        idle_sound = {filename = '__pycoalprocessinggraphics__/sounds/gasturbinemk02.ogg', volume = 0.3},
+        sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk02.ogg"},
+        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk02.ogg", volume = 0.3},
         apparent_volume = 2.5
     }
 }

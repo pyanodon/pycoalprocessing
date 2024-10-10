@@ -12,7 +12,7 @@ TECHNOLOGY {
         count = 20,
         ingredients = {
             {"automation-science-pack", 2},
-            {"logistic-science-pack", 1}
+            {"logistic-science-pack",   1}
         },
         time = 45
     }

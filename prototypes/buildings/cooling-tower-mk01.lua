@@ -5,9 +5,9 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "electronic-circuit", amount = 5},
-        {type = "item", name = "pipe", amount = 20}, --bob copper-pipe
-        {type = "item", name = "iron-gear-wheel", amount = 15}, --bob brass-gear-wheel
-        {type = "item", name = "iron-plate", amount = 30} --bob brass-plate
+        {type = "item", name = "pipe",               amount = 20}, --bob copper-pipe
+        {type = "item", name = "iron-gear-wheel",    amount = 15}, --bob brass-gear-wheel
+        {type = "item", name = "iron-plate",         amount = 30} --bob brass-plate
     },
     results = {
         {type = "item", name = "cooling-tower-mk01", amount = 1}

@@ -3,23 +3,23 @@
 -- variation counts from 0 (Python-like).
 
 circuit_connector_definitions["borax-mine-mkxx"] = circuit_connector_definitions.create_vector
-(
-  universal_connector_template,
-  {--Directions are up, right, down, left.
-    { variation = 26, main_offset = util.by_pixel(-40, 85), shadow_offset = util.by_pixel(-46, 97), show_shadow = false }, 
-    { variation = 26, main_offset = util.by_pixel(-40, 85), shadow_offset = util.by_pixel(-46, 97), show_shadow = false },
-    { variation = 26, main_offset = util.by_pixel(-40, 85), shadow_offset = util.by_pixel(-46, 97), show_shadow = false },
-    { variation = 26, main_offset = util.by_pixel(-40, 85), shadow_offset = util.by_pixel(-46, 97), show_shadow = false }
-  }
-)
+    (
+      universal_connector_template,
+      { --Directions are up, right, down, left.
+        {variation = 26, main_offset = util.by_pixel(-40, 85), shadow_offset = util.by_pixel(-46, 97), show_shadow = false},
+        {variation = 26, main_offset = util.by_pixel(-40, 85), shadow_offset = util.by_pixel(-46, 97), show_shadow = false},
+        {variation = 26, main_offset = util.by_pixel(-40, 85), shadow_offset = util.by_pixel(-46, 97), show_shadow = false},
+        {variation = 26, main_offset = util.by_pixel(-40, 85), shadow_offset = util.by_pixel(-46, 97), show_shadow = false}
+      }
+    )
 
 circuit_connector_definitions["niobium-mine"] = circuit_connector_definitions.create_vector
-(
-  universal_connector_template,
-  {--Directions are up, right, down, left.
-    { variation = 18, main_offset = util.by_pixel(-84, -5), shadow_offset = util.by_pixel(-78, 7), show_shadow = false }, 
-    { variation = 18, main_offset = util.by_pixel(-84, -5), shadow_offset = util.by_pixel(-78, 7), show_shadow = false },
-    { variation = 18, main_offset = util.by_pixel(-84, -5), shadow_offset = util.by_pixel(-78, 7), show_shadow = false },
-    { variation = 18, main_offset = util.by_pixel(-84, -5), shadow_offset = util.by_pixel(-78, 7), show_shadow = false }
-  }
-)
+    (
+      universal_connector_template,
+      { --Directions are up, right, down, left.
+        {variation = 18, main_offset = util.by_pixel(-84, -5), shadow_offset = util.by_pixel(-78, 7), show_shadow = false},
+        {variation = 18, main_offset = util.by_pixel(-84, -5), shadow_offset = util.by_pixel(-78, 7), show_shadow = false},
+        {variation = 18, main_offset = util.by_pixel(-84, -5), shadow_offset = util.by_pixel(-78, 7), show_shadow = false},
+        {variation = 18, main_offset = util.by_pixel(-84, -5), shadow_offset = util.by_pixel(-78, 7), show_shadow = false}
+      }
+    )

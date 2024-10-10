@@ -8,10 +8,10 @@ RECIPE {
         {type = "item", name = "coal", amount = 10}
     },
     results = {
-        {type = "fluid", name = "coal-gas", amount = 40},
-        {type = "fluid", name = "tar", amount = 50},
-        {type = "item", name = "iron-oxide", amount = 1, probability = 0.3},
-        {type = "item", name = "coke", amount = 6}
+        {type = "fluid", name = "coal-gas",   amount = 40},
+        {type = "fluid", name = "tar",        amount = 50},
+        {type = "item",  name = "iron-oxide", amount = 1, probability = 0.3},
+        {type = "item",  name = "coke",       amount = 6}
     },
     main_product = "coal-gas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/coalgas-from-coal.png",
@@ -30,10 +30,10 @@ RECIPE {
         {type = "item", name = "wood", amount = 10}
     },
     results = {
-        {type = "fluid", name = "coal-gas", amount = 10},
-        {type = "fluid", name = "tar", amount = 30},
-        {type = "item", name = "iron-oxide", amount = 1, probability = 0.3},
-        {type = "item", name = "coal", amount = 10}
+        {type = "fluid", name = "coal-gas",   amount = 10},
+        {type = "fluid", name = "tar",        amount = 30},
+        {type = "item",  name = "iron-oxide", amount = 1, probability = 0.3},
+        {type = "item",  name = "coal",       amount = 10}
     },
     main_product = "coal-gas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/coalgas-from-wood.png",
@@ -53,8 +53,8 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "coal-gas", amount = 20},
-        {type = "fluid", name = "tar", amount = 20},
-        {type = "item", name = "ash", amount = 1}
+        {type = "fluid", name = "tar",      amount = 20},
+        {type = "item",  name = "ash",      amount = 1}
     },
     main_product = "coal-gas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/coalgas-from-coke.png",

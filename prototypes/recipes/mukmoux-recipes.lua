@@ -1,4 +1,3 @@
-
 RECIPE {
     type = "recipe",
     name = "mukmoux-fat",
@@ -6,7 +5,7 @@ RECIPE {
     enabled = false,
     energy_required = 60,
     ingredients = {
-        {type = "item", name = "fawogae", amount = 5},
+        {type = "item", name = "fawogae",       amount = 5},
         {type = "item", name = "ralesia-seeds", amount = 30}
     },
     results = {
@@ -22,14 +21,14 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        {type = "item", name = "mukmoux-fat", amount = 20},
-        {type = "item", name = "nichrome", amount = 1},
-        {type = "fluid", name = "water", amount = 2000}
+        {type = "item",  name = "mukmoux-fat", amount = 20},
+        {type = "item",  name = "nichrome",    amount = 1},
+        {type = "fluid", name = "water",       amount = 2000}
     },
     results = {
         {type = "fluid", name = "oleochemicals", amount = 300},
-        {type = "fluid", name = "glycerol", amount = 150},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000}
+        {type = "fluid", name = "glycerol",      amount = 150},
+        {type = "fluid", name = "steam",         amount = 2000, temperature = 150, ignored_by_productivity = 2000}
     },
     main_product = "oleochemicals",
     icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png",
@@ -45,13 +44,13 @@ RECIPE {
     enabled = false,
     energy_required = 10,
     ingredients = {
-        {type = "item", name = "mukmoux-fat", amount = 20},
-        {type = "item", name = "chromium", amount = 2},
-        {type = "fluid", name = "water", amount = 2000}
+        {type = "item",  name = "mukmoux-fat", amount = 20},
+        {type = "item",  name = "chromium",    amount = 2},
+        {type = "fluid", name = "water",       amount = 2000}
     },
     results = {
         {type = "fluid", name = "oleochemicals", amount = 250},
-        {type = "fluid", name = "steam", amount = 2000, temperature = 150, ignored_by_productivity = 2000}
+        {type = "fluid", name = "steam",         amount = 2000, temperature = 150, ignored_by_productivity = 2000}
     },
     main_product = "oleochemicals",
     icon = "__pycoalprocessinggraphics__/graphics/icons/oleochemicals.png",

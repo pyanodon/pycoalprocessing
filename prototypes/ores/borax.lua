@@ -1,8 +1,8 @@
-local resource_autoplace = require 'resource-autoplace'
+local resource_autoplace = require "resource-autoplace"
 
 data.raw.planet.nauvis.map_gen_settings.autoplace_controls["borax"] = {}
 
-data:extend{{
+data:extend {{
     type = "autoplace-control",
     name = "borax",
     richness = true,
@@ -15,7 +15,7 @@ data:extend{{
     type = "noise-layer",
     name = "borax"
 }}
-]]--
+]] --
 
 ENTITY {
     type = "resource",

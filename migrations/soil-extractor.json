@@ -1,20 +1,56 @@
 {
     "item": [
-        ["soil-extractormk01", "soil-extractor-mk01"],
-        ["soil-extractormk02", "soil-extractor-mk02"],
-        ["soil-extractormk03", "soil-extractor-mk03"],
-        ["soil-extractormk04", "soil-extractor-mk04"]
+        [
+            "soil-extractormk01",
+            "soil-extractor-mk01"
+        ],
+        [
+            "soil-extractormk02",
+            "soil-extractor-mk02"
+        ],
+        [
+            "soil-extractormk03",
+            "soil-extractor-mk03"
+        ],
+        [
+            "soil-extractormk04",
+            "soil-extractor-mk04"
+        ]
     ],
     "recipe": [
-        ["soil-extractormk01", "soil-extractor-mk01"],
-        ["soil-extractormk02", "soil-extractor-mk02"],
-        ["soil-extractormk03", "soil-extractor-mk03"],
-        ["soil-extractormk04", "soil-extractor-mk04"]
+        [
+            "soil-extractormk01",
+            "soil-extractor-mk01"
+        ],
+        [
+            "soil-extractormk02",
+            "soil-extractor-mk02"
+        ],
+        [
+            "soil-extractormk03",
+            "soil-extractor-mk03"
+        ],
+        [
+            "soil-extractormk04",
+            "soil-extractor-mk04"
+        ]
     ],
     "entity": [
-        ["soil-extractormk01", "soil-extractor-mk01"],
-        ["soil-extractormk02", "soil-extractor-mk02"],
-        ["soil-extractormk03", "soil-extractor-mk03"],
-        ["soil-extractormk04", "soil-extractor-mk04"]
+        [
+            "soil-extractormk01",
+            "soil-extractor-mk01"
+        ],
+        [
+            "soil-extractormk02",
+            "soil-extractor-mk02"
+        ],
+        [
+            "soil-extractormk03",
+            "soil-extractor-mk03"
+        ],
+        [
+            "soil-extractormk04",
+            "soil-extractor-mk04"
+        ]
     ]
 }

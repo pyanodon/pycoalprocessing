@@ -6,13 +6,13 @@ RECIPE {
     energy_required = 2,
     ingredients = {
         {type = "fluid", name = "refsyngas", amount = 100},
-        {type = "fluid", name = "water", amount = 500},
+        {type = "fluid", name = "water",     amount = 500},
         {type = "fluid", name = "light-oil", amount = 50},
-        {type = "item", name = "nichrome", amount = 10}
+        {type = "item",  name = "nichrome",  amount = 10}
     },
     results = {
         {type = "fluid", name = "combustion-mixture2", amount = 200},
-        {type = "fluid", name = "water", amount = 500, temperature = 100}
+        {type = "fluid", name = "water",               amount = 500, temperature = 100}
     },
     main_product = "combustion-mixture2"
 }

@@ -5,8 +5,8 @@ RECIPE {
     enabled = false,
     energy_required = 4,
     ingredients = {
-        {type = "fluid", name = "syngas", amount = 100},
-        {type = "item", name = "active-carbon", amount = 1}
+        {type = "fluid", name = "syngas",        amount = 100},
+        {type = "item",  name = "active-carbon", amount = 1}
     },
     results = {
         {type = "fluid", name = "refsyngas", amount = 70}
@@ -20,14 +20,14 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "syngas", amount = 100},
+        {type = "fluid", name = "syngas",   amount = 100},
         {type = "fluid", name = "methanol", amount = 100}
     },
     results = {
-        {type = "fluid", name = "refsyngas", amount = 100},
-        {type = "fluid", name = "water", amount = 30}, --bob hydrogen
+        {type = "fluid", name = "refsyngas",      amount = 100},
+        {type = "fluid", name = "water",          amount = 30}, --bob hydrogen
         {type = "fluid", name = "carbon-dioxide", amount = 30},
-        {type = "fluid", name = "acidgas", amount = 65}
+        {type = "fluid", name = "acidgas",        amount = 65}
     },
     main_product = "refsyngas"
 }:add_unlock("methanol-processing-2")
@@ -39,15 +39,15 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "syngas", amount = 100},
-        {type = "item", name = "methanol-gas-canister", amount = 1}
+        {type = "fluid", name = "syngas",                amount = 100},
+        {type = "item",  name = "methanol-gas-canister", amount = 1}
     },
     results = {
-        {type = "fluid", name = "refsyngas", amount = 100},
-        {type = "fluid", name = "water", amount = 30}, --bob hydrogen
-        {type = "fluid", name = "carbon-dioxide", amount = 20},
-        {type = "fluid", name = "acidgas", amount = 60},
-        {type = "item", name = "empty-gas-canister", amount = 1, ignored_by_productivity = 1}
+        {type = "fluid", name = "refsyngas",          amount = 100},
+        {type = "fluid", name = "water",              amount = 30}, --bob hydrogen
+        {type = "fluid", name = "carbon-dioxide",     amount = 20},
+        {type = "fluid", name = "acidgas",            amount = 60},
+        {type = "item",  name = "empty-gas-canister", amount = 1,  ignored_by_productivity = 1}
     },
     main_product = "refsyngas"
 }:add_unlock("methanol-processing-1")

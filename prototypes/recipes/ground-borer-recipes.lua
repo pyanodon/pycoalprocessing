@@ -5,9 +5,9 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "lubricant", amount = 200},
-        {type = "fluid", name = "coal-gas", amount = 300},
-        {type = "item", name = "drill-head", amount = 1}
+        {type = "fluid", name = "lubricant",  amount = 200},
+        {type = "fluid", name = "coal-gas",   amount = 300},
+        {type = "item",  name = "drill-head", amount = 1}
     },
     results = {
         {type = "item", name = "nexelit-ore", amount = 10}
@@ -26,9 +26,9 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "lubricant", amount = 100},
-        {type = "fluid", name = "coal-gas", amount = 100},
-        {type = "item", name = "drill-head", amount = 1}
+        {type = "fluid", name = "lubricant",  amount = 100},
+        {type = "fluid", name = "coal-gas",   amount = 100},
+        {type = "item",  name = "drill-head", amount = 1}
     },
     results = {
         {type = "item", name = "stone", amount = 30}
@@ -47,9 +47,9 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "lubricant", amount = 100},
-        {type = "fluid", name = "coal-gas", amount = 100},
-        {type = "item", name = "drill-head", amount = 1}
+        {type = "fluid", name = "lubricant",  amount = 100},
+        {type = "fluid", name = "coal-gas",   amount = 100},
+        {type = "item",  name = "drill-head", amount = 1}
     },
     results = {
         {type = "item", name = "raw-borax", amount = 15}
@@ -68,9 +68,9 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "lubricant", amount = 100},
-        {type = "fluid", name = "coal-gas", amount = 100},
-        {type = "item", name = "drill-head", amount = 2}
+        {type = "fluid", name = "lubricant",  amount = 100},
+        {type = "fluid", name = "coal-gas",   amount = 100},
+        {type = "item",  name = "drill-head", amount = 2}
     },
     results = {
         {type = "item", name = "niobium-ore", amount = 15}
@@ -89,9 +89,9 @@ RECIPE {
     enabled = false,
     energy_required = 3,
     ingredients = {
-        {type = "fluid", name = "lubricant", amount = 100},
-        {type = "fluid", name = "coal-gas", amount = 100},
-        {type = "item", name = "drill-head", amount = 1}
+        {type = "fluid", name = "lubricant",  amount = 100},
+        {type = "fluid", name = "coal-gas",   amount = 100},
+        {type = "item",  name = "drill-head", amount = 1}
     },
     results = {
         {type = "item", name = "limestone", amount = 20}

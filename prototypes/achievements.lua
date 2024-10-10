@@ -22,35 +22,35 @@ data.raw["dont-build-entity-achievement"]["logistic-network-embargo"] = nil
 data.raw["finish-the-game-achievement"]["no-time-for-chitchat"] = nil
 data.raw["finish-the-game-achievement"]["there-is-no-spoon"] = nil
 
-data.raw["finish-the-game-achievement"]["smoke-me-a-kipper-i-will-be-back-for-breakfast"].icon="__pycoalprocessinggraphics__/graphics/achievement/smoke-me-a-kipper-i-will-be-back-for-breakfast.png"
+data.raw["finish-the-game-achievement"]["smoke-me-a-kipper-i-will-be-back-for-breakfast"].icon = "__pycoalprocessinggraphics__/graphics/achievement/smoke-me-a-kipper-i-will-be-back-for-breakfast.png"
 
 -- ordering: 0, then a letter per mod, then a letter within the mod
 -- PyCP: a, PyIN: b, PyFE: c, PyPH: d, PyRO: e, PyHT: f, PyAL: g, PyAE: h
-data:extend(
-{
+data:extend
   {
-    type = "produce-achievement",
-    name = "empire-of-dirt",
-    order = "0aa",
-    item_product = "soil",
-    amount = 1000000,
-    icon = "__base__/graphics/achievement/mass-production-1.png",
-    icon_size = 128,
-    limited_to_one_game = true
-  },
-  {
-    type = "produce-achievement",
-    name = "dust-to-dust",
-    order = "0ab",
-    item_product = "ash",
-    amount = 1000000,
-    icon = "__base__/graphics/achievement/mass-production-1.png",
-    icon_size = 128,
-    limited_to_one_game = true
-  },
-})
+    {
+      type = "produce-achievement",
+      name = "empire-of-dirt",
+      order = "0aa",
+      item_product = "soil",
+      amount = 1000000,
+      icon = "__base__/graphics/achievement/mass-production-1.png",
+      icon_size = 128,
+      limited_to_one_game = true
+    },
+    {
+      type = "produce-achievement",
+      name = "dust-to-dust",
+      order = "0ab",
+      item_product = "ash",
+      amount = 1000000,
+      icon = "__base__/graphics/achievement/mass-production-1.png",
+      icon_size = 128,
+      limited_to_one_game = true
+    },
+  }
 if mods.pypetroleumhandling then
-  data:extend({
+  data:extend {
     {
       type = "produce-achievement",
       name = "what-do-you-mean-i-didnt-win-the-game",
@@ -61,71 +61,71 @@ if mods.pypetroleumhandling then
       icon_size = 128,
       limited_to_one_game = true
     },
-  })
+  }
 end
 if mods.pyalienlife then
-  data:extend({
-      {
-        type = "dont-use-entity-in-energy-production-achievement",
-        name = "training-regimen",
-        order = "0ga",
-        last_hour_only = true,
-        excluded = "electric-energy-interface", -- this is NOT optional, so fill in something you can't build anyway
-        included = "generator-1",
-        minimum_energy_produced = "1TJ",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/training-regimen.png",
-        icon_size = 128
-      },
-      {
-        type = "build-entity-achievement",
-        name = "animal-labor",
-        order = "0gb",
-        to_build = "caravan",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
-        icon_size = 128
-      },
-      {
-        type = "build-entity-achievement",
-        name = "is-it-a-bird",
-        order = "0gc",
-        to_build = "nukavan",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/is-it-a-bird.png",
-        icon_size = 128
-      },
-      {
-        type = "build-entity-achievement",
-        name = "as-per-my-last-email",
-        order = "0gd",
-        to_build = "nukavan",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/as-per-my-last-email.png",
-        icon_size = 128
-      },
-      {
-        type = "build-entity-achievement",
-        name = "cthulhu-fhtagn",
-        order = "0ge",
-        to_build = "ocula",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/cthulhu-fhtagn.png",
-        icon_size = 128
-      },
-      {
-        type = "achievement",
-        name = "no-ulterior-motives-behind-this-acronym",
-        order = "0gf",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/no-ulterior-motives-behind-this-acronym.png",
-        icon_size = 128
-      },
-      {
-        type = "achievement",
-        name = "polished-turd",
-        order = "0gg",
-        icon = "__pycoalprocessinggraphics__/graphics/achievement/polished-turd.png",
-        icon_size = 128
-      },
-    })
+  data:extend {
+    {
+      type = "dont-use-entity-in-energy-production-achievement",
+      name = "training-regimen",
+      order = "0ga",
+      last_hour_only = true,
+      excluded = "electric-energy-interface",   -- this is NOT optional, so fill in something you can't build anyway
+      included = "generator-1",
+      minimum_energy_produced = "1TJ",
+      icon = "__pycoalprocessinggraphics__/graphics/achievement/training-regimen.png",
+      icon_size = 128
+    },
+    {
+      type = "build-entity-achievement",
+      name = "animal-labor",
+      order = "0gb",
+      to_build = "caravan",
+      icon = "__pycoalprocessinggraphics__/graphics/achievement/animal-labor.png",
+      icon_size = 128
+    },
+    {
+      type = "build-entity-achievement",
+      name = "is-it-a-bird",
+      order = "0gc",
+      to_build = "nukavan",
+      icon = "__pycoalprocessinggraphics__/graphics/achievement/is-it-a-bird.png",
+      icon_size = 128
+    },
+    {
+      type = "build-entity-achievement",
+      name = "as-per-my-last-email",
+      order = "0gd",
+      to_build = "nukavan",
+      icon = "__pycoalprocessinggraphics__/graphics/achievement/as-per-my-last-email.png",
+      icon_size = 128
+    },
+    {
+      type = "build-entity-achievement",
+      name = "cthulhu-fhtagn",
+      order = "0ge",
+      to_build = "ocula",
+      icon = "__pycoalprocessinggraphics__/graphics/achievement/cthulhu-fhtagn.png",
+      icon_size = 128
+    },
+    {
+      type = "achievement",
+      name = "no-ulterior-motives-behind-this-acronym",
+      order = "0gf",
+      icon = "__pycoalprocessinggraphics__/graphics/achievement/no-ulterior-motives-behind-this-acronym.png",
+      icon_size = 128
+    },
+    {
+      type = "achievement",
+      name = "polished-turd",
+      order = "0gg",
+      icon = "__pycoalprocessinggraphics__/graphics/achievement/polished-turd.png",
+      icon_size = 128
+    },
+  }
 end
 if mods.pyalternativeenergy then
-  data:extend({
+  data:extend {
     {
       type = "produce-achievement",
       name = "taste-the-rainbow",
@@ -146,5 +146,5 @@ if mods.pyalternativeenergy then
       icon_size = 128,
       limited_to_one_game = true
     },
-  })
+  }
 end

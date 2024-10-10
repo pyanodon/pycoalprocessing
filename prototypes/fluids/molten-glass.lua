@@ -1,4 +1,3 @@
-
 RECIPE {
     type = "recipe",
     name = "glass",
@@ -11,7 +10,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "molten-glass", amount = 20}
     },
-    main_product= "molten-glass",
+    main_product = "molten-glass",
     subgroup = "py-items",
     order = "aac"
 }
@@ -24,12 +23,12 @@ RECIPE {
     energy_required = 4,
     ingredients = {
         {type = "item", name = "powdered-quartz", amount = 2},
-        {type = "item", name = "pure-sand", amount = 10},
+        {type = "item", name = "pure-sand",       amount = 10},
     },
     results = {
         {type = "fluid", name = "molten-glass", amount = 50}
     },
-    main_product= "molten-glass",
+    main_product = "molten-glass",
     subgroup = "py-items",
     order = "aac"
 }:add_unlock("advanced-material-processing")
@@ -39,7 +38,7 @@ FLUID {
     type = "fluid",
     name = "molten-glass",
     icon = "__pycoalprocessinggraphics__/graphics/icons/molten-glass.png",
-	icon_size = 64,
+    icon_size = 64,
     default_temperature = 10,
     base_flow_rate = 100, -- less than 15 = liquid / equal a 15 = gas
     base_color = {r = 0.7, g = 0.7, b = 0.7},

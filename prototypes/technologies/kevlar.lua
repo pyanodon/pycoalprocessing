@@ -10,13 +10,13 @@ TECHNOLOGY {
         count = 50,
         ingredients = {
             {"automation-science-pack", 1},
-            {"logistic-science-pack", 1}
+            {"logistic-science-pack",   1}
         },
         time = 30
     }
 }
 
-if mods['pypetroleumhandling'] then
+if mods["pypetroleumhandling"] then
     TECHNOLOGY {
         type = "technology",
         name = "kevlar-mk02",
@@ -30,8 +30,8 @@ if mods['pypetroleumhandling'] then
             count = 50,
             ingredients = {
                 {"automation-science-pack", 1},
-                {"logistic-science-pack", 1},
-                {"chemical-science-pack", 1}
+                {"logistic-science-pack",   1},
+                {"chemical-science-pack",   1}
             },
             time = 30
         }
