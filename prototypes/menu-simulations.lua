@@ -48,8 +48,8 @@ menu_simulations.cp_unload =
   [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -70,8 +70,8 @@ menu_simulations.cp_forest =
   [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -106,8 +106,8 @@ menu_simulations.cp_borax =
   [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -128,8 +128,8 @@ menu_simulations.in_bots =
   [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -149,8 +149,8 @@ menu_simulations.in_bus =
   [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -172,8 +172,8 @@ if mods["pyfusionenergy"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -194,8 +194,8 @@ if mods["pyfusionenergy"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -218,8 +218,8 @@ if mods["pyhightech"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -239,8 +239,8 @@ if mods["pyhightech"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -272,8 +272,8 @@ if mods["pyhightech"] then
       [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -298,8 +298,8 @@ if mods["pyrawores"] then
       [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -322,8 +322,8 @@ if mods["pyrawores"] then
         string.format([[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -348,8 +348,8 @@ if mods["pyrawores"] then
         string.format([[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -375,8 +375,8 @@ if mods["pypetroleumhandling"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -396,8 +396,8 @@ if mods["pypetroleumhandling"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -423,8 +423,8 @@ if mods["pypetroleumhandling"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -447,8 +447,8 @@ if mods["pyalienlife"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -470,8 +470,8 @@ if mods["pyalienlife"] then
       [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+9.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+9.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -494,16 +494,16 @@ if mods["pyalienlife"] then
       [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
         entity.destroy()
     end
 
-    local y = game.camera_position.y + 17
-    local x = game.camera_position.x - 40
+    local y = game.simulation.camera_position.y + 17
+    local x = game.simulation.camera_position.x - 40
     local character = surface.create_entity{ name = "character", position = {x, y}, force = "player" }
     character.color = {1, 0, 0, 0.5}
     local car = surface.create_entity{ name = "dingrido", position = {x, y}, force = "player" }
@@ -538,16 +538,16 @@ if mods["pyalternativeenergy"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+9.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+9.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
         entity.destroy()
     end
 
-    local y = game.camera_position.y + 8
-    local x = game.camera_position.x + 40
+    local y = game.simulation.camera_position.y + 8
+    local x = game.simulation.camera_position.x + 40
     local character = surface.create_entity{ name = "character", position = {x, y}, force = "player" }
     character.color = {1, 0, 0, 0.5}
     local car = surface.create_entity{ name = "car", position = {x, y}, force = "player" }
@@ -598,8 +598,8 @@ if mods["pyalternativeenergy"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -620,8 +620,8 @@ if mods["pyalternativeenergy"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+9.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+9.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
@@ -642,8 +642,8 @@ if mods["pyalternativeenergy"] then
     [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.camera_zoom = 1
+    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+    game.simulation.camera_zoom = 1
     game.tick_paused = false
 
     for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
