@@ -267,8 +267,8 @@ if rail_support then
     rail_support:add_ingredient {"intermetallics", 10}
 end
 
-local elevated_rails_tech = TECHNOLOGY("elevated-rail")
-if elevated_rails_tech then
+if data.raw.technology["elevated-rail"] then
+    local elevated_rails_tech = TECHNOLOGY("elevated-rail")
     elevated_rails_tech:remove_pack("production-science-pack")
     elevated_rails_tech:remove_pack("chemical-science-pack")
     elevated_rails_tech:remove_prereq("production-science-pack")
