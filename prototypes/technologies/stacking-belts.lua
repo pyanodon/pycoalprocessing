@@ -101,10 +101,8 @@ RECIPE {
     name = "py-stack-inserter",
     enabled = false,
     result = "py-stack-inserter",
-    ingredients = {
-        {type = "item", name = "py-stack-inserter", amount = 1},
-    }
-}
+    ingredients = {},
+}:add_ingredient {"electronic-circuit", 4}:add_ingredient {"small-parts-01", 10}:add_ingredient {"intermetallics", 3}:add_ingredient {"belt", 3}:add_ingredient {"engine-unit", 3}:add_ingredient {type = "fluid", name = "lubricant", amount = 15}
 
 local i = 1
 for science, pack in pairs(science_packs_that_unlock_belt_stacking) do
