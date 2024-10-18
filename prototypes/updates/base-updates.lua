@@ -277,3 +277,5 @@ end
 
 TECHNOLOGY("fluid-wagon"):remove_pack("logistic-science-pack")
 TECHNOLOGY("automated-rail-transportation"):remove_pack("logistic-science-pack")
+
+data.raw.pump.pump.pumping_speed = data.raw.pump.pump.pumping_speed * 10
