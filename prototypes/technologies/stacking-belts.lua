@@ -48,6 +48,7 @@ for _, science in pairs(science_packs_that_unlock_belt_stacking) do
     }
 
     data:extend{tech}
+    i = i + 1
 
     ::continue::
 end
