@@ -4,6 +4,7 @@ end
 
 require "prototypes/updates/base-updates"
 require "prototypes/updates/entity-updates"
+require "prototypes/technologies/stacking-belts"
 
 ITEM("automation-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
 ITEM("automation-science-pack", "tool"):set("icon_size", 64)
@@ -218,7 +219,6 @@ RECIPE("beacon-mk01")
     :add_ingredient {"eva", 10}
     :add_ingredient {"stainless-steel", 10}:remove_ingredient {"steel-plate"}
     :add_ingredient {"tower-mk02", 1}
-
 
 if register_cache_file ~= nil then
     register_cache_file({"pycoalprocessing"}, "__pycoalprocessing__/cached-configs/pycoalprocessing.lua")
