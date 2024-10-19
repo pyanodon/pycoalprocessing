@@ -120,10 +120,10 @@ ITEM {
 
     pictures =
     {
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore.png",   scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore-1.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore-2.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore-3.png", scale = 0.25}
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore-1.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore-2.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore-3.png", scale = 0.66}
     },
     flags = {},
     subgroup = "py-items",
@@ -345,11 +345,11 @@ ITEM {
 
     pictures =
     {
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-01.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-02.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-03.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-04.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-05.png", scale = 0.25},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-01.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-02.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-03.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-04.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-05.png", scale = 0.66},
     },
     flags = {},
     subgroup = "py-items",
@@ -375,9 +375,9 @@ ITEM {
     icon_size = 64,
     pictures = {
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax.png",   scale = 0.33},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax-1.png", scale = 0.33},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax-2.png", scale = 0.33},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax-3.png", scale = 0.33}
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax-1.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax-2.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax-3.png", scale = 0.66}
     },
     flags = {},
     subgroup = "py-items",
@@ -392,9 +392,9 @@ ITEM {
     icon_size = 64,
     pictures = {
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/borax.png",   scale = 0.33},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/borax-1.png", scale = 0.33},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/borax-2.png", scale = 0.33},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/borax-3.png", scale = 0.33}
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/borax-1.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/borax-2.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/borax-3.png", scale = 0.66}
     },
     flags = {},
     subgroup = "py-items",
@@ -476,18 +476,18 @@ ITEM {
 
     pictures =
     {
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-01.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-02.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-03.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-04.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-05.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-06.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-07.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-08.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-09.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-10.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-11.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-12.png", scale = 0.25},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-01.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-02.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-03.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-04.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-05.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-06.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-07.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-08.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-09.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-10.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-11.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/lab-12.png", scale = 0.66},
     },
     flags = {},
     subgroup = "py-items",
@@ -536,10 +536,10 @@ ITEM {
 
     pictures =
     {
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore.png",    scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore-01.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore-02.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore-03.png", scale = 0.25}
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore-01.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore-02.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore-03.png", scale = 0.66}
     },
     flags = {},
     subgroup = "py-items-hpf",
@@ -787,13 +787,13 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/mip/log-01.png",
     pictures =
     {
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-01.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-02.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-03.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-04.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-05.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-06.png", scale = 0.25},
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-07.png", scale = 0.25},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-01.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-02.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-03.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-04.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-05.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-06.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/log-07.png", scale = 0.66},
     },
     icon_size = 64,
     flags = {},
