@@ -60,7 +60,7 @@ py.on_event(defines.events.on_research_finished, function(event)
 	end
 end)
 
-py.on_event({defines.events.on_built_entity, defines.events.on_robot_built_entity, defines.events.script_raised_built, defines.events.script_raised_revive}, function(event)
+py.on_event(py.events.on_built(), function(event)
 	Beacons.events.on_built(event)
 	Pond.events.on_built(event)
 end)
