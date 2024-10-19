@@ -9,16 +9,7 @@ require "scripts.tailings-pond"
 require "scripts.beacons"
 require "scripts.milestones"
 
-local function init()
-	Beacons.events.init()
-	Wiki.events.init()
-	Pond.events.init()
-	Spreadsheet.events.init()
-end
-
-script.on_configuration_changed(init)
-script.on_init(function()
-	init()
+py.on_event(py.events.on_init(), function()
 	for _, interface in pairs {"silo_script", "better-victory-screen"} do
 		if remote.interfaces[interface] and remote.interfaces[interface]["set_no_victory"] then
 			remote.call(interface, "set_no_victory", true)
@@ -65,9 +56,7 @@ py.on_event(py.events.on_built(), function(event)
 	Pond.events.on_built(event)
 end)
 
-py.on_event({defines.events.on_player_mined_entity, defines.events.on_robot_mined_entity, defines.events.script_raised_destroy},
-	Beacons.events.on_destroyed
-)
+py.on_event(py.events.on_destroyed(), Beacons.events.on_destroyed)
 
 py.on_event(defines.events.on_entity_died, function(event)
 	Pond.events.on_entity_died(event)

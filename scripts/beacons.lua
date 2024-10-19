@@ -54,10 +54,10 @@ for i = 1, 5 do
 	end
 end
 
-Beacons.events.init = function()
+py.on_event(py.events.on_init(), function()
 	storage.beacon_interference_icons = storage.beacon_interference_icons or {}
 	storage.farms = storage.farms or farm_buildings
-end
+end)
 
 local function enable_entity(entity)
 	local name = entity.name:gsub("%-mk..+", "")

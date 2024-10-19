@@ -27,11 +27,11 @@ local gasses = {
 	["neon"] = false,
 }
 
-Pond.events.init = function()
+py.on_event(py.events.on_init(), function()
 	storage.tailings_ponds = storage.tailings_ponds or {}
 	storage.tiles = storage.tiles or {}
 	storage.Tiles = nil
-end
+end)
 
 --Pond contains gases, lets spill them out. Only negative is this can be used as a 'gas' void so...
 --If the gas is 'polluting' create pollution, else just vent.

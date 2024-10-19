@@ -1,4 +1,4 @@
-Wiki.events.init = function()
+py.on_event(py.events.on_init(), function()
     for _, player in pairs(game.players) do
         Wiki.create_pywiki_button(player)
     end
@@ -56,4 +56,4 @@ Wiki.events.init = function()
             text_only = true
         })
     end
-end
+end)

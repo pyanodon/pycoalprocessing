@@ -238,7 +238,7 @@ local function calculate_unlocked_at(required_science, name)
 	}
 end
 
-Spreadsheet.events.init = function()
+py.on_event(py.events.on_init(), function()
 	local required_science = calculate_required_science()
 	storage.fluid_spreadsheet_data = {
 		columns = {
@@ -347,7 +347,7 @@ Spreadsheet.events.init = function()
 			})
 		end
 	end
-end
+end)
 
 gui_events[defines.events.on_gui_click]["py_spreadsheet_sort"] = function(event)
 	local player = game.get_player(event.player_index)
