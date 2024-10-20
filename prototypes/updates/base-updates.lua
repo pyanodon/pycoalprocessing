@@ -288,3 +288,5 @@ table.insert(tech_that_unlocks_fluid_mining.effects, {
     type = "mining-with-fluid",
     modifier = true
 })
+
+data.raw.recipe["engine-unit"].category = "crafting"
