@@ -45,7 +45,7 @@ data:extend {py.merge(data.raw.inserter["bulk-inserter"], {
         type = "electric",
         usage_priority = "secondary-input"
     },
-    rotation_speed = data.raw.inserter.inserter.rotation_speed,
+    rotation_speed = data.raw.inserter.inserter.rotation_speed * 1.5,
     minable = {
         mining_time = 0.2,
         result = "py-stack-inserter"
