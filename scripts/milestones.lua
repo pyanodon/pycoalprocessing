@@ -411,7 +411,7 @@ remote.add_interface("pycoalprocessing", {
             "moondrop",
             "vrauks",
             "fawogae",
-            "ralesias",
+            "ralesia",
             "fish",
             "auog",
             "cottongut",

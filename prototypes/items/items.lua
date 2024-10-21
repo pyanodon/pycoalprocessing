@@ -402,16 +402,35 @@ ITEM {
     stack_size = 100
 }
 
-ITEM {
-    type = "item",
-    name = "ralesia",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia.png",
-    icon_size = 32,
-    flags = {},
-    subgroup = "py-items",
-    order = "g",
-    stack_size = 100
-}
+if not mods["pyalienlife"] then
+    ITEM {
+        type = "item",
+        name = "ralesia",
+        icon = "__pycoalprocessinggraphics__/graphics/icons/ralesia.png",
+        icon_size = 32,
+        flags = {},
+        subgroup = "py-items",
+        order = "g",
+        stack_size = 100
+    }
+else
+    ITEM {
+        type = "module",
+        name = "ralesia",
+        icons = {
+            {icon = "__pyalienlifegraphics__/graphics/icons/ralesia.png"}
+        },
+        icon_size = 64,
+        category = "ralesia",
+        tier = 1,
+        flags = {},
+        subgroup = "py-alienlife-ralesia",
+        order = "ra",
+        stack_size = 50,
+        effect = {pollution = 1, speed = 1},
+        limitation_message_key = "ralesia"
+    }
+end
 
 ITEM {
     type = "item",
