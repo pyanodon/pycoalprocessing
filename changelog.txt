@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
-Version: 2.2.0
-Date: ???
+Version: 3.0.0
+Date: 2024-10-20
   Changes:
     - Fixed fawogae stock pipe connection not matching the graphics
     - Engine units can now be hand-crafted (https://github.com/pyanodon/pybugreports/issues/576)
