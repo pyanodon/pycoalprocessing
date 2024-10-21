@@ -71,3 +71,5 @@ for _, recipe in pairs(data.raw.recipe) do
         error("Recipe " .. recipe.name .. " is missing crafting_machine_tint. Please fill out this field.")
     end
 end
+
+data.raw.fluid["steam"].heat_capacity = (1000 / 60 * 126) .. "J"
