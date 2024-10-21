@@ -107,9 +107,9 @@ local function scorch_earth(pond)
 	local surface = entity.surface
 	--Vent Gasses
 	local fluid = empty_pond_gas(fluid, surface, entity.position)
-	if not fluid then -- totally drained
+	if not fluid or fluid.amount == 0 then -- totally drained
 		pond.fluid_per = 0
-		fluidbox[1] = fluid
+		fluidbox[1] = nil
 		return
 	end
 
@@ -141,9 +141,13 @@ local function scorch_earth(pond)
 		fluid.amount = amount
 	end
 
-	pond.fluid_per = fluid.amount / tanksize
+	pond.fluid_per = math.max(0, fluid.amount / tanksize)
 	--push the updated fluidbox to the entity.
-	fluidbox[1] = fluid
+	if fluid.amount <= 0 then
+		fluidbox[1] = nil
+	else
+		fluidbox[1] = fluid
+	end
 end
 
 Pond.events.on_built = function(event)
