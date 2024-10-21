@@ -49,6 +49,9 @@ if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
     })
 
     for _, recipe in pairs(data.raw.recipe) do
+        if not recipe.results then
+            goto continue
+        end
         for _, result in pairs(recipe.results) do -- This looks long, however we skip a lot of the logic with caching
             local result_name = result[1] or result.name
             if result_name and valid_entities[result_name] then
