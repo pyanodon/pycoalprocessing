@@ -4,6 +4,7 @@ Date: ???
   Changes:
     - Fixed fawogae stock pipe connection not matching the graphics
     - Engine units can now be hand-crafted (https://github.com/pyanodon/pybugreports/issues/576)
+    - Renamed "Barrel" back to "Empty barrel" so that you can search for it in factoriopedia without seeing all the other barrels.
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.31
 Date: 2024-9-7
