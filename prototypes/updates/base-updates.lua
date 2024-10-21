@@ -302,3 +302,47 @@ if mods.pyrawores then
 end
 
 data.raw.recipe["iron-stick"].enabled = true
+
+local starting_techs = {
+    "automation",
+    "coal-processing-1",
+    "gun-turret",
+    "soil-washing",
+    "stone-wall",
+}
+
+for _, t in pairs(starting_techs) do
+    t = data.raw.technology[t]
+    if t then t.prerequisites = {"automation-science-pack"} end
+    ::continue::
+end
+
+data.raw.technology["automation-science-pack"].prerequisites = {"steam-power"}
+data.raw.technology["steam-power"].research_trigger = {type = "craft-item", item = "iron-plate", count = 10}
+data.raw.technology["automation-science-pack"].research_trigger = {type = "craft-item", item = "copper-plate", count = 10}
+
+RECIPE("collector"):add_unlock("automation-science-pack").enabled = false
+RECIPE("lab"):add_unlock("automation-science-pack").enabled = false
+RECIPE("planter-box"):add_unlock("automation-science-pack").enabled = false
+RECIPE("empty-planter-box"):add_unlock("automation-science-pack").enabled = false
+RECIPE("soil-extractor-mk01"):add_unlock("automation-science-pack").enabled = false
+RECIPE("soil"):add_unlock("automation-science-pack").enabled = false
+RECIPE("wpu"):add_unlock("automation-science-pack").enabled = false
+RECIPE("log-wood"):add_unlock("automation-science-pack").enabled = false
+
+RECIPE("poorman-wood-fence"):add_unlock("stone-wall").enabled = false
+RECIPE("small-electric-pole"):add_unlock("steam-power").enabled = false
+RECIPE("copper-cable").enabled = true
+RECIPE("automation-science-pack").enabled = false
+
+RECIPE("wooden-chest"):add_unlock("automation").enabled = false
+RECIPE("iron-chest"):add_unlock("automation").enabled = false
+
+data.raw.technology["electronics"].research_trigger = nil
+data.raw.technology["electronics"].unit = {
+    count = 10,
+    ingredients = {
+        {"automation-science-pack", 1}
+    },
+    time = 30
+}
