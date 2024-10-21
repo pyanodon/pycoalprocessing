@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.2
+Date: 2024-10-21
+  Changes:
+    - The selector combinator is now craftable at logistics science. (previously chemical science)
+---------------------------------------------------------------------------------------------------
 Version: 3.0.1
 Date: 2024-10-21
   Changes:

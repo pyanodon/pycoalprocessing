@@ -290,3 +290,13 @@ table.insert(tech_that_unlocks_fluid_mining.effects, {
 })
 
 data.raw.recipe["engine-unit"].category = "crafting"
+
+RECIPE("selector-combinator"):remove_ingredient("advanced-circuit"):add_ingredient {"electronic-circuit", 5}
+TECHNOLOGY("advanced-combinators").unit.ingredients = {
+    {"automation-science-pack", 1},
+    {"logistic-science-pack",   1},
+}
+TECHNOLOGY("advanced-combinators").prerequisites = mods.pyrawores and {"circuit-network", "solder-mk02"} or {"circuit-network"}
+if mods.pyrawores then
+    RECIPE("selector-combinator"):add_ingredient {type = "fluid", name = "molten-solder", amount = 10}.category = "crafting-with-fluid"
+end
