@@ -1,5 +1,7 @@
 local sand_vehicle_speed_modifier = _G.sand_vehicle_speed_modifier
 
+local sand_sounds = sound_variations("__base__/sound/walking/sand", 9, 0.8, volume_multiplier("main-menu", 2.9))
+
 local variants = {
     main = {
         {
@@ -42,7 +44,8 @@ local variants = {
     u_transition = {
         picture = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-u.png",
         count = 8
-    }
+    },
+    empty_transitions = true, -- TODO: fix tile transitions
 }
 
 data:extend {{
@@ -55,29 +58,12 @@ data:extend {{
     autoplace = nil,
     layer = 35,
     variants = variants,
-    walking_sound = {
-        {
-            filename = "__base__/sound/walking/sand-01.ogg",
-            volume = 0.8
-        },
-        {
-            filename = "__base__/sound/walking/sand-02.ogg",
-            volume = 0.8
-        },
-        {
-            filename = "__base__/sound/walking/sand-03.ogg",
-            volume = 0.8
-        },
-        {
-            filename = "__base__/sound/walking/sand-04.ogg",
-            volume = 0.8
-        }
-    },
+    walking_sound = sand_sounds,
     map_color = defines.color.brown,
     absorptions_per_second = {pollution = 0.0002},
     vehicle_friction_modifier = sand_vehicle_speed_modifier,
-    transitions = data.raw.tile["dirt-4"].transitions,
-    transitions_between_transitions = data.raw.tile["dirt-4"].transitions_between_transitions,
+    transitions = data.raw.tile["dirt-4"].variants.transitions,
+    transitions_between_transitions = data.raw.tile["dirt-4"].variants.transitions_between_transitions,
 }}
 
 data:extend {{
@@ -91,29 +77,12 @@ data:extend {{
     layer = 36,
     tint = {0.25, 0.25, 0.25, 0.25},
     variants = variants,
-    walking_sound = {
-        {
-            filename = "__base__/sound/walking/sand-01.ogg",
-            volume = 0.8
-        },
-        {
-            filename = "__base__/sound/walking/sand-02.ogg",
-            volume = 0.8
-        },
-        {
-            filename = "__base__/sound/walking/sand-03.ogg",
-            volume = 0.8
-        },
-        {
-            filename = "__base__/sound/walking/sand-04.ogg",
-            volume = 0.8
-        }
-    },
+    walking_sound = sand_sounds,
     map_color = defines.color.brown,
     absorptions_per_second = {pollution = 0.0002},
     vehicle_friction_modifier = sand_vehicle_speed_modifier,
-    transitions = data.raw.tile["dirt-4"].transitions,
-    transitions_between_transitions = data.raw.tile["dirt-4"].transitions_between_transitions,
+    transitions = data.raw.tile["dirt-4"].variants.transitions,
+    transitions_between_transitions = data.raw.tile["dirt-4"].variants.transitions_between_transitions,
 }}
 
 data:extend {{
