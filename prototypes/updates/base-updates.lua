@@ -300,3 +300,5 @@ TECHNOLOGY("advanced-combinators").prerequisites = mods.pyrawores and {"circuit-
 if mods.pyrawores then
     RECIPE("selector-combinator"):add_ingredient {type = "fluid", name = "molten-solder", amount = 10}.category = "crafting-with-fluid"
 end
+
+data.raw.recipe["iron-stick"].enabled = true
