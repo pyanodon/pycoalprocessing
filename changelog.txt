@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.7
+Date: 2024-10-21
+  Changes:
+    - Fixed softlock caused by blue chips in the cargo landing pad recipe.
+    - Pyified the cargo landing pad recipe.
+    - Added a new infinite tech that lets you place as many cargo landing pads as you want.
+---------------------------------------------------------------------------------------------------
 Version: 3.0.6
 Date: 2024-10-21
   Changes:

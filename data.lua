@@ -66,6 +66,8 @@ require "prototypes/technologies/pyrrhic"
 require "prototypes/technologies/artillery-2"
 require "prototypes/technologies/artillery-range"
 
+require "prototypes/technologies/cargo-landing-pad-capacity"
+
 
 -- (( RESOURCES )) --
 require "prototypes.ores.borax"

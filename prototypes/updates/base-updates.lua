@@ -346,3 +346,11 @@ data.raw.technology["electronics"].unit = {
     },
     time = 30
 }
+
+local cargo_landing_pad = RECIPE("cargo-landing-pad"):remove_ingredient("processing-unit"):add_ingredient {"advanced-circuit", 100}:remove_ingredient("steel-plate"):add_ingredient {"steel-plate", 500}
+if mods.pyalienlife then
+    cargo_landing_pad:add_ingredient {"py-warehouse-buffer", 1}:add_ingredient{"titanium-plate", 500}
+end
+if mods.pyalternativeenergy then
+    cargo_landing_pad:add_ingredient{"mechanical-parts-02", 2}
+end
