@@ -441,7 +441,7 @@ RECIPE {
     type = "recipe",
     name = "log-wood",
     category = "wpu",
-    enabled = false,
+    enabled = true,
     energy_required = 4,
     ingredients = {
         {type = "item", name = "log", amount = 4}

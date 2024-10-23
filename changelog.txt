@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.8
-Date: ?
+Date: 2024-10-23
   Changes:
+    - Fixed not having chests at the start. (https://github.com/pyanodon/pybugreports/issues/622)
     - Fixed innaccuracies in the inserter pywiki page.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.7
