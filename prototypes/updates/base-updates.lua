@@ -321,7 +321,7 @@ data.raw.technology["automation-science-pack"].prerequisites = {"steam-power"}
 data.raw.technology["steam-power"].research_trigger = {type = "craft-item", item = "iron-plate", count = 10}
 data.raw.technology["automation-science-pack"].research_trigger = {type = "craft-item", item = "copper-plate", count = 10}
 
-RECIPE("collector"):add_unlock("automation-science-pack").enabled = false
+RECIPE("flora-collector-mk01"):add_unlock("automation-science-pack").enabled = false
 RECIPE("lab"):add_unlock("automation-science-pack").enabled = false
 RECIPE("planter-box"):add_unlock("automation-science-pack").enabled = false
 RECIPE("empty-planter-box"):add_unlock("automation-science-pack").enabled = false
