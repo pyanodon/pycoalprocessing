@@ -24,6 +24,7 @@ local rocks = {
     ["rare-earth-bolide"] = true,
     ["phosphate-rock"] = true,
     ["sulfur-patch"] = true,
+    ["geothermal-crack"] = true,
     -- Commented because only scales on size :shrug:
     -- ['bitumen-seep'] = true
 }
@@ -48,7 +49,6 @@ local non_rocks = {
     ["oil-sand"] = true,
     ["bitumen-seep"] = true,
     ["ore-bioreserve"] = true,
-    ["geothermal-crack"] = true,
     ["ree"] = true,
     ["antimonium"] = true,
 }
@@ -70,7 +70,7 @@ mapgens["py-recommended"] = {
             cliff_elevation_interval = 40 / 0.25,
             richness = 3
         },
-        starting_area = mods["rso-mod"] and "normal" or 64
+        starting_area = mods["rso-mod"] and "normal" or 4
     },
     advanced_settings = {
         pollution = {
