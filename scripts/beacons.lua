@@ -124,7 +124,7 @@ local function beacon_check(reciver)
 end
 
 Beacons.events.on_built = function(event)
-	local entity = event.created_entity or event.entity
+	local entity = event.entity
 	if not entity.valid then return end
 	if entity.type == "beacon" then
 		if not our_beacons[entity.name] then return end

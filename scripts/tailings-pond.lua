@@ -151,7 +151,7 @@ local function scorch_earth(pond)
 end
 
 Pond.events.on_built = function(event)
-	local entity = event.entity or event.created_entity
+	local entity = event.entity
 	if not entity.valid or entity.name ~= "tailings-pond" then return end
 	entity.direction = defines.direction.north
 	local pond = {
