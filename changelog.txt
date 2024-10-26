@@ -4,6 +4,7 @@ Date: yes
   Changes:
     - Made resource rocks spawn closer to spawn in py recommended preset.
     - Fixed nuclear research technology.
+    - Fixed tailings ponds losing liquids over time when connected to pipes.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.9
 Date: 2024-10-24

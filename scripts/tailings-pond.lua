@@ -146,7 +146,7 @@ local function scorch_earth(pond)
 	if fluid.amount <= 0 then
 		fluidbox[1] = nil
 	else
-		fluidbox[1] = fluid
+		fluidbox[1].amount = fluid.amount
 	end
 end
 
