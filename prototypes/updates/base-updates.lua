@@ -85,7 +85,7 @@ data.raw.technology["uranium-ammo"].unit.ingredients = {
     {"military-science-pack",   1},
     {"chemical-science-pack",   1}
 }
-data.raw.technology["uranium-ammo"].prerequisites = {"military-2", "uranium-mining"}
+data.raw.technology["uranium-ammo"].prerequisites = {"military-2", "uranium-processing"}
 
 TECHNOLOGY("concrete"):remove_prereq("automation-2")
 -- Remove empty vanilla techs
@@ -348,8 +348,8 @@ data.raw.technology["electronics"].unit = {
 
 local cargo_landing_pad = RECIPE("cargo-landing-pad"):remove_ingredient("processing-unit"):add_ingredient {"advanced-circuit", 100}:remove_ingredient("steel-plate"):add_ingredient {"steel-plate", 500}
 if mods.pyalienlife then
-    cargo_landing_pad:add_ingredient {"py-warehouse-buffer", 1}:add_ingredient{"titanium-plate", 500}
+    cargo_landing_pad:add_ingredient {"py-warehouse-buffer", 1}:add_ingredient {"titanium-plate", 500}
 end
 if mods.pyalternativeenergy then
-    cargo_landing_pad:add_ingredient{"mechanical-parts-02", 2}
+    cargo_landing_pad:add_ingredient {"mechanical-parts-02", 2}
 end

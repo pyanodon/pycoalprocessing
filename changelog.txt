@@ -3,6 +3,7 @@ Version: 3.0.10
 Date: yes
   Changes:
     - Made resource rocks spawn closer to spawn in py recommended preset.
+    - Fixed nuclear research technology.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.9
 Date: 2024-10-24
