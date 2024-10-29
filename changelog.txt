@@ -1,8 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.11
-Date: oubishgcoins
+Date: 2024-10-29
   Changes:
-    - Fixed tailings ponds not overflowing.
+    - Fixed tailings ponds not overflowing but for real this time.
+    - Removed ash.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.10
 Date: 2024-10-27
