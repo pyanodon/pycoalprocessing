@@ -146,7 +146,7 @@ local function scorch_earth(pond)
 	--push the updated fluidbox to the entity.
 	if fluid.amount <= 0 then
 		fluidbox[1] = nil
-	else
+	elseif fluid.amount ~= fluidbox[1].amount then
 		fluid.amount = fluid.amount * segment_size / tanksize
 		fluidbox[1] = fluid
 	end
