@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.12
+Date: now,always,and forever
+  Changes:
+    - The circuit network is now unlocked with the steam power technology instead of copper processing 1.
+---------------------------------------------------------------------------------------------------
 Version: 3.0.11
 Date: 2024-10-29
   Changes:
