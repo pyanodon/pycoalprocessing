@@ -121,7 +121,7 @@ ENTITY {
     module_slots = 5,
     --TODO:find out what replaced module info icon shift
     --module_info_icon_shift = {0, 0.9},
-    allowed_effects = {"consumption", "speed", "productivity", "pollution"},
+    allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
 }
 
 -- DiscoScience compat, we rewrite the animation to fit our lab
