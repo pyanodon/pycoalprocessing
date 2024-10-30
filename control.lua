@@ -82,6 +82,10 @@ py.on_event(defines.events.on_player_created, function(event)
 		player.print {"messages.warning-biters"}
 	end
 
+	if script.active_mods.quality then
+		player.print {"messages.warning-quality"}
+	end
+
 	Wiki.events.on_player_created(event)
 end)
 
