@@ -12,6 +12,7 @@
     "~ pypostprocessing >= 3.0.0",
     "(?) DiscoScience",
     "(?) better-victory-screen",
+    "(?) elevated-rails",
     "! 248k",
     "! wret-beacon-rebalance-mod",
     "! beacon-overhaul",

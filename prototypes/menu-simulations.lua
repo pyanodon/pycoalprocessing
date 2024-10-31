@@ -5,38 +5,40 @@ end
 local menu_simulations = data.raw["utility-constants"]["default"].main_menu_simulations
 
 -- do not work
-menu_simulations.burner_city = nil
-menu_simulations.early_smelting = nil
-menu_simulations.mining_defense = nil
-menu_simulations.lab = nil
-menu_simulations.oil_refinery = nil
+menu_simulations.nauvis_burner_city = nil
+menu_simulations.nauvis_early_smelting = nil
+menu_simulations.nauvis_mining_defense = nil
+menu_simulations.nauvis_lab = nil
+menu_simulations.nauvis_oil_refinery = nil
+menu_simulations.nauvis_uranium_processing = nil
+menu_simulations.nauvis_ship_rails = nil
 
 -- work, but use the old bots
-menu_simulations.logistic_robots = nil
-menu_simulations.solar_power_construction = nil
-menu_simulations.spider_ponds = nil
-menu_simulations.artillery = nil   -- also involves biters/military
-menu_simulations.big_defense = nil -- also involves biters/military
+menu_simulations.nauvis_logistic_robots = nil
+menu_simulations.nauvis_solar_power_construction = nil
+menu_simulations.nauvis_spider_ponds = nil
+menu_simulations.nauvis_artillery = nil   -- also involves biters/military
+menu_simulations.nauvis_big_defense = nil -- also involves biters/military
 
 -- work, but are not really what Py is like/are kind of boring
-menu_simulations.biter_base_artillery = nil
-menu_simulations.biter_base_laser_defense = nil -- breaks with PyAE
-menu_simulations.biter_base_player_attack = nil
-menu_simulations.biter_base_spidertron = nil
-menu_simulations.biter_base_steamrolled = nil
-menu_simulations.chase_player = nil
-menu_simulations.brutal_defeat = nil
-menu_simulations.forest_fire = nil
+menu_simulations.nauvis_biter_base_artillery = nil
+menu_simulations.nauvis_biter_base_laser_defense = nil -- breaks with PyAE
+menu_simulations.nauvis_biter_base_player_attack = nil
+menu_simulations.nauvis_biter_base_spidertron = nil
+menu_simulations.nauvis_biter_base_steamrolled = nil
+menu_simulations.nauvis_chase_player = nil
+menu_simulations.nauvis_brutal_defeat = nil
+menu_simulations.nauvis_forest_fire = nil
 
 if mods["pyhightech"] or mods["pyrawores"] or mods["pypetroleumhandling"] then
   -- work, but involves biters/military
   menu_simulations.artillery = nil
   menu_simulations.big_defense = nil
-  menu_simulations.train_junction = nil -- uses artillery wagon...
-  menu_simulations.train_station = nil -- uses artillery wagon...
+  menu_simulations.nauvis_train_junction = nil -- uses artillery wagon...
+  menu_simulations.nauvis_train_station = nil -- uses artillery wagon...
 
-  menu_simulations.nuclear_power = nil -- does not involve biters, but PyHT makes it weird and PyHT + PyRO breaks it
-  menu_simulations.oil_pumpjacks = nil -- does not involve biters, but makes no sense with PyPH
+  menu_simulations.nauvis_nuclear_power = nil -- does not involve biters, but PyHT makes it weird and PyHT + PyRO breaks it
+  menu_simulations.nauvis_oil_pumpjacks = nil -- does not involve biters, but makes no sense with PyPH
 end
 
 menu_simulations.cp_unload =

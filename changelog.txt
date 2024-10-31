@@ -8,6 +8,7 @@ Version: 3.0.14
 Date: 2024-10-30
   Changes:
     - Added warning on game load if quality is enabled.
+    - Now correctly disabling base game main menu simulations (they got renamed).
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.13
 Date: 2024-10-29
