@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.15
+Date: whenthetypoisfxed
+  Changes:
+    - Changed name of bricks from rich clay recipe to match ingredients.
+---------------------------------------------------------------------------------------------------
 Version: 3.0.14
 Date: 2024-10-30
   Changes:
