@@ -124,4 +124,15 @@ remote.add_interface("pycp", {
 	end
 })
 
+-- this is also on_configuration_changed, for reasons
+py.on_event(py.events.on_init(), function(changedata)
+	if not changedata then return end -- on_init, don't care
+	log(serpent.block(changedata))
+	local quality = (changedata.mod_changes or {}).quality
+	if quality and not quality.old_version then
+		game.print({"messages.warning-quality"})
+
+	end
+end)
+
 py.finalize_events()
