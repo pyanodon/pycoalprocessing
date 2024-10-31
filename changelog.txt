@@ -1,14 +1,11 @@
 ---------------------------------------------------------------------------------------------------
-Version: 3.0.15
-Date: whenthetypoisfxed
-  Changes:
-    - Changed name of bricks from rich clay recipe to match ingredients.
----------------------------------------------------------------------------------------------------
 Version: 3.0.14
-Date: 2024-10-30
+Date: At some point
   Changes:
     - Added warning on game load if quality is enabled.
-    - Now correctly disabling base game main menu simulations (they got renamed).
+    - Base game main menu simulations are now correctly disabled (they got renamed).
+    - Changed name of bricks from rich clay recipe to match ingredients.
+    - Added initial Ukrainian translation (by bootseller)
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.13
 Date: 2024-10-29
