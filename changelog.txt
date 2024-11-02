@@ -6,6 +6,7 @@ Date: At some point
     - Base game main menu simulations are now correctly disabled (they got renamed).
     - Changed name of bricks from rich clay recipe to match ingredients.
     - Added initial Ukrainian translation (by bootseller)
+    - Fixed a softlock in shortpy related to labs being uncraftable. Resolves https://github.com/pyanodon/pybugreports/issues/635
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.13
 Date: 2024-10-29

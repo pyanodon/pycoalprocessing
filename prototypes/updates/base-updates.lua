@@ -336,6 +336,8 @@ RECIPE("automation-science-pack").enabled = false
 
 RECIPE("iron-chest"):add_unlock("automation").enabled = false
 
+RECIPE("lab"):remove_ingredient("electronic-circuit")
+
 data.raw.technology["electronics"].research_trigger = nil
 data.raw.technology["electronics"].unit = {
     count = 10,
