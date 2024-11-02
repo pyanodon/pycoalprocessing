@@ -1,4 +1,31 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.14
+Date: 2024-11-02
+  Changes:
+    - Added warning on game load if quality is enabled.
+    - Base game main menu simulations are now correctly disabled (they got renamed).
+    - Changed name of bricks from rich clay recipe to match ingredients.
+    - Added initial Ukrainian translation (by bootseller)
+    - Fixed a softlock in shortpy related to labs being uncraftable. Resolves https://github.com/pyanodon/pybugreports/issues/635
+    - Removed certain confusing or legacy item localised names from the English translation that were made visible in 2.0. Resolves https://github.com/pyanodon/pybugreports/issues/665 Resolves https://github.com/pyanodon/pybugreports/issues/664
+---------------------------------------------------------------------------------------------------
+Version: 3.0.13
+Date: 2024-10-29
+  Changes:
+    - Added quality efffect to all buildings module effects
+---------------------------------------------------------------------------------------------------
+Version: 3.0.12
+Date: 2024-10-29
+  Changes:
+    - The circuit network is now unlocked with the steam power technology instead of copper processing 1.
+    - Removed ash.
+---------------------------------------------------------------------------------------------------
+Version: 3.0.11
+Date: 2024-10-29
+  Changes:
+    - Fixed tailings ponds not overflowing but for real this time.
+    - Removed ash.
+---------------------------------------------------------------------------------------------------
 Version: 3.0.10
 Date: 2024-10-27
   Changes:

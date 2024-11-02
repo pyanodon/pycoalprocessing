@@ -82,6 +82,10 @@ py.on_event(defines.events.on_player_created, function(event)
 		player.print {"messages.warning-biters"}
 	end
 
+	if script.active_mods.quality then
+		player.print {"messages.warning-quality"}
+	end
+
 	Wiki.events.on_player_created(event)
 end)
 
@@ -119,5 +123,16 @@ remote.add_interface("pycp", {
 		py.mod_nth_tick_funcs[func]()
 	end
 })
+
+-- this is also on_configuration_changed, for reasons
+py.on_event(py.events.on_init(), function(changedata)
+	if not changedata then return end -- on_init, don't care
+	log(serpent.block(changedata))
+	local quality = (changedata.mod_changes or {}).quality
+	if quality and not quality.old_version then
+		game.print({"messages.warning-quality"})
+
+	end
+end)
 
 py.finalize_events()

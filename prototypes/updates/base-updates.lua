@@ -280,8 +280,7 @@ TECHNOLOGY("automated-rail-transportation"):remove_pack("logistic-science-pack")
 
 data.raw.pump.pump.pumping_speed = data.raw.pump.pump.pumping_speed * 10
 
-local tech_that_unlocks_red_green_wires = data.raw.technology["copper-mk01"] or data.raw.technology.engine
-table.insert(tech_that_unlocks_red_green_wires.effects, table.remove(data.raw.technology["circuit-network"].effects, 1))
+table.insert(data.raw["technology"]["steam-power"].effects, table.remove(data.raw.technology["circuit-network"].effects, 1))
 
 local tech_that_unlocks_fluid_mining = data.raw.technology["mining-with-fluid"] or data.raw.technology["steam-power"]
 table.insert(tech_that_unlocks_fluid_mining.effects, {
@@ -336,6 +335,8 @@ RECIPE("copper-cable").enabled = true
 RECIPE("automation-science-pack").enabled = false
 
 RECIPE("iron-chest"):add_unlock("automation").enabled = false
+
+RECIPE("lab"):remove_ingredient("electronic-circuit")
 
 data.raw.technology["electronics"].research_trigger = nil
 data.raw.technology["electronics"].unit = {
