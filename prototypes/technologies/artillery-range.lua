@@ -21,7 +21,7 @@ TECHNOLOGY {
       {"military-science-pack",   1}
     },
     time = 30,
-    count = 2000
+    count = 2000,
   },
   order = "d-e-f"
 }
@@ -382,7 +382,7 @@ TECHNOLOGY {
       {"space-science-pack",      1}
     },
     time = 30,
-    count = 2000
+    count_formula = "2^L*1000",
   },
   upgrade = true,
   max_level = "infinite",
