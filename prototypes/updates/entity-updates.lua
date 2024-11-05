@@ -7,6 +7,7 @@ data.raw["underground-belt"]["express-underground-belt"].max_distance = 33
 data.raw.generator["steam-engine"].maximum_temperature = 500
 data.raw.generator["steam-engine"].destroy_non_fuel_fluid = false
 data.raw.generator["steam-engine"].fluid_usage_per_tick = 0.25
+data.raw.generator["steam-engine"].effectivity = 0.5
 
 --modify boiler to produce more water
 data.raw.boiler.boiler.target_temperature = 250
