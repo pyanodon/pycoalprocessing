@@ -232,37 +232,39 @@ if mods["pyhightech"] then
     [[
   ]]
   }
-  menu_simulations.ht_pa =
-  {
-    checkboard = false,
-    save = "__pyhightechgraphics__/menu-simulations/menu-simulation-ht-pa2.zip",
-    length = 60 * 20,
-    init =
-    [[
-    local surface = game.surfaces.nauvis
-    local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
-    game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
-    game.simulation.camera_zoom = 1
-    game.tick_paused = false
+  if mods["pyrawores"] then
+    menu_simulations.ht_pa =
+    {
+      checkboard = false,
+      save = "__pyhightechgraphics__/menu-simulations/menu-simulation-ht-pa2.zip",
+      length = 60 * 20,
+      init =
+      [[
+      local surface = game.surfaces.nauvis
+      local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
+      game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
+      game.simulation.camera_zoom = 1
+      game.tick_paused = false
 
-    for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
-        entity.destroy()
-    end
+      for _, entity in ipairs(surface.find_entities_filtered{ type="character"}) do
+          entity.destroy()
+      end
 
-    local character = surface.create_entity{name = "character", position = {29.5, -25.5}, force = "player"}
-    character.walking_state = {walking = true, direction = 4}
+      local character = surface.create_entity{name = "character", position = {29.5, -25.5}, force = "player"}
+      character.walking_state = {walking = true, direction = defines.direction.south}
 
-    script.on_nth_tick(1, function()
-      if character.position.y < 11 then return end
-      character.walking_state = {walking = true, direction = 6}
+      script.on_nth_tick(1, function()
+        if character.position.y < 11 then return end
+        character.walking_state = {walking = true, direction = defines.direction.west}
 
-      script.on_nth_tick(10, nil)
-    end)
-  ]],
-    update =
-    [[
-  ]]
-  }
+        script.on_nth_tick(10, nil)
+      end)
+    ]],
+      update =
+      [[
+    ]]
+    }
+  end
   local does_not_work_due_to_batteries = mods["pyalienlife"] and not mods["pyalternativeenergy"]
   if not does_not_work_due_to_batteries then
     menu_simulations.ht_chips =
