@@ -7,6 +7,7 @@ Date: ?
     - The selector combinator technology no longer depends on solder processing MK 02
     - Made most crafting machines flippable
     - Fixed menu simulation script for Factorio 2.0
+    - Minor locale fix for the "Crafting machine overfill multiplier" mod setting
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.14
 Date: 2024-11-02
