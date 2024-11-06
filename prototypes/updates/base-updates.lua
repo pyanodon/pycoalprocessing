@@ -293,13 +293,16 @@ table.insert(tech_that_unlocks_fluid_mining.effects, {
 data.raw.recipe["engine-unit"].category = "crafting"
 
 RECIPE("selector-combinator"):remove_ingredient("advanced-circuit"):add_ingredient {"electronic-circuit", 5}
-TECHNOLOGY("advanced-combinators").unit.ingredients = {
+TECHNOLOGY("advanced-combinators").unit.ingredients = mods.pyalienlife and {
+    {"automation-science-pack", 1},
+    {"py-science-pack-1",       1},
+} or {
     {"automation-science-pack", 1},
     {"logistic-science-pack",   1},
 }
-TECHNOLOGY("advanced-combinators").prerequisites = mods.pyrawores and {"circuit-network", "solder-mk02"} or {"circuit-network"}
+TECHNOLOGY("advanced-combinators").prerequisites = {"circuit-network"}
 if mods.pyrawores then
-    RECIPE("selector-combinator"):add_ingredient {type = "fluid", name = "molten-solder", amount = 10}.category = "crafting-with-fluid"
+    RECIPE("selector-combinator"):add_ingredient {type = "item", name = "solder", amount = 5}
 end
 
 data.raw.recipe["iron-stick"].enabled = true
