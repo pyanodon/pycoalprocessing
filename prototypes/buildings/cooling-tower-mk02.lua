@@ -51,6 +51,7 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    forced_symmetry = "diagonal-pos",
     match_animation_speed_to_activity = false,
     module_slots = 4,
     allowed_effects = {"speed", "consumption"},

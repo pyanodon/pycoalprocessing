@@ -2,6 +2,7 @@
 Version: 3.0.15
 Date: ?
   Changes:
+    - Made most crafting machines flippable
     - Fixed menu simulation script for Factorio 2.0
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.14
