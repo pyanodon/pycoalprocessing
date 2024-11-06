@@ -5,6 +5,8 @@ Date: 2024-11-06
     - The selector combinator now requires py science pack 1 instead of logistics science.
     - The selector combinator now requires solid solder instead of molten solder.
     - The selector combinator technology no longer depends on solder processing MK 02
+    - Made most crafting machines flippable
+    - Fixed menu simulation script for Factorio 2.0
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.14
 Date: 2024-11-02
