@@ -87,9 +87,6 @@ mapgens["py-recommended"] = {
             min_expansion_cooldown = 60 * 60 * 60, -- 60 min
             max_expansion_cooldown = 60 * 60 * 180 -- 180 min
         },
-        difficulty_settings = {
-            --research_queue_setting = "always"
-        }
     }
 }
 
