@@ -12,7 +12,7 @@ RECIPE("light-oil-cracking"):remove_unlock("advanced-oil-processing"):set_fields
 
 RECIPE("coal-liquefaction"):remove_unlock("coal-liquefaction"):set_fields {hidden = true}
 
---TECHNOLOGY("oil-processing"):add_pack('chemical-science-pack')
+TECHNOLOGY("oil-processing"):set("research_trigger", nil)
 
 TECHNOLOGY("flammables"):set_fields {enabled = false}:set_fields {hidden = true}
 
