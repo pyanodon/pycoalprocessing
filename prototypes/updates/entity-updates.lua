@@ -18,7 +18,7 @@ data.raw.boiler.boiler.energy_source.fuel_categories = {"chemical", "biomass"}
 --modify steam turbine temp
 data.raw.generator["steam-turbine"].maximum_temperature = 2000
 data.raw.generator["steam-turbine"].fluid_usage_per_tick = 1
-data.raw.generator["steam-turbine"].effectivity = 10
+data.raw.generator["steam-turbine"].effectivity = 5
 data.raw.generator["steam-turbine"].destroy_non_fuel_fluid = false
 
 --increase steam max temp
