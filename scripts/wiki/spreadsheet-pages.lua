@@ -1,6 +1,3 @@
-Spreadsheet = {}
-Spreadsheet.events = {}
-
 local floor = math.floor
 local function on_search(search_key, gui)
 	gui = gui.content
