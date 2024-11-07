@@ -9,6 +9,7 @@ Date: ?
     - Made most crafting machines flippable
     - Fixed menu simulation script for Factorio 2.0
     - Minor locale fix for the "Crafting machine overfill multiplier" mod setting
+    - Fixed that the "oil extraction" technology had both a trigger tech and a research unit defined concurrently.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.14
 Date: 2024-11-02
