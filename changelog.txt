@@ -3,6 +3,7 @@ Version: 3.0.16
 Date: ?
   Changes:
     - Removed incompatibility with the (now deprecated) 248k mod.
+    - Updated Uk translation
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.15
 Date: 2024-11-7
