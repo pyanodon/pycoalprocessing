@@ -359,14 +359,3 @@ end
 if mods.pyalternativeenergy then
     cargo_landing_pad:add_ingredient {"mechanical-parts-02", 2}
 end
-
-data.raw.technology["oil-processing"].research_trigger = nil
-data.raw.technology["oil-processing"].unit = {
-    count = 360,
-    ingredients = {
-        {amount = 3, name = "automation-science-pack", type = "item"},
-        {amount = 1, name = "logistic-science-pack", type = "item"},
-        {amount = 2, name = "py-science-pack-1", type = "item"}
-    },
-    time = 60
-}
