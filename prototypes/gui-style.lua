@@ -157,3 +157,31 @@ style.centering_horizontal_flow = {
 	vertical_align = "center",
 	horizontal_align = "center"
 }
+
+style.py_schedule_scroll_pane = {
+	type = "scroll_pane_style",
+	extra_padding_when_activated = 0,
+	padding = 4,
+	graphical_set = {
+		base = {
+			position = {17, 0},
+			corner_size = 8,
+			center = {position = {42, 8}, size = 1},
+			top = {},
+			left_top = {},
+			right_top = {},
+			draw_type = "outer"
+		},
+		shadow = default_inner_shadow
+	},
+	background_graphical_set = {
+		position = {282, 17},
+		corner_size = 8,
+		custom_horizontal_tiling_sizes = {28, 44, 288},
+		overall_tiling_horizontal_spacing = 8,
+		overall_tiling_horizontal_padding = 4,
+		overall_tiling_vertical_spacing = 12,
+		overall_tiling_vertical_size = 28,
+		overall_tiling_vertical_padding = 4
+	}
+}
