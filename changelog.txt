@@ -2,8 +2,11 @@
 Version: 3.0.16
 Date: ?
   Changes:
+    - Fixed Caravan task list missing scroll bar. Resolves https://github.com/pyanodon/pybugreports/issues/683
     - Removed incompatibility with the (now deprecated) 248k mod.
-    - Updated Uk translation
+    - Updated Ukraine translation
+    - Adjusted pywiki inserter descriptions to account for the slight buff to mechanical inserters swing speed from 2.0
+    - Fixed that steam engines and turbines were 2x as efficent compared to 1.1. Resolves https://github.com/pyanodon/pybugreports/issues/643
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.15
 Date: 2024-11-7

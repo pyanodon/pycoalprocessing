@@ -359,3 +359,5 @@ end
 if mods.pyalternativeenergy then
     cargo_landing_pad:add_ingredient {"mechanical-parts-02", 2}
 end
+
+data.raw.generator["steam-engine"].effectivity = 0.5
