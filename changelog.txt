@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.15
-Date: ?
+Date: 2024-11-7
   Changes:
     - The selector combinator now requires py science pack 1 instead of logistics science.
     - The selector combinator now requires solid solder instead of molten solder.
