@@ -336,7 +336,8 @@ RECIPE("log-wood").enabled = true
 
 RECIPE("poorman-wood-fence"):add_unlock("stone-wall").enabled = false
 RECIPE("small-electric-pole"):add_unlock("steam-power").enabled = false
-RECIPE("copper-cable").enabled = true
+RECIPE("copper-cable"):remove_unlock("electronics").enabled = true
+RECIPE("electronic-circuit"):remove_unlock("electronics").enabled = true
 RECIPE("automation-science-pack").enabled = false
 
 RECIPE("iron-chest"):add_unlock("automation").enabled = false
