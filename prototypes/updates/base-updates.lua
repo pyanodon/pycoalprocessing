@@ -361,3 +361,6 @@ if mods.pyalternativeenergy then
 end
 
 data.raw.generator["steam-engine"].effectivity = 0.5
+
+data.raw.pipe.pipe.icon_draw_specification = nil
+data.raw["pipe-to-ground"]["pipe-to-ground"].icon_draw_specification = nil
