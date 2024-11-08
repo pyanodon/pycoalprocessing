@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.16
-Date: ?
+Date: 2024-11-7
   Changes:
     - [space-age] Added new pYwiki page listing all spoilable items, their spoil times, and unlocked science packs.
     - Fixed Caravan task list missing scroll bar. Resolves https://github.com/pyanodon/pybugreports/issues/683
