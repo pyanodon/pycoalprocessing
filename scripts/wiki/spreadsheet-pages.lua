@@ -37,7 +37,7 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 
 	for _, row in pairs(rows) do
 		local container = content.add {type = "flow", direction = "vertical", name = row.search_key}
-		local flow = container.add {type = "flow", direction = "horizontal", tags = row}
+		local flow = container.add {type = "flow", direction = "horizontal"}--, tags = row}
 		for i, column in pairs(columns) do
 			local line_item = row[column.name]
 			local caption = line_item.value
@@ -45,12 +45,23 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 			local tooltip = line_item.tooltip
 
 			if i == 1 then
-				flow.add {type = "label", caption = caption, elem_tooltip = elem_tooltip, tooltip = tooltip}.style.width = column.width + 10
+				if type(caption) == "function" then
+					local flow = flow.add {type = "flow", direction = "horizontal"}
+					flow.style.width = column.width + 10
+					caption(flow)
+				else
+					flow.add {type = "label", caption = caption, elem_tooltip = elem_tooltip, tooltip = tooltip}.style.width = column.width + 10
+				end
 			else
 				local flow = flow.add {type = "flow"}
 				flow.style.horizontal_align = "center"
 				flow.style.width = column.width + 10
-				flow.add {type = "label", caption = caption, elem_tooltip = elem_tooltip, tooltip = tooltip}
+				if type(caption) == "function" then
+					local flow = flow.add {type = "flow", direction = "horizontal"}
+					caption(flow)
+				else
+					flow.add {type = "label", caption = caption, elem_tooltip = elem_tooltip, tooltip = tooltip}
+				end
 			end
 		end
 		container.add {type = "line", direction = "horizontal"}
@@ -359,7 +370,7 @@ local function generate_decay_spreadsheet_data(required_science)
 		columns = {
 			{name = "localised-name", width = 200},
 			{name = "decay-time",     width = 180},
-			{name = "decay-result",   width = 240},
+			{name = "decay-result",   width = 300},
 			{name = "unlocked-at",    width = 120},
 		},
 		rows = {},
@@ -370,16 +381,19 @@ local function generate_decay_spreadsheet_data(required_science)
 
 	for name, item in pairs(prototypes.item) do
 		local decay_ticks = item.get_spoil_ticks()
-		if 0 == decay_ticks then goto continue end
+		if decay_ticks == 0 then goto continue end
 
-		local decay_result = ""
-		local decay_chain = {}
-		local already_seen = {}
-		local total_decay_ticks = 0
+		local function decay_result_builder(flow)
+			local decay_result = ""
+			local decay_chain = {}
+			local already_seen = {}
+			local total_decay_ticks = 0
 
-		if item.spoil_to_trigger_result then
-			decay_result = "[Trigger]"
-		else
+			if item.spoil_to_trigger_result then
+				flow.add {type = "label", caption = "[Trigger]"}
+				return
+			end
+				
 			local spoilage_item = item
 			while spoilage_item do
 				table.insert(decay_chain, spoilage_item)
@@ -394,11 +408,18 @@ local function generate_decay_spreadsheet_data(required_science)
 			local arrow_emoji = "[font=default-bold][color=255,200,200] → [/color][/font]"
 			for i = 1, #decay_chain do
 				local spoilage_item = decay_chain[i]
+				flow.add {type = "label", caption = "[item=" .. spoilage_item.name .. "]", elem_tooltip = {type = "item", name = spoilage_item.name}}
 				decay_result = decay_result .. "[item=" .. spoilage_item.name .. "]"
-				if i ~= #decay_chain then decay_result = decay_result .. arrow_emoji end
+				if i ~= #decay_chain then
+					decay_result = decay_result .. arrow_emoji
+					flow.add {type = "label", caption = arrow_emoji}
+				end
 			end
+
+			return decay_result, total_decay_ticks, decay_chain, already_seen
 		end
 
+		local decay_result, total_decay_ticks, decay_chain, already_seen = decay_result_builder {add = function() end}
 		local unlocked_at = calculate_unlocked_at(required_science, name)
 
 		local decay_time_string = py.format_large_time(decay_ticks / 60)
@@ -419,7 +440,7 @@ local function generate_decay_spreadsheet_data(required_science)
 				order = decay_ticks
 			},
 			["decay-result"] = {
-				value = decay_result,
+				value = decay_result_builder,
 				order = string.format("%06x", #decay_chain) .. string.format("%06x", table_size(already_seen)) .. decay_result
 			},
 			["unlocked-at"] = unlocked_at,
