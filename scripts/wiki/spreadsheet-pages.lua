@@ -100,6 +100,7 @@ end
 remote.add_interface("pywiki_spreadsheets", {
 	create_fluid_page = function(gui, player) create_spreadsheet(gui, player, storage.fluid_spreadsheet_data) end,
 	create_solid_fuel_page = function(gui, player) create_spreadsheet(gui, player, storage.solid_fuel_spreadsheet_data) end,
+	create_decay_page = function(gui, player) create_spreadsheet(gui, player, storage.decay_spreadsheet_data) end,
 	on_search = on_search
 })
 
@@ -182,11 +183,10 @@ local function calculate_required_science()
 	}
 
 	local recipe_required_science = {}
+
 	for _, recipe in pairs(prototypes.recipe) do
 		if recipe.enabled then
-			for _, product in pairs(recipe.products) do
-				recipe_required_science[product.name] = 0
-			end
+			recipe_required_science[recipe.name] = 0
 		end
 	end
 
@@ -204,10 +204,17 @@ local function calculate_required_science()
 		end
 	end
 
-	for name, recipe in pairs(recipes_to_check) do
+	for recipe_name, recipe in pairs(recipes_to_check) do
 		for _, product in pairs(recipe.products) do
-			product = product.name
-			result[product] = min(result[product] or math.huge, recipe_required_science[name] or math.huge)
+			product = prototypes.item[product.name] or prototypes.fluid[product.name]
+			local already_seen = {}
+			while product do
+				local name = product.name
+				if already_seen[name] then break end
+				result[name] = min(result[name] or math.huge, recipe_required_science[recipe_name] or math.huge)
+				already_seen[name] = true
+				if product.type == "item" then product = product.spoil_result else product = nil end
+			end
 		end
 	end
 
@@ -235,8 +242,7 @@ local function calculate_unlocked_at(required_science, name)
 	}
 end
 
-py.on_event(py.events.on_init(), function()
-	local required_science = calculate_required_science()
+local function generate_fluid_spreadsheet_data(required_science)
 	storage.fluid_spreadsheet_data = {
 		columns = {
 			{name = "localised-name", width = 200},
@@ -294,7 +300,9 @@ py.on_event(py.events.on_init(), function()
 			})
 		end
 	end
+end
 
+local function generate_soild_fuel_spreadsheet_data(required_science)
 	storage.solid_fuel_spreadsheet_data = {
 		columns = {
 			{name = "localised-name", width = 200},
@@ -344,6 +352,89 @@ py.on_event(py.events.on_init(), function()
 			})
 		end
 	end
+end
+
+local function generate_decay_spreadsheet_data(required_science)
+	storage.decay_spreadsheet_data = {
+		columns = {
+			{name = "localised-name", width = 200},
+			{name = "decay-time",     width = 180},
+			{name = "decay-result",   width = 240},
+			{name = "unlocked-at",    width = 120},
+		},
+		rows = {},
+		name = "decay_spreadsheet_data",
+		default_sort = {"localised-name", false},
+		prefered_sorts = {}
+	}
+
+	for name, item in pairs(prototypes.item) do
+		local decay_ticks = item.get_spoil_ticks()
+		if 0 == decay_ticks then goto continue end
+
+		local decay_result = ""
+		local decay_chain = {}
+		local already_seen = {}
+		local total_decay_ticks = 0
+
+		if item.spoil_to_trigger_result then
+			decay_result = "[Trigger]"
+		else
+			local spoilage_item = item
+			while spoilage_item do
+				table.insert(decay_chain, spoilage_item)
+				if already_seen[spoilage_item.name] then
+					total_decay_ticks = "[color=255,170,0] ∞ [/color]"
+					break
+				end
+				total_decay_ticks = total_decay_ticks + spoilage_item.get_spoil_ticks()
+				already_seen[spoilage_item.name] = true
+				spoilage_item = spoilage_item.spoil_result
+			end
+			local arrow_emoji = "[font=default-bold][color=255,200,200] → [/color][/font]"
+			for i = 1, #decay_chain do
+				local spoilage_item = decay_chain[i]
+				decay_result = decay_result .. "[item=" .. spoilage_item.name .. "]"
+				if i ~= #decay_chain then decay_result = decay_result .. arrow_emoji end
+			end
+		end
+
+		local unlocked_at = calculate_unlocked_at(required_science, name)
+
+		local decay_time_string = py.format_large_time(decay_ticks / 60)
+		if type(total_decay_ticks) == "string" then
+			decay_time_string = decay_time_string .. " [font=default-small](" .. total_decay_ticks .. ")[/font]"
+		elseif total_decay_ticks > decay_ticks then
+			decay_time_string = decay_time_string .. " [font=default-small](" .. py.format_large_time(total_decay_ticks / 60) .. ")[/font]"
+		end
+
+		table.insert(storage.decay_spreadsheet_data.rows, {
+			["localised-name"] = {
+				value = {"", "[item=" .. name .. "] ", item.localised_name},
+				order = name,
+				elem_tooltip = {type = "item", name = name}
+			},
+			["decay-time"] = {
+				value = decay_time_string,
+				order = decay_ticks
+			},
+			["decay-result"] = {
+				value = decay_result,
+				order = string.format("%06x", #decay_chain) .. string.format("%06x", table_size(already_seen)) .. decay_result
+			},
+			["unlocked-at"] = unlocked_at,
+			search_key = name .. "|" .. decay_ticks .. "|" .. decay_result .. "|" .. unlocked_at.pack
+		})
+		::continue::
+	end
+end
+
+py.on_event(py.events.on_init(), function()
+	local required_science = calculate_required_science()
+	
+	generate_fluid_spreadsheet_data(required_science)
+	generate_soild_fuel_spreadsheet_data(required_science)
+	generate_decay_spreadsheet_data(required_science)	
 end)
 
 gui_events[defines.events.on_gui_click]["py_spreadsheet_sort"] = function(event)
