@@ -1,3 +1,5 @@
+local spreadsheet_row_functions = {}
+
 local floor = math.floor
 local function on_search(search_key, gui)
 	gui = gui.content
@@ -44,24 +46,21 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 			local elem_tooltip = line_item.elem_tooltip
 			local tooltip = line_item.tooltip
 
-			if i == 1 then
-				if type(caption) == "function" then
-					local flow = flow.add {type = "flow", direction = "horizontal"}
-					flow.style.width = column.width + 10
-					caption(flow)
-				else
-					flow.add {type = "label", caption = caption, elem_tooltip = elem_tooltip, tooltip = tooltip}.style.width = column.width + 10
-				end
+			local label
+			if type(caption) == "table" and caption.function_name then
+				label = flow.add {type = "flow", direction = "horizontal"}
+				local f = spreadsheet_row_functions[caption.function_name]
+				if not f then error("No function named " .. caption.function_name) end
+				f(label, table.unpack(caption.args))
 			else
-				local flow = flow.add {type = "flow"}
-				flow.style.horizontal_align = "center"
-				flow.style.width = column.width + 10
-				if type(caption) == "function" then
-					local flow = flow.add {type = "flow", direction = "horizontal"}
-					caption(flow)
-				else
-					flow.add {type = "label", caption = caption, elem_tooltip = elem_tooltip, tooltip = tooltip}
-				end
+				label = flow.add {type = "label", caption = caption, elem_tooltip = elem_tooltip, tooltip = tooltip}
+			end
+
+			if i == 1 then
+				label.style.width = column.width + 10
+			else
+				label.style.horizontal_align = "center"
+				label.style.width = column.width + 10
 			end
 		end
 		container.add {type = "line", direction = "horizontal"}
@@ -365,6 +364,45 @@ local function generate_soild_fuel_spreadsheet_data(required_science)
 	end
 end
 
+local function decay_result_builder(flow, item)
+	if not item.valid then return end
+
+	local decay_result = ""
+	local decay_chain = {}
+	local already_seen = {}
+	local total_decay_ticks = 0
+
+	if item.spoil_to_trigger_result then
+		flow.add {type = "label", caption = "[Trigger]"}
+		return
+	end
+
+	local spoilage_item = item
+	while spoilage_item do
+		table.insert(decay_chain, spoilage_item)
+		if already_seen[spoilage_item.name] then
+			total_decay_ticks = "[color=255,170,0] ∞ [/color]"
+			break
+		end
+		total_decay_ticks = total_decay_ticks + spoilage_item.get_spoil_ticks()
+		already_seen[spoilage_item.name] = true
+		spoilage_item = spoilage_item.spoil_result
+	end
+	local arrow_emoji = "[font=default-bold][color=255,200,200] → [/color][/font]"
+	for i = 1, #decay_chain do
+		local spoilage_item = decay_chain[i]
+		flow.add {type = "label", caption = "[item=" .. spoilage_item.name .. "]", elem_tooltip = {type = "item", name = spoilage_item.name}}
+		decay_result = decay_result .. "[item=" .. spoilage_item.name .. "]"
+		if i ~= #decay_chain then
+			decay_result = decay_result .. arrow_emoji
+			flow.add {type = "label", caption = arrow_emoji}
+		end
+	end
+
+	return decay_result, total_decay_ticks, decay_chain, already_seen
+end
+spreadsheet_row_functions.decay_result_builder = decay_result_builder
+
 local function generate_decay_spreadsheet_data(required_science)
 	storage.decay_spreadsheet_data = {
 		columns = {
@@ -383,43 +421,9 @@ local function generate_decay_spreadsheet_data(required_science)
 		local decay_ticks = item.get_spoil_ticks()
 		if decay_ticks == 0 then goto continue end
 
-		local function decay_result_builder(flow)
-			local decay_result = ""
-			local decay_chain = {}
-			local already_seen = {}
-			local total_decay_ticks = 0
+		
 
-			if item.spoil_to_trigger_result then
-				flow.add {type = "label", caption = "[Trigger]"}
-				return
-			end
-				
-			local spoilage_item = item
-			while spoilage_item do
-				table.insert(decay_chain, spoilage_item)
-				if already_seen[spoilage_item.name] then
-					total_decay_ticks = "[color=255,170,0] ∞ [/color]"
-					break
-				end
-				total_decay_ticks = total_decay_ticks + spoilage_item.get_spoil_ticks()
-				already_seen[spoilage_item.name] = true
-				spoilage_item = spoilage_item.spoil_result
-			end
-			local arrow_emoji = "[font=default-bold][color=255,200,200] → [/color][/font]"
-			for i = 1, #decay_chain do
-				local spoilage_item = decay_chain[i]
-				flow.add {type = "label", caption = "[item=" .. spoilage_item.name .. "]", elem_tooltip = {type = "item", name = spoilage_item.name}}
-				decay_result = decay_result .. "[item=" .. spoilage_item.name .. "]"
-				if i ~= #decay_chain then
-					decay_result = decay_result .. arrow_emoji
-					flow.add {type = "label", caption = arrow_emoji}
-				end
-			end
-
-			return decay_result, total_decay_ticks, decay_chain, already_seen
-		end
-
-		local decay_result, total_decay_ticks, decay_chain, already_seen = decay_result_builder {add = function() end}
+		local decay_result, total_decay_ticks, decay_chain, already_seen = decay_result_builder ( {add = function() end}, item )
 		local unlocked_at = calculate_unlocked_at(required_science, name)
 
 		local decay_time_string = py.format_large_time(decay_ticks / 60)
@@ -440,7 +444,7 @@ local function generate_decay_spreadsheet_data(required_science)
 				order = decay_ticks
 			},
 			["decay-result"] = {
-				value = decay_result_builder,
+				value = {function_name = "decay_result_builder", args = {item}},
 				order = string.format("%06x", #decay_chain) .. string.format("%06x", table_size(already_seen)) .. decay_result
 			},
 			["unlocked-at"] = unlocked_at,
