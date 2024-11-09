@@ -339,6 +339,10 @@ RECIPE("small-electric-pole"):add_unlock("steam-power").enabled = false
 RECIPE("copper-cable"):remove_unlock("electronics").enabled = true
 if not mods["pyhightech"] then RECIPE("electronic-circuit"):remove_unlock("electronics").enabled = true end
 RECIPE("automation-science-pack").enabled = false
+if not mods["pyalienlife"] then
+    RECIPE("electric-mining-drill").enabled = true
+    TECHNOLOGY("electric-mining-drill").enabled = false
+end
 
 RECIPE("iron-chest"):add_unlock("automation").enabled = false
 

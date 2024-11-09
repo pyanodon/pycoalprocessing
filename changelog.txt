@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.20
+Date: ?
+  Changes:
+    - Fixed deadlocks in modpack configurations without Alien Life because 2.0 put the electric mining drill behind automation science.
+---------------------------------------------------------------------------------------------------
 Version: 3.0.19
 Date: 2024-11-8
   Changes:
