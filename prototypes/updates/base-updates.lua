@@ -138,14 +138,12 @@ for i = 1, 6 do
             -- Speed icon
             {
                 icon = "__core__/graphics/icons/technology/constants/constant-speed.png",
-                icon_mipmaps = 3,
                 icon_size = 128,
                 scale = 0.5,
                 shift = {50, 50}
             }
         })
     tech:set("icon_size", 128)
-    tech:set("icon_mipmaps", nil)
 end
 
 -- Recipe unlocks

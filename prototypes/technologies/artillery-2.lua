@@ -1,7 +1,7 @@
 TECHNOLOGY {
   type = "technology",
   name = "artillery-2",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects = {},
   prerequisites = {"artillery"},

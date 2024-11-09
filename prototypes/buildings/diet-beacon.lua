@@ -5,7 +5,6 @@ TECHNOLOGY {
     name = "diet-beacon",
     icon = "__base__/graphics/technology/module.png",
     icon_size = 256,
-    icon_mipmaps = 4,
     prerequisites = {"speed-module", "productivity-module", "efficiency-module"},
     effects = {},
     unit = {
@@ -140,7 +139,6 @@ for am = 5, 1, -1 do
         beacon.minable = {mining_time = 0.2, result = "beacon-mk01"}
         beacon.icon = "__pycoalprocessinggraphics__/graphics/icons/beacon-01.png"
         beacon.icon_size = 64
-        beacon.icon_mipmaps = nil
         data:extend {beacon}
     end
 end

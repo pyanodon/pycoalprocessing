@@ -129,7 +129,6 @@ for am = 5, 1, -1 do
         beacon.next_upgrade = nil
         beacon.icon = "__pycoalprocessinggraphics__/graphics/icons/beacon.png"
         beacon.icon_size = 64
-        beacon.icon_mipmaps = nil
         data:extend {beacon}
     end
 end
@@ -137,7 +136,6 @@ end
 data.raw.item.beacon.place_result = "beacon-AM1-FM1"
 data.raw.item.beacon.icon = "__pycoalprocessinggraphics__/graphics/icons/beacon.png"
 data.raw.item.beacon.icon_size = 64
-data.raw.item.beacon.icon_mipmaps = nil
 data.raw.item.beacon.stack_size = 100
 data.raw.beacon.beacon.subgroup = data.raw.item.beacon.subgroup
 

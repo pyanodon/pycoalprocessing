@@ -3,7 +3,7 @@ ITEM {
     type = "item",
     stack_size = 10,
     icon = "__pycoalprocessinggraphics__/graphics/icons/py-logo-15tiles.png",
-    icon_size = 64, icon_mipmaps = 4,
+    icon_size = 64,
     place_result = "py-logo-15tiles",
     flags = {},
     subgroup = "py-walls",

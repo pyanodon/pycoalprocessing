@@ -1,7 +1,7 @@
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-1",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -29,7 +29,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-2",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -58,7 +58,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-3",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -87,7 +87,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-4",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -116,7 +116,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-5",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -145,7 +145,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-6",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -175,7 +175,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-7",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -205,7 +205,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-8",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -235,7 +235,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-9",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -266,7 +266,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-10",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -297,7 +297,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-11",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -328,7 +328,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-12",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
@@ -359,7 +359,7 @@ TECHNOLOGY {
 TECHNOLOGY {
   type = "technology",
   name = "artillery-shell-range-13",
-  icon_size = 256, icon_mipmaps = 4,
+  icon_size = 256,
   icon = "__base__/graphics/technology/artillery.png",
   effects =
   {
