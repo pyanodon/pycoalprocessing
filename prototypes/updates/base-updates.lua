@@ -367,5 +367,14 @@ end
 
 data.raw.generator["steam-engine"].effectivity = 0.5
 
-data.raw.pipe.pipe.icon_draw_specification = nil
-data.raw["pipe-to-ground"]["pipe-to-ground"].icon_draw_specification = nil
+local function big_fluid_icons_for_pipes(name)
+    local prototype = data.raw.pipe[name] or data.raw["pipe-to-ground"][name]
+    if not prototype then return end
+    prototype.icon_draw_specification = {scale = 0.65}
+end
+big_fluid_icons_for_pipes("pipe")
+big_fluid_icons_for_pipes("pipe-to-ground")
+big_fluid_icons_for_pipes("niobium-pipe")
+big_fluid_icons_for_pipes("niobium-pipe-to-ground")
+big_fluid_icons_for_pipes("ht-pipes")
+big_fluid_icons_for_pipes("ht-pipes-to-ground")
