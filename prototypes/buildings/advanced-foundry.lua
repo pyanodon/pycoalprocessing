@@ -125,7 +125,7 @@ for i = 1, 4 do
                 pipe_connections = {{flow_direction = "output", position = {-0.5, 2.5}, direction = defines.direction.south}}
             },
         },
-        vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.65},
+        impact_category = "metal",
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/advanced-foundry.ogg", volume = 0.45},
         }

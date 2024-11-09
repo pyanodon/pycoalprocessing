@@ -99,7 +99,7 @@ data:extend {{
     collision_mask = {layers = {}},
     subgroup = "trees",
     order = "a[tree]-b[dead-tree]",
-    vehicle_impact_sound = {filename = "__base__/sound/car-wood-impact.ogg", volume = 1.0},
+    impact_category = "wood", 
     pictures = {
         --dry-hairy-tree
         {

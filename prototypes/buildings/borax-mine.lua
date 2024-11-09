@@ -128,7 +128,7 @@ for i = 1, 4 do
         wet_mining_graphics_set = {
             animation = wet_graphics
         },
-        vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.65},
+        impact_category = "metal",
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/borax-mine.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/borax-mine.ogg", volume = 0.3},

@@ -174,7 +174,7 @@ for i = 1, 4 do
         },
         fluid_boxes_off_when_no_fluid_recipe = true,
         fluid_boxes = fluid_boxes,
-        vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.65},
+        impact_category = "metal",
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/ralesia-plantation.ogg", volume = 1.2},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/ralesia-plantation.ogg", volume = 0.3},

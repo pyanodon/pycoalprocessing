@@ -103,7 +103,7 @@ ENTITY {
         fade_in_ticks = 4,
         fade_out_ticks = 20
     },
-    --vehicle_impact_sound = sounds.generic_impact,
+    --impact_category = "default",
     --open_sound = sounds.machine_open,
     --close_sound = sounds.machine_close,
     energy_source =

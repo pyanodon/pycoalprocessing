@@ -66,7 +66,7 @@ ENTITY {
             shift = {0.83, -0.869}
         },
     },
-    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.55},
+    impact_category = "metal",
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/co2-absorber.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/co2-absorber.ogg", volume = 0.3},
