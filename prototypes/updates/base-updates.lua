@@ -378,3 +378,5 @@ big_fluid_icons_for_pipes("niobium-pipe")
 big_fluid_icons_for_pipes("niobium-pipe-to-ground")
 big_fluid_icons_for_pipes("ht-pipes")
 big_fluid_icons_for_pipes("ht-pipes-to-ground")
+
+data.raw["utility-constants"]["default"].max_fluid_flow = math.max(data.raw["utility-constants"]["default"].max_fluid_flow or 0, 30000)

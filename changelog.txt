@@ -4,6 +4,7 @@ Date: ?
   Changes:
     - Fixed deadlocks in modpack configurations without Alien Life because 2.0 put the electric mining drill behind automation science.
     - Adjusted alt-mode icon sizes for fluids inside of pipes. Resolves https://github.com/pyanodon/pybugreports/issues/689
+    - Increased the max fluid transfer between 2 fluidboxes from 6000/s to 30000/s
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.19
 Date: 2024-11-8
