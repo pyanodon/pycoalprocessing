@@ -20,7 +20,6 @@ FLUID {
     icon = "__pycoalprocessinggraphics__/graphics/icons/tpa.png",
     icon_size = 32,
     default_temperature = 10,
-    base_flow_rate = 100,
     gas_temperature = 15,
     base_color = {r = 0.937, g = 0.803, b = 0.007},
     flow_color = {r = 1, g = 1, b = 1},

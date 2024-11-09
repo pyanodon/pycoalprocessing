@@ -4,7 +4,6 @@ FLUID {
     icon = "__pycoalprocessinggraphics__/graphics/icons/gasoline.png",
     icon_size = 32,
     default_temperature = 10,
-    base_flow_rate = 100,
     gas_temperature = 15,
     heat_capacity = "1kJ",
     base_color = {r = 0.776, g = 0.709, b = 0.043},

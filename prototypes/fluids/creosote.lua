@@ -26,7 +26,6 @@ FLUID {
     icon = "__pycoalprocessinggraphics__/graphics/icons/creosote.png",
     icon_size = 64,
     default_temperature = 10,
-    base_flow_rate = 100,
     gas_temperature = 15,
     heat_capacity = "1kJ",
     base_color = {r = 0.360, g = 0.250, b = 0.070},

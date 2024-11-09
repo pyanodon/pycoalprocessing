@@ -19,7 +19,6 @@ FLUID {
     icon = "__pycoalprocessinggraphics__/graphics/icons/hydrogen-peroxide.png",
     icon_size = 32,
     default_temperature = 10,
-    base_flow_rate = 100,
     gas_temperature = 15,
     base_color = {r = 0.674, g = 1, b = 0.929},
     flow_color = {r = 1, g = 1, b = 1},

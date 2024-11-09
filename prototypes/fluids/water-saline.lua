@@ -4,7 +4,6 @@ FLUID {
     icon = "__pycoalprocessinggraphics__/graphics/icons/water-saline.png",
     icon_size = 64,
     default_temperature = 25,
-    base_flow_rate = 100,
     gas_temperature = 35,
     heat_capacity = "1kJ",
     base_color = {r = 0.9, g = 0.9, b = 1},

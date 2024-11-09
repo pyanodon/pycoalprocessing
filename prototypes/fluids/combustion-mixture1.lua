@@ -4,7 +4,6 @@ FLUID {
     icon = "__pycoalprocessinggraphics__/graphics/icons/combustion-mixture1.png",
     icon_size = 32,
     default_temperature = 10,
-    base_flow_rate = 100,
     heat_capacity = "2kJ",
     base_color = {r = 0.811, g = 0.325, b = 0.0},
     flow_color = {r = 1, g = 1, b = 1},
