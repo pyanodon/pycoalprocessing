@@ -110,7 +110,6 @@ for i = 1, 4 do
                 pipe_picture = py.pipe_pictures("assembling-machine-2", {1.17, 2.78}, {-0.05, -0.8}, nil, nil, pipes2),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
-                base_level = -1,
                 pipe_connections = {{flow_direction = "input", position = {0.5, 2.5}, direction = defines.direction.south}}
             },
             {

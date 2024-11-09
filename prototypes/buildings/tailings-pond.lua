@@ -70,7 +70,6 @@ ENTITY {
     fluid_box =
     {
         volume = 1000000,
-        base_level = -1,
         pipe_picture = {
             north = {
                 layers = {

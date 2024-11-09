@@ -50,7 +50,6 @@ ENTITY {
     selection_box = {{-1.53, -1.53}, {1.53, 1.53}},
     fluid_box = {
         volume = 100,
-        base_level = -1,
         pipe_covers = py.pipe_covers(false, true, true, true),
         production_type = "input-output",
         filter = "combustion-mixture1",
