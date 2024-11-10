@@ -125,9 +125,8 @@ ENTITY {
         width = 12,
         height = 12
     },
-    --circuit_wire_connection_points = circuit_connector_definitions['niobium-mine'].points,
-    --circuit_connector_sprites = circuit_connector_definitions['niobium-mine'].sprites,
-    --circuit_wire_max_distance = default_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["niobium-mine"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     graphics_set = {
         animation = dry_graphics
     },

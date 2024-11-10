@@ -45,13 +45,6 @@ for y = 0, 2112 - 352, 352 do
 end
 data:extend(pictures)
 
-local blank_png = {
-    filename = "__core__/graphics/empty.png",
-    height = 1,
-    priority = "extra-high",
-    width = 1
-}
-
 ENTITY {
     type = "storage-tank",
     name = "tailings-pond",
@@ -67,8 +60,7 @@ ENTITY {
     dying_explosion = "storage-tank-explosion",
     collision_box = {{-8.9, -8.9}, {8.9, 8.9}},
     selection_box = {{-9, -9}, {9, 9}},
-    fluid_box =
-    {
+    fluid_box = {
         volume = 1000000,
         pipe_picture = {
             north = {
@@ -120,11 +112,11 @@ ENTITY {
                     }
                 }
             },
-            west = blank_png
+            west = py.empty_image()
         },
         pipe_covers = {
-            north = blank_png,
-            east = blank_png,
+            north = py.empty_image(),
+            east = py.empty_image(),
             south = {
                 layers = {
                     {
@@ -213,10 +205,8 @@ ENTITY {
     impact_category = "metal-large",
     open_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.15},
     close_sound = {filename = "__base__/sound/car-metal-impact-1.ogg", volume = 0.15},
-    working_sound =
-    {
-        sound =
-        {
+    working_sound = {
+        sound = {
             filename = "__base__/sound/storage-tank.ogg",
             volume = 0.6
         },
@@ -224,24 +214,6 @@ ENTITY {
         audible_distance_modifier = 0.5,
         max_sounds_per_type = 3
     },
-    circuit_wire_connection_points = {
-        {
-            shadow = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}},
-            wire = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}}
-        },
-        {
-            shadow = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}},
-            wire = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}}
-        },
-        {
-            shadow = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}},
-            wire = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}}
-        },
-        {
-            shadow = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}},
-            wire = {red = {2.546875, -2.4375}, green = {2.546875, -2.4375}}
-        }
-    },
+    circuit_connector = circuit_connector_definitions["tailings-pond"],
     circuit_wire_max_distance = 9,
-    circuit_connector_sprites = _G.circuit_connector_definitions["storage-tank"].sprites
 }
