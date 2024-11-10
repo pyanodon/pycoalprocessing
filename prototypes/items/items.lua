@@ -428,7 +428,6 @@ else
         order = "ra",
         stack_size = 50,
         effect = {pollution = 1, speed = 1},
-        limitation_message_key = "ralesia"
     }
 end
 
