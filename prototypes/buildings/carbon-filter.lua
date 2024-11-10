@@ -57,7 +57,6 @@ for i = 1, 4 do
         collision_box = {{-2.25, -2.25}, {2.25, 2.25}},
         selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
         forced_symmetry = "diagonal-pos",
-        match_animation_speed_to_activity = false,
         module_slots = i,
         allowed_effects = {"consumption", "speed", "pollution", "productivity"},
         crafting_categories = {"carbonfilter"},

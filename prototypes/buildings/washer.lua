@@ -65,7 +65,6 @@ for i = 1, 4 do
         collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
         selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
         forced_symmetry = "diagonal-pos",
-        match_animation_speed_to_activity = false,
         module_slots = i,
         allowed_effects = {"consumption", "speed", "pollution", "productivity"},
         crafting_categories = {"washer"},

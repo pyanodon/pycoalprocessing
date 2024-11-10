@@ -48,7 +48,6 @@ for i = 1, 4 do
         collision_box = {{-4.3, -4.3}, {4.3, 4.3}},
         selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
         forced_symmetry = "diagonal-pos",
-        match_animation_speed_to_activity = false,
         module_slots = 0,
         allowed_effects = {"consumption", "speed"},
         crafting_categories = {"ground-borer"},

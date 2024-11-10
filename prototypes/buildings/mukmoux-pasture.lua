@@ -39,7 +39,6 @@ ENTITY {
     dying_explosion = "big-explosion",
     collision_box = {{-4.9, -4.9}, {4.9, 4.9}},
     selection_box = {{-5.0, -5.0}, {5.0, 5.0}},
-    match_animation_speed_to_activity = false,
     module_slots = 2,
     allowed_effects = {"consumption", "productivity", "pollution", "speed"},
     crafting_categories = {"mukmoux"},

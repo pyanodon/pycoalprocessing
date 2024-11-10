@@ -40,7 +40,6 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-3.45, -3.45}, {3.45, 3.45}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
-    match_animation_speed_to_activity = false,
     module_slots = 4,
     allowed_effects = {"consumption", "speed", "productivity"},
     crafting_categories = {"co2"},
