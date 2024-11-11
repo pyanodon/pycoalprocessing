@@ -197,6 +197,7 @@ end
 
 Pond.events.on_entity_died = function(event)
 	local entity = event.entity
+	if not entity.valid then return end
 	if entity.name == "ninja-tree" then
 		local surface = entity.surface
 		local position = entity.position
