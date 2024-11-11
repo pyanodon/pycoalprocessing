@@ -95,7 +95,7 @@ ENTITY {
         pipe_covers = _G.pipecoverspictures(),
         volume = 200,
         pipe_connections = {
-            {direction = defines.direction.west, position = {-3, 3.3}}
+            {direction = defines.direction.south, position = {-3, 3}}
         }
     },
     module_slots = 4,
