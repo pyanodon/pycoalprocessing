@@ -2,12 +2,16 @@ local resource_autoplace = require "resource-autoplace"
 --TODO:look into ore gen for 2.0
 --local noise = require 'noise'
 
+-- https://github.com/pyanodon/pybugreports/issues/701
+if not mods["pyalienlife"] and not mods["pyhightech"] then
+    TECHNOLOGY('fission-reactor-equipment'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
+end
+
 -- (( TECHNOLOGY ))--
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):add_pack("military-science-pack")
 TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
 TECHNOLOGY("military-4"):remove_pack("utility-science-pack")
 --TODO:update fusion equipment/ fission equipment
---TECHNOLOGY('fission-reactor-equipment'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
 TECHNOLOGY("rocket-fuel"):add_pack("military-science-pack"):remove_prereq("advanced-oil-processing"):remove_prereq("flammables")
 TECHNOLOGY("kovarex-enrichment-process"):add_pack("military-science-pack")
 TECHNOLOGY("worker-robots-speed-3"):remove_pack("utility-science-pack"):add_pack("production-science-pack")

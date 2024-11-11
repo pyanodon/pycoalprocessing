@@ -4,6 +4,7 @@ Date: ?
   Changes:
     - Added support for PyBlock mapgen warning (PyBlock needs to be updated)
     - Rotated niobium mine pipe connection to match 1.1 direction.
+    - Fixed Yellow sci softlock in PyShort. Resolves https://github.com/pyanodon/pybugreports/issues/701
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.20
 Date: 2024-11-9
