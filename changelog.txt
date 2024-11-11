@@ -6,6 +6,7 @@ Date: ?
     - Rotated niobium mine pipe connection to match 1.1 direction.
     - Fixed Yellow sci softlock in PyShort. Resolves https://github.com/pyanodon/pybugreports/issues/701
     - Fixed possible crash when entities get destroyed.
+    - Fixed crash while modifying ghost beacon dials.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.20
 Date: 2024-11-9

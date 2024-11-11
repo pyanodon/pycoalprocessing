@@ -157,13 +157,14 @@ end
 Beacons.events.on_gui_opened = function(event)
 	if event.gui_type ~= defines.gui_type.entity then return end
 	local entity = event.entity
-	if entity.type ~= "beacon" then return end
-	local player = game.get_player(event.player_index)
+	local player = game.get_player(event.player_index) --[[@as LuaPlayer]]
+	if entity.type ~= "beacon" and entity.type ~= "entity-ghost" then return end
+	local name = (entity.type == "entity-ghost" and entity.ghost_name) or entity.name
 	if player.gui.relative.Dials then
 		player.gui.relative.Dials.destroy()
 	end
 
-	if not our_beacons[entity.name] then return end
+	if not our_beacons[name] then return end
 	local dial = player.gui.relative.add {
 		type = "frame",
 		name = "Dials",
@@ -182,14 +183,14 @@ Beacons.events.on_gui_opened = function(event)
 		name = "AM",
 		minimum_value = 1,
 		maximum_value = 5,
-		value = entity.name:match("%d+"),
+		value = name:match("%d+"),
 		discrete_slider = true,
 		caption = "AM"
 	}
 	AM.add {
 		type = "textfield",
 		name = "AM_slider_num",
-		text = entity.name:match("%d+"),
+		text = name:match("%d+"),
 		numeric = true,
 		lose_focus_on_confirm = true,
 	}.style.maximal_width = 50
@@ -202,14 +203,14 @@ Beacons.events.on_gui_opened = function(event)
 		name = "FM",
 		minimum_value = 1,
 		maximum_value = 5,
-		value = entity.name:match("%d+$"),
+		value = name:match("%d+$"),
 		discrete_slider = true,
 		caption = "FM"
 	}
 	FM.add {
 		type = "textfield",
 		name = "FM_slider_num",
-		text = entity.name:match("%d+$"),
+		text = name:match("%d+$"),
 		numeric = true,
 		lose_focus_on_confirm = true,
 	}.style.maximal_width = 50
@@ -240,12 +241,25 @@ gui_events[defines.events.on_gui_click]["py_beacon_confirm"] = function(event)
 	if event.element.name ~= "py_beacon_confirm" then return end
 
 	local gui = event.element.parent
-	local player = game.get_player(event.player_index)
+	local player = game.get_player(event.player_index) --[[@as LuaPlayer]]
 	local beacon = player.opened
 	if not beacon then return end
-	local beacon_name_prefix = our_beacons[beacon.name] .. "-AM"
+	local init_name = (beacon.type == "entity-ghost" and beacon.ghost_name) or beacon.name
+	local beacon_name_prefix = our_beacons[init_name] .. "-AM"
 	local beacon_name = beacon_name_prefix .. gui.AM_flow.AM.slider_value .. "-FM" .. gui.FM_flow.FM.slider_value
-	if beacon.name == beacon_name then return end
+	if init_name == beacon_name then return end
+
+	if beacon.type == "entity-ghost" then
+		beacon.surface.create_entity {
+			name = "entity-ghost",
+			position = beacon.position,
+			force = beacon.force_index,
+			create_build_effect_smoke = false,
+			inner_name = beacon_name,
+		}
+		beacon.destroy()
+		return
+	end
 
 	local new_beacon = beacon.surface.create_entity {
 		name = beacon_name,
