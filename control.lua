@@ -75,9 +75,12 @@ py.on_event(defines.events.on_player_created, function(event)
 	local player = game.players[event.player_index]
 	player.print {"messages.welcome"}
 	local autoplace_controls = game.surfaces["nauvis"].map_gen_settings.autoplace_controls
-	if autoplace_controls["stone"] and autoplace_controls["stone"].richness <= 1 then
+  game.print(autoplace_controls["raw-coal"].size)
+	if script.active_mods["PyBlock"] ~= nil and (game.surfaces["nauvis"].map_gen_settings.property_expression_names.elevation ~= "elevation_island" or autoplace_controls["raw-coal"].size ~= 0) then
+		player.print {"messages.pyblock-warning-no-preset"}
+  elseif script.active_mods["PyBlock"] == nil and autoplace_controls["stone"] and autoplace_controls["stone"].richness <= 1 then
 		player.print {"messages.warning-no-preset", {"map-gen-preset-name.py-recommended"}}
-	end
+  end
 	if autoplace_controls["enemy-base"] and autoplace_controls["enemy-base"].size > 0 then
 		player.print {"messages.warning-biters"}
 	end
