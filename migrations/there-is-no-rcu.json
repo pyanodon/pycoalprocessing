@@ -1,0 +1,14 @@
+{
+    "item": [
+        [
+            "rocket-control-unit",
+            "speed-module"
+        ]
+    ],
+    "recipe": [
+        [
+            "rocket-control-unit",
+            "speed-module"
+        ]
+    ]
+}
