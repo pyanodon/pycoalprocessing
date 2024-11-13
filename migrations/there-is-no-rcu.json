@@ -3,6 +3,10 @@
         [
             "rocket-control-unit",
             "speed-module"
+        ],
+        [
+            "destablilized-toxirus",
+            "destabilized-toxirus"
         ]
     ],
     "recipe": [

@@ -8,6 +8,7 @@ Date: ?
     - Fixed possible crash when entities get destroyed.
     - Fixed crash while modifying ghost beacon dials.
     - Migrated the (now deleted) rocket control unit item into speed module 1s.
+    - Added migration from "destablilized-toxirus" to "destabilized-toxirus"
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.20
 Date: 2024-11-9
