@@ -72,24 +72,26 @@ py.on_event({defines.events.on_gui_closed, defines.events.on_player_changed_surf
 end)
 
 py.on_event(defines.events.on_player_created, function(event)
+	Wiki.events.on_player_created(event)
+
 	local player = game.players[event.player_index]
-	player.print {"messages.welcome"}
-	local autoplace_controls = game.surfaces["nauvis"].map_gen_settings.autoplace_controls
-  game.print(autoplace_controls["raw-coal"].size)
-	if script.active_mods["PyBlock"] ~= nil and (game.surfaces["nauvis"].map_gen_settings.property_expression_names.elevation ~= "elevation_island" or autoplace_controls["raw-coal"].size ~= 0) then
-		player.print {"messages.pyblock-warning-no-preset"}
-  elseif script.active_mods["PyBlock"] == nil and autoplace_controls["stone"] and autoplace_controls["stone"].richness <= 1 then
+    if not player.valid then return end
+    local nauvis = game.surfaces["nauvis"]
+    if not nauvis then return end
+
+	local autoplace = nauvis.map_gen_settings.autoplace_controls
+
+	if not script.active_mods["PyBlock"] and autoplace.stone and autoplace.stone.richness <= 1 then
 		player.print {"messages.warning-no-preset", {"map-gen-preset-name.py-recommended"}}
-  end
-	if autoplace_controls["enemy-base"] and autoplace_controls["enemy-base"].size > 0 then
+	end
+
+	if autoplace["enemy-base"] and autoplace["enemy-base"].size > 0 then
 		player.print {"messages.warning-biters"}
 	end
 
 	if script.active_mods.quality then
 		player.print {"messages.warning-quality"}
 	end
-
-	Wiki.events.on_player_created(event)
 end)
 
 py.register_on_nth_tick(153, "pond153", "pycp", Pond.events[153])

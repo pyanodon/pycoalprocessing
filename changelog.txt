@@ -3,6 +3,7 @@ Version: 3.0.22
 Date: ?
   Changes:
     - Fixed Yellow sci softlock outside PyShort. Resolves https://github.com/pyanodon/pybugreports/issues/713
+    - Fixed crash on creating a new game with Short Py
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.21
 Date: 2024-11-14
