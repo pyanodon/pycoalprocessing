@@ -3,9 +3,8 @@ local resource_autoplace = require "resource-autoplace"
 --local noise = require 'noise'
 
 -- https://github.com/pyanodon/pybugreports/issues/701
-if not mods["pyalienlife"] and not mods["pyhightech"] then
-    TECHNOLOGY('fission-reactor-equipment'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
-end
+-- https://github.com/pyanodon/pybugreports/issues/713
+TECHNOLOGY('fission-reactor-equipment'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
 
 -- (( TECHNOLOGY ))--
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):add_pack("military-science-pack")
