@@ -254,6 +254,7 @@ gui_events[defines.events.on_gui_click]["py_beacon_confirm"] = function(event)
 			name = "entity-ghost",
 			position = beacon.position,
 			force = beacon.force_index,
+			quality = beacon.quality,
 			create_build_effect_smoke = false,
 			inner_name = beacon_name,
 		}
@@ -264,6 +265,7 @@ gui_events[defines.events.on_gui_click]["py_beacon_confirm"] = function(event)
 	local new_beacon = beacon.surface.create_entity {
 		name = beacon_name,
 		position = beacon.position,
+		quality = beacon.quality,
 		force = beacon.force_index,
 		create_build_effect_smoke = false
 	}
