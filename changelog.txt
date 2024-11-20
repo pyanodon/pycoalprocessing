@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.23
+Date: 2024-11-20
+  Changes:
+    - [space-age] Stack inserters are now unlocked at late logistics science instead of early logistics science.
+    - [space-age] Added iron-niobium alloy to the stack inserter recipe.
+    - [space-age] Added fast-inserter to the stack inserter recipe.
+    - [space-age] Removed intermetallics from the stack inserter recipe.
+    - [space-age] Increased the energy consumption of the stack inserter from 780 kW -> 1.5 MW.
+    - [space-age] Added an idle drain of 800kW to the stack inserter.
+    - [space-age] Buffed the swing speed of the stack inserter by 15%.
+---------------------------------------------------------------------------------------------------
 Version: 3.0.22
 Date: 2024-11-14
   Changes:
