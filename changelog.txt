@@ -9,6 +9,7 @@ Date: 2024-11-20
     - [space-age] Increased the energy consumption of the stack inserter from 780 kW -> 1.5 MW.
     - [space-age] Added an idle drain of 800kW to the stack inserter.
     - [space-age] Buffed the swing speed of the stack inserter by 15%.
+    - Fixed various issues in the tech tree. Resolves https://github.com/pyanodon/pybugreports/issues/634
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.22
 Date: 2024-11-14

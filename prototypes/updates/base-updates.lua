@@ -1,6 +1,4 @@
 local resource_autoplace = require "resource-autoplace"
---TODO:look into ore gen for 2.0
---local noise = require 'noise'
 
 -- https://github.com/pyanodon/pybugreports/issues/701
 -- https://github.com/pyanodon/pybugreports/issues/713
@@ -381,3 +379,8 @@ big_fluid_icons_for_pipes("ht-pipes")
 big_fluid_icons_for_pipes("ht-pipes-to-ground")
 
 data.raw["utility-constants"]["default"].max_fluid_flow = math.max(data.raw["utility-constants"]["default"].max_fluid_flow or 0, 30000)
+
+data.raw["technology"]["efficiency-module"].prerequisites = {mods.pyalternativeenergy and "machine-components-mk02" or "productivity-module"}
+data.raw["technology"]["bulk-inserter"].prerequisites = {mods.pyhightech and "basic-electronics" or "chemical-science-pack"}
+if data.raw["technology"]["bulk-inserter-2"] then data.raw["technology"]["bulk-inserter-2"].prerequisites = {"bulk-inserter"} end
+if mods["pypetroleumhandling"] then data.raw.technology["oil-gathering"] = nil end
