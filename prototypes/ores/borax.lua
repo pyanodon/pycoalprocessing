@@ -11,13 +11,6 @@ data:extend {{
     category = "resource"
 }}
 
---[[TODO: GET THIS A REAL FIX
-data:extend{{
-    type = "noise-layer",
-    name = "borax"
-}}
-]] --
-
 ENTITY {
     type = "resource",
     name = "borax",
@@ -44,7 +37,7 @@ ENTITY {
     autoplace = resource_autoplace.resource_autoplace_settings {
         name = "borax",
         order = "b",
-        base_density = 10,
+        base_density = 4,
         base_spots_per_km2 = 1.25,
         has_starting_area_placement = false,
         random_spot_size_minimum = 2,
