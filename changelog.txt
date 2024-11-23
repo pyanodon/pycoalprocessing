@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.24
+Date: ?
+  Changes:
+    - Removed hyphens from various alloy and nuclear product names in order to aid in itemsearch qol.
+    - Renamed "High-pressure furnace" to "High pressure furnace".
+---------------------------------------------------------------------------------------------------
 Version: 3.0.23
 Date: 2024-11-20
   Changes:
