@@ -113,6 +113,7 @@ for i = 1, 4 do
         },
         energy_usage = (420 * i) .. "kW",
         resource_searching_radius = 4.49 + i,
+        resource_drain_rate_percent = 200 * (2 ^ -i),
         vector_to_place_result = {0, -4.65},
         radius_visualisation_picture = {
             filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-radius-visualization.png",

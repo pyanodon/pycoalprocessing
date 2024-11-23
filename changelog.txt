@@ -4,6 +4,7 @@ Date: ?
   Changes:
     - Removed hyphens from various alloy and nuclear product names in order to aid in itemsearch qol.
     - Renamed "High-pressure furnace" to "High pressure furnace".
+    - The crystal mine now scales resource_drain_rate_percent with MK level. 100%, 50%, 25%, 12.5% for MK1, MK2, MK3, MK4 respectively.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.23
 Date: 2024-11-20
