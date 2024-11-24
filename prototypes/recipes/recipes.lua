@@ -15,12 +15,12 @@ RECIPE {
     name = "soil",
     category = "soil-extraction",
     enabled = true,
-    energy_required = 5,
+    energy_required = 8,
     ingredients = {
-        {type = "fluid", name = "water", amount = 500}
+        {type = "fluid", name = "water", amount = 800}
     },
     results = {
-        {type = "item", name = "soil", amount = 10}
+        {type = "item", name = "soil", amount = 16}
     }
 }
 

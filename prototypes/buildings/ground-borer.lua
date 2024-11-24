@@ -56,9 +56,10 @@ for i = 1, 4 do
             type = "electric",
             usage_priority = "secondary-input",
             emissions_per_minute = {
-                pollution = 1
+                pollution = 3 * i
             },
         },
+        vector_to_place_result = {4.5, 0},
         energy_usage = (1.25 * i) .. "MW",
         graphics_set = {
             animation = {

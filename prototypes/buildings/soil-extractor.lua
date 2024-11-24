@@ -54,6 +54,7 @@ for i = 1, 4 do
         name = name,
         icon = icon,
         icon_size = icon_size,
+        vector_to_place_result = {0.0, 3.5},
         flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 1, result = name},
         fast_replaceable_group = "soil-extractor",
@@ -71,7 +72,7 @@ for i = 1, 4 do
             type = "electric",
             usage_priority = "secondary-input",
             emissions_per_minute = {
-                pollution = 1
+                pollution = 2 * i
             },
         },
         energy_usage = (400 * i) .. "kW",
@@ -107,6 +108,7 @@ for i = 1, 4 do
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {0, 1}, {0, -1}, nil, nil, pipes),
                 volume = 1000,
                 height = 2,
+                filter = "water",
                 pipe_connections = {{flow_direction = "input-output", position = {3.0, 0.0}, direction = defines.direction.east}, {flow_direction = "input-output", position = {-3.0, 0.0}, direction = defines.direction.west}}
             }
         },
