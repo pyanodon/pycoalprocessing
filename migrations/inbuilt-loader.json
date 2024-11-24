@@ -95,6 +95,22 @@
         [
             "casting-unit-mk04",
             "casting-unit-mk04-legacy"
+        ],
+        [
+            "sap-extractor-mk01",
+            "sap-extractor-mk01-legacy"
+        ],
+        [
+            "sap-extractor-mk02",
+            "sap-extractor-mk02-legacy"
+        ],
+        [
+            "sap-extractor-mk03",
+            "sap-extractor-mk03-legacy"
+        ],
+        [
+            "sap-extractor-mk04",
+            "sap-extractor-mk04-legacy"
         ]
     ]
 }
