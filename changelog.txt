@@ -10,6 +10,7 @@ Date: ?
     - The WPU, soil extractor, sand extractor, ground borer, and classifier now have inbuilt loader outputs. Works with belt stacking technologies.
       Migration notice: Existing versions of these five machines will not have the loader output and be marked with the (Legacy) tag. Remove this tag by simply mining the machine and re-building it.
     - Adjusted the soil recipe. Reduced speed by 60% and increased output by 60%. This is effectively the same recipe however the new ratio is more friendly to belt stacking with stack inserters.
+    - Implemented FSM animations for the soil extractor.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.23
 Date: 2024-11-20

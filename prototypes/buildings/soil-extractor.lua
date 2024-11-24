@@ -77,24 +77,51 @@ for i = 1, 4 do
         },
         energy_usage = (400 * i) .. "kW",
         graphics_set = {
+            working_visualisations = {
+                {
+                    fadeout = true,
+                    constant_speed = true,
+                    animation = {
+                        layers = {
+                            {
+                                filename = "__pycoalprocessinggraphics__/graphics/entity/soil-extractor/soil-extractor.png",
+                                width = 235,
+                                height = 266,
+                                frame_count = 30,
+                                line_length = 6,
+                                animation_speed = 0.8,
+                                shift = {0.16, -0.609}
+                            },
+                            {
+                                filename = "__pycoalprocessinggraphics__/graphics/entity/soil-extractor/soil-extractor-mask.png",
+                                width = 235,
+                                height = 266,
+                                frame_count = 30,
+                                line_length = 6,
+                                animation_speed = 0.8,
+                                shift = {0.16, -0.609},
+                                tint = py.tints[i],
+                            }
+                        }
+                    },
+                },
+            },
             animation = {
                 layers = {
                     {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/soil-extractor/soil-extractor.png",
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/soil-extractor/soil-extractor-off.png",
                         width = 235,
                         height = 266,
-                        frame_count = 30,
-                        line_length = 6,
-                        animation_speed = 0.8,
+                        frame_count = 1,
+                        line_length = 1,
                         shift = {0.16, -0.609}
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/soil-extractor/soil-extractor-mask.png",
                         width = 235,
                         height = 266,
-                        frame_count = 30,
-                        line_length = 6,
-                        animation_speed = 0.8,
+                        frame_count = 1,
+                        line_length = 1,
                         shift = {0.16, -0.609},
                         tint = py.tints[i],
                     }
