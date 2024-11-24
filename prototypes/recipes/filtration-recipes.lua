@@ -60,9 +60,9 @@ RECIPE {
         {type = "item",  name = "active-carbon",               amount = 2}
     },
     results = {
-        {type = "fluid", name = "carbon-dioxide",              amount = 600},
-        {type = "item",  name = "saturated-nexelit-cartridge", amount = 1},
-        {type = "item",  name = "ash",                         amount = 10}
+        {type = "fluid", name = "carbon-dioxide",    amount = 600},
+        {type = "item",  name = "nexelit-cartridge", amount = 1},
+        {type = "item",  name = "ash",               amount = 10}
     },
     main_product = "carbon-dioxide",
     icon = "__pycoalprocessinggraphics__/graphics/icons/co2.png",
