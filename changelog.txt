@@ -7,6 +7,7 @@ Date: ?
     - The crystal mine now scales resource_drain_rate_percent with MK level. 100%, 50%, 25%, 12.5% for MK1, MK2, MK3, MK4 respectively.
     - [space-age] Decreased the base richness of borax ore in order account for the new scaling resource drain rate.
     - The WPU, soil extractor, sand extractor, ground borer, and classifier now have inbuilt loader outputs. Works with belt stacking technologies.
+      Migration notice: Existing versions of these five machines will not have the loader output and be marked with the (Legacy) tag. Remove this tag by simply mining the machine and re-building it.
     - Adjusted the soil recipe. Reduced speed by 60% and increased output by 60%. This is effectively the same recipe however the new ratio is more friendly to belt stacking with stack inserters.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.23
