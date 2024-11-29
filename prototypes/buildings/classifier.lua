@@ -43,7 +43,7 @@ for i = 1, 4 do
         minable = {mining_time = 1, result = name},
         fast_replaceable_group = "classifier",
         max_health = 400 * i,
-        vector_to_place_result = {0.0, 3.5},
+        vector_to_place_result = {0.0, 4.0},
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
         collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
