@@ -44,7 +44,7 @@ for i = 1, 4 do
         minable = {mining_time = 1, result = name},
         fast_replaceable_group = "wpu",
         max_health = 800 * i,
-        vector_to_place_result = {0.0, 3.5},
+        vector_to_place_result = {0.0, 3.01},
         corpse = "medium-remnants",
         dying_explosion = "medium-explosion",
         collision_box = {{-2.8, -2.8}, {2.8, 2.8}},

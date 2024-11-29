@@ -59,7 +59,7 @@ for i = 1, 4 do
                 pollution = 3 * i
             },
         },
-        vector_to_place_result = {5.0, 0},
+        vector_to_place_result = {4.51, 0},
         energy_usage = (1.25 * i) .. "MW",
         graphics_set = {
             animation = {

@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.26
+Date: 2024-11-29
+  Changes:
+    - Fixed various loader outputs would always output to the left side of the belt.
+    - Decreased min factorio version from 2.0.22 to 2.0.21
+---------------------------------------------------------------------------------------------------
 Version: 3.0.25
 Date: 2024-11-29
   Changes:

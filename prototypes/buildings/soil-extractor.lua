@@ -54,7 +54,7 @@ for i = 1, 4 do
         name = name,
         icon = icon,
         icon_size = icon_size,
-        vector_to_place_result = {0.0, 4.0},
+        vector_to_place_result = {0.0, 3.51},
         flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 1, result = name},
         fast_replaceable_group = "soil-extractor",
