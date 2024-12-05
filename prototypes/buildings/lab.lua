@@ -167,4 +167,17 @@ if mods["DiscoScience"] then
             }
         }
     }
+    -- Add the script placement trigger
+    data.raw.lab.lab.created_effect = {
+        type = "direct",
+        action_delivery = {
+            type = "instant",
+            source_effects = {
+                {
+                    type = "script",
+                    effect_id = "ds-create-lab",
+                },
+            }
+        }
+    }
 end

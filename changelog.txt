@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.27
+Date: ???
+  Changes:
+    - Fixed DiscoScience integration. Resolves https://github.com/pyanodon/pybugreports/issues/774
+---------------------------------------------------------------------------------------------------
 Version: 3.0.26
 Date: 2024-11-29
   Changes:
