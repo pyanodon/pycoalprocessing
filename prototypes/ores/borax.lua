@@ -25,7 +25,7 @@ ENTITY {
         -- mining_particle = "borax-particle",
         mining_time = 3,
         results = {
-            {type = "item", name = "raw-borax", amount = 3, probability = 0.7}
+            {type = "item", name = "raw-borax", amount = 2}
         },
         fluid_amount = 50,
         required_fluid = "syngas"
