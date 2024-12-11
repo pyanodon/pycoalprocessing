@@ -374,7 +374,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax.png",
     icon_size = 64,
     pictures = {
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax.png",   scale = 0.33},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax.png",   scale = 0.66},
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax-1.png", scale = 0.66},
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax-2.png", scale = 0.66},
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/raw-borax-3.png", scale = 0.66}
