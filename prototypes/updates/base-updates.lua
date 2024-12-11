@@ -378,7 +378,7 @@ big_fluid_icons_for_pipes("niobium-pipe-to-ground")
 big_fluid_icons_for_pipes("ht-pipes")
 big_fluid_icons_for_pipes("ht-pipes-to-ground")
 
-data.raw["utility-constants"]["default"].max_fluid_flow = math.max(data.raw["utility-constants"]["default"].max_fluid_flow or 0, 30000)
+data.raw["utility-constants"]["default"].max_fluid_flow = math.max(data.raw["utility-constants"]["default"].max_fluid_flow or 0, 500)
 
 data.raw["technology"]["efficiency-module"].prerequisites = {mods.pyalternativeenergy and "machine-components-mk02" or "productivity-module"}
 data.raw["technology"]["bulk-inserter"].prerequisites = {mods.pyhightech and "basic-electronics" or "chemical-science-pack"}
