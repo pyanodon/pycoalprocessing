@@ -696,7 +696,8 @@ RECIPE {
     },
     results = {
         {type = "item", name = "small-electric-pole", amount = 3}
-    }
+    },
+    allow_as_intermediate = false
 }:add_unlock("creosote")
 
 RECIPE {
