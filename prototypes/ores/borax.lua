@@ -23,9 +23,9 @@ ENTITY {
     highlight = true,
     minable = {
         -- mining_particle = "borax-particle",
-        mining_time = 3,
+        mining_time = 1.5,
         results = {
-            {type = "item", name = "raw-borax", amount = 2}
+            {type = "item", name = "raw-borax"}
         },
         fluid_amount = 50,
         required_fluid = "syngas"
