@@ -8,6 +8,7 @@ Date: ?
     - Fixed 1,800,000/s max flow rate instead of 30,000/s. Resolves https://github.com/pyanodon/pybugreports/issues/772
     - Fixed that the fish turbine could not be hand-craftable through the log route. Resolves https://github.com/pyanodon/pybugreports/issues/667
     - Align wood processing unit output to a grid square.
+    - Adjusted cliff settings in the default Py preset so they actually show up again.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.26
 Date: 2024-11-29
