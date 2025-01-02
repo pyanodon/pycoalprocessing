@@ -27,7 +27,7 @@ ENTITY {
         results = {
             {type = "item", name = "raw-borax"}
         },
-        fluid_amount = 50,
+        fluid_amount = 25,
         required_fluid = "syngas"
     },
     collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
