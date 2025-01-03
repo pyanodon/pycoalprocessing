@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.27
-Date: ?
+Date: 2025-1-2
   Changes:
     - Fixed the borax mine getting stuck on itself with certain levels of belt stacking. Resolves https://github.com/pyanodon/pybugreports/issues/779
     - Fixed one of the borax item variations being too small. Resolves https://github.com/pyanodon/pybugreports/issues/775
