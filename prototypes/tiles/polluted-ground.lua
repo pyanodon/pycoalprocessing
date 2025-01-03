@@ -88,6 +88,7 @@ data:extend {{
 data:extend {{
     type = "tree",
     name = "ninja-tree",
+    hidden = true,
     icon = "__pycoalprocessinggraphics__/graphics/empty.png",
     icon_size = 1,
     flags = {"placeable-neutral", "placeable-off-grid", "breaths-air", "not-blueprintable", "not-deconstructable"},
@@ -99,7 +100,7 @@ data:extend {{
     collision_mask = {layers = {}},
     subgroup = "trees",
     order = "a[tree]-b[dead-tree]",
-    impact_category = "wood", 
+    impact_category = "wood",
     pictures = {
         --dry-hairy-tree
         {
