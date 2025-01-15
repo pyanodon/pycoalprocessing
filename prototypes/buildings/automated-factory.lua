@@ -73,42 +73,22 @@ for i = 1, 4 do
             animation = {
                 layers = {
                     {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/automated-factory/left.png",
-                        width = 128,
-                        height = 280,
-                        line_length = 16,
-                        frame_count = 101,
-                        shift = {-1.5, -0.68},
-                        animation_speed = 0.5
-                    },
-                    {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/automated-factory/right.png",
-                        width = 116,
-                        height = 280,
-                        line_length = 16,
-                        frame_count = 101,
-                        shift = {2.31, -0.68},
-                        animation_speed = 0.5
-                    },
-                    {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/automated-factory/left-mask.png",
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/automated-factory/mk0" .. i .. "-left.png",
                         width = 128,
                         height = 280,
                         line_length = 16,
                         frame_count = 101,
                         shift = {-1.5, -0.68},
                         animation_speed = 0.5,
-                        tint = py.tints[i],
                     },
                     {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/automated-factory/right-mask.png",
+                        filename = "__pycoalprocessinggraphics__/graphics/entity/automated-factory/mk0" .. i .. "-right.png",
                         width = 116,
                         height = 280,
                         line_length = 16,
                         frame_count = 101,
                         shift = {2.31, -0.68},
                         animation_speed = 0.5,
-                        tint = py.tints[i],
                     }
                 }
             },

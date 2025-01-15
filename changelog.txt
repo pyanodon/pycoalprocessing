@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.28
+Date: ?
+  Graphics:
+    - Reverted automated factory graphics back to 1.1 graphics. Resolves https://github.com/pyanodon/pybugreports/issues/617
+---------------------------------------------------------------------------------------------------
 Version: 3.0.27
 Date: 2025-1-2
   Changes:
