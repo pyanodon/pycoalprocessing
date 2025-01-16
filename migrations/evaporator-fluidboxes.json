@@ -1,0 +1,20 @@
+{
+    "entity": [
+        [
+            "evaporator",
+            "evaporator-legacy"
+        ],
+        [
+            "evaporator-mk02",
+            "evaporator-mk02-legacy"
+        ],
+        [
+            "evaporator-mk03",
+            "evaporator-mk03-legacy"
+        ],
+        [
+            "evaporator-mk04",
+            "evaporator-mk04-legacy"
+        ]
+    ]
+}

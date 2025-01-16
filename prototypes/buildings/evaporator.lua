@@ -97,6 +97,7 @@ for i = 1, 4 do
                                 width = 168,
                                 height = 177,
                                 animation_speed = 0.25,
+                                shift = {0, -0.3}
                             },
                             {
                                 filename = "__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-anim-mask.png",
@@ -106,6 +107,7 @@ for i = 1, 4 do
                                 height = 177,
                                 animation_speed = 0.25,
                                 tint = py.tints[i],
+                                shift = {0, -0.3}
                             },
                             {
                                 filename = "__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-anim-glow.png",
@@ -115,6 +117,7 @@ for i = 1, 4 do
                                 height = 177,
                                 animation_speed = 0.25,
                                 draw_as_glow = true,
+                                shift = {0, -0.3}
                             },
                         }
                     }
@@ -127,14 +130,14 @@ for i = 1, 4 do
                         width = 168,
                         height = 177,
                         frame_count = 1,
-                        shift = {0.1, 0.0},
+                        shift = {0.1, -0.3},
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-off-mask.png",
                         width = 168,
                         height = 177,
                         frame_count = 1,
-                        shift = {0.1, 0.0},
+                        shift = {0.1, -0.3},
                         tint = py.tints[i],
                     },
                     {
@@ -142,7 +145,7 @@ for i = 1, 4 do
                         width = 168,
                         height = 177,
                         frame_count = 1,
-                        shift = {0.1, 0.0},
+                        shift = {0.1, -0.3},
                         draw_as_glow = true,
                     },
                 }
@@ -150,6 +153,47 @@ for i = 1, 4 do
         },
         fluid_boxes_off_when_no_fluid_recipe = true,
         fluid_boxes = {
+            {
+                production_type = "input",
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
+                volume = 1000,
+                pipe_connections = {{flow_direction = "input", position = {2.0, 1.0}, direction = defines.direction.east}}
+            },
+            {
+                production_type = "input",
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
+                volume = 1000,
+                pipe_connections = {{flow_direction = "input", position = {-2.0, -1.0}, direction = defines.direction.west}}
+            },
+            {
+                production_type = "output",
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
+                volume = 100,
+                pipe_connections = {{flow_direction = "output", position = {2.0, -1.0}, direction = defines.direction.east}}
+            },
+            {
+                production_type = "output",
+                pipe_covers = pipe_covers,
+                pipe_picture = pipe_picture,
+                volume = 100,
+                pipe_connections = {{flow_direction = "output", position = {-2.0, 1.0}, direction = defines.direction.west}}
+            },
+        },
+        impact_category = "metal",
+        working_sound = {
+            sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg"},
+            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg", volume = 0.3},
+            apparent_volume = 2.5
+        },
+    }
+
+    -- https://github.com/pyanodon/pybugreports/issues/556
+    if not mods["pystellarexpedition"] then
+        local legacy = table.deepcopy(data.raw["assembling-machine"][name])
+        legacy.fluid_boxes = {
             {
                 production_type = "input",
                 pipe_covers = pipe_covers,
@@ -178,14 +222,12 @@ for i = 1, 4 do
                 volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {0.0, -2.0}, direction = defines.direction.north}}
             },
-        },
-        impact_category = "metal",
-        working_sound = {
-            sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg"},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg", volume = 0.3},
-            apparent_volume = 2.5
-        },
-    }
+        }
+        legacy.name = name .. "-legacy"
+        legacy.hidden = true
+        legacy.localised_name = {"", {"entity-name." .. name}, " (Legacy)"}
+        data:extend {legacy}
+    end
 end
 
 RECIPE {
