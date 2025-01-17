@@ -57,7 +57,7 @@ ENTITY {
     stage_counts = {20000, 13000, 10000, 5000, 3000, 1000, 500, 100},
     stages = {
         sheet = {
-            filename = "__pycoalprocessinggraphics__/graphics/ores/hr-niobium.png",
+            filename = "__pycoalprocessinggraphics__/graphics/ores/niobium.png",
             priority = "extra-high",
             width = 128,
             height = 128,
