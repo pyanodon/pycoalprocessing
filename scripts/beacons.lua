@@ -71,6 +71,7 @@ local function enable_entity(entity)
 	local rendering_object = rendering.get_object_by_id(rendering_id)
 	if rendering_object then rendering_object.destroy() end
 	storage.beacon_interference_icons[unit_number] = nil
+    entity.custom_status = nil
 end
 
 local function disable_entity(entity)
@@ -79,6 +80,10 @@ local function disable_entity(entity)
 		return
 	end
 	entity.active = false
+    entity.custom_status = {
+        diode = defines.entity_status_diode.red,
+        label = {"entity-status.beacon-interference"}
+    }
 	local unit_number = entity.unit_number
 	if storage.beacon_interference_icons[unit_number] then return end
 	storage.beacon_interference_icons[unit_number] = rendering.draw_sprite {
