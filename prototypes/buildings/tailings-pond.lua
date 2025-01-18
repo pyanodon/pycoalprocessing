@@ -36,6 +36,7 @@ for y = 0, 2112 - 352, 352 do
             priority = "extra-high",
             width = 448,
             height = 352,
+            shift = {0, -0.5},
             x = x,
             y = y,
             draw_as_glow = true
