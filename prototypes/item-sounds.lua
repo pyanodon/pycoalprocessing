@@ -1,6 +1,10 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 
 local function add_sound_item(name, move_sound, pick_sound, drop_sound)
+    if not move_sound then error("Missing move_sound") end
+    if not pick_sound then error("Missing pick_sound") end
+    if not drop_sound then error("Missing drop_sound") end
+
     for item_type in pairs(defines.prototypes.item) do
         local item = (data.raw[item_type] or {})[name]
         if item then
@@ -10,7 +14,7 @@ local function add_sound_item(name, move_sound, pick_sound, drop_sound)
             return
         end
     end
-    error("Could not find item " .. name)
+    log("Item Sounds: Could not find item " .. name)
 end
 
 add_sound_item("ash", item_sounds.sulfur_inventory_move, item_sounds.resource_inventory_pickup, item_sounds.sulfur_inventory_move)
