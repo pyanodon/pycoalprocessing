@@ -7,6 +7,7 @@ Date: ?
     - AM:FM beacon disabled entities no longer show "disabled by script" and instead shows a custom status "Beacon interference".
     - Removed all legacy low-res graphic files from pyanodon.
     - Fixed improper shift amount for the tailings pond fluid graphic. Resolves https://github.com/pyanodon/pybugreports/issues/804
+    - Swapped coal to gunpowder in the grenades recipe.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.27
 Date: 2025-1-2

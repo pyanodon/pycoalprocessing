@@ -384,3 +384,5 @@ data.raw["technology"]["efficiency-module"].prerequisites = {mods.pyalternativee
 data.raw["technology"]["bulk-inserter"].prerequisites = {mods.pyhightech and "basic-electronics" or "chemical-science-pack"}
 if data.raw["technology"]["bulk-inserter-2"] then data.raw["technology"]["bulk-inserter-2"].prerequisites = {"bulk-inserter"} end
 if mods["pypetroleumhandling"] then data.raw.technology["oil-gathering"] = nil end
+
+RECIPE("grenade"):replace_ingredient("coal", "gunpowder")
