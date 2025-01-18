@@ -9,6 +9,7 @@ Date: ?
     - Fixed improper shift amount for the tailings pond fluid graphic. Resolves https://github.com/pyanodon/pybugreports/issues/804
     - Swapped coal to gunpowder in the grenades recipe.
     - Removed hyphens from most item, fluid, entity, and recipe names in order to aid in itemsearch.
+    - Updated the locale for automation 1, 2, and 3 techs.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.27
 Date: 2025-1-2
