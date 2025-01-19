@@ -119,7 +119,9 @@ function Wiki.close_wiki(player)
             remote.call(on_closed[1], on_closed[2], contents, player)
         end
     end
-    main_frame.parent.destroy()
+    -- https://github.com/pyanodon/pybugreports/issues/820
+    pcall(main_frame.parent.destroy)
+    pcall(main_frame.destroy)
 end
 
 gui_events[defines.events.on_gui_click]["py_open_wiki"] = function(event)
