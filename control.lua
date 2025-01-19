@@ -74,7 +74,7 @@ end)
 py.on_event(defines.events.on_player_created, function(event)
 	Wiki.events.on_player_created(event)
 
-	local player = game.players[event.player_index]
+	local player = game.get_player(event.player_index)
     if not player.valid then return end
     local nauvis = game.surfaces["nauvis"]
     if not nauvis then return end
