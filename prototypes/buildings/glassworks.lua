@@ -34,7 +34,16 @@ local function working_visualizations()
             width = 34,
             height = 55,
             animation_speed = 0.3,
-            shift = util.by_pixel(-16, -32 - (224 / 2) + (55 / 2)),
+            shift = util.by_pixel(31, 52.5),
+        },
+        {
+            filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/a4.png",
+            frame_count = 100,
+            line_length = 10,
+            width = 22,
+            height = 39,
+            animation_speed = 0.3,
+            shift = util.by_pixel(37, 24.5),
         },
     }
     return {{animation = {layers = working_visualizations}}}
@@ -103,19 +112,16 @@ for i = 1, 4 do
         }
     }
 
-    table.insert(graphics_set.working_visualisations, {
+    table.insert(graphics_set.working_visualisations, 1, {
         fadeout = true,
-        north_position = util.by_pixel(-16, -32),
-        west_position = util.by_pixel(-16, -32),
-        south_position = util.by_pixel(-16, -32),
-        east_position = util.by_pixel(-16, -32),
         animation = {
             filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/a1.png",
             frame_count = 100,
             line_length = 13,
             width = 128,
             height = 224,
-            animation_speed = 0.3
+            animation_speed = 0.3,
+            shift = util.by_pixel(-16, -32),
         }
     })
 
