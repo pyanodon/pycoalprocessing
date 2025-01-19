@@ -120,7 +120,7 @@ ITEM {
 
     pictures =
     {
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore.png",   scale = 0.66},
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore-1.png", scale = 0.66},
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore-2.png", scale = 0.66},
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/nexelit-ore-3.png", scale = 0.66}
@@ -554,7 +554,7 @@ ITEM {
 
     pictures =
     {
-        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore.png", scale = 0.66},
+        {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore.png",    scale = 0.66},
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore-01.png", scale = 0.66},
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore-02.png", scale = 0.66},
         {size = 64, filename = "__pycoalprocessinggraphics__/graphics/icons/mip/niobium-ore-03.png", scale = 0.66}

@@ -7,7 +7,7 @@ RECIPE {
     energy_required = 1,
     ingredients = {
         {type = "item", name = "steel-plate",  amount = 2}, --bob aluminium-plate
-        {type = "item", name = "copper-plate", amount = 1} --bob brass-plate
+        {type = "item", name = "copper-plate", amount = 1}  --bob brass-plate
     },
     results = {
         {type = "item", name = "empty-gas-canister", amount = 1}

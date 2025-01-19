@@ -6,7 +6,7 @@ RECIPE {
     ingredients = {
         {type = "item", name = "stone-brick",        amount = 20},
         {type = "item", name = "copper-plate",       amount = 20},
-        {type = "item", name = "iron-gear-wheel",    amount = 5}, --bob steel-bearing
+        {type = "item", name = "iron-gear-wheel",    amount = 5},  --bob steel-bearing
         {type = "item", name = "iron-plate",         amount = 10}, --bob invar-alloy
         {type = "item", name = "electronic-circuit", amount = 3},
         {type = "item", name = "steam-engine",       amount = 1},

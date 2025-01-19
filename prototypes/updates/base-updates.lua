@@ -2,7 +2,7 @@ local resource_autoplace = require "resource-autoplace"
 
 -- https://github.com/pyanodon/pybugreports/issues/701
 -- https://github.com/pyanodon/pybugreports/issues/713
-TECHNOLOGY('fission-reactor-equipment'):remove_pack('utility-science-pack'):add_pack('production-science-pack')
+TECHNOLOGY("fission-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
 
 -- (( TECHNOLOGY ))--
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):add_pack("military-science-pack")

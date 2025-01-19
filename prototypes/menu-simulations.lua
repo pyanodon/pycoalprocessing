@@ -1,5 +1,5 @@
 if not mods["pyindustry"] then
-  return
+    return
 end
 
 local menu_simulations = data.raw["utility-constants"]["default"].main_menu_simulations
@@ -31,23 +31,23 @@ menu_simulations.nauvis_brutal_defeat = nil
 menu_simulations.nauvis_forest_fire = nil
 
 if mods["pyhightech"] or mods["pyrawores"] or mods["pypetroleumhandling"] then
-  -- work, but involves biters/military
-  menu_simulations.artillery = nil
-  menu_simulations.big_defense = nil
-  menu_simulations.nauvis_train_junction = nil -- uses artillery wagon...
-  menu_simulations.nauvis_train_station = nil -- uses artillery wagon...
+    -- work, but involves biters/military
+    menu_simulations.artillery = nil
+    menu_simulations.big_defense = nil
+    menu_simulations.nauvis_train_junction = nil -- uses artillery wagon...
+    menu_simulations.nauvis_train_station = nil -- uses artillery wagon...
 
-  menu_simulations.nauvis_nuclear_power = nil -- does not involve biters, but PyHT makes it weird and PyHT + PyRO breaks it
-  menu_simulations.nauvis_oil_pumpjacks = nil -- does not involve biters, but makes no sense with PyPH
+    menu_simulations.nauvis_nuclear_power = nil -- does not involve biters, but PyHT makes it weird and PyHT + PyRO breaks it
+    menu_simulations.nauvis_oil_pumpjacks = nil -- does not involve biters, but makes no sense with PyPH
 end
 
 menu_simulations.cp_unload =
 {
-  checkboard = false,
-  save = "__pycoalprocessinggraphics__/menu-simulations/menu-simulation-cp-unload.zip",
-  length = 60 * 20,
-  init =
-  [[
+    checkboard = false,
+    save = "__pycoalprocessinggraphics__/menu-simulations/menu-simulation-cp-unload.zip",
+    length = 60 * 20,
+    init =
+    [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -58,18 +58,18 @@ menu_simulations.cp_unload =
         entity.destroy()
     end
   ]],
-  update =
-  [[
+    update =
+    [[
   ]]
 }
 
 menu_simulations.cp_forest =
 {
-  checkboard = false,
-  save = "__pycoalprocessinggraphics__/menu-simulations/menu-simulation-cp-forest.zip",
-  length = 60 * 20,
-  init =
-  [[
+    checkboard = false,
+    save = "__pycoalprocessinggraphics__/menu-simulations/menu-simulation-cp-forest.zip",
+    length = 60 * 20,
+    init =
+    [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -94,18 +94,18 @@ menu_simulations.cp_forest =
       end
     end)
   ]],
-  update =
-  [[
+    update =
+    [[
   ]]
 }
 
 menu_simulations.cp_borax =
 {
-  checkboard = false,
-  save = "__pycoalprocessinggraphics__/menu-simulations/menu-simulation-cp-borax.zip",
-  length = 60 * 20,
-  init =
-  [[
+    checkboard = false,
+    save = "__pycoalprocessinggraphics__/menu-simulations/menu-simulation-cp-borax.zip",
+    length = 60 * 20,
+    init =
+    [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -116,18 +116,18 @@ menu_simulations.cp_borax =
         entity.destroy()
     end
   ]],
-  update =
-  [[
+    update =
+    [[
   ]]
 }
 
 menu_simulations.in_bots =
 {
-  checkboard = false,
-  save = "__pyindustry__/menu-simulations/menu-simulation-in-bots.zip",
-  length = 60 * 20,
-  init =
-  [[
+    checkboard = false,
+    save = "__pyindustry__/menu-simulations/menu-simulation-in-bots.zip",
+    length = 60 * 20,
+    init =
+    [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -138,17 +138,17 @@ menu_simulations.in_bots =
         entity.destroy()
     end
   ]],
-  update =
-  [[
+    update =
+    [[
   ]]
 }
 menu_simulations.in_bus =
 {
-  checkboard = false,
-  save = "__pyindustry__/menu-simulations/menu-simulation-in-bus.zip",
-  length = 60 * 20,
-  init =
-  [[
+    checkboard = false,
+    save = "__pyindustry__/menu-simulations/menu-simulation-in-bus.zip",
+    length = 60 * 20,
+    init =
+    [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -159,19 +159,19 @@ menu_simulations.in_bus =
         entity.destroy()
     end
   ]],
-  update =
-  [[
+    update =
+    [[
   ]]
 }
 
 if mods["pyfusionenergy"] then
-  menu_simulations.fe_diamonds =
-  {
-    checkboard = false,
-    save = "__pyfusionenergygraphics__/menu-simulations/menu-simulation-fe-diamonds.zip",
-    length = 60 * 20,
-    init =
-    [[
+    menu_simulations.fe_diamonds =
+    {
+        checkboard = false,
+        save = "__pyfusionenergygraphics__/menu-simulations/menu-simulation-fe-diamonds.zip",
+        length = 60 * 20,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -182,18 +182,18 @@ if mods["pyfusionenergy"] then
         entity.destroy()
     end
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
-  local has_alternative_energy = mods["pyalternativeenergy"]
-  menu_simulations.fe_reactors =
-  {
-    checkboard = false,
-    save = has_alternative_energy and "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-fe-reactors2.zip" or "__pyfusionenergygraphics__/menu-simulations/menu-simulation-fe-reactors.zip",
-    length = 60 * 20,
-    init =
-    [[
+    }
+    local has_alternative_energy = mods["pyalternativeenergy"]
+    menu_simulations.fe_reactors =
+    {
+        checkboard = false,
+        save = has_alternative_energy and "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-fe-reactors2.zip" or "__pyfusionenergygraphics__/menu-simulations/menu-simulation-fe-reactors.zip",
+        length = 60 * 20,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -204,20 +204,20 @@ if mods["pyfusionenergy"] then
         entity.destroy()
     end
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
+    }
 end
 
 if mods["pyhightech"] then
-  menu_simulations.ht_ores =
-  {
-    checkboard = false,
-    save = "__pyhightechgraphics__/menu-simulations/menu-simulation-ht-ores.zip",
-    length = 60 * 20,
-    init =
-    [[
+    menu_simulations.ht_ores =
+    {
+        checkboard = false,
+        save = "__pyhightechgraphics__/menu-simulations/menu-simulation-ht-ores.zip",
+        length = 60 * 20,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -228,18 +228,18 @@ if mods["pyhightech"] then
         entity.destroy()
     end
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
-  if mods["pyrawores"] then
-    menu_simulations.ht_pa =
-    {
-      checkboard = false,
-      save = "__pyhightechgraphics__/menu-simulations/menu-simulation-ht-pa2.zip",
-      length = 60 * 20,
-      init =
-      [[
+    }
+    if mods["pyrawores"] then
+        menu_simulations.ht_pa =
+        {
+            checkboard = false,
+            save = "__pyhightechgraphics__/menu-simulations/menu-simulation-ht-pa2.zip",
+            length = 60 * 20,
+            init =
+            [[
       local surface = game.surfaces.nauvis
       local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
       game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -260,20 +260,20 @@ if mods["pyhightech"] then
         script.on_nth_tick(10, nil)
       end)
     ]],
-      update =
-      [[
+            update =
+            [[
     ]]
-    }
-  end
-  local does_not_work_due_to_batteries = mods["pyalienlife"] and not mods["pyalternativeenergy"]
-  if not does_not_work_due_to_batteries then
-    menu_simulations.ht_chips =
-    {
-      checkboard = false,
-      save = "__pyhightechgraphics__/menu-simulations/menu-simulation-ht-chips2.zip",
-      length = 60 * 20,
-      init =
-      [[
+        }
+    end
+    local does_not_work_due_to_batteries = mods["pyalienlife"] and not mods["pyalternativeenergy"]
+    if not does_not_work_due_to_batteries then
+        menu_simulations.ht_chips =
+        {
+            checkboard = false,
+            save = "__pyhightechgraphics__/menu-simulations/menu-simulation-ht-chips2.zip",
+            length = 60 * 20,
+            init =
+            [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -284,22 +284,22 @@ if mods["pyhightech"] then
         entity.destroy()
     end
   ]],
-      update =
-      [[
+            update =
+            [[
   ]]
-    }
-  end
+        }
+    end
 end
 
 if mods["pyrawores"] then
-  if mods["pyfusionenergy"] then -- without PyFE, a lot of buildings are different, so it's impossible to showcase an (almost) full chain
-    menu_simulations.ro_chain =
-    {
-      checkboard = false,
-      save = "__pyraworesgraphics__/menu-simulations/menu-simulation-ro-chain.zip",
-      length = 60 * 20,
-      init =
-      [[
+    if mods["pyfusionenergy"] then -- without PyFE, a lot of buildings are different, so it's impossible to showcase an (almost) full chain
+        menu_simulations.ro_chain =
+        {
+            checkboard = false,
+            save = "__pyraworesgraphics__/menu-simulations/menu-simulation-ro-chain.zip",
+            length = 60 * 20,
+            init =
+            [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -310,20 +310,20 @@ if mods["pyrawores"] then
         entity.destroy()
     end
   ]],
-      update =
-      [[
+            update =
+            [[
   ]]
-    }
-  end
+        }
+    end
 
-  local has_fusion_energy = mods["pyfusionenergy"]
-  menu_simulations.ro_mines =
-  {
-    checkboard = false,
-    save = "__pyraworesgraphics__/menu-simulations/menu-simulation-ro-mines.zip",
-    length = 60 * 20,
-    init =
-        string.format([[
+    local has_fusion_energy = mods["pyfusionenergy"]
+    menu_simulations.ro_mines =
+    {
+        checkboard = false,
+        save = "__pyraworesgraphics__/menu-simulations/menu-simulation-ro-mines.zip",
+        length = 60 * 20,
+        init =
+            string.format([[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -337,19 +337,19 @@ if mods["pyrawores"] then
     local pipe = surface.find_entities_filtered{name = "infinity-pipe", limit = 1}[1]
     pipe.set_infinity_pipe_filter({ name = "%s", percentage=0.5, temperature=100, mode="exactly" })
   ]], has_fusion_energy and "acetylene" or "diesel"), -- PyFE makes the crystal mine take acetylene instead of diesel
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
+    }
 
-  local mold_exists = mods["pyalienlife"]
-  menu_simulations.ro_cast =
-  {
-    checkboard = false,
-    save = "__pyraworesgraphics__/menu-simulations/menu-simulation-ro-cast.zip",
-    length = 60 * 20,
-    init =
-        string.format([[
+    local mold_exists = mods["pyalienlife"]
+    menu_simulations.ro_cast =
+    {
+        checkboard = false,
+        save = "__pyraworesgraphics__/menu-simulations/menu-simulation-ro-cast.zip",
+        length = 60 * 20,
+        init =
+            string.format([[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -363,20 +363,20 @@ if mods["pyrawores"] then
     local box = surface.find_entities_filtered{name = "steel-chest", limit = 1}[1]
     box.insert{name="%s", count=4800}
   ]], mold_exists and "mold" or "sand-casting"),
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
+    }
 end
 
 if mods["pypetroleumhandling"] then
-  menu_simulations.ph_shale =
-  {
-    checkboard = false,
-    save = "__pypetroleumhandlinggraphics__/menu-simulations/menu-simulation-ph-shale.zip",
-    length = 60 * 20,
-    init =
-    [[
+    menu_simulations.ph_shale =
+    {
+        checkboard = false,
+        save = "__pypetroleumhandlinggraphics__/menu-simulations/menu-simulation-ph-shale.zip",
+        length = 60 * 20,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -387,17 +387,17 @@ if mods["pypetroleumhandling"] then
         entity.destroy()
     end
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
-  menu_simulations.ph_seeps =
-  {
-    checkboard = false,
-    save = "__pypetroleumhandlinggraphics__/menu-simulations/menu-simulation-ph-seeps.zip",
-    length = 60 * 20,
-    init =
-    [[
+    }
+    menu_simulations.ph_seeps =
+    {
+        checkboard = false,
+        save = "__pypetroleumhandlinggraphics__/menu-simulations/menu-simulation-ph-seeps.zip",
+        length = 60 * 20,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -414,17 +414,17 @@ if mods["pypetroleumhandling"] then
       box.insert{name="clay", count=1000}
     end
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
-  menu_simulations.ph_drills =
-  {
-    checkboard = false,
-    save = "__pypetroleumhandlinggraphics__/menu-simulations/menu-simulation-ph-drills.zip",
-    length = 60 * 20,
-    init =
-    [[
+    }
+    menu_simulations.ph_drills =
+    {
+        checkboard = false,
+        save = "__pypetroleumhandlinggraphics__/menu-simulations/menu-simulation-ph-drills.zip",
+        length = 60 * 20,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -435,20 +435,20 @@ if mods["pypetroleumhandling"] then
         entity.destroy()
     end
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
+    }
 end
 
 if mods["pyalienlife"] then
-  menu_simulations.al_early =
-  {
-    checkboard = false,
-    save = "__pyalienlifegraphics__/menu-simulations/menu-simulation-al-early.zip",
-    length = 60 * 20,
-    init =
-    [[
+    menu_simulations.al_early =
+    {
+        checkboard = false,
+        save = "__pyalienlifegraphics__/menu-simulations/menu-simulation-al-early.zip",
+        length = 60 * 20,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -459,19 +459,19 @@ if mods["pyalienlife"] then
         entity.destroy()
     end
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
+    }
 
-  if mods["pyhightech"] then -- no cardaveric arum without HT
-    menu_simulations.al_spaghetti =
-    {
-      checkboard = false,
-      save = "__pyalienlifegraphics__/menu-simulations/menu-simulation-al-spaghetti.zip",
-      length = 60 * 20,
-      init =
-      [[
+    if mods["pyhightech"] then -- no cardaveric arum without HT
+        menu_simulations.al_spaghetti =
+        {
+            checkboard = false,
+            save = "__pyalienlifegraphics__/menu-simulations/menu-simulation-al-spaghetti.zip",
+            length = 60 * 20,
+            init =
+            [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+9.25}
@@ -482,20 +482,20 @@ if mods["pyalienlife"] then
         entity.destroy()
     end
   ]],
-      update =
-      [[
+            update =
+            [[
   ]]
-    }
-  end
+        }
+    end
 
-  if mods["pyhightech"] then -- no antelopes without HT
-    menu_simulations.al_late =
-    {
-      checkboard = false,
-      save = "__pyalienlifegraphics__/menu-simulations/menu-simulation-al-late.zip",
-      length = 60 * 22,
-      init =
-      [[
+    if mods["pyhightech"] then -- no antelopes without HT
+        menu_simulations.al_late =
+        {
+            checkboard = false,
+            save = "__pyalienlifegraphics__/menu-simulations/menu-simulation-al-late.zip",
+            length = 60 * 22,
+            init =
+            [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -525,21 +525,21 @@ if mods["pyalienlife"] then
             end
         end)
   ]],
-      update =
-      [[
+            update =
+            [[
   ]]
-    }
-  end
+        }
+    end
 end
 
 if mods["pyalternativeenergy"] then
-  menu_simulations.ae_early =
-  {
-    checkboard = false,
-    save = "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-ae-early.zip",
-    length = 60 * 15,
-    init =
-    [[
+    menu_simulations.ae_early =
+    {
+        checkboard = false,
+        save = "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-ae-early.zip",
+        length = 60 * 15,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+9.25}
@@ -588,18 +588,18 @@ if mods["pyalternativeenergy"] then
             end
         end)
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
+    }
 
-  menu_simulations.ae_fossil_plants =
-  {
-    checkboard = false,
-    save = "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-ae-fossil-plants.zip",
-    length = 60 * 20,
-    init =
-    [[
+    menu_simulations.ae_fossil_plants =
+    {
+        checkboard = false,
+        save = "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-ae-fossil-plants.zip",
+        length = 60 * 20,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -610,18 +610,18 @@ if mods["pyalternativeenergy"] then
         entity.destroy()
     end
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
+    }
 
-  menu_simulations.ae_renewable =
-  {
-    checkboard = false,
-    save = "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-ae-renewable.zip",
-    length = 60 * 20,
-    init =
-    [[
+    menu_simulations.ae_renewable =
+    {
+        checkboard = false,
+        save = "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-ae-renewable.zip",
+        length = 60 * 20,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+9.25}
@@ -632,18 +632,18 @@ if mods["pyalternativeenergy"] then
         entity.destroy()
     end
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
+    }
 
-  menu_simulations.ae_nuclear =
-  {
-    checkboard = false,
-    save = "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-ae-nuclear.zip",
-    length = 60 * 20,
-    init =
-    [[
+    menu_simulations.ae_nuclear =
+    {
+        checkboard = false,
+        save = "__pyalternativeenergygraphics__/menu-simulations/menu-simulation-ae-nuclear.zip",
+        length = 60 * 20,
+        init =
+        [[
     local surface = game.surfaces.nauvis
     local logo = surface.find_entities_filtered{name = "py-logo-15tiles", limit = 1}[1]
     game.simulation.camera_position = {logo.position.x, logo.position.y+10.25}
@@ -654,8 +654,8 @@ if mods["pyalternativeenergy"] then
         entity.destroy()
     end
   ]],
-    update =
-    [[
+        update =
+        [[
   ]]
-  }
+    }
 end

@@ -1,31 +1,31 @@
 {
-  "name": "pycoalprocessing",
-  "version": "3.0.28",
-  "factorio_version": "2.0",
-  "title": "Pyanodons Coal Processing",
-  "author": "Pyanodon, Nexela, Kingarthur, notnotmelon, Mootykins, ShadowGlass, Archezekiel, Quintuple",
-  "contact": "https://discord.gg/SBHM3h5Utj",
-  "homepage": "https://mods.factorio.com/mods/pyanodon/pycoalprocessing",
-  "description": "Extends and overhauls Factorio's burner phase. Use realistic oil and coal processes to create advanced products. Functions as the core and library for the rest of the pY mods.",
-  "dependencies": [
-    "base >= 2.0.21",
-    "~ pycoalprocessinggraphics >= 3.0.3",
-    "~ pypostprocessing >= 3.0.0",
-    "(?) DiscoScience",
-    "(?) better-victory-screen",
-    "(?) elevated-rails",
-    "! wret-beacon-rebalance-mod",
-    "! beacon-overhaul",
-    "! BigBags",
-    "! space-age"
-  ],
-  "package": {
-    "ignore": [],
-    "scripts": {}
-  },
-  "quality_required": false,
-  "space_travel_required": false,
-  "spoiling_required": false,
-  "freezing_required": false,
-  "segmented_units_required": false
+    "name": "pycoalprocessing",
+    "version": "3.0.28",
+    "factorio_version": "2.0",
+    "title": "Pyanodons Coal Processing",
+    "author": "Pyanodon, Nexela, Kingarthur, notnotmelon, Mootykins, ShadowGlass, Archezekiel, Quintuple",
+    "contact": "https://discord.gg/SBHM3h5Utj",
+    "homepage": "https://mods.factorio.com/mods/pyanodon/pycoalprocessing",
+    "description": "Extends and overhauls Factorio's burner phase. Use realistic oil and coal processes to create advanced products. Functions as the core and library for the rest of the pY mods.",
+    "dependencies": [
+        "base >= 2.0.21",
+        "~ pycoalprocessinggraphics >= 3.0.3",
+        "~ pypostprocessing >= 3.0.0",
+        "(?) DiscoScience",
+        "(?) better-victory-screen",
+        "(?) elevated-rails",
+        "! wret-beacon-rebalance-mod",
+        "! beacon-overhaul",
+        "! BigBags",
+        "! space-age"
+    ],
+    "package": {
+        "ignore": [],
+        "scripts": {}
+    },
+    "quality_required": false,
+    "space_travel_required": false,
+    "spoiling_required": false,
+    "freezing_required": false,
+    "segmented_units_required": false
 }

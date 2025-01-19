@@ -146,7 +146,7 @@ for i = 1, 4 do
             apparent_volume = 2.5
         },
     }
-    
+
     -- https://github.com/pyanodon/pycoalprocessing/commit/cf03a35fa5dec4c74a464d847b4e266394317726
     if not mods["pystellarexpedition"] then
         local legacy = table.deepcopy(data.raw["assembling-machine"][name])

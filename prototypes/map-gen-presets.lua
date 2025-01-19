@@ -67,7 +67,7 @@ mapgens["py-recommended"] = {
             water = {frequency = 0.75, size = 0.75},
         },
         cliff_settings = {
-            cliff_elevation_interval = 40/0.5,
+            cliff_elevation_interval = 40 / 0.5,
             richness = 3
         },
         starting_area = mods["rso-mod"] and "normal" or 4
