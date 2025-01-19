@@ -14,7 +14,31 @@ RECIPE {
     results = {
         {type = "item", name = "glassworks-mk01", amount = 1}
     }
-} --:add_unlock("coal-processing-1")
+}
+
+local function working_visualizations()
+    local working_visualizations = {
+        {
+            filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/a2.png",
+            frame_count = 100,
+            line_length = 13,
+            width = 96,
+            height = 224,
+            animation_speed = 0.3,
+            shift = util.by_pixel(96, -32)
+        },
+        {
+            filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/a3.png",
+            frame_count = 100,
+            line_length = 10,
+            width = 34,
+            height = 55,
+            animation_speed = 0.3,
+            shift = util.by_pixel(-16, -32 - (224 / 2) + (55 / 2)),
+        },
+    }
+    return {{animation = {layers = working_visualizations}}}
+end
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
@@ -35,6 +59,66 @@ for i = 1, 4 do
         stack_size = 10
     }
 
+    local graphics_set = py.finite_state_machine_working_visualisations {
+        states = {
+            {
+                name = "idle",
+                next_active = "working",
+                next_inactive = "idle",
+                frame_sequence = {1},
+            },
+            {
+                name = "working",
+                next_active = "idle",
+                next_inactive = "idle",
+                frame_sequence = py.range(2, 100),
+            },
+        },
+        working_visualisations = working_visualizations(),
+        shadow = {
+            layers = {
+                {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/bot.png",
+                    width = 256,
+                    height = 32,
+                    frame_count = 1,
+                    shift = util.by_pixel(16, 96)
+                },
+                {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/top.png",
+                    width = 256,
+                    height = 224,
+                    frame_count = 1,
+                    shift = util.by_pixel(16, -32)
+                },
+                {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/top-mask.png",
+                    width = 256,
+                    height = 224,
+                    frame_count = 1,
+                    shift = util.by_pixel(16, -32),
+                    tint = py.tints[i]
+                },
+            }
+        }
+    }
+
+    table.insert(graphics_set.working_visualisations, {
+        fadeout = true,
+        north_position = util.by_pixel(-16, -32),
+        west_position = util.by_pixel(-16, -32),
+        south_position = util.by_pixel(-16, -32),
+        east_position = util.by_pixel(-16, -32),
+        animation = {
+            filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/a1.png",
+            frame_count = 100,
+            line_length = 13,
+            width = 128,
+            height = 224,
+            animation_speed = 0.3
+        }
+    })
+
     ENTITY {
         type = "assembling-machine",
         name = name,
@@ -53,18 +137,15 @@ for i = 1, 4 do
         allowed_effects = {"consumption", "speed", "pollution", "productivity"},
         crafting_categories = {"glassworks"},
         crafting_speed = i,
-        energy_source =
-        {
+        energy_source = {
             type = "fluid",
             emissions_per_minute = {
                 pollution = 10
             },
             destroy_non_fuel_fluid = false,
-            fluid_box =
-            {
+            fluid_box = {
                 volume = 200,
-                pipe_connections =
-                {
+                pipe_connections = {
                     {flow_direction = "input-output", position = {3.0, 0},  direction = defines.direction.east},
                     {flow_direction = "input-output", position = {-3.0, 0}, direction = defines.direction.west}
                 },
@@ -74,8 +155,7 @@ for i = 1, 4 do
             },
             effectivity = 1,
             burns_fluid = true,
-            light_flicker =
-            {
+            light_flicker = {
                 minimum_intensity = 0,
                 maximum_intensity = 0,
                 light_intensity_to_size_coefficient = 0,
@@ -83,8 +163,7 @@ for i = 1, 4 do
             },
             scale_fluid_usage = true,
             fluid_usage_per_tick = 10,
-            smoke =
-            {
+            smoke = {
                 {
                     name = "smoke",
                     north_position = util.by_pixel(68, -64),
@@ -108,68 +187,7 @@ for i = 1, 4 do
             }
         },
         energy_usage = (10 * i) .. "MW",
-        graphics_set = {
-            working_visualisations = {
-                {
-                    fadeout = true,
-                    constant_speed = true,
-                    north_position = util.by_pixel(-16, -32),
-                    west_position = util.by_pixel(-16, -32),
-                    south_position = util.by_pixel(-16, -32),
-                    east_position = util.by_pixel(-16, -32),
-                    animation = {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/a1.png",
-                        frame_count = 100,
-                        line_length = 13,
-                        width = 128,
-                        height = 224,
-                        animation_speed = 0.3
-                    }
-                },
-                {
-                    fadeout = true,
-                    constant_speed = true,
-                    north_position = util.by_pixel(96, -32),
-                    west_position = util.by_pixel(96, -32),
-                    south_position = util.by_pixel(96, -32),
-                    east_position = util.by_pixel(96, -32),
-                    animation = {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/a2.png",
-                        frame_count = 100,
-                        line_length = 13,
-                        width = 96,
-                        height = 224,
-                        animation_speed = 0.3
-                    }
-                },
-            },
-            animation = {
-                layers = {
-                    {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/bot.png",
-                        width = 256,
-                        height = 32,
-                        frame_count = 1,
-                        shift = util.by_pixel(16, 96)
-                    },
-                    {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/top.png",
-                        width = 256,
-                        height = 224,
-                        frame_count = 1,
-                        shift = util.by_pixel(16, -32)
-                    },
-                    {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/top-mask.png",
-                        width = 256,
-                        height = 224,
-                        frame_count = 1,
-                        shift = util.by_pixel(16, -32),
-                        tint = py.tints[i]
-                    },
-                }
-            },
-        },
+        graphics_set = graphics_set,
         fluid_boxes_off_when_no_fluid_recipe = true,
         fluid_boxes = {
             --1
