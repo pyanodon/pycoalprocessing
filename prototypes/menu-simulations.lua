@@ -124,7 +124,7 @@ menu_simulations.cp_borax =
 menu_simulations.in_bots =
 {
     checkboard = false,
-    save = "__pyindustry__/menu-simulations/menu-simulation-in-bots.zip",
+    save = "__pyindustrygraphics__/menu-simulations/menu-simulation-in-bots.zip",
     length = 60 * 20,
     init =
     [[
@@ -145,7 +145,7 @@ menu_simulations.in_bots =
 menu_simulations.in_bus =
 {
     checkboard = false,
-    save = "__pyindustry__/menu-simulations/menu-simulation-in-bus.zip",
+    save = "__pyindustrygraphics__/menu-simulations/menu-simulation-in-bus.zip",
     length = 60 * 20,
     init =
     [[
