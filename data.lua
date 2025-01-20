@@ -129,6 +129,7 @@ require "prototypes/fluids/tpa"
 require "prototypes/fluids/molten-glass"
 
 -- (( BUILDINGS )) --
+require "prototypes/buildings/stack-inserter"
 require "prototypes/buildings/distilator"
 require "prototypes/buildings/gas-turbine-mk01"
 require "prototypes/buildings/gas-turbine-mk02"

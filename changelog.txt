@@ -10,6 +10,7 @@ Date: ?
     - Swapped coal to gunpowder in the grenades recipe.
     - Removed hyphens from most item, fluid, entity, and recipe names in order to aid in itemsearch.
     - Updated the locale for automation 1, 2, and 3 techs.
+    - Moved the stack inserter prototype definintions from data-updates stage to data stage.
     - Added 2.0 item pickup and move sound effect support. https://github.com/pyanodon/pycoalprocessing/pull/379
     - Added FSM animations to the glassworks. Resolves https://github.com/pyanodon/pybugreports/issues/754
     - Fixed a crash related to factoriopedia and factory planner. Resolves https://github.com/pyanodon/pybugreports/issues/820
