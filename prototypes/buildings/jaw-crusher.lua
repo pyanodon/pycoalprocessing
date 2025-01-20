@@ -107,16 +107,6 @@ for i = 1, 4 do
                         shift = {1.0, -0.5},
                         animation_speed = 0.5,
                         tint = py.tints[i]
-                    },
-                    {
-                        filename = "__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-right-mask.png",
-                        width = 32,
-                        height = 256,
-                        line_length = 64,
-                        frame_count = 161,
-                        shift = {3.0, -0.5},
-                        animation_speed = 0.5,
-                        tint = py.tints[i]
                     }
                 }
             },
