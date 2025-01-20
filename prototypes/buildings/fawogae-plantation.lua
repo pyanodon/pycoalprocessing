@@ -137,7 +137,6 @@ for i = 1, 4 do
         impact_category = "metal",
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/fawogae-plantation.ogg"},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/fawogae-plantation.ogg", volume = 0.3},
             apparent_volume = 1.2
         }
     }

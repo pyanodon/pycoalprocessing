@@ -13,6 +13,7 @@ Date: ?
     - Added 2.0 item pickup and move sound effect support. https://github.com/pyanodon/pycoalprocessing/pull/379
     - Added FSM animations to the glassworks. Resolves https://github.com/pyanodon/pybugreports/issues/754
     - Fixed a crash related to factoriopedia and factory planner. Resolves https://github.com/pyanodon/pybugreports/issues/820
+    - Removed idle sounds from the fawogae plantation. Resolves https://github.com/pyanodon/pybugreports/issues/561
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.27
 Date: 2025-1-2
