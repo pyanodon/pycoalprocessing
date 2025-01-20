@@ -108,7 +108,6 @@ for i = 1, 4 do
         impact_category = "metal",
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 1.0},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 0.3},
             apparent_volume = 2.5
         },
     }

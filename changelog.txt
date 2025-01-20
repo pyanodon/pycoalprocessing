@@ -14,6 +14,7 @@ Date: ?
     - Added FSM animations to the glassworks. Resolves https://github.com/pyanodon/pybugreports/issues/754
     - Fixed a crash related to factoriopedia and factory planner. Resolves https://github.com/pyanodon/pybugreports/issues/820
     - Removed idle sounds from the fawogae plantation. Resolves https://github.com/pyanodon/pybugreports/issues/561
+    - Removed idle sounds from the wood processing unit. Resolves https://github.com/pyanodon/pybugreports/issues/548
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.27
 Date: 2025-1-2
