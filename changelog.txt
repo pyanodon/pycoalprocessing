@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.28
-Date: ?
+Date: 2024-1-20
   Graphics:
     - Reverted automated factory graphics back to 1.1 graphics. Resolves https://github.com/pyanodon/pybugreports/issues/617
     - Changed the fluidbox locations for the evaporator. Migration notice: the new fluidboxes will only appear if the entity is mined and rebuilt. Resolves https://github.com/pyanodon/pybugreports/issues/556.
