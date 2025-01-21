@@ -1,12 +1,10 @@
 local function restock_generator_equipment(player)
-    local should_remove_the_alert = true
-
-    if not player.character then return should_remove_the_alert end
+    if not player.character then return end
 
     local grid = player.character.grid
-    if not grid then return should_remove_the_alert end
+    if not grid then return end
     local inventory = player.get_main_inventory()
-    if not inventory then return should_remove_the_alert end
+    if not inventory then return end
 
     for _, equipment in pairs(grid.equipment) do
         if equipment.type ~= "generator-equipment" then goto continue end
@@ -38,7 +36,6 @@ local function restock_generator_equipment(player)
                 end
             end
 
-            should_remove_the_alert = false
             player.add_custom_alert(
                 player.character,
                 {type = "virtual", name = "no-fuel"},
@@ -51,19 +48,10 @@ local function restock_generator_equipment(player)
 
         ::continue::
     end
-
-    return should_remove_the_alert
 end
 
 py.register_on_nth_tick(251, "generator-equipment-autofill", "pycp", function()
     for _, player in pairs(game.connected_players) do
-        local should_remove_the_alert = restock_generator_equipment(player)
-
-        if should_remove_the_alert and player.character then
-            player.remove_alert {
-                entity = player.character,
-                icon = {type = "virtual", name = "no-fuel"},
-            }
-        end
+        restock_generator_equipment(player)
     end
 end)
