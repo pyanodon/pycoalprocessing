@@ -8,6 +8,7 @@ require "scripts.wiki.statistics-page"
 require "scripts.tailings-pond"
 require "scripts.beacons"
 require "scripts.milestones"
+require "scripts.generator-equipment-autofill"
 
 py.on_event(py.events.on_init(), function()
     for _, interface in pairs {"silo_script", "better-victory-screen"} do
