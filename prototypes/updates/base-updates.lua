@@ -92,7 +92,6 @@ data.raw.technology["uranium-ammo"].prerequisites = {"military-2", "uranium-proc
 
 TECHNOLOGY("concrete"):remove_prereq("automation-2")
 -- Remove empty vanilla techs
---TECHNOLOGY('electronics'):set_fields{enabled = false, hidden = true}
 TECHNOLOGY("automation-2"):set_fields {prerequisites = {}}
 TECHNOLOGY("laser"):set_fields {enabled = false, hidden = true}
 TECHNOLOGY("distractor"):set_fields {prerequisites = {}}

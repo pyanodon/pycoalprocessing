@@ -4,19 +4,20 @@ Date: ?
   Changes:
     - Improved several technology descriptions.
     - Fixed "needs uranium mining" message when using fluid drills on copper ore in pyHM. Resolves https://github.com/pyanodon/pybugreports/issues/780
+    - Migrated the internal name of the "vacuum-tube-electronics" technology to "electronics". Resolves https://github.com/pyanodon/pybugreports/issues/453
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.30
-Date: 2024-1-20
+Date: 2025-1-20
   Changes:
     - Added a generator equipment fuel manager to automatically restock gasolene and fusion generators with fuel from your inventory.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.29
-Date: 2024-1-20
+Date: 2025-1-20
   Changes:
     - Removed corrupted sprite-right-mask.png from the jaw crusher animation.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.28
-Date: 2024-1-20
+Date: 2025-1-20
   Changes:
     - Reverted automated factory graphics back to 1.1 graphics. Resolves https://github.com/pyanodon/pybugreports/issues/617
     - Changed the fluidbox locations for the evaporator. Migration notice: the new fluidboxes will only appear if the entity is mined and rebuilt. Resolves https://github.com/pyanodon/pybugreports/issues/556.
