@@ -142,9 +142,18 @@ end)
 
 py.on_event(py.events.on_init(), function()
     for _, force in pairs(game.forces) do
+        -- https://github.com/pyanodon/pybugreports/issues/780
         force.technologies["hidden-mining-fluid-autounlock"].researched = true
+
+        -- https://github.com/pyanodon/pybugreports/issues/453
         force.technologies["electronics"].enabled = true
+        if force.technologies["gate"] and force.technologies["gate"].researched then
+            force.technologies["electronics"].researched = true
+        end
         force.technologies["railway"].enabled = true
+        if force.technologies["automated-rail-transportation"] and force.technologies["automated-rail-transportation"].researched then
+            force.technologies["railway"].researched = true
+        end
     end
 end)
 
