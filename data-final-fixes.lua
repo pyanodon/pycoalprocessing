@@ -67,6 +67,13 @@ if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
     end
 end
 
+for _, science_pack in pairs(data.raw.lab.lab.inputs or {}) do
+    science_pack = data.raw.tool[science_pack]
+    if science_pack then
+        science_pack.stack_size = math.max(science_pack.stack_size or 0, 500)
+    end
+end
+
 data.raw["utility-constants"].default.minimum_recipe_overload_multiplier = 1
 
 for _, recipe in pairs(data.raw.recipe) do

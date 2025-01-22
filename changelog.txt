@@ -4,6 +4,7 @@ Date: ?
   Changes:
     - Improved several technology descriptions.
     - Improved pipe connector graphics for the advanced foundry.
+    - Boosted the stack size of all science packs from 200 -> 500. Resolves https://github.com/pyanodon/pybugreports/issues/262
     - Fixed "needs uranium mining" message when using fluid drills on copper ore in pyHM. Resolves https://github.com/pyanodon/pybugreports/issues/780
     - Migrated the internal name of the "vacuum-tube-electronics" technology to "electronics". Resolves https://github.com/pyanodon/pybugreports/issues/453
     - Migrated the internal name of the "railway-mk01" technology to "railway". Resolves https://github.com/pyanodon/pybugreports/issues/453
