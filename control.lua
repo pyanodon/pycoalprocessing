@@ -144,6 +144,7 @@ py.on_event(py.events.on_init(), function()
     for _, force in pairs(game.forces) do
         force.technologies["hidden-mining-fluid-autounlock"].researched = true
         force.technologies["electronics"].enabled = true
+        force.technologies["railway"].enabled = true
     end
 end)
 
