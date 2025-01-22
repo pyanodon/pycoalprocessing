@@ -140,4 +140,10 @@ py.on_event(py.events.on_init(), function(changedata)
     end
 end)
 
+py.on_event(py.events.on_init(), function()
+    for _, force in pairs(game.forces) do
+        force.technologies["hidden-mining-fluid-autounlock"].researched = true
+    end
+end)
+
 py.finalize_events()

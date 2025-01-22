@@ -22,20 +22,15 @@ require "prototypes/technologies/coal-processing-2"
 require "prototypes/technologies/coal-processing-3"
 require "prototypes/technologies/syngas"
 require "prototypes/technologies/tar-processing"
-
 require "prototypes/technologies/energy-1"
 require "prototypes/technologies/energy-2"
 require "prototypes/technologies/energy-3"
-
 require "prototypes/technologies/methanol-processing-1"
 require "prototypes/technologies/methanol-processing-2"
-
 require "prototypes/technologies/cooling-tower-1"
 require "prototypes/technologies/cooling-tower-2"
-
 require "prototypes/technologies/excavation-1"
 require "prototypes/technologies/excavation-2"
-
 require "prototypes/technologies/biofilm"
 require "prototypes/technologies/filtration"
 require "prototypes/technologies/desulfurization"
@@ -45,29 +40,23 @@ require "prototypes/technologies/fluid-separation"
 require "prototypes/technologies/fuel-production"
 require "prototypes/technologies/fine-electronics"
 require "prototypes/technologies/fluid-processing-machines"
-
 require "prototypes/technologies/ralesia"
 require "prototypes/technologies/ulric"
 require "prototypes/technologies/wood-processing"
 require "prototypes/technologies/wood-processing-2"
 require "prototypes/technologies/lab-instrument"
-
 require "prototypes/technologies/niobium"
 require "prototypes/technologies/nexelit"
 require "prototypes/technologies/chromium"
-
 require "prototypes/technologies/organic-solvent"
 require "prototypes/technologies/mukmoux"
 require "prototypes/technologies/kevlar"
 require "prototypes/technologies/creosote"
-
 require "prototypes/technologies/pyrrhic"
-
 require "prototypes/technologies/artillery-2"
 require "prototypes/technologies/artillery-range"
-
 require "prototypes/technologies/cargo-landing-pad-capacity"
-
+require "prototypes/technologies/hidden-mining-fluid-autounlock"
 
 -- (( RESOURCES )) --
 require "prototypes.ores.borax"

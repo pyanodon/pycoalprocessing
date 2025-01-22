@@ -3,6 +3,7 @@ Version: 3.0.31
 Date: ?
   Changes:
     - Improved several technology descriptions.
+    - Fixed "needs uranium mining" message when using fluid drills on copper ore in pyHM. Resolves https://github.com/pyanodon/pybugreports/issues/780
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.30
 Date: 2024-1-20
