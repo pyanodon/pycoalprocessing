@@ -3,6 +3,7 @@ Version: 3.0.31
 Date: ?
   Changes:
     - Improved the sound effects for the quenching tower.
+    - Improved the pipe connection graphics for the quenching tower to work with machine flippability.
     - Improved several technology descriptions.
     - Improved pipe connector graphics for the advanced foundry.
     - Fixed "needs uranium mining" message when using fluid drills on copper ore in pyHM. Resolves https://github.com/pyanodon/pybugreports/issues/780
