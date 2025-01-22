@@ -155,9 +155,10 @@ for i = 1, 4 do
         },
         impact_category = "metal",
         working_sound = {
-            sound = {filename = "__pycoalprocessinggraphics__/sounds/quenching-tower.ogg", volume = 0.42},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/quenching-tower.ogg", volume = 0.3},
-            apparent_volume = 2.5
+            sound = {filename = "__pycoalprocessinggraphics__/sounds/quenching-tower.ogg", volume = 0.8},
+            idle_sound = mods["pyfusionenergygraphics"] and {filename = "__pyfusionenergygraphics__/sounds/hydrocyclone-idle.ogg", volume = 0.3} or nil,
+            fade_in_ticks = 15,
+            fade_out_ticks = 4,
         },
     }
 end
