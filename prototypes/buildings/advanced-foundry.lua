@@ -97,29 +97,37 @@ for i = 1, 4 do
         fluid_boxes = {
             {
                 production_type = "input",
-                pipe_covers = py.pipe_covers(true, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
+                pipe_picture = py.sexy_pipe_pictures(),
+                pipe_picture_frozen = py.sexy_pipe_pictures_frozen(),
+                pipe_covers = pipecoverspictures(),
+                secondary_draw_orders = {north = -1, east = -1, west = -1},
                 volume = 1000,
                 pipe_connections = {{flow_direction = "input", position = {2.5, -0.5}, direction = defines.direction.east}}
             },
             {
                 production_type = "input",
-                pipe_covers = py.pipe_covers(true, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
+                pipe_picture = py.sexy_pipe_pictures(),
+                pipe_picture_frozen = py.sexy_pipe_pictures_frozen(),
+                pipe_covers = pipecoverspictures(),
+                secondary_draw_orders = {north = -1, east = -1, west = -1},
                 volume = 1000,
                 pipe_connections = {{flow_direction = "input", position = {0.5, 2.5}, direction = defines.direction.south}}
             },
             {
                 production_type = "output",
-                pipe_covers = py.pipe_covers(true, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
+                pipe_picture = py.sexy_pipe_pictures(),
+                pipe_picture_frozen = py.sexy_pipe_pictures_frozen(),
+                pipe_covers = pipecoverspictures(),
+                secondary_draw_orders = {north = -1, east = -1, west = -1},
                 volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-2.5, -0.5}, direction = defines.direction.west}}
             },
             {
                 production_type = "output",
-                pipe_covers = py.pipe_covers(true, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.88}, nil, nil),
+                pipe_picture = py.sexy_pipe_pictures(),
+                pipe_picture_frozen = py.sexy_pipe_pictures_frozen(),
+                pipe_covers = pipecoverspictures(),
+                secondary_draw_orders = {north = -1, east = -1, west = -1},
                 volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-0.5, 2.5}, direction = defines.direction.south}}
             },
