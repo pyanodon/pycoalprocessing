@@ -514,7 +514,7 @@ if mods.pyhightech then
     add_sound_single("cadaveric-arum-mk01", item_sounds.mechanical_inventory_move, item_sounds.mechanical_inventory_pickup, item_sounds.mechanical_inventory_move)
     add_sound_single("kicalk-plantation", item_sounds.mechanical_inventory_move, item_sounds.mechanical_inventory_pickup, item_sounds.mechanical_inventory_move)
     add_sound_single("moondrop-greenhouse-mk01", item_sounds.mechanical_inventory_move, item_sounds.mechanical_inventory_pickup, item_sounds.mechanical_inventory_move)
-    add_sound_single("zipir", item_sounds.water_inventory_move, item_sounds.water_inventory_pickup, item_sounds.water_inventory_move) --doesn't work
+    add_sound_single("zipir", item_sounds.fluid_inventory_move, item_sounds.fluid_inventory_pickup, item_sounds.fluid_inventory_move)
     add_sound_single("auog-paddock", item_sounds.mechanical_inventory_move, item_sounds.mechanical_inventory_pickup, item_sounds.mechanical_inventory_move)
     add_sound_single("quantum-computer", item_sounds.electric_large_inventory_move, item_sounds.electric_large_inventory_pickup, item_sounds.electric_large_inventory_move)
     add_sound_single("clay", item_sounds.resource_inventory_move, item_sounds.resource_inventory_pickup, item_sounds.resource_inventory_move)
@@ -524,7 +524,7 @@ if mods.pyhightech then
     add_sound_single("glass-fiber", item_sounds.wire_inventory_move, item_sounds.wire_inventory_pickup, item_sounds.wire_inventory_move)
     add_sound_single("melamine", item_sounds.wood_inventory_move, item_sounds.wood_inventory_pickup, item_sounds.wood_inventory_move)
     add_sound_single("melamine-resin", item_sounds.resource_inventory_move, item_sounds.resource_inventory_pickup, item_sounds.resource_inventory_move)
-    add_sound_single("pdms", item_sounds.barrel_inventory_move, item_sounds.barrel_inventory_pickup, item_sounds.barrel_inventory_move) --doesn't work
+    add_sound_single("pdms", item_sounds.metal_barrel_inventory_move, item_sounds.metal_barrel_inventory_pickup, item_sounds.metal_barrel_inventory_move)
     add_sound_single("phosphate-glass", item_sounds.science_inventory_move, item_sounds.science_inventory_pickup, item_sounds.science_inventory_move)
     add_sound_single("silicon", item_sounds.resource_inventory_move, item_sounds.resource_inventory_pickup, item_sounds.resource_inventory_move)
     add_sound_single("stone-wool", item_sounds.resource_inventory_move, item_sounds.resource_inventory_pickup, item_sounds.resource_inventory_move)
