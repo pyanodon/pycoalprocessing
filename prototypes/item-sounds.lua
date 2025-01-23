@@ -1,6 +1,10 @@
 local item_sounds = require("__base__.prototypes.item_sounds")
 
 local function add_sound_single(name, move_sound, pick_sound, drop_sound)
+    if not move_sound then error("Missing move_sound") end
+    if not pick_sound then error("Missing pick_sound") end
+    if not drop_sound then error("Missing drop_sound") end
+
     for item_type in pairs(defines.prototypes.item) do
         local item = (data.raw[item_type] or {})[name]
         if item then
