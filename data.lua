@@ -171,9 +171,6 @@ require "prototypes/menu-simulations"
 -- sprites
 require "prototypes/sprites/sprites"
 
--- sounds --
-require "prototypes/item-sounds"
-
 data.raw["utility-constants"].default.main_menu_background_image_location = "__pycoalprocessinggraphics__/graphics/pycp-wall.jpg"
 
 -- adding fuel value to liquids
