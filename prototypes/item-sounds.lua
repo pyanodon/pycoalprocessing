@@ -340,7 +340,7 @@ if mods.pyrawores then
     add_sound_single("mega-drill-head", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
     add_sound_single("salt", item_sounds.resource_inventory_move, item_sounds.resource_inventory_pickup, item_sounds.resource_inventory_move)
     for _, type in ipairs({"aluminium", "chromium", "lead", "nickel", "quartz", "tin", "titanium", "zinc"}) do
-        add_sound_single("ore-" .. type, item_sounds.drill_inventory_move, item_sounds.drill_inventory_pickup, item_sounds.drill_inventory_move)
+        add_sound_single("ore-" .. type, item_sounds.resource_inventory_move, item_sounds.resource_inventory_pickup, item_sounds.resource_inventory_move)
     end
 end
 -- PyFusionEnergy
@@ -646,5 +646,4 @@ if mods.pyhightech then
     add_sound_single("ree-concentrate", item_sounds.resource_inventory_move, item_sounds.resource_inventory_pickup, item_sounds.resource_inventory_move)
     add_sound_single("reo", item_sounds.resource_inventory_move, item_sounds.resource_inventory_pickup, item_sounds.resource_inventory_move)
     add_sound_single("re-tin", item_sounds.metal_small_inventory_move, item_sounds.metal_small_inventory_pickup, item_sounds.metal_small_inventory_move)
-
 end
