@@ -209,11 +209,11 @@ ENTITY {
     working_sound = {
         sound = {
             filename = "__base__/sound/storage-tank.ogg",
-            volume = 0.6
+            volume = 0.6,
+            audible_distance_modifier = 0.5,
         },
         match_volume_to_activity = true,
-        audible_distance_modifier = 0.5,
-        max_sounds_per_type = 3
+        max_sounds_per_prototype = 3
     },
     circuit_connector = circuit_connector_definitions["tailings-pond"],
     circuit_wire_max_distance = 9,
