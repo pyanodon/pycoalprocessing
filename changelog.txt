@@ -2,6 +2,7 @@
 Version: 3.0.31
 Date: ?
   Changes:
+    - Fix Rectisol icon display in YAFC and other places that rely on it.
     - Improved the sound effects for the quenching tower.
     - Improved the pipe connection graphics for the quenching tower to work with machine flippability.
     - Improved several technology descriptions.
