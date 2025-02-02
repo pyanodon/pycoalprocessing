@@ -5,6 +5,7 @@ end
 require "prototypes/updates/base-updates"
 require "prototypes/updates/entity-updates"
 require "prototypes/technologies/stacking-belts"
+require "prototypes/item-sounds"
 
 ITEM("automation-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
 ITEM("automation-science-pack", "tool"):set("icon_size", 64)
