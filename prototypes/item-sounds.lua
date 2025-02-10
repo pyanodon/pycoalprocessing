@@ -196,11 +196,11 @@ if mods.pyindustry then
         end
     end
     add_sound_single("py-recharge-station-mk01", item_sounds.electric_large_inventory_move, item_sounds.electric_large_inventory_pickup, item_sounds.electric_large_inventory_move)
-    add_sound_multiple("py-roboport-mk%02d", 1, 2, item_sounds.roboport_inventory_move, item_sounds.roboport_inventory_pickup, item_sounds.roboport_inventory_pickup)
-    add_sound_single("py-ze", item_sounds.roboport_inventory_move, item_sounds.roboport_inventory_pickup, item_sounds.roboport_inventory_pickup)
-    add_sound_multiple("py-ze-mk%02d", 2, 4, item_sounds.roboport_inventory_move, item_sounds.roboport_inventory_pickup, item_sounds.roboport_inventory_pickup)
-    add_sound_single("py-construction-robot-mk01", item_sounds.robotic_inventory_move, item_sounds.robotic_inventory_pickup, item_sounds.robotic_inventory_pickup)
-    add_sound_single("py-logistic-robot-mk01", item_sounds.robotic_inventory_move, item_sounds.robotic_inventory_pickup, item_sounds.robotic_inventory_pickup)
+    add_sound_multiple("py-roboport-mk%02d", 1, 2, item_sounds.roboport_inventory_move, item_sounds.roboport_inventory_pickup, item_sounds.roboport_inventory_move)
+    add_sound_single("py-ze", item_sounds.roboport_inventory_move, item_sounds.roboport_inventory_pickup, item_sounds.roboport_inventory_move)
+    add_sound_multiple("py-ze-mk%02d", 2, 4, item_sounds.roboport_inventory_move, item_sounds.roboport_inventory_pickup, item_sounds.roboport_inventory_move)
+    add_sound_single("py-construction-robot-mk01", item_sounds.robotic_inventory_move, item_sounds.robotic_inventory_pickup, item_sounds.robotic_inventory_move)
+    add_sound_single("py-logistic-robot-mk01", item_sounds.robotic_inventory_move, item_sounds.robotic_inventory_pickup, item_sounds.robotic_inventory_move)
     -- These sounds cannot be added here because these items are implemented during data-updates.
     --add_sound_item("py-aluminium", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
     --add_sound_item("py-iron", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
