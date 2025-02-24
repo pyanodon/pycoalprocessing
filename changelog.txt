@@ -11,6 +11,7 @@ Date: ?
     - Fixed "needs uranium mining" message when using fluid drills on copper ore in pyHM. Resolves https://github.com/pyanodon/pybugreports/issues/780
     - Migrated the internal name of the "vacuum-tube-electronics" technology to "electronics". Resolves https://github.com/pyanodon/pybugreports/issues/453
     - Migrated the internal name of the "railway-mk01" technology to "railway". Resolves https://github.com/pyanodon/pybugreports/issues/453
+    - Added more 2.0 item pickup and move sound effects for py industry, py raw ores, pyFE, pyPH, and pyHT.
     - Misc. locale updates
     - Updated Ukrainian translation
 ---------------------------------------------------------------------------------------------------
