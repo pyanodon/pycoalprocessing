@@ -53,7 +53,7 @@ for i = 1, 4 do
     ENTITY {
         type = "assembling-machine",
         name = name,
-        icon = "__pycoalprocessinggraphics__/graphics/icons/rectisol.png",
+        icon = icon,
         icon_size = 64,
         flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 1, result = name},

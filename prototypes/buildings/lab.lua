@@ -10,6 +10,7 @@ ENTITY {
     dying_explosion = "lab-explosion",
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    drawing_box_vertical_extension = 2,
     --damaged_trigger_effect = hit_effects.entity(),
     on_animation =
     {
@@ -97,9 +98,9 @@ ENTITY {
         sound =
         {
             filename = "__base__/sound/lab.ogg",
-            volume = 0.7
+            volume = 0.7,
+            audible_distance_modifier = 0.7,
         },
-        audible_distance_modifier = 0.7,
         fade_in_ticks = 4,
         fade_out_ticks = 20
     },
