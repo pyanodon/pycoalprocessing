@@ -10,6 +10,7 @@ ENTITY {
     dying_explosion = "lab-explosion",
     collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    drawing_box_vertical_extension = 2,
     --damaged_trigger_effect = hit_effects.entity(),
     on_animation =
     {
