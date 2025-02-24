@@ -2,6 +2,7 @@
 Version: 3.0.31
 Date: ?
   Changes:
+    - Defined "drawing_box_vertical_extension" for labs. This fixes them disappearing when rendered at the edge of the screen.
     - Improved the sound effects for the quenching tower.
     - Improved the pipe connection graphics for the quenching tower to work with machine flippability.
     - Improved several technology descriptions.
