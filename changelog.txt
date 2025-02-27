@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.31
-Date: ?
+Date: 2025-2-26
   Changes:
     - Fix Rectisol icon display in YAFC and other places that rely on it.
     - Defined "drawing_box_vertical_extension" for labs. This fixes them disappearing when rendered at the edge of the screen.
