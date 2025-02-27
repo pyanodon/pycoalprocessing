@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.32
+Date: 2025-2-27
+  Changes:
+    - Added a shortcut to disable the equipment fuel manager. Resolves https://github.com/pyanodon/pybugreports/issues/829
+---------------------------------------------------------------------------------------------------
 Version: 3.0.31
 Date: 2025-2-26
   Changes:
