@@ -3,6 +3,7 @@ Version: 3.0.33
 Date: ?
   Changes:
     - The botanical nursery can now pass-thru fluids.
+    - Fixed fluid mining drills not working when connected to pipelines with low fluid level
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.32
 Date: 2025-2-27
