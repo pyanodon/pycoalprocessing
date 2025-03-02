@@ -5,6 +5,7 @@ Date: ?
     - The botanical nursery can now pass-thru fluids.
     - Fixed fluid mining drills not working when connected to pipelines with low fluid level
     - Fixed some recipes not having defined catalysts
+    - Emptying and filling canisters no longer counts as unlocking that fluid for use in selection lists.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.32
 Date: 2025-2-27
