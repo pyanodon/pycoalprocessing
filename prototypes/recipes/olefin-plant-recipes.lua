@@ -7,11 +7,11 @@ RECIPE {
     ingredients = {
         {type = "item",  name = "nexelit-plate", amount = 2},
         {type = "fluid", name = "olefin",        amount = 200},
-        {type = "fluid", name = "water",         amount = 200}
+        {type = "fluid", name = "water",         amount = 200, ignored_by_stats = 100}
     },
     results = {
         {type = "fluid", name = "aromatics", amount = 200},
-        {type = "fluid", name = "water",     amount = 100}
+        {type = "fluid", name = "water",     amount = 100, ignored_by_stats = 100, ignored_by_productivity = 100}
         --{type="fluid", name="hydrogen", amount=10},
     },
     main_product = "aromatics",
