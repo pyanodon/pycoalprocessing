@@ -6,6 +6,7 @@ Date: ?
     - Fixed fluid mining drills not working when connected to pipelines with low fluid level
     - Fixed some recipes not having defined catalysts
     - Emptying and filling canisters no longer counts as unlocking that fluid for use in selection lists.
+    - Fixed crash due to missing no fuel virtual signal in the equipment fuel manager. Resolves https://github.com/pyanodon/pybugreports/issues/877
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.32
 Date: 2025-2-27

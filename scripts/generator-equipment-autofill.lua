@@ -39,7 +39,9 @@ local function restock_generator_equipment(player)
                 end
             end
 
-            player.add_custom_alert(
+            -- https://github.com/pyanodon/pybugreports/issues/877
+            pcall(
+                player.add_custom_alert,
                 player.character,
                 {type = "virtual", name = "no-fuel"},
                 {"alerts.equipment-out-of-fuel", equipment.prototype.take_result.name, equipment.prototype.localised_name},
