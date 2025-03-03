@@ -61,7 +61,7 @@ for f, fluid in pairs(data.raw.fluid) do
             burnt_result = "empty-fuel-canister",
             stack_size = 20,
             ignore_for_dependencies = true,
-            unlock_results = true
+            unlock_results = false
         }
 
         local fuel_amount = 50
@@ -86,7 +86,7 @@ for f, fluid in pairs(data.raw.fluid) do
                 {type = "item", name = fluid.name .. "-canister", amount = 1}
             },
             ignore_for_dependencies = true,
-            unlock_results = true
+            unlock_results = false
         }:add_unlock("plastics")
 
 
