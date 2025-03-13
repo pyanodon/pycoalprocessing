@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
-Version: 3.0.33
-Date: 2025-3-3
+Version: 3.0.34
+Date: ???
   Changes:
     - Fixed aromaticsolefin recipe that had a tab in the order string. Resolves https://github.com/pyanodon/pybugreports/issues/904
 ---------------------------------------------------------------------------------------------------
