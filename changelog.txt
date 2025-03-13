@@ -2,6 +2,11 @@
 Version: 3.0.33
 Date: 2025-3-3
   Changes:
+    - Fixed aromaticsolefin recipe that had a tab in the order string. Resolves https://github.com/pyanodon/pybugreports/issues/904
+---------------------------------------------------------------------------------------------------
+Version: 3.0.33
+Date: 2025-3-3
+  Changes:
     - The botanical nursery can now pass-thru fluids.
     - Fixed fluid mining drills not working when connected to pipelines with low fluid level
     - Fixed some recipes not having defined catalysts
