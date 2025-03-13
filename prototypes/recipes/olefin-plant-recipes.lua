@@ -123,7 +123,7 @@ RECIPE {
     icon = "__pycoalprocessinggraphics__/graphics/icons/olefin.png",
     icon_size = 32,
     subgroup = "py-fluids",
-    order = "d8	"
+    order = "d8"
 }:add_unlock("fuel-production")
 
 RECIPE {
