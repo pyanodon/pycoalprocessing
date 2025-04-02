@@ -16,8 +16,7 @@
         "(?) elevated-rails",
         "! wret-beacon-rebalance-mod",
         "! beacon-overhaul",
-        "! BigBags",
-        "! space-age"
+        "! BigBags"
     ],
     "package": {
         "ignore": [],

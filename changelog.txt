@@ -3,7 +3,8 @@ Version: 3.0.34
 Date: ???
   Changes:
     - Fixed aromaticsolefin recipe that had a tab in the order string. Resolves https://github.com/pyanodon/pybugreports/issues/904
-    - Fixed crash from generator fuel toggle without pyindustry active
+    - Fixed crash from generator fuel toggle without pyindustry active.
+    - Fixed crashes when loading spoil to trigger result items within py codex. Resolves https://github.com/pyanodon/pybugreports/issues/844
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.33
 Date: 2025-3-3

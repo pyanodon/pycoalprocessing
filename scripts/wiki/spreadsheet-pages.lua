@@ -374,7 +374,7 @@ local function decay_result_builder(flow, item)
 
     if item.spoil_to_trigger_result then
         flow.add {type = "label", caption = "[Trigger]"}
-        return
+        return "trigger", item.get_spoil_ticks(), {item}, {[item.name] = true}
     end
 
     local spoilage_item = item
@@ -425,7 +425,7 @@ local function generate_decay_spreadsheet_data(required_science)
 
         local decay_result, total_decay_ticks, decay_chain, already_seen = decay_result_builder({add = function() end}, item)
         local unlocked_at = calculate_unlocked_at(required_science, name)
-
+        
         local decay_time_string = py.format_large_time(decay_ticks / 60)
         if type(total_decay_ticks) == "string" then
             decay_time_string = decay_time_string .. " [font=default-small](" .. total_decay_ticks .. ")[/font]"
