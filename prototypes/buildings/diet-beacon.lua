@@ -44,7 +44,7 @@ ITEM {
     subgroup = "module",
     order = "a[beacon]",
     place_result = "diet-beacon-AM1-FM1",
-    stack_size = 100
+    stack_size = 20
 }
 
 local graphics_set = {

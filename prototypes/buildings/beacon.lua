@@ -136,7 +136,7 @@ end
 data.raw.item.beacon.place_result = "beacon-AM1-FM1"
 data.raw.item.beacon.icon = "__pycoalprocessinggraphics__/graphics/icons/beacon.png"
 data.raw.item.beacon.icon_size = 64
-data.raw.item.beacon.stack_size = 100
+data.raw.item.beacon.stack_size = 20
 data.raw.beacon.beacon.subgroup = data.raw.item.beacon.subgroup
 
 data.raw.module["speed-module"].beacon_tint.primary = {0, 0.65, 1}
