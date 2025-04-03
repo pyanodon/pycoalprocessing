@@ -51,7 +51,7 @@ ENTITY {
     name = "tailings-pond",
     icon = "__pycoalprocessinggraphics__/graphics/icons/tailings-pond.png",
     icon_size = 64,
-    flags = {"placeable-player", "player-creation", "not-rotatable"},
+    flags = {"placeable-player", "player-creation"},
     minable = {mining_time = 0.5, result = "tailings-pond"},
     max_health = 500,
     corpse = "big-remnants",
