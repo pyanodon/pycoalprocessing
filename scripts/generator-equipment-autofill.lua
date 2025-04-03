@@ -56,6 +56,7 @@ local function restock_generator_equipment(player)
 end
 
 py.register_on_nth_tick(251, "generator-equipment-autofill", "pycp", function()
+    if not script.active_mods["pyindustry"] then return end
     for _, player in pairs(game.connected_players) do
         restock_generator_equipment(player)
     end

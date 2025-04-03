@@ -90,7 +90,7 @@ py.on_event(defines.events.on_player_created, function(event)
         player.print {"messages.warning-biters"}
     end
 
-    if script.active_mods.quality then
+    if script.active_mods.quality and not script.active_mods.pystellarexpedition then
         player.print {"messages.warning-quality"}
     end
 end)
@@ -135,7 +135,7 @@ py.on_event(py.events.on_init(), function(changedata)
     if not changedata then return end -- on_init, don't care
     log(serpent.block(changedata))
     local quality = (changedata.mod_changes or {}).quality
-    if quality and not quality.old_version then
+    if quality and not quality.old_version and not script.active_mods.pystellarexpedition then
         game.print {"messages.warning-quality"}
     end
 end)
