@@ -6,6 +6,7 @@ Date: ?
     - Fixed aromaticsolefin recipe that had a tab in the order string. Resolves https://github.com/pyanodon/pybugreports/issues/904
     - Fixed crash from generator fuel toggle without pyindustry active.
     - Fixed crashes when loading spoil to trigger result items within py codex. Resolves https://github.com/pyanodon/pybugreports/issues/844
+    - Launching a rocket does not win the game. Resolves https://github.com/pyanodon/pybugreports/issues/830
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.33
 Date: 2025-3-3
