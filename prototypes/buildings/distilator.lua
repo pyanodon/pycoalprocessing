@@ -212,15 +212,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"distilator",       1},
-        {"steel-plate",      10},
-        {"nexelit-plate",    10},
-        {"advanced-circuit", 5},
-        {"plastic-bar",      10},
-        {"engine-unit",      3},
+        {type = "item", name = "distilator",       amount = 1},
+        {type = "item", name = "steel-plate",      amount = 10},
+        {type = "item", name = "nexelit-plate",    amount = 10},
+        {type = "item", name = "advanced-circuit", amount = 5},
+        {type = "item", name = "plastic-bar",      amount = 10},
+        {type = "item", name = "engine-unit",      amount = 3},
     },
     results = {
-        {"distilator-mk02", 1}
+        {type = "item", name = "distilator-mk02", amount = 1}
     }
 }
 
@@ -230,15 +230,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"distilator-mk02",      1},
-        {"electric-engine-unit", 4},
-        {"steel-plate",          15},
-        {"niobium-plate",        20},
-        {"processing-unit",      5},
-        {"niobium-pipe",         15},
+        {type = "item", name = "distilator-mk02",      amount = 1},
+        {type = "item", name = "electric-engine-unit", amount = 4},
+        {type = "item", name = "steel-plate",          amount = 15},
+        {type = "item", name = "niobium-plate",        amount = 20},
+        {type = "item", name = "processing-unit",      amount = 5},
+        {type = "item", name = "niobium-pipe",         amount = 15},
     },
     results = {
-        {"distilator-mk03", 1}
+        {type = "item", name = "distilator-mk03", amount = 1}
     }
 }
 
@@ -248,11 +248,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"distilator-mk03", 1},
-        {"pump",            4},
-        {"nbfe-alloy",      15},
+        {type = "item", name = "distilator-mk03", amount = 1},
+        {type = "item", name = "pump",            amount = 4},
+        {type = "item", name = "nbfe-alloy",      amount = 15},
     },
     results = {
-        {"distilator-mk04", 1}
+        {type = "item", name = "distilator-mk04", amount = 1}
     }
 }

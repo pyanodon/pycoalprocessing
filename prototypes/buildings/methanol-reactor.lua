@@ -180,14 +180,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"methanol-reactor", 1},
-        {"advanced-circuit", 25},
-        {"plastic-bar",      50},
-        {"nexelit-plate",    15},
-        {"engine-unit",      8},
+        {type = "item", name = "methanol-reactor", amount = 1},
+        {type = "item", name = "advanced-circuit", amount = 25},
+        {type = "item", name = "plastic-bar",      amount = 50},
+        {type = "item", name = "nexelit-plate",    amount = 15},
+        {type = "item", name = "engine-unit",      amount = 8},
     },
     results = {
-        {"methanol-reactor-mk02", 1}
+        {type = "item", name = "methanol-reactor-mk02", amount = 1}
     }
 }
 
@@ -197,13 +197,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"methanol-reactor-mk02", 1},
-        {"processing-unit",       20},
-        {"niobium-plate",         30},
-        {"electric-engine-unit",  6},
+        {type = "item", name = "methanol-reactor-mk02", amount = 1},
+        {type = "item", name = "processing-unit",       amount = 20},
+        {type = "item", name = "niobium-plate",         amount = 30},
+        {type = "item", name = "electric-engine-unit",  amount = 6},
     },
     results = {
-        {"methanol-reactor-mk03", 1}
+        {type = "item", name = "methanol-reactor-mk03", amount = 1}
     }
 }
 
@@ -213,12 +213,12 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"methanol-reactor-mk03", 1},
-        {"kevlar",                30},
-        {"nbfe-alloy",            15},
-        {"low-density-structure", 10},
+        {type = "item", name = "methanol-reactor-mk03", amount = 1},
+        {type = "item", name = "kevlar",                amount = 30},
+        {type = "item", name = "nbfe-alloy",            amount = 15},
+        {type = "item", name = "low-density-structure", amount = 10},
     },
     results = {
-        {"methanol-reactor-mk04", 1}
+        {type = "item", name = "methanol-reactor-mk04", amount = 1}
     }
 }

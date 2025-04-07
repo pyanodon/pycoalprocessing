@@ -22,11 +22,11 @@ ITEM("lab"):set("icon_size", 64)
 ITEM("electric-engine-unit"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit.png")
 ITEM("electric-engine-unit"):set("icon_size", 64)
 
-RECIPE("small-electric-pole"):replace_result("small-electric-pole", {"small-electric-pole", amount = 1})
+RECIPE("small-electric-pole"):replace_result("small-electric-pole", {type = "item", name = "small-electric-pole", amount = 1})
 
-RECIPE("medium-electric-pole"):add_ingredient {type = "item", name = "niobium-plate", amount = 1}:replace_ingredient("copper-plate", {"copper-cable", 5}):replace_ingredient("iron-stick", {"nbfe-alloy", 2}):remove_ingredient("steel-plate")
+RECIPE("medium-electric-pole"):add_ingredient {type = "item", name = "niobium-plate", amount = 1}:replace_ingredient("copper-plate", {type = "item", name = "copper-cable", amount = 5}):replace_ingredient("iron-stick", {type = "item", name = "nbfe-alloy", amount = 2}):remove_ingredient("steel-plate")
 
-RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient {type = "item", name = "niobium-plate", amount = 2}:add_ingredient {type = "item", name = "copper-cable", amount = 15}:replace_ingredient("iron-stick", {"steel-plate", 6})
+RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient {type = "item", name = "niobium-plate", amount = 2}:add_ingredient {type = "item", name = "copper-cable", amount = 15}:replace_ingredient("iron-stick", {type = "item", name = "steel-plate", amount = 6})
 
 RECIPE("chemical-plant"):remove_unlock("oil-processing"):set_fields {hidden = true}
 ENTITY("chemical-plant"):set_fields {hidden = true}
@@ -193,24 +193,24 @@ table.insert(recipes_list, "niobium-plate")
 py.allow_productivity(recipes_list)
 
 RECIPE("beacon")
-    :add_ingredient {"sc-engine", 2}
-    :add_ingredient {"magnetic-ring", 10}
-    :add_ingredient {"intelligent-unit", 1}
-    :add_ingredient {"parametric-oscilator", 1}
-    :add_ingredient {"biopolymer", 10}
-    :add_ingredient {"super-alloy", 10}:remove_ingredient {"steel-plate"}
-    :add_ingredient {"tower-mk04", 1}
-    :add_ingredient {"processing-unit", 5}:remove_ingredient {"electronic-circuit"}:remove_ingredient {"advanced-circuit"}
-    :add_ingredient {"metastable-quasicrystal", 1}
+    :add_ingredient {type = "item", name = "sc-engine", amount = 2}
+    :add_ingredient {type = "item", name = "magnetic-ring", amount = 10}
+    :add_ingredient {type = "item", name = "intelligent-unit", amount = 1}
+    :add_ingredient {type = "item", name = "parametric-oscilator", amount = 1}
+    :add_ingredient {type = "item", name = "biopolymer", amount = 10}
+    :add_ingredient {type = "item", name = "super-alloy", amount = 10}:remove_ingredient {"steel-plate"}
+    :add_ingredient {type = "item", name = "tower-mk04", amount = 1}
+    :add_ingredient {type = "item", name = "processing-unit", amount = 5}:remove_ingredient {"electronic-circuit"}:remove_ingredient {"advanced-circuit"}
+    :add_ingredient {type = "item", name = "metastable-quasicrystal", amount = 1}
     :add_ingredient {type = "fluid", name = "r4", amount = 100}
 if mods.pyalternativeenergy then data.raw.recipe.beacon.category = "crafting-with-fluid" end
 
 RECIPE("beacon-mk01")
-    :add_ingredient {"self-assembly-monolayer", 1}
-    :add_ingredient {"mechanical-parts-02", 1}
-    :add_ingredient {"eva", 10}
-    :add_ingredient {"stainless-steel", 10}:remove_ingredient {"steel-plate"}
-    :add_ingredient {"tower-mk02", 1}
+    :add_ingredient {type = "item", name = "self-assembly-monolayer", amount = 1}
+    :add_ingredient {type = "item", name = "mechanical-parts-02", amount = 1}
+    :add_ingredient {type = "item", name = "eva", amount = 10}
+    :add_ingredient {type = "item", name = "stainless-steel", amount = 10}:remove_ingredient {"steel-plate"}
+    :add_ingredient {type = "item", name = "tower-mk02", amount = 1}
 
 if register_cache_file ~= nil then
     register_cache_file({"pycoalprocessing"}, "__pycoalprocessing__/cached-configs/pycoalprocessing.lua")

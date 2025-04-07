@@ -129,15 +129,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"ground-borer",     1},
-        {"nexelit-plate",    10},
-        {"concrete",         40},
-        {"plastic-bar",      10},
-        {"engine-unit",      4},
-        {"advanced-circuit", 10}
+        {type = "item", name = "ground-borer",     amount = 1},
+        {type = "item", name = "nexelit-plate",    amount = 10},
+        {type = "item", name = "concrete",         amount = 40},
+        {type = "item", name = "plastic-bar",      amount = 10},
+        {type = "item", name = "engine-unit",      amount = 4},
+        {type = "item", name = "advanced-circuit", amount = 10}
     },
     results = {
-        {"ground-borer-mk02", 1}
+        {type = "item", name = "ground-borer-mk02", amount = 1}
     }
 }
 
@@ -147,14 +147,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"ground-borer-mk02",    1},
-        {"niobium-plate",        20},
-        {"electric-engine-unit", 4},
-        {"processing-unit",      10},
-        {"kevlar",               15},
+        {type = "item", name = "ground-borer-mk02",    amount = 1},
+        {type = "item", name = "niobium-plate",        amount = 20},
+        {type = "item", name = "electric-engine-unit", amount = 4},
+        {type = "item", name = "processing-unit",      amount = 10},
+        {type = "item", name = "kevlar",               amount = 15},
     },
     results = {
-        {"ground-borer-mk03", 1}
+        {type = "item", name = "ground-borer-mk03", amount = 1}
     }
 }
 
@@ -164,12 +164,12 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"ground-borer-mk03",     1},
-        {"concrete",              40},
-        {"nbfe-alloy",            30},
-        {"low-density-structure", 15},
+        {type = "item", name = "ground-borer-mk03",     amount = 1},
+        {type = "item", name = "concrete",              amount = 40},
+        {type = "item", name = "nbfe-alloy",            amount = 30},
+        {type = "item", name = "low-density-structure", amount = 15},
     },
     results = {
-        {"ground-borer-mk04", 1}
+        {type = "item", name = "ground-borer-mk04", amount = 1}
     }
 }

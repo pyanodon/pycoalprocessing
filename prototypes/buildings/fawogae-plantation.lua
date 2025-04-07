@@ -148,15 +148,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"fawogae-plantation-mk01", 1},
-        {"plastic-bar",             20},
-        {"advanced-circuit",        15},
-        {"engine-unit",             1},
-        {"treated-wood",            30},
-        {"steel-plate",             10},
+        {type = "item", name = "fawogae-plantation-mk01", amount = 1},
+        {type = "item", name = "plastic-bar",             amount = 20},
+        {type = "item", name = "advanced-circuit",        amount = 15},
+        {type = "item", name = "engine-unit",             amount = 1},
+        {type = "item", name = "treated-wood",            amount = 30},
+        {type = "item", name = "steel-plate",             amount = 10},
     },
     results = {
-        {"fawogae-plantation-mk02", 1}
+        {type = "item", name = "fawogae-plantation-mk02", amount = 1}
     }
 }
 
@@ -166,15 +166,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"fawogae-plantation-mk02", 1},
-        {"niobium-plate",           15},
-        {"electric-engine-unit",    1},
-        {"processing-unit",         10},
-        {"treated-wood",            20}, --pyht fiberboard
-        {"niobium-pipe",            20},
+        {type = "item", name = "fawogae-plantation-mk02", amount = 1},
+        {type = "item", name = "niobium-plate",           amount = 15},
+        {type = "item", name = "electric-engine-unit",    amount = 1},
+        {type = "item", name = "processing-unit",         amount = 10},
+        {type = "item", name = "treated-wood",            amount = 20}, --pyht fiberboard
+        {type = "item", name = "niobium-pipe",            amount = 20},
     },
     results = {
-        {"fawogae-plantation-mk03", 1}
+        {type = "item", name = "fawogae-plantation-mk03", amount = 1}
     }
 }
 
@@ -184,10 +184,10 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"fawogae-plantation-mk03", 1},
-        {"low-density-structure",   20},
+        {type = "item", name = "fawogae-plantation-mk03", amount = 1},
+        {type = "item", name = "low-density-structure",   amount = 20},
     },
     results = {
-        {"fawogae-plantation-mk04", 1}
+        {type = "item", name = "fawogae-plantation-mk04", amount = 1}
     }
 }

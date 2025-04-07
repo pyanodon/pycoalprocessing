@@ -133,15 +133,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"automated-factory-mk01", 1},
-        {"assembling-machine-1",   2},
-        {"plastic-bar",            20},
-        {"fast-inserter",          4},
-        {"engine-unit",            4},
-        {"advanced-circuit",       15}
+        {type = "item", name = "automated-factory-mk01", amount = 1},
+        {type = "item", name = "assembling-machine-1",   amount = 2},
+        {type = "item", name = "plastic-bar",            amount = 20},
+        {type = "item", name = "fast-inserter",          amount = 4},
+        {type = "item", name = "engine-unit",            amount = 4},
+        {type = "item", name = "advanced-circuit",       amount = 15}
     },
     results = {
-        {"automated-factory-mk02", 1}
+        {type = "item", name = "automated-factory-mk02", amount = 1}
     }
 }
 
@@ -151,14 +151,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"automated-factory-mk02", 1},
-        {"bulk-inserter",          4},
-        {"electric-engine-unit",   4},
-        {"niobium-plate",          25},
-        {"processing-unit",        10}
+        {type = "item", name = "automated-factory-mk02", amount = 1},
+        {type = "item", name = "bulk-inserter",          amount = 4},
+        {type = "item", name = "electric-engine-unit",   amount = 4},
+        {type = "item", name = "niobium-plate",          amount = 25},
+        {type = "item", name = "processing-unit",        amount = 10}
     },
     results = {
-        {"automated-factory-mk03", 1}
+        {type = "item", name = "automated-factory-mk03", amount = 1}
     }
 }
 
@@ -168,12 +168,12 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"automated-factory-mk03", 1},
-        {"low-density-structure",  10},
-        {"nbfe-alloy",             10},
+        {type = "item", name = "automated-factory-mk03", amount = 1},
+        {type = "item", name = "low-density-structure",  amount = 10},
+        {type = "item", name = "nbfe-alloy",             amount = 10},
 
     },
     results = {
-        {"automated-factory-mk04", 1}
+        {type = "item", name = "automated-factory-mk04", amount = 1}
     }
 }

@@ -99,13 +99,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"ball-mill-mk01",   1},
-        {"steel-plate",      30},
-        {"engine-unit",      1},
-        {"advanced-circuit", 5},
+        {type = "item", name = "ball-mill-mk01",   amount = 1},
+        {type = "item", name = "steel-plate",      amount = 30},
+        {type = "item", name = "engine-unit",      amount = 1},
+        {type = "item", name = "advanced-circuit", amount = 5},
     },
     results = {
-        {"ball-mill-mk02", 1}
+        {type = "item", name = "ball-mill-mk02", amount = 1}
     }
 }
 
@@ -115,13 +115,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"ball-mill-mk02",       1},
-        {"niobium-plate",        15},
-        {"electric-engine-unit", 2},
-        {"processing-unit",      10},
+        {type = "item", name = "ball-mill-mk02",       amount = 1},
+        {type = "item", name = "niobium-plate",        amount = 15},
+        {type = "item", name = "electric-engine-unit", amount = 2},
+        {type = "item", name = "processing-unit",      amount = 10},
     },
     results = {
-        {"ball-mill-mk03", 1}
+        {type = "item", name = "ball-mill-mk03", amount = 1}
     }
 }
 
@@ -131,11 +131,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"ball-mill-mk03", 1},
-        {"concrete",       35},
-        {"nbfe-alloy",     10},
+        {type = "item", name = "ball-mill-mk03", amount = 1},
+        {type = "item", name = "concrete",       amount = 35},
+        {type = "item", name = "nbfe-alloy",     amount = 10},
     },
     results = {
-        {"ball-mill-mk04", 1}
+        {type = "item", name = "ball-mill-mk04", amount = 1}
     }
 }

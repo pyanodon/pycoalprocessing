@@ -164,15 +164,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"soil-extractor-mk01", 1},
-        {"plastic-bar",         20},
-        {"engine-unit",         2},
-        {"pump",                4},
-        {"advanced-circuit",    15},
-        {"copper-cable",        50},
+        {type = "item", name = "soil-extractor-mk01", amount = 1},
+        {type = "item", name = "plastic-bar",         amount = 20},
+        {type = "item", name = "engine-unit",         amount = 2},
+        {type = "item", name = "pump",                amount = 4},
+        {type = "item", name = "advanced-circuit",    amount = 15},
+        {type = "item", name = "copper-cable",        amount = 50},
     },
     results = {
-        {"soil-extractor-mk02", 1}
+        {type = "item", name = "soil-extractor-mk02", amount = 1}
     }
 }
 
@@ -182,13 +182,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"soil-extractor-mk02",  1},
-        {"processing-unit",      20},
-        {"niobium-plate",        30},
-        {"electric-engine-unit", 6},
+        {type = "item", name = "soil-extractor-mk02",  amount = 1},
+        {type = "item", name = "processing-unit",      amount = 20},
+        {type = "item", name = "niobium-plate",        amount = 30},
+        {type = "item", name = "electric-engine-unit", amount = 6},
     },
     results = {
-        {"soil-extractor-mk03", 1}
+        {type = "item", name = "soil-extractor-mk03", amount = 1}
     }
 }
 
@@ -198,11 +198,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"soil-extractor-mk03", 1},
-        {"pump",                1},
-        {"nbfe-alloy",          35},
+        {type = "item", name = "soil-extractor-mk03", amount = 1},
+        {type = "item", name = "pump",                amount = 1},
+        {type = "item", name = "nbfe-alloy",          amount = 35},
     },
     results = {
-        {"soil-extractor-mk04", 1}
+        {type = "item", name = "soil-extractor-mk04", amount = 1}
     }
 }

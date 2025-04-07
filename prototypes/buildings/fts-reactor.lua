@@ -263,14 +263,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"fts-reactor",      1},
-        {"engine-unit",      6},
-        {"nexelit-plate",    10},
-        {"plastic-bar",      10},
-        {"advanced-circuit", 20}
+        {type = "item", name = "fts-reactor",      amount = 1},
+        {type = "item", name = "engine-unit",      amount = 6},
+        {type = "item", name = "nexelit-plate",    amount = 10},
+        {type = "item", name = "plastic-bar",      amount = 10},
+        {type = "item", name = "advanced-circuit", amount = 20}
     },
     results = {
-        {"fts-reactor-mk02", 1}
+        {type = "item", name = "fts-reactor-mk02", amount = 1}
     }
 }
 
@@ -280,13 +280,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"fts-reactor-mk02",     1},
-        {"electric-engine-unit", 6},
-        {"kevlar",               15},
-        {"processing-unit",      10},
+        {type = "item", name = "fts-reactor-mk02",     amount = 1},
+        {type = "item", name = "electric-engine-unit", amount = 6},
+        {type = "item", name = "kevlar",               amount = 15},
+        {type = "item", name = "processing-unit",      amount = 10},
     },
     results = {
-        {"fts-reactor-mk03", 1}
+        {type = "item", name = "fts-reactor-mk03", amount = 1}
     }
 }
 
@@ -296,11 +296,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"fts-reactor-mk03",      1},
-        {"low-density-structure", 15},
-        {"nbfe-alloy",            5},
+        {type = "item", name = "fts-reactor-mk03",      amount = 1},
+        {type = "item", name = "low-density-structure", amount = 15},
+        {type = "item", name = "nbfe-alloy",            amount = 5},
     },
     results = {
-        {"fts-reactor-mk04", 1}
+        {type = "item", name = "fts-reactor-mk04", amount = 1}
     }
 }

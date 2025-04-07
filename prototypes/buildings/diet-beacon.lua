@@ -10,9 +10,9 @@ TECHNOLOGY {
     unit = {
         count = 2100,
         ingredients = {
-            {"automation-science-pack", 6},
-            {"logistic-science-pack",   2},
-            {"chemical-science-pack",   1}
+            {type = "item", name = "automation-science-pack", amount = 6},
+            {type = "item", name = "logistic-science-pack",   amount = 2},
+            {type = "item", name = "chemical-science-pack",   amount = 1}
         },
         time = 90,
     },
@@ -26,10 +26,10 @@ RECIPE {
     energy_required = 15,
     ingredients =
     {
-        {"steel-plate",          10},
-        {"electric-engine-unit", 1},
-        {"iron-gear-wheel",      50},
-        {"advanced-circuit",     5}
+        {type = "item", name = "steel-plate",          amount = 10},
+        {type = "item", name = "electric-engine-unit", amount = 1},
+        {type = "item", name = "iron-gear-wheel",      amount = 50},
+        {type = "item", name = "advanced-circuit",     amount = 5}
     },
     results = {
         {type = "item", name = "beacon-mk01", amount = 1}

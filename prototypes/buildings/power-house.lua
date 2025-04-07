@@ -192,15 +192,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"power-house",         1},
-        {"nexelit-plate",       15},
-        {"advanced-circuit",    10},
-        {"fast-transport-belt", 30},
-        {"steel-plate",         15},
-        {"engine-unit",         1},
+        {type = "item", name = "power-house",         amount = 1},
+        {type = "item", name = "nexelit-plate",       amount = 15},
+        {type = "item", name = "advanced-circuit",    amount = 10},
+        {type = "item", name = "fast-transport-belt", amount = 30},
+        {type = "item", name = "steel-plate",         amount = 15},
+        {type = "item", name = "engine-unit",         amount = 1},
     },
     results = {
-        {"power-house-mk02", 1}
+        {type = "item", name = "power-house-mk02", amount = 1}
     }
 }
 
@@ -210,14 +210,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"power-house-mk02",     1},
-        {"electric-engine-unit", 4},
-        {"kevlar",               15},
-        {"processing-unit",      5},
-        {"niobium-plate",        10},
+        {type = "item", name = "power-house-mk02",     amount = 1},
+        {type = "item", name = "electric-engine-unit", amount = 4},
+        {type = "item", name = "kevlar",               amount = 15},
+        {type = "item", name = "processing-unit",      amount = 5},
+        {type = "item", name = "niobium-plate",        amount = 10},
     },
     results = {
-        {"power-house-mk03", 1}
+        {type = "item", name = "power-house-mk03", amount = 1}
     }
 }
 
@@ -227,11 +227,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"power-house-mk03",      1},
-        {"low-density-structure", 5},
-        {"nbfe-alloy",            10},
+        {type = "item", name = "power-house-mk03",      amount = 1},
+        {type = "item", name = "low-density-structure", amount = 5},
+        {type = "item", name = "nbfe-alloy",            amount = 10},
     },
     results = {
-        {"power-house-mk04", 1}
+        {type = "item", name = "power-house-mk04", amount = 1}
     }
 }

@@ -241,13 +241,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"glassworks-mk01",  1},
-        {"steel-plate",      35},
-        {"engine-unit",      5},
-        {"advanced-circuit", 10}
+        {type = "item", name = "glassworks-mk01",  amount = 1},
+        {type = "item", name = "steel-plate",      amount = 35},
+        {type = "item", name = "engine-unit",      amount = 5},
+        {type = "item", name = "advanced-circuit", amount = 10}
     },
     results = {
-        {"glassworks-mk02", 1}
+        {type = "item", name = "glassworks-mk02", amount = 1}
     }
 }
 
@@ -257,14 +257,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"glassworks-mk02",      1},
-        {"electric-engine-unit", 15},
-        {"kevlar",               15},
-        {"processing-unit",      10},
-        {"niobium-plate",        20},
+        {type = "item", name = "glassworks-mk02",      amount = 1},
+        {type = "item", name = "electric-engine-unit", amount = 15},
+        {type = "item", name = "kevlar",               amount = 15},
+        {type = "item", name = "processing-unit",      amount = 10},
+        {type = "item", name = "niobium-plate",        amount = 20},
     },
     results = {
-        {"glassworks-mk03", 1}
+        {type = "item", name = "glassworks-mk03", amount = 1}
     }
 }
 
@@ -274,12 +274,12 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"glassworks-mk03",       1},
-        {"concrete",              40},
-        {"nbfe-alloy",            15},
-        {"low-density-structure", 10},
+        {type = "item", name = "glassworks-mk03",       amount = 1},
+        {type = "item", name = "concrete",              amount = 40},
+        {type = "item", name = "nbfe-alloy",            amount = 15},
+        {type = "item", name = "low-density-structure", amount = 10},
     },
     results = {
-        {"glassworks-mk04", 1}
+        {type = "item", name = "glassworks-mk04", amount = 1}
     }
 }

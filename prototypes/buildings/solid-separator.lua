@@ -99,14 +99,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"solid-separator",  1},
-        {"engine-unit",      6},
-        {"nexelit-plate",    10},
-        {"plastic-bar",      10},
-        {"advanced-circuit", 20}
+        {type = "item", name = "solid-separator",  amount = 1},
+        {type = "item", name = "engine-unit",      amount = 6},
+        {type = "item", name = "nexelit-plate",    amount = 10},
+        {type = "item", name = "plastic-bar",      amount = 10},
+        {type = "item", name = "advanced-circuit", amount = 20}
     },
     results = {
-        {"solid-separator-mk02", 1}
+        {type = "item", name = "solid-separator-mk02", amount = 1}
     }
 }
 
@@ -116,15 +116,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"solid-separator-mk02", 1},
-        {"electric-engine-unit", 4},
-        {"steel-plate",          15},
-        {"niobium-plate",        20},
-        {"processing-unit",      5},
-        {"niobium-pipe",         15},
+        {type = "item", name = "solid-separator-mk02", amount = 1},
+        {type = "item", name = "electric-engine-unit", amount = 4},
+        {type = "item", name = "steel-plate",          amount = 15},
+        {type = "item", name = "niobium-plate",        amount = 20},
+        {type = "item", name = "processing-unit",      amount = 5},
+        {type = "item", name = "niobium-pipe",         amount = 15},
     },
     results = {
-        {"solid-separator-mk03", 1}
+        {type = "item", name = "solid-separator-mk03", amount = 1}
     }
 }
 
@@ -134,11 +134,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"solid-separator-mk03",  1},
-        {"nbfe-alloy",            20},
-        {"low-density-structure", 10},
+        {type = "item", name = "solid-separator-mk03",  amount = 1},
+        {type = "item", name = "nbfe-alloy",            amount = 20},
+        {type = "item", name = "low-density-structure", amount = 10},
     },
     results = {
-        {"solid-separator-mk04", 1}
+        {type = "item", name = "solid-separator-mk04", amount = 1}
     }
 }

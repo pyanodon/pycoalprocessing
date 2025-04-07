@@ -130,7 +130,7 @@ RECIPE {
         {type = "item",  name = "wood",         amount = 10}
     },
     results = {
-        {"flask", 2}
+        {type = "item", name = "flask", amount = 2}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/mip/glassware-01.png",
     icon_size = 64,
@@ -314,9 +314,9 @@ RECIPE {
     category = "smelting",
     enabled = false,
     energy_required = 3.5,
-    ingredients = {{"crushed-iron", 1}},
+    ingredients = {{type = "item", name = "crushed-iron", amount = 1}},
     results = {
-        {"iron-plate", 2}
+        {type = "item", name = "iron-plate", amount = 2}
     },
 }:add_unlock("advanced-material-processing")
 
@@ -326,9 +326,9 @@ RECIPE {
     category = "smelting",
     enabled = false,
     energy_required = 3.5,
-    ingredients = {{"crushed-copper", 1}},
+    ingredients = {{type = "item", name = "crushed-copper", amount = 1}},
     results = {
-        {"copper-plate", 2}
+        {type = "item", name = "copper-plate", amount = 2}
     },
 }:add_unlock("advanced-material-processing")
 

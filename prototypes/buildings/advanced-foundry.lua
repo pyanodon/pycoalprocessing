@@ -145,16 +145,16 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"advanced-foundry-mk01", 1},
-        {"nexelit-plate",         20},
-        {"concrete",              60},
-        {"engine-unit",           4},
-        {"steel-plate",           40},
-        {"plastic-bar",           10},
-        {"advanced-circuit",      10}
+        {type = "item", name = "advanced-foundry-mk01", amount = 1},
+        {type = "item", name = "nexelit-plate",         amount = 20},
+        {type = "item", name = "concrete",              amount = 60},
+        {type = "item", name = "engine-unit",           amount = 4},
+        {type = "item", name = "steel-plate",           amount = 40},
+        {type = "item", name = "plastic-bar",           amount = 10},
+        {type = "item", name = "advanced-circuit",      amount = 10}
     },
     results = {
-        {"advanced-foundry-mk02", 1}
+        {type = "item", name = "advanced-foundry-mk02", amount = 1}
     }
 }
 
@@ -164,14 +164,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"advanced-foundry-mk02", 1},
-        {"concrete",              100},
-        {"processing-unit",       15},
-        {"niobium-plate",         10},
-        {"electric-engine-unit",  4},
+        {type = "item", name = "advanced-foundry-mk02", amount = 1},
+        {type = "item", name = "concrete",              amount = 100},
+        {type = "item", name = "processing-unit",       amount = 15},
+        {type = "item", name = "niobium-plate",         amount = 10},
+        {type = "item", name = "electric-engine-unit",  amount = 4},
     },
     results = {
-        {"advanced-foundry-mk03", 1}
+        {type = "item", name = "advanced-foundry-mk03", amount = 1}
     }
 }
 
@@ -181,11 +181,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"advanced-foundry-mk03", 1},
-        {"low-density-structure", 20},
-        {"nbfe-alloy",            10},
+        {type = "item", name = "advanced-foundry-mk03", amount = 1},
+        {type = "item", name = "low-density-structure", amount = 20},
+        {type = "item", name = "nbfe-alloy",            amount = 10},
     },
     results = {
-        {"advanced-foundry-mk04", 1}
+        {type = "item", name = "advanced-foundry-mk04", amount = 1}
     }
 }

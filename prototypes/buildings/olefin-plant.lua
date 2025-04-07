@@ -162,16 +162,16 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"olefin-plant",     1},
-        {"storage-tank",     3},
-        {"advanced-circuit", 10},
-        {"pump",             4},
-        {"concrete",         40},
-        {"engine-unit",      2},
-        {"nexelit-plate",    10}
+        {type = "item", name = "olefin-plant",     amount = 1},
+        {type = "item", name = "storage-tank",     amount = 3},
+        {type = "item", name = "advanced-circuit", amount = 10},
+        {type = "item", name = "pump",             amount = 4},
+        {type = "item", name = "concrete",         amount = 40},
+        {type = "item", name = "engine-unit",      amount = 2},
+        {type = "item", name = "nexelit-plate",    amount = 10}
     },
     results = {
-        {"olefin-plant-mk02", 1}
+        {type = "item", name = "olefin-plant-mk02", amount = 1}
     }
 }
 
@@ -181,16 +181,16 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"olefin-plant-mk02",    1},
-        {"storage-tank",         3},
-        {"processing-unit",      15},
-        {"niobium-plate",        20},
-        {"pump",                 4},
-        {"electric-engine-unit", 4},
-        {"kevlar",               20}
+        {type = "item", name = "olefin-plant-mk02",    amount = 1},
+        {type = "item", name = "storage-tank",         amount = 3},
+        {type = "item", name = "processing-unit",      amount = 15},
+        {type = "item", name = "niobium-plate",        amount = 20},
+        {type = "item", name = "pump",                 amount = 4},
+        {type = "item", name = "electric-engine-unit", amount = 4},
+        {type = "item", name = "kevlar",               amount = 20}
     },
     results = {
-        {"olefin-plant-mk03", 1}
+        {type = "item", name = "olefin-plant-mk03", amount = 1}
     }
 }
 
@@ -200,13 +200,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"olefin-plant-mk03",     1},
-        {"storage-tank",          3},
-        {"pump",                  4},
-        {"nbfe-alloy",            20},
-        {"low-density-structure", 10},
+        {type = "item", name = "olefin-plant-mk03",     amount = 1},
+        {type = "item", name = "storage-tank",          amount = 3},
+        {type = "item", name = "pump",                  amount = 4},
+        {type = "item", name = "nbfe-alloy",            amount = 20},
+        {type = "item", name = "low-density-structure", amount = 10},
     },
     results = {
-        {"olefin-plant-mk04", 1}
+        {type = "item", name = "olefin-plant-mk04", amount = 1}
     }
 }

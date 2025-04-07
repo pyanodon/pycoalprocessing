@@ -288,14 +288,14 @@ RECIPE {
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {"chemical-plant-mk01", 1},
-        {"concrete",            30},
-        {"titanium-plate",      20},
-        {"nickel-plate",        50},
-        {"engine-unit",         5},
+        {type = "item", name = "chemical-plant-mk01", amount = 1},
+        {type = "item", name = "concrete",            amount = 30},
+        {type = "item", name = "titanium-plate",      amount = 20},
+        {type = "item", name = "nickel-plate",        amount = 50},
+        {type = "item", name = "engine-unit",         amount = 5},
     },
     results = {
-        {"chemical-plant-mk02", 1}
+        {type = "item", name = "chemical-plant-mk02", amount = 1}
     }
 }
 
@@ -305,13 +305,13 @@ RECIPE {
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {"chemical-plant-mk02",  1},
-        {"electric-engine-unit", 4},
-        {"nichrome",             20},
-        {"glass",                50},
+        {type = "item", name = "chemical-plant-mk02",  amount = 1},
+        {type = "item", name = "electric-engine-unit", amount = 4},
+        {type = "item", name = "nichrome",             amount = 20},
+        {type = "item", name = "glass",                amount = 50},
     },
     results = {
-        {"chemical-plant-mk03", 1}
+        {type = "item", name = "chemical-plant-mk03", amount = 1}
     }
 }
 
@@ -321,10 +321,10 @@ RECIPE {
     energy_required = 1,
     enabled = false,
     ingredients = {
-        {"chemical-plant-mk03",   1},
-        {"low-density-structure", 30},
+        {type = "item", name = "chemical-plant-mk03",   amount = 1},
+        {type = "item", name = "low-density-structure", amount = 30},
     },
     results = {
-        {"chemical-plant-mk04", 1}
+        {type = "item", name = "chemical-plant-mk04", amount = 1}
     }
 }

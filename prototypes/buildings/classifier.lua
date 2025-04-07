@@ -110,15 +110,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"classifier",          1},
-        {"nexelit-plate",       15},
-        {"advanced-circuit",    10},
-        {"engine-unit",         2},
-        {"fast-transport-belt", 30},
-        {"steel-plate",         15},
+        {type = "item", name = "classifier",          amount = 1},
+        {type = "item", name = "nexelit-plate",       amount = 15},
+        {type = "item", name = "advanced-circuit",    amount = 10},
+        {type = "item", name = "engine-unit",         amount = 2},
+        {type = "item", name = "fast-transport-belt", amount = 30},
+        {type = "item", name = "steel-plate",         amount = 15},
     },
     results = {
-        {"classifier-mk02", 1}
+        {type = "item", name = "classifier-mk02", amount = 1}
     }
 }
 
@@ -128,15 +128,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"classifier-mk02",        1},
-        {"electric-engine-unit",   4},
-        {"express-transport-belt", 20},
-        {"kevlar",                 15},
-        {"processing-unit",        5},
-        {"niobium-plate",          10},
+        {type = "item", name = "classifier-mk02",        amount = 1},
+        {type = "item", name = "electric-engine-unit",   amount = 4},
+        {type = "item", name = "express-transport-belt", amount = 20},
+        {type = "item", name = "kevlar",                 amount = 15},
+        {type = "item", name = "processing-unit",        amount = 5},
+        {type = "item", name = "niobium-plate",          amount = 10},
     },
     results = {
-        {"classifier-mk03", 1}
+        {type = "item", name = "classifier-mk03", amount = 1}
     }
 }
 
@@ -146,11 +146,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"classifier-mk03",       1},
-        {"low-density-structure", 5},
-        {"nbfe-alloy",            10},
+        {type = "item", name = "classifier-mk03",       amount = 1},
+        {type = "item", name = "low-density-structure", amount = 5},
+        {type = "item", name = "nbfe-alloy",            amount = 10},
     },
     results = {
-        {"classifier-mk04", 1}
+        {type = "item", name = "classifier-mk04", amount = 1}
     }
 }

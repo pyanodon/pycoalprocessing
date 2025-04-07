@@ -220,16 +220,16 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"rectisol",         1},
-        {"storage-tank",     2},
-        {"advanced-circuit", 25},
-        {"plastic-bar",      50},
-        {"nexelit-plate",    15},
-        {"pump",             2},
-        {"engine-unit",      1},
+        {type = "item", name = "rectisol",         amount = 1},
+        {type = "item", name = "storage-tank",     amount = 2},
+        {type = "item", name = "advanced-circuit", amount = 25},
+        {type = "item", name = "plastic-bar",      amount = 50},
+        {type = "item", name = "nexelit-plate",    amount = 15},
+        {type = "item", name = "pump",             amount = 2},
+        {type = "item", name = "engine-unit",      amount = 1},
     },
     results = {
-        {"rectisol-mk02", 1}
+        {type = "item", name = "rectisol-mk02", amount = 1}
     }
 }
 
@@ -239,15 +239,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"rectisol-mk02",        1},
-        {"storage-tank",         2},
-        {"processing-unit",      20},
-        {"niobium-plate",        30},
-        {"electric-engine-unit", 4},
-        {"pump",                 2},
+        {type = "item", name = "rectisol-mk02",        amount = 1},
+        {type = "item", name = "storage-tank",         amount = 2},
+        {type = "item", name = "processing-unit",      amount = 20},
+        {type = "item", name = "niobium-plate",        amount = 30},
+        {type = "item", name = "electric-engine-unit", amount = 4},
+        {type = "item", name = "pump",                 amount = 2},
     },
     results = {
-        {"rectisol-mk03", 1}
+        {type = "item", name = "rectisol-mk03", amount = 1}
     }
 }
 
@@ -257,13 +257,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"rectisol-mk03",         1},
-        {"storage-tank",          2},
-        {"kevlar",                30},
-        {"nbfe-alloy",            15},
-        {"low-density-structure", 10},
+        {type = "item", name = "rectisol-mk03",         amount = 1},
+        {type = "item", name = "storage-tank",          amount = 2},
+        {type = "item", name = "kevlar",                amount = 30},
+        {type = "item", name = "nbfe-alloy",            amount = 15},
+        {type = "item", name = "low-density-structure", amount = 10},
     },
     results = {
-        {"rectisol-mk04", 1}
+        {type = "item", name = "rectisol-mk04", amount = 1}
     }
 }

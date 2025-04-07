@@ -155,14 +155,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"quenching-tower",  1},
-        {"plastic-bar",      20},
-        {"pump",             4},
-        {"advanced-circuit", 15},
-        {"engine-unit",      1},
+        {type = "item", name = "quenching-tower",  amount = 1},
+        {type = "item", name = "plastic-bar",      amount = 20},
+        {type = "item", name = "pump",             amount = 4},
+        {type = "item", name = "advanced-circuit", amount = 15},
+        {type = "item", name = "engine-unit",      amount = 1},
     },
     results = {
-        {"quenching-tower-mk02", 1}
+        {type = "item", name = "quenching-tower-mk02", amount = 1}
     }
 }
 
@@ -172,14 +172,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"quenching-tower-mk02", 1},
-        {"electric-engine-unit", 4},
-        {"niobium-plate",        20},
-        {"niobium-pipe",         20},
-        {"processing-unit",      10}
+        {type = "item", name = "quenching-tower-mk02", amount = 1},
+        {type = "item", name = "electric-engine-unit", amount = 4},
+        {type = "item", name = "niobium-plate",        amount = 20},
+        {type = "item", name = "niobium-pipe",         amount = 20},
+        {type = "item", name = "processing-unit",      amount = 10}
     },
     results = {
-        {"quenching-tower-mk03", 1}
+        {type = "item", name = "quenching-tower-mk03", amount = 1}
     }
 }
 
@@ -189,12 +189,12 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"quenching-tower-mk03",  1},
-        {"low-density-structure", 10},
-        {"nbfe-alloy",            10},
-        {"kevlar",                20},
+        {type = "item", name = "quenching-tower-mk03",  amount = 1},
+        {type = "item", name = "low-density-structure", amount = 10},
+        {type = "item", name = "nbfe-alloy",            amount = 10},
+        {type = "item", name = "kevlar",                amount = 20},
     },
     results = {
-        {"quenching-tower-mk04", 1}
+        {type = "item", name = "quenching-tower-mk04", amount = 1}
     }
 }

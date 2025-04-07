@@ -134,13 +134,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"washer",           1},
-        {"engine-unit",      2},
-        {"advanced-circuit", 5},
-        {"nexelit-plate",    30}
+        {type = "item", name = "washer",           amount = 1},
+        {type = "item", name = "engine-unit",      amount = 2},
+        {type = "item", name = "advanced-circuit", amount = 5},
+        {type = "item", name = "nexelit-plate",    amount = 30}
     },
     results = {
-        {"washer-mk02", 1}
+        {type = "item", name = "washer-mk02", amount = 1}
     }
 }
 
@@ -150,13 +150,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"washer-mk02",          1},
-        {"processing-unit",      20},
-        {"niobium-plate",        30},
-        {"electric-engine-unit", 6},
+        {type = "item", name = "washer-mk02",          amount = 1},
+        {type = "item", name = "processing-unit",      amount = 20},
+        {type = "item", name = "niobium-plate",        amount = 30},
+        {type = "item", name = "electric-engine-unit", amount = 6},
     },
     results = {
-        {"washer-mk03", 1}
+        {type = "item", name = "washer-mk03", amount = 1}
     }
 }
 
@@ -166,11 +166,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"washer-mk03",           1},
-        {"low-density-structure", 15},
-        {"nbfe-alloy",            5},
+        {type = "item", name = "washer-mk03",           amount = 1},
+        {type = "item", name = "low-density-structure", amount = 15},
+        {type = "item", name = "nbfe-alloy",            amount = 5},
     },
     results = {
-        {"washer-mk04", 1}
+        {type = "item", name = "washer-mk04", amount = 1}
     }
 }

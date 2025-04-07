@@ -171,14 +171,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"hpf",              1},
-        {"nexelit-plate",    10},
-        {"advanced-circuit", 10},
-        {"steel-plate",      15},
-        {"concrete",         10},
+        {type = "item", name = "hpf",              amount = 1},
+        {type = "item", name = "nexelit-plate",    amount = 10},
+        {type = "item", name = "advanced-circuit", amount = 10},
+        {type = "item", name = "steel-plate",      amount = 15},
+        {type = "item", name = "concrete",         amount = 10},
     },
     results = {
-        {"hpf-mk02", 1}
+        {type = "item", name = "hpf-mk02", amount = 1}
     }
 }
 
@@ -188,14 +188,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"hpf-mk02",             1},
-        {"electric-engine-unit", 1},
-        {"kevlar",               10},
-        {"processing-unit",      5},
-        {"niobium-pipe",         10},
+        {type = "item", name = "hpf-mk02",             amount = 1},
+        {type = "item", name = "electric-engine-unit", amount = 1},
+        {type = "item", name = "kevlar",               amount = 10},
+        {type = "item", name = "processing-unit",      amount = 5},
+        {type = "item", name = "niobium-pipe",         amount = 10},
     },
     results = {
-        {"hpf-mk03", 1}
+        {type = "item", name = "hpf-mk03", amount = 1}
     }
 }
 
@@ -205,11 +205,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"hpf-mk03",              1},
-        {"low-density-structure", 20},
-        {"nbfe-alloy",            10},
+        {type = "item", name = "hpf-mk03",              amount = 1},
+        {type = "item", name = "low-density-structure", amount = 20},
+        {type = "item", name = "nbfe-alloy",            amount = 10},
     },
     results = {
-        {"hpf-mk04", 1}
+        {type = "item", name = "hpf-mk04", amount = 1}
     }
 }

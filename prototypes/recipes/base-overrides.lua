@@ -4,12 +4,12 @@ RECIPE {
     category = "crafting-with-fluid",
     enabled = false,
     ingredients = {
-        {name = "lime",   amount = 5},
-        {name = "sand",   amount = 10},
-        {name = "gravel", amount = 10},
-        {type = "fluid",  name = "water", amount = 100}
+        {type = "item",  name = "lime",   amount = 5},
+        {type = "item",  name = "sand",   amount = 10},
+        {type = "item",  name = "gravel", amount = 10},
+        {type = "fluid", name = "water",  amount = 100}
     },
-    results = {{name = "concrete", amount = 5}}
+    results = {{type = "item", name = "concrete", amount = 5}}
 }:remove_unlock("concrete"):add_unlock("separation")
 
 RECIPE {
@@ -18,12 +18,12 @@ RECIPE {
     enabled = false,
     category = "crafting-with-fluid",
     ingredients = {
-        {name = "iron-gear-wheel", amount = 2},
-        {name = "transport-belt",  amount = 2},
-        {name = "nbfe-alloy",      amount = 1},
-        {type = "fluid",           name = "lubricant", amount = 10}
+        {type = "item",  name = "iron-gear-wheel", amount = 2},
+        {type = "item",  name = "transport-belt",  amount = 2},
+        {type = "item",  name = "nbfe-alloy",      amount = 1},
+        {type = "fluid", name = "lubricant",       amount = 10}
     },
-    results = {{name = "fast-transport-belt", amount = 2}}
+    results = {{type = "item", name = "fast-transport-belt", amount = 2}}
 }
 
 RECIPE {
@@ -32,12 +32,12 @@ RECIPE {
     energy_required = 2,
     enabled = false,
     ingredients = {
-        {name = "underground-belt", amount = 2},
-        {name = "iron-gear-wheel",  amount = 10},
-        {name = "nbfe-alloy",       amount = 1},
-        {name = "chromium",         amount = 1}
+        {type = "item", name = "underground-belt", amount = 2},
+        {type = "item", name = "iron-gear-wheel",  amount = 10},
+        {type = "item", name = "nbfe-alloy",       amount = 1},
+        {type = "item", name = "chromium",         amount = 1}
     },
-    results = {{name = "fast-underground-belt", amount = 2}}
+    results = {{type = "item", name = "fast-underground-belt", amount = 2}}
 }
 
 RECIPE {
@@ -46,13 +46,13 @@ RECIPE {
     energy_required = 2,
     enabled = false,
     ingredients = {
-        {name = "splitter",         amount = 1},
-        {name = "iron-gear-wheel",  amount = 5},
-        {name = "advanced-circuit", amount = 2},
-        {name = "nbfe-alloy",       amount = 1},
-        {name = "chromium",         amount = 1}
+        {type = "item", name = "splitter",         amount = 1},
+        {type = "item", name = "iron-gear-wheel",  amount = 5},
+        {type = "item", name = "advanced-circuit", amount = 2},
+        {type = "item", name = "nbfe-alloy",       amount = 1},
+        {type = "item", name = "chromium",         amount = 1}
     },
-    results = {{name = "fast-splitter", amount = 1}}
+    results = {{type = "item", name = "fast-splitter", amount = 1}}
 }
 
 RECIPE {
@@ -136,7 +136,7 @@ RECIPE {
     name = "fission-reactor-equipment",
     enabled = false,
     energy_required = 10,
-    ingredients = {{"processing-unit", 25}, {type = "item", name = "low-density-structure", amount = 10}},
+    ingredients = {{type = "item", name = "processing-unit", amount = 25}, {type = "item", name = "low-density-structure", amount = 10}},
     results = {
         {type = "item", name = "fission-reactor-equipment", amount = 1}
     }
@@ -147,7 +147,7 @@ RECIPE {
     name = "distractor-capsule",
     enabled = false,
     energy_required = 15,
-    ingredients = {{"defender-capsule", 2}, {"advanced-circuit", 2}},
+    ingredients = {{type = "item", name = "defender-capsule", amount = 2}, {type = "item", name = "advanced-circuit", amount = 2}},
     results = {
         {type = "item", name = "distractor-capsule", amount = 2}
     }
@@ -158,7 +158,7 @@ RECIPE {
     name = "destroyer-capsule",
     enabled = false,
     energy_required = 15,
-    ingredients = {{"distractor-capsule", 2}, {"speed-module", 1}},
+    ingredients = {{type = "item", name = "distractor-capsule", amount = 2}, {type = "item", name = "speed-module", amount = 1}},
     results = {
         {type = "item", name = "destroyer-capsule", amount = 2}
     }
@@ -168,7 +168,7 @@ RECIPE {
     type = "recipe",
     name = "assembling-machine-3",
     enabled = false,
-    ingredients = {{"bulk-inserter", 2}, {"assembling-machine-2", 2}},
+    ingredients = {{type = "item", name = "bulk-inserter", amount = 2}, {type = "item", name = "assembling-machine-2", amount = 2}},
     results = {
         {type = "item", name = "assembling-machine-3", amount = 1}
     }

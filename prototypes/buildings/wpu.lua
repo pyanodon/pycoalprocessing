@@ -129,15 +129,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"wpu",              1},
-        {"engine-unit",      2},
-        {"advanced-circuit", 25},
-        {"plastic-bar",      50},
-        {"nexelit-plate",    15},
-        {"fast-inserter",    4},
+        {type = "item", name = "wpu",              amount = 1},
+        {type = "item", name = "engine-unit",      amount = 2},
+        {type = "item", name = "advanced-circuit", amount = 25},
+        {type = "item", name = "plastic-bar",      amount = 50},
+        {type = "item", name = "nexelit-plate",    amount = 15},
+        {type = "item", name = "fast-inserter",    amount = 4},
     },
     results = {
-        {"wpu-mk02", 1}
+        {type = "item", name = "wpu-mk02", amount = 1}
     }
 }
 
@@ -147,14 +147,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"wpu-mk02",             1},
-        {"bulk-inserter",        4},
-        {"electric-engine-unit", 4},
-        {"niobium-plate",        25},
-        {"processing-unit",      10}
+        {type = "item", name = "wpu-mk02",             amount = 1},
+        {type = "item", name = "bulk-inserter",        amount = 4},
+        {type = "item", name = "electric-engine-unit", amount = 4},
+        {type = "item", name = "niobium-plate",        amount = 25},
+        {type = "item", name = "processing-unit",      amount = 10}
     },
     results = {
-        {"wpu-mk03", 1}
+        {type = "item", name = "wpu-mk03", amount = 1}
     }
 }
 
@@ -164,11 +164,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"wpu-mk03",              1},
-        {"low-density-structure", 10},
-        {"nbfe-alloy",            10},
+        {type = "item", name = "wpu-mk03",              amount = 1},
+        {type = "item", name = "low-density-structure", amount = 10},
+        {type = "item", name = "nbfe-alloy",            amount = 10},
     },
     results = {
-        {"wpu-mk04", 1}
+        {type = "item", name = "wpu-mk04", amount = 1}
     }
 }

@@ -142,14 +142,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"carbon-filter",    1},
-        {"engine-unit",      2},
-        {"plastic-bar",      10},
-        {"nexelit-plate",    15},
-        {"advanced-circuit", 5},
+        {type = "item", name = "carbon-filter",    amount = 1},
+        {type = "item", name = "engine-unit",      amount = 2},
+        {type = "item", name = "plastic-bar",      amount = 10},
+        {type = "item", name = "nexelit-plate",    amount = 15},
+        {type = "item", name = "advanced-circuit", amount = 5},
     },
     results = {
-        {"carbon-filter-mk02", 1}
+        {type = "item", name = "carbon-filter-mk02", amount = 1}
     }
 }
 
@@ -159,15 +159,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"carbon-filter-mk02",   1},
-        {"processing-unit",      5},
-        {"niobium-plate",        20},
-        {"niobium-pipe",         10},
-        {"electric-engine-unit", 1},
-        {"kevlar",               10}
+        {type = "item", name = "carbon-filter-mk02",   amount = 1},
+        {type = "item", name = "processing-unit",      amount = 5},
+        {type = "item", name = "niobium-plate",        amount = 20},
+        {type = "item", name = "niobium-pipe",         amount = 10},
+        {type = "item", name = "electric-engine-unit", amount = 1},
+        {type = "item", name = "kevlar",               amount = 10}
     },
     results = {
-        {"carbon-filter-mk03", 1}
+        {type = "item", name = "carbon-filter-mk03", amount = 1}
     }
 }
 
@@ -177,11 +177,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"carbon-filter-mk03",    1},
-        {"low-density-structure", 15},
-        {"nbfe-alloy",            5},
+        {type = "item", name = "carbon-filter-mk03",    amount = 1},
+        {type = "item", name = "low-density-structure", amount = 15},
+        {type = "item", name = "nbfe-alloy",            amount = 5},
     },
     results = {
-        {"carbon-filter-mk04", 1}
+        {type = "item", name = "carbon-filter-mk04", amount = 1}
     }
 }

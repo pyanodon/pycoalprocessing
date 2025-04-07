@@ -236,13 +236,13 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"evaporator",       1},
-        {"engine-unit",      2},
-        {"nexelit-plate",    10},
-        {"advanced-circuit", 10},
+        {type = "item", name = "evaporator",       amount = 1},
+        {type = "item", name = "engine-unit",      amount = 2},
+        {type = "item", name = "nexelit-plate",    amount = 10},
+        {type = "item", name = "advanced-circuit", amount = 10},
     },
     results = {
-        {"evaporator-mk02", 1}
+        {type = "item", name = "evaporator-mk02", amount = 1}
     }
 }
 
@@ -252,14 +252,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"evaporator-mk02",      1},
-        {"electric-engine-unit", 2},
-        {"kevlar",               5},
-        {"processing-unit",      10},
-        {"niobium-plate",        12},
+        {type = "item", name = "evaporator-mk02",      amount = 1},
+        {type = "item", name = "electric-engine-unit", amount = 2},
+        {type = "item", name = "kevlar",               amount = 5},
+        {type = "item", name = "processing-unit",      amount = 10},
+        {type = "item", name = "niobium-plate",        amount = 12},
     },
     results = {
-        {"evaporator-mk03", 1}
+        {type = "item", name = "evaporator-mk03", amount = 1}
     }
 }
 
@@ -269,11 +269,11 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"evaporator-mk03",       1},
-        {"low-density-structure", 10},
-        {"nbfe-alloy",            5},
+        {type = "item", name = "evaporator-mk03",       amount = 1},
+        {type = "item", name = "low-density-structure", amount = 10},
+        {type = "item", name = "nbfe-alloy",            amount = 5},
     },
     results = {
-        {"evaporator-mk04", 1}
+        {type = "item", name = "evaporator-mk04", amount = 1}
     }
 }

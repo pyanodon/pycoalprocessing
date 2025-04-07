@@ -35,10 +35,10 @@ if mods["pyhightech"] or mods["pyrawores"] or mods["pypetroleumhandling"] then
     menu_simulations.artillery = nil
     menu_simulations.big_defense = nil
     menu_simulations.nauvis_train_junction = nil -- uses artillery wagon...
-    menu_simulations.nauvis_train_station = nil -- uses artillery wagon...
+    menu_simulations.nauvis_train_station = nil  -- uses artillery wagon...
 
-    menu_simulations.nauvis_nuclear_power = nil -- does not involve biters, but PyHT makes it weird and PyHT + PyRO breaks it
-    menu_simulations.nauvis_oil_pumpjacks = nil -- does not involve biters, but makes no sense with PyPH
+    menu_simulations.nauvis_nuclear_power = nil  -- does not involve biters, but PyHT makes it weird and PyHT + PyRO breaks it
+    menu_simulations.nauvis_oil_pumpjacks = nil  -- does not involve biters, but makes no sense with PyPH
 end
 
 menu_simulations.cp_unload =

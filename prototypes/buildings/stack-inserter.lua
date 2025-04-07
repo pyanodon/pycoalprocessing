@@ -76,7 +76,7 @@ RECIPE {
     type = "recipe",
     name = "py-stack-inserter",
     enabled = false,
-    result = "py-stack-inserter",
+    results = {{type = "item", name = "py-stack-inserter", amount = 1}},
     ingredients = {
         {type = "item", name = "fast-inserter",      amount = 3},
         {type = "item", name = "electronic-circuit", amount = 5},

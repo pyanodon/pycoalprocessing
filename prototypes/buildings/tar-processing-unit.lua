@@ -205,15 +205,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"tar-processing-unit", 1},
-        {"engine-unit",         1},
-        {"nexelit-plate",       20},
-        {"concrete",            60},
-        {"plastic-bar",         10},
-        {"advanced-circuit",    10}
+        {type = "item", name = "tar-processing-unit", amount = 1},
+        {type = "item", name = "engine-unit",         amount = 1},
+        {type = "item", name = "nexelit-plate",       amount = 20},
+        {type = "item", name = "concrete",            amount = 60},
+        {type = "item", name = "plastic-bar",         amount = 10},
+        {type = "item", name = "advanced-circuit",    amount = 10}
     },
     results = {
-        {"tar-processing-unit-mk02", 1}
+        {type = "item", name = "tar-processing-unit-mk02", amount = 1}
     }
 }
 
@@ -223,14 +223,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"tar-processing-unit-mk02", 1},
-        {"processing-unit",          20},
-        {"niobium-plate",            30},
-        {"electric-engine-unit",     2},
-        {"pump",                     2},
+        {type = "item", name = "tar-processing-unit-mk02", amount = 1},
+        {type = "item", name = "processing-unit",          amount = 20},
+        {type = "item", name = "niobium-plate",            amount = 30},
+        {type = "item", name = "electric-engine-unit",     amount = 2},
+        {type = "item", name = "pump",                     amount = 2},
     },
     results = {
-        {"tar-processing-unit-mk03", 1}
+        {type = "item", name = "tar-processing-unit-mk03", amount = 1}
     }
 }
 
@@ -240,12 +240,12 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {"tar-processing-unit-mk03", 1},
-        {"pump",                     4},
-        {"nbfe-alloy",               20},
-        {"low-density-structure",    10},
+        {type = "item", name = "tar-processing-unit-mk03", amount = 1},
+        {type = "item", name = "pump",                     amount = 4},
+        {type = "item", name = "nbfe-alloy",               amount = 20},
+        {type = "item", name = "low-density-structure",    amount = 10},
     },
     results = {
-        {"tar-processing-unit-mk04", 1}
+        {type = "item", name = "tar-processing-unit-mk04", amount = 1}
     }
 }
