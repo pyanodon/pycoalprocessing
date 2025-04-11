@@ -85,8 +85,7 @@ for f, fluid in pairs(data.raw.fluid) do
             results = {
                 {type = "item", name = fluid.name .. "-canister", amount = 1}
             },
-            ignore_for_dependencies = true,
-            unlock_results = false
+            ignore_for_dependencies = true
         }:add_unlock("plastics")
 
 
@@ -106,6 +105,7 @@ for f, fluid in pairs(data.raw.fluid) do
                 {type = "item",  name = "empty-fuel-canister", amount = 1}
             },
             ignore_for_dependencies = true,
+            unlock_results = false,
             --icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
             --icon_size = 32,
             main_product = fluid.name,
