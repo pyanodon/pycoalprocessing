@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.34
-Date: ?
+Date: 2025-4-13
   Changes:
     - Added various missing item descriptions.
     - Fixed aromaticsolefin recipe that had a tab in the order string. Resolves https://github.com/pyanodon/pybugreports/issues/904
