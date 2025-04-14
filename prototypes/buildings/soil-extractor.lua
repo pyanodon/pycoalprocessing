@@ -56,7 +56,7 @@ for i = 1, 4 do
         icon_size = icon_size,
         vector_to_place_result = {0.0, 3.51},
         flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 1, result = name},
+        minable = {mining_time = 0.5, result = name},
         fast_replaceable_group = "soil-extractor",
         max_health = i * 300,
         corpse = "big-remnants",
