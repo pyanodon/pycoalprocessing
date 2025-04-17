@@ -25,27 +25,30 @@ local variants = {
             weights = {0.090, 0.025, 0.125, 0.005, 0.010, 0.100, 0.100, 0.010, 0.020, 0.020, 0.010, 0.100, 0.025, 0.100, 0.100, 0.100}
         }
     },
-    inner_corner = {
-        picture = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-inner-corner.png",
-        count = 8
-    },
-    outer_corner = {
-        picture = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-outer-corner.png",
-        count = 8
-    },
-    side = {
-        picture = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-side.png",
-        count = 8
-    },
-    o_transition = {
-        picture = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-o.png",
-        count = 4
-    },
-    u_transition = {
-        picture = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-u.png",
-        count = 8
-    },
-    empty_transitions = true, -- TODO: fix tile transitions
+    transition = {
+        mask_layout = {
+            inner_corner = {
+                spritesheet = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-inner-corner.png",
+                count = 8
+            },
+            outer_corner = {
+                spritesheet = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-outer-corner.png",
+                count = 8
+            },
+            side = {
+                spritesheet = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-side.png",
+                count = 8
+            },
+            o_transition = {
+                spritesheet = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-o.png",
+                count = 4
+            },
+            u_transition = {
+                spritesheet = "__pycoalprocessinggraphics__/graphics/tiles/polluted-ground/polluted-ground-u.png",
+                count = 8
+            },
+        }
+    }
 }
 
 data:extend {{
@@ -57,13 +60,14 @@ data:extend {{
     walking_speed_modifier = .50,
     autoplace = nil,
     layer = 35,
+    layer_group = "ground-artificial",
     variants = variants,
     walking_sound = sand_sounds,
     map_color = defines.color.brown,
     absorptions_per_second = {pollution = 0.0002},
     vehicle_friction_modifier = sand_vehicle_speed_modifier,
-    transitions = data.raw.tile["dirt-4"].variants.transitions,
-    transitions_between_transitions = data.raw.tile["dirt-4"].variants.transitions_between_transitions,
+    transitions = data.raw.tile["dirt-4"].transitions,
+    transitions_between_transitions = data.raw.tile["dirt-4"].transitions_between_transitions,
 }}
 
 data:extend {{
@@ -75,14 +79,15 @@ data:extend {{
     walking_speed_modifier = .50,
     autoplace = nil,
     layer = 36,
+    layer_group = "ground-artificial",
     tint = {0.25, 0.25, 0.25, 0.25},
     variants = variants,
     walking_sound = sand_sounds,
     map_color = defines.color.brown,
     absorptions_per_second = {pollution = 0.0002},
     vehicle_friction_modifier = sand_vehicle_speed_modifier,
-    transitions = data.raw.tile["dirt-4"].variants.transitions,
-    transitions_between_transitions = data.raw.tile["dirt-4"].variants.transitions_between_transitions,
+    transitions = data.raw.tile["dirt-4"].transitions,
+    transitions_between_transitions = data.raw.tile["dirt-4"].transitions_between_transitions,
 }}
 
 data:extend {{

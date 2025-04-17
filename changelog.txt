@@ -3,6 +3,7 @@ Version: 3.0.35
 Date: ?
   Changes:
     - Reduced the mining time of soil extractors from 1 second to 0.5 seconds.
+    - Fixed rendering errors with tailings pond spill tiles transitions.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.34
 Date: 2025-4-13
