@@ -154,8 +154,8 @@ RECIPE("battery"):remove_unlock("battery"):set_fields {hidden = true}
 -- Recipe updates
 RECIPE("flying-robot-frame"):remove_ingredient("electronic-circuit"):add_ingredient {type = "item", name = "advanced-circuit", amount = 1}
 RECIPE("flamethrower-ammo"):replace_ingredient("crude-oil", "light-oil")
-RECIPE("rail"):clear_ingredients():add_ingredient {"stone", 1}:add_ingredient {"iron-stick", 2}:add_ingredient {"treated-wood", 2}:add_ingredient {"steel-plate", 1}
-RECIPE("landfill"):replace_ingredient("stone", {"stone", 30}):add_ingredient {"gravel", 30}:add_ingredient {"soil", 30}
+RECIPE("rail"):clear_ingredients():add_ingredient {type = "item", name = "stone", amount = 1}:add_ingredient {type = "item", name = "iron-stick", amount = 2}:add_ingredient {type = "item", name = "treated-wood", amount = 2}:add_ingredient {type = "item", name = "steel-plate", amount = 1}
+RECIPE("landfill"):replace_ingredient("stone", {type = "item", name = "stone", amount = 30}):add_ingredient {type = "item", name = "gravel", amount = 30}:add_ingredient {type = "item", name = "soil", amount = 30}
 RECIPE("burner-inserter"):replace_ingredient("iron-plate", {type = "item", name = "iron-plate", amount = 5})
 RECIPE("burner-inserter"):replace_ingredient("iron-gear-wheel", {type = "item", name = "iron-gear-wheel", amount = 2})
 ITEM("rocket-fuel"):set_fields {fuel_category = "jerry"}
@@ -256,15 +256,15 @@ end
 
 local rail_ramp = RECIPE("rail-ramp")
 if rail_ramp then
-    rail_ramp:add_ingredient {"solder", 10}
-    rail_ramp:add_ingredient {"bolts", 10}
-    rail_ramp:add_ingredient {"intermetallics", 10}
+    rail_ramp:add_ingredient {type = "item", name = "solder", amount = 10}
+    rail_ramp:add_ingredient {type = "item", name = "bolts", amount = 10}
+    rail_ramp:add_ingredient {type = "item", name = "intermetallics", amount = 10}
 end
 local rail_support = RECIPE("rail-support")
 if rail_support then
-    rail_support:add_ingredient {"solder", 10}
-    rail_support:add_ingredient {"bolts", 10}
-    rail_support:add_ingredient {"intermetallics", 10}
+    rail_support:add_ingredient {type = "item", name = "solder", amount = 10}
+    rail_support:add_ingredient {type = "item", name = "bolts", amount = 10}
+    rail_support:add_ingredient {type = "item", name = "intermetallics", amount = 10}
 end
 
 if data.raw.technology["elevated-rail"] then
@@ -284,7 +284,7 @@ table.insert(data.raw["technology"]["steam-power"].effects, table.remove(data.ra
 
 data.raw.recipe["engine-unit"].category = "crafting"
 
-RECIPE("selector-combinator"):remove_ingredient("advanced-circuit"):add_ingredient {"electronic-circuit", 5}
+RECIPE("selector-combinator"):remove_ingredient("advanced-circuit"):add_ingredient {type = "item", name = "electronic-circuit", amount = 5}
 TECHNOLOGY("advanced-combinators").unit.ingredients = mods.pyalienlife and {
     {"automation-science-pack", 1},
     {"py-science-pack-1",       1},
@@ -349,12 +349,12 @@ data.raw.technology["electronics"].unit = {
     time = 30
 }
 
-local cargo_landing_pad = RECIPE("cargo-landing-pad"):remove_ingredient("processing-unit"):add_ingredient {"advanced-circuit", 100}:remove_ingredient("steel-plate"):add_ingredient {"steel-plate", 500}
+local cargo_landing_pad = RECIPE("cargo-landing-pad"):remove_ingredient("processing-unit"):add_ingredient {type = "item", name = "advanced-circuit", amount = 100}:remove_ingredient("steel-plate"):add_ingredient {type = "item", name = "steel-plate", amount = 500}
 if mods.pyalienlife then
-    cargo_landing_pad:add_ingredient {"py-warehouse-buffer", 1}:add_ingredient {"titanium-plate", 500}
+    cargo_landing_pad:add_ingredient {type = "item", name = "py-warehouse-buffer", amount = 1}:add_ingredient {type = "item", name = "titanium-plate", amount = 500}
 end
 if mods.pyalternativeenergy then
-    cargo_landing_pad:add_ingredient {"mechanical-parts-02", 2}
+    cargo_landing_pad:add_ingredient {type = "item", name = "mechanical-parts-02", amount = 2}
 end
 
 data.raw.generator["steam-engine"].effectivity = 0.5

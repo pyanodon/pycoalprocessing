@@ -82,4 +82,4 @@ RECIPE {
         {type = "item", name = "electronic-circuit", amount = 5},
     },
     energy_required = 2,
-}:add_ingredient {"small-parts-01", 10}:add_ingredient {"belt", 3}:add_ingredient {"engine-unit", 3}:add_ingredient {type = "fluid", name = "lubricant", amount = 200}:add_ingredient {"nbfe-alloy", 10}
+}:add_ingredient {type = "item", name = "small-parts-01", amount = 10}:add_ingredient {type = "item", name = "belt", amount = 3}:add_ingredient {type = "item", name = "engine-unit", amount = 3}:add_ingredient {type = "fluid", name = "lubricant", amount = 200}:add_ingredient {type = "item", name = "nbfe-alloy", amount = 10}
