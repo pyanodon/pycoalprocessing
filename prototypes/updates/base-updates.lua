@@ -381,3 +381,5 @@ if data.raw["technology"]["bulk-inserter-2"] then data.raw["technology"]["bulk-i
 if mods["pypetroleumhandling"] then data.raw.technology["oil-gathering"] = nil end
 
 RECIPE("grenade"):replace_ingredient("coal", "gunpowder")
+
+data.raw.technology["laser-weapons-damage-1"].prerequisites = {"chemical-science-pack", "military-science-pack"}
