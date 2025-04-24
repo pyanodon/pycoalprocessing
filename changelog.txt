@@ -6,6 +6,7 @@ Date: ?
     - Fixed rendering errors with tailings pond spill tiles transitions.
     - Banned productivity modules in co2 absorber. Resolves https://github.com/pyanodon/pybugreports/issues/969
     - Refined concrete is now cheaper. Reduced concrete requirement from 20 -> 5.
+    - Renamed raw borax ore. Resolves https://github.com/pyanodon/pybugreports/issues/959
   Internal:
     - remove shorthands in recipe declarations
 ---------------------------------------------------------------------------------------------------
