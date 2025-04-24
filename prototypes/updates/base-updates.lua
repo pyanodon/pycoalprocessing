@@ -1,5 +1,7 @@
 local resource_autoplace = require "resource-autoplace"
 
+RECIPE("refined-concrete"):multiply_ingredient_amount("concrete", 0.25)
+
 -- https://github.com/pyanodon/pybugreports/issues/701
 -- https://github.com/pyanodon/pybugreports/issues/713
 TECHNOLOGY("fission-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
