@@ -216,6 +216,6 @@ if register_cache_file ~= nil then
     register_cache_file({"pycoalprocessing"}, "__pycoalprocessing__/cached-configs/pycoalprocessing.lua")
 end
 
-if mods.autotech then
+if mods["dependency-graph-lib"] then
     data.raw.item["copper-plate"].autotech_startup = true
 end
