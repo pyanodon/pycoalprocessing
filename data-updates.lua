@@ -215,3 +215,7 @@ RECIPE("beacon-mk01")
 if register_cache_file ~= nil then
     register_cache_file({"pycoalprocessing"}, "__pycoalprocessing__/cached-configs/pycoalprocessing.lua")
 end
+
+if mods.autotech then
+    data.raw.item["copper-plate"].autotech_startup = true
+end
