@@ -7,6 +7,7 @@ data:extend {py.merge(data.raw.inserter["bulk-inserter"], {
     wait_for_full_hand = true,
     enter_drop_mode_if_held_stack_spoiled = true,
     max_belt_stack_size = MAX_BELT_STACK,
+    grab_less_to_match_belt_stack = true,
     use_easter_egg = false,
     stack_size_bonus = (data.raw.inserter["bulk-inserter"].stack_size_bonus or 0) + 12,
     hand_size = 2.25,
