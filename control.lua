@@ -123,12 +123,12 @@ for _, event in pairs {defines.events.on_built_entity, defines.events.on_robot_b
     })
 end
 
-remote.add_interface("pycp", {
-    ---@param func string
-    execute_on_nth_tick = function(func)
+py.on_event(defines.events.on_tick, function(event)
+    local func_list = remote.call("on_nth_tick", "query", "pycp", event.tick)
+    for _, func in pairs(func_list) do
         py.mod_nth_tick_funcs[func]()
     end
-})
+end)
 
 -- this is also on_configuration_changed, for reasons
 py.on_event(py.events.on_init(), function(changedata)
