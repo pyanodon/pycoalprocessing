@@ -9,8 +9,7 @@ Date: ?
     - Renamed raw borax ore. Resolves https://github.com/pyanodon/pybugreports/issues/959
     - Fixed laser-weapons-damage-1 being impossible to research. Resolves https://github.com/pyanodon/pybugreports/issues/944
     - Stack inserters now grab partial stacks to match belt stack size. Resolves https://github.com/pyanodon/pybugreports/issues/853
-  Internal:
-    - remove shorthands in recipe declarations
+    - Fixed quenching tower boundary + graphics inconsistent with rest of mod. Resolves https://github.com/pyanodon/pybugreports/issues/1002
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.34
 Date: 2025-4-13

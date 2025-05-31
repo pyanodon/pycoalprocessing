@@ -82,20 +82,20 @@ for i = 1, 4 do
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/quenching-tower/quenching-tower-anim.png",
                         width = 232,
-                        height = 252,
+                        height = 275,
                         frame_count = 60,
                         line_length = 8,
                         animation_speed = 0.7,
-                        shift = {0.08, 0.0},
+                        shift = {0.08, -0.5},
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/quenching-tower/quenching-tower-anim-mask.png",
                         width = 232,
-                        height = 252,
+                        height = 275,
                         frame_count = 60,
                         line_length = 8,
                         animation_speed = 0.7,
-                        shift = {0.08, 0.0},
+                        shift = {0.08, -0.5},
                         tint = py.tints[i],
                     }
                 }

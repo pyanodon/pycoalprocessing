@@ -9,7 +9,7 @@
     "description": "Extends and overhauls Factorio's burner phase. Use realistic oil and coal processes to create advanced products. Functions as the core and library for the rest of the pY mods.",
     "dependencies": [
         "base >= 2.0.33",
-        "~ pycoalprocessinggraphics >= 3.0.5",
+        "~ pycoalprocessinggraphics >= 3.0.6",
         "~ pypostprocessing >= 3.0.28",
         "(?) DiscoScience",
         "(?) better-victory-screen",
