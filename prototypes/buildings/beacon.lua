@@ -127,6 +127,7 @@ for am = 5, 1, -1 do
         beacon.drawing_box_vertical_extension = 3.5
         beacon.collision_mask = {layers = {item = true, object = true, water_tile = true}}
         beacon.next_upgrade = nil
+        beacon.fast_replaceable_group = "beacon-amfm"
         beacon.icon = "__pycoalprocessinggraphics__/graphics/icons/beacon.png"
         beacon.icon_size = 64
         data:extend {beacon}

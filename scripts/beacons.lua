@@ -254,6 +254,7 @@ gui_events[defines.events.on_gui_click]["py_beacon_confirm"] = function(event)
     local beacon_name = beacon_name_prefix .. gui.AM_flow.AM.slider_value .. "-FM" .. gui.FM_flow.FM.slider_value
     if init_name == beacon_name then return end
 
+    -- If ghost just change and return
     if beacon.type == "entity-ghost" then
         beacon.surface.create_entity {
             name = "entity-ghost",
@@ -261,10 +262,16 @@ gui_events[defines.events.on_gui_click]["py_beacon_confirm"] = function(event)
             force = beacon.force_index,
             quality = beacon.quality,
             create_build_effect_smoke = false,
+            fast_replace = true,
             inner_name = beacon_name,
         }
-        beacon.destroy()
         return
+    end
+
+    local recivers = {}
+    -- Get before replace
+    for _, reciver in pairs(beacon.get_beacon_effect_receivers()) do
+        recivers[reciver.unit_number] = reciver
     end
 
     local new_beacon = beacon.surface.create_entity {
@@ -272,21 +279,16 @@ gui_events[defines.events.on_gui_click]["py_beacon_confirm"] = function(event)
         position = beacon.position,
         quality = beacon.quality,
         force = beacon.force_index,
+        fast_replace = true,
         create_build_effect_smoke = false
     }
-    local module_slot = beacon.get_inventory(defines.inventory.beacon_modules)
-    local new_beacon_slots = new_beacon.get_inventory(defines.inventory.beacon_modules)
-    for i = 1, #module_slot do
-        new_beacon_slots.insert(module_slot[i])
-    end
-    local recivers = {}
-    for _, reciver in pairs(beacon.get_beacon_effect_receivers()) do
-        recivers[reciver.unit_number] = reciver
-    end
+
+    -- Get after replace
     for _, reciver in pairs(new_beacon.get_beacon_effect_receivers()) do
         recivers[reciver.unit_number] = reciver
     end
-    beacon.destroy()
+
+    -- Check all recivers
     for _, reciver in pairs(recivers) do
         beacon_check(reciver)
     end

@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.36
+Date: ???
+  Changes:
+    - AM/FM beacons fast-replace on settings change. Resolves https://github.com/pyanodon/pybugreports/issues/1049
+---------------------------------------------------------------------------------------------------
 Version: 3.0.35
 Date: 2025-6-1
   Changes:
