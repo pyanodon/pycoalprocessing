@@ -128,11 +128,86 @@ local function beacon_check(reciver)
     enable_entity(reciver)
 end
 
+---Replaces a beacon entity with a different frequency entity
+---@param entity LuaEntity
+---@param new_beacon_name string
+---@return LuaEntity?
+local function change_frequency(entity, new_beacon_name)
+    if not entity or not entity.valid then
+        return
+    end
+    -- Ghost only?
+    if entity.type == "entity-ghost" then
+        if entity.ghost_name == new_beacon_name then
+            return
+        end
+        return entity.surface.create_entity {
+            name = entity.type,
+            position = entity.position,
+            force = entity.force_index,
+            quality = entity.quality,
+            create_build_effect_smoke = false,
+            fast_replace = true,
+            inner_name = new_beacon_name,
+        }
+    else -- No ghost
+        if entity.name == new_beacon_name then
+            return
+        end
+        -- Not ghost
+        -- Get current effect receivers
+        local receivers = {}
+        for _, receiver in pairs(entity.get_beacon_effect_receivers()) do
+            receivers[receiver.unit_number] = receiver
+        end
+        -- Replace entity
+        local new_entity = entity.surface.create_entity {
+            name = new_beacon_name,
+            position = entity.position,
+            quality = entity.quality,
+            force = entity.force_index,
+            fast_replace = true,
+            create_build_effect_smoke = false
+        }
+        -- Get new effect receivers
+        for _, receiver in pairs(new_entity.get_beacon_effect_receivers()) do
+            receivers[receiver.unit_number] = receiver
+        end
+        -- Check all receivers
+        for _, receiver in pairs(receivers) do
+            beacon_check(receiver)
+        end
+        if remote.interfaces["cryogenic-distillation"] then
+            remote.call("cryogenic-distillation", "am_fm_beacon_settings_changed", new_entity)
+        end
+        return new_entity
+    end
+end
+
+-- If a pipette is placed on top of a ghost, the AM/FM setting is lost without script intervention
+Beacons.events.on_pre_build = function(event)
+    if event.build_mode ~= defines.build_mode.normal then
+        return
+    end
+    local surface = game.get_player(event.player_index).surface
+    local colliding_ghost = surface.find_entity("entity-ghost", event.position)
+    if colliding_ghost and our_beacons[colliding_ghost.ghost_name] then
+        storage.last_beacon_ghost = colliding_ghost.ghost_name
+    end
+end
+
 Beacons.events.on_built = function(event)
     local entity = event.entity
+    local ghost = storage.last_beacon_ghost
+    storage.last_beacon_ghost = nil
     if not entity.valid then return end
     if entity.type == "beacon" then
         if not our_beacons[entity.name] then return end
+        -- If the ghost doesn't match the placed entity, then fix it
+        if ghost and entity.name ~= ghost then
+            change_frequency(entity, ghost)
+            return
+        end
         for _, reciver in pairs(entity.get_beacon_effect_receivers()) do
             beacon_check(reciver)
         end
@@ -248,51 +323,10 @@ gui_events[defines.events.on_gui_click]["py_beacon_confirm"] = function(event)
     local gui = event.element.parent
     local player = game.get_player(event.player_index) --[[@as LuaPlayer]]
     local beacon = player.opened
-    if not beacon then return end
+    if not beacon then return end ---@cast beacon LuaEntity
     local init_name = (beacon.type == "entity-ghost" and beacon.ghost_name) or beacon.name
     local beacon_name_prefix = our_beacons[init_name] .. "-AM"
     local beacon_name = beacon_name_prefix .. gui.AM_flow.AM.slider_value .. "-FM" .. gui.FM_flow.FM.slider_value
-    if init_name == beacon_name then return end
 
-    -- If ghost just change and return
-    if beacon.type == "entity-ghost" then
-        beacon.surface.create_entity {
-            name = "entity-ghost",
-            position = beacon.position,
-            force = beacon.force_index,
-            quality = beacon.quality,
-            create_build_effect_smoke = false,
-            fast_replace = true,
-            inner_name = beacon_name,
-        }
-        return
-    end
-
-    local recivers = {}
-    -- Get before replace
-    for _, reciver in pairs(beacon.get_beacon_effect_receivers()) do
-        recivers[reciver.unit_number] = reciver
-    end
-
-    local new_beacon = beacon.surface.create_entity {
-        name = beacon_name,
-        position = beacon.position,
-        quality = beacon.quality,
-        force = beacon.force_index,
-        fast_replace = true,
-        create_build_effect_smoke = false
-    }
-
-    -- Get after replace
-    for _, reciver in pairs(new_beacon.get_beacon_effect_receivers()) do
-        recivers[reciver.unit_number] = reciver
-    end
-
-    -- Check all recivers
-    for _, reciver in pairs(recivers) do
-        beacon_check(reciver)
-    end
-    if remote.interfaces["cryogenic-distillation"] then
-        remote.call("cryogenic-distillation", "am_fm_beacon_settings_changed", new_beacon)
-    end
+    change_frequency(beacon, beacon_name)
 end

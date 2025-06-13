@@ -52,6 +52,10 @@ py.on_event(defines.events.on_research_finished, function(event)
     end
 end)
 
+py.on_event(defines.events.on_pre_build, function(event)
+    Beacons.events.on_pre_build(event)
+end)
+
 py.on_event(py.events.on_built(), function(event)
     Beacons.events.on_built(event)
     Pond.events.on_built(event)
