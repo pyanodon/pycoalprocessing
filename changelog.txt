@@ -4,6 +4,7 @@ Date: ???
   Changes:
     - AM/FM beacons fast-replace on settings change. Resolves https://github.com/pyanodon/pybugreports/issues/1049
     - AM/FM beacons now place correctly when placing a regular entity over top of a ghost. Resolves https://github.com/pyanodon/pybugreports/issues/1049
+    - AM/FM beacons now support copy/pasting settings with shift+[left|right]-click. Resolves https://github.com/pyanodon/pybugreports/issues/1049
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.35
 Date: 2025-6-1

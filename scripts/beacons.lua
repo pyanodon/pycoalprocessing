@@ -131,8 +131,9 @@ end
 ---Replaces a beacon entity with a different frequency entity
 ---@param entity LuaEntity
 ---@param new_beacon_name string
+---@param player PlayerIdentification? player whose undo queue this action is added to
 ---@return LuaEntity?
-local function change_frequency(entity, new_beacon_name)
+local function change_frequency(entity, new_beacon_name, player)
     if not entity or not entity.valid then
         return
     end
@@ -145,6 +146,7 @@ local function change_frequency(entity, new_beacon_name)
             name = entity.type,
             position = entity.position,
             force = entity.force_index,
+            player = player,
             quality = entity.quality,
             create_build_effect_smoke = false,
             fast_replace = true,
@@ -166,6 +168,7 @@ local function change_frequency(entity, new_beacon_name)
             position = entity.position,
             quality = entity.quality,
             force = entity.force_index,
+            player = player,
             fast_replace = true,
             create_build_effect_smoke = false
         }
@@ -204,6 +207,7 @@ Beacons.events.on_built = function(event)
     if entity.type == "beacon" then
         if not our_beacons[entity.name] then return end
         -- If the ghost doesn't match the placed entity, then fix it
+        -- TODO: find a way to have this action properly work with the undo stack
         if ghost and entity.name ~= ghost then
             change_frequency(entity, ghost)
             return
@@ -232,6 +236,22 @@ Beacons.events.on_destroyed = function(event)
             remote.call("cryogenic-distillation", "am_fm_beacon_destroyed", recivers, recivers[1].surface)
         end
     end
+end
+
+Beacons.events.on_entity_settings_pasted = function(event)
+    local source, destination = event.source, event.destination
+    if not source.valid or not destination.valid then
+        return
+    end
+
+    local source_name = (source.type == "entity-ghost" and source.ghost_name) or source.name
+    local destination_name = (destination.type == "entity-ghost" and destination.ghost_name) or destination.name
+    -- Not a beacon or not changing
+    if not (our_beacons[source_name] and our_beacons[destination_name]) or source_name == destination_name then
+        return
+    end
+
+    change_frequency(destination, source_name, event.player_index)
 end
 
 Beacons.events.on_gui_opened = function(event)
@@ -328,5 +348,5 @@ gui_events[defines.events.on_gui_click]["py_beacon_confirm"] = function(event)
     local beacon_name_prefix = our_beacons[init_name] .. "-AM"
     local beacon_name = beacon_name_prefix .. gui.AM_flow.AM.slider_value .. "-FM" .. gui.FM_flow.FM.slider_value
 
-    change_frequency(beacon, beacon_name)
+    change_frequency(beacon, beacon_name, event.player_index)
 end

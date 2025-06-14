@@ -68,6 +68,10 @@ py.on_event(defines.events.on_entity_died, function(event)
     Beacons.events.on_destroyed(event)
 end)
 
+py.on_event(defines.events.on_entity_settings_pasted, function(event)
+    Beacons.events.on_entity_settings_pasted(event)
+end)
+
 py.on_event(defines.events.on_gui_opened, function(event)
     Beacons.events.on_gui_opened(event)
 end)
