@@ -394,7 +394,7 @@ remote.add_interface("pycoalprocessing", {
                 {type = "item",       name = "dingrido",                      quantity = 1},
                 {type = "item",       name = "phadaisus",                     quantity = 1},
                 {type = "item",       name = "spidertron",                    quantity = 1},
-                {type = "item",       name = "pydrive",                       quantity = 1},
+                {type = "item",       name = "wyrmhole",                       quantity = 1},
                 {type = "item",       name = "bioport",                       quantity = 1},
                 {type = "technology", name = "pyrrhic",                       quantity = 1},
 
