@@ -248,15 +248,14 @@ remote.add_interface("pycoalprocessing", {
                 {type = "item",       name = "gobachov",                      quantity = 1},
                 {type = "item",       name = "huzu",                          quantity = 1},
                 {type = "item",       name = "chorkok",                       quantity = 1},
-                -- One of the creature chamber TURD paths unlocks improved versions of certain creatures, replacing the originals
-                -- and locking the player out of the original recipes and milestones. I've added the improved versions here,
-                -- but hidden to avoid confusion.
+                -- One of the creature chamber TURD paths unlocks improved versions of certain creatures, replacing the originals.
+                -- The TURD versions are set as aliases of the originals, so they can still trigger the milestone.
                 {type = "item",       name = "digosaurus",                    quantity = 1},
-                {type = "item",       name = "digosaurus-turd",               quantity = 1,    hidden = true},
                 {type = "item",       name = "thikat",                        quantity = 1},
-                {type = "item",       name = "thikat-turd",                   quantity = 1,    hidden = true},
                 {type = "item",       name = "work-o-dile",                   quantity = 1},
-                {type = "item",       name = "work-o-dile-turd",              quantity = 1,    hidden = true},
+                {type = "alias",      name = "digosaurus-turd",  equals = "digosaurus",  quantity = 1},
+                {type = "alias",      name = "thikat-turd",      equals = "thikat",      quantity = 1},
+                {type = "alias",      name = "work-o-dile-turd", equals = "work-o-dile", quantity = 1},
 
                 -- This is a new group. Its purpose is to contain milestones for all the improved processing recipes.
                 -- Only the first (second unlocked) for each chain isn't hidden. Since milestones can only detect items
@@ -386,9 +385,9 @@ remote.add_interface("pycoalprocessing", {
                 {type = "item",       name = "flyavan",                       quantity = 1},
                 {type = "item",       name = "nukavan",                       quantity = 1},
                 -- see previous note about TURD upgraded creatures
-                {type = "item",       name = "caravan-turd",                  quantity = 1,    hidden = true},
-                {type = "item",       name = "flyavan-turd",                  quantity = 1,    hidden = true},
-                {type = "item",       name = "nukavan-turd",                  quantity = 1,    hidden = true},
+                {type = "alias",      name = "caravan-turd", equals = "caravan", quantity = 1},
+                {type = "alias",      name = "flyavan-turd", equals = "flyavan", quantity = 1},
+                {type = "alias",      name = "nukavan-turd", equals = "nukavan", quantity = 1},
                 {type = "item",       name = "ocula",                         quantity = 1},
                 {type = "item",       name = "crawdad",                       quantity = 1},
                 {type = "item",       name = "dingrido",                      quantity = 1},
