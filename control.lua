@@ -101,6 +101,10 @@ py.on_event(defines.events.on_player_created, function(event)
     if script.active_mods.quality and not script.active_mods.pystellarexpedition then
         player.print {"messages.warning-quality"}
     end
+
+    if not script.active_mods.fnei and not script.active_mods["RecipeBook"] then
+        player.print {"messages.warning-recipe-book"}
+    end
 end)
 
 py.register_on_nth_tick(153, "pond153", "pycp", Pond.events[153])
