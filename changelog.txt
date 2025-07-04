@@ -3,6 +3,7 @@ Version: 3.0.38
 Date: ???
   Changes:
     - Update milestones preset to use aliases for TURD creatures (thanks, Wiwiweb!)
+    - Fixed beacons duplicating when adjusting sliders.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.37
 Date: 2025-06-29
