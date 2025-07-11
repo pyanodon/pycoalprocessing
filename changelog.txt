@@ -2,6 +2,7 @@
 Version: 3.0.38
 Date: ???
   Changes:
+    - Added warning about factoriopedia being limited.
     - Update milestones preset to use aliases for TURD creatures (thanks, Wiwiweb!)
     - Fixed beacons duplicating when adjusting sliders.
 ---------------------------------------------------------------------------------------------------
