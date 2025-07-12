@@ -131,7 +131,7 @@ end
 ---Replaces a beacon entity with a different frequency entity
 ---@param entity LuaEntity
 ---@param new_beacon_name string
----@param player PlayerIdentification? player whose undo queue this action is added to
+---@param player integer? player whose undo queue this action is added to
 ---@return LuaEntity?
 local function change_frequency(entity, new_beacon_name, player)
     if not entity or not entity.valid then
@@ -163,6 +163,7 @@ local function change_frequency(entity, new_beacon_name, player)
             receivers[receiver.unit_number] = receiver
         end
         -- Replace entity
+        local mineable_result = entity.prototype.mineable_properties.products[1].name
         local new_entity = entity.surface.create_entity {
             name = new_beacon_name,
             position = entity.position,
@@ -172,6 +173,9 @@ local function change_frequency(entity, new_beacon_name, player)
             fast_replace = true,
             create_build_effect_smoke = false
         }
+        if player then
+            game.players[player].character.get_inventory(defines.inventory.character_main).remove {name = mineable_result, amount = 1}
+        end
         -- Get new effect receivers
         for _, receiver in pairs(new_entity.get_beacon_effect_receivers()) do
             receivers[receiver.unit_number] = receiver
