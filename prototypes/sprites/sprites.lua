@@ -98,30 +98,52 @@ data:extend {{
     flags = {"icon"}
 }}
 
-data:extend {{
-    name = "slot_icon_fuel",
-    type = "sprite",
-    filename = "__pycoalprocessinggraphics__/graphics/gui/slot-fuel-white.png",
-    priority = "medium",
-    width = 64,
-    height = 64,
-    mipmap_count = 3,
-    scale = 0.5,
-    flags = {"gui-icon"}
+data:extend {
+    {
+        name = "slot_icon_fuel",
+        type = "sprite",
+        filename = "__pycoalprocessinggraphics__/graphics/gui/slot-fuel-white.png",
+        priority = "medium",
+        width = 64,
+        height = 64,
+        mipmap_count = 3,
+        scale = 0.5,
+        flags = {"gui-icon"}
+    },
+    {
+        name = "slot_icon_fuel_black",
+        type = "sprite",
+        filename = "__pycoalprocessinggraphics__/graphics/gui/slot-fuel-black.png",
+        priority = "medium",
+        width = 64,
+        height = 64,
+        mipmap_count = 3,
+        scale = 0.5,
+        flags = {"gui-icon"}
+    },
+    {
+        name = "slot_icon_food",
+        type = "sprite",
+        filename = "__pycoalprocessinggraphics__/graphics/gui/empty-food-slot-white.png",
+        priority = "medium",
+        width = 64,
+        height = 64,
+        mipmap_count = 3,
+        scale = 0.5,
+        flags = {"gui-icon"}
+    },
+    {
+        name = "slot_icon_food_black",
+        type = "sprite",
+        filename = "__pycoalprocessinggraphics__/graphics/gui/empty-food-slot-black.png",
+        priority = "medium",
+        width = 64,
+        height = 64,
+        mipmap_count = 3,
+        scale = 0.5,
+        flags = {"gui-icon"}
+    },
 }
-}
-
-data:extend {{
-    name = "slot_icon_fuel_black",
-    type = "sprite",
-    filename = "__pycoalprocessinggraphics__/graphics/gui/slot-fuel-black.png",
-    priority = "medium",
-    width = 64,
-    height = 64,
-    mipmap_count = 3,
-    scale = 0.5,
-    flags = {"gui-icon"}
-}}
 
 data:extend {{
     type = "sprite",
