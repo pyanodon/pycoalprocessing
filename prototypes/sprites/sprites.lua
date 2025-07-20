@@ -124,7 +124,7 @@ data:extend {
     {
         name = "slot_icon_food",
         type = "sprite",
-        filename = "__pycoalprocessinggraphics__/graphics/gui/empty-food-slot-white.png",
+        filename = "__pycoalprocessing__/graphics/gui/empty-food-slot-white.png",
         priority = "medium",
         width = 64,
         height = 64,
@@ -135,7 +135,7 @@ data:extend {
     {
         name = "slot_icon_food_black",
         type = "sprite",
-        filename = "__pycoalprocessinggraphics__/graphics/gui/empty-food-slot-black.png",
+        filename = "__pycoalprocessing__/graphics/gui/empty-food-slot-black.png",
         priority = "medium",
         width = 64,
         height = 64,
