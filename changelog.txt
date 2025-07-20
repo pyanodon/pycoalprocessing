@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.38
-Date: ???
+Date: 2025-07-20
   Changes:
     - Added warning about factoriopedia being limited.
     - Update milestones preset to use aliases for TURD creatures (thanks, Wiwiweb!)
