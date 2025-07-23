@@ -5,7 +5,7 @@ RECIPE {
     enabled = false,
     energy_required = 9.3,
     ingredients = {
-        {type = "fluid", name = "dirty-water-heavy", amount = 800},
+        {type = "fluid", name = "tailings", amount = 800},
         {type = "fluid", name = "water",             amount = 2000},
         {type = "fluid", name = "aromatics",         amount = 200}
     },

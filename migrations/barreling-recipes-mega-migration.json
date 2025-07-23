@@ -110,11 +110,11 @@
         ],
         [
             "fill-dirty-water-light-barrel",
-            "dirty-water-light-barrel"
+            "muddy-sludge-barrel"
         ],
         [
             "fill-dirty-water-heavy-barrel",
-            "dirty-water-heavy-barrel"
+            "tailings-barrel"
         ],
         [
             "fill-flue-gas-barrel",

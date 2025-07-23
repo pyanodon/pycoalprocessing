@@ -117,8 +117,8 @@ for f, fluid in pairs(data.raw.fluid) do
     if data.raw.recipe["empty-" .. fluid.name .. "-barrel"] ~= nil then
         RECIPE("empty-" .. fluid.name .. "-barrel"):set_fields {ignore_for_dependencies = true}
     end
-    if data.raw.recipe["fill-" .. fluid.name .. "-barrel"] ~= nil then
-        RECIPE("fill-" .. fluid.name .. "-barrel"):set_fields {ignore_for_dependencies = true}
+    if data.raw.recipe[fluid.name .. "-barrel"] ~= nil then
+        RECIPE(fluid.name .. "-barrel"):set_fields {ignore_for_dependencies = true}
     end
     if data.raw.item[fluid.name .. "-barrel"] ~= nil then
         ITEM(fluid.name .. "-barrel"):set_fields {ignore_for_dependencies = true}

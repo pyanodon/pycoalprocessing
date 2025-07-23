@@ -117,7 +117,7 @@ local function scorch_earth(pond)
     local segment_size = fluidbox.get_capacity(1)
     if tanksize - fluid.amount < 1 then -- pond is full, don't fall for floating point trickery
         local fluid_name = fluid.name
-        local is_water = fluid_name ~= "dirty-water-heavy" and (not not fluid_name:find("water"))
+        local is_water = fluid_name ~= "tailings" and (not not fluid_name:find("water"))
         local threshold_in_units = tanksize * overflow_threshold
         local surface_index = surface.index
 

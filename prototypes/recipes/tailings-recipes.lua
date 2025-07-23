@@ -11,7 +11,7 @@ local tailings_copper_iron =
             {type = "fluid", name = "water", amount = 500}
         },
         results = {
-            {type = "fluid", name = "dirty-water-heavy", amount = 500},
+            {type = "fluid", name = "tailings", amount = 500},
             {type = "fluid", name = "flue-gas",          amount = 150},
             {type = "fluid", name = "water-saline",      amount = 250}
         },

@@ -170,7 +170,7 @@ RECIPE {
     enabled = false,
     energy_required = 4,
     ingredients = {
-        {type = "fluid", name = "dirty-water-light", amount = 250}
+        {type = "fluid", name = "muddy-sludge", amount = 250}
     },
     results = {
         {type = "item", name = "organics", amount = 1}

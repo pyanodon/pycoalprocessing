@@ -1,0 +1,48 @@
+{
+    "fluid": [
+        [
+            "dirty-water-light",
+            "tailings"
+        ],
+        [
+            "dirty-water-heavy",
+            "muddy-sludge"
+        ]
+    ],
+    "item": [
+        [
+            "dirty-water-light-barrel",
+            "tailings-barrel"
+        ],
+        [
+            "dirty-water-heavy-barrel",
+            "muddy-sludge-barrel"
+        ]
+    ],
+    "recipe": [
+        [
+            "empty-dirty-water-light-barrel",
+            "empty-tailings-barrel"
+        ],
+        [
+            "empty-dirty-water-heavy-barrel",
+            "empty-muddy-sludge-barrel"
+        ],
+        [
+            "dirty-water-light-barrel",
+            "tailings-barrel"
+        ],
+        [
+            "dirty-water-heavy-barrel",
+            "muddy-sludge-barrel"
+        ],
+        [
+            "dirty-water-light-barrel-recycling",
+            "tailings-barrel-recycling"
+        ],
+        [
+            "dirty-water-heavy-barrel-recycling",
+            "muddy-sludge-barrel-recycling"
+        ]
+    ]
+}

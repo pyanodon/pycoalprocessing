@@ -51,7 +51,7 @@ RECIPE {
     },
     results = {
         {type = "item",  name = "sand",              amount = 10},
-        {type = "fluid", name = "dirty-water-light", amount = 100}
+        {type = "fluid", name = "muddy-sludge", amount = 100}
     },
     main_product = "sand",
     icon = "__pycoalprocessinggraphics__/graphics/icons/soil-washer.png",
@@ -71,7 +71,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 100}
     },
     results = {
-        {type = "fluid", name = "dirty-water-light", amount = 100}
+        {type = "fluid", name = "muddy-sludge", amount = 100}
     },
     -- main_product = "sand",
     subgroup = "py-washer",
@@ -90,7 +90,7 @@ RECIPE {
     },
     results = {
         {type = "item",  name = "pure-sand",         amount = 8},
-        {type = "fluid", name = "dirty-water-light", amount = 80}
+        {type = "fluid", name = "muddy-sludge", amount = 80}
     },
     main_product = "pure-sand",
     icon = "__pycoalprocessinggraphics__/graphics/icons/sand-washer.png",
@@ -256,7 +256,7 @@ RECIPE {
     energy_required = 5,
     ingredients = {
         {type = "item",  name = "biofilm",           amount = 1},
-        {type = "fluid", name = "dirty-water-heavy", amount = 200}
+        {type = "fluid", name = "tailings", amount = 200}
     },
     results = {
         {type = "fluid", name = "acidgas", amount = 60}
@@ -641,7 +641,7 @@ RECIPE {
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "fluid", name = "dirty-water-heavy", amount = 500}
+        {type = "fluid", name = "tailings", amount = 500}
     },
     results = {
         {type = "item", name = "nexelit-ore",   amount = 1},

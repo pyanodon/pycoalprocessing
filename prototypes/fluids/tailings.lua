@@ -1,6 +1,6 @@
 FLUID {
     type = "fluid",
-    name = "dirty-water-heavy",
+    name = "tailings",
     icon = "__pycoalprocessinggraphics__/graphics/icons/dirty-water.png",
     icon_size = 64,
     default_temperature = 10,
