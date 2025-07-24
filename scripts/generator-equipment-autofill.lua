@@ -26,29 +26,32 @@ local function restock_generator_equipment(player)
             end
         end
 
-        if burner_inventory.is_empty() then
-            local fuel_categories = burner.fuel_categories
-            for i = 1, math.max(100, #inventory) do
-                local stack = inventory[i]
-                if stack.valid_for_read and fuel_categories[stack.prototype.fuel_category] then
-                    local inserted_count = burner_inventory.insert(stack)
-                    if inserted_count ~= 0 then
-                        stack.count = stack.count - inserted_count
-                        goto added_fuel
-                    end
+        -- add fuel if not full
+        if not burner_inventory.is_full() then
+            for _, item_stack in pairs(inventory.get_contents()) do
+                if burner.fuel_categories[prototypes.item[item_stack.name].fuel_category] then
+                    local inserted_count = burner_inventory.insert(item_stack)
+                    if inserted_count ~= 0 then -- if items were inserted then remove them from the player's inventory
+                        inventory.remove{
+                            name = item_stack.name,
+                            quality = item_stack.quality,
+                            count = inserted_count
+                        }
+                    end -- if now full, end early
+                    if burner_inventory.is_full() then break end
                 end
             end
 
-            -- https://github.com/pyanodon/pybugreports/issues/877
-            pcall(
-                player.add_custom_alert,
-                player.character,
-                {type = "virtual", name = "no-fuel"},
-                {"alerts.equipment-out-of-fuel", equipment.prototype.take_result.name, equipment.prototype.localised_name},
-                false
-            )
-
-            ::added_fuel::
+            if burner_inventory.is_empty() then
+                -- https://github.com/pyanodon/pybugreports/issues/877
+                pcall(
+                    player.add_custom_alert,
+                    player.character,
+                    {type = "virtual", name = "no-fuel"},
+                    {"alerts.equipment-out-of-fuel", equipment.prototype.take_result.name, equipment.prototype.localised_name},
+                    false
+                )
+            end
         end
 
         ::continue::
