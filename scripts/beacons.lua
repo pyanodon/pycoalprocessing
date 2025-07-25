@@ -82,7 +82,7 @@ local function disable_entity(entity)
     entity.active = false
     entity.custom_status = {
         diode = defines.entity_status_diode.red,
-        label = { "entity-status.beacon-interference" }
+        label = {"entity-status.beacon-interference"}
     }
     local unit_number = entity.unit_number
     if storage.beacon_interference_icons[unit_number] then return end
@@ -174,7 +174,7 @@ local function change_frequency(entity, new_beacon_name, player)
             create_build_effect_smoke = false
         }
         if player then
-            game.players[player].get_main_inventory(defines.inventory.character_main).remove { name = mineable_result, amount = 1 }
+            game.players[player].get_main_inventory(defines.inventory.character_main).remove {name = mineable_result, amount = 1}
         end
         -- Get new effect receivers
         for _, receiver in pairs(new_entity.get_beacon_effect_receivers()) do
@@ -279,9 +279,9 @@ Beacons.events.on_gui_opened = function(event)
         direction = "vertical",
         caption = "Beacon Dials"
     }
-    local AM = dial.add { type = "flow", name = "AM_flow" }
+    local AM = dial.add {type = "flow", name = "AM_flow"}
     AM.style.vertical_align = "center"
-    AM.add { type = "label", name = "AM_label", caption = "AM" }
+    AM.add {type = "label", name = "AM_label", caption = "AM"}
     AM.add {
         type = "slider",
         name = "AM",
@@ -299,9 +299,9 @@ Beacons.events.on_gui_opened = function(event)
         lose_focus_on_confirm = true,
     }.style.maximal_width = 50
 
-    local FM = dial.add { type = "flow", name = "FM_flow" }
+    local FM = dial.add {type = "flow", name = "FM_flow"}
     FM.style.vertical_align = "center"
-    FM.add { type = "label", name = "FM_label", caption = "FM" }
+    FM.add {type = "label", name = "FM_label", caption = "FM"}
     FM.add {
         type = "slider",
         name = "FM",
@@ -318,7 +318,7 @@ Beacons.events.on_gui_opened = function(event)
         numeric = true,
         lose_focus_on_confirm = true,
     }.style.maximal_width = 50
-    dial.add { type = "button", name = "py_beacon_confirm", caption = "CONFIRM" }
+    dial.add {type = "button", name = "py_beacon_confirm", caption = "CONFIRM"}
 end
 
 gui_events[defines.events.on_gui_value_changed]["AM"] = function(event)
