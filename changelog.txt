@@ -5,6 +5,7 @@ Date: ?
     - Changed internal name of "dirty-water-light" to "tailings".
     - Changed internal name of "dirty-water-heavy" to "muddy-water".
     - Fixed generator equipment manager only filling the first slot. Resolves https://github.com/pyanodon/pybugreports/issues/1085
+    - Fixed Diet beacon crash on changing frequency. Resolves https://github.com/pyanodon/pybugreports/issues/1114
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.39
 Date: 2025-07-20
