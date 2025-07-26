@@ -7,6 +7,7 @@ Date: ?
     - Fixed generator equipment manager only filling the first slot. Resolves https://github.com/pyanodon/pybugreports/issues/1085
     - Fixed Diet beacon crash on changing frequency. Resolves https://github.com/pyanodon/pybugreports/issues/1114
     - Fixed Bulk Inserter 1 and 2 technologies not having the correct prerequesites and dependants. Resolves https://github.com/pyanodon/pybugreports/issues/1086 and https://github.com/pyanodon/pybugreports/issues/1099
+    - Fixed that launching a rocket would trigger the Pyrrhic Victory achievement. This incidentally enables some other achievements that were disabled by an old "temporary" fix.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.39
 Date: 2025-07-20
