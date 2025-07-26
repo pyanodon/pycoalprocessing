@@ -97,7 +97,7 @@ if mods.pyalienlife then
             type = "build-entity-achievement",
             name = "is-it-a-bird",
             order = "0gc",
-            to_build = "nukavan",
+            to_build = "flyavan",
             icon = "__pycoalprocessinggraphics__/graphics/achievement/is-it-a-bird.png",
             icon_size = 128
         },
