@@ -164,7 +164,7 @@ require "prototypes/buildings/beacon"
 require "prototypes/buildings/diet-beacon"
 require "prototypes/buildings/lab"
 
---require 'prototypes/achievements'
+require 'prototypes/achievements'
 require "prototypes/logo"
 require "prototypes/menu-simulations"
 
