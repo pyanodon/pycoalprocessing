@@ -174,7 +174,7 @@ local function change_frequency(entity, new_beacon_name, player)
             create_build_effect_smoke = false
         }
         if player then
-            game.players[player].character.get_inventory(defines.inventory.character_main).remove {name = mineable_result, amount = 1}
+            game.players[player].get_main_inventory(defines.inventory.character_main).remove {name = mineable_result, amount = 1}
         end
         -- Get new effect receivers
         for _, receiver in pairs(new_entity.get_beacon_effect_receivers()) do
