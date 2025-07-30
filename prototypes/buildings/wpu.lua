@@ -1,6 +1,6 @@
 RECIPE {
     type = "recipe",
-    name = "wpu",
+    name = "wpu-mk01",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
@@ -12,14 +12,14 @@ RECIPE {
         {type = "item", name = "copper-cable",        amount = 50}
     },
     results = {
-        {type = "item", name = "wpu", amount = 1}
+        {type = "item", name = "wpu-mk01", amount = 1}
     }
 }:add_unlock("wood-processing")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
-    local name = i == 1 and "wpu" or "wpu-mk0" .. i
+    local name = "wpu-mk0" .. i
     local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
@@ -129,7 +129,7 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "wpu",              amount = 1},
+        {type = "item", name = "wpu-mk01",              amount = 1},
         {type = "item", name = "engine-unit",      amount = 2},
         {type = "item", name = "advanced-circuit", amount = 25},
         {type = "item", name = "plastic-bar",      amount = 50},
