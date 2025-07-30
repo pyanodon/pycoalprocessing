@@ -1,0 +1,25 @@
+{
+  "entity": [
+    [
+      "wpu-legacy",
+      "wpu-mk01-legacy"
+    ],
+    [
+      "wpu",
+      "wpu-mk01"
+    ]
+  ],
+  "recipe": [
+    [
+      "wpu",
+      "wpu-mk01"
+    ]
+  ],
+  "item": [
+    [
+      "wpu",
+      "wpu-mk01"
+    ]
+  ]
+
+}
