@@ -120,13 +120,11 @@ require "prototypes/buildings/advanced-foundry"
 require "prototypes/buildings/co2-absorber"
 require "prototypes/buildings/fluid-separator"
 require "prototypes/buildings/fawogae-plantation"
-if not mods.pyalienlife then require "prototypes/buildings/ulric-corral" end
 require "prototypes/buildings/borax-mine"
 require "prototypes/buildings/ralesia-plantation"
 require "prototypes/buildings/niobium-mine"
 require "prototypes/buildings/jaw-crusher"
 require "prototypes/buildings/ball-mill"
-if not mods.pyalienlife then require "prototypes/buildings/mukmoux-pasture" end
 require "prototypes/buildings/automated-factory"
 require "prototypes/buildings/sand-extractor"
 require "prototypes/buildings/botanical-nursery"
