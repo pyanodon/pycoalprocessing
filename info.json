@@ -10,6 +10,7 @@
     "dependencies": [
         "base >= 2.0.48",
         "~ pycoalprocessinggraphics >= 3.0.6",
+        "~ pycommondenominator >= 1.0.0",
         "~ pypostprocessing >= 3.0.28",
         "(?) DiscoScience",
         "(?) better-victory-screen",
