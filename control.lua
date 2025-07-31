@@ -102,7 +102,7 @@ py.on_event(defines.events.on_player_created, function(event)
         player.print {"messages.warning-quality"}
     end
 
-    if not script.active_mods.fnei and not script.active_mods["RecipeBook"] then
+    if not script.active_mods.FNEI and not script.active_mods["RecipeBook"] then
         player.print {"messages.warning-recipe-book"}
     end
 end)
