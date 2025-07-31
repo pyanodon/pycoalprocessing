@@ -299,14 +299,6 @@ new_fluid {
 }
 
 new_fluid {
-    name = "gasoline",
-    base_color = {r = 0.776, g = 0.709, b = 0.043},
-    flow_color = {r = 1, g = 1, b = 1},
-    subgroup = "py-syngas",
-    order = "z-[gasoline]"
-}
-
-new_fluid {
     name = "glycerol",
     base_color = {r = 0.913, g = 0.890, b = 0.6},
     flow_color = {r = 1, g = 1, b = 1},
