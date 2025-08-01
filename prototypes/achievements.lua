@@ -1,26 +1,33 @@
-data.raw["research-achievement"]["eco-unfriendly"] = nil
-data.raw["group-attack-achievement"]["it-stinks-and-they-dont-like-it"] = nil
-data.raw["build-entity-achievement"]["getting-on-track-like-a-pro"] = nil
-data.raw["produce-achievement"]["mass-production-1"] = nil
-data.raw["produce-achievement"]["mass-production-2"] = nil
-data.raw["produce-achievement"]["mass-production-3"] = nil
-data.raw["produce-per-hour-achievement"]["circuit-veteran-1"] = nil
-data.raw["produce-per-hour-achievement"]["circuit-veteran-2"] = nil
-data.raw["produce-per-hour-achievement"]["circuit-veteran-3"] = nil
-data.raw["produce-per-hour-achievement"]["computer-age-1"] = nil
-data.raw["produce-per-hour-achievement"]["computer-age-2"] = nil
-data.raw["produce-per-hour-achievement"]["computer-age-3"] = nil
-data.raw["produce-per-hour-achievement"]["iron-throne-1"] = nil
-data.raw["produce-per-hour-achievement"]["iron-throne-2"] = nil
-data.raw["produce-per-hour-achievement"]["iron-throne-3"] = nil
-data.raw["dont-use-entity-in-energy-production-achievement"]["solaris"] = nil
-data.raw["kill-achievement"]["steamrolled"] = nil
-data.raw["combat-robot-count-achievement"]["minions"] = nil
-data.raw["dont-use-entity-in-energy-production-achievement"]["steam-all-the-way"] = nil
-data.raw["dont-build-entity-achievement"]["raining-bullets"] = nil
-data.raw["dont-build-entity-achievement"]["logistic-network-embargo"] = nil
-data.raw["complete-objective-achievement"]["no-time-for-chitchat"] = nil
-data.raw["complete-objective-achievement"]["there-is-no-spoon"] = nil
+local vanilla_achievements_to_disable = {
+    {cat = "research-achievement", name = "eco-unfriendly"},
+    {cat = "group-attack-achievement", name = "it-stinks-and-they-dont-like-it"},
+    {cat = "build-entity-achievement", name = "getting-on-track-like-a-pro"},
+    {cat = "produce-achievement", name = "mass-production-1"},
+    {cat = "produce-achievement", name = "mass-production-2"},
+    {cat = "produce-achievement", name = "mass-production-3"},
+    {cat = "produce-per-hour-achievement", name = "circuit-veteran-1"},
+    {cat = "produce-per-hour-achievement", name = "circuit-veteran-2"},
+    {cat = "produce-per-hour-achievement", name = "circuit-veteran-3"},
+    {cat = "produce-per-hour-achievement", name = "computer-age-1"},
+    {cat = "produce-per-hour-achievement", name = "computer-age-2"},
+    {cat = "produce-per-hour-achievement", name = "computer-age-3"},
+    {cat = "produce-per-hour-achievement", name = "iron-throne-1"},
+    {cat = "produce-per-hour-achievement", name = "iron-throne-2"},
+    {cat = "produce-per-hour-achievement", name = "iron-throne-3"},
+    {cat = "dont-use-entity-in-energy-production-achievement", name = "solaris"},
+    {cat = "kill-achievement", name = "steamrolled"},
+    {cat = "combat-robot-count-achievement", name = "minions"},
+    {cat = "dont-use-entity-in-energy-production-achievement", name = "steam-all-the-way"},
+    {cat = "dont-build-entity-achievement", name = "raining-bullets"},
+    {cat = "dont-build-entity-achievement", name = "logistic-network-embargo"},
+    {cat = "complete-objective-achievement", name = "no-time-for-chitchat"},
+    {cat = "complete-objective-achievement", name = "there-is-no-spoon"},
+    mods.pypetroleumhandling and {cat = "complete-objective-achievement", name = "smoke-me-a-kipper-i-will-be-back-for-breakfast"} or nil
+}
+
+for _, cheevo in pairs(vanilla_achievements_to_disable) do
+    data.raw[cheevo.cat][cheevo.name].hidden = true
+end
 
 
 -- ordering: 0, then a letter per mod, then a letter within the mod
@@ -58,7 +65,6 @@ data:extend
     },
 }
 if mods.pypetroleumhandling then
-    data.raw["complete-objective-achievement"]["smoke-me-a-kipper-i-will-be-back-for-breakfast"] = nil -- replaced here with the meme achievement and above with pyrrhic victory
     data:extend {
         {
             type = "produce-achievement",
