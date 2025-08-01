@@ -8,6 +8,7 @@ Date: ?
     - Fixed Diet beacon crash on changing frequency. Resolves https://github.com/pyanodon/pybugreports/issues/1114
     - Fixed Bulk Inserter 1 and 2 technologies not having the correct prerequesites and dependants. Resolves https://github.com/pyanodon/pybugreports/issues/1086 and https://github.com/pyanodon/pybugreports/issues/1099
     - Fixed that launching a rocket would trigger the Pyrrhic Victory achievement. This incidentally enables some other achievements that were disabled by an old "temporary" fix.
+    - Fixed that the rocket silo recipe description still mentioned winning the game.
     - Fixed "no FNEI-like tool" warning showing with FNEI present
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.39
