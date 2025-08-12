@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.40
-Date: ?
+Date: 2025-08-12
   Changes:
     - Normalized fish farm and wood processing unit to use `-turd` instead of `turd-`
     - Changed internal name of "dirty-water-light" to "tailings".
