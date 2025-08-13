@@ -38,6 +38,8 @@ for i = 1, 4 do
     ENTITY {
         type = "assembling-machine",
         name = name,
+        localised_name = {"?", {"entity-name.wpu-mk0" .. i}, {"item-tier.mk0" .. i, {"entity-name.wpu"}}},
+        localised_description = {"?", {"entity-description.wpu-mk0" .. i}, {"entity-description.wpu"}},
         icon = icon,
         icon_size = icon_size,
         flags = {"placeable-neutral", "player-creation"},
