@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.40
-Date: ?
+Date: 2025-08-12
   Changes:
+    - Normalized fish farm and wood processing unit to use `-turd` instead of `turd-`
     - Changed internal name of "dirty-water-light" to "tailings".
     - Changed internal name of "dirty-water-heavy" to "muddy-water".
     - Fixed generator equipment manager only filling the first slot. Resolves https://github.com/pyanodon/pybugreports/issues/1085
