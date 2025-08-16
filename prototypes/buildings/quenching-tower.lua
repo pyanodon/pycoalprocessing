@@ -3,13 +3,13 @@ local pipe_picture_override = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/quenching-tower/top-right.png",
         priority = "low",
         width = 232,
-        height = 252
+        height = 242
     },
     south = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/quenching-tower/south-left.png",
         priority = "extra-high",
         width = 232,
-        height = 252
+        height = 242
     }
 }
 
@@ -108,35 +108,40 @@ for i = 1, 4 do
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.82, 4.0}, {1.08, -4.0}, nil, nil, pipe_picture_override),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {3.0, -1.0}, direction = defines.direction.east}}
+                pipe_connections = {{flow_direction = "input", position = {3.0, -1.0}, direction = defines.direction.east}},
+                secondary_draw_orders = {north = -1}
             },
             {
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.82, 4.0}, {1.08, -4.0}, nil, nil, pipe_picture_override),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {3.0, 1.0}, direction = defines.direction.east}}
+                pipe_connections = {{flow_direction = "input", position = {3.0, 1.0}, direction = defines.direction.east}},
+                secondary_draw_orders = {north = -1}
             },
             {
                 production_type = "output",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.82, 4.0}, {1.08, -4.0}, nil, nil, pipe_picture_override),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-3.0, -1.0}, direction = defines.direction.west}}
+                pipe_connections = {{flow_direction = "output", position = {-3.0, -1.0}, direction = defines.direction.west}},
+                secondary_draw_orders = {north = -1}
             },
             {
                 production_type = "output",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.82, 4.0}, {1.08, -4.0}, nil, nil, pipe_picture_override),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-3.0, 1.0}, direction = defines.direction.west}}
+                pipe_connections = {{flow_direction = "output", position = {-3.0, 1.0}, direction = defines.direction.west}},
+                secondary_draw_orders = {north = -1}
             },
             {
                 production_type = "output",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.82, 4.0}, {1.08, -4.0}, nil, nil, pipe_picture_override),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-1.0, 3.0}, direction = defines.direction.south}}
+                pipe_connections = {{flow_direction = "output", position = {-1.0, 3.0}, direction = defines.direction.south}},
+                secondary_draw_orders = {north = -1}
             },
         },
         impact_category = "metal",
