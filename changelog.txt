@@ -4,6 +4,7 @@ Date: ???
   Changes:
     - Updated RU locale (Thanks, Astorin!)
     - Set minimum factorio version to 2.0.58
+    - Fixed beacon crash on changing frequency in remote view
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.40
 Date: 2025-08-12
