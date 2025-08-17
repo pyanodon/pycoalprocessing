@@ -175,7 +175,7 @@ local function change_frequency(entity, new_beacon_name, player)
         }
         if player then
             --if there is no inventory attatched to the player theres no need to remove the item
-            local inventory = game.players[player].get_main_inventory(defines.inventory.character_main)
+            local inventory = game.players[player].get_main_inventory()
             if inventory then
                 inventory.remove {name = mineable_result, amount = 1}
             end
