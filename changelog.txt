@@ -3,6 +3,7 @@ Version: 3.0.41
 Date: ???
   Changes:
     - Updated RU locale (Thanks, Astorin!)
+    - Realigned pipe cover graphics on the quenching tower. Resolves https://github.com/pyanodon/pybugreports/issues/1149
     - Set minimum factorio version to 2.0.58
     - Fixed beacon crash on changing frequency in remote view
 ---------------------------------------------------------------------------------------------------
