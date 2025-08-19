@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.41
-Date: ???
+Date: 2025-08-19
   Changes:
     - Updated RU locale (Thanks, Astorin!)
     - Realigned pipe cover graphics on the quenching tower. Resolves https://github.com/pyanodon/pybugreports/issues/1149
