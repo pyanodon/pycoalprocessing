@@ -60,8 +60,7 @@ for f, fluid in pairs(data.raw.fluid) do
             fuel_category = "jerry",
             burnt_result = "empty-fuel-canister",
             stack_size = 20,
-            ignore_for_dependencies = true,
-            unlock_results = false
+            ignore_for_dependencies = true
         }
 
         local fuel_amount = 50
@@ -106,8 +105,6 @@ for f, fluid in pairs(data.raw.fluid) do
             },
             ignore_for_dependencies = true,
             unlock_results = false,
-            --icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
-            --icon_size = 32,
             main_product = fluid.name,
             subgroup = "py-items",
             order = "canister-b-[empty-methanol-gas-canister]"
