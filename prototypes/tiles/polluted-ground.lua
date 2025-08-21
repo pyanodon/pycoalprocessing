@@ -1,4 +1,5 @@
-local sand_vehicle_speed_modifier = _G.sand_vehicle_speed_modifier
+-- local sand_vehicle_speed_modifier = _G.sand_vehicle_speed_modifier -- TODO references a nil global
+local sand_vehicle_speed_modifier = nil
 
 local sand_sounds = sound_variations("__base__/sound/walking/sand", 9, 0.8, volume_multiplier("main-menu", 2.9))
 
