@@ -124,12 +124,34 @@ function Wiki.close_wiki(player)
     pcall(main_frame.destroy)
 end
 
+local function find_page_index(page_name)
+    local i = 0
+    for section_name, page in pairs(storage.wiki_pages) do
+        i = i + 1
+        if section_name == page_name then return i end
+        if page.is_section then
+            for subsection_name in pairs(page.pages) do
+                i = i + 1
+                if subsection_name == page_name then return i end
+            end
+        end
+    end
+    return math.huge -- fail
+end
+
 gui_events[defines.events.on_gui_click]["py_open_wiki"] = function(event)
     local player = game.get_player(event.player_index)
     if Wiki.get_wiki_gui(player) then
         Wiki.close_wiki(player)
     else
         Wiki.open_wiki(player)
+        if event.alt then
+            if event.shift then
+                Wiki.open_page(player, find_page_index("caravan-manager"))
+            else
+                Wiki.open_page(player, find_page_index("turd"))
+            end
+        end
     end
 end
 
