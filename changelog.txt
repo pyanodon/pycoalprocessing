@@ -1,6 +1,13 @@
 ---------------------------------------------------------------------------------------------------
-Version: 3.0.41
+Version: 3.0.42
 Date: ???
+  Changes:
+    - Alt+click the codex button to go directly to the T.U.R.D. page.
+    - Alt+shift+click the codex button to go directly to the caravan manager.
+    - Fixed typo in DE locale
+---------------------------------------------------------------------------------------------------
+Version: 3.0.41
+Date: 2025-08-19
   Changes:
     - Updated RU locale (Thanks, Astorin!)
     - Realigned pipe cover graphics on the quenching tower. Resolves https://github.com/pyanodon/pybugreports/issues/1149

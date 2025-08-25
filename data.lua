@@ -3,9 +3,6 @@ require "__pypostprocessing__.lib"
 -- (( GUI Style )) --
 require "prototypes/gui-style"
 
--- (( Custom Input )) --
-require "prototypes/custom-input"
-
 -- (( Groups )) --
 require "prototypes/item-groups"
 
