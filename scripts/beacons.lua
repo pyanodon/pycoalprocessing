@@ -109,20 +109,12 @@ local function beacon_check(reciver)
             local am = beacon.name:match("%d+") --[[@as string]]
             local fm = beacon.name:match("%d+$") --[[@as string]]
             local total = am .. fm
-            if settings.startup["future-beacons"].value then
-                if effected_am[am] or effected_fm[fm] then
-                    disable_entity(reciver)
-                    return
-                end
-                effected_am[am] = true
-                effected_fm[fm] = true
-            else
-                if effected_total[total] then
-                    disable_entity(reciver)
-                    return
-                end
-                effected_total[total] = true
+            if effected_am[am] or effected_fm[fm] then
+                disable_entity(reciver)
+                return
             end
+            effected_am[am] = true
+            effected_fm[fm] = true
         end
     end
     enable_entity(reciver)
