@@ -3,9 +3,6 @@ require "__pypostprocessing__.lib"
 -- (( GUI Style )) --
 require "prototypes/gui-style"
 
--- (( Custom Input )) --
-require "prototypes/custom-input"
-
 -- (( Groups )) --
 require "prototypes/item-groups"
 
@@ -164,7 +161,7 @@ require "prototypes/buildings/beacon"
 require "prototypes/buildings/diet-beacon"
 require "prototypes/buildings/lab"
 
---require 'prototypes/achievements'
+require 'prototypes/achievements'
 require "prototypes/logo"
 require "prototypes/menu-simulations"
 

@@ -325,7 +325,7 @@ RECIPE("planter-box"):add_unlock("automation-science-pack").enabled = false
 RECIPE("empty-planter-box"):add_unlock("automation-science-pack").enabled = false
 RECIPE("soil-extractor-mk01"):add_unlock("automation-science-pack").enabled = false
 RECIPE("soil"):add_unlock("automation-science-pack").enabled = false
-RECIPE("wpu"):add_unlock("automation-science-pack").enabled = false
+RECIPE("wpu-mk01"):add_unlock("automation-science-pack").enabled = false
 RECIPE("log-wood").enabled = true
 
 RECIPE("poorman-wood-fence"):add_unlock("stone-wall").enabled = false
