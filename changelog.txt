@@ -9,7 +9,6 @@ Date: 2025-08-23
   Changes:
     - Alt+click the codex button to go directly to the T.U.R.D. page.
     - Alt+shift+click the codex button to go directly to the caravan manager.
-    - Fixed typo in DE locale
     - Fixed load issue with JA language active
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.41
