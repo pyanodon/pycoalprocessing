@@ -10,6 +10,7 @@ Date: 2025-08-23
     - Alt+click the codex button to go directly to the T.U.R.D. page.
     - Alt+shift+click the codex button to go directly to the caravan manager.
     - Fixed load issue with JA language active
+    - Fixed typo in DE locale
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.41
 Date: 2025-08-19
@@ -18,7 +19,6 @@ Date: 2025-08-19
     - Realigned pipe cover graphics on the quenching tower. Resolves https://github.com/pyanodon/pybugreports/issues/1149
     - Set minimum factorio version to 2.0.58
     - Fixed beacon crash on changing frequency in remote view
-    - Fixed typo in DE locale
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.40
 Date: 2025-08-12
