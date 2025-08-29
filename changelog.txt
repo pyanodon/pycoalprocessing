@@ -6,6 +6,7 @@ Date: ???
     - Alt+shift+click the codex button to go directly to the caravan manager.
     - Fixed typo in DE locale
     - Fixed load issue with JA language active
+    - Improved generator autofill to evenly distribute stacks of fuels. Resolves https://github.com/pyanodon/pybugreports/issues/1085
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.41
 Date: 2025-08-19
