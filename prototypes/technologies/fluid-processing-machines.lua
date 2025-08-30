@@ -15,7 +15,7 @@ TECHNOLOGY({
     }
 })
 
-if mods[ "pypetroleumhandling" ] then
+if mods["pypetroleumhandling"] then
     TECHNOLOGY({
         type = "technology",
         name = "fluid-processing-machines-2",

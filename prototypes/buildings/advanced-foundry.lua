@@ -79,7 +79,7 @@ for i = 1, 4 do
                         frame_count = 76,
                         shift = { 0.3, -0.5 },
                         animation_speed = 0.5,
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/advanced-foundry/advanced-foundry-top.png",

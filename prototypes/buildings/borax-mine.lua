@@ -50,8 +50,8 @@ for i = 1, 4 do
     local wet_graphics = {}
     -- Insert, and follow by adding in the appropriate pipe graphics
     for abbreviation, direction in pairs({ N = "north", E = "east", S = "south", W = "west" }) do
-        wet_graphics[ direction ] = util.copy(dry_graphics)
-        wet_graphics[ direction ].layers[ 3 ] = {
+        wet_graphics[direction] = util.copy(dry_graphics)
+        wet_graphics[direction].layers[3] = {
             priority = "extra-high",
             filename = "__pycoalprocessinggraphics__/graphics/entity/borax-mine/" .. abbreviation .. ".png",
             line_length = 1,
@@ -119,7 +119,7 @@ for i = 1, 4 do
             width = 12,
             height = 12
         },
-        circuit_connector = circuit_connector_definitions[ "borax-mine-mkxx" ],
+        circuit_connector = circuit_connector_definitions["borax-mine-mkxx"],
         circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
         graphics_set = {
             animation = dry_graphics

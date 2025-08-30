@@ -143,6 +143,6 @@ for am = 5, 1, -1 do
     end
 end
 
-data.raw.module[ "speed-module" ].beacon_tint.primary = { 0, 0.65, 1 }
-data.raw.module[ "speed-module-2" ].beacon_tint.primary = { 0, 0.65, 1 }
-data.raw.module[ "speed-module-3" ].beacon_tint.primary = { 0, 0.65, 1 }
+data.raw.module["speed-module"].beacon_tint.primary = { 0, 0.65, 1 }
+data.raw.module["speed-module-2"].beacon_tint.primary = { 0, 0.65, 1 }
+data.raw.module["speed-module-3"].beacon_tint.primary = { 0, 0.65, 1 }

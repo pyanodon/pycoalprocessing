@@ -29,7 +29,7 @@ local pictures = {}
 local i = 1
 for y = 0, 2112 - 352, 352 do
     for x = 0, 2240 - 448, 448 do
-        pictures[ #pictures+1 ] = {
+        pictures[#pictures+1] = {
             type = "sprite",
             name = "tailings-pond-sprite-" .. i,
             filename = "__pycoalprocessinggraphics__/graphics/entity/tailings-pond/fluid.png",
@@ -215,6 +215,6 @@ ENTITY({
         match_volume_to_activity = true,
         max_sounds_per_prototype = 3
     },
-    circuit_connector = circuit_connector_definitions[ "tailings-pond" ],
+    circuit_connector = circuit_connector_definitions["tailings-pond"],
     circuit_wire_max_distance = 9,
 })

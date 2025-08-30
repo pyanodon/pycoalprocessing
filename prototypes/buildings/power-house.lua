@@ -134,7 +134,7 @@ for i = 1, 4 do
                         line_length = 6,
                         animation_speed = 0.7,
                         shift = { 0.156, -0.165 },
-                        tint = py.tints[ i ]
+                        tint = py.tints[i]
                     },
                 }
             },

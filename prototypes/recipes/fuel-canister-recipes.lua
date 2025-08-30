@@ -1,6 +1,6 @@
 local skipped_fluids = {
     hydrogen = true,
-    [ "pressured-hydrogen" ] = true
+    ["pressured-hydrogen"] = true
 }
 
 RECIPE({
@@ -23,7 +23,7 @@ RECIPE({
 }):add_unlock("plastics")
 
 for f, fluid in pairs(data.raw.fluid) do
-    if fluid.fuel_value and not skipped_fluids[ fluid.name ] and fluid.auto_barrel ~= false then
+    if fluid.fuel_value and not skipped_fluids[fluid.name] and fluid.auto_barrel ~= false then
         local fluid_icon = table.deepcopy(fluid.icons) or { { icon = fluid.icon } }
         -- Apply to each layer
         for _, icon in pairs(fluid_icon) do
@@ -40,7 +40,7 @@ for f, fluid in pairs(data.raw.fluid) do
 
         for _, icon in pairs(fluid_icon) do
             icon.shift = icon.shift or {}
-            local x, y = icon.shift[ 1 ] or icon.shift.x or 0, icon.shift[ 2 ] or icon.shift.y or 0
+            local x, y = icon.shift[1] or icon.shift.x or 0, icon.shift[2] or icon.shift.y or 0
             icon.shift = { x, y + 2 }
             table.insert(icons, icon)
             local icon = table.deepcopy(icon)
@@ -114,13 +114,13 @@ for f, fluid in pairs(data.raw.fluid) do
         }):add_unlock("plastics")
     end
 
-    if data.raw.recipe[ "empty-" .. fluid.name .. "-barrel" ] ~= nil then
+    if data.raw.recipe["empty-" .. fluid.name .. "-barrel"] ~= nil then
         RECIPE("empty-" .. fluid.name .. "-barrel"):set_fields({ ignore_for_dependencies = true })
     end
-    if data.raw.recipe[ fluid.name .. "-barrel" ] ~= nil then
+    if data.raw.recipe[fluid.name .. "-barrel"] ~= nil then
         RECIPE(fluid.name .. "-barrel"):set_fields({ ignore_for_dependencies = true })
     end
-    if data.raw.item[ fluid.name .. "-barrel" ] ~= nil then
+    if data.raw.item[fluid.name .. "-barrel"] ~= nil then
         ITEM(fluid.name .. "-barrel"):set_fields({ ignore_for_dependencies = true })
     end
 end

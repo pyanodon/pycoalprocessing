@@ -91,7 +91,7 @@ for i = 1, 4 do
                         width = 202,
                         height = 247,
                         animation_speed = 0.4,
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                         shift = { 0.15, -0.79 },
                         draw_as_glow = true
                     }

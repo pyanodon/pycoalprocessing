@@ -118,7 +118,7 @@ for i = 1, 4 do
                         width = 224,
                         height = 320,
                         frame_count = 1,
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                         shift = util.by_pixel(0, -80),
                     },
                     {

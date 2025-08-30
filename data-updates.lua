@@ -41,15 +41,15 @@ require("prototypes/updates/base-oil")
 
 --add handcrafting to player character
 for _, player_type in pairs({ "character", "god-controller" }) do
-    for _, player in pairs(data.raw[ player_type ]) do
+    for _, player in pairs(data.raw[player_type]) do
         player.crafting_categories = player.crafting_categories or {}
         table.insert(player.crafting_categories, "handcrafting")
         player.crafting_categories = table.dedupe(player.crafting_categories)
     end
 end
 
-data.raw[ "item-subgroup" ][ "science-pack" ].group = "production"
-data.raw[ "item-subgroup" ][ "science-pack" ].order = "y"
+data.raw["item-subgroup"]["science-pack"].group = "production"
+data.raw["item-subgroup"]["science-pack"].order = "y"
 
 --gather recipes for module changes
 local recipes_list =
@@ -216,6 +216,6 @@ if register_cache_file ~= nil then
     register_cache_file({ "pycoalprocessing" }, "__pycoalprocessing__/cached-configs/pycoalprocessing.lua")
 end
 
-if mods[ "dependency-graph-lib" ] then
-    data.raw.item[ "copper-plate" ].autotech_startup = true
+if mods["dependency-graph-lib"] then
+    data.raw.item["copper-plate"].autotech_startup = true
 end

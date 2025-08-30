@@ -1,8 +1,8 @@
-if not mods[ "pyindustry" ] then
+if not mods["pyindustry"] then
     return
 end
 
-local menu_simulations = data.raw[ "utility-constants" ][ "default" ].main_menu_simulations
+local menu_simulations = data.raw["utility-constants"]["default"].main_menu_simulations
 
 -- do not work
 menu_simulations.nauvis_burner_city = nil
@@ -30,7 +30,7 @@ menu_simulations.nauvis_chase_player = nil
 menu_simulations.nauvis_brutal_defeat = nil
 menu_simulations.nauvis_forest_fire = nil
 
-if mods[ "pyhightech" ] or mods[ "pyrawores" ] or mods[ "pypetroleumhandling" ] then
+if mods["pyhightech"] or mods["pyrawores"] or mods["pypetroleumhandling"] then
     -- work, but involves biters/military
     menu_simulations.artillery = nil
     menu_simulations.big_defense = nil
@@ -164,7 +164,7 @@ menu_simulations.in_bus =
   ]]
 }
 
-if mods[ "pyfusionenergy" ] then
+if mods["pyfusionenergy"] then
     menu_simulations.fe_diamonds =
     {
         checkboard = false,
@@ -186,7 +186,7 @@ if mods[ "pyfusionenergy" ] then
         [[
   ]]
     }
-    local has_alternative_energy = mods[ "pyalternativeenergy" ]
+    local has_alternative_energy = mods["pyalternativeenergy"]
     menu_simulations.fe_reactors =
     {
         checkboard = false,
@@ -212,7 +212,7 @@ if mods[ "pyfusionenergy" ] then
     }
 end
 
-if mods[ "pyhightech" ] then
+if mods["pyhightech"] then
     menu_simulations.ht_ores =
     {
         checkboard = false,
@@ -234,7 +234,7 @@ if mods[ "pyhightech" ] then
         [[
   ]]
     }
-    if mods[ "pyrawores" ] then
+    if mods["pyrawores"] then
         menu_simulations.ht_pa =
         {
             checkboard = false,
@@ -267,7 +267,7 @@ if mods[ "pyhightech" ] then
     ]]
         }
     end
-    local does_not_work_due_to_batteries = mods[ "pyalienlife" ] and not mods[ "pyalternativeenergy" ]
+    local does_not_work_due_to_batteries = mods["pyalienlife"] and not mods["pyalternativeenergy"]
     if not does_not_work_due_to_batteries then
         menu_simulations.ht_chips =
         {
@@ -293,8 +293,8 @@ if mods[ "pyhightech" ] then
     end
 end
 
-if mods[ "pyrawores" ] then
-    if mods[ "pyfusionenergy" ] then -- without PyFE, a lot of buildings are different, so it's impossible to showcase an (almost) full chain
+if mods["pyrawores"] then
+    if mods["pyfusionenergy"] then   -- without PyFE, a lot of buildings are different, so it's impossible to showcase an (almost) full chain
         menu_simulations.ro_chain =
         {
             checkboard = false,
@@ -318,7 +318,7 @@ if mods[ "pyrawores" ] then
         }
     end
 
-    local has_fusion_energy = mods[ "pyfusionenergy" ]
+    local has_fusion_energy = mods["pyfusionenergy"]
     menu_simulations.ro_mines =
     {
         checkboard = false,
@@ -344,7 +344,7 @@ if mods[ "pyrawores" ] then
   ]]
     }
 
-    local mold_exists = mods[ "pyalienlife" ]
+    local mold_exists = mods["pyalienlife"]
     menu_simulations.ro_cast =
     {
         checkboard = false,
@@ -371,7 +371,7 @@ if mods[ "pyrawores" ] then
     }
 end
 
-if mods[ "pypetroleumhandling" ] then
+if mods["pypetroleumhandling"] then
     menu_simulations.ph_shale =
     {
         checkboard = false,
@@ -443,7 +443,7 @@ if mods[ "pypetroleumhandling" ] then
     }
 end
 
-if mods[ "pyalienlife" ] then
+if mods["pyalienlife"] then
     menu_simulations.al_early =
     {
         checkboard = false,
@@ -466,7 +466,7 @@ if mods[ "pyalienlife" ] then
   ]]
     }
 
-    if mods[ "pyhightech" ] then -- no cardaveric arum without HT
+    if mods["pyhightech"] then   -- no cardaveric arum without HT
         menu_simulations.al_spaghetti =
         {
             checkboard = false,
@@ -490,7 +490,7 @@ if mods[ "pyalienlife" ] then
         }
     end
 
-    if mods[ "pyhightech" ] then -- no antelopes without HT
+    if mods["pyhightech"] then   -- no antelopes without HT
         menu_simulations.al_late =
         {
             checkboard = false,
@@ -534,7 +534,7 @@ if mods[ "pyalienlife" ] then
     end
 end
 
-if mods[ "pyalternativeenergy" ] then
+if mods["pyalternativeenergy"] then
     menu_simulations.ae_early =
     {
         checkboard = false,

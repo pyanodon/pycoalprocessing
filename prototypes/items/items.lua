@@ -402,7 +402,7 @@ ITEM({
     stack_size = 100
 })
 
-if not mods[ "pyalienlife" ] then
+if not mods["pyalienlife"] then
     ITEM({
         type = "item",
         name = "ralesia",

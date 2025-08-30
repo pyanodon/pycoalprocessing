@@ -2,7 +2,7 @@
 -- for base-game implementation details, see https://github.com/wube/factorio-data/blob/ed3d12197fbbe63fcd19c0eb23bc826cea44410f/core/lualib/circuit-connector-sprites.lua#L101
 -- variation counts from 0 (Python-like).
 
-circuit_connector_definitions[ "borax-mine-mkxx" ] = circuit_connector_definitions.create_vector
+circuit_connector_definitions["borax-mine-mkxx"] = circuit_connector_definitions.create_vector
     (
         universal_connector_template,
         { --Directions are up, right, down, left.
@@ -13,7 +13,7 @@ circuit_connector_definitions[ "borax-mine-mkxx" ] = circuit_connector_definitio
         }
     )
 
-circuit_connector_definitions[ "niobium-mine" ] = circuit_connector_definitions.create_vector
+circuit_connector_definitions["niobium-mine"] = circuit_connector_definitions.create_vector
     (
         universal_connector_template,
         { --Directions are up, right, down, left.
@@ -24,7 +24,7 @@ circuit_connector_definitions[ "niobium-mine" ] = circuit_connector_definitions.
         }
     )
 
-circuit_connector_definitions[ "tailings-pond" ] = circuit_connector_definitions.create_vector
+circuit_connector_definitions["tailings-pond"] = circuit_connector_definitions.create_vector
     (
         universal_connector_template,
         { --Directions are horizontal in/outputs, vertical in/outputs.

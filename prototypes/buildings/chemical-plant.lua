@@ -197,7 +197,7 @@ for i = 1, 4 do
                         line_length = 20,
                         animation_speed = 0.35,
                         shift = util.by_pixel(-96, -64),
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/mid-mask.png",
@@ -207,7 +207,7 @@ for i = 1, 4 do
                         line_length = 20,
                         animation_speed = 0.35,
                         shift = util.by_pixel(0, -64),
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/right-mask.png",
@@ -217,7 +217,7 @@ for i = 1, 4 do
                         line_length = 20,
                         animation_speed = 0.35,
                         shift = util.by_pixel(96, -64),
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                     },
                 },
             },

@@ -1,4 +1,4 @@
-local style = data.raw[ "gui-style" ].default
+local style = data.raw["gui-style"].default
 
 style.py_entity_preview = {
     type = "empty_widget_style",
@@ -80,7 +80,7 @@ style.py_schedule_move_button_alt = {
     }
 }
 
-local graphics_set = table.deepcopy(data.raw[ "gui-style" ].default.train_schedule_temporary_station_delete_button
+local graphics_set = table.deepcopy(data.raw["gui-style"].default.train_schedule_temporary_station_delete_button
     .default_graphical_set) --[[@as data.ElementImageSet]]
 graphics_set.base.corner_size = 8
 -- Removes black lines at right and bottom of shadow

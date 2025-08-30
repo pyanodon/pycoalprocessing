@@ -124,7 +124,7 @@ for i = 1, 4 do
                         line_length = 1,
                         repeat_count = 100,
                         shift = util.by_pixel(-0, 32),
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                         animation_speed = 0.5
                     },
                     {

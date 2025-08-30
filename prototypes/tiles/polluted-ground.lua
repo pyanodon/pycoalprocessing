@@ -57,9 +57,11 @@ local variants = {
 data:extend({ {
     type = "tile",
     name = "polluted-ground",
-    collision_mask = { layers = {
-        ground_tile = true
-    } },
+    collision_mask = {
+        layers = {
+            ground_tile = true
+        }
+    },
     walking_speed_modifier = .50,
     autoplace = nil,
     layer = 35,
@@ -69,16 +71,18 @@ data:extend({ {
     map_color = defines.color.brown,
     absorptions_per_second = { pollution = 0.0002 },
     vehicle_friction_modifier = sand_vehicle_speed_modifier,
-    transitions = data.raw.tile[ "dirt-4" ].transitions,
-    transitions_between_transitions = data.raw.tile[ "dirt-4" ].transitions_between_transitions,
+    transitions = data.raw.tile["dirt-4"].transitions,
+    transitions_between_transitions = data.raw.tile["dirt-4"].transitions_between_transitions,
 } })
 
 data:extend({ {
     type = "tile",
     name = "polluted-ground-burnt",
-    collision_mask = { layers = {
-        ground_tile = true
-    } },
+    collision_mask = {
+        layers = {
+            ground_tile = true
+        }
+    },
     walking_speed_modifier = .50,
     autoplace = nil,
     layer = 36,
@@ -89,8 +93,8 @@ data:extend({ {
     map_color = defines.color.brown,
     absorptions_per_second = { pollution = 0.0002 },
     vehicle_friction_modifier = sand_vehicle_speed_modifier,
-    transitions = data.raw.tile[ "dirt-4" ].transitions,
-    transitions_between_transitions = data.raw.tile[ "dirt-4" ].transitions_between_transitions,
+    transitions = data.raw.tile["dirt-4"].transitions,
+    transitions_between_transitions = data.raw.tile["dirt-4"].transitions_between_transitions,
 } })
 
 data:extend({ {

@@ -61,8 +61,8 @@ local pixel_offsets = {
 }
 -- Insert, and follow by adding in the appropriate pipe graphics
 for abbreviation, direction in pairs({ N = "north", E = "east", S = "south", W = "west" }) do
-    wet_graphics[ direction ] = util.copy(dry_graphics)
-    wet_graphics[ direction ].layers[ 3 ] = {
+    wet_graphics[direction] = util.copy(dry_graphics)
+    wet_graphics[direction].layers[3] = {
         priority = "extra-high",
         filename = "__pycoalprocessinggraphics__/graphics/entity/niobium-mine/" .. abbreviation .. ".png",
         line_length = 1,
@@ -71,7 +71,7 @@ for abbreviation, direction in pairs({ N = "north", E = "east", S = "south", W =
         frame_count = 1,
         repeat_count = 136,
         direction_count = 1,
-        shift = pixel_offsets[ abbreviation ]
+        shift = pixel_offsets[abbreviation]
     }
 end
 
@@ -124,7 +124,7 @@ ENTITY({
         width = 12,
         height = 12
     },
-    circuit_connector = circuit_connector_definitions[ "niobium-mine" ],
+    circuit_connector = circuit_connector_definitions["niobium-mine"],
     circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     graphics_set = {
         animation = dry_graphics

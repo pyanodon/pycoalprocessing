@@ -106,7 +106,7 @@ for i = 1, 4 do
                                 width = 168,
                                 height = 177,
                                 animation_speed = 0.25,
-                                tint = py.tints[ i ],
+                                tint = py.tints[i],
                                 shift = { 0, -0.3 }
                             },
                             {
@@ -138,7 +138,7 @@ for i = 1, 4 do
                         height = 177,
                         frame_count = 1,
                         shift = { 0.1, -0.3 },
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/evaporator/evaporator-off-glow.png",
@@ -191,8 +191,8 @@ for i = 1, 4 do
     })
 
     -- https://github.com/pyanodon/pybugreports/issues/556
-    if not mods[ "pystellarexpedition" ] then
-        local legacy = table.deepcopy(data.raw[ "assembling-machine" ][ name ])
+    if not mods["pystellarexpedition"] then
+        local legacy = table.deepcopy(data.raw["assembling-machine"][name])
         legacy.fluid_boxes = {
             {
                 production_type = "input",

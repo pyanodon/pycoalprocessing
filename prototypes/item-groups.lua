@@ -161,12 +161,12 @@ data:extend({
     }
 })
 
-data.raw[ "item-subgroup" ][ "fluid" ].group = "coal-processing"
-data.raw[ "item-subgroup" ][ "fluid" ].order = "c"
-data.raw.item[ "sulfur" ].subgroup = "py-sulfur"
-data.raw.item[ "low-density-structure" ].subgroup = "space-related"
-data.raw.item[ "rocket-fuel" ].subgroup = "space-related"
-data.raw.item[ "nuclear-fuel" ].subgroup = "space-related"
-data.raw.item[ "stone" ].subgroup = "intermediate-product"
-data.raw.item[ "explosives" ].subgroup = "py-items"
-data.raw.fluid[ "sulfuric-acid" ].subgroup = "py-fluids"
+data.raw["item-subgroup"]["fluid"].group = "coal-processing"
+data.raw["item-subgroup"]["fluid"].order = "c"
+data.raw.item["sulfur"].subgroup = "py-sulfur"
+data.raw.item["low-density-structure"].subgroup = "space-related"
+data.raw.item["rocket-fuel"].subgroup = "space-related"
+data.raw.item["nuclear-fuel"].subgroup = "space-related"
+data.raw.item["stone"].subgroup = "intermediate-product"
+data.raw.item["explosives"].subgroup = "py-items"
+data.raw.fluid["sulfuric-acid"].subgroup = "py-fluids"

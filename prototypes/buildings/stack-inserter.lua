@@ -2,14 +2,14 @@ if not feature_flags.space_travel then return end
 
 local MAX_BELT_STACK = 8
 
-data:extend({ py.merge(data.raw.inserter[ "bulk-inserter" ], {
+data:extend({ py.merge(data.raw.inserter["bulk-inserter"], {
     name = "py-stack-inserter",
     wait_for_full_hand = true,
     enter_drop_mode_if_held_stack_spoiled = true,
     max_belt_stack_size = MAX_BELT_STACK,
     grab_less_to_match_belt_stack = true,
     use_easter_egg = false,
-    stack_size_bonus = (data.raw.inserter[ "bulk-inserter" ].stack_size_bonus or 0) + 12,
+    stack_size_bonus = (data.raw.inserter["bulk-inserter"].stack_size_bonus or 0) + 12,
     hand_size = 2.25,
     insert_position = { 0, 1.7 },
     pickup_position = { 0, -1.5 },
@@ -27,14 +27,16 @@ data:extend({ py.merge(data.raw.inserter[ "bulk-inserter" ], {
         mining_time = 0.2,
         result = "py-stack-inserter"
     },
-    platform_picture = { sheet = {
-        filename = "__pycoalprocessinggraphics__/graphics/entity/stack-inserter/stack-inserter-platform.png",
-        height = 79,
-        priority = "extra-high",
-        scale = 0.5,
-        shift = { 0.046875, 0.203125 },
-        width = 105
-    } },
+    platform_picture = {
+        sheet = {
+            filename = "__pycoalprocessinggraphics__/graphics/entity/stack-inserter/stack-inserter-platform.png",
+            height = 79,
+            priority = "extra-high",
+            scale = 0.5,
+            shift = { 0.046875, 0.203125 },
+            width = 105
+        }
+    },
     hand_open_picture = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/stack-inserter/stack-inserter-hand-open.png",
         height = 164,

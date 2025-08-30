@@ -98,7 +98,7 @@ for i = 1, 4 do
                         frame_count = 100,
                         animation_speed = 0.5,
                         shift = util.by_pixel(-80, -50),
-                        tint = py.tints[ i ]
+                        tint = py.tints[i]
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-b-mask.png",
@@ -108,7 +108,7 @@ for i = 1, 4 do
                         frame_count = 100,
                         animation_speed = 0.5,
                         shift = util.by_pixel(16, -50),
-                        tint = py.tints[ i ]
+                        tint = py.tints[i]
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/distilator/distilator-c-mask.png",
@@ -118,7 +118,7 @@ for i = 1, 4 do
                         frame_count = 100,
                         animation_speed = 0.5,
                         shift = util.by_pixel(112, -50),
-                        tint = py.tints[ i ]
+                        tint = py.tints[i]
                     },
                 },
             },

@@ -1,7 +1,7 @@
 local resource_autoplace = require("resource-autoplace")
 
-data.raw.planet.nauvis.map_gen_settings.autoplace_controls[ "borax" ] = {}
-data.raw.planet.nauvis.map_gen_settings.autoplace_settings.entity.settings[ "borax" ] = {}
+data.raw.planet.nauvis.map_gen_settings.autoplace_controls["borax"] = {}
+data.raw.planet.nauvis.map_gen_settings.autoplace_settings.entity.settings["borax"] = {}
 
 data:extend({ {
     type = "autoplace-control",

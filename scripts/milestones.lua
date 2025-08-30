@@ -468,7 +468,7 @@ remote.add_interface("pycoalprocessing", {
             end
         end
         return {
-            [ "Full Py Mods" ] = preset
+            ["Full Py Mods"] = preset
         }
     end
 })

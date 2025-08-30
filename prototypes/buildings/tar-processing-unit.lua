@@ -117,7 +117,7 @@ for i = 1, 4 do
                         height = 384,
                         frame_count = 1,
                         shift = util.by_pixel(0, -16),
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/l.png",

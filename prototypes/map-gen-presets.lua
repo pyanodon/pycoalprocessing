@@ -1,30 +1,30 @@
 local blacklist = {
-    [ "enemy-base" ] = true,
-    [ "trees" ] = true,
+    ["enemy-base"] = true,
+    ["trees"] = true,
 }
 
 local rocks = {
-    [ "iron-rock" ] = true,
-    [ "copper-rock" ] = true,
-    [ "uranium-rock" ] = true,
-    [ "zinc-rock" ] = true,
-    [ "aluminium-rock" ] = true,
-    [ "chromium-rock" ] = true,
-    [ "coal-rock" ] = true,
-    [ "lead-rock" ] = true,
-    [ "nexelit-rock" ] = true,
-    [ "nickel-rock" ] = true,
-    [ "phosphate-rock-02" ] = true,
-    [ "quartz-rock" ] = true,
-    [ "salt-rock" ] = true,
-    [ "tin-rock" ] = true,
-    [ "titanium-rock" ] = true,
-    [ "volcanic-pipe" ] = true,
-    [ "regolites" ] = true,
-    [ "rare-earth-bolide" ] = true,
-    [ "phosphate-rock" ] = true,
-    [ "sulfur-patch" ] = true,
-    [ "geothermal-crack" ] = true,
+    ["iron-rock"] = true,
+    ["copper-rock"] = true,
+    ["uranium-rock"] = true,
+    ["zinc-rock"] = true,
+    ["aluminium-rock"] = true,
+    ["chromium-rock"] = true,
+    ["coal-rock"] = true,
+    ["lead-rock"] = true,
+    ["nexelit-rock"] = true,
+    ["nickel-rock"] = true,
+    ["phosphate-rock-02"] = true,
+    ["quartz-rock"] = true,
+    ["salt-rock"] = true,
+    ["tin-rock"] = true,
+    ["titanium-rock"] = true,
+    ["volcanic-pipe"] = true,
+    ["regolites"] = true,
+    ["rare-earth-bolide"] = true,
+    ["phosphate-rock"] = true,
+    ["sulfur-patch"] = true,
+    ["geothermal-crack"] = true,
     -- Commented because only scales on size :shrug:
     -- ['bitumen-seep'] = true
 }
@@ -56,12 +56,12 @@ local non_rocks = {
 
 
 
-local mapgens = data.raw[ "map-gen-presets" ][ "default" ]
-mapgens[ "py-recommended" ] = {
+local mapgens = data.raw["map-gen-presets"]["default"]
+mapgens["py-recommended"] = {
     order = "h",
     basic_settings = {
         autoplace_controls = {
-            [ "enemy-base" ] = {
+            ["enemy-base"] = {
                 frequency = 0
             },
             water = { frequency = 0.75, size = 0.75 },
@@ -70,7 +70,7 @@ mapgens[ "py-recommended" ] = {
             cliff_elevation_interval = 40 / 0.5,
             richness = 3
         },
-        starting_area = mods[ "rso-mod" ] and "normal" or 4
+        starting_area = mods["rso-mod"] and "normal" or 4
     },
     advanced_settings = {
         pollution = {
@@ -91,50 +91,50 @@ mapgens[ "py-recommended" ] = {
 }
 
 local non_rock_values = {
-    [ "rich-resources" ] = {
+    ["rich-resources"] = {
         richness = 2.0
     },
-    [ "rail-world" ] = {
+    ["rail-world"] = {
         frequency = 0.33,
         size = 3.0
     },
-    [ "py-recommended" ] = {
+    ["py-recommended"] = {
         frequency = 0.33,
         richness = 4,
         size = 0.75
     },
-    [ "ribbon-world" ] = {
+    ["ribbon-world"] = {
         frequency = 3.0,
         size = 0.5,
         richness = 2.0
     }
 }
 local rock_values = {
-    [ "rich-resources" ] = {
+    ["rich-resources"] = {
         richness = 2.0
     },
-    [ "rail-world" ] = {
+    ["rail-world"] = {
         frequency = 0.33,
         richness = 3.0
     },
-    [ "py-recommended" ] = {
+    ["py-recommended"] = {
         frequency = 0.33,
         richness = 5
     },
-    [ "ribbon-world" ] = {
+    ["ribbon-world"] = {
         frequency = 3.0,
         richness = 1.0
     }
 }
 
-for name in pairs(data.raw[ "autoplace-control" ]) do
-    if blacklist[ name ] then goto continue end
-    local is_rock = rocks[ name ]
+for name in pairs(data.raw["autoplace-control"]) do
+    if blacklist[name] then goto continue end
+    local is_rock = rocks[name]
     for preset_name, preset_data in pairs(mapgens) do
-        local control = preset_data[ "basic_settings" ] and preset_data[ "basic_settings" ][ "autoplace_controls" ]
+        local control = preset_data["basic_settings"] and preset_data["basic_settings"]["autoplace_controls"]
         -- If someone has already modified it, I see no reason to change it
-        if control and not control[ name ] then
-            control[ name ] = is_rock and rock_values[ preset_name ] or non_rock_values[ preset_name ]
+        if control and not control[name] then
+            control[name] = is_rock and rock_values[preset_name] or non_rock_values[preset_name]
         end
     end
     ::continue::

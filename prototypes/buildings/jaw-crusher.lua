@@ -96,7 +96,7 @@ for i = 1, 4 do
                         frame_count = 161,
                         shift = { -2.0, -0.5 },
                         animation_speed = 0.5,
-                        tint = py.tints[ i ]
+                        tint = py.tints[i]
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/jaw-crusher/sprite-mid-mask.png",
@@ -106,7 +106,7 @@ for i = 1, 4 do
                         frame_count = 161,
                         shift = { 1.0, -0.5 },
                         animation_speed = 0.5,
-                        tint = py.tints[ i ]
+                        tint = py.tints[i]
                     }
                 }
             },

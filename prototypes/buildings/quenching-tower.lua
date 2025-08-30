@@ -96,7 +96,7 @@ for i = 1, 4 do
                         line_length = 8,
                         animation_speed = 0.7,
                         shift = { 0.08, -0.5 },
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                     }
                 }
             },
@@ -147,7 +147,7 @@ for i = 1, 4 do
         impact_category = "metal",
         working_sound = {
             sound = { filename = "__pycoalprocessinggraphics__/sounds/quenching-tower.ogg", volume = 0.8 },
-            idle_sound = mods[ "pyfusionenergygraphics" ] and { filename = "__pyfusionenergygraphics__/sounds/hydrocyclone-idle.ogg", volume = 0.3 } or nil,
+            idle_sound = mods["pyfusionenergygraphics"] and { filename = "__pyfusionenergygraphics__/sounds/hydrocyclone-idle.ogg", volume = 0.3 } or nil,
             fade_in_ticks = 15,
             fade_out_ticks = 4,
         },

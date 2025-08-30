@@ -91,7 +91,7 @@ for i = 1, 4 do
                         line_length = 6,
                         animation_speed = 1,
                         shift = { 0.15, 0.3 },
-                        tint = py.tints[ i ]
+                        tint = py.tints[i]
                     },
                 }
             },

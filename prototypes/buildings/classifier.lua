@@ -80,7 +80,7 @@ for i = 1, 4 do
                         line_length = 8,
                         animation_speed = 0.6,
                         shift = { 0.495, -0.48 },
-                        tint = py.tints[ i ],
+                        tint = py.tints[i],
                     },
                 }
             },
@@ -94,8 +94,8 @@ for i = 1, 4 do
     })
 
     -- https://github.com/pyanodon/pycoalprocessing/commit/cf03a35fa5dec4c74a464d847b4e266394317726
-    if not mods[ "pystellarexpedition" ] then
-        local legacy = table.deepcopy(data.raw[ "assembling-machine" ][ name ])
+    if not mods["pystellarexpedition"] then
+        local legacy = table.deepcopy(data.raw["assembling-machine"][name])
         legacy.vector_to_place_result = nil
         legacy.name = name .. "-legacy"
         legacy.hidden = true

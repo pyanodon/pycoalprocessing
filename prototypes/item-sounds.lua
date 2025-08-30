@@ -6,7 +6,7 @@ local function add_sound_single(name, move_sound, pick_sound, drop_sound)
     if not drop_sound then error("Missing drop_sound") end
 
     for item_type in pairs(defines.prototypes.item) do
-        local item = (data.raw[ item_type ] or {})[ name ]
+        local item = (data.raw[item_type] or {})[name]
         if item then
             item.inventory_move_sound = move_sound
             item.pick_sound = pick_sound

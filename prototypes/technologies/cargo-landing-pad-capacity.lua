@@ -1,16 +1,16 @@
 data:extend({ {
     type = "technology",
     name = "cargo-landing-pad-capacity",
-    icon = data.raw.technology[ "rocket-silo" ].icon,
-    icon_size = data.raw.technology[ "rocket-silo" ].icon_size,
+    icon = data.raw.technology["rocket-silo"].icon,
+    icon_size = data.raw.technology["rocket-silo"].icon_size,
     effects = {
         {
             type = "cargo-landing-pad-count",
             modifier = 1,
             icons = {
                 {
-                    icon = data.raw.item[ "cargo-landing-pad" ].icon,
-                    icon_size = data.raw.item[ "cargo-landing-pad" ].icon_size,
+                    icon = data.raw.item["cargo-landing-pad"].icon,
+                    icon_size = data.raw.item["cargo-landing-pad"].icon_size,
                     scale = 1
                 },
                 {
@@ -32,7 +32,7 @@ data:extend({ {
             { "py-science-pack-2" },
             { "chemical-science-pack" },
             { "py-science-pack-3" },
-        } or table.deepcopy(data.raw.technology[ "rocket-silo" ].unit.ingredients),
+        } or table.deepcopy(data.raw.technology["rocket-silo"].unit.ingredients),
         time = 180
     },
     max_level = "infinite"

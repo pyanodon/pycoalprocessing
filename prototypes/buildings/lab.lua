@@ -126,18 +126,18 @@ ENTITY({
 })
 
 -- DiscoScience compat, we rewrite the animation to fit our lab
-if mods[ "DiscoScience" ] then
+if mods["DiscoScience"] then
     -- Remove the 3 glow layers
     -- We can remove only the first layer and not use the second layer in the overlay below for a less obvious effect
     for I = 1, 3 do
         table.remove(data.raw.lab.lab.on_animation.layers, 2)
     end
     -- Overwrite on/off to the variant without blue lights embedded
-    data.raw.lab.lab.on_animation.layers[ 1 ].filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
-    data.raw.lab.lab.off_animation.layers[ 1 ].filename =
+    data.raw.lab.lab.on_animation.layers[1].filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
+    data.raw.lab.lab.off_animation.layers[1].filename =
     "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
     -- Overwrite the animation with ours
-    data.raw.animation[ "discoscience/lab-storm" ] = {
+    data.raw.animation["discoscience/lab-storm"] = {
         type = "animation",
         name = "discoscience/lab-storm",
         layers =

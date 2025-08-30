@@ -106,7 +106,7 @@ for i = 1, 4 do
                     height = 224,
                     frame_count = 1,
                     shift = util.by_pixel(16, -32),
-                    tint = py.tints[ i ]
+                    tint = py.tints[i]
                 },
             }
         }

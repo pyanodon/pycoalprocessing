@@ -109,7 +109,7 @@ for i = 1, 4 do
                         animation_speed = 0.4,
                         run_mode = "forward-then-backward",
                         shift = { 0.1, 0.1 },
-                        tint = py.tints[ i ]
+                        tint = py.tints[i]
                     },
                 }
             },

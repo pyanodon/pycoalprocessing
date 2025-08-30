@@ -3,21 +3,21 @@ local patreon = "https://www.patreon.com/pyanodon"
 local bugs = "https://github.com/pyanodon/pybugreports/issues"
 
 local science_pack_names = {
-    [ "automation-science-pack" ] = true,
-    [ "py-science-pack-1" ] = true,
-    [ "logistic-science-pack" ] = true,
-    [ "military-science-pack" ] = true,
-    [ "py-science-pack-2" ] = true,
-    [ "chemical-science-pack" ] = true,
-    [ "py-science-pack-3" ] = true,
-    [ "production-science-pack" ] = true,
-    [ "py-science-pack-4" ] = true,
-    [ "utility-science-pack" ] = true,
-    [ "space-science-pack" ] = true,
+    ["automation-science-pack"] = true,
+    ["py-science-pack-1"] = true,
+    ["logistic-science-pack"] = true,
+    ["military-science-pack"] = true,
+    ["py-science-pack-2"] = true,
+    ["chemical-science-pack"] = true,
+    ["py-science-pack-3"] = true,
+    ["production-science-pack"] = true,
+    ["py-science-pack-4"] = true,
+    ["utility-science-pack"] = true,
+    ["space-science-pack"] = true,
 }
 
 if script.active_mods.pystellarexpedition then
-    science_pack_names[ "space-science-pack-2" ] = true
+    science_pack_names["space-science-pack-2"] = true
 end
 
 local animals = {
@@ -57,11 +57,11 @@ end
 
 local creature_names = {}
 for _, animal in pairs(animals) do
-    creature_names[ animal ] = true
-    creature_names[ animal .. "-mk01" ] = true
-    creature_names[ animal .. "-mk02" ] = true
-    creature_names[ animal .. "-mk03" ] = true
-    creature_names[ animal .. "-mk04" ] = true
+    creature_names[animal] = true
+    creature_names[animal .. "-mk01"] = true
+    creature_names[animal .. "-mk02"] = true
+    creature_names[animal .. "-mk03"] = true
+    creature_names[animal .. "-mk04"] = true
 end
 animals = nil
 
@@ -133,13 +133,13 @@ local function calculate_statistics(player, include_laggy_calculations)
     statistics.items_consumed = 0
     for item, count in pairs(item_production_statistics.input_counts) do
         statistics.items_produced = statistics.items_produced + count
-        if science_pack_names[ item ] then
+        if science_pack_names[item] then
             statistics.science_produced = statistics.science_produced + count
         end
     end
     for item, count in pairs(item_production_statistics.output_counts) do
         statistics.items_consumed = statistics.items_consumed + count
-        if creature_names[ item ] then
+        if creature_names[item] then
             statistics.creatures_slaughtered = statistics.creatures_slaughtered + count
         end
     end
@@ -187,7 +187,7 @@ local function calculate_statistics(player, include_laggy_calculations)
         force = force
     })
 
-    if remote.interfaces[ "caravans" ] then
+    if remote.interfaces["caravans"] then
         statistics.caravans = remote.call("caravans", "get_caravan_count")
     else
         statistics.caravans = 0
@@ -197,9 +197,9 @@ local function calculate_statistics(player, include_laggy_calculations)
 end
 
 local function add_statistic(gui, localised_string)
-    local name = localised_string[ 1 ]
-    if gui[ name ] then
-        gui[ name ].caption = localised_string
+    local name = localised_string[1]
+    if gui[name] then
+        gui[name].caption = localised_string
     else
         local label = gui.add({ type = "label", caption = localised_string, name = name })
         label.style.single_line = false

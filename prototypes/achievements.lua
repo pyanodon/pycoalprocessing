@@ -27,7 +27,7 @@ local vanilla_achievements_to_disable = {
 }
 
 for _, cheevo in pairs(vanilla_achievements_to_disable) do
-    data.raw[ cheevo.cat ][ cheevo.name ].hidden = true
+    data.raw[cheevo.cat][cheevo.name].hidden = true
 end
 
 

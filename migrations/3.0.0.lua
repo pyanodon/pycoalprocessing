@@ -3,7 +3,7 @@ storage.on_tick = {}
 for _, surface in pairs(game.surfaces) do
     for i = 1, 4 do
         local target = "fawogae-plantation-mk0" .. i
-        if not prototypes.entity[ target ] then
+        if not prototypes.entity[target] then
             break
         end
         for _, plantation in pairs(surface.find_entities_filtered({ name = target })) do
