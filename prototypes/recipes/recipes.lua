@@ -159,7 +159,7 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "steam", amount = 400}
+        {type = "fluid", name = "steam", amount = 400, minimum_temperature = 100}
     },
     results = {
         {type = "fluid", name = "water", amount = 400, temperature = 100}
@@ -178,7 +178,7 @@ RECIPE {
     enabled = false,
     energy_required = 2,
     ingredients = {
-        {type = "fluid", name = "steam", amount = 400}
+        {type = "fluid", name = "steam", amount = 400, minimum_temperature = 200}
     },
     results = {
         {type = "fluid", name = "water", amount = 400, temperature = 200}
