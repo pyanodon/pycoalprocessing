@@ -77,7 +77,11 @@ local function restock_generator_equipment(player)
                     -- if all burners are full, end inventory iteration early
                     if burner_count == 0 then break end
                     -- If none left in the stack, move onto next inventory item, otherwise try the next burner
-                    if item_stack.count == 0 then break end
+                    if item_stack.count == 0 then
+                        --Update the index offset so the next burner is checked first when we loop again with the next inventory item
+                        burner_index_offset = index
+                        break
+                    end
                 end
             end
 
