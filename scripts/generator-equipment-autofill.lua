@@ -49,7 +49,7 @@ local function restock_generator_equipment(player)
             ::again::
             local inserted_some = false
             for i = 1, burner_count do
-                local index = (i + burner_index_offset) % burner_count
+                local index = ((i + burner_index_offset - 1) % (burner_count)) + 1
                 local burner_data = burners[index]
                 if burner_data.fuel_categories[prototypes.item[item_stack.name].fuel_category] then
                     local item_stack_size = prototypes.item[item_stack.name].stack_size
