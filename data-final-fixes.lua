@@ -7,17 +7,17 @@ if not mods.pyalternativeenergy then
                     temp = result.temperature
                 end
             end
-            recipe.localised_name = {"recipe-name." .. recipe.name, tostring(temp)}
+            recipe.localised_name = { "recipe-name." .. recipe.name, tostring(temp) }
         end
     end
 end
 
-require "prototypes/map-gen-presets"
+require("prototypes/map-gen-presets")
 
 -- Updating requester paste setting
-local rpm_entity = tonumber(settings.startup["rpm_entity"].value)
-local rpm_items = tonumber(settings.startup["rpm_items"].value)
-local overload = tonumber(settings.startup["overload"].value)
+local rpm_entity = tonumber(settings.startup[ "rpm_entity" ].value)
+local rpm_items = tonumber(settings.startup[ "rpm_items" ].value)
+local overload = tonumber(settings.startup[ "overload" ].value)
 if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
     --log("Updating recipe requester paste values")
     --These types (data.raw[entity_type]) are placeable entities
@@ -29,7 +29,7 @@ if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
     -- We then check if it's an entity and make an entry for that answer, followed by returning that result
     setmetatable(valid_entities, {
         __index = function(self, index)
-            local item = data.raw.item[index]
+            local item = data.raw.item[ index ]
             -- Place result?
             if item and item.place_result then
                 rawset(self, index, true)
@@ -37,7 +37,7 @@ if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
             end
             -- Valid entity?
             for type_name, _ in pairs(entity_types) do
-                if data.raw[type_name] and data.raw[type_name][index] then
+                if data.raw[ type_name ] and data.raw[ type_name ][ index ] then
                     rawset(self, index, true)
                     return true
                 end
@@ -53,8 +53,8 @@ if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
             goto continue
         end
         for _, result in pairs(recipe.results) do -- This looks long, however we skip a lot of the logic with caching
-            local result_name = result[1] or result.name
-            if result_name and valid_entities[result_name] then
+            local result_name = result[ 1 ] or result.name
+            if result_name and valid_entities[ result_name ] then
                 --log("Set multiplier for " .. recipe.name .. " (" .. result_name .. ")")
                 recipe.requester_paste_multiplier = tonumber(rpm_entity)
                 recipe.overload_multiplier = tonumber(overload)
@@ -67,7 +67,7 @@ if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
     end
 end
 
-data.raw["utility-constants"].default.minimum_recipe_overload_multiplier = 1
+data.raw[ "utility-constants" ].default.minimum_recipe_overload_multiplier = 1
 
 for _, recipe in pairs(data.raw.recipe) do
     if recipe.category == "tar" and not recipe.crafting_machine_tint then

@@ -25,22 +25,22 @@ local pipes = {
     }
 }
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "botanical-nursery",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "electric-mining-drill", amount = 1},
-        {type = "item", name = "soil-extractor-mk01",   amount = 1},
-        {type = "item", name = "electronic-circuit",    amount = 5},
-        {type = "item", name = "wood",                  amount = 50},
-        {type = "item", name = "iron-plate",            amount = 35}
+        { type = "item", name = "electric-mining-drill", amount = 1 },
+        { type = "item", name = "soil-extractor-mk01",   amount = 1 },
+        { type = "item", name = "electronic-circuit",    amount = 5 },
+        { type = "item", name = "wood",                  amount = 50 },
+        { type = "item", name = "iron-plate",            amount = 35 }
     },
     results = {
-        {type = "item", name = "botanical-nursery", amount = 1}
+        { type = "item", name = "botanical-nursery", amount = 1 }
     }
-}:add_unlock("wood-processing")
+}):add_unlock("wood-processing")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
@@ -49,7 +49,7 @@ for i = 1, 4 do
     local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
-    ITEM {
+    ITEM({
         type = "item",
         name = name,
         icon = icon,
@@ -59,25 +59,25 @@ for i = 1, 4 do
         order = "f",
         place_result = name,
         stack_size = 10
-    }
+    })
 
-    ENTITY {
+    ENTITY({
         type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 1, result = name},
+        flags = { "placeable-neutral", "player-creation" },
+        minable = { mining_time = 1, result = name },
         fast_replaceable_group = "botanical-nursery",
         max_health = 700 * i,
         corpse = "big-remnants",
         dying_explosion = "big-explosion",
-        collision_box = {{-3.3, -3.3}, {3.3, 3.3}},
-        selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
+        collision_box = { { -3.3, -3.3 }, { 3.3, 3.3 } },
+        selection_box = { { -3.5, -3.5 }, { 3.5, 3.5 } },
         forced_symmetry = "diagonal-pos",
         module_slots = 0,
-        allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
-        crafting_categories = {"nursery"},
+        allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" },
+        crafting_categories = { "nursery" },
         crafting_speed = i,
         energy_source = {
             type = "electric",
@@ -98,7 +98,7 @@ for i = 1, 4 do
                         frame_count = 35,
                         animation_speed = 0.4,
                         run_mode = "forward-then-backward",
-                        shift = {0.1, 0.1}
+                        shift = { 0.1, 0.1 }
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/botanical-nursery/botanical-nursery-mask.png",
@@ -108,8 +108,8 @@ for i = 1, 4 do
                         frame_count = 35,
                         animation_speed = 0.4,
                         run_mode = "forward-then-backward",
-                        shift = {0.1, 0.1},
-                        tint = py.tints[i]
+                        shift = { 0.1, 0.1 },
+                        tint = py.tints[ i ]
                     },
                 }
             },
@@ -119,79 +119,79 @@ for i = 1, 4 do
             --1
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-3", {0.2, 4.13}, {0.12, -4.03}, {4.115, 0.1}, {-3.88, 0.16}, pipes),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", { 0.2, 4.13 }, { 0.12, -4.03 }, { 4.115, 0.1 }, { -3.88, 0.16 }, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input-output", position = {0.0, 3.0}, direction = defines.direction.south}}
+                pipe_connections = { { flow_direction = "input-output", position = { 0.0, 3.0 }, direction = defines.direction.south } }
             },
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-3", {0.2, 4.13}, {0.12, -4.03}, {4.115, 0.1}, {-3.88, 0.16}, pipes),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", { 0.2, 4.13 }, { 0.12, -4.03 }, { 4.115, 0.1 }, { -3.88, 0.16 }, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input-output", position = {0.0, -3.0}, direction = defines.direction.north}}
+                pipe_connections = { { flow_direction = "input-output", position = { 0.0, -3.0 }, direction = defines.direction.north } }
             },
             {
                 production_type = "output",
-                pipe_picture = py.pipe_pictures("assembling-machine-3", {0.2, 4.13}, {0.12, -4.03}, {4.115, 0.1}, {-3.88, 0.16}, pipes),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", { 0.2, 4.13 }, { 0.12, -4.03 }, { 4.115, 0.1 }, { -3.88, 0.16 }, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {3.0, 0.0}, direction = defines.direction.east}}
+                pipe_connections = { { flow_direction = "output", position = { 3.0, 0.0 }, direction = defines.direction.east } }
             },
         },
         impact_category = "metal",
         working_sound = {
-            sound = {filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 1.8},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 0.3},
+            sound = { filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 1.8 },
+            idle_sound = { filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 0.3 },
             apparent_volume = 2.5
         },
-    }
+    })
 end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "botanical-nursery-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "botanical-nursery", amount = 1},
-        {type = "item", name = "engine-unit",       amount = 2},
-        {type = "item", name = "advanced-circuit",  amount = 5},
-        {type = "item", name = "nexelit-plate",     amount = 30}
+        { type = "item", name = "botanical-nursery", amount = 1 },
+        { type = "item", name = "engine-unit",       amount = 2 },
+        { type = "item", name = "advanced-circuit",  amount = 5 },
+        { type = "item", name = "nexelit-plate",     amount = 30 }
     },
     results = {
-        {type = "item", name = "botanical-nursery-mk02", amount = 1}
+        { type = "item", name = "botanical-nursery-mk02", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "botanical-nursery-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "botanical-nursery-mk02", amount = 1},
-        {type = "item", name = "electric-engine-unit",   amount = 2},
-        {type = "item", name = "processing-unit",        amount = 10},
-        {type = "item", name = "niobium-plate",          amount = 40},
-        {type = "item", name = "kevlar",                 amount = 15}
+        { type = "item", name = "botanical-nursery-mk02", amount = 1 },
+        { type = "item", name = "electric-engine-unit",   amount = 2 },
+        { type = "item", name = "processing-unit",        amount = 10 },
+        { type = "item", name = "niobium-plate",          amount = 40 },
+        { type = "item", name = "kevlar",                 amount = 15 }
     },
     results = {
-        {type = "item", name = "botanical-nursery-mk03", amount = 1}
+        { type = "item", name = "botanical-nursery-mk03", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "botanical-nursery-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "botanical-nursery-mk03", amount = 1},
-        {type = "item", name = "low-density-structure",  amount = 10},
-        {type = "item", name = "nbfe-alloy",             amount = 20},
+        { type = "item", name = "botanical-nursery-mk03", amount = 1 },
+        { type = "item", name = "low-density-structure",  amount = 10 },
+        { type = "item", name = "nbfe-alloy",             amount = 20 },
     },
     results = {
-        {type = "item", name = "botanical-nursery-mk04", amount = 1}
+        { type = "item", name = "botanical-nursery-mk04", amount = 1 }
     }
-}
+})

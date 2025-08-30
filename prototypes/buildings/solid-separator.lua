@@ -1,19 +1,19 @@
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "solid-separator",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "steam-engine",       amount = 3},
-        {type = "item", name = "electronic-circuit", amount = 30},
-        {type = "item", name = "steel-plate",        amount = 50},
-        {type = "item", name = "iron-plate",         amount = 20},
-        {type = "item", name = "iron-gear-wheel",    amount = 50}
+        { type = "item", name = "steam-engine",       amount = 3 },
+        { type = "item", name = "electronic-circuit", amount = 30 },
+        { type = "item", name = "steel-plate",        amount = 50 },
+        { type = "item", name = "iron-plate",         amount = 20 },
+        { type = "item", name = "iron-gear-wheel",    amount = 50 }
     },
     results = {
-        {type = "item", name = "solid-separator", amount = 1}
+        { type = "item", name = "solid-separator", amount = 1 }
     }
-}:add_unlock("separation")
+}):add_unlock("separation")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
@@ -22,7 +22,7 @@ for i = 1, 4 do
     local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
-    ITEM {
+    ITEM({
         type = "item",
         name = name,
         icon = icon,
@@ -32,24 +32,24 @@ for i = 1, 4 do
         order = "x",
         place_result = name,
         stack_size = 10
-    }
+    })
 
-    ENTITY {
+    ENTITY({
         type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 1, result = name},
+        flags = { "placeable-neutral", "player-creation" },
+        minable = { mining_time = 1, result = name },
         fast_replaceable_group = "solid-separator",
         max_health = i * 400,
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
-        collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
-        selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
+        collision_box = { { -3.4, -3.4 }, { 3.4, 3.4 } },
+        selection_box = { { -3.5, -3.5 }, { 3.5, 3.5 } },
         module_slots = i,
-        allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
-        crafting_categories = {"solid-separator"},
+        allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" },
+        crafting_categories = { "solid-separator" },
         crafting_speed = i,
         energy_source = {
             type = "electric",
@@ -69,7 +69,7 @@ for i = 1, 4 do
                         frame_count = 20,
                         line_length = 5,
                         animation_speed = 1,
-                        shift = {0.37, -1.169},
+                        shift = { 0.37, -1.169 },
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/solid-separator/solid-separator-mask.png",
@@ -78,67 +78,67 @@ for i = 1, 4 do
                         frame_count = 20,
                         line_length = 5,
                         animation_speed = 1,
-                        shift = {0.37, -1.169},
-                        tint = py.tints[i],
+                        shift = { 0.37, -1.169 },
+                        tint = py.tints[ i ],
                     },
                 }
             },
         },
         impact_category = "metal",
         working_sound = {
-            sound = {filename = "__pycoalprocessinggraphics__/sounds/solid-separator.ogg"},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/solid-separator.ogg", volume = 0.3},
+            sound = { filename = "__pycoalprocessinggraphics__/sounds/solid-separator.ogg" },
+            idle_sound = { filename = "__pycoalprocessinggraphics__/sounds/solid-separator.ogg", volume = 0.3 },
             apparent_volume = 2.5
         },
-    }
+    })
 end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "solid-separator-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "solid-separator",  amount = 1},
-        {type = "item", name = "engine-unit",      amount = 6},
-        {type = "item", name = "nexelit-plate",    amount = 10},
-        {type = "item", name = "plastic-bar",      amount = 10},
-        {type = "item", name = "advanced-circuit", amount = 20}
+        { type = "item", name = "solid-separator",  amount = 1 },
+        { type = "item", name = "engine-unit",      amount = 6 },
+        { type = "item", name = "nexelit-plate",    amount = 10 },
+        { type = "item", name = "plastic-bar",      amount = 10 },
+        { type = "item", name = "advanced-circuit", amount = 20 }
     },
     results = {
-        {type = "item", name = "solid-separator-mk02", amount = 1}
+        { type = "item", name = "solid-separator-mk02", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "solid-separator-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "solid-separator-mk02", amount = 1},
-        {type = "item", name = "electric-engine-unit", amount = 4},
-        {type = "item", name = "steel-plate",          amount = 15},
-        {type = "item", name = "niobium-plate",        amount = 20},
-        {type = "item", name = "processing-unit",      amount = 5},
-        {type = "item", name = "niobium-pipe",         amount = 15},
+        { type = "item", name = "solid-separator-mk02", amount = 1 },
+        { type = "item", name = "electric-engine-unit", amount = 4 },
+        { type = "item", name = "steel-plate",          amount = 15 },
+        { type = "item", name = "niobium-plate",        amount = 20 },
+        { type = "item", name = "processing-unit",      amount = 5 },
+        { type = "item", name = "niobium-pipe",         amount = 15 },
     },
     results = {
-        {type = "item", name = "solid-separator-mk03", amount = 1}
+        { type = "item", name = "solid-separator-mk03", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "solid-separator-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "solid-separator-mk03",  amount = 1},
-        {type = "item", name = "nbfe-alloy",            amount = 20},
-        {type = "item", name = "low-density-structure", amount = 10},
+        { type = "item", name = "solid-separator-mk03",  amount = 1 },
+        { type = "item", name = "nbfe-alloy",            amount = 20 },
+        { type = "item", name = "low-density-structure", amount = 10 },
     },
     results = {
-        {type = "item", name = "solid-separator-mk04", amount = 1}
+        { type = "item", name = "solid-separator-mk04", amount = 1 }
     }
-}
+})

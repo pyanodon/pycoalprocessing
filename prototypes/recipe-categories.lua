@@ -1,4 +1,4 @@
-data:extend {
+data:extend({
     {
         type = "recipe-category",
         name = "coal-processing"
@@ -175,4 +175,4 @@ data:extend {
         type = "recipe-category",
         name = "handcrafting"
     },
-}
+})

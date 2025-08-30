@@ -1,20 +1,20 @@
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "tar-processing-unit",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "steel-plate",        amount = 20},
-        {type = "item", name = "steam-engine",       amount = 3},
-        {type = "item", name = "iron-plate",         amount = 20},
-        {type = "item", name = "pipe",               amount = 20},
-        {type = "item", name = "stone-furnace",      amount = 3},
-        {type = "item", name = "electronic-circuit", amount = 7}
+        { type = "item", name = "steel-plate",        amount = 20 },
+        { type = "item", name = "steam-engine",       amount = 3 },
+        { type = "item", name = "iron-plate",         amount = 20 },
+        { type = "item", name = "pipe",               amount = 20 },
+        { type = "item", name = "stone-furnace",      amount = 3 },
+        { type = "item", name = "electronic-circuit", amount = 7 }
     },
     results = {
-        {type = "item", name = "tar-processing-unit", amount = 1}
+        { type = "item", name = "tar-processing-unit", amount = 1 }
     }
-}:add_unlock("tar-processing")
+}):add_unlock("tar-processing")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
@@ -23,7 +23,7 @@ for i = 1, 4 do
     local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
-    ITEM {
+    ITEM({
         type = "item",
         name = name,
         icon = icon,
@@ -33,25 +33,25 @@ for i = 1, 4 do
         order = "z1",
         place_result = name,
         stack_size = 10
-    }
+    })
 
-    ENTITY {
+    ENTITY({
         type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 1, result = name},
+        flags = { "placeable-neutral", "player-creation" },
+        minable = { mining_time = 1, result = name },
         fast_replaceable_group = "tar-processing-unit",
         max_health = i * 250,
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
-        collision_box = {{-5.3, -5.3}, {5.3, 5.3}},
-        selection_box = {{-5.5, -5.5}, {5.5, 5.5}},
+        collision_box = { { -5.3, -5.3 }, { 5.3, 5.3 } },
+        selection_box = { { -5.5, -5.5 }, { 5.5, 5.5 } },
         forced_symmetry = "diagonal-pos",
         module_slots = i,
-        allowed_effects = {"consumption", "speed", "pollution", "productivity"},
-        crafting_categories = {"tar"},
+        allowed_effects = { "consumption", "speed", "pollution", "productivity" },
+        crafting_categories = { "tar" },
         crafting_speed = i,
         energy_source = {
             type = "electric",
@@ -117,7 +117,7 @@ for i = 1, 4 do
                         height = 384,
                         frame_count = 1,
                         shift = util.by_pixel(0, -16),
-                        tint = py.tints[i],
+                        tint = py.tints[ i ],
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/tar-processing-unit/l.png",
@@ -149,103 +149,103 @@ for i = 1, 4 do
         fluid_boxes = {
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0.0, -0.96 }, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {0, 5.0}, direction = defines.direction.south}}
+                pipe_connections = { { flow_direction = "input", position = { 0, 5.0 }, direction = defines.direction.south } }
             },
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0.0, -0.96 }, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {2, 5.0}, direction = defines.direction.south}}
+                pipe_connections = { { flow_direction = "input", position = { 2, 5.0 }, direction = defines.direction.south } }
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0.0, -0.96 }, nil, nil),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-3, -5.0}, direction = defines.direction.north}}
+                pipe_connections = { { flow_direction = "output", position = { -3, -5.0 }, direction = defines.direction.north } }
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0.0, -0.96 }, nil, nil),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {1, -5.0}, direction = defines.direction.north}}
+                pipe_connections = { { flow_direction = "output", position = { 1, -5.0 }, direction = defines.direction.north } }
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0.0, -0.96 }, nil, nil),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-1, -5.0}, direction = defines.direction.north}}
+                pipe_connections = { { flow_direction = "output", position = { -1, -5.0 }, direction = defines.direction.north } }
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0.0, -0.96 }, nil, nil),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {3, -5.0}, direction = defines.direction.north}}
+                pipe_connections = { { flow_direction = "output", position = { 3, -5.0 }, direction = defines.direction.north } }
             },
         },
         impact_category = "metal",
         working_sound = {
-            sound = {filename = "__base__/sound/oil-refinery.ogg"},
-            idle_sound = {filename = "__base__/sound/idle1.ogg", volume = 0.3},
+            sound = { filename = "__base__/sound/oil-refinery.ogg" },
+            idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.3 },
             apparent_volume = 2.5
         },
-    }
+    })
 end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "tar-processing-unit-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "tar-processing-unit", amount = 1},
-        {type = "item", name = "engine-unit",         amount = 1},
-        {type = "item", name = "nexelit-plate",       amount = 20},
-        {type = "item", name = "concrete",            amount = 60},
-        {type = "item", name = "plastic-bar",         amount = 10},
-        {type = "item", name = "advanced-circuit",    amount = 10}
+        { type = "item", name = "tar-processing-unit", amount = 1 },
+        { type = "item", name = "engine-unit",         amount = 1 },
+        { type = "item", name = "nexelit-plate",       amount = 20 },
+        { type = "item", name = "concrete",            amount = 60 },
+        { type = "item", name = "plastic-bar",         amount = 10 },
+        { type = "item", name = "advanced-circuit",    amount = 10 }
     },
     results = {
-        {type = "item", name = "tar-processing-unit-mk02", amount = 1}
+        { type = "item", name = "tar-processing-unit-mk02", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "tar-processing-unit-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "tar-processing-unit-mk02", amount = 1},
-        {type = "item", name = "processing-unit",          amount = 20},
-        {type = "item", name = "niobium-plate",            amount = 30},
-        {type = "item", name = "electric-engine-unit",     amount = 2},
-        {type = "item", name = "pump",                     amount = 2},
+        { type = "item", name = "tar-processing-unit-mk02", amount = 1 },
+        { type = "item", name = "processing-unit",          amount = 20 },
+        { type = "item", name = "niobium-plate",            amount = 30 },
+        { type = "item", name = "electric-engine-unit",     amount = 2 },
+        { type = "item", name = "pump",                     amount = 2 },
     },
     results = {
-        {type = "item", name = "tar-processing-unit-mk03", amount = 1}
+        { type = "item", name = "tar-processing-unit-mk03", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "tar-processing-unit-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "tar-processing-unit-mk03", amount = 1},
-        {type = "item", name = "pump",                     amount = 4},
-        {type = "item", name = "nbfe-alloy",               amount = 20},
-        {type = "item", name = "low-density-structure",    amount = 10},
+        { type = "item", name = "tar-processing-unit-mk03", amount = 1 },
+        { type = "item", name = "pump",                     amount = 4 },
+        { type = "item", name = "nbfe-alloy",               amount = 20 },
+        { type = "item", name = "low-density-structure",    amount = 10 },
     },
     results = {
-        {type = "item", name = "tar-processing-unit-mk04", amount = 1}
+        { type = "item", name = "tar-processing-unit-mk04", amount = 1 }
     }
-}
+})

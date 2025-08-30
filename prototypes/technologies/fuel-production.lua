@@ -1,4 +1,4 @@
-TECHNOLOGY {
+TECHNOLOGY({
     type = "technology",
     name = "fuel-production",
     icon = "__pycoalprocessinggraphics__/graphics/technology/fuel-production-mk01.png",
@@ -9,10 +9,10 @@ TECHNOLOGY {
     unit = {
         count = 100,
         ingredients = {
-            {"automation-science-pack", 3},
-            {"logistic-science-pack",   2},
-            {"chemical-science-pack",   1}
+            { "automation-science-pack", 3 },
+            { "logistic-science-pack",   2 },
+            { "chemical-science-pack",   1 }
         },
         time = 50
     }
-}
+})

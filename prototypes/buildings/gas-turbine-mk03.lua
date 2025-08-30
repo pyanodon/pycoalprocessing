@@ -45,27 +45,27 @@ local pipe_pictures =
         else
             east = py.empty_image()
         end
-        return {north = north, south = south, west = west, east = east}
+        return { north = north, south = south, west = west, east = east }
     end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "gasturbinemk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "processing-unit", amount = 20},
-        {type = "item", name = "pipe",            amount = 20},
-        {type = "item", name = "nexelit-plate",   amount = 50},
-        {type = "item", name = "iron-plate",      amount = 70},
-        {type = "item", name = "gasturbinemk02",  amount = 2}
+        { type = "item", name = "processing-unit", amount = 20 },
+        { type = "item", name = "pipe",            amount = 20 },
+        { type = "item", name = "nexelit-plate",   amount = 50 },
+        { type = "item", name = "iron-plate",      amount = 70 },
+        { type = "item", name = "gasturbinemk02",  amount = 2 }
     },
     results = {
-        {type = "item", name = "gasturbinemk03", amount = 1}
+        { type = "item", name = "gasturbinemk03", amount = 1 }
     }
-}:add_unlock("energy-3")
+}):add_unlock("energy-3")
 
-ITEM {
+ITEM({
     type = "item",
     name = "gasturbinemk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk03.png",
@@ -75,15 +75,15 @@ ITEM {
     order = "a-d[gasturbinemk03]",
     place_result = "gasturbinemk03",
     stack_size = 10
-}
+})
 
-ENTITY {
+ENTITY({
     type = "generator",
     name = "gasturbinemk03",
     icon = "__pycoalprocessinggraphics__/graphics/icons/gas-turbinemk03.png",
     icon_size = 64,
-    flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "gasturbinemk03"},
+    flags = { "placeable-neutral", "player-creation" },
+    minable = { mining_time = 1, result = "gasturbinemk03" },
     max_health = 500,
     corpse = "big-remnants",
     effectivity = 1,
@@ -96,18 +96,18 @@ ENTITY {
             percent = 70
         }
     },
-    collision_box = {{-4.4, -4.4}, {4.4, 4.4}},
-    selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
+    collision_box = { { -4.4, -4.4 }, { 4.4, 4.4 } },
+    selection_box = { { -4.5, -4.5 }, { 4.5, 4.5 } },
     fluid_box = {
         filter = "combustion-mixture1",
         minimum_temperature = 500.0,
         volume = 100,
         pipe_covers = py.pipe_covers(false, true, false, false),
-        pipe_picture = pipe_pictures({0, 0}, {0, 0}, {0, 0}, {0, 0}),
+        pipe_picture = pipe_pictures({ 0, 0 }, { 0, 0 }, { 0, 0 }, { 0, 0 }),
         production_type = "input-output",
         pipe_connections = {
-            {flow_direction = "input-output", position = {4.0, 0.0},  direction = defines.direction.east},
-            {flow_direction = "input-output", position = {-4.0, 0.0}, direction = defines.direction.west}
+            { flow_direction = "input-output", position = { 4.0, 0.0 },  direction = defines.direction.east },
+            { flow_direction = "input-output", position = { -4.0, 0.0 }, direction = defines.direction.west }
         }
     },
     energy_source = {
@@ -124,7 +124,7 @@ ENTITY {
         frame_count = 31,
         animation_speed = 1 / 3,
         line_length = 7,
-        shift = {-0.05, -0.84}
+        shift = { -0.05, -0.84 }
     },
     vertical_animation = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk03/gas-turbine-mk03-vertical.png",
@@ -133,13 +133,13 @@ ENTITY {
         frame_count = 31,
         animation_speed = 1 / 3,
         line_length = 7,
-        shift = {0.0, -0.82}
+        shift = { 0.0, -0.82 }
     },
     smoke = {
         {
             name = "turbine-smoke",
-            north_position = {0.5, 1.0},
-            east_position = {0.5, 1.0},
+            north_position = { 0.5, 1.0 },
+            east_position = { 0.5, 1.0 },
             frequency = 5 / 16,
             starting_vertical_speed = 0.08,
             slow_down_factor = 1,
@@ -150,8 +150,8 @@ ENTITY {
     performance_to_sound_speedup = 0.3,
     impact_category = "metal-large",
     working_sound = {
-        sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk03.ogg"},
-        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk03.ogg", volume = 0.3},
+        sound = { filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk03.ogg" },
+        idle_sound = { filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk03.ogg", volume = 0.3 },
         apparent_volume = 2.3
     }
-}
+})

@@ -1,4 +1,4 @@
-TECHNOLOGY {
+TECHNOLOGY({
     type = "technology",
     name = "tar-processing",
     icon = "__pycoalprocessinggraphics__/graphics/technology/tar.png",
@@ -9,8 +9,8 @@ TECHNOLOGY {
     unit = {
         count = 50,
         ingredients = {
-            {"automation-science-pack", 1},
+            { "automation-science-pack", 1 },
         },
         time = 30
     }
-}
+})

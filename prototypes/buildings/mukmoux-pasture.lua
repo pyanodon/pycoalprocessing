@@ -1,20 +1,20 @@
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "mukmoux-pasture",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "soil",             amount = 500},
-        {type = "item", name = "steel-plate",      amount = 100},
-        {type = "item", name = "storage-tank",     amount = 5},
-        {type = "item", name = "advanced-circuit", amount = 10} --bob electronic-logic-board
+        { type = "item", name = "soil",             amount = 500 },
+        { type = "item", name = "steel-plate",      amount = 100 },
+        { type = "item", name = "storage-tank",     amount = 5 },
+        { type = "item", name = "advanced-circuit", amount = 10 } --bob electronic-logic-board
     },
     results = {
-        {type = "item", name = "mukmoux-pasture", amount = 1}
+        { type = "item", name = "mukmoux-pasture", amount = 1 }
     }
-}:add_unlock("mukmoux")
+}):add_unlock("mukmoux")
 
-ITEM {
+ITEM({
     type = "item",
     name = "mukmoux-pasture",
     icon = "__pycoalprocessinggraphics__/graphics/icons/mukmoux-pasture.png",
@@ -24,24 +24,24 @@ ITEM {
     order = "d",
     place_result = "mukmoux-pasture",
     stack_size = 10
-}
+})
 
-ENTITY {
+ENTITY({
     type = "assembling-machine",
     name = "mukmoux-pasture",
     icon = "__pycoalprocessinggraphics__/graphics/icons/mukmoux-pasture.png",
     icon_size = 64,
-    flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 0.5, result = "mukmoux-pasture"},
+    flags = { "placeable-neutral", "player-creation" },
+    minable = { mining_time = 0.5, result = "mukmoux-pasture" },
     fast_replaceable_group = "mukmoux-pasture",
     max_health = 100,
     corpse = "big-remnants",
     dying_explosion = "big-explosion",
-    collision_box = {{-4.9, -4.9}, {4.9, 4.9}},
-    selection_box = {{-5.0, -5.0}, {5.0, 5.0}},
+    collision_box = { { -4.9, -4.9 }, { 4.9, 4.9 } },
+    selection_box = { { -5.0, -5.0 }, { 5.0, 5.0 } },
     module_slots = 2,
-    allowed_effects = {"consumption", "productivity", "pollution", "speed"},
-    crafting_categories = {"mukmoux"},
+    allowed_effects = { "consumption", "productivity", "pollution", "speed" },
+    crafting_categories = { "mukmoux" },
     crafting_speed = 1,
     energy_source = {
         type = "electric",
@@ -54,10 +54,10 @@ ENTITY {
     graphics_set = {
         working_visualisations = {
             {
-                north_position = {-2.96, 1.93},
-                west_position = {-2.96, 1.93},
-                south_position = {-2.96, 1.93},
-                east_position = {-2.96, 1.93},
+                north_position = { -2.96, 1.93 },
+                west_position = { -2.96, 1.93 },
+                south_position = { -2.96, 1.93 },
+                east_position = { -2.96, 1.93 },
                 animation = {
                     filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-left.png",
                     scale = 1.2,
@@ -69,10 +69,10 @@ ENTITY {
                 }
             },
             {
-                north_position = {1.78, 2.06},
-                west_position = {1.78, 2.06},
-                south_position = {1.78, 2.06},
-                east_position = {1.78, 2.06},
+                north_position = { 1.78, 2.06 },
+                west_position = { 1.78, 2.06 },
+                south_position = { 1.78, 2.06 },
+                east_position = { 1.78, 2.06 },
                 animation = {
                     filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-right.png",
                     scale = 1.2,
@@ -84,10 +84,10 @@ ENTITY {
                 }
             },
             {
-                north_position = {1.28, -2.28},
-                west_position = {1.28, -2.28},
-                south_position = {1.28, -2.28},
-                east_position = {1.28, -2.28},
+                north_position = { 1.28, -2.28 },
+                west_position = { 1.28, -2.28 },
+                south_position = { 1.28, -2.28 },
+                east_position = { 1.28, -2.28 },
                 animation = {
                     filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-top.png",
                     scale = 1.2,
@@ -107,7 +107,7 @@ ENTITY {
                     height = 363,
                     frame_count = 1,
                     line_length = 1,
-                    shift = {0.0, -0.5}
+                    shift = { 0.0, -0.5 }
                 },
                 {
                     filename = "__pycoalprocessinggraphics__/graphics/entity/mukmoux-pasture/mukmoux-mask.png",
@@ -115,16 +115,16 @@ ENTITY {
                     height = 363,
                     frame_count = 1,
                     line_length = 1,
-                    shift = {0.0, -0.5},
-                    tint = {r = 1.0, g = 1.0, b = 0.0, a = 1.0}
+                    shift = { 0.0, -0.5 },
+                    tint = { r = 1.0, g = 1.0, b = 0.0, a = 1.0 }
                 },
             },
         },
     },
     impact_category = "metal-large",
     working_sound = {
-        sound = {filename = "__pycoalprocessinggraphics__/sounds/mukmoux-pasture.ogg", volume = 0.9},
-        idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/mukmoux-pasture.ogg", volume = 0.3},
+        sound = { filename = "__pycoalprocessinggraphics__/sounds/mukmoux-pasture.ogg", volume = 0.9 },
+        idle_sound = { filename = "__pycoalprocessinggraphics__/sounds/mukmoux-pasture.ogg", volume = 0.3 },
         apparent_volume = 0.45
     }
-}
+})

@@ -8,26 +8,26 @@ py.on_event(py.events.on_init(), function()
 
     remote.call("pywiki", "add_page", {
         name = "statistics",
-        remote = {"create_statistics_page", "create_statistics_page"}
+        remote = { "create_statistics_page", "create_statistics_page" }
     })
 
     remote.call("pywiki", "add_page", {
         name = "fluid-index",
-        remote = {"pywiki_spreadsheets", "create_fluid_page"},
-        searchable = {"pywiki_spreadsheets", "on_search"}
+        remote = { "pywiki_spreadsheets", "create_fluid_page" },
+        searchable = { "pywiki_spreadsheets", "on_search" }
     })
 
     remote.call("pywiki", "add_page", {
         name = "item-index",
-        remote = {"pywiki_spreadsheets", "create_solid_fuel_page"},
-        searchable = {"pywiki_spreadsheets", "on_search"}
+        remote = { "pywiki_spreadsheets", "create_solid_fuel_page" },
+        searchable = { "pywiki_spreadsheets", "on_search" }
     })
 
-    if script.active_mods["pyalternativeenergy"] and script.feature_flags.spoiling and settings.startup["py-enable-decay"].value then
+    if script.active_mods[ "pyalternativeenergy" ] and script.feature_flags.spoiling and settings.startup[ "py-enable-decay" ].value then
         remote.call("pywiki", "add_page", {
             name = "decay",
-            remote = {"pywiki_spreadsheets", "create_decay_page"},
-            searchable = {"pywiki_spreadsheets", "on_search"}
+            remote = { "pywiki_spreadsheets", "create_decay_page" },
+            searchable = { "pywiki_spreadsheets", "on_search" }
         })
     end
 
@@ -57,7 +57,7 @@ py.on_event(py.events.on_init(), function()
         text_only = true
     })
 
-    if not script.active_mods["pyalternativeenergy"] then
+    if not script.active_mods[ "pyalternativeenergy" ] then
         remote.call("pywiki", "add_page", {
             name = "combustion-mixture",
             section = "coalprocessing",

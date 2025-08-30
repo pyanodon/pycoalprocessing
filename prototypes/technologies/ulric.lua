@@ -1,4 +1,4 @@
-TECHNOLOGY {
+TECHNOLOGY({
     type = "technology",
     name = "ulric",
     icon = "__pycoalprocessinggraphics__/graphics/technology/ulric.png",
@@ -9,8 +9,8 @@ TECHNOLOGY {
     unit = {
         count = 100,
         ingredients = {
-            {"automation-science-pack", 1}
+            { "automation-science-pack", 1 }
         },
         time = 55
     }
-}
+})

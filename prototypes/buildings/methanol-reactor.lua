@@ -7,25 +7,25 @@ local pipes = {
     }
 }
 
-local pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.05, -0.75}, nil, nil, pipes)
+local pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { -0.05, -0.75 }, nil, nil, pipes)
 local pipe_covers = py.pipe_covers(true, true, true, true)
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "methanol-reactor",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "gasturbinemk01",     amount = 1},
-        {type = "item", name = "boiler",             amount = 2},
-        {type = "item", name = "electronic-circuit", amount = 25},
-        {type = "item", name = "steel-plate",        amount = 20},
-        {type = "item", name = "iron-gear-wheel",    amount = 15}
+        { type = "item", name = "gasturbinemk01",     amount = 1 },
+        { type = "item", name = "boiler",             amount = 2 },
+        { type = "item", name = "electronic-circuit", amount = 25 },
+        { type = "item", name = "steel-plate",        amount = 20 },
+        { type = "item", name = "iron-gear-wheel",    amount = 15 }
     },
     results = {
-        {type = "item", name = "methanol-reactor", amount = 1}
+        { type = "item", name = "methanol-reactor", amount = 1 }
     }
-}:add_unlock("methanol-processing-1")
+}):add_unlock("methanol-processing-1")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
@@ -34,7 +34,7 @@ for i = 1, 4 do
     local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
-    ITEM {
+    ITEM({
         type = "item",
         name = name,
         icon = icon,
@@ -44,25 +44,25 @@ for i = 1, 4 do
         order = "q",
         place_result = name,
         stack_size = 10
-    }
+    })
 
-    ENTITY {
+    ENTITY({
         type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 0.5, result = name},
+        flags = { "placeable-neutral", "player-creation" },
+        minable = { mining_time = 0.5, result = name },
         fast_replaceable_group = "methanol-reactor",
         max_health = i * 300,
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
-        collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
-        selection_box = {{-3, -3}, {3, 3}},
+        collision_box = { { -2.75, -2.75 }, { 2.75, 2.75 } },
+        selection_box = { { -3, -3 }, { 3, 3 } },
         forced_symmetry = "diagonal-pos",
         module_slots = i,
-        allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
-        crafting_categories = {"methanol"},
+        allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" },
+        crafting_categories = { "methanol" },
         crafting_speed = i,
         energy_source = {
             type = "electric",
@@ -82,7 +82,7 @@ for i = 1, 4 do
                         width = 202,
                         height = 247,
                         animation_speed = 0.4,
-                        shift = {0.15, -0.79}
+                        shift = { 0.15, -0.79 }
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/methanol-reactor/methanol-anim-mask.png",
@@ -91,8 +91,8 @@ for i = 1, 4 do
                         width = 202,
                         height = 247,
                         animation_speed = 0.4,
-                        tint = py.tints[i],
-                        shift = {0.15, -0.79},
+                        tint = py.tints[ i ],
+                        shift = { 0.15, -0.79 },
                         draw_as_glow = true
                     }
                 }
@@ -106,7 +106,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-0.5, -2.5}, direction = defines.direction.north}}
+                pipe_connections = { { flow_direction = "output", position = { -0.5, -2.5 }, direction = defines.direction.north } }
             },
             --North, right
             {
@@ -114,7 +114,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {0.5, -2.5}, direction = defines.direction.north}}
+                pipe_connections = { { flow_direction = "output", position = { 0.5, -2.5 }, direction = defines.direction.north } }
             },
             --South, left
             {
@@ -122,7 +122,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-0.5, 2.5}, direction = defines.direction.south}}
+                pipe_connections = { { flow_direction = "output", position = { -0.5, 2.5 }, direction = defines.direction.south } }
             },
             --South, right
             {
@@ -130,7 +130,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {0.5, 2.5}, direction = defines.direction.south}}
+                pipe_connections = { { flow_direction = "output", position = { 0.5, 2.5 }, direction = defines.direction.south } }
             },
             --West, top
             {
@@ -138,7 +138,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {-2.5, -0.5}, direction = defines.direction.west}}
+                pipe_connections = { { flow_direction = "input", position = { -2.5, -0.5 }, direction = defines.direction.west } }
             },
             --West, bottom
             {
@@ -146,7 +146,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {-2.5, 0.5}, direction = defines.direction.west}}
+                pipe_connections = { { flow_direction = "input", position = { -2.5, 0.5 }, direction = defines.direction.west } }
             },
             --East, top
             {
@@ -154,7 +154,7 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {2.5, -0.5}, direction = defines.direction.east}}
+                pipe_connections = { { flow_direction = "input", position = { 2.5, -0.5 }, direction = defines.direction.east } }
             },
             --East, bottom
             {
@@ -162,63 +162,63 @@ for i = 1, 4 do
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {2.5, 0.5}, direction = defines.direction.east}}
+                pipe_connections = { { flow_direction = "input", position = { 2.5, 0.5 }, direction = defines.direction.east } }
             },
         },
         impact_category = "metal",
         working_sound = {
-            sound = {filename = "__pycoalprocessinggraphics__/sounds/methanol-reactor.ogg"},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/methanol-reactor.ogg", volume = 0.3},
+            sound = { filename = "__pycoalprocessinggraphics__/sounds/methanol-reactor.ogg" },
+            idle_sound = { filename = "__pycoalprocessinggraphics__/sounds/methanol-reactor.ogg", volume = 0.3 },
             apparent_volume = 2.5
         },
-    }
+    })
 end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "methanol-reactor-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "methanol-reactor", amount = 1},
-        {type = "item", name = "advanced-circuit", amount = 25},
-        {type = "item", name = "plastic-bar",      amount = 50},
-        {type = "item", name = "nexelit-plate",    amount = 15},
-        {type = "item", name = "engine-unit",      amount = 8},
+        { type = "item", name = "methanol-reactor", amount = 1 },
+        { type = "item", name = "advanced-circuit", amount = 25 },
+        { type = "item", name = "plastic-bar",      amount = 50 },
+        { type = "item", name = "nexelit-plate",    amount = 15 },
+        { type = "item", name = "engine-unit",      amount = 8 },
     },
     results = {
-        {type = "item", name = "methanol-reactor-mk02", amount = 1}
+        { type = "item", name = "methanol-reactor-mk02", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "methanol-reactor-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "methanol-reactor-mk02", amount = 1},
-        {type = "item", name = "processing-unit",       amount = 20},
-        {type = "item", name = "niobium-plate",         amount = 30},
-        {type = "item", name = "electric-engine-unit",  amount = 6},
+        { type = "item", name = "methanol-reactor-mk02", amount = 1 },
+        { type = "item", name = "processing-unit",       amount = 20 },
+        { type = "item", name = "niobium-plate",         amount = 30 },
+        { type = "item", name = "electric-engine-unit",  amount = 6 },
     },
     results = {
-        {type = "item", name = "methanol-reactor-mk03", amount = 1}
+        { type = "item", name = "methanol-reactor-mk03", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "methanol-reactor-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "methanol-reactor-mk03", amount = 1},
-        {type = "item", name = "kevlar",                amount = 30},
-        {type = "item", name = "nbfe-alloy",            amount = 15},
-        {type = "item", name = "low-density-structure", amount = 10},
+        { type = "item", name = "methanol-reactor-mk03", amount = 1 },
+        { type = "item", name = "kevlar",                amount = 30 },
+        { type = "item", name = "nbfe-alloy",            amount = 15 },
+        { type = "item", name = "low-density-structure", amount = 10 },
     },
     results = {
-        {type = "item", name = "methanol-reactor-mk04", amount = 1}
+        { type = "item", name = "methanol-reactor-mk04", amount = 1 }
     }
-}
+})

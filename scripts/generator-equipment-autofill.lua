@@ -19,7 +19,7 @@ local function restock_generator_equipment(player)
 
         if burnt_result_inventory then
             for i = 1, #burnt_result_inventory do
-                local stack = burnt_result_inventory[i]
+                local stack = burnt_result_inventory[ i ]
                 if stack.valid_for_read then
                     stack.count = stack.count - inventory.insert(stack)
                 end
@@ -29,14 +29,14 @@ local function restock_generator_equipment(player)
         -- add fuel if not full
         if not burner_inventory.is_full() then
             for _, item_stack in pairs(inventory.get_contents()) do
-                if burner.fuel_categories[prototypes.item[item_stack.name].fuel_category] then
+                if burner.fuel_categories[ prototypes.item[ item_stack.name ].fuel_category ] then
                     local inserted_count = burner_inventory.insert(item_stack)
                     if inserted_count ~= 0 then -- if items were inserted then remove them from the player's inventory
-                        inventory.remove{
+                        inventory.remove({
                             name = item_stack.name,
                             quality = item_stack.quality,
                             count = inserted_count
-                        }
+                        })
                     end -- if now full, end early
                     if burner_inventory.is_full() then break end
                 end
@@ -47,8 +47,9 @@ local function restock_generator_equipment(player)
                 pcall(
                     player.add_custom_alert,
                     player.character,
-                    {type = "virtual", name = "no-fuel"},
-                    {"alerts.equipment-out-of-fuel", equipment.prototype.take_result.name, equipment.prototype.localised_name},
+                    { type = "virtual", name = "no-fuel" },
+                    { "alerts.equipment-out-of-fuel", equipment.prototype.take_result.name, equipment.prototype
+                        .localised_name },
                     false
                 )
             end
@@ -59,7 +60,7 @@ local function restock_generator_equipment(player)
 end
 
 py.register_on_nth_tick(251, "generator-equipment-autofill", "pycp", function()
-    if not script.active_mods["pyindustry"] then return end
+    if not script.active_mods[ "pyindustry" ] then return end
     for _, player in pairs(game.connected_players) do
         restock_generator_equipment(player)
     end

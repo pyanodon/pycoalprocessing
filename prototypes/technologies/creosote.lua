@@ -1,4 +1,4 @@
-TECHNOLOGY {
+TECHNOLOGY({
     type = "technology",
     name = "creosote",
     icon = "__pycoalprocessinggraphics__/graphics/technology/creosote.png",
@@ -8,8 +8,8 @@ TECHNOLOGY {
     unit = {
         count = 20,
         ingredients = {
-            {"automation-science-pack", 1},
+            { "automation-science-pack", 1 },
         },
         time = 50
     }
-}
+})

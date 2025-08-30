@@ -7,22 +7,22 @@ local pipes = {
     }
 }
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "gasifier",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "steel-plate",        amount = 20},
-        {type = "item", name = "pipe",               amount = 20},
-        {type = "item", name = "iron-plate",         amount = 10},
-        {type = "item", name = "steam-engine",       amount = 2},
-        {type = "item", name = "electronic-circuit", amount = 4}
+        { type = "item", name = "steel-plate",        amount = 20 },
+        { type = "item", name = "pipe",               amount = 20 },
+        { type = "item", name = "iron-plate",         amount = 10 },
+        { type = "item", name = "steam-engine",       amount = 2 },
+        { type = "item", name = "electronic-circuit", amount = 4 }
     },
     results = {
-        {type = "item", name = "gasifier", amount = 1}
+        { type = "item", name = "gasifier", amount = 1 }
     }
-}:add_unlock("tar-processing")
+}):add_unlock("tar-processing")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
@@ -31,7 +31,7 @@ for i = 1, 4 do
     local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
-    ITEM {
+    ITEM({
         type = "item",
         name = name,
         icon = icon,
@@ -41,25 +41,25 @@ for i = 1, 4 do
         order = "o",
         place_result = name,
         stack_size = 10
-    }
+    })
 
-    ENTITY {
+    ENTITY({
         type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 1, result = name},
+        flags = { "placeable-neutral", "player-creation" },
+        minable = { mining_time = 1, result = name },
         fast_replaceable_group = "gasifier",
         max_health = 350 * i,
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
-        collision_box = {{-3.9, -3.9}, {3.9, 3.9}},
-        selection_box = {{-4, -4}, {4, 4}},
+        collision_box = { { -3.9, -3.9 }, { 3.9, 3.9 } },
+        selection_box = { { -4, -4 }, { 4, 4 } },
         forced_symmetry = "diagonal-pos",
         module_slots = i,
-        allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
-        crafting_categories = {"gasifier"},
+        allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" },
+        crafting_categories = { "gasifier" },
         crafting_speed = i,
         energy_source = {
             type = "electric",
@@ -80,7 +80,7 @@ for i = 1, 4 do
                         frame_count = 30,
                         line_length = 6,
                         animation_speed = 1,
-                        shift = {0.15, 0.3},
+                        shift = { 0.15, 0.3 },
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/gasifier/gasifier-anim-mask.png",
@@ -90,8 +90,8 @@ for i = 1, 4 do
                         frame_count = 30,
                         line_length = 6,
                         animation_speed = 1,
-                        shift = {0.15, 0.3},
-                        tint = py.tints[i]
+                        shift = { 0.15, 0.3 },
+                        tint = py.tints[ i ]
                     },
                 }
             },
@@ -99,102 +99,102 @@ for i = 1, 4 do
         fluid_boxes = {
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", { 0.05, 0.575 }, { 0.0, -0.95 }, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {3.5, -0.5}, direction = defines.direction.east}}
+                pipe_connections = { { flow_direction = "input", position = { 3.5, -0.5 }, direction = defines.direction.east } }
             },
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
-                pipe_picture = py.pipe_pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
-                pipe_connections = {{flow_direction = "input", position = {3.5, -2.5}, direction = defines.direction.east}}
+                pipe_picture = py.pipe_pictures("assembling-machine-3", { 0.05, 0.575 }, { 0.0, -0.95 }, nil, nil, pipes),
+                pipe_connections = { { flow_direction = "input", position = { 3.5, -2.5 }, direction = defines.direction.east } }
             },
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
-                pipe_picture = py.pipe_pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
-                pipe_connections = {{flow_direction = "input", position = {3.5, 2.5}, direction = defines.direction.east}}
+                pipe_picture = py.pipe_pictures("assembling-machine-3", { 0.05, 0.575 }, { 0.0, -0.95 }, nil, nil, pipes),
+                pipe_connections = { { flow_direction = "input", position = { 3.5, 2.5 }, direction = defines.direction.east } }
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 100,
-                pipe_picture = py.pipe_pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
-                pipe_connections = {{flow_direction = "output", position = {-3.5, -0.5}, direction = defines.direction.west}}
+                pipe_picture = py.pipe_pictures("assembling-machine-3", { 0.05, 0.575 }, { 0.0, -0.95 }, nil, nil, pipes),
+                pipe_connections = { { flow_direction = "output", position = { -3.5, -0.5 }, direction = defines.direction.west } }
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 100,
-                pipe_picture = py.pipe_pictures("assembling-machine-3", {0.05, 0.575}, {0.0, -0.95}, nil, nil, pipes),
-                pipe_connections = {{flow_direction = "output", position = {-3.5, -2.5}, direction = defines.direction.west}}
+                pipe_picture = py.pipe_pictures("assembling-machine-3", { 0.05, 0.575 }, { 0.0, -0.95 }, nil, nil, pipes),
+                pipe_connections = { { flow_direction = "output", position = { -3.5, -2.5 }, direction = defines.direction.west } }
             },
             {
                 production_type = "output",
-                pipe_picture = py.pipe_pictures("assembling-machine-3", {0.05, 0.575}, {0.00, -0.95}, nil, nil, pipes),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", { 0.05, 0.575 }, { 0.00, -0.95 }, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-3.5, 2.5}, direction = defines.direction.west}}
+                pipe_connections = { { flow_direction = "output", position = { -3.5, 2.5 }, direction = defines.direction.west } }
             }
         },
         impact_category = "metal",
         working_sound = {
-            sound = {filename = "__pycoalprocessinggraphics__/sounds/gasifier.ogg"},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/gasifier.ogg", volume = 0.3},
+            sound = { filename = "__pycoalprocessinggraphics__/sounds/gasifier.ogg" },
+            idle_sound = { filename = "__pycoalprocessinggraphics__/sounds/gasifier.ogg", volume = 0.3 },
             apparent_volume = 2.5
         },
-    }
+    })
 end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "gasifier-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "gasifier",         amount = 1},
-        {type = "item", name = "storage-tank",     amount = 1},
-        {type = "item", name = "plastic-bar",      amount = 30},
-        {type = "item", name = "engine-unit",      amount = 2},
-        {type = "item", name = "advanced-circuit", amount = 10}
+        { type = "item", name = "gasifier",         amount = 1 },
+        { type = "item", name = "storage-tank",     amount = 1 },
+        { type = "item", name = "plastic-bar",      amount = 30 },
+        { type = "item", name = "engine-unit",      amount = 2 },
+        { type = "item", name = "advanced-circuit", amount = 10 }
     },
     results = {
-        {type = "item", name = "gasifier-mk02", amount = 1}
+        { type = "item", name = "gasifier-mk02", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "gasifier-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "gasifier-mk02",        amount = 1},
-        {type = "item", name = "storage-tank",         amount = 1},
-        {type = "item", name = "electric-engine-unit", amount = 2},
-        {type = "item", name = "kevlar",               amount = 15},
-        {type = "item", name = "processing-unit",      amount = 10},
-        {type = "item", name = "niobium-plate",        amount = 20},
+        { type = "item", name = "gasifier-mk02",        amount = 1 },
+        { type = "item", name = "storage-tank",         amount = 1 },
+        { type = "item", name = "electric-engine-unit", amount = 2 },
+        { type = "item", name = "kevlar",               amount = 15 },
+        { type = "item", name = "processing-unit",      amount = 10 },
+        { type = "item", name = "niobium-plate",        amount = 20 },
     },
     results = {
-        {type = "item", name = "gasifier-mk03", amount = 1}
+        { type = "item", name = "gasifier-mk03", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "gasifier-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "gasifier-mk03", amount = 1},
-        {type = "item", name = "storage-tank",  amount = 1},
-        {type = "item", name = "nbfe-alloy",    amount = 20},
+        { type = "item", name = "gasifier-mk03", amount = 1 },
+        { type = "item", name = "storage-tank",  amount = 1 },
+        { type = "item", name = "nbfe-alloy",    amount = 20 },
     },
     results = {
-        {type = "item", name = "gasifier-mk04", amount = 1}
+        { type = "item", name = "gasifier-mk04", amount = 1 }
     }
-}
+})

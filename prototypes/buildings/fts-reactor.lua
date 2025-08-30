@@ -1,21 +1,21 @@
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "fts-reactor",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "concrete",           amount = 20},
-        {type = "item", name = "steel-plate",        amount = 20},
-        {type = "item", name = "stone-brick",        amount = 10},
-        {type = "item", name = "steam-engine",       amount = 2},
-        {type = "item", name = "iron-gear-wheel",    amount = 5},
-        {type = "item", name = "iron-plate",         amount = 10},
-        {type = "item", name = "electronic-circuit", amount = 20}
+        { type = "item", name = "concrete",           amount = 20 },
+        { type = "item", name = "steel-plate",        amount = 20 },
+        { type = "item", name = "stone-brick",        amount = 10 },
+        { type = "item", name = "steam-engine",       amount = 2 },
+        { type = "item", name = "iron-gear-wheel",    amount = 5 },
+        { type = "item", name = "iron-plate",         amount = 10 },
+        { type = "item", name = "electronic-circuit", amount = 20 }
     },
     results = {
-        {type = "item", name = "fts-reactor", amount = 1}
+        { type = "item", name = "fts-reactor", amount = 1 }
     }
-}:add_unlock("coal-processing-2")
+}):add_unlock("coal-processing-2")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
@@ -24,7 +24,7 @@ for i = 1, 4 do
     local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
-    ITEM {
+    ITEM({
         type = "item",
         name = name,
         icon = icon,
@@ -34,25 +34,25 @@ for i = 1, 4 do
         order = "n",
         place_result = name,
         stack_size = 10
-    }
+    })
 
-    ENTITY {
+    ENTITY({
         type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 1, result = name},
+        flags = { "placeable-neutral", "player-creation" },
+        minable = { mining_time = 1, result = name },
         fast_replaceable_group = "fts-reactor",
         max_health = 300 * i,
         corpse = "medium-remnants",
         dying_explosion = "medium-explosion",
-        collision_box = {{-4.35, -4.35}, {4.35, 4.35}},
-        selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
+        collision_box = { { -4.35, -4.35 }, { 4.35, 4.35 } },
+        selection_box = { { -4.5, -4.5 }, { 4.5, 4.5 } },
         forced_symmetry = "diagonal-pos",
         module_slots = i,
-        allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
-        crafting_categories = {"fts-reactor"},
+        allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" },
+        crafting_categories = { "fts-reactor" },
         crafting_speed = i,
         energy_source = {
             type = "electric",
@@ -124,7 +124,7 @@ for i = 1, 4 do
                         line_length = 1,
                         repeat_count = 100,
                         shift = util.by_pixel(-0, 32),
-                        tint = py.tints[i],
+                        tint = py.tints[ i ],
                         animation_speed = 0.5
                     },
                     {
@@ -208,99 +208,99 @@ for i = 1, 4 do
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0, -0.9 }, nil, nil),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {4.0, 0.0}, direction = defines.direction.east}}
+                pipe_connections = { { flow_direction = "input", position = { 4.0, 0.0 }, direction = defines.direction.east } }
             },
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0, -0.9 }, nil, nil),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {4.0, 2.0}, direction = defines.direction.east}}
+                pipe_connections = { { flow_direction = "input", position = { 4.0, 2.0 }, direction = defines.direction.east } }
             },
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0, -0.9 }, nil, nil),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {4.0, -2.0}, direction = defines.direction.east}}
+                pipe_connections = { { flow_direction = "input", position = { 4.0, -2.0 }, direction = defines.direction.east } }
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0, -0.9 }, nil, nil),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-4.0, 0.0}, direction = defines.direction.west}}
+                pipe_connections = { { flow_direction = "output", position = { -4.0, 0.0 }, direction = defines.direction.west } }
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0, -0.9 }, nil, nil),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-4.0, 2.0}, direction = defines.direction.west}}
+                pipe_connections = { { flow_direction = "output", position = { -4.0, 2.0 }, direction = defines.direction.west } }
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-3", nil, { 0, -0.9 }, nil, nil),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-4.0, -2.0}, direction = defines.direction.west}}
+                pipe_connections = { { flow_direction = "output", position = { -4.0, -2.0 }, direction = defines.direction.west } }
             }
         },
         impact_category = "metal",
         working_sound = {
-            sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg"},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg", volume = 0.3},
+            sound = { filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg" },
+            idle_sound = { filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg", volume = 0.3 },
             apparent_volume = 2.5
         },
-    }
+    })
 end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "fts-reactor-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "fts-reactor",      amount = 1},
-        {type = "item", name = "engine-unit",      amount = 6},
-        {type = "item", name = "nexelit-plate",    amount = 10},
-        {type = "item", name = "plastic-bar",      amount = 10},
-        {type = "item", name = "advanced-circuit", amount = 20}
+        { type = "item", name = "fts-reactor",      amount = 1 },
+        { type = "item", name = "engine-unit",      amount = 6 },
+        { type = "item", name = "nexelit-plate",    amount = 10 },
+        { type = "item", name = "plastic-bar",      amount = 10 },
+        { type = "item", name = "advanced-circuit", amount = 20 }
     },
     results = {
-        {type = "item", name = "fts-reactor-mk02", amount = 1}
+        { type = "item", name = "fts-reactor-mk02", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "fts-reactor-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "fts-reactor-mk02",     amount = 1},
-        {type = "item", name = "electric-engine-unit", amount = 6},
-        {type = "item", name = "kevlar",               amount = 15},
-        {type = "item", name = "processing-unit",      amount = 10},
+        { type = "item", name = "fts-reactor-mk02",     amount = 1 },
+        { type = "item", name = "electric-engine-unit", amount = 6 },
+        { type = "item", name = "kevlar",               amount = 15 },
+        { type = "item", name = "processing-unit",      amount = 10 },
     },
     results = {
-        {type = "item", name = "fts-reactor-mk03", amount = 1}
+        { type = "item", name = "fts-reactor-mk03", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "fts-reactor-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "fts-reactor-mk03",      amount = 1},
-        {type = "item", name = "low-density-structure", amount = 15},
-        {type = "item", name = "nbfe-alloy",            amount = 5},
+        { type = "item", name = "fts-reactor-mk03",      amount = 1 },
+        { type = "item", name = "low-density-structure", amount = 15 },
+        { type = "item", name = "nbfe-alloy",            amount = 5 },
     },
     results = {
-        {type = "item", name = "fts-reactor-mk04", amount = 1}
+        { type = "item", name = "fts-reactor-mk04", amount = 1 }
     }
-}
+})

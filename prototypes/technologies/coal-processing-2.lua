@@ -1,4 +1,4 @@
-TECHNOLOGY {
+TECHNOLOGY({
     type = "technology",
     name = "coal-processing-2",
     icon = "__pycoalprocessinggraphics__/graphics/technology/coal-processing-2.png",
@@ -6,14 +6,14 @@ TECHNOLOGY {
     order = "c-a",
     --upgrade = true,
     prerequisites = {},
-    dependencies = {"coal-processing-1"},
+    dependencies = { "coal-processing-1" },
     effects = {},
     unit = {
         count = 50,
         ingredients = {
-            {"automation-science-pack", 1},
-            {"logistic-science-pack",   1}
+            { "automation-science-pack", 1 },
+            { "logistic-science-pack",   1 }
         },
         time = 35
     }
-}
+})

@@ -1,4 +1,4 @@
-local style = data.raw["gui-style"].default
+local style = data.raw[ "gui-style" ].default
 
 style.py_entity_preview = {
     type = "empty_widget_style",
@@ -7,9 +7,9 @@ style.py_entity_preview = {
     padding = 0,
     graphical_set = {
         base = {
-            position = {17, 0},
+            position = { 17, 0 },
             corner_size = 8,
-            center = {position = {76, 8}, size = {1, 1}},
+            center = { position = { 76, 8 }, size = { 1, 1 } },
             draw_type = "outer"
         },
         shadow = default_inner_shadow
@@ -66,8 +66,8 @@ style.py_schedule_move_button = {
     type = "button_style",
     parent = "train_schedule_delete_button",
     default_graphical_set = {
-        base = {position = {68, 0}, corner_size = 8},
-        shadow = {position = {399, 90}, corner_size = 4, draw_type = "outer"} -- Removes black lines at right and bottom of shadow
+        base = { position = { 68, 0 }, corner_size = 8 },
+        shadow = { position = { 399, 90 }, corner_size = 4, draw_type = "outer" } -- Removes black lines at right and bottom of shadow
     }
 }
 
@@ -75,15 +75,16 @@ style.py_schedule_move_button_alt = {
     type = "button_style",
     parent = "py_schedule_move_button",
     default_graphical_set = {
-        base = {position = {68, 0}, corner_size = 8},
-        shadow = {position = {399, 90}, corner_size = 2, draw_type = "inner"}
+        base = { position = { 68, 0 }, corner_size = 8 },
+        shadow = { position = { 399, 90 }, corner_size = 2, draw_type = "inner" }
     }
 }
 
-local graphics_set = table.deepcopy(data.raw["gui-style"].default.train_schedule_temporary_station_delete_button.default_graphical_set) --[[@as data.ElementImageSet]]
+local graphics_set = table.deepcopy(data.raw[ "gui-style" ].default.train_schedule_temporary_station_delete_button
+    .default_graphical_set) --[[@as data.ElementImageSet]]
 graphics_set.base.corner_size = 8
 -- Removes black lines at right and bottom of shadow
-graphics_set.shadow.position = {467, 90}
+graphics_set.shadow.position = { 467, 90 }
 graphics_set.shadow.corner_size = 4
 graphics_set.shadow.draw_type = "outer"
 style.py_schedule_temporary_move_button = {
@@ -138,9 +139,9 @@ style.window_content_frame = {
     padding = 4,
     graphical_set = {
         base = {
-            position = {17, 0},
+            position = { 17, 0 },
             corner_size = 8,
-            center = {position = {76, 8}, size = {1, 1}},
+            center = { position = { 76, 8 }, size = { 1, 1 } },
             draw_type = "outer"
         },
         shadow = default_inner_shadow
@@ -153,7 +154,7 @@ style.filter_group_table = {
     vertical_spacing = 0,
     padding = 0,
     background_graphical_set = {
-        position = {282, 17},
+        position = { 282, 17 },
         corner_size = 8,
         overall_tiling_vertical_size = 48,
         overall_tiling_vertical_spacing = 24,
@@ -176,9 +177,9 @@ style.py_schedule_scroll_pane = {
     padding = 4,
     graphical_set = {
         base = {
-            position = {17, 0},
+            position = { 17, 0 },
             corner_size = 8,
-            center = {position = {42, 8}, size = 1},
+            center = { position = { 42, 8 }, size = 1 },
             top = {},
             left_top = {},
             right_top = {},
@@ -187,9 +188,9 @@ style.py_schedule_scroll_pane = {
         shadow = default_inner_shadow
     },
     background_graphical_set = {
-        position = {282, 17},
+        position = { 282, 17 },
         corner_size = 8,
-        custom_horizontal_tiling_sizes = {28, 44, 288},
+        custom_horizontal_tiling_sizes = { 28, 44, 288 },
         overall_tiling_horizontal_spacing = 8,
         overall_tiling_horizontal_padding = 4,
         overall_tiling_vertical_spacing = 12,

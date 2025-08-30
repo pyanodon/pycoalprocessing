@@ -32,31 +32,35 @@ if mods.pyalienlife then
         --1
         {
             production_type = "input",
-            pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
+            pipe_picture = py.pipe_pictures("assembling-machine-3", { -0.0, 3.837 }, { -0.0, -3.837 }, { 4.0, 0.0 },
+                { -4.0, 0.0 }, pipes),
             pipe_covers = py.pipe_covers(true, true, true, true),
             volume = 1000,
-            pipe_connections = {{flow_direction = "input", position = {0.0, 3.0}, direction = defines.direction.south}}
+            pipe_connections = { { flow_direction = "input", position = { 0.0, 3.0 }, direction = defines.direction.south } }
         },
         {
             production_type = "input",
-            pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
+            pipe_picture = py.pipe_pictures("assembling-machine-3", { -0.0, 3.837 }, { -0.0, -3.837 }, { 4.0, 0.0 },
+                { -4.0, 0.0 }, pipes),
             pipe_covers = py.pipe_covers(true, true, true, true),
             volume = 1000,
-            pipe_connections = {{flow_direction = "input", position = {0.0, -3.0}, direction = defines.direction.north}}
+            pipe_connections = { { flow_direction = "input", position = { 0.0, -3.0 }, direction = defines.direction.north } }
         },
         {
             production_type = "input",
             pipe_covers = py.pipe_covers(true, true, true, true),
-            pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
+            pipe_picture = py.pipe_pictures("assembling-machine-3", { -0.0, 3.837 }, { -0.0, -3.837 }, { 4.0, 0.0 },
+                { -4.0, 0.0 }, pipes),
             volume = 1000,
-            pipe_connections = {{flow_direction = "input", position = {-3.0, 0.0}, direction = defines.direction.west}}
+            pipe_connections = { { flow_direction = "input", position = { -3.0, 0.0 }, direction = defines.direction.west } }
         },
         {
             production_type = "output",
             pipe_covers = py.pipe_covers(false, true, true, true),
-            pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
+            pipe_picture = py.pipe_pictures("assembling-machine-3", { -0.0, 3.837 }, { -0.0, -3.837 }, { 4.0, 0.0 },
+                { -4.0, 0.0 }, pipes),
             volume = 100,
-            pipe_connections = {{flow_direction = "output", position = {3.0, 0.0}, direction = defines.direction.east}}
+            pipe_connections = { { flow_direction = "output", position = { 3.0, 0.0 }, direction = defines.direction.east } }
         },
     }
 else
@@ -64,40 +68,42 @@ else
         --1
         {
             production_type = "input",
-            pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
+            pipe_picture = py.pipe_pictures("assembling-machine-3", { -0.0, 3.837 }, { -0.0, -3.837 }, { 4.0, 0.0 },
+                { -4.0, 0.0 }, pipes),
             pipe_covers = py.pipe_covers(true, true, true, true),
             volume = 1000,
-            pipe_connections = {{flow_direction = "input", position = {0.0, 3.0}, direction = defines.direction.south}}
+            pipe_connections = { { flow_direction = "input", position = { 0.0, 3.0 }, direction = defines.direction.south } }
         },
         {
             production_type = "input",
-            pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.0, 3.837}, {-0.0, -3.837}, {4.0, 0.0}, {-4.0, 0.0}, pipes),
+            pipe_picture = py.pipe_pictures("assembling-machine-3", { -0.0, 3.837 }, { -0.0, -3.837 }, { 4.0, 0.0 },
+                { -4.0, 0.0 }, pipes),
             pipe_covers = py.pipe_covers(true, true, true, true),
             volume = 1000,
-            pipe_connections = {{flow_direction = "input", position = {0.0, -3.0}, direction = defines.direction.north}}
+            pipe_connections = { { flow_direction = "input", position = { 0.0, -3.0 }, direction = defines.direction.north } }
         },
     }
 end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "ralesia-plantation-mk01",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "soil",               amount = 300},
-        {type = "item", name = "pipe",               amount = 15},
-        {type = "item", name = "electronic-circuit", amount = 25},
-        {type = "item", name = "stone",              amount = 100},
-        {type = "item", name = "iron-plate",         amount = 30},
-        {type = "item", name = "treated-wood",       amount = 50},
-        {type = "item", name = "steam-engine",       amount = 1},
-        {type = "item", name = "small-lamp",         amount = 20}
+        { type = "item", name = "soil",               amount = 300 },
+        { type = "item", name = "pipe",               amount = 15 },
+        { type = "item", name = "electronic-circuit", amount = 25 },
+        { type = "item", name = "stone",              amount = 100 },
+        { type = "item", name = "iron-plate",         amount = 30 },
+        { type = "item", name = "treated-wood",       amount = 50 },
+        { type = "item", name = "steam-engine",       amount = 1 },
+        { type = "item", name = "small-lamp",         amount = 20 }
     },
     results = {
-        {type = "item", name = "ralesia-plantation-mk01", amount = 1}
+        { type = "item", name = "ralesia-plantation-mk01", amount = 1 }
     }
-}:add_unlock("ralesia")
+}):add_unlock("ralesia")
 
 for i = 1, 4 do
     if not mods.pyalienlife and i == 2 then return end
@@ -106,7 +112,7 @@ for i = 1, 4 do
     local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
-    ITEM {
+    ITEM({
         type = "item",
         name = name,
         icon = icon,
@@ -116,25 +122,25 @@ for i = 1, 4 do
         order = "f",
         place_result = name,
         stack_size = 10
-    }
+    })
 
-    ENTITY {
+    ENTITY({
         type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 1, result = name},
+        flags = { "placeable-neutral", "player-creation" },
+        minable = { mining_time = 1, result = name },
         fast_replaceable_group = "ralesia-plantation",
         max_health = 300 * i,
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
-        collision_box = {{-3.2, -3.2}, {3.2, 3.2}},
-        selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
+        collision_box = { { -3.2, -3.2 }, { 3.2, 3.2 } },
+        selection_box = { { -3.5, -3.5 }, { 3.5, 3.5 } },
         forced_symmetry = "diagonal-pos",
         module_slots = i,
-        allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
-        crafting_categories = {"ralesia"},
+        allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" },
+        crafting_categories = { "ralesia" },
         crafting_speed = 0.3 * i,
         energy_source = {
             type = "electric",
@@ -155,7 +161,7 @@ for i = 1, 4 do
                         line_length = 8,
                         animation_speed = 0.5,
                         run_mode = "forward-then-backward",
-                        shift = {0.0, -0.163}
+                        shift = { 0.0, -0.163 }
                     },
                     {
                         filename = "__pycoalprocessinggraphics__/graphics/entity/ralesia-plantation/ralesia-plantation-mask.png",
@@ -165,8 +171,8 @@ for i = 1, 4 do
                         line_length = 8,
                         animation_speed = 0.5,
                         run_mode = "forward-then-backward",
-                        shift = {0.0, -0.163},
-                        tint = py.tints[i]
+                        shift = { 0.0, -0.163 },
+                        tint = py.tints[ i ]
                     },
                 }
             },
@@ -175,59 +181,59 @@ for i = 1, 4 do
         fluid_boxes = fluid_boxes,
         impact_category = "metal",
         working_sound = {
-            sound = {filename = "__pycoalprocessinggraphics__/sounds/ralesia-plantation.ogg", volume = 1.2},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/ralesia-plantation.ogg", volume = 0.3},
+            sound = { filename = "__pycoalprocessinggraphics__/sounds/ralesia-plantation.ogg", volume = 1.2 },
+            idle_sound = { filename = "__pycoalprocessinggraphics__/sounds/ralesia-plantation.ogg", volume = 0.3 },
             apparent_volume = 2.5
         }
-    }
+    })
 end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "ralesia-plantation-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "ralesia-plantation-mk01", amount = 1},
-        {type = "item", name = "plastic-bar",             amount = 50},
-        {type = "item", name = "engine-unit",             amount = 2},
-        {type = "item", name = "pump",                    amount = 4},
-        {type = "item", name = "advanced-circuit",        amount = 15}
+        { type = "item", name = "ralesia-plantation-mk01", amount = 1 },
+        { type = "item", name = "plastic-bar",             amount = 50 },
+        { type = "item", name = "engine-unit",             amount = 2 },
+        { type = "item", name = "pump",                    amount = 4 },
+        { type = "item", name = "advanced-circuit",        amount = 15 }
     },
     results = {
-        {type = "item", name = "ralesia-plantation-mk02", amount = 1}
+        { type = "item", name = "ralesia-plantation-mk02", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "ralesia-plantation-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "ralesia-plantation-mk02", amount = 1},
-        {type = "item", name = "electric-engine-unit",    amount = 4},
-        {type = "item", name = "niobium-plate",           amount = 20},
-        {type = "item", name = "pipe",                    amount = 20},
-        {type = "item", name = "processing-unit",         amount = 10}
+        { type = "item", name = "ralesia-plantation-mk02", amount = 1 },
+        { type = "item", name = "electric-engine-unit",    amount = 4 },
+        { type = "item", name = "niobium-plate",           amount = 20 },
+        { type = "item", name = "pipe",                    amount = 20 },
+        { type = "item", name = "processing-unit",         amount = 10 }
     },
     results = {
-        {type = "item", name = "ralesia-plantation-mk03", amount = 1}
+        { type = "item", name = "ralesia-plantation-mk03", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "ralesia-plantation-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "ralesia-plantation-mk03", amount = 1},
-        {type = "item", name = "low-density-structure",   amount = 10},
-        {type = "item", name = "nbfe-alloy",              amount = 10},
-        {type = "item", name = "kevlar",                  amount = 20},
+        { type = "item", name = "ralesia-plantation-mk03", amount = 1 },
+        { type = "item", name = "low-density-structure",   amount = 10 },
+        { type = "item", name = "nbfe-alloy",              amount = 10 },
+        { type = "item", name = "kevlar",                  amount = 20 },
     },
     results = {
-        {type = "item", name = "ralesia-plantation-mk04", amount = 1}
+        { type = "item", name = "ralesia-plantation-mk04", amount = 1 }
     }
-}
+})

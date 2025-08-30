@@ -13,18 +13,18 @@ local pollution_modifier = .15
 
 --List of Gas fluids, true values cause pollution when vented, all gasses with gas in the name fall under this category
 local gasses = {
-    ["chlorine"] = true,
-    ["hydrogen-chloride"] = true,
-    ["sulfur-dioxide"] = true,
-    ["carbon-dioxide"] = true,
-    ["oxygen"] = false,
-    ["hydrogen"] = false,
-    ["nitrogen"] = false,
-    ["purest-nitrogen-gas"] = false,
-    ["pressured-air"] = false,
-    ["hot-air"] = false,
-    ["vacuum"] = false,
-    ["neon"] = false,
+    [ "chlorine" ] = true,
+    [ "hydrogen-chloride" ] = true,
+    [ "sulfur-dioxide" ] = true,
+    [ "carbon-dioxide" ] = true,
+    [ "oxygen" ] = false,
+    [ "hydrogen" ] = false,
+    [ "nitrogen" ] = false,
+    [ "purest-nitrogen-gas" ] = false,
+    [ "pressured-air" ] = false,
+    [ "hot-air" ] = false,
+    [ "vacuum" ] = false,
+    [ "neon" ] = false,
 }
 
 py.on_event(py.events.on_init(), function()
@@ -38,16 +38,16 @@ end)
 local function empty_pond_gas(fluid, surface, position)
     if fluid then
         if
-            gasses[fluid.name] == true
-            or fluid.temperature >= prototypes.fluid[fluid.name].gas_temperature
+            gasses[ fluid.name ] == true
+            or fluid.temperature >= prototypes.fluid[ fluid.name ].gas_temperature
             or (fluid.name:find("%-gas")
                 or fluid.name:find("gas%-")
-                and not gasses[fluid.name] == false)
+                and not gasses[ fluid.name ] == false)
         then
             surface.pollute(position, fluid.amount * pollution_modifier)
             game.get_pollution_statistics(surface).on_flow("tailings-pond", fluid.amount * pollution_modifier)
             return nil
-        elseif gasses[fluid.name] == false then
+        elseif gasses[ fluid.name ] == false then
             return nil
         end
         return fluid
@@ -73,17 +73,17 @@ local function set_fluid_level_image(pond)
         if pond_sprite then pond_sprite.destroy() end
     end
     local color
-    if pond.entity.fluidbox[1] then
-        color = prototypes.fluid[pond.entity.fluidbox[1].name].base_color
+    if pond.entity.fluidbox[ 1 ] then
+        color = prototypes.fluid[ pond.entity.fluidbox[ 1 ].name ].base_color
     end
-    pond.sprite = rendering.draw_sprite {
+    pond.sprite = rendering.draw_sprite({
         sprite = "tailings-pond-sprite-" .. fill_level,
         render_layer = "object",
         target = pond.entity,
-        target_offset = {0, -0.5},
+        target_offset = { 0, -0.5 },
         surface = pond.entity.surface,
         tint = color or nil
-    }.id
+    }).id
     pond.fill_level = fill_level
 end
 
@@ -101,7 +101,7 @@ end
 local function scorch_earth(pond)
     local entity = pond.entity
     local fluidbox = entity.fluidbox
-    local fluid = fluidbox[1]
+    local fluid = fluidbox[ 1 ]
     if fluid and fluid.name == "neutron" then return end
 
     local surface = entity.surface
@@ -109,7 +109,7 @@ local function scorch_earth(pond)
     local fluid = empty_pond_gas(fluid, surface, entity.position)
     if not fluid or fluid.amount == 0 then -- totally drained
         pond.fluid_per = 0
-        fluidbox[1] = nil
+        fluidbox[ 1 ] = nil
         return
     end
 
@@ -121,8 +121,8 @@ local function scorch_earth(pond)
         local threshold_in_units = tanksize * overflow_threshold
         local surface_index = surface.index
 
-        if not storage.tiles[surface_index] then storage.tiles[surface_index] = {} end
-        local tiles = storage.tiles[surface_index]
+        if not storage.tiles[ surface_index ] then storage.tiles[ surface_index ] = {} end
+        local tiles = storage.tiles[ surface_index ]
 
         local amount = fluid.amount
         repeat
@@ -133,7 +133,7 @@ local function scorch_earth(pond)
                 x = math.floor(x + entity.position.x) - 1
                 y = math.floor(y + entity.position.y) - 1
                 if surface.get_tile(x, y).name ~= "polluted-ground" then
-                    tiles[#tiles + 1] = {name = "polluted-ground", position = {x = x, y = y}}
+                    tiles[ #tiles+1 ] = { name = "polluted-ground", position = { x = x, y = y } }
                 end
             end
         until amount < threshold_in_units
@@ -145,10 +145,10 @@ local function scorch_earth(pond)
     pond.fluid_per = math.max(0, fluid.amount / tanksize)
     --push the updated fluidbox to the entity.
     if fluid.amount <= 0 then
-        fluidbox[1] = nil
-    elseif fluid.amount ~= fluidbox[1].amount then
+        fluidbox[ 1 ] = nil
+    elseif fluid.amount ~= fluidbox[ 1 ].amount then
         fluid.amount = fluid.amount * segment_size / tanksize
-        fluidbox[1] = fluid
+        fluidbox[ 1 ] = fluid
     end
 end
 
@@ -161,33 +161,33 @@ Pond.events.on_built = function(event)
         fluid_per = 0
     }
     set_fluid_level_image(pond)
-    storage.tailings_ponds[entity.unit_number] = pond
+    storage.tailings_ponds[ entity.unit_number ] = pond
 end
 
-Pond.events[153] = function()
+Pond.events[ 153 ] = function()
     for i, pond in pairs(storage.tailings_ponds) do
         if pond.entity.valid then
             scorch_earth(pond)
             set_fluid_level_image(pond)
         else
-            storage.tailings_ponds[i] = nil
+            storage.tailings_ponds[ i ] = nil
             return
         end
     end
 end
 
 -- offset tile setting to prevent lag spikes
-Pond.events[154] = function()
+Pond.events[ 154 ] = function()
     for surface_index, tiles in pairs(storage.tiles) do
-        local surface = game.surfaces[surface_index]
+        local surface = game.surfaces[ surface_index ]
         for _, tile in pairs(tiles) do
             if tile.position.x % 4 == 0 and tile.position.y % 4 == 0 then
-                surface.create_entity {
+                surface.create_entity({
                     name = "ninja-tree",
                     position = tile.position,
                     force = "neutral",
                     create_build_effect_smoke = false
-                }
+                })
             end
         end
         surface.set_tiles(tiles, true)
@@ -203,12 +203,12 @@ Pond.events.on_entity_died = function(event)
         local position = entity.position
         local radius = 4
         -- Find any nearby ninja trees and burn them
-        local _, fire = next(surface.find_entities_filtered {position = position, type = {"fire"}})
+        local _, fire = next(surface.find_entities_filtered({ position = position, type = { "fire" } }))
         if fire and fire.valid then
-            for i, tree in pairs(surface.find_entities_filtered {position = position, name = "ninja-tree", radius = radius}) do
+            for i, tree in pairs(surface.find_entities_filtered({ position = position, name = "ninja-tree", radius = radius })) do
                 -- 80% chance
                 if tree ~= entity and math.random(1, 100) < 80 then
-                    surface.create_entity {name = fire.name, position = tree.position}
+                    surface.create_entity({ name = fire.name, position = tree.position })
                 end
             end
         end
@@ -220,7 +220,7 @@ Pond.events.on_entity_died = function(event)
             local x, y = spiral(i)
             x = math.floor(x + position_x) - 1
             y = math.floor(y + position_y) - 1
-            tiles[i] = {name = "polluted-ground-burnt", position = {x, y}}
+            tiles[ i ] = { name = "polluted-ground-burnt", position = { x, y } }
         end
         entity.surface.set_tiles(tiles, true)
         entity.destroy()

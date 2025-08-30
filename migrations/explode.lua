@@ -1,7 +1,7 @@
 local killed_ninjas = 0
 local remaining_ninjas = 0
 for _, surface in pairs(game.surfaces) do
-    for _, ninja in pairs(surface.find_entities_filtered {type = "tree", name = "ninja-tree"}) do
+    for _, ninja in pairs(surface.find_entities_filtered({ type = "tree", name = "ninja-tree" })) do
         local tile_position = ninja.position
         tile_position.x = math.floor(tile_position.x)
         tile_position.y = math.floor(tile_position.y)

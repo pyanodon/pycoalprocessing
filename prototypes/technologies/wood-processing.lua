@@ -1,4 +1,4 @@
-TECHNOLOGY {
+TECHNOLOGY({
     type = "technology",
     name = "wood-processing",
     icon = "__pycoalprocessinggraphics__/graphics/technology/wood-processing.png",
@@ -10,8 +10,8 @@ TECHNOLOGY {
     unit = {
         count = 30,
         ingredients = {
-            {"automation-science-pack", 1}
+            { "automation-science-pack", 1 }
         },
         time = 45
     }
-}
+})

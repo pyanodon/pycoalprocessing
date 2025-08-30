@@ -1,4 +1,4 @@
-TECHNOLOGY {
+TECHNOLOGY({
     type = "technology",
     name = "biofilm",
     icon = "__pycoalprocessinggraphics__/graphics/technology/biofilm.png",
@@ -9,10 +9,10 @@ TECHNOLOGY {
     unit = {
         count = 50,
         ingredients = {
-            {"automation-science-pack", 1},
-            {"logistic-science-pack",   1},
-            {"chemical-science-pack",   1},
+            { "automation-science-pack", 1 },
+            { "logistic-science-pack",   1 },
+            { "chemical-science-pack",   1 },
         },
         time = 30
     }
-}
+})

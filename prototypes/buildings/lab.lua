@@ -1,15 +1,15 @@
-ENTITY {
+ENTITY({
     type = "lab",
     name = "lab",
     icon = "__pycoalprocessinggraphics__/graphics/icons/lab-mk01.png",
     icon_size = 64,
-    flags = {"placeable-player", "player-creation"},
-    minable = {mining_time = 0.2, result = "lab"},
+    flags = { "placeable-player", "player-creation" },
+    minable = { mining_time = 0.2, result = "lab" },
     max_health = 150,
     corpse = "lab-remnants",
     dying_explosion = "lab-explosion",
-    collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
-    selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    collision_box = { { -2.2, -2.2 }, { 2.2, 2.2 } },
+    selection_box = { { -2.5, -2.5 }, { 2.5, 2.5 } },
     drawing_box_vertical_extension = 2,
     --damaged_trigger_effect = hit_effects.entity(),
     on_animation =
@@ -122,21 +122,22 @@ ENTITY {
     module_slots = 5,
     --TODO:find out what replaced module info icon shift
     --module_info_icon_shift = {0, 0.9},
-    allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
-}
+    allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" },
+})
 
 -- DiscoScience compat, we rewrite the animation to fit our lab
-if mods["DiscoScience"] then
+if mods[ "DiscoScience" ] then
     -- Remove the 3 glow layers
     -- We can remove only the first layer and not use the second layer in the overlay below for a less obvious effect
     for I = 1, 3 do
         table.remove(data.raw.lab.lab.on_animation.layers, 2)
     end
     -- Overwrite on/off to the variant without blue lights embedded
-    data.raw.lab.lab.on_animation.layers[1].filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
-    data.raw.lab.lab.off_animation.layers[1].filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
+    data.raw.lab.lab.on_animation.layers[ 1 ].filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
+    data.raw.lab.lab.off_animation.layers[ 1 ].filename =
+    "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
     -- Overwrite the animation with ours
-    data.raw.animation["discoscience/lab-storm"] = {
+    data.raw.animation[ "discoscience/lab-storm" ] = {
         type = "animation",
         name = "discoscience/lab-storm",
         layers =

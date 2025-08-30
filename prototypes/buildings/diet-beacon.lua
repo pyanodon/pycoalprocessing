@@ -1,42 +1,42 @@
 -- create A.M and F.M beacons
 
-TECHNOLOGY {
+TECHNOLOGY({
     type = "technology",
     name = "diet-beacon",
     icon = "__base__/graphics/technology/module.png",
     icon_size = 256,
-    prerequisites = {"speed-module", "productivity-module", "efficiency-module"},
+    prerequisites = { "speed-module", "productivity-module", "efficiency-module" },
     effects = {},
     unit = {
         count = 2100,
         ingredients = {
-            {type = "item", name = "automation-science-pack", amount = 6},
-            {type = "item", name = "logistic-science-pack",   amount = 2},
-            {type = "item", name = "chemical-science-pack",   amount = 1}
+            { type = "item", name = "automation-science-pack", amount = 6 },
+            { type = "item", name = "logistic-science-pack",   amount = 2 },
+            { type = "item", name = "chemical-science-pack",   amount = 1 }
         },
         time = 90,
     },
-    localised_description = {"technology-description.effect-transmission"}
-}
+    localised_description = { "technology-description.effect-transmission" }
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "beacon-mk01",
     enabled = false,
     energy_required = 15,
     ingredients =
     {
-        {type = "item", name = "steel-plate",          amount = 10},
-        {type = "item", name = "electric-engine-unit", amount = 1},
-        {type = "item", name = "iron-gear-wheel",      amount = 50},
-        {type = "item", name = "advanced-circuit",     amount = 5}
+        { type = "item", name = "steel-plate",          amount = 10 },
+        { type = "item", name = "electric-engine-unit", amount = 1 },
+        { type = "item", name = "iron-gear-wheel",      amount = 50 },
+        { type = "item", name = "advanced-circuit",     amount = 5 }
     },
     results = {
-        {type = "item", name = "beacon-mk01", amount = 1}
+        { type = "item", name = "beacon-mk01", amount = 1 }
     }
-}:add_unlock("diet-beacon")
+}):add_unlock("diet-beacon")
 
-ITEM {
+ITEM({
     type = "item",
     name = "beacon-mk01",
     icon = "__pycoalprocessinggraphics__/graphics/icons/beacon-01.png",
@@ -45,12 +45,12 @@ ITEM {
     order = "a[beacon]",
     place_result = "diet-beacon-AM1-FM1",
     stack_size = 20
-}
+})
 
 local graphics_set = {
     apply_module_tint = "primary",
     module_tint_mode = "mix",
-    no_modules_tint = {1, 0, 0},
+    no_modules_tint = { 1, 0, 0 },
     animation_list = {
         {
             render_layer = "floor-mechanics-under-corpse",
@@ -127,22 +127,22 @@ for am = 5, 1, -1 do
         beacon.energy_usage = 500 * am * (fm ^ 3) .. "kW"
         beacon.supply_area_distance = 32 - 8 * (am - 1)
         if beacon.supply_area_distance < 2 then beacon.supply_area_distance = 2 end
-        beacon.placeable_by = {item = "beacon-mk01", count = 1}
-        beacon.localised_name = {"entity-name.new-beacon-mk01", tostring(am), tostring(fm)}
-        beacon.allowed_effects = {"speed", "consumption"}
+        beacon.placeable_by = { item = "beacon-mk01", count = 1 }
+        beacon.localised_name = { "entity-name.new-beacon-mk01", tostring(am), tostring(fm) }
+        beacon.allowed_effects = { "speed", "consumption" }
         beacon.graphics_set = graphics_set
-        beacon.collision_box = {{-1.05, -1.05}, {1.05, 1.05}}
-        beacon.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}
+        beacon.collision_box = { { -1.05, -1.05 }, { 1.05, 1.05 } }
+        beacon.selection_box = { { -1.5, -1.5 }, { 1.5, 1.5 } }
         beacon.drawing_box_vertical_extension = 3
-        beacon.collision_mask = {layers = {item = true, object = true, water_tile = true}}
+        beacon.collision_mask = { layers = { item = true, object = true, water_tile = true } }
         beacon.next_upgrade = nil
-        beacon.minable = {mining_time = 0.2, result = "beacon-mk01"}
+        beacon.minable = { mining_time = 0.2, result = "beacon-mk01" }
         beacon.icon = "__pycoalprocessinggraphics__/graphics/icons/beacon-01.png"
         beacon.icon_size = 64
-        data:extend {beacon}
+        data:extend({ beacon })
     end
 end
 
-data.raw.module["speed-module"].beacon_tint.primary = {0, 0.65, 1}
-data.raw.module["speed-module-2"].beacon_tint.primary = {0, 0.65, 1}
-data.raw.module["speed-module-3"].beacon_tint.primary = {0, 0.65, 1}
+data.raw.module[ "speed-module" ].beacon_tint.primary = { 0, 0.65, 1 }
+data.raw.module[ "speed-module-2" ].beacon_tint.primary = { 0, 0.65, 1 }
+data.raw.module[ "speed-module-3" ].beacon_tint.primary = { 0, 0.65, 1 }

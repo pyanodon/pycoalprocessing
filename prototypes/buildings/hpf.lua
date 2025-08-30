@@ -1,20 +1,20 @@
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "hpf",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "stone-brick",        amount = 20},
-        {type = "item", name = "copper-plate",       amount = 20},
-        {type = "item", name = "iron-gear-wheel",    amount = 5},  --bob steel-bearing
-        {type = "item", name = "iron-plate",         amount = 10}, --bob invar-alloy
-        {type = "item", name = "electronic-circuit", amount = 3},
-        {type = "item", name = "steam-engine",       amount = 1},
+        { type = "item", name = "stone-brick",        amount = 20 },
+        { type = "item", name = "copper-plate",       amount = 20 },
+        { type = "item", name = "iron-gear-wheel",    amount = 5 },  --bob steel-bearing
+        { type = "item", name = "iron-plate",         amount = 10 }, --bob invar-alloy
+        { type = "item", name = "electronic-circuit", amount = 3 },
+        { type = "item", name = "steam-engine",       amount = 1 },
     },
     results = {
-        {type = "item", name = "hpf", amount = 1}
+        { type = "item", name = "hpf", amount = 1 }
     }
-}:add_unlock("coal-processing-1")
+}):add_unlock("coal-processing-1")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
@@ -23,7 +23,7 @@ for i = 1, 4 do
     local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
-    ITEM {
+    ITEM({
         type = "item",
         name = name,
         icon = icon,
@@ -33,25 +33,25 @@ for i = 1, 4 do
         order = "p",
         place_result = name,
         stack_size = 10
-    }
+    })
 
-    ENTITY {
+    ENTITY({
         type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 0.5, result = name},
+        flags = { "placeable-neutral", "player-creation" },
+        minable = { mining_time = 0.5, result = name },
         fast_replaceable_group = "hpf",
         max_health = 300 * i,
         corpse = "medium-remnants",
         dying_explosion = "medium-explosion",
-        collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
-        selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
+        collision_box = { { -3.4, -3.4 }, { 3.4, 3.4 } },
+        selection_box = { { -3.5, -3.5 }, { 3.5, 3.5 } },
         forced_symmetry = "diagonal-pos",
         module_slots = i,
-        allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
-        crafting_categories = {"hpf"},
+        allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" },
+        crafting_categories = { "hpf" },
         crafting_speed = i,
         energy_source = {
             type = "electric",
@@ -118,7 +118,7 @@ for i = 1, 4 do
                         width = 224,
                         height = 320,
                         frame_count = 1,
-                        tint = py.tints[i],
+                        tint = py.tints[ i ],
                         shift = util.by_pixel(0, -80),
                     },
                     {
@@ -143,73 +143,73 @@ for i = 1, 4 do
         fluid_boxes = {
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, { 0.0, -0.96 }, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {3.0, 0.0}, direction = defines.direction.east}}
+                pipe_connections = { { flow_direction = "input", position = { 3.0, 0.0 }, direction = defines.direction.east } }
             },
             {
                 production_type = "output",
-                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, { 0.0, -0.96 }, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-3.0, 0.0}, direction = defines.direction.west}}
+                pipe_connections = { { flow_direction = "output", position = { -3.0, 0.0 }, direction = defines.direction.west } }
             },
         },
         impact_category = "metal",
         working_sound = {
-            sound = {filename = "__pycoalprocessinggraphics__/sounds/hpf.ogg"},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/hpf.ogg", volume = 0.3},
+            sound = { filename = "__pycoalprocessinggraphics__/sounds/hpf.ogg" },
+            idle_sound = { filename = "__pycoalprocessinggraphics__/sounds/hpf.ogg", volume = 0.3 },
             apparent_volume = 2.5
         },
-    }
+    })
 end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "hpf-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "hpf",              amount = 1},
-        {type = "item", name = "nexelit-plate",    amount = 10},
-        {type = "item", name = "advanced-circuit", amount = 10},
-        {type = "item", name = "steel-plate",      amount = 15},
-        {type = "item", name = "concrete",         amount = 10},
+        { type = "item", name = "hpf",              amount = 1 },
+        { type = "item", name = "nexelit-plate",    amount = 10 },
+        { type = "item", name = "advanced-circuit", amount = 10 },
+        { type = "item", name = "steel-plate",      amount = 15 },
+        { type = "item", name = "concrete",         amount = 10 },
     },
     results = {
-        {type = "item", name = "hpf-mk02", amount = 1}
+        { type = "item", name = "hpf-mk02", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "hpf-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "hpf-mk02",             amount = 1},
-        {type = "item", name = "electric-engine-unit", amount = 1},
-        {type = "item", name = "kevlar",               amount = 10},
-        {type = "item", name = "processing-unit",      amount = 5},
-        {type = "item", name = "niobium-pipe",         amount = 10},
+        { type = "item", name = "hpf-mk02",             amount = 1 },
+        { type = "item", name = "electric-engine-unit", amount = 1 },
+        { type = "item", name = "kevlar",               amount = 10 },
+        { type = "item", name = "processing-unit",      amount = 5 },
+        { type = "item", name = "niobium-pipe",         amount = 10 },
     },
     results = {
-        {type = "item", name = "hpf-mk03", amount = 1}
+        { type = "item", name = "hpf-mk03", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "hpf-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "hpf-mk03",              amount = 1},
-        {type = "item", name = "low-density-structure", amount = 20},
-        {type = "item", name = "nbfe-alloy",            amount = 10},
+        { type = "item", name = "hpf-mk03",              amount = 1 },
+        { type = "item", name = "low-density-structure", amount = 20 },
+        { type = "item", name = "nbfe-alloy",            amount = 10 },
     },
     results = {
-        {type = "item", name = "hpf-mk04", amount = 1}
+        { type = "item", name = "hpf-mk04", amount = 1 }
     }
-}
+})

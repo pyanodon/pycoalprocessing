@@ -1,39 +1,40 @@
 local vanilla_achievements_to_disable = {
-    {cat = "research-achievement", name = "eco-unfriendly"},
-    {cat = "group-attack-achievement", name = "it-stinks-and-they-dont-like-it"},
-    {cat = "build-entity-achievement", name = "getting-on-track-like-a-pro"},
-    {cat = "produce-achievement", name = "mass-production-1"},
-    {cat = "produce-achievement", name = "mass-production-2"},
-    {cat = "produce-achievement", name = "mass-production-3"},
-    {cat = "produce-per-hour-achievement", name = "circuit-veteran-1"},
-    {cat = "produce-per-hour-achievement", name = "circuit-veteran-2"},
-    {cat = "produce-per-hour-achievement", name = "circuit-veteran-3"},
-    {cat = "produce-per-hour-achievement", name = "computer-age-1"},
-    {cat = "produce-per-hour-achievement", name = "computer-age-2"},
-    {cat = "produce-per-hour-achievement", name = "computer-age-3"},
-    {cat = "produce-per-hour-achievement", name = "iron-throne-1"},
-    {cat = "produce-per-hour-achievement", name = "iron-throne-2"},
-    {cat = "produce-per-hour-achievement", name = "iron-throne-3"},
-    {cat = "dont-use-entity-in-energy-production-achievement", name = "solaris"},
-    {cat = "kill-achievement", name = "steamrolled"},
-    {cat = "combat-robot-count-achievement", name = "minions"},
-    {cat = "dont-use-entity-in-energy-production-achievement", name = "steam-all-the-way"},
-    {cat = "dont-build-entity-achievement", name = "raining-bullets"},
-    {cat = "dont-build-entity-achievement", name = "logistic-network-embargo"},
-    {cat = "complete-objective-achievement", name = "no-time-for-chitchat"},
-    {cat = "complete-objective-achievement", name = "there-is-no-spoon"},
-    mods.pypetroleumhandling and {cat = "complete-objective-achievement", name = "smoke-me-a-kipper-i-will-be-back-for-breakfast"} or nil
+    { cat = "research-achievement",                             name = "eco-unfriendly" },
+    { cat = "group-attack-achievement",                         name = "it-stinks-and-they-dont-like-it" },
+    { cat = "build-entity-achievement",                         name = "getting-on-track-like-a-pro" },
+    { cat = "produce-achievement",                              name = "mass-production-1" },
+    { cat = "produce-achievement",                              name = "mass-production-2" },
+    { cat = "produce-achievement",                              name = "mass-production-3" },
+    { cat = "produce-per-hour-achievement",                     name = "circuit-veteran-1" },
+    { cat = "produce-per-hour-achievement",                     name = "circuit-veteran-2" },
+    { cat = "produce-per-hour-achievement",                     name = "circuit-veteran-3" },
+    { cat = "produce-per-hour-achievement",                     name = "computer-age-1" },
+    { cat = "produce-per-hour-achievement",                     name = "computer-age-2" },
+    { cat = "produce-per-hour-achievement",                     name = "computer-age-3" },
+    { cat = "produce-per-hour-achievement",                     name = "iron-throne-1" },
+    { cat = "produce-per-hour-achievement",                     name = "iron-throne-2" },
+    { cat = "produce-per-hour-achievement",                     name = "iron-throne-3" },
+    { cat = "dont-use-entity-in-energy-production-achievement", name = "solaris" },
+    { cat = "kill-achievement",                                 name = "steamrolled" },
+    { cat = "combat-robot-count-achievement",                   name = "minions" },
+    { cat = "dont-use-entity-in-energy-production-achievement", name = "steam-all-the-way" },
+    { cat = "dont-build-entity-achievement",                    name = "raining-bullets" },
+    { cat = "dont-build-entity-achievement",                    name = "logistic-network-embargo" },
+    { cat = "complete-objective-achievement",                   name = "no-time-for-chitchat" },
+    { cat = "complete-objective-achievement",                   name = "there-is-no-spoon" },
+    mods.pypetroleumhandling and
+    { cat = "complete-objective-achievement", name = "smoke-me-a-kipper-i-will-be-back-for-breakfast" } or nil
 }
 
 for _, cheevo in pairs(vanilla_achievements_to_disable) do
-    data.raw[cheevo.cat][cheevo.name].hidden = true
+    data.raw[ cheevo.cat ][ cheevo.name ].hidden = true
 end
 
 
 -- ordering: 0, then a letter per mod, then a letter within the mod
 -- PyCP: a, PyIN: b, PyFE: c, PyPH: d, PyRO: e, PyHT: f, PyAL: g, PyAE: h
 data:extend
-{
+({
     {
         type = "produce-achievement",
         name = "empire-of-dirt",
@@ -63,9 +64,9 @@ data:extend
         icon_size = 128,
         limited_to_one_game = false
     },
-}
+})
 if mods.pypetroleumhandling then
-    data:extend {
+    data:extend({
         {
             type = "produce-achievement",
             name = "what-do-you-mean-i-didnt-win-the-game",
@@ -76,10 +77,10 @@ if mods.pypetroleumhandling then
             icon_size = 128,
             limited_to_one_game = false
         },
-    }
+    })
 end
 if mods.pyalienlife then
-    data:extend {
+    data:extend({
         {
             type = "dont-use-entity-in-energy-production-achievement",
             name = "training-regimen",
@@ -137,10 +138,10 @@ if mods.pyalienlife then
             icon = "__pycoalprocessinggraphics__/graphics/achievement/polished-turd.png",
             icon_size = 128
         },
-    }
+    })
 end
 if mods.pyalternativeenergy then
-    data:extend {
+    data:extend({
         {
             type = "produce-achievement",
             name = "taste-the-rainbow",
@@ -161,5 +162,5 @@ if mods.pyalternativeenergy then
             icon_size = 128,
             limited_to_one_game = true
         },
-    }
+    })
 end

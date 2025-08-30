@@ -7,22 +7,22 @@ local pipes = {
     }
 }
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "carbon-filter",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "assembling-machine-2", amount = 1},
-        {type = "item", name = "pipe",                 amount = 2},
-        {type = "item", name = "steam-engine",         amount = 3},
-        {type = "item", name = "iron-plate",           amount = 20},
-        {type = "item", name = "iron-gear-wheel",      amount = 30}
+        { type = "item", name = "assembling-machine-2", amount = 1 },
+        { type = "item", name = "pipe",                 amount = 2 },
+        { type = "item", name = "steam-engine",         amount = 3 },
+        { type = "item", name = "iron-plate",           amount = 20 },
+        { type = "item", name = "iron-gear-wheel",      amount = 30 }
     },
     results = {
-        {type = "item", name = "carbon-filter", amount = 1}
+        { type = "item", name = "carbon-filter", amount = 1 }
     }
-}:add_unlock("filtration")
+}):add_unlock("filtration")
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
@@ -31,7 +31,7 @@ for i = 1, 4 do
     local icon = "__pycoalprocessinggraphics__/graphics/icons/" .. name .. ".png"
     local icon_size = 64
 
-    ITEM {
+    ITEM({
         type = "item",
         name = name,
         icon = icon,
@@ -41,25 +41,25 @@ for i = 1, 4 do
         order = "e",
         place_result = name,
         stack_size = 10
-    }
+    })
 
-    ENTITY {
+    ENTITY({
         type = "assembling-machine",
         name = name,
         icon = icon,
         icon_size = icon_size,
-        flags = {"placeable-neutral", "player-creation"},
-        minable = {mining_time = 1, result = name},
+        flags = { "placeable-neutral", "player-creation" },
+        minable = { mining_time = 1, result = name },
         fast_replaceable_group = "carbon-filter",
         max_health = 150 * i,
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
-        collision_box = {{-2.25, -2.25}, {2.25, 2.25}},
-        selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
+        collision_box = { { -2.25, -2.25 }, { 2.25, 2.25 } },
+        selection_box = { { -2.5, -2.5 }, { 2.5, 2.5 } },
         forced_symmetry = "diagonal-pos",
         module_slots = i,
-        allowed_effects = {"consumption", "speed", "pollution", "productivity"},
-        crafting_categories = {"carbonfilter"},
+        allowed_effects = { "consumption", "speed", "pollution", "productivity" },
+        crafting_categories = { "carbonfilter" },
         crafting_speed = i,
         energy_source = {
             type = "electric",
@@ -79,7 +79,7 @@ for i = 1, 4 do
                         height = 167,
                         frame_count = 25,
                         line_length = 5,
-                        shift = {0.1, -0.125},
+                        shift = { 0.1, -0.125 },
                         animation_speed = 1.5
                     },
                     {
@@ -89,9 +89,9 @@ for i = 1, 4 do
                         height = 167,
                         frame_count = 25,
                         line_length = 5,
-                        shift = {0.1, -0.125},
+                        shift = { 0.1, -0.125 },
                         animation_speed = 1.5,
-                        tint = py.tints[i]
+                        tint = py.tints[ i ]
                     },
                 }
             },
@@ -100,88 +100,88 @@ for i = 1, 4 do
         fluid_boxes = {
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-2", {0, 0.36}, {0, -0.95}, nil, nil, pipes),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", { 0, 0.36 }, { 0, -0.95 }, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {2.0, 0.0}, direction = defines.direction.east}}
+                pipe_connections = { { flow_direction = "input", position = { 2.0, 0.0 }, direction = defines.direction.east } }
             },
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-2", {0, 0.36}, {0, -0.95}, nil, nil, pipes),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", { 0, 0.36 }, { 0, -0.95 }, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 1000,
-                pipe_connections = {{flow_direction = "input", position = {0.0, 2.0}, direction = defines.direction.south}}
+                pipe_connections = { { flow_direction = "input", position = { 0.0, 2.0 }, direction = defines.direction.south } }
             },
             {
                 production_type = "output",
-                pipe_picture = py.pipe_pictures("assembling-machine-2", {0, 0.36}, {0, -0.95}, nil, nil, pipes),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", { 0, 0.36 }, { 0, -0.95 }, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {-2.0, 0.0}, direction = defines.direction.west}}
+                pipe_connections = { { flow_direction = "output", position = { -2.0, 0.0 }, direction = defines.direction.west } }
             },
             {
                 production_type = "output",
-                pipe_picture = py.pipe_pictures("assembling-machine-2", {0, 0.36}, {0, -0.95}, nil, nil, pipes),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", { 0, 0.36 }, { 0, -0.95 }, nil, nil, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 volume = 100,
-                pipe_connections = {{flow_direction = "output", position = {0.0, -2.0}, direction = defines.direction.north}}
+                pipe_connections = { { flow_direction = "output", position = { 0.0, -2.0 }, direction = defines.direction.north } }
             },
         },
         impact_category = "metal",
         working_sound = {
-            sound = {filename = "__pycoalprocessinggraphics__/sounds/carbon-filter.ogg"},
-            idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/carbon-filter.ogg", volume = 0.3},
+            sound = { filename = "__pycoalprocessinggraphics__/sounds/carbon-filter.ogg" },
+            idle_sound = { filename = "__pycoalprocessinggraphics__/sounds/carbon-filter.ogg", volume = 0.3 },
             apparent_volume = 2.5
         },
-    }
+    })
 end
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "carbon-filter-mk02",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "carbon-filter",    amount = 1},
-        {type = "item", name = "engine-unit",      amount = 2},
-        {type = "item", name = "plastic-bar",      amount = 10},
-        {type = "item", name = "nexelit-plate",    amount = 15},
-        {type = "item", name = "advanced-circuit", amount = 5},
+        { type = "item", name = "carbon-filter",    amount = 1 },
+        { type = "item", name = "engine-unit",      amount = 2 },
+        { type = "item", name = "plastic-bar",      amount = 10 },
+        { type = "item", name = "nexelit-plate",    amount = 15 },
+        { type = "item", name = "advanced-circuit", amount = 5 },
     },
     results = {
-        {type = "item", name = "carbon-filter-mk02", amount = 1}
+        { type = "item", name = "carbon-filter-mk02", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "carbon-filter-mk03",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "carbon-filter-mk02",   amount = 1},
-        {type = "item", name = "processing-unit",      amount = 5},
-        {type = "item", name = "niobium-plate",        amount = 20},
-        {type = "item", name = "niobium-pipe",         amount = 10},
-        {type = "item", name = "electric-engine-unit", amount = 1},
-        {type = "item", name = "kevlar",               amount = 10}
+        { type = "item", name = "carbon-filter-mk02",   amount = 1 },
+        { type = "item", name = "processing-unit",      amount = 5 },
+        { type = "item", name = "niobium-plate",        amount = 20 },
+        { type = "item", name = "niobium-pipe",         amount = 10 },
+        { type = "item", name = "electric-engine-unit", amount = 1 },
+        { type = "item", name = "kevlar",               amount = 10 }
     },
     results = {
-        {type = "item", name = "carbon-filter-mk03", amount = 1}
+        { type = "item", name = "carbon-filter-mk03", amount = 1 }
     }
-}
+})
 
-RECIPE {
+RECIPE({
     type = "recipe",
     name = "carbon-filter-mk04",
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "carbon-filter-mk03",    amount = 1},
-        {type = "item", name = "low-density-structure", amount = 15},
-        {type = "item", name = "nbfe-alloy",            amount = 5},
+        { type = "item", name = "carbon-filter-mk03",    amount = 1 },
+        { type = "item", name = "low-density-structure", amount = 15 },
+        { type = "item", name = "nbfe-alloy",            amount = 5 },
     },
     results = {
-        {type = "item", name = "carbon-filter-mk04", amount = 1}
+        { type = "item", name = "carbon-filter-mk04", amount = 1 }
     }
-}
+})

@@ -1,4 +1,4 @@
-TECHNOLOGY {
+TECHNOLOGY({
     type = "technology",
     name = "cooling-tower-2",
     icon = "__pycoalprocessinggraphics__/graphics/technology/cooling-towermk02.png",
@@ -6,14 +6,14 @@ TECHNOLOGY {
     order = "c-a",
     --upgrade = true,
     prerequisites = {},
-    dependencies = {"cooling-tower-1", "energy-2"},
+    dependencies = { "cooling-tower-1", "energy-2" },
     effects = {},
     unit = {
         count = 20,
         ingredients = {
-            {"automation-science-pack", 2},
-            {"logistic-science-pack",   1}
+            { "automation-science-pack", 2 },
+            { "logistic-science-pack",   1 }
         },
         time = 45
     }
-}
+})

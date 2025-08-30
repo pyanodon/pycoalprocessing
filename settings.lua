@@ -1,4 +1,4 @@
-data:extend {
+data:extend({
     {
         type = "int-setting",
         name = "rpm_entity", -- requester paste multiplier for entities
@@ -33,4 +33,4 @@ data:extend {
         setting_type = "startup",
         default_value = true,
     }
-}
+})
