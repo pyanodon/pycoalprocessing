@@ -105,7 +105,6 @@ local function restock_generator_equipment(player)
                 {"alerts.equipment-out-of-fuel", burner_data.equipment.prototype.take_result.name, burner_data.equipment.prototype.localised_name},
                 false
             )
-            break
         end
     end
 end
