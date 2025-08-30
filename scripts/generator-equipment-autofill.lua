@@ -12,6 +12,7 @@ local function restock_generator_equipment(player)
     local burner_count = 0
 
     for _, equipment in pairs(grid.equipment) do
+        -- This code scoped under a "do-end" so that the goto continue statement can jump to a location where there are no localy scoped variables defined (Lua limitation)
         do
             if equipment.type ~= "generator-equipment" then goto continue end
             if equipment.prototype.hidden then goto continue end
