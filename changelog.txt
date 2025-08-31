@@ -2,7 +2,7 @@
 Version: 3.0.43
 Date: ???
   Changes:
-    - Many typos fixed and some new translations in DE locale.
+    - Many typos fixed and some new translations in DE locale including the py codex.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.42
 Date: 2025-08-23
