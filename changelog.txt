@@ -3,6 +3,7 @@ Version: 3.0.43
 Date: ???
   Changes:
     - Many typos fixed and some new translations in DE locale.
+    - Fix lockup trying to calculate spoilage possibilities of hidden items.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.42
 Date: 2025-08-23
