@@ -420,6 +420,8 @@ local function generate_decay_spreadsheet_data(required_science)
     for name, item in pairs(prototypes.item) do
         local decay_ticks = item.get_spoil_ticks()
         if decay_ticks == 0 then goto continue end
+        -- TODO: Figure out why this is so damn slow. Dancing miku will consistently freeze migrations without this check.
+        if item.hidden then goto continue end
 
 
 
@@ -456,7 +458,6 @@ end
 
 py.on_event(py.events.on_init(), function()
     local required_science = calculate_required_science()
-
     generate_fluid_spreadsheet_data(required_science)
     generate_soild_fuel_spreadsheet_data(required_science)
     generate_decay_spreadsheet_data(required_science)
