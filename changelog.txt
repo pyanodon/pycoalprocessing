@@ -4,6 +4,7 @@ Date: ???
   Changes:
     - Many typos fixed and some new translations in DE locale.
     - Fix lockup trying to calculate spoilage possibilities of hidden items.
+    - Improved generator autofill to evenly distribute stacks of fuels. Resolves https://github.com/pyanodon/pybugreports/issues/1085
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.42
 Date: 2025-08-23
