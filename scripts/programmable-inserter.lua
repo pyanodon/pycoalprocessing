@@ -144,10 +144,6 @@ local function update_targets(inserter)
       -- set new target and proper inventory target index
       entity.proxy_target_entity = target
       entity.proxy_target_inventory = proxy_targets[target.type][metadata[index .. "_inventory"]]
-    -- else -- either no target exists or target inventory is not valid for that entity
-    --   inserter[index] = nil -- make inserter act normal
-    --   entity.proxy_target_entity = nil -- remove entity reference from proxy
-    --   entity.proxy_target_inventory = proxy_targets.default[metadata[index .. "_inventory"]] -- save the desired type for later
     end
   end
 end
@@ -306,6 +302,8 @@ py.on_event(defines.events.on_gui_selection_state_changed, function (event)
       metadata[element.name].destroy()
       metadata[element.name] = nil
       metadata[element.name .. "_inventory"] = nil
+      -- set target entity
+      inserter[element.name] = nil
       -- remove from storage if neither exists
       if not metadata.drop_target and not metadata.pickup_target then
         storage.programmable_inserters[inserter.unit_number] = nil
@@ -319,6 +317,8 @@ py.on_event(defines.events.on_gui_selection_state_changed, function (event)
         force = inserter.force,
         position = inserter[element.name:sub(1, -7) .. "position"]
       }
+      -- set target entity
+      inserter[element.name] = metadata[element.name]
       
       storage.programmable_inserters[inserter.unit_number] = metadata
       update_targets(inserter)
@@ -397,16 +397,10 @@ py.on_event(defines.events.on_player_setup_blueprint, function (event)
   -- if non existant, cancel
   if not blueprint then return end
   local entities = blueprint and blueprint.get_blueprint_entities()
-  if not entities then return; end
+  if not entities then return end
   -- update entities
   for i, entity in pairs(entities) do
-    -- if fake underground, remove from blueprint
-    if xutil.is_type.psuedo(entity) then
-      entities[i] = nil
-      -- if psuedo pipe to ground, replace with normal variant
-    elseif xutil.is_pipe(entity) then
-      entity.name = xutil.get_type.base(entity)
-    end
+    -- add tags and remove proxy inventories as necessary
   end
   blueprint.set_blueprint_entities(entities)
 end)
@@ -429,4 +423,4 @@ if script.active_mods["bobinserters"] then
   end)
 end
 
-]]
+--]]
