@@ -157,10 +157,22 @@ local function update_gui(entity, player_index, opened)
   if not valid(entity.unit_number) then return end
   local player = game.get_player(player_index)
 
+  local in_space = entity.surface.get_property("gravity") == 0
+  local tags = (entity.tags or {})["py-dynamic-inserter"]
+  local useful_data = {
+    drop_target_inventory = nil,
+    pickup_target_inventory = nil,
+  }
   
   local metadata = storage.programmable_inserters[entity.unit_number] or {}
   local drop_target = metadata.drop_target and (proxy_targets[(metadata.drop_target.proxy_target_entity or {}).type or ""] or {}) and metadata.drop_target.proxy_target_entity or entity.drop_target
+  if not drop_target and entity.type == "entity-ghost" then
+    -- check for other ghost or normal entities
+  end
   local pickup_target = metadata.pickup_target and (proxy_targets[(metadata.pickup_target.proxy_target_entity or {}).type or ""] or {}) and metadata.pickup_target.proxy_target_entity or entity.pickup_target
+  if not pickup_target and entity.type == "entity-ghost" then
+    -- check for other ghost or normal entities
+  end
 
   if player.gui.relative["programmable-inserter-gui"] then
     player.gui.relative["programmable-inserter-gui"].destroy()
@@ -241,7 +253,7 @@ local function update_gui(entity, player_index, opened)
       {(proxy_targets[(drop_target or {}).type] or {}).cargo and "" or "tooltip.unavailable-insert-target", {"inventory-target.cargo"}}
     },
     tooltip = {"tooltip.inserter-drop-target-tooltip"},
-    selected_index = selection_indices.input[metadata.drop_target_inventory] or 1
+    selected_index = selection_indices.input[(tags or metadata).drop_target_inventory] or 1
   }
   main_frame.add{
     type = "drop-down",
@@ -255,12 +267,12 @@ local function update_gui(entity, player_index, opened)
       {(proxy_targets[(pickup_target or {}).type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
     },
     tooltip = {"tooltip.inserter-pickup-target-tooltip"},
-    selected_index = selection_indices.output[metadata.pickup_target_inventory] or 1
+    selected_index = selection_indices.output[(tags or metadata).pickup_target_inventory] or 1
   }
 end
 
 py.on_event(py.events.on_gui_opened(), function (event)
-  if game.get_player(event.player_index).opened and game.get_player(event.player_index).opened.surface.get_property("gravity") == 0 then return end
+  if game.get_player(event.player_index).opened_gui_type == "entity" and game.get_player(event.player_index).opened.surface.get_property("gravity") == 0 then return end
   update_gui(event.entity, event.player_index, false)
 end)
 
@@ -281,10 +293,11 @@ py.on_event(defines.events.on_gui_selection_state_changed, function (event)
   local selection = element.items[element.selected_index][2][1]:sub(18)
   
   if inserter.type == "entity-ghost" then
-    -- tags = inserter.tags or {}
-    -- tags["py-dynamic-inserter"] = tags["py-dynamic-inserter"] or {}
-    -- tags["py-dynamic-inserter"][element.name] = selection
-    -- inserter.tags = tags
+    local tags = inserter.tags or {}
+    tags["py-dynamic-inserter"] = tags["py-dynamic-inserter"] or {}
+    tags["py-dynamic-inserter"][element.name .. "_inventory"] = element.selected_index ~= 1 and selection or nil
+    if not tags["py-dynamic-inserter"].drop_target_inventory and not tags["py-dynamic-inserter"].pickup_target_inventory then tags["py-dynamic-inserter"] = nil end
+    inserter.tags = tags
   else
     local metadata = storage.programmable_inserters[inserter.unit_number] or { inserter = inserter }
     -- "default" logic
@@ -377,12 +390,25 @@ py.on_event(defines.events.on_entity_settings_pasted, function (event)
 
 end)
 
-script.on_event(defines.events.on_player_setup_blueprint, function (event)
-
-end)
-
-script.on_event(defines.events.on_player_configured_blueprint, function (event)
-
+py.on_event(defines.events.on_player_setup_blueprint, function (event)
+	local blueprint = game.get_player(event.player_index).blueprint_to_setup
+  -- if normally invalid
+	if not blueprint or not blueprint.valid_for_read then blueprint = game.get_player(event.player_index).cursor_stack end
+  -- if non existant, cancel
+  if not blueprint then return end
+  local entities = blueprint and blueprint.get_blueprint_entities()
+  if not entities then return; end
+  -- update entities
+  for i, entity in pairs(entities) do
+    -- if fake underground, remove from blueprint
+    if xutil.is_type.psuedo(entity) then
+      entities[i] = nil
+      -- if psuedo pipe to ground, replace with normal variant
+    elseif xutil.is_pipe(entity) then
+      entity.name = xutil.get_type.base(entity)
+    end
+  end
+  blueprint.set_blueprint_entities(entities)
 end)
 
 if script.active_mods["quick-adjustable-inserters"] then
