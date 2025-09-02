@@ -363,8 +363,8 @@ end)
 py.on_event(py.events.on_destroyed(), function (event)
   if event.entity.type ~= "inserter" then return end
 
-  for _, entity in pairs(storage[event.entity.unit_number] or {}) do
-    if entity.type == "proxy-container" then entity.destroy() end
+  for _, entity in pairs(storage.programmable_inserters[event.entity.unit_number] or {}) do
+    if entity.type == "proxy-container" and entity.valid then entity.destroy() end
   end
   storage[event.entity.unit_number] = nil
 end)
