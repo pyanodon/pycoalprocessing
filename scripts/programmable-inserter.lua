@@ -356,13 +356,11 @@ py.on_event(py.events.on_destroyed(), function (event)
   storage[event.entity.unit_number] = nil
 end)
 
-script.on_event(defines.events.on_player_rotated_entity, function (event)
+py.on_event(defines.events.on_player_rotated_entity, function (event)
   update_targets(event.entity)
 end)
 
---[[
-
-script.on_event(defines.events.on_entity_settings_pasted, function (event)
+py.on_event(defines.events.on_entity_settings_pasted, function (event)
   local source = event.source
   local destination = event.destination
   local data = {} -- store the data in an ambiguous table, save as tags or in storage depending on the destination
