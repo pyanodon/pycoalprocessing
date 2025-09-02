@@ -360,6 +360,8 @@ py.on_event(defines.events.on_player_rotated_entity, function (event)
   update_targets(event.entity)
 end)
 
+--[[
+
 py.on_event(defines.events.on_entity_settings_pasted, function (event)
   local source = event.source
   local destination = event.destination
