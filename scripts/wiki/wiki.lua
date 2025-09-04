@@ -6,7 +6,11 @@ local mod_gui = require "mod-gui"
 function Wiki.create_pywiki_button(player)
     local flow = mod_gui.get_button_flow(player)
     if flow.py_open_wiki then return end
-    flow.add {type = "sprite-button", name = "py_open_wiki", sprite = "pywiki"}
+    local button = flow.add {type = "sprite-button", name = "py_open_wiki", sprite = "pywiki"}
+    button.tooltip = {"", "[font=default-bold][color=255, 230, 192]", {"pywiki.button-tooltip"}, "[/color][/font]"}
+    if script.active_mods.pyalienlife then
+        button.tooltip = {"", button.tooltip, "\n", {"pywiki.button-tooltip-alienlife-shortcuts"}}
+    end
 end
 
 Wiki.events.on_player_created = function(event)
