@@ -99,6 +99,7 @@ local function valid(metadata_index)
       metadata.drop_target.destroy()
     end
     storage.programmable_inserters[metadata_index] = nil
+    game.print("detected invalid programmable inserter data!")
     return false
   end
   return true
@@ -347,6 +348,18 @@ py.on_event(py.events.on_built(), function (event)
   if event.entity.surface.get_property("gravity") == 0 then return end
   if event.entity.type == "inserter" and event.tags and event.tags["py-dynamic-inserter"] then
     -- create relevant entities
+    local metadata = event.tags["py-dynamic-inserter"]
+    metadata.inserter = event.entity
+    for index, value in pairs(metadata) do
+      if index:sub(-9) == "inventory" then
+        metadata[index:sub(1,-11)] = event.entity.surface.create_entity{
+          name = "py-dynamic-inserter-target",
+          force = event.entity.force,
+          position = event.entity[index:sub(1,-17) .. "position"]
+        }
+      end
+    end
+    update_targets(event.entity)
   elseif proxy_targets[event.entity.type] then
     -- connect proxies to newly created entity
     local target = event.entity
@@ -373,19 +386,79 @@ py.on_event(defines.events.on_player_rotated_entity, function (event)
   update_targets(event.entity)
 end)
 
---[[
-
 py.on_event(defines.events.on_entity_settings_pasted, function (event)
   local source = event.source
   local destination = event.destination
-  local data = {} -- store the data in an ambiguous table, save as tags or in storage depending on the destination
+  local data -- store the data in an ambiguous table, save as tags or in storage depending on the destination
   -- both things must be inserters
   if (source.type == "entity-ghost" and source.ghost_type or source.type) ~= "inserter" or (destination.type == "entity-ghost" and destination.ghost_type or destination.type) ~= "inserter" then return end
 
   if source.type == "entity-ghost" then
     data = (source.tags or {})["py-dynamic-inserter"] or {}
-  else
+  elseif storage.programmable_inserters[source.unit_number] then
+    data = {
+      drop_target_inventory = storage.programmable_inserters[source.unit_number].drop_target_inventory,
+      pickup_target_inventory = storage.programmable_inserters[source.unit_number].pickup_target_inventory
+    }
+  end
 
+  if destination.type == "entity-ghost" then
+    local tags = (destination.tags or {}) or {}
+    tags["py-dynamic-inserter"] = data
+    destination.tags = tags
+  else
+    if not data and storage.programmable_inserters[destination.unit_number] then
+      -- remove old references
+      local metadata = storage.programmable_inserters[destination.unit_number]
+      if metadata.drop_target then metadata.drop_target.destroy() end
+      if metadata.pickup_target then metadata.pickup_target.destroy() end
+      storage.programmable_inserters[destination.unit_number] = nil
+    elseif data and storage.programmable_inserters[destination.unit_number] then
+      -- just update things
+      local metadata = storage.programmable_inserters[destination.unit_number]
+      metadata.drop_target_inventory = data.drop_target_inventory
+      if not metadata.drop_target and metadata.drop_target_inventory then
+        metadata.drop_target = destination.surface.create_entity{
+          name = "py-dynamic-inserter-target",
+          force = destination.force,
+          position = destination.drop_position
+        }
+      elseif metadata.drop_target and not metadata.drop_target_inventory then
+        metadata.drop_target.destroy()
+        metadata.drop_target = nil
+      end
+      metadata.pickup_target_inventory = data.pickup_target_inventory
+      if not metadata.pickup_target and metadata.pickup_target_inventory then
+        metadata.pickup_target = destination.surface.create_entity{
+          name = "py-dynamic-inserter-target",
+          force = destination.force,
+          position = destination.pickup_position
+        }
+      elseif metadata.pickup_target and not metadata.pickup_target_inventory then
+        metadata.pickup_target.destroy()
+        metadata.pickup_target = nil
+      end
+      update_targets(destination)
+    elseif data then
+      -- add all the things
+      storage.programmable_inserters[destination.unit_number] = {
+        inserter = destination,
+        drop_target = data.drop_target_inventory and destination.surface.create_entity{
+          name = "py-dynamic-inserter-target",
+          force = destination.force,
+          position = destination.drop_position
+        } or nil,
+        drop_target_inventory = data.drop_target_inventory,
+        pickup_target = data.pickup_target_inventory and destination.surface.create_entity{
+          name = "py-dynamic-inserter-target",
+          force = destination.force,
+          position = destination.pickup_position
+        } or nil,
+        pickup_target_inventory = data.pickup_target_inventory
+      }
+      storage.programmable_inserters[destination.unit_number].pickup_target_inventory = data.pickup_target_inventory
+      update_targets(destination)
+    end
   end
 
 end)
@@ -396,11 +469,26 @@ py.on_event(defines.events.on_player_setup_blueprint, function (event)
 	if not blueprint or not blueprint.valid_for_read then blueprint = game.get_player(event.player_index).cursor_stack end
   -- if non existant, cancel
   if not blueprint then return end
-  local entities = blueprint and blueprint.get_blueprint_entities()
+  local entities = blueprint.get_blueprint_entities()
   if not entities then return end
   -- update entities
-  for i, entity in pairs(entities) do
+  local mapping -- we might need it, might not
+  for index, entity in pairs(entities) do
     -- add tags and remove proxy inventories as necessary
+    if prototypes.entity[entity.name].type == "inserter" then
+      mapping = mapping or event.mapping.get()
+      local tags = entity.tags or {}
+      if mapping[index].type == "entity-ghost" then
+        tags["py-dynamic-inserter"] = (mapping[index].tags or {})["py-dynamic-inserter"]
+      elseif storage.programmable_inserters[mapping[index].unit_number] then
+        -- we only need to add data if data is in storage
+        tags["py-dynamic-inserter"] = {
+          drop_target_inventory = storage.programmable_inserters[mapping[index].unit_number].drop_target_inventory,
+          pickup_target_inventory = storage.programmable_inserters[mapping[index].unit_number].pickup_target_inventory
+        }
+      end
+      entity.tags = tags
+    end
   end
   blueprint.set_blueprint_entities(entities)
 end)
@@ -422,5 +510,3 @@ if script.active_mods["bobinserters"] then
     update_targets(event.entity)
   end)
 end
-
---]]
