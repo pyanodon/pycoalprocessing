@@ -144,13 +144,14 @@ gui_events[defines.events.on_gui_click]["py_open_wiki"] = function(event)
     if Wiki.get_wiki_gui(player) then
         Wiki.close_wiki(player)
     else
-        Wiki.open_wiki(player)
         if event.alt then
             if event.shift then
-                Wiki.open_page(player, find_page_index("caravan-manager"))
+                Wiki.open_wiki_to_page(player, "caravan-manager")
             else
-                Wiki.open_page(player, find_page_index("turd"))
+                Wiki.open_wiki_to_page(player, "turd")
             end
+        else
+            Wiki.open_wiki(player)
         end
     end
 end
@@ -176,6 +177,11 @@ function Wiki.add_section(name)
         name = name,
         is_section = true
     }
+end
+
+function Wiki.open_wiki_to_page(player, page_name)
+    Wiki.open_wiki(player)
+    Wiki.open_page(player, find_page_index(page_name))
 end
 
 function Wiki.open_page(player, index)
@@ -251,6 +257,7 @@ remote.add_interface("pywiki", {
     add_page = Wiki.add_page,
     add_section = Wiki.add_section,
     open_page = Wiki.open_page,
+    open_wiki_to_page = Wiki.open_wiki_to_page,
     get_wiki_gui = Wiki.get_wiki_gui,
     get_pages = Wiki.get_pages,
     get_page_contents = Wiki.get_page_contents,
