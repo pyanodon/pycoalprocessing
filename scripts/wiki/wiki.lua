@@ -6,7 +6,11 @@ local mod_gui = require "mod-gui"
 function Wiki.create_pywiki_button(player)
     local flow = mod_gui.get_button_flow(player)
     if flow.py_open_wiki then return end
-    flow.add {type = "sprite-button", name = "py_open_wiki", sprite = "pywiki"}
+    local button = flow.add {type = "sprite-button", name = "py_open_wiki", sprite = "pywiki"}
+    button.tooltip = {"", "[font=default-bold][color=255, 230, 192]", {"pywiki.button-tooltip"}, "[/color][/font]"}
+    if script.active_mods.pyalienlife then
+        button.tooltip = {"", button.tooltip, "\n", {"pywiki.button-tooltip-alienlife-shortcuts"}}
+    end
 end
 
 Wiki.events.on_player_created = function(event)
@@ -144,13 +148,14 @@ gui_events[defines.events.on_gui_click]["py_open_wiki"] = function(event)
     if Wiki.get_wiki_gui(player) then
         Wiki.close_wiki(player)
     else
-        Wiki.open_wiki(player)
         if event.alt then
             if event.shift then
-                Wiki.open_page(player, find_page_index("caravan-manager"))
+                Wiki.open_wiki_to_page(player, "caravan-manager")
             else
-                Wiki.open_page(player, find_page_index("turd"))
+                Wiki.open_wiki_to_page(player, "turd")
             end
+        else
+            Wiki.open_wiki(player)
         end
     end
 end
@@ -176,6 +181,11 @@ function Wiki.add_section(name)
         name = name,
         is_section = true
     }
+end
+
+function Wiki.open_wiki_to_page(player, page_name)
+    Wiki.open_wiki(player)
+    Wiki.open_page(player, find_page_index(page_name))
 end
 
 function Wiki.open_page(player, index)
@@ -251,6 +261,7 @@ remote.add_interface("pywiki", {
     add_page = Wiki.add_page,
     add_section = Wiki.add_section,
     open_page = Wiki.open_page,
+    open_wiki_to_page = Wiki.open_wiki_to_page,
     get_wiki_gui = Wiki.get_wiki_gui,
     get_pages = Wiki.get_pages,
     get_page_contents = Wiki.get_page_contents,
