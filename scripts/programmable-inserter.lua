@@ -268,7 +268,7 @@ local function update_gui(entity, player_index, opened)
 end
 
 py.on_event(py.events.on_gui_opened(), function (event)
-  if game.get_player(event.player_index).opened_gui_type == "entity" and game.get_player(event.player_index).opened.surface.get_property("gravity") == 0 then return end
+  if game.get_player(event.player_index).opened_gui_type == defines.gui_type.entity and game.get_player(event.player_index).opened.surface.get_property("gravity") == 0 then return end
   update_gui(event.entity, event.player_index, false)
 end)
 
