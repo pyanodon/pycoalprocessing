@@ -331,7 +331,8 @@ end)
 
 py.on_event(py.events.on_gui_click(), function (event)
   local button = event.element
-  if not button or button.get_mod() ~= "pycoalprocessing" then return end
+  if not button or not button.valid then return end
+  if button.get_mod() ~= "pycoalprocessing" then return end
 
   if button.name == "show-inserter-settings" then
     local base = button.parent.parent
