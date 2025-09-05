@@ -494,18 +494,22 @@ py.on_event(defines.events.on_player_setup_blueprint, function (event)
 end)
 
 if script.active_mods["quick-adjustable-inserters"] then
-  ---@param event EventData.on_qai_inserter_vectors_changed
-  script.on_event(defines.events.on_qai_inserter_vectors_changed, function(event)
-    update_targets(event.inserter)
-  end)
+  if defines.events.on_qai_inserter_vectors_changed then
+    ---@param event EventData.on_qai_inserter_vectors_changed
+    script.on_event(defines.events.on_qai_inserter_vectors_changed, function(event)
+        update_targets(event.inserter)
+    end)
+  end
 
-  ---@param event EventData.on_qai_inserter_adjustment_finished
-  script.on_event(defines.events.on_qai_inserter_adjustment_finished, function(event)
-    update_targets(event.inserter)
-  end)
+  if defines.events.on_qai_inserter_adjustment_finished then
+    ---@param event EventData.on_qai_inserter_adjustment_finished
+    script.on_event(defines.events.on_qai_inserter_adjustment_finished, function(event)
+      update_targets(event.inserter)
+    end)
+  end
 end
 
-if script.active_mods["bobinserters"] then
+if script.active_mods["bobinserters"] and defines.events.on_bobs_inserter_adjusted then
   script.on_event(defines.events.on_bobs_inserter_adjusted, function (event)
     update_targets(event.entity)
   end)
