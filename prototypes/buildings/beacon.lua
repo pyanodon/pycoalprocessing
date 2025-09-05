@@ -124,7 +124,7 @@ for i, setting in pairs(beacon_settings) do
     local beacon = table.deepcopy(data.raw.beacon.beacon)
     local am, fm = setting.am, setting.fm
     beacon.name = beacon_names[i]
-    beacon.distribution_effectivity = settings.startup["future-beacons"].value and (0.2 * am * fm) or (0.5 * am * fm)
+    beacon.distribution_effectivity = 0.2 * am * fm
     beacon.energy_usage = 1000 * am * (fm ^ 3) .. "kW"
     beacon.supply_area_distance = 64 - 16 * (am - 1)
     if beacon.supply_area_distance < 2 then beacon.supply_area_distance = 2 end

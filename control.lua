@@ -9,6 +9,7 @@ require "scripts.tailings-pond"
 require "scripts.beacons"
 require "scripts.milestones"
 require "scripts.generator-equipment-autofill"
+require "scripts.programmable-inserter"
 
 py.on_event(py.events.on_init(), function()
     for _, interface in pairs {"silo_script", "better-victory-screen"} do
