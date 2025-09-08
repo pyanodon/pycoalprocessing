@@ -5,8 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     --upgrade = true,
-    prerequisites = {},
-    dependencies = {"wood-processing"},
+    prerequisites = {"wood-processing"},
     effects = {},
     unit = {
         count = 30,

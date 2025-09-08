@@ -4,8 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/energy-3.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {},
-    dependencies = {"energy-2"},
+    prerequisites = {"energy-2"},
     --upgrade = true,
     effects = {},
     unit = {

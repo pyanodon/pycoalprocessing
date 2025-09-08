@@ -4,8 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/excavation-2.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {},
-    dependencies = {"excavation-1"},
+    prerequisites = {"excavation-1"},
     --upgrade = true,
     effects = {},
     unit = {
@@ -26,8 +25,7 @@ if mods["pypetroleumhandling"] then
         icon = "__pycoalprocessinggraphics__/graphics/technology/excavation-3.png",
         icon_size = 128,
         order = "c-a",
-        prerequisites = {},
-        dependencies = {"excavation-2"},
+        prerequisites = {"excavation-2"},
         --upgrade = true,
         effects = {},
         unit = {

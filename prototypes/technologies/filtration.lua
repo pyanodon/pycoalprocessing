@@ -22,8 +22,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/filtration-mk02.png",
     icon_size = 128,
     order = "c-b",
-    prerequisites = {},
-    dependencies = {"filtration"},
+    prerequisites = {"filtration"},
     effects = {},
     unit = {
         count = 40,
