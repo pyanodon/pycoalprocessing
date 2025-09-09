@@ -25,12 +25,5 @@ data:extend {
         minimum_value = 0,
         maximum_value = 100,
         default_value = 0
-    },
-    {
-        type = "bool-setting",
-        name = "future-beacons",
-        order = "ad",
-        setting_type = "startup",
-        default_value = true,
     }
 }
