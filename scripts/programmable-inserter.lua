@@ -29,14 +29,9 @@ local proxy_targets = {
     burnt_result = defines.inventory.burnt_result,
     modules = defines.inventory.mining_drill_modules,
   },
-  ["rocket-silo"] = {
-    input = defines.inventory.crafter_input,
-    output = defines.inventory.crafter_output,
-    fuel = defines.inventory.fuel,
-    burnt_result = defines.inventory.burnt_result,
-    modules = defines.inventory.crafter_modules,
-    trash = defines.inventory.rocket_silo_trash,
-    cargo = defines.inventory.rocket_silo_rocket,
+  ["car"] = {
+    input = defines.inventory.car_trunk,
+    fuel = defines.inventory.fuel
   },
   ["default"] = {
     input = defines.inventory.crafter_input,
@@ -45,8 +40,7 @@ local proxy_targets = {
     burnt_result = defines.inventory.burnt_result,
     modules = defines.inventory.crafter_modules,
     trash = defines.inventory.crafter_trash,
-    dump = defines.inventory.assembling_machine_dump,
-    cargo = defines.inventory.rocket_silo_rocket,
+    dump = defines.inventory.assembling_machine_dump
   }
 }
 
@@ -61,9 +55,7 @@ local proxy_pointers = {
   [defines.inventory.lab_input] = "input",
   [defines.inventory.lab_modules] = "modules",
   [defines.inventory.lab_trash] = "trash",
-  [defines.inventory.mining_drill_modules] = "modules",
-  [defines.inventory.rocket_silo_rocket] = "cargo",
-  [defines.inventory.rocket_silo_trash] = "trash",
+  [defines.inventory.mining_drill_modules] = "modules"
 }
 
 local selection_indices ={
@@ -71,8 +63,7 @@ local selection_indices ={
     default = 1,
     input = 2,
     fuel = 3,
-    modules = 4,
-    cargo = 5
+    modules = 4
   },
   output = {
     default = 1,
@@ -130,11 +121,11 @@ local function update_targets(inserter)
         "assembling-machine",
         "lab",
         "mining-drill",
-        "rocket-silo"
+        "car"
       }
     }) do
       -- make sure we dont select things that we aren't supposed to see, only target things we need
-      if not p_target.prototype.hidden and proxy_targets[p_target.type][metadata[index .. "_inventory"]] then
+      if (p_target.type ~= "car" or p_target.name == "space-pod") and not p_target.prototype.hidden and proxy_targets[p_target.type][metadata[index .. "_inventory"]] then
         target = p_target
         break
       end
@@ -154,7 +145,6 @@ local function update_gui(entity, player_index, opened)
   if not valid(entity.unit_number) then return end
   local player = game.get_player(player_index)
 
-  local in_space = entity.surface.get_property("gravity") == 0
   local tags = (entity.tags or {})["py-dynamic-inserter"]
   local useful_data = {
     drop_target_inventory = nil,
@@ -247,7 +237,6 @@ local function update_gui(entity, player_index, opened)
       {(proxy_targets[(drop_target or {}).type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
       {(proxy_targets[(drop_target or {}).type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
       {(proxy_targets[(drop_target or {}).type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
-      {(proxy_targets[(drop_target or {}).type] or {}).cargo and "" or "tooltip.unavailable-insert-target", {"inventory-target.cargo"}}
     },
     tooltip = {"tooltip.inserter-drop-target-tooltip"},
     selected_index = selection_indices.input[(tags or metadata).drop_target_inventory] or 1
@@ -268,8 +257,10 @@ local function update_gui(entity, player_index, opened)
   }
 end
 
+-- TODO fix upgrade events breaking it
+
 py.on_event(py.events.on_gui_opened(), function (event)
-  if game.get_player(event.player_index).opened_gui_type == defines.gui_type.entity and game.get_player(event.player_index).opened.surface.get_property("gravity") == 0 then return end
+  if game.get_player(event.player_index).opened_gui_type ~= defines.gui_type.entity then return end
   update_gui(event.entity, event.player_index, false)
 end)
 
@@ -346,7 +337,6 @@ py.on_event(py.events.on_gui_click(), function (event)
 end)
 
 py.on_event(py.events.on_built(), function (event)
-  if event.entity.surface.get_property("gravity") == 0 then return end
   if event.entity.type == "inserter" and event.tags and event.tags["py-dynamic-inserter"] then
     -- create relevant entities
     local metadata = event.tags["py-dynamic-inserter"]
@@ -361,7 +351,7 @@ py.on_event(py.events.on_built(), function (event)
       end
     end
     update_targets(event.entity)
-  elseif proxy_targets[event.entity.type] then
+  elseif (event.entity.type ~= "car" or event.entity.name == "space-pod") and proxy_targets[event.entity.type] then
     -- connect proxies to newly created entity
     local target = event.entity
     for _, proxy in pairs(target.surface.find_entities_filtered{
