@@ -10,7 +10,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "refsyngas", amount = 70}
-    }
+    },
 }:add_unlock("filtration")
 
 RECIPE {

@@ -15,3 +15,5 @@ TECHNOLOGY {
         time = 55
     }
 }
+
+data.raw.technology["concrete"]:add_prereq("crusher") -- concrete requires gravel

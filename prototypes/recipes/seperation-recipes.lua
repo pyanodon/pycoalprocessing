@@ -16,7 +16,7 @@ RECIPE {
     icon = "__pycoalprocessinggraphics__/graphics/icons/class-pure-sand.png",
     icon_size = 32,
     subgroup = "py-items-class",
-    order = "b"
+    order = "b",
 }:add_unlock("separation")
 
 RECIPE {

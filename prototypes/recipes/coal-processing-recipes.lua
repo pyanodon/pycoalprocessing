@@ -290,7 +290,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "flue-gas",       amount = 500},
-        {type = "fluid", name = "carbon-dioxide", amount = 100},
+        {type = "fluid", name = "carbon-dioxide", amount = 100, autotech_ignore = not not mods.pyalienlife},
         {type = "fluid", name = "aromatics",      amount = 100},
         {type = "item",  name = "rich-clay",      amount = 1}
     },
@@ -298,7 +298,7 @@ RECIPE {
     icon = "__pycoalprocessinggraphics__/graphics/icons/tar-distilation.png",
     icon_size = 32,
     subgroup = "py-items",
-    order = "t"
+    order = "t",
 }:add_unlock("tar-processing")
 
 RECIPE {
