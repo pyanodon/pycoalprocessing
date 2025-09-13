@@ -92,7 +92,7 @@ data.raw.technology["uranium-ammo"].unit.ingredients = {
 }
 data.raw.technology["uranium-ammo"].prerequisites = {"military-2", "uranium-processing"}
 
-TECHNOLOGY("concrete"):remove_prereq("automation-2")
+TECHNOLOGY("concrete"):remove_prereq("automation-2"):remove_prereq("advanced-material-processing")
 -- Remove empty vanilla techs
 TECHNOLOGY("automation-2"):set_fields {prerequisites = {}}
 TECHNOLOGY("laser"):set_fields {enabled = false, hidden = true}
