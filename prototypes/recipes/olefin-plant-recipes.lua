@@ -33,7 +33,7 @@ RECIPE {
         {type = "fluid", name = "carbon-dioxide", amount = 200}
     },
     results = {
-        {type = "fluid", name = "olefin", amount = 200, autotech_ignore = true}
+        {type = "fluid", name = "olefin", amount = 200, autotech_is_not_primary_source = true}
     },
     main_product = "olefin",
     icon = "__pycoalprocessinggraphics__/graphics/icons/olefin.png",

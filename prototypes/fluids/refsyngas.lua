@@ -43,7 +43,7 @@ RECIPE {
         {type = "item",  name = "methanol-gas-canister", amount = 1}
     },
     results = {
-        {type = "fluid", name = "refsyngas",          amount = 100, autotech_ignore = true},
+        {type = "fluid", name = "refsyngas",          amount = 100, autotech_is_not_primary_source = true},
         {type = "fluid", name = "water",              amount = 30}, --bob hydrogen
         {type = "fluid", name = "carbon-dioxide",     amount = 20},
         {type = "fluid", name = "acidgas",            amount = 60},
