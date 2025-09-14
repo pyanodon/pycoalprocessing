@@ -218,7 +218,7 @@ function Wiki.open_page(player, index)
     if page_data.text_only then
         local label = contents.add {type = "label", caption = {"pywiki-descriptions." .. page_data.name}, style = "label_with_left_padding", ignored_by_interaction = false}
         label.style.single_line = false
-        label.style.rich_text_setting = defines.rich_text_setting.highlight
+        label.style.rich_text_setting = page_data.rich_text_setting or defines.rich_text_setting.highlight
     elseif page_data.remote then
         remote.call(page_data.remote[1], page_data.remote[2], contents, player)
     end
