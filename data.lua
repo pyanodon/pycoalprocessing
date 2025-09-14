@@ -168,6 +168,9 @@ require "prototypes/menu-simulations"
 -- sprites
 require "prototypes/sprites/sprites"
 
+-- util entities
+require "prototypes/util"
+
 data.raw["utility-constants"].default.main_menu_background_image_location = "__pycoalprocessinggraphics__/graphics/pycp-wall.jpg"
 
 -- adding fuel value to liquids
