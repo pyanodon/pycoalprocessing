@@ -53,7 +53,7 @@ TECHNOLOGY("rocket-silo"):add_pack("military-science-pack")
 TECHNOLOGY("research-speed-6"):add_pack("military-science-pack")
 TECHNOLOGY("logistic-system"):add_pack("military-science-pack"):add_pack("production-science-pack")
 TECHNOLOGY("worker-robots-speed-5"):add_pack("military-science-pack")
-TECHNOLOGY("worker-robots-speed-6"):add_pack("military-science-pack").unit.cost_formula = "1.5^(L-6)*1000"
+TECHNOLOGY("worker-robots-speed-6"):add_pack("military-science-pack").unit.count_formula = "1.5^(L-6)*1000"
 TECHNOLOGY("worker-robots-storage-3"):add_pack("military-science-pack")
 TECHNOLOGY("personal-roboport-mk2-equipment"):add_pack("military-science-pack"):add_pack("production-science-pack")
 TECHNOLOGY("mining-productivity-3"):add_pack("military-science-pack")
