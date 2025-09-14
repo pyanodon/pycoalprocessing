@@ -6,6 +6,7 @@ Date: ???
     - Fix lockup trying to calculate spoilage possibilities of hidden items.
     - Improved generator autofill to evenly distribute stacks of fuels. Resolves https://github.com/pyanodon/pybugreports/issues/1085
     - Added Dutch locale
+    - Allowed codex pages to use a rich text setting other than highlight
     - Tint empty methanol canisters to be darker than filled methanol canisters. Resolves https://github.com/pyanodon/pybugreports/issues/1204
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.42
