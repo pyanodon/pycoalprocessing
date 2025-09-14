@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: a.b.c
+Date: ???
+  Changes:
+    - Change order for muddy-sludge to set it as the default recipe. Resolves https://github.com/pyanodon/pybugreports/issues/1193
+---------------------------------------------------------------------------------------------------
 Version: 3.0.42
 Date: 2025-08-23
   Changes:
