@@ -51,6 +51,9 @@ end
 data.raw["item-subgroup"]["science-pack"].group = "production"
 data.raw["item-subgroup"]["science-pack"].order = "y"
 
+-- has to be added here due to fluid/recipe load order shenanigans
+data.raw.recipe["muddy-sludge"].icons = py.composite_icon("muddy-sludge", "water", "soil")
+
 --gather recipes for module changes
 local recipes_list =
 {
