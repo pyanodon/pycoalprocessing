@@ -81,14 +81,8 @@ local function valid(metadata_index)
   if not metadata then return true end
   if not metadata.inserter.valid or (metadata.pickup_target and not metadata.pickup_target.valid) or (metadata.drop_target and not metadata.drop_target.valid) then
     if metadata.inserter.valid then metadata.inserter.destroy() end
-    if metadata.pickup_target and metadata.pickup_target.valid then
-      storage.programmable_inserters[metadata.pickup_target.unit_number] = nil
-      metadata.pickup_target.destroy()
-    end
-    if metadata.drop_target and metadata.drop_target.valid then
-      storage.programmable_inserters[metadata.drop_target.unit_number] = nil
-      metadata.drop_target.destroy()
-    end
+    if metadata.pickup_target and metadata.pickup_target.valid then metadata.pickup_target.destroy() end
+    if metadata.drop_target and metadata.drop_target.valid then metadata.drop_target.destroy() end
     storage.programmable_inserters[metadata_index] = nil
     game.print("detected invalid programmable inserter data!")
     return false
@@ -131,7 +125,6 @@ local function update_targets(inserter)
       end
     end
     
-    
     if target then
       -- set new target and proper inventory target index
       entity.proxy_target_entity = target
@@ -140,16 +133,12 @@ local function update_targets(inserter)
   end
 end
 
-local function update_gui(entity, player_index, opened)
+local function update_gui(entity, player_index)
   if not entity or (entity.type == "entity-ghost" and entity.ghost_type or entity.type) ~= "inserter" then return end
   if not valid(entity.unit_number) then return end
   local player = game.get_player(player_index)
 
   local tags = (entity.tags or {})["py-dynamic-inserter"]
-  local useful_data = {
-    drop_target_inventory = nil,
-    pickup_target_inventory = nil,
-  }
   
   local metadata = storage.programmable_inserters[entity.unit_number] or {}
   local drop_target = metadata.drop_target and (proxy_targets[(metadata.drop_target.proxy_target_entity or {}).type or ""] or {}) and metadata.drop_target.proxy_target_entity or entity.drop_target
@@ -161,112 +150,136 @@ local function update_gui(entity, player_index, opened)
     -- check for other ghost or normal entities
   end
 
-  if player.gui.relative["programmable-inserter-gui"] then
-    player.gui.relative["programmable-inserter-gui"].destroy()
-  end
+  local relative = player.gui.relative
 
-  local window = player.gui.relative.add{
-    type = "frame",
-    name = "programmable-inserter-gui",
-    style = "invisible_frame",
-    anchor = {
-      gui = defines.relative_gui_type.inserter_gui,
-      position = defines.relative_gui_position.right
+  if not relative["programmable-inserter-gui"] then
+    -- recreate main gui
+    local window = player.gui.relative.add{
+      type = "frame",
+      name = "programmable-inserter-gui",
+      style = "invisible_frame",
+      anchor = {
+        gui = defines.relative_gui_type.inserter_gui,
+        position = defines.relative_gui_position.right
+      }
     }
-  }
 
-  -- add 'settings' button
-  local mini_window = window.add{
-    type = "frame",
-    name = "mini-frame"
-  }
-  mini_window.style.top_padding = 5
-  mini_window.style.bottom_padding = 5
-  mini_window.style.left_padding = 5
-  mini_window.style.right_padding = 5
-  mini_window.visible = not opened
-  mini_window.add{
-    type = "sprite-button",
-    name = "show-inserter-settings",
-    style = "close_button",
-    sprite = "utility/tip_icon",
-    tooltip = {"tooltip.show-inserter-settings"}
-  }
-
-  -- add main settings window
-  local main_frame = window.add{
-    type = "frame",
-    name = "main-frame",
-    direction = "vertical"
-  }
-  main_frame.visible = opened
-  main_frame.add{
-    type = "flow",
-    name = "titlebar",
-    direction = "horizontal"
-  }.add{
-      type = "label",
-      style = "frame_title",
-      caption = {"tooltip.inserter-settings-title"}
-  }
-  local header = main_frame.titlebar.add{
-    type = "empty-widget",
-    style = "draggable_space_header"
-  }
-  header.style.horizontally_stretchable = true
-  header.style.natural_height = 24
-  header.style.height = 24
-  header.style.right_margin = 5
-  main_frame.titlebar.add{
+    -- add 'settings' button
+    local mini_window = window.add{
+      type = "frame",
+      name = "mini-frame"
+    }
+    mini_window.style.top_padding = 5
+    mini_window.style.bottom_padding = 5
+    mini_window.style.left_padding = 5
+    mini_window.style.right_padding = 5
+    mini_window.add{
       type = "sprite-button",
-      name = "hide-inserter-settings",
+      name = "show-inserter-settings",
       style = "close_button",
-      sprite = "utility/close",
-  }
-  
-  main_frame = main_frame.add{
-    type = "frame",
-    style = "inside_shallow_frame_with_padding_and_vertical_spacing",
-    direction = "vertical"
-  }
-  main_frame.add{
-    type = "drop-down",
-    name = "drop_target",
-    items = {
+      sprite = "utility/tip_icon",
+      tooltip = {"tooltip.show-inserter-settings"}
+    }
+
+    -- add main settings window
+    local main_frame = window.add{
+      type = "frame",
+      name = "main-frame",
+      direction = "vertical"
+    }
+    main_frame.visible = false
+    main_frame.add{
+      type = "flow",
+      name = "titlebar",
+      direction = "horizontal"
+    }.add{
+        type = "label",
+        style = "frame_title",
+        caption = {"tooltip.inserter-settings-title"}
+    }
+    local header = main_frame.titlebar.add{
+      type = "empty-widget",
+      style = "draggable_space_header"
+    }
+    header.style.horizontally_stretchable = true
+    header.style.natural_height = 24
+    header.style.height = 24
+    header.style.right_margin = 5
+    main_frame.titlebar.add{
+        type = "sprite-button",
+        name = "hide-inserter-settings",
+        style = "close_button",
+        sprite = "utility/close",
+    }
+    
+    main_frame = main_frame.add{
+      type = "frame",
+      name = "sub-frame",
+      style = "inside_shallow_frame_with_padding_and_vertical_spacing",
+      direction = "vertical"
+    }
+
+    -- update checkboxes
+    main_frame.add{
+      type = "drop-down",
+      name = "drop_target",
+      items = {
+        {"", {"inventory-target.default"}},
+        {(proxy_targets[(drop_target or {}).type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
+        {(proxy_targets[(drop_target or {}).type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
+        {(proxy_targets[(drop_target or {}).type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+      },
+      tooltip = {"tooltip.inserter-drop-target-tooltip"},
+      selected_index = selection_indices.input[(tags or metadata).drop_target_inventory] or 1
+    }
+    main_frame.add{
+      type = "drop-down",
+      name = "pickup_target",
+      items = {
+        {"", {"inventory-target.default"}},
+        {(proxy_targets[(pickup_target or {}).type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
+        {(proxy_targets[(pickup_target or {}).type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
+        {(proxy_targets[(pickup_target or {}).type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+        {(proxy_targets[(pickup_target or {}).type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
+        {(proxy_targets[(pickup_target or {}).type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
+      },
+      tooltip = {"tooltip.inserter-pickup-target-tooltip"},
+      selected_index = selection_indices.output[(tags or metadata).pickup_target_inventory] or 1
+    }
+  else
+    relative["programmable-inserter-gui"].visible = true
+    local sub_frame = relative["programmable-inserter-gui"]["main-frame"]["sub-frame"]
+
+    -- update checkboxes
+    sub_frame.drop_target.items = {
       {"", {"inventory-target.default"}},
       {(proxy_targets[(drop_target or {}).type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
       {(proxy_targets[(drop_target or {}).type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
       {(proxy_targets[(drop_target or {}).type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
-    },
-    tooltip = {"tooltip.inserter-drop-target-tooltip"},
-    selected_index = selection_indices.input[(tags or metadata).drop_target_inventory] or 1
-  }
-  main_frame.add{
-    type = "drop-down",
-    name = "pickup_target",
-    items = {
-      {"", {"inventory-target.default"}},
-      {(proxy_targets[(pickup_target or {}).type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
-      {(proxy_targets[(pickup_target or {}).type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
-      {(proxy_targets[(pickup_target or {}).type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
-      {(proxy_targets[(pickup_target or {}).type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
-      {(proxy_targets[(pickup_target or {}).type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
-    },
-    tooltip = {"tooltip.inserter-pickup-target-tooltip"},
-    selected_index = selection_indices.output[(tags or metadata).pickup_target_inventory] or 1
-  }
+    }
+    sub_frame.drop_target.selected_index = selection_indices.input[(tags or metadata).drop_target_inventory] or 1
+    sub_frame.pickup_target.items = {
+        {"", {"inventory-target.default"}},
+        {(proxy_targets[(pickup_target or {}).type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
+        {(proxy_targets[(pickup_target or {}).type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
+        {(proxy_targets[(pickup_target or {}).type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+        {(proxy_targets[(pickup_target or {}).type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
+        {(proxy_targets[(pickup_target or {}).type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
+    }
+    sub_frame.pickup_target.selected_index = selection_indices.output[(tags or metadata).pickup_target_inventory] or 1
+  end
 end
 
 -- TODO fix upgrade events breaking it
 
 py.on_event(py.events.on_gui_opened(), function (event)
   if game.get_player(event.player_index).opened_gui_type ~= defines.gui_type.entity then return end
-  update_gui(event.entity, event.player_index, false)
+  update_gui(event.entity, event.player_index)
 end)
 
 py.on_event(defines.events.on_gui_closed, function (event)
-  if game.get_player(event.player_index).gui.relative["programmable-inserter-gui"] then
-    game.get_player(event.player_index).gui.relative["programmable-inserter-gui"].destroy()
+  if game.get_player(event.player_index).gui.relative["programmable-inserter-gui"] and game.get_player(event.player_index).gui.relative["programmable-inserter-gui"].visible then
+    game.get_player(event.player_index).gui.relative["programmable-inserter-gui"].visible = false
   end
 end)
 
@@ -317,7 +330,7 @@ py.on_event(defines.events.on_gui_selection_state_changed, function (event)
     end
   end
 
-  update_gui(inserter, event.player_index, true)
+  update_gui(inserter, event.player_index)
 end)
 
 py.on_event(py.events.on_gui_click(), function (event)
@@ -350,6 +363,8 @@ py.on_event(py.events.on_built(), function (event)
         }
       end
     end
+    -- save data to storage
+    storage.programmable_inserters[event.entity.unit_number] = metadata
     update_targets(event.entity)
   elseif (event.entity.type ~= "car" or event.entity.name == "space-pod") and proxy_targets[event.entity.type] then
     -- connect proxies to newly created entity
@@ -359,6 +374,7 @@ py.on_event(py.events.on_built(), function (event)
       name = "py-dynamic-inserter-target"
     }) do
       proxy.proxy_target_entity = target
+      -- TODO fix somehow
       proxy.proxy_target_inventory = proxy_targets[target.type][proxy_pointers[proxy.proxy_target_inventory]]
     end
   end
@@ -384,6 +400,7 @@ py.on_event(defines.events.on_entity_settings_pasted, function (event)
   -- both things must be inserters
   if (source.type == "entity-ghost" and source.ghost_type or source.type) ~= "inserter" or (destination.type == "entity-ghost" and destination.ghost_type or destination.type) ~= "inserter" then return end
 
+  local metadata = storage.programmable_inserters[destination.unit_number]
   if source.type == "entity-ghost" then
     data = (source.tags or {})["py-dynamic-inserter"] or {}
   elseif storage.programmable_inserters[source.unit_number] then
@@ -400,7 +417,6 @@ py.on_event(defines.events.on_entity_settings_pasted, function (event)
   else
     if not data and storage.programmable_inserters[destination.unit_number] then
       -- remove old references
-      local metadata = storage.programmable_inserters[destination.unit_number]
       if metadata.drop_target then metadata.drop_target.destroy() end
       if metadata.pickup_target then metadata.pickup_target.destroy() end
       storage.programmable_inserters[destination.unit_number] = nil
@@ -447,7 +463,6 @@ py.on_event(defines.events.on_entity_settings_pasted, function (event)
         } or nil,
         pickup_target_inventory = data.pickup_target_inventory
       }
-      storage.programmable_inserters[destination.unit_number].pickup_target_inventory = data.pickup_target_inventory
       update_targets(destination)
     end
   end
