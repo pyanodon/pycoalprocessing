@@ -4,12 +4,12 @@ RECIPE("refined-concrete"):multiply_ingredient_amount("concrete", 0.25)
 
 -- https://github.com/pyanodon/pybugreports/issues/701
 -- https://github.com/pyanodon/pybugreports/issues/713
-TECHNOLOGY("fission-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
+TECHNOLOGY("fission-reactor-equipment"):remove_pack("utility-science-pack"):add_pack("production-science-pack"):remove_prereq("utility-science-pack")
 
 -- (( TECHNOLOGY ))--
 TECHNOLOGY("utility-science-pack"):add_pack("production-science-pack"):add_pack("military-science-pack")
 TECHNOLOGY("destroyer"):remove_pack("utility-science-pack"):add_pack("production-science-pack")
-TECHNOLOGY("military-4"):remove_pack("utility-science-pack")
+TECHNOLOGY("military-4"):remove_pack("utility-science-pack"):remove_prereq("utility-science-pack")
 --TODO:update fusion equipment/ fission equipment
 TECHNOLOGY("rocket-fuel"):add_pack("military-science-pack"):remove_prereq("advanced-oil-processing"):remove_prereq("flammables")
 TECHNOLOGY("kovarex-enrichment-process"):add_pack("military-science-pack")
@@ -53,7 +53,7 @@ TECHNOLOGY("rocket-silo"):add_pack("military-science-pack")
 TECHNOLOGY("research-speed-6"):add_pack("military-science-pack")
 TECHNOLOGY("logistic-system"):add_pack("military-science-pack"):add_pack("production-science-pack")
 TECHNOLOGY("worker-robots-speed-5"):add_pack("military-science-pack")
-TECHNOLOGY("worker-robots-speed-6"):add_pack("military-science-pack")
+TECHNOLOGY("worker-robots-speed-6"):add_pack("military-science-pack").unit.count_formula = "1.5^(L-6)*1000"
 TECHNOLOGY("worker-robots-storage-3"):add_pack("military-science-pack")
 TECHNOLOGY("personal-roboport-mk2-equipment"):add_pack("military-science-pack"):add_pack("production-science-pack")
 TECHNOLOGY("mining-productivity-3"):add_pack("military-science-pack")
@@ -92,7 +92,7 @@ data.raw.technology["uranium-ammo"].unit.ingredients = {
 }
 data.raw.technology["uranium-ammo"].prerequisites = {"military-2", "uranium-processing"}
 
-TECHNOLOGY("concrete"):remove_prereq("automation-2")
+TECHNOLOGY("concrete"):remove_prereq("automation-2"):remove_prereq("advanced-material-processing")
 -- Remove empty vanilla techs
 TECHNOLOGY("automation-2"):set_fields {prerequisites = {}}
 TECHNOLOGY("laser"):set_fields {enabled = false, hidden = true}
@@ -103,17 +103,17 @@ TECHNOLOGY("productivity-module"):set_fields {prerequisites = {}}
 TECHNOLOGY("efficiency-module"):set_fields {prerequisites = {}}
 
 -- (( TECHNOLOGY DEPENDENCIES ))--
---TECHNOLOGY('steel-axe'):set_fields{dependencies = {'steel-processing'}}
-TECHNOLOGY("fast-inserter"):set_fields {dependencies = {"automation"}}:set_fields {prerequisites = {}}
-TECHNOLOGY("military-2"):set_fields {dependencies = {"military"}}
+--TECHNOLOGY('steel-axe'):set_fields{prerequisites = {'steel-processing'}}
+TECHNOLOGY("fast-inserter"):set_fields {prerequisites = {"automation"}}:set_fields {prerequisites = {}}
+TECHNOLOGY("military-2"):set_fields {prerequisites = {"military"}}
 TECHNOLOGY("gate"):set_fields {prerequisites = {"stone-wall"}}:remove_pack("logistic-science-pack")
 TECHNOLOGY("automobilism"):remove_pack("logistic-science-pack"):set_fields {prerequisites = {}}
 TECHNOLOGY("engine"):remove_pack("logistic-science-pack"):set_fields {prerequisites = {}}
-TECHNOLOGY("heavy-armor"):set_fields {dependencies = {"military"}}
-TECHNOLOGY("modular-armor"):set_fields {dependencies = {"heavy-armor"}}
-TECHNOLOGY("power-armor"):set_fields {dependencies = {"modular-armor"}}
-TECHNOLOGY("power-armor-mk2"):set_fields {dependencies = {"power-armor"}}
-TECHNOLOGY("electric-energy-accumulators"):set_fields {dependencies = {"electric-energy-distribution-1"}}
+TECHNOLOGY("heavy-armor"):set_fields {prerequisites = {"military"}}
+TECHNOLOGY("modular-armor"):set_fields {prerequisites = {"heavy-armor"}}
+TECHNOLOGY("power-armor"):set_fields {prerequisites = {"modular-armor"}}
+TECHNOLOGY("power-armor-mk2"):set_fields {prerequisites = {"power-armor"}}
+TECHNOLOGY("electric-energy-accumulators"):set_fields {prerequisites = {"electric-energy-distribution-1"}}
 
 TECHNOLOGY("logistic-science-pack"):set_fields {prerequisites = {}}
 TECHNOLOGY("chemical-science-pack"):set_fields {prerequisites = {}}
@@ -378,7 +378,10 @@ data.raw["utility-constants"]["default"].max_fluid_flow = math.max(data.raw["uti
 data.raw["technology"]["efficiency-module"].prerequisites = {mods.pyalternativeenergy and "machine-components-mk02" or "productivity-module"}
 data.raw["technology"]["bulk-inserter"].prerequisites = {mods.pyhightech and "basic-electronics" or "chemical-science-pack"}
 if data.raw["technology"]["bulk-inserter-2"] then data.raw["technology"]["bulk-inserter-2"].prerequisites = {"bulk-inserter"} end
-if mods["pypetroleumhandling"] then data.raw.technology["oil-gathering"] = nil end
+if mods["pypetroleumhandling"] then
+    data.raw.technology["oil-gathering"] = nil
+    data.raw.technology["oil-processing"]:remove_prereq("oil-gathering")
+end
 
 RECIPE("grenade"):replace_ingredient("coal", "gunpowder")
 

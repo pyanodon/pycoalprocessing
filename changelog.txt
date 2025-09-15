@@ -1,17 +1,40 @@
 ---------------------------------------------------------------------------------------------------
-Version: a.b.c
+Version: 4.0.0
 Date: ???
   Changes:
     - Change order for muddy-sludge to set it as the default recipe. Resolves https://github.com/pyanodon/pybugreports/issues/1193
     - Update recipe icon for muddy-sludge.
+---------------------------------------------------------------------------------------------------
+Version: 3.0.43
+Date: ???
+  Changes:
+    - Remade tech tree with autotech 2.0. Science pack cost comparasion:
+    - automation: n/a -> trigger
+    - py1: 100 -> 100
+    - logi: 360 -> 300
+    - py2: 1300 -> 800
+    - chem: 2000 -> 1400
+    - py3: 2250 -> 1750
+    - prod: 1750 -> 2250
+    - py4: 2250 -> 3000
+    - utility: 1500 -> 3300
+    - space: 1000 -> 3600
+    - phyrric: 3000 -> 8000
+    - Tuned down the exponential ramping on worker robot speed from 2^N to 1.5^N.
+    - Many typos fixed and some new translations in DE locale including the py codex.
+    - Fix lockup trying to calculate spoilage possibilities of hidden items.
+    - Improved generator autofill to evenly distribute stacks of fuels. Resolves https://github.com/pyanodon/pybugreports/issues/1085
+    - Added Dutch locale
+    - Allowed codex pages to use a rich text setting other than highlight
+    - Tint empty methanol canisters to be darker than filled methanol canisters. Resolves https://github.com/pyanodon/pybugreports/issues/1204
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.42
 Date: 2025-08-23
   Changes:
     - Alt+click the codex button to go directly to the T.U.R.D. page.
     - Alt+shift+click the codex button to go directly to the caravan manager.
-    - Fixed typo in DE locale
     - Fixed load issue with JA language active
+    - Fixed typo in DE locale
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.41
 Date: 2025-08-19

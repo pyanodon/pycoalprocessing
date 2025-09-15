@@ -5,8 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     --upgrade = true,
-    prerequisites = {},
-    dependencies = {"cooling-tower-1", "energy-2"},
+    prerequisites = {"cooling-tower-1", "energy-2"},
     effects = {},
     unit = {
         count = 20,

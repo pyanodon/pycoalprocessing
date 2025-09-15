@@ -22,8 +22,7 @@ if mods["pypetroleumhandling"] then
         icon = "__pycoalprocessinggraphics__/graphics/technology/fluid-processing-machines-2.png",
         icon_size = 128,
         order = "c-a",
-        prerequisites = {},
-        dependencies = {"fluid-processing-machines-1"},
+        prerequisites = {"fluid-processing-machines-1"},
         effects = {},
         unit = {
             count = 50,
