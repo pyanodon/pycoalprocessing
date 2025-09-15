@@ -98,7 +98,7 @@ py.on_event(py.events.on_init(), function (event)
 end)
 
 local function update_targets(inserter)
-  if not inserter or not valid(inserter.unit_number) or not storage.programmable_inserters[inserter.unit_number] then return end
+  if not inserter or not storage.programmable_inserters[inserter.unit_number] or not valid(inserter.unit_number) then return end
   local metadata = storage.programmable_inserters[inserter.unit_number]
   for index, entity in pairs{
     drop_target = metadata.drop_target,
@@ -349,12 +349,14 @@ py.on_event(py.events.on_gui_click(), function (event)
   end
 end)
 
+local search_range = script.active_mods.bobinserters and 4 or script.active_mods["quick-adjustable-inserters"] and 3 or 2
+
 py.on_event(py.events.on_built(), function (event)
   if event.entity.type == "inserter" and event.tags and event.tags["py-dynamic-inserter"] then
     -- create relevant entities
     local metadata = event.tags["py-dynamic-inserter"]
     metadata.inserter = event.entity
-    for index, value in pairs(metadata) do
+    for index in pairs(metadata) do
       if index:sub(-9) == "inventory" then
         metadata[index:sub(1,-11)] = event.entity.surface.create_entity{
           name = "py-dynamic-inserter-target",
@@ -369,13 +371,20 @@ py.on_event(py.events.on_built(), function (event)
   elseif (event.entity.type ~= "car" or event.entity.name == "space-pod") and proxy_targets[event.entity.type] then
     -- connect proxies to newly created entity
     local target = event.entity
-    for _, proxy in pairs(target.surface.find_entities_filtered{
-      area = target.bounding_box,
-      name = "py-dynamic-inserter-target"
+    for _, inserter in pairs(target.surface.find_entities_filtered{
+      area = {
+        {
+          target.bounding_box.left_top.x - search_range,
+          target.bounding_box.left_top.y - search_range
+        },
+        {
+          target.bounding_box.right_bottom.x + search_range,
+          target.bounding_box.right_bottom.y + search_range
+        }
+      },
+      type = "inserter"
     }) do
-      proxy.proxy_target_entity = target
-      -- TODO fix somehow
-      proxy.proxy_target_inventory = proxy_targets[target.type][proxy_pointers[proxy.proxy_target_inventory]]
+      update_targets(inserter)
     end
   end
 end)
