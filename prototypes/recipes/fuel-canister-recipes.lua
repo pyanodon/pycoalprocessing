@@ -60,7 +60,7 @@ for f, fluid in pairs(data.raw.fluid) do
             fuel_category = "jerry",
             burnt_result = "empty-fuel-canister",
             stack_size = 20,
-            ignore_for_dependencies = true,
+            autotech_ignore = true,
             unlock_results = false
         }
 
@@ -85,7 +85,7 @@ for f, fluid in pairs(data.raw.fluid) do
             results = {
                 {type = "item", name = fluid.name .. "-canister", amount = 1}
             },
-            ignore_for_dependencies = true
+            autotech_ignore = true
         }:add_unlock("plastics")
 
 
@@ -104,23 +104,11 @@ for f, fluid in pairs(data.raw.fluid) do
                 {type = "fluid", name = fluid.name,            amount = fuel_amount},
                 {type = "item",  name = "empty-fuel-canister", amount = 1}
             },
-            ignore_for_dependencies = true,
+            autotech_ignore = true,
             unlock_results = false,
-            --icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
-            --icon_size = 32,
             main_product = fluid.name,
             subgroup = "py-items",
             order = "canister-b-[empty-methanol-gas-canister]"
         }:add_unlock("plastics")
-    end
-
-    if data.raw.recipe["empty-" .. fluid.name .. "-barrel"] ~= nil then
-        RECIPE("empty-" .. fluid.name .. "-barrel"):set_fields {ignore_for_dependencies = true}
-    end
-    if data.raw.recipe[fluid.name .. "-barrel"] ~= nil then
-        RECIPE(fluid.name .. "-barrel"):set_fields {ignore_for_dependencies = true}
-    end
-    if data.raw.item[fluid.name .. "-barrel"] ~= nil then
-        ITEM(fluid.name .. "-barrel"):set_fields {ignore_for_dependencies = true}
     end
 end

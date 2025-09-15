@@ -5,8 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     --upgrade = true,
-    prerequisites = {},
-    dependencies = {"coal-processing-1"},
+    prerequisites = {"coal-processing-1"},
     effects = {},
     unit = {
         count = 50,

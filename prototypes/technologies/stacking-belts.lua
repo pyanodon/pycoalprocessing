@@ -19,11 +19,11 @@ end
 
 local science_packs_that_unlock_belt_stacking = {
     ["logistic-science-pack"] = "logistic-science-pack",
-    ["py-science-pack-mk02"] = "py-science-pack-2",
+    ["py-science-pack-2"] = "py-science-pack-2",
     ["chemical-science-pack"] = "chemical-science-pack",
-    ["py-science-pack-mk03"] = "py-science-pack-3",
+    ["py-science-pack-3"] = "py-science-pack-3",
     ["production-science-pack"] = "production-science-pack",
-    ["py-science-pack-mk04"] = "py-science-pack-4",
+    ["py-science-pack-4"] = "py-science-pack-4",
     ["utility-science-pack"] = "utility-science-pack",
 }
 

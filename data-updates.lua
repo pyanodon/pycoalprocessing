@@ -188,9 +188,8 @@ local recipes_list =
     "tpa",
     "wood-to-coal",
     "zinc-chloride",
+    "niobium-plate"
 }
-
-table.insert(recipes_list, "niobium-plate")
 
 --adding to module limitation list
 py.allow_productivity(recipes_list)

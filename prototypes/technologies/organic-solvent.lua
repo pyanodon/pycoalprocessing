@@ -4,7 +4,7 @@ TECHNOLOGY {
     icon = "__pycoalprocessinggraphics__/graphics/technology/organic-solvent.png",
     icon_size = 128,
     order = "c-a",
-    prerequisites = {},
+    prerequisites = {"coal-processing-2"},
     effects = {},
     unit = {
         count = 50,
