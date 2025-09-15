@@ -5,8 +5,7 @@ TECHNOLOGY {
     icon_size = 128,
     order = "c-a",
     --upgrade = true,
-    prerequisites = {},
-    dependencies = {"energy-1"},
+    prerequisites = {"energy-1"},
     effects = {},
     unit = {
         count = 25,
