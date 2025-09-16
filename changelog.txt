@@ -2,6 +2,7 @@
 Version: 4.0.0
 Date: ???
   Changes:
+    - Linearilized Dependencies.
     - Change order for muddy-sludge to set it as the default recipe. Resolves https://github.com/pyanodon/pybugreports/issues/1193
     - Update recipe icon for muddy-sludge.
 ---------------------------------------------------------------------------------------------------
