@@ -3,6 +3,7 @@ Version: 3.0.44
 Date: ????
   Changes:
     - Fixed some techs having a too-fast cycle time
+    - Updated Simplified Chinese locale courtesy of @alone on Discord
     - Fixed all techs added by "enable all feature flags" not being seen by autotech.
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.43
