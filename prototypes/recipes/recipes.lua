@@ -416,7 +416,7 @@ RECIPE {
     },
     results = {
         {type = "item",  name = "lime",           amount = 10},
-        {type = "fluid", name = "carbon-dioxide", amount = 100}
+        {type = "fluid", name = "carbon-dioxide", amount = 100, autotech_is_not_primary_source = true}
     },
     main_product = "lime"
 }:add_unlock("separation")
