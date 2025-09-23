@@ -59,6 +59,10 @@ require "prototypes/technologies/hidden-mining-fluid-autounlock"
 require "prototypes.ores.borax"
 require "prototypes.ores.niobium"
 
+-- Armor
+require "prototypes/equipment/armor-updates"
+require "prototypes/equipment/portable-gasoline-generator"
+
 
 -- (( RECIPES )) --
 require "prototypes/recipes/recipes"
@@ -83,6 +87,8 @@ require "prototypes/items/canister"
 
 -- (( TILES )) --
 require "prototypes/tiles/polluted-ground"
+require "prototypes/tiles/py-iron-oxide"
+require "prototypes/tiles/py-nexelit"
 
 -- (( FLUIDS )) --
 require "prototypes/fluids/acidgas"
@@ -161,7 +167,7 @@ require "prototypes/buildings/beacon"
 require "prototypes/buildings/diet-beacon"
 require "prototypes/buildings/lab"
 
-require 'prototypes/achievements'
+require "prototypes/achievements"
 require "prototypes/logo"
 require "prototypes/menu-simulations"
 
