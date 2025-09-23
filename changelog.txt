@@ -5,6 +5,7 @@ Date: ????
     - Fixed some techs having a too-fast cycle time
     - Updated Simplified Chinese locale courtesy of @alone on Discord
     - Fixed all techs added by "enable all feature flags" not being seen by autotech.
+    - DE locale updated, unused strings removed compared to EN locale
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.43
 Date: 2025-09-15
