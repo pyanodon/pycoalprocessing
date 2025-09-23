@@ -13,16 +13,20 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "steel-plate",      amount = 20},
-        {type = "item", name = "steam-engine",     amount = 1},
-        {type = "item", name = "iron-gear-wheel",  amount = 20},
-        {type = "item", name = "fast-inserter",    amount = 3},
-        {type = "item", name = "advanced-circuit", amount = 5}
+        {type = "item", name = "steel-plate",        amount = 20},
+        {type = "item", name = "steam-engine",       amount = 1},
+        {type = "item", name = "iron-gear-wheel",    amount = 20},
+        {type = "item", name = "fast-inserter",      amount = 3},
+        {type = "item", name = "electronic-circuit", amount = 5}
     },
     results = {
         {type = "item", name = "automated-factory-mk01", amount = 1}
     }
-}:add_unlock("advanced-circuit")
+}:add_unlock("fast-inserter")
+
+if mods["pyrawores"] then
+    RECIPE("automated-factory-mk01"):replace_ingredient("electronic-circuit", "advanced-circuit"):remove_unlock("fast-inserter"):add_unlock("advanced-circuit")
+end
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
