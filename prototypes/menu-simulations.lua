@@ -1,7 +1,3 @@
-if not mods["pyindustry"] then
-    return
-end
-
 local menu_simulations = data.raw["utility-constants"]["default"].main_menu_simulations
 
 -- do not work
