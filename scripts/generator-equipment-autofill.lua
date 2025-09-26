@@ -54,13 +54,13 @@ local function restock_generator_equipment(player)
                 local burner_data = burners[index]
                 if burner_data.fuel_categories[prototypes.item[item_stack.name].fuel_category] then
                     local item_stack_size = prototypes.item[item_stack.name].stack_size
-                    local inserted_count = burner_data.burner_inventory.insert{
-                            name = item_stack.name,
-                            quality = item_stack.quality,
-                            count = math.min(item_stack.count, item_stack_size)
-                        }
+                    local inserted_count = burner_data.burner_inventory.insert {
+                        name = item_stack.name,
+                        quality = item_stack.quality,
+                        count = math.min(item_stack.count, item_stack_size)
+                    }
                     if inserted_count ~= 0 then -- if items were inserted then remove them from the player's inventory
-                        inventory.remove{
+                        inventory.remove {
                             name = item_stack.name,
                             quality = item_stack.quality,
                             count = inserted_count
@@ -110,7 +110,6 @@ local function restock_generator_equipment(player)
 end
 
 py.register_on_nth_tick(251, "generator-equipment-autofill", "pycp", function()
-    if not script.active_mods["pyindustry"] then return end
     for _, player in pairs(game.connected_players) do
         restock_generator_equipment(player)
     end
