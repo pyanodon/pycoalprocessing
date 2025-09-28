@@ -5,6 +5,7 @@ Date: ????
     - Fixed some techs having a too-fast cycle time
     - Updated Simplified Chinese locale courtesy of @alone on Discord
     - Fixed all techs added by "enable all feature flags" not being seen by autotech.
+    - duplicate entry of "Advanced small parts" in milestones removed
     - DE locale updated, unused strings removed compared to EN locale
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.43

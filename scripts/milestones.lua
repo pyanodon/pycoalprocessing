@@ -100,7 +100,6 @@ remote.add_interface("pycoalprocessing", {
                 {type = "item",       name = "electric-engine-unit",          quantity = 1},
                 {type = "item",       name = "eg-si",                         quantity = 1},
                 {type = "item",       name = "optical-fiber",                 quantity = 1},
-                {type = "item",       name = "small-parts-02",                quantity = 1},
                 {type = "item",       name = "eva",                           quantity = 1},
                 {type = "item",       name = "pu-239",                        quantity = 1},
                 {type = "item",       name = "nuclear-sample",                quantity = 1},
