@@ -29,6 +29,13 @@ for _, cheevo in pairs(vanilla_achievements_to_disable) do
     data.raw[cheevo.cat][cheevo.name].hidden = true
 end
 
+-- update lazy bastard to be Pyanodon Compliant™
+-- 250 number is compliments of the following message by Osmo
+-->I did some calculations and playtesting and the answer is 241.
+-->This requires that there exists a native flora patch near water, so that a steam engine can be connected to it with only 1 power pole.
+-->You start with 10 mining drills and one furnace. Having mining drills is nice, but the furnace later gets recycled into the boiler, so researching and flora harvesting cannot be done unless all the required iron, copper and stone have been smelted.
+(data.raw["dont-craft-manually-achievement"]["lazy-bastard"] or {}).amount = 250
+
 
 -- ordering: 0, then a letter per mod, then a letter within the mod
 -- PyCP: a, PyIN: b, PyFE: c, PyPH: d, PyRO: e, PyHT: f, PyAL: g, PyAE: h
