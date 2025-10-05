@@ -8,6 +8,7 @@ Date: ????
     - duplicate entry of "Advanced small parts" in milestones removed
     - Updated "Lazy Bastard" achievement requirement to < 250 handcrafts
     - DE locale updated, unused strings removed compared to EN locale
+    - Fixed crash with some mods that delete vanilla achievements
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.43
 Date: 2025-09-15

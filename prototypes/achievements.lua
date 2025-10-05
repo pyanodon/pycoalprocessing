@@ -26,7 +26,11 @@ local vanilla_achievements_to_disable = {
 }
 
 for _, cheevo in pairs(vanilla_achievements_to_disable) do
-    data.raw[cheevo.cat][cheevo.name].hidden = true
+    local category = data.raw[cheevo.cat] or {}
+    local prototype = category[cheevo.name]
+    if prototype then
+        prototype.hidden = true
+    end
 end
 
 -- update lazy bastard to be Pyanodon Compliant™
