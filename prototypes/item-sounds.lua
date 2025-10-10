@@ -174,14 +174,16 @@ add_sound_single("beacon-mk01", item_sounds.mechanical_inventory_move, item_soun
 
 -- PyIndustry
 if mods.pyindustry then
-    add_sound_single("py-tank-1000", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-1500", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-3000", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-4000", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-5000", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-6500", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-7000", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-8000", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+    add_sound_single("py-tank-1", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+    add_sound_single("py-tank-2", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+    add_sound_single("py-tank-3", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+    add_sound_single("py-tank-4", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+    add_sound_single("py-tank-5", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+    add_sound_single("py-tank-6", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+    add_sound_single("py-tank-7", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+    add_sound_single("py-tank-8", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+    add_sound_single("py-tank-9", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+    add_sound_single("py-tank-10", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
     add_sound_single("barrel-machine-mk01", item_sounds.mechanical_inventory_move, item_sounds.mechanical_inventory_pickup, item_sounds.mechanical_inventory_move)
     add_sound_single("py-check-valve", item_sounds.fluid_inventory_move, item_sounds.fluid_inventory_pickup, item_sounds.fluid_inventory_move)
     add_sound_single("py-overflow-valve", item_sounds.fluid_inventory_move, item_sounds.fluid_inventory_pickup, item_sounds.fluid_inventory_move)
@@ -433,8 +435,6 @@ if mods.pyfusionenergy then
 end
 -- PyPetroleumHandling
 if mods.pypetroleumhandling then
-    add_sound_single("py-tank-9000", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-10000", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
     add_sound_multiple("natural-gas-derrick-mk%02d", 1, 4, item_sounds.pumpjack_inventory_move, item_sounds.pumpjack_inventory_pickup, item_sounds.pumpjack_inventory_move)
     add_sound_multiple("oil-derrick-mk%02d", 1, 4, item_sounds.pumpjack_inventory_move, item_sounds.pumpjack_inventory_pickup, item_sounds.pumpjack_inventory_move)
     add_sound_multiple("oil-sand-extractor-mk%02d", 1, 4, item_sounds.drill_inventory_move, item_sounds.drill_inventory_pickup, item_sounds.drill_inventory_move)
