@@ -3,6 +3,7 @@ Version: 3.0.44
 Date: ????
   Changes:
     - Fixed some techs having a too-fast cycle time
+    - Fixed AM/FM text in beacon GUI not being localizable
     - Updated Simplified Chinese locale courtesy of @alone on Discord
     - Fixed all techs added by "enable all feature flags" not being seen by autotech.
     - duplicate entry of "Advanced small parts" in milestones removed
