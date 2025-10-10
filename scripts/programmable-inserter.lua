@@ -76,7 +76,7 @@ local selection_indices ={
 }
 
 local function valid(metadata_index)
-  metadata = storage.programmable_inserters[metadata_index]
+  local metadata = storage.programmable_inserters[metadata_index]
   -- if not valid, then remove entities (will most always be inserters being invalid)
   if not metadata then return true end
   if not metadata.inserter.valid or (metadata.pickup_target and not metadata.pickup_target.valid) or (metadata.drop_target and not metadata.drop_target.valid) then
@@ -107,8 +107,7 @@ local function update_targets(inserter)
     -- move proxy to new target position
     entity.teleport(inserter[index:sub(1, -7) .. "position"])
     
-    local target
-    for _, p_target in pairs(entity.surface.find_entities_filtered{
+    for _, target in pairs(entity.surface.find_entities_filtered{
       position = entity.position,
       type = {
         "furnace",
@@ -119,16 +118,12 @@ local function update_targets(inserter)
       }
     }) do
       -- make sure we dont select things that we aren't supposed to see, only target things we need
-      if (p_target.type ~= "car" or p_target.name == "space-pod") and not p_target.prototype.hidden and proxy_targets[p_target.type][metadata[index .. "_inventory"]] then
-        target = p_target
+      if (target.type ~= "car" or target.name == "space-pod") and not target.prototype.hidden and proxy_targets[target.type][metadata[index .. "_inventory"]] then
+        -- set new target and proper inventory target index
+        entity.proxy_target_entity = target
+        entity.proxy_target_inventory = proxy_targets[target.type][metadata[index .. "_inventory"]]
         break
       end
-    end
-    
-    if target then
-      -- set new target and proper inventory target index
-      entity.proxy_target_entity = target
-      entity.proxy_target_inventory = proxy_targets[target.type][metadata[index .. "_inventory"]]
     end
   end
 end
