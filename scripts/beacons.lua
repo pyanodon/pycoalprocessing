@@ -293,7 +293,7 @@ Beacons.events.on_gui_opened = function(event)
         maximum_value = 5,
         value = name:match("%d+"),
         discrete_slider = true,
-        caption = "AM"
+        caption = { "beacon-modifier.am" }
     }
     AM.add {
         type = "textfield",
@@ -313,7 +313,7 @@ Beacons.events.on_gui_opened = function(event)
         maximum_value = 5,
         value = name:match("%d+$"),
         discrete_slider = true,
-        caption = "FM"
+        caption = { "beacon-modifier.fm" }
     }
     FM.add {
         type = "textfield",
