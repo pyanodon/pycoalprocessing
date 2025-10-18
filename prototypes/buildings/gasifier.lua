@@ -156,7 +156,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "gasifier",         amount = 1},
-        {type = "item", name = "py-tank-3000",     amount = 1},
+        {type = "item", name = "py-tank-3",        amount = 1},
         {type = "item", name = "plastic-bar",      amount = 30},
         {type = "item", name = "engine-unit",      amount = 2},
         {type = "item", name = "advanced-circuit", amount = 10},
@@ -175,7 +175,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "gasifier-mk02",        amount = 1},
-        {type = "item", name = "py-tank-6500",         amount = 1},
+        {type = "item", name = "py-tank-7",            amount = 1},
         {type = "item", name = "electric-engine-unit", amount = 2},
         {type = "item", name = "kevlar",               amount = 15},
         {type = "item", name = "processing-unit",      amount = 10},
@@ -195,7 +195,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "gasifier-mk03", amount = 1},
-        {type = "item", name = "py-tank-8000",  amount = 1},
+        {type = "item", name = "py-tank-8",     amount = 1},
         {type = "item", name = "nbfe-alloy",    amount = 20},
         {type = "item", name = "super-steel",   amount = 20},
         {type = "item", name = "tin-plate",     amount = 40},

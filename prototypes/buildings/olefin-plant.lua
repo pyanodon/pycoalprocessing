@@ -167,7 +167,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "olefin-plant",     amount = 1},
-        {type = "item", name = "py-tank-3000",     amount = 3},
+        {type = "item", name = "py-tank-3",        amount = 3},
         {type = "item", name = "advanced-circuit", amount = 10},
         {type = "item", name = "pump",             amount = 4},
         {type = "item", name = "concrete",         amount = 40},
@@ -188,7 +188,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "olefin-plant-mk02",    amount = 1},
-        {type = "item", name = "py-tank-6500",         amount = 3},
+        {type = "item", name = "py-tank-7",            amount = 3},
         {type = "item", name = "processing-unit",      amount = 15},
         {type = "item", name = "niobium-plate",        amount = 20},
         {type = "item", name = "pump",                 amount = 4},
@@ -209,7 +209,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "olefin-plant-mk03",     amount = 1},
-        {type = "item", name = "py-tank-8000",          amount = 3},
+        {type = "item", name = "py-tank-8",             amount = 3},
         {type = "item", name = "pump",                  amount = 4},
         {type = "item", name = "nbfe-alloy",            amount = 20},
         {type = "item", name = "low-density-structure", amount = 10},

@@ -221,7 +221,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "rectisol",         amount = 1},
-        {type = "item", name = "py-tank-3000",     amount = 2},
+        {type = "item", name = "py-tank-3",        amount = 2},
         {type = "item", name = "advanced-circuit", amount = 25},
         {type = "item", name = "plastic-bar",      amount = 50},
         {type = "item", name = "nexelit-plate",    amount = 15},
@@ -241,7 +241,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "rectisol-mk02",        amount = 1},
-        {type = "item", name = "py-tank-6500",         amount = 2},
+        {type = "item", name = "py-tank-7",            amount = 2},
         {type = "item", name = "processing-unit",      amount = 20},
         {type = "item", name = "niobium-plate",        amount = 30},
         {type = "item", name = "electric-engine-unit", amount = 4},
@@ -261,7 +261,7 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "rectisol-mk03",         amount = 1},
-        {type = "item", name = "py-tank-8000",          amount = 2},
+        {type = "item", name = "py-tank-8",             amount = 2},
         {type = "item", name = "kevlar",                amount = 30},
         {type = "item", name = "nbfe-alloy",            amount = 15},
         {type = "item", name = "low-density-structure", amount = 10},

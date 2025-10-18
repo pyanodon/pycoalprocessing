@@ -604,7 +604,7 @@ RECIPE {
 }:add_unlock("filtration")
 
 if mods.pyrawores then
-    RECIPE("zinc-chloride"):replace_ingredient_unsafe("iron-plate", "zinc-plate"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen-chloride", amount = 20}):remove_ingredient("copper-plate"):add_result_unsafe {type = "fluid", name = "hydrogen", amount = 20}
+    RECIPE("zinc-chloride"):replace_ingredient_unsafe("iron-plate", "zinc-plate"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen-chloride", amount = 20}):remove_ingredient("copper-plate"):add_result {type = "fluid", name = "hydrogen", amount = 20}
 end
 
 RECIPE {
