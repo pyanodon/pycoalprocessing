@@ -147,6 +147,7 @@ RECIPE {
         {type = "item", name = "plastic-bar",      amount = 10},
         {type = "item", name = "nexelit-plate",    amount = 15},
         {type = "item", name = "advanced-circuit", amount = 5},
+        {type = "item", name = "duralumin",        amount = 20},
     },
     results = {
         {type = "item", name = "carbon-filter-mk02", amount = 1}
@@ -164,7 +165,9 @@ RECIPE {
         {type = "item", name = "niobium-plate",        amount = 20},
         {type = "item", name = "niobium-pipe",         amount = 10},
         {type = "item", name = "electric-engine-unit", amount = 1},
-        {type = "item", name = "kevlar",               amount = 10}
+        {type = "item", name = "kevlar",               amount = 10},
+        {type = "item", name = "titanium-plate",       amount = 30},
+        {type = "item", name = "stainless-steel",      amount = 15},
     },
     results = {
         {type = "item", name = "carbon-filter-mk03", amount = 1}
@@ -180,6 +183,8 @@ RECIPE {
         {type = "item", name = "carbon-filter-mk03",    amount = 1},
         {type = "item", name = "low-density-structure", amount = 15},
         {type = "item", name = "nbfe-alloy",            amount = 5},
+        {type = "item", name = "tin-plate",             amount = 30},
+        {type = "item", name = "super-steel",           amount = 20},
     },
     results = {
         {type = "item", name = "carbon-filter-mk04", amount = 1}

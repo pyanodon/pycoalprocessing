@@ -21,6 +21,10 @@ RECIPE {
     order = "c [methanol]"
 }:add_unlock("methanol-processing-1")
 
+if mods.pyrawores then
+    RECIPE("empty-gas-canister"):replace_ingredient_unsafe("steel-plate", "aluminium-plate")
+end
+
 ITEM {
     type = "item",
     name = "empty-gas-canister",

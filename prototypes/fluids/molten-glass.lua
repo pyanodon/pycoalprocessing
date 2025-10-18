@@ -15,6 +15,10 @@ RECIPE {
     order = "aac"
 }
 
+if mods.pyrawores then
+    RECIPE("glass"):set_fields {enabled = false}:set_fields {hidden = true}
+end
+
 RECIPE {
     type = "recipe",
     name = "glass-2",

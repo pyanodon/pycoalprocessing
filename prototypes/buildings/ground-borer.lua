@@ -15,6 +15,10 @@ RECIPE {
     }
 }:add_unlock("excavation-1")
 
+if mods.pyrawores then
+    RECIPE("ground-borer"):replace_ingredient_unsafe("iron-plate", "titanium-plate")
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
@@ -134,7 +138,9 @@ RECIPE {
         {type = "item", name = "concrete",         amount = 40},
         {type = "item", name = "plastic-bar",      amount = 10},
         {type = "item", name = "engine-unit",      amount = 4},
-        {type = "item", name = "advanced-circuit", amount = 10}
+        {type = "item", name = "advanced-circuit", amount = 10},
+        {type = "item", name = "duralumin",        amount = 30},
+        {type = "item", name = "tin-plate",        amount = 30},
     },
     results = {
         {type = "item", name = "ground-borer-mk02", amount = 1}
@@ -152,6 +158,8 @@ RECIPE {
         {type = "item", name = "electric-engine-unit", amount = 4},
         {type = "item", name = "processing-unit",      amount = 10},
         {type = "item", name = "kevlar",               amount = 15},
+        {type = "item", name = "titanium-plate",       amount = 20},
+        {type = "item", name = "stainless-steel",      amount = 15},
     },
     results = {
         {type = "item", name = "ground-borer-mk03", amount = 1}
@@ -168,6 +176,7 @@ RECIPE {
         {type = "item", name = "concrete",              amount = 40},
         {type = "item", name = "nbfe-alloy",            amount = 30},
         {type = "item", name = "low-density-structure", amount = 15},
+        {type = "item", name = "super-steel",           amount = 30},
     },
     results = {
         {type = "item", name = "ground-borer-mk04", amount = 1}

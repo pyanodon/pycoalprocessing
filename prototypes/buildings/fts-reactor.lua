@@ -17,6 +17,10 @@ RECIPE {
     }
 }:add_unlock("coal-processing-2")
 
+if mods.pyrawores then
+    RECIPE("fts-reactor"):replace_ingredient("stone-brick", "glass")
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
@@ -267,7 +271,9 @@ RECIPE {
         {type = "item", name = "engine-unit",      amount = 6},
         {type = "item", name = "nexelit-plate",    amount = 10},
         {type = "item", name = "plastic-bar",      amount = 10},
-        {type = "item", name = "advanced-circuit", amount = 20}
+        {type = "item", name = "advanced-circuit", amount = 20},
+        {type = "item", name = "duralumin",        amount = 20},
+        {type = "item", name = "lead-plate",       amount = 20}
     },
     results = {
         {type = "item", name = "fts-reactor-mk02", amount = 1}
@@ -284,6 +290,8 @@ RECIPE {
         {type = "item", name = "electric-engine-unit", amount = 6},
         {type = "item", name = "kevlar",               amount = 15},
         {type = "item", name = "processing-unit",      amount = 10},
+        {type = "item", name = "titanium-plate",       amount = 25},
+        {type = "item", name = "stainless-steel",      amount = 20},
     },
     results = {
         {type = "item", name = "fts-reactor-mk03", amount = 1}
@@ -299,6 +307,7 @@ RECIPE {
         {type = "item", name = "fts-reactor-mk03",      amount = 1},
         {type = "item", name = "low-density-structure", amount = 15},
         {type = "item", name = "nbfe-alloy",            amount = 5},
+        {type = "item", name = "super-steel",           amount = 20},
     },
     results = {
         {type = "item", name = "fts-reactor-mk04", amount = 1}

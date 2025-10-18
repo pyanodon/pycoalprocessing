@@ -99,6 +99,10 @@ RECIPE {
     }
 }:add_unlock("ralesia")
 
+if mods.pyrawores then
+    RECIPE("ralesia-plantation-mk01"):replace_ingredient("stone", "glass")
+end
+
 for i = 1, 4 do
     if not mods.pyalienlife and i == 2 then return end
 

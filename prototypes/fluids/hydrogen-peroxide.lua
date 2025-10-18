@@ -13,6 +13,10 @@ RECIPE {
     }
 }:add_unlock("sulfur-processing")
 
+if mods.pyrawores then
+    RECIPE("hydrogen-peroxide"):replace_ingredient_unsafe("iron-plate", "nickel-plate")
+end
+
 FLUID {
     type = "fluid",
     name = "hydrogen-peroxide",

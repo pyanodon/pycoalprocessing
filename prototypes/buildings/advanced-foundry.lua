@@ -14,6 +14,10 @@ RECIPE {
     }
 }:add_unlock("steel-processing")
 
+if mods.pyrawores then
+    RECIPE("advanced-foundry-mk01"):replace_ingredient_unsafe("steel-furnace", {type = "item", name = "py-burner", amount = 1})
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
@@ -151,7 +155,10 @@ RECIPE {
         {type = "item", name = "engine-unit",           amount = 4},
         {type = "item", name = "steel-plate",           amount = 40},
         {type = "item", name = "plastic-bar",           amount = 10},
-        {type = "item", name = "advanced-circuit",      amount = 10}
+        {type = "item", name = "advanced-circuit",      amount = 10},
+        {type = "item", name = "duralumin",             amount = 30},
+        {type = "item", name = "stainless-steel",       amount = 15},
+        {type = "item", name = "glass",                 amount = 15},
     },
     results = {
         {type = "item", name = "advanced-foundry-mk02", amount = 1}
@@ -169,6 +176,8 @@ RECIPE {
         {type = "item", name = "processing-unit",       amount = 15},
         {type = "item", name = "niobium-plate",         amount = 10},
         {type = "item", name = "electric-engine-unit",  amount = 4},
+        {type = "item", name = "titanium-plate",        amount = 10},
+        {type = "item", name = "super-steel",           amount = 20},
     },
     results = {
         {type = "item", name = "advanced-foundry-mk03", amount = 1}
@@ -184,6 +193,7 @@ RECIPE {
         {type = "item", name = "advanced-foundry-mk03", amount = 1},
         {type = "item", name = "low-density-structure", amount = 20},
         {type = "item", name = "nbfe-alloy",            amount = 10},
+        {type = "item", name = "lead-plate",            amount = 40}
     },
     results = {
         {type = "item", name = "advanced-foundry-mk04", amount = 1}

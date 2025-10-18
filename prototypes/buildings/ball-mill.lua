@@ -1,4 +1,4 @@
-RECIPE {
+local ball_mill_1 = RECIPE {
     type = "recipe",
     name = "ball-mill-mk01",
     energy_required = 0.5,
@@ -14,6 +14,10 @@ RECIPE {
         {type = "item", name = "ball-mill-mk01", amount = 1}
     }
 }:add_unlock("crusher")
+
+if mods.pyrawores then
+    RECIPE("ball-mill-mk01"):add_ingredient_unsafe {type = "item", name = "py-asphalt", amount = 50}
+end
 
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
@@ -103,6 +107,8 @@ RECIPE {
         {type = "item", name = "steel-plate",      amount = 30},
         {type = "item", name = "engine-unit",      amount = 1},
         {type = "item", name = "advanced-circuit", amount = 5},
+        {type = "item", name = "duralumin",        amount = 10},
+        {type = "item", name = "stainless-steel",  amount = 25},
     },
     results = {
         {type = "item", name = "ball-mill-mk02", amount = 1}
@@ -119,6 +125,8 @@ RECIPE {
         {type = "item", name = "niobium-plate",        amount = 15},
         {type = "item", name = "electric-engine-unit", amount = 2},
         {type = "item", name = "processing-unit",      amount = 10},
+        {type = "item", name = "titanium-plate",       amount = 50},
+        {type = "item", name = "super-steel",          amount = 15},
     },
     results = {
         {type = "item", name = "ball-mill-mk03", amount = 1}
@@ -134,6 +142,7 @@ RECIPE {
         {type = "item", name = "ball-mill-mk03", amount = 1},
         {type = "item", name = "concrete",       amount = 35},
         {type = "item", name = "nbfe-alloy",     amount = 10},
+        {type = "item", name = "lead-plate",     amount = 30},
     },
     results = {
         {type = "item", name = "ball-mill-mk04", amount = 1}

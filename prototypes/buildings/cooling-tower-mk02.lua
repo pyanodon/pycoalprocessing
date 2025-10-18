@@ -25,6 +25,10 @@ RECIPE {
     }
 }:add_unlock("cooling-tower-2")
 
+if mods.pyrawores then
+    RECIPE("cooling-tower-mk02"):replace_ingredient_unsafe("pipe", "niobium-pipe"):replace_ingredient_unsafe("iron-plate", "stainless-steel")
+end
+
 ITEM {
     type = "item",
     name = "cooling-tower-mk02",

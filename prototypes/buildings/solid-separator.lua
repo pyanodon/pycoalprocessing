@@ -103,7 +103,9 @@ RECIPE {
         {type = "item", name = "engine-unit",      amount = 6},
         {type = "item", name = "nexelit-plate",    amount = 10},
         {type = "item", name = "plastic-bar",      amount = 10},
-        {type = "item", name = "advanced-circuit", amount = 20}
+        {type = "item", name = "advanced-circuit", amount = 20},
+        {type = "item", name = "duralumin",        amount = 30},
+        {type = "item", name = "tin-plate",        amount = 30},
     },
     results = {
         {type = "item", name = "solid-separator-mk02", amount = 1}
@@ -122,6 +124,8 @@ RECIPE {
         {type = "item", name = "niobium-plate",        amount = 20},
         {type = "item", name = "processing-unit",      amount = 5},
         {type = "item", name = "niobium-pipe",         amount = 15},
+        {type = "item", name = "titanium-plate",       amount = 20},
+        {type = "item", name = "stainless-steel",      amount = 15},
     },
     results = {
         {type = "item", name = "solid-separator-mk03", amount = 1}
@@ -137,6 +141,7 @@ RECIPE {
         {type = "item", name = "solid-separator-mk03",  amount = 1},
         {type = "item", name = "nbfe-alloy",            amount = 20},
         {type = "item", name = "low-density-structure", amount = 10},
+        {type = "item", name = "super-steel",           amount = 30},
     },
     results = {
         {type = "item", name = "solid-separator-mk04", amount = 1}

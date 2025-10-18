@@ -16,6 +16,10 @@ RECIPE {
     order = "c"
 }:add_unlock("niobium")
 
+if mods.pyrawores then
+    RECIPE("niobium-complex"):replace_ingredient("water", "hydrogen-chloride")
+end
+
 FLUID {
     type = "fluid",
     name = "niobium-complex",

@@ -42,6 +42,10 @@ RECIPE {
     }
 }:add_unlock("energy-1")
 
+if mods.pyrawores then
+    RECIPE("power-house"):replace_ingredient_unsafe("iron-plate", "lead-plate")
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
@@ -198,6 +202,8 @@ RECIPE {
         {type = "item", name = "fast-transport-belt", amount = 30},
         {type = "item", name = "steel-plate",         amount = 15},
         {type = "item", name = "engine-unit",         amount = 1},
+        {type = "item", name = "duralumin",           amount = 15},
+        {type = "item", name = "stainless-steel",     amount = 20},
     },
     results = {
         {type = "item", name = "power-house-mk02", amount = 1}
@@ -215,6 +221,8 @@ RECIPE {
         {type = "item", name = "kevlar",               amount = 15},
         {type = "item", name = "processing-unit",      amount = 5},
         {type = "item", name = "niobium-plate",        amount = 10},
+        {type = "item", name = "titanium-plate",       amount = 40},
+        {type = "item", name = "super-steel",          amount = 30},
     },
     results = {
         {type = "item", name = "power-house-mk03", amount = 1}
@@ -230,6 +238,7 @@ RECIPE {
         {type = "item", name = "power-house-mk03",      amount = 1},
         {type = "item", name = "low-density-structure", amount = 5},
         {type = "item", name = "nbfe-alloy",            amount = 10},
+        {type = "item", name = "lead-plate",            amount = 20}
     },
     results = {
         {type = "item", name = "power-house-mk04", amount = 1}
