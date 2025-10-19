@@ -139,7 +139,7 @@ RECIPE {
 }
 
 if mods.pyrawores then
-    RECIPE("flask"):remove_ingredient("molten-glass"):add_ingredient {type = "fluid", name = "molten-glass", amount = 200, fluidbox_index = 2}
+    RECIPE("flask"):remove_ingredient("molten-glass"):add_ingredient_unsafe {type = "fluid", name = "molten-glass", amount = 200, fluidbox_index = 2}
 end
 
 RECIPE {
@@ -485,7 +485,7 @@ RECIPE {
 }:add_unlock("fine-electronics")
 
 if mods.pyrawores then
-    RECIPE("cladding"):remove_ingredient("molten-glass"):add_ingredient {type = "item", name = "glass", amount = 5}
+    RECIPE("cladding"):remove_ingredient("molten-glass"):add_ingredient_unsafe {type = "item", name = "glass", amount = 5}
 end
 
 RECIPE {
@@ -674,7 +674,7 @@ RECIPE {
 }:add_unlock("advanced-oil-processing")
 
 if mods.pyrawores then
-    RECIPE("filtration-media"):add_ingredient {type = "item", name = "glass", amount = 6}
+    RECIPE("filtration-media"):add_ingredient_unsafe {type = "item", name = "glass", amount = 6}
 end
 
 RECIPE {

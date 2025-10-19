@@ -213,7 +213,7 @@ RECIPE {
 }:add_unlock("lab-instrument")
 
 if mods.pyrawores then
-    RECIPE("lens"):remove_ingredient("molten-glass"):add_ingredient {type = "fluid", name = "molten-glass", amount = 100, fluidbox_index = 2}
+    RECIPE("lens"):remove_ingredient("molten-glass"):add_ingredient_unsafe {type = "fluid", name = "molten-glass", amount = 100, fluidbox_index = 2}
 end
 
 RECIPE {
@@ -707,7 +707,7 @@ RECIPE {
 }:add_unlock("niobium")
 
 if mods.pyrawores then
-    RECIPE("niobium-oxide"):replace_ingredient("water", {type = "fluid", name = "nitrogen", amount = 250})
+    RECIPE("niobium-oxide"):replace_ingredient_unsafe("water", {type = "fluid", name = "nitrogen", amount = 250})
 end
 
 RECIPE {
@@ -727,7 +727,7 @@ RECIPE {
 }:add_unlock("niobium")
 
 if mods.pyrawores then
-    RECIPE("niobium-plate"):replace_ingredient("coal", "salt").category = "electrolyzer"
+    RECIPE("niobium-plate"):replace_ingredient_unsafe("coal", "salt").category = "electrolyzer"
 end
 
 RECIPE {
@@ -1047,7 +1047,7 @@ RECIPE {
 
 if mods.pyrawores then
     RECIPE("oleochemicals-distilation"):replace_result_unsafe("coal", "raw-coal", 4)
-    RECIPE("oleochemicals-distilation"):replace_ingredient("water", {type = "fluid", name = "oxygen", amount = 400})
+    RECIPE("oleochemicals-distilation"):replace_ingredient_unsafe("water", {type = "fluid", name = "oxygen", amount = 400})
 end
 
 RECIPE {

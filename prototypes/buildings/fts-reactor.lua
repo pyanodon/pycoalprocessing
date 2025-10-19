@@ -18,7 +18,7 @@ RECIPE {
 }:add_unlock("coal-processing-2")
 
 if mods.pyrawores then
-    RECIPE("fts-reactor"):replace_ingredient("stone-brick", "glass")
+    RECIPE("fts-reactor"):replace_ingredient_unsafe("stone-brick", "glass")
 end
 
 for i = 1, 4 do

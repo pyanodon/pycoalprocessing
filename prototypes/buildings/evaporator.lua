@@ -266,7 +266,6 @@ RECIPE {
         {type = "item", name = "niobium-plate",        amount = 12},
         {type = "item", name = "titanium-plate",       amount = 40},
         {type = "item", name = "stainless-steel",      amount = 30},
-        {type = "item", name = "super-steel",          amount = 35},
     },
     results = {
         {type = "item", name = "evaporator-mk03", amount = 1}
@@ -282,6 +281,7 @@ RECIPE {
         {type = "item", name = "evaporator-mk03",       amount = 1},
         {type = "item", name = "low-density-structure", amount = 10},
         {type = "item", name = "nbfe-alloy",            amount = 5},
+        {type = "item", name = "super-steel",           amount = 35},
     },
     results = {
         {type = "item", name = "evaporator-mk04", amount = 1}

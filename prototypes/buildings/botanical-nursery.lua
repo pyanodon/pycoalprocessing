@@ -43,7 +43,7 @@ RECIPE {
 }:add_unlock("wood-processing")
 
 if mods.pyrawores then
-    RECIPE("botanical-nursery"):add_ingredient {type = "item", name = "glass", amount = 10}
+    RECIPE("botanical-nursery"):add_ingredient_unsafe {type = "item", name = "glass", amount = 10}
 end
 
 for i = 1, 4 do

@@ -17,7 +17,7 @@ RECIPE {
 }:add_unlock("filtration")
 
 if mods.pyrawores then
-    RECIPE("chemical-plant-mk01"):add_ingredient {type = "item", name = "glass", amount = 50}
+    RECIPE("chemical-plant-mk01"):add_ingredient_unsafe {type = "item", name = "glass", amount = 50}
 end
 
 for i = 1, 4 do

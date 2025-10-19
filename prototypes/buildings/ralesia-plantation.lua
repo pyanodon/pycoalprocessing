@@ -100,7 +100,7 @@ RECIPE {
 }:add_unlock("ralesia")
 
 if mods.pyrawores then
-    RECIPE("ralesia-plantation-mk01"):replace_ingredient("stone", "glass")
+    RECIPE("ralesia-plantation-mk01"):replace_ingredient_unsafe("stone", "glass")
 end
 
 for i = 1, 4 do

@@ -173,28 +173,26 @@ add_sound_multiple("gasturbinemk%02d", 1, 3, item_sounds.mechanical_inventory_mo
 add_sound_single("beacon-mk01", item_sounds.mechanical_inventory_move, item_sounds.mechanical_inventory_pickup, item_sounds.mechanical_inventory_move)
 
 -- PyIndustry
-if mods.pyindustry then
-    add_sound_single("py-tank-1", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-2", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-3", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-4", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-5", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-6", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-7", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-8", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-9", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("py-tank-10", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-    add_sound_single("barrel-machine-mk01", item_sounds.mechanical_inventory_move, item_sounds.mechanical_inventory_pickup, item_sounds.mechanical_inventory_move)
-    add_sound_single("py-check-valve", item_sounds.fluid_inventory_move, item_sounds.fluid_inventory_pickup, item_sounds.fluid_inventory_move)
-    add_sound_single("py-overflow-valve", item_sounds.fluid_inventory_move, item_sounds.fluid_inventory_pickup, item_sounds.fluid_inventory_move)
-    add_sound_single("py-underflow-valve", item_sounds.fluid_inventory_move, item_sounds.fluid_inventory_pickup, item_sounds.fluid_inventory_move)
-    add_sound_single("niobium-pipe", item_sounds.metal_small_inventory_move, item_sounds.metal_small_inventory_pickup, item_sounds.metal_small_inventory_move)
-    add_sound_single("niobium-pipe-to-ground", item_sounds.metal_small_inventory_move, item_sounds.metal_small_inventory_pickup, item_sounds.metal_small_inventory_move)
-    add_sound_multiple("accumulator-mk%02d", 1, 2, item_sounds.electric_large_inventory_move, item_sounds.electric_large_inventory_pickup, item_sounds.electric_large_inventory_move)
-    for _, building in ipairs {"shed", "storehouse", "warehouse", "deposit"} do
-        for _, type in ipairs {"basic", "active-provider", "buffer", "passive-provider", "requester", "storage"} do
-            add_sound_single("py-" .. building .. "-" .. type, item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
-        end
+add_sound_single("py-tank-1", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+add_sound_single("py-tank-2", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+add_sound_single("py-tank-3", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+add_sound_single("py-tank-4", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+add_sound_single("py-tank-5", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+add_sound_single("py-tank-6", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+add_sound_single("py-tank-7", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+add_sound_single("py-tank-8", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+add_sound_single("py-tank-9", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+add_sound_single("py-tank-10", item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
+add_sound_single("barrel-machine-mk01", item_sounds.mechanical_inventory_move, item_sounds.mechanical_inventory_pickup, item_sounds.mechanical_inventory_move)
+add_sound_single("py-check-valve", item_sounds.fluid_inventory_move, item_sounds.fluid_inventory_pickup, item_sounds.fluid_inventory_move)
+add_sound_single("py-overflow-valve", item_sounds.fluid_inventory_move, item_sounds.fluid_inventory_pickup, item_sounds.fluid_inventory_move)
+add_sound_single("py-underflow-valve", item_sounds.fluid_inventory_move, item_sounds.fluid_inventory_pickup, item_sounds.fluid_inventory_move)
+add_sound_single("niobium-pipe", item_sounds.metal_small_inventory_move, item_sounds.metal_small_inventory_pickup, item_sounds.metal_small_inventory_move)
+add_sound_single("niobium-pipe-to-ground", item_sounds.metal_small_inventory_move, item_sounds.metal_small_inventory_pickup, item_sounds.metal_small_inventory_move)
+add_sound_multiple("accumulator-mk%02d", 1, 2, item_sounds.electric_large_inventory_move, item_sounds.electric_large_inventory_pickup, item_sounds.electric_large_inventory_move)
+for _, building in ipairs {"shed", "storehouse", "warehouse", "deposit"} do
+    for _, type in ipairs {"basic", "active-provider", "buffer", "passive-provider", "requester", "storage"} do
+        add_sound_single("py-" .. building .. "-" .. type, item_sounds.metal_large_inventory_move, item_sounds.metal_large_inventory_pickup, item_sounds.metal_large_inventory_move)
     end
 end
 add_sound_single("py-recharge-station-mk01", item_sounds.electric_large_inventory_move, item_sounds.electric_large_inventory_pickup, item_sounds.electric_large_inventory_move)
