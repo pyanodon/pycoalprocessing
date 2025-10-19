@@ -21,6 +21,10 @@ RECIPE {
     order = "a1"
 }:add_unlock("nexelit")
 
+if mods.pyrawores then
+    data.raw.recipe["nexelit-plate"] = nil
+end
+
 --STEEL PLATE - cant change the base one,so i did that.
 RECIPE {
     type = "recipe",

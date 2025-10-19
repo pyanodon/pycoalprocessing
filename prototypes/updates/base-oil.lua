@@ -37,7 +37,7 @@ RECIPE("sulfur"):remove_unlock("sulfur-processing"):set_fields {hidden = true}
 
 ITEM("solid-fuel"):set_fields {hidden = true}
 
-if not (mods["pyhightech"] or mods["pypetroleumhandling"] or mods["pyrawores"]) then
+if not (mods["pyrawores"]) then
     TECHNOLOGY("sulfur-processing"):add_pack("chemical-science-pack")
     TECHNOLOGY("battery"):add_pack("chemical-science-pack")
     TECHNOLOGY("battery-equipment"):add_pack("chemical-science-pack")

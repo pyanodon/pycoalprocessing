@@ -797,6 +797,11 @@ ITEM {
     stack_size = 100
 }
 
+if mods.pyrawores then
+    ITEM("crushed-copper").hidden = true
+    ITEM("crushed-iron").hidden = true
+end
+
 ITEM {
     type = "item",
     name = "log",

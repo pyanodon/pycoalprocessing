@@ -32,6 +32,10 @@ RECIPE {
     }
 }
 
+if mods.pyrawores then
+    RECIPE("fawogae-plantation-mk01"):replace_ingredient_unsafe("copper-cable", "tinned-cable")
+end
+
 local fluid_boxes
 if mods.pyalienlife then
     fluid_boxes = {

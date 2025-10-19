@@ -210,7 +210,9 @@ RECIPE {
         {type = "item", name = "nexelit-plate",       amount = 20},
         {type = "item", name = "concrete",            amount = 60},
         {type = "item", name = "plastic-bar",         amount = 10},
-        {type = "item", name = "advanced-circuit",    amount = 10}
+        {type = "item", name = "advanced-circuit",    amount = 10},
+        {type = "item", name = "duralumin",           amount = 20},
+        {type = "item", name = "lead-plate",          amount = 20},
     },
     results = {
         {type = "item", name = "tar-processing-unit-mk02", amount = 1}
@@ -228,6 +230,8 @@ RECIPE {
         {type = "item", name = "niobium-plate",            amount = 30},
         {type = "item", name = "electric-engine-unit",     amount = 2},
         {type = "item", name = "pump",                     amount = 2},
+        {type = "item", name = "titanium-plate",           amount = 25},
+        {type = "item", name = "stainless-steel",          amount = 20},
     },
     results = {
         {type = "item", name = "tar-processing-unit-mk03", amount = 1}
@@ -244,6 +248,8 @@ RECIPE {
         {type = "item", name = "pump",                     amount = 4},
         {type = "item", name = "nbfe-alloy",               amount = 20},
         {type = "item", name = "low-density-structure",    amount = 10},
+        {type = "item", name = "super-steel",              amount = 20},
+        {type = "item", name = "tin-plate",                amount = 40},
     },
     results = {
         {type = "item", name = "tar-processing-unit-mk04", amount = 1}

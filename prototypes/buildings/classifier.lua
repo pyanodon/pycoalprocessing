@@ -116,6 +116,8 @@ RECIPE {
         {type = "item", name = "engine-unit",         amount = 2},
         {type = "item", name = "fast-transport-belt", amount = 30},
         {type = "item", name = "steel-plate",         amount = 15},
+        {type = "item", name = "duralumin",           amount = 30},
+        {type = "item", name = "tin-plate",           amount = 30},
     },
     results = {
         {type = "item", name = "classifier-mk02", amount = 1}
@@ -134,6 +136,8 @@ RECIPE {
         {type = "item", name = "kevlar",                 amount = 15},
         {type = "item", name = "processing-unit",        amount = 5},
         {type = "item", name = "niobium-plate",          amount = 10},
+        {type = "item", name = "titanium-plate",         amount = 20},
+        {type = "item", name = "stainless-steel",        amount = 15},
     },
     results = {
         {type = "item", name = "classifier-mk03", amount = 1}
@@ -149,6 +153,7 @@ RECIPE {
         {type = "item", name = "classifier-mk03",       amount = 1},
         {type = "item", name = "low-density-structure", amount = 5},
         {type = "item", name = "nbfe-alloy",            amount = 10},
+        {type = "item", name = "super-steel",           amount = 30},
     },
     results = {
         {type = "item", name = "classifier-mk04", amount = 1}

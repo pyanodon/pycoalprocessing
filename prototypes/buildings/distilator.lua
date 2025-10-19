@@ -218,6 +218,8 @@ RECIPE {
         {type = "item", name = "advanced-circuit", amount = 5},
         {type = "item", name = "plastic-bar",      amount = 10},
         {type = "item", name = "engine-unit",      amount = 3},
+        {type = "item", name = "stainless-steel",  amount = 30},
+        {type = "item", name = "duralumin",        amount = 20},
     },
     results = {
         {type = "item", name = "distilator-mk02", amount = 1}
@@ -236,6 +238,8 @@ RECIPE {
         {type = "item", name = "niobium-plate",        amount = 20},
         {type = "item", name = "processing-unit",      amount = 5},
         {type = "item", name = "niobium-pipe",         amount = 15},
+        {type = "item", name = "titanium-plate",       amount = 10},
+        {type = "item", name = "super-steel",          amount = 30},
     },
     results = {
         {type = "item", name = "distilator-mk03", amount = 1}
@@ -251,6 +255,7 @@ RECIPE {
         {type = "item", name = "distilator-mk03", amount = 1},
         {type = "item", name = "pump",            amount = 4},
         {type = "item", name = "nbfe-alloy",      amount = 15},
+        {type = "item", name = "lead-plate",      amount = 20},
     },
     results = {
         {type = "item", name = "distilator-mk04", amount = 1}

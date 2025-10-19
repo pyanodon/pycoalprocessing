@@ -42,6 +42,10 @@ RECIPE {
     }
 }:add_unlock("wood-processing")
 
+if mods.pyrawores then
+    RECIPE("botanical-nursery"):add_ingredient_unsafe {type = "item", name = "glass", amount = 10}
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
@@ -157,7 +161,9 @@ RECIPE {
         {type = "item", name = "botanical-nursery", amount = 1},
         {type = "item", name = "engine-unit",       amount = 2},
         {type = "item", name = "advanced-circuit",  amount = 5},
-        {type = "item", name = "nexelit-plate",     amount = 30}
+        {type = "item", name = "nexelit-plate",     amount = 30},
+        {type = "item", name = "duralumin",         amount = 10},
+        {type = "item", name = "glass",             amount = 50}
     },
     results = {
         {type = "item", name = "botanical-nursery-mk02", amount = 1}
@@ -174,7 +180,9 @@ RECIPE {
         {type = "item", name = "electric-engine-unit",   amount = 2},
         {type = "item", name = "processing-unit",        amount = 10},
         {type = "item", name = "niobium-plate",          amount = 40},
-        {type = "item", name = "kevlar",                 amount = 15}
+        {type = "item", name = "kevlar",                 amount = 15},
+        {type = "item", name = "titanium-plate",         amount = 10},
+        {type = "item", name = "stainless-steel",        amount = 10}
     },
     results = {
         {type = "item", name = "botanical-nursery-mk03", amount = 1}
@@ -190,6 +198,8 @@ RECIPE {
         {type = "item", name = "botanical-nursery-mk03", amount = 1},
         {type = "item", name = "low-density-structure",  amount = 10},
         {type = "item", name = "nbfe-alloy",             amount = 20},
+        {type = "item", name = "tin-plate",              amount = 20},
+        {type = "item", name = "super-steel",            amount = 30},
     },
     results = {
         {type = "item", name = "botanical-nursery-mk04", amount = 1}

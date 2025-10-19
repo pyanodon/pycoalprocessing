@@ -176,6 +176,8 @@ RECIPE {
         {type = "item", name = "advanced-circuit", amount = 10},
         {type = "item", name = "steel-plate",      amount = 15},
         {type = "item", name = "concrete",         amount = 10},
+        {type = "item", name = "duralumin",        amount = 30},
+        {type = "item", name = "tin-plate",        amount = 30},
     },
     results = {
         {type = "item", name = "hpf-mk02", amount = 1}
@@ -193,6 +195,8 @@ RECIPE {
         {type = "item", name = "kevlar",               amount = 10},
         {type = "item", name = "processing-unit",      amount = 5},
         {type = "item", name = "niobium-pipe",         amount = 10},
+        {type = "item", name = "titanium-plate",       amount = 20},
+        {type = "item", name = "stainless-steel",      amount = 15},
     },
     results = {
         {type = "item", name = "hpf-mk03", amount = 1}
@@ -208,6 +212,7 @@ RECIPE {
         {type = "item", name = "hpf-mk03",              amount = 1},
         {type = "item", name = "low-density-structure", amount = 20},
         {type = "item", name = "nbfe-alloy",            amount = 10},
+        {type = "item", name = "super-steel",           amount = 30},
     },
     results = {
         {type = "item", name = "hpf-mk04", amount = 1}

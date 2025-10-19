@@ -1,7 +1,3 @@
-if mods.pyindustry then
-    require "prototypes/updates/pyindustry-updates"
-end
-
 require "prototypes/updates/base-updates"
 require "prototypes/updates/entity-updates"
 require "prototypes/technologies/stacking-belts"
@@ -21,6 +17,9 @@ ITEM("lab"):set("icon_size", 64)
 
 ITEM("electric-engine-unit"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit.png")
 ITEM("electric-engine-unit"):set("icon_size", 64)
+
+RECIPE("niobium-pipe"):remove_unlock("py-storage-tanks"):add_unlock("niobium")
+RECIPE("niobium-pipe-to-ground"):remove_unlock("py-storage-tanks"):add_unlock("niobium")
 
 RECIPE("small-electric-pole"):replace_result("small-electric-pole", {type = "item", name = "small-electric-pole", amount = 1})
 

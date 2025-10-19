@@ -50,7 +50,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 600}
     },
     results = {
-        {type = "item",  name = "sand",              amount = 10},
+        {type = "item",  name = "sand",         amount = 10},
         {type = "fluid", name = "muddy-sludge", amount = 100}
     },
     main_product = "sand",
@@ -89,7 +89,7 @@ RECIPE {
         {type = "fluid", name = "water", amount = 200}
     },
     results = {
-        {type = "item",  name = "pure-sand",         amount = 8},
+        {type = "item",  name = "pure-sand",    amount = 8},
         {type = "fluid", name = "muddy-sludge", amount = 80}
     },
     main_product = "pure-sand",
@@ -137,6 +137,10 @@ RECIPE {
     subgroup = "py-items",
     order = "f"
 }
+
+if mods.pyrawores then
+    RECIPE("flask"):remove_ingredient("molten-glass"):add_ingredient_unsafe {type = "fluid", name = "molten-glass", amount = 200, fluidbox_index = 2}
+end
 
 RECIPE {
     type = "recipe",
@@ -255,7 +259,7 @@ RECIPE {
     enabled = false,
     energy_required = 5,
     ingredients = {
-        {type = "item",  name = "biofilm",           amount = 1},
+        {type = "item",  name = "biofilm",  amount = 1},
         {type = "fluid", name = "tailings", amount = 200}
     },
     results = {
@@ -386,6 +390,11 @@ RECIPE {
     },
 }:add_unlock("battery")
 
+if mods.pyrawores then
+    RECIPE("nas-battery"):replace_ingredient_unsafe("copper-ore", "sodium-hydroxide")
+    RECIPE("nas-battery"):add_ingredient_unsafe {type = "item", name = "lead-plate", amount = 6}
+end
+
 RECIPE {
     type = "recipe",
     name = "fluegas-filtration",
@@ -454,6 +463,11 @@ RECIPE {
     main_product = "glass-core"
 }:add_unlock("fine-electronics")
 
+if mods.pyrawores then
+    RECIPE("glass-core"):remove_ingredient("molten-glass"):add_ingredient_unsafe {type = "fluid", name = "molten-glass", amount = 100, fluidbox_index = 2}
+    RECIPE("glass-core"):replace_ingredient_unsafe("steel-plate", "silver-plate")
+end
+
 RECIPE {
     type = "recipe",
     name = "cladding",
@@ -470,6 +484,10 @@ RECIPE {
     main_product = "cladding"
 }:add_unlock("fine-electronics")
 
+if mods.pyrawores then
+    RECIPE("cladding"):remove_ingredient("molten-glass"):add_ingredient_unsafe {type = "item", name = "glass", amount = 5}
+end
+
 RECIPE {
     type = "recipe",
     name = "ppd",
@@ -485,6 +503,10 @@ RECIPE {
     },
     main_product = "ppd"
 }:add_unlock("kevlar")
+
+if mods.pyrawores then
+    RECIPE("ppd"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen", amount = 500}):add_ingredient_unsafe {type = "fluid", name = "chlorine", amount = 400}.category = "electrolyzer"
+end
 
 RECIPE {
     type = "recipe",
@@ -535,6 +557,10 @@ RECIPE {
     main_product = "nbfe-alloy"
 }:add_unlock("niobium")
 
+if mods.pyrawores then
+    RECIPE("nbfe-alloy").category = "py-rawores-smelter"
+end
+
 RECIPE {
     type = "recipe",
     name = "nbfe-coating",
@@ -567,6 +593,10 @@ RECIPE {
     main_product = "cladded-core"
 }:add_unlock("fine-electronics")
 
+if mods.pyrawores then
+    RECIPE("cladded-core"):add_ingredient_unsafe {type = "item", name = "aramid", amount = 1}
+end
+
 RECIPE {
     type = "recipe",
     name = "copper-coating",
@@ -584,6 +614,11 @@ RECIPE {
     main_product = "copper-coating"
 }:add_unlock("fine-electronics")
 
+if mods.pyrawores then
+    RECIPE("copper-coating").category = "electrolyzer"
+    RECIPE("copper-coating"):replace_ingredient_unsafe("organic-solvent", {type = "fluid", name = "water-saline", amount = 100})
+end
+
 RECIPE {
     type = "recipe",
     name = "optical-fiber",
@@ -599,6 +634,10 @@ RECIPE {
     },
     main_product = "optical-fiber"
 }:add_unlock("fine-electronics")
+
+if mods.pyrawores then
+    RECIPE("optical-fiber"):remove_ingredient("plastic-bar"):add_ingredient {type = "item", name = "plastic-bar", amount = 5}
+end
 
 RECIPE {
     type = "recipe",
@@ -633,6 +672,10 @@ RECIPE {
     },
     main_product = "filtration-media",
 }:add_unlock("advanced-oil-processing")
+
+if mods.pyrawores then
+    RECIPE("filtration-media"):add_ingredient_unsafe {type = "item", name = "glass", amount = 6}
+end
 
 RECIPE {
     type = "recipe",

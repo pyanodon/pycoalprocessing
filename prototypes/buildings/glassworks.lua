@@ -244,7 +244,9 @@ RECIPE {
         {type = "item", name = "glassworks-mk01",  amount = 1},
         {type = "item", name = "steel-plate",      amount = 35},
         {type = "item", name = "engine-unit",      amount = 5},
-        {type = "item", name = "advanced-circuit", amount = 10}
+        {type = "item", name = "advanced-circuit", amount = 10},
+        {type = "item", name = "duralumin",        amount = 30},
+        {type = "item", name = "tin-plate",        amount = 30}
     },
     results = {
         {type = "item", name = "glassworks-mk02", amount = 1}
@@ -262,6 +264,8 @@ RECIPE {
         {type = "item", name = "kevlar",               amount = 15},
         {type = "item", name = "processing-unit",      amount = 10},
         {type = "item", name = "niobium-plate",        amount = 20},
+        {type = "item", name = "titanium-plate",       amount = 20},
+        {type = "item", name = "stainless-steel",      amount = 15},
     },
     results = {
         {type = "item", name = "glassworks-mk03", amount = 1}
@@ -278,6 +282,7 @@ RECIPE {
         {type = "item", name = "concrete",              amount = 40},
         {type = "item", name = "nbfe-alloy",            amount = 15},
         {type = "item", name = "low-density-structure", amount = 10},
+        {type = "item", name = "super-steel",           amount = 30},
     },
     results = {
         {type = "item", name = "glassworks-mk04", amount = 1}

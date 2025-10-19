@@ -156,10 +156,12 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "gasifier",         amount = 1},
-        {type = "item", name = "storage-tank",     amount = 1},
+        {type = "item", name = "py-tank-3",        amount = 1},
         {type = "item", name = "plastic-bar",      amount = 30},
         {type = "item", name = "engine-unit",      amount = 2},
-        {type = "item", name = "advanced-circuit", amount = 10}
+        {type = "item", name = "advanced-circuit", amount = 10},
+        {type = "item", name = "duralumin",        amount = 20},
+        {type = "item", name = "lead-plate",       amount = 20}
     },
     results = {
         {type = "item", name = "gasifier-mk02", amount = 1}
@@ -173,11 +175,13 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "gasifier-mk02",        amount = 1},
-        {type = "item", name = "storage-tank",         amount = 1},
+        {type = "item", name = "py-tank-7",            amount = 1},
         {type = "item", name = "electric-engine-unit", amount = 2},
         {type = "item", name = "kevlar",               amount = 15},
         {type = "item", name = "processing-unit",      amount = 10},
         {type = "item", name = "niobium-plate",        amount = 20},
+        {type = "item", name = "titanium-plate",       amount = 25},
+        {type = "item", name = "stainless-steel",      amount = 20},
     },
     results = {
         {type = "item", name = "gasifier-mk03", amount = 1}
@@ -191,10 +195,12 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "gasifier-mk03", amount = 1},
-        {type = "item", name = "storage-tank",  amount = 1},
+        {type = "item", name = "py-tank-8",     amount = 1},
         {type = "item", name = "nbfe-alloy",    amount = 20},
+        {type = "item", name = "super-steel",   amount = 20},
+        {type = "item", name = "tin-plate",     amount = 40},
     },
     results = {
-        {type = "item", name = "gasifier-mk04", amount = 1}
+        {type = "item", name = "gasifier-mk04", amount = 1},
     }
 }

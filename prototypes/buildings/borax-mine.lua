@@ -147,7 +147,9 @@ RECIPE {
         {type = "item", name = "plastic-bar",         amount = 50},
         {type = "item", name = "nexelit-plate",       amount = 15},
         {type = "item", name = "engine-unit",         amount = 3},
-        {type = "item", name = "fast-transport-belt", amount = 30}
+        {type = "item", name = "fast-transport-belt", amount = 30},
+        {type = "item", name = "duralumin",           amount = 15},
+        {type = "item", name = "stainless-steel",     amount = 20}
     },
     results = {
         {type = "item", name = "borax-mine-mk02", amount = 1}
@@ -164,7 +166,9 @@ RECIPE {
         {type = "item", name = "processing-unit",        amount = 20},
         {type = "item", name = "niobium-plate",          amount = 30},
         {type = "item", name = "electric-engine-unit",   amount = 6},
-        {type = "item", name = "express-transport-belt", amount = 15}
+        {type = "item", name = "express-transport-belt", amount = 15},
+        {type = "item", name = "titanium-plate",         amount = 40},
+        {type = "item", name = "super-steel",            amount = 30}
     },
     results = {
         {type = "item", name = "borax-mine-mk03", amount = 1}
@@ -181,6 +185,7 @@ RECIPE {
         {type = "item", name = "kevlar",                amount = 30},
         {type = "item", name = "nbfe-alloy",            amount = 15},
         {type = "item", name = "low-density-structure", amount = 10},
+        {type = "item", name = "lead-plate",            amount = 20},
     },
     results = {
         {type = "item", name = "borax-mine-mk04", amount = 1}

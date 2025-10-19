@@ -139,11 +139,13 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "fluid-separator",  amount = 1},
-        {type = "item", name = "storage-tank",     amount = 1},
+        {type = "item", name = "py-tank-3",        amount = 1},
         {type = "item", name = "nexelit-plate",    amount = 10},
         {type = "item", name = "concrete",         amount = 40},
         {type = "item", name = "plastic-bar",      amount = 10},
-        {type = "item", name = "advanced-circuit", amount = 10}
+        {type = "item", name = "advanced-circuit", amount = 10},
+        {type = "item", name = "duralumin",        amount = 30},
+        {type = "item", name = "lead-plate",       amount = 20},
     },
     results = {
         {type = "item", name = "fluid-separator-mk02", amount = 1}
@@ -157,11 +159,13 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "fluid-separator-mk02", amount = 1},
-        {type = "item", name = "storage-tank",         amount = 1},
+        {type = "item", name = "py-tank-7",            amount = 1},
         {type = "item", name = "processing-unit",      amount = 5},
         {type = "item", name = "niobium-plate",        amount = 15},
         {type = "item", name = "electric-engine-unit", amount = 5},
-        {type = "item", name = "kevlar",               amount = 30}
+        {type = "item", name = "kevlar",               amount = 30},
+        {type = "item", name = "titanium-plate",       amount = 20},
+        {type = "item", name = "stainless-steel",      amount = 20}
     },
     results = {
         {type = "item", name = "fluid-separator-mk03", amount = 1}
@@ -175,10 +179,11 @@ RECIPE {
     enabled = false,
     ingredients = {
         {type = "item", name = "fluid-separator-mk03",  amount = 1},
-        {type = "item", name = "storage-tank",          amount = 1},
+        {type = "item", name = "py-tank-8",             amount = 1},
         {type = "item", name = "low-density-structure", amount = 10},
         {type = "item", name = "nbfe-alloy",            amount = 5},
         {type = "item", name = "niobium-pipe",          amount = 15},
+        {type = "item", name = "super-steel",           amount = 10},
     },
     results = {
         {type = "item", name = "fluid-separator-mk04", amount = 1}

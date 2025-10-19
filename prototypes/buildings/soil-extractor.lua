@@ -30,6 +30,10 @@ RECIPE {
     }
 }
 
+if mods.pyrawores then
+    RECIPE("soil-extractor-mk01"):replace_ingredient_unsafe("copper-cable", "tinned-cable")
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
@@ -169,7 +173,9 @@ RECIPE {
         {type = "item", name = "engine-unit",         amount = 2},
         {type = "item", name = "pump",                amount = 4},
         {type = "item", name = "advanced-circuit",    amount = 15},
-        {type = "item", name = "copper-cable",        amount = 50},
+        {type = "item", name = "tinned-cable",        amount = 50},
+        {type = "item", name = "duralumin",           amount = 20},
+        {type = "item", name = "stainless-steel",     amount = 30},
     },
     results = {
         {type = "item", name = "soil-extractor-mk02", amount = 1}
@@ -186,6 +192,8 @@ RECIPE {
         {type = "item", name = "processing-unit",      amount = 20},
         {type = "item", name = "niobium-plate",        amount = 30},
         {type = "item", name = "electric-engine-unit", amount = 6},
+        {type = "item", name = "titanium-plate",       amount = 10},
+        {type = "item", name = "super-steel",          amount = 30},
     },
     results = {
         {type = "item", name = "soil-extractor-mk03", amount = 1}
@@ -201,6 +209,7 @@ RECIPE {
         {type = "item", name = "soil-extractor-mk03", amount = 1},
         {type = "item", name = "pump",                amount = 1},
         {type = "item", name = "nbfe-alloy",          amount = 35},
+        {type = "item", name = "lead-plate",          amount = 20},
     },
     results = {
         {type = "item", name = "soil-extractor-mk04", amount = 1}
