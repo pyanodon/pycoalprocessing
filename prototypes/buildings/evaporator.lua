@@ -212,14 +212,14 @@ for i = 1, 4 do
                 production_type = "output",
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                volume = 100,
+                volume = 1000,
                 pipe_connections = {{flow_direction = "output", position = {-2.0, 0.0}, direction = defines.direction.west}}
             },
             {
                 production_type = "output",
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                volume = 100,
+                volume = 1000,
                 pipe_connections = {{flow_direction = "output", position = {0.0, -2.0}, direction = defines.direction.north}}
             },
         }

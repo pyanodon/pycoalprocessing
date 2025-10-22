@@ -5,6 +5,7 @@ Date: ????
     - Fixed some techs having a too-fast cycle time
     - Fixed AM/FM text in beacon GUI not being localizable
     - Fixed all techs added by "enable all feature flags" not being seen by autotech.
+    - Increased the output fluidbox size of all buildings from 100->1000. Allows fluid transfer at even higher rates before hitting engine limitations. Resolves https://github.com/pyanodon/pybugreports/issues/1203
     - duplicate entry of "Advanced small parts" in milestones removed
     - Updated "Lazy Bastard" achievement requirement to < 250 handcrafts
     - DE locale updated, unused strings removed compared to EN locale
