@@ -434,6 +434,7 @@ py.on_event(defines.events.on_entity_settings_pasted, function (event)
           force = destination.force,
           position = destination.drop_position
         }
+        destination.drop_target = metadata.drop_target
       elseif metadata.drop_target and not metadata.drop_target_inventory then
         metadata.drop_target.destroy()
         metadata.drop_target = nil
@@ -445,6 +446,7 @@ py.on_event(defines.events.on_entity_settings_pasted, function (event)
           force = destination.force,
           position = destination.pickup_position
         }
+        destination.pickup_target = metadata.pickup_target
       elseif metadata.pickup_target and not metadata.pickup_target_inventory then
         metadata.pickup_target.destroy()
         metadata.pickup_target = nil
