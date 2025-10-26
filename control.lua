@@ -91,7 +91,7 @@ py.on_event(defines.events.on_player_created, function(event)
 
     local autoplace = nauvis.map_gen_settings.autoplace_controls
 
-    if not script.active_mods["PyBlock"] and autoplace.stone and autoplace.stone.richness <= 1 then
+    if not script.active_mods["PyBlock"] and not script.active_mods["pystellarexpedition"] and autoplace.stone and autoplace.stone.richness <= 1 then
         player.print {"messages.warning-no-preset", {"map-gen-preset-name.py-recommended"}}
     end
 
