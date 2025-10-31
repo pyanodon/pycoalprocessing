@@ -135,7 +135,7 @@ for i = 1, 4 do
                 production_type = "output",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {0.2, 4.13}, {0.12, -4.03}, {4.115, 0.1}, {-3.88, 0.16}, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 100,
+                volume = 1000,
                 pipe_connections = {{flow_direction = "output", position = {3.0, 0.0}, direction = defines.direction.east}}
             },
         },
