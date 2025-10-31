@@ -8,6 +8,7 @@ Date: ????
     - duplicate entry of "Advanced small parts" in milestones removed
     - Updated "Lazy Bastard" achievement requirement to < 250 handcrafts
     - DE locale updated, unused strings removed compared to EN locale
+    - Fixed muddy sludge overflowing tailings ponds creating tiles. Resolves https://github.com/pyanodon/pybugreports/issues/1253
     - Fixed crash with some mods that delete vanilla achievements
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.43
