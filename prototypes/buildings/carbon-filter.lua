@@ -174,6 +174,10 @@ RECIPE {
     }
 }
 
+if mods.pyhightech then
+    RECIPE("carbon-filter-mk03"):add_ingredient_unsafe {type = "item", name = "re-magnet", amount = 30}:add_ingredient_unsafe {type = "item", name = "superconductor", amount = 20}:add_ingredient_unsafe {type = "item", name = "paramagnetic-material", amount = 15}
+end
+
 RECIPE {
     type = "recipe",
     name = "carbon-filter-mk04",
@@ -190,3 +194,7 @@ RECIPE {
         {type = "item", name = "carbon-filter-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("carbon-filter-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "quantum-vortex-storage-system", amount = 2}
+end

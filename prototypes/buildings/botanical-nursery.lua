@@ -189,6 +189,10 @@ RECIPE {
     }
 }
 
+if mods.pyhightech then
+    RECIPE("botanical-nursery-mk03"):add_ingredient_unsafe {type = "item", name = "phosphate-glass", amount = 50}:add_ingredient_unsafe {type = "item", name = "biopolymer", amount = 35}:add_ingredient_unsafe {type = "item", name = "aerogel", amount = 15}
+end
+
 RECIPE {
     type = "recipe",
     name = "botanical-nursery-mk04",
@@ -205,3 +209,7 @@ RECIPE {
         {type = "item", name = "botanical-nursery-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("botanical-nursery-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "hyperelastic-material", amount = 4}
+end

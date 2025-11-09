@@ -164,6 +164,10 @@ RECIPE {
     }
 }
 
+if mods.pyhightech then
+    RECIPE("washer-mk03"):add_ingredient_unsafe {type = "item", name = "heavy-fermion", amount = 20}:add_ingredient_unsafe {type = "item", name = "diamagnetic-material", amount = 10}:add_ingredient_unsafe {type = "item", name = "graphene-roll", amount = 15}
+end
+
 RECIPE {
     type = "recipe",
     name = "washer-mk04",
@@ -179,3 +183,7 @@ RECIPE {
         {type = "item", name = "washer-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("washer-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "var-josephson-junction", amount = 10}
+end

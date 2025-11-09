@@ -508,6 +508,10 @@ if mods.pyrawores then
     RECIPE("ppd"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen", amount = 500}):add_ingredient_unsafe {type = "fluid", name = "chlorine", amount = 400}.category = "electrolyzer"
 end
 
+if mods.pyhightech then
+    RECIPE("ppd"):replace_ingredient_unsafe("aromatics", {type = "fluid", name = "nitrobenzene", amount = 50})
+end
+
 RECIPE {
     type = "recipe",
     name = "kevlar",

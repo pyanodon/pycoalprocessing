@@ -229,6 +229,10 @@ RECIPE {
     }
 }
 
+if mods.pyhightech then
+    RECIPE("power-house-mk03"):add_ingredient_unsafe {type = "item", name = "paramagnetic-material", amount = 25}:add_ingredient_unsafe {type = "item", name = "volumetric-capacitor", amount = 10}:add_ingredient_unsafe {type = "item", name = "biopolymer", amount = 10}
+end
+
 RECIPE {
     type = "recipe",
     name = "power-house-mk04",
@@ -244,3 +248,7 @@ RECIPE {
         {type = "item", name = "power-house-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("power-house-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "quantum-vortex-storage-system", amount = 4}
+end

@@ -166,6 +166,10 @@ RECIPE {
     }
 }
 
+if mods.pyhightech then
+    RECIPE("ground-borer-mk03"):add_ingredient_unsafe {type = "item", name = "phosphate-glass", amount = 15}:add_ingredient_unsafe {type = "item", name = "heavy-fermion", amount = 10}:add_ingredient_unsafe {type = "item", name = "carbon-aerogel", amount = 10}
+end
+
 RECIPE {
     type = "recipe",
     name = "ground-borer-mk04",
@@ -182,3 +186,7 @@ RECIPE {
         {type = "item", name = "ground-borer-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("ground-borer-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 6}:add_ingredient_unsafe {type = "item", name = "quantum-vortex-storage-system", amount = 4}
+end

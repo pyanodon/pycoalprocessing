@@ -170,6 +170,10 @@ RECIPE {
     }
 }
 
+if mods.pyhightech then
+    RECIPE("desulfurizator-unit-mk03"):add_ingredient_unsafe {type = "item", name = "biopolymer", amount = 15}:add_ingredient_unsafe {type = "item", name = "carbon-aerogel", amount = 20}
+end
+
 RECIPE {
     type = "recipe",
     name = "desulfurizator-unit-mk04",
@@ -185,3 +189,7 @@ RECIPE {
         {type = "item", name = "desulfurizator-unit-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("desulfurizator-unit-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "quantum-dots", amount = 5}
+end

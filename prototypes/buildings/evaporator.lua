@@ -272,6 +272,10 @@ RECIPE {
     }
 }
 
+if mods.pyhightech then
+    RECIPE("evaporator-mk03"):add_ingredient_unsafe {type = "item", name = "heavy-fermion", amount = 20}:add_ingredient_unsafe {type = "item", name = "superconductor", amount = 10}
+end
+
 RECIPE {
     type = "recipe",
     name = "evaporator-mk04",
@@ -287,3 +291,7 @@ RECIPE {
         {type = "item", name = "evaporator-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("evaporator-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "harmonic-absorber", amount = 10}
+end

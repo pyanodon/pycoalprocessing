@@ -272,6 +272,10 @@ RECIPE {
     }
 }
 
+if mods.pyhightech then
+    RECIPE("glassworks-mk03"):add_ingredient_unsafe {type = "item", name = "phosphate-glass", amount = 40}:add_ingredient_unsafe {type = "item", name = "harmonic-absorber", amount = 20}:add_ingredient_unsafe {type = "item", name = "carbon-aerogel", amount = 20}
+end
+
 RECIPE {
     type = "recipe",
     name = "glassworks-mk04",
@@ -288,3 +292,7 @@ RECIPE {
         {type = "item", name = "glassworks-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("glassworks-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "parametric-oscilator", amount = 1}
+end

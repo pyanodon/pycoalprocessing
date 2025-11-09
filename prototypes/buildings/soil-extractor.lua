@@ -200,6 +200,10 @@ RECIPE {
     }
 }
 
+if mods.pyhightech then
+    RECIPE("soil-extractor-mk03"):add_ingredient_unsafe {type = "item", name = "biopolymer", amount = 30}:add_ingredient_unsafe {type = "item", name = "carbon-nanotube", amount = 30}:add_ingredient_unsafe {type = "item", name = "aerogel", amount = 15}
+end
+
 RECIPE {
     type = "recipe",
     name = "soil-extractor-mk04",
@@ -215,3 +219,7 @@ RECIPE {
         {type = "item", name = "soil-extractor-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("soil-extractor-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "nems", amount = 5}:add_ingredient_unsafe {type = "item", name = "graphene-roll", amount = 15}
+end

@@ -133,6 +133,10 @@ RECIPE {
     }
 }
 
+if mods.pyhightech then
+    RECIPE("ball-mill-mk03"):add_ingredient_unsafe {type = "item", name = "heavy-fermion", amount = 40}:add_ingredient_unsafe {type = "item", name = "re-magnet", amount = 30}:add_ingredient_unsafe {type = "item", name = "harmonic-absorber", amount = 10}
+end
+
 RECIPE {
     type = "recipe",
     name = "ball-mill-mk04",
@@ -148,3 +152,7 @@ RECIPE {
         {type = "item", name = "ball-mill-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("ball-mill-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "nv-center", amount = 2}
+end
