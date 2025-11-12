@@ -469,6 +469,8 @@ py.on_event(defines.events.on_entity_settings_pasted, function (event)
         } or nil,
         pickup_target_inventory = data.pickup_target_inventory
       }
+      destination.drop_target = storage.programmable_inserters[destination.unit_number].drop_target
+      destination.pickup_target = storage.programmable_inserters[destination.unit_number].pickup_target
       update_targets(destination)
     end
   end
