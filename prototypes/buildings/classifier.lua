@@ -138,6 +138,9 @@ RECIPE {
         {type = "item", name = "niobium-plate",          amount = 10},
         {type = "item", name = "titanium-plate",         amount = 20},
         {type = "item", name = "stainless-steel",        amount = 15},
+        {type = "item", name = "nenbit-matrix",          amount = 10},
+        {type = "item", name = "sc-unit",                amount = 1},
+        {type = "item", name = "boron-carbide",          amount = 15},
     },
     results = {
         {type = "item", name = "classifier-mk03", amount = 1}
@@ -158,6 +161,10 @@ RECIPE {
         {type = "item", name = "low-density-structure", amount = 5},
         {type = "item", name = "nbfe-alloy",            amount = 10},
         {type = "item", name = "super-steel",           amount = 30},
+        {type = "item", name = "super-alloy",           amount = 10},
+        {type = "item", name = "wall-shield",           amount = 2},
+        {type = "item", name = "science-coating",       amount = 1},
+        {type = "item", name = "control-unit",          amount = 5},
     },
     results = {
         {type = "item", name = "classifier-mk04", amount = 1}

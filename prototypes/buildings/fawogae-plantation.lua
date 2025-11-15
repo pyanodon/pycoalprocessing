@@ -176,6 +176,8 @@ RECIPE {
         {type = "item", name = "processing-unit",         amount = 10},
         {type = "item", name = "treated-wood",            amount = 20}, --pyht fiberboard
         {type = "item", name = "niobium-pipe",            amount = 20},
+        {type = "item", name = "nbti-alloy",              amount = 10},
+        {type = "item", name = "agzn-alloy",              amount = 15},
     },
     results = {
         {type = "item", name = "fawogae-plantation-mk03", amount = 1}
@@ -194,6 +196,10 @@ RECIPE {
     ingredients = {
         {type = "item", name = "fawogae-plantation-mk03", amount = 1},
         {type = "item", name = "low-density-structure",   amount = 20},
+        {type = "item", name = "silver-foam",             amount = 10},
+        {type = "item", name = "molybdenum-plate",        amount = 15},
+        {type = "item", name = "science-coating",         amount = 1},
+        {type = "item", name = "control-unit",            amount = 5},
     },
     results = {
         {type = "item", name = "fawogae-plantation-mk04", amount = 1}

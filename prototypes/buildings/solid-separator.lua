@@ -126,6 +126,9 @@ RECIPE {
         {type = "item", name = "niobium-pipe",         amount = 15},
         {type = "item", name = "titanium-plate",       amount = 20},
         {type = "item", name = "stainless-steel",      amount = 15},
+        {type = "item", name = "nbti-alloy",           amount = 15},
+        {type = "item", name = "boron-carbide",        amount = 20},
+        {type = "item", name = "py-heat-exchanger",    amount = 1},
     },
     results = {
         {type = "item", name = "solid-separator-mk03", amount = 1}
@@ -146,6 +149,10 @@ RECIPE {
         {type = "item", name = "nbfe-alloy",            amount = 20},
         {type = "item", name = "low-density-structure", amount = 10},
         {type = "item", name = "super-steel",           amount = 30},
+        {type = "item", name = "super-alloy",           amount = 20},
+        {type = "item", name = "wall-shield",           amount = 2},
+        {type = "item", name = "science-coating",       amount = 1},
+        {type = "item", name = "control-unit",          amount = 5},
     },
     results = {
         {type = "item", name = "solid-separator-mk04", amount = 1}

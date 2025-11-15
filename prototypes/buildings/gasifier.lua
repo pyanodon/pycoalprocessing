@@ -182,6 +182,8 @@ RECIPE {
         {type = "item", name = "niobium-plate",        amount = 20},
         {type = "item", name = "titanium-plate",       amount = 25},
         {type = "item", name = "stainless-steel",      amount = 20},
+        {type = "item", name = "nbti-alloy",           amount = 10},
+        {type = "item", name = "boron-carbide",        amount = 20},
     },
     results = {
         {type = "item", name = "gasifier-mk03", amount = 1}
@@ -198,11 +200,15 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "gasifier-mk03", amount = 1},
-        {type = "item", name = "py-tank-8",     amount = 1},
-        {type = "item", name = "nbfe-alloy",    amount = 20},
-        {type = "item", name = "super-steel",   amount = 20},
-        {type = "item", name = "tin-plate",     amount = 40},
+        {type = "item", name = "gasifier-mk03",   amount = 1},
+        {type = "item", name = "py-tank-8",       amount = 1},
+        {type = "item", name = "nbfe-alloy",      amount = 20},
+        {type = "item", name = "super-steel",     amount = 20},
+        {type = "item", name = "tin-plate",       amount = 40},
+        {type = "item", name = "super-alloy",     amount = 15},
+        {type = "item", name = "wall-shield",     amount = 8},
+        {type = "item", name = "science-coating", amount = 1},
+        {type = "item", name = "control-unit",    amount = 5},
     },
     results = {
         {type = "item", name = "gasifier-mk04", amount = 1},

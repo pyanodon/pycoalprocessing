@@ -240,6 +240,8 @@ RECIPE {
         {type = "item", name = "niobium-pipe",         amount = 15},
         {type = "item", name = "titanium-plate",       amount = 10},
         {type = "item", name = "super-steel",          amount = 30},
+        {type = "item", name = "nbti-alloy",           amount = 15},
+        {type = "item", name = "sc-unit",              amount = 4}
     },
     results = {
         {type = "item", name = "distilator-mk03", amount = 1}
@@ -260,6 +262,11 @@ RECIPE {
         {type = "item", name = "pump",            amount = 4},
         {type = "item", name = "nbfe-alloy",      amount = 15},
         {type = "item", name = "lead-plate",      amount = 20},
+        {type = "item", name = "super-alloy",     amount = 10},
+        {type = "item", name = "nbti-alloy",      amount = 10},
+        {type = "item", name = "agzn-alloy",      amount = 5},
+        {type = "item", name = "science-coating", amount = 2},
+        {type = "item", name = "control-unit",    amount = 5}
     },
     results = {
         {type = "item", name = "distilator-mk04", amount = 1}

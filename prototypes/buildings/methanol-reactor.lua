@@ -208,6 +208,7 @@ RECIPE {
         {type = "item", name = "electric-engine-unit",  amount = 6},
         {type = "item", name = "titanium-plate",        amount = 30},
         {type = "item", name = "stainless-steel",       amount = 15},
+        {type = "item", name = "nbti-alloy",            amount = 15},
     },
     results = {
         {type = "item", name = "methanol-reactor-mk03", amount = 1}
@@ -230,6 +231,9 @@ RECIPE {
         {type = "item", name = "low-density-structure", amount = 10},
         {type = "item", name = "tin-plate",             amount = 30},
         {type = "item", name = "super-steel",           amount = 20},
+        {type = "item", name = "super-alloy",           amount = 10},
+        {type = "item", name = "science-coating",       amount = 1},
+        {type = "item", name = "control-unit",          amount = 3},
     },
     results = {
         {type = "item", name = "methanol-reactor-mk04", amount = 1}

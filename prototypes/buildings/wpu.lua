@@ -155,6 +155,8 @@ RECIPE {
         {type = "item", name = "processing-unit",      amount = 10},
         {type = "item", name = "titanium-plate",       amount = 10},
         {type = "item", name = "stainless-steel",      amount = 10},
+        {type = "item", name = "nbti-alloy",           amount = 10},
+        {type = "item", name = "nmf-mk01",             amount = 1},
     },
     results = {
         {type = "item", name = "wpu-mk03", amount = 1}
@@ -176,6 +178,10 @@ RECIPE {
         {type = "item", name = "nbfe-alloy",            amount = 10},
         {type = "item", name = "tin-plate",             amount = 20},
         {type = "item", name = "super-steel",           amount = 30},
+        {type = "item", name = "super-alloy",           amount = 10},
+        {type = "item", name = "boron-carbide",         amount = 10},
+        {type = "item", name = "science-coating",       amount = 1},
+        {type = "item", name = "control-unit",          amount = 3},
     },
     results = {
         {type = "item", name = "wpu-mk04", amount = 1}

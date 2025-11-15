@@ -140,6 +140,8 @@ RECIPE {
         {type = "item", name = "kevlar",               amount = 10},
         {type = "item", name = "titanium-plate",       amount = 60},
         {type = "item", name = "super-steel",          amount = 30},
+        {type = "item", name = "nenbit-matrix",        amount = 20},
+        {type = "item", name = "molybdenum-plate",     amount = 15},
     },
     results = {
         {type = "item", name = "sand-extractor-mk03", amount = 1}
@@ -160,6 +162,10 @@ RECIPE {
         {type = "item", name = "low-density-structure", amount = 20},
         {type = "item", name = "nbfe-alloy",            amount = 10},
         {type = "item", name = "lead-plate",            amount = 30},
+        {type = "item", name = "super-alloy",           amount = 15},
+        {type = "item", name = "boron-carbide",         amount = 30},
+        {type = "item", name = "science-coating",       amount = 1},
+        {type = "item", name = "control-unit",          amount = 5},
     },
     results = {
         {type = "item", name = "sand-extractor-mk04", amount = 1}

@@ -194,6 +194,9 @@ RECIPE {
         {type = "item", name = "electric-engine-unit", amount = 6},
         {type = "item", name = "titanium-plate",       amount = 10},
         {type = "item", name = "super-steel",          amount = 30},
+        {type = "item", name = "nenbit-matrix",        amount = 10},
+        {type = "item", name = "sc-unit",              amount = 1},
+        {type = "item", name = "boron-carbide",        amount = 15},
     },
     results = {
         {type = "item", name = "soil-extractor-mk03", amount = 1}
@@ -214,6 +217,10 @@ RECIPE {
         {type = "item", name = "pump",                amount = 1},
         {type = "item", name = "nbfe-alloy",          amount = 35},
         {type = "item", name = "lead-plate",          amount = 20},
+        {type = "item", name = "super-alloy",         amount = 10},
+        {type = "item", name = "wall-shield",         amount = 2},
+        {type = "item", name = "science-coating",     amount = 1},
+        {type = "item", name = "control-unit",        amount = 5},
     },
     results = {
         {type = "item", name = "soil-extractor-mk04", amount = 1}

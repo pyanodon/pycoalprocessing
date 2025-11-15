@@ -248,6 +248,7 @@ RECIPE {
         {type = "item", name = "pump",                 amount = 2},
         {type = "item", name = "titanium-plate",       amount = 30},
         {type = "item", name = "stainless-steel",      amount = 15},
+        {type = "item", name = "nbti-alloy",           amount = 15},
     },
     results = {
         {type = "item", name = "rectisol-mk03", amount = 1}
@@ -271,6 +272,10 @@ RECIPE {
         {type = "item", name = "low-density-structure", amount = 10},
         {type = "item", name = "tin-plate",             amount = 30},
         {type = "item", name = "super-steel",           amount = 20},
+        {type = "item", name = "super-alloy",           amount = 10},
+        {type = "item", name = "wall-shield",           amount = 4},
+        {type = "item", name = "science-coating",       amount = 1},
+        {type = "item", name = "control-unit",          amount = 3},
     },
     results = {
         {type = "item", name = "rectisol-mk04", amount = 1}

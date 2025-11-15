@@ -223,6 +223,8 @@ RECIPE {
         {type = "item", name = "niobium-plate",        amount = 10},
         {type = "item", name = "titanium-plate",       amount = 40},
         {type = "item", name = "super-steel",          amount = 30},
+        {type = "item", name = "nbti-alloy",           amount = 20},
+        {type = "item", name = "py-heat-exchanger",    amount = 1},
     },
     results = {
         {type = "item", name = "power-house-mk03", amount = 1}
@@ -242,7 +244,11 @@ RECIPE {
         {type = "item", name = "power-house-mk03",      amount = 1},
         {type = "item", name = "low-density-structure", amount = 5},
         {type = "item", name = "nbfe-alloy",            amount = 10},
-        {type = "item", name = "lead-plate",            amount = 20}
+        {type = "item", name = "lead-plate",            amount = 20},
+        {type = "item", name = "super-alloy",           amount = 30},
+        {type = "item", name = "wall-shield",           amount = 5},
+        {type = "item", name = "science-coating",       amount = 2},
+        {type = "item", name = "control-unit",          amount = 5},
     },
     results = {
         {type = "item", name = "power-house-mk04", amount = 1}

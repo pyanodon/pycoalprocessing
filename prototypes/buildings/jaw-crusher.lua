@@ -151,6 +151,8 @@ RECIPE {
         {type = "item", name = "processing-unit",      amount = 10},
         {type = "item", name = "titanium-plate",       amount = 60},
         {type = "item", name = "super-steel",          amount = 30},
+        {type = "item", name = "nbti-alloy",           amount = 10},
+        {type = "item", name = "sc-unit",              amount = 2},
     },
     results = {
         {type = "item", name = "jaw-crusher-mk03", amount = 1}
@@ -171,6 +173,10 @@ RECIPE {
         {type = "item", name = "concrete",         amount = 40},
         {type = "item", name = "nbfe-alloy",       amount = 15},
         {type = "item", name = "lead-plate",       amount = 30},
+        {type = "item", name = "super-alloy",      amount = 20},
+        {type = "item", name = "boron-carbide",    amount = 30},
+        {type = "item", name = "science-coating",  amount = 1},
+        {type = "item", name = "control-unit",     amount = 5},
     },
     results = {
         {type = "item", name = "jaw-crusher-mk04", amount = 1}

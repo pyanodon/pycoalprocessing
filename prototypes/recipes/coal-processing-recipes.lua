@@ -336,6 +336,10 @@ RECIPE {
     order = "j"
 }:add_unlock("tar-processing")
 
+if mods.pyrawores then
+    RECIPE("tar-gasification"):remove_ingredient("water"):add_ingredient_unsafe {type = "fluid", name = "pressured-air", amount = 50}
+end
+
 RECIPE {
     type = "recipe",
     name = "coal-fawogae",

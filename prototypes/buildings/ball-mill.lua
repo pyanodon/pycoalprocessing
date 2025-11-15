@@ -127,6 +127,8 @@ RECIPE {
         {type = "item", name = "processing-unit",      amount = 10},
         {type = "item", name = "titanium-plate",       amount = 50},
         {type = "item", name = "super-steel",          amount = 15},
+        {type = "item", name = "nbti-alloy",           amount = 10},
+        {type = "item", name = "agitator-mk01",        amount = 1},
     },
     results = {
         {type = "item", name = "ball-mill-mk03", amount = 1}
@@ -143,10 +145,14 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "ball-mill-mk03", amount = 1},
-        {type = "item", name = "concrete",       amount = 35},
-        {type = "item", name = "nbfe-alloy",     amount = 10},
-        {type = "item", name = "lead-plate",     amount = 30},
+        {type = "item", name = "ball-mill-mk03",  amount = 1},
+        {type = "item", name = "concrete",        amount = 35},
+        {type = "item", name = "nbfe-alloy",      amount = 10},
+        {type = "item", name = "lead-plate",      amount = 30},
+        {type = "item", name = "super-alloy",     amount = 20},
+        {type = "item", name = "boron-carbide",   amount = 30},
+        {type = "item", name = "science-coating", amount = 1},
+        {type = "item", name = "control-unit",    amount = 5},
     },
     results = {
         {type = "item", name = "ball-mill-mk04", amount = 1}

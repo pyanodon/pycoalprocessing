@@ -168,6 +168,7 @@ RECIPE {
         {type = "item", name = "kevlar",               amount = 10},
         {type = "item", name = "titanium-plate",       amount = 30},
         {type = "item", name = "stainless-steel",      amount = 15},
+        {type = "item", name = "nbti-alloy",           amount = 15},
     },
     results = {
         {type = "item", name = "carbon-filter-mk03", amount = 1}
@@ -189,6 +190,10 @@ RECIPE {
         {type = "item", name = "nbfe-alloy",            amount = 5},
         {type = "item", name = "tin-plate",             amount = 30},
         {type = "item", name = "super-steel",           amount = 20},
+        {type = "item", name = "super-alloy",           amount = 10},
+        {type = "item", name = "wall-shield",           amount = 4},
+        {type = "item", name = "science-coating",       amount = 1},
+        {type = "item", name = "control-unit",          amount = 3}
     },
     results = {
         {type = "item", name = "carbon-filter-mk04", amount = 1}
