@@ -186,6 +186,7 @@ RECIPE {
 
 if mods.pyhightech then
     RECIPE("fawogae-plantation-mk03"):add_ingredient_unsafe {type = "item", name = "biopolymer", amount = 30}:add_ingredient_unsafe {type = "item", name = "carbon-nanotube", amount = 30}:add_ingredient_unsafe {type = "item", name = "aerogel", amount = 15}
+    RECIPE("fawogae-plantation-mk03"):replace_ingredient_unsafe("treated-wood", "fiberboard")
 end
 
 RECIPE {

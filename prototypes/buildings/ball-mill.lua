@@ -19,6 +19,10 @@ if mods.pyrawores then
     RECIPE("ball-mill-mk01"):add_ingredient_unsafe {type = "item", name = "py-asphalt", amount = 50}
 end
 
+if mods.pyhightech then
+    RECIPE("ball-mill-mk01"):remove_ingredient("py-asphalt"):add_ingredient {type = "item", name = "electronic-circuit", amount = 10}
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 

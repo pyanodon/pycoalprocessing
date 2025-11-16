@@ -19,6 +19,10 @@ if mods.pyrawores then
     RECIPE("olefin-plant"):replace_ingredient_unsafe("chemical-plant-mk01", "electrolyzer-mk01"):replace_ingredient_unsafe("advanced-circuit", "electronic-circuit")
 end
 
+if mods.pyhightech then
+    RECIPE("olefin-plant"):replace_ingredient("advanced-circuit", "electronic-circuit")
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 

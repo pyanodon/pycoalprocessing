@@ -714,6 +714,10 @@ if mods.pyrawores then
     RECIPE("niobium-oxide"):replace_ingredient_unsafe("water", {type = "fluid", name = "nitrogen", amount = 250})
 end
 
+if mods.pyhightech then
+    RECIPE("niobium-oxide"):replace_ingredient_unsafe("water", {type = "fluid", name = "ammonia", amount = 250})
+end
+
 RECIPE {
     type = "recipe",
     name = "niobium-plate",

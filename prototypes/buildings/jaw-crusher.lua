@@ -14,6 +14,10 @@ RECIPE {
     }
 }:add_unlock("crusher")
 
+if mods.pyhightech then
+    RECIPE("jaw-crusher"):remove_ingredient("electronic-circuit")
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 

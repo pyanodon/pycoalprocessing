@@ -38,6 +38,10 @@ if mods.pyrawores then
     RECIPE("evaporator"):replace_ingredient_unsafe("iron-plate", "tin-plate")
 end
 
+if mods.pyhightech then
+    RECIPE("evaporator"):remove_ingredient("electronic-circuit")
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
