@@ -234,6 +234,7 @@ RECIPE {
         {type = "item", name = "super-alloy",           amount = 10},
         {type = "item", name = "science-coating",       amount = 1},
         {type = "item", name = "control-unit",          amount = 3},
+        {type = "item", name = "wall-shield",           amount = 4}
     },
     results = {
         {type = "item", name = "methanol-reactor-mk04", amount = 1}
