@@ -168,7 +168,7 @@ for i = 1, 4 do
                 color = {0, 0, 0},
             },
             scale_fluid_usage = true,
-            fluid_usage_per_tick = 10,
+            fluid_usage_per_tick = 10 * i,
             smoke = {
                 {
                     name = "smoke",
