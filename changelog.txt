@@ -2,6 +2,7 @@
 Version: 3.0.44
 Date: ????
   Changes:
+    - Opening a page in the pY Codex with a searchbar will now focus the searchbar
     - Fixed some techs having a too-fast cycle time
     - Fixed AM/FM text in beacon GUI not being localizable
     - Fixed all techs added by "enable all feature flags" not being seen by autotech.
