@@ -223,6 +223,7 @@ function Wiki.open_page(player, index)
 
     local visible = not not page_data.searchable
     main_frame.caption_flow.py_wiki_search.visible = visible
+    main_frame.caption_flow.py_wiki_search.focus()
     main_frame.caption_flow.py_wiki_search_button.visible = visible
 
     if page_data.text_only then
