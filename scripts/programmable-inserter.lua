@@ -121,6 +121,7 @@ local function update_targets(inserter)
       if (target.type ~= "car" or target.name == "space-pod") and not target.prototype.hidden and proxy_targets[target.type][metadata[index .. "_inventory"]] then
         -- set new target and proper inventory target index
         entity.proxy_target_entity = target
+        target.teleport(0)
         entity.proxy_target_inventory = proxy_targets[target.type][metadata[index .. "_inventory"]]
         break
       end
