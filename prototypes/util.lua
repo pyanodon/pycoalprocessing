@@ -7,7 +7,7 @@ data:extend{
     icon = util.empty_icon().icon,
     draw_inventory_content = false,
     collision_mask = {layers = {}},
-    selection_box = {{-0.3, -0.3}, {0.3, 0.3}},
+    selection_box = {{-0.25, -0.25}, {0.25, 0.25}},
     flags = {
       "not-rotatable",
       "placeable-neutral",
