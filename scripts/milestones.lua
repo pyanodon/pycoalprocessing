@@ -163,10 +163,12 @@ remote.add_interface("pycoalprocessing", {
                 {type = "item",       name = "carbon-nanotube",               quantity = 1},
                 {type = "item",       name = "antiviral",                     quantity = 1},
                 {type = "item",       name = "biofet",                        quantity = 1},
+                {type = "item",       name = "photonic-chip",                 quantity = 1},
                 {type = "fluid",      name = "deuterium",                     quantity = 1},
                 {type = "item",       name = "transparent-anode",             quantity = 1},
                 {type = "item",       name = "antimatter",                    quantity = 1},
                 {type = "item",       name = "pcb4",                          quantity = 1},
+                {type = "item",       name = "used-quantum-battery",          quantity = 1},
                 {type = "item",       name = "intelligent-unit",              quantity = 1},
                 {type = "item",       name = "metastable-quasicrystal",       quantity = 1},
                 {type = "item",       name = "sc-engine",                     quantity = 1},
@@ -220,9 +222,14 @@ remote.add_interface("pycoalprocessing", {
                 {type = "item",       name = "tidal-mk01",                    quantity = 1},
                 {type = "item",       name = "hawt-turbine-mk01",             quantity = 1},
                 {type = "item",       name = "vawt-turbine-mk01",             quantity = 1},
-                {type = "item",       name = "lrf-building-mk01",             quantity = 1},
+                {type = "item",       name = "lrf-building-mk01",             quantity = 1}, -- thermosolar mk01
+                {type = "item",       name = "solar-concentrator",            quantity = 1,    hidden = true}, -- thermosolar mk02
+                {type = "item",       name = "sut",                           quantity = 1,    hidden = true}, -- thermosolar mk03
+                {type = "item",       name = "solar-tower-building",          quantity = 1,    hidden = true}, -- thermosolar mk04
                 {type = "item",       name = "solar-panel-mk01",              quantity = 1},
                 {type = "item",       name = "nuclear-reactor-mk01",          quantity = 1},
+                {type = "item",       name = "mdh",                           quantity = 1},
+                {type = "item",       name = "fusion-reactor-mk01",           quantity = 1},
                 {type = "item",       name = "steam-turbine-mk01",            quantity = 1},
                 {type = "item",       name = "steam-turbine-mk02",            quantity = 1,    hidden = true},
                 {type = "item",       name = "steam-turbine-mk03",            quantity = 1,    hidden = true},
