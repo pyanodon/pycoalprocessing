@@ -1,6 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.0.45
+Date: ???
+  Changes:
+    - Updated German locale courtesy of CarstenG
+    - Fixed Dutch locale translating two fluids to the same name. Resolves https://github.com/pyanodon/pybugreports/issues/1305
+---------------------------------------------------------------------------------------------------
 Version: 3.0.44
-Date: ????
+Date: 2025-12-28
   Changes:
     - Opening a page in the pY Codex with a searchbar will now focus the searchbar
     - Fixed some techs having a too-fast cycle time
@@ -16,7 +22,6 @@ Date: ????
     - Updated english name of "React and split these fuels" to "React and split olefins and organic solvent". Resolves https://github.com/pyanodon/pybugreports/issues/1280
     - Fixed glassworks max fuel consumption not scaling with tier. Resolves https://github.com/pyanodon/pybugreports/issues/1256
     - Removed redundant recipe names. Only applies to english locale
-    - Fixed Dutch locale translating to fluid to the same name. Resolves https://github.com/pyanodon/pybugreports/issues/1305
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.43
 Date: 2025-09-15
