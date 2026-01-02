@@ -137,14 +137,8 @@ local function update_gui(entity, player_index)
   local tags = (entity.tags or {})["py-dynamic-inserter"]
   
   local metadata = storage.programmable_inserters[entity.unit_number] or {}
-  local drop_target = metadata.drop_target and (proxy_targets[(metadata.drop_target.proxy_target_entity or {}).type or ""] or {}) and metadata.drop_target.proxy_target_entity or entity.drop_target
-  if not drop_target and entity.type == "entity-ghost" then
-    -- check for other ghost or normal entities
-  end
-  local pickup_target = metadata.pickup_target and (proxy_targets[(metadata.pickup_target.proxy_target_entity or {}).type or ""] or {}) and metadata.pickup_target.proxy_target_entity or entity.pickup_target
-  if not pickup_target and entity.type == "entity-ghost" then
-    -- check for other ghost or normal entities
-  end
+  local drop_target = metadata.drop_target and metadata.drop_target.proxy_target_entity or entity.drop_target
+  local pickup_target = metadata.pickup_target and metadata.pickup_target.proxy_target_entity or entity.pickup_target
 
   local relative = player.gui.relative
 
@@ -221,9 +215,9 @@ local function update_gui(entity, player_index)
       name = "drop_target",
       items = {
         {"", {"inventory-target.default"}},
-        {(proxy_targets[(drop_target or {}).type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
-        {(proxy_targets[(drop_target or {}).type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
-        {(proxy_targets[(drop_target or {}).type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+        {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
+        {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
+        {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
       },
       tooltip = {"tooltip.inserter-drop-target-tooltip"},
       selected_index = selection_indices.input[(tags or metadata).drop_target_inventory] or 1
@@ -233,11 +227,11 @@ local function update_gui(entity, player_index)
       name = "pickup_target",
       items = {
         {"", {"inventory-target.default"}},
-        {(proxy_targets[(pickup_target or {}).type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
-        {(proxy_targets[(pickup_target or {}).type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
-        {(proxy_targets[(pickup_target or {}).type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
-        {(proxy_targets[(pickup_target or {}).type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
-        {(proxy_targets[(pickup_target or {}).type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
+        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
+        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
+        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
+        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
       },
       tooltip = {"tooltip.inserter-pickup-target-tooltip"},
       selected_index = selection_indices.output[(tags or metadata).pickup_target_inventory] or 1
@@ -249,18 +243,18 @@ local function update_gui(entity, player_index)
     -- update checkboxes
     sub_frame.drop_target.items = {
       {"", {"inventory-target.default"}},
-      {(proxy_targets[(drop_target or {}).type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
-      {(proxy_targets[(drop_target or {}).type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
-      {(proxy_targets[(drop_target or {}).type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+      {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
+      {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
+      {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
     }
     sub_frame.drop_target.selected_index = selection_indices.input[(tags or metadata).drop_target_inventory] or 1
     sub_frame.pickup_target.items = {
         {"", {"inventory-target.default"}},
-        {(proxy_targets[(pickup_target or {}).type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
-        {(proxy_targets[(pickup_target or {}).type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
-        {(proxy_targets[(pickup_target or {}).type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
-        {(proxy_targets[(pickup_target or {}).type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
-        {(proxy_targets[(pickup_target or {}).type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
+        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
+        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
+        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
+        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
     }
     sub_frame.pickup_target.selected_index = selection_indices.output[(tags or metadata).pickup_target_inventory] or 1
   end
