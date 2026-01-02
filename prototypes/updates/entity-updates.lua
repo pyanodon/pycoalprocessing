@@ -107,6 +107,7 @@ RECIPE("steel-furnace"):replace_ingredient("stone-brick", "refined-concrete")
 
 
 data.raw.inserter["burner-inserter"].energy_source.type = "void"
+data.raw.inserter["burner-inserter"].next_upgrade = "inserter"
 --data.raw.inserter['burner-inserter'].energy_source.fuel_category = nil
 --data.raw.inserter['burner-inserter'].energy_source.fuel_categories = {'chemical', 'biomass'}
 
