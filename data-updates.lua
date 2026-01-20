@@ -155,7 +155,7 @@ local recipes_list =
     "petgas-methanol",
     "petgas-to-refsyngas",
     "ppd",
-    "ralesia-seeds",
+    -- "ralesia-seeds",
     "ralesia",
     "raw-borax",
     "ref-to-light-oil",
