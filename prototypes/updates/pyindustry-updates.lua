@@ -28,3 +28,6 @@ RECIPE {
 data.raw["container"]["py-logo-15tiles"].minable.result = "py-logo-15tiles"
 RECIPE("niobium-pipe"):remove_unlock("py-storage-tanks"):add_unlock("niobium")
 RECIPE("niobium-pipe-to-ground"):remove_unlock("py-storage-tanks"):add_unlock("niobium")
+
+data.raw.valve["py-overflow-valve"].flow_rate = data.raw.valve["py-overflow-valve"].flow_rate * 10
+data.raw.valve["py-underflow-valve"].flow_rate = data.raw.valve["ppy-underflow-valve"].flow_rate * 10
