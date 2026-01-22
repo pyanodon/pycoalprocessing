@@ -197,11 +197,17 @@ RECIPE {
         {type = "item", name = "niobium-pipe",         amount = 10},
         {type = "item", name = "titanium-plate",       amount = 20},
         {type = "item", name = "stainless-steel",      amount = 15},
+        {type = "item", name = "nbti-alloy",           amount = 20},
+        {type = "item", name = "py-heat-exchanger",    amount = 1},
     },
     results = {
         {type = "item", name = "hpf-mk03", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("hpf-mk03"):add_ingredient_unsafe {type = "item", name = "phosphate-glass", amount = 15}:add_ingredient_unsafe {type = "item", name = "heavy-fermion", amount = 10}:add_ingredient_unsafe {type = "item", name = "carbon-aerogel", amount = 10}
+end
 
 RECIPE {
     type = "recipe",
@@ -213,8 +219,16 @@ RECIPE {
         {type = "item", name = "low-density-structure", amount = 20},
         {type = "item", name = "nbfe-alloy",            amount = 10},
         {type = "item", name = "super-steel",           amount = 30},
+        {type = "item", name = "super-alloy",           amount = 30},
+        {type = "item", name = "wall-shield",           amount = 5},
+        {type = "item", name = "science-coating",       amount = 2},
+        {type = "item", name = "control-unit",          amount = 5},
     },
     results = {
         {type = "item", name = "hpf-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("hpf-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 6}:add_ingredient_unsafe {type = "item", name = "quantum-vortex-storage-system", amount = 4}
+end

@@ -14,6 +14,10 @@ RECIPE {
     }
 }:add_unlock("sulfur-processing")
 
+if mods.pyrawores then
+    RECIPE("anthraquinone"):remove_ingredient("steam"):add_ingredient_unsafe {type = "fluid", name = "liquid-nitrogen", amount = 10}
+end
+
 FLUID {
     type = "fluid",
     name = "anthraquinone",
