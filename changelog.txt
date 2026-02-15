@@ -2,6 +2,7 @@
 Version: 3.0.45
 Date: ???
   Changes:
+    - Updated Russian locale courtesy of @Astorin
     - Updated German locale courtesy of @Astorin
     - Updated Dutch locale courtesy of @QatSquirrel
     - Added module slots to botanical nursery. Resolves https://github.com/pyanodon/pybugreports/issues/555
