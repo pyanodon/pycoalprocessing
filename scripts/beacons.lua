@@ -285,15 +285,14 @@ Beacons.events.on_gui_opened = function(event)
     }
     local AM = dial.add {type = "flow", name = "AM_flow"}
     AM.style.vertical_align = "center"
-    AM.add {type = "label", name = "AM_label", caption = "AM"}
+    AM.add {type = "label", name = "AM_label", caption = { "beacon-modifier.am" }}
     AM.add {
         type = "slider",
         name = "AM",
         minimum_value = 1,
         maximum_value = 5,
         value = name:match("%d+"),
-        discrete_slider = true,
-        caption = { "beacon-modifier.am" }
+        discrete_slider = true
     }
     AM.add {
         type = "textfield",
@@ -305,15 +304,14 @@ Beacons.events.on_gui_opened = function(event)
 
     local FM = dial.add {type = "flow", name = "FM_flow"}
     FM.style.vertical_align = "center"
-    FM.add {type = "label", name = "FM_label", caption = "FM"}
+    FM.add {type = "label", name = "FM_label", caption = { "beacon-modifier.fm" }}
     FM.add {
         type = "slider",
         name = "FM",
         minimum_value = 1,
         maximum_value = 5,
         value = name:match("%d+$"),
-        discrete_slider = true,
-        caption = { "beacon-modifier.fm" }
+        discrete_slider = true
     }
     FM.add {
         type = "textfield",
