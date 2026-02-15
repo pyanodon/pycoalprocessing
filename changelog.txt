@@ -4,6 +4,7 @@ Date: ???
   Changes:
     - Updated German locale courtesy of CarstenG
     - Added module slots to botanical nursery. Resolves https://github.com/pyanodon/pybugreports/issues/555
+    - Fixed pY codex future beacons setting explanation
     - Remove productivity watermark from botanical nursery recipes. Resolves https://github.com/pyanodon/pybugreports/issues/1360
     - Fixed that the upgrade_target for the mechanical inserter was not set. Resolves https://github.com/pyanodon/pybugreports/issues/1323
     - Fixed AM/FM text in beacon GUI not being localizable, again. Resolves https://github.com/pyanodon/pybugreports/issues/1337
