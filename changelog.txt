@@ -2,7 +2,8 @@
 Version: 3.0.45
 Date: ???
   Changes:
-    - Updated German locale courtesy of CarstenG
+    - Updated German locale courtesy of @Astorin
+    - Updated Dutch locale courtesy of @QatSquirrel
     - Added module slots to botanical nursery. Resolves https://github.com/pyanodon/pybugreports/issues/555
     - Fixed that the upgrade_target for the mechanical inserter was not set. Resolves https://github.com/pyanodon/pybugreports/issues/1323
     - Fixed AM/FM text in beacon GUI not being localizable, again. Resolves https://github.com/pyanodon/pybugreports/issues/1337
@@ -18,7 +19,7 @@ Date: 2025-12-28
     - Increased the output fluidbox size of all buildings from 100->1000. Allows fluid transfer at even higher rates before hitting engine limitations. Resolves https://github.com/pyanodon/pybugreports/issues/1203
     - duplicate entry of "Advanced small parts" in milestones removed
     - Updated "Lazy Bastard" achievement requirement to < 250 handcrafts
-    - DE locale updated, unused strings removed compared to EN locale
+    - Updated Dutch locale courtesy of @CarstenG
     - Fixed muddy sludge overflowing tailings ponds creating tiles. Resolves https://github.com/pyanodon/pybugreports/issues/1253
     - Fixed crash with some mods that delete vanilla achievements
     - Renamed cargo landing pad capacity to cargo landing pad count to reduce confusion. Resolves https://github.com/pyanodon/pybugreports/issues/1298
