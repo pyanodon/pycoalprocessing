@@ -336,6 +336,10 @@ RECIPE {
     order = "j"
 }:add_unlock("tar-processing")
 
+if mods.pyrawores then
+    RECIPE("tar-gasification"):remove_ingredient("water"):add_ingredient_unsafe {type = "fluid", name = "pressured-air", amount = 50}
+end
+
 RECIPE {
     type = "recipe",
     name = "coal-fawogae",
@@ -708,6 +712,10 @@ RECIPE {
 
 if mods.pyrawores then
     RECIPE("niobium-oxide"):replace_ingredient_unsafe("water", {type = "fluid", name = "nitrogen", amount = 250})
+end
+
+if mods.pyhightech then
+    RECIPE("niobium-oxide"):replace_ingredient_unsafe("water", {type = "fluid", name = "ammonia", amount = 250})
 end
 
 RECIPE {

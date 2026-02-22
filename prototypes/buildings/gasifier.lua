@@ -182,11 +182,17 @@ RECIPE {
         {type = "item", name = "niobium-plate",        amount = 20},
         {type = "item", name = "titanium-plate",       amount = 25},
         {type = "item", name = "stainless-steel",      amount = 20},
+        {type = "item", name = "nbti-alloy",           amount = 10},
+        {type = "item", name = "boron-carbide",        amount = 20},
     },
     results = {
         {type = "item", name = "gasifier-mk03", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("gasifier-mk03"):add_ingredient_unsafe {type = "item", name = "diamagnetic-material", amount = 20}:add_ingredient_unsafe {type = "item", name = "paramagnetic-material", amount = 20}:add_ingredient_unsafe {type = "item", name = "harmonic-absorber", amount = 10}
+end
 
 RECIPE {
     type = "recipe",
@@ -194,13 +200,21 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "gasifier-mk03", amount = 1},
-        {type = "item", name = "py-tank-8",     amount = 1},
-        {type = "item", name = "nbfe-alloy",    amount = 20},
-        {type = "item", name = "super-steel",   amount = 20},
-        {type = "item", name = "tin-plate",     amount = 40},
+        {type = "item", name = "gasifier-mk03",   amount = 1},
+        {type = "item", name = "py-tank-8",       amount = 1},
+        {type = "item", name = "nbfe-alloy",      amount = 20},
+        {type = "item", name = "super-steel",     amount = 20},
+        {type = "item", name = "tin-plate",       amount = 40},
+        {type = "item", name = "super-alloy",     amount = 15},
+        {type = "item", name = "wall-shield",     amount = 8},
+        {type = "item", name = "science-coating", amount = 1},
+        {type = "item", name = "control-unit",    amount = 5},
     },
     results = {
         {type = "item", name = "gasifier-mk04", amount = 1},
     }
 }
+
+if mods.pyhightech then
+    RECIPE("gasifier-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "parametric-oscilator", amount = 2}
+end

@@ -14,6 +14,10 @@ RECIPE {
     }
 }:add_unlock("kevlar")
 
+if mods.pyrawores then
+    RECIPE("tpa"):remove_ingredient("steam"):add_ingredient_unsafe {type = "fluid", name = "liquid-nitrogen", amount = 50}
+end
+
 FLUID {
     type = "fluid",
     name = "tpa",

@@ -391,8 +391,11 @@ RECIPE {
 }:add_unlock("battery")
 
 if mods.pyrawores then
-    RECIPE("nas-battery"):replace_ingredient_unsafe("copper-ore", "sodium-hydroxide")
-    RECIPE("nas-battery"):add_ingredient_unsafe {type = "item", name = "lead-plate", amount = 6}
+    RECIPE("nas-battery"):replace_ingredient_unsafe("copper-ore", "sodium-hydroxide"):add_ingredient_unsafe {type = "item", name = "lead-plate", amount = 6}
+end
+
+if mods.pyhightech then
+    RECIPE("nas-battery"):add_ingredient_unsafe {type = "item", name = "rayon", amount = 2}
 end
 
 RECIPE {
@@ -488,6 +491,10 @@ if mods.pyrawores then
     RECIPE("cladding"):remove_ingredient("molten-glass"):add_ingredient_unsafe {type = "item", name = "glass", amount = 5}
 end
 
+if mods.pyhightech then
+    RECIPE("cladding"):add_ingredient_unsafe {type = "fluid", name = "nitrobenzene", amount = 50}
+end
+
 RECIPE {
     type = "recipe",
     name = "ppd",
@@ -508,6 +515,10 @@ if mods.pyrawores then
     RECIPE("ppd"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen", amount = 500}):add_ingredient_unsafe {type = "fluid", name = "chlorine", amount = 400}.category = "electrolyzer"
 end
 
+if mods.pyhightech then
+    RECIPE("ppd"):replace_ingredient_unsafe("aromatics", {type = "fluid", name = "nitrobenzene", amount = 50})
+end
+
 RECIPE {
     type = "recipe",
     name = "kevlar",
@@ -524,6 +535,10 @@ RECIPE {
     },
     main_product = "kevlar"
 }:add_unlock("kevlar")
+
+if mods.pyhightech then
+    RECIPE("kevlar"):add_ingredient_unsafe {type = "item", name = "nylon", amount = 5}
+end
 
 RECIPE {
     type = "recipe",
@@ -655,6 +670,10 @@ RECIPE {
     },
     main_product = "biofilm"
 }:add_unlock("biofilm")
+
+if mods.pyhightech then
+    RECIPE("biofilm"):add_ingredient_unsafe {type = "item", name = "rayon", amount = 2}
+end
 
 RECIPE {
     type = "recipe",

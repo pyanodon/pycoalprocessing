@@ -178,11 +178,17 @@ RECIPE {
         {type = "item", name = "electric-engine-unit",  amount = 4},
         {type = "item", name = "titanium-plate",        amount = 10},
         {type = "item", name = "super-steel",           amount = 20},
+        {type = "item", name = "nbti-alloy",            amount = 20},
+        {type = "item", name = "py-heat-exchanger",     amount = 1},
     },
     results = {
         {type = "item", name = "advanced-foundry-mk03", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("advanced-foundry-mk03"):add_ingredient_unsafe {type = "item", name = "paramagnetic-material", amount = 20}:add_ingredient_unsafe {type = "item", name = "harmonic-absorber", amount = 15}
+end
 
 RECIPE {
     type = "recipe",
@@ -193,9 +199,17 @@ RECIPE {
         {type = "item", name = "advanced-foundry-mk03", amount = 1},
         {type = "item", name = "low-density-structure", amount = 20},
         {type = "item", name = "nbfe-alloy",            amount = 10},
-        {type = "item", name = "lead-plate",            amount = 40}
+        {type = "item", name = "lead-plate",            amount = 40},
+        {type = "item", name = "super-alloy",           amount = 30},
+        {type = "item", name = "wall-shield",           amount = 5},
+        {type = "item", name = "science-coating",       amount = 2},
+        {type = "item", name = "control-unit",          amount = 5}
     },
     results = {
         {type = "item", name = "advanced-foundry-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("advanced-foundry-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 6}:add_ingredient_unsafe {type = "item", name = "pi-josephson-junction", amount = 4}
+end

@@ -240,11 +240,17 @@ RECIPE {
         {type = "item", name = "niobium-pipe",         amount = 15},
         {type = "item", name = "titanium-plate",       amount = 10},
         {type = "item", name = "super-steel",          amount = 30},
+        {type = "item", name = "nbti-alloy",           amount = 15},
+        {type = "item", name = "sc-unit",              amount = 4}
     },
     results = {
         {type = "item", name = "distilator-mk03", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("distilator-mk03"):add_ingredient_unsafe {type = "item", name = "phosphate-glass", amount = 15}:add_ingredient_unsafe {type = "item", name = "biopolymer", amount = 10}:add_ingredient_unsafe {type = "item", name = "aerogel", amount = 10}
+end
 
 RECIPE {
     type = "recipe",
@@ -256,8 +262,17 @@ RECIPE {
         {type = "item", name = "pump",            amount = 4},
         {type = "item", name = "nbfe-alloy",      amount = 15},
         {type = "item", name = "lead-plate",      amount = 20},
+        {type = "item", name = "super-alloy",     amount = 10},
+        {type = "item", name = "nbti-alloy",      amount = 10},
+        {type = "item", name = "agzn-alloy",      amount = 5},
+        {type = "item", name = "science-coating", amount = 2},
+        {type = "item", name = "control-unit",    amount = 5}
     },
     results = {
         {type = "item", name = "distilator-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("distilator-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 6}:add_ingredient_unsafe {type = "item", name = "var-josephson-junction", amount = 4}
+end

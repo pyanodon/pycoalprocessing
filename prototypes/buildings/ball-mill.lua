@@ -19,6 +19,10 @@ if mods.pyrawores then
     RECIPE("ball-mill-mk01"):add_ingredient_unsafe {type = "item", name = "py-asphalt", amount = 50}
 end
 
+if mods.pyhightech then
+    RECIPE("ball-mill-mk01"):remove_ingredient("py-asphalt"):add_ingredient {type = "item", name = "electronic-circuit", amount = 10}
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
@@ -127,11 +131,17 @@ RECIPE {
         {type = "item", name = "processing-unit",      amount = 10},
         {type = "item", name = "titanium-plate",       amount = 50},
         {type = "item", name = "super-steel",          amount = 15},
+        {type = "item", name = "nbti-alloy",           amount = 10},
+        {type = "item", name = "agitator-mk01",        amount = 1},
     },
     results = {
         {type = "item", name = "ball-mill-mk03", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("ball-mill-mk03"):add_ingredient_unsafe {type = "item", name = "heavy-fermion", amount = 40}:add_ingredient_unsafe {type = "item", name = "re-magnet", amount = 30}:add_ingredient_unsafe {type = "item", name = "harmonic-absorber", amount = 10}
+end
 
 RECIPE {
     type = "recipe",
@@ -139,12 +149,20 @@ RECIPE {
     energy_required = 0.5,
     enabled = false,
     ingredients = {
-        {type = "item", name = "ball-mill-mk03", amount = 1},
-        {type = "item", name = "concrete",       amount = 35},
-        {type = "item", name = "nbfe-alloy",     amount = 10},
-        {type = "item", name = "lead-plate",     amount = 30},
+        {type = "item", name = "ball-mill-mk03",  amount = 1},
+        {type = "item", name = "concrete",        amount = 35},
+        {type = "item", name = "nbfe-alloy",      amount = 10},
+        {type = "item", name = "lead-plate",      amount = 30},
+        {type = "item", name = "super-alloy",     amount = 20},
+        {type = "item", name = "boron-carbide",   amount = 30},
+        {type = "item", name = "science-coating", amount = 1},
+        {type = "item", name = "control-unit",    amount = 5},
     },
     results = {
         {type = "item", name = "ball-mill-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("ball-mill-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "nv-center", amount = 2}
+end

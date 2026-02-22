@@ -176,11 +176,18 @@ RECIPE {
         {type = "item", name = "processing-unit",         amount = 10},
         {type = "item", name = "treated-wood",            amount = 20}, --pyht fiberboard
         {type = "item", name = "niobium-pipe",            amount = 20},
+        {type = "item", name = "nbti-alloy",              amount = 10},
+        {type = "item", name = "agzn-alloy",              amount = 15},
     },
     results = {
         {type = "item", name = "fawogae-plantation-mk03", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("fawogae-plantation-mk03"):add_ingredient_unsafe {type = "item", name = "biopolymer", amount = 30}:add_ingredient_unsafe {type = "item", name = "carbon-nanotube", amount = 30}:add_ingredient_unsafe {type = "item", name = "aerogel", amount = 15}
+    RECIPE("fawogae-plantation-mk03"):replace_ingredient_unsafe("treated-wood", "fiberboard")
+end
 
 RECIPE {
     type = "recipe",
@@ -190,8 +197,16 @@ RECIPE {
     ingredients = {
         {type = "item", name = "fawogae-plantation-mk03", amount = 1},
         {type = "item", name = "low-density-structure",   amount = 20},
+        {type = "item", name = "silver-foam",             amount = 10},
+        {type = "item", name = "molybdenum-plate",        amount = 15},
+        {type = "item", name = "science-coating",         amount = 1},
+        {type = "item", name = "control-unit",            amount = 5},
     },
     results = {
         {type = "item", name = "fawogae-plantation-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("fawogae-plantation-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "nems", amount = 5}:add_ingredient_unsafe {type = "item", name = "graphene-roll", amount = 15}
+end
