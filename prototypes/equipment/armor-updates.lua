@@ -32,19 +32,13 @@ data.raw.armor["power-armor-mk2"].inventory_size_bonus = 100
 
 -- This should fix this issue https://github.com/pyanodon/pybugreports/issues/1050
 -- IF IF IF IF pyindustry and or pycoalprocessing are enabled only
-if mods.pyhightech then
-    data.raw.technology["battery-equipment"].hidden = true
-    data.raw.technology["battery-equipment"].enabled = false
-    data.raw.recipe["battery-equipment"].hidden = true
-    data.raw.item["battery-equipment"].hidden = true
-    data.raw.item["battery-equipment"].place_as_equipment_result = nil
-    data.raw.item["battery-equipment"].localised_name = {"equipment-name.battery-equipment"}
-    data.raw.technology["battery-mk2-equipment"].hidden = true
-    data.raw.technology["battery-mk2-equipment"].enabled = false
-    data.raw.recipe["battery-mk2-equipment"].hidden = true
-    data.raw.item["battery-mk2-equipment"].hidden = true
-    data.raw.item["battery-mk2-equipment"].place_as_equipment_result = nil
-    data.raw.item["battery-mk2-equipment"].localised_name = {"equipment-name.battery-mk2-equipment"}
+if mods.pyhightech then -- TODO move to updates in pyhightech and remove duplicate in pyindustry
+    TECHNOLOGY("battery-equipment"):hide().enabled = false
+    RECIPE("battery-equipment"):hide()
+    ITEM("battery-equipment"):hide().place_as_equipment_result = nil
+    TECHNOLOGY("battery-mk2-equipment"):hide().enabled = false
+    RECIPE("battery-mk2-equipment"):hide()
+    ITEM("battery-mk2-equipment"):hide().place_as_equipment_result = nil
 end
 
 data:extend {{

@@ -797,9 +797,9 @@ ITEM {
     stack_size = 100
 }
 
-if mods.pyrawores then
-    ITEM("crushed-copper").hidden = true
-    ITEM("crushed-iron").hidden = true
+if mods.pyrawores then -- TODO move to updates in pyrawores
+    ITEM("crushed-copper"):hide()
+    ITEM("crushed-iron"):hide()
 end
 
 ITEM {

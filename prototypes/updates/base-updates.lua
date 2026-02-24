@@ -95,9 +95,9 @@ data.raw.technology["uranium-ammo"].prerequisites = {"military-2", "uranium-proc
 TECHNOLOGY("concrete"):remove_prereq("automation-2"):remove_prereq("advanced-material-processing")
 -- Remove empty vanilla techs
 TECHNOLOGY("automation-2"):set_fields {prerequisites = {}}
-TECHNOLOGY("laser"):set_fields {enabled = false, hidden = true}
+TECHNOLOGY("laser"):hide().enabled = false
 TECHNOLOGY("distractor"):set_fields {prerequisites = {}}
-TECHNOLOGY("modules"):set_fields {enabled = false, hidden = true}
+TECHNOLOGY("modules"):hide().enabled = false
 TECHNOLOGY("speed-module"):set_fields {prerequisites = {}}
 TECHNOLOGY("productivity-module"):set_fields {prerequisites = {}}
 TECHNOLOGY("efficiency-module"):set_fields {prerequisites = {}}
@@ -150,8 +150,8 @@ end
 
 -- Recipe unlocks
 RECIPE("lubricant"):remove_unlock("lubricant")
-RECIPE("explosives"):remove_unlock("explosives"):set_fields {hidden = true}
-RECIPE("battery"):remove_unlock("battery"):set_fields {hidden = true}
+RECIPE("explosives"):remove_unlock("explosives"):hide()
+RECIPE("battery"):remove_unlock("battery"):hide()
 
 -- Recipe updates
 RECIPE("flying-robot-frame"):remove_ingredient("electronic-circuit"):add_ingredient {type = "item", name = "advanced-circuit", amount = 1}
