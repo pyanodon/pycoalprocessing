@@ -27,9 +27,9 @@ RECIPE("medium-electric-pole"):add_ingredient {type = "item", name = "niobium-pl
 
 RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient {type = "item", name = "niobium-plate", amount = 2}:add_ingredient {type = "item", name = "copper-cable", amount = 15}:replace_ingredient("iron-stick", {type = "item", name = "steel-plate", amount = 6})
 
-RECIPE("chemical-plant"):remove_unlock("oil-processing"):set_fields {hidden = true}
-ENTITY("chemical-plant"):set_fields {hidden = true}
-ITEM("chemical-plant"):set_fields {hidden = true}
+RECIPE("chemical-plant"):remove_unlock("oil-processing"):hide()
+ENTITY("chemical-plant"):hide()
+ITEM("chemical-plant"):hide()
 
 RECIPE("pump"):remove_unlock("fluid-handling"):add_unlock("engine")
 

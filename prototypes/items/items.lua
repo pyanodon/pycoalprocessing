@@ -798,8 +798,8 @@ ITEM {
 }
 
 if mods.pyrawores then
-    ITEM("crushed-copper").hidden = true
-    ITEM("crushed-iron").hidden = true
+    ITEM("crushed-copper"):hide()
+    ITEM("crushed-iron"):hide()
 end
 
 ITEM {

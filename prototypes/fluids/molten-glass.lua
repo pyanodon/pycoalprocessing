@@ -16,7 +16,7 @@ RECIPE {
 }
 
 if mods.pyrawores then
-    RECIPE("glass"):set_fields {enabled = false}:set_fields {hidden = true}
+    RECIPE("glass"):set_fields {enabled = false}:hide()
 end
 
 RECIPE {
