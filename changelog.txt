@@ -2,6 +2,7 @@
 Version: 3.0.45
 Date: ???
   Changes:
+    - Fixed big mine wiki page to mention drill heads instead of canistered fuel
     - Updated Russian locale courtesy of @Astorin
     - Updated German locale courtesy of @Spunk42
     - Updated Dutch locale courtesy of @QatSquirrel
