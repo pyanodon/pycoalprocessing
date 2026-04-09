@@ -1,50 +1,64 @@
 Beacons = {}
 Beacons.events = {}
 
-local farm_buildings = {
-    ["antelope-enclosure"] = "animal",
-    ["arqad-hive"] = "animal",
-    ["arthurian-pen"] = "animal",
-    ["auog-paddock"] = "animal",
-    ["cridren-enclosure"] = "plant",
-    ["dhilmos-pool"] = "animal",
-    ["dingrits-pack"] = "animal",
-    ["fish-farm"] = "animal",
-    ["kmauts-enclosure"] = "animal",
-    ["mukmoux-pasture"] = "animal",
-    ["phadai-enclosure"] = "animal",
-    ["phagnot-corral"] = "animal",
-    ["prandium-lab"] = "animal",
-    ["ez-ranch"] = "animal",
-    ["rc"] = "animal",
-    ["scrondrix-pen"] = "animal",
-    ["simik-den"] = "animal",
-    ["trits-reef"] = "animal",
-    ["ulric-corral"] = "animal",
-    ["vonix-den"] = "animal",
-    ["vrauks-paddock"] = "animal",
-    ["xenopen"] = "animal",
-    ["xyhiphoe-pool"] = "animal",
-    ["zipir-reef"] = "animal",
-    ["cadaveric-arum"] = "plant",
-    ["fwf"] = "plant",
-    ["grods-swamp"] = "plant",
-    ["guar-gum-plantation"] = "plant",
-    ["kicalk-plantation"] = "plant",
-    ["moondrop-greenhouse"] = "plant",
-    ["moss-farm"] = "plant",
-    ["ralesia-plantation"] = "plant",
-    ["rennea-plantation"] = "plant",
-    ["sap-extractor"] = "plant",
-    ["seaweed-crop"] = "plant",
-    ["sponge-culture"] = "plant",
-    ["tuuphra-plantation"] = "plant",
-    ["yotoi-aloe-orchard"] = "plant",
-    ["bhoddos-culture"] = "fungi",
-    ["fawogae-plantation"] = "fungi",
-    ["navens-culture"] = "fungi",
-    ["yaedols-culture"] = "fungi",
+-- autofilled with alienlife buildings
+local blacklist = {
+    ["antelope-enclosure"] = true,
+    ["arqad-hive"] = true,
+    ["arthurian-pen"] = true,
+    ["auog-paddock"] = true,
+    ["cridren-enclosure"] = true,
+    ["dhilmos-pool"] = true,
+    ["dingrits-pack"] = true,
+    ["fish-farm"] = true,
+    ["kmauts-enclosure"] = true,
+    ["mukmoux-pasture"] = true,
+    ["phadai-enclosure"] = true,
+    ["phagnot-corral"] = true,
+    ["prandium-lab"] = true,
+    ["ez-ranch"] = true,
+    ["rc"] = true,
+    ["scrondrix-pen"] = true,
+    ["simik-den"] = true,
+    ["trits-reef"] = true,
+    ["ulric-corral"] = true,
+    ["vonix-den"] = true,
+    ["vrauks-paddock"] = true,
+    ["xenopen"] = true,
+    ["xyhiphoe-pool"] = true,
+    ["zipir-reef"] = true,
+    ["cadaveric-arum"] = true,
+    ["fwf"] = true,
+    ["grods-swamp"] = true,
+    ["guar-gum-plantation"] = true,
+    ["kicalk-plantation"] = true,
+    ["moondrop-greenhouse"] = true,
+    ["moss-farm"] = true,
+    ["ralesia-plantation"] = true,
+    ["rennea-plantation"] = true,
+    ["sap-extractor"] = true,
+    ["seaweed-crop"] = true,
+    ["sponge-culture"] = true,
+    ["tuuphra-plantation"] = true,
+    ["yotoi-aloe-orchard"] = true,
+    ["bhoddos-culture"] = true,
+    ["fawogae-plantation"] = true,
+    ["navens-culture"] = true,
+    ["yaedols-culture"] = true,
 }
+
+remote.add_interface("py_beacons", {
+    ---Adds the entity to the blacklist of buildings ignored by beacon overloading. Blacklist checking ignores '-mk0x'
+    ---@param entity data.EntityID
+    add_to_blacklist = function (entity)
+        storage.farms[entity] = true
+    end,
+    ---Removes the entity from the blacklist of buildings ignored by beacon overloading. Blacklist checking ignores '-mk0x'
+    ---@param entity data.EntityID
+    remove_from_blacklist = function (entity)
+        storage.farms[entity] = nil
+    end
+})
 
 local our_beacons = {}
 for i = 1, 5 do
@@ -56,7 +70,7 @@ end
 
 py.on_event(py.events.on_init(), function()
     storage.beacon_interference_icons = storage.beacon_interference_icons or {}
-    storage.farms = storage.farms or farm_buildings
+    storage.farms = storage.farms or blacklist
 end)
 
 local function enable_entity(entity)
@@ -72,6 +86,9 @@ local function enable_entity(entity)
     if rendering_object then rendering_object.destroy() end
     storage.beacon_interference_icons[unit_number] = nil
     entity.custom_status = nil
+    for _, player in pairs(game.players) do
+        player.remove_alert{entity = entity, type = defines.alert_type.custom}
+    end
 end
 
 local function disable_entity(entity)
@@ -86,20 +103,18 @@ local function disable_entity(entity)
     }
     local unit_number = entity.unit_number
     if storage.beacon_interference_icons[unit_number] then return end
-    storage.beacon_interference_icons[unit_number] = rendering.draw_sprite {
-        sprite = "beacon-interference",
-        x_scale = 0.5,
-        y_scale = 0.5,
-        target = entity,
-        surface = entity.surface_index
-    }.id
+    storage.beacon_interference_icons[unit_number] = py.draw_error_sprite(entity, "beacon-interference").id
+    for _, player in pairs(game.players) do
+        player.add_custom_alert(entity, {type = "virtual", name = "beacon-interference"}, {"entity-status.beacon-interference"}, true)
+    end
 end
 
 ---@param reciver LuaEntity
+---@return boolean interference
 local function beacon_check(reciver)
     ---@class LuaEntity[]
     local beacons = reciver.get_beacons()
-    if not beacons or not next(beacons) then return end
+    if not beacons or not next(beacons) then return false end
 
     local effected_am = {}
     local effected_fm = {}
@@ -112,20 +127,21 @@ local function beacon_check(reciver)
             if settings.startup["future-beacons"].value then
                 if effected_am[am] or effected_fm[fm] then
                     disable_entity(reciver)
-                    return
+                    return true
                 end
                 effected_am[am] = true
                 effected_fm[fm] = true
             else
                 if effected_total[total] then
                     disable_entity(reciver)
-                    return
+                    return true
                 end
                 effected_total[total] = true
             end
         end
     end
     enable_entity(reciver)
+    return false
 end
 
 ---Replaces a beacon entity with a different frequency entity
@@ -185,8 +201,14 @@ local function change_frequency(entity, new_beacon_name, player)
             receivers[receiver.unit_number] = receiver
         end
         -- Check all receivers
+        local alert
         for _, receiver in pairs(receivers) do
-            beacon_check(receiver)
+            alert = alert or beacon_check(receiver)
+        end
+        if player and alert then
+            -- player.play_sound{
+                
+            -- }
         end
         if remote.interfaces["cryogenic-distillation"] then
             remote.call("cryogenic-distillation", "am_fm_beacon_settings_changed", new_entity)
@@ -212,6 +234,7 @@ Beacons.events.on_built = function(event)
     local ghost = storage.last_beacon_ghost
     storage.last_beacon_ghost = nil
     if not entity.valid then return end
+    local alert
     if entity.type == "beacon" then
         if not our_beacons[entity.name] then return end
         -- If the ghost doesn't match the placed entity, then fix it
@@ -221,10 +244,15 @@ Beacons.events.on_built = function(event)
             return
         end
         for _, reciver in pairs(entity.get_beacon_effect_receivers()) do
-            beacon_check(reciver)
+            alert = alert or beacon_check(reciver)
         end
     else
-        beacon_check(entity)
+        alert = beacon_check(entity)
+    end
+    if event.player_index and alert then
+        -- game.get_player(event.player_index).play_sound{
+
+        -- }
     end
 end
 
