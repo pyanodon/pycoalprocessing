@@ -719,7 +719,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "firearm-magazine",
-    category = "crafting-with-fluid",
+    category = "crafting",
     enabled = false,
     energy_required = 5,
     ingredients = {
