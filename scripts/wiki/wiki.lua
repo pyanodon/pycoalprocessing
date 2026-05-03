@@ -76,7 +76,6 @@ function Wiki.open_wiki(player)
     py_wiki_search.style.right_margin = -5
     py_wiki_search.style.width = 200
     py_wiki_search.visible = false
-    py_wiki_search.text = storage.wiki_page_search_query[player.index] or ""
     caption_flow.add {name = "py_wiki_search_button", type = "sprite-button", style = "frame_action_button_always_on", sprite = "utility/search_icon"}.visible = false
     caption_flow.add {name = "py_close_wiki", type = "sprite-button", style = "frame_action_button", sprite = "utility/close", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black"}
 
@@ -255,7 +254,6 @@ gui_events[defines.events.on_gui_text_changed]["py_wiki_search"] = function(even
 
     local search_query = event.element.text
     remote.call(searchable[1], searchable[2], search_query, contents, player)
-    storage.wiki_page_search_query[player.index] = search_query
 end
 
 remote.add_interface("pywiki", {
