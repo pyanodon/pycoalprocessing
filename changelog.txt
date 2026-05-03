@@ -14,6 +14,7 @@ Date: ???
     - Fixed Dutch locale translating two fluids to the same name. Resolves https://github.com/pyanodon/pybugreports/issues/1305
     - Fixed beacons not being useable with YAFC and other planner mods. Resolves https://github.com/pyanodon/pybugreports/issues/1449
     - Fixed codex search bar saving the search term when switching pages and closing the UI. Resolves https://github.com/pyanodon/pybugreports/issues/1409
+    - Fixed firearm magazine not being handcraftable. Resolves https://github.com/pyanodon/pybugreports/issues/1432
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.44
 Date: 2025-12-28
