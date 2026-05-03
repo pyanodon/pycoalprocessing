@@ -166,6 +166,7 @@ local function change_frequency(entity, new_beacon_name, player)
             quality = entity.quality,
             create_build_effect_smoke = false,
             fast_replace = true,
+            spill = false,
             inner_name = new_beacon_name,
         }
     else -- No ghost
@@ -187,6 +188,7 @@ local function change_frequency(entity, new_beacon_name, player)
             force = entity.force_index,
             player = player,
             fast_replace = true,
+            spill = false,
             create_build_effect_smoke = false
         }
         if player then

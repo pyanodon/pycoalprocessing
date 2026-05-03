@@ -15,6 +15,7 @@ Date: ???
     - Added an alert to beacon interference. It doesn't last forever, though. Existing interference will be pinned. Resolves https://github.com/pyanodon/pybugreports/issues/1413
     - Added an alert sound to beacon interference
     - Added a remote API to add or remove buildings from the beacon overloading blacklist
+    - Fixed beacon items being duplicated when manually constructed. Resolves https://github.com/pyanodon/pybugreports/issues/1273
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.44
 Date: 2025-12-28
