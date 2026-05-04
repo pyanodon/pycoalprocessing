@@ -82,7 +82,7 @@ local function disable_entity(entity)
     entity.active = false
     entity.custom_status = {
         diode = defines.entity_status_diode.red,
-        label = {"entity-status.beacon-interference"}
+        label = { "entity-status.beacon-interference" }
     }
     local unit_number = entity.unit_number
     if storage.beacon_interference_icons[unit_number] then return end
@@ -95,10 +95,10 @@ local function disable_entity(entity)
     }.id
 end
 
----@param reciver LuaEntity
-local function beacon_check(reciver)
+---@param receiver LuaEntity
+local function beacon_check(receiver)
     ---@class LuaEntity[]
-    local beacons = reciver.get_beacons()
+    local beacons = receiver.get_beacons()
     if not beacons or not next(beacons) then return end
 
     local effected_am = {}
@@ -111,21 +111,21 @@ local function beacon_check(reciver)
             local total = am .. fm
             if settings.startup["future-beacons"].value then
                 if effected_am[am] or effected_fm[fm] then
-                    disable_entity(reciver)
+                    disable_entity(receiver)
                     return
                 end
                 effected_am[am] = true
                 effected_fm[fm] = true
             else
                 if effected_total[total] then
-                    disable_entity(reciver)
+                    disable_entity(receiver)
                     return
                 end
                 effected_total[total] = true
             end
         end
     end
-    enable_entity(reciver)
+    enable_entity(receiver)
 end
 
 ---Replaces a beacon entity with a different frequency entity
@@ -177,7 +177,7 @@ local function change_frequency(entity, new_beacon_name, player)
             --if there is no inventory attatched to the player theres no need to remove the item
             local inventory = game.players[player].get_main_inventory()
             if inventory then
-                inventory.remove {name = mineable_result, amount = 1}
+                inventory.remove { name = mineable_result, amount = 1 }
             end
         end
         -- Get new effect receivers
@@ -220,8 +220,8 @@ Beacons.events.on_built = function(event)
             change_frequency(entity, ghost)
             return
         end
-        for _, reciver in pairs(entity.get_beacon_effect_receivers()) do
-            beacon_check(reciver)
+        for _, receiver in pairs(entity.get_beacon_effect_receivers()) do
+            beacon_check(receiver)
         end
     else
         beacon_check(entity)
@@ -235,13 +235,13 @@ Beacons.events.on_destroyed = function(event)
 
     if entity.type == "beacon" then
         if not our_beacons[entity.name] then return end
-        local recivers = entity.get_beacon_effect_receivers()
+        local receivers = entity.get_beacon_effect_receivers()
         entity.destroy() -- is needed for beacon check to remove interference if there was any
-        for _, reciver in pairs(recivers) do
-            beacon_check(reciver)
+        for _, receiver in pairs(receivers) do
+            beacon_check(receiver)
         end
-        if table_size(recivers) ~= 0 and remote.interfaces["cryogenic-distillation"] then
-            remote.call("cryogenic-distillation", "am_fm_beacon_destroyed", recivers, recivers[1].surface)
+        if table_size(receivers) ~= 0 and remote.interfaces["cryogenic-distillation"] then
+            remote.call("cryogenic-distillation", "am_fm_beacon_destroyed", receivers, receivers[1].surface)
         end
     end
 end
@@ -283,9 +283,9 @@ Beacons.events.on_gui_opened = function(event)
         direction = "vertical",
         caption = "Beacon Dials"
     }
-    local AM = dial.add {type = "flow", name = "AM_flow"}
+    local AM = dial.add { type = "flow", name = "AM_flow" }
     AM.style.vertical_align = "center"
-    AM.add {type = "label", name = "AM_label", caption = { "beacon-modifier.am" }}
+    AM.add { type = "label", name = "AM_label", caption = { "beacon-modifier.am" } }
     AM.add {
         type = "slider",
         name = "AM",
@@ -302,9 +302,9 @@ Beacons.events.on_gui_opened = function(event)
         lose_focus_on_confirm = true,
     }.style.maximal_width = 50
 
-    local FM = dial.add {type = "flow", name = "FM_flow"}
+    local FM = dial.add { type = "flow", name = "FM_flow" }
     FM.style.vertical_align = "center"
-    FM.add {type = "label", name = "FM_label", caption = { "beacon-modifier.fm" }}
+    FM.add { type = "label", name = "FM_label", caption = { "beacon-modifier.fm" } }
     FM.add {
         type = "slider",
         name = "FM",
@@ -320,7 +320,7 @@ Beacons.events.on_gui_opened = function(event)
         numeric = true,
         lose_focus_on_confirm = true,
     }.style.maximal_width = 50
-    dial.add {type = "button", name = "py_beacon_confirm", caption = "CONFIRM"}
+    dial.add { type = "button", name = "py_beacon_confirm", caption = "CONFIRM" }
 end
 
 gui_events[defines.events.on_gui_value_changed]["AM"] = function(event)
