@@ -218,7 +218,6 @@ end
 Beacons.events.on_built = function(event)
     local entity = event.entity
     local ghost_name = beacon_ghosts[event.player_index]
-    beacon_ghosts[event.player_index] = nil
     if not entity.valid then return end
     local alert
     if entity.type == "beacon" then
