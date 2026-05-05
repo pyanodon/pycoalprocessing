@@ -1,5 +1,5 @@
 for _, surface in pairs(game.surfaces) do
-    for _, entity in pairs(surface.find_entities_filtered{typpe = {"assembling-machine", "furnace", "rocket-silo", "mining-drill"}}) do
+    for _, entity in pairs(surface.find_entities_filtered{type = {"assembling-machine", "furnace", "rocket-silo", "mining-drill"}}) do
         local id = storage.beacon_interference_icons[entity.unit_number]
         if id then
             local rendering_object = rendering.get_object_by_id(id)
