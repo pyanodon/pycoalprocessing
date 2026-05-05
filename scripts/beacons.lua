@@ -75,9 +75,7 @@ end)
 
 local function enable_entity(entity)
     local name = entity.name:gsub("%-mk..+", "")
-    if storage.farms[name] ~= nil then
-        return
-    end
+    if storage.farms[name] ~= nil then return end
     entity.active = true
     local unit_number = entity.unit_number
     local rendering_id = storage.beacon_interference_icons[unit_number]
@@ -93,9 +91,7 @@ end
 
 local function disable_entity(entity)
     local name = entity.name:gsub("%-mk..+", "")
-    if storage.farms[name] ~= nil then
-        return
-    end
+    if storage.farms[name] ~= nil then return end
     entity.active = false
     entity.custom_status = {
         diode = defines.entity_status_diode.red,
@@ -147,56 +143,47 @@ end
 ---Replaces a beacon entity with a different frequency entity
 ---@param entity LuaEntity
 ---@param new_beacon_name string
----@param player integer? player whose undo queue this action is added to
----@return LuaEntity?
-local function change_frequency(entity, new_beacon_name, player)
-    if not entity or not entity.valid then
-        return
-    end
+---@param player_index integer? player whose undo queue this action is added to
+---@return LuaEntity? entity the current beacon or whatever it was replaced with
+local function change_frequency(entity, new_beacon_name, player_index)
+    if not entity or not entity.valid then return end
     -- Ghost only?
     if entity.type == "entity-ghost" then
-        if entity.ghost_name == new_beacon_name then
-            return
-        end
-        return entity.surface.create_entity {
+        if entity.ghost_name == new_beacon_name then return entity end
+        -- Replace entity
+        local new_entity = entity.surface.create_entity {
             name = entity.type,
-            position = entity.position,
-            force = entity.force_index,
-            player = player,
-            quality = entity.quality,
-            create_build_effect_smoke = false,
-            fast_replace = true,
-            spill = false,
             inner_name = new_beacon_name,
+            position = entity.position,
+            quality = entity.quality,
+            force = entity.force_index,
+            create_build_effect_smoke = false,
         }
+        entity.destroy()
+        return new_entity
     else -- No ghost
-        if entity.name == new_beacon_name then
-            return
-        end
-        -- Not ghost
+        if entity.name == new_beacon_name then return entity end
         -- Get current effect receivers
         local receivers = {}
         for _, receiver in pairs(entity.get_beacon_effect_receivers()) do
             receivers[receiver.unit_number] = receiver
         end
+        local player = player_index and game.get_player(player_index)
+        local index, action = py.find_latest_undo_action(player_index, entity, "built-entity")
         -- Replace entity
-        local mineable_result = entity.prototype.mineable_properties.products[1].name
         local new_entity = entity.surface.create_entity {
             name = new_beacon_name,
             position = entity.position,
             quality = entity.quality,
             force = entity.force_index,
-            player = player,
-            fast_replace = true,
-            spill = false,
+            player = index and player,
+            undo_index = index,
             create_build_effect_smoke = false
         }
-        if player then
-            --if there is no inventory attatched to the player theres no need to remove the item
-            local inventory = game.players[player].get_main_inventory()
-            if inventory then
-                inventory.remove {name = mineable_result, amount = 1}
-            end
+        entity.destroy()
+        if action then
+            -- needs to be done after the construction, ref https://forums.factorio.com/viewtopic.php?t=132714
+            player.undo_redo_stack.remove_undo_action(index, action) -- remove old action from queue
         end
         -- Get new effect receivers
         for _, receiver in pairs(new_entity.get_beacon_effect_receivers()) do
@@ -217,31 +204,29 @@ local function change_frequency(entity, new_beacon_name, player)
     end
 end
 
+-- storing in a local table is fine because it only exists for that tick
+local beacon_ghosts = {}
+
 -- If a pipette is placed on top of a ghost, the AM/FM setting is lost without script intervention
 Beacons.events.on_pre_build = function(event)
-    if event.build_mode ~= defines.build_mode.normal then
-        return
-    end
+    if event.build_mode ~= defines.build_mode.normal then return end
     local surface = game.get_player(event.player_index).surface
     local colliding_ghost = surface.find_entity("entity-ghost", event.position)
-    if colliding_ghost and our_beacons[colliding_ghost.ghost_name] then
-        storage.last_beacon_ghost = colliding_ghost.ghost_name
-    end
+    beacon_ghosts[event.player_index] = colliding_ghost and our_beacons[colliding_ghost.ghost_name] and colliding_ghost.ghost_name or nil
 end
 
 Beacons.events.on_built = function(event)
     local entity = event.entity
-    local ghost = storage.last_beacon_ghost
-    storage.last_beacon_ghost = nil
+    local ghost_name = beacon_ghosts[event.player_index]
+    beacon_ghosts[event.player_index] = nil
     if not entity.valid then return end
     local alert
     if entity.type == "beacon" then
         if not our_beacons[entity.name] then return end
         -- If the ghost doesn't match the placed entity, then fix it
-        -- TODO: find a way to have this action properly work with the undo stack
-        if ghost and entity.name ~= ghost then
-            change_frequency(entity, ghost)
-            return
+        if ghost_name and entity.name ~= ghost_name then
+            change_frequency(entity, ghost_name, event.player_index)
+            return -- recievers already updated and player notified of issues
         end
         for _, reciver in pairs(entity.get_beacon_effect_receivers()) do
             alert = alert or beacon_check(reciver)
@@ -274,16 +259,12 @@ end
 
 Beacons.events.on_entity_settings_pasted = function(event)
     local source, destination = event.source, event.destination
-    if not source.valid or not destination.valid then
-        return
-    end
+    if not source.valid or not destination.valid then return end
 
     local source_name = (source.type == "entity-ghost" and source.ghost_name) or source.name
     local destination_name = (destination.type == "entity-ghost" and destination.ghost_name) or destination.name
     -- Not a beacon or not changing
-    if not (our_beacons[source_name] and our_beacons[destination_name]) or source_name == destination_name then
-        return
-    end
+    if not our_beacons[source_name] or not our_beacons[destination_name] or source_name == destination_name then return end
 
     change_frequency(destination, source_name, event.player_index)
 end
@@ -380,5 +361,5 @@ gui_events[defines.events.on_gui_click]["py_beacon_confirm"] = function(event)
     local beacon_name_prefix = our_beacons[init_name] .. "-AM"
     local beacon_name = beacon_name_prefix .. gui.AM_flow.AM.slider_value .. "-FM" .. gui.FM_flow.FM.slider_value
 
-    change_frequency(beacon, beacon_name, event.player_index)
+    player.opened = change_frequency(beacon, beacon_name, event.player_index)
 end
