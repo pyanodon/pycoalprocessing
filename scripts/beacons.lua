@@ -208,9 +208,7 @@ local function change_frequency(entity, new_beacon_name, player)
             alert = alert or beacon_check(receiver)
         end
         if player and alert then
-            -- player.play_sound{
-                
-            -- }
+            player.play_sound{path="utility/alert_destroyed"}
         end
         if remote.interfaces["cryogenic-distillation"] then
             remote.call("cryogenic-distillation", "am_fm_beacon_settings_changed", new_entity)
@@ -252,9 +250,7 @@ Beacons.events.on_built = function(event)
         alert = beacon_check(entity)
     end
     if event.player_index and alert then
-        -- game.get_player(event.player_index).play_sound{
-
-        -- }
+        game.get_player(event.player_index).play_sound{path="utility/alert_destroyed"}
     end
 end
 
