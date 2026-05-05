@@ -265,13 +265,13 @@ Beacons.events.on_destroyed = function(event)
 
     if entity.type == "beacon" then
         if not our_beacons[entity.name] then return end
-        local recivers = entity.get_beacon_effect_receivers()
+        local recievers = entity.get_beacon_effect_receivers()
         entity.destroy() -- is needed for beacon check to remove interference if there was any
-        for _, reciver in pairs(recivers) do
-            beacon_check(reciver)
+        for _, reciever in pairs(recievers) do
+            beacon_check(reciever)
         end
-        if table_size(recivers) ~= 0 and remote.interfaces["cryogenic-distillation"] then
-            remote.call("cryogenic-distillation", "am_fm_beacon_destroyed", recivers, recivers[1].surface)
+        if table_size(recievers) ~= 0 and remote.interfaces["cryogenic-distillation"] then
+            remote.call("cryogenic-distillation", "am_fm_beacon_destroyed", recievers, recievers[1].surface)
         end
     end
 end
