@@ -2,7 +2,7 @@ RECIPE {
     type = "recipe",
     name = "iron-oxide-smelting",
     enabled = true,
-    category = "smelting",
+    categories = {"smelting"},
     energy_required = 3.5,
     ingredients = {{type = "item", name = "iron-oxide", amount = 20}},
     results = {
@@ -13,7 +13,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "soil",
-    category = "soil-extraction",
+    categories = {"soil-extraction"},
     enabled = true,
     energy_required = 8,
     ingredients = {
@@ -27,7 +27,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "fawogae",
-    category = "fawogae",
+    categories = {"fawogae"},
     enabled = true,
     --hidden = true,
     energy_required = 5.0,
@@ -42,7 +42,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "soil-washing",
-    category = "washer",
+    categories = {"washer"},
     enabled = true,
     energy_required = 4,
     ingredients = {
@@ -63,7 +63,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "muddy-sludge",
-    category = "washer",
+    categories = {"washer"},
     enabled = true,
     energy_required = 4,
     ingredients = {
@@ -81,7 +81,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "sand-washing",
-    category = "washer",
+    categories = {"washer"},
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -102,7 +102,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "fawogae-substrate",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = true,
     energy_required = 3.5,
     ingredients = {
@@ -123,7 +123,7 @@ RECIPE {
     type = "recipe",
     name = "flask",
     enabled = true,
-    category = "glassworks",
+    categories = {"glassworks"},
     energy_required = 3,
     ingredients = {
         {type = "fluid", name = "molten-glass", amount = 25, fluidbox_index = 2},
@@ -155,7 +155,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "cooling-water",
-    category = "cooling",
+    categories = {"cooling"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -174,7 +174,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "cooling-water-2",
-    category = "cooling",
+    categories = {"cooling"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -193,7 +193,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "fluegas-to-syngas",
-    category = "carbonfilter",
+    categories = {"carbonfilter"},
     enabled = false,
     energy_required = 7,
     ingredients = {
@@ -231,7 +231,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "bone-solvent",
-    category = "carbonfilter",
+    categories = {"carbonfilter"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -251,7 +251,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "dirty-acid",
-    category = "carbonfilter",
+    categories = {"carbonfilter"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -271,7 +271,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "olefin-filtration",
-    category = "carbonfilter",
+    categories = {"carbonfilter"},
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -291,7 +291,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "oleochemicals-crude-oil",
-    category = "carbonfilter",
+    categories = {"carbonfilter"},
     enabled = false,
     energy_required = 5.0,
     ingredients = {
@@ -311,7 +311,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "crushed-iron",
-    category = "smelting",
+    categories = {"smelting"},
     enabled = false,
     energy_required = 3.5,
     ingredients = {{type = "item", name = "crushed-iron", amount = 1}},
@@ -323,7 +323,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "crushed-copper",
-    category = "smelting",
+    categories = {"smelting"},
     enabled = false,
     energy_required = 3.5,
     ingredients = {{type = "item", name = "crushed-copper", amount = 1}},
@@ -335,7 +335,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "aromatics-to-rubber",
-    category = "methanol",
+    categories = {"methanol"},
     enabled = false,
     energy_required = 1.5,
     ingredients = {
@@ -354,7 +354,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "aromatics-to-plastic",
-    category = "oil-processing",
+    categories = {"oil-processing"},
     enabled = false,
     energy_required = 1.5,
     ingredients = {
@@ -372,7 +372,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "nas-battery",
-    category = "advanced-crafting",
+    categories = {"advanced-crafting"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -389,7 +389,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "fluegas-filtration",
-    category = "carbonfilter",
+    categories = {"carbonfilter"},
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -407,7 +407,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "lime",
-    category = "hpf",
+    categories = {"hpf"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -424,7 +424,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "fuelrod-mk01",
-    category = "hpf",
+    categories = {"hpf"},
     enabled = false,
     energy_required = 3.5,
     ingredients = {
@@ -440,7 +440,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "glass-core",
-    category = "glassworks",
+    categories = {"glassworks"},
     enabled = false,
     energy_required = 3.5,
     ingredients = {
@@ -457,7 +457,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "cladding",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 2.0,
     ingredients = {
@@ -473,7 +473,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "ppd",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -489,7 +489,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "kevlar",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 6.0,
     ingredients = {
@@ -506,7 +506,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "kevlar-coating",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 3.0,
     ingredients = {
@@ -522,7 +522,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "nbfe-alloy",
-    category = "hpf", --bobs smelting
+    categories = {"hpf"}, --bobs smelting
     enabled = false,
     energy_required = 4.0,
     ingredients = {
@@ -538,7 +538,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "nbfe-coating",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 3.0,
     ingredients = {
@@ -554,7 +554,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "cladded-core",
-    category = "advanced-crafting",
+    categories = {"advanced-crafting"},
     enabled = false,
     energy_required = 2.0,
     ingredients = {
@@ -570,7 +570,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "copper-coating",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 3.0,
     ingredients = {
@@ -587,7 +587,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "optical-fiber",
-    category = "advanced-crafting",
+    categories = {"advanced-crafting"},
     enabled = false,
     energy_required = 3.0,
     ingredients = {
@@ -603,7 +603,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "biofilm",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 3.0,
     ingredients = {
@@ -620,7 +620,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "filtration-media",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 3.0,
     ingredients = {
@@ -637,7 +637,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "nexelit-ore-1",
-    category = "evaporator",
+    categories = {"evaporator"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -645,7 +645,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "nexelit-ore",   amount = 1},
-        {type = "item", name = "tailings-dust", amount = 1, probability = 0.4}
+        {type = "item", name = "tailings-dust", amount = 1, independent_probability = 0.4}
     },
     main_product = "nexelit-ore",
     subgroup = "py-mill",
@@ -654,7 +654,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "sulfuric-acid",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -670,7 +670,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "powdered-quartz",
-    category = "ball-mill",
+    categories = {"ball-mill"},
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -678,7 +678,7 @@ RECIPE {
     },
     results = {
         {type = "item", name = "powdered-quartz", amount = 5},
-        {type = "item", name = "gravel",          amount = 1, probability = 0.5}
+        {type = "item", name = "gravel",          amount = 1, independent_probability = 0.5}
     },
     main_product = "powdered-quartz",
     subgroup = "py-items",
@@ -687,7 +687,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "small-electric-pole-2",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -703,7 +703,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "gun-powder",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -719,7 +719,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "firearm-magazine",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 5,
     ingredients = {

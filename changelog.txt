@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.1.0
+Date: ???
+  Changes:
+    - Updated to Factorio 2.1
+    - Removed equipment fuel manager in favor of the engine's built-in auto_refuel
+    - Changed beacon overload blacklist to be locally loaded instead of always saved in storage to allow mods that are removed to have their effects removed
+    - Added annotations to tailings pond script
+    - Added inserter inventory targeting options
+    - Removed unnecessary prototype values to clear up the log
+    - Updated vector_to_place_result so items shouldn't drop on the floor. Resolves https://github.com/pyanodon/pybugreports/issues/1486
+    - Fixed that many buildings did not have certain pipe covers rendered
+    - Added factory planner integration for barreling-like recipes
+    - Reduced most fluidbox sizes from 1000 to 100
+---------------------------------------------------------------------------------------------------
 Version: 3.0.45
 Date: ???
   Changes:

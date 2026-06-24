@@ -6,7 +6,7 @@ local skipped_fluids = {
 RECIPE {
     type = "recipe",
     name = "empty-jerry-can",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -61,7 +61,6 @@ for f, fluid in pairs(data.raw.fluid) do
             burnt_result = "empty-fuel-canister",
             stack_size = 20,
             autotech_ignore = true,
-            unlock_results = false
         }
 
         local fuel_amount = 50
@@ -75,7 +74,7 @@ for f, fluid in pairs(data.raw.fluid) do
             type = "recipe",
             name = "fill-" .. fluid.name .. "-canister",
             localised_name = {"recipe-name.fill-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
-            category = "crafting-with-fluid",
+            categories = {"crafting-with-fluid"},
             enabled = false,
             energy_required = 0.2,
             ingredients = {
@@ -94,7 +93,7 @@ for f, fluid in pairs(data.raw.fluid) do
             name = "empty-" .. fluid.name .. "-canister",
             localised_name = {"recipe-name.empty-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
             icons = recipe_icon,
-            category = "crafting-with-fluid",
+            categories = {"crafting-with-fluid"},
             enabled = false,
             energy_required = 0.2,
             ingredients = {

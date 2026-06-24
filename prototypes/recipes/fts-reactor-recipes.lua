@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "heavy-oil_from_coal-gas",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 9,
     ingredients = {
@@ -24,7 +24,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "light-oil_from_syngas",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 9,
     ingredients = {
@@ -47,7 +47,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "petgas-from-refsyngas",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 9.5,
     ingredients = {
@@ -69,7 +69,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "ref-to-light-oil",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 10,
     ingredients = {
@@ -91,7 +91,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "sulfuric-petgas",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 9.5,
     ingredients = {
@@ -116,7 +116,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "combustion-olefin",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 9.5,
     ingredients = {
@@ -140,7 +140,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "heavyoil-to-coal-gas",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 9.3,
     ingredients = {
@@ -163,7 +163,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "lightoil-to-syngas",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 9.3,
     ingredients = {
@@ -186,7 +186,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "petgas-to-refsyngas",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 9.3,
     ingredients = {
@@ -209,7 +209,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "glycerol-syngas",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -231,7 +231,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "coal-briquette",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 10,
     ingredients = {
@@ -251,7 +251,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "heavy-oleo",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 1,
     ingredients = {

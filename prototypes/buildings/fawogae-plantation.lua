@@ -39,14 +39,14 @@ if mods.pyalienlife then
             production_type = "input",
             pipe_covers = py.pipe_covers(false, true, true, true),
             pipe_picture = py.pipe_pictures("assembling-machine-3", {0, 0.22}, {0.02, -1}, nil, nil, pipes),
-            volume = 1000,
+            volume = 100,
             pipe_connections = {{flow_direction = "input", position = {-0.5, -2.5}, direction = defines.direction.north}}
         },
         {
             production_type = "input",
             pipe_covers = py.pipe_covers(false, true, true, true),
             pipe_picture = py.pipe_pictures("assembling-machine-3", {0, 0.22}, {0.02, -1}, nil, nil, pipes),
-            volume = 1000,
+            volume = 100,
             pipe_connections = {{flow_direction = "input", position = {0.5, 2.5}, direction = defines.direction.south}}
         },
     }
@@ -56,7 +56,7 @@ else
             production_type = "input",
             pipe_covers = py.pipe_covers(false, true, true, true),
             pipe_picture = py.pipe_pictures("assembling-machine-3", {0, 0.22}, {0.02, -1}, nil, nil, pipes),
-            volume = 1000,
+            volume = 100,
             pipe_connections = {{flow_direction = "input", position = {-0.5, -2.5}, direction = defines.direction.north}}
         },
     }
@@ -94,7 +94,6 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
         selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
-        forced_symmetry = "diagonal-pos",
         module_slots = i,
         allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
         crafting_categories = {"fawogae"},
@@ -137,7 +136,6 @@ for i = 1, 4 do
         impact_category = "metal",
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/fawogae-plantation.ogg"},
-            apparent_volume = 1.2
         }
     }
 end

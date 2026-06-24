@@ -48,7 +48,6 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-4.3, -4.3}, {4.3, 4.3}},
         selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
-        forced_symmetry = "diagonal-pos",
         module_slots = i,
         allowed_effects = {"consumption", "speed", "pollution", "productivity"},
         crafting_categories = {"chemistry"},
@@ -87,7 +86,6 @@ for i = 1, 4 do
                         filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/light-y.png",
                         frame_count = 1,
                         repeat_count = 80,
-                        draw_as_light = true,
                         draw_as_glow = true,
                         width = 288,
                         height = 384,
@@ -103,7 +101,6 @@ for i = 1, 4 do
                         filename = "__pycoalprocessinggraphics__/graphics/entity/chemical-plant/light-b.png",
                         frame_count = 1,
                         repeat_count = 80,
-                        draw_as_light = true,
                         draw_as_glow = true,
                         width = 288,
                         height = 384,
@@ -229,7 +226,7 @@ for i = 1, 4 do
                 production_type = "output",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {4.0, -4.0}, direction = defines.direction.north}}
             },
             --North2
@@ -237,7 +234,7 @@ for i = 1, 4 do
                 production_type = "output",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {0.0, -4.0}, direction = defines.direction.north}}
             },
             --North3
@@ -245,7 +242,7 @@ for i = 1, 4 do
                 production_type = "output",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {2.0, -4.0}, direction = defines.direction.north}}
             },
             --South3
@@ -253,7 +250,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {0.0, 4.0}, direction = defines.direction.south}}
             },
             --South
@@ -261,7 +258,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {2.0, 4.0}, direction = defines.direction.south}}
             },
             --South2
@@ -269,7 +266,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {4.0, 4.0}, direction = defines.direction.south}}
             },
         },
@@ -277,7 +274,6 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/chemical-plant.ogg", volume = 1.0},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/chemical-plant.ogg", volume = 0.3},
-            apparent_volume = 2.5
         }
     }
 end

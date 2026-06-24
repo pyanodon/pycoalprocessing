@@ -202,7 +202,7 @@ RECIPE("beacon")
     :add_ingredient {type = "item", name = "processing-unit", amount = 5}:remove_ingredient {"electronic-circuit"}:remove_ingredient {"advanced-circuit"}
     :add_ingredient {type = "item", name = "metastable-quasicrystal", amount = 1}
     :add_ingredient {type = "fluid", name = "r4", amount = 100}
-if mods.pyalternativeenergy then data.raw.recipe.beacon.category = "crafting-with-fluid" end
+if mods.pyalternativeenergy then RECIPE("beacon"):replace_category("crafting", "crafting-with-fluid") end
 
 RECIPE("beacon-mk01")
     :add_ingredient {type = "item", name = "self-assembly-monolayer", amount = 1}

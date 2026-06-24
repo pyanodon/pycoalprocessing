@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "mining-nexelit",
-    category = "ground-borer",
+    categories = {"ground-borer"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -22,7 +22,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "mining-stone",
-    category = "ground-borer",
+    categories = {"ground-borer"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -43,7 +43,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "mining-borax",
-    category = "ground-borer",
+    categories = {"ground-borer"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -64,7 +64,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "mining-niobium",
-    category = "ground-borer",
+    categories = {"ground-borer"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -85,7 +85,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "mining-limestone",
-    category = "ground-borer",
+    categories = {"ground-borer"},
     enabled = false,
     energy_required = 3,
     ingredients = {

@@ -66,21 +66,28 @@ ENTITY {
             pollution = 1
         },
     },
-    horizontal_animation = {
-        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-vertical-anim.png",
-        width = 238,
-        height = 249,
-        frame_count = 16,
-        line_length = 4,
-        shift = {0.195, -0.239}
-    },
-    vertical_animation = {
-        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-horizontal-anim.png",
-        width = 238,
-        height = 244,
-        frame_count = 16,
-        line_length = 4,
-        shift = {0.155, -0.325}
+    two_direction_only = true,
+    pictures = {
+        north = {
+            animation = {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-horizontal-anim.png",
+                width = 238,
+                height = 244,
+                frame_count = 16,
+                line_length = 4,
+                shift = {0.155, -0.325}
+            }
+        },
+        east = {
+            animation = {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk02/gas-turbine-mk02-vertical-anim.png",
+                width = 238,
+                height = 249,
+                frame_count = 16,
+                line_length = 4,
+                shift = {0.195, -0.239}
+            }
+        }
     },
     smoke = {
         {
@@ -89,16 +96,15 @@ ENTITY {
             east_position = {0.52, -3.1},
             frequency = 5 / 8,
             starting_vertical_speed = 0.08,
-            slow_down_factor = 1,
+            vertical_speed_slowdown = 1,
             starting_frame_deviation = 60
         }
     },
-    min_perceived_performance = 0.1,
-    performance_to_sound_speedup = 0.3,
+    perceived_performance = {minimum = 0.1},
     impact_category = "metal-large",
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk02.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk02.ogg", volume = 0.3},
-        apparent_volume = 2.5
+        activity_to_speed_modifiers = {multiplier = 0.3}
     }
 }

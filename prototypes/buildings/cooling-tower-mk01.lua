@@ -39,7 +39,6 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
-    forced_symmetry = "diagonal-pos",
     fixed_recipe = "cooling-water",
     module_slots = 2,
     allowed_effects = {"speed", "consumption"},
@@ -63,14 +62,14 @@ ENTITY {
             production_type = "input",
             pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {-0.0, -0.9}, nil, nil),
             pipe_covers = py.pipe_covers(false, true, true, true),
-            volume = 1000,
+            volume = 100,
             pipe_connections = {{flow_direction = "input", position = {1.0, 0.0}, direction = defines.direction.east}}
         },
         {
             production_type = "output",
             pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {-0.0, -0.9}, nil, nil),
             pipe_covers = py.pipe_covers(false, true, true, true),
-            volume = 1000,
+            volume = 100,
             pipe_connections = {{flow_direction = "output", position = {-1.0, 0.0}, direction = defines.direction.west}}
         }
     },
@@ -78,6 +77,5 @@ ENTITY {
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg", volume = 0.3},
-        apparent_volume = 2.5
     }
 }

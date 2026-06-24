@@ -1,6 +1,6 @@
 if not mods.pyalternativeenergy then
     for _, recipe in pairs(data.raw.recipe) do
-        if not recipe.localised_name and recipe.category == "combustion" and not recipe.name:find("%-biomass$") then
+        if not recipe.localised_name and recipe:has_category("combustion") and not recipe.name:find("%-biomass$") then
             local temp
             for _, result in pairs(recipe.results) do
                 if result.name == "combustion-mixture1" then
@@ -70,7 +70,14 @@ end
 data.raw["utility-constants"].default.minimum_recipe_overload_multiplier = 1
 
 for _, recipe in pairs(data.raw.recipe) do
-    if recipe.category == "tar" and not recipe.crafting_machine_tint then
+    if recipe:has_category("tar") and not recipe.crafting_machine_tint then
         error("Recipe " .. recipe.name .. " is missing crafting_machine_tint. Please fill out this field.")
+    end
+end
+
+-- make all generator equipment auto refuel
+if settings.startup["generator-equipment-manager"].value then
+    for _, equipment in pairs(data.raw["generator-equipment"]) do
+        if equipment.burner then equipment.burner.auto_refuel = true end
     end
 end

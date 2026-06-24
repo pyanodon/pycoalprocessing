@@ -51,12 +51,12 @@ remote.add_interface("py_beacons", {
     ---Adds the entity to the blacklist of buildings ignored by beacon overloading. Blacklist checking ignores '-mk0x'
     ---@param entity data.EntityID
     add_to_blacklist = function (entity)
-        storage.farms[entity] = true
+        blacklist[entity] = true
     end,
     ---Removes the entity from the blacklist of buildings ignored by beacon overloading. Blacklist checking ignores '-mk0x'
     ---@param entity data.EntityID
     remove_from_blacklist = function (entity)
-        storage.farms[entity] = nil
+        blacklist[entity] = nil
     end
 })
 
@@ -70,13 +70,12 @@ end
 
 py.on_event(py.events.on_init(), function()
     storage.beacon_interference_icons = storage.beacon_interference_icons or {}
-    storage.farms = storage.farms or blacklist
 end)
 
 local function enable_entity(entity)
     local name = entity.name:gsub("%-mk..+", "")
-    if storage.farms[name] ~= nil then return end
-    entity.active = true
+    if blacklist[name] ~= nil then return end
+    entity.disabled_by_script = true
     local unit_number = entity.unit_number
     local rendering_id = storage.beacon_interference_icons[unit_number]
     if not rendering_id then return end
@@ -91,8 +90,8 @@ end
 
 local function disable_entity(entity)
     local name = entity.name:gsub("%-mk..+", "")
-    if storage.farms[name] ~= nil then return end
-    entity.active = false
+    if blacklist[name] ~= nil then return end
+    entity.disabled_by_script = false
     entity.custom_status = {
         diode = defines.entity_status_diode.red,
         label = {"entity-status.beacon-interference"}

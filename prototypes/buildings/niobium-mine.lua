@@ -70,7 +70,6 @@ for abbreviation, direction in pairs {N = "north", E = "east", S = "south", W = 
         height = 237,
         frame_count = 1,
         repeat_count = 136,
-        direction_count = 1,
         shift = pixel_offsets[abbreviation]
     }
 end
@@ -90,7 +89,7 @@ ENTITY {
     collision_box = {{-3.3, -3.3}, {3.3, 3.3}},
     selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
     input_fluid_box = {
-        pipe_picture = _G.assembler2pipepictures(),
+        pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {-3, 3}),
         pipe_covers = _G.pipecoverspictures(),
         volume = 200,
         pipe_connections = {
@@ -118,7 +117,7 @@ ENTITY {
     },
     energy_usage = "550kW",
     resource_searching_radius = 5.49,
-    vector_to_place_result = {0, -3.65},
+    vector_to_place_result = {0, -3.8},
     radius_visualisation_picture = {
         filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-radius-visualization.png",
         width = 12,
@@ -136,6 +135,5 @@ ENTITY {
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/niobium-mine.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/niobium-mine.ogg", volume = 0.3},
-        apparent_volume = 2.5
     }
 }

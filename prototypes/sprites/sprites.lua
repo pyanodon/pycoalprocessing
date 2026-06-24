@@ -115,7 +115,6 @@ data:extend {
         priority = "medium",
         width = 64,
         height = 64,
-        mipmap_count = 3,
         scale = 0.5,
         flags = {"gui-icon"}
     },
@@ -126,7 +125,6 @@ data:extend {
         priority = "medium",
         width = 64,
         height = 64,
-        mipmap_count = 3,
         scale = 0.5,
         flags = {"gui-icon"}
     },
@@ -137,7 +135,6 @@ data:extend {
         priority = "medium",
         width = 64,
         height = 64,
-        mipmap_count = 3,
         scale = 0.5,
         flags = {"gui-icon"}
     },
@@ -148,7 +145,6 @@ data:extend {
         priority = "medium",
         width = 64,
         height = 64,
-        mipmap_count = 3,
         scale = 0.5,
         flags = {"gui-icon"}
     },

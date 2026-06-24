@@ -44,7 +44,7 @@ for i = 1, 4 do
         minable = {mining_time = 1, result = name},
         fast_replaceable_group = "wpu",
         max_health = 800 * i,
-        vector_to_place_result = {-0.5, 3.2},
+        vector_to_place_result = {-0.5, 3.3},
         corpse = "medium-remnants",
         dying_explosion = "medium-explosion",
         collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
@@ -108,7 +108,6 @@ for i = 1, 4 do
         impact_category = "metal",
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 1.0},
-            apparent_volume = 2.5
         },
     }
 

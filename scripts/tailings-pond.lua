@@ -1,6 +1,13 @@
 Pond = {}
 Pond.events = {}
 
+---@class TailingsPond
+---@field entity LuaEntity
+---@field fluid_per double
+---@field fill_level double
+---@field sprite uint
+---@field lifetime_pollution_tiles_created uint
+
 -- 500 fluids units are required to fill a tile
 local fluids_per_tile = 500
 
@@ -35,6 +42,10 @@ end)
 
 --Pond contains gases, lets spill them out. Only negative is this can be used as a 'gas' void so...
 --If the gas is 'polluting' create pollution, else just vent.
+---@param fluid Fluid
+---@param surface LuaSurface
+---@param position MapPosition
+---@return Fluid?
 local function empty_pond_gas(fluid, surface, position)
     if fluid then
         if
@@ -55,6 +66,7 @@ local function empty_pond_gas(fluid, surface, position)
 end
 
 --Sets animation frame based on tank filled percentage
+---@param pond TailingsPond
 local function set_fluid_level_image(pond)
     local fluid_per = pond.fluid_per
     --adjust percentage to match frames 30 frames, 1 is empty, 30 is full.
@@ -98,22 +110,23 @@ local function spiral(n)
 end
 
 --As the tailings pond get full they leak out and start polluting the ground around them
+---@param pond TailingsPond
 local function scorch_earth(pond)
     local entity = pond.entity
     local fluidbox = entity.fluidbox
-    local fluid = fluidbox[1]
+    local fluid = entity.get_fluid(1)
     if fluid and fluid.name == "neutron" then return end
 
     local surface = entity.surface
     --Vent Gasses
-    local fluid = empty_pond_gas(fluid, surface, entity.position)
+    fluid = empty_pond_gas(fluid, surface, entity.position)
     if not fluid or fluid.amount == 0 then -- totally drained
         pond.fluid_per = 0
-        fluidbox[1] = nil
+        entity.set_fluid(1)
         return
     end
 
-    local tanksize = fluidbox.get_prototype(1).volume
+    local tanksize = fluidbox.get_prototype(1).get_volume(entity.quality)
     local segment_size = fluidbox.get_capacity(1)
     if tanksize - fluid.amount < 1 then -- pond is full, don't fall for floating point trickery
         local fluid_name = fluid.name
@@ -145,10 +158,10 @@ local function scorch_earth(pond)
     pond.fluid_per = math.max(0, fluid.amount / tanksize)
     --push the updated fluidbox to the entity.
     if fluid.amount <= 0 then
-        fluidbox[1] = nil
+        entity.set_fluid(1)
     elseif fluid.amount ~= fluidbox[1].amount then
         fluid.amount = fluid.amount * segment_size / tanksize
-        fluidbox[1] = fluid
+        entity.set_fluid(1, fluid)
     end
 end
 

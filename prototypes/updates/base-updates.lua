@@ -194,7 +194,7 @@ RECIPE("cannon-shell"):remove_ingredient("explosives"):add_ingredient {type = "i
 RECIPE {
     type = "recipe",
     name = "explosive-cannon-shell",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 8,
     ingredients = {
@@ -284,7 +284,7 @@ data.raw.pump.pump.pumping_speed = data.raw.pump.pump.pumping_speed * 10
 
 table.insert(data.raw["technology"]["steam-power"].effects, table.remove(data.raw.technology["circuit-network"].effects, 1))
 
-data.raw.recipe["engine-unit"].category = "crafting"
+RECIPE("engine-unit"):replace_category("advanced-crafting", "crafting")
 
 RECIPE("selector-combinator"):remove_ingredient("advanced-circuit"):add_ingredient {type = "item", name = "electronic-circuit", amount = 5}
 TECHNOLOGY("advanced-combinators").unit.ingredients = mods.pyalienlife and {

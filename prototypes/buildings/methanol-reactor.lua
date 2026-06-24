@@ -59,7 +59,6 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-2.75, -2.75}, {2.75, 2.75}},
         selection_box = {{-3, -3}, {3, 3}},
-        forced_symmetry = "diagonal-pos",
         module_slots = i,
         allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
         crafting_categories = {"methanol"},
@@ -105,7 +104,7 @@ for i = 1, 4 do
                 production_type = "output",
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-0.5, -2.5}, direction = defines.direction.north}}
             },
             --North, right
@@ -113,7 +112,7 @@ for i = 1, 4 do
                 production_type = "output",
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {0.5, -2.5}, direction = defines.direction.north}}
             },
             --South, left
@@ -121,7 +120,7 @@ for i = 1, 4 do
                 production_type = "output",
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-0.5, 2.5}, direction = defines.direction.south}}
             },
             --South, right
@@ -129,7 +128,7 @@ for i = 1, 4 do
                 production_type = "output",
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {0.5, 2.5}, direction = defines.direction.south}}
             },
             --West, top
@@ -137,7 +136,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {-2.5, -0.5}, direction = defines.direction.west}}
             },
             --West, bottom
@@ -145,7 +144,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {-2.5, 0.5}, direction = defines.direction.west}}
             },
             --East, top
@@ -153,7 +152,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {2.5, -0.5}, direction = defines.direction.east}}
             },
             --East, bottom
@@ -161,7 +160,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_covers = pipe_covers,
                 pipe_picture = pipe_picture,
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {2.5, 0.5}, direction = defines.direction.east}}
             },
         },
@@ -169,7 +168,6 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/methanol-reactor.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/methanol-reactor.ogg", volume = 0.3},
-            apparent_volume = 2.5
         },
     }
 end

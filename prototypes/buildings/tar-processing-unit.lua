@@ -48,7 +48,6 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-5.3, -5.3}, {5.3, 5.3}},
         selection_box = {{-5.5, -5.5}, {5.5, 5.5}},
-        forced_symmetry = "diagonal-pos",
         module_slots = i,
         allowed_effects = {"consumption", "speed", "pollution", "productivity"},
         crafting_categories = {"tar"},
@@ -151,42 +150,42 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {0, 5.0}, direction = defines.direction.south}}
             },
             {
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {2, 5.0}, direction = defines.direction.south}}
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-3, -5.0}, direction = defines.direction.north}}
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {1, -5.0}, direction = defines.direction.north}}
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-1, -5.0}, direction = defines.direction.north}}
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0.0, -0.96}, nil, nil),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {3, -5.0}, direction = defines.direction.north}}
             },
         },
@@ -194,7 +193,6 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__base__/sound/oil-refinery.ogg"},
             idle_sound = {filename = "__base__/sound/idle1.ogg", volume = 0.3},
-            apparent_volume = 2.5
         },
     }
 end
