@@ -85,8 +85,8 @@ local function set_fluid_level_image(pond)
         if pond_sprite then pond_sprite.destroy() end
     end
     local color
-    if pond.entity.fluidbox[1] then
-        color = prototypes.fluid[pond.entity.fluidbox[1].name].base_color
+    if pond.entity.get_fluid(1) then
+        color = prototypes.fluid[pond.entity.get_fluid(1).name].base_color
     end
     pond.sprite = rendering.draw_sprite {
         sprite = "tailings-pond-sprite-" .. fill_level,
@@ -113,7 +113,6 @@ end
 ---@param pond TailingsPond
 local function scorch_earth(pond)
     local entity = pond.entity
-    local fluidbox = entity.fluidbox
     local fluid = entity.get_fluid(1)
     if fluid and fluid.name == "neutron" then return end
 
@@ -122,12 +121,12 @@ local function scorch_earth(pond)
     fluid = empty_pond_gas(fluid, surface, entity.position)
     if not fluid or fluid.amount == 0 then -- totally drained
         pond.fluid_per = 0
-        entity.set_fluid(1)
+        entity.clear_fluid(1)
         return
     end
 
-    local tanksize = fluidbox.get_prototype(1).get_volume(entity.quality)
-    local segment_size = fluidbox.get_capacity(1)
+    local tanksize = entity.get_fluid_capacity(1)
+    local segment_size = entity.get_fluid_segment_capacity(1)
     if tanksize - fluid.amount < 1 then -- pond is full, don't fall for floating point trickery
         local fluid_name = fluid.name
         local is_water = fluid_name == "muddy-sludge" or (not not fluid_name:find("water"))
@@ -158,8 +157,8 @@ local function scorch_earth(pond)
     pond.fluid_per = math.max(0, fluid.amount / tanksize)
     --push the updated fluidbox to the entity.
     if fluid.amount <= 0 then
-        entity.set_fluid(1)
-    elseif fluid.amount ~= fluidbox[1].amount then
+        entity.clear_fluid(1)
+    elseif fluid.amount ~= entity.get_fluid(1).amount then
         fluid.amount = fluid.amount * segment_size / tanksize
         entity.set_fluid(1, fluid)
     end
