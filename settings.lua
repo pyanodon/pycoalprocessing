@@ -35,7 +35,7 @@ data:extend {
     },
     {
         type = "bool-setting",
-        name = "generator-equipment-manager",
+        name = "py-generator-equipment-manager",
         order = "ae",
         setting_type = "startup",
         default_value = true

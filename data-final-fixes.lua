@@ -76,7 +76,7 @@ for _, recipe in pairs(data.raw.recipe) do
 end
 
 -- make all generator equipment auto refuel
-if settings.startup["generator-equipment-manager"].value then
+if settings.startup["py-generator-equipment-manager"].value then
     for _, equipment in pairs(data.raw["generator-equipment"]) do
         if equipment.burner then equipment.burner.auto_refuel = true end
     end

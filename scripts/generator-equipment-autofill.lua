@@ -1,4 +1,4 @@
-if not settings.startup["generator-equipment-manager"].value then return end
+if not settings.startup["py-generator-equipment-manager"].value then return end
 
 ---@param player LuaPlayer
 local function empty_generator_equipment(player)
