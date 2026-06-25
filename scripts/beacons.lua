@@ -75,7 +75,7 @@ end)
 local function enable_entity(entity)
     local name = entity.name:gsub("%-mk..+", "")
     if blacklist[name] ~= nil then return end
-    entity.disabled_by_script = true
+    entity.disabled_by_script = false
     local unit_number = entity.unit_number
     local rendering_id = storage.beacon_interference_icons[unit_number]
     if not rendering_id then return end
@@ -91,7 +91,7 @@ end
 local function disable_entity(entity)
     local name = entity.name:gsub("%-mk..+", "")
     if blacklist[name] ~= nil then return end
-    entity.disabled_by_script = false
+    entity.disabled_by_script = true
     entity.custom_status = {
         diode = defines.entity_status_diode.red,
         label = {"entity-status.beacon-interference"}
@@ -168,22 +168,24 @@ local function change_frequency(entity, new_beacon_name, player_index)
             receivers[receiver.unit_number] = receiver
         end
         local player = player_index and game.get_player(player_index)
-        local index, action = py.find_latest_undo_action(player_index, entity, "built-entity")
+        -- local index, action = py.find_latest_undo_action(player_index, entity, "built-entity")
         -- Replace entity
         local new_entity = entity.surface.create_entity {
             name = new_beacon_name,
             position = entity.position,
             quality = entity.quality,
             force = entity.force_index,
-            player = index and player,
-            undo_index = index,
+            -- player = index and player,
+            -- undo_index = index,
+            fast_replace = true,
+            spill = false,
             create_build_effect_smoke = false
         }
-        entity.destroy()
-        if action then
-            -- needs to be done after the construction, ref https://forums.factorio.com/viewtopic.php?t=132714
-            player.undo_redo_stack.remove_undo_action(index, action) -- remove old action from queue
-        end
+        -- entity.destroy()
+        -- if action then
+        --     -- needs to be done after the construction, ref https://forums.factorio.com/viewtopic.php?t=132714
+        --     player.undo_redo_stack.remove_undo_action(index, action) -- remove old action from queue
+        -- end
         -- Get new effect receivers
         for _, receiver in pairs(new_entity.get_beacon_effect_receivers()) do
             receivers[receiver.unit_number] = receiver
