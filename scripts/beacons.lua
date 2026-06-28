@@ -193,7 +193,8 @@ local function change_frequency(entity, new_beacon_name, player_index)
         -- Check all receivers
         local alert
         for _, receiver in pairs(receivers) do
-            alert = alert or beacon_check(receiver)
+            local result = beacon_check(receiver)
+            alert = alert or result
         end
         if player and alert then
             player.play_sound{path="utility/alert_destroyed"}
@@ -222,14 +223,15 @@ Beacons.events.on_built = function(event)
     if not entity.valid then return end
     local alert
     if entity.type == "beacon" then
-        if not our_beacons[entity.name] then return end
+      if not our_beacons[entity.name] then return end
         -- If the ghost doesn't match the placed entity, then fix it
         if ghost_name and entity.name ~= ghost_name then
             change_frequency(entity, ghost_name, event.player_index)
             return -- recievers already updated and player notified of issues
         end
-        for _, reciver in pairs(entity.get_beacon_effect_receivers()) do
-            alert = alert or beacon_check(reciver)
+        for _, receiver in pairs(entity.get_beacon_effect_receivers()) do
+            local result = beacon_check(receiver)
+            alert = alert or result
         end
     else
         alert = beacon_check(entity)
