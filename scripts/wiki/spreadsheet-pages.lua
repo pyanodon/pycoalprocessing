@@ -508,10 +508,13 @@ local function generate_recipe_decay_spreadsheet_data()
                 ingredients_order = ingredients_order .. "|" .. ingredient.name
             end
         end
+        local complex = false
         for _, product in pairs(products) do
             if spoilables[product.name] and product.always_fresh then
+                complex = complex or (product.percent_spoiled or 1) ~= 1
                 products_value = products_value .. ("[%s=%s] (%.1f%%) "):format(product.type, product.name, (product.percent_spoiled or 1)*100)
             elseif spoilables[product.name] and (product.percent_spoiled or 1) ~= 1 then
+                complex = true
                 products_value = products_value .. ("[%s=%s] (x*%.1f%%) "):format(product.type, product.name, (product.percent_spoiled or 1)*100)
             elseif spoilables[product.name] and (product.percent_spoiled or 1) == 1 then
                 products_value = products_value .. ("[%s=%s] (x%%) "):format(product.type, product.name)
@@ -521,6 +524,7 @@ local function generate_recipe_decay_spreadsheet_data()
             products_order = products_order .. "|" .. product.name
         end
 
+        if not complex and not has_ingredients_that_spoil then goto continue end
         storage.recipe_decay_spreadsheet_data.rows[#storage.recipe_decay_spreadsheet_data.rows+1] = {
             ["localised-name"] = {
                 value = {"", "[recipe=" .. name .. "] ", recipe.localised_name},
