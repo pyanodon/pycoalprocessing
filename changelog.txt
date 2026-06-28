@@ -12,6 +12,7 @@ Date: ???
     - Fixed that many buildings did not have certain pipe covers rendered
     - Added factory planner integration for barreling-like recipes
     - Reduced most fluidbox sizes from 1000 to 100
+    - Fixed that beacon interference would only disable one entity instead of all effected ones
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.45
 Date: ???
