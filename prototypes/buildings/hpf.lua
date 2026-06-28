@@ -60,6 +60,7 @@ for i = 1, 4 do
             },
         },
         energy_usage = (2 * i) .. "MW",
+        tall = true,
         graphics_set = {
             working_visualisations = {
                 {

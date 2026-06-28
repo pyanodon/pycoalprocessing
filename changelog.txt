@@ -13,6 +13,7 @@ Date: ???
     - Added factory planner integration for barreling-like recipes
     - Reduced most fluidbox sizes from 1000 to 100
     - Fixed that beacon interference would only disable one entity instead of all effected ones
+    - Added the following entities to be hidden when visibility of tall entities is toggled: chemical plant, classifier, fts reactor, combustion turbine, high pressure furnace, lab
 ---------------------------------------------------------------------------------------------------
 Version: 3.0.45
 Date: ???

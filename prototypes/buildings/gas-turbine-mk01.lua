@@ -67,6 +67,7 @@ ENTITY {
         },
     },
     two_direction_only = true,
+    tall = true,
     pictures = {
         north = {
             animation = {
