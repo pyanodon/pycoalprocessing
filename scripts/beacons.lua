@@ -69,7 +69,7 @@ for i = 1, 5 do
 end
 
 py.on_event(py.events.on_init(), function()
-    storage.beacon_interference_icons = storage.beacon_interference_icons or {}
+    storage.beacon_interference_alerts = storage.beacon_interference_alerts or {}
 end)
 
 local function enable_entity(entity)
@@ -77,15 +77,10 @@ local function enable_entity(entity)
     if blacklist[name] ~= nil then return end
     entity.disabled_by_script = false
     local unit_number = entity.unit_number
-    local rendering_id = storage.beacon_interference_icons[unit_number]
-    if not rendering_id then return end
-    local rendering_object = rendering.get_object_by_id(rendering_id)
-    if rendering_object then rendering_object.destroy() end
-    storage.beacon_interference_icons[unit_number] = nil
+    local alert_id = storage.beacon_interference_alerts[unit_number]
+    storage.beacon_interference_alerts[unit_number] = nil
     entity.custom_status = nil
-    for _, player in pairs(game.players) do
-        player.remove_alert{entity = entity, type = defines.alert_type.custom}
-    end
+    py.clear_alert(alert_id)
 end
 
 local function disable_entity(entity)
@@ -97,18 +92,22 @@ local function disable_entity(entity)
         label = {"entity-status.beacon-interference"}
     }
     local unit_number = entity.unit_number
-    if storage.beacon_interference_icons[unit_number] then return end
-    storage.beacon_interference_icons[unit_number] = py.draw_error_sprite(entity, "beacon-interference").id
-    for _, player in pairs(game.players) do
-        player.add_custom_alert(entity, {type = "virtual", name = "beacon-interference"}, {"entity-status.beacon-interference"}, true)
-    end
+    if storage.beacon_interference_alerts[unit_number] then return end
+    storage.beacon_interference_alerts[unit_number] = py.generate_alert(
+      entity,
+      {type = "virtual", name = "beacon-interference"},
+      "beacon-interference",
+      {"entity-status.beacon-interference"},
+      true
+    )
 end
 
----@param reciver LuaEntity
+---@param reciever LuaEntity
 ---@return boolean interference
-local function beacon_check(reciver)
-    ---@class LuaEntity[]
-    local beacons = reciver.get_beacons()
+local function beacon_check(reciever)
+    local name = reciever.name:gsub("%-mk..+", "")
+    if blacklist[name] ~= nil then return end
+    local beacons = reciever.get_beacons()
     if not beacons or not next(beacons) then return false end
 
     local effected_am = {}
@@ -121,21 +120,21 @@ local function beacon_check(reciver)
             local total = am .. fm
             if settings.startup["future-beacons"].value then
                 if effected_am[am] or effected_fm[fm] then
-                    disable_entity(reciver)
+                    disable_entity(reciever)
                     return true
                 end
                 effected_am[am] = true
                 effected_fm[fm] = true
             else
                 if effected_total[total] then
-                    disable_entity(reciver)
+                    disable_entity(reciever)
                     return true
                 end
                 effected_total[total] = true
             end
         end
     end
-    enable_entity(reciver)
+    enable_entity(reciever)
     return false
 end
 
@@ -244,7 +243,7 @@ end
 Beacons.events.on_destroyed = function(event)
     local entity = event.entity
     if not entity.valid or not entity.unit_number then return end
-    storage.beacon_interference_icons[entity.unit_number] = nil
+    storage.beacon_interference_alerts[entity.unit_number] = nil
 
     if entity.type == "beacon" then
         if not our_beacons[entity.name] then return end

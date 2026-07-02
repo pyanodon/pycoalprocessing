@@ -12,7 +12,6 @@ Date: ???
     - Fixed that many buildings did not have certain pipe covers rendered
     - Added factory planner integration for barreling-like recipes
     - Reduced most fluidbox sizes from 1000 to 100
-    - Fixed that beacon interference would only disable one entity instead of all effected ones
     - Added the following entities to be hidden when visibility of tall entities is toggled: chemical plant, classifier, fts reactor, combustion turbine, high pressure furnace, lab
     - Fixed big mine wiki page to mention drill heads instead of canistered fuel
     - Updated Russian locale courtesy of @Astorin
@@ -24,11 +23,9 @@ Date: ???
     - Fixed that the upgrade_target for the mechanical inserter was not set. Resolves https://github.com/pyanodon/pybugreports/issues/1323
     - Fixed AM/FM text in beacon GUI not being localizable, again. Resolves https://github.com/pyanodon/pybugreports/issues/1337
     - Fixed Dutch locale translating two fluids to the same name. Resolves https://github.com/pyanodon/pybugreports/issues/1305
-    - Added an alert to beacon interference. It doesn't last forever, though. Existing interference will be pinned. Resolves https://github.com/pyanodon/pybugreports/issues/1413
-    - Added an alert sound to beacon interference
+    - Added an alert and alert sound to beacon interference. Resolves https://github.com/pyanodon/pybugreports/issues/1413
     - Added a remote API to add or remove buildings from the beacon overloading blacklist
     - Fixed that adjusting a beacon's AM or FM value would close the UI
-    - Fixed that adjusting a beacon's AM or FM value would break the undo queue
     - Fixed beacon items being duplicated when manually constructed. Resolves https://github.com/pyanodon/pybugreports/issues/1273
     - Fixed beacons not being useable with YAFC and other planner mods. Resolves https://github.com/pyanodon/pybugreports/issues/1449
     - Fixed codex search bar saving the search term when switching pages and closing the UI. Resolves https://github.com/pyanodon/pybugreports/issues/1409
