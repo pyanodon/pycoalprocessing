@@ -54,7 +54,7 @@ for i = 1, 4 do
         name = name,
         icon = icon,
         icon_size = icon_size,
-        vector_to_place_result = {0.0, 3.51},
+        vector_to_place_result = {0.0, 3.8},
         flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 0.5, result = name},
         fast_replaceable_group = "soil-extractor",
@@ -63,7 +63,6 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
-        forced_symmetry = "diagonal-pos",
         module_slots = i,
         allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
         crafting_categories = {"soil-extraction"},
@@ -133,8 +132,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_covers = py.pipe_covers(true, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {0, 1}, {0, -1}, nil, nil, pipes),
-                volume = 1000,
-                height = 2,
+                volume = 100,
                 filter = "water",
                 pipe_connections = {{flow_direction = "input-output", position = {3.0, 0.0}, direction = defines.direction.east}, {flow_direction = "input-output", position = {-3.0, 0.0}, direction = defines.direction.west}}
             }
@@ -143,7 +141,6 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/soil-extractor.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/soil-extractor.ogg", volume = 0.3},
-            apparent_volume = 2.5
         },
     }
 

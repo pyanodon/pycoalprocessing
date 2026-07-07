@@ -25,8 +25,13 @@ py.on_event(py.events.on_init(), function()
 
     if script.active_mods["pyalternativeenergy"] and script.feature_flags.spoiling and settings.startup["py-enable-decay"].value then
         remote.call("pywiki", "add_page", {
-            name = "decay",
-            remote = {"pywiki_spreadsheets", "create_decay_page"},
+            name = "item_decay",
+            remote = {"pywiki_spreadsheets", "create_item_decay_page"},
+            searchable = {"pywiki_spreadsheets", "on_search"}
+        })
+        remote.call("pywiki", "add_page", {
+            name = "recipe_decay",
+            remote = {"pywiki_spreadsheets", "create_recipe_decay_page"},
             searchable = {"pywiki_spreadsheets", "on_search"}
         })
     end

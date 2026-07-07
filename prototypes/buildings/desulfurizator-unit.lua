@@ -65,7 +65,6 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-2.9, -2.9}, {2.9, 2.9}},
         selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
-        forced_symmetry = "diagonal-pos",
         module_slots = i,
         allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
         crafting_categories = {"desulfurization"},
@@ -108,14 +107,14 @@ for i = 1, 4 do
                 production_type = "output",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.05, 1.25}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_right),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {2.5, -1.5}, direction = defines.direction.east}}
             },
             {
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {0.25, 1.25}, {-0.00, -0.95}, {0.65, 0.10}, {-0.65, 0.10}, pipe_left),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {2.5, 1.5}, direction = defines.direction.east}}
             }
         },
@@ -123,7 +122,6 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__base__/sound/chemical-plant.ogg"},
             --idle_sound = {filename = "__base__/sound/chemical-plant.ogg", volume = 0.3},
-            apparent_volume = 0.5
         },
     }
 end

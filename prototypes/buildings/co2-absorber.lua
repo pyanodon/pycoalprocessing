@@ -69,6 +69,5 @@ ENTITY {
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/co2-absorber.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/co2-absorber.ogg", volume = 0.3},
-        apparent_volume = 1.0
     }
 }

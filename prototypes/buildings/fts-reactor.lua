@@ -49,7 +49,6 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-4.35, -4.35}, {4.35, 4.35}},
         selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
-        forced_symmetry = "diagonal-pos",
         module_slots = i,
         allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
         crafting_categories = {"fts-reactor"},
@@ -62,6 +61,7 @@ for i = 1, 4 do
             },
         },
         energy_usage = (1.5 * i) .. "MW",
+        tall = true,
         graphics_set = {
             working_visualisations = {
                 {
@@ -209,42 +209,42 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {4.0, 0.0}, direction = defines.direction.east}}
             },
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {4.0, 2.0}, direction = defines.direction.east}}
             },
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {4.0, -2.0}, direction = defines.direction.east}}
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-4.0, 0.0}, direction = defines.direction.west}}
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-4.0, 2.0}, direction = defines.direction.west}}
             },
             {
                 production_type = "output",
                 pipe_covers = py.pipe_covers(false, true, true, true),
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {0, -0.9}, nil, nil),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-4.0, -2.0}, direction = defines.direction.west}}
             }
         },
@@ -252,7 +252,6 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/evaporator.ogg", volume = 0.3},
-            apparent_volume = 2.5
         },
     }
 end

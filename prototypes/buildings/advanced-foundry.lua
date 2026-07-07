@@ -46,7 +46,6 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-2.9, -2.9}, {2.9, 2.9}},
         selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
-        forced_symmetry = "diagonal-pos",
         module_slots = i,
         allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
         crafting_categories = {"advanced-foundry", "smelting"},
@@ -101,7 +100,7 @@ for i = 1, 4 do
                 pipe_picture_frozen = py.sexy_pipe_pictures_frozen(),
                 pipe_covers = pipecoverspictures(),
                 secondary_draw_orders = {north = -1, east = -1, west = -1},
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {2.5, -0.5}, direction = defines.direction.east}}
             },
             {
@@ -110,7 +109,7 @@ for i = 1, 4 do
                 pipe_picture_frozen = py.sexy_pipe_pictures_frozen(),
                 pipe_covers = pipecoverspictures(),
                 secondary_draw_orders = {north = -1, east = -1, west = -1},
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {0.5, 2.5}, direction = defines.direction.south}}
             },
             {
@@ -119,7 +118,7 @@ for i = 1, 4 do
                 pipe_picture_frozen = py.sexy_pipe_pictures_frozen(),
                 pipe_covers = pipecoverspictures(),
                 secondary_draw_orders = {north = -1, east = -1, west = -1},
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-2.5, -0.5}, direction = defines.direction.west}}
             },
             {
@@ -128,7 +127,7 @@ for i = 1, 4 do
                 pipe_picture_frozen = py.sexy_pipe_pictures_frozen(),
                 pipe_covers = pipecoverspictures(),
                 secondary_draw_orders = {north = -1, east = -1, west = -1},
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-0.5, 2.5}, direction = defines.direction.south}}
             },
         },

@@ -125,6 +125,5 @@ ENTITY {
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/mukmoux-pasture.ogg", volume = 0.9},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/mukmoux-pasture.ogg", volume = 0.3},
-        apparent_volume = 0.45
     }
 }

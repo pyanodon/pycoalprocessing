@@ -51,12 +51,12 @@ remote.add_interface("py_beacons", {
     ---Adds the entity to the blacklist of buildings ignored by beacon overloading. Blacklist checking ignores '-mk0x'
     ---@param entity data.EntityID
     add_to_blacklist = function (entity)
-        storage.farms[entity] = true
+        blacklist[entity] = true
     end,
     ---Removes the entity from the blacklist of buildings ignored by beacon overloading. Blacklist checking ignores '-mk0x'
     ---@param entity data.EntityID
     remove_from_blacklist = function (entity)
-        storage.farms[entity] = nil
+        blacklist[entity] = nil
     end
 })
 
@@ -69,47 +69,45 @@ for i = 1, 5 do
 end
 
 py.on_event(py.events.on_init(), function()
-    storage.beacon_interference_icons = storage.beacon_interference_icons or {}
-    storage.farms = storage.farms or blacklist
+    storage.beacon_interference_alerts = storage.beacon_interference_alerts or {}
 end)
 
 local function enable_entity(entity)
     local name = entity.name:gsub("%-mk..+", "")
-    if storage.farms[name] ~= nil then return end
-    entity.active = true
+    if blacklist[name] ~= nil then return end
+    entity.disabled_by_script = false
     local unit_number = entity.unit_number
-    local rendering_id = storage.beacon_interference_icons[unit_number]
-    if not rendering_id then return end
-    local rendering_object = rendering.get_object_by_id(rendering_id)
-    if rendering_object then rendering_object.destroy() end
-    storage.beacon_interference_icons[unit_number] = nil
+    local alert_id = storage.beacon_interference_alerts[unit_number]
+    storage.beacon_interference_alerts[unit_number] = nil
     entity.custom_status = nil
-    for _, player in pairs(game.players) do
-        player.remove_alert{entity = entity, type = defines.alert_type.custom}
-    end
+    py.clear_alert(alert_id)
 end
 
 local function disable_entity(entity)
     local name = entity.name:gsub("%-mk..+", "")
-    if storage.farms[name] ~= nil then return end
-    entity.active = false
+    if blacklist[name] ~= nil then return end
+    entity.disabled_by_script = true
     entity.custom_status = {
         diode = defines.entity_status_diode.red,
         label = {"entity-status.beacon-interference"}
     }
     local unit_number = entity.unit_number
-    if storage.beacon_interference_icons[unit_number] then return end
-    storage.beacon_interference_icons[unit_number] = py.draw_error_sprite(entity, "beacon-interference").id
-    for _, player in pairs(game.players) do
-        player.add_custom_alert(entity, {type = "virtual", name = "beacon-interference"}, {"entity-status.beacon-interference"}, true)
-    end
+    if storage.beacon_interference_alerts[unit_number] then return end
+    storage.beacon_interference_alerts[unit_number] = py.generate_alert(
+      entity,
+      {type = "virtual", name = "beacon-interference"},
+      "beacon-interference",
+      {"entity-status.beacon-interference"},
+      true
+    )
 end
 
----@param reciver LuaEntity
+---@param reciever LuaEntity
 ---@return boolean interference
-local function beacon_check(reciver)
-    ---@class LuaEntity[]
-    local beacons = reciver.get_beacons()
+local function beacon_check(reciever)
+    local name = reciever.name:gsub("%-mk..+", "")
+    if blacklist[name] ~= nil then return end
+    local beacons = reciever.get_beacons()
     if not beacons or not next(beacons) then return false end
 
     local effected_am = {}
@@ -122,21 +120,21 @@ local function beacon_check(reciver)
             local total = am .. fm
             if settings.startup["future-beacons"].value then
                 if effected_am[am] or effected_fm[fm] then
-                    disable_entity(reciver)
+                    disable_entity(reciever)
                     return true
                 end
                 effected_am[am] = true
                 effected_fm[fm] = true
             else
                 if effected_total[total] then
-                    disable_entity(reciver)
+                    disable_entity(reciever)
                     return true
                 end
                 effected_total[total] = true
             end
         end
     end
-    enable_entity(reciver)
+    enable_entity(reciever)
     return false
 end
 
@@ -169,22 +167,24 @@ local function change_frequency(entity, new_beacon_name, player_index)
             receivers[receiver.unit_number] = receiver
         end
         local player = player_index and game.get_player(player_index)
-        local index, action = py.find_latest_undo_action(player_index, entity, "built-entity")
+        -- local index, action = py.find_latest_undo_action(player_index, entity, "built-entity")
         -- Replace entity
         local new_entity = entity.surface.create_entity {
             name = new_beacon_name,
             position = entity.position,
             quality = entity.quality,
             force = entity.force_index,
-            player = index and player,
-            undo_index = index,
+            -- player = index and player,
+            -- undo_index = index,
+            fast_replace = true,
+            spill = false,
             create_build_effect_smoke = false
         }
-        entity.destroy()
-        if action then
-            -- needs to be done after the construction, ref https://forums.factorio.com/viewtopic.php?t=132714
-            player.undo_redo_stack.remove_undo_action(index, action) -- remove old action from queue
-        end
+        -- entity.destroy()
+        -- if action then
+        --     -- needs to be done after the construction, ref https://forums.factorio.com/viewtopic.php?t=132714
+        --     player.undo_redo_stack.remove_undo_action(index, action) -- remove old action from queue
+        -- end
         -- Get new effect receivers
         for _, receiver in pairs(new_entity.get_beacon_effect_receivers()) do
             receivers[receiver.unit_number] = receiver
@@ -192,7 +192,8 @@ local function change_frequency(entity, new_beacon_name, player_index)
         -- Check all receivers
         local alert
         for _, receiver in pairs(receivers) do
-            alert = alert or beacon_check(receiver)
+            local result = beacon_check(receiver)
+            alert = alert or result
         end
         if player and alert then
             player.play_sound{path="utility/alert_destroyed"}
@@ -221,14 +222,15 @@ Beacons.events.on_built = function(event)
     if not entity.valid then return end
     local alert
     if entity.type == "beacon" then
-        if not our_beacons[entity.name] then return end
+      if not our_beacons[entity.name] then return end
         -- If the ghost doesn't match the placed entity, then fix it
         if ghost_name and entity.name ~= ghost_name then
             change_frequency(entity, ghost_name, event.player_index)
             return -- recievers already updated and player notified of issues
         end
-        for _, reciver in pairs(entity.get_beacon_effect_receivers()) do
-            alert = alert or beacon_check(reciver)
+        for _, receiver in pairs(entity.get_beacon_effect_receivers()) do
+            local result = beacon_check(receiver)
+            alert = alert or result
         end
     else
         alert = beacon_check(entity)
@@ -241,7 +243,7 @@ end
 Beacons.events.on_destroyed = function(event)
     local entity = event.entity
     if not entity.valid or not entity.unit_number then return end
-    storage.beacon_interference_icons[entity.unit_number] = nil
+    storage.beacon_interference_alerts[entity.unit_number] = nil
 
     if entity.type == "beacon" then
         if not our_beacons[entity.name] then return end

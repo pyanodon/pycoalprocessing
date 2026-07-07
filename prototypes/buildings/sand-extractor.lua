@@ -40,7 +40,7 @@ for i = 1, 4 do
         name = name,
         icon = icon,
         icon_size = icon_size,
-        vector_to_place_result = {-0.5, 3.1},
+        vector_to_place_result = {-0.5, 3.3},
         flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 1, result = name},
         fast_replaceable_group = "sand-extractor",
@@ -90,7 +90,6 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/sand-extractor.ogg", volume = 0.9},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/sand-extractor.ogg", volume = 0.3},
-            apparent_volume = 0.45
         },
     }
 

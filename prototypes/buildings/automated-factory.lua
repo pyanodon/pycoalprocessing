@@ -56,7 +56,6 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-3.3, -3.3}, {3.3, 3.3}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
-        forced_symmetry = "diagonal-pos",
         module_slots = i,
         allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
         crafting_categories = {"crafting", "crafting-with-fluid", "advanced-crafting"},
@@ -100,21 +99,21 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {0.3, 3.06}, {-0.00, -0.93}, {0.55, 0.15}, {-0.5, 0.15}, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {0.0, 3.0}, direction = defines.direction.south}}
             },
             {
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {0.3, 3.06}, {-0.00, -0.93}, {0.55, 0.15}, {-0.5, 0.15}, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {0.0, -3.0}, direction = defines.direction.north}}
             },
             {
                 production_type = "output",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {0.3, 3.06}, {-0.00, -0.93}, {0.55, 0.15}, {-0.5, 0.15}, pipes),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {2.0, 3.0}, direction = defines.direction.south}}
             },
         },
@@ -122,7 +121,6 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/automated-factory.ogg", volume = 1.0},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/automated-factory.ogg", volume = 0.3},
-            apparent_volume = 2.5
         }
     }
 end

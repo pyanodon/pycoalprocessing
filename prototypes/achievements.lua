@@ -71,8 +71,7 @@ data:extend
         order = "0ac",
         objective_condition = "game-finished",
         icon = "__pycoalprocessinggraphics__/graphics/achievement/smoke-me-a-kipper-i-will-be-back-for-breakfast.png",
-        icon_size = 128,
-        limited_to_one_game = false
+        icon_size = 128
     },
 }
 if mods.pypetroleumhandling then

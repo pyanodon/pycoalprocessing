@@ -19,7 +19,7 @@ RECIPE {
         {type = "item", name = "py-iron-oxide", amount = 45},
         {type = "item", name = "iron-chest",    amount = 1},
     },
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     results = {
         {type = "item", name = "py-logo-15tiles", amount = 1}
     }

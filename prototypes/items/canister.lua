@@ -2,7 +2,7 @@
 RECIPE {
     type = "recipe",
     name = "empty-gas-canister",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -39,7 +39,7 @@ RECIPE {
     type = "recipe",
     name = "fill-methanol-gas-canister",
     localised_name = {"recipe-name.fill-methanol-gas-canister"},
-    category = "crafting-with-fluid", --bob bob-pump
+    categories = {"crafting-with-fluid"}, --bob bob-pump
     enabled = false,
     energy_required = 0.2,
     ingredients = {
@@ -58,7 +58,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "empty-methanol-gas-canister",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     energy_required = 0.2,
     ingredients = {

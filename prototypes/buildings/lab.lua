@@ -12,6 +12,7 @@ ENTITY {
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
     drawing_box_vertical_extension = 2,
     --damaged_trigger_effect = hit_effects.entity(),
+    tall = true,
     on_animation =
     {
         layers =

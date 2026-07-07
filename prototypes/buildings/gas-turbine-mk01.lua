@@ -66,23 +66,31 @@ ENTITY {
             pollution = 1
         },
     },
-    horizontal_animation = {
-        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk01/gasturbinemk01_horizontal.png",
-        width = 131,
-        height = 288,
-        frame_count = 25,
-        line_length = 5,
-        shift = {0.5, -3.0},
-        animation_speed = 0.8
-    },
-    vertical_animation = {
-        filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk01/gasturbinemk01_vertical.png",
-        width = 128,
-        height = 288,
-        frame_count = 25,
-        line_length = 5,
-        shift = {0.5, -3.0},
-        animation_speed = 0.8
+    two_direction_only = true,
+    tall = true,
+    pictures = {
+        north = {
+            animation = {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk01/gasturbinemk01_vertical.png",
+                width = 128,
+                height = 288,
+                frame_count = 25,
+                line_length = 5,
+                shift = {0.5, -3.0},
+                animation_speed = 0.8
+            }
+        },
+        east = {
+            animation = {
+                filename = "__pycoalprocessinggraphics__/graphics/entity/gas-turbinemk01/gasturbinemk01_horizontal.png",
+                width = 131,
+                height = 288,
+                frame_count = 25,
+                line_length = 5,
+                shift = {0.5, -3.0},
+                animation_speed = 0.8
+            }
+        }
     },
     smoke = {
         {
@@ -91,7 +99,7 @@ ENTITY {
             east_position = {-0.75, -2},
             frequency = 5 / 32,
             starting_vertical_speed = 0.08,
-            slow_down_factor = 1,
+            vertical_speed_slowdown = 1,
             starting_frame_deviation = 60
         },
         {
@@ -100,16 +108,15 @@ ENTITY {
             east_position = {1.2, -2},
             frequency = 5 / 32,
             starting_vertical_speed = 0.08,
-            slow_down_factor = 1,
+            vertical_speed_slowdown = 1,
             starting_frame_deviation = 60
         }
     },
-    min_perceived_performance = 0.1,
-    performance_to_sound_speedup = 0.3,
+    perceived_performance = {minimum = 0.1},
     impact_category = "metal-large",
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk01.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/gasturbinemk01.ogg", volume = 0.3},
-        apparent_volume = 2.5
+        activity_to_speed_modifiers = {multiplier = 0.3}
     }
 }
