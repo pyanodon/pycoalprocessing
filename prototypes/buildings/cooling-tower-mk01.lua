@@ -39,6 +39,7 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    use_mirroring = true,
     fixed_recipe = "cooling-water",
     module_slots = 2,
     allowed_effects = {"speed", "consumption"},

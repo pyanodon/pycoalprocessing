@@ -47,6 +47,7 @@ for i = 1, 4 do
         dying_explosion = "big-explosion",
         collision_box = {{-4.3, -4.3}, {4.3, 4.3}},
         selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
+        use_mirroring = true,
         module_slots = 0,
         allowed_effects = {"consumption", "speed"},
         crafting_categories = {"ground-borer"},

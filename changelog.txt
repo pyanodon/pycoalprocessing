@@ -3,6 +3,7 @@ Version: 3.1.1
 Date: ???
   Changes:
     - Removed Factoriopedia warning
+    - Restored mirroring for buildings
 ---------------------------------------------------------------------------------------------------
 Version: 3.1.0
 Date: 2026-07-07

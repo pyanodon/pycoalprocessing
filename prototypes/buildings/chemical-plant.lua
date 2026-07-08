@@ -48,6 +48,7 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-4.3, -4.3}, {4.3, 4.3}},
         selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
+        use_mirroring = true,
         module_slots = i,
         allowed_effects = {"consumption", "speed", "pollution", "productivity"},
         crafting_categories = {"chemistry"},
