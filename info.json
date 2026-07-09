@@ -1,6 +1,6 @@
 {
     "name": "pycoalprocessing",
-    "version": "3.1.0",
+    "version": "3.1.1",
     "factorio_version": "2.1",
     "title": "Pyanodons Coal Processing",
     "author": "Pyanodon, Nexela, Kingarthur, notnotmelon, Mootykins, ShadowGlass, Archezekiel, Quintuple, przemo1232, protocol_1903",
@@ -9,8 +9,8 @@
     "description": "Extends and overhauls Factorio's burner phase. Use realistic oil and coal processes to create advanced products. Functions as the core and library for the rest of the pY mods.",
     "dependencies": [
         "base >= 2.1",
-        "~ pycoalprocessinggraphics >= 3.1.0",
-        "~ pypostprocessing >= 3.1.0",
+        "~ pycoalprocessinggraphics >= 3.1.1",
+        "~ pypostprocessing >= 3.1.1",
         "(?) DiscoScience",
         "(?) better-victory-screen",
         "(?) elevated-rails",
