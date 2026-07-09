@@ -2,6 +2,8 @@ storage.beacon_interference_alerts = storage.beacon_interference_alerts or {}
 storage.alerts = storage.alerts or {}
 storage.alert_count = storage.alert_count or 0
 
+if not storage.beacon_interference_icons then return end
+
 for _, surface in pairs(game.surfaces) do
     for _, entity in pairs(surface.find_entities_filtered{type = {"assembling-machine", "furnace", "rocket-silo", "mining-drill"}}) do
         local id = storage.beacon_interference_icons[entity.unit_number]
