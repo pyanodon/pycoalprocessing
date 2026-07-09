@@ -1,4 +1,5 @@
 storage.beacon_interference_alerts = storage.beacon_interference_alerts or {}
+storage.beacon_interference_icons = storage.beacon_interference_icons or {}
 storage.alerts = storage.alerts or {}
 storage.alert_count = storage.alert_count or 0
 
