@@ -497,17 +497,19 @@ py.on_event(defines.events.on_player_setup_blueprint, function (event)
     -- add tags and remove proxy inventories as necessary
     if prototypes.entity[entity.name].type == "inserter" then
       mapping = mapping or event.mapping.get()
-      local tags = entity.tags or {}
-      if mapping[index].type == "entity-ghost" then
-        tags["py-dynamic-inserter"] = (mapping[index].tags or {})["py-dynamic-inserter"]
-      elseif storage.programmable_inserters[mapping[index].unit_number] then
-        -- we only need to add data if data is in storage
-        tags["py-dynamic-inserter"] = {
-          drop_target_inventory = storage.programmable_inserters[mapping[index].unit_number].drop_target_inventory,
-          pickup_target_inventory = storage.programmable_inserters[mapping[index].unit_number].pickup_target_inventory
-        }
+      if mapping[index] then
+        local tags = entity.tags or {}
+        if mapping[index].type == "entity-ghost" then
+          tags["py-dynamic-inserter"] = (mapping[index].tags or {})["py-dynamic-inserter"]
+        elseif storage.programmable_inserters[mapping[index].unit_number] then
+          -- we only need to add data if data is in storage
+          tags["py-dynamic-inserter"] = {
+            drop_target_inventory = storage.programmable_inserters[mapping[index].unit_number].drop_target_inventory,
+            pickup_target_inventory = storage.programmable_inserters[mapping[index].unit_number].pickup_target_inventory
+          }
+        end
+        entity.tags = tags
       end
-      entity.tags = tags
     end
   end
   blueprint.set_blueprint_entities(entities)
