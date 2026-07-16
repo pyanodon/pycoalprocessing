@@ -5,6 +5,8 @@ Date: ???
     - Fix crash in beacon migration. Resolves https://github.com/pyanodon/pybugreports/issues/1515
     - Fixed a crash when blueprinting inserters after another mod has edited the blueprint. Resolves https://github.com/pyanodon/pybugreports/issues/1526
     - Fixed missing prototype reference in programmable inserters. Resolves https://github.com/pyanodon/pybugreports/issues/1523
+    - Fixed that selecting an area for blueprint would destroy wire connections. Resolves https://github.com/pyanodon/pybugreports/issues/1508
+    - Fixed that updating an inserter's targets would not show the correct selection in the UI
 ---------------------------------------------------------------------------------------------------
 Version: 3.1.2
 Date: 2026-07-09
