@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.1.3
-Date: ???
+Date: 2026-07-16
   Changes:
     - Fix crash in beacon migration. Resolves https://github.com/pyanodon/pybugreports/issues/1515
     - Fixed a crash when blueprinting inserters after another mod has edited the blueprint. Resolves https://github.com/pyanodon/pybugreports/issues/1526
