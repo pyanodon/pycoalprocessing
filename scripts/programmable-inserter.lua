@@ -62,17 +62,19 @@ local proxy_targets = {
 local selection_indices ={
   input = {
     default = 1,
-    input = 2,
-    fuel = 3,
-    modules = 4
+    cargo = 2,
+    input = 3,
+    fuel = 4,
+    modules = 5
   },
   output = {
     default = 1,
-    output = 2,
-    burnt_result = 3,
-    modules = 4,
-    trash = 5,
-    dump = 6
+    cargo = 2,
+    output = 3,
+    burnt_result = 4,
+    modules = 5,
+    trash = 6,
+    dump = 7
   }
 }
 
@@ -483,6 +485,7 @@ py.on_event(defines.events.on_entity_settings_pasted, function (event)
 
 end)
 
+---@param event EventData.on_player_setup_blueprint
 py.on_event(defines.events.on_player_setup_blueprint, function (event)
 	local blueprint = game.get_player(event.player_index).blueprint_to_setup
   -- if normally invalid
@@ -498,21 +501,18 @@ py.on_event(defines.events.on_player_setup_blueprint, function (event)
     if prototypes.entity[entity.name].type == "inserter" then
       mapping = mapping or event.mapping.get()
       if mapping[index] then
-        local tags = entity.tags or {}
         if mapping[index].type == "entity-ghost" then
-          tags["py-dynamic-inserter"] = (mapping[index].tags or {})["py-dynamic-inserter"]
+          blueprint.set_blueprint_entity_tag(index, "py-dynamic-inserter", (mapping[index].tags or {})["py-dynamic-inserter"])
         elseif storage.programmable_inserters[mapping[index].unit_number] then
           -- we only need to add data if data is in storage
-          tags["py-dynamic-inserter"] = {
+          blueprint.set_blueprint_entity_tag(index, "py-dynamic-inserter", {
             drop_target_inventory = storage.programmable_inserters[mapping[index].unit_number].drop_target_inventory,
             pickup_target_inventory = storage.programmable_inserters[mapping[index].unit_number].pickup_target_inventory
-          }
+          })
         end
-        entity.tags = tags
       end
     end
   end
-  blueprint.set_blueprint_entities(entities)
 end)
 
 if script.active_mods["quick-adjustable-inserters"] then
