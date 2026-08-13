@@ -65,7 +65,7 @@ local burner = {
 --modify assembly machine 1
 data.raw["assembling-machine"]["assembling-machine-1"].crafting_speed = 1
 data.raw["assembling-machine"]["assembling-machine-1"].energy_source = table.deepcopy(burner)
-data.raw["assembling-machine"]["assembling-machine-1"].fluid_boxes = data.raw["assembling-machine"]["assembling-machine-2"].fluid_boxes
+data.raw["assembling-machine"]["assembling-machine-1"].fluid_boxes = table.deepcopy(data.raw["assembling-machine"]["assembling-machine-2"].fluid_boxes)
 table.insert(data.raw["assembling-machine"]["assembling-machine-1"].crafting_categories, "crafting-with-fluid")
 
 --modify assembly machine 2
