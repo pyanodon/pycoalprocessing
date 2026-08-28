@@ -139,6 +139,9 @@ data.raw.car.tank.energy_source.burnt_inventory_size = data.raw.car.tank.energy_
 data.raw.locomotive.locomotive.energy_source.fuel_category = nil
 data.raw.locomotive.locomotive.energy_source.fuel_categories = {"chemical", "biomass"}
 data.raw.locomotive.locomotive.energy_source.burnt_inventory_size = data.raw.locomotive.locomotive.energy_source.fuel_inventory_size
+data.raw.locomotive.locomotive.max_speed = nil
+data.raw["cargo-wagon"]["cargo-wagon"].max_speed = nil
+data.raw["fluid-wagon"]["fluid-wagon"].max_speed = nil
 
 data.raw.inserter["burner-inserter"].filter_count = 1
 data.raw.inserter["inserter"].filter_count = 2
