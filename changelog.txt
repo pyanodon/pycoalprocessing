@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 3.1.4
-Date: ????
+Date: 2026-08-28
   Changes:
     - Removed speed cap on vanilla locomotive, cargo wagon, and fluid wagon
     - Fixed that assembling machine fluidbox connections were referenced instead of copied. Resolves https://github.com/pyanodon/pybugreports/issues/1551
