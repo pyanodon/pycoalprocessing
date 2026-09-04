@@ -13,6 +13,11 @@ ENTITY {
     drawing_box_vertical_extension = 2,
     --damaged_trigger_effect = hit_effects.entity(),
     tall = true,
+    circuit_connector = circuit_connector_definitions.create_single(
+        universal_connector_template,
+        { variation = 26, main_offset = util.by_pixel( 53.625, -178.25), shadow_offset = util.by_pixel( 53.625, -178.25), show_shadow = true }
+    ),
+    circuit_wire_max_distance = 9,
     on_animation =
     {
         layers =
@@ -28,7 +33,7 @@ ENTITY {
                 shift = util.by_pixel(0, -112),
             },
             {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/l.png",
+                filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/l.png",  
                 draw_as_light = true,
                 width = 160,
                 height = 384,

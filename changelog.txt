@@ -3,6 +3,7 @@ Version: 3.1.5
 Date: ???
   Changes:
     - Updated autotech caches to apply latest tech tree fixes
+    - Added circuit connections to the lab. Resolves https://github.com/pyanodon/pybugreports/issues/1519
 ---------------------------------------------------------------------------------------------------
 Version: 3.1.4
 Date: 2026-08-28
