@@ -87,7 +87,7 @@ local function valid(metadata_index)
     if metadata.pickup_target and metadata.pickup_target.valid then metadata.pickup_target.destroy() end
     if metadata.drop_target and metadata.drop_target.valid then metadata.drop_target.destroy() end
     storage.programmable_inserters[metadata_index] = nil
-    game.print("detected invalid programmable inserter data!")
+    game.print("detected invalid programmable inserter data. DO NOT SAVE YOUR GAME YET! please send a copy of this world to protocol_1903 on the pY discord or on https://github.com/pyanodon/pybugreports/issues/1562")
     return false
   end
   return true
@@ -393,9 +393,9 @@ py.on_event(py.events.on_built(), function (event)
 end)
 
 py.on_event(py.events.on_destroyed(), function (event)
-  if event.entity.type ~= "inserter" then return end
+  if event.entity.type ~= "inserter" or not storage.programmable_inserters[event.entity.unit_number] then return end
 
-  for _, entity in pairs(storage.programmable_inserters[event.entity.unit_number] or {}) do
+  for _, entity in pairs(storage.programmable_inserters[event.entity.unit_number]) do
     if entity.type == "proxy-container" and entity.valid then entity.destroy() end
   end
   storage[event.entity.unit_number] = nil
