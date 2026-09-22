@@ -160,13 +160,13 @@ RECIPE("rail"):clear_ingredients():add_ingredient {type = "item", name = "stone"
 RECIPE("landfill"):replace_ingredient("stone", {type = "item", name = "stone", amount = 30}):add_ingredient {type = "item", name = "gravel", amount = 30}:add_ingredient {type = "item", name = "soil", amount = 30}
 RECIPE("burner-inserter"):replace_ingredient("iron-plate", {type = "item", name = "iron-plate", amount = 5})
 RECIPE("burner-inserter"):replace_ingredient("iron-gear-wheel", {type = "item", name = "iron-gear-wheel", amount = 2})
-ITEM("rocket-fuel"):set_fields {fuel_categories = {"jerry"}}
+ITEM("rocket-fuel").fuel_categories = {"jerry"}
 
 data.raw.item["wood"].fuel_categories = {"biomass"}
 data.raw.item["nuclear-fuel"].burnt_result = nil
 -- add ash to burnt results for chemical fuel items
-for i, item in pairs(data.raw.item) do
-    if item.fuel_categories and table.any(item.fuel_categories, function(f) return f == "chemical" end) and item.name ~= "active-carbon" then
+for _, item in pairs(data.raw.item) do
+    if ITEM(item.name):has_fuel_category("chemical") and item.name ~= "active-carbon" then
         data.raw.item[item.name].burnt_result = "ash"
     end
 end
