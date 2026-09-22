@@ -5,6 +5,7 @@ Date: ???
     - Updated autotech caches to apply latest tech tree fixes
     - Added circuit connections to the lab. Resolves https://github.com/pyanodon/pybugreports/issues/1519
     - Marked beacons and diet beacons to be hidden when visibility of tall entities is toggled
+    - Changed to ItemPrototype.fuel_categories
 ---------------------------------------------------------------------------------------------------
 Version: 3.1.4
 Date: 2026-08-28
