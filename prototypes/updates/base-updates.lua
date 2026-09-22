@@ -160,13 +160,13 @@ RECIPE("rail"):clear_ingredients():add_ingredient {type = "item", name = "stone"
 RECIPE("landfill"):replace_ingredient("stone", {type = "item", name = "stone", amount = 30}):add_ingredient {type = "item", name = "gravel", amount = 30}:add_ingredient {type = "item", name = "soil", amount = 30}
 RECIPE("burner-inserter"):replace_ingredient("iron-plate", {type = "item", name = "iron-plate", amount = 5})
 RECIPE("burner-inserter"):replace_ingredient("iron-gear-wheel", {type = "item", name = "iron-gear-wheel", amount = 2})
-ITEM("rocket-fuel"):set_fields {fuel_category = "jerry"}
+ITEM("rocket-fuel"):set_fields {fuel_categories = {"jerry"}}
 
-data.raw.item["wood"].fuel_category = "biomass"
+data.raw.item["wood"].fuel_categories = {"biomass"}
 data.raw.item["nuclear-fuel"].burnt_result = nil
 -- add ash to burnt results for chemical fuel items
 for i, item in pairs(data.raw.item) do
-    if item.fuel_category ~= nil and item.fuel_category == "chemical" and item.name ~= "active-carbon" then
+    if item.fuel_categories and table.any(item.fuel_categories, function(f) return f == "chemical" end) and item.name ~= "active-carbon" then
         data.raw.item[item.name].burnt_result = "ash"
     end
 end
@@ -175,8 +175,7 @@ for _, entity in py.iter_prototypes("entity") do
     if entity.burner or (entity.energy_source and entity.energy_source.type == "burner") then
         local es = entity.burner or entity.energy_source
 
-        if ((not es.fuel_categories and (es.fuel_category or "chemical") == "chemical")
-                or (es.fuel_categories and table.any(es.fuel_categories, function(f) return f == "chemical" end)))
+        if (es.fuel_categories and table.any(es.fuel_categories, function(f) return f == "chemical" end))
             and (es.burnt_inventory_size or 0) < 1
         then
             es.burnt_inventory_size = 1
