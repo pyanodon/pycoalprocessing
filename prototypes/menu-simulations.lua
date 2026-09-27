@@ -3,6 +3,7 @@ if not mods["pyindustry"] then
 end
 
 local menu_simulations = data.raw["utility-constants"]["default"].main_menu_simulations
+---@cast menu_simulations -?
 
 -- do not work
 menu_simulations.nauvis_burner_city = nil

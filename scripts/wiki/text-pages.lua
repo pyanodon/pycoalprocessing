@@ -1,3 +1,12 @@
+---@namespace PyCoalProcessing
+---@type PyCoalProcessingStorage
+storage = storage --[[@as PyCoalProcessingStorage]]
+
+---@class (partial) PyCoalProcessingStorage
+---@field wiki_pages table
+---@field currently_opened_wiki_page table
+---@field wiki_page_search_query table
+
 py.on_event(py.events.on_init(), function()
     for _, player in pairs(game.players) do
         Wiki.create_pywiki_button(player)

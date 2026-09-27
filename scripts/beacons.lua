@@ -1,3 +1,10 @@
+---@namespace PyCoalProcessing
+---@type PyCoalProcessingStorage
+storage = storage --[[@as PyCoalProcessingStorage]]
+
+---@class (partial) PyCoalProcessingStorage
+---@field beacon_interference_alerts table
+
 Beacons = {}
 Beacons.events = {}
 
@@ -103,7 +110,7 @@ local function disable_entity(entity)
 end
 
 ---@param reciever LuaEntity
----@return boolean interference
+---@return boolean? interference
 local function beacon_check(reciever)
     local name = reciever.name:gsub("%-mk..+", "")
     if blacklist[name] ~= nil then return end
@@ -186,7 +193,7 @@ local function change_frequency(entity, new_beacon_name, player_index)
         --     player.undo_redo_stack.remove_undo_action(index, action) -- remove old action from queue
         -- end
         -- Get new effect receivers
-        for _, receiver in pairs(new_entity.get_beacon_effect_receivers()) do
+        for _, receiver in pairs(new_entity--[[@cast -?]].get_beacon_effect_receivers()) do
             receivers[receiver.unit_number] = receiver
         end
         -- Check all receivers
@@ -211,7 +218,7 @@ local beacon_ghosts = {}
 -- If a pipette is placed on top of a ghost, the AM/FM setting is lost without script intervention
 Beacons.events.on_pre_build = function(event)
     if event.build_mode ~= defines.build_mode.normal then return end
-    local surface = game.get_player(event.player_index).surface
+    local surface = game.get_player(event.player_index)--[[@cast -?]].surface
     local colliding_ghost = surface.find_entity("entity-ghost", event.position)
     beacon_ghosts[event.player_index] = colliding_ghost and our_beacons[colliding_ghost.ghost_name] and colliding_ghost.ghost_name or nil
 end
@@ -236,7 +243,7 @@ Beacons.events.on_built = function(event)
         alert = beacon_check(entity)
     end
     if event.player_index and alert then
-        game.get_player(event.player_index).play_sound{path="utility/alert_destroyed"}
+        game.get_player(event.player_index)--[[@cast -?]].play_sound{path="utility/alert_destroyed"}
     end
 end
 

@@ -7,14 +7,14 @@ require "prototypes/updates/entity-updates"
 require "prototypes/technologies/stacking-belts"
 require "prototypes/item-sounds"
 
-ITEM("automation-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
-ITEM("automation-science-pack", "tool"):set("icon_size", 64)
+ITEM("automation-science-pack"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
+ITEM("automation-science-pack"):set("icon_size", 64)
 
-ITEM("logistic-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png")
-ITEM("logistic-science-pack", "tool"):set("icon_size", 64)
+ITEM("logistic-science-pack"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png")
+ITEM("logistic-science-pack"):set("icon_size", 64)
 
-ITEM("chemical-science-pack", "tool"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png")
-ITEM("chemical-science-pack", "tool"):set("icon_size", 64)
+ITEM("chemical-science-pack"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png")
+ITEM("chemical-science-pack"):set("icon_size", 64)
 
 ITEM("lab"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/lab-mk01.png")
 ITEM("lab"):set("icon_size", 64)
@@ -197,9 +197,9 @@ RECIPE("beacon")
     :add_ingredient {type = "item", name = "intelligent-unit", amount = 1}
     :add_ingredient {type = "item", name = "parametric-oscilator", amount = 1}
     :add_ingredient {type = "item", name = "biopolymer", amount = 10}
-    :add_ingredient {type = "item", name = "super-alloy", amount = 10}:remove_ingredient {"steel-plate"}
+    :add_ingredient {type = "item", name = "super-alloy", amount = 10}
     :add_ingredient {type = "item", name = "tower-mk04", amount = 1}
-    :add_ingredient {type = "item", name = "processing-unit", amount = 5}:remove_ingredient {"electronic-circuit"}:remove_ingredient {"advanced-circuit"}
+    :add_ingredient {type = "item", name = "processing-unit", amount = 5}
     :add_ingredient {type = "item", name = "metastable-quasicrystal", amount = 1}
     :add_ingredient {type = "fluid", name = "r4", amount = 100}
 if mods.pyalternativeenergy then RECIPE("beacon"):replace_category("crafting", "crafting-with-fluid") end
@@ -208,7 +208,7 @@ RECIPE("beacon-mk01")
     :add_ingredient {type = "item", name = "self-assembly-monolayer", amount = 1}
     :add_ingredient {type = "item", name = "mechanical-parts-02", amount = 1}
     :add_ingredient {type = "item", name = "eva", amount = 10}
-    :add_ingredient {type = "item", name = "stainless-steel", amount = 10}:remove_ingredient {"steel-plate"}
+    :add_ingredient {type = "item", name = "stainless-steel", amount = 10}
     :add_ingredient {type = "item", name = "tower-mk02", amount = 1}
 
 if register_cache_file ~= nil then
@@ -216,5 +216,6 @@ if register_cache_file ~= nil then
 end
 
 if mods["dependency-graph-lib"] then
+    ---@diagnostic disable-next-line: inject-field
     data.raw.item["copper-plate"].autotech_startup = true
 end

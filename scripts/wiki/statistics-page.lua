@@ -63,11 +63,10 @@ for _, animal in pairs(animals) do
     creature_names[animal .. "-mk03"] = true
     creature_names[animal .. "-mk04"] = true
 end
-animals = nil
 
 local function comma_value(n)
     local left, num, right = string.match(n, "^([^%d]*%d)(%d*)(.-)$")
-    return left .. (num:reverse():gsub("(%d%d%d)", "%1,"):reverse()) .. right
+    return left .. (num--[[@cast -?]]:reverse():gsub("(%d%d%d)", "%1,"):reverse()) .. right
 end
 
 local floor = math.floor
@@ -78,14 +77,14 @@ local function calculate_statistics(player, include_laggy_calculations)
     local statistics = {}
 
     statistics.hour = floor(game.tick / 60 / 60 / 60)
-    statistics.minute = floor(game.tick / 60 / 60) % 60
+    statistics.minute = tostring(floor(game.tick / 60 / 60) % 60)
     if statistics.minute < 10 then statistics.minute = "0" .. statistics.minute end
-    statistics.second = floor(game.tick / 60) % 60
+    statistics.second = tostring(floor(game.tick / 60) % 60)
     if statistics.second < 10 then statistics.second = "0" .. statistics.second end
 
     local daytime = surface.daytime * 24
     statistics.daytime_hour = floor(daytime)
-    statistics.daytime_minute = floor(daytime * 60) % 60
+    statistics.daytime_minute = tostring(floor(daytime * 60) % 60)
     if statistics.daytime_minute < 10 then statistics.daytime_minute = "0" .. statistics.daytime_minute end
     if statistics.daytime_hour == 24 then
         statistics.daytime_hour = 0
@@ -174,7 +173,7 @@ local function calculate_statistics(player, include_laggy_calculations)
     statistics.losses = floor(losses)
     statistics.kills = floor(kills)
 
-    statistics.pollution = 0
+    statistics.pollution = 0.0
     for _, count in pairs(game.get_pollution_statistics(surface).input_counts) do
         statistics.pollution = statistics.pollution + count
     end

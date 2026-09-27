@@ -112,7 +112,7 @@ for i = 1, 4 do
         }
     }
 
-    table.insert(graphics_set.working_visualisations, 1, {
+    table.insert(graphics_set.working_visualisations--[[@cast -?]], 1, {
         fadeout = true,
         animation = {
             filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/a1.png",
