@@ -317,6 +317,16 @@ circuit_connector_definitions["hpf"] = circuit_connector_definitions.create_vect
         }
 )
 
+circuit_connector_definitions["jaw-crusher"] = circuit_connector_definitions.create_vector(
+        universal_connector_template,
+        {
+            {variation = 25, main_offset = {-2, -1.4}, shadow_offset = {-1.4, -.5}, show_shadow = false},
+            {variation = 25, main_offset = {-2, -1.4}, shadow_offset = {-1.4, -.5}, show_shadow = false},
+            {variation = 25, main_offset = {-2, -1.4}, shadow_offset = {-1.4, -.5}, show_shadow = false},
+            {variation = 25, main_offset = {-2, -1.4}, shadow_offset = {-1.4, -.5}, show_shadow = false},
+        }
+)
+
 circuit_connector_definitions["methanol-reactor"] = circuit_connector_definitions.create_vector(
         universal_connector_template,
         {
