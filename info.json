@@ -1,6 +1,6 @@
 {
     "name": "pycoalprocessing",
-    "version": "3.1.5",
+    "version": "3.1.6",
     "factorio_version": "2.1",
     "title": "Pyanodons Coal Processing",
     "author": "Pyanodon, Nexela, Kingarthur, notnotmelon, Mootykins, ShadowGlass, Archezekiel, Quintuple, przemo1232, protocol_1903",
@@ -15,8 +15,7 @@
         "(?) better-victory-screen",
         "(?) elevated-rails",
         "! wret-beacon-rebalance-mod",
-        "! beacon-overhaul",
-        "! BigBags"
+        "! beacon-overhaul"
     ],
     "package": {
         "ignore": [],
