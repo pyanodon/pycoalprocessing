@@ -125,5 +125,7 @@ ENTITY {
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/mukmoux-pasture.ogg", volume = 0.9},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/mukmoux-pasture.ogg", volume = 0.3},
-    }
+    },
+    circuit_connector = circuit_connector_definitions["mukmoux-pasture"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
 }

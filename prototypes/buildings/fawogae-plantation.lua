@@ -137,7 +137,9 @@ for i = 1, 4 do
         impact_category = "metal",
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/fawogae-plantation.ogg"},
-        }
+        },
+    circuit_connector = circuit_connector_definitions["fawogae-plantation"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

@@ -109,6 +109,8 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 1.0},
         },
+    circuit_connector = circuit_connector_definitions["wpu"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 
     -- https://github.com/pyanodon/pycoalprocessing/commit/cf03a35fa5dec4c74a464d847b4e266394317726

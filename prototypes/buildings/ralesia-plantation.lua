@@ -177,7 +177,9 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/ralesia-plantation.ogg", volume = 1.2},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/ralesia-plantation.ogg", volume = 0.3},
-        }
+        },
+    circuit_connector = circuit_connector_definitions["ralesia-plantation"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

@@ -104,5 +104,7 @@ ENTITY {
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg", volume = 0.3},
-    }
+    },
+    circuit_connector = circuit_connector_definitions["cooling-tower-mk2"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
 }

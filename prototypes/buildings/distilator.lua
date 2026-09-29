@@ -202,6 +202,8 @@ for i = 1, 4 do
             sound = {filename = "__pycoalprocessinggraphics__/sounds/distilator.ogg", volume = 1.2},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/distilator.ogg", volume = 0.3},
         },
+    circuit_connector = circuit_connector_definitions["distilator"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 
