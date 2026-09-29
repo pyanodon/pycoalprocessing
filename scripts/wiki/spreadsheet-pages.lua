@@ -329,7 +329,7 @@ local function generate_soild_fuel_spreadsheet_data(required_science)
     }
 
     for name, item in pairs(prototypes.item) do
-        if item.fuel_category and not item.hidden then
+        if item.fuel_categories and not item.hidden then
             local burnt_result, burnt_result_order, burnt_result_tooltip
             if item.burnt_result then
                 burnt_result = "[item=" .. item.burnt_result.name .. "]"
@@ -346,8 +346,8 @@ local function generate_soild_fuel_spreadsheet_data(required_science)
                     elem_tooltip = {type = "item", name = name}
                 },
                 ["fuel-category"] = {
-                    value = prototypes.fuel_category[item.fuel_category].localised_name,
-                    order = item.fuel_category or ""
+                    value = prototypes.fuel_category[item.fuel_categories[1]].localised_name,
+                    order = item.fuel_categories[1] or ""
                 },
                 ["fuel-value"] = {
                     value = py.format_energy(item.fuel_value, "J"),
@@ -359,7 +359,7 @@ local function generate_soild_fuel_spreadsheet_data(required_science)
                     elem_tooltip = burnt_result_tooltip
                 },
                 ["unlocked-at"] = unlocked_at,
-                search_key = name .. "|" .. item.fuel_category .. "|" .. (burnt_result_order or "") .. "|" .. unlocked_at.pack
+                search_key = name .. "|" .. item.fuel_categories[1] .. "|" .. (burnt_result_order or "") .. "|" .. unlocked_at.pack
             })
         end
     end

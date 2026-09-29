@@ -57,7 +57,7 @@ for f, fluid in pairs(data.raw.fluid) do
             subgroup = "py-cans",
             order = "canister-b-[full-gas-canister]",
             fuel_value = "10MJ",
-            fuel_category = "jerry",
+            fuel_categories = {"jerry"},
             burnt_result = "empty-fuel-canister",
             stack_size = 20,
             autotech_ignore = true,

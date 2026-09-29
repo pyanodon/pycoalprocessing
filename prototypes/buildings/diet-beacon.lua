@@ -130,6 +130,7 @@ for am = 5, 1, -1 do
         beacon.placeable_by = {item = "beacon-mk01", count = 1}
         beacon.localised_name = {"entity-name.new-beacon-mk01", tostring(am), tostring(fm)}
         beacon.allowed_effects = {"speed", "consumption"}
+        beacon.tall = true
         beacon.graphics_set = graphics_set
         beacon.collision_box = {{-1.05, -1.05}, {1.05, 1.05}}
         beacon.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}

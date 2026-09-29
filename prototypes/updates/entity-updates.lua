@@ -96,11 +96,9 @@ data.raw["mining-drill"]["electric-mining-drill"].mining_speed = 2
 data.raw["mining-drill"]["electric-mining-drill"].energy_usage = "1MW"
 
 data.raw.furnace["stone-furnace"].energy_usage = "200kW"
-data.raw.furnace["stone-furnace"].energy_source.fuel_category = nil
 data.raw.furnace["stone-furnace"].energy_source.fuel_categories = {"chemical", "biomass"}
 
 data.raw.furnace["steel-furnace"].energy_usage = "500kW"
-data.raw.furnace["steel-furnace"].energy_source.fuel_category = nil
 data.raw.furnace["steel-furnace"].energy_source.fuel_categories = {"chemical", "biomass"}
 
 RECIPE("steel-furnace"):replace_ingredient("stone-brick", "refined-concrete")
@@ -108,13 +106,11 @@ RECIPE("steel-furnace"):replace_ingredient("stone-brick", "refined-concrete")
 
 data.raw.inserter["burner-inserter"].energy_source = {type = "void"}
 data.raw.inserter["burner-inserter"].next_upgrade = "inserter"
---data.raw.inserter['burner-inserter'].energy_source.fuel_category = nil
 --data.raw.inserter['burner-inserter'].energy_source.fuel_categories = {'chemical', 'biomass'}
 
 data.raw.inserter["inserter"].extension_speed = 0.035
 data.raw.inserter["inserter"].rotation_speed = 0.02
 
-data.raw["mining-drill"]["burner-mining-drill"].energy_source.fuel_category = nil
 data.raw["mining-drill"]["burner-mining-drill"].energy_source.fuel_categories = {"chemical", "biomass"}
 
 data.raw.furnace["electric-furnace"].energy_usage = "1MW"
@@ -130,13 +126,10 @@ if mods["Companion_Drones"] then
     data.raw["spider-vehicle"]["companion"].energy_source.burnt_inventory_size = 1
 end
 
-data.raw.car.car.energy_source.fuel_category = nil
 data.raw.car.car.energy_source.fuel_categories = {"jerry", "chemical", "biomass"}
 data.raw.car.car.energy_source.burnt_inventory_size = data.raw.car.car.energy_source.fuel_inventory_size
-data.raw.car.tank.energy_source.fuel_category = nil
 data.raw.car.tank.energy_source.fuel_categories = {"jerry", "chemical", "biomass"}
 data.raw.car.tank.energy_source.burnt_inventory_size = data.raw.car.tank.energy_source.fuel_inventory_size
-data.raw.locomotive.locomotive.energy_source.fuel_category = nil
 data.raw.locomotive.locomotive.energy_source.fuel_categories = {"chemical", "biomass"}
 data.raw.locomotive.locomotive.energy_source.burnt_inventory_size = data.raw.locomotive.locomotive.energy_source.fuel_inventory_size
 data.raw.locomotive.locomotive.max_speed = nil

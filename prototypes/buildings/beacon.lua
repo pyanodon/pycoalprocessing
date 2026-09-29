@@ -132,6 +132,7 @@ for i, setting in pairs(beacon_settings) do
     beacon.localised_name = {"entity-name.new-beacon", tostring(am), tostring(fm)}
     beacon.profile = nil
     beacon.allowed_effects = {"speed", "consumption"}
+    beacon.tall = true
     beacon.graphics_set = graphics_set
     beacon.collision_box = {{-2.05, -2.05}, {2.05, 2.05}}
     beacon.selection_box = {{-2.5, -2.5}, {2.5, 2.5}}

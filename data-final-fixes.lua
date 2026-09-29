@@ -70,7 +70,7 @@ end
 data.raw["utility-constants"].default.minimum_recipe_overload_multiplier = 1
 
 for _, recipe in pairs(data.raw.recipe) do
-    if recipe:has_category("tar") and not recipe.crafting_machine_tint then
+    if RECIPE(recipe):has_category("tar") and not recipe.crafting_machine_tint then
         error("Recipe " .. recipe.name .. " is missing crafting_machine_tint. Please fill out this field.")
     end
 end
