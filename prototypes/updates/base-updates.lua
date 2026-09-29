@@ -379,7 +379,7 @@ data.raw["technology"]["bulk-inserter"].prerequisites = {mods.pyhightech and "ba
 if data.raw["technology"]["bulk-inserter-2"] then data.raw["technology"]["bulk-inserter-2"].prerequisites = {"bulk-inserter"} end
 if mods["pypetroleumhandling"] then
     data.raw.technology["oil-gathering"] = nil
-    data.raw.technology["oil-processing"]:remove_prereq("oil-gathering")
+    TECHNOLOGY("oil-processing"):remove_prereq("oil-gathering")
 end
 
 RECIPE("grenade"):replace_ingredient("coal", "gunpowder")
