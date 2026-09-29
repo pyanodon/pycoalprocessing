@@ -90,11 +90,11 @@ local function valid(metadata_index)
   -- if not valid, then remove entities (will most always be inserters being invalid)
   if not metadata then return true end
   if not metadata.inserter.valid or (metadata.pickup_target and not metadata.pickup_target.valid) or (metadata.drop_target and not metadata.drop_target.valid) then
-    if metadata.inserter.valid then metadata.inserter.destroy() end
+    game.print("Invalid programmable inserter data found. BEFORE SAVING, consider submitting a copy of your current save to the tracking issue: https://github.com/pyanodon/pybugreports/issues/1562")
+    log(string.format("Found invalid inserter metadata at index %i! dump:\n%s", metadata_index, serpent.block(storage.programmable_inserters[metadata_index])))
     if metadata.pickup_target and metadata.pickup_target.valid then metadata.pickup_target.destroy() end
     if metadata.drop_target and metadata.drop_target.valid then metadata.drop_target.destroy() end
     storage.programmable_inserters[metadata_index] = nil
-    game.print("detected invalid programmable inserter data. DO NOT SAVE YOUR GAME YET! please send a copy of this world to protocol_1903 on the pY discord or on https://github.com/pyanodon/pybugreports/issues/1562")
     return false
   end
   return true
@@ -407,7 +407,7 @@ py.on_event(py.events.on_destroyed(), function (event)
   for _, entity in pairs(storage.programmable_inserters[event.entity.unit_number]) do
     if entity.type == "proxy-container" and entity.valid then entity.destroy() end
   end
-  storage[event.entity.unit_number] = nil
+  storage.programmable_inserters[event.entity.unit_number] = nil
 end)
 
 py.on_event(defines.events.on_player_rotated_entity, function (event)
