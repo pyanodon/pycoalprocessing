@@ -1,3 +1,4 @@
+---@diagnostic disable
 -- one-time clear of invalid inserter data to prevent warning for the bug we just fixed
 for id, metadata in pairs(storage.programmable_inserters) do
   if not metadata.inserter.valid then

@@ -930,7 +930,7 @@ RECIPE {
         {type = "item", name = "coal", amount = 1}
     },
     energy_required = 0.5
-}:add_unlock("coal-processing-3")
+}--[[@as data.RecipePrototype]]:add_unlock("coal-processing-3")
 
 RECIPE {
     type = "recipe",
