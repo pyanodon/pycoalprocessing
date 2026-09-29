@@ -144,6 +144,8 @@ for i = 1, 4 do
             sound = {filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 1.8},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 0.3},
         },
+        circuit_connector = circuit_connector_definitions["botanical-nursery"],
+        circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

@@ -91,6 +91,8 @@ for i = 1, 4 do
             sound = {filename = "__pycoalprocessinggraphics__/sounds/sand-extractor.ogg", volume = 0.9},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/sand-extractor.ogg", volume = 0.3},
         },
+    circuit_connector = circuit_connector_definitions["sand-extractor"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 
     -- https://github.com/pyanodon/pycoalprocessing/commit/cf03a35fa5dec4c74a464d847b4e266394317726
