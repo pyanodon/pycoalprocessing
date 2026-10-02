@@ -18,8 +18,8 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/jerry-can.png",
     icon_size = 64,
-    subgroup = "py-items",
-    order = "c [methanol]"
+    subgroup = "py-cans",
+    order = "fuel-canister"
 }:add_unlock("plastics")
 
 for f, fluid in pairs(data.raw.fluid) do
@@ -106,7 +106,7 @@ for f, fluid in pairs(data.raw.fluid) do
             autotech_ignore = true,
             unlock_results = false,
             main_product = fluid.name,
-            subgroup = "py-items",
+            subgroup = "py-cans",
             order = "canister-b-[empty-methanol-gas-canister]"
         }:add_unlock("plastics")
     end

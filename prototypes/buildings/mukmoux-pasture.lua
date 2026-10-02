@@ -21,7 +21,7 @@ ITEM {
     icon_size = 64,
     flags = {},
     subgroup = "coal-processing",
-    order = "d",
+    order = "b",
     place_result = "mukmoux-pasture",
     stack_size = 10
 }

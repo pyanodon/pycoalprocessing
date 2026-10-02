@@ -150,13 +150,19 @@ data:extend {
         type = "item-subgroup",
         name = "py-fluids",
         group = "coal-processing",
-        order = "z"
+        order = "c--0"
     },
     {
         type = "item-subgroup",
         name = "py-unsorted",
         group = "coal-processing",
         order = "zzzz"
+    },
+    {
+        type = "item-subgroup",
+        name = "py-logs",
+        group = "coal-processing",
+        order = "c-00"
     }
 }
 
@@ -166,6 +172,6 @@ data.raw.item["sulfur"].subgroup = "py-sulfur"
 data.raw.item["low-density-structure"].subgroup = "space-related"
 data.raw.item["rocket-fuel"].subgroup = "space-related"
 data.raw.item["nuclear-fuel"].subgroup = "space-related"
-data.raw.item["stone"].subgroup = "intermediate-product"
+data.raw.item["stone"].subgroup = "raw-resource"
 data.raw.item["explosives"].subgroup = "py-items"
 data.raw.fluid["sulfuric-acid"].subgroup = "py-fluids"
