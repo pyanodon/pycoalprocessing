@@ -839,7 +839,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/jerry-can.png",
     icon_size = 64,
     flags = {},
-    subgroup = "py-items",
+    subgroup = "py-cans",
     order = "fuel-canister",
     stack_size = 20
 }

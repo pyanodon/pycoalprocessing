@@ -22,7 +22,7 @@ ITEM {
     icon_size = 64,
     flags = {},
     subgroup = "coal-processing",
-    order = "e",
+    order = "a",
     place_result = "niobium-mine",
     stack_size = 10
 }

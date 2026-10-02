@@ -11,7 +11,7 @@ RECIPE {
         {type = "fluid", name = "molten-glass", amount = 20}
     },
     main_product = "molten-glass",
-    subgroup = "py-items",
+    subgroup = "py-fluids",
     order = "aac"
 }
 
@@ -29,7 +29,7 @@ RECIPE {
         {type = "fluid", name = "molten-glass", amount = 50}
     },
     main_product = "molten-glass",
-    subgroup = "py-items",
+    subgroup = "py-fluids",
     order = "aac"
 }:add_unlock("advanced-material-processing")
 
@@ -44,6 +44,6 @@ FLUID {
     flow_color = {r = 1, g = 1, b = 1},
     max_temperature = 100,
     gas_temperature = 15,
-    subgroup = "py-items",
+    subgroup = "py-fluids",
     order = "c"
 }

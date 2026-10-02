@@ -73,9 +73,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "muddy-sludge", amount = 100}
     },
-    -- main_product = "sand",
-    subgroup = "py-washer",
-    order = "z"
+    -- main_product = "sand"
 }
 
 RECIPE {
@@ -263,9 +261,7 @@ RECIPE {
     },
     main_product = "acidgas",
     icon = "__pycoalprocessinggraphics__/graphics/icons/acidgas.png",
-    icon_size = 32,
-    subgroup = "py-fluid-handling",
-    order = "f"
+    icon_size = 32
 }:add_unlock("biofilm")
 
 RECIPE {
