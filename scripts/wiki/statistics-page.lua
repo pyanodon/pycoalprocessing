@@ -77,15 +77,18 @@ local function calculate_statistics(player, include_laggy_calculations)
     local statistics = {}
 
     statistics.hour = floor(game.tick / 60 / 60 / 60)
-    statistics.minute = tostring(floor(game.tick / 60 / 60) % 60)
-    if statistics.minute < 10 then statistics.minute = "0" .. statistics.minute end
-    statistics.second = tostring(floor(game.tick / 60) % 60)
-    if statistics.second < 10 then statistics.second = "0" .. statistics.second end
+    local int_minute = floor(game.tick / 60 / 60) % 60
+    statistics.minute = tostring(int_minute)
+    if int_minute < 10 then statistics.minute = "0" .. int_minute end
+    local int_second = floor(game.tick / 60) % 60
+    statistics.second = tostring(int_second)
+    if int_second < 10 then statistics.second = "0" .. int_second end
 
     local daytime = surface.daytime * 24
     statistics.daytime_hour = floor(daytime)
-    statistics.daytime_minute = tostring(floor(daytime * 60) % 60)
-    if statistics.daytime_minute < 10 then statistics.daytime_minute = "0" .. statistics.daytime_minute end
+    local daytime_minute = floor(daytime * 60) % 60
+    statistics.daytime_minute = tostring(daytime_minute)
+    if daytime_minute < 10 then statistics.daytime_minute = "0" .. daytime_minute end
     if statistics.daytime_hour == 24 then
         statistics.daytime_hour = 0
         statistics.am_pm = "AM"
