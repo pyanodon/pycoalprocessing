@@ -125,27 +125,13 @@ TECHNOLOGY("utility-science-pack"):set_fields {prerequisites = {}}
 -- Technology icons
 for i = 1, 6 do
     local tech = TECHNOLOGY("research-speed-" .. i)
-    tech:set(
-        "icons", {
-            -- Base layer
-            {
-                icon = "__pycoalprocessinggraphics__/graphics/technology/energy-1.png",
-                icon_size = 128,
-                tint = {r = 0, g = 0, b = 0, a = 1}
-            },
-            -- Border
-            {icon = "__pycoalprocessinggraphics__/graphics/technology/border.png", icon_size = 128},
-            -- Lab
-            {icon = "__pycoalprocessinggraphics__/graphics/technology/lab.png",    icon_size = 128, scale = 0.8},
-            -- Speed icon
-            {
-                icon = "__core__/graphics/icons/technology/constants/constant-speed.png",
-                icon_size = 128,
-                scale = 0.5,
-                shift = {50, 50}
-            }
-        })
-    tech:set("icon_size", 128)
+    local speed_icon = {
+        icon = "__core__/graphics/icons/technology/constants/constant-speed.png",
+        icon_size = 128,
+        scale = 0.5,
+        shift = {50, 50}
+    }
+    tech:create_icons("__pycoalprocessinggraphics__/graphics/technology/lab.png", speed_icon)
 end
 
 -- Recipe unlocks
