@@ -1,8 +1,8 @@
 if not mods.pyalternativeenergy then
     for _, recipe in pairs(data.raw.recipe) do
-        if not recipe.localised_name and recipe:has_category("combustion") and not recipe.name:find("%-biomass$") then
+        if not recipe.localised_name and RECIPE(recipe):has_category("combustion") and not recipe.name:find("%-biomass$") then
             local temp
-            for _, result in pairs(recipe.results) do
+            for _, result in pairs(recipe.results--[[@cast -?]]) do
                 if result.name == "combustion-mixture1" then
                     temp = result.temperature
                 end
@@ -53,7 +53,7 @@ if rpm_entity ~= 30 or rpm_items ~= 30 or overload ~= 0 then
             goto continue
         end
         for _, result in pairs(recipe.results) do -- This looks long, however we skip a lot of the logic with caching
-            local result_name = result[1] or result.name
+            local result_name = result.name
             if result_name and valid_entities[result_name] then
                 --log("Set multiplier for " .. recipe.name .. " (" .. result_name .. ")")
                 recipe.requester_paste_multiplier = tonumber(rpm_entity)

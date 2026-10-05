@@ -1,3 +1,4 @@
+---@diagnostic disable
 storage.beacon_interference_alerts = storage.beacon_interference_alerts or {}
 storage.alerts = storage.alerts or {}
 storage.alert_count = storage.alert_count or 0

@@ -14,6 +14,7 @@ ENTITY {
     --damaged_trigger_effect = hit_effects.entity(),
     tall = true,
     circuit_connector = circuit_connector_definitions.create_single(
+        ---@diagnostic disable-next-line: param-type-mismatch
         universal_connector_template,
         { variation = 26, main_offset = util.by_pixel( 53.625, -178.25), shadow_offset = util.by_pixel( 53.625, -178.25), show_shadow = true }
     ),
@@ -136,10 +137,12 @@ if mods["DiscoScience"] then
     -- Remove the 3 glow layers
     -- We can remove only the first layer and not use the second layer in the overlay below for a less obvious effect
     for I = 1, 3 do
-        table.remove(data.raw.lab.lab.on_animation.layers, 2)
+        table.remove(data.raw.lab.lab.on_animation--[[@cast -?]].layers--[[@cast -?]], 2)
     end
+    ---@diagnostic disable-next-line: need-check-nil
     -- Overwrite on/off to the variant without blue lights embedded
     data.raw.lab.lab.on_animation.layers[1].filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
+    ---@diagnostic disable-next-line: need-check-nil
     data.raw.lab.lab.off_animation.layers[1].filename = "__pycoalprocessinggraphics__/graphics/entity/lab-mk01/raw-bw.png"
     -- Overwrite the animation with ours
     data.raw.animation["discoscience/lab-storm"] = {

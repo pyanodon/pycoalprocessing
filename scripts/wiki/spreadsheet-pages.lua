@@ -1,3 +1,7 @@
+---@namespace PyCoalProcessing
+---@type PyCoalProcessingStorage
+storage = storage --[[@as PyCoalProcessingStorage]]
+
 local spreadsheet_row_functions = {}
 
 local floor = math.floor
@@ -68,7 +72,7 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 
     data.prefered_sorts[player.index] = {sort_by, asc}
 
-    local search_key = remote.call("pywiki", "get_page_searchbar", player).text
+    local search_key = remote.call("pywiki", "get_page_searchbar", player)--[[@cast -?]].text
     on_search(search_key, gui)
 end
 
@@ -107,6 +111,12 @@ local function create_spreadsheet(gui, player, data)
     update_spreadsheet(gui, player, data, sort_by, asc)
 end
 
+---@class (partial) PyCoalProcessingStorage
+---@field fluid_spreadsheet_data table
+---@field solid_fuel_spreadsheet_data table
+---@field item_decay_spreadsheet_data table
+---@field recipe_decay_spreadsheet_data table
+
 remote.add_interface("pywiki_spreadsheets", {
     create_fluid_page = function(gui, player) create_spreadsheet(gui, player, storage.fluid_spreadsheet_data) end,
     create_solid_fuel_page = function(gui, player) create_spreadsheet(gui, player, storage.solid_fuel_spreadsheet_data) end,
@@ -132,7 +142,7 @@ local function hue(color)
     local max = math.max(math.max(red, green), blue)
     if min == max then return 0 end
 
-    local hue = 0
+    local hue = 0.0
     if max == red then
         hue = (green - blue) / (max - min)
     elseif max == green then
@@ -369,26 +379,28 @@ local function decay_result_builder(flow, item)
     if not item.valid then return end
 
     local decay_result = ""
-    local decay_chain = {}
+    local decay_chain = {}--[[@as LuaItemPrototype[] ]]
     local already_seen = {}
     local total_decay_ticks = 0
+    local total_decay_ticks_string
 
     if item.spoil_to_trigger_result then
         flow.add {type = "label", caption = "[Trigger]"}
         return "trigger", item.get_spoil_ticks(), {item}, {[item.name] = true}
     end
 
-    local spoilage_item = item
+    local spoilage_item = item--[[@as LuaItemPrototype?]]
     while spoilage_item do
         table.insert(decay_chain, spoilage_item)
         if already_seen[spoilage_item.name] then
-            total_decay_ticks = "[color=255,170,0] ∞ [/color]"
+            total_decay_ticks_string = "[color=255,170,0] ∞ [/color]"
             break
         end
         total_decay_ticks = total_decay_ticks + spoilage_item.get_spoil_ticks()
         already_seen[spoilage_item.name] = true
         spoilage_item = spoilage_item.spoil_result
     end
+    total_decay_ticks_string = tostring(total_decay_ticks)
     local arrow_emoji = "[font=default-bold][color=255,200,200] → [/color][/font]"
     for i = 1, #decay_chain do
         local spoilage_item = decay_chain[i]
@@ -400,7 +412,7 @@ local function decay_result_builder(flow, item)
         end
     end
 
-    return decay_result, total_decay_ticks, decay_chain, already_seen
+    return decay_result, total_decay_ticks_string, decay_chain, already_seen
 end
 spreadsheet_row_functions.decay_result_builder = decay_result_builder
 
