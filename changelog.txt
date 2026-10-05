@@ -5,6 +5,7 @@ Date: ????
     - Unconflicted big bags. Resolves https://github.com/pyanodon/pybugreports/issues/1570
     - Updated German locale (thanks, Spunk42!)
     - Updated science pack tech icons to match in game items
+    - Fixed spilling tailings ponds potentially crashing the game if left unattended for dozens of hours. Resolves https://github.com/pyanodon/pybugreports/issues/1450
 ---------------------------------------------------------------------------------------------------
 Version: 3.1.5
 Date: 2026-09-22
