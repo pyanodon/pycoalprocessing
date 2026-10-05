@@ -8,12 +8,15 @@ require "prototypes/technologies/stacking-belts"
 require "prototypes/item-sounds"
 
 ITEM("automation-science-pack"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
+TECHNOLOGY("automation-science-pack"):set("icon_size", 64):create_icons("__pycoalprocessinggraphics__/graphics/icons/science-pack-1.png")
 ITEM("automation-science-pack"):set("icon_size", 64)
 
 ITEM("logistic-science-pack"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png")
+TECHNOLOGY("logistic-science-pack"):set("icon_size", 64):create_icons("__pycoalprocessinggraphics__/graphics/icons/science-pack-2.png")
 ITEM("logistic-science-pack"):set("icon_size", 64)
 
 ITEM("chemical-science-pack"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png")
+TECHNOLOGY("chemical-science-pack"):set("icon_size", 64):create_icons("__pycoalprocessinggraphics__/graphics/icons/science-pack-3.png")
 ITEM("chemical-science-pack"):set("icon_size", 64)
 
 ITEM("lab"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/lab-mk01.png")
