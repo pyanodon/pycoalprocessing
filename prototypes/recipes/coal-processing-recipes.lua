@@ -396,7 +396,7 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/log.png",
     icon_size = 32,
-    subgroup = "py-items",
+    subgroup = "py-logs",
     order = "c6"
 }:add_unlock("wood-processing")
 
@@ -414,7 +414,7 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/log2.png",
     icon_size = 32,
-    subgroup = "py-items",
+    subgroup = "py-logs",
     order = "c7"
 }:add_unlock("wood-processing")
 
@@ -433,7 +433,7 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/log3.png",
     icon_size = 32,
-    subgroup = "py-items",
+    subgroup = "py-logs",
     order = "c8"
 }:add_unlock("wood-processing")
 
@@ -451,7 +451,7 @@ RECIPE {
     },
     icon = data.raw.item["wood"].icon,
     icon_size = 64,
-    subgroup = "py-items",
+    subgroup = "py-logs",
     order = "a7"
 }:add_unlock("wood-processing")
 
@@ -703,7 +703,7 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/log5.png",
     icon_size = 32,
-    subgroup = "py-items",
+    subgroup = "py-logs",
     order = "c9"
 }:add_unlock("wood-processing-2")
 
@@ -741,7 +741,7 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/log4.png",
     icon_size = 32,
-    subgroup = "py-items",
+    subgroup = "py-logs",
     order = "c9"
 }:add_unlock("wood-processing-2")
 
@@ -761,7 +761,7 @@ RECIPE {
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/log6.png",
     icon_size = 32,
-    subgroup = "py-items",
+    subgroup = "py-logs",
     order = "c9"
 }:add_unlock("wood-processing-2")
 

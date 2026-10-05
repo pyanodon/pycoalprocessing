@@ -17,8 +17,8 @@ RECIPE {
         icon_size = 32,
         tint = {r = 0.5, g = 0.5, b = 0.5}
     }},
-    subgroup = "py-items",
-    order = "c [methanol]"
+    subgroup = "py-cans",
+    order = "gas-canister-a-[empty-gas-canister]"
 }:add_unlock("methanol-processing-1")
 
 ITEM {
@@ -30,8 +30,8 @@ ITEM {
         tint = {r = 0.5, g = 0.5, b = 0.5}
     }},
     flags = {},
-    subgroup = "py-items",
-    order = "canister-a-[empty-gas-canister]",
+    subgroup = "py-cans",
+    order = "gas-canister-a-[empty-gas-canister]",
     stack_size = 20
 }
 
@@ -73,8 +73,8 @@ RECIPE {
         icon_size = 32,
         tint = {r = 0.5, g = 0.5, b = 0.5}
     }},
-    subgroup = "py-items",
-    order = "canister-b-[empty-methanol-gas-canister]"
+    subgroup = "py-cans",
+    order = "gas-canister-b-[empty-methanol-gas-canister]"
 }:add_unlock("methanol-processing-1")
 
 ITEM {
@@ -83,7 +83,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/canister.png",
     icon_size = 32,
     flags = {},
-    subgroup = "py-items",
-    order = "canister-b-[fill-methanol-gas-canister]",
+    subgroup = "py-cans",
+    order = "gas-canister-b-[fill-methanol-gas-canister]",
     stack_size = 20
 }

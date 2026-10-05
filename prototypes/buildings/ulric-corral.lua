@@ -23,7 +23,7 @@ ITEM {
     icon_size = 64,
     flags = {},
     subgroup = "coal-processing",
-    order = "h",
+    order = "c",
     place_result = "ulric-corral-mk01",
     stack_size = 10
 }

@@ -199,7 +199,7 @@ RECIPE {
         {type = "item",  name = "nexelit-plate", amount = 2}
     },
     results = {{type = "fluid", name = "lubricant", amount = 100}},
-    subgroup = "fluid-recipes",
+    subgroup = "fluid",
     crafting_machine_tint = {
         primary = {r = 0.268, g = 0.723, b = 0.223, a = 1.000},   -- #44b838ff
         secondary = {r = 0.432, g = 0.793, b = 0.386, a = 1.000}, -- #6eca62ff

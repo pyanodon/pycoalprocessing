@@ -8,5 +8,7 @@ FLUID {
     base_color = {r = 0.741, g = 0.788, b = 0.196},
     flow_color = {r = 1, g = 1, b = 1},
     max_temperature = 100,
-    gas_temperature = 15
+    gas_temperature = 15,
+    subgroup = "py-fluid-handling",
+    order = "f"
 }

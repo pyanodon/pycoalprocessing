@@ -22,7 +22,7 @@ ITEM {
     icon_size = 64,
     flags = {},
     subgroup = "coal-processing",
-    order = "g",
+    order = "d",
     place_result = "co2-absorber",
     stack_size = 10
 }

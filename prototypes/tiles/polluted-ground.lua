@@ -69,6 +69,8 @@ data:extend {{
     vehicle_friction_modifier = sand_vehicle_speed_modifier,
     transitions = data.raw.tile["dirt-4"].transitions,
     transitions_between_transitions = data.raw.tile["dirt-4"].transitions_between_transitions,
+    subgroup = "special-tiles",
+    order = "a"
 }}
 
 data:extend {{
@@ -89,6 +91,8 @@ data:extend {{
     vehicle_friction_modifier = sand_vehicle_speed_modifier,
     transitions = data.raw.tile["dirt-4"].transitions,
     transitions_between_transitions = data.raw.tile["dirt-4"].transitions_between_transitions,
+    subgroup = "special-tiles",
+    order = "b"
 }}
 
 data:extend {{
