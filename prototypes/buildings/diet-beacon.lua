@@ -140,6 +140,7 @@ for am = 5, 1, -1 do
         beacon.minable = {mining_time = 0.2, result = "beacon-mk01"}
         beacon.icon = "__pycoalprocessinggraphics__/graphics/icons/beacon-01.png"
         beacon.icon_size = 64
+        beacon.profile = nil
         data:extend {beacon}
     end
 end
