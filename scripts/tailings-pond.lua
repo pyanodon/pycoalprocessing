@@ -151,7 +151,12 @@ local function scorch_earth(pond)
                 local x, y = spiral(pond.lifetime_pollution_tiles_created)
                 x = math.floor(x + entity.position.x--[[@as number]]) - 1
                 y = math.floor(y + entity.position.y--[[@as number]]) - 1
-                if surface.get_tile(x, y).name ~= "polluted-ground" then
+                local next_tile = surface.get_tile(x, y)
+                if not next_tile.valid then
+                    surface.request_to_generate_chunks({x, y})
+                    surface.force_generate_chunk_requests()
+                end
+                if next_tile.name ~= "polluted-ground" then
                     tiles[#tiles + 1] = {name = "polluted-ground", position = {x = x, y = y}}
                 end
             end
