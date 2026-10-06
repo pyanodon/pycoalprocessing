@@ -1,3 +1,10 @@
+---@namespace PyCoalProcessing
+---@type PyCoalProcessingStorage
+storage = storage --[[@as PyCoalProcessingStorage]]
+
+---@class (partial) PyCoalProcessingStorage
+---@field programmable_inserters table
+
 -- save a list of all valid targets, valid inventories for that target, and associated locale key for that inventory
 local proxy_targets = {
   ["furnace"] = {
@@ -137,7 +144,7 @@ end
 local function update_gui(entity, player_index)
   if not entity or (entity.type == "entity-ghost" and entity.ghost_type or entity.type) ~= "inserter" then return end
   if not valid(entity.unit_number) then return end
-  local player = game.get_player(player_index)
+  local player = game.get_player(player_index)--[[@as LuaPlayer]]
 
   local tags = (entity.tags or {})["py-dynamic-inserter"]
   
@@ -276,13 +283,15 @@ end
 -- TODO fix upgrade events breaking it
 
 py.on_event(py.events.on_gui_opened(), function (event)
-  if game.get_player(event.player_index).opened_gui_type ~= defines.gui_type.entity then return end
+  if game.get_player(event.player_index)--[[@cast -?]].opened_gui_type ~= defines.gui_type.entity then return end
   update_gui(event.entity, event.player_index)
 end)
 
 py.on_event(defines.events.on_gui_closed, function (event)
-  if game.get_player(event.player_index).gui.relative["programmable-inserter-gui"] and game.get_player(event.player_index).gui.relative["programmable-inserter-gui"].visible then
-    game.get_player(event.player_index).gui.relative["programmable-inserter-gui"].visible = false
+  if game.get_player(event.player_index)--[[@cast -?]].gui.relative["programmable-inserter-gui"] and
+    game.get_player(event.player_index)--[[@cast -?]].gui.relative["programmable-inserter-gui"].visible
+  then
+    game.get_player(event.player_index)--[[@cast -?]].gui.relative["programmable-inserter-gui"].visible = false
   end
 end)
 
@@ -290,7 +299,7 @@ py.on_event(defines.events.on_gui_selection_state_changed, function (event)
   local element = event.element
   if not element or element.get_mod() ~= "pycoalprocessing" or element.type ~= "drop-down" then return end
 
-  local player = game.get_player(event.player_index)
+  local player = game.get_player(event.player_index)--[[@as LuaPlayer]]
   local inserter = player.opened
   if not inserter then return end
 
@@ -300,7 +309,7 @@ py.on_event(defines.events.on_gui_selection_state_changed, function (event)
     local tags = inserter.tags or {}
     tags["py-dynamic-inserter"] = tags["py-dynamic-inserter"] or {}
     tags["py-dynamic-inserter"][element.name .. "_inventory"] = element.selected_index ~= 1 and selection or nil
-    if not tags["py-dynamic-inserter"].drop_target_inventory and not tags["py-dynamic-inserter"].pickup_target_inventory then tags["py-dynamic-inserter"] = nil end
+    if not tags["py-dynamic-inserter"].drop_target_inventory and not tags["py-dynamic-inserter"]--[[@as table]].pickup_target_inventory then tags["py-dynamic-inserter"] = nil end
     inserter.tags = tags
   else
     local metadata = storage.programmable_inserters[inserter.unit_number] or { inserter = inserter }
@@ -320,11 +329,11 @@ py.on_event(defines.events.on_gui_selection_state_changed, function (event)
       -- save the target inventory
       metadata[element.name .. "_inventory"] = selection
       -- create proxy container if required
-      metadata[element.name] = metadata[element.name] or inserter.surface.create_entity{
+      metadata[element.name] = metadata[element.name] or inserter.surface--[[@cast -?]].create_entity{
         name = "py-dynamic-inserter-target",
         force = inserter.force,
         position = inserter[element.name:sub(1, -7) .. "position"]
-      }
+      }--[[@as LuaSurface.create_entity_param]]
       -- set target entity
       inserter[element.name] = metadata[element.name]
       
@@ -487,9 +496,9 @@ end)
 
 ---@param event EventData.on_player_setup_blueprint
 py.on_event(defines.events.on_player_setup_blueprint, function (event)
-	local blueprint = game.get_player(event.player_index).blueprint_to_setup
+	local blueprint = game.get_player(event.player_index)--[[@cast -?]].blueprint_to_setup--[[@as LuaItemStack?]]
   -- if normally invalid
-	if not blueprint or not blueprint.valid_for_read then blueprint = game.get_player(event.player_index).cursor_stack end
+	if not blueprint or not blueprint.valid_for_read then blueprint = game.get_player(event.player_index)--[[@cast -?]].cursor_stack end
   -- if non existant, cancel
   if not blueprint then return end
   local entities = blueprint.get_blueprint_entities()
@@ -516,23 +525,32 @@ py.on_event(defines.events.on_player_setup_blueprint, function (event)
 end)
 
 if script.active_mods["quick-adjustable-inserters"] then
+  ---@diagnostic disable-next-line: undefined-field
   if defines.events.on_qai_inserter_vectors_changed then
+    ---@diagnostic disable-next-line: undefined-field, type-not-found, param-type-mismatch
     ---@param event EventData.on_qai_inserter_vectors_changed
     script.on_event(defines.events.on_qai_inserter_vectors_changed, function(event)
-        update_targets(event.inserter)
+      ---@diagnostic disable-next-line: undefined-field
+      update_targets(event.inserter)
     end)
   end
 
+  ---@diagnostic disable-next-line: undefined-field
   if defines.events.on_qai_inserter_adjustment_finished then
+  ---@diagnostic disable-next-line: undefined-field, type-not-found, param-type-mismatch
     ---@param event EventData.on_qai_inserter_adjustment_finished
     script.on_event(defines.events.on_qai_inserter_adjustment_finished, function(event)
+      ---@diagnostic disable-next-line: undefined-field
       update_targets(event.inserter)
     end)
   end
 end
 
+---@diagnostic disable-next-line: undefined-field
 if script.active_mods["bobinserters"] and defines.events.on_bobs_inserter_adjusted then
+  ---@diagnostic disable-next-line: undefined-field
   script.on_event(defines.events.on_bobs_inserter_adjusted, function (event)
+    ---@diagnostic disable-next-line: undefined-field
     update_targets(event.entity)
   end)
 end

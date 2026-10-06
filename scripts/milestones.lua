@@ -455,7 +455,7 @@ remote.add_interface("pycoalprocessing", {
             "-mk03",
             "-mk04",
         }
-        local insert_index
+        local insert_index = 1
         for index, milestone in pairs(preset.milestones) do
             if milestone.name == "Flora and Fauna" and milestone.type == "group" then
                 insert_index = index + 1

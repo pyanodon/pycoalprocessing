@@ -1,3 +1,7 @@
+---@namespace PyCoalProcessing
+---@type PyCoalProcessingStorage
+storage = storage --[[@as PyCoalProcessingStorage]]
+
 Wiki = {}
 Wiki.events = {}
 
@@ -116,10 +120,11 @@ function Wiki.close_wiki(player)
 
     local pages = Wiki.get_pages(player)
     if pages then
-        local page_data = pages.tags.contents[pages.selected_index]
+        local page_data = pages.tags.contents[pages.selected_index]--[[@as table]]
         if page_data and page_data.on_closed then
-            local on_closed = page_data.on_closed
-            remote.call(on_closed[1], on_closed[2], contents, player)
+            local on_closed = page_data.on_closed--[[@as table]]
+            ---@diagnostic disable-next-line: param-type-mismatch
+            remote.call(on_closed[1], on_closed[2], nil, player)
         end
     end
     -- https://github.com/pyanodon/pybugreports/issues/820
@@ -256,6 +261,7 @@ gui_events[defines.events.on_gui_text_changed]["py_wiki_search"] = function(even
     remote.call(searchable[1], searchable[2], search_query, contents, player)
 end
 
+---@diagnostic disable-next-line: param-type-mismatch
 remote.add_interface("pywiki", {
     add_page = Wiki.add_page,
     add_section = Wiki.add_section,
