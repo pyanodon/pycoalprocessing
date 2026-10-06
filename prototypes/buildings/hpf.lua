@@ -162,6 +162,8 @@ for i = 1, 4 do
             sound = {filename = "__pycoalprocessinggraphics__/sounds/hpf.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/hpf.ogg", volume = 0.3},
         },
+    circuit_connector = circuit_connector_definitions["hpf"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

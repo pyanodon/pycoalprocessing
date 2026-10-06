@@ -13,11 +13,7 @@ ENTITY {
     drawing_box_vertical_extension = 2,
     --damaged_trigger_effect = hit_effects.entity(),
     tall = true,
-    circuit_connector = circuit_connector_definitions.create_single(
-        ---@diagnostic disable-next-line: param-type-mismatch
-        universal_connector_template,
-        { variation = 26, main_offset = util.by_pixel( 53.625, -178.25), shadow_offset = util.by_pixel( 53.625, -178.25), show_shadow = true }
-    ),
+    circuit_connector = circuit_connector_definitions["lab"],
     circuit_wire_max_distance = 9,
     on_animation =
     {

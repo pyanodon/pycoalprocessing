@@ -91,6 +91,8 @@ for i = 1, 4 do
             sound = {filename = "__pycoalprocessinggraphics__/sounds/classifier.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/classifier.ogg", volume = 0.3},
         },
+        circuit_connector = circuit_connector_definitions["classifier"],
+        circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 
     -- https://github.com/pyanodon/pycoalprocessing/commit/cf03a35fa5dec4c74a464d847b4e266394317726

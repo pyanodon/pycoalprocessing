@@ -151,6 +151,8 @@ for i = 1, 4 do
             fade_in_ticks = 15,
             fade_out_ticks = 4,
         },
+    circuit_connector = circuit_connector_definitions["quenching-tower"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

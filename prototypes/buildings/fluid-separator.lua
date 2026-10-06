@@ -128,6 +128,8 @@ for i = 1, 4 do
             sound = {filename = "__pycoalprocessinggraphics__/sounds/fluid-separator.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/fluid-separator.ogg", volume = 0.3},
         },
+    circuit_connector = circuit_connector_definitions["fluid-separator"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 
