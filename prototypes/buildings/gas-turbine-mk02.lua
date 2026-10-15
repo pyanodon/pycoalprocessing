@@ -39,6 +39,7 @@ ENTITY {
     effectivity = 1,
     fluid_usage_per_tick = 1.25,
     maximum_temperature = 2000,
+    minimum_input_temperature = 500.0,
     destroy_non_fuel_fluid = false,
     resistances = {
         {
@@ -53,7 +54,6 @@ ENTITY {
         pipe_covers = py.pipe_covers(false, true, true, true),
         production_type = "input-output",
         filter = "combustion-mixture1",
-        minimum_temperature = 500.0,
         pipe_connections = {
             {flow_direction = "input-output", position = {3.0, 0.0},  direction = defines.direction.east},
             {flow_direction = "input-output", position = {-3.0, 0.0}, direction = defines.direction.west}

@@ -89,6 +89,7 @@ ENTITY {
     effectivity = 1,
     fluid_usage_per_tick = 1.5,
     maximum_temperature = 3000,
+    minimum_input_temperature = 500.0,
     destroy_non_fuel_fluid = false,
     resistances = {
         {
@@ -100,7 +101,6 @@ ENTITY {
     selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
     fluid_box = {
         filter = "combustion-mixture1",
-        minimum_temperature = 500.0,
         volume = 100,
         pipe_covers = py.pipe_covers(false, true, false, false),
         pipe_picture = pipe_pictures({0, 0}, {0, 0}, {0, 0}, {0, 0}),
