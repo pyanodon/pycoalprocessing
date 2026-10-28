@@ -1,6 +1,6 @@
 if not mods.pyalternativeenergy then
     for _, recipe in pairs(data.raw.recipe) do
-        if not recipe.localised_name and RECIPE(recipe):has_category("combustion") and not recipe.name:find("%-biomass$") then
+        if not recipe.localised_name and RECIPE(recipe.name):has_category("combustion") and not recipe.name:find("%-biomass$") then
             local temp
             for _, result in pairs(recipe.results--[[@cast -?]]) do
                 if result.name == "combustion-mixture1" then
@@ -70,7 +70,7 @@ end
 data.raw["utility-constants"].default.minimum_recipe_overload_multiplier = 1
 
 for _, recipe in pairs(data.raw.recipe) do
-    if RECIPE(recipe):has_category("tar") and not recipe.crafting_machine_tint then
+    if RECIPE(recipe.name):has_category("tar") and not recipe.crafting_machine_tint then
         error("Recipe " .. recipe.name .. " is missing crafting_machine_tint. Please fill out this field.")
     end
 end
