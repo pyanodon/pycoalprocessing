@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 3.1.9
+Date: ???
+  Changes:
+    - Marked Destructive Distillation Columns to be hidden when visibility of tall entities is toggled
+---------------------------------------------------------------------------------------------------
 Version: 3.1.8
 Date: 2026-10-16
   Changes:

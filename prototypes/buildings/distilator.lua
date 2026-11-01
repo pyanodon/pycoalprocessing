@@ -60,6 +60,7 @@ for i = 1, 4 do
             },
         },
         energy_usage = (500 * i) .. "kW",
+        tall = true,
         graphics_set = {
             animation = {
                 layers = {
