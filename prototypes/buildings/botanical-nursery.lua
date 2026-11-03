@@ -78,9 +78,9 @@ for i = 1, 4 do
         dying_explosion = "big-explosion",
         collision_box = {{-3.3, -3.3}, {3.3, 3.3}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
-        forced_symmetry = "diagonal-pos",
-        module_slots = 0,
-        allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
+        use_mirroring = true,
+        module_slots = i,
+        allowed_effects = {"speed", "consumption", "pollution", "quality"},
         crafting_categories = {"nursery"},
         crafting_speed = i,
         energy_source = {
@@ -125,14 +125,14 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {0.2, 4.13}, {0.12, -4.03}, {4.115, 0.1}, {-3.88, 0.16}, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input-output", position = {0.0, 3.0}, direction = defines.direction.south}}
             },
             {
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {0.2, 4.13}, {0.12, -4.03}, {4.115, 0.1}, {-3.88, 0.16}, pipes),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input-output", position = {0.0, -3.0}, direction = defines.direction.north}}
             },
             {
@@ -147,8 +147,9 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 1.8},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/botanical-nursery.ogg", volume = 0.3},
-            apparent_volume = 2.5
         },
+        circuit_connector = circuit_connector_definitions["botanical-nursery"],
+        circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "concrete",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     ingredients = {
         {type = "item",  name = "lime",   amount = 5},
@@ -16,7 +16,7 @@ RECIPE {
     type = "recipe",
     name = "fast-transport-belt",
     enabled = false,
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     ingredients = {
         {type = "item",  name = "iron-gear-wheel", amount = 2},
         {type = "item",  name = "transport-belt",  amount = 2},
@@ -58,7 +58,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "electric-engine-unit",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     energy_required = 10,
     ingredients = {
@@ -73,7 +73,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "processing-unit",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     energy_required = 10,
     ingredients = {
@@ -87,7 +87,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "low-density-structure",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     energy_required = 20,
     ingredients = {
@@ -102,7 +102,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "production-science-pack",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -119,7 +119,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "utility-science-pack",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     energy_required = 10,
     ingredients = {
@@ -178,7 +178,7 @@ RECIPE {
     type = "recipe",
     name = "rocket-fuel",
     enabled = false,
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     ingredients = {
         {type = "fluid", name = "hydrogen-peroxide", amount = 80},
         {type = "fluid", name = "methanol",          amount = 20}
@@ -191,7 +191,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "lubricant",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -213,7 +213,7 @@ RECIPE("hazard-concrete"):remove_unlock("concrete"):add_unlock("separation")
 RECIPE {
     type = "recipe",
     name = "shotgun-shell",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 5,
     ingredients = {

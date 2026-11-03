@@ -1,3 +1,4 @@
+---@diagnostic disable
 local killed_ninjas = 0
 local remaining_ninjas = 0
 for _, surface in pairs(game.surfaces) do

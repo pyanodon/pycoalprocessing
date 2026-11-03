@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "aromatics",
-    category = "olefin",
+    categories = {"olefin"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -24,7 +24,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "olefin",
-    category = "olefin",
+    categories = {"olefin"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -49,7 +49,7 @@ end
 RECIPE {
     type = "recipe",
     name = "olefin-petgas",
-    category = "fluid-separator",
+    categories = {"fluid-separator"},
     enabled = false,
     energy_required = 2.8,
     ingredients = {
@@ -71,7 +71,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "gasoline",
-    category = "fluid-separator",
+    categories = {"fluid-separator"},
     enabled = false,
     energy_required = 2.8,
     ingredients = {
@@ -94,7 +94,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "refolefin",
-    category = "olefin",
+    categories = {"olefin"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -114,7 +114,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "aromaticsolefin",
-    category = "olefin",
+    categories = {"olefin"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -133,7 +133,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "olefin-lube",
-    category = "olefin",
+    categories = {"olefin"},
     enabled = false,
     energy_required = 3,
     ingredients = {

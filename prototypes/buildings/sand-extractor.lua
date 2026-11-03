@@ -40,7 +40,7 @@ for i = 1, 4 do
         name = name,
         icon = icon,
         icon_size = icon_size,
-        vector_to_place_result = {-0.5, 3.1},
+        vector_to_place_result = {-0.5, 3.3},
         flags = {"placeable-neutral", "player-creation"},
         minable = {mining_time = 1, result = name},
         fast_replaceable_group = "sand-extractor",
@@ -90,8 +90,9 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/sand-extractor.ogg", volume = 0.9},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/sand-extractor.ogg", volume = 0.3},
-            apparent_volume = 0.45
         },
+    circuit_connector = circuit_connector_definitions["sand-extractor"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 
     -- https://github.com/pyanodon/pycoalprocessing/commit/cf03a35fa5dec4c74a464d847b4e266394317726

@@ -51,7 +51,7 @@ for i = 1, 4 do
         dying_explosion = "big-explosion",
         collision_box = {{-4.3, -4.3}, {4.3, 4.3}},
         selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
-        forced_symmetry = "diagonal-pos",
+        use_mirroring = true,
         module_slots = 0,
         allowed_effects = {"consumption", "speed"},
         crafting_categories = {"ground-borer"},
@@ -63,7 +63,7 @@ for i = 1, 4 do
                 pollution = 3 * i
             },
         },
-        vector_to_place_result = {4.51, 0},
+        vector_to_place_result = {4.8, 0},
         energy_usage = (1.25 * i) .. "MW",
         graphics_set = {
             animation = {
@@ -96,7 +96,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.70}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {0.0, 4.0}, direction = defines.direction.south}}
             },
             --2
@@ -104,7 +104,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.70}, nil, nil),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {0.0, -4.0}, direction = defines.direction.north}}
             }
         },
@@ -112,8 +112,9 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/ground-borer.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/ground-borer.ogg", volume = 0.3},
-            apparent_volume = 2.5
         },
+    circuit_connector = circuit_connector_definitions["ground-borer"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 
     -- https://github.com/pyanodon/pycoalprocessing/commit/cf03a35fa5dec4c74a464d847b4e266394317726

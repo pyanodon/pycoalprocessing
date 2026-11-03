@@ -44,7 +44,7 @@ for i = 1, 4 do
         minable = {mining_time = 1, result = name},
         fast_replaceable_group = "wpu",
         max_health = 800 * i,
-        vector_to_place_result = {-0.5, 3.2},
+        vector_to_place_result = {-0.5, 3.3},
         corpse = "medium-remnants",
         dying_explosion = "medium-explosion",
         collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
@@ -108,8 +108,9 @@ for i = 1, 4 do
         impact_category = "metal",
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/wpu.ogg", volume = 1.0},
-            apparent_volume = 2.5
         },
+    circuit_connector = circuit_connector_definitions["wpu"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 
     -- https://github.com/pyanodon/pycoalprocessing/commit/cf03a35fa5dec4c74a464d847b4e266394317726

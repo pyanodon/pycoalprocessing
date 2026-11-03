@@ -1,5 +1,20 @@
+---@namespace PyCoalProcessing
+---@type PyCoalProcessingStorage
+storage = storage --[[@as PyCoalProcessingStorage]]
+
+---@class (partial) PyCoalProcessingStorage
+---@field tailings_ponds table
+---@field tiles table
+
 Pond = {}
 Pond.events = {}
+
+---@class TailingsPond
+---@field entity LuaEntity
+---@field fluid_per double
+---@field fill_level double
+---@field sprite uint
+---@field lifetime_pollution_tiles_created uint
 
 -- 500 fluids units are required to fill a tile
 local fluids_per_tile = 500
@@ -30,11 +45,14 @@ local gasses = {
 py.on_event(py.events.on_init(), function()
     storage.tailings_ponds = storage.tailings_ponds or {}
     storage.tiles = storage.tiles or {}
-    storage.Tiles = nil
 end)
 
 --Pond contains gases, lets spill them out. Only negative is this can be used as a 'gas' void so...
 --If the gas is 'polluting' create pollution, else just vent.
+---@param fluid Fluid
+---@param surface LuaSurface
+---@param position MapPosition
+---@return Fluid?
 local function empty_pond_gas(fluid, surface, position)
     if fluid then
         if
@@ -55,6 +73,7 @@ local function empty_pond_gas(fluid, surface, position)
 end
 
 --Sets animation frame based on tank filled percentage
+---@param pond TailingsPond
 local function set_fluid_level_image(pond)
     local fluid_per = pond.fluid_per
     --adjust percentage to match frames 30 frames, 1 is empty, 30 is full.
@@ -73,8 +92,8 @@ local function set_fluid_level_image(pond)
         if pond_sprite then pond_sprite.destroy() end
     end
     local color
-    if pond.entity.fluidbox[1] then
-        color = prototypes.fluid[pond.entity.fluidbox[1].name].base_color
+    if pond.entity.get_fluid(1) then
+        color = prototypes.fluid[pond.entity.get_fluid(1)--[[@cast -?]].name].base_color
     end
     pond.sprite = rendering.draw_sprite {
         sprite = "tailings-pond-sprite-" .. fill_level,
@@ -98,26 +117,26 @@ local function spiral(n)
 end
 
 --As the tailings pond get full they leak out and start polluting the ground around them
+---@param pond TailingsPond
 local function scorch_earth(pond)
     local entity = pond.entity
-    local fluidbox = entity.fluidbox
-    local fluid = fluidbox[1]
+    local fluid = entity.get_fluid(1)
     if fluid and fluid.name == "neutron" then return end
 
     local surface = entity.surface
     --Vent Gasses
-    local fluid = empty_pond_gas(fluid, surface, entity.position)
+    fluid = empty_pond_gas(fluid--[[@cast -?]], surface, entity.position)
     if not fluid or fluid.amount == 0 then -- totally drained
         pond.fluid_per = 0
-        fluidbox[1] = nil
+        entity.clear_fluid(1)
         return
     end
 
-    local tanksize = fluidbox.get_prototype(1).volume
-    local segment_size = fluidbox.get_capacity(1)
+    local tanksize = entity.get_fluid_capacity(1)
+    local segment_size = entity.get_fluid_segment_capacity(1)
     if tanksize - fluid.amount < 1 then -- pond is full, don't fall for floating point trickery
         local fluid_name = fluid.name
-        local is_water = fluid_name ~= "tailings" and (not not fluid_name:find("water"))
+        local is_water = fluid_name == "muddy-sludge" or (not not fluid_name:find("water"))
         local threshold_in_units = tanksize * overflow_threshold
         local surface_index = surface.index
 
@@ -130,25 +149,30 @@ local function scorch_earth(pond)
             if not is_water then
                 pond.lifetime_pollution_tiles_created = (pond.lifetime_pollution_tiles_created or 0) + 1
                 local x, y = spiral(pond.lifetime_pollution_tiles_created)
-                x = math.floor(x + entity.position.x) - 1
-                y = math.floor(y + entity.position.y) - 1
-                if surface.get_tile(x, y).name ~= "polluted-ground" then
+                x = math.floor(x + entity.position.x--[[@as number]]) - 1
+                y = math.floor(y + entity.position.y--[[@as number]]) - 1
+                local next_tile = surface.get_tile(x, y)
+                if not next_tile.valid then
+                    surface.request_to_generate_chunks({x, y})
+                    surface.force_generate_chunk_requests()
+                end
+                if next_tile.name ~= "polluted-ground" then
                     tiles[#tiles + 1] = {name = "polluted-ground", position = {x = x, y = y}}
                 end
             end
         until amount < threshold_in_units
         -- add fluid consumed to production stats graph
-        entity.force.get_fluid_production_statistics(surface).on_flow(fluid.name, amount - fluid.amount)
+        entity.force--[[@as LuaForce]].get_fluid_production_statistics(surface).on_flow(fluid.name, amount - fluid.amount)
         fluid.amount = amount
     end
 
     pond.fluid_per = math.max(0, fluid.amount / tanksize)
     --push the updated fluidbox to the entity.
     if fluid.amount <= 0 then
-        fluidbox[1] = nil
-    elseif fluid.amount ~= fluidbox[1].amount then
+        entity.clear_fluid(1)
+    elseif fluid.amount ~= entity.get_fluid(1)--[[@cast -?]].amount then
         fluid.amount = fluid.amount * segment_size / tanksize
-        fluidbox[1] = fluid
+        entity.set_fluid(1, fluid)
     end
 end
 
@@ -160,7 +184,7 @@ Pond.events.on_built = function(event)
         entity = entity,
         fluid_per = 0
     }
-    set_fluid_level_image(pond)
+    set_fluid_level_image(pond--[[@as TailingsPond]])
     storage.tailings_ponds[entity.unit_number] = pond
 end
 

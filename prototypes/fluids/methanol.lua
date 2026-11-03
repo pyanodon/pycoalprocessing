@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "methanol-from-syngas",
-    category = "methanol",
+    categories = {"methanol"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -23,7 +23,7 @@ end
 RECIPE {
     type = "recipe",
     name = "oleo-methanol",
-    category = "methanol",
+    categories = {"methanol"},
     enabled = false,
     energy_required = 3,
     ingredients = {

@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "glass",
-    category = "glassworks",
+    categories = {"glassworks"},
     enabled = true,
     energy_required = 4,
     ingredients = {
@@ -22,7 +22,7 @@ end
 RECIPE {
     type = "recipe",
     name = "glass-2",
-    category = "glassworks",
+    categories = {"glassworks"},
     enabled = false,
     energy_required = 4,
     ingredients = {

@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "creosote",
-    category = "tar",
+    categories = {"tar"},
     enabled = false,
     energy_required = 3,
     ingredients = {

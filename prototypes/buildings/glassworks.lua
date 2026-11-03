@@ -112,7 +112,7 @@ for i = 1, 4 do
         }
     }
 
-    table.insert(graphics_set.working_visualisations, 1, {
+    table.insert(graphics_set.working_visualisations--[[@cast -?]], 1, {
         fadeout = true,
         animation = {
             filename = "__pycoalprocessinggraphics__/graphics/entity/glassworks/a1.png",
@@ -138,7 +138,7 @@ for i = 1, 4 do
         dying_explosion = "big-explosion",
         collision_box = {{-3.3, -3.3}, {3.3, 3.3}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
-        forced_symmetry = "diagonal-pos",
+        use_mirroring = true,
         module_slots = i,
         allowed_effects = {"consumption", "speed", "pollution", "productivity"},
         crafting_categories = {"glassworks"},
@@ -156,7 +156,7 @@ for i = 1, 4 do
                     {flow_direction = "input-output", position = {-3.0, 0}, direction = defines.direction.west}
                 },
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.75}, nil, nil),
                 production_type = "input",
             },
             effectivity = 1,
@@ -168,7 +168,7 @@ for i = 1, 4 do
                 color = {0, 0, 0},
             },
             scale_fluid_usage = true,
-            fluid_usage_per_tick = 10,
+            fluid_usage_per_tick = 10 * i,
             smoke = {
                 {
                     name = "smoke",
@@ -199,30 +199,30 @@ for i = 1, 4 do
             --1
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.75}, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {1.0, -3.0}, direction = defines.direction.north}}
             },
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.75}, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {-1.0, -3.0}, direction = defines.direction.north}}
             },
             {
                 production_type = "input",
-                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.75}, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {2.0, 3.0}, direction = defines.direction.south}}
             },
             {
                 production_type = "output",
-                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.96}, nil, nil),
+                pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {0.0, -0.75}, nil, nil),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "output", position = {-2.0, 3.0}, direction = defines.direction.south}}
             },
         },
@@ -230,8 +230,9 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/glassworks.ogg", volume = 0.7},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/glassworks.ogg", volume = 0.3},
-            apparent_volume = 2.5
-        }
+        },
+    circuit_connector = circuit_connector_definitions["glassworks"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

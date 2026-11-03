@@ -1,3 +1,7 @@
+---@namespace PyCoalProcessing
+---@type PyCoalProcessingStorage
+storage = storage --[[@as PyCoalProcessingStorage]]
+
 local spreadsheet_row_functions = {}
 
 local floor = math.floor
@@ -68,7 +72,7 @@ local function update_spreadsheet(gui, player, data, sort_by, asc)
 
     data.prefered_sorts[player.index] = {sort_by, asc}
 
-    local search_key = remote.call("pywiki", "get_page_searchbar", player).text
+    local search_key = remote.call("pywiki", "get_page_searchbar", player)--[[@cast -?]].text
     on_search(search_key, gui)
 end
 
@@ -107,10 +111,17 @@ local function create_spreadsheet(gui, player, data)
     update_spreadsheet(gui, player, data, sort_by, asc)
 end
 
+---@class (partial) PyCoalProcessingStorage
+---@field fluid_spreadsheet_data table
+---@field solid_fuel_spreadsheet_data table
+---@field item_decay_spreadsheet_data table
+---@field recipe_decay_spreadsheet_data table
+
 remote.add_interface("pywiki_spreadsheets", {
     create_fluid_page = function(gui, player) create_spreadsheet(gui, player, storage.fluid_spreadsheet_data) end,
     create_solid_fuel_page = function(gui, player) create_spreadsheet(gui, player, storage.solid_fuel_spreadsheet_data) end,
-    create_decay_page = function(gui, player) create_spreadsheet(gui, player, storage.decay_spreadsheet_data) end,
+    create_item_decay_page = function(gui, player) create_spreadsheet(gui, player, storage.item_decay_spreadsheet_data) end,
+    create_recipe_decay_page = function(gui, player) create_spreadsheet(gui, player, storage.recipe_decay_spreadsheet_data) end,
     on_search = on_search
 })
 
@@ -131,7 +142,7 @@ local function hue(color)
     local max = math.max(math.max(red, green), blue)
     if min == max then return 0 end
 
-    local hue = 0
+    local hue = 0.0
     if max == red then
         hue = (green - blue) / (max - min)
     elseif max == green then
@@ -231,7 +242,7 @@ local function calculate_required_science()
     return result
 end
 
-local function calculate_unlocked_at(required_science, name)
+local function calculate_unlocked_at(required_science, name, recipe)
     local jerry_check, _, fluid_name = name:find("^(.+)%-canister$")
     if jerry_check then name = fluid_name end
 
@@ -328,7 +339,7 @@ local function generate_soild_fuel_spreadsheet_data(required_science)
     }
 
     for name, item in pairs(prototypes.item) do
-        if item.fuel_category and not item.hidden then
+        if item.fuel_categories and not item.hidden then
             local burnt_result, burnt_result_order, burnt_result_tooltip
             if item.burnt_result then
                 burnt_result = "[item=" .. item.burnt_result.name .. "]"
@@ -345,8 +356,8 @@ local function generate_soild_fuel_spreadsheet_data(required_science)
                     elem_tooltip = {type = "item", name = name}
                 },
                 ["fuel-category"] = {
-                    value = prototypes.fuel_category[item.fuel_category].localised_name,
-                    order = item.fuel_category or ""
+                    value = prototypes.fuel_category[item.fuel_categories[1]].localised_name,
+                    order = item.fuel_categories[1] or ""
                 },
                 ["fuel-value"] = {
                     value = py.format_energy(item.fuel_value, "J"),
@@ -358,7 +369,7 @@ local function generate_soild_fuel_spreadsheet_data(required_science)
                     elem_tooltip = burnt_result_tooltip
                 },
                 ["unlocked-at"] = unlocked_at,
-                search_key = name .. "|" .. item.fuel_category .. "|" .. (burnt_result_order or "") .. "|" .. unlocked_at.pack
+                search_key = name .. "|" .. item.fuel_categories[1] .. "|" .. (burnt_result_order or "") .. "|" .. unlocked_at.pack
             })
         end
     end
@@ -368,26 +379,28 @@ local function decay_result_builder(flow, item)
     if not item.valid then return end
 
     local decay_result = ""
-    local decay_chain = {}
+    local decay_chain = {}--[[@as LuaItemPrototype[] ]]
     local already_seen = {}
     local total_decay_ticks = 0
+    local total_decay_ticks_string
 
     if item.spoil_to_trigger_result then
         flow.add {type = "label", caption = "[Trigger]"}
         return "trigger", item.get_spoil_ticks(), {item}, {[item.name] = true}
     end
 
-    local spoilage_item = item
+    local spoilage_item = item--[[@as LuaItemPrototype?]]
     while spoilage_item do
         table.insert(decay_chain, spoilage_item)
         if already_seen[spoilage_item.name] then
-            total_decay_ticks = "[color=255,170,0] ∞ [/color]"
+            total_decay_ticks_string = "[color=255,170,0] ∞ [/color]"
             break
         end
         total_decay_ticks = total_decay_ticks + spoilage_item.get_spoil_ticks()
         already_seen[spoilage_item.name] = true
         spoilage_item = spoilage_item.spoil_result
     end
+    total_decay_ticks_string = tostring(total_decay_ticks)
     local arrow_emoji = "[font=default-bold][color=255,200,200] → [/color][/font]"
     for i = 1, #decay_chain do
         local spoilage_item = decay_chain[i]
@@ -399,12 +412,14 @@ local function decay_result_builder(flow, item)
         end
     end
 
-    return decay_result, total_decay_ticks, decay_chain, already_seen
+    return decay_result, total_decay_ticks_string, decay_chain, already_seen
 end
 spreadsheet_row_functions.decay_result_builder = decay_result_builder
 
-local function generate_decay_spreadsheet_data(required_science)
-    storage.decay_spreadsheet_data = {
+local spoilables = {} -- list of all things that can spoil, to speed up recipe catalogue
+
+local function generate_item_decay_spreadsheet_data(required_science)
+    storage.item_decay_spreadsheet_data = {
         columns = {
             {name = "localised-name", width = 200},
             {name = "decay-time",     width = 180},
@@ -412,7 +427,7 @@ local function generate_decay_spreadsheet_data(required_science)
             {name = "unlocked-at",    width = 120},
         },
         rows = {},
-        name = "decay_spreadsheet_data",
+        name = "item_decay_spreadsheet_data",
         default_sort = {"localised-name", false},
         prefered_sorts = {}
     }
@@ -435,7 +450,7 @@ local function generate_decay_spreadsheet_data(required_science)
             decay_time_string = decay_time_string .. " [font=default-small](" .. py.format_large_time(total_decay_ticks / 60) .. ")[/font]"
         end
 
-        table.insert(storage.decay_spreadsheet_data.rows, {
+        storage.item_decay_spreadsheet_data.rows[#storage.item_decay_spreadsheet_data.rows+1] = {
             ["localised-name"] = {
                 value = {"", "[item=" .. name .. "] ", item.localised_name},
                 order = name,
@@ -451,7 +466,94 @@ local function generate_decay_spreadsheet_data(required_science)
             },
             ["unlocked-at"] = unlocked_at,
             search_key = name .. "|" .. decay_ticks .. "|" .. decay_result .. "|" .. unlocked_at.pack
-        })
+        }
+        ::continue::
+    end
+end
+
+local function generate_recipe_decay_spreadsheet_data()
+    storage.recipe_decay_spreadsheet_data = {
+        columns = {
+            {name = "localised-name",    width = 200},
+            {name = "decay-ingredients", width = 700},
+            {name = "decay-products",    width = 700},
+        },
+        rows = {},
+        name = "recipe_decay_spreadsheet_data",
+        default_sort = {"localised-name", false},
+        prefered_sorts = {}
+    }
+
+    for name, recipe in pairs(prototypes.recipe) do
+        if recipe.hidden then goto continue end
+        local ingredients = recipe.ingredients
+        local products = recipe.products
+        local ingredients_value, products_value = "", ""
+        local ingredients_order, products_order = "", ""
+        local has_ingredients_that_spoil, has_products_that_spoil, need_check_ingredients
+        for _, product in pairs(products) do
+            if spoilables[product.name] then
+                has_products_that_spoil = true
+                if not product.always_fresh then
+                    need_check_ingredients = true
+                    break
+                end
+            end
+        end
+        if not has_products_that_spoil then goto continue end
+        if need_check_ingredients then
+            for _, ingredient in pairs(ingredients) do
+                if spoilables[ingredient.name] and ingredient.spoil_weight ~= 0 then
+                    has_ingredients_that_spoil = true; break
+                end
+            end
+        end
+        if has_ingredients_that_spoil then
+            for _, ingredient in pairs(ingredients) do
+                local weight = ingredient.spoil_weight or 1
+                if spoilables[ingredient.name] and weight ~= 0 then
+                    if weight ~= 1 then
+                        ingredients_value = ingredients_value .. ("[%s=%s] ([color=red]%.1f%%[/color]) "):format(ingredient.type, ingredient.name, (ingredient.spoil_weight or 1)*100)
+                    else
+                        ingredients_value = ingredients_value .. ("[%s=%s] (%.1f%%) "):format(ingredient.type, ingredient.name, (ingredient.spoil_weight or 1)*100)
+                    end
+                end
+                ingredients_order = ingredients_order .. "|" .. ingredient.name
+            end
+        end
+        local complex = false
+        for _, product in pairs(products) do
+            if spoilables[product.name] and product.always_fresh then
+                complex = complex or (product.percent_spoiled or 1) ~= 1
+                products_value = products_value .. ("[%s=%s] (%.1f%%) "):format(product.type, product.name, (product.percent_spoiled or 1)*100)
+            elseif spoilables[product.name] and (product.percent_spoiled or 1) ~= 1 then
+                complex = true
+                products_value = products_value .. ("[%s=%s] (x*%.1f%%) "):format(product.type, product.name, (product.percent_spoiled or 1)*100)
+            elseif spoilables[product.name] and (product.percent_spoiled or 1) == 1 then
+                products_value = products_value .. ("[%s=%s] (x%%) "):format(product.type, product.name)
+            else
+                products_value = products_value .. ("[%s=%s] "):format(product.type, product.name)
+            end
+            products_order = products_order .. "|" .. product.name
+        end
+
+        if not complex and not has_ingredients_that_spoil then goto continue end
+        storage.recipe_decay_spreadsheet_data.rows[#storage.recipe_decay_spreadsheet_data.rows+1] = {
+            ["localised-name"] = {
+                value = {"", "[recipe=" .. name .. "] ", recipe.localised_name},
+                order = name,
+                elem_tooltip = {type = "recipe", name = name}
+            },
+            ["decay-ingredients"] = {
+                value = ingredients_value,
+                order = ingredients_order
+            },
+            ["decay-products"] = {
+                value = products_value,
+                order = products_order
+            },
+            search_key = name .. "|" .. ingredients_order .. "|" .. products_order
+        }
         ::continue::
     end
 end
@@ -460,7 +562,8 @@ py.on_event(py.events.on_init(), function()
     local required_science = calculate_required_science()
     generate_fluid_spreadsheet_data(required_science)
     generate_soild_fuel_spreadsheet_data(required_science)
-    generate_decay_spreadsheet_data(required_science)
+    generate_item_decay_spreadsheet_data(required_science)
+    generate_recipe_decay_spreadsheet_data()
 end)
 
 gui_events[defines.events.on_gui_click]["py_spreadsheet_sort"] = function(event)

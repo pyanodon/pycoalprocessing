@@ -1,5 +1,6 @@
 local resource_autoplace = require "resource-autoplace"
 
+---@diagnostic disable-next-line: need-check-nil
 data.raw.planet.nauvis.map_gen_settings.autoplace_controls["niobium"] = {}
 data.raw.planet.nauvis.map_gen_settings.autoplace_settings.entity.settings["niobium"] = {}
 

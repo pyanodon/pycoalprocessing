@@ -2,7 +2,7 @@
 RECIPE {
     type = "recipe",
     name = "nexelit-plate",
-    category = "advanced-foundry",
+    categories = {"advanced-foundry"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -29,7 +29,7 @@ end
 RECIPE {
     type = "recipe",
     name = "steel-plate2",
-    category = "advanced-foundry",
+    categories = {"advanced-foundry"},
     enabled = false,
     energy_required = 2,
     ingredients = {

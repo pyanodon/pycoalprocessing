@@ -6,7 +6,7 @@ local skipped_fluids = {
 RECIPE {
     type = "recipe",
     name = "empty-jerry-can",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -24,10 +24,10 @@ RECIPE {
 
 for f, fluid in pairs(data.raw.fluid) do
     if fluid.fuel_value and not skipped_fluids[fluid.name] and fluid.auto_barrel ~= false then
-        local fluid_icon = table.deepcopy(fluid.icons) or {{icon = fluid.icon}}
+        local fluid_icon = table.deepcopy(fluid.icons) or {{icon = fluid.icon}}--[[@as data.IconData[] ]]
         -- Apply to each layer
         for _, icon in pairs(fluid_icon) do
-            icon.icon_size = icon.icon_size or fluid_icon.icon_size or fluid.icon_size or 64
+            icon.icon_size = icon.icon_size or fluid.icon_size or 64
             icon.scale = 16 / icon.icon_size -- 32 = 0.5, 64 = 0.25
         end
 
@@ -39,7 +39,7 @@ for f, fluid in pairs(data.raw.fluid) do
         local icons = {{icon = "__pycoalprocessinggraphics__/graphics/icons/jerry-can.png", icon_size = 64}}
 
         for _, icon in pairs(fluid_icon) do
-            icon.shift = icon.shift or {}
+            icon.shift = icon.shift or {}--[[@as data.Vector]]
             local x, y = icon.shift[1] or icon.shift.x or 0, icon.shift[2] or icon.shift.y or 0
             icon.shift = {x, y + 2}
             table.insert(icons, icon)
@@ -57,7 +57,7 @@ for f, fluid in pairs(data.raw.fluid) do
             subgroup = "py-cans",
             order = "canister-b-[full-gas-canister]",
             fuel_value = "10MJ",
-            fuel_category = "jerry",
+            fuel_categories = {"jerry"},
             burnt_result = "empty-fuel-canister",
             stack_size = 20,
             autotech_ignore = true,
@@ -66,16 +66,16 @@ for f, fluid in pairs(data.raw.fluid) do
 
         local fuel_amount = 50
         if string.match(fluid.fuel_value, "[kK]J") then
-            fuel_amount = math.ceil(10 / (string.match(fluid.fuel_value, "[%d%.]+") / 1000))
+            fuel_amount = math.ceil(10 / (string.match(fluid.fuel_value, "[%d%.]+")--[[@as int]] / 1000))
         elseif string.match(fluid.fuel_value, "[mM]J") then
-            fuel_amount = math.ceil(10 / (string.match(fluid.fuel_value, "[%d%.]+")))
+            fuel_amount = math.ceil(10 / string.match(fluid.fuel_value, "[%d%.]+")--[[@as int]])
         end
 
         RECIPE {
             type = "recipe",
             name = "fill-" .. fluid.name .. "-canister",
             localised_name = {"recipe-name.fill-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
-            category = "crafting-with-fluid",
+            categories = {"crafting-with-fluid"},
             enabled = false,
             energy_required = 0.2,
             ingredients = {
@@ -94,7 +94,7 @@ for f, fluid in pairs(data.raw.fluid) do
             name = "empty-" .. fluid.name .. "-canister",
             localised_name = {"recipe-name.empty-can", fluid.localised_name or {"fluid-name." .. fluid.name}},
             icons = recipe_icon,
-            category = "crafting-with-fluid",
+            categories = {"crafting-with-fluid"},
             enabled = false,
             energy_required = 0.2,
             ingredients = {

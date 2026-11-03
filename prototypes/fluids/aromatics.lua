@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "aromatics2",
-    category = "gasifier",
+    categories = {"gasifier"},
     enabled = false,
     energy_required = 2.0,
     ingredients = {

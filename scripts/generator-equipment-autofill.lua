@@ -1,8 +1,8 @@
-local SHORTCUT = "py-toggle-equipment-fuel-manager"
+if not settings.startup["py-generator-equipment-manager"].value then return end
 
-local function restock_generator_equipment(player)
+---@param player LuaPlayer
+local function empty_generator_equipment(player)
     if not player.character then return end
-    if not player.is_shortcut_toggled(SHORTCUT) then return end
 
     local grid = player.character.grid
     if not grid then return end
@@ -111,13 +111,6 @@ end
 
 py.register_on_nth_tick(251, "generator-equipment-autofill", "pycp", function()
     for _, player in pairs(game.connected_players) do
-        restock_generator_equipment(player)
+        empty_generator_equipment(player)
     end
-end)
-
-py.on_event(defines.events.on_lua_shortcut, function(event)
-    if event.prototype_name ~= SHORTCUT then return end
-    local player = game.get_player(event.player_index)
-
-    player.set_shortcut_toggled(SHORTCUT, not player.is_shortcut_toggled(SHORTCUT))
 end)

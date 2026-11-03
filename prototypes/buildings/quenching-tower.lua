@@ -63,7 +63,7 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
-        forced_symmetry = "diagonal-pos",
+        use_mirroring = true,
         module_slots = i,
         allowed_effects = {"speed", "productivity", "consumption", "pollution", "quality"},
         crafting_categories = {"quenching-tower"},
@@ -107,7 +107,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.875, 4.1}, {1.1, -3.85}, nil, nil, pipe_picture_override),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {3.0, -1.0}, direction = defines.direction.east}},
                 secondary_draw_orders = {north = -1}
             },
@@ -115,7 +115,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-3", {-0.875, 4.1}, {1.1, -3.85}, nil, nil, pipe_picture_override),
                 pipe_covers = py.pipe_covers(false, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {3.0, 1.0}, direction = defines.direction.east}},
                 secondary_draw_orders = {north = -1}
             },
@@ -151,6 +151,8 @@ for i = 1, 4 do
             fade_in_ticks = 15,
             fade_out_ticks = 4,
         },
+    circuit_connector = circuit_connector_definitions["quenching-tower"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

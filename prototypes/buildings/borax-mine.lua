@@ -59,7 +59,6 @@ for i = 1, 4 do
             height = 288,
             frame_count = 1,
             repeat_count = 90,
-            direction_count = 1,
             shift = util.by_pixel(0, 0.0)
         }
     end
@@ -91,13 +90,12 @@ for i = 1, 4 do
         collision_box = {{-4.1, -4.1}, {4.1, 4.1}},
         selection_box = {{-4.5, -4.5}, {4.5, 4.5}},
         input_fluid_box = {
-            pipe_picture = _G.assembler2pipepictures(),
             pipe_covers = _G.pipecoverspictures(),
             volume = 200,
             pipe_connections = {
-                {direction = defines.direction.west,  position = {-4.1, 0}},
-                {direction = defines.direction.east,  position = {4.1, 0}},
-                {direction = defines.direction.south, position = {0, 4.1}}
+                {direction = defines.direction.west,  position = {-4, 0}},
+                {direction = defines.direction.east,  position = {4, 0}},
+                {direction = defines.direction.south, position = {0, 4}}
             }
         },
         module_slots = i,
@@ -113,7 +111,7 @@ for i = 1, 4 do
         energy_usage = (420 * i) .. "kW",
         resource_searching_radius = 4.49 + i,
         resource_drain_rate_percent = 200 * (2 ^ -i),
-        vector_to_place_result = {0, -4.65},
+        vector_to_place_result = {0, -4.8},
         radius_visualisation_picture = {
             filename = "__base__/graphics/entity/electric-mining-drill/electric-mining-drill-radius-visualization.png",
             width = 12,
@@ -131,7 +129,6 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/borax-mine.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/borax-mine.ogg", volume = 0.3},
-            apparent_volume = 2.5
         },
     }
 end

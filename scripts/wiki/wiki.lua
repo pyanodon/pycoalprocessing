@@ -1,3 +1,7 @@
+---@namespace PyCoalProcessing
+---@type PyCoalProcessingStorage
+storage = storage --[[@as PyCoalProcessingStorage]]
+
 Wiki = {}
 Wiki.events = {}
 
@@ -76,7 +80,6 @@ function Wiki.open_wiki(player)
     py_wiki_search.style.right_margin = -5
     py_wiki_search.style.width = 200
     py_wiki_search.visible = false
-    py_wiki_search.text = storage.wiki_page_search_query[player.index] or ""
     caption_flow.add {name = "py_wiki_search_button", type = "sprite-button", style = "frame_action_button_always_on", sprite = "utility/search_icon"}.visible = false
     caption_flow.add {name = "py_close_wiki", type = "sprite-button", style = "frame_action_button", sprite = "utility/close", hovered_sprite = "utility/close_black", clicked_sprite = "utility/close_black"}
 
@@ -117,10 +120,11 @@ function Wiki.close_wiki(player)
 
     local pages = Wiki.get_pages(player)
     if pages then
-        local page_data = pages.tags.contents[pages.selected_index]
+        local page_data = pages.tags.contents[pages.selected_index]--[[@as table]]
         if page_data and page_data.on_closed then
-            local on_closed = page_data.on_closed
-            remote.call(on_closed[1], on_closed[2], contents, player)
+            local on_closed = page_data.on_closed--[[@as table]]
+            ---@diagnostic disable-next-line: param-type-mismatch
+            remote.call(on_closed[1], on_closed[2], nil, player)
         end
     end
     -- https://github.com/pyanodon/pybugreports/issues/820
@@ -223,6 +227,7 @@ function Wiki.open_page(player, index)
 
     local visible = not not page_data.searchable
     main_frame.caption_flow.py_wiki_search.visible = visible
+    main_frame.caption_flow.py_wiki_search.focus()
     main_frame.caption_flow.py_wiki_search_button.visible = visible
 
     if page_data.text_only then
@@ -254,9 +259,9 @@ gui_events[defines.events.on_gui_text_changed]["py_wiki_search"] = function(even
 
     local search_query = event.element.text
     remote.call(searchable[1], searchable[2], search_query, contents, player)
-    storage.wiki_page_search_query[player.index] = search_query
 end
 
+---@diagnostic disable-next-line: param-type-mismatch
 remote.add_interface("pywiki", {
     add_page = Wiki.add_page,
     add_section = Wiki.add_section,
