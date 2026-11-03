@@ -14,6 +14,10 @@ RECIPE {
     }
 }:add_unlock("mukmoux")
 
+if mods.pyhightech then
+    RECIPE("mukmoux-pasture"):replace_ingredient("advanced-circuit", "electronic-circuit")
+end
+
 ITEM {
     type = "item",
     name = "mukmoux-pasture",

@@ -14,6 +14,10 @@ RECIPE {
     }
 }:add_unlock("crusher")
 
+if mods.pyhightech then
+    RECIPE("jaw-crusher"):remove_ingredient("electronic-circuit")
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
@@ -130,7 +134,10 @@ RECIPE {
         {type = "item", name = "jaw-crusher",      amount = 1},
         {type = "item", name = "nexelit-plate",    amount = 30},
         {type = "item", name = "engine-unit",      amount = 4},
-        {type = "item", name = "advanced-circuit", amount = 10}
+        {type = "item", name = "advanced-circuit", amount = 10},
+        {type = "item", name = "duralumin",        amount = 20},
+        {type = "item", name = "stainless-steel",  amount = 30},
+        {type = "item", name = "tin-plate",        amount = 30},
     },
     results = {
         {type = "item", name = "jaw-crusher-mk02", amount = 1}
@@ -147,11 +154,19 @@ RECIPE {
         {type = "item", name = "niobium-plate",        amount = 20},
         {type = "item", name = "electric-engine-unit", amount = 4},
         {type = "item", name = "processing-unit",      amount = 10},
+        {type = "item", name = "titanium-plate",       amount = 60},
+        {type = "item", name = "super-steel",          amount = 30},
+        {type = "item", name = "nbti-alloy",           amount = 10},
+        {type = "item", name = "sc-unit",              amount = 2},
     },
     results = {
         {type = "item", name = "jaw-crusher-mk03", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("jaw-crusher-mk03"):add_ingredient_unsafe {type = "item", name = "heavy-fermion", amount = 40}:add_ingredient_unsafe {type = "item", name = "re-magnet", amount = 30}:add_ingredient_unsafe {type = "item", name = "harmonic-absorber", amount = 10}
+end
 
 RECIPE {
     type = "recipe",
@@ -162,8 +177,17 @@ RECIPE {
         {type = "item", name = "jaw-crusher-mk03", amount = 1},
         {type = "item", name = "concrete",         amount = 40},
         {type = "item", name = "nbfe-alloy",       amount = 15},
+        {type = "item", name = "lead-plate",       amount = 30},
+        {type = "item", name = "super-alloy",      amount = 20},
+        {type = "item", name = "boron-carbide",    amount = 30},
+        {type = "item", name = "science-coating",  amount = 1},
+        {type = "item", name = "control-unit",     amount = 5},
     },
     results = {
         {type = "item", name = "jaw-crusher-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("jaw-crusher-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "superconductor-servomechanims", amount = 5}:add_ingredient_unsafe {type = "item", name = "nv-center", amount = 2}
+end

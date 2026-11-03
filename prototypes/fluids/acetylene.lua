@@ -15,6 +15,10 @@ RECIPE {
     main_product = "acetylene"
 }
 
+if mods.pyrawores then
+    RECIPE("acetylene").category = "gasifier"
+end
+
 FLUID {
     type = "fluid",
     name = "acetylene",

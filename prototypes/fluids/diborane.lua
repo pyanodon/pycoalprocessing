@@ -13,6 +13,10 @@ RECIPE {
     }
 }:add_unlock("energy-1")
 
+if mods.pyrawores then
+    RECIPE("diborane"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen", amount = 250}).category = "electrolyzer"
+end
+
 FLUID {
     type = "fluid",
     name = "diborane",

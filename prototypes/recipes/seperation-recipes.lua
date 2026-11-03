@@ -61,6 +61,11 @@ RECIPE {
     order = "c"
 }:add_unlock("separation")
 
+if mods.pyrawores then
+    RECIPE("tailings-classification"):replace_ingredient_unsafe("copper-ore", "ore-lead")
+    RECIPE("tailings-classification"):replace_ingredient_unsafe("iron-ore", "ore-tin")
+end
+
 RECIPE {
     type = "recipe",
     name = "co2-organics",

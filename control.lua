@@ -17,7 +17,6 @@ require "scripts.beacons"
 require "scripts.milestones"
 require "scripts.generator-equipment-autofill"
 require "scripts.programmable-inserter"
-require "scripts.factory-planner"
 
 py.on_event(py.events.on_init(), function()
     for _, interface in pairs {"silo_script", "better-victory-screen"} do
@@ -100,7 +99,7 @@ py.on_event(defines.events.on_player_created, function(event)
     local autoplace = nauvis.map_gen_settings.autoplace_controls
     ---@cast autoplace -?
 
-    if not script.active_mods["PyBlock"] and autoplace.stone and autoplace.stone.richness <= 1 then
+    if not script.active_mods["PyBlock"] and not script.active_mods["pystellarexpedition"] and autoplace.stone and autoplace.stone.richness <= 1 then
         player.print {"messages.warning-no-preset", {"map-gen-preset-name.py-recommended"}}
     end
 

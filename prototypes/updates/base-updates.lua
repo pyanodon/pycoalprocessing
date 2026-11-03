@@ -51,9 +51,9 @@ TECHNOLOGY("braking-force-7"):add_pack("military-science-pack")
 TECHNOLOGY("power-armor-mk2"):add_pack("production-science-pack")
 TECHNOLOGY("rocket-silo"):add_pack("military-science-pack")
 TECHNOLOGY("research-speed-6"):add_pack("military-science-pack")
-TECHNOLOGY("logistic-system"):add_pack("military-science-pack"):add_pack("production-science-pack")
+--TECHNOLOGY("logistic-system"):add_pack("military-science-pack"):add_pack("production-science-pack")
 TECHNOLOGY("worker-robots-speed-5"):add_pack("military-science-pack")
-TECHNOLOGY("worker-robots-speed-6"):add_pack("military-science-pack").unit--[[@as data.TechnologyUnit]].count_formula = "1.5^(L-6)*1000"
+TECHNOLOGY("worker-robots-speed-6"):add_pack("military-science-pack").unit.count_formula = "1.5^(L-6)*1000"
 TECHNOLOGY("worker-robots-storage-3"):add_pack("military-science-pack")
 TECHNOLOGY("personal-roboport-mk2-equipment"):add_pack("military-science-pack"):add_pack("production-science-pack")
 TECHNOLOGY("mining-productivity-3"):add_pack("military-science-pack")
@@ -95,9 +95,9 @@ data.raw.technology["uranium-ammo"].prerequisites = {"military-2", "uranium-proc
 TECHNOLOGY("concrete"):remove_prereq("automation-2"):remove_prereq("advanced-material-processing")
 -- Remove empty vanilla techs
 TECHNOLOGY("automation-2"):set_fields {prerequisites = {}}
-TECHNOLOGY("laser"):set_fields {enabled = false, hidden = true}
+TECHNOLOGY("laser"):hide().enabled = false
 TECHNOLOGY("distractor"):set_fields {prerequisites = {}}
-TECHNOLOGY("modules"):set_fields {enabled = false, hidden = true}
+TECHNOLOGY("modules"):hide().enabled = false
 TECHNOLOGY("speed-module"):set_fields {prerequisites = {}}
 TECHNOLOGY("productivity-module"):set_fields {prerequisites = {}}
 TECHNOLOGY("efficiency-module"):set_fields {prerequisites = {}}
@@ -136,8 +136,8 @@ end
 
 -- Recipe unlocks
 RECIPE("lubricant"):remove_unlock("lubricant")
-RECIPE("explosives"):remove_unlock("explosives"):set_fields {hidden = true}
-RECIPE("battery"):remove_unlock("battery"):set_fields {hidden = true}
+RECIPE("explosives"):remove_unlock("explosives"):hide()
+RECIPE("battery"):remove_unlock("battery"):hide()
 
 -- Recipe updates
 RECIPE("flying-robot-frame"):remove_ingredient("electronic-circuit"):add_ingredient {type = "item", name = "advanced-circuit", amount = 1}
@@ -363,7 +363,7 @@ data.raw["technology"]["bulk-inserter"].prerequisites = {mods.pyhightech and "ba
 if data.raw["technology"]["bulk-inserter-2"] then data.raw["technology"]["bulk-inserter-2"].prerequisites = {"bulk-inserter"} end
 if mods["pypetroleumhandling"] then
     data.raw.technology["oil-gathering"] = nil
-    TECHNOLOGY("oil-processing"):remove_prereq("oil-gathering")
+    data.raw.technology["oil-processing"]:remove_prereq("oil-gathering")
 end
 
 RECIPE("grenade"):replace_ingredient("coal", "gunpowder")

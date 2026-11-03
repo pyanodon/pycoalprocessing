@@ -27,6 +27,10 @@ RECIPE {
     }
 }:add_unlock("methanol-processing-1")
 
+if mods.pyrawores then
+    RECIPE("methanol-reactor"):replace_ingredient_unsafe("chemical-plant-mk01", "electrolyzer-mk01")
+end
+
 for i = 1, 4 do
     if not mods.pyrawores and i == 2 then return end
 
@@ -186,6 +190,7 @@ RECIPE {
         {type = "item", name = "plastic-bar",      amount = 50},
         {type = "item", name = "nexelit-plate",    amount = 15},
         {type = "item", name = "engine-unit",      amount = 8},
+        {type = "item", name = "duralumin",        amount = 20},
     },
     results = {
         {type = "item", name = "methanol-reactor-mk02", amount = 1}
@@ -202,11 +207,18 @@ RECIPE {
         {type = "item", name = "processing-unit",       amount = 20},
         {type = "item", name = "niobium-plate",         amount = 30},
         {type = "item", name = "electric-engine-unit",  amount = 6},
+        {type = "item", name = "titanium-plate",        amount = 30},
+        {type = "item", name = "stainless-steel",       amount = 15},
+        {type = "item", name = "nbti-alloy",            amount = 15},
     },
     results = {
         {type = "item", name = "methanol-reactor-mk03", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("methanol-reactor-mk03"):add_ingredient_unsafe {type = "item", name = "biopolymer", amount = 30}:add_ingredient_unsafe {type = "item", name = "carbon-nanotube", amount = 30}:add_ingredient_unsafe {type = "item", name = "aerogel", amount = 15}
+end
 
 RECIPE {
     type = "recipe",
@@ -218,8 +230,18 @@ RECIPE {
         {type = "item", name = "kevlar",                amount = 30},
         {type = "item", name = "nbfe-alloy",            amount = 15},
         {type = "item", name = "low-density-structure", amount = 10},
+        {type = "item", name = "tin-plate",             amount = 30},
+        {type = "item", name = "super-steel",           amount = 20},
+        {type = "item", name = "super-alloy",           amount = 10},
+        {type = "item", name = "science-coating",       amount = 1},
+        {type = "item", name = "control-unit",          amount = 3},
+        {type = "item", name = "wall-shield",           amount = 4}
     },
     results = {
         {type = "item", name = "methanol-reactor-mk04", amount = 1}
     }
 }
+
+if mods.pyhightech then
+    RECIPE("methanol-reactor-mk04"):replace_ingredient_unsafe("control-unit", "intelligent-unit"):add_ingredient_unsafe {type = "item", name = "nems", amount = 5}:add_ingredient_unsafe {type = "item", name = "graphene-roll", amount = 15}
+end

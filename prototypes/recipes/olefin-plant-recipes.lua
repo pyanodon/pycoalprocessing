@@ -42,6 +42,10 @@ RECIPE {
     order = "d4"
 }:add_unlock("fuel-production")
 
+if mods.pyrawores then
+    RECIPE("olefin"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen", amount = 400})
+end
+
 RECIPE {
     type = "recipe",
     name = "olefin-petgas",
