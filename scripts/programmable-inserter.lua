@@ -363,6 +363,7 @@ end)
 
 local search_range = script.active_mods.bobinserters and 4 or script.active_mods["quick-adjustable-inserters"] and 3 or 2
 
+---@param event EventData.on_built_entity|EventData.on_robot_built_entity|EventData.on_space_platform_built_entity|EventData.script_raised_built|EventData.script_raised_revive
 py.on_event(py.events.on_built(), function (event)
   if event.entity.type == "inserter" and event.tags and event.tags["py-dynamic-inserter"] then
     -- create relevant entities
@@ -401,6 +402,7 @@ py.on_event(py.events.on_built(), function (event)
   end
 end)
 
+---@param event EventData.on_player_mined_entity|EventData.on_robot_mined_entity|EventData.on_space_platform_mined_entity|EventData.script_raised_destroy|EventData.on_entity_died
 py.on_event(py.events.on_destroyed(), function (event)
   if event.entity.type ~= "inserter" or not storage.programmable_inserters[event.entity.unit_number] then return end
 

@@ -176,6 +176,7 @@ local function scorch_earth(pond)
     end
 end
 
+---@param event EventData.on_built_entity|EventData.on_robot_built_entity|EventData.on_space_platform_built_entity|EventData.script_raised_built|EventData.script_raised_revive
 Pond.events.on_built = function(event)
     local entity = event.entity
     if not entity.valid or entity.name ~= "tailings-pond" then return end
@@ -219,6 +220,7 @@ Pond.events[154] = function()
     storage.tiles = {}
 end
 
+---@param event EventData.on_entity_died
 Pond.events.on_entity_died = function(event)
     local entity = event.entity
     if not entity.valid then return end
