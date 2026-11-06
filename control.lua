@@ -65,6 +65,7 @@ py.on_event(defines.events.on_pre_build, function(event)
     Beacons.events.on_pre_build(event)
 end)
 
+---@param event EventData.on_built_entity|EventData.on_robot_built_entity|EventData.on_space_platform_built_entity|EventData.script_raised_built|EventData.script_raised_revive
 py.on_event(py.events.on_built(), function(event)
     Beacons.events.on_built(event)
     Pond.events.on_built(event)
