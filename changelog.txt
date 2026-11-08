@@ -3,6 +3,7 @@ Version: 3.1.9
 Date: ???
   Changes:
     - Marked Destructive Distillation Columns to be hidden when visibility of tall entities is toggled
+    - Fixed inconsistent application of programmable inserter targets when built from a ghost. Resolves https://github.com/pyanodon/pybugreports/issues/1619
 ---------------------------------------------------------------------------------------------------
 Version: 3.1.8
 Date: 2026-10-16

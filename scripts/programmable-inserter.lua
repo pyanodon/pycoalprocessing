@@ -135,6 +135,7 @@ local function update_targets(inserter)
         entity.proxy_target_entity = target
         entity.proxy_target_inventory = proxy_targets[target.type][metadata[index .. "_inventory"]]
         target.teleport(0) -- set it on top so its the default target
+        inserter[index] = entity
         break
       end
     end
@@ -364,7 +365,7 @@ end)
 local search_range = script.active_mods.bobinserters and 4 or script.active_mods["quick-adjustable-inserters"] and 3 or 2
 
 ---@param event EventData.on_built_entity|EventData.on_robot_built_entity|EventData.on_space_platform_built_entity|EventData.script_raised_built|EventData.script_raised_revive
-py.on_event(py.events.on_built(), function (event)
+py.on_event(py.events.on_built(), function (event) 
   if event.entity.type == "inserter" and event.tags and event.tags["py-dynamic-inserter"] then
     -- create relevant entities
     local metadata = event.tags["py-dynamic-inserter"]
@@ -374,7 +375,7 @@ py.on_event(py.events.on_built(), function (event)
         metadata[index:sub(1,-11)] = event.entity.surface.create_entity{
           name = "py-dynamic-inserter-target",
           force = event.entity.force,
-          position = event.entity[index:sub(1,-17) .. "position"]
+          position = event.entity[index:sub(1,-17) .. "position"] --[[@as MapPosition]]
         }
       end
     end
