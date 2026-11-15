@@ -88,6 +88,10 @@ RECIPE {
     order = "h4"
 }:add_unlock("advanced-oil-processing")
 
+if mods.pyrawores then
+    RECIPE("ref-to-light-oil"):add_ingredient_unsafe {type = "fluid", name = "hydrogen", amount = 250}
+end
+
 RECIPE {
     type = "recipe",
     name = "sulfuric-petgas",

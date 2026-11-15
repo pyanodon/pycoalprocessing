@@ -14,6 +14,10 @@ RECIPE {
     }
 }:add_unlock("cooling-tower-1")
 
+if mods.pyrawores then
+    RECIPE("cooling-tower-mk01"):replace_ingredient_unsafe("iron-plate", "duralumin")
+end
+
 ITEM {
     type = "item",
     name = "cooling-tower-mk01",

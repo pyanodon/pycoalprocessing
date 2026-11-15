@@ -14,6 +14,10 @@ RECIPE {
     }
 }:add_unlock("advanced-oil-processing")
 
+if mods.pyrawores then
+    RECIPE("aromatics2"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen", amount = 500})
+end
+
 FLUID {
     type = "fluid",
     name = "aromatics",

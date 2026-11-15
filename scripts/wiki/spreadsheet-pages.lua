@@ -435,9 +435,10 @@ local function generate_item_decay_spreadsheet_data(required_science)
     for name, item in pairs(prototypes.item) do
         local decay_ticks = item.get_spoil_ticks()
         if decay_ticks == 0 then goto continue end
-        spoilables[name] = true
         -- TODO: Figure out why this is so damn slow. Dancing miku will consistently freeze migrations without this check.
         if item.hidden then goto continue end
+
+
 
         local decay_result, total_decay_ticks, decay_chain, already_seen = decay_result_builder({add = function() end}, item)
         local unlocked_at = calculate_unlocked_at(required_science, name)

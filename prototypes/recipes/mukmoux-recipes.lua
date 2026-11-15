@@ -58,3 +58,7 @@ RECIPE {
     subgroup = "py-fluid-handling",
     order = "c"
 }:add_unlock("mukmoux")
+
+if mods.pyrawores then
+    RECIPE("dedicated-oleochemicals"):replace_ingredient_unsafe("chromium", "titanium-plate")
+end

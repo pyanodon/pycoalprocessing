@@ -61,6 +61,7 @@ for f, fluid in pairs(data.raw.fluid) do
             burnt_result = "empty-fuel-canister",
             stack_size = 20,
             autotech_ignore = true,
+            unlock_results = false
         }
 
         local fuel_amount = 50
