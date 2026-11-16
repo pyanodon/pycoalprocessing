@@ -1,3 +1,5 @@
+if not storage.programmable_inserters then return end
+
 for _, metadata in pairs(storage.programmable_inserters) do
   if metadata.inserter and metadata.inserter.valid then
     metadata.inserter.pickup_target = metadata.pickup_target
