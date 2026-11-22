@@ -1,7 +1,3 @@
-if mods.pyindustry then
-    require "prototypes/updates/pyindustry-updates"
-end
-
 require "prototypes/updates/base-updates"
 require "prototypes/updates/entity-updates"
 require "prototypes/technologies/stacking-belts"
@@ -25,15 +21,18 @@ ITEM("lab"):set("icon_size", 64)
 ITEM("electric-engine-unit"):set("icon", "__pycoalprocessinggraphics__/graphics/icons/electric-engine-unit.png")
 ITEM("electric-engine-unit"):set("icon_size", 64)
 
+RECIPE("niobium-pipe"):remove_unlock("py-storage-tanks"):add_unlock("niobium")
+RECIPE("niobium-pipe-to-ground"):remove_unlock("py-storage-tanks"):add_unlock("niobium")
+
 RECIPE("small-electric-pole"):replace_result("small-electric-pole", {type = "item", name = "small-electric-pole", amount = 1})
 
 RECIPE("medium-electric-pole"):add_ingredient {type = "item", name = "niobium-plate", amount = 1}:replace_ingredient("copper-plate", {type = "item", name = "copper-cable", amount = 5}):replace_ingredient("iron-stick", {type = "item", name = "nbfe-alloy", amount = 2}):remove_ingredient("steel-plate")
 
 RECIPE("big-electric-pole"):remove_ingredient("steel-plate"):remove_ingredient("copper-plate"):add_ingredient {type = "item", name = "niobium-plate", amount = 2}:add_ingredient {type = "item", name = "copper-cable", amount = 15}:replace_ingredient("iron-stick", {type = "item", name = "steel-plate", amount = 6})
 
-RECIPE("chemical-plant"):remove_unlock("oil-processing"):set_fields {hidden = true}
-ENTITY("chemical-plant"):set_fields {hidden = true}
-ITEM("chemical-plant"):set_fields {hidden = true}
+RECIPE("chemical-plant"):remove_unlock("oil-processing"):hide()
+ENTITY("chemical-plant"):hide()
+ITEM("chemical-plant"):hide()
 
 RECIPE("pump"):remove_unlock("fluid-handling"):add_unlock("engine")
 
@@ -53,6 +52,9 @@ end
 
 data.raw["item-subgroup"]["science-pack"].group = "production"
 data.raw["item-subgroup"]["science-pack"].order = "y"
+
+-- has to be added here due to fluid/recipe load order shenanigans
+data.raw.recipe["muddy-sludge"].icons = py.composite_icon("muddy-sludge", "water", "soil")
 
 --gather recipes for module changes
 local recipes_list =

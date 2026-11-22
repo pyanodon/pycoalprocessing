@@ -8,6 +8,8 @@ local function empty_generator_equipment(player)
     if not grid then return end
     local inventory = player.get_main_inventory()
     if not inventory then return end
+    local burners = {}
+    local burner_count = 0
 
     for _, equipment in pairs(grid.equipment) do
         if equipment.type ~= "generator-equipment" or equipment.prototype.hidden then goto continue end
@@ -26,7 +28,6 @@ local function empty_generator_equipment(player)
 end
 
 py.register_on_nth_tick(251, "generator-equipment-autofill", "pycp", function()
-    if not script.active_mods["pyindustry"] then return end
     for _, player in pairs(game.connected_players) do
         empty_generator_equipment(player)
     end

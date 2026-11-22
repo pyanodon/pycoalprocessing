@@ -16,6 +16,10 @@ RECIPE {
     order = "a"
 }:add_unlock("methanol-processing-1")
 
+if mods.pyrawores then
+    RECIPE("methanol-from-syngas"):replace_ingredient_unsafe("iron-plate", "zinc-plate")
+end
+
 RECIPE {
     type = "recipe",
     name = "oleo-methanol",

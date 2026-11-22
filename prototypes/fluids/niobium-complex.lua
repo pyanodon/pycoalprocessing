@@ -16,6 +16,10 @@ RECIPE {
     order = "c"
 }:add_unlock("niobium")
 
+if mods.pyrawores then
+    RECIPE("niobium-complex"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen-chloride", amount = 100})
+end
+
 FLUID {
     type = "fluid",
     name = "niobium-complex",

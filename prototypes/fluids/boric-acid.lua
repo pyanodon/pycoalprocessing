@@ -13,6 +13,10 @@ RECIPE {
     }
 }:add_unlock("lab-instrument")
 
+if mods.pyrawores then
+    RECIPE("boric-acid").category = "electrolyzer"
+end
+
 FLUID {
     type = "fluid",
     name = "boric-acid",

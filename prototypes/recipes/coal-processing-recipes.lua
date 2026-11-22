@@ -6,7 +6,7 @@ RECIPE {
     enabled = false,
     energy_required = 45,
     ingredients = {
-        {type = "item", name = "ralesia",                  amount = 10},
+        {type = "item", name = "ralesia",             amount = 10},
         {type = "item", name = "muddy-sludge-barrel", amount = 5}
     },
     results = {
@@ -61,6 +61,10 @@ RECIPE {
     subgroup = "py-items",
     order = "h"
 }:add_unlock("ralesia")
+
+if mods.pyrawores then
+    RECIPE("ralesia"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen", amount = 300})
+end
 
 RECIPE {
     type = "recipe",
@@ -163,6 +167,11 @@ RECIPE {
     order = "n"
 }:add_unlock("lab-instrument")
 
+if mods.pyrawores then
+    RECIPE("equipment-chassi"):replace_ingredient_unsafe("copper-plate", "tin-plate")
+    RECIPE("equipment-chassi"):replace_ingredient_unsafe("iron-plate", "duralumin")
+end
+
 RECIPE {
     type = "recipe",
     name = "lab-instrument",
@@ -202,6 +211,10 @@ RECIPE {
     subgroup = "py-items-hpf",
     order = "f"
 }:add_unlock("lab-instrument")
+
+if mods.pyrawores then
+    RECIPE("lens"):remove_ingredient("molten-glass"):add_ingredient_unsafe {type = "fluid", name = "molten-glass", amount = 100, fluidbox_index = 2}
+end
 
 RECIPE {
     type = "recipe",
@@ -269,7 +282,7 @@ RECIPE {
         {type = "item",  name = "raw-borax", amount = 10}
     },
     results = {
-        {type = "item",  name = "borax",             amount = 10},
+        {type = "item",  name = "borax",        amount = 10},
         {type = "fluid", name = "muddy-sludge", amount = 100}
     },
     main_product = "borax",
@@ -323,6 +336,10 @@ RECIPE {
     order = "j"
 }:add_unlock("tar-processing")
 
+if mods.pyrawores then
+    RECIPE("tar-gasification"):remove_ingredient("water"):add_ingredient_unsafe {type = "fluid", name = "pressured-air", amount = 50}
+end
+
 RECIPE {
     type = "recipe",
     name = "coal-fawogae",
@@ -341,6 +358,10 @@ RECIPE {
     subgroup = "py-items-hpf",
     order = "g"
 }:add_unlock("coal-processing-1")
+
+if mods.pyrawores then
+    RECIPE("coal-fawogae"):replace_result_unsafe("coal", "raw-coal", 3)
+end
 
 RECIPE {
     type = "recipe",
@@ -361,6 +382,10 @@ RECIPE {
     order = "h"
 }:add_unlock("coal-processing-1")
 
+if mods.pyrawores then
+    RECIPE("coke-coal"):replace_ingredient_unsafe("coal", "raw-coal", 10)
+end
+
 RECIPE {
     type = "recipe",
     name = "stone-distilation",
@@ -372,10 +397,10 @@ RECIPE {
         {type = "fluid", name = "water", amount = 200}
     },
     results = {
-        {type = "item",  name = "tailings-dust",     amount = 10},
-        {type = "item",  name = "coarse",            amount = 10},
-        {type = "fluid", name = "tar",               amount = 100},
-        {type = "fluid", name = "tailings", amount = 100}
+        {type = "item",  name = "tailings-dust", amount = 10},
+        {type = "item",  name = "coarse",        amount = 10},
+        {type = "fluid", name = "tar",           amount = 100},
+        {type = "fluid", name = "tailings",      amount = 100}
     },
     main_product = "tar",
     icon = "__pycoalprocessinggraphics__/graphics/icons/tar.png",
@@ -519,7 +544,7 @@ RECIPE {
     main_product = "syngas"
 }:add_unlock("coal-processing-3")
 
-RECIPE {
+local nichrome = RECIPE {
     type = "recipe",
     name = "nichrome",
     categories = {"hpf"},
@@ -534,6 +559,11 @@ RECIPE {
         {type = "item", name = "nichrome", amount = 1}
     }
 }:add_unlock("chromium")
+
+if mods.pyrawores then
+    RECIPE("nichrome"):replace_ingredient_unsafe("water", {type = "fluid", name = "nitrogen", amount = 100})
+    RECIPE("nichrome"):replace_ingredient_unsafe("iron-plate", "nickel-plate")
+end
 
 RECIPE {
     type = "recipe",
@@ -551,6 +581,10 @@ RECIPE {
         {type = "item", name = "active-carbon", amount = 5}
     }
 }:add_unlock("filtration")
+
+if mods.pyrawores then
+    RECIPE("active-carbon"):remove_ingredient("water"):add_ingredient_unsafe {type = "fluid", name = "nitrogen", amount = 50}:add_ingredient_unsafe {type = "item", name = "sodium-hydroxide", amount = 4}
+end
 
 RECIPE {
     type = "recipe",
@@ -572,6 +606,10 @@ RECIPE {
     icon_size = 32,
     order = "d [syn-gas]"
 }:add_unlock("filtration")
+
+if mods.pyrawores then
+    RECIPE("zinc-chloride"):replace_ingredient_unsafe("iron-plate", "zinc-plate"):replace_ingredient_unsafe("water", {type = "fluid", name = "hydrogen-chloride", amount = 20}):remove_ingredient("copper-plate"):add_result {type = "fluid", name = "hydrogen", amount = 20}
+end
 
 RECIPE {
     type = "recipe",
@@ -672,6 +710,14 @@ RECIPE {
     main_product = "niobium-oxide"
 }:add_unlock("niobium")
 
+if mods.pyrawores then
+    RECIPE("niobium-oxide"):replace_ingredient_unsafe("water", {type = "fluid", name = "nitrogen", amount = 250})
+end
+
+if mods.pyhightech then
+    RECIPE("niobium-oxide"):replace_ingredient_unsafe("water", {type = "fluid", name = "ammonia", amount = 250})
+end
+
 RECIPE {
     type = "recipe",
     name = "niobium-plate",
@@ -688,6 +734,10 @@ RECIPE {
     main_product = "niobium-plate"
 }:add_unlock("niobium")
 
+if mods.pyrawores then
+    RECIPE("niobium-plate"):replace_ingredient_unsafe("coal", "salt").category = "electrolyzer"
+end
+
 RECIPE {
     type = "recipe",
     name = "log5",
@@ -695,8 +745,8 @@ RECIPE {
     enabled = false,
     energy_required = 20,
     ingredients = {
-        {type = "fluid", name = "muddy-sludge", amount = 500},
-        {type = "fluid", name = "carbon-dioxide",    amount = 300}
+        {type = "fluid", name = "muddy-sludge",   amount = 500},
+        {type = "fluid", name = "carbon-dioxide", amount = 300}
     },
     results = {
         {type = "item", name = "log", amount = 3}
@@ -752,9 +802,9 @@ RECIPE {
     enabled = false,
     energy_required = 15,
     ingredients = {
-        {type = "fluid", name = "muddy-sludge", amount = 500},
-        {type = "item",  name = "ash",               amount = 30},
-        {type = "fluid", name = "carbon-dioxide",    amount = 350}
+        {type = "fluid", name = "muddy-sludge",   amount = 500},
+        {type = "item",  name = "ash",            amount = 30},
+        {type = "fluid", name = "carbon-dioxide", amount = 350}
     },
     results = {
         {type = "item", name = "log", amount = 3}
@@ -802,6 +852,10 @@ RECIPE {
     subgroup = "py-items-class",
     order = "f"
 }:add_unlock("chromium")
+
+if mods.pyrawores then
+    RECIPE("richdust-separation"):replace_result_unsafe("chromite-sand", "chromite-sand", 3)
+end
 
 RECIPE {
     type = "recipe",
@@ -909,6 +963,10 @@ RECIPE {
     order = "a"
 }:add_unlock("chromium")
 
+if mods.pyrawores then
+    data.raw.recipe["making-chromium"] = nil
+end
+
 RECIPE {
     type = "recipe",
     name = "wood-to-coal",
@@ -995,6 +1053,11 @@ RECIPE {
     order = "i"
 }:add_unlock("advanced-oil-processing")
 
+if mods.pyrawores then
+    RECIPE("oleochemicals-distilation"):replace_result_unsafe("coal", "raw-coal", 4)
+    RECIPE("oleochemicals-distilation"):replace_ingredient_unsafe("water", {type = "fluid", name = "oxygen", amount = 400})
+end
+
 RECIPE {
     type = "recipe",
     name = "oleo-gasification",
@@ -1012,6 +1075,10 @@ RECIPE {
     },
     main_product = "aromatics",
 }:add_unlock("mukmoux")
+
+if mods.pyrawores then
+    RECIPE("oleo-gasification"):replace_ingredient_unsafe("water", {type = "fluid", name = "oxygen", amount = 250})
+end
 --)) Coal Processing 2 ((--
 
 --(( Coal Processing 3 ))--

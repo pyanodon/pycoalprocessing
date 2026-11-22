@@ -28,13 +28,6 @@ data:extend {
     },
     {
         type = "bool-setting",
-        name = "future-beacons",
-        order = "ad",
-        setting_type = "startup",
-        default_value = true,
-    },
-    {
-        type = "bool-setting",
         name = "py-generator-equipment-manager",
         order = "ae",
         setting_type = "startup",
