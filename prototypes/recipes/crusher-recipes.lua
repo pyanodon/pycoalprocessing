@@ -2,7 +2,7 @@
 RECIPE {
     type = "recipe",
     name = "niobium-powder",
-    categories = {"crusher"},
+    category = "crusher",
     enabled = false,
     energy_required = 3.5,
     ingredients = {
@@ -23,7 +23,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "crushing-iron",
-    categories = {"crusher"},
+    category = "crusher",
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -44,7 +44,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "crushing-copper",
-    categories = {"crusher"},
+    category = "crusher",
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -65,7 +65,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "stone-to-gravel",
-    categories = {"crusher"},
+    category = "crusher",
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -84,7 +84,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "gravel-to-sand",
-    categories = {"crusher"},
+    category = "crusher",
     enabled = false,
     energy_required = 1,
     ingredients = {

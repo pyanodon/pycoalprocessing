@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "hydrogen-peroxide",
-    categories = {"carbonfilter"},
+    category = "carbonfilter",
     enabled = false,
     energy_required = 2.7,
     ingredients = {

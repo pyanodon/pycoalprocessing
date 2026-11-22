@@ -69,7 +69,6 @@ ENTITY {
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/co2-absorber.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/co2-absorber.ogg", volume = 0.3},
-    },
-    circuit_connector = circuit_connector_definitions["co2-absorber"],
-    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
+        apparent_volume = 1.0
+    }
 }

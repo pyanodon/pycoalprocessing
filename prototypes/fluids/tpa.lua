@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "tpa",
-    categories = {"rectisol"},
+    category = "rectisol",
     enabled = false,
     energy_required = 4,
     ingredients = {

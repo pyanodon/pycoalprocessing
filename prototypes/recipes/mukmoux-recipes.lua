@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "mukmoux-fat",
-    categories = {"mukmoux"},
+    category = "mukmoux",
     enabled = false,
     energy_required = 60,
     ingredients = {
@@ -17,7 +17,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "oleochemicals",
-    categories = {"fts-reactor"},
+    category = "fts-reactor",
     enabled = false,
     energy_required = 10,
     ingredients = {
@@ -40,7 +40,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "dedicated-oleochemicals",
-    categories = {"fts-reactor"},
+    category = "fts-reactor",
     enabled = false,
     energy_required = 10,
     ingredients = {

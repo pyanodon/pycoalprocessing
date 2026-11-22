@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "extract-sand",
-    categories = {"sand-extractor"},
+    category = "sand-extractor",
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -20,7 +20,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "extract-gravel",
-    categories = {"sand-extractor"},
+    category = "sand-extractor",
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -39,7 +39,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "extract-stone",
-    categories = {"sand-extractor"},
+    category = "sand-extractor",
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -58,7 +58,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "extract-richdust",
-    categories = {"sand-extractor"},
+    category = "sand-extractor",
     enabled = false,
     energy_required = 10,
     ingredients = {
@@ -77,7 +77,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "extract-coarse",
-    categories = {"sand-extractor"},
+    category = "sand-extractor",
     enabled = false,
     energy_required = 7,
     ingredients = {

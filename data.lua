@@ -52,6 +52,7 @@ require "prototypes/technologies/creosote"
 require "prototypes/technologies/pyrrhic"
 require "prototypes/technologies/artillery-2"
 require "prototypes/technologies/artillery-range"
+require "prototypes/technologies/cargo-landing-pad-capacity"
 require "prototypes/technologies/hidden-mining-fluid-autounlock"
 
 -- (( RESOURCES )) --

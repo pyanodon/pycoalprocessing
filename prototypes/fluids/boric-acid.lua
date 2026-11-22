@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "boric-acid",
-    categories = {"gasifier"}, --bob electrolysis
+    category = "gasifier", --bob electrolysis
     enabled = false,
     energy_required = 2,
     ingredients = {

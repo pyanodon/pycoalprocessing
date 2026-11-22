@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "combustion-mixture2",
-    categories = {"combustion"},
+    category = "combustion",
     enabled = false,
     energy_required = 2,
     ingredients = {

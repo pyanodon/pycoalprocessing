@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "niobium-complex",
-    categories = {"chemistry"},
+    category = "chemistry",
     enabled = false,
     energy_required = 3.5,
     ingredients = {

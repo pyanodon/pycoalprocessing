@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "coal-slurry",
-    categories = {"fluid-separator"},
+    category = "fluid-separator",
     enabled = false,
     energy_required = 2,
     ingredients = {

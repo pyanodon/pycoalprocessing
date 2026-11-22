@@ -35,7 +35,7 @@ ITEM {
     type = "item",
     name = "coke",
     fuel_value = "5MJ",
-    fuel_categories = {"chemical"},
+    fuel_category = "chemical",
     icon = "__pycoalprocessinggraphics__/graphics/icons/coke.png",
     icon_size = 32,
     flags = {},
@@ -70,7 +70,7 @@ ITEM {
     type = "item",
     name = "active-carbon",
     fuel_value = "15MJ",
-    fuel_categories = {"chemical"},
+    fuel_category = "chemical",
     icon = "__pycoalprocessinggraphics__/graphics/icons/active-carbon.png",
     icon_size = 32,
     flags = {},
@@ -137,7 +137,7 @@ ITEM {
     icon = "__pycoalprocessinggraphics__/graphics/icons/drill-head.png",
     icon_size = 64,
     fuel_value = "5MJ",
-    fuel_categories = {"drill"},
+    fuel_category = "drill",
     flags = {},
     subgroup = "py-items",
     order = "g",
@@ -187,7 +187,7 @@ ITEM {
     order = "organics",
     stack_size = 100,
     fuel_value = "2MJ",
-    fuel_categories = {"biomass"},
+    fuel_category = "biomass",
 }
 
 ITEM {
@@ -219,7 +219,7 @@ ITEM {
     icon_size = 32,
     flags = {},
     fuel_value = "3MJ",
-    fuel_categories = {"chemical"},
+    fuel_category = "chemical",
     subgroup = "py-items",
     order = "coal-dust",
     stack_size = 100
@@ -306,7 +306,7 @@ ITEM {
     type = "item",
     name = "fuelrod-mk01",
     fuel_value = "75MJ",
-    fuel_categories = {"fuelrod"},
+    fuel_category = "fuelrod",
     icon = "__pycoalprocessinggraphics__/graphics/icons/fuelrod-mk01.png",
     icon_size = 32,
     flags = {},
@@ -766,7 +766,7 @@ ITEM {
     type = "item",
     name = "coal-briquette",
     fuel_value = "60MJ",
-    fuel_categories = {"chemical"},
+    fuel_category = "chemical",
     icon = "__pycoalprocessinggraphics__/graphics/icons/coal-briquette.png",
     icon_size = 32,
     flags = {},
@@ -806,7 +806,7 @@ ITEM {
     type = "item",
     name = "log",
     fuel_value = "4MJ",
-    fuel_categories = {"biomass"},
+    fuel_category = "biomass",
     icon = "__pycoalprocessinggraphics__/graphics/icons/mip/log-01.png",
     pictures =
     {
@@ -834,7 +834,7 @@ ITEM {
     subgroup = "py-items",
     order = "treated-wood",
     fuel_value = "4MJ",
-    fuel_categories = {"biomass"},
+    fuel_category = "biomass",
     stack_size = 100
 }
 
@@ -878,7 +878,7 @@ ITEM {
     icon_size = 64,
     flags = {},
     fuel_value = "4MJ",
-    fuel_categories = {"chemical"},
+    fuel_category = "chemical",
     subgroup = "py-items",
     order = "caa",
     stack_size = 100

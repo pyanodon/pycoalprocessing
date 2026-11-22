@@ -1,4 +1,3 @@
----@diagnostic disable
 game.reload_script()
 
 for _, player in pairs(game.players) do

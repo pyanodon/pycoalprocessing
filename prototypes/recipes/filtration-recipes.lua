@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "lithium-peroxide",
-    categories = {"chemistry"},
+    category = "chemistry",
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -17,7 +17,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "nexelit-cartridge",
-    categories = {"crafting"},
+    category = "crafting",
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -32,7 +32,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "air-pollution",
-    categories = {"co2"},
+    category = "co2",
     enabled = false,
     energy_required = 40,
     ingredients = {
@@ -51,7 +51,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "co2",
-    categories = {"hpf"},
+    category = "hpf",
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -74,7 +74,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "saturated-nexelit-cartridge-regen",
-    categories = {"crafting"},
+    category = "crafting",
     enabled = false,
     energy_required = 3,
     ingredients = {

@@ -97,15 +97,6 @@ data:extend {{
     height = 64,
     flags = {"icon"}
 }}
--- add virtual signal variant so it can be used as an alert
-data:extend{{
-    type = "virtual-signal",
-    name = "beacon-interference",
-    icon = "__pycoalprocessinggraphics__/graphics/icons/gui/beacon-interference.png",
-    icon_size = 64,
-    hidden = true,
-    hidden_in_factoriopedia = true
-}}
 
 data:extend {
     {
@@ -115,6 +106,7 @@ data:extend {
         priority = "medium",
         width = 64,
         height = 64,
+        mipmap_count = 3,
         scale = 0.5,
         flags = {"gui-icon"}
     },
@@ -125,6 +117,7 @@ data:extend {
         priority = "medium",
         width = 64,
         height = 64,
+        mipmap_count = 3,
         scale = 0.5,
         flags = {"gui-icon"}
     },
@@ -135,6 +128,7 @@ data:extend {
         priority = "medium",
         width = 64,
         height = 64,
+        mipmap_count = 3,
         scale = 0.5,
         flags = {"gui-icon"}
     },
@@ -145,6 +139,7 @@ data:extend {
         priority = "medium",
         width = 64,
         height = 64,
+        mipmap_count = 3,
         scale = 0.5,
         flags = {"gui-icon"}
     },

@@ -3,6 +3,7 @@ data:extend {
         type = "item-group",
         name = "coal-processing",
         order = "t",
+        inventory_order = "t",
         icon = "__pycoalprocessinggraphics__/graphics/technology/item-group.png",
         icon_size = 64
     },

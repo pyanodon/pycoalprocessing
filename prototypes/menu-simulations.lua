@@ -1,5 +1,4 @@
 local menu_simulations = data.raw["utility-constants"]["default"].main_menu_simulations
----@cast menu_simulations -?
 
 -- do not work
 menu_simulations.nauvis_burner_city = nil
@@ -571,14 +570,14 @@ if mods["pyalternativeenergy"] then
             if tickCount == 60 * 8 then
                 character.riding_state = { acceleration = defines.riding.acceleration.reversing, direction = defines.riding.direction.straight }
             end
-            if tickCount == 60 * 8.7 then
+            if tickCount == 60 * 8.5 then
                 character.riding_state = { acceleration = defines.riding.acceleration.braking, direction = defines.riding.direction.straight }
             end
             if tickCount == 60 * 9 then
-                character.riding_state = { acceleration = defines.riding.acceleration.accelerating, direction = defines.riding.direction.right }
+                character.riding_state = { acceleration = defines.riding.acceleration.accelerating, direction = defines.riding.direction.left }
             end
-            if tickCount == 60 * 9.2 then
-                character.riding_state = { acceleration = defines.riding.acceleration.nothing, direction = defines.riding.direction.left }
+            if tickCount == 60 * 9.25 then
+                character.riding_state = { acceleration = defines.riding.acceleration.accelerating, direction = defines.riding.direction.right }
             end
             if tickCount == 60 * 9.4 then
                 character.riding_state = { acceleration = defines.riding.acceleration.accelerating, direction = defines.riding.direction.straight }

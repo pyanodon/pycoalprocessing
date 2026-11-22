@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "sand-classification",
-    categories = {"classifier"},
+    category = "classifier",
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -22,7 +22,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "coarse-classification",
-    categories = {"classifier"},
+    category = "classifier",
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -43,7 +43,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "tailings-classification",
-    categories = {"classifier"},
+    category = "classifier",
     enabled = false,
     energy_required = 2.5,
     ingredients = {
@@ -69,7 +69,7 @@ end
 RECIPE {
     type = "recipe",
     name = "co2-organics",
-    categories = {"hpf"},
+    category = "hpf",
     enabled = false,
     energy_required = 2.0,
     ingredients = {
@@ -88,7 +88,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "soil-separation",
-    categories = {"solid-separator"},
+    category = "solid-separator",
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -110,7 +110,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "tailings-separation",
-    categories = {"solid-separator"},
+    category = "solid-separator",
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -130,7 +130,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "creosote-to-aromatics",
-    categories = {"tar"},
+    category = "tar",
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -152,15 +152,15 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "ash-separation",
-    categories = {"solid-separator"},
+    category = "solid-separator",
     enabled = false,
     energy_required = 1,
     ingredients = {
         {type = "item", name = "ash", amount = 10}
     },
     results = {
-        {type = "item", name = "coal-dust",  amount = 1, independent_probability = 0.5},
-        {type = "item", name = "iron-oxide", amount = 1, independent_probability = 0.05}
+        {type = "item", name = "coal-dust",  amount = 1, probability = 0.5},
+        {type = "item", name = "iron-oxide", amount = 1, probability = 0.05}
     },
     icon = "__pycoalprocessinggraphics__/graphics/icons/ash-separation.png",
     icon_size = 32,
@@ -171,7 +171,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "organics-from-dirty-water",
-    categories = {"evaporator"},
+    category = "evaporator",
     enabled = false,
     energy_required = 4,
     ingredients = {

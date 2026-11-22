@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "anthraquinone",
-    categories = {"rectisol"},
+    category = "rectisol",
     enabled = false,
     energy_required = 3,
     ingredients = {

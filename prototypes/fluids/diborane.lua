@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "diborane",
-    categories = {"hpf"},
+    category = "hpf",
     enabled = false,
     energy_required = 7,
     ingredients = {

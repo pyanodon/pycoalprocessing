@@ -58,9 +58,9 @@ TECHNOLOGY("worker-robots-storage-3"):add_pack("military-science-pack")
 TECHNOLOGY("personal-roboport-mk2-equipment"):add_pack("military-science-pack"):add_pack("production-science-pack")
 TECHNOLOGY("mining-productivity-3"):add_pack("military-science-pack")
 
-data.raw.technology["artillery-shell-range-1"].unit--[[@cast -?]].count_formula = nil
+data.raw.technology["artillery-shell-range-1"].unit.count_formula = nil
 
-data.raw.technology.artillery.unit--[[@cast -?]].ingredients = {
+data.raw.technology.artillery.unit.ingredients = {
     {"automation-science-pack", 1},
     {"logistic-science-pack",   1},
     {"chemical-science-pack",   1},
@@ -68,7 +68,7 @@ data.raw.technology.artillery.unit--[[@cast -?]].ingredients = {
 }
 data.raw.technology.artillery.prerequisites = {"military"}
 
-data.raw.technology["artillery-shell-speed-1"].unit--[[@cast -?]].ingredients = {
+data.raw.technology["artillery-shell-speed-1"].unit.ingredients = {
     {"automation-science-pack", 1},
     {"logistic-science-pack",   1},
     {"chemical-science-pack",   1},
@@ -76,7 +76,7 @@ data.raw.technology["artillery-shell-speed-1"].unit--[[@cast -?]].ingredients = 
 }
 data.raw.technology["artillery-shell-speed-1"].prerequisites = {"artillery"}
 
-data.raw.technology.tank.unit--[[@cast -?]].ingredients = {
+data.raw.technology.tank.unit.ingredients = {
     {"automation-science-pack", 1},
     {"logistic-science-pack",   1},
     {"chemical-science-pack",   1},
@@ -84,7 +84,7 @@ data.raw.technology.tank.unit--[[@cast -?]].ingredients = {
 }
 data.raw.technology.tank.prerequisites = {}
 
-data.raw.technology["uranium-ammo"].unit--[[@cast -?]].ingredients = {
+data.raw.technology["uranium-ammo"].unit.ingredients = {
     {"automation-science-pack", 1},
     {"logistic-science-pack",   1},
     {"military-science-pack",   1},
@@ -125,13 +125,27 @@ TECHNOLOGY("utility-science-pack"):set_fields {prerequisites = {}}
 -- Technology icons
 for i = 1, 6 do
     local tech = TECHNOLOGY("research-speed-" .. i)
-    local speed_icon = {
-        icon = "__core__/graphics/icons/technology/constants/constant-speed.png",
-        icon_size = 128,
-        scale = 0.5,
-        shift = {50, 50}
-    }
-    tech:create_icons("__pycoalprocessinggraphics__/graphics/technology/lab.png", speed_icon)
+    tech:set(
+        "icons", {
+            -- Base layer
+            {
+                icon = "__pycoalprocessinggraphics__/graphics/technology/energy-1.png",
+                icon_size = 128,
+                tint = {r = 0, g = 0, b = 0, a = 1}
+            },
+            -- Border
+            {icon = "__pycoalprocessinggraphics__/graphics/technology/border.png", icon_size = 128},
+            -- Lab
+            {icon = "__pycoalprocessinggraphics__/graphics/technology/lab.png",    icon_size = 128, scale = 0.8},
+            -- Speed icon
+            {
+                icon = "__core__/graphics/icons/technology/constants/constant-speed.png",
+                icon_size = 128,
+                scale = 0.5,
+                shift = {50, 50}
+            }
+        })
+    tech:set("icon_size", 128)
 end
 
 -- Recipe unlocks
@@ -146,13 +160,13 @@ RECIPE("rail"):clear_ingredients():add_ingredient {type = "item", name = "stone"
 RECIPE("landfill"):replace_ingredient("stone", {type = "item", name = "stone", amount = 30}):add_ingredient {type = "item", name = "gravel", amount = 30}:add_ingredient {type = "item", name = "soil", amount = 30}
 RECIPE("burner-inserter"):replace_ingredient("iron-plate", {type = "item", name = "iron-plate", amount = 5})
 RECIPE("burner-inserter"):replace_ingredient("iron-gear-wheel", {type = "item", name = "iron-gear-wheel", amount = 2})
-ITEM("rocket-fuel").fuel_categories = {"jerry"}
+ITEM("rocket-fuel"):set_fields {fuel_category = "jerry"}
 
-data.raw.item["wood"].fuel_categories = {"biomass"}
+data.raw.item["wood"].fuel_category = "biomass"
 data.raw.item["nuclear-fuel"].burnt_result = nil
 -- add ash to burnt results for chemical fuel items
-for _, item in pairs(data.raw.item) do
-    if ITEM(item.name):has_fuel_category("chemical") and item.name ~= "active-carbon" then
+for i, item in pairs(data.raw.item) do
+    if item.fuel_category ~= nil and item.fuel_category == "chemical" and item.name ~= "active-carbon" then
         data.raw.item[item.name].burnt_result = "ash"
     end
 end
@@ -161,7 +175,8 @@ for _, entity in py.iter_prototypes("entity") do
     if entity.burner or (entity.energy_source and entity.energy_source.type == "burner") then
         local es = entity.burner or entity.energy_source
 
-        if (es.fuel_categories and table.any(es.fuel_categories, function(f) return f == "chemical" end))
+        if ((not es.fuel_categories and (es.fuel_category or "chemical") == "chemical")
+                or (es.fuel_categories and table.any(es.fuel_categories, function(f) return f == "chemical" end)))
             and (es.burnt_inventory_size or 0) < 1
         then
             es.burnt_inventory_size = 1
@@ -179,7 +194,7 @@ RECIPE("cannon-shell"):remove_ingredient("explosives"):add_ingredient {type = "i
 RECIPE {
     type = "recipe",
     name = "explosive-cannon-shell",
-    categories = {"crafting"},
+    category = "crafting",
     enabled = false,
     energy_required = 8,
     ingredients = {
@@ -267,12 +282,12 @@ TECHNOLOGY("automated-rail-transportation"):remove_pack("logistic-science-pack")
 
 data.raw.pump.pump.pumping_speed = data.raw.pump.pump.pumping_speed * 10
 
-table.insert(data.raw["technology"]["steam-power"].effects--[[@cast -?]], table.remove(data.raw.technology["circuit-network"].effects--[[@cast -?]], 1))
+table.insert(data.raw["technology"]["steam-power"].effects, table.remove(data.raw.technology["circuit-network"].effects, 1))
 
-RECIPE("engine-unit"):replace_category("advanced-crafting", "crafting")
+data.raw.recipe["engine-unit"].category = "crafting"
 
 RECIPE("selector-combinator"):remove_ingredient("advanced-circuit"):add_ingredient {type = "item", name = "electronic-circuit", amount = 5}
-TECHNOLOGY("advanced-combinators").unit--[[@as data.TechnologyUnit]].ingredients = mods.pyalienlife and {
+TECHNOLOGY("advanced-combinators").unit.ingredients = mods.pyalienlife and {
     {"automation-science-pack", 1},
     {"py-science-pack-1",       1},
 } or {
@@ -295,8 +310,8 @@ local starting_techs = {
 }
 
 for _, t in pairs(starting_techs) do
-    tech = data.raw.technology[t]
-    if tech then tech.prerequisites = {"automation-science-pack"} end
+    t = data.raw.technology[t]
+    if t then t.prerequisites = {"automation-science-pack"} end
     ::continue::
 end
 
@@ -357,6 +372,8 @@ big_fluid_icons_for_pipes("niobium-pipe")
 big_fluid_icons_for_pipes("niobium-pipe-to-ground")
 big_fluid_icons_for_pipes("ht-pipes")
 big_fluid_icons_for_pipes("ht-pipes-to-ground")
+
+data.raw["utility-constants"]["default"].max_fluid_flow = math.max(data.raw["utility-constants"]["default"].max_fluid_flow or 0, 500)
 
 data.raw["technology"]["efficiency-module"].prerequisites = {mods.pyalternativeenergy and "machine-components-mk02" or "productivity-module"}
 data.raw["technology"]["bulk-inserter"].prerequisites = {mods.pyhightech and "basic-electronics" or "chemical-science-pack"}

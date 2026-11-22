@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "refsyngas-from-filtered-syngas",
-    categories = {"carbonfilter"},
+    category = "carbonfilter",
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -16,7 +16,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "refsyngas-from-meth",
-    categories = {"rectisol"},
+    category = "rectisol",
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -35,7 +35,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "refsyngas-from-meth-canister",
-    categories = {"rectisol"},
+    category = "rectisol",
     enabled = false,
     energy_required = 2,
     ingredients = {

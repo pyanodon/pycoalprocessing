@@ -1,4 +1,3 @@
----@diagnostic disable
 storage.on_tick = {}
 -- fix rotation of fawogae plantations after fixing the graphics
 for _, surface in pairs(game.surfaces) do
