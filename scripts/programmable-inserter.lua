@@ -1,3 +1,10 @@
+---@namespace PyCoalProcessing
+---@type PyCoalProcessingStorage
+storage = storage --[[@as PyCoalProcessingStorage]]
+
+---@class (partial) PyCoalProcessingStorage
+---@field programmable_inserters table
+
 -- save a list of all valid targets, valid inventories for that target, and associated locale key for that inventory
 local proxy_targets = {
   ["furnace"] = {
@@ -17,6 +24,20 @@ local proxy_targets = {
     trash = defines.inventory.crafter_trash,
     dump = defines.inventory.assembling_machine_dump,
   },
+  ["rocket-silo"] = {
+    input = defines.inventory.crafter_input,
+    output = defines.inventory.crafter_output,
+    fuel = defines.inventory.fuel,
+    burnt_result = defines.inventory.burnt_result,
+    modules = defines.inventory.crafter_modules,
+    trash = defines.inventory.rocket_silo_trash,
+    cargo = defines.inventory.rocket_silo_rocket,
+  },
+  ["agricultural-tower"] = {
+    input = defines.inventory.agricultural_tower_input,
+    output = defines.inventory.agricultural_tower_output,
+    modules = defines.inventory.agricultural_tower_modules,
+  },
   ["lab"] = {
     input = defines.inventory.lab_input,
     trash = defines.inventory.lab_trash,
@@ -30,7 +51,7 @@ local proxy_targets = {
     modules = defines.inventory.mining_drill_modules,
   },
   ["car"] = {
-    input = defines.inventory.car_trunk,
+    cargo = defines.inventory.car_trunk,
     fuel = defines.inventory.fuel
   },
   ["default"] = {
@@ -40,38 +61,27 @@ local proxy_targets = {
     burnt_result = defines.inventory.burnt_result,
     modules = defines.inventory.crafter_modules,
     trash = defines.inventory.crafter_trash,
-    dump = defines.inventory.assembling_machine_dump
+    dump = defines.inventory.assembling_machine_dump,
+    cargo = defines.inventory.car_trunk
   }
-}
-
-local proxy_pointers = {
-  [defines.inventory.assembling_machine_dump] = "dump",
-  [defines.inventory.burnt_result] = "burnt_result",
-  [defines.inventory.crafter_input] = "input",
-  [defines.inventory.crafter_modules] = "modules",
-  [defines.inventory.crafter_output] = "output",
-  [defines.inventory.crafter_trash] = "trash",
-  [defines.inventory.fuel] = "fuel",
-  [defines.inventory.lab_input] = "input",
-  [defines.inventory.lab_modules] = "modules",
-  [defines.inventory.lab_trash] = "trash",
-  [defines.inventory.mining_drill_modules] = "modules"
 }
 
 local selection_indices ={
   input = {
     default = 1,
-    input = 2,
-    fuel = 3,
-    modules = 4
+    cargo = 2,
+    input = 3,
+    fuel = 4,
+    modules = 5
   },
   output = {
     default = 1,
-    output = 2,
-    burnt_result = 3,
-    modules = 4,
-    trash = 5,
-    dump = 6
+    cargo = 2,
+    output = 3,
+    burnt_result = 4,
+    modules = 5,
+    trash = 6,
+    dump = 7
   }
 }
 
@@ -80,11 +90,11 @@ local function valid(metadata_index)
   -- if not valid, then remove entities (will most always be inserters being invalid)
   if not metadata then return true end
   if not metadata.inserter.valid or (metadata.pickup_target and not metadata.pickup_target.valid) or (metadata.drop_target and not metadata.drop_target.valid) then
-    if metadata.inserter.valid then metadata.inserter.destroy() end
+    game.print("Invalid programmable inserter data found. BEFORE SAVING, consider submitting a copy of your current save to the tracking issue: https://github.com/pyanodon/pybugreports/issues/1562")
+    log(string.format("Found invalid inserter metadata at index %i! dump:\n%s", metadata_index, serpent.block(storage.programmable_inserters[metadata_index])))
     if metadata.pickup_target and metadata.pickup_target.valid then metadata.pickup_target.destroy() end
     if metadata.drop_target and metadata.drop_target.valid then metadata.drop_target.destroy() end
     storage.programmable_inserters[metadata_index] = nil
-    game.print("detected invalid programmable inserter data!")
     return false
   end
   return true
@@ -114,7 +124,9 @@ local function update_targets(inserter)
         "assembling-machine",
         "lab",
         "mining-drill",
-        "car"
+        "car",
+        "agricultural-tower",
+        "rocket-silo"
       }
     }) do
       -- make sure we dont select things that we aren't supposed to see, only target things we need
@@ -123,6 +135,7 @@ local function update_targets(inserter)
         entity.proxy_target_entity = target
         entity.proxy_target_inventory = proxy_targets[target.type][metadata[index .. "_inventory"]]
         target.teleport(0) -- set it on top so its the default target
+        inserter[index] = entity
         break
       end
     end
@@ -132,7 +145,7 @@ end
 local function update_gui(entity, player_index)
   if not entity or (entity.type == "entity-ghost" and entity.ghost_type or entity.type) ~= "inserter" then return end
   if not valid(entity.unit_number) then return end
-  local player = game.get_player(player_index)
+  local player = game.get_player(player_index)--[[@as LuaPlayer]]
 
   local tags = (entity.tags or {})["py-dynamic-inserter"]
   
@@ -210,28 +223,32 @@ local function update_gui(entity, player_index)
     }
 
     -- update checkboxes
+    local drop_target_type = drop_target and (drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type)
     main_frame.add{
       type = "drop-down",
       name = "drop_target",
       items = {
         {"", {"inventory-target.default"}},
-        {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
-        {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
-        {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+        {drop_target_type and (proxy_targets[drop_target_type] or {}).cargo and "" or "tooltip.unavailable-insert-target", {"inventory-target.cargo"}},
+        {drop_target_type and (proxy_targets[drop_target_type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
+        {drop_target_type and (proxy_targets[drop_target_type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
+        {drop_target_type and (proxy_targets[drop_target_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
       },
       tooltip = {"tooltip.inserter-drop-target-tooltip"},
       selected_index = selection_indices.input[(tags or metadata).drop_target_inventory] or 1
     }
+    local pickup_target_type = pickup_target and (pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type)
     main_frame.add{
       type = "drop-down",
       name = "pickup_target",
       items = {
         {"", {"inventory-target.default"}},
-        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
-        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
-        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
-        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
-        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).cargo and "" or "tooltip.unavailable-insert-target", {"inventory-target.cargo"}},
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
       },
       tooltip = {"tooltip.inserter-pickup-target-tooltip"},
       selected_index = selection_indices.output[(tags or metadata).pickup_target_inventory] or 1
@@ -241,20 +258,24 @@ local function update_gui(entity, player_index)
     local sub_frame = relative["programmable-inserter-gui"]["main-frame"]["sub-frame"]
 
     -- update checkboxes
+    local drop_target_type = drop_target and (drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type)
     sub_frame.drop_target.items = {
       {"", {"inventory-target.default"}},
-      {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
-      {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
-      {drop_target and (proxy_targets[drop_target.type ~= "entity-ghost" and drop_target.type or drop_target.ghost_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+      {drop_target_type and (proxy_targets[drop_target_type] or {}).cargo and "" or "tooltip.unavailable-insert-target", {"inventory-target.cargo"}},
+      {drop_target_type and (proxy_targets[drop_target_type] or {}).input and "" or "tooltip.unavailable-insert-target", {"inventory-target.input"}},
+      {drop_target_type and (proxy_targets[drop_target_type] or {}).fuel and "" or "tooltip.unavailable-insert-target", {"inventory-target.fuel"}},
+      {drop_target_type and (proxy_targets[drop_target_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
     }
     sub_frame.drop_target.selected_index = selection_indices.input[(tags or metadata).drop_target_inventory] or 1
+    local pickup_target_type = pickup_target and (pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type)
     sub_frame.pickup_target.items = {
         {"", {"inventory-target.default"}},
-        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
-        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
-        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
-        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
-        {pickup_target and (proxy_targets[pickup_target.type ~= "entity-ghost" and pickup_target.type or pickup_target.ghost_type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).cargo and "" or "tooltip.unavailable-insert-target", {"inventory-target.cargo"}},
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).output and "" or "tooltip.unavailable-insert-target", {"inventory-target.output"}},
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).burnt_result and "" or "tooltip.unavailable-insert-target", {"inventory-target.burnt_result"}},
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).modules and "" or "tooltip.unavailable-insert-target", {"inventory-target.modules"}},
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).trash and "" or "tooltip.unavailable-insert-target", {"inventory-target.trash"}},
+        {pickup_target_type and (proxy_targets[pickup_target_type] or {}).dump and "" or "tooltip.unavailable-insert-target", {"inventory-target.dump"}}
     }
     sub_frame.pickup_target.selected_index = selection_indices.output[(tags or metadata).pickup_target_inventory] or 1
   end
@@ -263,13 +284,15 @@ end
 -- TODO fix upgrade events breaking it
 
 py.on_event(py.events.on_gui_opened(), function (event)
-  if game.get_player(event.player_index).opened_gui_type ~= defines.gui_type.entity then return end
+  if game.get_player(event.player_index)--[[@cast -?]].opened_gui_type ~= defines.gui_type.entity then return end
   update_gui(event.entity, event.player_index)
 end)
 
 py.on_event(defines.events.on_gui_closed, function (event)
-  if game.get_player(event.player_index).gui.relative["programmable-inserter-gui"] and game.get_player(event.player_index).gui.relative["programmable-inserter-gui"].visible then
-    game.get_player(event.player_index).gui.relative["programmable-inserter-gui"].visible = false
+  if game.get_player(event.player_index)--[[@cast -?]].gui.relative["programmable-inserter-gui"] and
+    game.get_player(event.player_index)--[[@cast -?]].gui.relative["programmable-inserter-gui"].visible
+  then
+    game.get_player(event.player_index)--[[@cast -?]].gui.relative["programmable-inserter-gui"].visible = false
   end
 end)
 
@@ -277,7 +300,7 @@ py.on_event(defines.events.on_gui_selection_state_changed, function (event)
   local element = event.element
   if not element or element.get_mod() ~= "pycoalprocessing" or element.type ~= "drop-down" then return end
 
-  local player = game.get_player(event.player_index)
+  local player = game.get_player(event.player_index)--[[@as LuaPlayer]]
   local inserter = player.opened
   if not inserter then return end
 
@@ -287,7 +310,7 @@ py.on_event(defines.events.on_gui_selection_state_changed, function (event)
     local tags = inserter.tags or {}
     tags["py-dynamic-inserter"] = tags["py-dynamic-inserter"] or {}
     tags["py-dynamic-inserter"][element.name .. "_inventory"] = element.selected_index ~= 1 and selection or nil
-    if not tags["py-dynamic-inserter"].drop_target_inventory and not tags["py-dynamic-inserter"].pickup_target_inventory then tags["py-dynamic-inserter"] = nil end
+    if not tags["py-dynamic-inserter"].drop_target_inventory and not tags["py-dynamic-inserter"]--[[@as table]].pickup_target_inventory then tags["py-dynamic-inserter"] = nil end
     inserter.tags = tags
   else
     local metadata = storage.programmable_inserters[inserter.unit_number] or { inserter = inserter }
@@ -307,11 +330,11 @@ py.on_event(defines.events.on_gui_selection_state_changed, function (event)
       -- save the target inventory
       metadata[element.name .. "_inventory"] = selection
       -- create proxy container if required
-      metadata[element.name] = metadata[element.name] or inserter.surface.create_entity{
+      metadata[element.name] = metadata[element.name] or inserter.surface--[[@cast -?]].create_entity{
         name = "py-dynamic-inserter-target",
         force = inserter.force,
         position = inserter[element.name:sub(1, -7) .. "position"]
-      }
+      }--[[@as LuaSurface.create_entity_param]]
       -- set target entity
       inserter[element.name] = metadata[element.name]
       
@@ -341,7 +364,8 @@ end)
 
 local search_range = script.active_mods.bobinserters and 4 or script.active_mods["quick-adjustable-inserters"] and 3 or 2
 
-py.on_event(py.events.on_built(), function (event)
+---@param event EventData.on_built_entity|EventData.on_robot_built_entity|EventData.on_space_platform_built_entity|EventData.script_raised_built|EventData.script_raised_revive
+py.on_event(py.events.on_built(), function (event) 
   if event.entity.type == "inserter" and event.tags and event.tags["py-dynamic-inserter"] then
     -- create relevant entities
     local metadata = event.tags["py-dynamic-inserter"]
@@ -351,7 +375,7 @@ py.on_event(py.events.on_built(), function (event)
         metadata[index:sub(1,-11)] = event.entity.surface.create_entity{
           name = "py-dynamic-inserter-target",
           force = event.entity.force,
-          position = event.entity[index:sub(1,-17) .. "position"]
+          position = event.entity[index:sub(1,-17) .. "position"] --[[@as MapPosition]]
         }
       end
     end
@@ -379,13 +403,14 @@ py.on_event(py.events.on_built(), function (event)
   end
 end)
 
+---@param event EventData.on_player_mined_entity|EventData.on_robot_mined_entity|EventData.on_space_platform_mined_entity|EventData.script_raised_destroy|EventData.on_entity_died
 py.on_event(py.events.on_destroyed(), function (event)
-  if event.entity.type ~= "inserter" then return end
+  if event.entity.type ~= "inserter" or not storage.programmable_inserters[event.entity.unit_number] then return end
 
-  for _, entity in pairs(storage.programmable_inserters[event.entity.unit_number] or {}) do
+  for _, entity in pairs(storage.programmable_inserters[event.entity.unit_number]) do
     if entity.type == "proxy-container" and entity.valid then entity.destroy() end
   end
-  storage[event.entity.unit_number] = nil
+  storage.programmable_inserters[event.entity.unit_number] = nil
 end)
 
 py.on_event(defines.events.on_player_rotated_entity, function (event)
@@ -472,10 +497,11 @@ py.on_event(defines.events.on_entity_settings_pasted, function (event)
 
 end)
 
+---@param event EventData.on_player_setup_blueprint
 py.on_event(defines.events.on_player_setup_blueprint, function (event)
-	local blueprint = game.get_player(event.player_index).blueprint_to_setup
+	local blueprint = game.get_player(event.player_index)--[[@cast -?]].blueprint_to_setup--[[@as LuaItemStack?]]
   -- if normally invalid
-	if not blueprint or not blueprint.valid_for_read then blueprint = game.get_player(event.player_index).cursor_stack end
+	if not blueprint or not blueprint.valid_for_read then blueprint = game.get_player(event.player_index)--[[@cast -?]].cursor_stack end
   -- if non existant, cancel
   if not blueprint then return end
   local entities = blueprint.get_blueprint_entities()
@@ -486,40 +512,48 @@ py.on_event(defines.events.on_player_setup_blueprint, function (event)
     -- add tags and remove proxy inventories as necessary
     if prototypes.entity[entity.name].type == "inserter" then
       mapping = mapping or event.mapping.get()
-      local tags = entity.tags or {}
-      if mapping[index].type == "entity-ghost" then
-        tags["py-dynamic-inserter"] = (mapping[index].tags or {})["py-dynamic-inserter"]
-      elseif storage.programmable_inserters[mapping[index].unit_number] then
-        -- we only need to add data if data is in storage
-        tags["py-dynamic-inserter"] = {
-          drop_target_inventory = storage.programmable_inserters[mapping[index].unit_number].drop_target_inventory,
-          pickup_target_inventory = storage.programmable_inserters[mapping[index].unit_number].pickup_target_inventory
-        }
+      if mapping[index] then
+        if mapping[index].type == "entity-ghost" then
+          blueprint.set_blueprint_entity_tag(index, "py-dynamic-inserter", (mapping[index].tags or {})["py-dynamic-inserter"])
+        elseif storage.programmable_inserters[mapping[index].unit_number] then
+          -- we only need to add data if data is in storage
+          blueprint.set_blueprint_entity_tag(index, "py-dynamic-inserter", {
+            drop_target_inventory = storage.programmable_inserters[mapping[index].unit_number].drop_target_inventory,
+            pickup_target_inventory = storage.programmable_inserters[mapping[index].unit_number].pickup_target_inventory
+          })
+        end
       end
-      entity.tags = tags
     end
   end
-  blueprint.set_blueprint_entities(entities)
 end)
 
 if script.active_mods["quick-adjustable-inserters"] then
+  ---@diagnostic disable-next-line: undefined-field
   if defines.events.on_qai_inserter_vectors_changed then
+    ---@diagnostic disable-next-line: undefined-field, type-not-found, param-type-mismatch
     ---@param event EventData.on_qai_inserter_vectors_changed
     script.on_event(defines.events.on_qai_inserter_vectors_changed, function(event)
-        update_targets(event.inserter)
+      ---@diagnostic disable-next-line: undefined-field
+      update_targets(event.inserter)
     end)
   end
 
+  ---@diagnostic disable-next-line: undefined-field
   if defines.events.on_qai_inserter_adjustment_finished then
+  ---@diagnostic disable-next-line: undefined-field, type-not-found, param-type-mismatch
     ---@param event EventData.on_qai_inserter_adjustment_finished
     script.on_event(defines.events.on_qai_inserter_adjustment_finished, function(event)
+      ---@diagnostic disable-next-line: undefined-field
       update_targets(event.inserter)
     end)
   end
 end
 
+---@diagnostic disable-next-line: undefined-field
 if script.active_mods["bobinserters"] and defines.events.on_bobs_inserter_adjusted then
+  ---@diagnostic disable-next-line: undefined-field
   script.on_event(defines.events.on_bobs_inserter_adjusted, function (event)
+    ---@diagnostic disable-next-line: undefined-field
     update_targets(event.entity)
   end)
 end

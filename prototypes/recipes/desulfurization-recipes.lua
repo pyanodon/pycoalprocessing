@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "dirty-reaction",
-    category = "fts-reactor",
+    categories = {"fts-reactor"},
     enabled = false,
     energy_required = 9.3,
     ingredients = {
@@ -24,7 +24,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "coalgas-syngas",
-    category = "desulfurization",
+    categories = {"desulfurization"},
     enabled = false,
     energy_required = 5.5,
     ingredients = {
@@ -46,7 +46,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "sulfur-crudeoil",
-    category = "desulfurization",
+    categories = {"desulfurization"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -55,7 +55,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "heavy-oil", amount = 300},
-        {type = "item",  name = "sulfur",    amount = 3,  probability = 0.5},
+        {type = "item",  name = "sulfur",    amount = 3,  independent_probability = 0.5},
         {type = "item",  name = "ash",       amount = 1}
     },
     main_product = "heavy-oil",
@@ -68,7 +68,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "sulfur-heavyoil",
-    category = "desulfurization",
+    categories = {"desulfurization"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -89,7 +89,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "sulfur-lightoil",
-    category = "desulfurization",
+    categories = {"desulfurization"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -110,7 +110,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "sulfur-petgas",
-    category = "desulfurization",
+    categories = {"desulfurization"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -118,7 +118,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "syngas", amount = 90},
-        {type = "item",  name = "sulfur", amount = 1, probability = 0.5},
+        {type = "item",  name = "sulfur", amount = 1, independent_probability = 0.5},
         {type = "item",  name = "ash",    amount = 1}
     },
     main_product = "sulfur",
@@ -131,7 +131,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "aromatics-to-lubricant",
-    category = "desulfurization",
+    categories = {"desulfurization"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -149,7 +149,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "explosive-glycerol",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 2.0,
     ingredients = {
@@ -169,7 +169,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "extract-sulfur",
-    category = "evaporator",
+    categories = {"evaporator"},
     enabled = false,
     energy_required = 1,
     ingredients = {

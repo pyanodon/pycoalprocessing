@@ -126,11 +126,13 @@ for i, setting in pairs(beacon_settings) do
     beacon.name = beacon_names[i]
     beacon.distribution_effectivity = 0.2 * am * fm
     beacon.energy_usage = 1000 * am * (fm ^ 3) .. "kW"
-    beacon.supply_area_distance = 64 - 16 * (am - 1)
+    beacon.supply_area_distance = 64 - 16 * (am - 1)--[[@as int]]
     if beacon.supply_area_distance < 2 then beacon.supply_area_distance = 2 end
     beacon.placeable_by = {item = "beacon", count = 1}
     beacon.localised_name = {"entity-name.new-beacon", tostring(am), tostring(fm)}
+    beacon.profile = nil
     beacon.allowed_effects = {"speed", "consumption"}
+    beacon.tall = true
     beacon.graphics_set = graphics_set
     beacon.collision_box = {{-2.05, -2.05}, {2.05, 2.05}}
     beacon.selection_box = {{-2.5, -2.5}, {2.5, 2.5}}
@@ -150,8 +152,8 @@ data.raw.item.beacon.icon_size = 64
 data.raw.item.beacon.stack_size = 20
 data.raw.beacon.beacon.subgroup = data.raw.item.beacon.subgroup
 
-data.raw.module["speed-module"].beacon_tint.primary = {0, 0.65, 1}
-data.raw.module["speed-module-2"].beacon_tint.primary = {0, 0.65, 1}
-data.raw.module["speed-module-3"].beacon_tint.primary = {0, 0.65, 1}
+data.raw.module["speed-module"].beacon_tint--[[@cast -?]].primary = {0, 0.65, 1}
+data.raw.module["speed-module-2"].beacon_tint--[[@cast -?]].primary = {0, 0.65, 1}
+data.raw.module["speed-module-3"].beacon_tint--[[@cast -?]].primary = {0, 0.65, 1}
 
 TECHNOLOGY("effect-transmission"):add_prereq("diet-beacon")

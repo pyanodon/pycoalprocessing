@@ -26,8 +26,19 @@ local vanilla_achievements_to_disable = {
 }
 
 for _, cheevo in pairs(vanilla_achievements_to_disable) do
-    data.raw[cheevo.cat][cheevo.name].hidden = true
+    local category = data.raw[cheevo.cat] or {}
+    local prototype = category[cheevo.name]
+    if prototype then
+        prototype.hidden = true
+    end
 end
+
+-- update lazy bastard to be Pyanodon Compliant™
+-- 250 number is compliments of the following message by Osmo
+-->I did some calculations and playtesting and the answer is 241.
+-->This requires that there exists a native flora patch near water, so that a steam engine can be connected to it with only 1 power pole.
+-->You start with 10 mining drills and one furnace. Having mining drills is nice, but the furnace later gets recycled into the boiler, so researching and flora harvesting cannot be done unless all the required iron, copper and stone have been smelted.
+(data.raw["dont-craft-manually-achievement"]["lazy-bastard"] or {}).amount = 250
 
 
 -- ordering: 0, then a letter per mod, then a letter within the mod
@@ -60,8 +71,7 @@ data:extend
         order = "0ac",
         objective_condition = "game-finished",
         icon = "__pycoalprocessinggraphics__/graphics/achievement/smoke-me-a-kipper-i-will-be-back-for-breakfast.png",
-        icon_size = 128,
-        limited_to_one_game = false
+        icon_size = 128
     },
 }
 if mods.pypetroleumhandling then

@@ -2,8 +2,8 @@ local pipes = {
     north = {
         filename = "__pycoalprocessinggraphics__/graphics/entity/washer/pipe-north.png",
         priority = "low",
-        width = 30,
-        height = 44
+        width = 32,
+        height = 32
     }
 }
 local pipes2 = {
@@ -64,7 +64,7 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-2.8, -2.8}, {2.8, 2.8}},
         selection_box = {{-3.0, -3.0}, {3.0, 3.0}},
-        forced_symmetry = "diagonal-pos",
+        use_mirroring = true,
         module_slots = i,
         allowed_effects = {"consumption", "speed", "pollution", "productivity"},
         crafting_categories = {"washer"},
@@ -108,7 +108,7 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-2", {1.17, 2.78}, {-0.05, -0.8}, nil, nil, pipes2),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {0.5, 2.5}, direction = defines.direction.south}}
             },
             {
@@ -123,8 +123,9 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/washer.ogg", volume = 1.8},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/washer.ogg", volume = 0.3},
-            apparent_volume = 1.8
         },
+    circuit_connector = circuit_connector_definitions["washer"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

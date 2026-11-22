@@ -1,7 +1,7 @@
 RECIPE {
     type = "recipe",
     name = "coal-gas",
-    category = "distilator",
+    categories = {"distilator"},
     enabled = true,
     energy_required = 3,
     ingredients = {
@@ -10,7 +10,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "coal-gas",   amount = 40},
         {type = "fluid", name = "tar",        amount = 50},
-        {type = "item",  name = "iron-oxide", amount = 1, probability = 0.3},
+        {type = "item",  name = "iron-oxide", amount = 1, independent_probability = 0.3},
         {type = "item",  name = "coke",       amount = 6}
     },
     main_product = "coal-gas",
@@ -23,7 +23,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "coal-gas-from-wood",
-    category = "distilator",
+    categories = {"distilator"},
     enabled = true,
     energy_required = 3,
     ingredients = {
@@ -32,7 +32,7 @@ RECIPE {
     results = {
         {type = "fluid", name = "coal-gas",   amount = 10},
         {type = "fluid", name = "tar",        amount = 30},
-        {type = "item",  name = "iron-oxide", amount = 1, probability = 0.3},
+        {type = "item",  name = "iron-oxide", amount = 1, independent_probability = 0.3},
         {type = "item",  name = "coal",       amount = 10}
     },
     main_product = "coal-gas",
@@ -45,7 +45,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "coal-gas-from-coke",
-    category = "distilator",
+    categories = {"distilator"},
     enabled = true,
     energy_required = 5,
     ingredients = {

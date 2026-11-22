@@ -96,8 +96,9 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/niobium-mine.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/niobium-mine.ogg", volume = 0.3},
-            apparent_volume = 2.5
-        }
+        },
+        circuit_connector = circuit_connector_definitions["ball-mill"],
+        circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

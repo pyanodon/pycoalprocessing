@@ -25,5 +25,12 @@ data:extend {
         minimum_value = 0,
         maximum_value = 100,
         default_value = 0
+    },
+    {
+        type = "bool-setting",
+        name = "py-generator-equipment-manager",
+        order = "ae",
+        setting_type = "startup",
+        default_value = true
     }
 }

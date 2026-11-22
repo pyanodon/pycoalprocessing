@@ -130,6 +130,7 @@ for am = 5, 1, -1 do
         beacon.placeable_by = {item = "beacon-mk01", count = 1}
         beacon.localised_name = {"entity-name.new-beacon-mk01", tostring(am), tostring(fm)}
         beacon.allowed_effects = {"speed", "consumption"}
+        beacon.tall = true
         beacon.graphics_set = graphics_set
         beacon.collision_box = {{-1.05, -1.05}, {1.05, 1.05}}
         beacon.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}
@@ -139,10 +140,11 @@ for am = 5, 1, -1 do
         beacon.minable = {mining_time = 0.2, result = "beacon-mk01"}
         beacon.icon = "__pycoalprocessinggraphics__/graphics/icons/beacon-01.png"
         beacon.icon_size = 64
+        beacon.profile = nil
         data:extend {beacon}
     end
 end
 
-data.raw.module["speed-module"].beacon_tint.primary = {0, 0.65, 1}
-data.raw.module["speed-module-2"].beacon_tint.primary = {0, 0.65, 1}
-data.raw.module["speed-module-3"].beacon_tint.primary = {0, 0.65, 1}
+data.raw.module["speed-module"].beacon_tint--[[@cast -?]].primary = {0, 0.65, 1}
+data.raw.module["speed-module-2"].beacon_tint--[[@cast -?]].primary = {0, 0.65, 1}
+data.raw.module["speed-module-3"].beacon_tint--[[@cast -?]].primary = {0, 0.65, 1}

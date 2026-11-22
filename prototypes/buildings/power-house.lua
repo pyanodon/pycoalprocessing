@@ -101,7 +101,7 @@ for i = 1, 4 do
                     south_position = {2.1, -1.9},
                     frequency = 90,
                     starting_vertical_speed = 0.03,
-                    slow_down_factor = 1,
+                    vertical_speed_slowdown = 1,
                     starting_frame_deviation = 60
                 },
                 {
@@ -112,7 +112,7 @@ for i = 1, 4 do
                     south_position = {1.9, -3.0},
                     frequency = 90,
                     starting_vertical_speed = 0.02,
-                    slow_down_factor = 1,
+                    vertical_speed_slowdown = 1,
                     starting_frame_deviation = 60
                 },
             },
@@ -149,20 +149,20 @@ for i = 1, 4 do
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-2", {-0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_left),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {-1.0, -3.0}, direction = defines.direction.north}}
             },
             {
                 production_type = "input",
                 pipe_picture = py.pipe_pictures("assembling-machine-2", {0.1, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_mid),
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_connections = {{flow_direction = "input", position = {0.0, -3.0}, direction = defines.direction.north}}
             },
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_picture = py.pipe_pictures("assembling-machine-2", {-0, 1.1}, {-0.00, -0.89}, {0.55, 0.15}, {-0.5, 0.15}, pipe_right),
                 pipe_connections = {{flow_direction = "input", position = {1.0, -3.0}, direction = defines.direction.north}}
             },
@@ -185,8 +185,9 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/power-house.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/power-house.ogg", volume = 0.3},
-            apparent_volume = 2.5
         },
+    circuit_connector = circuit_connector_definitions["power-house"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 

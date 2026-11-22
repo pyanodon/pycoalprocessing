@@ -52,7 +52,6 @@ require "prototypes/technologies/creosote"
 require "prototypes/technologies/pyrrhic"
 require "prototypes/technologies/artillery-2"
 require "prototypes/technologies/artillery-range"
-require "prototypes/technologies/cargo-landing-pad-capacity"
 require "prototypes/technologies/hidden-mining-fluid-autounlock"
 
 -- (( RESOURCES )) --
@@ -192,18 +191,3 @@ data.raw.fluid["refsyngas"].fuel_value = "0.5MJ"
 data.raw.fluid["methanol"].fuel_value = "1MJ"
 data.raw.fluid["tar"].fuel_value = "0.2MJ"
 --data.raw.fluid['combustion-mixture1'].fuel_value = '0.1MJ'
-
-data:extend {{
-    type = "shortcut",
-    name = "py-toggle-equipment-fuel-manager",
-    action = "lua",
-    technology_to_unlock = "personal-roboport-equipment",
-    unavailable_until_unlocked = true,
-    toggleable = true,
-    style = "default",
-    icon = "__pycoalprocessinggraphics__/graphics/gui/toggle-equipment-fuel-manager.png",
-    small_icon = "__pycoalprocessinggraphics__/graphics/gui/toggle-equipment-fuel-manager.png",
-    icon_size = 36,
-    small_icon_size = 36,
-    order = data.raw.shortcut["toggle-equipment-movement-bonus"].order
-}}

@@ -55,7 +55,7 @@ ENTITY {
     dying_explosion = "medium-explosion",
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-    forced_symmetry = "diagonal-pos",
+    use_mirroring = true,
     module_slots = 4,
     allowed_effects = {"speed", "consumption"},
     crafting_categories = {"cooling"},
@@ -91,14 +91,14 @@ ENTITY {
     fluid_boxes = {
         {
             production_type = "input",
-            pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {-0.05, -0.7}, nil, nil, pipes),
+            pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {-0.0, -0.75}, nil, nil),
             pipe_covers = py.pipe_covers(false, true, true, true),
-            volume = 1000,
+            volume = 100,
             pipe_connections = {{flow_direction = "input", position = {1.0, -2.0}, direction = defines.direction.north}}
         },
         {
             production_type = "output",
-            pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {-0.05, -0.7}, nil, nil, pipes),
+            pipe_picture = py.pipe_pictures("assembling-machine-2", nil, {-0.0, -0.75}, nil, nil),
             pipe_covers = py.pipe_covers(false, true, true, true),
             volume = 100,
             pipe_connections = {{flow_direction = "output", position = {-1.0, -2.0}, direction = defines.direction.north}}
@@ -108,6 +108,7 @@ ENTITY {
     working_sound = {
         sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg"},
         idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/cooling-tower-mk01.ogg", volume = 0.3},
-        apparent_volume = 2.5
-    }
+    },
+    circuit_connector = circuit_connector_definitions["cooling-tower-mk2"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
 }

@@ -2,7 +2,7 @@
 RECIPE {
     type = "recipe",
     name = "bonemeal",
-    category = "ulric",
+    categories = {"ulric"},
     enabled = false,
     energy_required = 45,
     ingredients = {
@@ -25,7 +25,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "raw-borax",
-    category = "borax",
+    categories = {"borax"},
     enabled = false,
     energy_required = 4.5,
     ingredients = {
@@ -45,7 +45,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "ralesia",
-    category = "ralesia",
+    categories = {"ralesia"},
     enabled = false,
     energy_required = 7.7,
     ingredients = {
@@ -69,7 +69,7 @@ end
 RECIPE {
     type = "recipe",
     name = "rich-clay",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     energy_required = 6,
     ingredients = {
@@ -89,7 +89,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "ground-sample01",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -109,7 +109,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "bio-sample01",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 6,
     ingredients = {
@@ -129,7 +129,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "alien-sample01",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 10,
     ingredients = {
@@ -149,7 +149,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "equipment-chassi",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 7,
     ingredients = {
@@ -175,7 +175,7 @@ end
 RECIPE {
     type = "recipe",
     name = "lab-instrument",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 7,
     ingredients = {
@@ -195,7 +195,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "lens",
-    category = "glassworks",
+    categories = {"glassworks"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -219,7 +219,7 @@ end
 RECIPE {
     type = "recipe",
     name = "boron-trioxide",
-    category = "hpf",
+    categories = {"hpf"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -239,7 +239,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "ralesia-seeds",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 5.5,
     ingredients = {
@@ -274,7 +274,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "borax-washing",
-    category = "washer",
+    categories = {"washer"},
     enabled = false,
     energy_required = 7.0,
     ingredients = {
@@ -295,7 +295,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "tar-distilation",
-    category = "distilator",
+    categories = {"distilator"},
     enabled = false,
     energy_required = 2.5,
     ingredients = {
@@ -317,7 +317,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "tar-gasification",
-    category = "gasifier",
+    categories = {"gasifier"},
     enabled = false,
     energy_required = 3.0,
     ingredients = {
@@ -343,7 +343,7 @@ end
 RECIPE {
     type = "recipe",
     name = "coal-fawogae",
-    category = "hpf",
+    categories = {"hpf"},
     enabled = false,
     energy_required = 2.0,
     ingredients = {
@@ -366,7 +366,7 @@ end
 RECIPE {
     type = "recipe",
     name = "coke-coal",
-    category = "hpf",
+    categories = {"hpf"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -389,7 +389,7 @@ end
 RECIPE {
     type = "recipe",
     name = "stone-distilation",
-    category = "distilator",
+    categories = {"distilator"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -412,7 +412,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "log1",
-    category = "nursery",
+    categories = {"nursery"},
     enabled = false,
     energy_required = 80,
     ingredients = {},
@@ -428,7 +428,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "log2",
-    category = "nursery",
+    categories = {"nursery"},
     enabled = false,
     energy_required = 60,
     ingredients = {
@@ -446,7 +446,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "log3",
-    category = "nursery",
+    categories = {"nursery"},
     enabled = false,
     energy_required = 40,
     ingredients = {
@@ -465,7 +465,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "log-wood",
-    category = "wpu",
+    categories = {"wpu"},
     enabled = true,
     energy_required = 4,
     ingredients = {
@@ -494,7 +494,7 @@ RECIPE {
         {type = "item", name = "concrete", amount = 15}
     },
     main_product = "concrete",
-    category = "hpf",
+    categories = {"hpf"},
     icon = "__base__/graphics/icons/concrete.png",
     icon_size = 64,
     subgroup = "py-items-hpf",
@@ -504,7 +504,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "treated-wood",
-    category = "tar",
+    categories = {"tar"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -530,7 +530,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "gasify-coal-dust",
-    category = "gasifier",
+    categories = {"gasifier"},
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -539,7 +539,7 @@ RECIPE {
     },
     results = {
         {type = "fluid", name = "syngas", amount = 70},
-        {type = "item",  name = "ash",    amount = 1, probability = 0.3}
+        {type = "item",  name = "ash",    amount = 1, independent_probability = 0.3}
     },
     main_product = "syngas"
 }:add_unlock("coal-processing-3")
@@ -547,7 +547,7 @@ RECIPE {
 local nichrome = RECIPE {
     type = "recipe",
     name = "nichrome",
-    category = "hpf",
+    categories = {"hpf"},
     enabled = false,
     energy_required = 2.5,
     ingredients = {
@@ -568,7 +568,7 @@ end
 RECIPE {
     type = "recipe",
     name = "active-carbon",
-    category = "hpf",
+    categories = {"hpf"},
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -589,7 +589,7 @@ end
 RECIPE {
     type = "recipe",
     name = "zinc-chloride",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -614,7 +614,7 @@ end
 RECIPE {
     type = "recipe",
     name = "tailings-dust",
-    category = "evaporator",
+    categories = {"evaporator"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -622,7 +622,7 @@ RECIPE {
     },
     results = {
         {type = "item",  name = "tailings-dust", amount = 4},
-        {type = "fluid", name = "acidgas",       amount = 30, probability = 0.5}
+        {type = "fluid", name = "acidgas",       amount = 30, independent_probability = 0.5}
     },
     main_product = "tailings-dust",
     icon = "__pycoalprocessinggraphics__/graphics/icons/tailings_dust.png",
@@ -632,7 +632,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "drill-head",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -649,7 +649,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "niobium-ore",
-    category = "niobium",
+    categories = {"niobium"},
     enabled = false,
     energy_required = 7,
     ingredients = {
@@ -665,7 +665,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "niobium-dust",
-    category = "ball-mill",
+    categories = {"ball-mill"},
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -681,7 +681,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "niobium-concentrate",
-    category = "classifier",
+    categories = {"classifier"},
     enabled = false,
     energy_required = 4,
     ingredients = {
@@ -697,7 +697,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "niobium-oxide",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 3.5,
     ingredients = {
@@ -721,7 +721,7 @@ end
 RECIPE {
     type = "recipe",
     name = "niobium-plate",
-    category = "chemistry", --bob electrolysis
+    categories = {"chemistry"}, --bob electrolysis
     enabled = false,
     energy_required = 3.5,
     ingredients = {
@@ -741,7 +741,7 @@ end
 RECIPE {
     type = "recipe",
     name = "log5",
-    category = "nursery",
+    categories = {"nursery"},
     enabled = false,
     energy_required = 20,
     ingredients = {
@@ -760,7 +760,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "organics-from-wood",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -779,7 +779,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "log4",
-    category = "nursery",
+    categories = {"nursery"},
     enabled = false,
     energy_required = 30,
     ingredients = {
@@ -798,7 +798,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "log6",
-    category = "nursery",
+    categories = {"nursery"},
     enabled = false,
     energy_required = 15,
     ingredients = {
@@ -818,7 +818,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "log-organics",
-    category = "wpu",
+    categories = {"wpu"},
     enabled = false,
     energy_required = 10,
     ingredients = {
@@ -836,7 +836,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "richdust-separation",
-    category = "solid-separator",
+    categories = {"solid-separator"},
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -860,7 +860,7 @@ end
 RECIPE {
     type = "recipe",
     name = "organic-solvent",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 2.5,
     ingredients = {
@@ -881,7 +881,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "aromatic-organic",
-    category = "gasifier",
+    categories = {"gasifier"},
     enabled = false,
     energy_required = 10,
     ingredients = {
@@ -901,7 +901,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "petgas-methanol",
-    category = "fluid-separator",
+    categories = {"fluid-separator"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -922,7 +922,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "oleo-heavy",
-    category = "fluid-separator",
+    categories = {"fluid-separator"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -944,7 +944,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "making-chromium",
-    category = "hpf",
+    categories = {"hpf"},
     enabled = false,
     energy_required = 5.5,
     ingredients = {
@@ -978,7 +978,7 @@ RECIPE {
     },
     icon_size = 64,
     enabled = false,
-    category = "hpf",
+    categories = {"hpf"},
     subgroup = "py-items-hpf",
     order = "c",
     ingredients = {
@@ -988,12 +988,12 @@ RECIPE {
         {type = "item", name = "coal", amount = 1}
     },
     energy_required = 0.5
-}:add_unlock("coal-processing-3")
+}--[[@as data.RecipePrototype]]:add_unlock("coal-processing-3")
 
 RECIPE {
     type = "recipe",
     name = "coal-dust",
-    category = "ball-mill",
+    categories = {"ball-mill"},
     enabled = false,
     energy_required = 4.0,
     ingredients = {
@@ -1012,7 +1012,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "sand-brick",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     energy_required = 2.0,
     ingredients = {
@@ -1033,7 +1033,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "oleochemicals-distilation",
-    category = "distilator",
+    categories = {"distilator"},
     enabled = false,
     energy_required = 2.5,
     ingredients = {
@@ -1061,7 +1061,7 @@ end
 RECIPE {
     type = "recipe",
     name = "oleo-gasification",
-    category = "gasifier",
+    categories = {"gasifier"},
     enabled = false,
     energy_required = 3.0,
     ingredients = {
@@ -1086,7 +1086,7 @@ end
 RECIPE {
     type = "recipe",
     name = "organics-processing",
-    category = "gasifier",
+    categories = {"gasifier"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -1107,7 +1107,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "sand-casting",
-    category = "tar",
+    categories = {"tar"},
     enabled = false,
     energy_required = 1,
     ingredients = {
@@ -1134,7 +1134,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "tar-oil",
-    category = "tar",
+    categories = {"tar"},
     enabled = false,
     energy_required = 2.5,
     ingredients = {
@@ -1155,7 +1155,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "slacked-lime",
-    category = "chemistry",
+    categories = {"chemistry"},
     enabled = false,
     energy_required = 3,
     ingredients = {
@@ -1176,7 +1176,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "oleo-solidfuel",
-    category = "methanol",
+    categories = {"methanol"},
     enabled = false,
     energy_required = 2,
     ingredients = {
@@ -1196,7 +1196,7 @@ RECIPE {
 RECIPE {
     type = "recipe",
     name = "coaldust-ash",
-    category = "hpf",
+    categories = {"hpf"},
     enabled = false,
     energy_required = 1,
     ingredients = {

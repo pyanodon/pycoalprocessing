@@ -81,8 +81,9 @@ style.py_schedule_move_button_alt = {
 }
 
 local graphics_set = table.deepcopy(data.raw["gui-style"].default.train_schedule_temporary_station_delete_button.default_graphical_set) --[[@as data.ElementImageSet]]
-graphics_set.base.corner_size = 8
+graphics_set.base--[[@cast -?]].corner_size = 8
 -- Removes black lines at right and bottom of shadow
+---@cast graphics_set.shadow data.ElementImageSetLayer
 graphics_set.shadow.position = {467, 90}
 graphics_set.shadow.corner_size = 4
 graphics_set.shadow.draw_type = "outer"

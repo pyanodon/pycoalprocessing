@@ -1,3 +1,10 @@
+---@namespace PyCoalProcessing
+---@type PyCoalProcessingStorage
+storage = storage --[[@as PyCoalProcessingStorage]]
+
+---@class (partial) PyCoalProcessingStorage
+---@field finished boolean
+
 require "__pypostprocessing__.lib"
 
 require "scripts.wiki.wiki"
@@ -10,6 +17,7 @@ require "scripts.beacons"
 require "scripts.milestones"
 require "scripts.generator-equipment-autofill"
 require "scripts.programmable-inserter"
+require "scripts.factory-planner"
 
 py.on_event(py.events.on_init(), function()
     for _, interface in pairs {"silo_script", "better-victory-screen"} do
@@ -57,6 +65,7 @@ py.on_event(defines.events.on_pre_build, function(event)
     Beacons.events.on_pre_build(event)
 end)
 
+---@param event EventData.on_built_entity|EventData.on_robot_built_entity|EventData.on_space_platform_built_entity|EventData.script_raised_built|EventData.script_raised_revive
 py.on_event(py.events.on_built(), function(event)
     Beacons.events.on_built(event)
     Pond.events.on_built(event)
@@ -84,12 +93,13 @@ end)
 py.on_event(defines.events.on_player_created, function(event)
     Wiki.events.on_player_created(event)
 
-    local player = game.get_player(event.player_index)
+    local player = game.get_player(event.player_index)--[[@as LuaPlayer]]
     if not player.valid then return end
     local nauvis = game.surfaces["nauvis"]
     if not nauvis then return end
 
     local autoplace = nauvis.map_gen_settings.autoplace_controls
+    ---@cast autoplace -?
 
     if not script.active_mods["PyBlock"] and not script.active_mods["pystellarexpedition"] and autoplace.stone and autoplace.stone.richness <= 1 then
         player.print {"messages.warning-no-preset", {"map-gen-preset-name.py-recommended"}}
@@ -101,10 +111,6 @@ py.on_event(defines.events.on_player_created, function(event)
 
     if script.active_mods.quality and not script.active_mods.pystellarexpedition then
         player.print {"messages.warning-quality"}
-    end
-
-    if not script.active_mods.FNEI and not script.active_mods["RecipeBook"] then
-        player.print {"messages.warning-recipe-book"}
     end
 end)
 
@@ -138,6 +144,7 @@ end
 
 py.on_event(defines.events.on_tick, function(event)
     local func_list = remote.call("on_nth_tick", "query", "pycp", event.tick)
+    --[[@cast func_list string[] ]]
     for _, func in pairs(func_list) do
         py.mod_nth_tick_funcs[func]()
     end

@@ -43,7 +43,7 @@ for i = 1, 4 do
         minable = {mining_time = 1, result = name},
         fast_replaceable_group = "classifier",
         max_health = 400 * i,
-        vector_to_place_result = {0.0, 3.51},
+        vector_to_place_result = {0.0, 3.8},
         corpse = "big-remnants",
         dying_explosion = "medium-explosion",
         collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
@@ -60,6 +60,7 @@ for i = 1, 4 do
             },
         },
         energy_usage = (i * 750) .. "kW",
+        tall = true,
         graphics_set = {
             animation = {
                 layers = {
@@ -89,8 +90,9 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/classifier.ogg"},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/classifier.ogg", volume = 0.3},
-            apparent_volume = 2.5
         },
+        circuit_connector = circuit_connector_definitions["classifier"],
+        circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 
     -- https://github.com/pyanodon/pycoalprocessing/commit/cf03a35fa5dec4c74a464d847b4e266394317726

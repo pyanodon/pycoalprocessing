@@ -47,7 +47,7 @@ for i = 1, 4 do
         dying_explosion = "medium-explosion",
         collision_box = {{-3.9, -3.9}, {3.9, 3.9}},
         selection_box = {{-4, -4}, {4, 4}},
-        forced_symmetry = "diagonal-neg",
+        use_mirroring = true,
         module_slots = i,
         allowed_effects = {"consumption", "speed", "pollution", "productivity"},
         crafting_categories = {"distilator"},
@@ -60,6 +60,7 @@ for i = 1, 4 do
             },
         },
         energy_usage = (500 * i) .. "kW",
+        tall = true,
         graphics_set = {
             animation = {
                 layers = {
@@ -129,7 +130,7 @@ for i = 1, 4 do
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_connections = {{flow_direction = "input", position = {-1.5, -3.5}, direction = defines.direction.north}}
             },
@@ -145,7 +146,7 @@ for i = 1, 4 do
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil),
                 pipe_connections = {{flow_direction = "input", position = {-1.5, 3.5}, direction = defines.direction.south}}
             },
@@ -161,7 +162,7 @@ for i = 1, 4 do
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil), --.05
                 pipe_connections = {{flow_direction = "input", position = {-3.5, -1.5}, direction = defines.direction.west}}
             },
@@ -177,7 +178,7 @@ for i = 1, 4 do
             {
                 production_type = "input",
                 pipe_covers = py.pipe_covers(true, true, true, true),
-                volume = 1000,
+                volume = 100,
                 pipe_picture = py.pipe_pictures("assembling-machine-3", nil, {-0.00, -0.95}, nil, nil), --.05
                 pipe_connections = {{flow_direction = "input", position = {3.5, -1.5}, direction = defines.direction.east}}
             },
@@ -201,8 +202,9 @@ for i = 1, 4 do
         working_sound = {
             sound = {filename = "__pycoalprocessinggraphics__/sounds/distilator.ogg", volume = 1.2},
             idle_sound = {filename = "__pycoalprocessinggraphics__/sounds/distilator.ogg", volume = 0.3},
-            apparent_volume = 2.5
         },
+    circuit_connector = circuit_connector_definitions["distilator"],
+    circuit_wire_max_distance = _G.default_circuit_wire_max_distance,
     }
 end
 
