@@ -47,77 +47,124 @@ ITEM {
     stack_size = 20
 }
 
-local graphics_set = {
-    apply_module_tint = "primary",
-    module_tint_mode = "mix",
-    no_modules_tint = {1, 0, 0},
-    animation_list = {
-        {
-            render_layer = "floor-mechanics-under-corpse",
-            animation = {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/terrain.png",
-                priority = "high",
-                width = 160,
-                height = 160,
-                frame_count = 1,
-                line_length = 1,
-                shift = util.by_pixel(-0, -0),
-                scale = 0.6
-            }
-        },
-        {
-            animation = {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/raw.png",
-                priority = "high",
-                width = 96,
-                height = 224,
-                frame_count = 50,
-                line_length = 10,
-                animation_speed = 0.25,
-                shift = util.by_pixel(-0, -96),
-            }
-        },
-        {
-            animation = {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/ao.png",
-                priority = "high",
-                width = 96,
-                height = 224,
-                frame_count = 50,
-                line_length = 10,
-                animation_speed = 0.25,
-                shift = util.by_pixel(-0, -96),
-            }
-        },
-        {
-            animation = {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/l.png",
-                priority = "high",
-                width = 160,
-                height = 128,
-                frame_count = 50,
-                line_length = 10,
-                animation_speed = 0.25,
-                draw_as_glow = true,
-                shift = util.by_pixel(-0, -112)
+local function graphics_set(AM, FM)
+    return {
+        apply_module_tint = "primary",
+        module_tint_mode = "mix",
+        no_modules_tint = {1, 0, 0},
+        animation_list = {
+            {
+                render_layer = "floor-mechanics-under-corpse",
+                animation = {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/terrain.png",
+                    priority = "high",
+                    width = 160,
+                    height = 160,
+                    frame_count = 1,
+                    line_length = 1,
+                    shift = util.by_pixel(-0, -0),
+                    scale = 0.6
+                }
             },
-            apply_tint = true
-        },
-        {
-            animation = {
-                filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/sh.png",
-                priority = "high",
-                width = 128,
-                height = 96,
-                draw_as_shadow = true,
-                frame_count = 50,
-                line_length = 10,
-                animation_speed = 0.25,
-                shift = util.by_pixel(48, 0),
-            }
-        },
+            {
+                animation = {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/raw.png",
+                    priority = "high",
+                    width = 96,
+                    height = 224,
+                    frame_count = 50,
+                    line_length = 10,
+                    animation_speed = 0.25,
+                    shift = util.by_pixel(-0, -96),
+                }
+            },
+            {
+                animation = {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/ao.png",
+                    priority = "high",
+                    width = 96,
+                    height = 224,
+                    frame_count = 50,
+                    line_length = 10,
+                    animation_speed = 0.25,
+                    shift = util.by_pixel(-0, -96),
+                }
+            },
+            {
+                animation = {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/l.png",
+                    priority = "high",
+                    width = 160,
+                    height = 128,
+                    frame_count = 50,
+                    line_length = 10,
+                    animation_speed = 0.25,
+                    draw_as_glow = true,
+                    shift = util.by_pixel(-0, -112)
+                },
+                apply_tint = true
+            },
+            {
+                animation = {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/sh.png",
+                    priority = "high",
+                    width = 128,
+                    height = 96,
+                    draw_as_shadow = true,
+                    frame_count = 50,
+                    line_length = 10,
+                    animation_speed = 0.25,
+                    shift = util.by_pixel(48, 0),
+                }
+            },
+            {
+                render_layer = "floor-mechanics-under-corpse",
+                animation = {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/spritesheet-am.png",
+                    priority = "high",
+                    width = 320,
+                    height = 320,
+                    x = 320 * (5 - AM),
+                    frame_count = 1,
+                    line_length = 1,
+                    shift = util.by_pixel(-0, -4),
+                    scale = 0.25
+                }
+            },
+            {
+                render_layer = "lower-object-above-shadow",
+                animation = {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/spritesheet-am-bloom.png",
+                    priority = "high",
+                    width = 320,
+                    height = 320,
+                    x = 320 * (5 - AM),
+                    frame_count = 1,
+                    line_length = 1,
+                    draw_as_glow = true,
+                    shift = util.by_pixel(-0, -4),
+                    scale = 0.25
+                },
+                apply_tint = true
+            },
+            {
+                animation = {
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/spritesheet-fm.png",
+                    priority = "high",
+                    width = 192,
+                    height = 448,
+                    x = 192 * (FM - 1),
+                    frame_count = 1,
+                    line_length = 1,
+                    draw_as_glow = true,
+                    shift = util.by_pixel(-0, -96),
+                    scale = 0.5
+                },
+                apply_tint = true
+            },
+        }
     }
-}
+end
 
 for am = 5, 1, -1 do
     for fm = 5, 1, -1 do
@@ -131,15 +178,27 @@ for am = 5, 1, -1 do
         beacon.localised_name = {"entity-name.new-beacon-mk01", tostring(am), tostring(fm)}
         beacon.allowed_effects = {"speed", "consumption"}
         beacon.tall = true
-        beacon.graphics_set = graphics_set
+        beacon.graphics_set = graphics_set(am, fm)
         beacon.collision_box = {{-1.05, -1.05}, {1.05, 1.05}}
         beacon.selection_box = {{-1.5, -1.5}, {1.5, 1.5}}
         beacon.drawing_box_vertical_extension = 3
         beacon.collision_mask = {layers = {item = true, object = true, water_tile = true}}
         beacon.next_upgrade = nil
         beacon.minable = {mining_time = 0.2, result = "beacon-mk01"}
-        beacon.icon = "__pycoalprocessinggraphics__/graphics/icons/beacon-01.png"
+        beacon.icons = {
+            {icon = "__pycoalprocessinggraphics__/graphics/icons/beacon-01.png"},
+            {icon = "__pyalienlifegraphics__/graphics/icons/" .. am .. ".png", scale = 0.25, shift = {-12, -3}, floating = true},
+            {icon = "__pyalienlifegraphics__/graphics/icons/" .. fm .. ".png", scale = 0.25, shift = {0, -3}, floating = true}
+        }
         beacon.icon_size = 64
+        beacon.icons_positioning = {{
+            inventory_index = defines.inventory.beacon_modules,
+            max_icons_per_row = 2,
+            max_icon_rows = 1,
+            scale = 1,
+            shift = {0, 1},
+            separation_multiplier = 1.3
+        }}
         beacon.profile = nil
         data:extend {beacon}
     end
