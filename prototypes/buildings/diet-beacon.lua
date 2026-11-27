@@ -120,7 +120,7 @@ local function graphics_set(AM, FM)
             {
                 render_layer = "floor-mechanics-under-corpse",
                 animation = {
-                    filename = "__pycoalprocessing__/spritesheet-am.png",
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/spritesheet-am.png",
                     priority = "high",
                     width = 320,
                     height = 320,
@@ -134,7 +134,7 @@ local function graphics_set(AM, FM)
             {
                 render_layer = "lower-object-above-shadow",
                 animation = {
-                    filename = "__pycoalprocessing__/spritesheet-am-bloom.png",
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/spritesheet-am-bloom.png",
                     priority = "high",
                     width = 320,
                     height = 320,
@@ -149,7 +149,7 @@ local function graphics_set(AM, FM)
             },
             {
                 animation = {
-                    filename = "__pycoalprocessing__/spritesheet-fm.png",
+                    filename = "__pycoalprocessinggraphics__/graphics/entity/beacon/01/spritesheet-fm.png",
                     priority = "high",
                     width = 192,
                     height = 448,
